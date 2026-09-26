@@ -1,0 +1,22 @@
+{
+  "name": "gaza-accountability-index",
+  "private": true,
+  "description": "Scores every state's conduct regarding Gaza since 7 October 2023; every point tied to a dated, archived source.",
+  "license": "MIT",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "turbo": "2.11.4",
+    "typescript": "catalog:"
+  }
+}

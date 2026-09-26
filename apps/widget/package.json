@@ -1,0 +1,20 @@
+{
+  "name": "@gai/widget",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Embeddable widget script served from /embed/.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

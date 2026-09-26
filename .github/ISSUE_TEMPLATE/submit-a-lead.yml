@@ -1,0 +1,47 @@
+name: Submit a lead
+description: Conduct the index may be missing. Leads are checked against a primary document before anything is scored.
+title: "[Lead] "
+labels: ["lead"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. A lead is never scored as it is. It becomes an event only after it is checked against a primary document, archived and hashed, following the sources playbook (`docs/06-sources-playbook.md`). Press and NGO reports are welcome as a starting point.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Name or ISO 3166-1 alpha-3 code of the state whose conduct this is.
+      placeholder: "DEU"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Who did what, stated as fact. For example "The Ministry of Economy suspended two export licences for military goods to Israel."
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of the action
+      description: When the action took effect or was formally decided (YYYY-MM-DD). Give your best estimate and say so if unsure.
+      placeholder: "2024-03-15"
+    validations:
+      required: true
+  - type: textarea
+    id: primary-source
+    attributes:
+      label: Primary source (if any)
+      description: Government release, official gazette, parliamentary record, UN document, court filing, licence register.
+  - type: textarea
+    id: other-sources
+    attributes:
+      label: Other sources
+      description: Press reports, NGO reports or datasets that mention it.
+  - type: input
+    id: indicator
+    attributes:
+      label: Indicator (optional)
+      description: The indicator id from the methodology, if you know it (for example A1, B5, D2).

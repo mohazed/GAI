@@ -1,0 +1,58 @@
+name: Report an error
+description: Something on the site or in the data is wrong (a date, a figure, a source, a quote, a summary).
+title: "[Error] "
+labels: ["error-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Errors go through the corrections process: every change to a published event is logged on the corrections page, with who flagged it. Nothing is deleted.
+        If you represent a government or another party named in an event and want to respond to it, use **Right of reply** instead.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Name or ISO 3166-1 alpha-3 code.
+      placeholder: "DEU"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Event id or page address
+      description: The event id, shown on each event card (format `evt_YYYY_MM_DD_ISO3_IND`), or the address of the page where the error appears.
+    validations:
+      required: true
+  - type: textarea
+    id: what-is-wrong
+    attributes:
+      label: What is wrong
+      description: Quote the text or value that is wrong and say what it should be.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Links to documents that show the error, preferably primary (government release, official gazette, UN record, court filing).
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of error
+      options:
+        - Date
+        - Points or indicator
+        - Source or archived copy
+        - Quote or translation
+        - Summary wording
+        - Missing event
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: How to credit you on the corrections page (optional)
+      description: Leave empty to be credited by your GitHub username, or write "anonymous".
