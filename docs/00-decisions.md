@@ -1,6 +1,6 @@
 # 00 — Decision log
 
-Every decision that shapes the build, with the reason. Decisions are numbered so later sessions can cite them ("per D-07"). Reversible unless marked otherwise. Confirmed by Mohamed Zouad on 2026-09-26; the spec is `Gaza Accountability Index — Cahier des charges.md` at the repo root.
+Every decision that shapes the build, with the reason. Decisions taken during the build itself (from P-01 on), every departure from this plan and every change to `PROMPTS.md` are in `10-build-log.md` (B-xx). Decisions are numbered so later sessions can cite them ("per D-07"). Reversible unless marked otherwise. Confirmed by Mohamed Zouad on 2026-09-26; the spec is `Gaza Accountability Index — Cahier des charges.md` at the repo root.
 
 | ID | Decision | Reason | Reversible? |
 |---|---|---|---|

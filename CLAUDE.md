@@ -4,7 +4,7 @@ You are building and filling a public index that scores every state's conduct re
 
 ## Read first, always
 
-1. `docs/00-decisions.md` — decisions D-01…D-26; cite them ("per D-09") when they drive a choice.
+1. `docs/00-decisions.md` — decisions D-01…D-26; cite them ("per D-09") when they drive a choice. Then `docs/10-build-log.md` — every decision taken during the build (B-xx), every departure from the plan, every prompt change, and what is still open or scheduled; cite them ("per B-26").
 2. The documents your prompt names. `docs/02-methodology-spec.md`, `docs/03-data-model.md`, `docs/04-architecture.md`, `docs/05-design-system.md`, `docs/06-sources-playbook.md` are the contract; the original spec is `Gaza Accountability Index — Cahier des charges.md`.
 3. `PROMPTS.md` to see where your session sits in the sequence.
 
@@ -41,4 +41,5 @@ One file per country for events and assessments; one file per source; ids follow
 
 1. Run `pnpm lint && pnpm typecheck && pnpm test && pnpm validate` (and `pnpm build` for site sessions). Fix what fails; do not skip.
 2. Commit as described above.
-3. Print a report with: what was done; what was verified and how; what was **not** done and why; open questions for the author (numbered, each with a recommended default); the exact next prompt id in `PROMPTS.md`.
+3. Add this session's decisions, departures from the plan, prompt changes and open questions to `docs/10-build-log.md` (new B-xx rows, statuses of older rows updated).
+4. Print a report with: what was done; what was verified and how; what was **not** done and why; open questions for the author (numbered, each with a recommended default); the exact next prompt id in `PROMPTS.md`.

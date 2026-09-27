@@ -17,7 +17,7 @@ The site must read like a reference work produced by a data desk, not like a sta
 | Text and UI | **Source Sans 3** (variable) | 18 (reading), 16 (UI), 14 (table), 12 (captions) | line-height 1.5 reading, 1.35 UI; weight 400 and 600 only |
 | Codes, ids, hashes, axis labels, dates in tables | **Source Code Pro** | 13 / 12 / 11 px | never for prose |
 
-Rules: sentence case everywhere, including buttons and navigation (navigation may use 13 px uppercase with 0.06 em tracking as the one exception). Minus sign is U+2212 (−), never a hyphen. Plus sign is shown on positive scores and points. Thin spaces as thousands separators in FR (12 345), commas in EN (12,345). French: espace insécable before `:` and narrow no-break space before `; ? !`, guillemets « » with no-break spaces, decimal comma. Dates: "12 September 2026" / "12 septembre 2026"; ISO dates in tables and ids.
+Rules: sentence case everywhere, including buttons and navigation (navigation may use 13 px uppercase with 0.06 em tracking as the one exception). Minus sign is U+2212 (−), never a hyphen. Plus sign is shown on positive scores and points. Thin spaces as thousands separators in FR (12 345), commas in EN (12,345). Percentages: "71%" in EN, "71 %" with a narrow no-break space in FR, as the generated summary lines write them (docs/10 B-83). French: espace insécable before `:` and narrow no-break space before `; ? !`, guillemets « » with no-break spaces, decimal comma. Dates: "12 September 2026" / "12 septembre 2026"; ISO dates in tables and ids.
 
 ## 3. Colour tokens (light theme only in v1, D-22)
 
