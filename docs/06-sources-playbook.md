@@ -80,7 +80,7 @@ Inclusion of ES-10/24 (occupation as a whole, not Gaza only) and of the 2026 par
 4. For each candidate: find the primary; `pnpm archive <url>`; write the source YAML; write the event YAML with the quote and locator; set `status: draft`.
 5. For each indicator with no event: write the assessment entry (`none-found` with queries, or `no-data` with the reason).
 6. Leads without a primary go to `data/leads/XXX.yaml`.
-7. Run `pnpm validate` until clean; run `pnpm score --country XXX` and read the result critically: does any single event dominate unexpectedly, is any cap hit, does the band match the evidence?
+7. Run `pnpm validate` until clean; run `pnpm score --country XXX --preview` (the new events are still drafts, and only published events score; `--preview` scores draft and reviewed events as if published and says so) and read the result critically: does any single event dominate unexpectedly, is any cap hit, does the band match the evidence?
 8. Second reading (rule 6): re-open every archived text; confirm each quote and each indicator match; set `second_read.verdict`.
 9. Set `status: reviewed`; commit on branch `data/wave-N`; write the PR description as a table of events with points and confidence, plus the assessment summary.
 10. The author reviews the diff, requests changes or merges; the merge commit sets `status: published` (a script `pnpm publish:events --pr N` does the flip with `reviewed_by`).
