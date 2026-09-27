@@ -15,16 +15,18 @@ import { EventCard, IndicatorBadge } from '../../components/EventCard'
 import { Footer } from '../../components/Footer'
 import { Masthead } from '../../components/Masthead'
 import { MethodologyTable } from '../../components/MethodologyTable'
+import { Movers } from '../../components/Movers'
 import { OutcomeChip } from '../../components/OutcomeChip'
 import { RankingPanel } from '../../components/RankingPanel'
+import { RankingStrip } from '../../components/RankingStrip'
 import { RightOfReplyBlock } from '../../components/RightOfReplyBlock'
 import { ScoreGauge } from '../../components/ScoreGauge'
 import { SearchBox } from '../../components/SearchBox'
 import { Timeline } from '../../components/Timeline'
 import { VersionSelector } from '../../components/VersionSelector'
-import { type MapCountry, WorldMap } from '../../components/WorldMap'
+import { WorldMap } from '../../components/WorldMap'
 import { apiReader, KIT_API_DIR } from '../../lib/api'
-import { eventCountsByCategory } from '../../lib/events'
+import { mapCountries, rankingStrip, stripFrom } from '../../lib/countries'
 import { clientMessages, type Lang } from '../../lib/i18n'
 import { siteMethodology } from '../../lib/methodology'
 import type { Mode } from '../../lib/mode'
@@ -35,6 +37,7 @@ import {
   KIT_SERIES,
   KIT_SOURCE,
   kitEvents,
+  kitMovers,
   kitName,
   kitRankRows,
   mixedCoverage,
@@ -88,30 +91,9 @@ function Row({
   const base = deu.event_list[0]
   if (base === undefined) throw new Error('the DEU fixture has no event')
   const samples = kitEvents(base)
-  const counts = eventCountsByCategory(deu.event_list, deu.build_date)
+  const counts = deu.events.by_category
   const rows = [...rankRows(countries), ...kitRankRows(m)]
-  const mapCountries: MapCountry[] = countries.countries.map((c) =>
-    c.excluded
-      ? {
-          iso3: c.iso3,
-          name: c.name,
-          excluded: true,
-          band: null,
-          display: null,
-          coverage: null,
-          noExportData: false,
-        }
-      : {
-          iso3: c.iso3,
-          name: c.name,
-          excluded: false,
-          band: c.band,
-          display: c.score_display,
-          coverage: c.coverage.ratio,
-          noExportData:
-            c.coverage.statuses.A1 === 'no-data' && c.coverage.statuses.A2 === 'no-data',
-        },
-  )
+  const mapCountryList = mapCountries(countries)
   const index = kit.methodologyIndex()
   const aug = kit.changesMonth('2025-08')
   const nov = kit.changesMonth('2025-11')
@@ -299,11 +281,52 @@ function Row({
           <RankingPanel rows={rows.filter((r) => r.excluded)} mode={mode} methodology={m} />
         </Specimen>
 
+        {mode === 'score' ? (
+          <>
+            <Specimen
+              title="Movers · rises and falls, one direction empty, none"
+              note="synthetic XAA–XAD; the fixture has no mover"
+            >
+              <Movers lang={lang} movers={kitMovers(latest.movers.d7)} />
+              <Movers lang={lang} movers={{ ...kitMovers(latest.movers.d7), down: [] }} />
+              <Movers lang={lang} movers={latest.movers.d7} />
+            </Specimen>
+            <Specimen
+              title="RankingStrip · all rows, gap between top and bottom"
+              note="fixture DEU and synthetic XAA–XAE"
+            >
+              <RankingStrip
+                lang={lang}
+                methodology={m}
+                strip={rankingStrip(countries)}
+                total={countries.counts.scored}
+              />
+              <RankingStrip
+                lang={lang}
+                methodology={m}
+                strip={stripFrom(
+                  rows
+                    .filter((r) => !r.excluded && r.display !== null && r.band !== null)
+                    .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+                    .map((r) => ({
+                      iso3: r.iso3,
+                      name: r.name,
+                      display: r.display ?? 0,
+                      band: r.band ?? '',
+                    })),
+                  2,
+                )}
+                total={rows.filter((r) => !r.excluded).length}
+              />
+            </Specimen>
+          </>
+        ) : null}
+
         <Specimen
           title={`WorldMap · ${mode}`}
           note="fixture countries; DEU coloured, ISR and PSE hatched"
         >
-          <WorldMap lang={lang} mode={mode} methodology={m} countries={mapCountries} />
+          <WorldMap lang={lang} mode={mode} methodology={m} countries={mapCountryList} />
         </Specimen>
 
         <Specimen

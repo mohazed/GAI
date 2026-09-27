@@ -5,7 +5,14 @@
  * (XAA…XAE) and names starting "Kit sample", and synthetic texts start "Kit sample". Nothing in
  * this file is data about a real state.
  */
-import type { ApiCategory, ApiCoverage, ApiEvent, ApiSeriesPoint, ApiSource } from '@gai/schema/api'
+import type {
+  ApiCategory,
+  ApiCoverage,
+  ApiEvent,
+  ApiMovers,
+  ApiSeriesPoint,
+  ApiSource,
+} from '@gai/schema/api'
 import { frenchPunctuation } from '../../lib/format'
 import type { CategoryKey, SiteMethodology } from '../../lib/methodology'
 import type { RankRow } from '../../lib/rank'
@@ -320,4 +327,23 @@ function splitScore(score: number): Record<CategoryKey, number> {
   const b = Math.max(-40, Math.min(45, score * 0.3))
   const c = Math.max(-20, Math.min(20, score * 0.1))
   return { A: a, B: b, C: c, D: score - a - b - c, E: 0 }
+}
+
+/** Synthetic movers over the fixture's seven-day window (the fixture has none). */
+export function kitMovers(window: ApiMovers): ApiMovers {
+  const mover = (letter: string, iso3: string, from: number, to: number) => ({
+    iso3,
+    name: kitName(letter),
+    from,
+    to,
+    delta: to - from,
+    display_from: from,
+    display_to: to,
+    display_delta: to - from,
+  })
+  return {
+    ...window,
+    up: [mover('A', 'XAA', 40, 46), mover('C', 'XAC', 9, 12)],
+    down: [mover('B', 'XAB', -39, -44), mover('D', 'XAD', -61, -63)],
+  }
 }

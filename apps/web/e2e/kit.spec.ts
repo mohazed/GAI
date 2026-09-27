@@ -110,8 +110,9 @@ test.describe('component kit (/_kit)', () => {
     await expect(row.locator('table').first()).toBeVisible()
     await expect(row.locator('.gauge svg').first()).toBeVisible()
     await expect(row.getByRole('link', { name: 'Germany' }).first()).toBeVisible()
-    // Controls that need JavaScript are not rendered without it.
-    await expect(row.locator('fieldset')).toHaveCount(0)
+    // Controls that need JavaScript are hidden without it.
+    await expect(row.locator('fieldset').first()).toBeHidden()
+    await expect(row.locator('details.weights').first()).toBeHidden()
     await context.close()
   })
 })

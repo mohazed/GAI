@@ -193,7 +193,13 @@ export function RankTable({
             </span>
           </button>
         ) : (
-          label
+          // The same box as the button, so that hydration does not move the rows (CLS).
+          <span className="inline-flex min-h-6 items-center gap-1">
+            {label}
+            <span aria-hidden="true" className="font-mono text-m11 text-ink-2">
+              {active ? (sort.dir === 'asc' ? '↑' : '↓') : ''}
+            </span>
+          </span>
         )}
       </th>
     )
@@ -210,8 +216,10 @@ export function RankTable({
 
   return (
     <div id={id} className="flex flex-col gap-4">
-      {ready ? (
-        <fieldset className="flex flex-col gap-2">
+      {/* Server-rendered so that hydration does not push the table down; hidden without
+          scripting (.js-only), where the buttons could not filter anything. */}
+      {scored.length > 0 ? (
+        <fieldset className="js-only flex flex-col gap-2">
           <legend className="text-14 font-semibold">{t('filters')}</legend>
           <div className="flex flex-wrap items-center gap-2">
             {regionList.map((r) => (

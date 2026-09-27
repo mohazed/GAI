@@ -53,13 +53,11 @@ export function RankingPanel({ rows, mode, methodology, id }: RankingPanelProps)
   const summary = useTranslations('weights')('title')
   const [weights, setWeights] = useState<CategoryWeights>(DEFAULT_WEIGHTS)
   const [copied, setCopied] = useState(false)
-  const [ready, setReady] = useState(false)
   const [open, setOpen] = useState(false)
   useEffect(() => {
     const w = weightsFromUrl()
     setWeights(w)
     setOpen(!isDefaultWeights(w))
-    setReady(true)
   }, [])
 
   const update = (next: CategoryWeights) => {
@@ -70,11 +68,12 @@ export function RankingPanel({ rows, mode, methodology, id }: RankingPanelProps)
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Collapsed by default (docs/05 §6 Ranking), open when the link carries weights. Only
-          rendered once JavaScript runs: without it the sliders could not re-rank anything. */}
-      {mode === 'score' && ready ? (
+      {/* Collapsed by default (docs/05 §6 Ranking), open when the link carries weights. In the
+          HTML from the start so that hydration does not push the table down, but hidden without
+          scripting (.js-only): the sliders could not re-rank anything. */}
+      {mode === 'score' ? (
         <details
-          className="weights"
+          className="weights js-only"
           open={open}
           onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)}
         >
