@@ -6,7 +6,6 @@
  * `vector-effect: non-scaling-stroke` so the stroke stays 1.5 px.
  */
 import { dayNumber } from '@gai/scoring'
-import { scaleLinear } from 'd3-scale'
 import { curveStepAfter, line } from 'd3-shape'
 
 export { pct, valuePercent } from './linear'
@@ -14,18 +13,37 @@ export { pct, valuePercent } from './linear'
 /** Width of the nested path SVG's user space; its height equals the chart height in px. */
 export const PATH_WIDTH = 1000
 
+/**
+ * The linear map of d3-scale's `scaleLinear` for a two-value domain and range, with the same
+ * arithmetic (normalise, then interpolate as `r0 · (1 − t) + r1 · t`), so the positions are
+ * those d3-scale gave. Written out because the Compare page draws its chart in the browser and
+ * d3-scale (with d3-array, d3-format, d3-interpolate and d3-time) would weigh more than the chart
+ * (docs/10 B-127).
+ */
+function linearMap(domain: [number, number], range: [number, number], clamp: boolean) {
+  const [d0, d1] = domain
+  const [r0, r1] = range
+  const span = d1 - d0
+  return (v: number) => {
+    let t = span === 0 ? 0.5 : (v - d0) / span
+    if (clamp) t = Math.max(0, Math.min(1, t))
+    return r0 * (1 - t) + r1 * t
+  }
+}
+
 /** Linear map of an ISO date onto [0, 100] between `from` and `to`. */
 export function datePercent(from: string, to: string) {
-  const s = scaleLinear()
-    .domain([dayNumber(from), Math.max(dayNumber(to), dayNumber(from) + 1)])
-    .range([0, 100])
-    .clamp(true)
+  const s = linearMap(
+    [dayNumber(from), Math.max(dayNumber(to), dayNumber(from) + 1)],
+    [0, 100],
+    true,
+  )
   return (iso: string) => s(dayNumber(iso))
 }
 
 /** Linear map of a value onto a pixel row, `domain[1]` at `top`. */
 export function valuePx(domain: [number, number], top: number, bottom: number) {
-  const s = scaleLinear().domain(domain).range([bottom, top])
+  const s = linearMap(domain, [bottom, top], false)
   return (v: number) => Math.round(s(v) * 100) / 100
 }
 

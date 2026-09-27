@@ -668,3 +668,12 @@
     outline-offset: -2px;
   }
 }
+
+@layer components {
+  /* The Compare page's results region (components/ComparePanel.tsx): the charts arrive after the
+     country files are fetched, so the region keeps most of a screen from the start and the footer
+     below it does not move into view and out again (CLS, docs/04 §3). */
+  .compare-results {
+    min-height: max(24rem, 70vh);
+  }
+}

@@ -11,7 +11,9 @@
  *   pnpm build && pnpm --filter @gai/web lighthouse
  *
  * Pages: home and ranking (P-07); the country page of Germany in the real data, in both languages,
- * and Israel as an excluded entity (P-08).
+ * and Israel as an excluded entity (P-08); Compare empty and with Germany chosen (its charts
+ * arrive after a fetch, inside a region that keeps its height), Changes and a monthly report
+ * (P-09).
  */
 const { chromium } = require('@playwright/test')
 
@@ -24,7 +26,30 @@ const PAGES = [
   '/en/country/DEU/',
   '/fr/country/DEU/',
   '/en/country/ISR/',
+  '/en/compare/',
+  '/fr/compare/',
+  '/en/compare/?c=DEU',
+  '/en/changes/',
+  '/fr/changes/',
+  '/en/changes/2024-06/',
 ]
+
+// ≤ 150 KB of JavaScript per page, transferred (gzip). The application-code share (≤ 25 KB) is
+// checked on the built chunks by scripts/postbuild.ts.
+const SCRIPT_BUDGET = {
+  'resource-summary:script:size': ['error', { maxNumericValue: 150 * 1024 }],
+}
+
+const ASSERTIONS = {
+  'largest-contentful-paint': ['error', { maxNumericValue: 1500 }],
+  // No layout shift from fonts or hydration (docs/04 §3). The text face swaps in over a
+  // metric-matched fallback (app/globals.css), which leaves sub-pixel movement of inline links
+  // (0.0001 to 0.0004 measured): the limit is 0.001, a hundredth of the "good" 0.1.
+  'cumulative-layout-shift': ['error', { maxNumericValue: 0.001 }],
+  'categories:accessibility': ['error', { minScore: 1 }],
+  'categories:best-practices': ['error', { minScore: 1 }],
+  'categories:seo': ['error', { minScore: 1 }],
+}
 
 module.exports = {
   ci: {
@@ -41,21 +66,18 @@ module.exports = {
       },
     },
     assert: {
-      // The median of the runs is asserted.
-      aggregationMethod: 'median',
-      assertions: {
-        // ≤ 150 KB of JavaScript per page, transferred (gzip). The application-code share
-        // (≤ 25 KB) is checked on the built chunks by scripts/postbuild.ts.
-        'resource-summary:script:size': ['error', { maxNumericValue: 150 * 1024 }],
-        'largest-contentful-paint': ['error', { maxNumericValue: 1500 }],
-        // No layout shift from fonts or hydration (docs/04 §3). The text face swaps in over a
-        // metric-matched fallback (app/globals.css), which leaves sub-pixel movement of inline
-        // links (0.0001 to 0.0004 measured): the limit is 0.001, a hundredth of the "good" 0.1.
-        'cumulative-layout-shift': ['error', { maxNumericValue: 0.001 }],
-        'categories:accessibility': ['error', { minScore: 1 }],
-        'categories:best-practices': ['error', { minScore: 1 }],
-        'categories:seo': ['error', { minScore: 1 }],
-      },
+      // The median of the runs is asserted. The Compare page with a country chosen (`?c=`) loads
+      // its results view on demand after the first load (docs/04 §3, docs/10 B-135): the
+      // JavaScript budget is the page's first load, measured on /en/compare/ and /fr/compare/;
+      // the `?c=` run checks everything else, layout shift included.
+      assertMatrix: [
+        {
+          matchingUrlPattern: '^[^?]*$',
+          aggregationMethod: 'median',
+          assertions: { ...SCRIPT_BUDGET, ...ASSERTIONS },
+        },
+        { matchingUrlPattern: '\\?c=', aggregationMethod: 'median', assertions: ASSERTIONS },
+      ],
     },
     upload: { target: 'filesystem', outputDir: '.lighthouseci' },
   },

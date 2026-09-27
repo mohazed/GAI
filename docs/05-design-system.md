@@ -80,13 +80,13 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 **WorldMap.** SVG, Equal Earth, countries filled by band (hatched for no coverage under 30 %? No: hatched only for excluded and for `no-data` on both A1 and A2 when score is hidden). Strokes paper 0.5 px. Hover: name and score in a tooltip; click: country page. Legend: the ScoreGauge strip without a marker, with band names. No zoom or pan controls; on mobile the map is replaced by the ranking strip. Phase-1 mode: fill by coverage in ink tints.
 
-**CompareChart.** Up to five step lines in the compare palette, direct-labelled at the right end (country name), no legend. Same axes as Timeline. Beneath: **CategoryDots**: five rows (A–E), one axis per row from cap− to cap+, a dot per country in its compare colour, labelled on hover. Then **EventDiff**: a two-to-five column table of events by month.
+**CompareChart.** Up to five step lines in the compare palette, direct-labelled at the right end (country name), no legend. Same axes as Timeline. Beneath: **CategoryDots**: five rows (A–E), one axis per row from cap− to cap+, a dot per country in its compare colour, labelled on hover. Then **EventDiff**: a two-to-five column table of events by month. As built (P-09, docs/10 B-127, B-129): each country also has a line dash and a dot shape, shown in its chip in the picker; EventDiff lists computed values only when their points changed.
 
 **CiteThis.** Outlined button "Cite" opening a popover with three tabs (APA, Chicago, Plain) and a Copy button. Output includes country, score, band, methodology version, date, and the dated permalink. Example, Plain: `Gaza Accountability Index, Germany: −14 (Passive), methodology v1.0.0, as of 26 September 2026, https://…/country/DEU?date=2026-09-26`.
 
 **ShareCard (PNG, build-time).** 1200 × 630, paper background. Top: wordmark small. Left: country name (Newsreader 72), score (Newsreader 168) with band chip; right: gauge (marker) and coverage line; bottom: summary line in Source Sans 28 and the permalink + methodology version in mono. Same template for all; Phase-1 variant shows "Scorecard · N events · coverage X %" instead of the number. As built (P-08, docs/10 B-114): one card per language (`/cards/{ISO3}.png`, `/cards/fr/{ISO3}.png`); the Phase-1 line adds "· N computed values" when computed values are in force, since the event count covers acts only (B-74); an excluded entity's card says "Not scored" with the reason, without gauge.
 
-**ChangesFeed.** Grouped by ISO week ("Week of 21 September 2026"); each entry a compact EventCard (date, country, indicator, summary, points). Filters: country, indicator, sign.
+**ChangesFeed.** Grouped by ISO week ("Week of 21 September 2026"); each entry a compact EventCard (date, country, indicator, summary, points). Filters: country, indicator, sign. As built (P-09, docs/10 B-131): the filters are the country page's filter links (they work without JavaScript); a computed value is listed only when its points changed, the others counted in one line per week.
 
 **MethodologyTable / VersionSelector / DiffViewer.** The indicator table rendered from YAML; a `<select>` of versions; the diff as a table: country, old score, new score, cause (indicator/threshold).
 
@@ -102,9 +102,9 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 **Country.** Title: country name (Newsreader 64), with region and memberships as plain text beneath. ScoreGauge + CoverageBar. Summary line (generated). CategoryRows. Timeline. "Events" heading with count, filters (indicator, sign, confidence), then EventCards newest first. Assessment block: "What was checked" — a 31-row compact table of indicator, status, date checked, note (collapsed by default). Replies block. Cite / Share / Download JSON row (outlined buttons). Related: "Compare with peers" links (same region, same band).
 
-**Compare.** Country picker (search + up to five chips), CompareChart, CategoryDots, EventDiff, Cite. State in the URL.
+**Compare.** Country picker (search + up to five chips), CompareChart, CategoryDots, EventDiff, Cite. State in the URL. As built (P-09, docs/10 B-125, B-126, B-128): `?c=DEU,FRA` and, in score mode, `?w=` with the weights panel; without JavaScript, a sentence and the list of country pages.
 
-**Changes.** ChangesFeed with month navigation; a "Monthly report" link per month (generated Markdown page: movers, new events, corrections).
+**Changes.** ChangesFeed with month navigation; a "Monthly report" link per month (generated Markdown page: movers, new events, corrections). As built (P-09, docs/10 B-130, B-132): the feed of the latest weeks, then a table of months, each linking its report rendered at /changes/{YYYY-MM}/ (rows linked to their events, previous and next months); a line with the build date, and a stale-build notice when the build is more than three days old.
 
 **Methodology.** Version selector. Sections: Purpose and standpoint (short), The scale, Rules (conduct not promises; silence is negative; material beats symbolic), Indicator table, Formula (rendered from LaTeX via KaTeX at build, with a plain-language paragraph), Event types and decay, Confidence, Computed indicators, Passivity, Coverage, Sensitivity tables (rendered), Symmetry table, Versioning and changelog, Known limitations. FR version is a full translation.
 
@@ -129,7 +129,7 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 ## 8. Charts
 
-SVG only, drawn with d3 scales in React (no chart library). Strokes 1.5 px; hairline grid; direct labels instead of legends wherever possible; axis text in mono; no 3-D, no donuts, no radars, no area fills with gradients, no animated draw-in. Every chart has a text alternative. Colour is never the only carrier of meaning.
+SVG only, drawn with d3 scales in React (no chart library; since P-09 the two linear scales are written out with d3-scale's arithmetic and d3-shape draws the step lines, docs/10 B-127). Strokes 1.5 px; hairline grid; direct labels instead of legends wherever possible; axis text in mono; no 3-D, no donuts, no radars, no area fills with gradients, no animated draw-in. Every chart has a text alternative. Colour is never the only carrier of meaning.
 
 ## 9. Anti-slop checklist (CI-reviewed by a design-critique pass before launch)
 

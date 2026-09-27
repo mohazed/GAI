@@ -70,6 +70,23 @@ export function countryClientMessages(lang: Lang) {
   }
 }
 
+/**
+ * The namespaces the Compare page's client panel reads besides CLIENT_NAMESPACES: its own strings
+ * and the category labels of CategoryDots. Only the Compare page sends them (a nested provider).
+ */
+export const COMPARE_CLIENT_NAMESPACES = ['compare', 'categories'] as const
+
+export function compareClientMessages(lang: Lang) {
+  const m = MESSAGES[lang]
+  return {
+    ...clientMessages(lang),
+    ...(Object.fromEntries(COMPARE_CLIENT_NAMESPACES.map((k) => [k, m[k]])) as Pick<
+      Messages,
+      (typeof COMPARE_CLIENT_NAMESPACES)[number]
+    >),
+  }
+}
+
 export { switchLocalePath } from './locale-path'
 
 /** `getT(lang)` as a plain `Translate`, for views shared with client components. */

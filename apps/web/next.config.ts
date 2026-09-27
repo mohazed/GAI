@@ -30,6 +30,21 @@ const config: NextConfig = {
     extensionAlias: { '.js': ['.ts', '.tsx', '.js'] },
     inlineCss: true,
   },
+  // Views loaded with import() (the Compare page's results, the country page's dated snapshot)
+  // share components and helpers with other pages. Left to Next.js's default, webpack moved such
+  // shared modules into a chunk of their own once they passed its 20 kB threshold, which every
+  // page importing them then loaded as one more request, without module concatenation: the
+  // Compare results cost the country and ranking pages about 1.3 kB and 0.8 kB on the wire
+  // (docs/10 B-127). Only chunks loaded at page start are considered for splitting; a module
+  // shared with an on-demand chunk is copied into that chunk instead.
+  webpack(webpackConfig, { isServer }) {
+    const split = webpackConfig.optimization?.splitChunks
+    if (!isServer && split && typeof split.chunks === 'function') {
+      const pick = split.chunks as (chunk: { canBeInitial(): boolean }) => boolean
+      split.chunks = (chunk: { canBeInitial(): boolean }) => pick(chunk) && chunk.canBeInitial()
+    }
+    return webpackConfig
+  },
 }
 
 export default withNextIntl(config)

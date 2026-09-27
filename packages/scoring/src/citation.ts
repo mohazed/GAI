@@ -76,34 +76,51 @@ function subject(input: CitationInput, lang: Lang): string {
   return `${name}${colon} ${formatSigned(input.score.display, lang, 0)} (${input.score.bandName[lang]})`
 }
 
-/** One citation. */
-export function citation(input: CitationInput, style: CitationStyle, lang: Lang): string {
-  const url = permalink(input.siteUrl, lang, input.iso3, input.date)
+/** One citation of `subj` at `url`: the three styles share everything but the subject and link. */
+function cite(
+  subj: string,
+  url: string,
+  date: string,
+  methodologyVersion: string,
+  author: Author,
+  style: CitationStyle,
+  lang: Lang,
+): string {
   const w = WORDS[lang]
-  const author = input.author ?? AUTHOR
-  const version = `v${input.methodologyVersion}`
-  const subj = subject(input, lang)
-  const { year, month, day } = dateParts(input.date)
+  const version = `v${methodologyVersion}`
+  const { year, month, day } = dateParts(date)
   switch (style) {
     case 'plain':
-      return `${INDEX_TITLE}, ${subj}, ${w.methodology} ${version}, ${w.asOf} ${formatLongDate(input.date, lang)}, ${url}`
+      return `${INDEX_TITLE}, ${subj}, ${w.methodology} ${version}, ${w.asOf} ${formatLongDate(date, lang)}, ${url}`
     case 'apa': {
       const when =
         lang === 'fr'
           ? `${year}, ${day === 1 ? '1er' : day} ${monthName(month, lang)}`
           : `${year}, ${monthName(month, lang)} ${day}`
       // APA 7 data set: Author. (Date). Title (Version) [Data set]. Publisher. URL
-      return `${author.family}, ${author.initials} (${when}). ${subj} (${w.version(input.methodologyVersion)}) [${w.dataset}]. ${INDEX_TITLE}. ${url}`
+      return `${author.family}, ${author.initials} (${when}). ${subj} (${w.version(methodologyVersion)}) [${w.dataset}]. ${INDEX_TITLE}. ${url}`
     }
     case 'chicago': {
       const when =
-        lang === 'fr'
-          ? formatLongDate(input.date, lang)
-          : `${monthName(month, lang)} ${day}, ${year}`
+        lang === 'fr' ? formatLongDate(date, lang) : `${monthName(month, lang)} ${day}, ${year}`
       const title = lang === 'fr' ? `«${NBSP}${subj}${NBSP}».` : `“${subj}.”`
       return `${author.family}, ${author.given}. ${title} ${INDEX_TITLE}, ${w.methodology} ${version}, ${when}. ${url}.`
     }
   }
+}
+
+/** One citation. */
+export function citation(input: CitationInput, style: CitationStyle, lang: Lang): string {
+  const url = permalink(input.siteUrl, lang, input.iso3, input.date)
+  return cite(
+    subject(input, lang),
+    url,
+    input.date,
+    input.methodologyVersion,
+    input.author ?? AUTHOR,
+    style,
+    lang,
+  )
 }
 
 /** The three citations in one language. */
@@ -113,4 +130,70 @@ export function citations(input: CitationInput, lang: Lang): Record<CitationStyl
     chicago: citation(input, 'chicago', lang),
     plain: citation(input, 'plain', lang),
   }
+}
+
+/** At most five countries are compared (docs/05 §6 Compare). */
+export const MAX_COMPARED = 5
+
+export interface ComparisonInput {
+  /** One to five countries, in the order chosen; `score` null in scorecard mode (D-16). */
+  readonly countries: readonly Pick<CitationInput, 'iso3' | 'countryName' | 'score'>[]
+  /** `YYYY-MM-DD`: the build date, the date of the data compared. */
+  readonly date: string
+  readonly methodologyVersion: string
+  readonly siteUrl: string
+  readonly author?: Author | undefined
+}
+
+/**
+ * The permalink of a comparison: `{site}/{lang}/compare?c=DEU,FRA` (the Compare page reads `c`,
+ * docs/04 §3). It is not dated: the page shows the build's data, and the citation names the date.
+ */
+export function comparePermalink(siteUrl: string, lang: Lang, iso3s: readonly string[]): string {
+  if (!/^https?:\/\/\S+$/.test(siteUrl))
+    throw new RangeError(`expected an http(s) URL, got ${siteUrl}`)
+  if (iso3s.length === 0 || iso3s.length > MAX_COMPARED)
+    throw new RangeError(`expected 1 to ${MAX_COMPARED} countries, got ${iso3s.length}`)
+  for (const iso3 of iso3s)
+    if (!/^[A-Z]{3}$/.test(iso3)) throw new RangeError(`expected an ISO3 code, got ${iso3}`)
+  return `${siteUrl.replace(/\/+$/, '')}/${lang}/compare?c=${iso3s.join(',')}`
+}
+
+const COMPARISON = {
+  en: { title: 'Comparison', scorecards: 'scorecards' },
+  fr: { title: 'Comparaison', scorecards: "fiches d'évaluation" },
+} as const
+
+/**
+ * "Comparison: Germany −14 (Passive), France +3 (Acting)" / "Comparaison : Allemagne −14
+ * (Passivité), …"; in scorecard mode "Comparison: Germany, France (scorecards)".
+ */
+function comparisonSubject(input: ComparisonInput, lang: Lang): string {
+  const colon = lang === 'fr' ? `${NBSP}:` : ':'
+  const w = COMPARISON[lang]
+  const scored = input.countries.every((c) => c.score !== null)
+  const names = input.countries.map((c) =>
+    scored && c.score !== null
+      ? `${c.countryName[lang]} ${formatSigned(c.score.display, lang, 0)} (${c.score.bandName[lang]})`
+      : c.countryName[lang],
+  )
+  return `${w.title}${colon} ${names.join(', ')}${scored ? '' : ` (${w.scorecards})`}`
+}
+
+/** The three citations of a comparison of one to five countries (docs/05 §6 Compare, "Cite"). */
+export function comparisonCitations(
+  input: ComparisonInput,
+  lang: Lang,
+): Record<CitationStyle, string> {
+  if (!isIsoDate(input.date)) throw new RangeError(`expected a date YYYY-MM-DD, got ${input.date}`)
+  const url = comparePermalink(
+    input.siteUrl,
+    lang,
+    input.countries.map((c) => c.iso3),
+  )
+  const subj = comparisonSubject(input, lang)
+  const author = input.author ?? AUTHOR
+  const one = (style: CitationStyle) =>
+    cite(subj, url, input.date, input.methodologyVersion, author, style, lang)
+  return { apa: one('apa'), chicago: one('chicago'), plain: one('plain') }
 }

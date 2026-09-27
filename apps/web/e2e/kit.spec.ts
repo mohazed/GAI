@@ -164,3 +164,65 @@ test.describe('country page kit (/_kit/country/)', () => {
     })
   }
 })
+
+test.describe('changes kit (/_kit/changes/)', () => {
+  test('filters: links set client state and the address; the week stays with its entries', async ({
+    page,
+  }) => {
+    const errors = collectErrors(page)
+    await page.goto('/_kit/changes/')
+    const feed = page.locator('[data-kit-changes="feed"]')
+    const nav = feed.getByRole('navigation', { name: 'Filters' })
+    await expect(nav).toBeVisible()
+    await expect(feed.locator('article')).toHaveCount(2)
+    await nav.getByRole('link', { name: 'A6', exact: true }).click()
+    await expect(page).toHaveURL(/\?indicator=A6$/)
+    await expect(feed.getByText('2 of 2 shown.')).toBeVisible()
+    await nav.locator('a[href="#f-cty-DEU"]').click()
+    await expect(page).toHaveURL(/\?indicator=A6&country=DEU$/)
+    await expect(nav.locator('a[href="#f-cty-DEU"]')).toHaveAttribute('aria-current', 'true')
+    await expect(feed.locator('h3')).toHaveCount(2)
+    // The address restores the filter.
+    await page.goto('/_kit/changes/?sign=negative')
+    await expect(feed.getByText('No change matches these filters.')).toBeHidden()
+    expect(errors).toEqual([])
+  })
+
+  test('filters without JavaScript: the country rule of the Changes stylesheet applies', async ({
+    browser,
+  }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false })
+    const page = await context.newPage()
+    await page.goto('/_kit/changes/')
+    const link = page.locator('[data-kit-changes="feed"] a[href="#f-cty-DEU"]')
+    await link.click()
+    await expect(page).toHaveURL(/#f-cty-DEU$/)
+    // The link of the current filter is marked (scripts/filter-css.ts), the entries stay.
+    await expect(link).toHaveCSS('text-decoration-thickness', '2px')
+    await expect(page.locator('[data-kit-changes="feed"] article')).toHaveCount(2)
+    for (const a of await page.locator('[data-kit-changes="feed"] article').all())
+      await expect(a).toBeVisible()
+    await context.close()
+  })
+
+  test('monthly reports: the movers table, a new event and an end, each linked', async ({
+    page,
+  }) => {
+    await page.goto('/_kit/changes/')
+    const en = page.locator('[data-kit-changes="report-en"]')
+    await expect(en.locator('table a[href="/en/country/DEU/"]')).toHaveCount(1)
+    await expect(en.locator('a[href="/en/country/DEU/#evt_2025_08_08_DEU_A6"]')).toHaveCount(1)
+    const fr = page.locator('[data-kit-changes="report-fr"]')
+    // Scorecard variant (D-16): no movers table; the end of the state is listed and linked.
+    await expect(fr.locator('table')).toHaveCount(0)
+    await expect(fr.locator('a[href="/fr/country/DEU/#evt_2025_08_08_DEU_A6"]')).toHaveCount(1)
+    const result = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
+      // The kit shows two reports (two h1) under specimen labels, not a page's heading order.
+      .disableRules(['heading-order', 'page-has-heading-one', 'landmark-one-main', 'region'])
+      .analyze()
+    expect(
+      result.violations.map((v) => `${v.id}: ${v.help} ${v.nodes[0]?.target.join(' ')}`),
+    ).toEqual([])
+  })
+})

@@ -1,124 +1,136 @@
-'use client'
-
-import type { ApiFeedWeek } from '@gai/schema/api'
-import { formatLongDate } from '@gai/scoring'
-import { useLocale, useTranslations } from 'next-intl'
-import { useEffect, useId, useMemo, useState } from 'react'
-import { CompactEvent, type Lang } from './CompactEvent'
+import type { ApiFeedEntry, ApiFeedWeek } from '@gai/schema/api'
+import type { ReactNode } from 'react'
+import { longDate } from '../lib/format'
+import { getT, type Lang } from '../lib/i18n'
+import type { SiteMethodology } from '../lib/methodology'
+import { CompactEvent } from './CompactEvent'
+import { FacetBrowser, type FacetDef, type FacetItem } from './FacetBrowser'
 
 export interface ChangesFeedProps {
+  lang: Lang
   /** Weeks of changes, newest first (`weeks` of changes/latest.json or a month file). */
-  weeks: ApiFeedWeek[]
+  weeks: readonly ApiFeedWeek[]
+  /** For the order of the indicators in the filters. */
+  methodology: SiteMethodology
+  /** Anchor of the feed's section: the "All" filter links point at it. */
+  sectionId: string
+  /**
+   * The filters (default true). Their anchors have fixed ids (`#f-ind-A1`), so a page shows one
+   * filtered feed at most: the kit's rows, which repeat every component, show it without them.
+   */
+  filters?: boolean
 }
 
+type Sign = 'positive' | 'negative'
+
+function signOf(points: number): Sign[] {
+  return points > 0 ? ['positive'] : points < 0 ? ['negative'] : []
+}
+
+function entryValues(e: ApiFeedEntry): Record<string, string[]> {
+  return { cty: [e.country], ind: [e.indicator], sign: signOf(e.points) }
+}
+
+/** Filter anchors of the country facet: `#f-cty-{ISO3}` (the Changes page's stylesheet). */
+export const COUNTRY_FACET = 'cty'
+
 /**
- * The changes feed (docs/05 §5 ChangesFeed): entries grouped by ISO week, each a compact event;
- * filters by country, indicator and sign once JavaScript runs. Computed values whose points did
- * not change are counted, not listed (P-09).
+ * The changes feed (docs/05 §5 ChangesFeed): entries grouped by ISO week ("Week of 21 September
+ * 2026"), each a compact event (date, country, indicator, summary, points), newest week first.
+ * A computed value is listed only when its points differ from the value in force the day before;
+ * the others are counted in one line per week, not listed (P-09). Filters by country, indicator
+ * and sign work as the country page's event filters do (FacetBrowser): links to `#f-{facet}-
+ * {value}` anchors without JavaScript, combined in client state and `?country=&indicator=&sign=`
+ * with it. A week is shown while one of its entries is.
  */
-export function ChangesFeed({ weeks }: ChangesFeedProps) {
-  const t = useTranslations('changes')
-  const lang = useLocale() as Lang
-  const id = useId()
-  const [ready, setReady] = useState(false)
-  const [country, setCountry] = useState('')
-  const [indicator, setIndicator] = useState('')
-  const [sign, setSign] = useState('')
-  useEffect(() => setReady(true), [])
+export function ChangesFeed({
+  lang,
+  weeks,
+  methodology,
+  sectionId,
+  filters = true,
+}: ChangesFeedProps) {
+  const t = getT(lang)
+  const groups = weeks
+    .map((w) => ({ w, entries: w.entries.filter((e) => e.points_changed) }))
+    .filter((g) => g.entries.length > 0 || g.w.unchanged_computed > 0)
+  const all = groups.flatMap((g) => g.entries)
+  if (groups.length === 0) return <p className="text-16 text-ink-2">{t('changes.empty')}</p>
 
-  const all = weeks.flatMap((w) => w.entries.filter((e) => e.points_changed))
-  const countries = useMemo(() => {
-    const m = new Map(all.map((e) => [e.country, e.country_name[lang]]))
-    return [...m].sort((a, b) => a[1].localeCompare(b[1], lang))
-  }, [all, lang])
-  const indicators = useMemo(() => [...new Set(all.map((e) => e.indicator))].sort(), [all])
+  const collator = new Intl.Collator(lang)
+  const countries = [...new Map(all.map((e) => [e.country, e.country_name[lang]]))].sort((a, b) =>
+    collator.compare(a[1], b[1]),
+  )
+  const present = new Set(all.map((e) => e.indicator))
+  const signs = new Set(all.flatMap((e) => signOf(e.points)))
+  const facets: FacetDef[] = [
+    {
+      key: COUNTRY_FACET,
+      param: 'country',
+      label: t('changes.country'),
+      values: countries.map(([id, label]) => ({ id, label })),
+    },
+    {
+      key: 'ind',
+      param: 'indicator',
+      label: t('changes.indicator'),
+      values: methodology.indicators
+        .filter((i) => present.has(i.id))
+        .map((i) => ({ id: i.id, label: i.id })),
+    },
+    {
+      key: 'sign',
+      param: 'sign',
+      label: t('changes.sign'),
+      values: (['positive', 'negative'] as const)
+        .filter((s) => signs.has(s))
+        .map((s) => ({ id: s, label: t(`changes.${s}`) })),
+    },
+  ]
 
-  const keep = (e: ApiFeedWeek['entries'][number]) =>
-    e.points_changed &&
-    (country === '' || e.country === country) &&
-    (indicator === '' || e.indicator === indicator) &&
-    (sign === '' || (sign === 'positive' ? e.points > 0 : e.points < 0))
+  const items: FacetItem[] = []
+  const nodes: ReactNode[] = []
+  for (const { w, entries } of groups) {
+    // The week's heading and its count line carry the values of its entries, so that the
+    // stylesheet hides them with the entries when JavaScript is off.
+    const union: Record<string, string[]> = { cty: [], ind: [], sign: [] }
+    for (const e of entries)
+      for (const [k, v] of Object.entries(entryValues(e))) union[k] = [...(union[k] ?? []), ...v]
+    const headingId = `${sectionId}-${w.week}`
+    items.push({ key: `h-${w.week}`, values: union, group: w.week, header: true })
+    nodes.push(
+      <h3 key={`h-${w.week}`} id={headingId} className="mt-6 text-16 font-semibold">
+        {t('changes.week', { date: longDate(w.from, lang) })}
+        <span className="ms-2 font-mono text-m12 font-normal text-ink-2">{w.week}</span>
+      </h3>,
+    )
+    for (const e of entries) {
+      items.push({ key: `${e.id}-${e.change}`, values: entryValues(e), group: w.week })
+      nodes.push(
+        <CompactEvent
+          key={`${e.id}-${e.change}`}
+          entry={e}
+          lang={lang}
+          endedLabel={t('changes.ended')}
+          endedPoints={t('changes.endedPoints')}
+        />,
+      )
+    }
+    if (w.unchanged_computed > 0) {
+      items.push({ key: `u-${w.week}`, values: union, group: w.week, header: true })
+      nodes.push(
+        <p key={`u-${w.week}`} className="border-t border-rule pt-2 text-12 text-ink-2">
+          {t('changes.unchangedComputed', { count: w.unchanged_computed })}
+        </p>,
+      )
+    }
+  }
 
-  const shown = weeks.map((w) => ({ w, entries: w.entries.filter(keep) }))
-  const total = shown.reduce((n, s) => n + s.entries.length, 0)
-
+  // Only recomputations without change: nothing to filter.
+  if (all.length === 0 || !filters) return <div className="flex flex-col">{nodes}</div>
   return (
-    <div className="flex flex-col gap-6">
-      {ready && all.length > 0 ? (
-        <fieldset className="flex flex-wrap items-end gap-4">
-          <legend className="sr-only">{t('filters')}</legend>
-          <label className="flex flex-col gap-1 text-14" htmlFor={`${id}-c`}>
-            {t('country')}
-            <select
-              id={`${id}-c`}
-              value={country}
-              onChange={(e) => setCountry(e.currentTarget.value)}
-              className="min-h-8 rounded-xs border border-ink bg-paper px-2"
-            >
-              <option value="">{t('all')}</option>
-              {countries.map(([iso, name]) => (
-                <option key={iso} value={iso}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="flex flex-col gap-1 text-14" htmlFor={`${id}-i`}>
-            {t('indicator')}
-            <select
-              id={`${id}-i`}
-              value={indicator}
-              onChange={(e) => setIndicator(e.currentTarget.value)}
-              className="min-h-8 rounded-xs border border-ink bg-paper px-2"
-            >
-              <option value="">{t('all')}</option>
-              {indicators.map((i) => (
-                <option key={i} value={i}>
-                  {i}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="flex flex-col gap-1 text-14" htmlFor={`${id}-s`}>
-            {t('sign')}
-            <select
-              id={`${id}-s`}
-              value={sign}
-              onChange={(e) => setSign(e.currentTarget.value)}
-              className="min-h-8 rounded-xs border border-ink bg-paper px-2"
-            >
-              <option value="">{t('all')}</option>
-              <option value="positive">{t('positive')}</option>
-              <option value="negative">{t('negative')}</option>
-            </select>
-          </label>
-        </fieldset>
-      ) : null}
-      {total === 0 ? <p className="text-16 text-ink-2">{t('empty')}</p> : null}
-      {shown
-        .filter((s) => s.entries.length > 0 || s.w.unchanged_computed > 0)
-        .map(({ w, entries }) => (
-          <section key={w.week} aria-labelledby={`${id}-${w.week}`}>
-            <h3 id={`${id}-${w.week}`} className="text-16 font-semibold">
-              {t('week', { date: formatLongDate(w.from, lang) })}
-              <span className="ms-2 font-mono text-m12 font-normal text-ink-2">{w.week}</span>
-            </h3>
-            {entries.map((e) => (
-              <CompactEvent
-                key={`${e.id}-${e.change}`}
-                entry={e}
-                lang={lang}
-                endedLabel={t('ended')}
-                endedPoints={t('endedPoints')}
-              />
-            ))}
-            {w.unchanged_computed > 0 ? (
-              <p className="border-t border-rule pt-2 text-12 text-ink-2">
-                {t('unchangedComputed', { count: w.unchanged_computed })}
-              </p>
-            ) : null}
-          </section>
-        ))}
-    </div>
+    <FacetBrowser ns="changes" facets={facets} items={items} sectionId={sectionId} list="div">
+      {nodes}
+    </FacetBrowser>
   )
 }

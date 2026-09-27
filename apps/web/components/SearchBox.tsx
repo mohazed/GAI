@@ -2,11 +2,9 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import { type KeyboardEvent, useEffect, useId, useMemo, useState } from 'react'
+import { type SearchCountry, searchMatches } from '../lib/search'
 
-export interface SearchCountry {
-  iso3: string
-  name: { en: string; fr: string }
-}
+export type { SearchCountry } from '../lib/search'
 
 export interface SearchBoxProps {
   countries: SearchCountry[]
@@ -15,13 +13,6 @@ export interface SearchBoxProps {
 }
 
 const MAX = 8
-
-function fold(s: string): string {
-  return s
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-}
 
 /**
  * "Find a country" (docs/05 §6 Home): a combobox over the country names in both languages and
@@ -38,28 +29,7 @@ export function SearchBox({ countries, action }: SearchBoxProps) {
   const [ready, setReady] = useState(false)
   useEffect(() => setReady(true), [])
 
-  const matches = useMemo(() => {
-    const needle = fold(q.trim())
-    if (needle === '') return []
-    const scored = countries
-      .map((c) => {
-        const names = [fold(c.name[lang]), fold(c.name[lang === 'en' ? 'fr' : 'en'])]
-        const code = c.iso3.toLowerCase()
-        const rank =
-          code === needle
-            ? 0
-            : names.some((n) => n.startsWith(needle))
-              ? 1
-              : names.some((n) => n.includes(needle))
-                ? 2
-                : -1
-        return { c, rank }
-      })
-      .filter((m) => m.rank >= 0)
-    const collator = new Intl.Collator(lang)
-    scored.sort((a, b) => a.rank - b.rank || collator.compare(a.c.name[lang], b.c.name[lang]))
-    return scored.slice(0, MAX).map((m) => m.c)
-  }, [q, countries, lang])
+  const matches = useMemo(() => searchMatches(countries, q, lang, MAX), [q, countries, lang])
 
   const go = (c: SearchCountry) => {
     window.location.assign(`/${lang}/country/${c.iso3}/`)

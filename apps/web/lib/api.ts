@@ -43,8 +43,19 @@ export function apiReader(dir: string) {
     cache.set(file, parsed.data)
     return parsed.data
   }
+  /** A text file of the API (the monthly reports' Markdown), as written. */
+  function text(file: string): string {
+    const full = path.join(dir, file)
+    if (!existsSync(full)) {
+      throw new MissingApiError(
+        `${path.relative(process.cwd(), full)} is missing. Run \`pnpm build:data\` at the repository root first.`,
+      )
+    }
+    return readFileSync(full, 'utf8')
+  }
   return {
     dir,
+    text,
     exists: () => existsSync(path.join(dir, 'manifest.json')),
     manifest: () => read('manifest.json', ApiManifestFile),
     countries: () => read('countries.json', ApiCountriesFile),

@@ -7,8 +7,12 @@ import { spawnSync } from 'node:child_process'
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { MonthReport, reportLinks } from '../components/MonthReport'
 import { cardInput, loadFonts, renderCard } from '../scripts/cards'
+import { countryFilterCss } from '../scripts/filter-css'
 import { apiReader } from './api'
 import { computedInForce, listItems, timelineEvents } from './event-list'
 import { siteMethodology } from './methodology'
@@ -160,5 +164,51 @@ describe('site ↔ API contract (fixtures build)', () => {
       expect(png.readUInt32BE(16)).toBe(1200)
       expect(png.readUInt32BE(20)).toBe(630)
     }
+  })
+
+  it('has a no-JavaScript country filter rule for every registry entry (Changes page)', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    const iso3s = api.countries().countries.map((c) => c.iso3)
+    const css = countryFilterCss(iso3s)
+    for (const c of iso3s) {
+      // The same selectors as the indicator, sign and confidence rules of app/globals.css.
+      expect(css, c).toContain(`#f-cty-${c}:target ~ .ev-list > .ev-item:not(.f-${c})`)
+      expect(css, c).toContain(`#f-cty-${c}:target ~ .ev-filters .ev-flink-${c}`)
+    }
+    expect(() => countryFilterCss(['deu'])).toThrow()
+  })
+
+  it('renders every monthly report in its four variants, each row linked to its entry', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    const latest = api.changesLatest()
+    let linked = 0
+    for (const m of latest.months) {
+      const month = api.changesMonth(m.month)
+      const variants = [
+        ['en', month.reports.en, false],
+        ['fr', month.reports.fr, false],
+        ['en', month.reports.scorecard_en, true],
+        ['fr', month.reports.scorecard_fr, true],
+      ] as const
+      for (const [lang, file, scorecard] of variants) {
+        const html = renderToStaticMarkup(
+          createElement(MonthReport, { lang, month, markdown: api.text(file), scorecard }),
+        )
+        expect(html, file).toMatch(/^<div[^>]*><h1 /)
+        const links = reportLinks(month, lang)
+        const hrefs = [
+          ...(scorecard ? [] : links.movers),
+          ...links.weeks.flat().map((l) => l.href),
+          ...links.ended.map((l) => l.href),
+          ...links.corrections.map((l) => l.href),
+        ].filter((h): h is string => h !== null)
+        for (const h of hrefs) expect(html, `${file} ${h}`).toContain(`href="${h}"`)
+        linked += hrefs.length
+        // No score in scorecard mode (D-16): the movers table is left out.
+        if (scorecard) expect(html).not.toContain('<table')
+      }
+    }
+    // The fixtures have a mover, a new event and an end (months 2025-08 and 2025-11).
+    expect(linked).toBeGreaterThan(0)
   })
 })

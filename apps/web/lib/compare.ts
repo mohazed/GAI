@@ -44,3 +44,39 @@ export function spreadLabels(
   })
   return out
 }
+
+/**
+ * The countries of a `?c=` value (docs/04 §3: `?c=DEU,FRA`): ISO3 codes separated by commas, in
+ * the order given, upper-cased, each once. Codes of scored countries are kept, up to five; the
+ * others are returned apart (unknown codes, excluded entities, a sixth country) so that the page
+ * can say why they are not shown.
+ */
+export function parseCompare(
+  value: string | null,
+  scored: ReadonlySet<string>,
+): { kept: string[]; dropped: string[] } {
+  const kept: string[] = []
+  const dropped: string[] = []
+  if (value === null) return { kept, dropped }
+  for (const raw of value.split(',')) {
+    const code = raw.trim().toUpperCase()
+    if (code === '' || kept.includes(code) || dropped.includes(code)) continue
+    if (scored.has(code) && kept.length < MAX_COMPARE) kept.push(code)
+    else dropped.push(code)
+  }
+  return { kept, dropped }
+}
+
+/**
+ * The query of a comparison: `?c=DEU,FRA`, then `&w=A,B,C,D` when the weights are not the
+ * defaults (written by the caller with @gai/scoring's `formatWeights`), with plain commas as
+ * documented (URLSearchParams would write them as %2C). Empty when nothing is chosen.
+ */
+export function compareQuery(iso3s: readonly string[], weights: string | null): string {
+  const parts = [
+    iso3s.length > 0 ? `c=${iso3s.join(',')}` : '',
+    weights === null ? '' : `w=${weights}`,
+  ]
+  const q = parts.filter((p) => p !== '').join('&')
+  return q === '' ? '' : `?${q}`
+}

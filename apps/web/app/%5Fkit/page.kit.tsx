@@ -374,11 +374,26 @@ function Row({
           <CiteThis citations={citations} />
         </Specimen>
 
-        <Specimen title="ChangesFeed" note="fixture months 2025-08 and 2025-11">
-          <ChangesFeed weeks={weeks} />
+        <Specimen
+          title="ChangesFeed · without filters"
+          note="fixture months 2025-08 and 2025-11; with filters at /_kit/changes/"
+        >
+          <ChangesFeed
+            lang={lang}
+            weeks={weeks}
+            methodology={m}
+            sectionId={`kit-feed-${n}`}
+            filters={false}
+          />
         </Specimen>
         <Specimen title="ChangesFeed · empty" note="latest five weeks of the fixture">
-          <ChangesFeed weeks={latest.weeks} />
+          <ChangesFeed
+            lang={lang}
+            weeks={latest.weeks}
+            methodology={m}
+            sectionId={`kit-feed-latest-${n}`}
+            filters={false}
+          />
         </Specimen>
 
         <Specimen title="VersionSelector · MethodologyTable">
