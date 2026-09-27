@@ -49,7 +49,7 @@ export function CategoryRows({ lang, mode, methodology, categories, counts }: Ca
             <tr key={spec.id} className="border-t border-rule first:border-t-0">
               <th
                 scope="row"
-                className={`w-32 py-2 pe-4 text-start align-top font-normal whitespace-nowrap md:w-44 ${ink}`}
+                className={`w-28 py-2 pe-3 text-start align-top font-normal md:w-44 md:pe-4 md:whitespace-nowrap ${ink}`}
               >
                 <span className="font-semibold">
                   <span className="font-mono text-m13">{spec.id}</span> {spec.short[lang]}
@@ -71,14 +71,17 @@ export function CategoryRows({ lang, mode, methodology, categories, counts }: Ca
                 </td>
               ) : null}
               <td
-                className={`py-2 ps-4 text-end align-top whitespace-nowrap ${scoreMode ? 'font-mono text-m13' : 'text-14'} ${ink}`}
+                className={`w-20 py-2 ps-3 text-end align-top md:w-auto md:ps-4 md:whitespace-nowrap ${scoreMode ? 'font-mono text-m13' : 'text-14'} ${ink}`}
               >
                 {scoreMode ? (
                   <>
-                    <span className="num font-semibold">{signed(c.clipped, lang)}</span>
+                    <span className="num font-semibold whitespace-nowrap">
+                      {signed(c.clipped, lang)}
+                    </span>
                     {c.capped ? (
                       <span className="block text-m11 text-ink-2">
-                        {t('categories.capped')} <span className="num">{signed(c.raw, lang)}</span>
+                        {t('categories.capped')}{' '}
+                        <span className="num whitespace-nowrap">{signed(c.raw, lang)}</span>
                       </span>
                     ) : null}
                   </>
@@ -107,7 +110,7 @@ function CategoryAxis({ category, muted }: { category: ApiCategory; muted: boole
   const fill = muted ? 'fill-ink-3' : 'fill-ink'
   const stroke = muted ? 'stroke-ink-3' : 'stroke-ink'
   return (
-    <svg width="100%" height="24" aria-hidden="true" className="block min-w-24 ltr">
+    <svg width="100%" height="24" aria-hidden="true" className="block min-w-16 ltr">
       <line
         x1={pct(x(category.cap.min))}
         x2={pct(x(category.cap.max))}

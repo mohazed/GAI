@@ -58,6 +58,27 @@ test.describe('component kit (/_kit)', () => {
         return doc.scrollWidth - doc.clientWidth
       })
       expect(overflow, `page overflows by ${overflow}px at ${width}px`).toBeLessThanOrEqual(0)
+      // Stricter than the page itself: nothing may reach into the right-hand gutter (16 px on a
+      // phone), so that slightly wider text metrics on another system cannot tip it over. Content
+      // inside its own scroll container, visually hidden text and SVG marks drawn past their
+      // chart's edge are left out.
+      const intruders = await page.evaluate(() => {
+        const limit = document.documentElement.clientWidth - 8
+        const out: string[] = []
+        for (const el of Array.from(document.querySelectorAll('body *'))) {
+          if (el.closest('.overflow-x-auto, .sr-only') || el.parentElement?.closest('svg')) continue
+          // Leaves only (text, cells, controls, a chart's root <svg>): containers own the gutter.
+          if (el.tagName.toLowerCase() !== 'svg' && el.children.length > 0) continue
+          const r = el.getBoundingClientRect()
+          if (r.width > 0 && r.right > limit) {
+            out.push(
+              `${el.tagName.toLowerCase()} "${(el.textContent ?? '').trim().slice(0, 40)}" ends at ${Math.round(r.right)}`,
+            )
+          }
+        }
+        return out
+      })
+      expect(intruders, `elements in the gutter at ${width}px`).toEqual([])
     }
   })
 
