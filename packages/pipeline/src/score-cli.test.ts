@@ -245,6 +245,38 @@ describe('pnpm score on a richer dataset: the printed numbers are the engine num
   })
 })
 
+describe('pnpm score with generated events', () => {
+  const root = join(TMP, 'generated')
+  cpSync(join(REPO_ROOT, 'fixtures'), root, { recursive: true })
+  const src = 'src_20260927_fts_plan-1156-p1'
+  writeFileSync(
+    join(root, 'data/structured/fts_funding.csv'),
+    `iso3,window_start,window_end,usd_paid_committed,plan_ids,retrieved_at,source\nDEU,2024-09-01,2025-08-31,600000000,1156,2026-09-27T10:00:00Z,${src}\n`,
+  )
+  writeFileSync(
+    join(root, 'data/structured/gni.csv'),
+    `iso3,year,gni_atlas_usd,source\nDEU,2025,5026012352665,src_20260927_worldbank_gni-atlas\n`,
+  )
+
+  it('scores the D1 event generated from fts_funding.csv and gni.csv', () => {
+    const r = runScore(['--country', 'DEU', '--root', root, '--date', '2025-09-15', '--json'], {
+      cwd: REPO_ROOT,
+      today: '2025-09-15',
+    })
+    expect(r.code, r.stderr).toBe(0)
+    const out = JSON.parse(r.stdout)
+    // x = 6e8 × 100 / 5.026e12 = 0.0119 % ≥ 0.0100 % → +12, valid 2025-09-01 … 2025-10-01
+    expect(out.score.categories.D.raw).toBe(12)
+    const d1 = out.score.events.find((e: { id: string }) => e.id === 'evt_2025_09_01_DEU_D1_fts')
+    expect(d1).toBeDefined()
+    const later = runScore(['--country', 'DEU', '--root', root, '--date', '2025-10-01', '--json'], {
+      cwd: REPO_ROOT,
+      today: '2025-10-01',
+    })
+    expect(JSON.parse(later.stdout).score.categories.D.raw).toBe(0)
+  })
+})
+
 describe('pnpm score errors', () => {
   it.each([
     [['--root', 'fixtures'], /--country is required/],

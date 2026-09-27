@@ -15,7 +15,13 @@
     "test": "turbo run test",
     "validate": "tsx packages/schema/src/cli/validate.ts",
     "score": "tsx packages/pipeline/src/cli/score.ts",
-    "methodology:render": "tsx packages/schema/src/cli/render-methodology.ts"
+    "methodology:render": "tsx packages/schema/src/cli/render-methodology.ts",
+    "archive": "tsx packages/pipeline/src/cli/archive.ts",
+    "fetch:fts": "tsx packages/pipeline/src/cli/fetch-fts.ts",
+    "fetch:worldbank": "tsx packages/pipeline/src/cli/fetch-worldbank.ts",
+    "fetch:comtrade": "tsx packages/pipeline/src/cli/fetch-comtrade.ts",
+    "import:unvotes": "tsx packages/pipeline/src/cli/import-unvotes.ts",
+    "import:sipri": "tsx packages/pipeline/src/cli/import-sipri.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",

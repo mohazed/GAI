@@ -26,6 +26,14 @@ How a Claude Code data session finds, archives and files evidence. This is the o
 
 Each fetcher archives the raw response (or the downloaded file) as a `dataset` source and writes the CSV rows with that source id. The generators then produce the events.
 
+How the fetchers do it (P-04, verified 2026-09-27):
+
+- Every response is saved with Save Page Now and the table is built from the **archived** bytes (`/web/{timestamp}id_/{url}`), never from a separate live call, so the `sha256` covers exactly what the rows were computed from. A capture whose body is an error page (a rate-limit JSON) is rejected and captured anew. Save Page Now allows about 5 captures of one URL per day; a fresh capture can take minutes before Wayback serves it.
+- **FTS:** `/v1/public/fts/flow?planid={id}&limit=1000` (1000 is the largest page; plans 1156, 1273 and 1510 have two pages) and the location list `/v2/public/location` (same content as v1). Fields used: `id`, `amountUSD`, `status` (paid, commitment), `boundary` (incoming), `date`, `sourceObjects` of type Organization with `organizationTypes` containing `Governments` (the FTS spelling), `sourceObjects` of type Location (mapped to ISO3), `destinationObjects` of type Plan. The plan total of incoming paid + committed flows equals FTS's own plan funding figure. A government flow whose source location is not a scored country is reported, never attributed by name.
+- **World Bank:** `mrnev=1` (most recent non-empty value); the latest year differs between countries (see the fetch report).
+- **Comtrade:** the keyed API cannot be archived (the key would be in the URL), so the data of record are the keyless `/public/v1/preview/…` URLs of the same queries, one year per call, totals only (`customsCode=C00&motCode=0&partner2Code=0`), archived and parsed; two keyed calls per reporter cross-check them. `/public/v1/getDA` (archived) gives each reporter's first release of each year.
+- **Votes:** each entry of `votes.yaml` carries the verbatim `quote` of its press release that states the recorded vote; it is the second evidence entry of every generated B1 event.
+
 ### Qualifying UNGA resolutions (`methodology/v1.0.0/votes.yaml`)
 
 The session that builds the votes table enumerates every plenary resolution adopted by recorded vote since 2023-10-07 whose subject is Gaza, UNRWA, or the status/rights of Palestine, and records symbol, date, title, counts, and a one-line inclusion rationale. Seed list, verified 2026-09-26 against UN sources (confirm symbols marked † from the Digital Library record before use):

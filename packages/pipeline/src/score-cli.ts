@@ -19,8 +19,8 @@
  *
  * Exit codes: 0 done, 1 the data or methodology cannot be loaded or scored, 2 usage error.
  *
- * Only events in data/events are scored for now; the generated events (votes, vetoes, SIPRI,
- * Comtrade, FTS, recognitions) are added by the generators of P-04.
+ * The events are those of data/events plus the events generated from data/structured (votes,
+ * vetoes, SIPRI, Comtrade, FTS; D-08), as build-data will publish them.
  */
 import { existsSync, realpathSync } from 'node:fs'
 import { join, relative, resolve } from 'node:path'
@@ -50,6 +50,7 @@ import {
   type ScoringMethodology,
   summaryLines,
 } from '@gai/scoring'
+import { generateAll, generateContext } from './generate/index.js'
 import { scoringMethodology } from './methodology.js'
 
 export interface ScoreArgs {
@@ -192,12 +193,16 @@ interface CountryReport {
 function report(
   ds: Dataset,
   m: ScoringMethodology,
+  generated: readonly Event[],
   country: Country,
   date: string,
   preview: boolean,
 ): CountryReport {
   const previewed: string[] = []
-  const events: Event[] = ds.events
+  const events: Event[] = [
+    ...ds.events,
+    ...generated.map((value) => ({ value, file: 'data/structured' })),
+  ]
     .filter((e) => e.value.country === country.iso3)
     .map((e) => {
       if (!preview || !PREVIEW_STATUSES.includes(e.value.status)) return e.value
@@ -414,7 +419,8 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
       `--methodology: expected one of ${folders.join(', ') || '(none)'}, got ${folder ?? '(none)'}`,
     )
   }
-  const m = scoringMethodology(loadMethodology(repoRoot, folder))
+  const lm = loadMethodology(repoRoot, folder)
+  const m = scoringMethodology(lm)
   const date = args.date ?? options.today
   if (date < m.windowStart) {
     return fail(2, `--date ${date}: the index starts on ${m.windowStart} (docs/02 §1)`)
@@ -435,7 +441,13 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
       `${args.country} is excluded from the index (D-10): ${country.excluded_reason?.en ?? ''}`,
     )
   }
-  const r = report(ds, m, country, date, args.preview)
+  let generated: Event[]
+  try {
+    generated = generateAll(generateContext(lm), ds.structured).events
+  } catch (err) {
+    return fail(1, `the generated events cannot be built: ${(err as Error).message}`)
+  }
+  const r = report(ds, m, generated, country, date, args.preview)
   const stdout = args.json
     ? `${JSON.stringify(reportJson(r), null, 2)}\n`
     : `${countryText(r, m, source, args.list).join('\n')}\n`
