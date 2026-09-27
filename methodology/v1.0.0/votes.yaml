@@ -45,6 +45,10 @@
 #   source       required. Id of the archived source of kind official (the UN press release of
 #                the vote, or the official record), pattern src_{YYYYMMDD}_{publisher}_{topic}
 #                (docs/03 §2).
+#   quote        required. Verbatim passage of that source stating the adoption and the recorded
+#                vote, as it appears in archive/text/{source}.txt (checked by pnpm validate).
+#                It is the quote of the press-release evidence of each generated B1 event.
+#   locator      required. Where the quote sits in the source (paragraph, page).
 #   rationale    required. {en, fr}: one line stating why the vote qualifies.
 #
 # Example of the shape (illustrative only, not an entry; the real list is written in P-14):
@@ -60,6 +64,8 @@
 #       meeting: A/ES-10/PV.…
 #       undl_record: 0
 #       source: src_YYYYMMDD_un-press_…
+#       quote: "…"
+#       locator: "paragraph …"
 #       rationale: {en: "…", fr: "…"}
 
 version: 1.0.0-rc.1

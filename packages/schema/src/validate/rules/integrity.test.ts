@@ -222,9 +222,33 @@ describe("'structured.unique'", () => {
         },
       ])
       addRows(ds, 'comtrade_a2.csv', [
-        { iso3: 'DEU', ...window, hs: '93', usd: 1, reporter: 'self', ...common },
-        { iso3: 'DEU', ...window, hs: '93', usd: 1, reporter: 'mirror', ...common },
-        { iso3: 'DEU', ...window, hs: '8710', usd: 1, reporter: 'self', ...common },
+        {
+          iso3: 'DEU',
+          ...window,
+          release_date: '2025-02-01',
+          hs: '93',
+          usd: 1,
+          reporter: 'self',
+          ...common,
+        },
+        {
+          iso3: 'DEU',
+          ...window,
+          release_date: '2025-02-01',
+          hs: '93',
+          usd: 1,
+          reporter: 'mirror',
+          ...common,
+        },
+        {
+          iso3: 'DEU',
+          ...window,
+          release_date: '2025-02-01',
+          hs: '8710',
+          usd: 1,
+          reporter: 'self',
+          ...common,
+        },
       ])
       addRows(ds, 'gni.csv', [
         { iso3: 'DEU', year: 2023, gni_atlas_usd: 1, source: DATASET_ID },
@@ -269,14 +293,26 @@ describe("'structured.unique'", () => {
   it('reports duplicates in every table, by its own key', () => {
     const issues = of('structured.unique', (ds) => {
       const window = { window_start: '2024-01-01', window_end: '2024-12-31' }
+      const released = { release_date: '2025-02-01' }
       const common = { retrieved_at: '2026-09-01T00:00:00Z', source: DATASET_ID }
       const fts = { iso3: 'DEU', ...window, usd_paid_committed: 1, plan_ids: '1', ...common }
       addRows(ds, 'fts_funding.csv', [fts, { ...fts, usd_paid_committed: 2 }])
-      const a2 = { iso3: 'DEU', ...window, hs: '93', usd: 1, reporter: 'self' as const, ...common }
+      const plan = { iso3: 'DEU', plan_id: '1156', usd_paid_committed: 1, flows: 1, ...common }
+      addRows(ds, 'fts_plan_totals.csv', [plan, { ...plan, flows: 2 }])
+      const a2 = {
+        iso3: 'DEU',
+        ...window,
+        ...released,
+        hs: '93',
+        usd: 1,
+        reporter: 'self' as const,
+        ...common,
+      }
       addRows(ds, 'comtrade_a2.csv', [a2, { ...a2, usd: 2 }])
       const c3 = {
         iso3: 'DEU',
         ...window,
+        ...released,
         usd_total: 1,
         usd_2022: 1,
         reporter: 'self' as const,
@@ -313,6 +349,7 @@ describe("'structured.unique'", () => {
     expect(issues.map((i) => [i.file, i.id])).toEqual([
       ['data/structured/unsc_vetoes.csv', 'row 3'],
       ['data/structured/fts_funding.csv', 'row 3'],
+      ['data/structured/fts_plan_totals.csv', 'row 3'],
       ['data/structured/sipri_deliveries.csv', 'row 3'],
       ['data/structured/sipri_orders.csv', 'row 3'],
       ['data/structured/comtrade_a2.csv', 'row 3'],
@@ -320,7 +357,7 @@ describe("'structured.unique'", () => {
       ['data/structured/gni.csv', 'row 3'],
       ['data/structured/population.csv', 'row 3'],
     ])
-    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(9)
+    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(10)
   })
 
   it('reports a resolution or a draft recorded with two dates', () => {

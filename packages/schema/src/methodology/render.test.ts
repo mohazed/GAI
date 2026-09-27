@@ -293,6 +293,8 @@ describe('renderBlock: other tables', () => {
       subject: 'unrwa',
       counts: { yes: 1500, no: 10, abstain: 3 },
       source: 'src_20240101_un-press_test',
+      quote: 'Test quote',
+      locator: 'paragraph 1',
       rationale: { en: 'Test rationale.', fr: 'Justification de test.' },
     })
     expect(renderBlock(copy, 'votes', 'en')).toBe(

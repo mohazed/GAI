@@ -930,6 +930,8 @@ describe("'source.archive-index'", () => {
         subject: 'gaza',
         counts: { yes: 0, no: 0, abstain: 0 },
         source: EXTRA,
+        quote: 'Test',
+        locator: 'paragraph 1',
         rationale: { en: 'Test', fr: 'Test' },
       })
     })
@@ -1192,6 +1194,8 @@ describe("'source.orphan'", () => {
         subject: 'gaza',
         counts: { yes: 0, no: 0, abstain: 0 },
         source: EXTRA,
+        quote: 'Test',
+        locator: 'paragraph 1',
         rationale: { en: 'Test', fr: 'Test' },
       })
     })

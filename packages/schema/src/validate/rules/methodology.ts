@@ -17,6 +17,7 @@ import type {
 } from '../../methodology/schemas.js'
 import { CATEGORY_IDS, CONFIDENCE_LEVELS, WINDOW_START } from '../../primitives.js'
 import type { Rule, ValidationContext } from '../context.js'
+import { quoteSearcher } from '../normalise.js'
 
 // ---------------------------------------------------------------------------------------------
 // Helpers
@@ -657,7 +658,8 @@ function passivity({ methodology: m }: ValidationContext): Issue[] {
 
 /**
  * docs/02 §2 (B1), docs/06 §2: each qualifying vote is listed once, adopted on or after
- * 2023-10-07, and cites an existing source of kind official. Whether that source is archived is
+ * 2023-10-07, cites an existing source of kind official, and quotes it verbatim (the quote is
+ * the press-release evidence of the generated B1 events). Whether that source is archived is
  * checked on the source itself (source.archive-required, source.archive-index), not here.
  */
 function votes(ctx: ValidationContext): Issue[] {
@@ -686,6 +688,18 @@ function votes(ctx: ValidationContext): Issue[] {
       push(
         `vote ${vote.symbol} cites ${vote.source} of kind ${source.value.kind}; expected official.`,
       )
+    }
+    if (source) {
+      const text = ctx.dataset.readArchiveText(vote.source)
+      if (text === undefined) {
+        push(
+          `vote ${vote.symbol}: archive/text/${vote.source}.txt is missing, so its quote cannot be checked.`,
+        )
+      } else if (!quoteSearcher(text)(vote.quote)) {
+        push(
+          `vote ${vote.symbol}: the quote does not appear verbatim in archive/text/${vote.source}.txt (only whitespace and invisible format characters are normalised).`,
+        )
+      }
     }
   }
   return out

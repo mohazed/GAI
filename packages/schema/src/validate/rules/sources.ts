@@ -10,7 +10,7 @@ import { parseSourceId } from '../../ids.js'
 import { type Issue, type IssueLocation, issue } from '../../issues.js'
 import type { Located } from '../../load/dataset.js'
 import type { Event, Evidence, Source } from '../../records.js'
-import { STRUCTURED_TABLE_NAMES } from '../../structured.js'
+import { STRUCTURED_TABLE_NAMES, splitSourceIds } from '../../structured.js'
 import type { Rule, ValidationContext } from '../context.js'
 import { normaliseWhitespace, quoteSearcher } from '../normalise.js'
 
@@ -489,7 +489,9 @@ function supportingSourceIds(ctx: ValidationContext): Set<string> {
     for (const ev of e.value.evidence) ids.add(ev.source)
   }
   for (const table of STRUCTURED_TABLE_NAMES) {
-    for (const row of ctx.dataset.structured[table] ?? []) ids.add(row.value.source)
+    for (const row of ctx.dataset.structured[table] ?? []) {
+      for (const id of splitSourceIds(row.value.source)) ids.add(id)
+    }
   }
   for (const v of ctx.methodology.votes?.value.votes ?? []) ids.add(v.source)
   for (const id of [...ids]) {
@@ -649,7 +651,9 @@ export const orphan: Rule = (ctx) => {
   for (const e of ctx.dataset.events) for (const ev of e.value.evidence) cited.add(ev.source)
   for (const v of votes.value.votes) cited.add(v.source)
   for (const table of STRUCTURED_TABLE_NAMES) {
-    for (const row of ctx.dataset.structured[table] ?? []) cited.add(row.value.source)
+    for (const row of ctx.dataset.structured[table] ?? []) {
+      for (const id of splitSourceIds(row.value.source)) cited.add(id)
+    }
   }
   for (const lead of ctx.dataset.leads) {
     for (const ls of lead.value.sources) if ('source' in ls) cited.add(ls.source)

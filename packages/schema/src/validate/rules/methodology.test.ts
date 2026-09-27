@@ -133,6 +133,8 @@ function testVote(source: string, overrides: Partial<QualifyingVote> = {}): Qual
     subject: 'gaza',
     counts: { yes: 0, no: 0, abstain: 0 },
     source,
+    quote: 'Unter diesen Umständen genehmigt die Bundesregierung',
+    locator: 'paragraph 1',
     rationale: { en: 'Test fixture.', fr: 'Donnée de test.' },
     ...overrides,
   }
@@ -949,6 +951,37 @@ describe('methodology.votes', () => {
       addVotes(m, testVote(source.value.id))
     })
     expectIssue(issues, 'methodology.votes', 'votes.yaml', 'A/RES/TEST/1', /kind press/)
+  })
+
+  it('reports a quote that is not verbatim in the archived text, whitespace aside', () => {
+    const spaced = check((ds, m) =>
+      addVotes(
+        m,
+        testVote(fixtureSourceId(ds), {
+          quote: 'Unter  diesen\nUmständen genehmigt die Bundesregierung',
+        }),
+      ),
+    )
+    expect(issuesOf(spaced, rule)).toEqual([])
+    const issues = check((ds, m) =>
+      addVotes(m, testVote(fixtureSourceId(ds), { quote: 'adopted by a recorded vote of 1 to 0' })),
+    )
+    expectIssue(
+      issues,
+      'methodology.votes',
+      'votes.yaml',
+      'A/RES/TEST/1',
+      /does not appear verbatim/,
+    )
+  })
+
+  it('reports a missing archived text', () => {
+    const issues = check((ds, m) => {
+      const id = fixtureSourceId(ds)
+      ds.readArchiveText = () => undefined
+      addVotes(m, testVote(id))
+    })
+    expectIssue(issues, 'methodology.votes', 'votes.yaml', 'A/RES/TEST/1', /is missing/)
   })
 })
 

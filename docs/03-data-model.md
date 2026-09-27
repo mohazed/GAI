@@ -14,10 +14,11 @@ data/
     unga_votes.csv                # resolution, date, iso3, vote (Y|N|A|X)
     unsc_vetoes.csv               # date, draft, vetoed_by, ceasefire (true), source
     fts_funding.csv               # iso3, window_start, window_end, usd_paid_committed, plan_ids, retrieved_at, source
+    fts_plan_totals.csv           # iso3, plan_id, usd_paid_committed, flows, retrieved_at, source
     sipri_deliveries.csv          # release_date, data_year, supplier_iso3, tiv_to_israel, tiv_total_to_israel, source
     sipri_orders.csv              # release_date, data_year, buyer_iso3, tiv_new_orders_from_israel, source
-    comtrade_a2.csv               # iso3, window_start, window_end, hs, usd, reporter (self|mirror), retrieved_at, source
-    comtrade_c3.csv               # iso3, window_start, window_end, usd_total, usd_2022, reporter, retrieved_at, source
+    comtrade_a2.csv               # iso3, window_start, window_end, release_date, hs, usd, reporter (self|mirror), retrieved_at, source
+    comtrade_c3.csv               # iso3, window_start, window_end, release_date, usd_total, usd_2022, reporter, retrieved_at, source
     gni.csv                       # iso3, year, gni_atlas_usd, source
     population.csv                # iso3, year, population, source
   corrections.yaml                # public corrections and retractions log
@@ -167,7 +168,9 @@ Statuses: `has-events` (at least one published event, set automatically by the b
 
 ## 7. Structured tables
 
-CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column with a `src_` id of kind `dataset` whose record archives the origin (the API response or downloaded file, hashed). The generators in `packages/pipeline` produce `computed` and `repeatable` events from these tables at build time; generated events are not written into `data/events/` but are published in the API outputs and carry `generated: true`.
+CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column with a `src_` id of kind `dataset` whose record archives the origin (the API response or downloaded file, hashed). When a row is derived from several archived responses (the pages of one FTS query plus the FTS location list; a Comtrade year and its 2022 baseline plus the release-date record), the column lists every id, joined by `;`, and each one must be an archived dataset source. The generators in `packages/pipeline` produce `computed` and `repeatable` events from these tables at build time; generated events are not written into `data/events/` but are published in the API outputs and carry `generated: true`.
+
+`fts_funding.csv`: one row per donor and monthly D1 window (the twelve calendar months before the month the value applies to, docs/02 §5), zeros included for donors with funding in some window. `fts_plan_totals.csv`: the same government funding per donor and plan over all flow dates, for reference; it does not score. `comtrade_a2.csv` and `comtrade_c3.csv` windows are calendar years; `release_date` is the first release of that year's data by the reporter (Israel for mirror rows) in the Comtrade data-availability record, the date the computed event starts.
 
 `unga_votes.csv` columns: `resolution` (symbol, e.g. `A/RES/ES-10/21`), `date`, `iso3`, `vote` (`Y`, `N`, `A`, `X` = absent/non-voting), `source`. Only resolutions listed in `methodology/vX/votes.yaml` are scored; others may be stored for tracking.
 

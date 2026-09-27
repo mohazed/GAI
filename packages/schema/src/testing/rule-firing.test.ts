@@ -576,6 +576,8 @@ const CASES: Record<RuleId, Case> = {
         subject: 'gaza',
         counts: { yes: 0, no: 0, abstain: 0 },
         source: SRC_1,
+        quote: 'Unter diesen Umständen genehmigt die Bundesregierung',
+        locator: 'paragraph 1',
         rationale: { en: 'Test fixture.', fr: 'Donnée de test.' },
       } as QualifyingVote
       need(m.votes, 'votes.yaml').value.votes.push(vote)

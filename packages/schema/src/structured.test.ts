@@ -11,13 +11,16 @@ import {
   ComtradeA2Row,
   ComtradeC3Row,
   FtsFundingRow,
+  FtsPlanTotalsRow,
   GniRow,
   PopulationRow,
   SipriDeliveriesRow,
   SipriOrdersRow,
+  SourceIdList,
   STRUCTURED_ISO3_COLUMN,
   STRUCTURED_TABLE_NAMES,
   STRUCTURED_TABLES,
+  splitSourceIds,
   UngaVoteRow,
   UnscVetoRow,
 } from './structured.js'
@@ -46,11 +49,12 @@ describe('the table registry', () => {
     expect(text.split('\n')[0]).toBe(STRUCTURED_TABLES[t].columns.join(','))
   })
 
-  it('names the nine documented tables', () => {
+  it('names the ten documented tables', () => {
     expect([...STRUCTURED_TABLE_NAMES].sort()).toEqual([
       'comtrade_a2.csv',
       'comtrade_c3.csv',
       'fts_funding.csv',
+      'fts_plan_totals.csv',
       'gni.csv',
       'population.csv',
       'sipri_deliveries.csv',
@@ -204,6 +208,7 @@ describe('ComtradeA2Row and ComtradeC3Row', () => {
     iso3: 'DEU',
     window_start: '2023-10-07',
     window_end: '2024-10-06',
+    release_date: '2025-02-20',
     hs: '93',
     usd: '250000',
     reporter: 'self',
@@ -214,6 +219,7 @@ describe('ComtradeA2Row and ComtradeC3Row', () => {
     iso3: 'DEU',
     window_start: '2023-10-07',
     window_end: '2024-10-06',
+    release_date: '2025-02-20',
     usd_total: '5000000',
     usd_2022: '4000000',
     reporter: 'mirror',
@@ -278,5 +284,38 @@ describe('GniRow and PopulationRow', () => {
     const r = PopulationRow.safeParse({ iso3: 'DEU', year: 'x', population: '1', source: SRC })
     expect(r.success).toBe(false)
     expect(r.error?.issues[0]?.message).toContain('year')
+  })
+})
+
+describe('SourceIdList (the source column)', () => {
+  it('holds one id, or several joined by ";"', () => {
+    expect(problems(SourceIdList, SRC)).toEqual([])
+    expect(problems(SourceIdList, `${SRC};src_20240311_sipri_at_2023-p2`)).toEqual([])
+    expect(splitSourceIds(`${SRC};src_20240311_sipri_at_2023-p2`)).toEqual([
+      SRC,
+      'src_20240311_sipri_at_2023-p2',
+    ])
+  })
+
+  it('rejects an empty member, a bad id and a repeated id', () => {
+    for (const bad of ['', `${SRC};`, `${SRC}; ${SRC}`, 'not-a-source', `${SRC};${SRC}`]) {
+      expect(SourceIdList.safeParse(bad).success, bad).toBe(false)
+    }
+  })
+})
+
+describe('FtsPlanTotalsRow', () => {
+  const row = {
+    iso3: 'DEU',
+    plan_id: '1156',
+    usd_paid_committed: '12000000',
+    flows: '24',
+    retrieved_at: STAMP,
+    source: SRC,
+  }
+  it('coerces integers and keeps the plan id a string', () => {
+    expect(FtsPlanTotalsRow.parse(row)).toMatchObject({ plan_id: '1156', flows: 24 })
+    expect(problems(FtsPlanTotalsRow, { ...row, plan_id: 'x1' })).toEqual(['plan_id'])
+    expect(problems(FtsPlanTotalsRow, { ...row, flows: '-1' })).toEqual(['flows'])
   })
 })

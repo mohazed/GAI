@@ -2,12 +2,39 @@
  * Row schemas for the structured tables in `data/structured/` (docs/03 §1 and §7).
  *
  * CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column holding
- * the id of a `dataset` source that archives the origin. Columns are listed in file order; the
+ * the id of a `dataset` source that archives the origin, or several ids joined by `;` when the row
+ * is derived from more than one archived response. Columns are listed in file order; the
  * loader rejects a header that differs.
  */
 import { z } from 'zod'
+import { isValidId } from './ids.js'
 import { Iso3, IsoDate, IsoDateTime } from './primitives.js'
-import { SourceId } from './records.js'
+
+/** Separator of the ids in a `source` cell and of the plan ids in fts_funding.csv. */
+export const LIST_SEPARATOR = ';'
+
+/** The source ids of a `source` cell, in the order written. */
+export function splitSourceIds(cell: string): string[] {
+  return cell.split(LIST_SEPARATOR)
+}
+
+/**
+ * The `source` column: one dataset source id, or several joined by `;` when the row is derived
+ * from more than one archived response (several pages of one API query, or a year and its
+ * baseline year). Each id matches src_{YYYYMMDD}_{…} and none repeats.
+ */
+export const SourceIdList = z.string().superRefine((cell, ctx) => {
+  const ids = splitSourceIds(cell)
+  const bad = ids.filter((id) => !isValidId('source', id))
+  if (bad.length > 0) {
+    ctx.addIssue({
+      code: 'custom',
+      message: `expected one or more source ids src_{YYYYMMDD}_{publisher-slug}_{topic-slug} joined by "${LIST_SEPARATOR}"; not a source id: ${bad.map((b) => `"${b}"`).join(', ')}`,
+    })
+  } else if (new Set(ids).size !== ids.length) {
+    ctx.addIssue({ code: 'custom', message: 'a source id is listed more than once' })
+  }
+})
 
 const int = (label: string) =>
   z.preprocess(
@@ -48,7 +75,7 @@ export const UngaVoteRow = z.strictObject({
   iso3: Iso3,
   /** Y yes, N no, A abstain, X absent or did not participate (scored as absent). */
   vote: z.enum(['Y', 'N', 'A', 'X']),
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const UnscVetoRow = z.strictObject({
@@ -59,7 +86,7 @@ export const UnscVetoRow = z.strictObject({
   vetoed_by: Iso3,
   /** true when the operative paragraphs called for a ceasefire, truce or pause (docs/02 B2). */
   ceasefire: bool,
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const FtsFundingRow = z.strictObject({
@@ -70,7 +97,19 @@ export const FtsFundingRow = z.strictObject({
   /** FTS plan ids joined by `;`, e.g. 1156;1273. */
   plan_ids: z.string().regex(/^\d+(;\d+)*$/, 'expected plan ids joined by ";"'),
   retrieved_at: IsoDateTime,
-  source: SourceId,
+  source: SourceIdList,
+})
+
+/** Per-plan totals of FTS government funding, all flow dates (docs/06 §2, fetch:fts). */
+export const FtsPlanTotalsRow = z.strictObject({
+  iso3: Iso3,
+  /** FTS plan id, e.g. 1156. */
+  plan_id: z.string().regex(/^\d+$/, 'expected an FTS plan id'),
+  usd_paid_committed: nonNegInt('usd_paid_committed'),
+  /** Number of FTS flows summed. */
+  flows: nonNegInt('flows'),
+  retrieved_at: IsoDateTime,
+  source: SourceIdList,
 })
 
 export const SipriDeliveriesRow = z.strictObject({
@@ -79,7 +118,7 @@ export const SipriDeliveriesRow = z.strictObject({
   supplier_iso3: Iso3,
   tiv_to_israel: nonNegNumber('tiv_to_israel'),
   tiv_total_to_israel: nonNegNumber('tiv_total_to_israel'),
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const SipriOrdersRow = z.strictObject({
@@ -87,44 +126,56 @@ export const SipriOrdersRow = z.strictObject({
   data_year: int('data_year'),
   buyer_iso3: Iso3,
   tiv_new_orders_from_israel: nonNegNumber('tiv_new_orders_from_israel'),
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const ComtradeA2Row = z.strictObject({
   iso3: Iso3,
   window_start: IsoDate,
   window_end: IsoDate,
+  /**
+   * First release of the period's data by the reporter (Israel for mirror rows), from the
+   * Comtrade data-availability record: the computed event is valid from this date to the next
+   * period's release (docs/02 §3, §5).
+   */
+  release_date: IsoDate,
   /** HS chapter or heading: 93, 8710, 8526 or 8802. */
   hs: z.string().regex(/^\d{2}(\d{2}){0,2}$/, 'expected an HS code of 2, 4 or 6 digits'),
   usd: nonNegInt('usd'),
   reporter: Reporter,
   retrieved_at: IsoDateTime,
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const ComtradeC3Row = z.strictObject({
   iso3: Iso3,
   window_start: IsoDate,
   window_end: IsoDate,
+  /**
+   * First release of the period's data by the reporter (Israel for mirror rows), from the
+   * Comtrade data-availability record: the computed event is valid from this date to the next
+   * period's release (docs/02 §3, §5).
+   */
+  release_date: IsoDate,
   usd_total: nonNegInt('usd_total'),
   usd_2022: nonNegInt('usd_2022'),
   reporter: Reporter,
   retrieved_at: IsoDateTime,
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const GniRow = z.strictObject({
   iso3: Iso3,
   year: int('year'),
   gni_atlas_usd: nonNegInt('gni_atlas_usd'),
-  source: SourceId,
+  source: SourceIdList,
 })
 
 export const PopulationRow = z.strictObject({
   iso3: Iso3,
   year: int('year'),
   population: nonNegInt('population'),
-  source: SourceId,
+  source: SourceIdList,
 })
 
 /** Every structured table: file name → columns in order and the row schema. */
@@ -149,6 +200,10 @@ export const STRUCTURED_TABLES = {
     ],
     row: FtsFundingRow,
   },
+  'fts_plan_totals.csv': {
+    columns: ['iso3', 'plan_id', 'usd_paid_committed', 'flows', 'retrieved_at', 'source'],
+    row: FtsPlanTotalsRow,
+  },
   'sipri_deliveries.csv': {
     columns: [
       'release_date',
@@ -169,6 +224,7 @@ export const STRUCTURED_TABLES = {
       'iso3',
       'window_start',
       'window_end',
+      'release_date',
       'hs',
       'usd',
       'reporter',
@@ -182,6 +238,7 @@ export const STRUCTURED_TABLES = {
       'iso3',
       'window_start',
       'window_end',
+      'release_date',
       'usd_total',
       'usd_2022',
       'reporter',
@@ -211,6 +268,7 @@ export const STRUCTURED_ISO3_COLUMN: Record<StructuredTableName, string> = {
   'unga_votes.csv': 'iso3',
   'unsc_vetoes.csv': 'vetoed_by',
   'fts_funding.csv': 'iso3',
+  'fts_plan_totals.csv': 'iso3',
   'sipri_deliveries.csv': 'supplier_iso3',
   'sipri_orders.csv': 'buyer_iso3',
   'comtrade_a2.csv': 'iso3',

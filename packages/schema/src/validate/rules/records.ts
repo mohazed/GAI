@@ -23,6 +23,7 @@ import {
   STRUCTURED_ISO3_COLUMN,
   STRUCTURED_TABLE_NAMES,
   type StructuredTableName,
+  splitSourceIds,
 } from '../../structured.js'
 import type { Rule, ValidationContext } from '../context.js'
 import { compareEventOrder } from '../order.js'
@@ -54,6 +55,7 @@ export const STRUCTURED_UNIQUE_KEYS: Record<StructuredTableName, readonly string
   'unga_votes.csv': ['resolution', 'iso3'],
   'unsc_vetoes.csv': ['draft', 'vetoed_by'],
   'fts_funding.csv': ['iso3', 'window_start', 'window_end'],
+  'fts_plan_totals.csv': ['iso3', 'plan_id'],
   'sipri_deliveries.csv': ['release_date', 'data_year', 'supplier_iso3'],
   'sipri_orders.csv': ['release_date', 'data_year', 'buyer_iso3'],
   'comtrade_a2.csv': ['iso3', 'window_start', 'window_end', 'hs', 'reporter'],
@@ -1029,7 +1031,7 @@ const leadSourceKind: Rule = (ctx) => {
 
 /**
  * structured.source-dataset (docs/03 §7: "a `src_` id of kind `dataset` whose record archives
- * the origin"): the source column names an existing source of kind dataset that is archived
+ * the origin"): each id of the source column (one, or several joined by `;`) names an existing source of kind dataset that is archived
  * (wayback_url and sha256, capture not failed, or a dataset row whose origin is archived; see
  * `notArchivedReason`). Generated events are built from these rows, so nothing scores from an
  * unarchived table (CLAUDE.md).
@@ -1038,38 +1040,40 @@ const structuredSourceDataset: Rule = (ctx) => {
   const out: Issue[] = []
   for (const table of STRUCTURED_TABLE_NAMES) {
     for (const row of rowsOf(ctx, table)) {
-      const sourceId = row.value.source
-      if (typeof sourceId !== 'string') continue
+      const cell = row.value.source
+      if (typeof cell !== 'string') continue
       const loc = at(row, `row ${row.line ?? '?'}`, 'source')
-      const src = ctx.index.sourceById.get(sourceId)
-      if (src === undefined) {
-        if (!ctx.dataset.invalid.source.has(sourceId)) {
+      for (const sourceId of splitSourceIds(cell)) {
+        const src = ctx.index.sourceById.get(sourceId)
+        if (src === undefined) {
+          if (!ctx.dataset.invalid.source.has(sourceId)) {
+            out.push(
+              issue(
+                'structured.source-dataset',
+                loc,
+                `source ${sourceId} does not exist; expected an existing source of kind dataset`,
+              ),
+            )
+          }
+        } else if (src.value.kind !== 'dataset') {
           out.push(
             issue(
               'structured.source-dataset',
               loc,
-              `source ${sourceId} does not exist; expected an existing source of kind dataset`,
+              `source ${sourceId} is of kind ${src.value.kind}; expected kind dataset`,
             ),
           )
-        }
-      } else if (src.value.kind !== 'dataset') {
-        out.push(
-          issue(
-            'structured.source-dataset',
-            loc,
-            `source ${sourceId} is of kind ${src.value.kind}; expected kind dataset`,
-          ),
-        )
-      } else {
-        const reason = notArchivedReason(ctx, src.value)
-        if (reason !== null) {
-          out.push(
-            issue(
-              'structured.source-dataset',
-              loc,
-              `${reason}; expected a dataset source whose record archives the origin (wayback_url and sha256)`,
-            ),
-          )
+        } else {
+          const reason = notArchivedReason(ctx, src.value)
+          if (reason !== null) {
+            out.push(
+              issue(
+                'structured.source-dataset',
+                loc,
+                `${reason}; expected a dataset source whose record archives the origin (wayback_url and sha256)`,
+              ),
+            )
+          }
         }
       }
     }
@@ -1079,24 +1083,35 @@ const structuredSourceDataset: Rule = (ctx) => {
 
 /**
  * structured.iso3-known (docs/03 §7): the table's country column is in countries.yaml (warning).
- * A code whose countries.yaml entry failed its schema is not reported.
+ * A code whose countries.yaml entry failed its schema is not reported. One warning per table, at
+ * the first row concerned: a table fetched for the whole world before the registry is complete
+ * (P-13) would otherwise give one warning per row and bury every other warning.
  */
 const structuredIso3Known: Rule = (ctx) => {
   const out: Issue[] = []
   for (const table of STRUCTURED_TABLE_NAMES) {
     const column = STRUCTURED_ISO3_COLUMN[table]
+    const unknown = new Map<string, number[]>()
+    let first: Located<Record<string, unknown>> | undefined
     for (const row of rowsOf(ctx, table)) {
       const iso3 = row.value[column]
       if (typeof iso3 !== 'string') continue
       if (ctx.index.countryByIso3.has(iso3) || ctx.dataset.invalid.country.has(iso3)) continue
-      out.push(
-        issue(
-          'structured.iso3-known',
-          at(row, `row ${row.line ?? '?'}`, column),
-          `${column} ${iso3} is not in countries.yaml; expected a registered country code`,
-        ),
-      )
+      first ??= row
+      unknown.set(iso3, [...(unknown.get(iso3) ?? []), row.line ?? 0])
     }
+    if (first === undefined) continue
+    const codes = [...unknown.keys()]
+    const message =
+      codes.length === 1
+        ? `${column} ${codes[0]} is not in countries.yaml; expected a registered country code`
+        : `${codes.length} ${column} codes are not in countries.yaml (${codes
+            .map((c) => {
+              const lines = unknown.get(c) ?? []
+              return `${c} ×${lines.length}`
+            })
+            .join(', ')}); expected registered country codes`
+    out.push(issue('structured.iso3-known', at(first, `row ${first.line ?? '?'}`, column), message))
   }
   return out
 }

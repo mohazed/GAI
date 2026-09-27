@@ -335,6 +335,14 @@ export const QualifyingVote = z.strictObject({
   undl_record: z.number().int().positive().optional(),
   /** Archived UN press release or record (kind official). */
   source: SourceId,
+  /**
+   * Verbatim passage of the source stating the adoption and the recorded vote, checked against
+   * archive/text/{source}.txt; it is the quote of the press-release evidence of every generated
+   * B1 event of this vote.
+   */
+  quote: NonEmpty,
+  /** Where the quote sits in the source (paragraph, page). */
+  locator: NonEmpty,
   rationale: LangText,
 })
 export type QualifyingVote = z.infer<typeof QualifyingVote>

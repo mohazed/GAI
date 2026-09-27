@@ -1221,6 +1221,22 @@ describe("'structured.source-dataset'", () => {
     expect(issues).toEqual([])
   })
 
+  it('checks every id of a row citing several sources', () => {
+    const second = 'src_20260901_test-dataset_page-2'
+    const clean = of('structured.source-dataset', (ds) => {
+      addSource(ds, DATASET_ID, 'dataset', '2026-09-01')
+      addSource(ds, second, 'dataset', '2026-09-01')
+      addFtsRow(ds, { source: `${DATASET_ID};${second}` })
+    })
+    expect(clean).toEqual([])
+    const issues = of('structured.source-dataset', (ds) => {
+      addSource(ds, DATASET_ID, 'dataset', '2026-09-01')
+      addFtsRow(ds, { source: `${DATASET_ID};${SOURCE_ID}` })
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain(`source ${SOURCE_ID} is of kind`)
+  })
+
   it('reports a row citing a source of another kind', () => {
     const issues = of('structured.source-dataset', (ds) => addFtsRow(ds, { source: SOURCE_ID }))
     expect(issues).toHaveLength(1)
@@ -1281,6 +1297,17 @@ describe("'structured.iso3-known'", () => {
     ])
   })
 
+  it('gives one warning per table, naming every unknown code and its row count', () => {
+    const issues = of('structured.iso3-known', (ds) => {
+      addFtsRow(ds, { iso3: 'QQQ' })
+      addFtsRow(ds, { iso3: 'QQQ', window_start: '2025-02-01', window_end: '2026-01-31' })
+      addFtsRow(ds, { iso3: 'ZZZ', window_start: '2025-03-01', window_end: '2026-02-28' })
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ file: 'data/structured/fts_funding.csv', path: 'iso3' })
+    expect(issues[0]?.message).toContain('2 iso3 codes are not in countries.yaml (QQQ ×2, ZZZ ×1)')
+  })
+
   it('warns on a code missing from the registry, in the table-specific column', () => {
     const issues = of('structured.iso3-known', (ds) => {
       ds.structured['unsc_vetoes.csv'].push({
@@ -1321,6 +1348,7 @@ describe("'structured.window'", () => {
         iso3: 'DEU',
         window_start: '2025-01-01',
         window_end: '2024-12-31',
+        release_date: '2025-02-01',
         reporter: 'mirror' as const,
         retrieved_at: '2026-09-01T00:00:00Z',
         source: DATASET_ID,

@@ -32,3 +32,6 @@ Folder `methodology/v1.0.0/`, status release candidate; scores are computed but 
 - Formulas and thresholds for the computed indicators A1, A2, A4, C3 and D1 (docs/02 §5).
 - Symmetry table of docs/02 §13. Qualifying-votes list empty until the votes are verified (P-14).
 - Tone-lint list `banned-words.txt` for event summaries.
+- `votes.yaml` entries also carry `quote` and `locator`: the verbatim passage of the archived UN
+  press release stating the recorded vote, which becomes the press-release evidence of each
+  generated B1 event. Shape only; the list is still empty and no score changes.
