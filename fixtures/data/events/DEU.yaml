@@ -1,0 +1,37 @@
+# Test fixture (P-02). A real event with real, archived sources; not part of the published
+# dataset and not reviewed by the maintainer. See fixtures/README.md.
+- id: evt_2025_08_08_DEU_A6
+  revision: 2
+  country: DEU
+  indicator: A6
+  type: standing
+  date: 2025-08-08
+  end: 2025-11-24
+  points: 10
+  confidence: confirmed
+  scope: [gaza]
+  summary:
+    en: The Federal Chancellor stated that the federal government would not approve, until further notice, exports of military equipment that could be used in the Gaza Strip.
+    fr: Le chancelier fédéral a déclaré que le gouvernement fédéral n'autoriserait pas, jusqu'à nouvel ordre, les exportations d'équipements militaires susceptibles d'être utilisés dans la bande de Gaza.
+  actor: {en: Federal Chancellor, fr: Chancelier fédéral, name: Friedrich Merz}
+  evidence:
+    - source: src_20250808_bundesregierung_ruestungsexporte-gaza
+      quote: Unter diesen Umständen genehmigt die Bundesregierung bis auf Weiteres keine Ausfuhren von Rüstungsgütern, die im Gazastreifen zum Einsatz kommen können.
+      quote_lang: de
+      quote_en: Under these circumstances, the federal government will not approve, until further notice, any exports of military equipment that could be used in the Gaza Strip.
+      locator: paragraph 6
+    - source: src_20251117_bundesregierung_ruestungsexporte-israel-aufhebung
+      quote: Die mit der Pressemitteilung der Bundesregierung vom 8. August 2025 bekanntgegebenen Beschränkungen zum Rüstungsexport nach Israel werden aufgehoben. Die Aufhebung wird ab dem 24. November 2025 in Vollzug gesetzt.
+      quote_lang: de
+      quote_en: The restrictions on arms exports to Israel announced in the federal government's press release of 8 August 2025 are being lifted. The lifting will be put into effect from 24 November 2025.
+      locator: paragraph 19
+  status: published
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: 2026-09-27
+    second_read: {by: claude-opus-5-5, at: 2026-09-27, verdict: agree}
+    reviewed_by: fixture
+    reviewed_at: 2026-09-27
+    notes: Test fixture. Real event and sources, verified in P-02; not reviewed by the maintainer and not part of the published dataset.

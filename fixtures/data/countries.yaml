@@ -1,0 +1,118 @@
+# countries.yaml — the universe of the index (docs/02 §1, docs/03 §3).
+#
+# 193 scored entities (UN member states plus the Holy See, minus Israel and Palestine), plus ISR
+# and PSE flagged `excluded: true` (D-10). P-02 seeds three entries; the full registry is built in
+# a later prompt.
+#
+# Facts verified 2026-09-27 (P-02):
+# - iso2, m49, region, subregion: UN M49 overview, https://unstats.un.org/unsd/methodology/m49/overview/
+# - name.en, name.fr: UNTERM country names, https://unterm.un.org/unterm2/en/country
+# - memberships.unsc: https://main.un.org/securitycouncil/en/content/countries-elected-members
+#   (DEU: 1977-1978, 1987-1988, 1995-1996, 2003-2004, 2011-2012, 2019-2020; not elected for
+#   2027-2028, the two Western European and Others seats went to Austria and Portugal; ISR: never
+#   elected) and https://main.un.org/securitycouncil/en/content/current-members
+# - PSE observer status: https://www.un.org/en/about-us/non-member-states (A/RES/67/19)
+
+- iso3: DEU
+  iso2: DE
+  m49: 276
+  name: {en: Germany, fr: Allemagne}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-27. The Federal Foreign Office country page dated
+      2026-03-18 (https://www.auswaertiges-amt.de/de/service/laender/palaestinensischegebiete-node/bilaterale-beziehungen-204432)
+      describes the Palestinian territories and support for building a future Palestinian state
+      within a negotiated two-state solution. Checked in P-02.
+  gov_sources:
+    - {label: Federal Foreign Office, url: 'https://www.auswaertiges-amt.de/en', type: mfa, lang: [de, en]}
+    - {label: Bundesregierung, url: 'https://www.bundesregierung.de/breg-de', type: head_of_government, lang: [de, en]}
+    - {label: Bundestag, url: 'https://www.bundestag.de', type: parliament, lang: [de]}
+    - {label: Bundesanzeiger, url: 'https://www.bundesanzeiger.de/pub/de/start', type: gazette, lang: [de]}
+  notes: >-
+    Not a member of the Security Council between 2023-10-07 and 2026-09-27; last term 2019-2020.
+    gov_sources checked 2026-09-27: https://www.bundesregierung.de redirects to /breg-de and
+    https://www.bundesanzeiger.de redirects to /pub/de/start; the English versions of the Federal
+    Foreign Office (/en) and the Bundesregierung (/breg-en) respond.
+
+- iso3: ISR
+  iso2: IL
+  m49: 376
+  name: {en: Israel, fr: Israël}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: true
+  excluded_reason:
+    en: >-
+      Party to the conflict. The index measures the conduct of third states, so Israel is not
+      scored (D-10).
+    fr: >-
+      Partie au conflit. L'indice mesure la conduite des États tiers, Israël n'est donc pas noté
+      (D-10).
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: null}
+  gov_sources: []
+  notes: Excluded from the ranking (D-10); no country page in v1.
+
+- iso3: PSE
+  iso2: PS
+  m49: 275
+  name: {en: State of Palestine, fr: État de Palestine}
+  region: Asia
+  subregion: Western Asia
+  un_member: false
+  observer: true
+  excluded: true
+  excluded_reason:
+    en: >-
+      The affected party. The index measures the conduct of third states, so the State of
+      Palestine is not scored (D-10).
+    fr: >-
+      Partie affectée. L'indice mesure la conduite des États tiers, l'État de Palestine n'est donc
+      pas noté (D-10).
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: Not applicable (the State of Palestine itself).
+  gov_sources: []
+  notes: >-
+    Excluded from the ranking (D-10); no country page in v1. Not a UN member state:
+    non-member observer State since A/RES/67/19 of 29 November 2012
+    (https://www.un.org/en/about-us/non-member-states). Names are the UN M49 names "State of
+    Palestine" and "État de Palestine", which match the UNTERM short names. Arab League: listed
+    as دولة فلسطين among the member states on lasportal.org (Wayback capture of
+    http://www.lasportal.org/ar/aboutlas/Pages/CountryData.aspx, 2025-03-24). OIC: listed as
+    "State of PALESTINE, Member since 1969" on https://www.oic-oci.org/states/?lan=en (Wayback
+    capture 2026-01-14).

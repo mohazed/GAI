@@ -1,0 +1,20 @@
+# Test fixture (P-02). Synthetic correction entry: the revision-1 → revision-2 change it
+# describes was made while building the fixture, not after publication. See fixtures/README.md.
+- id: cor_20260927_1
+  date: 2026-09-27
+  event: evt_2025_08_08_DEU_A6
+  kind: correction
+  flagged_by: author
+  flagged_ref: test fixture
+  before:
+    end: null
+    evidence: [src_20250808_bundesregierung_ruestungsexporte-gaza]
+  after:
+    end: 2025-11-24
+    evidence:
+      - src_20250808_bundesregierung_ruestungsexporte-gaza
+      - src_20251117_bundesregierung_ruestungsexporte-israel-aufhebung
+  reason: >-
+    Test fixture. The end date was added, with its source: the transcript of the government press
+    conference of 17 November 2025, which states that the restrictions are lifted from
+    24 November 2025.
