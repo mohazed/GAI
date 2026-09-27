@@ -1,15 +1,19 @@
 /**
  * `pnpm publish:events --pr N [--by HANDLE] [--date YYYY-MM-DD] [--exclude id,id…] [--dry-run]`
  * — the review flip of docs/06 §4 step 10 and of the P-D review prompt (PROMPTS.md). After the
- * author has reviewed a data pull request, every event of the data/events/*.yaml files the pull
- * request changes that stands at `status: reviewed` becomes `status: published`, with
+ * author has reviewed a data pull request, every event that the pull request adds or changes in
+ * data/events/*.yaml and that stands at `status: reviewed` becomes `status: published`, with
  * `review.reviewed_by` and `review.reviewed_at` set (docs/03 §4: a published event names its
- * reviewer and review date; docs/03 §11: the session or the author sets them before merge, CI
- * flips nothing, and only `published` scores).
+ * reviewer and review date; docs/03 §11: the author runs this command on the PR branch before
+ * merge, CI flips nothing, and only `published` scores).
  *
  * An event is published only when (publishEventsInYaml):
  * - its status is `reviewed` (draft and published events are left as they are and not listed);
  * - its id is not excluded (`--exclude`: the events the author did not approve);
+ * - the pull request adds it or changes it: an event already `reviewed` at the merge base and
+ *   identical there (unchangedReviewedIds) was reviewed with an earlier pull request, where the
+ *   author published or excluded it; it is not in this pull request's diff, so this review
+ *   cannot approve it;
  * - `review.second_read` exists with verdict `agree` (docs/06 §1 rule 6; validator rule
  *   event.second-read);
  * - the review date is not before `review.drafted_at` (validator rule on review dates) nor
@@ -27,16 +31,24 @@
  * and compared with the original: the three fields of the published events must be the only
  * differences, otherwise the function throws and nothing is written.
  *
- * The command (runPublishEvents) takes the changed files from `gh pr diff N --name-only`, keeps
- * the data/events/*.yaml files present in the working tree, and refuses to write unless the
- * checked-out branch is the pull request's head branch, the local HEAD is the pull request's
- * head commit and those files have no uncommitted change (so that what is published is what
- * the author reviewed). It then edits every file (unless --dry-run), prints the published and
- * skipped ids per file and reminds to run `pnpm validate`.
+ * The command (runPublishEvents) reads the pull request with `gh pr view N --json
+ * headRefName,headRefOid,baseRefName,baseRefOid,state` and refuses to write unless it is open
+ * (the flip happens before merge; after it, the commit would land on a dead branch), the
+ * checked-out branch is its head branch, the local HEAD is its head commit (so that what is
+ * published is what the author reviewed) and its base commit is in the local repository (else:
+ * `git fetch origin <base>`). The changed files come from git, not from `gh pr diff`, which
+ * GitHub refuses (HTTP 406) beyond 300 files or 20,000 lines, the size of a wave pull request:
+ * as HEAD is the pull request's head, `git merge-base <baseRefOid> HEAD` and
+ * `git diff --name-status -z --no-renames <merge base> HEAD` list the files GitHub shows, with
+ * whether each was added. The command keeps the data/events/*.yaml files present in the
+ * working tree, refuses when they have uncommitted changes, reads each file the pull request
+ * modifies as it was at the merge base (`git cat-file blob`), edits every file (unless
+ * --dry-run), prints the published and skipped ids per file and reminds to run `pnpm validate`.
  *
  * Pure: gh, git, the file system and today's date are injected; cli/publish-events.ts supplies
- * them. Exit codes: 0 done (also when nothing was published), 1 gh or git failed, a check
- * refused or a file could not be edited, 2 usage error.
+ * them (today: localIsoDate, the author's local calendar date). Exit codes: 0 done (also when
+ * nothing was published), 1 gh or git failed, a check refused or a file could not be edited,
+ * 2 usage error.
  */
 import { isDeepStrictEqual } from 'node:util'
 import { parseEventId } from '@gai/schema'
@@ -71,7 +83,16 @@ export interface PublishOptions {
   date: string
   /** Ids of events the author did not approve: left as they are. */
   exclude: ReadonlySet<string>
+  /**
+   * Ids of reviewed events that the pull request neither adds nor changes (unchangedReviewedIds):
+   * left as they are. Default: none.
+   */
+  unchanged?: ReadonlySet<string>
 }
+
+/** The reason given for an event of `PublishOptions.unchanged`. */
+export const UNCHANGED_REASON =
+  'reviewed before this pull request and not changed by it; not published here'
 
 export interface SkippedEvent {
   id: string
@@ -291,6 +312,10 @@ export function publishEventsInYaml(text: string, opts: PublishOptions): Publish
       return
     }
     if (status !== 'reviewed') return
+    if (opts.unchanged?.has(id)) {
+      skipped.push({ id, reason: UNCHANGED_REASON })
+      return
+    }
     const plan = planEvent(text, item, opts, newline)
     if ('reason' in plan) {
       skipped.push({ id, reason: plan.reason })
@@ -322,6 +347,61 @@ export function publishEventsInYaml(text: string, opts: PublishOptions): Publish
   return { text: out, published, skipped }
 }
 
+/** The items of a data/events file as plain values; throws on invalid YAML or a non-list. */
+function eventValues(text: string): unknown[] {
+  const doc = parseDocument(text, YAML_OPTIONS)
+  if (doc.errors.length > 0) throw new Error(`not valid YAML: ${firstError(doc.errors)}`)
+  const value = doc.toJS({ maxAliasCount: 100 }) as unknown
+  if (value === null || value === undefined) return []
+  if (!Array.isArray(value)) throw new Error('expected a list of events (docs/03 §4)')
+  return value
+}
+
+const isRecord = (v: unknown): v is Record<string, unknown> =>
+  typeof v === 'object' && v !== null && !Array.isArray(v)
+
+/**
+ * The ids of the events of `head` (a data/events file on the pull request's head) that stand at
+ * `status: reviewed` in `base` (the same file at the merge base; null when the pull request adds
+ * the file) and are deep-equal there, every field included: the pull request neither adds nor
+ * changes them, so its review does not cover them (publishEventsInYaml skips them). An event
+ * that was a draft at the base, or that the pull request edits in any field, is not in the set.
+ * Throws when either text is not valid YAML or not a list (the base's message says so).
+ */
+export function unchangedReviewedIds(base: string | null, head: string): Set<string> {
+  const before = new Map<string, Record<string, unknown>>()
+  if (base !== null) {
+    let values: unknown[]
+    try {
+      values = eventValues(base)
+    } catch (err) {
+      throw new Error(`at the merge base: ${(err as Error).message}`)
+    }
+    for (const v of values) {
+      if (!isRecord(v) || typeof v.id !== 'string' || v.status !== 'reviewed') continue
+      if (!before.has(v.id)) before.set(v.id, v)
+    }
+  }
+  const unchanged = new Set<string>()
+  if (before.size === 0) return unchanged
+  for (const v of eventValues(head)) {
+    if (!isRecord(v) || typeof v.id !== 'string') continue
+    if (isDeepStrictEqual(before.get(v.id), v)) unchanged.add(v.id)
+  }
+  return unchanged
+}
+
+/**
+ * A date as YYYY-MM-DD in the local time zone of the process: the author's calendar date, the
+ * one data sessions write in `review.drafted_at` and `review.second_read.at` (the review dates
+ * must share one calendar; with UTC, a review just after local midnight would carry the
+ * previous day and skip the events drafted that day).
+ */
+export function localIsoDate(d: Date): string {
+  const pad = (n: number, width: number) => String(n).padStart(width, '0')
+  return `${pad(d.getFullYear(), 4)}-${pad(d.getMonth() + 1, 2)}-${pad(d.getDate(), 2)}`
+}
+
 // ---------------------------------------------------------------------------------------------
 // The command
 
@@ -330,7 +410,7 @@ export interface PublishArgs {
   pr: number
   /** `review.reviewed_by` (default DEFAULT_REVIEWER). */
   by: string
-  /** `review.reviewed_at` (default: today). */
+  /** `review.reviewed_at` (default: today, the author's local calendar date). */
   date?: string
   /** Ids not to publish, sorted and unique. */
   exclude: string[]
@@ -405,7 +485,11 @@ export interface CommandResult {
 export type CommandRunner = (args: readonly string[]) => CommandResult
 
 export interface PublishEnv {
-  /** Today's date (UTC), the default review date and the latest one allowed. */
+  /**
+   * Today's local calendar date (localIsoDate), YYYY-MM-DD: the author's day of review, in the
+   * same calendar as `review.drafted_at` and `review.second_read.at`. The default review date and
+   * the latest one allowed.
+   */
   today: string
   gh: CommandRunner
   git: CommandRunner
@@ -450,6 +534,64 @@ export function runPublishEvents(argv: readonly string[], env: PublishEnv): Publ
   }
 }
 
+/** A git object id (SHA-1 or SHA-256), as gh and git print it. */
+const OID = /^[0-9a-f]{40}(?:[0-9a-f]{24})?$/
+
+interface PullRequest {
+  /** OPEN, CLOSED or MERGED. */
+  state: string
+  head: { name: string; oid: string }
+  base: { name: string; oid: string }
+}
+
+/** The fields runPublishEvents asks `gh pr view` for. */
+const PR_FIELDS = 'headRefName,headRefOid,baseRefName,baseRefOid,state'
+
+function parsePullRequest(stdout: string): PullRequest | null {
+  let json: Record<string, unknown>
+  try {
+    const parsed = JSON.parse(stdout) as unknown
+    if (!isRecord(parsed)) return null
+    json = parsed
+  } catch {
+    return null
+  }
+  const { headRefName, headRefOid, baseRefName, baseRefOid, state } = json
+  if (
+    typeof headRefName !== 'string' ||
+    typeof headRefOid !== 'string' ||
+    typeof baseRefName !== 'string' ||
+    typeof baseRefOid !== 'string' ||
+    typeof state !== 'string' ||
+    !OID.test(baseRefOid)
+  ) {
+    return null
+  }
+  return {
+    state,
+    head: { name: headRefName, oid: headRefOid },
+    base: { name: baseRefName, oid: baseRefOid },
+  }
+}
+
+/**
+ * The output of `git diff --name-status -z`: path → status letter (A added, D deleted,
+ * M modified, T type changed; with a rename or copy, which --no-renames rules out, the new path).
+ */
+function parseNameStatus(stdout: string): Map<string, string> {
+  const tokens = stdout.split('\0')
+  const out = new Map<string, string>()
+  for (let i = 0; i < tokens.length; i++) {
+    const status = tokens[i] ?? ''
+    if (status === '') continue
+    const two = status.startsWith('R') || status.startsWith('C')
+    const path = tokens[two ? i + 2 : i + 1]
+    i += two ? 2 : 1
+    if (path !== undefined && path !== '') out.set(path, status.charAt(0))
+  }
+  return out
+}
+
 function run(args: PublishArgs, env: PublishEnv): PublishRunResult {
   const date = args.date ?? env.today
   if (date > env.today) {
@@ -460,19 +602,21 @@ function run(args: PublishArgs, env: PublishEnv): PublishRunResult {
   }
   const pr = String(args.pr)
 
-  // The pull request's head, and the checked-out branch and commit.
-  const view = env.gh(['pr', 'view', pr, '--json', 'headRefName,headRefOid'])
+  // The pull request: open, and checked out at its head.
+  const view = env.gh(['pr', 'view', pr, '--json', PR_FIELDS])
   if (view.code !== 0) return fail(1, cmdFailure(`gh pr view ${pr}`, view))
-  let head: { name: string; oid: string }
-  try {
-    const json = JSON.parse(view.stdout) as { headRefName?: unknown; headRefOid?: unknown }
-    if (typeof json.headRefName !== 'string' || typeof json.headRefOid !== 'string')
-      throw new Error()
-    head = { name: json.headRefName, oid: json.headRefOid }
-  } catch {
+  const pull = parsePullRequest(view.stdout)
+  if (pull === null) {
     return fail(
       1,
-      `gh pr view ${pr}: expected JSON with headRefName and headRefOid, got ${view.stdout.trim()}`,
+      `gh pr view ${pr}: expected JSON with headRefName, headRefOid, baseRefName, baseRefOid and state, got ${view.stdout.trim()}`,
+    )
+  }
+  const { head, base } = pull
+  if (pull.state !== 'OPEN') {
+    return fail(
+      1,
+      `refusing: PR #${pr} is ${pull.state.toLowerCase()}; publish:events flips the events on the PR branch before merge (docs/03 §11). Open a new pull request from ${head.name} if it was merged without the flip.`,
     )
   }
   const branch = env.git(['rev-parse', '--abbrev-ref', 'HEAD'])
@@ -494,17 +638,25 @@ function run(args: PublishArgs, env: PublishEnv): PublishRunResult {
     )
   }
 
-  // The event files the pull request changes.
-  const diff = env.gh(['pr', 'diff', pr, '--name-only'])
-  if (diff.code !== 0) return fail(1, cmdFailure(`gh pr diff ${pr} --name-only`, diff))
-  const changed = [
-    ...new Set(
-      diff.stdout
-        .split('\n')
-        .map((l) => l.trim())
-        .filter((l) => l !== ''),
-    ),
-  ].sort((x, y) => (x < y ? -1 : x > y ? 1 : 0))
+  // The files the pull request changes, from its merge base (what GitHub's diff shows).
+  const known = env.git(['cat-file', '-e', `${base.oid}^{commit}`])
+  if (known.code !== 0) {
+    return fail(
+      1,
+      `refusing: the base of PR #${pr} (${base.name} at ${base.oid.slice(0, 12)}) is not in the local repository; run git fetch origin ${base.name} first`,
+    )
+  }
+  const mb = env.git(['merge-base', base.oid, 'HEAD'])
+  if (mb.code !== 0) return fail(1, cmdFailure(`git merge-base ${base.oid.slice(0, 12)} HEAD`, mb))
+  const mergeBase = mb.stdout.trim()
+  if (!OID.test(mergeBase)) {
+    return fail(1, `git merge-base: expected a commit id, got ${mergeBase}`)
+  }
+  const short = mergeBase.slice(0, 12)
+  const diff = env.git(['diff', '--name-status', '-z', '--no-renames', mergeBase, 'HEAD'])
+  if (diff.code !== 0) return fail(1, cmdFailure(`git diff --name-status ${short} HEAD`, diff))
+  const changes = parseNameStatus(diff.stdout)
+  const changed = [...changes.keys()].sort((x, y) => (x < y ? -1 : x > y ? 1 : 0))
   const eventFiles = changed.filter((f) => EVENT_FILE.test(f))
   const ignored = changed.length - eventFiles.length
   const texts = new Map<string, string>()
@@ -520,7 +672,7 @@ function run(args: PublishArgs, env: PublishEnv): PublishRunResult {
     else texts.set(file, text)
   }
   const files = [...texts.keys()]
-  const header = `PR #${pr} (${head.name}): ${plural(files.length, 'event file')} changed${
+  const header = `PR #${pr} (${head.name} into ${base.name}, merge base ${short}): ${plural(files.length, 'event file')} changed${
     ignored > 0 ? `, ${plural(ignored, 'other changed file')} ignored` : ''
   }`
   const absentLine =
@@ -554,12 +706,25 @@ function run(args: PublishArgs, env: PublishEnv): PublishRunResult {
     )
   }
 
+  // Each file as it was at the merge base (none when the pull request adds it).
+  const bases = new Map<string, string | null>()
+  for (const file of files) {
+    if (changes.get(file) === 'A') {
+      bases.set(file, null)
+      continue
+    }
+    const blob = env.git(['cat-file', 'blob', `${mergeBase}:${file}`])
+    if (blob.code !== 0) return fail(1, cmdFailure(`git cat-file blob ${short}:${file}`, blob))
+    bases.set(file, blob.stdout)
+  }
+
   // Edit everything in memory first: nothing is written when one file fails.
   const exclude = new Set(args.exclude)
   const results = new Map<string, PublishResult>()
   for (const [file, text] of texts) {
     try {
-      results.set(file, publishEventsInYaml(text, { by: args.by, date, exclude }))
+      const unchanged = unchangedReviewedIds(bases.get(file) ?? null, text)
+      results.set(file, publishEventsInYaml(text, { by: args.by, date, exclude, unchanged }))
     } catch (err) {
       return fail(1, `${file}: ${(err as Error).message}`)
     }

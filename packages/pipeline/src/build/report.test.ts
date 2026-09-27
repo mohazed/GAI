@@ -302,7 +302,7 @@ const EN_BODY = `## New events
 
 ## Methodology
 
-Scores for every date are computed with methodology 1.0.0; a new version recomputes the whole history (docs/02 §11).
+Scores for every date are computed with methodology 1.0.0; a new methodology version recomputes every date.
 `
 
 const EN_LINE =
@@ -348,7 +348,7 @@ const FR_BODY = `## Nouveaux événements
 
 ## Méthodologie
 
-Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version recalcule toute la série (docs/02 §11).
+Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
 `
 
 const FR_LINE =
@@ -375,7 +375,7 @@ describe('monthlyReport: the four variants of a month in progress', () => {
 
   it('French, scorecard mode', () => {
     expect(monthlyReport(september, FR_CARD, CTX)).toBe(
-      `# Changements, septembre 2026\n\nMode fiche${NB}: les scores ne sont pas affichés.\n\n${FR_LINE}\n\n${FR_BODY}`,
+      `# Changements, septembre 2026\n\nMode fiche d'évaluation${NB}: les scores ne sont pas affichés.\n\n${FR_LINE}\n\n${FR_BODY}`,
     )
   })
 })
@@ -404,11 +404,11 @@ None.
 
 ## Methodology
 
-Scores for every date are computed with methodology 1.0.0; a new version recomputes the whole history (docs/02 §11).
+Scores for every date are computed with methodology 1.0.0; a new methodology version recomputes every date.
 `)
     expect(monthlyReport(july, FR_CARD, CTX)).toBe(`# Changements, juillet 2026
 
-Mode fiche${NB}: les scores ne sont pas affichés.
+Mode fiche d'évaluation${NB}: les scores ne sont pas affichés.
 
 Gaza Accountability Index · méthodologie 1.0.0 · du 1er juillet 2026 au 31 juillet 2026
 
@@ -426,7 +426,7 @@ Aucune.
 
 ## Méthodologie
 
-Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version recalcule toute la série (docs/02 §11).
+Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
 `)
     expect(monthlyReport(july, FR, CTX)).toContain(
       `## Évolutions des scores\n\nAucun score affiché n'a changé.\n\n`,

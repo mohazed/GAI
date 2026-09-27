@@ -7,13 +7,15 @@
  *   a `start` entry on its `date` when that date lies in [window start, build date], and, for a
  *   hand-authored standing state (type `standing`), an `end` entry on its `end` date when that
  *   date lies in (window start, build date]: `end` is the first day the state no longer holds, so
- *   an end on the window start means the state never held inside the window. Computed events end
- *   at the next release, which is itself a start, so their ends are not listed; repeatable
- *   events have no end.
- * - `points_changed` is false only for a computed event whose points equal the points of the
- *   country's previous computed event of the indicator (`ApiEvent.previous_points`): the site
- *   lists a monthly or yearly recomputation only when its value moved and counts the others, one
- *   line per week (PROMPTS.md P-09).
+ *   an end on the window start means the state never held inside the window. A computed value
+ *   usually ends where the next one starts, and that start is the entry; when no computed event of
+ *   the same country and indicator starts on its end date (a month without FTS funding, a release
+ *   without a row of the country), its end is listed too, since the value stopped counting.
+ *   Repeatable events have no end.
+ * - `points_changed` is false only for a computed event whose points equal those of the computed
+ *   value in force the day before (`ApiEvent.previous_points`, null after a gap): the site lists a
+ *   monthly or yearly recomputation only when its value moved and counts the others, one line per
+ *   week (PROMPTS.md P-09). latest.json's `recent` leaves the unchanged ones out.
  * - Weeks are ISO 8601 weeks (Monday to Sunday, ./dates.ts). A month file lists every ISO week
  *   with at least one day in the month, with the full Monday–Sunday bounds, and only the entries
  *   dated inside the month; a week that spans two months appears in both files, each with its own
@@ -150,27 +152,37 @@ function entryOf(e: ApiEvent, name: LangText, change: 'start' | 'end'): ApiFeedE
 /**
  * Every feed entry from the window start to the build date, by date, country, id and change:
  * a `start` entry per published gaza event dated in [window start, date], an `end` entry per
- * published gaza standing state (not computed) whose `end` lies in (window start, date]. Throws
- * when an event belongs to a country that is not in `input.countries`.
+ * published gaza standing state, or computed value not followed by another on the same day, whose
+ * `end` lies in (window start, date]. Throws when an event belongs to a country that is not in
+ * `input.countries`.
  */
 export function feedEntries(input: ChangesInput): ApiFeedEntry[] {
   checkDates(input)
   const names = countryNames(input)
   const first = dayNumber(input.windowStart)
   const last = dayNumber(input.date)
+  const listed = input.events.filter((e) => e.status === 'published' && e.scope.includes('gaza'))
+  const computedKey = (country: string, indicator: string, date: string) =>
+    `${country}\u0000${indicator}\u0000${date}`
+  const computedStarts = new Set(
+    listed
+      .filter((e) => e.type === 'computed')
+      .map((e) => computedKey(e.country, e.indicator, e.date)),
+  )
   const out: ApiFeedEntry[] = []
-  for (const e of input.events) {
-    if (e.status !== 'published' || !e.scope.includes('gaza')) continue
+  for (const e of listed) {
     const name = names.get(e.country)
     if (name === undefined) {
       throw new Error(`event ${e.id} belongs to ${e.country}, which is not a scored country`)
     }
     const start = dayNumber(e.date)
     if (start >= first && start <= last) out.push(entryOf(e, name, 'start'))
-    if (e.type === 'standing' && e.end !== null) {
-      const end = dayNumber(e.end)
-      if (end > first && end <= last) out.push(entryOf(e, name, 'end'))
+    if (e.end === null || e.type === 'repeatable') continue
+    if (e.type === 'computed' && computedStarts.has(computedKey(e.country, e.indicator, e.end))) {
+      continue
     }
+    const end = dayNumber(e.end)
+    if (end > first && end <= last) out.push(entryOf(e, name, 'end'))
   }
   return out.sort(compareEntries)
 }
@@ -330,8 +342,8 @@ export function monthFiles(
 }
 
 /**
- * `changes/latest.json`: movers over 7 and 30 days, the 20 latest entries, the build date's ISO
- * week and the four before it (newest first; entries of every month, up to the build date; weeks
+ * `changes/latest.json`: movers over 7 and 30 days, the 20 latest listed entries (unchanged
+ * computed values left out, P-09), the build date's ISO week and the four before it (newest first; entries of every month, up to the build date; weeks
  * that end before the window start are left out), the corrections dated in (date − 30, date]
  * (newest first), and the list of month files. `months` must be exactly the feed's months
  * (`monthFiles`).
@@ -374,7 +386,10 @@ export function latestFile(
       d7: moversBetween(input, moversFrom(date, 7, windowStart), date, 7),
       d30: moversBetween(input, moversFrom(date, 30, windowStart), date, 30),
     },
-    recent: [...upTo].sort(compareNewestFirst).slice(0, RECENT_ENTRIES),
+    recent: upTo
+      .filter((e) => e.points_changed)
+      .sort(compareNewestFirst)
+      .slice(0, RECENT_ENTRIES),
     weeks,
     corrections,
     months: listed.map((m) => ({

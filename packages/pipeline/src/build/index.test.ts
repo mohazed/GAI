@@ -8,7 +8,8 @@
  * confirmed; no qualifying event for the passivity rule (category A never qualifies, docs/02 §6),
  * so the penalty −15 applies on every date: S = −15, then −5 from 2025-08-08, then −15 again from
  * 2025-11-24. Coverage at the build date: A6 has-events, B2 not-applicable (never on the Security
- * Council), A1, A2, A4 and C3 no-data (the fixture tables are empty), 25 unchecked → 1 / 30.
+ * Council), the 29 others unchecked → 1 / 30. The fixture tables are empty (not imported), so the
+ * derivation leaves A1, A2, A4, C3 and D1 to the hand assessment, which has them unchecked.
  */
 import { appendFileSync, cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -27,15 +28,24 @@ import {
   type ApiScoresDayFile,
   type ApiScoresIndex,
   apiSchemaFor,
+  type Country,
   type Dataset,
   type Event,
   loadDataset,
   loadMethodology,
+  type Source,
 } from '@gai/schema'
 import { dayNumber } from '@gai/scoring'
 import { afterAll, describe, expect, it } from 'vitest'
 import { generateAll, generateContext } from '../generate/index.js'
-import { BuildError, buildData, checkGeneratedEvents } from './index.js'
+import {
+  BuildError,
+  buildData,
+  checkGeneratedEvents,
+  checkSizes,
+  LARGE_FILE_BYTES,
+  MAX_FILE_BYTES,
+} from './index.js'
 import { jsonText } from './json.js'
 import { sha256 } from './manifest.js'
 import type { BuildInput, BuildOutput } from './types.js'
@@ -106,7 +116,10 @@ describe('buildData on the fixtures', () => {
       'dumps/events.csv',
       'dumps/sources.csv',
       'dumps/assessments.csv',
-      'dumps/scores-daily.csv',
+      'dumps/scores-daily-2023.csv',
+      'dumps/scores-daily-2024.csv',
+      'dumps/scores-daily-2025.csv',
+      'dumps/scores-daily-2026.csv',
       `dumps/gai-${DATE}.json`,
       'build-notes.json',
       'manifest.json',
@@ -159,11 +172,22 @@ describe('buildData on the fixtures', () => {
     expect(deu.coverage.applicable).toBe(30)
     expect(deu.coverage.has_events).toBe(1)
     expect(deu.coverage.not_applicable_ids).toEqual(['B2'])
-    // The fixture tables are empty: A1, A2 and C3 have no row, A4 no SIPRI release, so the
-    // tables make them no-data; D1 is left to the assessment (no FTS table), as is B1.
-    expect(deu.coverage.no_data_ids).toEqual(['A1', 'A2', 'A4', 'C3'])
-    expect(deu.coverage.no_export_data).toBe(true)
-    expect(deu.coverage.unchecked).toBe(25)
+    // The fixture tables are empty (not imported): A1, A2, A4, C3 and D1 are left to the hand
+    // assessment, as is B1, and the hand assessment has them unchecked; nothing is no-data.
+    expect(deu.coverage.no_data_ids).toEqual([])
+    expect(deu.coverage.no_export_data).toBe(false)
+    expect(deu.coverage.unchecked).toBe(29)
+    for (const id of ['A1', 'A2', 'A4', 'B1', 'C3', 'D1']) {
+      expect(
+        deu.assessment.indicators.find((r) => r.indicator === id),
+        id,
+      ).toMatchObject({
+        status: 'unchecked',
+        hand_status: 'unchecked',
+        derived: null,
+        override: null,
+      })
+    }
     expect(deu.events).toEqual({
       total: 1,
       confirmed: 1,
@@ -251,8 +275,19 @@ describe('buildData on the fixtures', () => {
         },
       ],
     })
-    const csv = text(out, 'dumps/scores-daily.csv').trimEnd().split('\n')
-    expect(csv).toHaveLength(DAYS + 1)
+    // One file per year, a header and one row per day of DEU: 2023-10-07 to 2023-12-31 is 86 days,
+    // 2026-01-01 to 2026-09-27 is 270; 86 + 366 + 365 + 270 = 1087 = DAYS.
+    const perYear: [string, number][] = [
+      ['2023', 86],
+      ['2024', 366],
+      ['2025', 365],
+      ['2026', 270],
+    ]
+    expect(perYear.reduce((sum, [, n]) => sum + n, 0)).toBe(DAYS)
+    for (const [year, n] of perYear) {
+      const csv = text(out, `dumps/scores-daily-${year}.csv`).trimEnd().split('\n')
+      expect(csv, year).toHaveLength(n + 1)
+    }
   })
 
   it('lists the registry with the excluded entities (D-10)', () => {
@@ -318,6 +353,29 @@ describe('buildData on the fixtures', () => {
     expect(notes.notes.find((n) => n.kind === 'unchecked')?.country).toBe('DEU')
     expect(notes.counts['validation-warning']).toBeGreaterThan(0)
     expect(notes.notes).toEqual(out.notes)
+  })
+
+  it('notes each empty table whose indicator the hand-written assessments decide', () => {
+    const derivedNotes = (o: BuildOutput) =>
+      o.notes
+        .filter((n) => n.kind === 'assessment-derived')
+        .map((n) => [n.country, n.indicator, n.message])
+    expect(derivedNotes(out)).toEqual([
+      [null, 'A1', 'sipri_deliveries.csv has no rows; the hand-written assessments decide A1'],
+      [null, 'A2', 'comtrade_a2.csv has no rows; the hand-written assessments decide A2'],
+      [null, 'A4', 'sipri_orders.csv has no rows; the hand-written assessments decide A4'],
+      [null, 'C3', 'comtrade_c3.csv has no rows; the hand-written assessments decide C3'],
+      [null, 'D1', 'fts_funding.csv has no rows; the hand-written assessments decide D1'],
+    ])
+    // Before the first post-war SIPRI release (2024-03-11), A1 is no-data whatever the table
+    // holds (docs/02 §5): the hand assessment does not decide it, so no A1 note.
+    const early = buildData(input(loadDataset(FIXTURES), { date: '2024-03-10' }))
+    expect(derivedNotes(early).map(([, indicator]) => indicator)).toEqual(['A2', 'A4', 'C3', 'D1'])
+    const deu = read<ApiScoredCountryFile>(early, 'countries/DEU.json')
+    expect(deu.assessment.indicators.find((r) => r.indicator === 'A1')).toMatchObject({
+      status: 'no-data',
+      derived: { status: 'no-data', reason: 'before-first-release' },
+    })
   })
 
   it('is deterministic: a second build gives the same bytes (D-25)', () => {
@@ -400,11 +458,18 @@ describe('buildData on the real structured tables', () => {
     expect(deu.event_list).toHaveLength(deuGenerated.length + 1)
   })
 
-  it('gives computed events the points of the previous value', () => {
+  it('gives computed events the points of the value in force the day before', () => {
     const deu = read<ApiScoredCountryFile>(out, 'countries/DEU.json')
-    const d1 = deu.event_list.filter((e) => e.indicator === 'D1')
+    const d1 = deu.event_list
+      .filter((e) => e.indicator === 'D1')
+      .sort((a, b) => dayNumber(a.date) - dayNumber(b.date) || (a.id < b.id ? -1 : 1))
+    // The previous D1 event when it ends on this event's date (`end` is exclusive); after a gap
+    // (a month without funding) or for the first one, null.
     d1.forEach((e, i) => {
-      expect(e.previous_points).toBe(i === 0 ? null : (d1[i - 1] as { points: number }).points)
+      const prev = d1[i - 1]
+      expect(e.previous_points, e.id).toBe(
+        prev !== undefined && prev.end === e.date ? prev.points : null,
+      )
     })
   })
 
@@ -434,6 +499,152 @@ describe('buildData on the real structured tables', () => {
   it('passes the determinism check on the same input', () => {
     const again = buildData(input(loadDataset(root)))
     for (const [path, content] of out.files) expect(again.files.get(path), path).toEqual(content)
+  })
+})
+
+// ---------------------------------------------------------------------------------------------
+// Synthetic Security Council data, in memory only: Germany held no seat in the window
+// (fixtures/README.md), and FRA stands for a permanent member. The elected term, the FRA registry
+// entry (placeholders except its permanent term), the veto source and the veto rows are made up
+// for the test, not facts; S/2099/… are not real document symbols.
+
+const VETO_SOURCE = 'src_20260101_test_synthetic-vetoes'
+const VETO_URL = 'https://example.org/synthetic-vetoes.csv'
+const VETO_WAYBACK = `https://web.archive.org/web/20260101000000id_/${VETO_URL}`
+
+/**
+ * The fixtures with a synthetic elected term for DEU (ended before the build date: a seat on some
+ * day of the window, not on the build date) and a synthetic permanent member FRA; with one veto row
+ * of FRA when `ceasefire` is a boolean, none when null.
+ */
+function withCouncil(ceasefire: boolean | null): Dataset {
+  const ds = loadDataset(FIXTURES)
+  const deu = ds.countries.find((c) => c.value.iso3 === 'DEU')
+  const hand = ds.assessments.find((a) => a.value.country === 'DEU')
+  const firstSource = ds.sources[0]
+  if (deu === undefined || hand === undefined || firstSource === undefined) {
+    throw new Error('fixture DEU or its sources missing')
+  }
+  deu.value.memberships.unsc = [{ from: '2024-01-01', to: '2025-12-31', permanent: false }]
+  // assessment.not-applicable refuses a hand B2 not-applicable for a state on the Council.
+  hand.value.indicators.B2 = { status: 'unchecked' }
+  const fra: Country = {
+    ...structuredClone(deu.value),
+    iso3: 'FRA',
+    iso2: 'FR',
+    m49: 250,
+    name: { en: 'Synthetic permanent member', fr: 'Membre permanent synthétique' },
+    memberships: {
+      unsc: [{ from: '1945-10-24', to: null, permanent: true }],
+      eu: false,
+      nato: false,
+      arab_league: false,
+      oic: false,
+      g20: false,
+      g7: false,
+      brics: false,
+    },
+    recognises_palestine: { since: null },
+    gov_sources: [],
+    notes: 'Synthetic registry entry of a build test: placeholders except the permanent term.',
+  }
+  ds.countries.push({ value: fra, file: 'data/countries.yaml', line: 1000 })
+  if (ceasefire === null) return ds
+  // The archived copy as the source record and archive/index.csv both give it (a made-up hash).
+  const archived = {
+    url: VETO_URL,
+    wayback_url: VETO_WAYBACK,
+    sha256: '0'.repeat(64),
+    bytes: 1,
+    retrieved_at: '2026-01-01T00:00:00Z',
+    content_type: 'text/csv',
+  }
+  const source: Source = {
+    ...structuredClone(firstSource.value),
+    ...archived,
+    id: VETO_SOURCE,
+    kind: 'dataset',
+    title: 'Synthetic veto table of a build test',
+    publisher: 'Test',
+    publisher_type: 'dataset',
+    language: 'en',
+    date: '2026-01-01',
+    text_file: `archive/text/${VETO_SOURCE}.txt`,
+    notes: 'Synthetic source of a build test.',
+  }
+  ds.sources.push({ value: source, file: `data/sources/2026/${VETO_SOURCE}.yaml`, line: 1 })
+  ds.archiveIndex.push({
+    value: { src_id: VETO_SOURCE, ...archived },
+    file: 'archive/index.csv',
+    line: 1000,
+  })
+  ds.archiveTextIds.add(VETO_SOURCE)
+  ds.structured['unsc_vetoes.csv'].push({
+    value: {
+      date: '2025-02-20',
+      draft: 'S/2099/1',
+      vetoed_by: 'FRA',
+      ceasefire,
+      source: VETO_SOURCE,
+    },
+    file: 'data/structured/unsc_vetoes.csv',
+    line: 2,
+  })
+  return ds
+}
+
+describe('buildData with Security Council terms (synthetic)', () => {
+  const row = (f: ApiScoredCountryFile, id: string) =>
+    f.assessment.indicators.find((r) => r.indicator === id)
+  const baseline = read<ApiScoredCountryFile>(FIXTURE_BUILD, 'countries/DEU.json')
+
+  it('makes B2 applicable and none-found for a state elected for part of the window', () => {
+    const ds = withCouncil(null)
+    expect(ds.issues.filter((i) => i.level === 'error')).toEqual([])
+    const out = buildData(input(ds))
+    const deu = read<ApiScoredCountryFile>(out, 'countries/DEU.json')
+    expect(row(deu, 'B2')).toMatchObject({
+      status: 'none-found',
+      hand_status: 'unchecked',
+      derived: { status: 'none-found', reason: 'no-veto-power' },
+      override: { from: 'unchecked', to: 'none-found', reason: 'derived:no-veto-power' },
+    })
+    expect(deu.coverage.statuses.B2).toBe('none-found')
+    expect(deu.coverage.not_applicable_ids).toEqual([])
+    // 31 scored indicators, none not-applicable: one more than the fixture build's 30.
+    expect(deu.coverage.applicable).toBe(baseline.coverage.applicable + 1)
+    expect(deu.coverage.applicable).toBe(31)
+    expect(deu.coverage.none_found).toBe(1)
+    // A permanent member while unsc_vetoes.csv is empty: the tables say nothing, and FRA has no
+    // hand assessment, so B2 is unchecked.
+    const fra = read<ApiScoredCountryFile>(out, 'countries/FRA.json')
+    expect(row(fra, 'B2')).toMatchObject({ status: 'unchecked', derived: null, override: null })
+  })
+
+  it('reads the veto table for a permanent member', () => {
+    const tracked = buildData(input(withCouncil(false)))
+    const fra = read<ApiScoredCountryFile>(tracked, 'countries/FRA.json')
+    expect(fra.event_list).toEqual([])
+    expect(row(fra, 'B2')).toMatchObject({
+      status: 'none-found',
+      hand_status: 'unchecked',
+      derived: { status: 'none-found', reason: 'no-ceasefire-veto' },
+      override: { from: 'unchecked', to: 'none-found', reason: 'derived:no-ceasefire-veto' },
+    })
+    // The elected member keeps no-veto-power whatever the veto table holds.
+    const deu = read<ApiScoredCountryFile>(tracked, 'countries/DEU.json')
+    expect(row(deu, 'B2')?.derived).toEqual({ status: 'none-found', reason: 'no-veto-power' })
+
+    const scored = buildData(input(withCouncil(true)))
+    const fraScored = read<ApiScoredCountryFile>(scored, 'countries/FRA.json')
+    // A veto of a ceasefire draft: one B2 event, −20 (docs/02 §2 B2).
+    expect(fraScored.event_list.map((e) => [e.id, e.generated, e.points])).toEqual([
+      ['evt_2025_02_20_FRA_B2_s-2099-1', true, -20],
+    ])
+    expect(row(fraScored, 'B2')).toMatchObject({
+      status: 'has-events',
+      derived: { status: 'has-events', reason: 'generated-event' },
+    })
   })
 })
 
@@ -482,5 +693,33 @@ describe('errors that stop the build', () => {
     expect(message).toContain('exclamation')
     expect(message).toContain('src_20990101_nowhere_none')
     expect(() => checkGeneratedEvents([{ ...base, generated: true }], input(ds))).toThrow(/same id/)
+  })
+})
+
+describe('file sizes (Cloudflare Pages serves files up to 25 MiB)', () => {
+  it('notes a file above 20 MiB and refuses one above 25 MiB', () => {
+    expect(LARGE_FILE_BYTES).toBe(20 * 1024 * 1024)
+    expect(MAX_FILE_BYTES).toBe(25 * 1024 * 1024)
+    const small = 'x'.repeat(LARGE_FILE_BYTES)
+    const large = new Uint8Array(LARGE_FILE_BYTES + 1)
+    expect(
+      checkSizes(
+        new Map<string, string | Uint8Array>([
+          ['a.json', small],
+          ['b.csv', large],
+        ]),
+      ),
+    ).toEqual([
+      {
+        kind: 'large-file',
+        country: null,
+        indicator: null,
+        message: `b.csv is ${LARGE_FILE_BYTES + 1} bytes; Cloudflare Pages serves files up to 25 MiB (docs/04 §5)`,
+      },
+    ])
+    const tooLarge = new Uint8Array(MAX_FILE_BYTES + 1)
+    expect(() => checkSizes(new Map([['dumps/x.json', tooLarge]]))).toThrow(
+      `1 file(s) exceed the 25 MiB that Cloudflare Pages serves (docs/04 §5); split them:\n  dumps/x.json: ${MAX_FILE_BYTES + 1} bytes`,
+    )
   })
 })

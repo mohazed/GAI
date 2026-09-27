@@ -5,13 +5,16 @@
  *
  * - Inputs: the dataset (`loadDataset`), every methodology version folder (the newest is current,
  *   the others are served as superseded, docs/02 §11), methodology/CHANGELOG.md, the frozen
- *   snapshots of data/snapshots/, the git HEAD and whether the inputs have uncommitted changes,
- *   and the commit that added each corrections-log entry (docs/03 §8: the previous version of the
- *   event is at that commit's parent).
- * - Output: a safe replace of the output directory. A directory that holds anything but a
- *   previous build (no manifest.json) is never removed; the new tree is written beside it in
- *   `{out}.building` and swapped in only once complete, so a failed build leaves the previous one
- *   in place.
+ *   snapshots of data/snapshots/, the git HEAD and whether the inputs have uncommitted changes
+ *   (git-ignored files under the dataset and methodology count: the build reads them), and the
+ *   mainline commit that brought each corrections-log entry (docs/03 §8: the previous version of
+ *   the event is at that commit's first parent, under the merge-commit strategy of PROMPTS.md).
+ * - Output: a safe replace of the output directory. Only a previous build is ever removed: a
+ *   directory whose manifest.json carries build-data's `generator` (manifest.ts), or a leftover
+ *   `{out}.building` / `{out}.previous` that is empty or holds such a manifest; anything else is
+ *   refused and left in place. The new tree is written beside the old one in `{out}.building`,
+ *   manifest.json first, and swapped in only once complete, so a failed build leaves the previous
+ *   one in place.
  * - `compareTrees` is the byte comparison of `pnpm build:data:check` (docs/04 §2 step 7).
  */
 import { execFileSync } from 'node:child_process'
@@ -28,6 +31,7 @@ import {
 } from 'node:fs'
 import { dirname, isAbsolute, join, posix, relative, resolve, sep } from 'node:path'
 import { listMethodologyVersions, loadDataset, loadMethodology } from '@gai/schema'
+import { GENERATOR } from './manifest.js'
 import type { BuildInput, GitInfo, SnapshotFile } from './types.js'
 
 export interface LoadOptions {
@@ -42,7 +46,11 @@ const real = (p: string): string => (existsSync(p) ? realpathSync(p) : p)
 /** A commit id the API accepts (api.ts `GitSha`: 40 hex digits). */
 const SHA_RE = /^[0-9a-f]{40}$/
 
-/** Code files whose uncommitted changes make a build `dirty` (api.ts `ApiGitInfo`). */
+/**
+ * Code files whose uncommitted changes make a build `dirty` (api.ts `ApiGitInfo`). Git-ignored
+ * files here do not count: node_modules, dist, .turbo and *.tsbuildinfo live here and do not
+ * change the output.
+ */
 export const CODE_INPUT_PATHS: readonly string[] = [
   'packages/schema',
   'packages/scoring',
@@ -52,15 +60,19 @@ export const CODE_INPUT_PATHS: readonly string[] = [
   'pnpm-workspace.yaml',
 ]
 
-/** Output of a git command, trimmed; null when git is missing or the command fails. */
-function tryGit(cwd: string, args: readonly string[]): string | null {
+/**
+ * Output of a git command, trimmed (unless `trim` is false: NUL-separated output, whose first
+ * path may begin with a space); null when git is missing or the command fails.
+ */
+function tryGit(cwd: string, args: readonly string[], trim = true): string | null {
   try {
-    return execFileSync('git', ['--no-optional-locks', ...args], {
+    const out = execFileSync('git', ['--no-optional-locks', ...args], {
       cwd,
       encoding: 'utf8',
       maxBuffer: 1024 * 1024 * 1024,
       stdio: ['ignore', 'pipe', 'pipe'],
-    }).trim()
+    })
+    return trim ? out.trim() : out
   } catch {
     return null
   }
@@ -74,31 +86,64 @@ function insideRoot(root: string, path: string): string | null {
   return rel.split(sep).join('/')
 }
 
+/** The name the loader and readSnapshots skip: ignored by git, it never makes a build dirty. */
+const SKIPPED_EVERYWHERE = '.DS_Store'
+
 /**
- * HEAD of the repository at `repoRoot`, and whether `inputPaths` (relative to `repoRoot`, or
- * absolute) hold uncommitted changes, untracked files included. `{sha: null, dirty: null}` outside
- * a git work tree, without a commit, or without git; `dirty: null` when an input lies outside the
- * repository or git status fails. A SHA-256 repository's ids do not fit the API (40 hex digits):
- * the sha is then null too.
+ * HEAD of the repository at `repoRoot`, and whether the inputs hold uncommitted changes:
+ * modified, staged, deleted or untracked files (`git status`) under `inputPaths` and `dataPaths`,
+ * and, under `dataPaths` only, git-ignored files too (`git ls-files --others --ignored
+ * --exclude-standard`; `.DS_Store` excepted). `dataPaths` are the inputs the build reads file by
+ * file (the dataset and methodology), where an ignored file (a `*.log`, say) still changes the
+ * output, so that a clean clone at the same commit would not rebuild the same bytes (D-25). Paths
+ * are relative to `repoRoot`, or absolute.
+ *
+ * `{sha: null, dirty: null}` outside a git work tree, without a commit, or without git;
+ * `dirty: null` when an input lies outside the repository or a git command fails. A SHA-256
+ * repository's ids do not fit the API (40 hex digits): the sha is then null too.
  */
-export function readGitInfo(repoRoot: string, inputPaths: readonly string[]): GitInfo {
+export function readGitInfo(
+  repoRoot: string,
+  inputPaths: readonly string[],
+  dataPaths: readonly string[] = [],
+): GitInfo {
   const sha = tryGit(repoRoot, ['rev-parse', '--verify', '--quiet', 'HEAD^{commit}'])
   if (sha === null || !SHA_RE.test(sha)) return { sha: null, dirty: null }
-  const paths: string[] = []
-  for (const p of inputPaths) {
-    const rel = insideRoot(repoRoot, p)
-    if (rel === null) return { sha, dirty: null }
-    paths.push(rel)
+  const inRepo = (list: readonly string[]): string[] | null => {
+    const out: string[] = []
+    for (const p of list) {
+      const rel = insideRoot(repoRoot, p)
+      if (rel === null) return null
+      out.push(rel)
+    }
+    return out
   }
-  if (paths.length === 0) return { sha, dirty: false }
+  const code = inRepo(inputPaths)
+  const data = inRepo(dataPaths)
+  if (code === null || data === null) return { sha, dirty: null }
+  if (code.length + data.length === 0) return { sha, dirty: false }
   const status = tryGit(repoRoot, [
     'status',
     '--porcelain',
     '--untracked-files=all',
     '--',
-    ...paths,
+    ...code,
+    ...data,
   ])
-  return { sha, dirty: status === null ? null : status !== '' }
+  if (status === null) return { sha, dirty: null }
+  if (status !== '' || data.length === 0) return { sha, dirty: status !== '' }
+  // `--ignored=matching` would need git 2.16; this form lists every ignored file one by one,
+  // files inside an ignored directory included.
+  const ignored = tryGit(
+    repoRoot,
+    ['ls-files', '-z', '--others', '--ignored', '--exclude-standard', '--', ...data],
+    false,
+  )
+  if (ignored === null) return { sha, dirty: null }
+  const counted = ignored
+    .split('\0')
+    .filter((p) => p !== '' && posix.basename(p) !== SKIPPED_EVERYWHERE)
+  return { sha, dirty: counted.length > 0 }
 }
 
 /** `id: cor_…` as written in data/corrections.yaml (block or flow mapping). */
@@ -107,10 +152,21 @@ const CORRECTION_ID_RE = /(?:^|[\s{,-])id:\s*["']?(cor_\d{8}_[1-9]\d*)\b/
 const COMMIT_MARK = '\u0001'
 
 /**
- * The commit that added each corrections-log entry: one `git log` pass over the file's history,
- * oldest first (parents before children), reading the added lines of each commit's diff; the first
- * commit whose added lines declare `id: cor_…` is the one that added the entry. Ids present in the
- * working-tree file but in no commit map to null (not committed yet).
+ * The mainline commit that brought each corrections-log entry onto the built branch: one
+ * `git log --first-parent -m` pass over the file's history along the first-parent chain of HEAD
+ * (direct commits and the merge commits of pull requests), oldest first, reading the added lines
+ * of each commit's diff against its first parent; the first commit whose added lines declare
+ * `id: cor_…` is the one that brought the entry. Ids present in the working-tree file but in no
+ * commit map to null (not committed yet).
+ *
+ * Why the mainline commit (docs/03 §8, api.ts `ApiCorrection.commit`): the validation rule
+ * `correction.required-on-edit` makes a pull request bring an event's edit together with its log
+ * entry, and pull requests are merged with a merge commit (PROMPTS.md), so the previous version of
+ * the event is at the first parent of that merge commit, whatever the order of the commits on the
+ * branch (the branch commit that appended the entry may come after the one that edited the event).
+ * The guarantee rests on that strategy: after a rebase-merge, or a direct push of several commits
+ * that puts the edit and the entry in separate commits, the first parent may already hold the
+ * corrected event.
  *
  * `correctionsFile` is relative to `repoRoot` (e.g. `data/corrections.yaml`, or
  * `fixtures/data/corrections.yaml`). Without git, outside a work tree, for a file outside the
@@ -141,6 +197,8 @@ export function readCorrectionCommits(
     '-c',
     'core.quotePath=false',
     'log',
+    '--first-parent',
+    '-m',
     '--topo-order',
     '--reverse',
     '--no-color',
@@ -226,9 +284,10 @@ export function readSnapshots(datasetRoot: string): SnapshotFile[] {
 /**
  * Everything `buildData` reads, from disk and git: the dataset at `datasetRoot`, the newest
  * methodology folder as current and the older ones (oldest first) as superseded, the methodology
- * changelog, the snapshots, the git state of the inputs (dataset, methodology, the build's code)
- * and the corrections' commits. Load issues are left in `dataset.issues` and
- * `methodology.issues` for the caller. Throws when there is no methodology version folder.
+ * changelog, the snapshots, the git state of the inputs (dataset, methodology, the build's code;
+ * git-ignored files count under the dataset and methodology) and the corrections' commits. Load
+ * issues are left in `dataset.issues` and `methodology.issues` for the caller. Throws when there is
+ * no methodology version folder.
  */
 export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: string }): BuildInput {
   const repoRoot = real(opts.repoRoot)
@@ -247,11 +306,10 @@ export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: stri
   const prefix = insideRoot(repoRoot, datasetRoot)
   const datasetPath = (p: string) =>
     prefix === null ? join(datasetRoot, p) : prefix === '.' ? p : `${prefix}/${p}`
-  const git = readGitInfo(repoRoot, [
+  const git = readGitInfo(repoRoot, CODE_INPUT_PATHS, [
     datasetPath('data'),
     datasetPath('archive'),
     'methodology',
-    ...CODE_INPUT_PATHS,
   ])
   const history = readCorrectionCommits(repoRoot, datasetPath('data/corrections.yaml'))
   return {
@@ -273,8 +331,60 @@ export class UnsafeOutputError extends Error {
   override name = 'UnsafeOutputError'
 }
 
-/** The file every build writes; its presence marks a directory as a previous build. */
+/** The file every build writes; its `generator` marks a directory as a previous build. */
 export const MANIFEST_FILE = 'manifest.json'
+
+/**
+ * What `dir`'s manifest.json says about the directory: `absent` when there is no regular file of
+ * that name (a symbolic link is not followed), `build` when it parses as a JSON object whose
+ * `generator` is build-data's (manifest.ts `GENERATOR`), `foreign` otherwise (a web app manifest,
+ * a truncated or unreadable file). Only `generator` is read, not the whole `ApiManifestFile`, so
+ * that a build of a later API version still replaces an older one.
+ */
+function manifestKind(dir: string): 'absent' | 'foreign' | 'build' {
+  const file = join(dir, MANIFEST_FILE)
+  try {
+    if (!lstatSync(file).isFile()) return 'absent'
+  } catch {
+    return 'absent'
+  }
+  try {
+    const parsed: unknown = JSON.parse(readFileSync(file, 'utf8'))
+    const isObject = typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)
+    return isObject && (parsed as { generator?: unknown }).generator === GENERATOR
+      ? 'build'
+      : 'foreign'
+  } catch {
+    return 'foreign'
+  }
+}
+
+/**
+ * Whether `path`, a `{out}.building` or `{out}.previous` sibling, exists; throws
+ * `UnsafeOutputError` when it does and is not a leftover of a build: only an empty directory, or
+ * one holding build-data's manifest.json, is (the staging loop writes manifest.json first, so an
+ * interrupted build's staging directory is one or the other). A symbolic link, a file or any other
+ * directory is not the build's to remove.
+ */
+function leftoverExists(path: string): boolean {
+  let stat: ReturnType<typeof lstatSync>
+  try {
+    stat = lstatSync(path)
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return false
+    throw err
+  }
+  const leftover =
+    !stat.isSymbolicLink() &&
+    stat.isDirectory() &&
+    (readdirSync(path).length === 0 || manifestKind(path) === 'build')
+  if (!leftover) {
+    throw new UnsafeOutputError(
+      `${path} is not a leftover build; remove it or choose another --out`,
+    )
+  }
+  return true
+}
 
 /** Throws unless `path` is a plain relative POSIX path (no `..`, `.`, empty segment or `\`). */
 function checkOutputPath(path: string): void {
@@ -291,16 +401,20 @@ function checkOutputPath(path: string): void {
 
 /**
  * Writes the build into `outDir`, replacing a previous build:
- * 1. refuses (throws `UnsafeOutputError`) when a file path is not plain relative POSIX, when the
- *    files hold no manifest.json (the next build could not replace them), when `outDir` is a
- *    symbolic link or not a directory, or when it is a non-empty directory without manifest.json
- *    (not a previous build: never removed);
- * 2. writes every file into `{outDir}.building` (a stale one is removed first), creating parent
- *    directories; text as UTF-8, bytes as given; files are created exclusively, so nothing is
- *    written through a symbolic link; on failure the partial tree is removed and the previous
- *    build stays in place;
- * 3. moves the previous build aside to `{outDir}.previous`, moves the new one into place, then
- *    removes the previous one (restored if the move fails).
+ * 1. refuses (throws `UnsafeOutputError`), before touching the disk, when a file path is not plain
+ *    relative POSIX, when the files hold no manifest.json (the next build could not replace them),
+ *    when `outDir` is a symbolic link or not a directory, when it is a non-empty directory whose
+ *    manifest.json is missing or is not build-data's (no `generator` "@gai/pipeline build-data":
+ *    not a previous build, never removed), or when `{outDir}.building` or `{outDir}.previous`
+ *    exists and is not a leftover of a build (an empty directory, or one holding build-data's
+ *    manifest.json);
+ * 2. writes every file into `{outDir}.building` (a leftover one is removed first), manifest.json
+ *    first so that the staging directory of an interrupted build is always recognised as a
+ *    leftover, then the others by path, creating parent directories; text as UTF-8, bytes as given;
+ *    files are created exclusively, so nothing is written through a symbolic link; on failure the
+ *    partial tree is removed and the previous build stays in place;
+ * 3. moves the previous build aside to `{outDir}.previous` (a leftover one is removed first), moves
+ *    the new one into place, then removes the previous one (restored if the move fails).
  */
 export function writeOutput(outDir: string, files: Map<string, string | Uint8Array>): void {
   const out = resolve(outDir)
@@ -325,27 +439,29 @@ export function writeOutput(outDir: string, files: Map<string, string | Uint8Arr
       throw new UnsafeOutputError(`${out} exists and is not a directory; refusing to replace it`)
     }
     if (readdirSync(out).length > 0) {
-      let manifest: ReturnType<typeof lstatSync> | undefined
-      try {
-        manifest = lstatSync(join(out, MANIFEST_FILE))
-      } catch {
-        manifest = undefined
-      }
-      if (manifest === undefined || !manifest.isFile()) {
+      const kind = manifestKind(out)
+      if (kind === 'absent') {
         throw new UnsafeOutputError(
           `${out} is not empty and has no ${MANIFEST_FILE}: it is not a previous build, so it is not replaced; choose another --out or empty it`,
         )
       }
+      if (kind === 'foreign') {
+        throw new UnsafeOutputError(
+          `${join(out, MANIFEST_FILE)} is not a build-data manifest (no generator ${JSON.stringify(GENERATOR)}): ${out} is not a previous build, so it is not replaced; choose another --out or empty it`,
+        )
+      }
     }
   }
-
-  mkdirSync(dirname(out), { recursive: true })
   const building = `${out}.building`
   const previous = `${out}.previous`
-  rmSync(building, { recursive: true, force: true })
+  const staleBuilding = leftoverExists(building)
+  const stalePrevious = leftoverExists(previous)
+
+  mkdirSync(dirname(out), { recursive: true })
+  if (staleBuilding) rmSync(building, { recursive: true, force: true })
   mkdirSync(building)
   try {
-    for (const p of paths) {
+    for (const p of [MANIFEST_FILE, ...paths.filter((q) => q !== MANIFEST_FILE)]) {
       const target = join(building, ...p.split('/'))
       mkdirSync(dirname(target), { recursive: true })
       writeFileSync(target, files.get(p) as string | Uint8Array, { flag: 'wx' })
@@ -355,7 +471,7 @@ export function writeOutput(outDir: string, files: Map<string, string | Uint8Arr
     throw err
   }
 
-  rmSync(previous, { recursive: true, force: true })
+  if (stalePrevious) rmSync(previous, { recursive: true, force: true })
   if (existing !== undefined) renameSync(out, previous)
   try {
     renameSync(building, out)

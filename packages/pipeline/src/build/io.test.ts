@@ -63,6 +63,15 @@ function tree(dir: string): Record<string, string> {
 
 const files = (entries: Record<string, string | Uint8Array>) => new Map(Object.entries(entries))
 
+/**
+ * A manifest.json that marks a previous build: the `generator` of manifest.ts, written out by
+ * hand. The date only tells two builds apart in these tests.
+ */
+const buildManifest = (date: string) =>
+  `{"generator":"@gai/pipeline build-data","date":"${date}"}\n`
+const OLD = buildManifest('2026-09-26')
+const NEW = buildManifest('2026-09-27')
+
 // ---------------------------------------------------------------------------------------------
 
 describe('writeOutput', () => {
@@ -87,12 +96,46 @@ describe('writeOutput', () => {
     expect(readdirSync(join(tmp, 'public/api')).sort()).toEqual(['v1'])
   })
 
-  it('replaces a previous build (manifest.json present): no file of the old tree survives', () => {
+  it('replaces a previous build (build-data manifest): no file of the old tree survives', () => {
     const out = join(tmp, 'v1')
-    writeOutput(out, files({ 'manifest.json': 'old\n', 'scores/2026-09-26.json': 'x\n' }))
-    writeOutput(out, files({ 'manifest.json': 'new\n', 'scores/2026-09-27.json': 'y\n' }))
-    expect(tree(out)).toEqual({ 'manifest.json': 'new\n', 'scores/2026-09-27.json': 'y\n' })
+    writeOutput(out, files({ 'manifest.json': OLD, 'scores/2026-09-26.json': 'x\n' }))
+    writeOutput(out, files({ 'manifest.json': NEW, 'scores/2026-09-27.json': 'y\n' }))
+    expect(tree(out)).toEqual({ 'manifest.json': NEW, 'scores/2026-09-27.json': 'y\n' })
     expect(readdirSync(tmp).sort()).toEqual(['v1'])
+  })
+
+  it('reads only the generator of the previous manifest (a later API version is replaced)', () => {
+    const out = join(tmp, 'v1')
+    const later =
+      '{"api_version":"9.0.0","files":"not an array","generator":"@gai/pipeline build-data"}\n'
+    writeOutput(out, files({ 'manifest.json': later, 'countries.json': '[]\n' }))
+    writeOutput(out, files({ 'manifest.json': NEW }))
+    expect(tree(out)).toEqual({ 'manifest.json': NEW })
+  })
+
+  it('stages manifest.json first, then the other files by path', () => {
+    const out = join(tmp, 'v1')
+    const build = files({
+      'z.json': '1\n',
+      'manifest.json': NEW,
+      'a/b.json': '2\n',
+      'm.json': '3\n',
+    })
+    // Records the order in which writeOutput reads the files to stage them.
+    const staged: string[] = []
+    const get = build.get.bind(build)
+    build.get = (key: string) => {
+      staged.push(key)
+      return get(key)
+    }
+    writeOutput(out, build)
+    expect(staged).toEqual(['manifest.json', 'a/b.json', 'm.json', 'z.json'])
+    expect(tree(out)).toEqual({
+      'a/b.json': '2\n',
+      'm.json': '3\n',
+      'manifest.json': NEW,
+      'z.json': '1\n',
+    })
   })
 
   it('accepts an existing empty directory', () => {
@@ -120,16 +163,94 @@ describe('writeOutput', () => {
     expect(() => writeOutput(out, files({ 'manifest.json': '{}\n' }))).toThrow(UnsafeOutputError)
   })
 
-  it('removes a stale .building directory left by an interrupted build', () => {
+  it("refuses a directory whose manifest.json is not build-data's, and leaves it untouched", () => {
+    const out = join(tmp, 'public')
+    mkdirSync(out)
+    writeFileSync(join(out, 'index.html'), '<!doctype html>\n')
+    const foreign = [
+      '{"name":"A web app"}\n',
+      '{"generator":"@gai/pipeline generate"}\n',
+      '{"generator":"@gai/pipeline build-d',
+      '[{"generator":"@gai/pipeline build-data"}]\n',
+      '"@gai/pipeline build-data"\n',
+      'null\n',
+      '',
+    ]
+    for (const manifest of foreign) {
+      writeFileSync(join(out, 'manifest.json'), manifest)
+      expect(() => writeOutput(out, files({ 'manifest.json': NEW }))).toThrow(UnsafeOutputError)
+      expect(() => writeOutput(out, files({ 'manifest.json': NEW }))).toThrow(
+        `${out}/manifest.json is not a build-data manifest (no generator "@gai/pipeline build-data"): ${out} is not a previous build`,
+      )
+      expect(tree(out)).toEqual({ 'index.html': '<!doctype html>\n', 'manifest.json': manifest })
+    }
+    expect(readdirSync(tmp)).toEqual(['public'])
+  })
+
+  it('removes the .building and .previous leftovers of an interrupted build', () => {
     const out = join(tmp, 'v1')
+    // A staging directory holding manifest.json and part of the tree, and an empty .previous.
     mkdirSync(join(`${out}.building`, 'countries'), { recursive: true })
     writeFileSync(join(`${out}.building`, 'countries/OLD.json'), 'stale\n')
-    writeFileSync(join(`${out}.building`, 'manifest.json'), 'stale\n')
+    writeFileSync(join(`${out}.building`, 'manifest.json'), OLD)
     mkdirSync(`${out}.previous`)
-    writeFileSync(join(`${out}.previous`, 'manifest.json'), 'stale\n')
-    writeOutput(out, files({ 'manifest.json': '{}\n', 'a.json': '1\n' }))
-    expect(tree(out)).toEqual({ 'a.json': '1\n', 'manifest.json': '{}\n' })
+    writeOutput(out, files({ 'manifest.json': NEW, 'a.json': '1\n' }))
+    expect(tree(out)).toEqual({ 'a.json': '1\n', 'manifest.json': NEW })
     expect(readdirSync(tmp).sort()).toEqual(['v1'])
+    // An empty staging directory, and a previous build moved aside but not yet removed.
+    mkdirSync(`${out}.building`)
+    mkdirSync(join(`${out}.previous`, 'scores'), { recursive: true })
+    writeFileSync(join(`${out}.previous`, 'scores/2026-09-25.json'), 'stale\n')
+    writeFileSync(join(`${out}.previous`, 'manifest.json'), buildManifest('2026-09-25'))
+    writeOutput(out, files({ 'manifest.json': OLD }))
+    expect(tree(out)).toEqual({ 'manifest.json': OLD })
+    expect(readdirSync(tmp).sort()).toEqual(['v1'])
+  })
+
+  it('refuses a .previous or .building that is not a leftover build; nothing moves', () => {
+    const out = join(tmp, 'report')
+    writeOutput(out, files({ 'manifest.json': OLD, 'a.json': '1\n' }))
+    const previous = `${out}.previous`
+    const building = `${out}.building`
+    const refused = (sibling: string) => {
+      expect(() => writeOutput(out, files({ 'manifest.json': NEW }))).toThrow(UnsafeOutputError)
+      expect(() => writeOutput(out, files({ 'manifest.json': NEW }))).toThrow(
+        `${sibling} is not a leftover build; remove it or choose another --out`,
+      )
+      // The current build is still in place, and nothing was staged.
+      expect(tree(out)).toEqual({ 'a.json': '1\n', 'manifest.json': OLD })
+    }
+    // Directories of someone else's files.
+    mkdirSync(previous)
+    writeFileSync(join(previous, 'thesis.txt'), 'mine\n')
+    refused(previous)
+    expect(tree(previous)).toEqual({ 'thesis.txt': 'mine\n' })
+    expect(existsSync(building)).toBe(false)
+    rmSync(previous, { recursive: true })
+    mkdirSync(building)
+    writeFileSync(join(building, 'notes.txt'), 'mine\n')
+    refused(building)
+    expect(tree(building)).toEqual({ 'notes.txt': 'mine\n' })
+    rmSync(building, { recursive: true })
+    // A directory whose manifest.json is not build-data's.
+    mkdirSync(previous)
+    writeFileSync(join(previous, 'manifest.json'), '{"name":"A web app"}\n')
+    refused(previous)
+    expect(tree(previous)).toEqual({ 'manifest.json': '{"name":"A web app"}\n' })
+    rmSync(previous, { recursive: true })
+    // A file.
+    writeFileSync(previous, 'a file\n')
+    refused(previous)
+    expect(readFileSync(previous, 'utf8')).toBe('a file\n')
+    rmSync(previous)
+    // A symbolic link, even to a previous build: never followed.
+    const target = join(tmp, 'elsewhere')
+    mkdirSync(target)
+    writeFileSync(join(target, 'manifest.json'), OLD)
+    symlinkSync(target, building)
+    refused(building)
+    expect(tree(target)).toEqual({ 'manifest.json': OLD })
+    expect(readdirSync(tmp).sort()).toEqual(['elsewhere', 'report', 'report.building'])
   })
 
   it('refuses a symbolic link or a file as the output directory', () => {
@@ -171,12 +292,10 @@ describe('writeOutput', () => {
 
   it('keeps the previous build when writing the new one fails', () => {
     const out = join(tmp, 'v1')
-    writeOutput(out, files({ 'manifest.json': 'old\n' }))
-    // `a` is both a file and a directory: the second write fails.
-    expect(() =>
-      writeOutput(out, files({ 'manifest.json': 'new\n', a: '1', 'a/b': '2' })),
-    ).toThrow()
-    expect(tree(out)).toEqual({ 'manifest.json': 'old\n' })
+    writeOutput(out, files({ 'manifest.json': OLD }))
+    // `a` is both a file and a directory: staging `a/b` fails.
+    expect(() => writeOutput(out, files({ 'manifest.json': NEW, a: '1', 'a/b': '2' }))).toThrow()
+    expect(tree(out)).toEqual({ 'manifest.json': OLD })
     expect(readdirSync(tmp).sort()).toEqual(['v1'])
   })
 })
@@ -320,7 +439,7 @@ describe('readCorrectionCommits', SLOW, () => {
     repo = join(tmp, 'repo')
   })
 
-  it('maps each id to the first commit whose added lines declare it; uncommitted ids to null', () => {
+  it('maps each id to the first mainline commit whose added lines declare it, or null', () => {
     initRepo(repo)
     const file = join(repo, 'data/corrections.yaml')
     mkdirSync(dirname(file), { recursive: true })
@@ -333,14 +452,19 @@ describe('readCorrectionCommits', SLOW, () => {
       `${HEADER}# Follows cor_20260101_1.\n${entry('cor_20260101_1', 'First, reworded.')}${entry('cor_20260102_1', 'Second.')}`,
     )
     const c2 = commitAll(repo, 'Second correction')
-    // An entry added on a branch and merged: the branch commit added it.
+    // An entry added on a branch: a build of the branch gives the branch commit ...
     git(repo, ['checkout', '-q', '-b', 'feature'])
     writeFileSync(file, `${readFileSync(file, 'utf8')}${entry('cor_20260103_1', 'Third.')}`)
     const c3 = commitAll(repo, 'Third correction, on a branch')
+    expect(readCorrectionCommits(repo, 'data/corrections.yaml').commits.get('cor_20260103_1')).toBe(
+      c3,
+    )
+    // ... and, once merged, a build of main gives the merge commit that brought it.
     git(repo, ['checkout', '-q', 'main'])
     writeFileSync(join(repo, 'other.txt'), 'unrelated\n')
     commitAll(repo, 'Unrelated change on main')
     git(repo, ['merge', '-q', '--no-ff', '-m', 'Merge feature', 'feature'])
+    const merge = git(repo, ['rev-parse', 'HEAD'])
     // Not committed yet; a flow-mapping entry too.
     writeFileSync(
       file,
@@ -352,12 +476,40 @@ describe('readCorrectionCommits', SLOW, () => {
     expect(Object.fromEntries(commits)).toEqual({
       cor_20260101_1: c1,
       cor_20260102_1: c2,
-      cor_20260103_1: c3,
+      cor_20260103_1: merge,
       cor_20260104_1: null,
       cor_20260105_1: null,
     })
     expect(c1).toMatch(/^[0-9a-f]{40}$/)
-    expect(new Set([c1, c2, c3]).size).toBe(3)
+    expect(new Set([c1, c2, c3, merge]).size).toBe(4)
+  })
+
+  it('gives the merge commit, whose first parent holds the event before the correction', () => {
+    initRepo(repo)
+    // A synthetic event, edited on a branch in one commit and logged in the next one.
+    const event = (revision: number, points: number) =>
+      `- id: evt_2025_08_08_DEU_A6\n  revision: ${revision}\n  points: ${points}\n`
+    const events = join(repo, 'data/events/DEU.yaml')
+    const log = join(repo, 'data/corrections.yaml')
+    mkdirSync(dirname(events), { recursive: true })
+    writeFileSync(events, event(1, -10))
+    writeFileSync(log, HEADER)
+    commitAll(repo, 'Base')
+    git(repo, ['checkout', '-q', '-b', 'data/DEU'])
+    writeFileSync(events, event(2, -5))
+    commitAll(repo, 'A: edit the event')
+    writeFileSync(log, HEADER + entry('cor_20261015_1', 'Synthetic.'))
+    const b = commitAll(repo, 'B: log the correction')
+    git(repo, ['checkout', '-q', 'main'])
+    git(repo, ['merge', '-q', '--no-ff', '-m', 'Merge data/DEU', 'data/DEU'])
+    const merge = git(repo, ['rev-parse', 'HEAD'])
+
+    const { commits, note } = readCorrectionCommits(repo, 'data/corrections.yaml')
+    expect(note).toBeNull()
+    expect(Object.fromEntries(commits)).toEqual({ cor_20261015_1: merge })
+    expect(git(repo, ['show', `${merge}^1:data/events/DEU.yaml`])).toBe(event(1, -10).trim())
+    // The branch commit that appended the entry already holds the corrected event.
+    expect(git(repo, ['show', `${b}^1:data/events/DEU.yaml`])).toBe(event(2, -5).trim())
   })
 
   it('reads a corrections file below a dataset prefix (e.g. fixtures/)', () => {
@@ -467,6 +619,52 @@ describe('readGitInfo', SLOW, () => {
       sha: head,
       dirty: null,
     })
+    expect(readGitInfo(repo, ['a.txt'], [join(tmp, 'elsewhere/data')])).toEqual({
+      sha: head,
+      dirty: null,
+    })
+  })
+
+  it('counts ignored files under the data paths (not .DS_Store), not under the code paths', () => {
+    initRepo(repo)
+    writeFileSync(join(repo, '.gitignore'), '*.log\n.DS_Store\nout/\n')
+    mkdirSync(join(repo, 'data/snapshots/v0.9.0'), { recursive: true })
+    mkdirSync(join(repo, 'methodology/v1.0.0'), { recursive: true })
+    mkdirSync(join(repo, 'packages/pipeline'), { recursive: true })
+    writeFileSync(join(repo, 'data/snapshots/v0.9.0/countries.json'), '{}\n')
+    writeFileSync(join(repo, 'methodology/v1.0.0/points.yaml'), 'A1: 1\n')
+    writeFileSync(join(repo, 'packages/pipeline/index.ts'), 'export {}\n')
+    const head = commitAll(repo, 'Inputs')
+    const code = ['packages/pipeline']
+    const data = ['data', 'archive', 'methodology']
+    const info = () => readGitInfo(repo, code, data)
+    expect(info()).toEqual({ sha: head, dirty: false })
+    // Finder's files: ignored by git, and skipped by the loader and readSnapshots.
+    writeFileSync(join(repo, 'data/.DS_Store'), 'x')
+    writeFileSync(join(repo, 'data/snapshots/v0.9.0/.DS_Store'), 'x')
+    expect(info()).toEqual({ sha: head, dirty: false })
+    // An ignored file the build reads and publishes: git status shows nothing, yet it is dirty.
+    writeFileSync(join(repo, 'data/snapshots/v0.9.0/run.log'), 'x\n')
+    expect(git(repo, ['status', '--porcelain', '--untracked-files=all'])).toBe('')
+    expect(info()).toEqual({ sha: head, dirty: true })
+    // Given as a code path, where only git status counts, it is not.
+    expect(readGitInfo(repo, [...code, ...data])).toEqual({ sha: head, dirty: false })
+    rmSync(join(repo, 'data/snapshots/v0.9.0/run.log'))
+    expect(info()).toEqual({ sha: head, dirty: false })
+    // A file inside an ignored directory, in an input folder that is not committed.
+    mkdirSync(join(repo, 'archive/out'), { recursive: true })
+    writeFileSync(join(repo, 'archive/out/a.txt'), 'x\n')
+    expect(info()).toEqual({ sha: head, dirty: true })
+    rmSync(join(repo, 'archive'), { recursive: true })
+    // An ignored file under methodology/, given as an absolute path.
+    writeFileSync(join(repo, 'methodology/v1.0.0/notes.log'), 'x\n')
+    expect(readGitInfo(repo, code, [join(repo, 'methodology')])).toEqual({ sha: head, dirty: true })
+    rmSync(join(repo, 'methodology/v1.0.0/notes.log'))
+    // Ignored files under a code path (a log, a build folder) do not count.
+    writeFileSync(join(repo, 'packages/pipeline/debug.log'), 'x\n')
+    mkdirSync(join(repo, 'packages/pipeline/out'))
+    writeFileSync(join(repo, 'packages/pipeline/out/index.js'), 'x\n')
+    expect(info()).toEqual({ sha: head, dirty: false })
   })
 })
 

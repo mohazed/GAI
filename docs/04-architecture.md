@@ -34,15 +34,17 @@ Tooling: pnpm, Turborepo, TypeScript strict, Biome (lint + format), Vitest, Play
 3. **Generate** events from structured tables (B1, B2, A1, A4, A2, C3, D1).
 4. **Score** every scored country for every date from 2023-10-07 to the build date (UTC), for the current methodology version. About 1 100 dates × 193 countries; runs in seconds.
 5. **Derive**: bands, coverage, movers (7-day and 30-day deltas), "changed this week/month" feed, sensitivity tables, summary lines (EN/FR templates), citation strings.
-6. **Emit** into `apps/web/public/api/v1/`:
-   - `countries.json` (all countries, current date), `countries/{iso3}.json` (full: subtotals, events with evidence and sources, assessments, replies, series of daily scores compressed as change points)
+6. **Emit** into `apps/web/public/api/v1/` (`pnpm build:data [--date YYYY-MM-DD] [--out dir] [--root dir] [--site-url url]`; every endpoint is documented with an example in `apps/web/public/api/README.md`, and every JSON file is checked against its zod schema in `packages/schema/src/api.ts` before it is written):
+   - `countries.json` (every registry entry at the build date, excluded entities flagged), `countries/{iso3}.json` (full: subtotals, indicator values, events with evidence and sources, assessments with the statuses of the generated indicators read from the tables, replies, corrections, series of daily scores compressed as change points, summary lines and citations with and without the score)
    - `countries/{iso3}/events.json`, `countries/{iso3}/series.json`
-   - `scores/index.json` (list of dates) and `scores/{YYYY-MM-DD}.json`
-   - `methodology/{version}.json`, `methodology/index.json`
-   - `changes/latest.json`, `changes/{YYYY-MM}.json`
-   - `corrections.json`, `replies.json`, `sensitivity.json`, `manifest.json` (git SHA, version, build time, SHA-256 of every emitted file)
+   - `scores/index.json` (list of dates) and `scores/{YYYY-MM-DD}.json` for every date from 2023-10-07 (score, band, passivity flag, clipped subtotals in full precision)
+   - `methodology/{version}.json` for every version folder, `methodology/index.json` (versions and changelog), and the frozen outputs of superseded versions copied from `data/snapshots/{version}/` to `methodology/{version}/`
+   - `changes/latest.json`, `changes/{YYYY-MM}.json`, and the monthly report in four variants: `changes/{YYYY-MM}.md` (English), `.fr.md`, `.scorecard.md` and `.scorecard.fr.md` (without scores, for scorecard mode, D-16)
+   - `corrections.json`, `replies.json`, `sensitivity.json`, `build-notes.json` (generator notes, unpublished events, events of countries outside the registry, derived statuses the hand-written assessments contradict, unchecked indicators, validation warnings), `manifest.json` (git SHA and dirty flag, methodology version, build date, site URL, size and SHA-256 of every other file)
    - `dumps/events.csv`, `dumps/sources.csv`, `dumps/assessments.csv`, `dumps/scores-daily.csv`, `dumps/gai-{date}.json` (everything)
-7. **Determinism test** (CI only): run steps 1–6 twice into temp dirs and diff. Build time is passed in as an argument so it is not a source of nondeterminism.
+
+   Coverage is the research status of the dataset at the build date; it is not recomputed for earlier dates, because the assessments record what was checked, not when. Outputs always carry the scores; the site decides what to show (D-16).
+7. **Determinism test** (`pnpm build:data:check`, run in CI on `data/` and on `fixtures/`): run steps 1–6 twice, as two separate processes, into temp dirs with the same date and diff every byte. Build time is passed in as an argument so it is not a source of nondeterminism.
 
 ## 3. Site (`apps/web`)
 

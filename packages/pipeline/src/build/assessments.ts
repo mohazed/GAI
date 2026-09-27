@@ -10,20 +10,29 @@
  * 1. Any of the seven: a published generated event of the indicator, scoped to gaza and dated on or
  *    before the date → `has-events` (`generated-event`). Nothing else overrides it.
  * 2. A1: before `no_data_before` of formula a1 (the first post-war SIPRI release) → `no-data`
- *    (`before-first-release`, docs/02 §5); else a row of sipri_deliveries.csv for the country
- *    released from `no_data_before` to the date → `none-found` (`row-without-deliveries`); else
- *    `no-data` (`no-row`): the card says "no export data", never zero (docs/02 §8).
- * 3. A2: a row of comtrade_a2.csv for the country released on or before the date (any HS code,
- *    either reporter) → `none-found` (`row-without-counted-exports`: the rows are HS 8526/8802 not
- *    confirmed as military, D-26); else `no-data` (`no-row`).
- * 4. C3: a row of comtrade_c3.csv for the country released on or before the date → `none-found`
- *    (`row-without-event`); else `no-data` (`no-row`).
- * 5. A4: the SIPRI releases in force are the release dates of either SIPRI table from
- *    `no_data_before` of formula a1 to the date. A release covers A4 when its data year
- *    (year of release − 1) starts on or after `parameters.orders_signed_from` of formula a4
- *    (default 2023-10-07; SIPRI dates orders by year, so the 2023 orders mix pre-war contracts).
- *    A covering release in force → `none-found` (`release-without-orders`); else `no-data`
- *    (`no-release`).
+ *    (`before-first-release`, docs/02 §5: no data for anyone, whatever the table holds). Else
+ *    sipri_deliveries.csv has no rows at all → null (not imported: the hand status stands, as for
+ *    D1). Else a release is in force when the table has a row of its data year (year of release
+ *    − 1, the rows generateA1 reads) released from `no_data_before` to the date. A SIPRI release
+ *    covers every country (docs/02 §5, methodology.en.md: s = TIV(country) / TIV(all), 0 ≤ s ≤ 1),
+ *    so a country without an event then has s = 0 → `none-found` (`release-without-deliveries`),
+ *    whether SIPRI lists it with earlier years only or not at all; except a country whose own
+ *    data-year row in force has deliveries but no computable share (total ≤ 0 or TIV above the
+ *    total; generateA1 notes it) → `no-data` (`row-not-computable`). No release in force →
+ *    `no-data` (`no-release`): the card says "no export data", never zero (docs/02 §8).
+ * 3. A2: comtrade_a2.csv has no rows → null (not fetched). Else a row of the country released on
+ *    or before the date (any HS code, either reporter) → `none-found`
+ *    (`row-without-counted-exports`: the rows are HS 8526/8802 not confirmed as military, D-26);
+ *    else `no-data` (`no-row`: docs/02 §5, "if both absent, no-data").
+ * 4. C3: comtrade_c3.csv has no rows → null (not fetched). Else a row of the country released on
+ *    or before the date → `none-found` (`row-without-event`); else `no-data` (`no-row`).
+ * 5. A4: sipri_orders.csv has no rows → null (orders not imported; `pnpm import:sipri` imports
+ *    them only with `--orders`, so a deliveries release says nothing about orders). Else the
+ *    releases in force are the release dates of sipri_orders.csv from `no_data_before` of formula
+ *    a1 to the date. A release covers A4 when its data year (year of release − 1) starts on or
+ *    after `parameters.orders_signed_from` of formula a4 (default 2023-10-07; SIPRI dates orders
+ *    by year, so the 2023 orders mix pre-war contracts). A covering release in force →
+ *    `none-found` (`release-without-orders`); else `no-data` (`no-release`).
  * 6. D1: fts_funding.csv has no rows at all → null (the table was not fetched). Else a row of the
  *    country with funding above zero, whose window ended before the date, and no usable GNI (the
  *    row gniFor picks, as the generator does, is missing or zero) → `no-data` (`no-gni`); else
@@ -61,6 +70,7 @@ import {
   type ScoringMethodology,
 } from '@gai/scoring'
 import { gniFor } from '../generate/funding.js'
+import { dataYearOf, isA1ShareComputable, isDataYearRow } from '../generate/sipri.js'
 import type { BuildNote, DerivedStatus } from './types.js'
 
 /** The indicators generated from data/structured (D-08), in code-unit order. */
@@ -130,45 +140,49 @@ function hasGeneratedEvent(input: DeriveInput, indicator: string): boolean {
   )
 }
 
-function deriveA1(input: DeriveInput): DerivedStatus {
+function deriveA1(input: DeriveInput): DerivedStatus | null {
   const { iso3, date } = input
   const first = firstSipriRelease(input.methodology)
   if (first.declared && date < first.date) return derived('no-data', 'before-first-release')
-  const row = input.structured['sipri_deliveries.csv'].some(
+  const rows = input.structured['sipri_deliveries.csv']
+  if (rows.length === 0) return null
+  const inForce = rows.filter(
     (r) =>
-      r.value.supplier_iso3 === iso3 &&
-      r.value.release_date >= first.date &&
-      r.value.release_date <= date,
+      isDataYearRow(r.value) && r.value.release_date >= first.date && r.value.release_date <= date,
   )
-  return row ? derived('none-found', 'row-without-deliveries') : derived('no-data', 'no-row')
+  if (inForce.length === 0) return derived('no-data', 'no-release')
+  const notComputable = inForce.some(
+    (r) =>
+      r.value.supplier_iso3 === iso3 && r.value.tiv_to_israel > 0 && !isA1ShareComputable(r.value),
+  )
+  return notComputable
+    ? derived('no-data', 'row-not-computable')
+    : derived('none-found', 'release-without-deliveries')
 }
 
-function deriveA2(input: DeriveInput): DerivedStatus {
-  const row = input.structured['comtrade_a2.csv'].some(
-    (r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date,
-  )
+function deriveA2(input: DeriveInput): DerivedStatus | null {
+  const rows = input.structured['comtrade_a2.csv']
+  if (rows.length === 0) return null
+  const row = rows.some((r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date)
   return row ? derived('none-found', 'row-without-counted-exports') : derived('no-data', 'no-row')
 }
 
-function deriveC3(input: DeriveInput): DerivedStatus {
-  const row = input.structured['comtrade_c3.csv'].some(
-    (r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date,
-  )
+function deriveC3(input: DeriveInput): DerivedStatus | null {
+  const rows = input.structured['comtrade_c3.csv']
+  if (rows.length === 0) return null
+  const row = rows.some((r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date)
   return row ? derived('none-found', 'row-without-event') : derived('no-data', 'no-row')
 }
 
-function deriveA4(input: DeriveInput): DerivedStatus {
-  const { date, structured } = input
+function deriveA4(input: DeriveInput): DerivedStatus | null {
+  const { date } = input
+  const orders = input.structured['sipri_orders.csv']
+  if (orders.length === 0) return null
   const first = firstSipriRelease(input.methodology).date
   const from = ordersSignedFrom(input.methodology)
-  const releases = [
-    ...structured['sipri_deliveries.csv'].map((r) => r.value.release_date),
-    ...structured['sipri_orders.csv'].map((r) => r.value.release_date),
-  ]
-  const covering = releases.some((release) => {
+  const covering = orders.some(({ value: { release_date: release } }) => {
     if (release < first || release > date) return false
-    const dataYear = Number(release.slice(0, 4)) - 1
-    return `${String(dataYear).padStart(4, '0')}-01-01` >= from
+    return `${String(dataYearOf(release)).padStart(4, '0')}-01-01` >= from
   })
   return covering
     ? derived('none-found', 'release-without-orders')

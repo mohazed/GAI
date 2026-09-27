@@ -2,7 +2,10 @@
  * Entry point of `pnpm publish:events --pr N` (see ../publish-events.ts). It supplies what the
  * command reads from outside: `gh` and `git` run in the repository root, the files of the
  * working tree (repository-relative, regular files only, strict UTF-8), and the only clock read
- * of the command, today's UTC date (the default and latest review date).
+ * of the command: today's date in the local time zone (localIsoDate), the default and latest
+ * review date. It is the author's calendar day, the one data sessions write in
+ * `review.drafted_at` and `review.second_read.at`, so the three review dates share one calendar:
+ * a review at 00:30 in Paris is dated that day, not the previous UTC day.
  *
  * The repository is found from this file's location, so the command works from any directory.
  */
@@ -12,7 +15,7 @@ import { lstatSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { findRepoRoot } from '@gai/schema'
-import { type CommandRunner, runPublishEvents } from '../publish-events.js'
+import { type CommandRunner, localIsoDate, runPublishEvents } from '../publish-events.js'
 
 const REPO_ROOT = findRepoRoot(dirname(fileURLToPath(import.meta.url)))
 
@@ -43,7 +46,7 @@ function readFile(path: string): string | null {
 }
 
 const result = runPublishEvents(process.argv.slice(2), {
-  today: new Date().toISOString().slice(0, 10),
+  today: localIsoDate(new Date()),
   gh: runner('gh'),
   git: runner('git'),
   readFile,

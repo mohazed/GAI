@@ -7,7 +7,7 @@
  * Layout, in order (EN / FR):
  * 1. `# Changes, September 2026` / `# Changements, septembre 2026`.
  * 2. Scorecard variant only: "Scorecard mode: scores are not displayed." /
- *    "Mode fiche : les scores ne sont pas affichés."
+ *    "Mode fiche d'évaluation : les scores ne sont pas affichés."
  * 3. `Gaza Accountability Index · methodology {v} · {from} to {to}` / `… · méthodologie {v} · du
  *    {from} au {to}`, plus `, month in progress` / `, mois en cours` for the build month.
  * 4. `## Movers` / `## Évolutions des scores` (not in the scorecard variant): a table of the
@@ -59,14 +59,14 @@ const TEXT = {
     kinds: { correction: 'correction', retraction: 'retraction' },
     methodology: 'Methodology',
     methodologyNote: (v: string) =>
-      `Scores for every date are computed with methodology ${v}; a new version recomputes the whole history (docs/02 §11).`,
+      `Scores for every date are computed with methodology ${v}; a new methodology version recomputes every date.`,
     noEvents: 'None.',
     noEnds: 'None.',
     noCorrections: 'None.',
   },
   fr: {
     title: (month: string) => `Changements, ${month}`,
-    scorecard: `Mode fiche${NBSP}: les scores ne sont pas affichés.`,
+    scorecard: `Mode fiche d'évaluation${NBSP}: les scores ne sont pas affichés.`,
     line: (v: string, from: string, to: string) =>
       `Gaza Accountability Index · méthodologie ${v} · du ${from} au ${to}`,
     inProgress: ', mois en cours',
@@ -84,7 +84,7 @@ const TEXT = {
     kinds: { correction: 'correction', retraction: 'retrait' },
     methodology: 'Méthodologie',
     methodologyNote: (v: string) =>
-      `Les scores de chaque date sont calculés avec la méthodologie ${v}${NNBSP}; une nouvelle version recalcule toute la série (docs/02 §11).`,
+      `Les scores de chaque date sont calculés avec la méthodologie ${v}${NNBSP}; une nouvelle version de la méthodologie recalcule toutes les dates.`,
     noEvents: 'Aucun.',
     noEnds: 'Aucune.',
     noCorrections: 'Aucune.',

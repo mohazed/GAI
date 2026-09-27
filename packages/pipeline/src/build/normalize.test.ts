@@ -327,20 +327,28 @@ describe('toApiEvent', () => {
 })
 
 describe('previousComputedPoints', () => {
-  const c = (id: string, country: string, indicator: string, date: string, points: number) =>
-    synthetic({ id, country, indicator, type: 'computed', date, points, end: null })
+  const c = (
+    id: string,
+    country: string,
+    indicator: string,
+    date: string,
+    end: string | null,
+    points: number,
+  ) => synthetic({ id, country, indicator, type: 'computed', date, points, end })
 
-  it('gives each computed event the points of the previous one of its country and indicator', () => {
+  it('gives each computed event the points of the value in force the day before', () => {
     const events = [
-      c('evt_2025_03_11_XXA_A1_tiv-2024', 'XXA', 'A1', '2025-03-11', -12),
-      c('evt_2024_03_11_XXA_A1_tiv-2023', 'XXA', 'A1', '2024-03-11', -8),
-      c('evt_2026_03_09_XXA_A1_tiv-2025', 'XXA', 'A1', '2026-03-09', -12),
-      c('evt_2025_03_11_XXB_A1_tiv-2024', 'XXB', 'A1', '2025-03-11', -4),
-      c('evt_2025_02_01_XXA_D1_fts', 'XXA', 'D1', '2025-02-01', 3),
-      c('evt_2025_03_01_XXA_D1_fts', 'XXA', 'D1', '2025-03-01', 6),
-      // Same date: by id.
-      c('evt_2025_03_01_XXA_C3_comtrade-2024-self', 'XXA', 'C3', '2025-03-01', -2),
-      c('evt_2025_03_01_XXA_C3_comtrade-2024-mirror', 'XXA', 'C3', '2025-03-01', -3),
+      c('evt_2025_03_11_XXA_A1_tiv-2024', 'XXA', 'A1', '2025-03-11', '2026-03-09', -12),
+      c('evt_2024_03_11_XXA_A1_tiv-2023', 'XXA', 'A1', '2024-03-11', '2025-03-11', -8),
+      c('evt_2026_03_09_XXA_A1_tiv-2025', 'XXA', 'A1', '2026-03-09', null, -12),
+      c('evt_2025_03_11_XXB_A1_tiv-2024', 'XXB', 'A1', '2025-03-11', null, -4),
+      c('evt_2025_02_01_XXA_D1_fts', 'XXA', 'D1', '2025-02-01', '2025-03-01', 3),
+      c('evt_2025_03_01_XXA_D1_fts', 'XXA', 'D1', '2025-03-01', '2025-04-01', 6),
+      // A month without funding (no row), then a new value: no value was in force on 2025-04-30.
+      c('evt_2025_05_01_XXA_D1_fts', 'XXA', 'D1', '2025-05-01', '2025-06-01', 6),
+      // Same date: by id; the self report's window does not follow the mirror's.
+      c('evt_2025_03_01_XXA_C3_comtrade-2024-mirror', 'XXA', 'C3', '2025-03-01', '2025-03-01', -3),
+      c('evt_2025_03_01_XXA_C3_comtrade-2024-self', 'XXA', 'C3', '2025-03-01', null, -2),
       synthetic({
         id: 'evt_2025_03_01_XXA_B9',
         indicator: 'B9',
@@ -358,6 +366,7 @@ describe('previousComputedPoints', () => {
       'evt_2025_03_11_XXB_A1_tiv-2024': null,
       evt_2025_02_01_XXA_D1_fts: null,
       evt_2025_03_01_XXA_D1_fts: 3,
+      evt_2025_05_01_XXA_D1_fts: null,
       'evt_2025_03_01_XXA_C3_comtrade-2024-mirror': null,
       'evt_2025_03_01_XXA_C3_comtrade-2024-self': -3,
       evt_2025_03_01_XXA_B9: null,

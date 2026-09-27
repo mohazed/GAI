@@ -466,7 +466,7 @@ describe('dumpFiles: paths and CSV conventions', () => {
       'dumps/events.csv',
       'dumps/sources.csv',
       'dumps/assessments.csv',
-      'dumps/scores-daily.csv',
+      'dumps/scores-daily-2023.csv',
       'dumps/gai-2023-10-10.json',
     ])
   })
@@ -485,7 +485,7 @@ describe('dumpFiles: paths and CSV conventions', () => {
       'country,indicator,category,scored,status,hand_status,derived_status,derived_reason,' +
         'checked_at,note,queries',
     )
-    expect(text('dumps/scores-daily.csv').split('\n')[0]).toBe(
+    expect(text('dumps/scores-daily-2023.csv').split('\n')[0]).toBe(
       'date,iso3,score,score_display,band,passivity_applied,A,B,C,D,E',
     )
     expect(EVENTS_CSV_COLUMNS).toHaveLength(26)
@@ -511,7 +511,7 @@ describe('dumpFiles: paths and CSV conventions', () => {
       ['dumps/events.csv', EVENTS_CSV_COLUMNS],
       ['dumps/sources.csv', SOURCES_CSV_COLUMNS],
       ['dumps/assessments.csv', ASSESSMENTS_CSV_COLUMNS],
-      ['dumps/scores-daily.csv', SCORES_DAILY_CSV_COLUMNS],
+      ['dumps/scores-daily-2023.csv', SCORES_DAILY_CSV_COLUMNS],
     ]
     for (const [path, columns] of cases) {
       const [header, ...rows] = records(path)
@@ -663,9 +663,9 @@ describe('dumps/assessments.csv', () => {
   })
 })
 
-describe('dumps/scores-daily.csv', () => {
+describe('dumps/scores-daily-{YYYY}.csv', () => {
   it('writes one row per date and country, by date then ISO3, full precision', () => {
-    expect(text('dumps/scores-daily.csv')).toBe(
+    expect(text('dumps/scores-daily-2023.csv')).toBe(
       [
         'date,iso3,score,score_display,band,passivity_applied,A,B,C,D,E',
         '2023-10-07,XAA,-15,-15,passive,true,0,0,0,0,0',
@@ -679,6 +679,26 @@ describe('dumps/scores-daily.csv', () => {
         '',
       ].join('\n'),
     )
+  })
+
+  it('writes one file per calendar year', () => {
+    // Synthetic window from 2023-12-30 to 2024-01-02: two days in each year.
+    const four = DAYS_XAA
+    const files = dumpFiles(
+      input({ windowStart: '2023-12-30', date: '2024-01-02', days: [{ iso3: 'XAA', days: four }] }),
+    )
+    expect([...files.keys()].filter((p) => p.startsWith('dumps/scores-daily'))).toEqual([
+      'dumps/scores-daily-2023.csv',
+      'dumps/scores-daily-2024.csv',
+    ])
+    expect(files.get('dumps/scores-daily-2023.csv')?.split('\n').slice(1, 3)).toEqual([
+      '2023-12-30,XAA,-15,-15,passive,true,0,0,0,0,0',
+      '2023-12-31,XAA,-5,-5,passive,true,10,0,0,0,0',
+    ])
+    expect(files.get('dumps/scores-daily-2024.csv')?.split('\n').slice(1, 3)).toEqual([
+      '2024-01-01,XAA,-5,-5,passive,true,10,0,0,0,0',
+      '2024-01-02,XAA,-20,-20,passive,true,0,-5,0,0,0',
+    ])
   })
 
   it('refuses days that do not run from the window start to the build date', () => {
@@ -791,7 +811,7 @@ describe('dumpFiles: determinism and edge cases', () => {
     expect(empty.get('dumps/events.csv')).toBe(`${EVENTS_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/sources.csv')).toBe(`${SOURCES_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/assessments.csv')).toBe(`${ASSESSMENTS_CSV_COLUMNS.join(',')}\n`)
-    expect(empty.get('dumps/scores-daily.csv')).toBe(`${SCORES_DAILY_CSV_COLUMNS.join(',')}\n`)
+    expect(empty.get('dumps/scores-daily-2023.csv')).toBe(`${SCORES_DAILY_CSV_COLUMNS.join(',')}\n`)
     const d = ApiDumpFile.parse(JSON.parse(empty.get('dumps/gai-2023-10-10.json') ?? ''))
     expect(d).toMatchObject({ countries: [], events: [], sources: [], leads: [] })
   })

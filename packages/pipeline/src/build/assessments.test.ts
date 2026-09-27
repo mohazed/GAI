@@ -227,27 +227,88 @@ describe('A1 (SIPRI deliveries)', () => {
     expect(derive({ date: '2026-09-27', structured: rows }).A1).toEqual(HAS)
   })
 
-  it('is none-found when the country has a row without deliveries', () => {
-    const rows = tables({ 'sipri_deliveries.csv': [delivery('2024-03-11', 'XXA', 0)] })
-    expect(generateAll(generateContext(M), rows).events).toEqual([])
-    expect(derive({ date: '2024-03-11', structured: rows }).A1).toEqual(
-      d('none-found', 'row-without-deliveries'),
-    )
+  it('is null when sipri_deliveries.csv has no rows (not imported: the hand status stands)', () => {
+    expect(derive({ date: '2024-03-11', structured: tables() }).A1).toBeNull()
+    expect(derive({ structured: tables() }).A1).toBeNull()
+    // An orders release says nothing about deliveries.
+    const orders = tables({ 'sipri_orders.csv': [order('2025-03-10', 'XXB', 20)] })
+    expect(derive({ structured: orders }).A1).toBeNull()
   })
 
-  it('is no-data without a row of the country released in [no_data_before, date]', () => {
-    expect(derive({ date: '2024-03-11', structured: tables() }).A1).toEqual(d('no-data', 'no-row'))
-    const other = tables({ 'sipri_deliveries.csv': [delivery('2024-03-11', 'XXB', 30)] })
-    expect(derive({ structured: other }).A1).toEqual(d('no-data', 'no-row'))
-    const later = tables({ 'sipri_deliveries.csv': [delivery('2025-03-10', 'XXA', 0)] })
-    expect(derive({ date: '2025-03-09', structured: later }).A1).toEqual(d('no-data', 'no-row'))
-    expect(derive({ date: '2025-03-10', structured: later }).A1).toEqual(
-      d('none-found', 'row-without-deliveries'),
-    )
+  const NONE = d('none-found', 'release-without-deliveries')
+
+  it('is none-found for every country without an event once a release is in force (s = 0)', () => {
+    const rows = tables({ 'sipri_deliveries.csv': [delivery('2024-03-11', 'XXB', 30)] })
+    // XXB: s = 30 / 100, an event; XXA is not listed by SIPRI: s = 0 / 100 = 0.
+    expect(derive({ iso3: 'XXB', date: '2024-03-11', structured: rows }).A1).toEqual(HAS)
+    expect(derive({ date: '2024-03-11', structured: rows }).A1).toEqual(NONE)
+    expect(derive({ structured: rows }).A1).toEqual(NONE)
+    // A row of XXA with zero TIV (the importer writes none, a hand edit could) gives the same.
+    const zero = tables({ 'sipri_deliveries.csv': [delivery('2024-03-11', 'XXA', 0)] })
+    expect(generateAll(generateContext(M), zero).events).toEqual([])
+    expect(derive({ date: '2024-03-11', structured: zero }).A1).toEqual(NONE)
+  })
+
+  it('treats a supplier whose only rows at a release are earlier data years as unlisted', () => {
+    // Release 2026-03-09 (data year 2025) exported over several years: XXA delivered in 2019
+    // only, XXB in 2025; XXC is not listed.
+    const historic = {
+      ...delivery('2026-03-09', 'XXA', 12, 400),
+      data_year: 2019,
+    }
+    const rows = tables({
+      'sipri_deliveries.csv': [historic, delivery('2026-03-09', 'XXB', 500, 500)],
+    })
+    const events = generateAll(generateContext(M), rows).events
+    expect(events.map((e) => e.id)).toEqual(['evt_2026_03_09_XXB_A1_tiv-2025'])
+    expect(derive({ structured: rows }).A1).toEqual(NONE)
+    expect(derive({ iso3: 'XXC', structured: rows }).A1).toEqual(NONE)
+    expect(derive({ iso3: 'XXB', structured: rows }).A1).toEqual(HAS)
+    // A release with earlier data years only is not in force: generateA1 reads none of its rows.
+    const only = tables({ 'sipri_deliveries.csv': [historic] })
+    expect(derive({ structured: only }).A1).toEqual(d('no-data', 'no-release'))
+  })
+
+  it('reads only rows of the data year (year of release − 1), not of the release year', () => {
+    // Release 2025-03-10 carries data through 2024; a row dated 2025 is not the measure.
+    const rows = tables({
+      'sipri_deliveries.csv': [{ ...delivery('2025-03-10', 'XXB', 30), data_year: 2025 }],
+    })
+    expect(generateAll(generateContext(M), rows).events).toEqual([])
+    expect(derive({ structured: rows }).A1).toEqual(d('no-data', 'no-release'))
+    expect(derive({ iso3: 'XXB', structured: rows }).A1).toEqual(d('no-data', 'no-release'))
+  })
+
+  it('is no-data without a release in force in [no_data_before, date]', () => {
+    const later = tables({ 'sipri_deliveries.csv': [delivery('2025-03-10', 'XXB', 30)] })
+    expect(derive({ date: '2025-03-09', structured: later }).A1).toEqual(d('no-data', 'no-release'))
+    expect(derive({ date: '2025-03-10', structured: later }).A1).toEqual(NONE)
     // A pre-war release (data year 2022) is not used by the generator and covers nothing.
     const prewar = tables({ 'sipri_deliveries.csv': [delivery('2023-03-13', 'XXA', 5)] })
     expect(generateAll(generateContext(M), prewar).events).toEqual([])
-    expect(derive({ date: '2025-01-01', structured: prewar }).A1).toEqual(d('no-data', 'no-row'))
+    expect(derive({ date: '2025-01-01', structured: prewar }).A1).toEqual(
+      d('no-data', 'no-release'),
+    )
+  })
+
+  it('is no-data when the country delivered but its share cannot be computed', () => {
+    const rows = tables({
+      'sipri_deliveries.csv': [
+        delivery('2025-03-10', 'XXA', 30, 20), // TIV 30 above the total 20
+        delivery('2025-03-10', 'XXB', 5, 0), // total 0
+        delivery('2025-03-10', 'XXC', 0, 0), // no deliveries: s = 0
+      ],
+    })
+    const g = generateAll(generateContext(M), rows)
+    expect(g.events).toEqual([])
+    expect(g.notes).toEqual([
+      'sipri_deliveries.csv row 2: TIV 30 of a total 20; no event',
+      'sipri_deliveries.csv row 3: TIV 5 of a total 0; no event',
+    ])
+    expect(derive({ structured: rows }).A1).toEqual(d('no-data', 'row-not-computable'))
+    expect(derive({ iso3: 'XXB', structured: rows }).A1).toEqual(d('no-data', 'row-not-computable'))
+    expect(derive({ iso3: 'XXC', structured: rows }).A1).toEqual(NONE)
+    expect(derive({ iso3: 'XXD', structured: rows }).A1).toEqual(NONE)
   })
 })
 
@@ -272,8 +333,11 @@ describe('A2 (Comtrade military exports)', () => {
     expect(derive({ date: '2025-06-30', structured: rows }).A2).toEqual(HAS)
   })
 
+  it('is null when comtrade_a2.csv has no rows (not fetched: the hand status stands)', () => {
+    expect(derive({ structured: tables() }).A2).toBeNull()
+  })
+
   it('is no-data without a row of the country released on or before the date', () => {
-    expect(derive({ structured: tables() }).A2).toEqual(d('no-data', 'no-row'))
     const other = tables({ 'comtrade_a2.csv': [a2('XXB', 2024, '2025-06-30', '8526', 1)] })
     expect(derive({ structured: other }).A2).toEqual(d('no-data', 'no-row'))
     const later = tables({ 'comtrade_a2.csv': [a2('XXA', 2024, '2025-06-30', '8526', 1)] })
@@ -298,8 +362,11 @@ describe('C3 (Comtrade total trade)', () => {
     )
   })
 
+  it('is null when comtrade_c3.csv has no rows (not fetched: the hand status stands)', () => {
+    expect(derive({ structured: tables() }).C3).toBeNull()
+  })
+
   it('is no-data without a row of the country released on or before the date', () => {
-    expect(derive({ structured: tables() }).C3).toEqual(d('no-data', 'no-row'))
     const rows = tables({ 'comtrade_c3.csv': [c3('XXA', 2024, '2025-05-01', 10, 10)] })
     expect(derive({ date: '2025-04-30', structured: rows }).C3).toEqual(d('no-data', 'no-row'))
     expect(derive({ iso3: 'XXB', structured: rows }).C3).toEqual(d('no-data', 'no-row'))
@@ -313,15 +380,21 @@ describe('A4 (SIPRI orders)', () => {
     )
   })
 
-  it('is no-data with only the 2024 release: data year 2023 starts before 2023-10-07', () => {
-    const rows = tables({
-      'sipri_deliveries.csv': [delivery('2024-03-11', 'XXB', 30)],
-      'sipri_orders.csv': [order('2024-03-11', 'XXA', 50)],
-    })
+  it('is null when sipri_orders.csv has no rows, even with a deliveries release in force', () => {
+    expect(derive({ structured: tables() }).A4).toBeNull()
+    // Orders not imported (`pnpm import:sipri` without --orders): no statement on A4.
+    const deliveries = tables({ 'sipri_deliveries.csv': [delivery('2025-03-10', 'XXB', 30)] })
+    expect(derive({ date: '2025-03-10', structured: deliveries }).A4).toBeNull()
+    expect(derive({ structured: deliveries }).A4).toBeNull()
+  })
+
+  it('is no-data with only the 2024 orders release: data year 2023 starts before 2023-10-07', () => {
+    const rows = tables({ 'sipri_orders.csv': [order('2024-03-11', 'XXA', 50)] })
     const g = generateAll(generateContext(M), rows)
     expect(g.events.filter((e) => e.indicator === 'A4')).toEqual([])
     expect(g.notes.some((n) => n.includes('XXA orders of 2023 not scored'))).toBe(true)
     expect(derive({ date: '2025-01-01', structured: rows }).A4).toEqual(d('no-data', 'no-release'))
+    expect(derive({ iso3: 'XXB', structured: rows }).A4).toEqual(d('no-data', 'no-release'))
   })
 
   it('is none-found once the 2025 release (data year 2024) is in force without an order', () => {
@@ -337,15 +410,26 @@ describe('A4 (SIPRI orders)', () => {
     expect(derive({ iso3: 'XXB', date: '2025-03-10', structured: rows }).A4).toEqual(HAS)
   })
 
-  it('reads the releases of both SIPRI tables', () => {
-    const rows = tables({ 'sipri_deliveries.csv': [delivery('2025-03-10', 'XXB', 30)] })
-    expect(derive({ date: '2025-03-10', structured: rows }).A4).toEqual(
+  it('reads the releases of sipri_orders.csv only', () => {
+    // The 2025 release is imported for deliveries only; the orders table holds the 2024 one.
+    const deliveriesOnly = tables({
+      'sipri_deliveries.csv': [delivery('2025-03-10', 'XXB', 30)],
+      'sipri_orders.csv': [order('2024-03-11', 'XXB', 50)],
+    })
+    expect(derive({ date: '2025-06-01', structured: deliveriesOnly }).A4).toEqual(
+      d('no-data', 'no-release'),
+    )
+    // Both tables imported for the 2025 release.
+    const both = tables({
+      'sipri_deliveries.csv': [delivery('2025-03-10', 'XXB', 30)],
+      'sipri_orders.csv': [order('2025-03-10', 'XXB', 20)],
+    })
+    expect(derive({ date: '2025-06-01', structured: both }).A4).toEqual(
       d('none-found', 'release-without-orders'),
     )
-  })
-
-  it('is no-data without any SIPRI release', () => {
-    expect(derive({ structured: tables() }).A4).toEqual(d('no-data', 'no-release'))
+    expect(derive({ date: '2025-06-01', structured: both }).A1).toEqual(
+      d('none-found', 'release-without-deliveries'),
+    )
   })
 
   function withA4(parameters: Record<string, unknown> | undefined): Methodology {
@@ -590,10 +674,9 @@ describe('the has-events rule', () => {
       { ...e, country: 'XXB' },
       { ...e, date: '2025-07-02' },
     ]
+    // Without the rule, the table rule applies: comtrade_a2.csv is empty in `base`, so null.
     for (const c of cases) {
-      expect(deriveGeneratedStatuses({ ...base, generated: [c] }).A2).toEqual(
-        d('no-data', 'no-row'),
-      )
+      expect(deriveGeneratedStatuses({ ...base, generated: [c] }).A2).toBeNull()
     }
   })
 })
@@ -618,7 +701,7 @@ describe('effectiveAssessment', () => {
       D1: entry('unchecked'),
     })
     const out = effectiveAssessment(hand, {
-      A1: d('no-data', 'no-row'),
+      A1: d('no-data', 'no-release'),
       B1: null,
       D1: d('none-found', 'no-funding'),
       C3: d('no-data', 'no-row'),
@@ -643,7 +726,7 @@ describe('effectiveAssessment', () => {
 
 describe('disagreements', () => {
   const derivedStatuses = {
-    A1: d('no-data', 'no-row'),
+    A1: d('no-data', 'no-release'),
     A2: d('none-found', 'row-without-counted-exports'),
     A4: d('no-data', 'no-release'),
     B1: null,
@@ -669,7 +752,7 @@ describe('disagreements', () => {
         country: 'XXA',
         indicator: 'A1',
         message:
-          'data/assessments/XXA.yaml gives A1 none-found; the structured tables give no-data (no-row), which is used.',
+          'data/assessments/XXA.yaml gives A1 none-found; the structured tables give no-data (no-release), which is used.',
       },
       {
         kind: 'assessment-disagreement',
@@ -701,8 +784,10 @@ describe('assessmentRows', () => {
     memberships: { unsc: [] },
   }
   const structured = tables({
-    'sipri_deliveries.csv': [delivery('2024-03-11', 'XXA', 0), delivery('2024-03-11', 'XXB', 9)],
+    'sipri_deliveries.csv': [delivery('2024-03-11', 'XXB', 9)],
+    'sipri_orders.csv': [order('2024-03-11', 'XXB', 5)],
     'comtrade_a2.csv': [a2('XXA', 2024, '2025-06-30', '93', 2_000_000)],
+    'comtrade_c3.csv': [c3('XXB', 2024, '2025-05-01', 10, 10)],
     'fts_funding.csv': [fts('XXA', '2024-06-01', '2025-05-31', 0)],
   })
   const generated = generateAll(generateContext(M), structured).events.filter(
@@ -794,12 +879,16 @@ describe('assessmentRows', () => {
   })
 
   it('shows the derived status of the generated indicators and why it replaced the hand one', () => {
-    // A1: a row of XXA without deliveries in the 2024 release.
+    // A1: the 2024 release is in force and XXA delivered nothing in 2023 (s = 0).
     expect(row('A1')).toMatchObject({
       status: 'none-found',
       hand_status: 'unchecked',
-      derived: { status: 'none-found', reason: 'row-without-deliveries' },
-      override: { from: 'unchecked', to: 'none-found', reason: 'derived:row-without-deliveries' },
+      derived: { status: 'none-found', reason: 'release-without-deliveries' },
+      override: {
+        from: 'unchecked',
+        to: 'none-found',
+        reason: 'derived:release-without-deliveries',
+      },
     })
     // A2: the generated event (V = USD 2 million: −8) overrides the hand none-found.
     expect(row('A2')).toMatchObject({
@@ -811,7 +900,7 @@ describe('assessmentRows', () => {
       note: 'Synthetic note.',
       queries: [],
     })
-    // A4: only the 2024 release (data year 2023) is in force.
+    // A4: only the 2024 orders release (data year 2023) is in force.
     expect(row('A4')).toMatchObject({
       status: 'no-data',
       hand_status: 'unchecked',
@@ -827,7 +916,7 @@ describe('assessmentRows', () => {
       derived: null,
       override: null,
     })
-    // C3: no row.
+    // C3: the table has a row of XXB only.
     expect(row('C3')).toMatchObject({
       status: 'no-data',
       derived: { status: 'no-data', reason: 'no-row' },
@@ -912,6 +1001,54 @@ describe('assessmentRows', () => {
       hand_status: 'unchecked',
       override: { from: 'unchecked', to: 'has-events', reason: 'published-event' },
     })
+  })
+
+  it('keeps the hand status of the indicators whose tables have no rows', () => {
+    const derivedStatuses = deriveGeneratedStatuses({
+      iso3: 'XXA',
+      date: DATE,
+      structured: tables(),
+      generated: [],
+      methodology: M,
+      unscMember: false,
+      permanentMember: false,
+    })
+    for (const id of ['A1', 'A2', 'A4', 'C3', 'D1'] as const) {
+      expect(derivedStatuses[id], id).toBeNull()
+    }
+    const cov = coverage(
+      {
+        country,
+        assessment: effectiveAssessment(handAssessment, derivedStatuses),
+        events: [],
+        date: DATE,
+      },
+      SCORING,
+    )
+    const out = assessmentRows({
+      methodology: M,
+      scoring: SCORING,
+      hand: handAssessment,
+      derived: derivedStatuses,
+      coverage: cov,
+      events: [],
+      date: DATE,
+    })
+    expect(out.find((r) => r.indicator === 'A2')).toMatchObject({
+      status: 'none-found',
+      hand_status: 'none-found',
+      derived: null,
+      override: null,
+      checked_at: '2025-01-01',
+    })
+    for (const id of ['A1', 'A4', 'C3', 'D1']) {
+      expect(out.find((r) => r.indicator === id)).toMatchObject({
+        status: 'unchecked',
+        hand_status: 'unchecked',
+        derived: null,
+        override: null,
+      })
+    }
   })
 
   it('records the derived no-data of A1 before the first post-war release', () => {

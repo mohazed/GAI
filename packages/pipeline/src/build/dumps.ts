@@ -9,9 +9,9 @@
  * - `dumps/sources.csv`: every source of the dataset, by id, every field in api.ts order.
  * - `dumps/assessments.csv`: one row per country and indicator (countries by ISO3, indicators in
  *   methodology order), with the hand-written and derived statuses; queries joined with ` | `.
- * - `dumps/scores-daily.csv`: one row per date and scored country from the window start to the
- *   build date, by date then ISO3; `score` to one decimal, the clipped category subtotals A–E in
- *   full precision (docs/02 §7, §9: a reader can recompute S with other weights). Coverage is not
+ * - `dumps/scores-daily-{YYYY}.csv`: one file per year, one row per date and scored country from
+ *   the window start to the build date, by date then ISO3; `score` to one decimal, the clipped
+ *   category subtotals A–E in full precision (docs/02 §7, §9: a reader can recompute S with other weights). Coverage is not
  *   a daily value: it is the research status at the build date (countries.json, assessments.csv).
  * - `dumps/gai-{date}.json`: the `ApiDumpFile` (countries, events, sources, assessments,
  *   corrections, replies, open leads), canonical JSON.
@@ -277,10 +277,13 @@ function assessmentsCsv(assessments: readonly DumpAssessment[]): string {
 }
 
 /**
- * `dumps/scores-daily.csv`: by date, then ISO3. Throws when a country is listed twice or when its
- * days do not run from the window start to the build date (one entry per day).
+ * `dumps/scores-daily-{YYYY}.csv`, one file per calendar year from the window start's year to the
+ * build date's: rows by date, then ISO3. One file per year keeps every file far below the 25 MiB
+ * that Cloudflare Pages serves (193 countries × 366 days is about 6 MB), however long the index
+ * runs. Throws when a country is listed twice or when its days do not run from the window start
+ * to the build date (one entry per day).
  */
-function scoresDailyCsv(input: DumpInput): string {
+function scoresDailyCsvs(input: DumpInput): [string, string][] {
   const first = dayNumber(input.windowStart)
   const count = dayNumber(input.date) - first + 1
   const countries = [...input.days].sort(by((c) => c.iso3))
@@ -294,20 +297,29 @@ function scoresDailyCsv(input: DumpInput): string {
       )
     }
   }
-  const rows: unknown[][] = []
+  const years = new Map<string, unknown[][]>()
   for (let i = 0; i < count; i++) {
     const date = isoDate(first + i)
+    const year = date.slice(0, 4)
+    let rows = years.get(year)
+    if (rows === undefined) {
+      rows = []
+      years.set(year, rows)
+    }
     for (const c of countries) {
       const line = { date, iso3: c.iso3, day: c.days[i] as DayScore }
       rows.push(SCORES_DAILY_CSV_COLUMNS.map((col) => SCORE_FIELDS[col](line)))
     }
   }
-  return csvDocument(SCORES_DAILY_CSV_COLUMNS, rows)
+  return [...years.entries()].map(([year, rows]) => [
+    `dumps/scores-daily-${year}.csv`,
+    csvDocument(SCORES_DAILY_CSV_COLUMNS, rows),
+  ])
 }
 
 /**
- * The five dump files, keyed by path relative to api/v1/: `dumps/events.csv`,
- * `dumps/sources.csv`, `dumps/assessments.csv`, `dumps/scores-daily.csv` and
+ * The dump files, keyed by path relative to api/v1/: `dumps/events.csv`, `dumps/sources.csv`,
+ * `dumps/assessments.csv`, `dumps/scores-daily-{YYYY}.csv` for each year, and
  * `dumps/gai-{date}.json`, in that order.
  */
 export function dumpFiles(input: DumpInput): Map<string, string> {
@@ -362,7 +374,7 @@ export function dumpFiles(input: DumpInput): Map<string, string> {
     ['dumps/events.csv', eventsCsv(events)],
     ['dumps/sources.csv', sourcesCsv(sources)],
     ['dumps/assessments.csv', assessmentsCsv(assessments)],
-    ['dumps/scores-daily.csv', scoresDailyCsv(input)],
+    ...scoresDailyCsvs(input),
     [`dumps/gai-${input.date}.json`, jsonText(dump)],
   ])
 }

@@ -198,7 +198,10 @@ export const ApiEvent = z.strictObject({
     /** For superseded, earlier-position, less-severe and same-tier: the event counting instead. */
     by: EventIdLike.nullable(),
   }),
-  /** Computed events: points of the country's previous computed event of the indicator. */
+  /**
+   * Computed events: points of the computed value of the same country and indicator in force the
+   * day before; null for the first value and after a gap (no value in force the day before).
+   */
   previous_points: Num.nullable(),
   /** Ids of the corrections log entries naming the event. */
   corrections: z.array(CorrectionId),
@@ -234,8 +237,9 @@ export const ApiCorrection = z.strictObject({
   after: z.record(z.string(), z.unknown()),
   reason: NonEmpty,
   /**
-   * The commit that added the entry to the corrections log (the previous version of the event is
-   * at its parent, docs/03 §8); null when the entry is not committed or the clone is shallow.
+   * The mainline commit (first-parent history of the built branch: the merge or direct commit)
+   * that added the entry to the corrections log; the previous version of the event is at its first
+   * parent (docs/03 §8). Null when the entry is not committed or the clone is shallow.
    */
   commit: GitSha.nullable(),
 })
@@ -671,7 +675,8 @@ export type ApiMovers = z.infer<typeof ApiMovers>
 
 /**
  * One entry of the changes feed: a published event scoped to gaza starting on `date`
- * (`change: start`), or a standing state ending on `date` (`change: end`, its end date).
+ * (`change: start`), or a standing state or a computed value not followed by another ending on
+ * `date` (`change: end`, its end date, the first day it no longer counts).
  */
 export const ApiFeedEntry = z.strictObject({
   id: EventIdLike,
@@ -684,9 +689,9 @@ export const ApiFeedEntry = z.strictObject({
   change: z.enum(['start', 'end']),
   date: IsoDate,
   points: Num,
-  /** Computed events: points of the previous computed event of the country and indicator. */
+  /** Computed starts: `ApiEvent.previous_points`; null for other entries. */
   previous_points: Num.nullable(),
-  /** false only for a computed event whose points equal the previous value (docs P-09). */
+  /** false only for a computed start whose points equal the value in force the day before (P-09). */
   points_changed: z.boolean(),
   confidence: Confidence,
   generated: z.boolean(),
@@ -746,7 +751,10 @@ export const ApiChangesLatestFile = z.strictObject({
   build_date: IsoDate,
   methodology: MethodologyVersion,
   movers: z.strictObject({ d7: ApiMovers, d30: ApiMovers }),
-  /** The 20 latest entries dated on or before the build date, newest first. */
+  /**
+   * The 20 latest entries dated on or before the build date, newest first, computed values whose
+   * points did not change left out (P-09).
+   */
   recent: z.array(ApiFeedEntry),
   /** The ISO week of the build date and the four before it, newest first. */
   weeks: z.array(ApiFeedWeek),
@@ -879,7 +887,11 @@ export type ApiBuildNotesFile = z.infer<typeof ApiBuildNotesFile>
 export const ApiGitInfo = z.strictObject({
   /** HEAD of the repository the build read, or null outside a git checkout. */
   sha: GitSha.nullable(),
-  /** Uncommitted changes under the build's inputs (data, archive, methodology, code). */
+  /**
+   * Uncommitted changes under the build's inputs (data, archive, methodology, code), and files
+   * git ignores under data, archive and methodology: either makes the build unreproducible from
+   * a clone at `sha`. Null when git cannot tell.
+   */
   dirty: z.boolean().nullable(),
 })
 export type ApiGitInfo = z.infer<typeof ApiGitInfo>

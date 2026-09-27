@@ -90,8 +90,11 @@ export type { BuildInput, BuildNote, BuildOutput } from './types.js'
 /** A problem in the data or the methodology that stops the build; the message says what. */
 export class BuildError extends Error {}
 
-/** Cloudflare Pages serves files up to 25 MiB; a file above this size is noted. */
+/** A file above this size is noted in build-notes.json, before it reaches the limit. */
 export const LARGE_FILE_BYTES = 20 * 1024 * 1024
+
+/** Cloudflare Pages serves files up to 25 MiB (docs/04 §5): a larger file fails the build. */
+export const MAX_FILE_BYTES = 25 * 1024 * 1024
 
 /** How many problems an error message lists before "and n more". */
 const LISTED = 50
@@ -253,6 +256,34 @@ function apiIndicators(s: CountryScore): ApiScoredCountryFile['indicators'] {
   }))
 }
 
+/**
+ * The size checks of step 6: a `large-file` note for each file above LARGE_FILE_BYTES, and a
+ * BuildError listing every file above MAX_FILE_BYTES, which Cloudflare Pages would not serve.
+ */
+export function checkSizes(files: ReadonlyMap<string, string | Uint8Array>): BuildNote[] {
+  const notes: BuildNote[] = []
+  const tooLarge: string[] = []
+  for (const [path, content] of [...files.entries()].sort(([a], [b]) => byCode(a, b))) {
+    const bytes =
+      typeof content === 'string' ? Buffer.byteLength(content, 'utf8') : content.byteLength
+    if (bytes > MAX_FILE_BYTES) tooLarge.push(`${path}: ${bytes} bytes`)
+    else if (bytes > LARGE_FILE_BYTES) {
+      notes.push({
+        kind: 'large-file',
+        country: null,
+        indicator: null,
+        message: `${path} is ${bytes} bytes; Cloudflare Pages serves files up to 25 MiB (docs/04 §5)`,
+      })
+    }
+  }
+  if (tooLarge.length > 0) {
+    throw new BuildError(
+      `${tooLarge.length} file(s) exceed the 25 MiB that Cloudflare Pages serves (docs/04 §5); split them:\n${listed(tooLarge)}`,
+    )
+  }
+  return notes
+}
+
 // ---------------------------------------------------------------------------------------------
 // The build
 
@@ -396,12 +427,24 @@ export function buildData(input: BuildInput): BuildOutput {
     }
     runs.push(run)
   }
-  if (ds.structured['fts_funding.csv'].length === 0) {
+  // A table without rows was not imported: deriveGeneratedStatuses leaves its indicator to the
+  // hand-written assessments (null), except A1 before the first post-war SIPRI release, which is
+  // no-data for every country whatever the table holds (docs/02 §5).
+  const emptyTableIndicators = [
+    ['sipri_deliveries.csv', 'A1'],
+    ['comtrade_a2.csv', 'A2'],
+    ['sipri_orders.csv', 'A4'],
+    ['comtrade_c3.csv', 'C3'],
+    ['fts_funding.csv', 'D1'],
+  ] as const
+  for (const [table, indicator] of emptyTableIndicators) {
+    if (ds.structured[table].length > 0) continue
+    if ([...derivedBy.values()].some((d) => (d[indicator] ?? null) !== null)) continue
     note(
       'assessment-derived',
-      'fts_funding.csv has no rows; the hand-written assessments decide D1',
+      `${table} has no rows; the hand-written assessments decide ${indicator}`,
       null,
-      'D1',
+      indicator,
     )
   }
 
@@ -738,16 +781,7 @@ export function buildData(input: BuildInput): BuildOutput {
   const files = new Map<string, string | Uint8Array>()
   for (const [path, value] of json) files.set(path, jsonText(value))
   for (const [path, content] of text) files.set(path, content)
-  for (const [path, content] of [...files.entries()].sort(([a], [b]) => byCode(a, b))) {
-    const bytes =
-      typeof content === 'string' ? Buffer.byteLength(content, 'utf8') : content.byteLength
-    if (bytes > LARGE_FILE_BYTES) {
-      note(
-        'large-file',
-        `${path} is ${bytes} bytes; Cloudflare Pages serves files up to 25 MiB (docs/04 §5)`,
-      )
-    }
-  }
+  notes.push(...checkSizes(files))
   const kindOrder = new Map<string, number>(BUILD_NOTE_KINDS.map((k, i) => [k, i]))
   const sortedNotes = [...notes].sort(
     (a, b) =>

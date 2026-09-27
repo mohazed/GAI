@@ -81,8 +81,8 @@ export interface ApiEventInfo {
   /** The event's EventEvaluation at the build date (from CountryScore.events). */
   evaluation: EventEvaluation
   /**
-   * Computed events: points of the previous computed event of the same country and indicator
-   * (`previousComputedPoints`), else null. Ignored (null) for other types.
+   * Computed events: points of the computed event of the same country and indicator in force the
+   * day before (`previousComputedPoints`), else null. Ignored (null) for other types.
    */
   previousPoints: number | null
   /** Ids of the corrections log entries naming the event. */
@@ -167,20 +167,24 @@ export function toApiEvent(e: Event, info: ApiEventInfo): ApiEvent {
 }
 
 /**
- * Event id → points of the previous computed event of the same country and indicator, over the
- * given events ordered by date then id; null for the first computed event of its series and for
- * every event that is not computed. Every event passed gets an entry.
+ * Event id → points of the computed event of the same country and indicator in force the day
+ * before it starts: the previous one of its series (by date then id) when that one ends on this
+ * event's date (`end` is exclusive, docs/02 §3). Null for the first value of a series, after a gap
+ * (a month without FTS funding, a SIPRI release or Comtrade year without a row of the country: the
+ * value before was 0 or no data, so the new value is a change), and for every event that is not
+ * computed. Every event passed gets an entry.
  */
 export function previousComputedPoints(events: readonly Event[]): Map<string, number | null> {
   const out = new Map<string, number | null>()
   const computed = events
     .filter((e) => e.type === 'computed')
     .sort((a, b) => compareStrings(a.date, b.date) || compareStrings(a.id, b.id))
-  const last = new Map<string, number>()
+  const last = new Map<string, Event>()
   for (const e of computed) {
     const key = `${e.country}\u0000${e.indicator}`
-    out.set(e.id, last.get(key) ?? null)
-    last.set(key, e.points)
+    const prev = last.get(key)
+    out.set(e.id, prev !== undefined && prev.end === e.date ? prev.points : null)
+    last.set(key, e)
   }
   for (const e of events) if (e.type !== 'computed') out.set(e.id, null)
   return out

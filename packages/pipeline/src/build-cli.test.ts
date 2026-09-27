@@ -352,6 +352,14 @@ describe('runBuildData: a run', () => {
     const { deps, calls } = fakeDeps()
     delete deps.load
     delete deps.write
+    // The second run replaces this build only if its manifest.json carries build-data's
+    // `generator` (manifest.ts), written out by hand.
+    const build = deps.build as BuildDeps['build']
+    deps.build = (input) => {
+      const output = build(input)
+      output.files.set('manifest.json', '{"generator":"@gai/pipeline build-data"}\n')
+      return output
+    }
     const r = run(['--root', 'fixtures', '--out', out, '--site-url', 'https://example.org'], deps)
     expect(r.stderr).toBe('')
     expect(r.code).toBe(0)

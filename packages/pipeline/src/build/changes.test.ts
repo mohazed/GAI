@@ -394,6 +394,58 @@ describe('feedEntries', () => {
     expect(end?.points_changed).toBe(true)
   })
 
+  it('lists the end of a computed value that no other value of its indicator follows', () => {
+    // Synthetic D1 series of AAA: +1 for August 2026, nothing for September (no funding row),
+    // +1 again from 1 October; and a C3 value replaced on its end date by the next release.
+    const events = [
+      ev({
+        id: 'evt_2026_08_01_AAA_D1_fts',
+        indicator: 'D1',
+        type: 'computed',
+        date: '2026-08-01',
+        end: '2026-09-01',
+        points: 1,
+        previous_points: null,
+      }),
+      ev({
+        id: 'evt_2026_10_01_AAA_D1_fts',
+        indicator: 'D1',
+        type: 'computed',
+        date: '2026-10-01',
+        end: '2026-11-01',
+        points: 1,
+        previous_points: null,
+      }),
+      ev({
+        id: 'evt_2025_05_20_AAA_C3_comtrade-2024-self',
+        indicator: 'C3',
+        type: 'computed',
+        date: '2025-05-20',
+        end: '2026-05-20',
+        points: -5,
+        previous_points: null,
+      }),
+      ev({
+        id: 'evt_2026_05_20_AAA_C3_comtrade-2025-self',
+        indicator: 'C3',
+        type: 'computed',
+        date: '2026-05-20',
+        end: null,
+        points: -5,
+        previous_points: -5,
+      }),
+    ]
+    const out = feedEntries(input('2026-10-15', { events }))
+    expect(out.map((e) => [e.date, e.id, e.change, e.points_changed])).toEqual([
+      ['2025-05-20', 'evt_2025_05_20_AAA_C3_comtrade-2024-self', 'start', true],
+      ['2026-05-20', 'evt_2026_05_20_AAA_C3_comtrade-2025-self', 'start', false],
+      ['2026-08-01', 'evt_2026_08_01_AAA_D1_fts', 'start', true],
+      ['2026-09-01', 'evt_2026_08_01_AAA_D1_fts', 'end', true],
+      ['2026-10-01', 'evt_2026_10_01_AAA_D1_fts', 'start', true],
+    ])
+    expect(out[3]?.previous_points).toBeNull()
+  })
+
   it('ignores previous_points on events that are not computed', () => {
     const e = ev({ id: 'evt_2026_09_02_AAA_B9', type: 'repeatable', date: '2026-09-02', points: 2 })
     const [entry] = feedEntries(input(BUILD, { events: [{ ...e, previous_points: 2 }] }))
@@ -746,19 +798,18 @@ describe('latestFile', () => {
     expect(latest.movers.d30.down.map((m) => [m.iso3, m.display_delta])).toEqual([['BBB', -2]])
   })
 
-  it('recent lists the entries newest first', () => {
+  it('recent lists the entries newest first, unchanged computed values left out (P-09)', () => {
+    // Left out: AAA C3 of 2026-09-22 (−3, as before), AAA D1 of 2026-09-01 (+3, as before) and
+    // CCC D1 of 2026-09-01 (0, as before).
     expect(latest.recent.map(key)).toEqual([
       '2026-09-27 evt_2026_09_27_BBB_B9 start',
-      '2026-09-22 evt_2026_09_22_AAA_C3_comtrade-2025 start',
       '2026-09-22 evt_2023_05_01_CCC_B11 end',
       '2026-09-20 evt_2026_09_20_CCC_C4 end',
       '2026-09-20 evt_2026_09_20_CCC_C4 start',
       '2026-09-18 evt_2026_09_18_AAA_B9 start',
       '2026-09-15 evt_2026_09_15_BBB_A1_sipri-2026 start',
       '2026-09-10 evt_2026_09_10_AAA_A6 start',
-      '2026-09-01 evt_2026_09_01_AAA_D1_fts-2026-09 start',
       '2026-09-01 evt_2026_09_01_BBB_D1_fts-2026-09 start',
-      '2026-09-01 evt_2026_09_01_CCC_D1_fts-2026-09 start',
       '2026-08-31 evt_2026_08_31_CCC_B9 start',
       '2026-08-01 evt_2026_08_01_AAA_D1_fts-2026-08 start',
       '2024-03-11 evt_2024_03_11_BBB_A1_sipri-2023 start',

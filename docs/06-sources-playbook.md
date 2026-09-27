@@ -91,7 +91,7 @@ Inclusion of ES-10/24 (occupation as a whole, not Gaza only) and of the 2026 par
 7. Run `pnpm validate` until clean; run `pnpm score --country XXX --preview` (the new events are still drafts, and only published events score; `--preview` scores draft and reviewed events as if published and says so) and read the result critically: does any single event dominate unexpectedly, is any cap hit, does the band match the evidence?
 8. Second reading (rule 6): re-open every archived text; confirm each quote and each indicator match; set `second_read.verdict`.
 9. Set `status: reviewed`; commit on branch `data/wave-N`; write the PR description as a table of events with points and confidence, plus the assessment summary.
-10. The author reviews the diff, requests changes or merges; the merge commit sets `status: published` (a script `pnpm publish:events --pr N` does the flip with `reviewed_by`).
+10. The author reviews the diff and requests changes, or runs `pnpm publish:events --pr N` on the PR branch while the PR is open, which sets `status: published`, `reviewed_by` and `reviewed_at` on the reviewed events the PR adds or changes (`--exclude` leaves out those not approved); commits; then merges. CI flips nothing (docs/03 §11).
 
 Time budget: 60–120 minutes of session time per major country; the session should stop and hand back if it exceeds three hours without finishing (split the country across two prompts).
 

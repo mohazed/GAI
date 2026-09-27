@@ -9,10 +9,12 @@ import { parse } from 'yaml'
 import {
   type CommandResult,
   DEFAULT_REVIEWER,
+  localIsoDate,
   type PublishEnv,
   parsePublishArgs,
   publishEventsInYaml,
   runPublishEvents,
+  unchangedReviewedIds,
 } from './publish-events.js'
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
@@ -127,6 +129,35 @@ ${head(I, '2025-01-10')}  status: draft
     drafted_by: claude-opus-5-5
     drafted_at: 2026-09-20
 `
+
+// A file as a pull request finds it at its merge base (EARLIER) and as the pull request leaves it
+// (LATER): A reviewed and unchanged, B a draft given its second reading and set to reviewed, C
+// reviewed but edited (its locator), J added. Synthetic, like MULTI.
+const J = 'evt_2025_01_11_DEU_A5'
+const REVIEWED_LINES = `  status: reviewed
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: 2026-09-20
+    second_read: {by: claude-opus-5-5, at: 2026-09-21, verdict: agree}
+`
+const DRAFT_LINES = `  status: draft
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: 2026-09-20
+`
+/** REVIEWED_LINES once publish:events has run with reviewed_by mzouad on `date`. */
+const PUBLISHED_LINES = (date: string) => `  status: published
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: 2026-09-20
+    second_read: {by: claude-opus-5-5, at: 2026-09-21, verdict: agree}
+    reviewed_by: mzouad
+    reviewed_at: ${date}
+`
+const TOP = '# Synthetic test file for publish:events; none of these events is real.\n\n'
+const EDITED_C = head(C, '2025-01-04').replace('locator: paragraph 1', 'locator: paragraph 2')
+const EARLIER = `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(B, '2025-01-03')}${DRAFT_LINES}${head(C, '2025-01-04')}${REVIEWED_LINES}`
+const LATER = `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(B, '2025-01-03')}${REVIEWED_LINES}${EDITED_C}${REVIEWED_LINES}${head(J, '2025-01-11')}${REVIEWED_LINES}`
 
 /** Replaces `from` once, failing the test when it is not in `text` (so expectations stay honest). */
 function swap(text: string, from: string, to: string): string {
@@ -361,6 +392,65 @@ describe('publishEventsInYaml', () => {
     expect(() => publishEventsInYaml(REVIEWED, opts({ date: '2026-02-30' }))).toThrow(RangeError)
     expect(() => publishEventsInYaml(REVIEWED, opts({ date: '27/09/2026' }))).toThrow(RangeError)
   })
+
+  it('skips the events named in unchanged, and reports an excluded one as excluded', () => {
+    const r = publishEventsInYaml(LATER, { ...opts(), unchanged: new Set([A]) })
+    expect(r.published).toEqual([B, C, J])
+    expect(r.skipped).toEqual([
+      {
+        id: A,
+        reason: 'reviewed before this pull request and not changed by it; not published here',
+      },
+    ])
+    expect(r.text).toBe(
+      `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(B, '2025-01-03')}${PUBLISHED_LINES('2026-09-28')}${EDITED_C}${PUBLISHED_LINES('2026-09-28')}${head(J, '2025-01-11')}${PUBLISHED_LINES('2026-09-28')}`,
+    )
+    const both = publishEventsInYaml(LATER, { ...opts({ exclude: [A] }), unchanged: new Set([A]) })
+    expect(both.skipped).toEqual([{ id: A, reason: 'excluded' }])
+    expect(both.published).toEqual([B, C, J])
+  })
+})
+
+describe('unchangedReviewedIds', () => {
+  it('lists the events reviewed at the merge base and identical on the head, and only those', () => {
+    expect(EDITED_C).not.toBe(head(C, '2025-01-04'))
+    // A: reviewed at the base, identical. B: a draft at the base. C: edited. J: added.
+    expect(unchangedReviewedIds(EARLIER, LATER)).toEqual(new Set([A]))
+    expect(unchangedReviewedIds(EARLIER, EARLIER)).toEqual(new Set([A, C]))
+    // The pull request adds the file: nothing was reviewed before it.
+    expect(unchangedReviewedIds(null, LATER)).toEqual(new Set())
+    // A published event is not a reviewed one.
+    expect(unchangedReviewedIds(FIXTURE, FIXTURE)).toEqual(new Set())
+    expect(unchangedReviewedIds('', LATER)).toEqual(new Set())
+  })
+
+  it('compares values, not bytes: comments, quoting and order do not make an event changed', () => {
+    const restyled = `${TOP}${head(C, '2025-01-04')}${REVIEWED_LINES}# moved, and A's status quoted
+${head(A, '2025-01-02')}${swap(REVIEWED_LINES, '  status: reviewed\n', "  status: 'reviewed'\n")}`
+    expect(unchangedReviewedIds(EARLIER, restyled)).toEqual(new Set([A, C]))
+  })
+
+  it('throws on a base or head file that is not valid YAML or not a list', () => {
+    expect(() => unchangedReviewedIds('- id: [\n', LATER)).toThrow(
+      /^at the merge base: not valid YAML/,
+    )
+    expect(() => unchangedReviewedIds('id: x\n', LATER)).toThrow(
+      'at the merge base: expected a list of events (docs/03 §4)',
+    )
+    expect(() => unchangedReviewedIds(EARLIER, '- id: [\n')).toThrow(/^not valid YAML/)
+  })
+})
+
+describe('localIsoDate', () => {
+  it('gives the local calendar date, not the UTC one', () => {
+    // Built from local fields, so the expectations hold in every time zone. In Paris (UTC+2 in
+    // October), 00:30 on 5 October is 22:30 UTC on 4 October, whose UTC date the command used to
+    // take; 23:59 on 4 October in New York (UTC−4) is 03:59 UTC on 5 October.
+    expect(localIsoDate(new Date(2026, 9, 5, 0, 30))).toBe('2026-10-05')
+    expect(localIsoDate(new Date(2026, 9, 4, 23, 59))).toBe('2026-10-04')
+    expect(localIsoDate(new Date(2027, 0, 1, 0, 0))).toBe('2027-01-01')
+    expect(localIsoDate(new Date(2026, 11, 31, 23, 59))).toBe('2026-12-31')
+  })
 })
 
 describe('parsePublishArgs', () => {
@@ -418,47 +508,78 @@ interface Fake {
   git: string[][]
 }
 
+// Commit ids of the doubles: the pull request's head, its base branch's tip, their merge base.
 const OID = '0123456789abcdef0123456789abcdef01234567'
+const BASE_OID = 'abcdefabcdefabcdefabcdefabcdefabcdefabcd'
+const MB = '89abcdef0123456789abcdef0123456789abcdef'
+/** What the header says of the pull request of the doubles. */
+const AT = 'data/wave-1 into main, merge base 89abcdef0123'
+const VIEW = ['pr', 'view', '12', '--json', 'headRefName,headRefOid,baseRefName,baseRefOid,state']
 const ok = (stdout: string): CommandResult => ({ code: 0, stdout, stderr: '' })
+const failed = (code: number, stderr: string): CommandResult => ({ code, stdout: '', stderr })
 
+/**
+ * gh, git and the working tree in memory. `files` is the working tree (the pull request's head),
+ * `base` the files at the merge base, `diff` the paths the pull request changes; git reports
+ * each as A (not in `base`), M (in both) or D (not in `files`).
+ */
 function fake(
   over: {
     files?: Record<string, string>
+    base?: Record<string, string>
     diff?: string[]
     branch?: string
     head?: string
+    state?: string
     localOid?: string
     dirty?: string
     view?: CommandResult
+    baseKnown?: boolean
+    mergeBase?: CommandResult
     diffResult?: CommandResult
+    blob?: CommandResult
   } = {},
 ): Fake {
   const files = new Map(Object.entries(over.files ?? { 'data/events/DEU.yaml': REVIEWED }))
+  const base = new Map(Object.entries(over.base ?? {}))
   const writes = new Map<string, string>()
   const gh: string[][] = []
   const git: string[][] = []
+  const nameStatus = (over.diff ?? ['data/events/DEU.yaml'])
+    .map((p) => `${files.has(p) ? (base.has(p) ? 'M' : 'A') : 'D'}\0${p}\0`)
+    .join('')
   const env: PublishEnv = {
     today: '2026-09-27',
     gh: (args) => {
       gh.push([...args])
       if (args[1] === 'view') {
-        return (
-          over.view ??
-          ok(`${JSON.stringify({ headRefName: over.head ?? 'data/wave-1', headRefOid: OID })}\n`)
-        )
+        const json = {
+          headRefName: over.head ?? 'data/wave-1',
+          headRefOid: OID,
+          baseRefName: 'main',
+          baseRefOid: BASE_OID,
+          state: over.state ?? 'OPEN',
+        }
+        return over.view ?? ok(`${JSON.stringify(json)}\n`)
       }
-      if (args[1] === 'diff') {
-        return over.diffResult ?? ok(`${(over.diff ?? ['data/events/DEU.yaml']).join('\n')}\n`)
-      }
-      return { code: 1, stdout: '', stderr: 'unexpected' }
+      return failed(1, 'unexpected')
     },
     git: (args) => {
       git.push([...args])
       if (args[0] === 'rev-parse' && args[1] === '--abbrev-ref')
         return ok(`${over.branch ?? 'data/wave-1'}\n`)
       if (args[0] === 'rev-parse') return ok(`${over.localOid ?? OID}\n`)
+      if (args[0] === 'cat-file' && args[1] === '-e') {
+        return over.baseKnown === false ? failed(128, 'fatal: Not a valid object name') : ok('')
+      }
+      if (args[0] === 'merge-base') return over.mergeBase ?? ok(`${MB}\n`)
+      if (args[0] === 'diff') return over.diffResult ?? ok(nameStatus)
       if (args[0] === 'status') return ok(over.dirty ?? '')
-      return { code: 1, stdout: '', stderr: 'unexpected' }
+      if (args[0] === 'cat-file' && args[1] === 'blob') {
+        const text = base.get(String(args[2]).slice(`${MB}:`.length))
+        return over.blob ?? (text === undefined ? failed(128, 'fatal: path not found') : ok(text))
+      }
+      return failed(1, 'unexpected')
     },
     readFile: (path) => files.get(path) ?? null,
     writeFile: (path, text) => {
@@ -467,6 +588,15 @@ function fake(
   }
   return { env, files, writes, gh, git }
 }
+
+/** The git calls up to the list of changed files. */
+const GIT_TO_DIFF = [
+  ['rev-parse', '--abbrev-ref', 'HEAD'],
+  ['rev-parse', 'HEAD'],
+  ['cat-file', '-e', `${BASE_OID}^{commit}`],
+  ['merge-base', BASE_OID, 'HEAD'],
+  ['diff', '--name-status', '-z', '--no-renames', MB, 'HEAD'],
+]
 
 const PUBLISHED_FIXTURE = (date: string, by = 'mzouad') =>
   FIXTURE.replace(FIXTURE_REVIEW, `    reviewed_by: ${by}\n    reviewed_at: ${date}\n`)
@@ -481,6 +611,7 @@ describe('runPublishEvents', () => {
         'data/events/README.md': 'status: reviewed\n',
         'data/events/old/DEU.yaml': REVIEWED,
         'data/assessments/DEU.yaml': 'country: DEU\n',
+        'data/sources/2025/src_20250808_bundesregierung_ruestungsexporte-gaza.yaml': 'id: x\n',
       },
       diff: [
         'data/sources/2025/src_20250808_bundesregierung_ruestungsexporte-gaza.yaml',
@@ -490,7 +621,6 @@ describe('runPublishEvents', () => {
         'data/events/old/DEU.yaml',
         'data/assessments/DEU.yaml',
         'data/events/DEU.yaml',
-        'data/events/DEU.yaml',
       ],
     })
     const r = runPublishEvents(['--pr', '12'], f.env)
@@ -498,7 +628,7 @@ describe('runPublishEvents', () => {
     expect(r.code).toBe(0)
     expect(r.stdout).toBe(
       [
-        'PR #12 (data/wave-1): 2 event files changed, 5 other changed files ignored',
+        `PR #12 (${AT}): 2 event files changed, 5 other changed files ignored`,
         'data/events/DEU.yaml',
         `  published ${FIXTURE_ID}`,
         'data/events/FRA.yaml',
@@ -510,13 +640,10 @@ describe('runPublishEvents', () => {
     )
     expect([...f.writes.keys()]).toEqual(['data/events/DEU.yaml'])
     expect(f.writes.get('data/events/DEU.yaml')).toBe(PUBLISHED_FIXTURE('2026-09-27'))
-    expect(f.gh).toEqual([
-      ['pr', 'view', '12', '--json', 'headRefName,headRefOid'],
-      ['pr', 'diff', '12', '--name-only'],
-    ])
+    // Both event files are added by the pull request: nothing to read at the merge base.
+    expect(f.gh).toEqual([VIEW])
     expect(f.git).toEqual([
-      ['rev-parse', '--abbrev-ref', 'HEAD'],
-      ['rev-parse', 'HEAD'],
+      ...GIT_TO_DIFF,
       ['status', '--porcelain', '--', 'data/events/DEU.yaml', 'data/events/FRA.yaml'],
     ])
   })
@@ -537,7 +664,7 @@ describe('runPublishEvents', () => {
       'refusing: the current branch is main, but PR #12 comes from data/wave-1; check it out first (gh pr checkout 12)\n',
     )
     expect(f.writes.size).toBe(0)
-    expect(f.gh).toEqual([['pr', 'view', '12', '--json', 'headRefName,headRefOid']])
+    expect(f.gh).toEqual([VIEW])
   })
 
   it('refuses when HEAD is not the head commit of the pull request', () => {
@@ -548,6 +675,23 @@ describe('runPublishEvents', () => {
       'refusing: HEAD is at fedcba987654, but the head of PR #12 is 0123456789ab; pull or push data/wave-1 first, so that the events published are the ones reviewed\n',
     )
     expect(f.writes.size).toBe(0)
+  })
+
+  it('refuses a merged or closed pull request, before any git call', () => {
+    const states: [string, string][] = [
+      ['MERGED', 'merged'],
+      ['CLOSED', 'closed'],
+    ]
+    for (const [state, word] of states) {
+      const f = fake({ state })
+      expect(runPublishEvents(['--pr', '12'], f.env)).toEqual({
+        code: 1,
+        stdout: '',
+        stderr: `refusing: PR #12 is ${word}; publish:events flips the events on the PR branch before merge (docs/03 §11). Open a new pull request from data/wave-1 if it was merged without the flip.\n`,
+      })
+      expect(f.writes.size).toBe(0)
+      expect(f.git).toEqual([])
+    }
   })
 
   it('refuses when the event files have uncommitted changes', () => {
@@ -567,7 +711,7 @@ describe('runPublishEvents', () => {
     expect(f.writes.size).toBe(0)
     expect(r.stdout).toBe(
       [
-        'PR #12 (data/wave-1): 1 event file changed',
+        `PR #12 (${AT}): 1 event file changed`,
         'data/events/DEU.yaml',
         `  published ${FIXTURE_ID}`,
         'Dry run: would publish 1 event in 1 file (reviewed_by mzouad, reviewed_at 2026-09-27); skipped 0. No file written.',
@@ -585,7 +729,7 @@ describe('runPublishEvents', () => {
     expect(r.code).toBe(0)
     expect(r.stdout).toBe(
       [
-        'PR #5 (data/wave-1): 2 event files changed',
+        `PR #5 (${AT}): 2 event files changed`,
         'data/events/DEU.yaml',
         `  published ${A}`,
         `  published ${G}`,
@@ -601,6 +745,78 @@ describe('runPublishEvents', () => {
       ].join('\n'),
     )
     expect([...f.writes.keys()]).toEqual(['data/events/DEU.yaml'])
+  })
+
+  it('publishes only the events the pull request adds or changes, not those reviewed before it', () => {
+    const f = fake({
+      files: { 'data/events/DEU.yaml': LATER },
+      base: { 'data/events/DEU.yaml': EARLIER },
+    })
+    const r = runPublishEvents(['--pr', '12'], f.env)
+    expect(r.stderr).toBe('')
+    expect(r.code).toBe(0)
+    expect(r.stdout).toBe(
+      [
+        `PR #12 (${AT}): 1 event file changed`,
+        'data/events/DEU.yaml',
+        `  published ${B}`,
+        `  published ${C}`,
+        `  published ${J}`,
+        `  skipped   ${A}: reviewed before this pull request and not changed by it; not published here`,
+        'Published 3 events in 1 file (reviewed_by mzouad, reviewed_at 2026-09-27); skipped 1.',
+        'Next: run pnpm validate, then commit the edited files.',
+        '',
+      ].join('\n'),
+    )
+    // A stays reviewed; B (second reading done here), C (edited here) and J (added) publish.
+    expect(f.writes.get('data/events/DEU.yaml')).toBe(
+      `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(B, '2025-01-03')}${PUBLISHED_LINES('2026-09-27')}${EDITED_C}${PUBLISHED_LINES('2026-09-27')}${head(J, '2025-01-11')}${PUBLISHED_LINES('2026-09-27')}`,
+    )
+    expect(f.git).toEqual([
+      ...GIT_TO_DIFF,
+      ['status', '--porcelain', '--', 'data/events/DEU.yaml'],
+      ['cat-file', 'blob', `${MB}:data/events/DEU.yaml`],
+    ])
+  })
+
+  it('does not publish, with a later pull request, an event excluded from an earlier one', () => {
+    // PR #3 adds A and C; the author excludes A. Its file, once published and merged, is the
+    // merge base of PR #9, which adds J to the same file and excludes nothing.
+    const pr3 = `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(C, '2025-01-04')}${REVIEWED_LINES}`
+    const first = fake({ files: { 'data/events/DEU.yaml': pr3 } })
+    const r3 = runPublishEvents(['--pr', '3', '--exclude', A], first.env)
+    expect(r3.code).toBe(0)
+    expect(r3.stdout).toContain(`  published ${C}\n  skipped   ${A}: excluded\n`)
+    const merged = first.writes.get('data/events/DEU.yaml') ?? ''
+    expect(merged).toBe(
+      `${TOP}${head(A, '2025-01-02')}${REVIEWED_LINES}${head(C, '2025-01-04')}${PUBLISHED_LINES('2026-09-27')}`,
+    )
+
+    const pr9 = `${merged}${head(J, '2025-01-11')}${REVIEWED_LINES}`
+    const later = fake({
+      files: { 'data/events/DEU.yaml': pr9 },
+      base: { 'data/events/DEU.yaml': merged },
+    })
+    const r9 = runPublishEvents(['--pr', '9'], later.env)
+    expect(r9.code).toBe(0)
+    expect(r9.stdout).toContain(
+      `  published ${J}\n  skipped   ${A}: reviewed before this pull request and not changed by it; not published here\n`,
+    )
+    expect(later.writes.get('data/events/DEU.yaml')).toBe(
+      `${merged}${head(J, '2025-01-11')}${PUBLISHED_LINES('2026-09-27')}`,
+    )
+  })
+
+  it('accepts an --exclude naming an event reviewed before the pull request', () => {
+    const f = fake({
+      files: { 'data/events/DEU.yaml': LATER },
+      base: { 'data/events/DEU.yaml': EARLIER },
+    })
+    const r = runPublishEvents(['--pr', '12', '--exclude', `${A},${J}`], f.env)
+    expect(r.code).toBe(0)
+    expect(r.stdout).toContain(
+      `  published ${B}\n  published ${C}\n  skipped   ${A}: excluded\n  skipped   ${J}: excluded\n`,
+    )
   })
 
   it('refuses an excluded id that is not an event of the changed files, writing nothing', () => {
@@ -637,21 +853,115 @@ describe('runPublishEvents', () => {
     )
   })
 
+  it('dates the review with the local day it is given, just after local midnight too', () => {
+    // 00:30 on 5 October, local time: an event drafted and read a second time that day.
+    const drafted = swap(
+      swap(REVIEWED_LINES, 'drafted_at: 2026-09-20', 'drafted_at: 2026-10-05'),
+      'at: 2026-09-21',
+      'at: 2026-10-05',
+    )
+    const f = fake({
+      files: { 'data/events/DEU.yaml': `${TOP}${head(J, '2025-01-11')}${drafted}` },
+    })
+    f.env.today = localIsoDate(new Date(2026, 9, 5, 0, 30))
+    const r = runPublishEvents(['--pr', '12', '--date', '2026-10-05'], f.env)
+    expect(r.stderr).toBe('')
+    expect(r.stdout).toContain(`  published ${J}\n`)
+    expect(f.writes.get('data/events/DEU.yaml')).toContain(
+      '    reviewed_by: mzouad\n    reviewed_at: 2026-10-05\n',
+    )
+  })
+
   it('exits 1 when gh fails or answers unexpectedly', () => {
-    const view = fake({ view: { code: 1, stdout: '', stderr: 'no pull requests found\n' } })
+    const view = fake({ view: failed(1, 'no pull requests found\n') })
     expect(runPublishEvents(['--pr', '99'], view.env)).toEqual({
       code: 1,
       stdout: '',
       stderr: 'gh pr view 99 failed (exit 1): no pull requests found\n',
     })
+    const expected = (got: string) =>
+      `gh pr view 99: expected JSON with headRefName, headRefOid, baseRefName, baseRefOid and state, got ${got}\n`
     const garbled = fake({ view: ok('not json') })
-    expect(runPublishEvents(['--pr', '99'], garbled.env).stderr).toBe(
-      'gh pr view 99: expected JSON with headRefName and headRefOid, got not json\n',
+    expect(runPublishEvents(['--pr', '99'], garbled.env).stderr).toBe(expected('not json'))
+    // An older answer without the base and the state, and a base that is not a commit id.
+    const partial = JSON.stringify({ headRefName: 'data/wave-1', headRefOid: OID })
+    expect(runPublishEvents(['--pr', '99'], fake({ view: ok(partial) }).env).stderr).toBe(
+      expected(partial),
     )
-    const diff = fake({ diffResult: { code: 4, stdout: '', stderr: 'auth required' } })
-    const r = runPublishEvents(['--pr', '99'], diff.env)
-    expect(r.code).toBe(1)
-    expect(r.stderr).toBe('gh pr diff 99 --name-only failed (exit 4): auth required\n')
+    const badBase = JSON.stringify({
+      headRefName: 'data/wave-1',
+      headRefOid: OID,
+      baseRefName: 'main',
+      baseRefOid: '--output=x',
+      state: 'OPEN',
+    })
+    const bad = fake({ view: ok(badBase) })
+    expect(runPublishEvents(['--pr', '99'], bad.env).stderr).toBe(expected(badBase))
+    expect(bad.git).toEqual([])
+  })
+
+  it('lists the changed files with git from the merge base, however many (no gh pr diff)', () => {
+    // A wave-sized pull request: GitHub refuses its diff (HTTP 406 beyond 300 files).
+    const sources = Array.from(
+      { length: 400 },
+      (_, i) => `data/sources/2025/src_20250101_synthetic_${String(i).padStart(3, '0')}.yaml`,
+    )
+    const f = fake({
+      files: {
+        'data/events/DEU.yaml': REVIEWED,
+        ...Object.fromEntries(sources.map((p) => [p, 'id: x\n'])),
+      },
+      diff: [...sources, 'data/events/DEU.yaml'],
+    })
+    const r = runPublishEvents(['--pr', '12'], f.env)
+    expect(r.code).toBe(0)
+    expect(r.stdout).toMatch(
+      /^PR #12 \(data\/wave-1 into main, merge base 89abcdef0123\): 1 event file changed, 400 other changed files ignored\n/,
+    )
+    expect(f.gh).toEqual([VIEW])
+    expect(f.writes.get('data/events/DEU.yaml')).toBe(PUBLISHED_FIXTURE('2026-09-27'))
+  })
+
+  it('refuses when the base commit of the pull request is not in the local repository', () => {
+    const f = fake({ baseKnown: false })
+    expect(runPublishEvents(['--pr', '12'], f.env)).toEqual({
+      code: 1,
+      stdout: '',
+      stderr:
+        'refusing: the base of PR #12 (main at abcdefabcdef) is not in the local repository; run git fetch origin main first\n',
+    })
+    expect(f.git).toEqual(GIT_TO_DIFF.slice(0, 3))
+    expect(f.writes.size).toBe(0)
+  })
+
+  it('exits 1, writing nothing, when git merge-base, git diff or git cat-file fails', () => {
+    const noBase = fake({ mergeBase: failed(1, '') })
+    expect(runPublishEvents(['--pr', '12'], noBase.env)).toEqual({
+      code: 1,
+      stdout: '',
+      stderr: 'git merge-base abcdefabcdef HEAD failed (exit 1)\n',
+    })
+    const diff = fake({ diffResult: failed(128, 'fatal: bad object\n') })
+    expect(runPublishEvents(['--pr', '12'], diff.env)).toEqual({
+      code: 1,
+      stdout: '',
+      stderr: 'git diff --name-status 89abcdef0123 HEAD failed (exit 128): fatal: bad object\n',
+    })
+    const blob = fake({
+      base: { 'data/events/DEU.yaml': REVIEWED },
+      blob: failed(128, 'fatal: unable to read'),
+    })
+    expect(runPublishEvents(['--pr', '12'], blob.env)).toEqual({
+      code: 1,
+      stdout: '',
+      stderr:
+        'git cat-file blob 89abcdef0123:data/events/DEU.yaml failed (exit 128): fatal: unable to read\n',
+    })
+    const broken = fake({ base: { 'data/events/DEU.yaml': '- id: [\n' } })
+    expect(runPublishEvents(['--pr', '12'], broken.env).stderr).toMatch(
+      /^data\/events\/DEU\.yaml: at the merge base: not valid YAML/,
+    )
+    for (const f of [noBase, diff, blob, broken]) expect(f.writes.size).toBe(0)
   })
 
   it('reports event files deleted by the pull request and publishes the others', () => {
@@ -669,14 +979,10 @@ describe('runPublishEvents', () => {
     const r = runPublishEvents(['--pr', '12'], f.env)
     expect(r).toEqual({
       code: 0,
-      stdout:
-        'PR #12 (data/wave-1): 0 event files changed, 2 other changed files ignored\nNothing to publish.\n',
+      stdout: `PR #12 (${AT}): 0 event files changed, 2 other changed files ignored\nNothing to publish.\n`,
       stderr: '',
     })
-    expect(f.git).toEqual([
-      ['rev-parse', '--abbrev-ref', 'HEAD'],
-      ['rev-parse', 'HEAD'],
-    ])
+    expect(f.git).toEqual(GIT_TO_DIFF)
   })
 
   it('writes nothing when one of the files cannot be edited', () => {
