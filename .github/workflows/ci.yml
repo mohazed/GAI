@@ -53,3 +53,16 @@ jobs:
         run: pnpm build:data:check
       - name: Build the API twice and compare (fixtures)
         run: pnpm build:data:check --root fixtures
+      # The site (docs/04 §3): pnpm build writes the API from data/ and exports apps/web to out/;
+      # its postbuild writes each page's CSP and fails on inline styles, the dev-only kit, Inter or
+      # any colour outside the design tokens (docs/05 §9).
+      - name: Build the site
+        run: pnpm build
+      # The kit build adds the dev-only /_kit route (fixtures API) in apps/web/out-kit/, never
+      # deployed; the browser tests run axe on it and check the CSP, the redirect and no-JS output.
+      - name: Build the component kit
+        run: pnpm --filter @gai/web build:kit
+      - name: Install Chromium for Playwright
+        run: pnpm --filter @gai/web exec playwright install --with-deps chromium
+      - name: Browser tests (axe on /_kit, CSP, redirect, no-JS)
+        run: pnpm test:e2e

@@ -1,0 +1,288 @@
+{
+  "common": {
+    "siteName": "Gaza Accountability Index",
+    "skip": "Skip to content",
+    "navLabel": "Main",
+    "nav": {
+      "ranking": "Ranking",
+      "countries": "Countries",
+      "compare": "Compare",
+      "changes": "Changes",
+      "methodology": "Methodology",
+      "data": "Data",
+      "about": "About"
+    },
+    "languageLabel": "Language:",
+    "versionTag": "v{version} · built {date}",
+    "versionTitle": "Methodology version and build date; opens the changelog"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "About",
+    "methodology": "Methodology",
+    "corrections": "Corrections",
+    "reply": "Right of reply",
+    "data": "Data & API",
+    "embed": "Embed",
+    "github": "GitHub",
+    "licence": "Data CC BY 4.0 · Code MIT",
+    "build": "v{version} · {sha} · built {date}",
+    "noSha": "no commit"
+  },
+  "home": {
+    "statement": "Every government, one scale, every point sourced.",
+    "sub": "The index records what each state has done regarding Gaza since 7 October 2023, from dated and archived documents.",
+    "readMethodology": "Read the methodology",
+    "scorecard": "Scores are not published yet. Each country page lists the events, their sources and what was checked."
+  },
+  "gauge": {
+    "label": "Score {score}, {band} band, on a scale from −100 to +100.",
+    "tooltip": "{score} · methodology v{version}",
+    "zero": "0 · passivity line",
+    "scorecard": "Score not yet published · scorecard mode",
+    "scorecardLabel": "Scale from −100 to +100. The score is not yet published.",
+    "excluded": "Not scored. {reason}"
+  },
+  "coverage": {
+    "label": "Coverage {pct}",
+    "missing": "{noData} without data, {unchecked} unchecked",
+    "aria": "Coverage {pct}: {covered} of {applicable} applicable indicators checked; {noData} without data, {unchecked} unchecked.",
+    "pastDate": "Coverage as of {date}, the build date. It is not recomputed for earlier dates.",
+    "excluded": "Not assessed: excluded from the index.",
+    "status": {
+      "has-events": "has events",
+      "none-found": "checked, nothing found",
+      "no-data": "no data published",
+      "unchecked": "not checked yet",
+      "not-applicable": "not applicable"
+    }
+  },
+  "categories": {
+    "caption": "Category subtotals, clipped at each category's caps",
+    "captionScorecard": "Published events by category",
+    "category": "Category",
+    "chart": "Subtotal on the category's axis",
+    "subtotal": "Subtotal",
+    "events": "Events",
+    "experimental": "experimental · not scored",
+    "capped": "capped · raw",
+    "count": "{count, plural, =0 {No events} one {# event} other {# events}}"
+  },
+  "event": {
+    "ended": "ended",
+    "retracted": "Retracted.",
+    "seeCorrection": "See correction {id}",
+    "revision": "Revision {n}, see correction",
+    "notice": {
+      "reported": "Single report, no primary document yet · weight {weight}",
+      "disputed": "Disputed: an official denial and the counter-evidence are both linked · weight {weight}"
+    },
+    "scopes": {
+      "gaza": "Gaza",
+      "lebanon": "Lebanon",
+      "west-bank": "West Bank",
+      "region": "Region",
+      "related": "Related"
+    },
+    "notCounted": "Not counted at the build date: {reason}",
+    "reasons": {
+      "counted": "counted",
+      "not-published": "not published",
+      "out-of-scope": "outside the Gaza scope",
+      "not-yet": "not yet in force",
+      "ended": "ended",
+      "expired": "past the decay period",
+      "excluded": "set to zero by a measure that supersedes it",
+      "superseded": "superseded by a later event",
+      "earlier-position": "replaced by a later position",
+      "less-severe": "a more severe event of the indicator counts",
+      "same-tier": "another event of the same tier counts"
+    },
+    "archived": "Archived copy",
+    "notArchived": "Archiving failed",
+    "contested": "Contested in a reply",
+    "scopeLine": "Scope: {scopes}",
+    "translationLabel": "Translation:",
+    "pointsLabel": "Points:"
+  },
+  "hash": {
+    "copy": "SHA-256 {short}; copy the full hash",
+    "copied": "Copied"
+  },
+  "chart": {
+    "dotLabel": "{date}, {indicator}, {points}: {summary}",
+    "timelineAria": "{country}, score from {from} to {to}: {changes, plural, =0 {no change} one {# change} other {# changes}}; {score} at the end.",
+    "stripAria": "{country}, events from {from} to {to}: {count, plural, =0 {none} one {# event} other {# events}}.",
+    "compareAria": "Scores from {from} to {to}: {countries}.",
+    "dataBehind": "Data behind this chart",
+    "empty": "No score change since 7 October 2023.",
+    "noEvents": "No events in the period.",
+    "seriesCaption": "Score changes by date",
+    "eventsCaption": "Events by date",
+    "compareCaption": "Scores at each change date",
+    "dotsCaption": "Category subtotals by country",
+    "date": "Date",
+    "score": "Score",
+    "change": "Change",
+    "cause": "Cause",
+    "indicator": "Indicator",
+    "points": "Points",
+    "summary": "Summary",
+    "start": "Start of the window",
+    "passivityOn": "Passivity penalty applied",
+    "passivityOff": "Passivity penalty lifted",
+    "decay": "Decay of earlier events",
+    "transition": {
+      "start": "starts",
+      "end": "ends",
+      "expire": "no longer counted",
+      "leaves-passivity-window": "leaves the passivity window"
+    }
+  },
+  "rank": {
+    "caption": "Countries by score",
+    "captionScorecard": "Countries in alphabetical order",
+    "filters": "Filters",
+    "coverage50": "Coverage ≥ 50%",
+    "clear": "Clear filters",
+    "count": "{shown} of {total, plural, one {# country} other {# countries}}",
+    "empty": "No country matches these filters. Clear a filter to see more rows.",
+    "delta": "Change from the published score:",
+    "excluded": "Not ranked",
+    "cols": {
+      "position": "#",
+      "country": "Country",
+      "score": "Score",
+      "events": "Events",
+      "band": "Band",
+      "categories": "Categories",
+      "coverage": "Coverage",
+      "lastChange": "Last change"
+    },
+    "regions": {
+      "Africa": "Africa",
+      "Americas": "Americas",
+      "Asia": "Asia",
+      "Europe": "Europe",
+      "Oceania": "Oceania"
+    },
+    "memberships": {
+      "unsc": "Security Council",
+      "eu": "EU",
+      "nato": "NATO",
+      "arab_league": "Arab League",
+      "oic": "OIC",
+      "g20": "G20",
+      "g7": "G7",
+      "brics": "BRICS"
+    },
+    "none": "No country is ranked yet."
+  },
+  "weights": {
+    "title": "Your weights",
+    "explain": "Weights multiply each category's capped subtotal. Events do not change.",
+    "reset": "Reset",
+    "copy": "Copy link",
+    "copied": "Link copied"
+  },
+  "search": {
+    "label": "Find a country",
+    "submit": "Search",
+    "none": "No country matches “{q}”.",
+    "hint": "Name in English or French, or ISO code."
+  },
+  "cite": {
+    "button": "Cite",
+    "title": "Cite this page",
+    "apa": "APA",
+    "chicago": "Chicago",
+    "plain": "Plain",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "changes": {
+    "filters": "Filters",
+    "country": "Country",
+    "indicator": "Indicator",
+    "sign": "Points",
+    "all": "All",
+    "positive": "Positive",
+    "negative": "Negative",
+    "empty": "No changes in this period.",
+    "week": "Week of {date}",
+    "ended": "ended",
+    "unchangedComputed": "{count, plural, one {# computed value} other {# computed values}} recalculated without change.",
+    "endedPoints": "no longer counted"
+  },
+  "version": {
+    "label": "Methodology version",
+    "current": "current",
+    "superseded": "superseded"
+  },
+  "map": {
+    "srScore": "World map of the countries in the index, filled by band. The ranking table lists the same scores.",
+    "srScorecard": "World map of the countries in the index, filled by research coverage. The country table lists the same figures.",
+    "excluded": "excluded from the index",
+    "coverage": "coverage {pct}",
+    "coverageLegend": "Coverage",
+    "bin": "{from} to {to}",
+    "hatched": "Excluded, or no export data",
+    "outside": "Not in the index"
+  },
+  "compare": {
+    "noEvents": "No events for these countries.",
+    "diffCaption": "Events by month and country",
+    "month": "Month",
+    "scorecard": "Scores are not published yet. The tables below compare the published events by category and by month.",
+    "countsCaption": "Published events by category and country"
+  },
+  "methodology": {
+    "caption": "Indicators of methodology {version}",
+    "cols": {
+      "id": "ID",
+      "indicator": "Indicator",
+      "type": "Type",
+      "points": "Points",
+      "cadence": "Cadence"
+    },
+    "types": {
+      "standing": "Standing",
+      "repeatable": "Repeatable",
+      "computed": "Computed"
+    },
+    "cap": ", cap {cap}",
+    "each": "{value} each",
+    "formula": "Formula {ref}, {min} to {max}",
+    "notScored": "tracked, not scored"
+  },
+  "diff": {
+    "none": "No earlier version to compare with.",
+    "unchanged": "No score differs between {from} and {to}.",
+    "caption": "Scores that differ between {from} and {to}",
+    "country": "Country",
+    "cause": "Cause"
+  },
+  "reply": {
+    "none": "No reply published for this country.",
+    "how": "How to submit a right of reply",
+    "from": "Reply from {org}, {role}",
+    "dates": "received {received} · published {published}",
+    "contests": "Contests:",
+    "response": "Response of the index",
+    "outcomeLabel": "Outcome:",
+    "outcome": {
+      "none": "No change",
+      "disputed": "Marked disputed",
+      "corrected": "Corrected",
+      "retracted": "Retracted"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "No page at this address. The ranking lists every country."
+  },
+  "redirect": {
+    "title": "Gaza Accountability Index",
+    "choose": "Choose a language:"
+  }
+}

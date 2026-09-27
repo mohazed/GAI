@@ -7,6 +7,12 @@
     },
     "test": {
       "outputs": []
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "outputs": ["out/**"],
+      "env": ["NEXT_PUBLIC_SHOW_SCORES", "GAI_KIT"]
     }
   }
 }

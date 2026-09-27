@@ -6,7 +6,16 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/out", "!**/.next", "!**/dist", "!**/coverage", "!**/.turbo"]
+    "includes": [
+      "**",
+      "!**/out",
+      "!**/.next",
+      "!**/dist",
+      "!**/coverage",
+      "!**/.turbo",
+      "!apps/web/map/*.topo.json",
+      "!apps/web/next-env.d.ts"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -32,6 +41,11 @@
       "source": {
         "organizeImports": "on"
       }
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   }
 }

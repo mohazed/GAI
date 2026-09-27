@@ -13,6 +13,7 @@
     "format": "biome format --write .",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
+    "test:e2e": "pnpm --filter @gai/web test:e2e",
     "validate": "tsx packages/schema/src/cli/validate.ts",
     "score": "tsx packages/pipeline/src/cli/score.ts",
     "methodology:render": "tsx packages/schema/src/cli/render-methodology.ts",
@@ -24,7 +25,9 @@
     "import:sipri": "tsx packages/pipeline/src/cli/import-sipri.ts",
     "build:data": "tsx packages/pipeline/src/cli/build-data.ts",
     "build:data:check": "tsx packages/pipeline/src/cli/build-data-check.ts",
-    "publish:events": "tsx packages/pipeline/src/cli/publish-events.ts"
+    "publish:events": "tsx packages/pipeline/src/cli/publish-events.ts",
+    "build": "pnpm build:data && turbo run build",
+    "dev": "pnpm --filter @gai/web dev"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",

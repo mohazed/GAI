@@ -1,0 +1,288 @@
+{
+  "common": {
+    "siteName": "Gaza Accountability Index",
+    "skip": "Aller au contenu",
+    "navLabel": "Principal",
+    "nav": {
+      "ranking": "Classement",
+      "countries": "Pays",
+      "compare": "Comparer",
+      "changes": "Changements",
+      "methodology": "Méthodologie",
+      "data": "Données",
+      "about": "À propos"
+    },
+    "languageLabel": "Langue :",
+    "versionTag": "v{version} · généré le {date}",
+    "versionTitle": "Version de la méthodologie et date de génération du site ; ouvre le journal des modifications"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "À propos",
+    "methodology": "Méthodologie",
+    "corrections": "Corrections",
+    "reply": "Droit de réponse",
+    "data": "Données et API",
+    "embed": "Intégrer",
+    "github": "GitHub",
+    "licence": "Données CC BY 4.0 · Code MIT",
+    "build": "v{version} · {sha} · généré le {date}",
+    "noSha": "sans commit"
+  },
+  "home": {
+    "statement": "Chaque gouvernement, une seule échelle, chaque point sourcé.",
+    "sub": "L'indice recense ce que chaque État a fait au sujet de Gaza depuis le 7 octobre 2023, à partir de documents datés et archivés.",
+    "readMethodology": "Lire la méthodologie",
+    "scorecard": "Les scores ne sont pas encore publiés. Chaque page pays présente les événements, leurs sources et ce qui a été vérifié."
+  },
+  "gauge": {
+    "label": "Score {score}, bande {band}, sur une échelle de −100 à +100.",
+    "tooltip": "{score} · méthodologie v{version}",
+    "zero": "0 · seuil de passivité",
+    "scorecard": "Score pas encore publié · mode fiche",
+    "scorecardLabel": "Échelle de −100 à +100. Le score n'est pas encore publié.",
+    "excluded": "Non noté. {reason}"
+  },
+  "coverage": {
+    "label": "Couverture {pct}",
+    "missing": "{noData} sans données, {unchecked, plural, one {# non vérifié} other {# non vérifiés}}",
+    "aria": "Couverture {pct} : {covered} indicateurs applicables vérifiés sur {applicable} ; {noData} sans données, {unchecked} non vérifiés.",
+    "pastDate": "Couverture au {date}, date de compilation. Elle n'est pas recalculée pour les dates antérieures.",
+    "excluded": "Non évalué : exclu de l'indice.",
+    "status": {
+      "has-events": "événements publiés",
+      "none-found": "vérifié, rien trouvé",
+      "no-data": "aucune donnée publiée",
+      "unchecked": "pas encore vérifié",
+      "not-applicable": "non applicable"
+    }
+  },
+  "categories": {
+    "caption": "Sous-totaux par catégorie, bornés par les plafonds de chaque catégorie",
+    "captionScorecard": "Événements publiés par catégorie",
+    "category": "Catégorie",
+    "chart": "Sous-total sur l'axe de la catégorie",
+    "subtotal": "Sous-total",
+    "events": "Événements",
+    "experimental": "expérimental · non noté",
+    "capped": "plafonné · brut",
+    "count": "{count, plural, =0 {Aucun événement} one {# événement} other {# événements}}"
+  },
+  "event": {
+    "ended": "fin",
+    "retracted": "Retiré.",
+    "seeCorrection": "Voir la correction {id}",
+    "revision": "Révision {n}, voir la correction",
+    "notice": {
+      "reported": "Source unique, pas encore de document primaire · poids {weight}",
+      "disputed": "Contesté : un démenti officiel et les éléments contraires sont tous deux liés · poids {weight}"
+    },
+    "scopes": {
+      "gaza": "Gaza",
+      "lebanon": "Liban",
+      "west-bank": "Cisjordanie",
+      "region": "Région",
+      "related": "Lié"
+    },
+    "notCounted": "Non compté à la date de compilation : {reason}",
+    "reasons": {
+      "counted": "compté",
+      "not-published": "non publié",
+      "out-of-scope": "hors du champ Gaza",
+      "not-yet": "pas encore en vigueur",
+      "ended": "terminé",
+      "expired": "au-delà de la période de décroissance",
+      "excluded": "ramené à zéro par une mesure qui le remplace",
+      "superseded": "remplacé par un événement ultérieur",
+      "earlier-position": "remplacé par une position ultérieure",
+      "less-severe": "un événement plus grave du même indicateur compte",
+      "same-tier": "un autre événement du même palier compte"
+    },
+    "archived": "Copie archivée",
+    "notArchived": "Archivage échoué",
+    "contested": "Contesté dans une réponse",
+    "scopeLine": "Champ : {scopes}",
+    "translationLabel": "Traduction :",
+    "pointsLabel": "Points :"
+  },
+  "hash": {
+    "copy": "SHA-256 {short} ; copier l'empreinte complète",
+    "copied": "Copié"
+  },
+  "chart": {
+    "dotLabel": "{date}, {indicator}, {points} : {summary}",
+    "timelineAria": "{country}, score du {from} au {to} : {changes, plural, =0 {aucun changement} one {# changement} other {# changements}} ; {score} à la fin.",
+    "stripAria": "{country}, événements du {from} au {to} : {count, plural, =0 {aucun} one {# événement} other {# événements}}.",
+    "compareAria": "Scores du {from} au {to} : {countries}.",
+    "dataBehind": "Données du graphique",
+    "empty": "Aucun changement de score depuis le 7 octobre 2023.",
+    "noEvents": "Aucun événement sur la période.",
+    "seriesCaption": "Changements de score par date",
+    "eventsCaption": "Événements par date",
+    "compareCaption": "Scores à chaque date de changement",
+    "dotsCaption": "Sous-totaux par catégorie et par pays",
+    "date": "Date",
+    "score": "Score",
+    "change": "Variation",
+    "cause": "Cause",
+    "indicator": "Indicateur",
+    "points": "Points",
+    "summary": "Résumé",
+    "start": "Début de la période",
+    "passivityOn": "Pénalité de passivité appliquée",
+    "passivityOff": "Pénalité de passivité levée",
+    "decay": "Décroissance d'événements antérieurs",
+    "transition": {
+      "start": "début",
+      "end": "fin",
+      "expire": "sortie du score",
+      "leaves-passivity-window": "sortie de la fenêtre de passivité"
+    }
+  },
+  "rank": {
+    "caption": "Pays par score",
+    "captionScorecard": "Pays par ordre alphabétique",
+    "filters": "Filtres",
+    "coverage50": "Couverture ≥ 50 %",
+    "clear": "Effacer les filtres",
+    "count": "{shown} pays sur {total}",
+    "empty": "Aucun pays ne correspond à ces filtres. Retirez un filtre pour voir plus de lignes.",
+    "delta": "Écart avec le score publié :",
+    "excluded": "Hors classement",
+    "cols": {
+      "position": "#",
+      "country": "Pays",
+      "score": "Score",
+      "events": "Événements",
+      "band": "Bande",
+      "categories": "Catégories",
+      "coverage": "Couverture",
+      "lastChange": "Dernier changement"
+    },
+    "regions": {
+      "Africa": "Afrique",
+      "Americas": "Amériques",
+      "Asia": "Asie",
+      "Europe": "Europe",
+      "Oceania": "Océanie"
+    },
+    "memberships": {
+      "unsc": "Conseil de sécurité",
+      "eu": "UE",
+      "nato": "OTAN",
+      "arab_league": "Ligue arabe",
+      "oic": "OCI",
+      "g20": "G20",
+      "g7": "G7",
+      "brics": "BRICS"
+    },
+    "none": "Aucun pays n'est encore classé."
+  },
+  "weights": {
+    "title": "Vos pondérations",
+    "explain": "Les pondérations multiplient le sous-total plafonné de chaque catégorie. Les événements ne changent pas.",
+    "reset": "Réinitialiser",
+    "copy": "Copier le lien",
+    "copied": "Lien copié"
+  },
+  "search": {
+    "label": "Trouver un pays",
+    "submit": "Rechercher",
+    "none": "Aucun pays ne correspond à « {q} ».",
+    "hint": "Nom en français ou en anglais, ou code ISO."
+  },
+  "cite": {
+    "button": "Citer",
+    "title": "Citer cette page",
+    "apa": "APA",
+    "chicago": "Chicago",
+    "plain": "Texte",
+    "copy": "Copier",
+    "copied": "Copié"
+  },
+  "changes": {
+    "filters": "Filtres",
+    "country": "Pays",
+    "indicator": "Indicateur",
+    "sign": "Points",
+    "all": "Tous",
+    "positive": "Positifs",
+    "negative": "Négatifs",
+    "empty": "Aucun changement sur cette période.",
+    "week": "Semaine du {date}",
+    "ended": "fin",
+    "unchangedComputed": "{count, plural, one {# valeur calculée recalculée} other {# valeurs calculées recalculées}} sans changement.",
+    "endedPoints": "ne compte plus"
+  },
+  "version": {
+    "label": "Version de la méthodologie",
+    "current": "en vigueur",
+    "superseded": "remplacée"
+  },
+  "map": {
+    "srScore": "Carte du monde des pays de l'indice, colorés par bande. Le tableau du classement donne les mêmes scores.",
+    "srScorecard": "Carte du monde des pays de l'indice, colorés selon la couverture des recherches. Le tableau des pays donne les mêmes chiffres.",
+    "excluded": "exclu de l'indice",
+    "coverage": "couverture {pct}",
+    "coverageLegend": "Couverture",
+    "bin": "de {from} à {to}",
+    "hatched": "Exclu, ou aucune donnée d'exportation",
+    "outside": "Hors de l'indice"
+  },
+  "compare": {
+    "noEvents": "Aucun événement pour ces pays.",
+    "diffCaption": "Événements par mois et par pays",
+    "month": "Mois",
+    "scorecard": "Les scores ne sont pas encore publiés. Les tableaux ci-dessous comparent les événements publiés par catégorie et par mois.",
+    "countsCaption": "Événements publiés par catégorie et par pays"
+  },
+  "methodology": {
+    "caption": "Indicateurs de la méthodologie {version}",
+    "cols": {
+      "id": "ID",
+      "indicator": "Indicateur",
+      "type": "Type",
+      "points": "Points",
+      "cadence": "Fréquence"
+    },
+    "types": {
+      "standing": "Durable",
+      "repeatable": "Répétable",
+      "computed": "Calculé"
+    },
+    "cap": ", plafond {cap}",
+    "each": "{value} chacun",
+    "formula": "Formule {ref}, de {min} à {max}",
+    "notScored": "suivi, non noté"
+  },
+  "diff": {
+    "none": "Aucune version antérieure à comparer.",
+    "unchanged": "Aucun score ne diffère entre {from} et {to}.",
+    "caption": "Scores qui diffèrent entre {from} et {to}",
+    "country": "Pays",
+    "cause": "Cause"
+  },
+  "reply": {
+    "none": "Aucune réponse publiée pour ce pays.",
+    "how": "Comment exercer le droit de réponse",
+    "from": "Réponse de {org}, {role}",
+    "dates": "reçue le {received} · publiée le {published}",
+    "contests": "Conteste :",
+    "response": "Réponse de l'indice",
+    "outcomeLabel": "Suite donnée :",
+    "outcome": {
+      "none": "Aucun changement",
+      "disputed": "Marqué contesté",
+      "corrected": "Corrigé",
+      "retracted": "Retiré"
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Aucune page à cette adresse. Le classement recense tous les pays."
+  },
+  "redirect": {
+    "title": "Gaza Accountability Index",
+    "choose": "Choisir une langue :"
+  }
+}

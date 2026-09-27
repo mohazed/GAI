@@ -1,0 +1,23 @@
+# Cloudflare Pages response headers (docs/04 §3). Rules add up: a path gets the headers of every
+# rule that matches it.
+#
+# Content-Security-Policy: every HTML page also carries a <meta http-equiv="Content-Security-
+# Policy"> written by scripts/postbuild.ts that allows scripts from this origin and, among inline
+# scripts, only those whose SHA-256 it lists: the language redirect of `/` and the inline data
+# scripts Next.js writes into each page. A browser enforces both policies, so inline scripts run
+# only when hashed. The header below therefore allows 'unsafe-inline' for scripts and the meta
+# restricts it; the build fails if any HTML page lacks the meta. No inline styles are allowed.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
+  X-Frame-Options: DENY
+
+# The API, the share cards and the widget are read from other origins (docs/04 §3, §4).
+/api/*
+  Access-Control-Allow-Origin: *
+/cards/*
+  Access-Control-Allow-Origin: *
+/embed/*
+  Access-Control-Allow-Origin: *
