@@ -1,13 +1,18 @@
 /**
  * After `next build` (docs/04 §3, docs/05 §9):
  * 1. writes the per-page CSP meta into every HTML file (scripts/csp.ts);
- * 2. refuses inline styles, a page without its policy, and a missing _headers;
+ * 2. refuses style attributes, a page without its policy, a url() to a missing file, and a
+ *    missing _headers;
  * 3. production only: refuses the dev-only kit, Inter, and any colour outside the design tokens
- *    in the CSS (a default Tailwind palette would show up as oklch() colours).
+ *    in the CSS (a default Tailwind palette would show up as oklch() colours);
+ * 4. production only: measures the JavaScript of every page against the budget of docs/04 §3
+ *    (scripts/js-budget.ts) and writes the table to out/../.js-weights.txt.
  */
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
+import { missingAssetUrls } from './assets'
 import { policyProblems, withPolicy } from './csp'
+import { budgetProblems, formatWeights, frameworkChunks, measurePage } from './js-budget'
 
 const kit = process.env.GAI_KIT === '1'
 const out = path.resolve(import.meta.dirname, '..', kit ? 'out-kit' : 'out')
@@ -46,8 +51,16 @@ const errors: string[] = []
 if (!existsSync(out)) throw new Error(`${out} does not exist; run next build first`)
 const files = walk(out)
 let pages = 0
+// The RSC payload (.txt, and the inline scripts of each page) is never edited: its text rows are
+// length-prefixed, and an edit breaks hydration.
+for (const f of files.filter((x) => x.endsWith('.css'))) {
+  for (const u of missingAssetUrls(readFileSync(f, 'utf8'), out))
+    errors.push(`${path.relative(out, f)}: url(${u}) is missing`)
+}
 for (const f of files.filter((x) => x.endsWith('.html'))) {
   const html = withPolicy(readFileSync(f, 'utf8'))
+  for (const u of missingAssetUrls(html, out))
+    errors.push(`${path.relative(out, f)}: url(${u}) is missing`)
   writeFileSync(f, html)
   pages += 1
   for (const p of policyProblems(html)) errors.push(`${path.relative(out, f)}: ${p}`)
@@ -71,6 +84,32 @@ if (!kit) {
   }
 }
 
+let weights = ''
+if (!kit) {
+  const manifest = JSON.parse(
+    readFileSync(path.resolve(import.meta.dirname, '..', '.next', 'build-manifest.json'), 'utf8'),
+  ) as { rootMainFiles: string[]; polyfillFiles: string[] }
+  const framework = frameworkChunks(manifest)
+  const cache = new Map<string, number>()
+  const measured = files
+    .filter((f) => f.endsWith('.html'))
+    .map((f) => path.relative(out, f))
+    .sort()
+    .map((page) => measurePage(out, page, framework, cache))
+  errors.push(...budgetProblems(measured))
+  // A client component that imports lib/i18n.ts ships both message files to every browser.
+  for (const f of files.filter(
+    (x) => x.endsWith('.js') && x.includes(`${path.sep}_next${path.sep}`),
+  )) {
+    if (readFileSync(f, 'utf8').includes('"readMethodology":'))
+      errors.push(
+        `${path.relative(out, f)}: contains a whole message file (a client import of lib/i18n?)`,
+      )
+  }
+  weights = formatWeights(measured)
+  writeFileSync(path.resolve(out, '..', '.js-weights.txt'), `${weights}\n`)
+}
+
 if (errors.length > 0) {
   console.error(
     `postbuild: ${errors.length} problem(s)\n${[...new Set(errors)].map((e) => `  ${e}`).join('\n')}`,
@@ -78,3 +117,4 @@ if (errors.length > 0) {
   process.exit(1)
 }
 console.log(`postbuild: CSP written into ${pages} page(s) of ${path.relative(process.cwd(), out)}/`)
+if (weights !== '') console.log(weights)

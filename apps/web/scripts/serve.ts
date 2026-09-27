@@ -1,13 +1,16 @@
 /**
  * A static server for a built site, close enough to Cloudflare Pages for the Playwright tests:
  * serves `<dir>/…/index.html` for directory paths, `404.html` with status 404 for anything
- * missing, and applies the rules of `<dir>/_headers` (every matching rule adds its headers).
+ * missing, applies the rules of `<dir>/_headers` (every matching rule adds its headers), and
+ * gzips text responses for clients that accept it, as the CDN does (Lighthouse measures the
+ * transferred bytes against the budget of docs/04 §3).
  *
  *   tsx scripts/serve.ts [dir=out] [port=4173]
  */
 import { createReadStream, existsSync, readFileSync, statSync } from 'node:fs'
 import { createServer } from 'node:http'
 import path from 'node:path'
+import { createGzip } from 'node:zlib'
 
 const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
@@ -26,6 +29,8 @@ const TYPES: Record<string, string> = {
 interface Rule {
   pattern: RegExp
   headers: [string, string][]
+  /** `! Name` lines: headers an earlier rule set that this path must not carry (Cloudflare). */
+  detach: string[]
 }
 
 export function parseHeaders(text: string): Rule[] {
@@ -36,14 +41,29 @@ export function parseHeaders(text: string): Rule[] {
     if (!/^\s/.test(raw)) {
       const glob = raw.trim()
       const re = `^${glob.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`
-      current = { pattern: new RegExp(re), headers: [] }
+      current = { pattern: new RegExp(re), headers: [], detach: [] }
       rules.push(current)
     } else if (current !== null) {
-      const i = raw.indexOf(':')
-      current.headers.push([raw.slice(0, i).trim(), raw.slice(i + 1).trim()])
+      const line = raw.trim()
+      if (line.startsWith('!')) {
+        current.detach.push(line.slice(1).trim().toLowerCase())
+        continue
+      }
+      const i = line.indexOf(':')
+      current.headers.push([line.slice(0, i).trim(), line.slice(i + 1).trim()])
     }
   }
   return rules
+}
+
+/** The headers of a path: every matching rule adds its own, then detached ones are removed. */
+export function headersFor(rules: readonly Rule[], pathname: string): Record<string, string> {
+  const matching = rules.filter((r) => r.pattern.test(pathname))
+  const detached = new Set(matching.flatMap((r) => r.detach))
+  const out: Record<string, string> = {}
+  for (const r of matching)
+    for (const [k, v] of r.headers) if (!detached.has(k.toLowerCase())) out[k] = v
+  return out
 }
 
 function resolve(dir: string, urlPath: string): string | null {
@@ -81,11 +101,20 @@ export function serve(dir: string, port: number): void {
     const file = resolve(dir, url)
     const status = file === null ? 404 : 200
     const body = file ?? path.join(dir, '404.html')
-    for (const r of rules)
-      if (r.pattern.test(pathname)) for (const [k, v] of r.headers) res.setHeader(k, v)
-    res.setHeader('Content-Type', TYPES[path.extname(body)] ?? 'application/octet-stream')
+    for (const [k, v] of Object.entries(headersFor(rules, pathname))) res.setHeader(k, v)
+    const type = TYPES[path.extname(body)] ?? 'application/octet-stream'
+    res.setHeader('Content-Type', type)
+    const gzip =
+      /^(text\/|application\/json|image\/svg)/.test(type) &&
+      /\bgzip\b/.test(String(req.headers['accept-encoding'] ?? ''))
+    if (gzip) {
+      res.setHeader('Content-Encoding', 'gzip')
+      res.setHeader('Vary', 'Accept-Encoding')
+    }
     res.writeHead(status)
-    createReadStream(body).pipe(res)
+    const stream = createReadStream(body)
+    if (gzip) stream.pipe(createGzip()).pipe(res)
+    else stream.pipe(res)
   }).listen(port, () => {
     console.log(`serving ${path.relative(process.cwd(), dir)}/ on http://localhost:${port}`)
   })

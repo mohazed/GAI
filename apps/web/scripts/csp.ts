@@ -1,12 +1,16 @@
 /**
  * Per-page Content-Security-Policy (docs/04 §3). Next.js writes inline <script> elements into
- * every page (its RSC payload); the root page adds the language redirect. Each HTML file gets a
- * <meta http-equiv="Content-Security-Policy"> that allows scripts from the site's origin and, of
- * the inline ones, exactly those it contains, by SHA-256. See public/_headers.
+ * every page (its RSC payload); the root page adds the language redirect; the stylesheet is
+ * inlined as one <style> element (`experimental.inlineCss`, docs/10 B-102: it saves the round
+ * trip of a render-blocking request). Each HTML file gets a <meta http-equiv=
+ * "Content-Security-Policy"> that allows scripts and styles from the site's origin and, of the
+ * inline ones, exactly those it contains, by SHA-256. Style attributes stay refused (the build
+ * fails on one, and a hash-source never allows them). See public/_headers.
  */
 import { createHash } from 'node:crypto'
 
 const INLINE_SCRIPT = /<script\b([^>]*)>([\s\S]*?)<\/script>/gi
+const INLINE_STYLE = /<style\b[^>]*>([\s\S]*?)<\/style>/gi
 const META_MARK = 'data-gai-csp'
 
 export function inlineScripts(html: string): string[] {
@@ -19,16 +23,21 @@ export function inlineScripts(html: string): string[] {
   return out
 }
 
+export function inlineStyles(html: string): string[] {
+  return [...html.matchAll(INLINE_STYLE)].map((m) => m[1] ?? '')
+}
+
 export function sha256Source(text: string): string {
   return `'sha256-${createHash('sha256').update(text, 'utf8').digest('base64')}'`
 }
 
 export function pagePolicy(html: string): string {
   const hashes = [...new Set(inlineScripts(html).map(sha256Source))].sort()
+  const styles = [...new Set(inlineStyles(html).map(sha256Source))].sort()
   return [
     "default-src 'self'",
     ['script-src', "'self'", ...hashes].join(' '),
-    "style-src 'self'",
+    ['style-src', "'self'", ...styles].join(' '),
     "img-src 'self'",
     "font-src 'self'",
     "connect-src 'self'",
@@ -56,13 +65,15 @@ export function withPolicy(html: string): string {
   return clean.slice(0, at) + meta + clean.slice(at)
 }
 
-/** Offences against the policy that the build must refuse (inline styles, scripts before the meta). */
+/** Offences against the policy that the build must refuse (style attributes, inline code before the meta). */
 export function policyProblems(html: string): string[] {
   const problems: string[] = []
   if (/<[a-z][^>]*\sstyle="/i.test(html))
     problems.push("an inline style attribute (style-src 'self')")
-  if (/<style\b/i.test(html)) problems.push("a <style> element (style-src 'self')")
   const meta = html.indexOf(META_MARK)
+  const firstStyle = html.search(/<style\b/i)
+  if (meta >= 0 && firstStyle >= 0 && firstStyle < meta)
+    problems.push('a <style> before the CSP meta')
   const firstScript = html.search(/<script\b/i)
   if (meta < 0) problems.push('no CSP meta')
   else if (firstScript >= 0 && firstScript < meta) problems.push('a script before the CSP meta')

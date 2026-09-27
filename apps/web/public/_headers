@@ -2,13 +2,15 @@
 # rule that matches it.
 #
 # Content-Security-Policy: every HTML page also carries a <meta http-equiv="Content-Security-
-# Policy"> written by scripts/postbuild.ts that allows scripts from this origin and, among inline
-# scripts, only those whose SHA-256 it lists: the language redirect of `/` and the inline data
-# scripts Next.js writes into each page. A browser enforces both policies, so inline scripts run
-# only when hashed. The header below therefore allows 'unsafe-inline' for scripts and the meta
-# restricts it; the build fails if any HTML page lacks the meta. No inline styles are allowed.
+# Policy"> written by scripts/postbuild.ts that allows scripts and styles from this origin and,
+# among inline ones, only those whose SHA-256 it lists: the language redirect of `/`, the inline
+# data scripts Next.js writes into each page, and the stylesheet inlined in a <style> element
+# (docs/10 B-102). A browser enforces both policies, so inline code runs only when hashed. The
+# header below therefore allows 'unsafe-inline' for scripts and styles and the meta restricts it;
+# the build fails if any HTML page lacks the meta. Style attributes are never allowed: the meta
+# lists hashes, which do not cover attributes, and the build fails on one.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
@@ -21,3 +23,20 @@
   Access-Control-Allow-Origin: *
 /embed/*
   Access-Control-Allow-Origin: *
+
+# Build assets named by content hash (scripts) or package version (fonts, scripts/fonts.ts): cached
+# for good, and without the page-level headers, which only apply to documents and would add some
+# 600 bytes to every script response (the JavaScript budget of docs/04 §3 is measured on the
+# wire). nosniff stays.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  ! Content-Security-Policy
+  ! Permissions-Policy
+  ! Referrer-Policy
+  ! X-Frame-Options
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  ! Content-Security-Policy
+  ! Permissions-Policy
+  ! Referrer-Policy
+  ! X-Frame-Options

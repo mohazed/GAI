@@ -45,8 +45,4 @@ export function clientMessages(lang: Lang): Pick<Messages, (typeof CLIENT_NAMESP
   >
 }
 
-/** Same path in the other language: `/en/ranking/` ↔ `/fr/ranking/`. */
-export function switchLocalePath(path: string, to: Lang): string {
-  const rest = path.replace(/^\/(en|fr)(?=\/|$)/, '')
-  return `/${to}${rest === '' ? '/' : rest}`
-}
+export { switchLocalePath } from './locale-path'

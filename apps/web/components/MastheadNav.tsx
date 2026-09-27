@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { switchLocalePath } from '../lib/i18n'
+import { switchLocalePath } from '../lib/locale-path'
 
 export interface NavItem {
   href: string

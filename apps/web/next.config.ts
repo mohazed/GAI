@@ -28,6 +28,7 @@ const config: NextConfig = {
   transpilePackages: ['@gai/schema', '@gai/scoring'],
   experimental: {
     extensionAlias: { '.js': ['.ts', '.tsx', '.js'] },
+    inlineCss: true,
   },
 }
 

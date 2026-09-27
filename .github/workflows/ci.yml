@@ -54,15 +54,24 @@ jobs:
       - name: Build the API twice and compare (fixtures)
         run: pnpm build:data:check --root fixtures
       # The site (docs/04 §3): pnpm build writes the API from data/ and exports apps/web to out/;
-      # its postbuild writes each page's CSP and fails on inline styles, the dev-only kit, Inter or
-      # any colour outside the design tokens (docs/05 §9).
+      # its postbuild writes each page's CSP and fails on style attributes, a url() to a missing
+      # file, the dev-only kit, Inter, any colour outside the design tokens (docs/05 §9), a page
+      # over the JavaScript budget (150 KB gzipped, 25 KB of application code; docs/10 B-79) or a
+      # message file in a client chunk.
       - name: Build the site
         run: pnpm build
       # The kit build adds the dev-only /_kit route (fixtures API) in apps/web/out-kit/, never
-      # deployed; the browser tests run axe on it and check the CSP, the redirect and no-JS output.
+      # deployed, with scores shown (NEXT_PUBLIC_SHOW_SCORES=true): the browser tests run the page
+      # smoke tests on it in score mode and on out/ in scorecard mode, axe on both and on the kit,
+      # and check the CSP, the redirect and the output without JavaScript.
       - name: Build the component kit
         run: pnpm --filter @gai/web build:kit
       - name: Install Chromium for Playwright
         run: pnpm --filter @gai/web exec playwright install --with-deps chromium
-      - name: Browser tests (axe on /_kit, CSP, redirect, no-JS)
+      - name: Browser tests (Home and Ranking in both modes, axe, CSP, redirect, no-JS)
         run: pnpm test:e2e
+      # Lighthouse CI on out/ (apps/web/lighthouserc.cjs): LCP < 1.5 s on Lighthouse's mobile
+      # profile with applied throttling, JavaScript ≤ 150 KB on the wire, CLS ≤ 0.001,
+      # accessibility, best practices and SEO at 100 (docs/04 §3, docs/10 B-103).
+      - name: Lighthouse CI (performance budgets)
+        run: pnpm --filter @gai/web lighthouse
