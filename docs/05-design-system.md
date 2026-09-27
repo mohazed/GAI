@@ -84,7 +84,7 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 **CiteThis.** Outlined button "Cite" opening a popover with three tabs (APA, Chicago, Plain) and a Copy button. Output includes country, score, band, methodology version, date, and the dated permalink. Example, Plain: `Gaza Accountability Index, Germany: −14 (Passive), methodology v1.0.0, as of 26 September 2026, https://…/country/DEU?date=2026-09-26`.
 
-**ShareCard (PNG, build-time).** 1200 × 630, paper background. Top: wordmark small. Left: country name (Newsreader 72), score (Newsreader 168) with band chip; right: gauge (marker) and coverage line; bottom: summary line in Source Sans 28 and the permalink + methodology version in mono. Same template for all; Phase-1 variant shows "Scorecard · N events · coverage X %" instead of the number.
+**ShareCard (PNG, build-time).** 1200 × 630, paper background. Top: wordmark small. Left: country name (Newsreader 72), score (Newsreader 168) with band chip; right: gauge (marker) and coverage line; bottom: summary line in Source Sans 28 and the permalink + methodology version in mono. Same template for all; Phase-1 variant shows "Scorecard · N events · coverage X %" instead of the number. As built (P-08, docs/10 B-114): one card per language (`/cards/{ISO3}.png`, `/cards/fr/{ISO3}.png`); the Phase-1 line adds "· N computed values" when computed values are in force, since the event count covers acts only (B-74); an excluded entity's card says "Not scored" with the reason, without gauge.
 
 **ChangesFeed.** Grouped by ISO week ("Week of 21 September 2026"); each entry a compact EventCard (date, country, indicator, summary, points). Filters: country, indicator, sign.
 
