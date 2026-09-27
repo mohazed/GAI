@@ -4,8 +4,8 @@
  * coverage at the build date.
  *
  * The score of each day comes from one `CountryScorer` (@gai/scoring), so the daily table
- * (scores/{date}.json, dumps/scores-daily.csv), the series and the build-date snapshot are read
- * from the same evaluations. Coverage describes the research status of the dataset (docs/02 §8,
+ * (scores/{date}.json, dumps/scores-daily-{YYYY}.csv), the series and the build-date snapshot
+ * are read from the same evaluations. Coverage describes the research status of the dataset (docs/02 §8,
  * D-09) and is computed at the build date only: the assessments record what was checked, not
  * when, so a coverage "as of" an earlier date could not be computed honestly.
  */
@@ -27,7 +27,7 @@ const CATEGORIES: readonly CategoryId[] = ['A', 'B', 'C', 'D', 'E']
 
 export interface CountryRunInput {
   country: Country
-  /** Every event of the country: hand-authored (all statuses) and generated. */
+  /** The country's public events (hand-authored and generated); drafts never enter the pass. */
   events: readonly Event[]
   scoring: ScoringMethodology
   /** The effective assessment at the build date (hand statuses with the derived ones laid over). */

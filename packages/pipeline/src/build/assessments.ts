@@ -22,7 +22,7 @@
  *    `no-data` (`no-release`): the card says "no export data", never zero (docs/02 §8).
  * 3. A2: comtrade_a2.csv has no rows → null (not fetched). Else a row of the country released on
  *    or before the date (any HS code, either reporter) → `none-found`
- *    (`row-without-counted-exports`: the rows are HS 8526/8802 not confirmed as military, D-26);
+ *    (`row-without-counted-exports`: the rows are HS 8526/8802 not confirmed as military, docs/02 §2 A2);
  *    else `no-data` (`no-row`: docs/02 §5, "if both absent, no-data").
  * 4. C3: comtrade_c3.csv has no rows → null (not fetched). Else a row of the country released on
  *    or before the date → `none-found` (`row-without-event`); else `no-data` (`no-row`).

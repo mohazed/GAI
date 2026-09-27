@@ -383,7 +383,9 @@ export function buildData(input: BuildInput): BuildOutput {
   const derivedBy = new Map<string, Record<string, DerivedStatus | null>>()
   for (const c of scored) {
     const gen = generatedBy.get(c.iso3) ?? []
-    const events = [...(handBy.get(c.iso3) ?? []), ...gen]
+    // Only public events enter the pass: drafts and reviewed events never score (docs/02 §3), and
+    // an unpublished event must not show through an indicator row, a transition or a count.
+    const events = [...(handBy.get(c.iso3) ?? []).filter((e) => isPublicStatus(e.status)), ...gen]
     const hand = handAssessment.get(c.iso3) ?? null
     const deriveInput = {
       iso3: c.iso3,

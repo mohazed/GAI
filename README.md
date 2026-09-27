@@ -24,10 +24,10 @@ git clone https://github.com/mohazed/GAI.git && cd GAI
 pnpm install
 pnpm lint && pnpm typecheck && pnpm test
 pnpm build:data --date 2026-10-01
-pnpm build
+pnpm build:data:check --date 2026-10-01
 ```
 
-The same commit and date produce identical output files; `manifest.json` lists the SHA-256 of each file for comparison. `build:data` and `build` are added in later build steps and are not yet available.
+The same commit and date produce identical output files under `apps/web/public/api/v1/`; `manifest.json` lists the SHA-256 of each file for comparison, and `pnpm build:data:check` builds twice and compares every byte. The API is documented in `apps/web/public/api/README.md`. `pnpm build` (the site) is added in a later build step and is not yet available.
 
 ## Errors and replies
 

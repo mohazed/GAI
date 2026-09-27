@@ -648,6 +648,40 @@ describe('buildData with Security Council terms (synthetic)', () => {
   })
 })
 
+describe('unpublished events', () => {
+  it('leave no trace in the outputs besides a build note', () => {
+    // A synthetic draft A3 event of DEU (reusing the fixture evidence) in a copy of the fixtures.
+    const root = join(TMP, 'draft')
+    cpSync(FIXTURES, root, { recursive: true })
+    const base = loadDataset(FIXTURES).events[0]?.value as Event
+    const draft: Event = {
+      ...base,
+      id: 'evt_2025_09_01_DEU_A3',
+      revision: 1,
+      indicator: 'A3',
+      date: '2025-09-01',
+      end: null,
+      points: -15,
+      status: 'draft',
+      review: { drafted_by: 'claude-opus-5-5', drafted_at: '2026-09-27' },
+    }
+    // JSON is YAML: the loader reads the list as written.
+    writeFileSync(join(root, 'data/events/DEU.yaml'), JSON.stringify([base, draft], null, 1))
+    const out = buildData(input(loadDataset(root)))
+    const deu = read<ApiScoredCountryFile>(out, 'countries/DEU.json')
+    expect(deu.event_list.map((e) => e.id)).toEqual(['evt_2025_08_08_DEU_A6'])
+    expect(deu.indicators.map((i) => i.id)).toEqual(['A6'])
+    expect(deu.score).toBe(-15)
+    for (const [path, content] of out.files) {
+      if (path === 'build-notes.json') continue
+      expect(String(content).includes('evt_2025_09_01_DEU_A3'), path).toBe(false)
+    }
+    expect(
+      out.notes.filter((n) => n.kind === 'unpublished-event').map((n) => [n.country, n.message]),
+    ).toEqual([['DEU', 'evt_2025_09_01_DEU_A3 is draft: not published']])
+  })
+})
+
 describe('errors that stop the build', () => {
   it('refuses a build date before the window and a site URL that is not http(s)', () => {
     const ds = loadDataset(FIXTURES)

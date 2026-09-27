@@ -41,7 +41,7 @@ Tooling: pnpm, Turborepo, TypeScript strict, Biome (lint + format), Vitest, Play
    - `methodology/{version}.json` for every version folder, `methodology/index.json` (versions and changelog), and the frozen outputs of superseded versions copied from `data/snapshots/{version}/` to `methodology/{version}/`
    - `changes/latest.json`, `changes/{YYYY-MM}.json`, and the monthly report in four variants: `changes/{YYYY-MM}.md` (English), `.fr.md`, `.scorecard.md` and `.scorecard.fr.md` (without scores, for scorecard mode, D-16)
    - `corrections.json`, `replies.json`, `sensitivity.json`, `build-notes.json` (generator notes, unpublished events, events of countries outside the registry, derived statuses the hand-written assessments contradict, unchecked indicators, validation warnings), `manifest.json` (git SHA and dirty flag, methodology version, build date, site URL, size and SHA-256 of every other file)
-   - `dumps/events.csv`, `dumps/sources.csv`, `dumps/assessments.csv`, `dumps/scores-daily.csv`, `dumps/gai-{date}.json` (everything)
+   - `dumps/events.csv`, `dumps/sources.csv`, `dumps/assessments.csv`, `dumps/scores-daily-{YYYY}.csv` (one file per year), `dumps/gai-{date}.json` (everything)
 
    Coverage is the research status of the dataset at the build date; it is not recomputed for earlier dates, because the assessments record what was checked, not when. Outputs always carry the scores; the site decides what to show (D-16).
 7. **Determinism test** (`pnpm build:data:check`, run in CI on `data/` and on `fixtures/`): run steps 1–6 twice, as two separate processes, into temp dirs with the same date and diff every byte. Build time is passed in as an argument so it is not a source of nondeterminism.

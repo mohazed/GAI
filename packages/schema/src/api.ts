@@ -5,7 +5,9 @@
  * are the contract between build-data, the site, the widget and outside readers of the API.
  *
  * Conventions (documented in apps/web/public/api/README.md):
- * - Keys are snake_case; objects are strict; absent values are `null`, never missing keys.
+ * - Keys are snake_case; objects are strict; absent values are `null`, never missing keys, except
+ *   in `methodology/{version}.json`, which reproduces the methodology files as parsed (their
+ *   optional keys may be absent).
  * - Dates are `YYYY-MM-DD` (UTC calendar dates); the only date that depends on the run is the
  *   build date passed to the build (`build_date`), and files whose content does not depend on it
  *   (`scores/{date}.json`, `changes/{YYYY-MM}.json`) do not carry it.

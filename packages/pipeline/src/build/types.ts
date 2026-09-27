@@ -87,7 +87,10 @@ export interface DerivedStatus {
 /** The scoring pass of one scored country (./country.ts). */
 export interface CountryRun {
   country: Country
-  /** Every event of the country: hand-authored (all statuses) and generated. */
+  /**
+   * The country's public events: hand-authored ones whose status is published, corrected,
+   * superseded or retracted, and the generated ones. Drafts and reviewed events never enter.
+   */
   events: Event[]
   scorer: CountryScorer
   /** One entry per day from the window start to the build date. */
