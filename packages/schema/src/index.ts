@@ -4,6 +4,7 @@
  */
 export const packageName = '@gai/schema'
 
+export * from './api.js'
 export * from './ids.js'
 export * from './issues.js'
 export * from './load/dataset.js'

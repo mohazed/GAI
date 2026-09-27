@@ -34,7 +34,10 @@ jobs:
       # One package at a time: the runner has two cores, and the scoring property tests, the
       # schema dataset tests and the pipeline tests are each CPU-bound; run side by side they
       # starve one another past their timeouts.
-      - run: pnpm test --concurrency=1
+      # This step also runs the scoring rules' worked examples (packages/scoring) and the
+      # build-data unit tests (packages/pipeline/src/build): no separate step repeats them.
+      - name: Tests (every package, scoring rules and build-data included)
+        run: pnpm test --concurrency=1
       - name: Validate data and methodology
         run: pnpm validate
         env:
@@ -43,3 +46,10 @@ jobs:
           # push). Pushes to any other branch: empty, so resolveBaseRef uses the merge base with
           # origin/main and the run checks the whole branch, as the pull request run does.
           GAI_VALIDATE_BASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.before != '0000000000000000000000000000000000000000' && github.event.before || '' }}
+      # Determinism (docs/04 §2 step 7, D-25): build the API twice, in two processes into two
+      # temporary directories, with one build date, and fail on any byte of difference. The full
+      # history fetched above lets the build name the commit of every correction.
+      - name: Build the API twice and compare (real data)
+        run: pnpm build:data:check
+      - name: Build the API twice and compare (fixtures)
+        run: pnpm build:data:check --root fixtures

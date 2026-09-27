@@ -23,7 +23,8 @@ export interface SeriesPoint {
   readonly transitions: readonly Transition[]
 }
 
-function point(s: CountryScore, transitions: readonly Transition[]): SeriesPoint {
+/** The series point of one day's score (categories to one decimal). */
+export function seriesPoint(s: CountryScore, transitions: readonly Transition[]): SeriesPoint {
   const categories = {} as Record<CategoryId, { raw: number; clipped: number }>
   for (const id of CATEGORY_IDS) {
     const c = s.categories[id]
@@ -49,6 +50,21 @@ function keyOf(p: SeriesPoint): string {
 }
 
 /**
+ * Keeps the change points of consecutive daily points (one per day, ascending): the first point,
+ * then every point whose published values differ from the day before (see dailySeries).
+ */
+export function compressSeries(points: readonly SeriesPoint[]): SeriesPoint[] {
+  const out: SeriesPoint[] = []
+  let previous = ''
+  for (const p of points) {
+    const key = keyOf(p)
+    if (key !== previous) out.push(p)
+    previous = key
+  }
+  return out
+}
+
+/**
  * The score from `from` to `to` (inclusive, `YYYY-MM-DD`), one point per day on which a published
  * value changes: the score to one decimal, the display integer, the band, the passivity flag, or a
  * category subtotal (raw or clipped) to one decimal. The first day is always a point. Between two
@@ -59,15 +75,11 @@ export function dailySeries(scorer: CountryScorer, from: string, to: string): Se
   const a = dayNumber(from)
   const b = dayNumber(to)
   if (b < a) throw new RangeError(`series end ${to} is before its start ${from}`)
-  const out: SeriesPoint[] = []
-  let previous = ''
+  const points: SeriesPoint[] = []
   for (let day = a; day <= b; day++) {
-    const p = point(scorer.atDay(day), scorer.transitionsOn(day))
-    const key = keyOf(p)
-    if (key !== previous) out.push(p)
-    previous = key
+    points.push(seriesPoint(scorer.atDay(day), scorer.transitionsOn(day)))
   }
-  return out
+  return compressSeries(points)
 }
 
 /** Score of `day` from a full series of change points (null before the first point). */

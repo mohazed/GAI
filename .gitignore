@@ -12,3 +12,9 @@ coverage/
 *.tsbuildinfo
 *.log
 .cache/
+
+# build-data outputs (docs/04 §2): rebuilt from data/ on every deploy, never committed (D-25).
+# The .building and .previous siblings exist only while a build replaces the previous one.
+/apps/web/public/api/v1/
+/apps/web/public/api/v1.building/
+/apps/web/public/api/v1.previous/
