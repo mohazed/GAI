@@ -403,8 +403,15 @@ export function indicatorOf(
   return ind
 }
 
+/**
+ * The parts of the methodology that combine a country's published subtotals into S (docs/02 §7,
+ * §9): the categories, the final clip and the bands. The site recomputes S with reader weights in
+ * the browser from these alone, without the indicators.
+ */
+export type CombineModel = Pick<ScoringMethodology, 'categories' | 'scoreClip' | 'bands'>
+
 /** The band whose inclusive range holds the rounded score (docs/02 §7). */
-export function bandFor(m: ScoringMethodology, display: number): CompiledBand {
+export function bandFor(m: Pick<ScoringMethodology, 'bands'>, display: number): CompiledBand {
   if (!Number.isInteger(display))
     throw new RangeError(`the band is read from an integer, got ${display}`)
   const band = m.bands.find((b) => display >= b.min && display <= b.max)

@@ -33,6 +33,7 @@ import {
 import {
   bandFor,
   type Cap,
+  type CombineModel,
   type CompiledIndicator,
   indicatorOf,
   type ScoringMethodology,
@@ -165,7 +166,7 @@ export function resolveWeights(
 export function combine(
   clipped: Readonly<Record<'A' | 'B' | 'C' | 'D', number>>,
   passivityValue: number,
-  m: ScoringMethodology,
+  m: CombineModel,
   weights?: Partial<Record<'A' | 'B' | 'C' | 'D', number>>,
 ): Combined {
   if (!Number.isFinite(passivityValue) || passivityValue < 0) {

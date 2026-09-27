@@ -6,7 +6,7 @@
  * computed from the published clip_k values and passivity flag; the URL encodes the weights as
  * `?w=A,B,C,D` with one-decimal values.
  */
-import type { ScoringMethodology } from './methodology.js'
+import type { CombineModel } from './methodology.js'
 import { roundHalfAwayFromZero } from './numeric.js'
 import {
   type CategoryWeights,
@@ -31,7 +31,7 @@ export interface PublishedCategories {
 export function userScore(
   published: PublishedCategories,
   weights: Partial<Record<'A' | 'B' | 'C' | 'D', number>>,
-  m: ScoringMethodology,
+  m: CombineModel,
 ): Combined {
   const c = published.categories
   return combine(
