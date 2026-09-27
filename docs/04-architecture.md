@@ -67,7 +67,7 @@ Tooling: pnpm, Turborepo, TypeScript strict, Biome (lint + format), Vitest, Play
 
 ## 5. CI and hosting
 
-- **CI on every PR:** biome, tsc, vitest, `validate:data`, `build:data` determinism, `next build`, Playwright smoke (home, ranking, one country, compare, methodology in EN and FR; axe checks), Lighthouse CI budget on the country page.
+- **CI on every PR:** biome, tsc, vitest, `pnpm validate`, `build:data` determinism, `next build`, Playwright smoke (home, ranking, one country, compare, methodology in EN and FR; axe checks), Lighthouse CI budget on the country page.
 - **Deploy:** Cloudflare Pages direct upload from GitHub Actions (`wrangler pages deploy apps/web/out`), on push to `main` and nightly. Preview deploys for PRs. Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` only.
 - **Mirror (optional):** a `rsync` step to the author's VPS with the same `out/` folder; documented, off by default.
 - **Data fetchers** run only on demand (`workflow_dispatch` or locally): `pnpm fetch:fts`, `pnpm fetch:worldbank`, `pnpm fetch:comtrade` (needs `COMTRADE_KEY` locally), `pnpm fetch:unvotes`, `pnpm import:sipri <file>`. Each writes the CSV, archives the raw response into a dataset source record, and the author commits.

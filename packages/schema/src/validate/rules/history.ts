@@ -23,8 +23,18 @@ import { unreadableFiles } from './shared.js'
 
 const CORRECTIONS_FILE = 'data/corrections.yaml'
 
-/** Fields whose change on a published event requires a corrections entry (docs/03 §11). */
+/**
+ * Fields whose change on a published event requires a corrections entry (docs/03 §11). Evidence
+ * is compared on EVIDENCE_KEYS only.
+ */
 export const EDIT_FIELDS = ['points', 'date', 'confidence', 'evidence'] as const
+
+/**
+ * The evidence fields an edit is judged on: the source, the verbatim quote, its language and the
+ * locator. The translations quote_en and quote_fr sit beside the original (CLAUDE.md, docs/03 §4),
+ * so adding or fixing one is not an evidence change and needs no corrections entry.
+ */
+export const EVIDENCE_KEYS = ['source', 'quote', 'quote_lang', 'locator'] as const
 
 /**
  * Statuses of an event that has been public: published, and the states a published event can move
@@ -61,6 +71,27 @@ export function canonicalJson(value: unknown): string {
 }
 
 const same = (a: unknown, b: unknown): boolean => canonicalJson(a) === canonicalJson(b)
+
+/**
+ * Evidence reduced to EVIDENCE_KEYS: each entry that is an object keeps only those keys (the
+ * translations and any other key are left out); anything else (a source id, a malformed raw
+ * value) is kept as it is.
+ */
+function evidenceCore(value: unknown): unknown {
+  if (!Array.isArray(value)) return value
+  return value.map((ev) => {
+    if (ev === null || typeof ev !== 'object' || Array.isArray(ev)) return ev
+    const out: Record<string, unknown> = {}
+    for (const key of EVIDENCE_KEYS) {
+      if (Object.hasOwn(ev, key)) out[key] = (ev as Record<string, unknown>)[key]
+    }
+    return out
+  })
+}
+
+/** Equality of two values of the event field `key`; evidence is compared on EVIDENCE_KEYS. */
+const sameField = (key: string, a: unknown, b: unknown): boolean =>
+  key === 'evidence' ? same(evidenceCore(a), evidenceCore(b)) : same(a, b)
 
 const hasOwn = (record: object, key: string): boolean => Object.hasOwn(record, key)
 
@@ -123,10 +154,11 @@ const baseUnavailable: Rule = (ctx) => {
 
 /**
  * correction.never-delete (CLAUDE.md, docs/03 §11): every event, source, correction, reply and
- * lead present on the base ref is still present. A record that failed its schema (`invalidIds`)
- * or whose file cannot be parsed still counts as present. Sources and replies are one file each,
- * so a file named after the id counts too. Base sources, replies and leads carry no file in the
- * snapshot; the documented path is derived from the id (`data/sources` etc. when it cannot be).
+ * lead present on the base ref is still present. A record that failed its schema (`invalidIds`;
+ * for sources, `invalid.source`) or whose file cannot be parsed still counts as present. Sources
+ * and replies are one file each, so a file named after the id counts too. Base sources, replies
+ * and leads carry no file in the snapshot; the documented path is derived from the id
+ * (`data/sources` etc. when it cannot be).
  */
 const neverDelete: Rule = (ctx) => {
   const base = ctx.base
@@ -157,7 +189,7 @@ const neverDelete: Rule = (ctx) => {
 
   const sourceIds = new Set(ds.sources.map((s) => s.value.id))
   for (const id of base.sourceIds) {
-    if (sourceIds.has(id) || ds.invalidIds.has(id) || fileWithIdUnder(ds, 'data/sources', id)) {
+    if (sourceIds.has(id) || ds.invalid.source.has(id) || fileWithIdUnder(ds, 'data/sources', id)) {
       continue
     }
     const parsed = parseSourceId(id)
@@ -225,7 +257,10 @@ const statusRegression: Rule = (ctx) => {
 /**
  * correction.required-on-edit (docs/03 §11, docs/08 §5). For every event that was public on the
  * base ref (PUBLIC_STATUSES) whose points, date, confidence or evidence changed, or whose status
- * entered or left retracted (leaving it needs an entry of kind correction):
+ * entered or left retracted (leaving it needs an entry of kind correction), evidence being
+ * compared on its source, quote, quote_lang and locator (EVIDENCE_KEYS; adding or fixing a
+ * translation, quote_en or quote_fr, is not an evidence change, in the diff or in the entries'
+ * before/after):
  * - a new corrections entry (id absent from the base log) names the event, of kind retraction
  *   when it was retracted and of kind correction otherwise (reported on the event);
  * - a change to points, date, confidence or evidence bumps `revision` above the base revision
@@ -254,7 +289,7 @@ const requiredOnEdit: Rule = (ctx) => {
     if (b === undefined || !PUBLIC_STATUSES.includes(String(b.raw.status))) continue
     const was = fieldsOf(b)
     const now = e.value as unknown as Record<string, unknown>
-    const changed = EDIT_FIELDS.filter((k) => !same(was[k], now[k]))
+    const changed = EDIT_FIELDS.filter((k) => !sameField(k, was[k], now[k]))
     // Entering or leaving `retracted` is logged; staying retracted is not a new edit.
     const retracted = e.value.status === 'retracted' && b.raw.status !== 'retracted'
     const unretracted = b.raw.status === 'retracted' && e.value.status !== 'retracted'
@@ -337,7 +372,7 @@ function diffMismatches(
     if (first !== undefined) {
       const given = first.value.before[key]
       const expected = eventValueFor(key, given, was)
-      if (!same(given, expected)) {
+      if (!sameField(key, given, expected)) {
         out.push(
           issue(
             'correction.required-on-edit',
@@ -351,7 +386,7 @@ function diffMismatches(
     if (last !== undefined) {
       const given = last.value.after[key]
       const expected = eventValueFor(key, given, now)
-      if (!same(given, expected)) {
+      if (!sameField(key, given, expected)) {
         out.push(
           issue(
             'correction.required-on-edit',

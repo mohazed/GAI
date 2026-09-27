@@ -495,6 +495,7 @@ describe("'country.excluded'", () => {
     const invalid = of('country.excluded', (ds) => {
       ds.countries = ds.countries.filter((c) => c.value.iso3 !== 'ISR')
       ds.invalidIds.add('ISR')
+      ds.invalid.country.add('ISR')
     })
     expect(invalid).toEqual([])
   })
@@ -637,8 +638,19 @@ describe("'assessment.country-known'", () => {
     const issues = of('assessment.country-known', (ds) => {
       first(ds.assessments, 'assessment').value.country = 'FRA'
       ds.invalidIds.add('FRA')
+      ds.invalid.country.add('FRA')
     })
     expect(issues).toEqual([])
+  })
+
+  it('reports the country when only a record of another kind with that id failed its schema', () => {
+    const issues = of('assessment.country-known', (ds) => {
+      first(ds.assessments, 'assessment').value.country = 'FRA'
+      // A second assessment file for FRA failed its schema; the registry has no FRA entry.
+      ds.invalidIds.add('FRA')
+      ds.invalid.assessment.add('FRA')
+    })
+    expect(issues.map((i) => [i.file, i.id])).toEqual([[ASSESSMENT_FILE, 'FRA']])
   })
 })
 
@@ -791,6 +803,29 @@ describe("'assessment.has-events-mismatch'", () => {
     })
   })
 
+  it('counts only published events scoped to gaza (only gaza scores in v1)', () => {
+    const westBankOnly = of('assessment.has-events-mismatch', (ds) => {
+      first(ds.events, 'event').value.scope = ['west-bank']
+    })
+    expect(westBankOnly).toHaveLength(1)
+    expect(westBankOnly[0]).toMatchObject({
+      level: 'warning',
+      file: ASSESSMENT_FILE,
+      id: 'DEU',
+      path: 'indicators.A6',
+    })
+    expect(westBankOnly[0]?.message).toContain('scoped to gaza')
+    const beside = of('assessment.has-events-mismatch', (ds) => {
+      first(ds.events, 'event').value.scope = ['west-bank']
+      entries(ds).A6 = { status: 'none-found', checked_at: '2026-09-27', note: 'Test.' }
+    })
+    expect(beside).toEqual([])
+    const withGaza = of('assessment.has-events-mismatch', (ds) => {
+      first(ds.events, 'event').value.scope = ['west-bank', 'gaza']
+    })
+    expect(withGaza).toEqual([])
+  })
+
   it('does not count events that are not published', () => {
     const issues = of('assessment.has-events-mismatch', (ds) => {
       first(ds.events, 'event').value.status = 'reviewed'
@@ -873,6 +908,7 @@ describe("'assessment.unchecked'", () => {
     const issues = of('assessment.unchecked', (ds) => {
       ds.assessments.length = 0
       ds.invalidIds.add('DEU')
+      ds.invalid.assessment.add('DEU')
     })
     expect(issues).toEqual([])
   })
@@ -1128,6 +1164,7 @@ describe("'lead.source-kind'", () => {
     const skipped = of('lead.source-kind', (ds) => {
       addLead(ds, { sources: [{ source: unknown }] })
       ds.invalidIds.add(unknown)
+      ds.invalid.source.add(unknown)
     })
     expect(skipped).toEqual([])
   })
@@ -1201,6 +1238,7 @@ describe("'structured.source-dataset'", () => {
     const skipped = of('structured.source-dataset', (ds) => {
       addFtsRow(ds)
       ds.invalidIds.add(DATASET_ID)
+      ds.invalid.source.add(DATASET_ID)
     })
     expect(skipped).toEqual([])
   })
@@ -1224,6 +1262,23 @@ describe("'structured.iso3-known'", () => {
       })
     })
     expect(issues).toEqual([])
+  })
+
+  it('does not warn on a code whose registry entry failed its schema, and only then', () => {
+    const skipped = of('structured.iso3-known', (ds) => {
+      addFtsRow(ds, { iso3: 'FRA' })
+      ds.invalidIds.add('FRA')
+      ds.invalid.country.add('FRA')
+    })
+    expect(skipped).toEqual([])
+    const otherKind = of('structured.iso3-known', (ds) => {
+      addFtsRow(ds, { iso3: 'FRA' })
+      ds.invalidIds.add('FRA')
+      ds.invalid.assessment.add('FRA')
+    })
+    expect(otherKind.map((i) => [i.file, i.id, i.path])).toEqual([
+      ['data/structured/fts_funding.csv', 'row 2', 'iso3'],
+    ])
   })
 
   it('warns on a code missing from the registry, in the table-specific column', () => {

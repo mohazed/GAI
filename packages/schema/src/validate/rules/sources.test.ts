@@ -202,6 +202,36 @@ describe("'event.quote-in-archive'", () => {
     expect(issuesOf(issues, 'event.quote-in-archive')).toEqual([])
   })
 
+  it('passes when an Arabic quote or its archived text carries bidi marks (U+200F, U+200E, U+061C, isolates)', () => {
+    // Synthetic text for the test, not a quotation of a real document.
+    const text = 'قال المتحدث\u200F: \u2067إن الحكومة\u2069 ستعلق\u061C التصاريح.\u200E'
+    const quote = 'إن الحكومة ستعلق التصاريح'
+    const plain = run((ds) => {
+      source(ds, SRC0).language = 'ar'
+      setArchiveText(ds, SRC0, text)
+      const e0 = evidence(ds, 0)
+      e0.quote = quote
+      e0.quote_lang = 'ar'
+    })
+    expect(issuesOf(plain, 'event.quote-in-archive')).toEqual([])
+    const marked = run((ds) => {
+      source(ds, SRC0).language = 'ar'
+      setArchiveText(ds, SRC0, text.replace(/[\u200E\u200F\u061C\u2066-\u2069]/g, ''))
+      const e0 = evidence(ds, 0)
+      e0.quote = `\u200F${quote.replace(' ستعلق', '\u200F ستعلق')}\u200F`
+      e0.quote_lang = 'ar'
+    })
+    expect(issuesOf(marked, 'event.quote-in-archive')).toEqual([])
+    const differs = run((ds) => {
+      source(ds, SRC0).language = 'ar'
+      setArchiveText(ds, SRC0, text)
+      const e0 = evidence(ds, 0)
+      e0.quote = 'إن الحكومة\u200F ستوقف التصاريح'
+      e0.quote_lang = 'ar'
+    })
+    expect(only(differs, 'event.quote-in-archive', EVENTS_FILE, EVT).path).toBe('evidence.0.quote')
+  })
+
   it('passes when the quote is decomposed (NFD)', () => {
     const issues = run((ds) => {
       const e0 = evidence(ds, 0)
@@ -474,8 +504,20 @@ describe("'event.evidence-source-known'", () => {
     const issues = run((ds) => {
       evidence(ds, 1).source = UNKNOWN
       ds.invalidIds.add(UNKNOWN)
+      ds.invalid.source.add(UNKNOWN)
     })
     expect(issuesOf(issues, 'event.evidence-source-known')).toEqual([])
+  })
+
+  it('still reports the source when only an index row of that id failed its schema', () => {
+    const issues = run((ds) => {
+      evidence(ds, 1).source = UNKNOWN
+      ds.invalidIds.add(UNKNOWN)
+      ds.invalid.archiveIndex.add(UNKNOWN)
+    })
+    expect(only(issues, 'event.evidence-source-known', EVENTS_FILE, EVT).path).toBe(
+      'evidence.1.source',
+    )
   })
 })
 
@@ -1028,6 +1070,16 @@ describe("'source.archive-index'", () => {
     const issues = run((ds) => {
       addIndexRow(ds, { ...source(ds, SRC0), id: EXTRA }, 4)
       ds.invalidIds.add(EXTRA)
+      ds.invalid.source.add(EXTRA)
+    })
+    expect(issuesOf(issues, 'source.archive-index')).toEqual([])
+  })
+
+  it('does not report a missing row when the index row of the source failed its schema', () => {
+    const issues = run((ds) => {
+      ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SRC1)
+      ds.invalidIds.add(SRC1)
+      ds.invalid.archiveIndex.add(SRC1)
     })
     expect(issuesOf(issues, 'source.archive-index')).toEqual([])
   })
@@ -1060,6 +1112,7 @@ describe("'source.dataset-origin'", () => {
     const skipped = run((ds) => {
       addDatasetRow(ds).origin = UNKNOWN
       ds.invalidIds.add(UNKNOWN)
+      ds.invalid.source.add(UNKNOWN)
     })
     expect(issuesOf(skipped, 'source.dataset-origin')).toEqual([])
   })

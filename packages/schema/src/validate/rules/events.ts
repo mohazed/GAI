@@ -71,7 +71,7 @@ function evidenceSources(ctx: ValidationContext, e: Event): EvidenceSources {
     seen.add(ev.source)
     const src = ctx.index.sourceById.get(ev.source)
     if (src) known.push(src.value)
-    else if (ctx.dataset.invalidIds.has(ev.source)) undecidable = true
+    else if (ctx.dataset.invalid.source.has(ev.source)) undecidable = true
   }
   return { known, undecidable }
 }
@@ -97,7 +97,10 @@ function isWithdrawn(e: Event): boolean {
 // ---------------------------------------------------------------------------------------------
 // Rules
 
-/** event.country-known — docs/03 §4, D-10: the country is registered and not excluded. */
+/**
+ * event.country-known — docs/03 §4, D-10: the country is registered and not excluded. A code whose
+ * countries.yaml entry failed its schema is not reported (`schema.country` covers it).
+ */
 function countryKnown(ctx: ValidationContext): Issue[] {
   const ds = ctx.dataset
   // countries.yaml missing or unreadable: the load issue covers it, do not cascade.
@@ -107,7 +110,9 @@ function countryKnown(ctx: ValidationContext): Issue[] {
     const iso3 = e.value.country
     const country = ctx.index.countryByIso3.get(iso3)
     if (!country) {
-      if (ds.invalidIds.has(iso3)) continue
+      // Only a malformed countries.yaml entry hides the code; a malformed record of another kind
+      // (an assessment for that country, say) does not.
+      if (ds.invalid.country.has(iso3)) continue
       out.push(
         issue(
           'event.country-known',
@@ -297,6 +302,42 @@ function eventEnd(ctx: ValidationContext): Issue[] {
     if (end < date) {
       out.push(
         issue('event.end', at(e), `end ${end} is before the date ${date}; expected end ≥ date.`),
+      )
+    }
+  }
+  return out
+}
+
+/**
+ * event.date-in-window — docs/02 §1, docs/02 §2 (B8): every indicator measures conduct since
+ * WINDOW_START (2023-10-07), so an event is dated on or after it. A repeatable (or computed) event
+ * dated earlier is an error. A standing event dated earlier is a warning: a state that already
+ * held on 2023-10-07 counts from that day, as B8 counts a pre-existing recognition as a standing
+ * state from 2023-10-07, so its date is expected to be 2023-10-07 (and its id to carry it). Every
+ * status is checked: a retracted event keeps the date it was published with.
+ */
+function dateInWindow(ctx: ValidationContext): Issue[] {
+  const out: Issue[] = []
+  for (const e of ctx.dataset.events) {
+    const { date, type } = e.value
+    if (date >= WINDOW_START) continue
+    const loc: IssueLocation = { ...at(e), path: 'date' }
+    if (type === 'standing') {
+      out.push(
+        issue(
+          'event.date-in-window',
+          loc,
+          `Date ${date} is before the window start ${WINDOW_START}; a standing state that began earlier is dated from ${WINDOW_START}, like the B8 pre-existing recognition (docs/02 §2), so expected date ${WINDOW_START}.`,
+          'warning',
+        ),
+      )
+    } else {
+      out.push(
+        issue(
+          'event.date-in-window',
+          loc,
+          `Date ${date} is before the window start ${WINDOW_START}; a ${type} event is dated on or after ${WINDOW_START} (docs/02 §1).`,
+        ),
       )
     }
   }
@@ -727,6 +768,7 @@ export const rules: Rule[] = [
   pointsRange,
   pointsRationale,
   eventEnd,
+  dateInWindow,
   confirmedSourceKind,
   corroboratedPublishers,
   disputedBothSides,

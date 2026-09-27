@@ -32,6 +32,34 @@ describe('normaliseWhitespace', () => {
     expect(normaliseWhitespace('\uFEFFText')).toBe('Text')
   })
 
+  it('removes the bidirectional format characters without leaving a space', () => {
+    // Left-to-right and right-to-left marks, the Arabic letter mark, embeddings and overrides
+    // (U+202A–U+202E) and isolates (U+2066–U+2069).
+    for (const mark of [
+      '\u200E',
+      '\u200F',
+      '\u061C',
+      '\u202A',
+      '\u202B',
+      '\u202C',
+      '\u202D',
+      '\u202E',
+      '\u2066',
+      '\u2067',
+      '\u2068',
+      '\u2069',
+    ]) {
+      expect(normaliseWhitespace(`a${mark}b`), `U+${mark.codePointAt(0)?.toString(16)}`).toBe('ab')
+    }
+    // Synthetic Arabic text for the test (not a quotation of a real document).
+    expect(normaliseWhitespace('\u200Fالحكومة\u200F ستعلق\u200F')).toBe('الحكومة ستعلق')
+  })
+
+  it('removes a format character before composing, so a mark cannot split a letter from its accent', () => {
+    expect(normaliseWhitespace('e\u200F\u0301')).toBe('\u00E9')
+    expect(normaliseWhitespace('e\u00AD\u0301')).toBe('\u00E9')
+  })
+
   it('applies Unicode NFC', () => {
     const decomposed = 'Ru\u0308stungsgu\u0308ter'
     expect(normaliseWhitespace(decomposed)).toBe('Rüstungsgüter')
@@ -80,6 +108,16 @@ describe('containsQuote', () => {
 
   it('finds a quote whose letters are decomposed (NFD)', () => {
     expect(containsQuote(text, 'Unter diesen Umständen'.normalize('NFD'))).toBe(true)
+  })
+
+  it('finds an Arabic quote whether the quote or the text carries right-to-left marks (U+200F)', () => {
+    // Synthetic Arabic text for the test (not a quotation of a real document).
+    const arabic = 'قال المتحدث\u200F: إن الحكومة\u200F ستعلق التصاريح\u200F.'
+    const quote = 'إن الحكومة ستعلق التصاريح'
+    expect(containsQuote(arabic, quote)).toBe(true)
+    expect(containsQuote(arabic.replaceAll('\u200F', ''), `\u200F${quote}\u200F`)).toBe(true)
+    expect(containsQuote(arabic, 'إن الحكومة\u200F\u00A0ستعلق')).toBe(true)
+    expect(containsQuote(arabic, 'إن الحكومة ستوقف التصاريح')).toBe(false)
   })
 
   it('rejects a quote that differs by one word', () => {

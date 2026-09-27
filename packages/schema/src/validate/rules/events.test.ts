@@ -125,8 +125,23 @@ describe('event.country-known', () => {
     const found = run((ds) => {
       fixtureEvent(ds).country = 'FRA'
       ds.invalidIds.add('FRA')
+      ds.invalid.country.add('FRA')
     })
     expect(issuesOf(found, 'event.country-known')).toEqual([])
+  })
+
+  it('still reports the country when only a record of another kind for it failed its schema', () => {
+    const found = issuesOf(
+      run((ds) => {
+        fixtureEvent(ds).country = 'FRA'
+        // data/assessments/FRA.yaml failed its schema; the registry has no FRA entry at all.
+        ds.invalidIds.add('FRA')
+        ds.invalid.assessment.add('FRA')
+      }),
+      'event.country-known',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID, level: 'error' })
   })
 
   it('stays silent when countries.yaml could not be loaded', () => {
@@ -483,6 +498,62 @@ describe('event.end', () => {
   })
 })
 
+describe('event.date-in-window', () => {
+  it('accepts the fixtures and events dated on the first day of the window', () => {
+    expect(issuesOf(run(), 'event.date-in-window')).toEqual([])
+    const found = run((ds) => {
+      addRepeatable(ds, 'A8', '2023-10-07', 5)
+      addEvent(ds, {
+        id: 'evt_2023_10_07_DEU_A3',
+        indicator: 'A3',
+        date: '2023-10-07',
+        points: -15,
+      })
+    })
+    expect(issuesOf(found, 'event.date-in-window')).toEqual([])
+  })
+
+  it('rejects a repeatable event dated before 2023-10-07', () => {
+    const found = issuesOf(
+      run((ds) => {
+        addRepeatable(ds, 'A8', '2023-10-06', 5)
+      }),
+      'event.date-in-window',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({
+      level: 'error',
+      file: FILE,
+      id: 'evt_2023_10_06_DEU_A8',
+      path: 'date',
+    })
+    expect(found[0]?.message).toContain('2023-10-06')
+  })
+
+  it('warns on a standing event dated before 2023-10-07, which starts on 2023-10-07 like B8', () => {
+    const found = issuesOf(
+      run((ds) => {
+        addEvent(ds, {
+          id: 'evt_2021_05_01_DEU_A3',
+          indicator: 'A3',
+          date: '2021-05-01',
+          points: -15,
+        })
+      }),
+      'event.date-in-window',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({
+      level: 'warning',
+      file: FILE,
+      id: 'evt_2021_05_01_DEU_A3',
+      path: 'date',
+    })
+    expect(found[0]?.message).toContain('B8 pre-existing recognition')
+    expect(found[0]?.message).toContain('expected date 2023-10-07')
+  })
+})
+
 describe('event.confirmed-source-kind', () => {
   it('accepts official sources, and a court source beside a press source', () => {
     expect(issuesOf(run(), 'event.confirmed-source-kind')).toEqual([])
@@ -533,6 +604,7 @@ describe('event.confirmed-source-kind', () => {
       const e = fixtureEvent(ds)
       e.evidence = evidenceFrom(e, [SRC_GAZA, 'src_20250808_broken_source'])
       ds.invalidIds.add('src_20250808_broken_source')
+      ds.invalid.source.add('src_20250808_broken_source')
     })
     expect(issuesOf(found, 'event.confirmed-source-kind')).toEqual([])
   })

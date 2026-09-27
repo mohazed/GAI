@@ -679,7 +679,7 @@ function votes(ctx: ValidationContext): Issue[] {
     }
     const source = ctx.index.sourceById.get(vote.source)
     if (!source) {
-      if (!ctx.dataset.invalidIds.has(vote.source)) {
+      if (!ctx.dataset.invalid.source.has(vote.source)) {
         push(`vote ${vote.symbol} cites ${vote.source}, which is not a source in data/sources.`)
       }
     } else if (source.value.kind !== 'official') {

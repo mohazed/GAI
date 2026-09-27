@@ -73,6 +73,7 @@ describe('source.archive-index and malformed index rows', () => {
     const ctx = fixtureContext((ds) => {
       ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SOURCE_2)
       ds.invalidIds.add(SOURCE_2)
+      ds.invalid.archiveIndex.add(SOURCE_2)
     })
     const issues = issuesOf(runRules(sourceRules, ctx), 'source.archive-index')
     expect(issues).toEqual([])

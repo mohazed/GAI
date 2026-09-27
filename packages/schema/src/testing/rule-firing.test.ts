@@ -170,6 +170,24 @@ const CASES: Record<RuleId, Case> = {
   'country.universe-size': { memory: () => undefined },
 
   // Events -----------------------------------------------------------------------------------
+  'record.chronology': {
+    memory: (ds) => {
+      source(ds).retrieved_at = '2025-08-01T00:00:00Z'
+    },
+  },
+  'structured.unique': {
+    memory: (ds) => {
+      const row = {
+        resolution: 'A/RES/ES-10/21',
+        date: '2023-10-27',
+        iso3: 'DEU',
+        vote: 'Y',
+        source: SRC_1,
+      }
+      addStructured(ds, 'unga_votes.csv', row)
+      addStructured(ds, 'unga_votes.csv', row)
+    },
+  },
   'event.country-known': {
     memory: (ds) => {
       event(ds).country = 'XYZ'
@@ -206,6 +224,15 @@ const CASES: Record<RuleId, Case> = {
       e.indicator = 'B12'
       e.points = 5
       delete e.points_rationale
+    },
+  },
+  'event.date-in-window': {
+    memory: (ds) => {
+      const e = event(ds)
+      e.type = 'repeatable'
+      e.indicator = 'B4'
+      e.points = -15
+      e.date = '2023-10-06'
     },
   },
   'event.end': {

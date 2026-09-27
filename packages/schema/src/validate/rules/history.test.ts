@@ -214,6 +214,23 @@ describe('correction.never-delete', () => {
     ).toEqual([])
   })
 
+  it('does not report a source whose record failed its schema, whatever its file', () => {
+    const invalid = of('correction.never-delete', (ds) => {
+      ds.sources = ds.sources.filter((s) => s.value.id !== SOURCE_ID)
+      removeFile(ds, SOURCE_FILE)
+      ds.invalidIds.add(SOURCE_ID)
+      ds.invalid.source.add(SOURCE_ID)
+    })
+    expect(invalid).toEqual([])
+    const otherKind = of('correction.never-delete', (ds) => {
+      ds.sources = ds.sources.filter((s) => s.value.id !== SOURCE_ID)
+      removeFile(ds, SOURCE_FILE)
+      ds.invalidIds.add(SOURCE_ID)
+      ds.invalid.archiveIndex.add(SOURCE_ID)
+    })
+    expect(otherKind.map((i) => [i.file, i.id])).toEqual([[SOURCE_FILE, SOURCE_ID]])
+  })
+
   it('falls back to data/sources when the base id does not parse', () => {
     const base = baseOf()
     base.sourceIds.add('src_not-a-dated-id')
@@ -340,6 +357,56 @@ describe('correction.required-on-edit', () => {
       expect(found).toHaveLength(1)
       expect(found[0]).toMatchObject({ file: EVENTS_FILE, id: EVENT_ID })
     }
+  })
+
+  it('does not count adding or fixing a translation as an evidence change', () => {
+    const translations: Mutate[] = [
+      (ds) => {
+        const first = event(ds).value.evidence[0]
+        if (first)
+          first.quote_en = 'Under these circumstances, the federal government approves no exports.'
+      },
+      (ds) => {
+        const first = event(ds).value.evidence[0]
+        if (first)
+          first.quote_fr =
+            'Dans ces circonstances, le gouvernement fédéral n’autorise aucune exportation.'
+      },
+      (ds) => {
+        const second = event(ds).value.evidence[1]
+        if (second) delete second.quote_en
+      },
+    ]
+    for (const edit of translations) {
+      expect(of('correction.required-on-edit', edit)).toEqual([])
+    }
+  })
+
+  it('still reports an edit to the quote itself, beside a translation edit', () => {
+    const found = of('correction.required-on-edit', (ds) => {
+      const first = event(ds).value.evidence[0]
+      if (first) {
+        first.quote = first.quote.replace('Unter diesen Umständen ', '')
+        first.quote_en = 'The federal government approves no exports.'
+      }
+      event(ds).value.revision = 3
+    })
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({ level: 'error', file: EVENTS_FILE, id: EVENT_ID })
+    expect(found[0]?.message).toContain('evidence changed')
+  })
+
+  it('compares evidence given in an entry without its translations', () => {
+    const found = of('correction.required-on-edit', (ds) => {
+      const before = structuredClone(event(ds).value.evidence)
+      const first = event(ds).value.evidence[0]
+      if (first) first.locator = 'paragraph 7'
+      event(ds).value.revision = 3
+      const after = structuredClone(event(ds).value.evidence)
+      for (const ev of after) ev.quote_en = 'A translation that differs from the event.'
+      addCorrection(ds, { before: { evidence: before }, after: { evidence: after } })
+    })
+    expect(found).toEqual([])
   })
 
   it('does not count an edit to an entry already on the base', () => {

@@ -35,7 +35,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §1',
     summary:
-      'A file inside a record directory (data/events, sources, assessments, replies, leads, structured; archive/text) does not follow its documented name pattern, so it would not be loaded.',
+      'A file inside a record directory (data/events, sources, assessments, replies, leads, structured; archive/text) sits at the wrong depth or has the wrong extension, so it would not be loaded; file names are checked against record ids by layout.file-matches-record.',
   },
   'load.symlink': {
     level: 'error',
@@ -76,7 +76,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §2',
     summary:
-      'The date in an id equals the record date (event date, source document date, correction date, reply received_at, lead date); an event keeps its id when a correction changes its date.',
+      'The date in an id equals the record date (event date, source document date, correction date, reply received_at, lead date); an event whose date was corrected keeps its id when its corrections, in log order, lead from the id date (first before.date) to the current date (last after.date).',
   },
   'id.parts-match': {
     level: 'error',
@@ -92,20 +92,28 @@ export const RULES = {
   'layout.events-sorted': {
     level: 'error',
     doc: 'docs/03 §1',
-    summary: 'Events in a country file are sorted by date, then id.',
+    summary:
+      'Events in a country file are sorted by date, then id in natural order (…_B9 before …_B10, _2 before _10); the first event out of order in each file is reported.',
+  },
+  'record.chronology': {
+    level: 'error',
+    doc: 'docs/03 §2, §4, §5, §8, §9',
+    summary:
+      "Dates follow each other: a source is retrieved no earlier than the day before its document date (UTC retrieval, local document date); a review is second-read and reviewed on or after it was drafted; a correction is dated on or after the event was drafted; a reply is received on or after the contested event's date (the earlier of its id date and current date).",
   },
 
   // Countries (docs/03 §3, docs/02 §1) ------------------------------------------------------------
   'country.excluded': {
     level: 'error',
     doc: 'docs/03 §3, D-10',
-    summary: 'Only ISR and PSE are excluded, and an excluded entry carries excluded_reason.',
+    summary:
+      'The registry lists ISR and PSE; they and only they are excluded, and excluded_reason is present exactly when excluded is true.',
   },
   'country.membership-flags': {
     level: 'error',
     doc: 'docs/02 §1, docs/03 §3',
     summary:
-      'Observers are not UN members; Security Council terms and dated memberships have from ≤ to.',
+      'Exactly one of un_member and observer is true; permanent Security Council terms belong to CHN, FRA, GBR, RUS and USA only, and each of these has an ongoing one; terms have from ≤ to, dated memberships since ≤ until.',
   },
   'country.universe-size': {
     level: 'warning',
@@ -157,21 +165,29 @@ export const RULES = {
     doc: 'docs/03 §4, docs/02 §3',
     summary: 'end is set only on standing events, and end ≥ date.',
   },
+  'event.date-in-window': {
+    level: 'error',
+    doc: 'docs/02 §1, docs/02 §2 (B8)',
+    summary:
+      'Events are dated on or after 2023-10-07; a standing state that began earlier starts on 2023-10-07 (warning).',
+  },
   'event.confirmed-source-kind': {
     level: 'error',
     doc: 'docs/02 §4, docs/02 §12.2, docs/03 §4',
-    summary: 'A confirmed event has a source of kind official, court or dataset.',
+    summary:
+      'A confirmed event, at any status, cites a source of a kind confidence.yaml lists (official, court, dataset) that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin) and is not an official, official-video or court record whose publisher_type is press or ngo.',
   },
   'event.corroborated-publishers': {
     level: 'error',
     doc: 'docs/02 §4, docs/03 §4',
-    summary: 'A corroborated event has two sources from distinct publishers.',
+    summary:
+      'A corroborated event cites sources of kind ngo or press (confidence.yaml) from at least two distinct publishers, compared after folding case, whitespace and trailing punctuation; sources recording the same document (same sha256, else url) count once.',
   },
   'event.disputed-both-sides': {
     level: 'error',
     doc: 'docs/02 §4',
     summary:
-      'A disputed event links both sides: a reply contesting it, or at least two evidence sources, one of kind official or official-video (the denial).',
+      'A disputed event links both sides: a reply contesting it, or an evidence source of kind official or official-video (the denial) and an evidence source from another publisher.',
   },
   'event.statement-requirements': {
     level: 'error',
@@ -188,12 +204,13 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §4, docs/02 §12.4',
     summary:
-      'Every quote appears in archive/text/{source}.txt after whitespace normalisation (B9/B10 always; others unless the locator starts with row or video).',
+      'Every quote appears verbatim in archive/text/{source}.txt after normalisation (NFC; whitespace runs collapsed; soft hyphen, zero-width and bidi format characters removed). The only exemption is a `row …` locator on a source of kind dataset, never on B9/B10; `video …` locators are checked against the transcript.',
   },
   'event.quote-translation': {
     level: 'error',
     doc: 'docs/03 §4, CLAUDE.md',
-    summary: 'A quote not in English carries quote_en beside the original.',
+    summary:
+      "A quote whose quote_lang is not English carries a non-empty quote_en beside the original; a quote_lang whose primary language differs from the cited source's language is a warning (sources in mul, und, mis or zxx excepted).",
   },
   'event.evidence-source-known': {
     level: 'error',
@@ -209,7 +226,8 @@ export const RULES = {
   'event.video-locator': {
     level: 'error',
     doc: 'docs/03 §5',
-    summary: 'Evidence from an official-video source has a `video hh:mm:ss` locator.',
+    summary:
+      'Evidence from an official-video source has a timestamp locator (`video hh:mm:ss` or `video mm:ss`), and a `video …` locator cites an official-video source.',
   },
   'event.published-reviewed': {
     level: 'error',
@@ -224,7 +242,8 @@ export const RULES = {
   'event.references': {
     level: 'error',
     doc: 'docs/03 §4',
-    summary: 'supersedes and related name existing events; supersedes names the same country.',
+    summary:
+      'supersedes names another existing event of the same country dated on or before the event; related names other existing events (links to generated events are not checked).',
   },
   'event.same-points': {
     level: 'error',
@@ -266,7 +285,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §5, docs/02 §12.3',
     summary:
-      'Every source has wayback_url, sha256 and retrieved_at, except dataset rows pointing at data/structured with an archived origin, and captures recorded as archive_status: failed (warning).',
+      'Every source has wayback_url, sha256 and retrieved_at, plus bytes and content_type once archived; a wayback_url is a Wayback Machine snapshot (a snapshot of another url than the source url is a warning). Dataset rows pointing at data/structured are exempt from the presence checks (source.dataset-origin checks their origin); a capture recorded as archive_status: failed is a warning, and an error if it still carries wayback_url or sha256.',
   },
   'source.text-file': {
     level: 'error',
@@ -277,13 +296,14 @@ export const RULES = {
   'source.archive-index': {
     level: 'error',
     doc: 'docs/03 §1, docs/06 §6',
-    summary: 'archive/index.csv agrees with the source record (wayback_url, sha256, bytes).',
+    summary:
+      'A source with a wayback_url has an archive/index.csv row (missing: an error when the source supports an event past draft, a structured row or a qualifying vote, else a warning) whose url, wayback_url, sha256 and bytes agree with the record (the row with the same wayback_url, else the latest); a row naming no source record is a warning.',
   },
   'source.dataset-origin': {
     level: 'error',
     doc: 'docs/03 §5',
     summary:
-      'A dataset-row source pointing at data/structured names an origin dataset source that is archived.',
+      'A dataset-row source pointing at data/structured names, in origin, an existing source of kind dataset that is archived (wayback_url and sha256, capture not failed).',
   },
   'source.orphan': {
     level: 'warning',
@@ -311,13 +331,13 @@ export const RULES = {
     level: 'error',
     doc: 'docs/02 §8',
     summary:
-      'not-applicable carries a note; B2 is not-applicable only for states not on the Security Council in the window.',
+      'not-applicable carries a note; on B2 (rule unsc_non_member) the state has no Security Council term overlapping the window from 2023-10-07 to the date of the check (checked_at, else last_full_check; any term ending on or after 2023-10-07 when neither is set).',
   },
   'assessment.has-events-mismatch': {
     level: 'warning',
     doc: 'docs/03 §6',
     summary:
-      'has-events is set by the build: a hand-set has-events without events, or another status on an indicator with published events, is overwritten.',
+      'has-events is set by the build from published gaza-scoped events (only gaza scores in v1): on a hand-authored indicator, has-events without such an event, or another status beside one, is overwritten.',
   },
   'assessment.unchecked': {
     level: 'warning',
@@ -341,7 +361,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §11, docs/08 §5',
     summary:
-      "An edit to a published event's points, date, confidence or evidence (or a retraction) comes with a new corrections.yaml entry and a revision bump, and the entry's before/after match the diff.",
+      'An edit to the points, date, confidence or evidence (source, quote, quote_lang, locator; not the translations) of an event public on the base ref, or a change of its status into or out of retracted, comes with a new corrections.yaml entry of the matching kind that records each changed field in before and after; field edits bump the revision, and the before/after values of new entries (date, points, confidence, end, evidence) match the base and current event.',
   },
   'correction.never-delete': {
     level: 'error',
@@ -375,20 +395,22 @@ export const RULES = {
   'reply.contests-known': {
     level: 'error',
     doc: 'docs/03 §9',
-    summary: 'Contested events exist and belong to the reply country.',
+    summary:
+      'Contested events exist in data/events and belong to the reply country; for a generated event id only the country in the id is checked.',
   },
   'reply.outcome-consistent': {
     level: 'error',
     doc: 'docs/03 §9, docs/08 §4',
     summary:
-      'outcome disputed → contested events are disputed; retracted → retracted; corrected → a correction entry exists.',
+      'For every contested event: outcome disputed → confidence disputed; retracted → status retracted; corrected → a corrections.yaml entry for it dated on or after received_at.',
   },
 
   // Leads (docs/03 §10) --------------------------------------------------------------------------
   'lead.status': {
     level: 'error',
     doc: 'docs/03 §10',
-    summary: 'promoted:evt_… names an existing event; dropped carries a reason.',
+    summary:
+      "promoted:evt_… names an existing event of the lead's country (another indicator is a warning); dropped carries a reason.",
   },
   'lead.source-kind': {
     level: 'error',
@@ -400,12 +422,19 @@ export const RULES = {
   'structured.source-dataset': {
     level: 'error',
     doc: 'docs/03 §7',
-    summary: 'The source column names an existing source of kind dataset.',
+    summary:
+      'The source column names an existing source of kind dataset that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin).',
   },
   'structured.iso3-known': {
     level: 'warning',
     doc: 'docs/03 §7',
     summary: 'The country code is in countries.yaml.',
+  },
+  'structured.unique': {
+    level: 'error',
+    doc: 'docs/03 §7, docs/02 §2 (B1, B2)',
+    summary:
+      'Structured rows are unique by key, a resolution has one date, and vetoes are cast by permanent members.',
   },
   'structured.window': {
     level: 'error',

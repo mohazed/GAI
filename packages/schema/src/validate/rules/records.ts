@@ -3,8 +3,10 @@
  * leads and structured tables (docs/03 §1–§3 and §6–§10, docs/02 §1 and §8).
  *
  * Every rule reads only the context: no clock, no file system. Records that failed their schema
- * are absent from the dataset; references to their ids (`dataset.invalidIds`) are not reported
- * again as unknown.
+ * are absent from the dataset; references to them are not reported again as unknown. Lookups of
+ * country codes, sources and assessments use the per-kind sets of `dataset.invalid` (a malformed
+ * assessment for FRA does not hide an unknown country FRA elsewhere); event ids use
+ * `dataset.invalidIds` (through `eventNotLoaded`).
  */
 import {
   parseCorrectionId,
@@ -42,6 +44,29 @@ const COUNTRIES_FILE = 'data/countries.yaml'
 
 /** Maximum days between receiving and publishing a reply (docs/03 §9, docs/08 §4). */
 export const REPLY_DEADLINE_DAYS = 10
+
+/**
+ * The columns that identify a row of each structured table (docs/03 §7): one vote per resolution
+ * and country, one veto per draft and permanent member, one figure per country and window (per HS
+ * code for A2) and reporter (self and mirror rows coexist; the generators prefer self, docs/02 §5), per release, data year and country (SIPRI), per country and year.
+ */
+export const STRUCTURED_UNIQUE_KEYS: Record<StructuredTableName, readonly string[]> = {
+  'unga_votes.csv': ['resolution', 'iso3'],
+  'unsc_vetoes.csv': ['draft', 'vetoed_by'],
+  'fts_funding.csv': ['iso3', 'window_start', 'window_end'],
+  'sipri_deliveries.csv': ['release_date', 'data_year', 'supplier_iso3'],
+  'sipri_orders.csv': ['release_date', 'data_year', 'buyer_iso3'],
+  'comtrade_a2.csv': ['iso3', 'window_start', 'window_end', 'hs', 'reporter'],
+  'comtrade_c3.csv': ['iso3', 'window_start', 'window_end', 'reporter'],
+  'gni.csv': ['iso3', 'year'],
+  'population.csv': ['iso3', 'year'],
+}
+
+/** Tables whose rows record one vote each: the column naming the voted text, voted on one date. */
+const VOTE_COLUMN: Partial<Record<StructuredTableName, string>> = {
+  'unga_votes.csv': 'resolution',
+  'unsc_vetoes.csv': 'draft',
+}
 
 /** Tables with a `window_start` / `window_end` pair (docs/03 §7). */
 const WINDOWED_TABLES: readonly StructuredTableName[] = [
@@ -297,6 +322,106 @@ const layoutEventsSorted: Rule = (ctx) => {
 }
 
 // ---------------------------------------------------------------------------------------------
+// Chronology across records (docs/03 §2, §4, §5, §8)
+
+/**
+ * record.chronology (docs/03 §2, §4, §5, §8): dates that record the steps of one process follow
+ * each other. Rules read no clock, so only the order of recorded dates is checked:
+ * - a source is retrieved on or after its document date (docs/03 §2: `date` is the document's
+ *   date, never the retrieval date): the date part of `retrieved_at` (UTC) is not before `date`;
+ *   reported on the source, at retrieved_at;
+ * - an event's review is second-read and reviewed on or after it was drafted (docs/03 §4):
+ *   `review.second_read.at` and `review.reviewed_at` are not before `review.drafted_at`; reported
+ *   on the event;
+ * - a correction is dated on or after the event it names was drafted (docs/03 §8): `date` is not
+ *   before the event's `review.drafted_at`; reported on the entry. Entries naming an event that is
+ *   not loaded are left to correction.event-known;
+ * - a reply is received on or after the date of each event it contests (docs/03 §9): its
+ *   `received_at` is not before the event's `date` (for a generated event, the date in its id);
+ *   reported on the reply, at contests.{i}. Unknown events are left to reply.contests-known.
+ */
+const recordChronology: Rule = (ctx) => {
+  const ds = ctx.dataset
+  const out: Issue[] = []
+  for (const src of ds.sources) {
+    const { id, date, retrieved_at } = src.value
+    if (retrieved_at === null) continue
+    const retrieved = retrieved_at.slice(0, 10)
+    // retrieved_at is UTC while the document date is local to the publisher: a page published
+    // early on its local day east of UTC can be captured on the previous UTC day.
+    if (addDays(retrieved, 1) >= date) continue
+    out.push(
+      issue(
+        'record.chronology',
+        at(src, id, 'retrieved_at'),
+        `retrieved_at ${retrieved_at} is before the document date ${date}; expected the retrieval on or after the date of the document (date is the document's date, never the retrieval date)`,
+      ),
+    )
+  }
+  for (const e of ds.events) {
+    const { id, review } = e.value
+    const read = review.second_read
+    if (read !== null && read !== undefined && read.at < review.drafted_at) {
+      out.push(
+        issue(
+          'record.chronology',
+          at(e, id, 'review.second_read.at'),
+          `the second reading is dated ${read.at}, before the event was drafted on ${review.drafted_at}; expected second_read.at on or after drafted_at`,
+        ),
+      )
+    }
+    const reviewed = review.reviewed_at
+    if (reviewed !== null && reviewed !== undefined && reviewed < review.drafted_at) {
+      out.push(
+        issue(
+          'record.chronology',
+          at(e, id, 'review.reviewed_at'),
+          `reviewed_at ${reviewed} is before the event was drafted on ${review.drafted_at}; expected reviewed_at on or after drafted_at`,
+        ),
+      )
+    }
+  }
+  for (const c of ds.corrections) {
+    const e = ctx.index.eventById.get(c.value.event)
+    if (e === undefined) continue
+    const drafted = e.value.review.drafted_at
+    if (c.value.date >= drafted) continue
+    out.push(
+      issue(
+        'record.chronology',
+        at(c, c.value.id, 'date'),
+        `the correction is dated ${c.value.date}, before ${c.value.event} was drafted on ${drafted}; expected a date on or after the drafting of the event it corrects`,
+      ),
+    )
+  }
+  for (const r of ds.replies) {
+    const { id, received_at, contests } = r.value
+    contests.forEach((eventId, i) => {
+      const e = ctx.index.eventById.get(eventId)
+      const parsed = parseEventId(eventId)
+      // An event keeps its id when a correction moves its date (docs/03 §2), possibly after the
+      // reply: the earlier of the id date and the current date is the one the reply could see.
+      const dates = [
+        e?.value.date,
+        e === undefined && !parsed?.generated ? undefined : parsed?.date,
+      ]
+        .filter((d): d is string => d !== undefined)
+        .sort()
+      const date = dates[0]
+      if (date === undefined || received_at >= date) return
+      out.push(
+        issue(
+          'record.chronology',
+          at(r, id, `contests.${i}`),
+          `received_at ${received_at} is before ${date}, the date of the contested event ${eventId}; expected a reply received on or after the event it contests`,
+        ),
+      )
+    })
+  }
+  return out
+}
+
+// ---------------------------------------------------------------------------------------------
 // Countries (docs/03 §3, docs/02 §1)
 
 /**
@@ -311,7 +436,7 @@ const countryExcluded: Rule = (ctx) => {
   const out: Issue[] = []
   if (ds.files.includes(COUNTRIES_FILE) && !unreadableFiles(ds).has(COUNTRIES_FILE)) {
     for (const iso3 of EXCLUDED_ISO3) {
-      if (ctx.index.countryByIso3.has(iso3) || ds.invalidIds.has(iso3)) continue
+      if (ctx.index.countryByIso3.has(iso3) || ds.invalid.country.has(iso3)) continue
       out.push(
         issue(
           'country.excluded',
@@ -452,14 +577,17 @@ const countryUniverseSize: Rule = (ctx) => {
 // ---------------------------------------------------------------------------------------------
 // Assessments (docs/03 §6, docs/02 §8)
 
-/** assessment.country-known (docs/03 §6): the country is in the registry and is not excluded. */
+/**
+ * assessment.country-known (docs/03 §6): the country is in the registry and is not excluded. A
+ * code whose countries.yaml entry failed its schema is not reported.
+ */
 const assessmentCountryKnown: Rule = (ctx) => {
   const out: Issue[] = []
   for (const a of ctx.dataset.assessments) {
     const iso3 = a.value.country
     const country = ctx.index.countryByIso3.get(iso3)
     if (country === undefined) {
-      if (!ctx.dataset.invalidIds.has(iso3)) {
+      if (!ctx.dataset.invalid.country.has(iso3)) {
         out.push(
           issue(
             'assessment.country-known',
@@ -592,9 +720,11 @@ const assessmentNotApplicable: Rule = (ctx) => {
 }
 
 /**
- * assessment.has-events-mismatch (docs/03 §6): the build sets has-events from published events,
- * so on hand-authored indicators a hand-set has-events without a published event, or another
- * status beside a published event, is overwritten (warning). "No published event" is not
+ * assessment.has-events-mismatch (docs/03 §6): the build sets has-events from the published events
+ * that score, so on hand-authored indicators a hand-set has-events without such an event, or
+ * another status beside one, is overwritten (warning). Only events whose scope includes `gaza`
+ * score in v1 (docs/03 §4, D-14): a published event scoped to the West Bank or Lebanon only is
+ * tracked, not scored, and does not make an indicator has-events. "No published event" is not
  * claimed when the country's events file cannot be read or an event of that country and
  * indicator failed its schema (the load or schema issue covers it).
  */
@@ -613,7 +743,7 @@ const assessmentHasEventsMismatch: Rule = (ctx) => {
     const unreadable = eventsFileUnreadable(ds, iso3)
     const published = new Set(
       (ctx.index.eventsByCountry.get(iso3) ?? [])
-        .filter((e) => e.value.status === 'published')
+        .filter((e) => e.value.status === 'published' && e.value.scope.includes('gaza'))
         .map((e) => e.value.indicator),
     )
     for (const [ind, entry] of Object.entries(a.value.indicators)) {
@@ -625,7 +755,7 @@ const assessmentHasEventsMismatch: Rule = (ctx) => {
           issue(
             'assessment.has-events-mismatch',
             at(a, iso3, path),
-            `${ind} is has-events but ${iso3} has no published ${ind} event; the build will overwrite the status`,
+            `${ind} is has-events but ${iso3} has no published ${ind} event scoped to gaza (only gaza scores in v1); the build will overwrite the status`,
           ),
         )
       } else if (entry.status !== 'has-events' && published.has(ind)) {
@@ -633,7 +763,7 @@ const assessmentHasEventsMismatch: Rule = (ctx) => {
           issue(
             'assessment.has-events-mismatch',
             at(a, iso3, path),
-            `${ind} is ${entry.status} but ${iso3} has a published ${ind} event; expected has-events, which the build will set`,
+            `${ind} is ${entry.status} but ${iso3} has a published ${ind} event scoped to gaza; expected has-events, which the build will set`,
           ),
         )
       }
@@ -671,7 +801,8 @@ const assessmentUnchecked: Rule = (ctx) => {
   for (const c of ctx.dataset.countries) {
     const iso3 = c.value.iso3
     if (c.value.excluded || ctx.index.assessmentByCountry.has(iso3)) continue
-    if (ctx.dataset.invalidIds.has(iso3)) continue
+    // The assessment file exists but failed its schema (schema.assessment covers it).
+    if (ctx.dataset.invalid.assessment.has(iso3)) continue
     out.push(
       issue(
         'assessment.unchecked',
@@ -870,7 +1001,7 @@ const leadSourceKind: Rule = (ctx) => {
       const loc = at(l, l.value.id, `sources.${i}`)
       const src = ctx.index.sourceById.get(entry.source)
       if (src === undefined) {
-        if (!ctx.dataset.invalidIds.has(entry.source)) {
+        if (!ctx.dataset.invalid.source.has(entry.source)) {
           out.push(
             issue(
               'lead.source-kind',
@@ -912,7 +1043,7 @@ const structuredSourceDataset: Rule = (ctx) => {
       const loc = at(row, `row ${row.line ?? '?'}`, 'source')
       const src = ctx.index.sourceById.get(sourceId)
       if (src === undefined) {
-        if (!ctx.dataset.invalidIds.has(sourceId)) {
+        if (!ctx.dataset.invalid.source.has(sourceId)) {
           out.push(
             issue(
               'structured.source-dataset',
@@ -946,7 +1077,10 @@ const structuredSourceDataset: Rule = (ctx) => {
   return out
 }
 
-/** structured.iso3-known (docs/03 §7): the table's country column is in countries.yaml (warning). */
+/**
+ * structured.iso3-known (docs/03 §7): the table's country column is in countries.yaml (warning).
+ * A code whose countries.yaml entry failed its schema is not reported.
+ */
 const structuredIso3Known: Rule = (ctx) => {
   const out: Issue[] = []
   for (const table of STRUCTURED_TABLE_NAMES) {
@@ -954,7 +1088,7 @@ const structuredIso3Known: Rule = (ctx) => {
     for (const row of rowsOf(ctx, table)) {
       const iso3 = row.value[column]
       if (typeof iso3 !== 'string') continue
-      if (ctx.index.countryByIso3.has(iso3) || ctx.dataset.invalidIds.has(iso3)) continue
+      if (ctx.index.countryByIso3.has(iso3) || ctx.dataset.invalid.country.has(iso3)) continue
       out.push(
         issue(
           'structured.iso3-known',
@@ -962,6 +1096,66 @@ const structuredIso3Known: Rule = (ctx) => {
           `${column} ${iso3} is not in countries.yaml; expected a registered country code`,
         ),
       )
+    }
+  }
+  return out
+}
+
+/**
+ * structured.unique (docs/03 §7, docs/02 §2 B1 and B2): the rows of a table are unique by the key
+ * columns of STRUCTURED_UNIQUE_KEYS; the rows of one General Assembly resolution (unga_votes) or
+ * one draft (unsc_vetoes) carry one date, since a text is put to the vote once; and a veto is
+ * cast by a permanent member (UNSC_PERMANENT_ISO3), the only states that can cast one. The later
+ * row is reported (by file order), naming the line of the first.
+ */
+const structuredUnique: Rule = (ctx) => {
+  const out: Issue[] = []
+  for (const table of STRUCTURED_TABLE_NAMES) {
+    const columns = STRUCTURED_UNIQUE_KEYS[table]
+    const voteColumn = VOTE_COLUMN[table]
+    const firstByKey = new Map<string, Located<Record<string, unknown>>>()
+    const firstByVote = new Map<string, Located<Record<string, unknown>>>()
+    for (const row of rowsOf(ctx, table)) {
+      const id = `row ${row.line ?? '?'}`
+      const key = columns.map((c) => String(row.value[c])).join('\u0000')
+      const prev = firstByKey.get(key)
+      if (prev === undefined) firstByKey.set(key, row)
+      else {
+        const values = columns.map((c) => `${c} ${String(row.value[c])}`).join(', ')
+        out.push(
+          issue(
+            'structured.unique',
+            at(row, id),
+            `${values} is already recorded at line ${prev.line ?? '?'}; expected one row per ${columns.join(', ')}`,
+          ),
+        )
+      }
+      if (voteColumn !== undefined) {
+        const text = String(row.value[voteColumn])
+        const firstVote = firstByVote.get(text)
+        if (firstVote === undefined) firstByVote.set(text, row)
+        else if (firstVote.value.date !== row.value.date) {
+          out.push(
+            issue(
+              'structured.unique',
+              at(row, id, 'date'),
+              `${voteColumn} ${text} is dated ${String(row.value.date)} here but ${String(firstVote.value.date)} at line ${firstVote.line ?? '?'}; expected one date per ${voteColumn}, the day it was put to the vote`,
+            ),
+          )
+        }
+      }
+      if (table === 'unsc_vetoes.csv') {
+        const member = row.value.vetoed_by
+        if (typeof member === 'string' && !UNSC_PERMANENT_ISO3.includes(member)) {
+          out.push(
+            issue(
+              'structured.unique',
+              at(row, id, 'vetoed_by'),
+              `vetoed_by ${member} is not a permanent member of the Security Council; expected one of ${UNSC_PERMANENT_ISO3.join(', ')}, the only states that can cast a veto`,
+            ),
+          )
+        }
+      }
     }
   }
   return out
@@ -992,6 +1186,7 @@ export const rules: Rule[] = [
   idPartsMatch,
   layoutFileMatchesRecord,
   layoutEventsSorted,
+  recordChronology,
   countryExcluded,
   countryMembershipFlags,
   countryUniverseSize,
@@ -1008,5 +1203,6 @@ export const rules: Rule[] = [
   leadSourceKind,
   structuredSourceDataset,
   structuredIso3Known,
+  structuredUnique,
   structuredWindow,
 ]

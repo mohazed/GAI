@@ -92,7 +92,8 @@ const ROW_LOCATOR = /^row\b/i
 /**
  * event.quote-in-archive (docs/02 §12.4, docs/03 §4, CLAUDE.md "Quotes are verbatim from
  * archive/text/; CI checks them"): every quote appears in archive/text/{source}.txt after
- * whitespace normalisation. The only exemption is docs/02 §12.4's: a quote from a dataset row,
+ * normalisation (`normaliseWhitespace`: NFC; whitespace runs collapsed; soft hyphen, zero-width
+ * and bidi format characters removed). The only exemption is docs/02 §12.4's: a quote from a dataset row,
  * i.e. evidence citing a source of kind `dataset` with a `row …` locator, and never on
  * indicators whose evidence requires an actor (B9, B10). A `row` locator on any other source, and
  * a `video …` locator (checked against the transcript an official-video source must have in
@@ -148,7 +149,7 @@ export const quoteInArchive: Rule = (ctx) => {
         report(
           order,
           ref,
-          `The quote "${excerpt(quote)}" does not appear verbatim in archive/text/${src}.txt (only whitespace is normalised).`,
+          `The quote "${excerpt(quote)}" does not appear verbatim in archive/text/${src}.txt (only whitespace and invisible format characters are normalised).`,
         )
       }
     }
@@ -203,12 +204,15 @@ export const quoteTranslation: Rule = (ctx) => {
   return out
 }
 
-/** event.evidence-source-known (docs/03 §4): every evidence entry cites an existing source. */
+/**
+ * event.evidence-source-known (docs/03 §4): every evidence entry cites an existing source. A
+ * source whose record failed its schema is not reported (`schema.source` covers it).
+ */
 export const evidenceSourceKnown: Rule = (ctx) => {
   const out: Issue[] = []
   for (const ref of eachEvidence(ctx)) {
     const src = ref.evidence.source
-    if (ctx.index.sourceById.has(src) || ctx.dataset.invalidIds.has(src)) continue
+    if (ctx.index.sourceById.has(src) || ctx.dataset.invalid.source.has(src)) continue
     out.push(
       issue(
         'event.evidence-source-known',
@@ -504,7 +508,10 @@ function supportingSourceIds(ctx: ValidationContext): Set<string> {
  * so a missing row is an error when the source supports an event past draft, a structured row
  * or a qualifying vote, and a warning otherwise. The row's url, wayback_url, sha256 and bytes
  * equal the record's (bytes compared when both are set). An index row naming no source record
- * is a warning.
+ * is a warning. A source whose only index rows failed their schema is not reported as missing a
+ * row, and an index row whose source record failed its schema is not reported as orphaned (the
+ * schema issues cover both; the lookups use the per-kind sets `invalid.archiveIndex` and
+ * `invalid.source`).
  */
 export const archiveIndex: Rule = (ctx) => {
   const out: Issue[] = []
@@ -515,7 +522,7 @@ export const archiveIndex: Rule = (ctx) => {
     const rows = ctx.index.archiveIndexRowsById.get(s.id) ?? []
     const row = rows.find((r) => r.value.wayback_url === s.wayback_url) ?? rows.at(-1)
     // A malformed index row is already reported by schema.archive-index.
-    if (!row && ctx.dataset.invalidIds.has(s.id)) continue
+    if (!row && ctx.dataset.invalid.archiveIndex.has(s.id)) continue
     if (!row) {
       supporting ??= supportingSourceIds(ctx)
       const needed = supporting.has(s.id)
@@ -553,7 +560,7 @@ export const archiveIndex: Rule = (ctx) => {
   }
   for (const row of ctx.dataset.archiveIndex) {
     const id = row.value.src_id
-    if (ctx.index.sourceById.has(id) || ctx.dataset.invalidIds.has(id)) continue
+    if (ctx.index.sourceById.has(id) || ctx.dataset.invalid.source.has(id)) continue
     out.push(
       issue(
         'source.archive-index',
@@ -589,7 +596,7 @@ export const datasetOrigin: Rule = (ctx) => {
     }
     const origin = ctx.index.sourceById.get(s.origin)
     if (!origin) {
-      if (ctx.dataset.invalidIds.has(s.origin)) continue
+      if (ctx.dataset.invalid.source.has(s.origin)) continue
       out.push(
         issue(
           'source.dataset-origin',

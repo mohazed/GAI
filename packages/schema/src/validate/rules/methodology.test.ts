@@ -936,6 +936,7 @@ describe('methodology.votes', () => {
     expectIssue(issues, 'methodology.votes', 'votes.yaml', 'A/RES/TEST/1', /not a source/)
     const invalid = check((ds, m) => {
       ds.invalidIds.add(unknown)
+      ds.invalid.source.add(unknown)
       addVotes(m, testVote(unknown))
     })
     expect(issuesOf(invalid, rule)).toEqual([])
