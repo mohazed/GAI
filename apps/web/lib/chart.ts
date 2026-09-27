@@ -9,13 +9,10 @@ import { dayNumber } from '@gai/scoring'
 import { scaleLinear } from 'd3-scale'
 import { curveStepAfter, line } from 'd3-shape'
 
+export { pct, valuePercent } from './linear'
+
 /** Width of the nested path SVG's user space; its height equals the chart height in px. */
 export const PATH_WIDTH = 1000
-
-/** A number as an SVG percentage with at most three decimals. */
-export function pct(n: number): string {
-  return `${Math.round(n * 1000) / 1000}%`
-}
 
 /** Linear map of an ISO date onto [0, 100] between `from` and `to`. */
 export function datePercent(from: string, to: string) {
@@ -30,12 +27,6 @@ export function datePercent(from: string, to: string) {
 export function valuePx(domain: [number, number], top: number, bottom: number) {
   const s = scaleLinear().domain(domain).range([bottom, top])
   return (v: number) => Math.round(s(v) * 100) / 100
-}
-
-/** Linear map of a value onto [0, 100] (horizontal value axes: gauge, category rows). */
-export function valuePercent(domain: [number, number]) {
-  const s = scaleLinear().domain(domain).range([0, 100]).clamp(true)
-  return (v: number) => s(v)
 }
 
 export interface StepPoint {

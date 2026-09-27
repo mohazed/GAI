@@ -7,6 +7,7 @@ import { createTranslator } from 'next-intl'
 import en from '../messages/en.json'
 import fr from '../messages/fr.json'
 import { frenchMessages } from './format'
+import type { Translate } from './translate'
 
 export const LOCALES = ['en', 'fr'] as const
 export type Lang = (typeof LOCALES)[number]
@@ -45,4 +46,34 @@ export function clientMessages(lang: Lang): Pick<Messages, (typeof CLIENT_NAMESP
   >
 }
 
+/**
+ * The namespaces the client components of the country page read besides CLIENT_NAMESPACES: the
+ * `?date=` snapshot redraws the gauge and the category rows, and the event filters and the share
+ * panel have their own strings. Only the country page sends them (a nested provider).
+ */
+export const COUNTRY_CLIENT_NAMESPACES = [
+  'gauge',
+  'categories',
+  'snapshot',
+  'events',
+  'share',
+] as const
+
+export function countryClientMessages(lang: Lang) {
+  const m = MESSAGES[lang]
+  return {
+    ...clientMessages(lang),
+    ...(Object.fromEntries(COUNTRY_CLIENT_NAMESPACES.map((k) => [k, m[k]])) as Pick<
+      Messages,
+      (typeof COUNTRY_CLIENT_NAMESPACES)[number]
+    >),
+  }
+}
+
 export { switchLocalePath } from './locale-path'
+
+/** `getT(lang)` as a plain `Translate`, for views shared with client components. */
+export function translator(lang: Lang): Translate {
+  const t = getT(lang)
+  return (key, values) => t(key as never, values as never)
+}

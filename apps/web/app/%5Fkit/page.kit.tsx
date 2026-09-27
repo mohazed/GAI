@@ -8,6 +8,7 @@ import { CategoryRows } from '../../components/CategoryRows'
 import { ChangesFeed } from '../../components/ChangesFeed'
 import { CiteThis } from '../../components/CiteThis'
 import { CategoryDots, CompareChart, EventDiff } from '../../components/CompareChart'
+import { ComputedRun } from '../../components/ComputedRun'
 import { ConfidenceChip } from '../../components/ConfidenceChip'
 import { CoverageBar } from '../../components/CoverageBar'
 import { DiffViewer } from '../../components/DiffViewer'
@@ -40,6 +41,7 @@ import {
   kitMovers,
   kitName,
   kitRankRows,
+  kitRun,
   mixedCoverage,
 } from './samples'
 
@@ -91,6 +93,8 @@ function Row({
   const base = deu.event_list[0]
   if (base === undefined) throw new Error('the DEU fixture has no event')
   const samples = kitEvents(base)
+  const generated = samples[samples.length - 1] as typeof base
+  const run = kitRun(generated).map((e) => ({ ...e, id: `${e.id}_k${n}` }))
   const counts = deu.events.by_category
   const rows = [...rankRows(countries), ...kitRankRows(m)]
   const mapCountryList = mapCountries(countries)
@@ -269,6 +273,23 @@ function Row({
               <EventCard key={e.id} lang={lang} methodology={m} event={e} sources={sources} />
             ))}
           </div>
+        </Specimen>
+
+        <Specimen
+          title="ComputedRun · five monthly values, points changed twice"
+          note="synthetic XAE; the fixture tables have no rows"
+        >
+          <ComputedRun
+            lang={lang}
+            methodology={m}
+            values={run}
+            changes={run.filter(
+              (e) => e.previous_points === null || e.previous_points !== e.points,
+            )}
+            sources={sources}
+            anchor={`series-kit-${n}`}
+            gitSha={null}
+          />
         </Specimen>
 
         <Specimen

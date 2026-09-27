@@ -197,7 +197,8 @@ export function Timeline({
         country: countryName,
         from: longDate(from, lang),
         to: longDate(to, lang),
-        count: drawn.length,
+        count: drawn.filter((e) => e.type !== 'computed').length,
+        changes: drawn.filter((e) => e.type === 'computed').length,
       })
   const height = scoreMode ? CHART_HEIGHT : STRIP_HEIGHT
   const axisY = scoreMode ? BOTTOM : STRIP_HEIGHT - 28
@@ -277,50 +278,54 @@ export function Timeline({
 function SeriesTable({ lang, series, t }: { lang: Lang; series: readonly ApiSeriesPoint[]; t: T }) {
   if (series.length === 0) return <p className="mt-2 text-ink-2">{t('chart.empty')}</p>
   return (
-    <table className="mt-2 w-full border-collapse text-14">
-      <caption className="sr-only">{t('chart.seriesCaption')}</caption>
-      <thead>
-        <tr className="border-b border-rule text-start">
-          <th scope="col" className="py-1 pe-4 text-start font-semibold">
-            {t('chart.date')}
-          </th>
-          <th scope="col" className="py-1 pe-4 text-end font-semibold">
-            {t('chart.score')}
-          </th>
-          <th scope="col" className="py-1 pe-4 text-end font-semibold">
-            {t('chart.change')}
-          </th>
-          <th scope="col" className="py-1 text-start font-semibold">
-            {t('chart.cause')}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {series.map((p, i) => {
-          const prev = series[i - 1]
-          return (
-            <tr key={p.date} className="border-b border-rule">
-              <td className="py-1 pe-4 font-mono text-m12">{p.date}</td>
-              <td className="py-1 pe-4 text-end font-mono text-m12">{signed(p.score, lang)}</td>
-              <td className="py-1 pe-4 text-end font-mono text-m12">
-                {prev === undefined ? '' : signed(p.score - prev.score, lang)}
-              </td>
-              <td className="py-1 text-12">
-                {p.transitions.length === 0
-                  ? i === 0 || prev === undefined
-                    ? t('chart.start')
-                    : prev.passivity_applied !== p.passivity_applied
-                      ? t(p.passivity_applied ? 'chart.passivityOn' : 'chart.passivityOff')
-                      : t('chart.decay')
-                  : p.transitions
-                      .map((tr) => `${tr.indicator} ${t(`chart.transition.${tr.kind}`)} (${tr.id})`)
-                      .join('; ')}
-              </td>
-            </tr>
-          )
-        })}
-      </tbody>
-    </table>
+    <div className="mt-2 overflow-x-auto">
+      <table className="w-full border-collapse text-14">
+        <caption className="sr-only">{t('chart.seriesCaption')}</caption>
+        <thead>
+          <tr className="border-b border-rule text-start">
+            <th scope="col" className="py-1 pe-4 text-start font-semibold">
+              {t('chart.date')}
+            </th>
+            <th scope="col" className="py-1 pe-4 text-end font-semibold">
+              {t('chart.score')}
+            </th>
+            <th scope="col" className="py-1 pe-4 text-end font-semibold">
+              {t('chart.change')}
+            </th>
+            <th scope="col" className="py-1 text-start font-semibold">
+              {t('chart.cause')}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {series.map((p, i) => {
+            const prev = series[i - 1]
+            return (
+              <tr key={p.date} className="border-b border-rule">
+                <td className="py-1 pe-4 font-mono text-m12">{p.date}</td>
+                <td className="py-1 pe-4 text-end font-mono text-m12">{signed(p.score, lang)}</td>
+                <td className="py-1 pe-4 text-end font-mono text-m12">
+                  {prev === undefined ? '' : signed(p.score - prev.score, lang)}
+                </td>
+                <td className="py-1 text-12 wrap-anywhere">
+                  {p.transitions.length === 0
+                    ? i === 0 || prev === undefined
+                      ? t('chart.start')
+                      : prev.passivity_applied !== p.passivity_applied
+                        ? t(p.passivity_applied ? 'chart.passivityOn' : 'chart.passivityOff')
+                        : t('chart.decay')
+                    : p.transitions
+                        .map(
+                          (tr) => `${tr.indicator} ${t(`chart.transition.${tr.kind}`)} (${tr.id})`,
+                        )
+                        .join('; ')}
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

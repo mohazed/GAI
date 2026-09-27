@@ -185,7 +185,7 @@ export function kitEvents(base: ApiEvent): ApiEvent[] {
           {
             ...(base.evidence[0] as ApiEvent['evidence'][number]),
             source: KIT_SOURCE.id,
-            quote: 'XAD,2024,1234567,USD',
+            quote: `XAD,2023-11-01,2024-10-31,1234567,1186,2026-09-27T00:00:00Z,${KIT_SOURCE.id}`,
             quote_lang: 'en',
             quote_en: null,
             quote_fr: null,
@@ -346,4 +346,52 @@ export function kitMovers(window: ApiMovers): ApiMovers {
     up: [mover('A', 'XAA', 40, 46), mover('C', 'XAC', 9, 12)],
     down: [mover('B', 'XAB', -39, -44), mover('D', 'XAD', -61, -63)],
   }
+}
+
+/**
+ * A run of synthetic monthly computed values (country XAE, indicator D1) for the ComputedRun
+ * specimen: five months, the points changing twice, the last one in force.
+ */
+export function kitRun(generated: ApiEvent): ApiEvent[] {
+  const months: [string, string, number, number | null][] = [
+    ['2026-05-01', '2026-06-01', 1, null],
+    ['2026-06-01', '2026-07-01', 1, 1],
+    ['2026-07-01', '2026-08-01', 3, 1],
+    ['2026-08-01', '2026-09-01', 3, 3],
+    ['2026-09-01', '2026-10-01', 6, 3],
+  ]
+  return months.map(([date, end, points, previous], i) => {
+    const last = i === months.length - 1
+    const windowEnd = `${Number(date.slice(0, 4)) - (date.slice(5, 7) === '01' ? 1 : 0)}-${date.slice(5, 7) === '01' ? '12' : String(Number(date.slice(5, 7)) - 1).padStart(2, '0')}-28`
+    return variantEvent(
+      generated,
+      {
+        id: `evt_${date.replaceAll('-', '_')}_XAE_D1_fts`,
+        country: 'XAE',
+        date,
+        end,
+        points,
+        previous_points: previous,
+        points_rationale: `Kit sample: tier +${points}.`,
+        evidence: [
+          {
+            ...(generated.evidence[0] as ApiEvent['evidence'][number]),
+            quote: `XAE,${date.slice(0, 4)}-01-01,${windowEnd},${1000000 * points},1186,2026-09-27T00:00:00Z,${KIT_SOURCE.id}`,
+            locator: `row ${10 + i} of data/structured/fts_funding.csv`,
+          },
+        ],
+        at_build: {
+          ...generated.at_build,
+          reason: last ? 'counted' : 'ended',
+          factor: last ? 1 : 0,
+          value: last ? points : 0,
+          counted: last ? points : 0,
+        },
+      },
+      {
+        en: 'monthly humanitarian funding value.',
+        fr: 'valeur mensuelle du financement humanitaire.',
+      },
+    )
+  })
 }

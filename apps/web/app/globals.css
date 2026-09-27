@@ -565,3 +565,106 @@
     pointer-events: none;
   }
 }
+
+@layer components {
+  /* Event filters without JavaScript (docs/05 §6 Country): each filter link points at an empty
+     anchor `#f-{facet}-{value}` placed before the list; while it is the :target, the items
+     without the class `f-{value}` are hidden and the link is marked. One rule per indicator,
+     sign and confidence level of the methodology (lib/contract.test.ts keeps the list complete).
+     With JavaScript the links are intercepted and the list is filtered in React state. */
+  #f-ind-A1:target ~ .ev-list > .ev-item:not(.f-A1),
+  #f-ind-A2:target ~ .ev-list > .ev-item:not(.f-A2),
+  #f-ind-A3:target ~ .ev-list > .ev-item:not(.f-A3),
+  #f-ind-A4:target ~ .ev-list > .ev-item:not(.f-A4),
+  #f-ind-A5:target ~ .ev-list > .ev-item:not(.f-A5),
+  #f-ind-A6:target ~ .ev-list > .ev-item:not(.f-A6),
+  #f-ind-A7:target ~ .ev-list > .ev-item:not(.f-A7),
+  #f-ind-A8:target ~ .ev-list > .ev-item:not(.f-A8),
+  #f-ind-B1:target ~ .ev-list > .ev-item:not(.f-B1),
+  #f-ind-B2:target ~ .ev-list > .ev-item:not(.f-B2),
+  #f-ind-B3:target ~ .ev-list > .ev-item:not(.f-B3),
+  #f-ind-B4:target ~ .ev-list > .ev-item:not(.f-B4),
+  #f-ind-B5:target ~ .ev-list > .ev-item:not(.f-B5),
+  #f-ind-B6:target ~ .ev-list > .ev-item:not(.f-B6),
+  #f-ind-B7:target ~ .ev-list > .ev-item:not(.f-B7),
+  #f-ind-B8:target ~ .ev-list > .ev-item:not(.f-B8),
+  #f-ind-B9:target ~ .ev-list > .ev-item:not(.f-B9),
+  #f-ind-B10:target ~ .ev-list > .ev-item:not(.f-B10),
+  #f-ind-B11:target ~ .ev-list > .ev-item:not(.f-B11),
+  #f-ind-B12:target ~ .ev-list > .ev-item:not(.f-B12),
+  #f-ind-C1:target ~ .ev-list > .ev-item:not(.f-C1),
+  #f-ind-C2:target ~ .ev-list > .ev-item:not(.f-C2),
+  #f-ind-C3:target ~ .ev-list > .ev-item:not(.f-C3),
+  #f-ind-C4:target ~ .ev-list > .ev-item:not(.f-C4),
+  #f-ind-C5:target ~ .ev-list > .ev-item:not(.f-C5),
+  #f-ind-C6:target ~ .ev-list > .ev-item:not(.f-C6),
+  #f-ind-D1:target ~ .ev-list > .ev-item:not(.f-D1),
+  #f-ind-D2:target ~ .ev-list > .ev-item:not(.f-D2),
+  #f-ind-D3:target ~ .ev-list > .ev-item:not(.f-D3),
+  #f-ind-D4:target ~ .ev-list > .ev-item:not(.f-D4),
+  #f-ind-D5:target ~ .ev-list > .ev-item:not(.f-D5),
+  #f-ind-E1:target ~ .ev-list > .ev-item:not(.f-E1),
+  #f-ind-E2:target ~ .ev-list > .ev-item:not(.f-E2),
+  #f-ind-E3:target ~ .ev-list > .ev-item:not(.f-E3),
+  #f-sign-positive:target ~ .ev-list > .ev-item:not(.f-positive),
+  #f-sign-negative:target ~ .ev-list > .ev-item:not(.f-negative),
+  #f-conf-confirmed:target ~ .ev-list > .ev-item:not(.f-confirmed),
+  #f-conf-corroborated:target ~ .ev-list > .ev-item:not(.f-corroborated),
+  #f-conf-reported:target ~ .ev-list > .ev-item:not(.f-reported),
+  #f-conf-disputed:target ~ .ev-list > .ev-item:not(.f-disputed) {
+    display: none;
+  }
+  #f-ind-A1:target ~ .ev-filters .ev-flink-A1,
+  #f-ind-A2:target ~ .ev-filters .ev-flink-A2,
+  #f-ind-A3:target ~ .ev-filters .ev-flink-A3,
+  #f-ind-A4:target ~ .ev-filters .ev-flink-A4,
+  #f-ind-A5:target ~ .ev-filters .ev-flink-A5,
+  #f-ind-A6:target ~ .ev-filters .ev-flink-A6,
+  #f-ind-A7:target ~ .ev-filters .ev-flink-A7,
+  #f-ind-A8:target ~ .ev-filters .ev-flink-A8,
+  #f-ind-B1:target ~ .ev-filters .ev-flink-B1,
+  #f-ind-B2:target ~ .ev-filters .ev-flink-B2,
+  #f-ind-B3:target ~ .ev-filters .ev-flink-B3,
+  #f-ind-B4:target ~ .ev-filters .ev-flink-B4,
+  #f-ind-B5:target ~ .ev-filters .ev-flink-B5,
+  #f-ind-B6:target ~ .ev-filters .ev-flink-B6,
+  #f-ind-B7:target ~ .ev-filters .ev-flink-B7,
+  #f-ind-B8:target ~ .ev-filters .ev-flink-B8,
+  #f-ind-B9:target ~ .ev-filters .ev-flink-B9,
+  #f-ind-B10:target ~ .ev-filters .ev-flink-B10,
+  #f-ind-B11:target ~ .ev-filters .ev-flink-B11,
+  #f-ind-B12:target ~ .ev-filters .ev-flink-B12,
+  #f-ind-C1:target ~ .ev-filters .ev-flink-C1,
+  #f-ind-C2:target ~ .ev-filters .ev-flink-C2,
+  #f-ind-C3:target ~ .ev-filters .ev-flink-C3,
+  #f-ind-C4:target ~ .ev-filters .ev-flink-C4,
+  #f-ind-C5:target ~ .ev-filters .ev-flink-C5,
+  #f-ind-C6:target ~ .ev-filters .ev-flink-C6,
+  #f-ind-D1:target ~ .ev-filters .ev-flink-D1,
+  #f-ind-D2:target ~ .ev-filters .ev-flink-D2,
+  #f-ind-D3:target ~ .ev-filters .ev-flink-D3,
+  #f-ind-D4:target ~ .ev-filters .ev-flink-D4,
+  #f-ind-D5:target ~ .ev-filters .ev-flink-D5,
+  #f-ind-E1:target ~ .ev-filters .ev-flink-E1,
+  #f-ind-E2:target ~ .ev-filters .ev-flink-E2,
+  #f-ind-E3:target ~ .ev-filters .ev-flink-E3,
+  #f-sign-positive:target ~ .ev-filters .ev-flink-positive,
+  #f-sign-negative:target ~ .ev-filters .ev-flink-negative,
+  #f-conf-confirmed:target ~ .ev-filters .ev-flink-confirmed,
+  #f-conf-corroborated:target ~ .ev-filters .ev-flink-corroborated,
+  #f-conf-reported:target ~ .ev-filters .ev-flink-reported,
+  #f-conf-disputed:target ~ .ev-filters .ev-flink-disputed,
+  .ev-flink[aria-current="true"] {
+    color: var(--ink);
+    text-decoration-thickness: 2px;
+  }
+  .ev-anchor {
+    display: block;
+    scroll-margin-top: 2rem;
+  }
+  /* A computed value reached from the Timeline or the changes feed. */
+  .ev-value:target {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+  }
+}

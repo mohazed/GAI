@@ -88,13 +88,14 @@ export function serve(dir: string, port: number): void {
   createServer((req, res) => {
     const url = req.url ?? '/'
     const pathname = url.split('?')[0] ?? '/'
-    // Cloudflare Pages redirects a directory path without its slash.
+    // Cloudflare Pages redirects a directory path without its slash, keeping the query (the
+    // dated permalinks are `/en/country/DEU?date=…`).
     if (
       !pathname.endsWith('/') &&
       !path.extname(pathname) &&
       existsSync(path.join(dir, pathname, 'index.html'))
     ) {
-      res.writeHead(308, { Location: `${pathname}/` })
+      res.writeHead(308, { Location: `${pathname}/${url.slice(pathname.length)}` })
       res.end()
       return
     }

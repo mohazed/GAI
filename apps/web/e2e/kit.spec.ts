@@ -116,3 +116,51 @@ test.describe('component kit (/_kit)', () => {
     await context.close()
   })
 })
+
+/**
+ * The country page of the fixture Germany (one real event, a synthetic correction and reply) in
+ * both languages and modes, and the fixture Israel as an excluded entity (P-08).
+ */
+test.describe('country page kit (/_kit/country/)', () => {
+  for (const view of ['en-score', 'fr-score', 'en-scorecard', 'fr-scorecard', 'en-excluded']) {
+    test(`${view}: structure and axe`, async ({ page }) => {
+      const errors = collectErrors(page)
+      await page.goto(`/_kit/country/${view}/`)
+      const main = page.locator(`[data-kit-country="${view}"]`)
+      await expect(main.getByRole('heading', { level: 1 })).toHaveCount(1)
+      const levels = await main.evaluate((m) =>
+        [...m.querySelectorAll('h1, h2, h3, h4')].map((h) => Number(h.tagName.slice(1))),
+      )
+      for (let i = 1; i < levels.length; i++)
+        expect(levels[i] as number).toBeLessThanOrEqual((levels[i - 1] as number) + 1)
+      if (view !== 'en-excluded') {
+        // The real fixture event: its quote in German, the translation, the revision note, the
+        // reply that contests it; gauge and coverage together.
+        await expect(
+          main.locator('[id="evt_2025_08_08_DEU_A6"] blockquote[lang="de"]'),
+        ).toHaveCount(2)
+        await expect(
+          main.locator('[id="evt_2025_08_08_DEU_A6"] a[href*="/corrections/#"]'),
+        ).toHaveCount(1)
+        await expect(main.locator('[id="rep_20260927_DEU_1"]')).toHaveCount(1)
+        await expect(main.locator('.gauge')).toHaveCount(1)
+        await expect(main.locator('.coverage-bar')).toHaveCount(1)
+      } else {
+        await expect(main.locator('.gauge')).toHaveCount(0)
+      }
+      await page.evaluate(() => {
+        for (const d of document.querySelectorAll('details')) d.open = true
+      })
+      const result = await new AxeBuilder({ page })
+        .include(`[data-kit-country="${view}"]`)
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
+        // The kit page has no masthead or footer landmarks of its own.
+        .disableRules(['region'])
+        .analyze()
+      expect(
+        result.violations.map((v) => `${v.id}: ${v.help} ${v.nodes[0]?.target.join(' ')}`),
+      ).toEqual([])
+      expect(errors).toEqual([])
+    })
+  }
+})

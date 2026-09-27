@@ -10,12 +10,21 @@
  *
  *   pnpm build && pnpm --filter @gai/web lighthouse
  *
- * P-08 adds the country page to `url`.
+ * Pages: home and ranking (P-07); the country page of Germany in the real data, in both languages,
+ * and Israel as an excluded entity (P-08).
  */
 const { chromium } = require('@playwright/test')
 
 const PORT = 4175
-const PAGES = ['/en/', '/fr/', '/en/ranking/', '/fr/ranking/']
+const PAGES = [
+  '/en/',
+  '/fr/',
+  '/en/ranking/',
+  '/fr/ranking/',
+  '/en/country/DEU/',
+  '/fr/country/DEU/',
+  '/en/country/ISR/',
+]
 
 module.exports = {
   ci: {

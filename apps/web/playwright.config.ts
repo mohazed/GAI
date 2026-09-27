@@ -23,7 +23,7 @@ export default defineConfig({
     },
     {
       name: 'scorecard',
-      testMatch: /pages\.spec\.ts$/,
+      testMatch: /(pages|country)\.spec\.ts$/,
       use: { ...devices['Desktop Chrome'], baseURL: `http://localhost:${PORTS.scorecard}` },
     },
   ],
