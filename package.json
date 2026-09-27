@@ -12,11 +12,14 @@
     "lint": "biome check .",
     "format": "biome format --write .",
     "typecheck": "turbo run typecheck",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "validate": "tsx packages/schema/src/cli/validate.ts",
+    "methodology:render": "tsx packages/schema/src/cli/render-methodology.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
     "turbo": "2.11.4",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "tsx": "catalog:"
   }
 }
