@@ -101,6 +101,91 @@ describe('findBannedWords with methodology banned-words.txt', () => {
 // ---------------------------------------------------------------------------------------------
 // Banned words: matching rules, on custom lists
 
+describe('findBannedWords pre-check', () => {
+  it('finds exactly what the terms find, on generated adversarial texts', () => {
+    // A deterministic generator (linear congruential) of texts mixing words of real terms,
+    // other letters, digits, spaces of every kind, apostrophe look-alikes, fullwidth forms and
+    // invisible format characters, U+FEFF (both whitespace and invisible) and an astral one
+    // (U+E0001) included. The pre-check must never hide or invent a match.
+    let seed = 20260927
+    const next = (n: number) => {
+      seed = (seed * 1103515245 + 12345) % 2147483648
+      return seed % n
+    }
+    const pieces = [
+      'brutal',
+      'shame',
+      'ful',
+      'war',
+      'crime',
+      'crimes',
+      'honteu',
+      'x',
+      'courage',
+      'en',
+      'd',
+      'guerre',
+      'crime de guerre',
+      'apartheid',
+      'Gaza',
+      '12',
+      'é',
+      'É',
+      'ｂｒｕｔａｌ',
+      'l',
+    ]
+    const glue = [
+      ' ',
+      '  ',
+      '\u00A0',
+      '\u202F',
+      '-',
+      "'",
+      '’',
+      'ʼ',
+      '`',
+      '\u00AD',
+      '\u200B',
+      '\u200D',
+      '\u2060',
+      '\uFEFF',
+      '\u{E0001}',
+      '',
+      '',
+      '',
+      '.',
+      ',',
+    ]
+    let checked = 0
+    let withMatch = 0
+    for (let i = 0; i < 4000; i++) {
+      let text = ''
+      const n = 1 + next(6)
+      for (let k = 0; k < n; k++) {
+        text += (pieces[next(pieces.length)] as string) + (glue[next(glue.length)] as string)
+      }
+      const fast = findBannedWords(text, REAL)
+      const reference = findBannedWords(text, REAL, { prefilter: false })
+      expect(fast, JSON.stringify(text)).toEqual(reference)
+      checked++
+      if (reference.length > 0) withMatch++
+    }
+    expect(checked).toBe(4000)
+    // The generator reaches both outcomes often.
+    expect(withMatch).toBeGreaterThan(500)
+    expect(checked - withMatch).toBeGreaterThan(500)
+  })
+
+  it('treats U+FEFF as an invisible inside a word and as a space between the words of a phrase', () => {
+    const m = custom('war crime*', 'brutal')
+    expect(terms('bru\uFEFFtal', m)).toEqual(['brutal'])
+    expect(terms('war\uFEFFcrimes', m)).toEqual(['war crime*'])
+    expect(terms('war\u200B crimes', m)).toEqual(['war crime*'])
+    expect(terms('warcrimes', m)).toEqual([])
+    expect(terms('x\u200Bbrutal', m)).toEqual([])
+  })
+})
+
 describe('findBannedWords matching rules', () => {
   it('matches whole words only (letters and digits on either side block a match)', () => {
     const m = custom('bold')

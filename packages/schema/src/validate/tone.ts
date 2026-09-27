@@ -46,7 +46,10 @@ interface CompiledTerm {
 /** A compiled banned-words list. Build it once with `compileBannedWords` and reuse it. */
 export interface BannedWordMatcher {
   readonly terms: readonly CompiledTerm[]
-  /** Union of every term: one pass tells whether a text needs the per-term scan at all. */
+  /**
+   * Union of every term, read on the text without its invisible format characters but U+FEFF:
+   * one pass tells whether a text needs the per-term scan at all (see compileBannedWords).
+   */
   readonly any: RegExp | null
 }
 
@@ -65,12 +68,28 @@ function escapeRegExp(s: string): string {
 }
 
 /**
- * The regular expression source for one term, or null for an empty term. Words are separated by
- * `\s+` (which includes U+00A0 and U+202F), ' and ’ match each other, a trailing `*` matches the
- * rest of the word, and the whole match must not touch a letter, mark or digit on either side.
- * Invisible format characters (`\p{Cf}`) are ignored inside and around the term.
+ * The only invisible format character that is also whitespace (`\s`): the pre-check keeps it in
+ * the text, and skips it where the terms skip any \p{Cf}.
  */
-function termSource(raw: string): string | null {
+const PREFILTER_INVISIBLE = '\\uFEFF*'
+const OTHER_INVISIBLES = /(?!\uFEFF)\p{Cf}/gu
+
+/** The text the pre-check reads: every \p{Cf} character removed except U+FEFF. */
+function stripForPrefilter(text: string): string {
+  return text.replace(OTHER_INVISIBLES, '')
+}
+
+/** Lookbehind and lookahead of every term: the match touches no letter, mark or digit. */
+const NOT_AFTER_WORD = `(?<!${WORD_CHAR}${INVISIBLE})`
+const NOT_BEFORE_WORD = `(?!${INVISIBLE}${WORD_CHAR})`
+
+/**
+ * The regular expression source for one term without its word boundaries, or null for an empty
+ * term. Words are separated by `\s+` (which includes U+00A0 and U+202F), ' and ’ match each other,
+ * a trailing `*` matches the rest of the word, and invisible format characters (`\p{Cf}`) are
+ * ignored inside the term. `termSource` adds the boundaries.
+ */
+function termCore(raw: string, invisible = INVISIBLE, separatorExtra = '\\p{Cf}'): string | null {
   const term = raw.normalize('NFC').trim()
   const wildcard = term.endsWith('*')
   const body = (wildcard ? term.slice(0, -1) : term).trim()
@@ -80,10 +99,20 @@ function termSource(raw: string): string | null {
     .map((word) =>
       [...word]
         .map((ch) => (ch === "'" || ch === '’' ? APOSTROPHE_CLASS : escapeRegExp(ch)))
-        .join(INVISIBLE),
+        .join(invisible),
     )
-  const tail = wildcard ? `(?:${INVISIBLE}${WORD_CHAR})*` : ''
-  return `(?<!${WORD_CHAR}${INVISIBLE})${words.join(`${INVISIBLE}\\s[\\s\\p{Cf}]*`)}${tail}(?!${INVISIBLE}${WORD_CHAR})`
+  const tail = wildcard ? `(?:${invisible}${WORD_CHAR})*` : ''
+  return `${words.join(`${invisible}\\s[\\s${separatorExtra}]*`)}${tail}`
+}
+
+/**
+ * The regular expression source for one term, or null for an empty term: its core, which must
+ * not touch a letter, mark or digit on either side (invisible format characters around it are
+ * ignored).
+ */
+function termSource(raw: string): string | null {
+  const core = termCore(raw)
+  return core === null ? null : `${NOT_AFTER_WORD}${core}${NOT_BEFORE_WORD}`
 }
 
 /**
@@ -94,20 +123,33 @@ function termSource(raw: string): string | null {
 export function compileBannedWords(entries: readonly BannedWord[]): BannedWordMatcher {
   const terms: CompiledTerm[] = []
   const sources: string[] = []
+  const cores: string[] = []
   for (const entry of entries) {
+    const core = termCore(entry.term, PREFILTER_INVISIBLE, '')
     const source = termSource(entry.term)
-    if (source === null || sources.includes(source)) continue
+    if (core === null || source === null || sources.includes(source)) continue
     try {
       terms.push({ term: entry.term, re: new RegExp(source, 'giu') })
       sources.push(source)
+      cores.push(core)
     } catch {
       // Unreachable with escaped input; a lint must never throw.
     }
   }
+  // The pre-check (`any`) is one union of every term, read on the text without its invisible
+  // format characters except U+FEFF (`stripForPrefilter`), with the word boundaries outside the
+  // alternation. It matches exactly when one of the terms matches the text as written: every
+  // \p{Cf} character a term may skip is either gone or U+FEFF, which the union skips like the
+  // terms do (U+FEFF is also whitespace, so it may still separate the words of a phrase). The
+  // terms themselves report the matches. Without \p{Cf} inside the union, V8 compiles it fast:
+  // the full union took seconds to compile for two-byte strings on Node 22.
   let any: RegExp | null = null
-  if (sources.length > 0) {
+  if (cores.length > 0) {
     try {
-      any = new RegExp(sources.map((s) => `(?:${s})`).join('|'), 'iu')
+      any = new RegExp(
+        `(?<!${WORD_CHAR}${PREFILTER_INVISIBLE})(?:${cores.map((c) => `(?:${c})`).join('|')})(?!${PREFILTER_INVISIBLE}${WORD_CHAR})`,
+        'iu',
+      )
     } catch {
       any = null
     }
@@ -122,11 +164,20 @@ export function compileBannedWords(entries: readonly BannedWord[]): BannedWordMa
  * cannot be hidden by characters that render the same, invisible format characters are ignored
  * (`bru\u00ADtal` is `brutal`), fullwidth letters match their ASCII forms, and the apostrophe
  * look-alikes ʼ ‘ ` ´ match ' and ’. Offsets and matched text refer to the NFC text as written.
+ *
+ * `prefilter: false` skips the one-pass pre-check and runs every term: the reference the
+ * pre-check is tested against; the results are the same.
  */
-export function findBannedWords(text: string, matcher: BannedWordMatcher): BannedWordMatch[] {
+export function findBannedWords(
+  text: string,
+  matcher: BannedWordMatcher,
+  options: { prefilter?: boolean } = {},
+): BannedWordMatch[] {
   const nfc = text.normalize('NFC')
   const folded = foldForMatch(nfc)
-  if (matcher.any === null || !matcher.any.test(folded)) return []
+  if (options.prefilter !== false) {
+    if (matcher.any === null || !matcher.any.test(stripForPrefilter(folded))) return []
+  }
   const found: (BannedWordMatch & { order: number })[] = []
   matcher.terms.forEach(({ term, re }, order) => {
     for (const m of folded.matchAll(re)) {
