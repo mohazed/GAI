@@ -21,6 +21,12 @@ Folder `methodology/v1.0.0/`, status release candidate; scores are computed but 
 - Indicator-level caps (A5 −15, A8 +10, B9 +10, B10 −10) and stacking rules (one standing state
   for B8, B12, C1, C4, D3; B11 ministers and settlers held separately; latest position for
   B5/B6; A7 supersedes A6).
+- Event types follow the final decisions of docs/02 §3: B3, B5, B6 and C2 are standing states,
+  and A6 is a standing state for every suspension, ending on the date the suspension is lifted.
+- Scaled indicators, whose points may differ between events of the same country and which record
+  the reason for their points: A1, A2, A4, A5, B1, B8, B9, B11, B12, C1, C3, C4, D1 and D3. This
+  keeps the list of docs/02 §12.1 (A5, B9, B12 tiers) and extends it to the computed indicators
+  (A1, A2, A4, C3, D1) and the other indicators with tiers (B1, B8, B11, C1, C4, D3).
 - Confidence weights 1.0 / 0.7 / 0.4 / 0.4; decay flat for 365 days, then linear to 0.25 at
   730 days, then 0; passivity penalty 15 with the qualifying rule of docs/02 §6.
 - Formulas and thresholds for the computed indicators A1, A2, A4, C3 and D1 (docs/02 §5).

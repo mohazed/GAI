@@ -3,8 +3,11 @@
  * at, the YAML 1.2 core schema (dates and yes/no stay strings), and the CSV header contract of
  * docs/03 §7.
  */
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { parseCsv, parseYaml } from './parse.js'
+import { FIXTURES_ROOT } from '../testing/harness.js'
+import { decodeUtf8, firstInvalidUtf8, parseCsv, parseYaml } from './parse.js'
 
 const FILE_Y = 'data/events/DEU.yaml'
 const FILE_C = 'data/structured/unga_votes.csv'
@@ -57,6 +60,32 @@ describe('parseYaml', () => {
   it('reports tab indentation on its line', () => {
     const parsed = parseYaml('a:\n\tb: 1\n', FILE_Y)
     expect(parsed.issues).toMatchObject([{ rule: 'load.yaml-syntax', file: FILE_Y, line: 2 }])
+  })
+
+  it('reports one issue for a tab that breaks the rest of the file, naming the tab', () => {
+    const text = readFileSync(join(FIXTURES_ROOT, 'data/events/DEU.yaml'), 'utf8')
+    const broken = text.replace('\n  revision: 2', '\n\trevision: 2')
+    expect(broken).not.toBe(text)
+    const line = broken.split('\n').findIndex((l) => l.startsWith('\trevision')) + 1
+    const parsed = parseYaml(broken, FILE_Y)
+    expect(parsed.ok).toBe(false)
+    expect(parsed.issues).toHaveLength(1)
+    expect(parsed.issues[0]).toMatchObject({ rule: 'load.yaml-syntax', file: FILE_Y, line })
+    expect(parsed.issues[0]?.message).toMatch(/^tabs are not allowed for indentation; .*further/)
+  })
+
+  it('keeps a tab inside a block scalar or a quoted string (valid YAML)', () => {
+    const parsed = parseYaml('a: |\n  foo\n  \tbar\nb: "x\ty"\n', FILE_Y)
+    expect(parsed.issues).toEqual([])
+    expect(parsed.value).toEqual({ a: 'foo\n\tbar\n', b: 'x\ty' })
+  })
+
+  it('reports only the first of several syntax errors, with the count of the others', () => {
+    const text = ['- id: a', '  scope: [gaza', '- id: b', '  x: {', ''].join('\n')
+    const parsed = parseYaml(text, FILE_Y)
+    expect(parsed.issues).toHaveLength(1)
+    expect(parsed.issues[0]?.message).not.toMatch(/^tabs/)
+    expect(parsed.issues[0]?.message).toMatch(/further syntax errors? in this file not listed/)
   })
 
   it('reports a duplicate key as load.yaml-syntax on the line of the second key', () => {
@@ -259,5 +288,36 @@ describe('parseCsv', () => {
   it('keeps field values verbatim (no trimming, no type conversion)', () => {
     const parsed = parseCsv('a,b\n 1 ,007\n', FILE_C)
     expect(parsed.rows[0]?.record).toEqual({ a: ' 1 ', b: '007' })
+  })
+})
+
+describe('decodeUtf8', () => {
+  const bytes = (...parts: (string | number[])[]) =>
+    Buffer.concat(parts.map((p) => (typeof p === 'string' ? Buffer.from(p) : Buffer.from(p))))
+
+  it('decodes valid UTF-8 without issue (accents, CJK, emoji-free 4-byte, BOM)', () => {
+    const text = '\uFEFFsummary: fédéral « x » 中文 𝐀\n'
+    const out = decodeUtf8(Buffer.from(text), FILE_Y)
+    expect(out).toEqual({ text, issues: [] })
+    expect(firstInvalidUtf8(Buffer.from(text))).toBeNull()
+  })
+
+  it("'load.encoding': a Latin-1 byte is reported at its line, the text is still returned", () => {
+    // `f\xe9d\xe9ral` on line 3 (Latin-1 é).
+    const raw = bytes('- id: a\n', '  summary:\n', '    fr: f', [0xe9], 'd', [0xe9], 'ral\n')
+    const out = decodeUtf8(raw, FILE_Y)
+    expect(out.issues).toMatchObject([
+      { rule: 'load.encoding', level: 'error', file: FILE_Y, line: 3 },
+    ])
+    expect(out.issues[0]?.message).toContain('0xE9')
+    expect(out.text).toContain('f\uFFFDd\uFFFDral')
+  })
+
+  it('finds overlong, surrogate, truncated and out-of-range sequences', () => {
+    expect(firstInvalidUtf8(bytes('ab', [0xc0, 0xaf]))).toEqual({ offset: 2, line: 1 })
+    expect(firstInvalidUtf8(bytes('a\n', [0xed, 0xa0, 0x80]))).toEqual({ offset: 2, line: 2 })
+    expect(firstInvalidUtf8(bytes('a\nb\n', [0xe2, 0x82]))).toEqual({ offset: 4, line: 3 })
+    expect(firstInvalidUtf8(bytes([0xf4, 0x90, 0x80, 0x80]))).toEqual({ offset: 0, line: 1 })
+    expect(firstInvalidUtf8(bytes([0xe2, 0x82, 0xac], 'x'))).toBeNull()
   })
 })

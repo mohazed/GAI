@@ -19,6 +19,7 @@ import type { Dataset, Located } from '../../load/dataset.js'
 import type { BaseRecord, BaseSnapshot } from '../../load/git.js'
 import type { Correction } from '../../records.js'
 import type { Rule } from '../context.js'
+import { unreadableFiles } from './shared.js'
 
 const CORRECTIONS_FILE = 'data/corrections.yaml'
 
@@ -37,7 +38,7 @@ export const PUBLIC_STATUSES: readonly string[] = [
 ]
 
 /** Keys of a correction's `before` / `after` checked against the diff. */
-export const DIFF_KEYS = ['date', 'points', 'confidence', 'end'] as const
+export const DIFF_KEYS = ['date', 'points', 'confidence', 'end', 'evidence'] as const
 
 // ---------------------------------------------------------------------------------------------
 // Helpers
@@ -63,6 +64,23 @@ const same = (a: unknown, b: unknown): boolean => canonicalJson(a) === canonical
 
 const hasOwn = (record: object, key: string): boolean => Object.hasOwn(record, key)
 
+/**
+ * The value a correction gives for `key`, compared with the event's value. `evidence` may be
+ * recorded as the list of cited source ids (the form docs/03 §8 entries use, e.g. the fixture
+ * `[src_…, src_…]`) or as full evidence entries: a list of strings is compared with the event's
+ * source ids in order, anything else with the full evidence.
+ */
+function eventValueFor(key: string, given: unknown, event: Record<string, unknown>): unknown {
+  const value = event[key]
+  if (key !== 'evidence') return value
+  if (Array.isArray(given) && given.every((x) => typeof x === 'string') && Array.isArray(value)) {
+    return value.map((ev) =>
+      ev !== null && typeof ev === 'object' ? (ev as { source?: unknown }).source : ev,
+    )
+  }
+  return value
+}
+
 /** The base record as a plain object: parsed value when valid today, raw YAML otherwise. */
 function fieldsOf<T>(rec: BaseRecord<T>): Record<string, unknown> {
   return rec.value !== null ? (rec.value as unknown as Record<string, unknown>) : rec.raw
@@ -75,21 +93,6 @@ function at(rec: Located<unknown>, id: string, path?: string): IssueLocation {
 }
 
 const shortRef = (base: BaseSnapshot): string => base.commit.slice(0, 10)
-
-/**
- * Files that exist but could not be read as a list of records (YAML syntax, or not a list):
- * their records are absent from the dataset without being in `invalidIds`, so history rules do
- * not report them as deleted (the load issue already covers them).
- */
-function unreadableFiles(ds: Dataset): Set<string> {
-  const out = new Set<string>()
-  for (const i of ds.issues) {
-    if (i.rule === 'load.yaml-syntax' || (i.rule.startsWith('schema.') && i.id === '-')) {
-      out.add(i.file)
-    }
-  }
-  return out
-}
 
 /** True when a file named `{id}.yaml` exists anywhere under `dir` in the working tree. */
 function fileWithIdUnder(ds: Dataset, dir: string, id: string): boolean {
@@ -227,8 +230,12 @@ const statusRegression: Rule = (ctx) => {
  *   when it was retracted and of kind correction otherwise (reported on the event);
  * - a change to points, date, confidence or evidence bumps `revision` above the base revision
  *   (reported on the event);
- * - the `before` / `after` values the new entries give for date, points, confidence and end
- *   match the base and current values (reported on the entry, at `before.{key}`/`after.{key}`).
+ * - the new entries record each changed field: some new entry gives it in `before` and some new
+ *   entry gives it in `after` ("a matching corrections entry", docs/03 §11; the log "records what
+ *   changed", docs/02 §3), reported on the event at the field;
+ * - the `before` / `after` values the new entries give for date, points, confidence, end and
+ *   evidence match the base and current values (reported on the entry, at
+ *   `before.{key}`/`after.{key}`). Evidence may be given as the list of source ids.
  *
  * The before/after check also runs on new entries for a base-published event whose tracked
  * fields did not change (e.g. an entry recording a new `end`): whatever an entry says must be
@@ -280,6 +287,23 @@ const requiredOnEdit: Rule = (ctx) => {
           ),
         )
       }
+      if (entries.length > 0) {
+        for (const key of changed) {
+          const sides = [
+            ...(entries.some((c) => hasOwn(c.value.before, key)) ? [] : [`before.${key}`]),
+            ...(entries.some((c) => hasOwn(c.value.after, key)) ? [] : [`after.${key}`]),
+          ]
+          if (sides.length === 0) continue
+          const listed = entries.map((c) => c.value.id).join(', ')
+          out.push(
+            issue(
+              'correction.required-on-edit',
+              at(e, id, key),
+              `${key} changed since the base ref ${ref} but the new entries for ${id} (${listed}) do not record it in ${sides.join(' and ')}; expected the entry to give the ${key} before and after the change`,
+            ),
+          )
+        }
+      }
       if (changed.length > 0) {
         const baseRevision = was.revision
         if (typeof baseRevision === 'number' && !(e.value.revision > baseRevision)) {
@@ -312,12 +336,13 @@ function diffMismatches(
     const first = entries.find((c) => hasOwn(c.value.before, key))
     if (first !== undefined) {
       const given = first.value.before[key]
-      if (!same(given, was[key])) {
+      const expected = eventValueFor(key, given, was)
+      if (!same(given, expected)) {
         out.push(
           issue(
             'correction.required-on-edit',
             at(first, first.value.id, `before.${key}`),
-            `before.${key} is ${canonicalJson(given)} but ${eventId} has ${key} ${canonicalJson(was[key])} on the base ref ${ref}; expected the base value`,
+            `before.${key} is ${canonicalJson(given)} but ${eventId} has ${key} ${canonicalJson(expected)} on the base ref ${ref}; expected the base value`,
           ),
         )
       }
@@ -325,12 +350,13 @@ function diffMismatches(
     const last = entries.findLast((c) => hasOwn(c.value.after, key))
     if (last !== undefined) {
       const given = last.value.after[key]
-      if (!same(given, now[key])) {
+      const expected = eventValueFor(key, given, now)
+      if (!same(given, expected)) {
         out.push(
           issue(
             'correction.required-on-edit',
             at(last, last.value.id, `after.${key}`),
-            `after.${key} is ${canonicalJson(given)} but ${eventId} now has ${key} ${canonicalJson(now[key])}; expected the current value`,
+            `after.${key} is ${canonicalJson(given)} but ${eventId} now has ${key} ${canonicalJson(expected)}; expected the current value`,
           ),
         )
       }

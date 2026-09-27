@@ -4,7 +4,7 @@
  * checks the rule id, file and record id of the issue.
  */
 import { describe, expect, it } from 'vitest'
-import type { Issue, RuleId } from '../../issues.js'
+import { type Issue, issue, type RuleId } from '../../issues.js'
 import type { Dataset, Located } from '../../load/dataset.js'
 import type { Methodology } from '../../load/methodology.js'
 import type { AssessmentEntry, Country, Lead, Source } from '../../records.js'
@@ -225,14 +225,58 @@ describe("'id.date-matches'", () => {
     expect(issues[0]).toMatchObject({ file: EVENTS_FILE, id: EVENT_ID, path: 'date' })
   })
 
-  it('accepts a corrected event date when a correction records the id date', () => {
-    for (const side of ['before', 'after'] as const) {
-      const issues = of('id.date-matches', (ds) => {
-        first(ds.events, 'event').value.date = '2025-08-09'
+  it('accepts a corrected event date when the corrections go from the id date to the current date', () => {
+    const issues = of('id.date-matches', (ds) => {
+      first(ds.events, 'event').value.date = '2025-08-09'
+      const c = first(ds.corrections, 'correction').value
+      c.before = { ...c.before, date: '2025-08-08' }
+      c.after = { ...c.after, date: '2025-08-09' }
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('reads several corrections of the date as a chain in log order', () => {
+    const chain = (lastAfter: string) =>
+      of('id.date-matches', (ds) => {
+        first(ds.events, 'event').value.date = '2025-08-10'
         const c = first(ds.corrections, 'correction').value
-        c[side] = { ...c[side], date: '2025-08-08' }
+        c.before = { ...c.before, date: '2025-08-08' }
+        c.after = { ...c.after, date: '2025-08-09' }
+        ds.corrections.push({
+          value: {
+            ...structuredClone(c),
+            id: 'cor_20260928_1',
+            date: '2026-09-28',
+            before: { date: '2025-08-09' },
+            after: { date: lastAfter },
+          },
+          file: 'data/corrections.yaml',
+          line: 30,
+        })
       })
-      expect(issues, side).toEqual([])
+    expect(chain('2025-08-10')).toEqual([])
+    expect(chain('2025-08-11').map((i) => i.id)).toEqual([EVENT_ID])
+  })
+
+  it('reports a date that the corrections do not account for', () => {
+    const cases: [string, Record<string, unknown>, Record<string, unknown>][] = [
+      // Only one side of the change is recorded.
+      ['2025-08-09', { date: '2025-08-08' }, {}],
+      ['2025-08-09', {}, { date: '2025-08-08' }],
+      // The entry records a change to another date than the event's (case e4).
+      ['2025-07-01', { date: '2025-08-08' }, { date: '2025-08-09' }],
+      // The entry does not start from the id date.
+      ['2025-08-09', { date: '2025-08-07' }, { date: '2025-08-09' }],
+    ]
+    for (const [date, before, after] of cases) {
+      const issues = of('id.date-matches', (ds) => {
+        first(ds.events, 'event').value.date = date
+        const c = first(ds.corrections, 'correction').value
+        c.before = { ...c.before, ...before }
+        c.after = { ...c.after, ...after }
+      })
+      expect(issues, JSON.stringify([date, before, after])).toHaveLength(1)
+      expect(issues[0]).toMatchObject({ file: EVENTS_FILE, id: EVENT_ID, path: 'date' })
     }
   })
 
@@ -363,13 +407,43 @@ describe("'layout.events-sorted'", () => {
     expect(issues).toEqual([])
   })
 
-  it('orders by date, then id by code unit', () => {
+  it('orders by date, then id in natural order', () => {
     const a = { date: '2025-01-01', id: 'evt_2025_01_01_DEU_B1' }
     const b = { date: '2025-01-01', id: 'evt_2025_01_01_DEU_B10' }
     expect(compareEventOrder(a, b)).toBe(-1)
     expect(compareEventOrder(b, a)).toBe(1)
     expect(compareEventOrder(a, { ...a })).toBe(0)
     expect(compareEventOrder({ ...b, date: '2024-12-31' }, a)).toBe(-1)
+    const b9 = { date: '2025-01-01', id: 'evt_2025_01_01_DEU_B9' }
+    expect(compareEventOrder(b9, b)).toBe(-1)
+    const n9 = { date: '2025-01-01', id: 'evt_2025_01_01_DEU_A6_9' }
+    const n10 = { date: '2025-01-01', id: 'evt_2025_01_01_DEU_A6_10' }
+    expect(compareEventOrder(n9, n10)).toBe(-1)
+    expect(compareEventOrder({ ...n9, id: 'evt_2025_01_01_DEU_A6' }, n9)).toBe(-1)
+  })
+
+  it('accepts instances _2 … _9, _10 and indicators B9, B10 of one date in natural order', () => {
+    const issues = of('layout.events-sorted', (ds) => {
+      for (const n of [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) {
+        ds.events.push(later(ds, `${EVENT_ID}_${n}`, '2025-08-08'))
+      }
+      ds.events.push(later(ds, 'evt_2025_09_01_DEU_B9', '2025-09-01'))
+      ds.events.push(later(ds, 'evt_2025_09_01_DEU_B10', '2025-09-01'))
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('reports _10 before _9, and B10 before B9, of one date', () => {
+    const instances = of('layout.events-sorted', (ds) => {
+      ds.events.push(later(ds, `${EVENT_ID}_10`, '2025-08-08'))
+      ds.events.push(later(ds, `${EVENT_ID}_9`, '2025-08-08'))
+    })
+    expect(instances.map((i) => i.id)).toEqual([`${EVENT_ID}_9`])
+    const indicators = of('layout.events-sorted', (ds) => {
+      ds.events.push(later(ds, 'evt_2025_09_01_DEU_B10', '2025-09-01'))
+      ds.events.push(later(ds, 'evt_2025_09_01_DEU_B9', '2025-09-01'))
+    })
+    expect(indicators.map((i) => i.id)).toEqual(['evt_2025_09_01_DEU_B9'])
   })
 })
 
@@ -400,6 +474,29 @@ describe("'country.excluded'", () => {
       countryOf(ds, 'DEU').value.excluded_reason = { en: 'Test.', fr: 'Test.' }
     })
     expect(issues.map((i) => [i.id, i.path])).toEqual([['DEU', 'excluded_reason']])
+  })
+
+  it('reports ISR or PSE missing from the registry', () => {
+    const issues = of('country.excluded', (ds) => {
+      ds.countries = ds.countries.filter((c) => !['ISR', 'PSE'].includes(c.value.iso3))
+    })
+    expect(issues.map((i) => [i.file, i.id])).toEqual([
+      [COUNTRIES_FILE, 'ISR'],
+      [COUNTRIES_FILE, 'PSE'],
+    ])
+  })
+
+  it('does not report ISR or PSE missing when the registry cannot be read or the entry is invalid', () => {
+    const unreadable = of('country.excluded', (ds) => {
+      ds.countries = []
+      ds.issues.push(issue('load.yaml-syntax', { file: COUNTRIES_FILE }, 'bad YAML'))
+    })
+    expect(unreadable).toEqual([])
+    const invalid = of('country.excluded', (ds) => {
+      ds.countries = ds.countries.filter((c) => c.value.iso3 !== 'ISR')
+      ds.invalidIds.add('ISR')
+    })
+    expect(invalid).toEqual([])
   })
 
   it('reports ISR or PSE when not excluded', () => {
@@ -451,6 +548,42 @@ describe("'country.membership-flags'", () => {
       ]
     })
     expect(issues.map((i) => [i.id, i.path])).toEqual([['DEU', 'memberships.unsc.1']])
+  })
+
+  it('reports a permanent term on a state that is not a permanent member', () => {
+    const issues = of('country.membership-flags', (ds) => {
+      countryOf(ds, 'DEU').value.memberships.unsc = [
+        { from: '1945-10-24', to: null, permanent: true },
+      ]
+    })
+    expect(issues.map((i) => [i.id, i.path])).toEqual([['DEU', 'memberships.unsc.0']])
+    expect(issues[0]?.message).toContain('CHN, FRA, GBR, RUS, USA')
+  })
+
+  it('reports a permanent member without an ongoing permanent term, and accepts one with it', () => {
+    const usa = (unsc: Country['memberships']['unsc']) => (ds: Dataset) => {
+      ds.countries.push({
+        value: {
+          ...structuredClone(countryOf(ds, 'DEU').value),
+          iso3: 'USA',
+          iso2: 'US',
+          m49: 840,
+        },
+        file: COUNTRIES_FILE,
+        line: 200,
+      })
+      countryOf(ds, 'USA').value.memberships.unsc = unsc
+    }
+    const missing = of('country.membership-flags', usa([]))
+    expect(missing.map((i) => [i.id, i.path])).toEqual([['USA', 'memberships.unsc']])
+    const ended = of(
+      'country.membership-flags',
+      usa([{ from: '1945-10-24', to: '2020-01-01', permanent: true }]),
+    )
+    expect(ended.map((i) => i.id)).toEqual(['USA'])
+    expect(
+      of('country.membership-flags', usa([{ from: '1945-10-24', to: null, permanent: true }])),
+    ).toEqual([])
   })
 
   it('reports a dated membership whose until is before since', () => {
@@ -596,6 +729,40 @@ describe("'assessment.not-applicable'", () => {
     }
   })
 
+  it('accepts B2 not-applicable when the only term starts after the date of the check', () => {
+    const checkedIn2026 = (ds: Dataset) => {
+      term('2027-01-01', '2028-12-31')(ds)
+      entries(ds).B2 = {
+        status: 'not-applicable',
+        checked_at: '2026-09-27',
+        note: 'Not a member of the Security Council between 2023-10-07 and 2026-09-27.',
+      }
+    }
+    expect(of('assessment.not-applicable', checkedIn2026)).toEqual([])
+    // last_full_check dates the check when the entry has no checked_at.
+    const fullCheck = of('assessment.not-applicable', (ds) => {
+      term('2027-01-01', '2028-12-31')(ds)
+      first(ds.assessments, 'assessment').value.last_full_check = '2026-09-27'
+    })
+    expect(fullCheck).toEqual([])
+  })
+
+  it('reports B2 not-applicable when the term has started by the date of the check', () => {
+    const issues = of('assessment.not-applicable', (ds) => {
+      term('2027-01-01', '2028-12-31')(ds)
+      entries(ds).B2 = { status: 'not-applicable', checked_at: '2027-01-01', note: 'Test.' }
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ id: 'DEU', path: 'indicators.B2' })
+    expect(issues[0]?.message).toContain('to 2027-01-01')
+  })
+
+  it('counts a term that has not started when no date dates the check', () => {
+    const issues = of('assessment.not-applicable', term('2027-01-01', '2028-12-31'))
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain('no checked_at or last_full_check')
+  })
+
   it('checks membership only on indicators with the unsc_non_member rule', () => {
     const issues = of('assessment.not-applicable', (ds) => {
       term('2024-01-01', '2025-12-31')(ds)
@@ -643,6 +810,27 @@ describe("'assessment.has-events-mismatch'", () => {
       entries(ds).B1 = { status: 'has-events' }
     })
     expect(issues).toEqual([])
+  })
+
+  it('does not claim a missing event when the events file cannot be read', () => {
+    const issues = of('assessment.has-events-mismatch', (ds) => {
+      ds.events = []
+      ds.issues.push(issue('load.yaml-syntax', { file: EVENTS_FILE }, 'bad YAML'))
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('does not claim a missing event when that event failed its schema', () => {
+    const issues = of('assessment.has-events-mismatch', (ds) => {
+      ds.events = []
+      ds.invalidIds.add(EVENT_ID)
+    })
+    expect(issues).toEqual([])
+    const other = of('assessment.has-events-mismatch', (ds) => {
+      ds.events = []
+      ds.invalidIds.add('evt_2025_08_08_DEU_A7')
+    })
+    expect(other.map((i) => i.path)).toEqual(['indicators.A6'])
   })
 })
 
@@ -736,6 +924,32 @@ describe("'reply.contests-known'", () => {
     expect(issues).toEqual([])
   })
 
+  it('accepts generated events of the reply country (votes, funding)', () => {
+    const issues = of('reply.contests-known', (ds) => {
+      first(ds.replies, 'reply').value.contests = [
+        'evt_2026_09_01_DEU_D1_fts-2026-09',
+        'evt_2023_10_27_DEU_B1_es-10-21',
+      ]
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('reports a generated event of another country', () => {
+    const issues = of('reply.contests-known', (ds) => {
+      first(ds.replies, 'reply').value.contests = ['evt_2023_10_27_FRA_B1_es-10-21']
+    })
+    expect(issues.map((i) => [i.id, i.path])).toEqual([[REPLY_ID, 'contests.0']])
+    expect(issues[0]?.message).toContain('belongs to FRA')
+  })
+
+  it('does not report an event in an events file that cannot be parsed', () => {
+    const issues = of('reply.contests-known', (ds) => {
+      ds.events = []
+      ds.issues.push(issue('load.yaml-syntax', { file: EVENTS_FILE }, 'bad YAML'))
+    })
+    expect(issues).toEqual([])
+  })
+
   it('reports an event of another country', () => {
     const issues = of('reply.contests-known', (ds) => {
       const e = cloneEvent(ds)
@@ -786,6 +1000,18 @@ describe("'reply.outcome-consistent'", () => {
     })
     expect(issues.map((i) => i.id)).toEqual([REPLY_ID])
   })
+
+  it('reports corrected when the only correction predates the reply', () => {
+    const issues = of('reply.outcome-consistent', (ds) => {
+      outcome('corrected')(ds)
+      const r = first(ds.replies, 'reply').value
+      r.received_at = '2026-10-01'
+      r.published_at = '2026-10-02'
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ file: REPLY_FILE, id: REPLY_ID, path: 'contests.0' })
+    expect(issues[0]?.message).toContain('on or after received_at 2026-10-01')
+  })
 })
 
 describe("'lead.status'", () => {
@@ -793,8 +1019,48 @@ describe("'lead.status'", () => {
     expect(of('lead.status')).toEqual([])
     const issues = of('lead.status', (ds) => {
       addLead(ds)
-      addLead(ds, { id: 'lead_20260901_DEU_2', status: `promoted:${EVENT_ID}` })
+      addLead(ds, { id: 'lead_20260901_DEU_2', indicator: 'A6', status: `promoted:${EVENT_ID}` })
       addLead(ds, { id: 'lead_20260901_DEU_3', status: 'dropped', reason: 'No primary found.' })
+    })
+    expect(issues).toEqual([])
+  })
+
+  it("reports a promotion to another country's event", () => {
+    const issues = of('lead.status', (ds) => {
+      addLead(
+        ds,
+        {
+          id: 'lead_20260901_FRA_1',
+          country: 'FRA',
+          indicator: 'A6',
+          status: `promoted:${EVENT_ID}`,
+        },
+        'data/leads/FRA.yaml',
+      )
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({
+      level: 'error',
+      file: 'data/leads/FRA.yaml',
+      id: 'lead_20260901_FRA_1',
+      path: 'status',
+    })
+    expect(issues[0]?.message).toContain('an event of DEU')
+  })
+
+  it('warns when the promoted event is of another indicator', () => {
+    const issues = of('lead.status', (ds) => {
+      addLead(ds, { indicator: 'B9', status: `promoted:${EVENT_ID}` })
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'warning', file: LEADS_FILE, id: LEAD_ID })
+  })
+
+  it('does not report a promotion into an events file that cannot be parsed', () => {
+    const issues = of('lead.status', (ds) => {
+      ds.issues.push(issue('load.yaml-syntax', { file: EVENTS_FILE }, 'bad YAML'))
+      ds.events = []
+      addLead(ds, { indicator: 'A6', status: `promoted:${EVENT_ID}` })
     })
     expect(issues).toEqual([])
   })
@@ -873,6 +1139,47 @@ describe("'structured.source-dataset'", () => {
     const issues = of('structured.source-dataset', (ds) => {
       addSource(ds, DATASET_ID, 'dataset', '2026-09-01')
       addFtsRow(ds)
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('reports a row citing a dataset source that is not archived', () => {
+    const patches: Partial<Source>[] = [
+      { archive_status: 'failed', wayback_url: null, sha256: null },
+      { wayback_url: null },
+      { archive_status: 'failed' },
+    ]
+    for (const patch of patches) {
+      const issues = of('structured.source-dataset', (ds) => {
+        addSource(ds, DATASET_ID, 'dataset', '2026-09-01')
+        const src = ds.sources.find((x) => x.value.id === DATASET_ID)
+        if (src) Object.assign(src.value, patch)
+        addFtsRow(ds)
+      })
+      expect(issues, JSON.stringify(patch)).toHaveLength(1)
+      expect(issues[0]).toMatchObject({
+        file: 'data/structured/fts_funding.csv',
+        id: 'row 2',
+        path: 'source',
+      })
+    }
+  })
+
+  it('accepts a row citing a dataset row whose origin is archived', () => {
+    const issues = of('structured.source-dataset', (ds) => {
+      addSource(ds, DATASET_ID, 'dataset', '2026-09-01')
+      const rowId = 'src_20260901_test-dataset_row'
+      addSource(ds, rowId, 'dataset', '2026-09-01')
+      const row = ds.sources.find((x) => x.value.id === rowId)
+      if (row) {
+        Object.assign(row.value, {
+          url: 'data/structured/fts_funding.csv',
+          wayback_url: null,
+          sha256: null,
+          origin: DATASET_ID,
+        })
+      }
+      addFtsRow(ds, { source: rowId })
     })
     expect(issues).toEqual([])
   })

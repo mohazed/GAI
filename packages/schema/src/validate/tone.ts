@@ -19,6 +19,24 @@ export type SummaryLang = 'en' | 'fr'
 /** A character that belongs to a word: letter, combining mark or digit. */
 const WORD_CHAR = '[\\p{L}\\p{M}\\p{N}]'
 const APOSTROPHE_CLASS = "['’]"
+/**
+ * Invisible format characters (soft hyphen, zero-width space and joiners, word joiner, BOM, bidi
+ * marks…): they render as nothing, so a term matches with any of them between its characters,
+ * and they neither start nor end a word.
+ */
+const INVISIBLE = '\\p{Cf}*'
+
+/**
+ * Folds, for matching only, characters that render like the ones a term is written with; every
+ * replacement is one UTF-16 unit for one, so offsets in the folded text are offsets in the text:
+ * fullwidth ASCII forms (U+FF01–U+FF5E) become ASCII, and the apostrophe look-alikes U+02BC,
+ * U+2018, U+0060 and U+00B4 become '.
+ */
+function foldForMatch(text: string): string {
+  return text
+    .replace(/[\uFF01-\uFF5E]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
+    .replace(/[\u02BC\u2018\u0060\u00B4]/g, "'")
+}
 
 interface CompiledTerm {
   term: string
@@ -50,6 +68,7 @@ function escapeRegExp(s: string): string {
  * The regular expression source for one term, or null for an empty term. Words are separated by
  * `\s+` (which includes U+00A0 and U+202F), ' and ’ match each other, a trailing `*` matches the
  * rest of the word, and the whole match must not touch a letter, mark or digit on either side.
+ * Invisible format characters (`\p{Cf}`) are ignored inside and around the term.
  */
 function termSource(raw: string): string | null {
   const term = raw.normalize('NFC').trim()
@@ -61,10 +80,10 @@ function termSource(raw: string): string | null {
     .map((word) =>
       [...word]
         .map((ch) => (ch === "'" || ch === '’' ? APOSTROPHE_CLASS : escapeRegExp(ch)))
-        .join(''),
+        .join(INVISIBLE),
     )
-  const tail = wildcard ? `${WORD_CHAR}*` : ''
-  return `(?<!${WORD_CHAR})${words.join('\\s+')}${tail}(?!${WORD_CHAR})`
+  const tail = wildcard ? `(?:${INVISIBLE}${WORD_CHAR})*` : ''
+  return `(?<!${WORD_CHAR}${INVISIBLE})${words.join(`${INVISIBLE}\\s[\\s\\p{Cf}]*`)}${tail}(?!${INVISIBLE}${WORD_CHAR})`
 }
 
 /**
@@ -99,14 +118,20 @@ export function compileBannedWords(entries: readonly BannedWord[]): BannedWordMa
 /**
  * Every occurrence of a banned term in `text` (compared after NFC, case-insensitively, whole
  * words only), sorted by position, then by the term's order in the list. When two terms match
- * the same span, the one listed first is reported: one occurrence, one match.
+ * the same span, the one listed first is reported: one occurrence, one match. So that a term
+ * cannot be hidden by characters that render the same, invisible format characters are ignored
+ * (`bru\u00ADtal` is `brutal`), fullwidth letters match their ASCII forms, and the apostrophe
+ * look-alikes ʼ ‘ ` ´ match ' and ’. Offsets and matched text refer to the NFC text as written.
  */
 export function findBannedWords(text: string, matcher: BannedWordMatcher): BannedWordMatch[] {
   const nfc = text.normalize('NFC')
-  if (matcher.any === null || !matcher.any.test(nfc)) return []
+  const folded = foldForMatch(nfc)
+  if (matcher.any === null || !matcher.any.test(folded)) return []
   const found: (BannedWordMatch & { order: number })[] = []
   matcher.terms.forEach(({ term, re }, order) => {
-    for (const m of nfc.matchAll(re)) found.push({ term, index: m.index, match: m[0], order })
+    for (const m of folded.matchAll(re)) {
+      found.push({ term, index: m.index, match: nfc.slice(m.index, m.index + m[0].length), order })
+    }
   })
   found.sort((a, b) => a.index - b.index || a.order - b.order)
   const out: BannedWordMatch[] = []
@@ -178,6 +203,11 @@ const OPENERS: Record<SummaryLang, readonly string[]> = {
     'because',
     'if',
     'for',
+    'mid',
+    'early',
+    'late',
+    'later',
+    'earlier',
   ],
   fr: [
     'en',
@@ -212,6 +242,9 @@ const OPENERS: Record<SummaryLang, readonly string[]> = {
     'à',
     'au',
     'aux',
+    'fin',
+    'début',
+    'mi',
   ],
 }
 
@@ -244,6 +277,42 @@ const MONTHS: Record<SummaryLang, readonly string[]> = {
     'novembre',
     'décembre',
   ],
+}
+
+/**
+ * Abbreviated months. Some are also names ("Jan", "Mar"), so they count as a date only when a
+ * full stop or a number follows ("Aug. 8", "Sept 8", "janv. 2025").
+ */
+const MONTH_ABBREVIATIONS: Record<SummaryLang, readonly string[]> = {
+  en: ['jan', 'feb', 'mar', 'apr', 'jun', 'jul', 'aug', 'sep', 'sept', 'oct', 'nov', 'dec'],
+  fr: ['janv', 'févr', 'fév', 'avr', 'juil', 'sept', 'oct', 'nov', 'déc'],
+}
+
+/** Units of time: "Two days later", "Deux jours plus tard", "A week after" open with a date. */
+const TIME_UNITS: Record<SummaryLang, readonly string[]> = {
+  en: ['day', 'days', 'week', 'weeks', 'month', 'months', 'year', 'years', 'hour', 'hours'],
+  fr: [
+    'jour',
+    'jours',
+    'semaine',
+    'semaines',
+    'mois',
+    'an',
+    'ans',
+    'année',
+    'années',
+    'heure',
+    'heures',
+  ],
+}
+
+/**
+ * Words that place a date within a period ("Mid-August", "Mi-août", "Late August", "Fin août"):
+ * a date when a month, a weekday or a number follows, with a hyphen or a space.
+ */
+const TIME_PREFIXES: Record<SummaryLang, readonly string[]> = {
+  en: ['mid', 'early', 'late'],
+  fr: ['mi', 'fin', 'début'],
 }
 
 const WEEKDAYS: Record<SummaryLang, readonly string[]> = {
@@ -304,16 +373,66 @@ function startOf(text: string): string {
 }
 
 /**
+ * Why an opening is never the actor, from its form alone (step 2 of `checkActorFirst`), or null.
+ * `text` is NFC and trimmed.
+ */
+function openingFailure(text: string, lang: SummaryLang): ActorFirstReason | null {
+  const folded = fold(text)
+  if (/^\p{N}/u.test(text)) return 'number'
+  if (QUOTE_CHARS.test(text)) return 'quotation'
+  if (!/^[\p{Lu}\p{Lt}]/u.test(text)) return 'not-capital'
+
+  const first = fold(FIRST_WORD.exec(text)?.[0] ?? '')
+  const head = fold(ELIDED_HEAD.exec(text)?.[0] ?? '')
+  const words = folded.split(/[\s,;:]+/).filter((w) => w !== '')
+  const second = /^[\p{L}\p{M}]+/u.exec(words[1] ?? '')?.[0] ?? ''
+  const isDateWord = (w: string) => MONTHS[lang].includes(w) || WEEKDAYS[lang].includes(w)
+  if (isDateWord(first)) return 'date'
+  if (MONTH_ABBREVIATIONS[lang].includes(first)) {
+    const rest = folded.slice(first.length)
+    if (/^(?:\.|\s*\p{N})/u.test(rest)) return 'date'
+  }
+  const [hyphenHead = '', hyphenNext = ''] = first.split('-')
+  if (TIME_PREFIXES[lang].includes(hyphenHead) && isDateWord(hyphenNext)) return 'date'
+  if (TIME_UNITS[lang].includes(first) || TIME_UNITS[lang].includes(second)) return 'date'
+  if (DATE_LEADS[lang].includes(first) || TIME_PREFIXES[lang].includes(first)) {
+    const next = folded.slice(first.length).trimStart()
+    const nextWord = /^[\p{L}\p{M}]+/u.exec(next)?.[0] ?? ''
+    if (/^\p{N}/u.test(next) || isDateWord(nextWord)) return 'date'
+  }
+  if (OPENERS[lang].includes(first) || (head !== '' && OPENERS[lang].includes(head))) {
+    return 'opener'
+  }
+  return null
+}
+
+/**
+ * True when a country name, actor label or actor name cannot be an actor because it opens like a
+ * number, a quotation, an introductory word or a dated phrase ("On 8 August 2025"). A name that
+ * merely starts with a month or weekday word and holds no digit ("May Mansour", "August Hanning")
+ * stays a name.
+ */
+function notAName(name: string, lang: SummaryLang): boolean {
+  // Judge the name's form as if it opened a sentence (capitalised).
+  const reason = openingFailure(name.charAt(0).toUpperCase() + name.slice(1), lang)
+  if (reason === 'date') return /\p{N}/u.test(name)
+  return reason === 'number' || reason === 'quotation' || reason === 'opener'
+}
+
+/**
  * Whether a summary starts with its actor. A heuristic, not a parser: the lint has no grammar of
  * EN or FR, so it accepts what it can recognise as the actor and rejects only the openings that
  * are never the actor.
  *
  * 1. Pass when the summary starts with the country name, the actor label or the actor name (as
  *    whole words), optionally after an article (EN "The "; FR "Le ", "La ", "Les ", "L'"),
- *    case-insensitively.
+ *    case-insensitively. A name that itself opens like a date or an introductory word ("On
+ *    8 August 2025") is not accepted as an actor.
  * 2. Otherwise fail when it starts with a number, a quotation mark or anything but a capital
- *    letter; with a date (a month or a weekday, or "On 8 …", "Le 8 …", "Le lundi …"); or with a
- *    word from the opener list (time, place, cause, condition, pronoun, connector).
+ *    letter; with a date (a month, abbreviated with a full stop or a number after it, or a
+ *    weekday; "On 8 …", "Le 8 …", "Le lundi …"; "Mid-August", "Fin août"; a unit of time among
+ *    the first two words, "Two days later"); or with a word from the opener list (time, place,
+ *    cause, condition, pronoun, connector).
  * 3. Otherwise pass: "Chancellor Friedrich Merz announced…" or "A federal court ruled…" start
  *    with an actor the event does not name, and a false alarm on them would train authors to
  *    ignore the rule. "The vote took place…" also passes; the second reading catches it.
@@ -329,8 +448,9 @@ export function checkActorFirst(
   const folded = fold(trimmed)
   const candidates = [names.countryName, names.actor?.label, names.actor?.name]
     .filter((c): c is string => typeof c === 'string')
+    .map((c) => c.normalize('NFC').trim())
+    .filter((c) => c !== '' && !notAName(c, lang))
     .map(fold)
-    .filter((c) => c !== '')
   const startsWithName = (prefix: string) =>
     folded.startsWith(prefix) && !/^[\p{L}\p{M}\p{N}]/u.test(folded.slice(prefix.length))
   for (const c of candidates) {
@@ -338,27 +458,8 @@ export function checkActorFirst(
     for (const article of ARTICLES[lang]) if (startsWithName(article + c)) return null
   }
 
-  const fail = (reason: ActorFirstReason): ActorFirstFailure => ({
-    reason,
-    start: startOf(trimmed),
-  })
-  if (/^\p{N}/u.test(trimmed)) return fail('number')
-  if (QUOTE_CHARS.test(trimmed)) return fail('quotation')
-  if (!/^[\p{Lu}\p{Lt}]/u.test(trimmed)) return fail('not-capital')
-
-  const first = fold(FIRST_WORD.exec(trimmed)?.[0] ?? '')
-  const head = fold(ELIDED_HEAD.exec(trimmed)?.[0] ?? '')
-  const isDateWord = (w: string) => MONTHS[lang].includes(w) || WEEKDAYS[lang].includes(w)
-  if (isDateWord(first)) return fail('date')
-  if (DATE_LEADS[lang].includes(first)) {
-    const next = folded.slice(first.length).trimStart()
-    const nextWord = /^[\p{L}\p{M}]+/u.exec(next)?.[0] ?? ''
-    if (/^\p{N}/u.test(next) || isDateWord(nextWord)) return fail('date')
-  }
-  if (OPENERS[lang].includes(first) || (head !== '' && OPENERS[lang].includes(head))) {
-    return fail('opener')
-  }
-  return null
+  const reason = openingFailure(trimmed, lang)
+  return reason === null ? null : { reason, start: startOf(trimmed) }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -375,8 +476,12 @@ export interface LintSummaryOptions extends ActorNames {
   matcher: BannedWordMatcher | null
 }
 
-/** Exclamation marks, upright and inverted (and their fullwidth and doubled forms). */
-const EXCLAMATION = /[!¡！‼⁉⁈]/gu
+/**
+ * Exclamation marks, upright and inverted, and the characters that render as one: fullwidth
+ * (U+FF01), small (U+FE57), doubled and combined (U+203C, U+2049, U+2048), the emoji and
+ * ornament forms (U+2755, U+2757, U+2762) and the Latin letter click U+01C3.
+ */
+const EXCLAMATION = /[!¡！﹗‼⁉⁈❕❗❢ǃ]/gu
 
 /**
  * Lints one event summary. Each violation carries a `message` written as a predicate

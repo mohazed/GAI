@@ -197,6 +197,20 @@ describe('temporary methodology roots', () => {
     expect(m.bands).toBeNull()
   })
 
+  it("'load.encoding': a Latin-1 byte in banned-words.txt or a YAML file is reported", () => {
+    copyV1()
+    writeFileSync(
+      path('banned-words.txt'),
+      Buffer.from([0x63, 0x6f, 0x6d, 0x70, 0x6c, 0x69, 0x63, 0x69, 0x74, 0xe9, 0x0a]),
+    )
+    edit('bands.yaml', (t) => `# caf\u00e9\n${t}`)
+    const m = loadMethodology(root)
+    expect(m.issues).toMatchObject([
+      { rule: 'load.encoding', level: 'error', file: `${FOLDER}/banned-words.txt`, line: 1 },
+    ])
+    expect(m.bands).not.toBeNull()
+  })
+
   it.each([
     'votes.yaml',
     'symmetry.yaml',

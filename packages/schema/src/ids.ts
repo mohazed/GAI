@@ -125,13 +125,21 @@ export function formatEventId(parts: {
   slug?: string
 }): string {
   const base = `evt_${parts.date.replaceAll('-', '_')}_${parts.iso3}_${parts.indicator}`
+  let id = base
   if (parts.slug !== undefined) {
     if (!isValidSlug(parts.slug)) throw new Error(`invalid slug "${parts.slug}"`)
-    return `${base}_${parts.slug}`
+    id = `${base}_${parts.slug}`
+  } else if (parts.n !== undefined && parts.n !== 1) {
+    if (!Number.isInteger(parts.n) || parts.n < 2) throw new Error(`invalid instance ${parts.n}`)
+    id = `${base}_${parts.n}`
   }
-  if (parts.n === undefined || parts.n === 1) return base
-  if (!Number.isInteger(parts.n) || parts.n < 2) throw new Error(`invalid instance ${parts.n}`)
-  return `${base}_${parts.n}`
+  return checked(id, parseEventId(id)?.generated === (parts.slug !== undefined), 'event')
+}
+
+/** Returns `id` when its parser accepts it; throws otherwise (a writer never emits a bad id). */
+function checked(id: string, ok: boolean, kind: string): string {
+  if (!ok) throw new Error(`invalid ${kind} id parts: "${id}" does not match ${kind} id rules`)
+  return id
 }
 
 /** The first free hand-authored id for this date, country and indicator. */
@@ -165,7 +173,8 @@ export function parseSourceId(id: string): ParsedSourceId | null {
 export function formatSourceId(parts: { date: string; segments: string[] }): string {
   if (parts.segments.length < 2) throw new Error('a source id needs at least two slug segments')
   for (const s of parts.segments) if (!isValidSlug(s)) throw new Error(`invalid slug "${s}"`)
-  return `src_${isoToCompact(parts.date)}_${parts.segments.join('_')}`
+  const id = `src_${isoToCompact(parts.date)}_${parts.segments.join('_')}`
+  return checked(id, parseSourceId(id) !== null, 'source')
 }
 
 interface DatedNumbered {
@@ -179,8 +188,10 @@ export function parseCorrectionId(id: string): DatedNumbered | null {
   return { date: compactToIso(m[1]), n: Number(m[2]) }
 }
 
+/** Throws unless `n` is an integer ≥ 1 and the date and country code are valid. */
 export function formatCorrectionId(parts: DatedNumbered): string {
-  return `cor_${isoToCompact(parts.date)}_${parts.n}`
+  const id = `cor_${isoToCompact(parts.date)}_${parts.n}`
+  return checked(id, parseCorrectionId(id) !== null, 'correction')
 }
 
 export function parseReplyId(id: string): (DatedNumbered & { iso3: string }) | null {
@@ -189,8 +200,10 @@ export function parseReplyId(id: string): (DatedNumbered & { iso3: string }) | n
   return { date: compactToIso(m[1]), iso3: m[2], n: Number(m[3]) }
 }
 
+/** Throws unless `n` is an integer ≥ 1 and the date and country code are valid. */
 export function formatReplyId(parts: DatedNumbered & { iso3: string }): string {
-  return `rep_${isoToCompact(parts.date)}_${parts.iso3}_${parts.n}`
+  const id = `rep_${isoToCompact(parts.date)}_${parts.iso3}_${parts.n}`
+  return checked(id, parseReplyId(id) !== null, 'reply')
 }
 
 export function parseLeadId(id: string): (DatedNumbered & { iso3: string }) | null {
@@ -199,8 +212,10 @@ export function parseLeadId(id: string): (DatedNumbered & { iso3: string }) | nu
   return { date: compactToIso(m[1]), iso3: m[2], n: Number(m[3]) }
 }
 
+/** Throws unless `n` is an integer ≥ 1 and the date and country code are valid. */
 export function formatLeadId(parts: DatedNumbered & { iso3: string }): string {
-  return `lead_${isoToCompact(parts.date)}_${parts.iso3}_${parts.n}`
+  const id = `lead_${isoToCompact(parts.date)}_${parts.iso3}_${parts.n}`
+  return checked(id, parseLeadId(id) !== null, 'lead')
 }
 
 /** True when `id` matches the pattern for `kind` and its embedded date is a real date. */

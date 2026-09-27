@@ -14,6 +14,10 @@ import type { ConfidenceLevel, Indicator, PointsSpec } from '../../methodology/s
 import { type Confidence, daysBetween, type SourceKind, WINDOW_START } from '../../primitives.js'
 import type { Event, Source } from '../../records.js'
 import type { Rule, ValidationContext } from '../context.js'
+import { foldName } from '../normalise.js'
+import { compareEventIds } from '../order.js'
+import { eventNotLoaded, unreadableFiles } from './shared.js'
+import { notArchivedReason } from './sources.js'
 
 type LocatedEvent = Located<Event>
 
@@ -80,29 +84,9 @@ function confidenceLevel(ctx: ValidationContext, id: Confidence): ConfidenceLeve
   return ctx.methodology.confidence?.value.levels.find((l) => l.id === id)
 }
 
-/**
- * Event id order: plain string order, except that ids of one date, country and indicator are
- * ordered by instance number (`_2` before `_10`).
- */
-function compareIds(a: string, b: string): number {
-  const pa = parseEventId(a)
-  const pb = parseEventId(b)
-  if (
-    pa &&
-    pb &&
-    pa.date === pb.date &&
-    pa.iso3 === pb.iso3 &&
-    pa.indicator === pb.indicator &&
-    pa.n !== pb.n
-  ) {
-    return pa.n - pb.n
-  }
-  return a < b ? -1 : a > b ? 1 : 0
-}
-
 function compareByDateThenId(a: LocatedEvent, b: LocatedEvent): number {
   if (a.value.date !== b.value.date) return a.value.date < b.value.date ? -1 : 1
-  return compareIds(a.value.id, b.value.id)
+  return compareEventIds(a.value.id, b.value.id)
 }
 
 /** Statuses that never score and are left out of the overlap and duplicate checks. */
@@ -319,9 +303,32 @@ function eventEnd(ctx: ValidationContext): Issue[] {
   return out
 }
 
+/** Publisher types of the press and NGOs (docs/03 §5): their records are not official documents. */
+const NON_OFFICIAL_PUBLISHER_TYPES: readonly string[] = ['press', 'ngo']
+/** Kinds that claim a primary document of a state or a court. */
+const PRIMARY_KINDS: readonly SourceKind[] = ['official', 'official-video', 'court']
+
+/**
+ * Why a source of an allowed kind still cannot make an event confirmed, or null when it can: it
+ * is not archived (docs/06 §6: a failed capture "cannot support a confirmed event until
+ * archived"; CLAUDE.md: nothing scores without an archived copy), or it claims a primary kind
+ * while its publisher is the press or an NGO (docs/03 §5: press articles are never the sole
+ * support of a confirmed event).
+ */
+function confirmedBlocker(ctx: ValidationContext, s: Source): string | null {
+  const archive = notArchivedReason(ctx, s)
+  if (archive !== null) return archive
+  if (PRIMARY_KINDS.includes(s.kind) && NON_OFFICIAL_PUBLISHER_TYPES.includes(s.publisher_type)) {
+    return `Source "${s.id}" is of kind ${s.kind} but its publisher_type is ${s.publisher_type}`
+  }
+  return null
+}
+
 /**
  * event.confirmed-source-kind — docs/02 §4 and §12.2: a confirmed event cites at least one
- * existing source whose kind is in confidence.yaml `confirmed.requires.any_source_kind`.
+ * existing source whose kind is in confidence.yaml `confirmed.requires.any_source_kind`, that is
+ * archived and whose publisher_type is not press or ngo (see `confirmedBlocker`). Checked at
+ * every status: a draft cannot be marked confirmed on a failed capture either.
  */
 function confirmedSourceKind(ctx: ValidationContext): Issue[] {
   const kinds: readonly SourceKind[] =
@@ -330,24 +337,41 @@ function confirmedSourceKind(ctx: ValidationContext): Issue[] {
   for (const e of ctx.dataset.events) {
     if (e.value.confidence !== 'confirmed') continue
     const { known, undecidable } = evidenceSources(ctx, e.value)
-    if (undecidable || known.some((s) => kinds.includes(s.kind))) continue
-    const found = distinctKinds(known)
-    const foundText = found.length > 0 ? ` (found ${found.join(', ')})` : ''
-    out.push(
-      issue(
-        'event.confirmed-source-kind',
-        at(e),
-        `Confidence is confirmed but no evidence source is of kind ${orList(kinds)}${foundText}; expected at least one.`,
-      ),
-    )
+    if (undecidable) continue
+    const ofKind = known.filter((s) => kinds.includes(s.kind))
+    const blockers = ofKind.map((s) => confirmedBlocker(ctx, s))
+    if (blockers.some((b) => b === null)) continue
+    let message: string
+    if (ofKind.length === 0) {
+      const found = distinctKinds(known)
+      const foundText = found.length > 0 ? ` (found ${found.join(', ')})` : ''
+      message = `Confidence is confirmed but no evidence source is of kind ${orList(kinds)}${foundText}; expected at least one.`
+    } else {
+      message = `Confidence is confirmed but no evidence source of kind ${orList(kinds)} can support it: ${blockers.join('; ')}; expected at least one archived primary source.`
+    }
+    out.push(issue('event.confirmed-source-kind', at(e), message))
   }
   return out
 }
 
+/** The document a source records: its sha256, else its url without scheme, `www.` or trailing slash. */
+function documentKey(s: Source): string {
+  if (s.sha256 !== null) return `sha256:${s.sha256}`
+  const url = s.url
+    .trim()
+    .replace(/^[a-z]+:\/\//i, '')
+    .replace(/^www\./i, '')
+    .replace(/\/+$/, '')
+  return `url:${url.toLowerCase()}`
+}
+
 /**
- * event.corroborated-publishers — docs/02 §4, docs/03 §4: the evidence sources whose kind is in
- * `corroborated.requires.publisher_kinds` (every kind when absent) come from at least
- * `min_distinct_publishers` distinct publishers (case-insensitive, trimmed).
+ * event.corroborated-publishers — docs/02 §4 ("two independent `ngo` or `press` sources"),
+ * docs/03 §4: the evidence sources whose kind is in `corroborated.requires.publisher_kinds`
+ * (every kind when absent) come from at least `min_distinct_publishers` distinct publishers,
+ * counting one publisher per distinct document. Publishers are compared with `foldName` (case,
+ * whitespace runs, U+00A0, compatibility forms and trailing punctuation fold); documents by
+ * sha256, else by url, so one article filed twice under two publisher names counts once.
  */
 function corroboratedPublishers(ctx: ValidationContext): Issue[] {
   const requires = confidenceLevel(ctx, 'corroborated')?.requires
@@ -359,19 +383,31 @@ function corroboratedPublishers(ctx: ValidationContext): Issue[] {
     const { known, undecidable } = evidenceSources(ctx, e.value)
     if (undecidable) continue
     const publishers = new Map<string, string>()
+    const documents = new Set<string>()
+    let repeated = 0
     for (const s of known) {
       if (kinds !== null && !kinds.includes(s.kind)) continue
-      const key = s.publisher.trim().toLowerCase()
+      const doc = documentKey(s)
+      if (documents.has(doc)) {
+        repeated++
+        continue
+      }
+      documents.add(doc)
+      const key = foldName(s.publisher)
       if (!publishers.has(key)) publishers.set(key, s.publisher.trim())
     }
     if (publishers.size >= min) continue
     const among = kinds !== null ? ` among sources of kind ${orList(kinds)}` : ''
     const names = publishers.size > 0 ? ` (${[...publishers.values()].join(', ')})` : ''
+    const same =
+      repeated > 0
+        ? `, not counting ${repeated} source(s) that record the same document (same sha256 or url) as another`
+        : ''
     out.push(
       issue(
         'event.corroborated-publishers',
         at(e),
-        `Confidence is corroborated but the evidence has ${publishers.size} distinct publisher(s)${among}${names}; expected at least ${min}.`,
+        `Confidence is corroborated but the evidence has ${publishers.size} distinct publisher(s)${among}${names}${same}; expected at least ${min}.`,
       ),
     )
   }
@@ -379,9 +415,11 @@ function corroboratedPublishers(ctx: ValidationContext): Issue[] {
 }
 
 /**
- * event.disputed-both-sides — docs/02 §4: a disputed event links both sides, either a reply
- * contesting it, or evidence from at least two distinct sources of which one is an official
- * denial (kind official or official-video).
+ * event.disputed-both-sides — docs/02 §4 ("an official denial is on record (a reply or an
+ * official source) and counter-evidence exists; both sides linked"): a disputed event links both
+ * sides, either a reply contesting it, or evidence with an official denial (a source of kind
+ * official or official-video) and a source from another publisher (compared with `foldName`).
+ * Two releases of one government are one side.
  */
 function disputedBothSides(ctx: ValidationContext): Issue[] {
   const out: Issue[] = []
@@ -390,14 +428,20 @@ function disputedBothSides(ctx: ValidationContext): Issue[] {
     if ((ctx.index.repliesByEvent.get(e.value.id)?.length ?? 0) > 0) continue
     const { known, undecidable } = evidenceSources(ctx, e.value)
     if (undecidable) continue
-    const hasDenial = known.some((s) => DENIAL_KINDS.includes(s.kind))
-    if (known.length >= 2 && hasDenial) continue
-    const denial = hasDenial ? '' : `, none of kind ${orList(DENIAL_KINDS)}`
+    const denials = known.filter((s) => DENIAL_KINDS.includes(s.kind))
+    const bothSides = denials.some((d) =>
+      known.some((s) => foldName(s.publisher) !== foldName(d.publisher)),
+    )
+    if (bothSides) continue
+    const found =
+      denials.length === 0
+        ? `, none of kind ${orList(DENIAL_KINDS)}`
+        : ', all from the publisher of the denial'
     out.push(
       issue(
         'event.disputed-both-sides',
         at(e),
-        `Confidence is disputed but no reply contests the event and the evidence cites ${known.length} source(s)${denial}; expected a contesting reply, or two sources of which one is an official denial.`,
+        `Confidence is disputed but no reply contests the event and the evidence cites ${known.length} source(s)${found}; expected a contesting reply, or an official denial and a source from another publisher.`,
       ),
     )
   }
@@ -440,14 +484,15 @@ function statementRequirements(ctx: ValidationContext): Issue[] {
 /**
  * event.statement-duplicate — docs/02 §2 (B9/B10): same speaker, same day, one event. Among
  * events of indicators with `requires_actor`, not retracted or superseded, events sharing
- * country, indicator, date and actor.name (case-insensitive, trimmed) are reported after the
- * first by id order.
+ * country, indicator, date and actor.name (compared with `foldName`: case, whitespace runs,
+ * U+00A0, compatibility forms and trailing punctuation fold) are reported after the first by id
+ * order.
  */
 function statementDuplicate(ctx: ValidationContext): Issue[] {
   const groups = new Map<string, LocatedEvent[]>()
   for (const [e, ind] of withIndicator(ctx)) {
     if (!ind.evidence.requires_actor || isWithdrawn(e.value)) continue
-    const name = (e.value.actor?.name ?? '').trim().toLowerCase()
+    const name = foldName(e.value.actor?.name ?? '')
     if (name === '') continue
     const key = [e.value.country, e.value.indicator, e.value.date, name].join('\u0000')
     const list = groups.get(key)
@@ -457,7 +502,7 @@ function statementDuplicate(ctx: ValidationContext): Issue[] {
   const out: Issue[] = []
   for (const list of groups.values()) {
     if (list.length < 2) continue
-    const [first, ...rest] = [...list].sort((a, b) => compareIds(a.value.id, b.value.id))
+    const [first, ...rest] = [...list].sort((a, b) => compareEventIds(a.value.id, b.value.id))
     if (!first) continue
     const speaker = (first.value.actor?.name ?? '').trim()
     for (const e of rest) {
@@ -526,18 +571,22 @@ function secondRead(ctx: ValidationContext): Issue[] {
 }
 
 /**
- * event.references — docs/03 §4: `supersedes` names another existing event of the same country;
- * each `related` id names another existing event. Ids of events that failed their schema count
- * as existing (for those, the country is read from the id).
+ * event.references — docs/03 §4: `supersedes` names another existing event of the same country,
+ * dated on or before the event ("the earlier event this replaces"); each `related` id names
+ * another existing event. Ids of events that failed their schema, or that sit in an events file
+ * that cannot be read, count as existing (for those, the country and date are read from the id).
+ * Generated events exist only in build outputs, so a `related` link to one is not checked.
  */
 function references(ctx: ValidationContext): Issue[] {
   const { eventById } = ctx.index
-  const invalid = ctx.dataset.invalidIds
+  const ds = ctx.dataset
+  const unreadable = unreadableFiles(ds)
   const out: Issue[] = []
-  for (const e of ctx.dataset.events) {
-    const { id, country, supersedes, related } = e.value
+  for (const e of ds.events) {
+    const { id, country, date, supersedes, related } = e.value
     if (supersedes !== null && supersedes !== undefined) {
       const target = eventById.get(supersedes)
+      const parsed = parseEventId(supersedes)
       if (supersedes === id) {
         out.push(
           issue(
@@ -546,7 +595,7 @@ function references(ctx: ValidationContext): Issue[] {
             `supersedes names the event itself; expected an earlier event of ${country}.`,
           ),
         )
-      } else if (!target && !invalid.has(supersedes)) {
+      } else if (!target && !eventNotLoaded(ds, supersedes, unreadable)) {
         out.push(
           issue(
             'event.references',
@@ -555,13 +604,23 @@ function references(ctx: ValidationContext): Issue[] {
           ),
         )
       } else {
-        const targetCountry = target ? target.value.country : parseEventId(supersedes)?.iso3
+        const targetCountry = target ? target.value.country : parsed?.iso3
+        const targetDate = target ? target.value.date : parsed?.date
         if (targetCountry !== undefined && targetCountry !== country) {
           out.push(
             issue(
               'event.references',
               at(e),
               `supersedes names ${supersedes}, an event of ${targetCountry}; expected an event of ${country}.`,
+            ),
+          )
+        }
+        if (targetDate !== undefined && targetDate > date) {
+          out.push(
+            issue(
+              'event.references',
+              at(e),
+              `supersedes names ${supersedes}, dated ${targetDate}, after this event (${date}); expected the earlier event this one replaces.`,
             ),
           )
         }
@@ -576,9 +635,11 @@ function references(ctx: ValidationContext): Issue[] {
             'related lists the event itself; expected other events.',
           ),
         )
-      } else if (!eventById.has(rel) && !invalid.has(rel) && !parseEventId(rel)?.generated) {
-        // Generated events (votes, vetoes, computed indicators) exist only in build outputs, so
-        // a link to one cannot be checked here.
+      } else if (
+        !eventById.has(rel) &&
+        !eventNotLoaded(ds, rel, unreadable) &&
+        !parseEventId(rel)?.generated
+      ) {
         out.push(
           issue(
             'event.references',
@@ -605,6 +666,11 @@ interface EventWindow {
  * computed events, are left out. Windows: standing [date, end) (end null = open); repeatable
  * [date, date + decay end_days] inclusive. The later event (by date, then id) is reported,
  * naming the other.
+ *
+ * Under a methodology that passes methodology.indicator-points, a non-scaled indicator allows a
+ * single points value, so event.points-range reports any event this rule would report first.
+ * The rule stays as the docs/02 §12.1 check itself, a guard that holds even if a future
+ * methodology lets a non-scaled indicator take several values.
  */
 function samePoints(ctx: ValidationContext): Issue[] {
   const endDays = ctx.methodology.decay?.value.end_days ?? DEFAULT_END_DAYS
@@ -634,7 +700,9 @@ function samePoints(ctx: ValidationContext): Issue[] {
     for (let j = 1; j < windows.length; j++) {
       const later = windows[j]
       if (!later) continue
-      for (const earlier of windows.slice(0, j)) {
+      for (let i = 0; i < j; i++) {
+        const earlier = windows[i]
+        if (!earlier) continue
         const overlap = earlier.start < later.end && later.start < earlier.end
         if (!overlap || earlier.e.value.points === later.e.value.points) continue
         out.push(

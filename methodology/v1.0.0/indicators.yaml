@@ -9,6 +9,8 @@
 # docs/02-methodology-spec.md §2 (indicator-level caps, precisions per indicator), §3 (event types),
 # §5 (computed indicators, via thresholds.yaml) and §8 (not-applicable rule), and the event rules of
 # docs/03-data-model.md §4. Names in English are the spec §3 "Indicator" cells verbatim.
+# The evidence rules are printed on the public methodology page: their references to the
+# repository documents stay in the comment above each rule, and file and field names are code.
 # Shape: packages/schema/src/methodology/schemas.ts (IndicatorsFile; objects are strict).
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
@@ -75,16 +77,16 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3; docs/03 §7.
       rule:
         en: >-
           Computed from the dataset, never typed in by hand; the formula and the raw rows are
-          downloadable (spec §3). Each row of data/structured/sipri_deliveries.csv cites a
-          dataset source that archives the SIPRI release (docs/03 §7).
+          downloadable. Each row of `data/structured/sipri_deliveries.csv` cites a dataset source
+          that archives the SIPRI release.
         fr: >-
           Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
-          brutes sont téléchargeables (cahier des charges, §3). Chaque ligne de
-          data/structured/sipri_deliveries.csv cite une source de type dataset qui archive la
-          publication du SIPRI (docs/03 §7).
+          brutes sont téléchargeables. Chaque ligne de `data/structured/sipri_deliveries.csv` cite
+          une source de type dataset qui archive la publication du SIPRI.
     primary_sources:
       - en: SIPRI Arms Transfers Database
         fr: Base de données du SIPRI sur les transferts d'armes
@@ -131,25 +133,24 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3; docs/03 §7; docs/02 §5, §8.
       rule:
         en: >-
           Computed from the dataset, never typed in by hand; the formula and the raw rows are
-          downloadable (spec §3). Values come from the country's own reporting to UN Comtrade;
-          if absent or confidential, from Israel's mirror import data by origin; if both are
-          absent, A2 is no-data, never zero (docs/02 §5, §8). Headings 8526 and 8802 enter only
-          with a licence register, a parliamentary answer or a published investigation citing
-          the customs code. Each row of data/structured/comtrade_a2.csv cites a dataset source
-          that archives the origin (docs/03 §7).
+          downloadable. Values come from the country's own reporting to UN Comtrade; if absent or
+          confidential, from Israel's mirror import data by origin; if both are absent, A2 is
+          no-data, never zero. Headings 8526 and 8802 enter only with a licence register, a
+          parliamentary answer or a published investigation citing the customs code. Each row of
+          `data/structured/comtrade_a2.csv` cites a dataset source that archives the origin.
         fr: >-
           Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
-          brutes sont téléchargeables (cahier des charges, §3). Les valeurs proviennent des
-          déclarations du pays lui-même à UN Comtrade ; à défaut, ou si elles sont
-          confidentielles, des données miroir des importations d'Israël par origine ; si les
-          deux manquent, A2 est « pas de données », jamais zéro (docs/02 §5, §8). Les positions
-          8526 et 8802 n'entrent qu'avec un registre de licences, une réponse parlementaire ou
-          une enquête publiée citant le code douanier. Chaque ligne de
-          data/structured/comtrade_a2.csv cite une source de type dataset qui archive l'origine
-          des données (docs/03 §7).
+          brutes sont téléchargeables. Les valeurs proviennent des déclarations du pays lui-même à
+          UN Comtrade ; à défaut, ou si elles sont confidentielles, des données miroir des
+          importations d'Israël par origine ; si les deux manquent, A2 est « pas de données »,
+          jamais zéro. Les positions 8526 et 8802 n'entrent qu'avec un registre de licences, une
+          réponse parlementaire ou une enquête publiée citant le code douanier. Chaque ligne de
+          `data/structured/comtrade_a2.csv` cite une source de type dataset qui archive l'origine
+          des données.
     primary_sources:
       - en: Israeli Tax Authority customs data
         fr: Données douanières de l'Autorité fiscale israélienne
@@ -208,24 +209,24 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           A document establishing that the country's companies are Tier-1 or Tier-2 suppliers of
           parts or maintenance for the F-35 programme: official programme documents, national
-          ministry statements, or the UN Special Rapporteur's reports. Every event needs one
-          primary document (official record, government release, court filing, dataset row).
-          NGO and press reports count only as leads until a primary document is found, or as
-          evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          ministry statements, or the UN Special Rapporteur's reports. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
-          Un document établissant que des entreprises du pays sont des fournisseurs de rang 1 ou
-          de rang 2 de pièces ou de maintenance pour le programme F-35 : documents officiels du
+          Un document établissant que des entreprises du pays sont des fournisseurs de rang 1 ou de
+          rang 2 de pièces ou de maintenance pour le programme F-35 : documents officiels du
           programme, déclarations de ministères nationaux ou rapports du Rapporteur spécial des
           Nations unies. Chaque événement exige un document primaire (acte officiel, communiqué
           gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
           d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
           trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
-          poids réduit (cahier des charges, §3 ; docs/02 §4).
+          poids réduit.
     primary_sources:
       - en: UN Special Rapporteur reports
         fr: Rapports du Rapporteur spécial des Nations unies
@@ -268,16 +269,16 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3; docs/03 §7.
       rule:
         en: >-
           Computed from the dataset, never typed in by hand; the formula and the raw rows are
-          downloadable (spec §3). Each row of data/structured/sipri_orders.csv cites a dataset
-          source that archives the SIPRI release (docs/03 §7).
+          downloadable. Each row of `data/structured/sipri_orders.csv` cites a dataset source that
+          archives the SIPRI release.
         fr: >-
           Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
-          brutes sont téléchargeables (cahier des charges, §3). Chaque ligne de
-          data/structured/sipri_orders.csv cite une source de type dataset qui archive la
-          publication du SIPRI (docs/03 §7).
+          brutes sont téléchargeables. Chaque ligne de `data/structured/sipri_orders.csv` cite une
+          source de type dataset qui archive la publication du SIPRI.
     primary_sources:
       - en: SIPRI
         fr: SIPRI
@@ -329,23 +330,23 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           One confirmed instance per event: a named exercise, a documented transit (port call,
           overflight authorisation), a public basing agreement, or an official confirmation of
-          intelligence sharing related to the Gaza campaign. Every event needs one primary
-          document (official record, government release, court filing, dataset row). NGO and
-          press reports count only as leads until a primary document is found, or as evidence
-          at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          intelligence sharing related to the Gaza campaign. Every event needs one primary document
+          (official record, government release, court filing, dataset row). NGO and press reports
+          count only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight.
         fr: >-
           Une instance confirmée par événement : un exercice nommé, un transit documenté (escale,
-          autorisation de survol), un accord de stationnement public, ou une confirmation
-          officielle d'un partage de renseignements lié à la campagne de Gaza. Chaque événement
-          exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
-          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
-          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
-          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
-          (cahier des charges, §3 ; docs/02 §4).
+          autorisation de survol), un accord de stationnement public, ou une confirmation officielle
+          d'un partage de renseignements lié à la campagne de Gaza. Chaque événement exige un
+          document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de
+          confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Defence ministry releases
         fr: Communiqués des ministères de la Défense
@@ -386,22 +387,22 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The government decision or official gazette entry suspending or refusing a class of
-          licences to Israel, or the court order with the same effect. Every event needs one
-          primary document (official record, government release, court filing, dataset row).
-          NGO and press reports count only as leads until a primary document is found, or as
-          evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          licences to Israel, or the court order with the same effect. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
-          La décision gouvernementale ou la publication au journal officiel suspendant ou
-          refusant une catégorie de licences à destination d'Israël, ou la décision de justice
-          ayant le même effet. Chaque événement exige un document primaire (acte officiel,
-          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données).
-          Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
-          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
-          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          La décision gouvernementale ou la publication au journal officiel suspendant ou refusant
+          une catégorie de licences à destination d'Israël, ou la décision de justice ayant le même
+          effet. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit.
     primary_sources:
       - en: Government decision
         fr: Décision gouvernementale
@@ -446,21 +447,20 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The law or decree, covering both exports to and imports from Israel. Every event
-          needs one primary document (official record, government release, court filing,
-          dataset row). NGO and press reports count only as leads until a primary document is
-          found, or as evidence at confidence corroborated or reported, with reduced weight
-          (spec §3, docs/02 §4).
+          The law or decree, covering both exports to and imports from Israel. Every event needs one
+          primary document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
-          La loi ou le décret, couvrant à la fois les exportations vers Israël et les
-          importations en provenance d'Israël. Chaque événement exige un document primaire
-          (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu
-          de données). Les rapports d'ONG et de presse ne comptent que comme pistes tant
-          qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
-          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
-          docs/02 §4).
+          La loi ou le décret, couvrant à la fois les exportations vers Israël et les importations
+          en provenance d'Israël. Chaque événement exige un document primaire (acte officiel,
+          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
+          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire
+          n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec
+          un poids réduit.
     primary_sources:
       - en: Law or decree
         fr: Loi ou décret
@@ -501,20 +501,20 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          A port authority decision or a government statement denying the transit. Every event
-          needs one primary document (official record, government release, court filing,
-          dataset row). NGO and press reports count only as leads until a primary document is
-          found, or as evidence at confidence corroborated or reported, with reduced weight
-          (spec §3, docs/02 §4).
+          A port authority decision or a government statement denying the transit. Every event needs
+          one primary document (official record, government release, court filing, dataset row). NGO
+          and press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           Une décision de l'autorité portuaire ou une déclaration gouvernementale refusant le
           transit. Chaque événement exige un document primaire (acte officiel, communiqué
           gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
           d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
           trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
-          poids réduit (cahier des charges, §3 ; docs/02 §4).
+          poids réduit.
     primary_sources:
       - en: Port authority
         fr: Autorité portuaire
@@ -592,18 +592,18 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: D-08; docs/06 §2.
       rule:
         en: >-
-          Generated from data/structured/unga_votes.csv, filtered by votes.yaml; never
-          hand-authored (D-08). Each vote row cites a dataset source that archives the UN voting
-          record, and each qualifying vote in votes.yaml cites the archived UN press release as
-          its official source (docs/06 §2).
+          Generated from `data/structured/unga_votes.csv`, filtered by `votes.yaml`; never
+          hand-authored. Each vote row cites a dataset source that archives the UN voting record,
+          and each qualifying vote in `votes.yaml` cites the archived UN press release as its
+          official source.
         fr: >-
-          Généré à partir de data/structured/unga_votes.csv, filtré par votes.yaml ; jamais
-          rédigé à la main (D-08). Chaque ligne de vote cite une source de type dataset qui
-          archive le relevé de vote des Nations unies, et chaque vote retenu dans votes.yaml
-          cite comme source officielle le communiqué de presse archivé des Nations unies
-          (docs/06 §2).
+          Généré à partir de `data/structured/unga_votes.csv`, filtré par `votes.yaml` ; jamais
+          rédigé à la main. Chaque ligne de vote cite une source de type dataset qui archive le
+          relevé de vote des Nations unies, et chaque vote retenu dans `votes.yaml` cite comme
+          source officielle le communiqué de presse archivé des Nations unies.
     primary_sources:
       - en: UN Digital Library voting records
         fr: Relevés des votes de la Bibliothèque numérique des Nations unies
@@ -668,15 +668,17 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: D-08; docs/03 §7.
       rule:
         en: >-
-          Generated from data/structured/unsc_vetoes.csv (rows with ceasefire: true); never
-          hand-authored (D-08). Each row cites an archived source from the Security Council
-          records of the vote.
+          Generated from `data/structured/unsc_vetoes.csv` (rows with `ceasefire: true`); never
+          hand-authored. Each row cites a dataset source that archives the Security Council record
+          of the vote, such as the UN veto list or the meeting record.
         fr: >-
-          Généré à partir de data/structured/unsc_vetoes.csv (lignes avec ceasefire: true) ;
-          jamais rédigé à la main (D-08). Chaque ligne cite une source archivée tirée des
-          documents du Conseil de sécurité relatifs au vote.
+          Généré à partir de `data/structured/unsc_vetoes.csv` (lignes avec `ceasefire: true`) ;
+          jamais rédigé à la main. Chaque ligne cite une source de type dataset qui archive le
+          relevé du vote au Conseil de sécurité, par exemple la liste des vetos des Nations unies ou
+          le procès-verbal de la séance.
     primary_sources:
       - en: UNSC records
         fr: Documents du Conseil de sécurité des Nations unies
@@ -736,21 +738,21 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The declaration of intervention as registered by the ICJ, and its text: the direction
-          of its argument decides B3 versus B4. Every event needs one primary document (official
-          record, government release, court filing, dataset row). NGO and press reports count
-          only as leads until a primary document is found, or as evidence at confidence
-          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          The declaration of intervention as registered by the ICJ, and its text: the direction of
+          its argument decides B3 versus B4. Every event needs one primary document (official
+          record, government release, court filing, dataset row). NGO and press reports count only
+          as leads until a primary document is found, or as evidence at confidence corroborated or
+          reported, with reduced weight.
         fr: >-
-          La déclaration d'intervention telle qu'enregistrée par la CIJ, et son texte : le sens
-          de son argumentation décide entre B3 et B4. Chaque événement exige un document
-          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
-          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
-          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
-          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
-          docs/02 §4).
+          La déclaration d'intervention telle qu'enregistrée par la CIJ, et son texte : le sens de
+          son argumentation décide entre B3 et B4. Chaque événement exige un document primaire (acte
+          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit.
     primary_sources:
       - en: ICJ press releases
         fr: Communiqués de presse de la CIJ
@@ -800,22 +802,23 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The official statement or formal act, or the text of the declaration of intervention
-          arguing against the applicant's construction; a press remark without a formal act does
-          not qualify. Every event needs one primary document (official record, government
-          release, court filing, dataset row). NGO and press reports count only as leads until a
-          primary document is found, or as evidence at confidence corroborated or reported, with
-          reduced weight (spec §3, docs/02 §4).
+          arguing against the applicant's construction; a press remark without a formal act does not
+          qualify. Every event needs one primary document (official record, government release,
+          court filing, dataset row). NGO and press reports count only as leads until a primary
+          document is found, or as evidence at confidence corroborated or reported, with reduced
+          weight.
         fr: >-
-          La déclaration officielle ou l'acte formel, ou le texte de la déclaration
-          d'intervention plaidant contre l'interprétation du demandeur ; une remarque à la presse
-          sans acte formel ne suffit pas. Chaque événement exige un document primaire (acte
-          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
-          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
-          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
-          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          La déclaration officielle ou l'acte formel, ou le texte de la déclaration d'intervention
+          plaidant contre l'interprétation du demandeur ; une remarque à la presse sans acte formel
+          ne suffit pas. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit.
     primary_sources:
       - en: Government statement
         fr: Déclaration gouvernementale
@@ -863,23 +866,23 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          An official statement by the head of government, foreign or justice minister on
-          executing the 21 November 2024 warrants; an overflight authorisation without a stated
-          position on the warrants is a lead. Every event needs one primary document (official
-          record, government release, court filing, dataset row). NGO and press reports count
-          only as leads until a primary document is found, or as evidence at confidence
-          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          An official statement by the head of government, foreign or justice minister on executing
+          the 21 November 2024 warrants; an overflight authorisation without a stated position on
+          the warrants is a lead. Every event needs one primary document (official record,
+          government release, court filing, dataset row). NGO and press reports count only as leads
+          until a primary document is found, or as evidence at confidence corroborated or reported,
+          with reduced weight.
         fr: >-
-          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères
-          ou du ministre de la Justice sur l'exécution des mandats du 21 novembre 2024 ; une
+          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères ou
+          du ministre de la Justice sur l'exécution des mandats du 21 novembre 2024 ; une
           autorisation de survol sans position déclarée sur les mandats est une piste. Chaque
-          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
-          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
-          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
-          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
-          (cahier des charges, §3 ; docs/02 §4).
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves
+          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Government statement
         fr: Déclaration gouvernementale
@@ -932,26 +935,25 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           An official statement by the head of government, foreign or justice minister on the
-          warrants, the official record of a visit by a person under warrant hosted without
-          arrest, or the official record of the withdrawal from the Rome Statute; an overflight
-          authorisation without a stated position on the warrants is a lead. Every event needs
-          one primary document (official record, government release, court filing, dataset
-          row). NGO and press reports count only as leads until a primary document is found, or
-          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          warrants, the official record of a visit by a person under warrant hosted without arrest,
+          or the official record of the withdrawal from the Rome Statute; an overflight
+          authorisation without a stated position on the warrants is a lead. Every event needs one
+          primary document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
-          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères
-          ou du ministre de la Justice sur les mandats, le relevé officiel d'une visite d'une
-          personne visée par un mandat accueillie sans être arrêtée, ou l'acte officiel du
-          retrait du Statut de Rome ; une autorisation de survol sans position déclarée sur les
-          mandats est une piste. Chaque événement exige un document primaire (acte officiel,
-          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
-          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
-          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
-          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères ou
+          du ministre de la Justice sur les mandats, le relevé officiel d'une visite d'une personne
+          visée par un mandat accueillie sans être arrêtée, ou l'acte officiel du retrait du Statut
+          de Rome ; une autorisation de survol sans position déclarée sur les mandats est une piste.
+          Chaque événement exige un document primaire (acte officiel, communiqué gouvernemental,
+          pièce de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse
+          ne comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Government statement
         fr: Déclaration gouvernementale
@@ -986,18 +988,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The official sanctions list. Every event needs one primary document (official record,
-          government release, court filing, dataset row). NGO and press reports count only as
-          leads until a primary document is found, or as evidence at confidence corroborated or
-          reported, with reduced weight (spec §3, docs/02 §4).
+          government release, court filing, dataset row). NGO and press reports count only as leads
+          until a primary document is found, or as evidence at confidence corroborated or reported,
+          with reduced weight.
         fr: >-
           La liste officielle des sanctions. Chaque événement exige un document primaire (acte
           officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
           données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
-          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
-          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit.
     primary_sources:
       - en: Official sanctions list
         fr: Liste officielle des sanctions
@@ -1052,15 +1055,15 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: D-08, docs/03 §3.
       rule:
         en: >-
-          Generated from recognises_palestine.since in data/countries.yaml; never hand-authored
-          (D-08, docs/03 §3). The recognition date recorded there comes from the foreign
-          ministry's announcement.
+          Generated from `recognises_palestine.since` in `data/countries.yaml`; never hand-authored.
+          The recognition date recorded there comes from the foreign ministry's announcement.
         fr: >-
-          Généré à partir de recognises_palestine.since dans data/countries.yaml ; jamais rédigé
-          à la main (D-08, docs/03 §3). La date de reconnaissance qui y figure provient de
-          l'annonce du ministère des Affaires étrangères.
+          Généré à partir de `recognises_palestine.since` dans `data/countries.yaml` ; jamais rédigé
+          à la main. La date de reconnaissance qui y figure provient de l'annonce du ministère des
+          Affaires étrangères.
     primary_sources:
       - en: Foreign ministry
         fr: Ministère des Affaires étrangères
@@ -1118,25 +1121,23 @@ indicators:
     evidence:
       requires_actor: true
       source_kinds: [official, official-video]
+      # Sources: spec §3, docs/02 §2; docs/02 §12.4, docs/03 §4–§5; docs/06 §7.
       rule:
         en: >-
-          The exact quote, the speaker, the date and the official transcript or official video
-          with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event
-          carries actor.name and cites a source of kind official or official-video; the quote
-          appears verbatim in archive/text/{source}.txt after whitespace normalisation,
-          including for a video, whose transcript is stored there (docs/02 §12.4, docs/03
-          §4–§5). Same speaker, same day: one event. The speaker is the head of government or
-          the foreign minister; statements by spokespersons do not score (docs/06 §7).
+          The exact quote, the speaker, the date and the official transcript or official video with
+          timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a
+          source of kind official or official-video; the quote appears verbatim in
+          `archive/text/{source}.txt` after whitespace normalisation, including for a video, whose
+          transcript is stored there. Same speaker, same day: one event. The speaker is the head of
+          government or the foreign minister; statements by spokespersons do not score.
         fr: >-
           La citation exacte, l'orateur, la date et la transcription officielle ou la vidéo
-          officielle avec horodatage ; les paraphrases de presse ne suffisent pas (cahier des
-          charges, §3 ; docs/02 §2). L'événement porte actor.name et cite une source de type
-          official ou official-video ; la citation figure mot pour mot dans
-          archive/text/{source}.txt après normalisation des espaces, y compris pour une vidéo,
-          dont la transcription y est conservée (docs/02 §12.4, docs/03 §4–§5). Même orateur,
-          même jour : un seul événement. L'orateur est le chef de gouvernement ou le ministre
-          des Affaires étrangères ; les déclarations de porte-parole ne sont pas notées
-          (docs/06 §7).
+          officielle avec horodatage ; les paraphrases de presse ne suffisent pas. L'événement porte
+          `actor.name` et cite une source de type official ou official-video ; la citation figure
+          mot pour mot dans `archive/text/{source}.txt` après normalisation des espaces, y compris
+          pour une vidéo, dont la transcription y est conservée. Même orateur, même jour : un seul
+          événement. L'orateur est le chef de gouvernement ou le ministre des Affaires étrangères ;
+          les déclarations de porte-parole ne sont pas notées.
     primary_sources:
       - en: Official transcript
         fr: Transcription officielle
@@ -1178,24 +1179,23 @@ indicators:
     evidence:
       requires_actor: true
       source_kinds: [official, official-video]
+      # Sources: spec §3, docs/02 §2; docs/02 §12.4, docs/03 §4–§5; docs/06 §7.
       rule:
         en: >-
-          The exact quote, the speaker, the date and the official transcript or official video
-          with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event
-          carries actor.name and cites a source of kind official or official-video; the quote
-          appears verbatim in archive/text/{source}.txt after whitespace normalisation,
-          including for a video, whose transcript is stored there (docs/02 §12.4, docs/03
-          §4–§5). Same speaker, same day: one event. The speaker is the head of government;
-          statements by spokespersons do not score (docs/06 §7).
+          The exact quote, the speaker, the date and the official transcript or official video with
+          timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a
+          source of kind official or official-video; the quote appears verbatim in
+          `archive/text/{source}.txt` after whitespace normalisation, including for a video, whose
+          transcript is stored there. Same speaker, same day: one event. The speaker is the head of
+          government; statements by spokespersons do not score.
         fr: >-
           La citation exacte, l'orateur, la date et la transcription officielle ou la vidéo
-          officielle avec horodatage ; les paraphrases de presse ne suffisent pas (cahier des
-          charges, §3 ; docs/02 §2). L'événement porte actor.name et cite une source de type
-          official ou official-video ; la citation figure mot pour mot dans
-          archive/text/{source}.txt après normalisation des espaces, y compris pour une vidéo,
-          dont la transcription y est conservée (docs/02 §12.4, docs/03 §4–§5). Même orateur,
-          même jour : un seul événement. L'orateur est le chef de gouvernement ; les
-          déclarations de porte-parole ne sont pas notées (docs/06 §7).
+          officielle avec horodatage ; les paraphrases de presse ne suffisent pas. L'événement porte
+          `actor.name` et cite une source de type official ou official-video ; la citation figure
+          mot pour mot dans `archive/text/{source}.txt` après normalisation des espaces, y compris
+          pour une vidéo, dont la transcription y est conservée. Même orateur, même jour : un seul
+          événement. L'orateur est le chef de gouvernement ; les déclarations de porte-parole ne
+          sont pas notées.
     primary_sources:
       - en: Official transcript
         fr: Transcription officielle
@@ -1250,20 +1250,20 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The official sanctions list. An EU-level listing counts only for a member state that
-          voted for it. Every event needs one primary document (official record, government
-          release, court filing, dataset row). NGO and press reports count only as leads until a
-          primary document is found, or as evidence at confidence corroborated or reported, with
-          reduced weight (spec §3, docs/02 §4).
+          The official sanctions list. An EU-level listing counts only for a member state that voted
+          for it. Every event needs one primary document (official record, government release, court
+          filing, dataset row). NGO and press reports count only as leads until a primary document
+          is found, or as evidence at confidence corroborated or reported, with reduced weight.
         fr: >-
-          La liste officielle des sanctions. Une inscription au niveau de l'UE ne compte que pour
-          un État membre qui a voté pour elle. Chaque événement exige un document primaire (acte
+          La liste officielle des sanctions. Une inscription au niveau de l'UE ne compte que pour un
+          État membre qui a voté pour elle. Chaque événement exige un document primaire (acte
           officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
           données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
-          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
-          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit.
     primary_sources:
       - en: Official sanctions list
         fr: Liste officielle des sanctions
@@ -1321,19 +1321,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The foreign ministry's announcement. Every event needs one primary document (official
-          record, government release, court filing, dataset row). NGO and press reports count
-          only as leads until a primary document is found, or as evidence at confidence
-          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          record, government release, court filing, dataset row). NGO and press reports count only
+          as leads until a primary document is found, or as evidence at confidence corroborated or
+          reported, with reduced weight.
         fr: >-
           L'annonce du ministère des Affaires étrangères. Chaque événement exige un document
-          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
-          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
-          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
-          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
-          docs/02 §4).
+          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne
+          de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes tant
+          qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
+          « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Foreign ministry
         fr: Ministère des Affaires étrangères
@@ -1393,22 +1393,22 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The government or EU decision; for an EU-level decision, the official minutes or
-          ministerial statements recording the state's support in the Council. Every event needs
-          one primary document (official record, government release, court filing, dataset
-          row). NGO and press reports count only as leads until a primary document is found, or
-          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          ministerial statements recording the state's support in the Council. Every event needs one
+          primary document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           La décision gouvernementale ou de l'UE ; pour une décision au niveau de l'UE, les
-          procès-verbaux officiels ou les déclarations ministérielles attestant le soutien de
-          l'État au Conseil. Chaque événement exige un document primaire (acte officiel,
-          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
-          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
-          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
-          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          procès-verbaux officiels ou les déclarations ministérielles attestant le soutien de l'État
+          au Conseil. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit.
     primary_sources:
       - en: Government or EU decision
         fr: Décision gouvernementale ou de l'UE
@@ -1442,20 +1442,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The signed agreement, from a treaty register or a ministry release. Every event needs
-          one primary document (official record, government release, court filing, dataset
-          row). NGO and press reports count only as leads until a primary document is found, or
-          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          The signed agreement, from a treaty register or a ministry release. Every event needs one
+          primary document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           L'accord signé, tiré d'un registre des traités ou d'un communiqué ministériel. Chaque
-          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
-          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
-          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
-          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
-          (cahier des charges, §3 ; docs/02 §4).
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves
+          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Treaty registers
         fr: Registres des traités
@@ -1497,18 +1496,18 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3; docs/03 §7; docs/02 §5.
       rule:
         en: >-
           Computed from the dataset, never typed in by hand; the formula and the raw rows are
-          downloadable (spec §3). Values come from the country's own reporting, else from
-          Israel's mirror data (docs/02 §5). Each row of data/structured/comtrade_c3.csv cites a
-          dataset source that archives the origin (docs/03 §7).
+          downloadable. Values come from the country's own reporting, else from Israel's mirror
+          data. Each row of `data/structured/comtrade_c3.csv` cites a dataset source that archives
+          the origin.
         fr: >-
           Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
-          brutes sont téléchargeables (cahier des charges, §3). Les valeurs proviennent des
-          déclarations du pays lui-même, à défaut des données miroir d'Israël (docs/02 §5).
-          Chaque ligne de data/structured/comtrade_c3.csv cite une source de type dataset qui
-          archive l'origine des données (docs/03 §7).
+          brutes sont téléchargeables. Les valeurs proviennent des déclarations du pays lui-même, à
+          défaut des données miroir d'Israël. Chaque ligne de `data/structured/comtrade_c3.csv` cite
+          une source de type dataset qui archive l'origine des données.
     primary_sources:
       - en: UN Comtrade
         fr: UN Comtrade
@@ -1557,18 +1556,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The customs regulation. Every event needs one primary document (official record,
-          government release, court filing, dataset row). NGO and press reports count only as
-          leads until a primary document is found, or as evidence at confidence corroborated or
-          reported, with reduced weight (spec §3, docs/02 §4).
+          government release, court filing, dataset row). NGO and press reports count only as leads
+          until a primary document is found, or as evidence at confidence corroborated or reported,
+          with reduced weight.
         fr: >-
-          La réglementation douanière. Chaque événement exige un document primaire (acte
-          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
-          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
-          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
-          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+          La réglementation douanière. Chaque événement exige un document primaire (acte officiel,
+          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
+          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire
+          n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec
+          un poids réduit.
     primary_sources:
       - en: Customs regulation
         fr: Réglementation douanière
@@ -1605,20 +1605,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The decision of the fund or central bank, one event per decision batch. Every event
-          needs one primary document (official record, government release, court filing,
-          dataset row). NGO and press reports count only as leads until a primary document is
-          found, or as evidence at confidence corroborated or reported, with reduced weight
-          (spec §3, docs/02 §4).
+          The decision of the fund or central bank, one event per decision batch. Every event needs
+          one primary document (official record, government release, court filing, dataset row). NGO
+          and press reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           La décision du fonds ou de la banque centrale, un événement par série de décisions. Chaque
           événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
           procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
           comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves
-          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des
-          charges, §3 ; docs/02 §4).
+          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Fund ethics council decisions
         fr: Décisions des conseils d'éthique des fonds
@@ -1650,19 +1649,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The procurement rule providing the exclusion. Every event needs one primary document
-          (official record, government release, court filing, dataset row). NGO and press
-          reports count only as leads until a primary document is found, or as evidence at
-          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          (official record, government release, court filing, dataset row). NGO and press reports
+          count only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight.
         fr: >-
-          La règle de passation des marchés publics prévoyant l'exclusion. Chaque événement
-          exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
-          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
-          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
-          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
-          (cahier des charges, §3 ; docs/02 §4).
+          La règle de passation des marchés publics prévoyant l'exclusion. Chaque événement exige un
+          document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de
+          confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Procurement rules
         fr: Règles de passation des marchés publics
@@ -1675,7 +1674,7 @@ indicators:
     category: D
     name:
       en: Humanitarian funding to the Gaza response, scaled per capita of GNI
-      fr: Financement humanitaire de la réponse à Gaza, rapporté au RNB par habitant
+      fr: Financement humanitaire de la réponse à Gaza, rapporté au RNB
     description:
       en: >-
         Humanitarian funding to the Gaza response, scaled to the country's GNI: paid and
@@ -1708,18 +1707,18 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3; docs/03 §7.
       rule:
         en: >-
           Computed from the dataset, never typed in by hand; the formula and the raw rows are
-          downloadable (spec §3). Rows of data/structured/fts_funding.csv (FTS, donor
-          organisation type Government) and data/structured/gni.csv (World Bank Atlas) cite
-          dataset sources that archive the API responses (docs/03 §7).
+          downloadable. Rows of `data/structured/fts_funding.csv` (FTS, donor organisation type
+          Government) and `data/structured/gni.csv` (World Bank Atlas) cite dataset sources that
+          archive the API responses.
         fr: >-
           Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
-          brutes sont téléchargeables (cahier des charges, §3). Les lignes de
-          data/structured/fts_funding.csv (FTS, type d'organisation donatrice Government) et de
-          data/structured/gni.csv (méthode Atlas de la Banque mondiale) citent des sources de
-          type dataset qui archivent les réponses des API (docs/03 §7).
+          brutes sont téléchargeables. Les lignes de `data/structured/fts_funding.csv` (FTS, type
+          d'organisation donatrice Government) et de `data/structured/gni.csv` (méthode Atlas de la
+          Banque mondiale) citent des sources de type dataset qui archivent les réponses des API.
     primary_sources:
       - en: OCHA Financial Tracking Service API
         fr: API du Service de suivi financier (FTS) d'OCHA
@@ -1763,21 +1762,21 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The government announcement of the suspension, or UNRWA donor tables; the event ends
-          on the announced resumption. Every event needs one primary document (official record,
-          government release, court filing, dataset row). NGO and press reports count only as
-          leads until a primary document is found, or as evidence at confidence corroborated or
-          reported, with reduced weight (spec §3, docs/02 §4).
+          The government announcement of the suspension, or UNRWA donor tables; the event ends on
+          the announced resumption. Every event needs one primary document (official record,
+          government release, court filing, dataset row). NGO and press reports count only as leads
+          until a primary document is found, or as evidence at confidence corroborated or reported,
+          with reduced weight.
         fr: >-
           L'annonce gouvernementale de la suspension, ou les tableaux des donateurs de l'UNRWA ;
-          l'événement prend fin à la reprise annoncée. Chaque événement exige un document
-          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
-          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
-          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
-          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
-          docs/02 §4).
+          l'événement prend fin à la reprise annoncée. Chaque événement exige un document primaire
+          (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit.
     primary_sources:
       - en: UNRWA donor tables
         fr: Tableaux des donateurs de l'UNRWA
@@ -1830,21 +1829,21 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          UNRWA donor tables; the increased tier requires the annual contribution to exceed the
-          2022 contribution in nominal USD in those tables. Every event needs one primary
-          document (official record, government release, court filing, dataset row). NGO and
-          press reports count only as leads until a primary document is found, or as evidence
-          at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          UNRWA donor tables; the increased tier requires the annual contribution to exceed the 2022
+          contribution in nominal USD in those tables. Every event needs one primary document
+          (official record, government release, court filing, dataset row). NGO and press reports
+          count only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight.
         fr: >-
-          Les tableaux des donateurs de l'UNRWA ; le palier « augmenté » exige que la
-          contribution annuelle dépasse, dans ces tableaux, la contribution de 2022 en dollars US
-          nominaux. Chaque événement exige un document primaire (acte officiel, communiqué
-          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
-          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
-          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
-          poids réduit (cahier des charges, §3 ; docs/02 §4).
+          Les tableaux des donateurs de l'UNRWA ; le palier « augmenté » exige que la contribution
+          annuelle dépasse, dans ces tableaux, la contribution de 2022 en dollars US nominaux.
+          Chaque événement exige un document primaire (acte officiel, communiqué gouvernemental,
+          pièce de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse
+          ne comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: UNRWA donor tables
         fr: Tableaux des donateurs de l'UNRWA
@@ -1879,20 +1878,20 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          A WHO or health ministry document on the programme, one event per programme. Every
-          event needs one primary document (official record, government release, court filing,
-          dataset row). NGO and press reports count only as leads until a primary document is
-          found, or as evidence at confidence corroborated or reported, with reduced weight
-          (spec §3, docs/02 §4).
+          A WHO or health ministry document on the programme, one event per programme. Every event
+          needs one primary document (official record, government release, court filing, dataset
+          row). NGO and press reports count only as leads until a primary document is found, or as
+          evidence at confidence corroborated or reported, with reduced weight.
         fr: >-
           Un document de l'OMS ou du ministère de la Santé sur le programme, un événement par
           programme. Chaque événement exige un document primaire (acte officiel, communiqué
           gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
           d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
           trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
-          poids réduit (cahier des charges, §3 ; docs/02 §4).
+          poids réduit.
     primary_sources:
       - en: WHO
         fr: OMS
@@ -1927,20 +1926,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The immigration regulation, one event per legal instrument. Every event needs one
-          primary document (official record, government release, court filing, dataset row).
-          NGO and press reports count only as leads until a primary document is found, or as
-          evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          The immigration regulation, one event per legal instrument. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           La réglementation de l'immigration, un événement par instrument juridique. Chaque
-          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
-          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
-          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
-          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
-          (cahier des charges, §3 ; docs/02 §4).
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves
+          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Immigration regulations
         fr: Réglementation de l'immigration
@@ -1978,19 +1976,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           A prosecutor announcement or court filing. Every event needs one primary document
-          (official record, government release, court filing, dataset row). NGO and press
-          reports count only as leads until a primary document is found, or as evidence at
-          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          (official record, government release, court filing, dataset row). NGO and press reports
+          count only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight.
         fr: >-
           Une annonce du parquet ou un acte de procédure judiciaire. Chaque événement exige un
           document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
           judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
-          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
-          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
-          §3 ; docs/02 §4).
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de
+          confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Prosecutor announcements
         fr: Annonces du parquet
@@ -2033,19 +2031,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
           The interior ministry decree or court ruling. Every event needs one primary document
-          (official record, government release, court filing, dataset row). NGO and press
-          reports count only as leads until a primary document is found, or as evidence at
-          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+          (official record, government release, court filing, dataset row). NGO and press reports
+          count only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight.
         fr: >-
-          Le décret du ministère de l'Intérieur ou la décision de justice. Chaque événement exige
-          un document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          Le décret du ministère de l'Intérieur ou la décision de justice. Chaque événement exige un
+          document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
           judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
-          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
-          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
-          §3 ; docs/02 §4).
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de
+          confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Interior ministry decrees
         fr: Décrets du ministère de l'Intérieur
@@ -2088,20 +2086,19 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
+      # Sources: spec §3, docs/02 §4.
       rule:
         en: >-
-          The court record accepting the complaint for investigation. Every event needs one
-          primary document (official record, government release, court filing, dataset row).
-          NGO and press reports count only as leads until a primary document is found, or as
-          evidence at confidence corroborated or reported, with reduced weight (spec §3,
-          docs/02 §4).
+          The court record accepting the complaint for investigation. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight.
         fr: >-
           Le dossier judiciaire acceptant la plainte pour enquête. Chaque événement exige un
           document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
           judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
-          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
-          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
-          §3 ; docs/02 §4).
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de
+          confiance « corroboré » ou « signalé », avec un poids réduit.
     primary_sources:
       - en: Court records
         fr: Dossiers judiciaires

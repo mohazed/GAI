@@ -12,7 +12,7 @@ import type { Located } from '../../load/dataset.js'
 import type { Event, Evidence, Source } from '../../records.js'
 import { STRUCTURED_TABLE_NAMES } from '../../structured.js'
 import type { Rule, ValidationContext } from '../context.js'
-import { normaliseWhitespace } from '../normalise.js'
+import { normaliseWhitespace, quoteSearcher } from '../normalise.js'
 
 // ---------------------------------------------------------------------------------------------
 // Helpers
@@ -86,78 +86,109 @@ function sourcePath(id: string): string {
 // ---------------------------------------------------------------------------------------------
 // Events: evidence entries
 
+/** A `row …` locator (a row of a dataset), matched as a whole word: "Rowland" is not a row. */
+const ROW_LOCATOR = /^row\b/i
+
 /**
- * event.quote-in-archive (docs/03 §4, docs/02 §12.4): every quote appears in
- * archive/text/{source}.txt after whitespace normalisation. Always checked for indicators whose
- * evidence requires an actor (B9, B10, statements); otherwise skipped when the locator starts
- * with `row` (dataset row) or `video` (timestamp in a video). Unknown sources are left to
+ * event.quote-in-archive (docs/02 §12.4, docs/03 §4, CLAUDE.md "Quotes are verbatim from
+ * archive/text/; CI checks them"): every quote appears in archive/text/{source}.txt after
+ * whitespace normalisation. The only exemption is docs/02 §12.4's: a quote from a dataset row,
+ * i.e. evidence citing a source of kind `dataset` with a `row …` locator, and never on
+ * indicators whose evidence requires an actor (B9, B10). A `row` locator on any other source, and
+ * a `video …` locator (checked against the transcript an official-video source must have in
+ * archive/text, docs/03 §5), are checked like any other. Unknown sources are left to
  * event.evidence-source-known.
+ *
+ * Each archived text is read, normalised and searched once for all the quotes that cite it, then
+ * released, so the rule holds one normalised text at a time.
  */
 export const quoteInArchive: Rule = (ctx) => {
   const m = ctx.methodology
   if (m.indicatorsFile === null) return []
-  // Same comparison as containsQuote(), with the normalised text cached per source.
-  const texts = new Map<string, string | undefined>()
-  const textOf = (id: string): string | undefined => {
-    if (!texts.has(id)) {
-      const raw = ctx.dataset.readArchiveText(id)
-      texts.set(id, raw === undefined ? undefined : normaliseWhitespace(raw))
-    }
-    return texts.get(id)
-  }
 
-  const out: Issue[] = []
-  for (const ref of eachEvidence(ctx)) {
+  // Evidence to check, grouped by source, with its position for a stable output order.
+  const bySource = new Map<string, { ref: EvidenceRef; order: number }[]>()
+  eachEvidence(ctx).forEach((ref, order) => {
     const { event, evidence } = ref
-    const src = evidence.source
-    if (!ctx.index.sourceById.has(src)) continue
+    const src = ctx.index.sourceById.get(evidence.source)
+    if (!src) return
     const always = m.indicatorById.get(event.value.indicator)?.evidence.requires_actor === true
-    const locator = evidence.locator.trim().toLowerCase()
-    if (!always && (locator.startsWith('row') || locator.startsWith('video'))) continue
+    const datasetRow = src.value.kind === 'dataset' && ROW_LOCATOR.test(evidence.locator.trim())
+    if (!always && datasetRow) return
+    const group = bySource.get(evidence.source)
+    if (group) group.push({ ref, order })
+    else bySource.set(evidence.source, [{ ref, order }])
+  })
 
-    const text = textOf(src)
-    if (text === undefined) {
-      out.push(
-        issue(
-          'event.quote-in-archive',
-          atEvidence(ref, 'quote'),
+  const found: { order: number; issue: Issue }[] = []
+  const report = (order: number, ref: EvidenceRef, message: string) =>
+    found.push({ order, issue: issue('event.quote-in-archive', atEvidence(ref, 'quote'), message) })
+  for (const [src, refs] of bySource) {
+    const raw = ctx.dataset.readArchiveText(src)
+    if (raw === undefined) {
+      for (const { ref, order } of refs) {
+        report(
+          order,
+          ref,
           `archive/text/${src}.txt is missing, so the quote cannot be checked against the archived text.`,
-        ),
-      )
+        )
+      }
       continue
     }
-    const quote = normaliseWhitespace(evidence.quote)
-    if (quote === '') {
-      out.push(
-        issue(
-          'event.quote-in-archive',
-          atEvidence(ref, 'quote'),
+    const contains = quoteSearcher(raw)
+    for (const { ref, order } of refs) {
+      const quote = ref.evidence.quote
+      if (normaliseWhitespace(quote) === '') {
+        report(
+          order,
+          ref,
           'The quote is empty after whitespace normalisation; expected a verbatim passage of the source.',
-        ),
-      )
-    } else if (!text.includes(quote)) {
-      out.push(
-        issue(
-          'event.quote-in-archive',
-          atEvidence(ref, 'quote'),
-          `The quote "${excerpt(evidence.quote)}" does not appear verbatim in archive/text/${src}.txt (only whitespace is normalised).`,
-        ),
-      )
+        )
+      } else if (!contains(quote)) {
+        report(
+          order,
+          ref,
+          `The quote "${excerpt(quote)}" does not appear verbatim in archive/text/${src}.txt (only whitespace is normalised).`,
+        )
+      }
     }
   }
-  return out
+  return found.sort((a, b) => a.order - b.order).map((f) => f.issue)
 }
+
+/** The primary subtag of a language tag, lowercase (`pt-BR` → `pt`). */
+const primaryLang = (tag: string): string => (tag.split('-')[0] ?? '').toLowerCase()
+
+/** Language tags that name no single language: a source in one of them may hold any quote. */
+const NO_SINGLE_LANGUAGE = new Set(['mul', 'und', 'mis', 'zxx'])
 
 /**
  * event.quote-translation (docs/03 §4, CLAUDE.md): translations sit beside the original, never
  * instead of it. A quote whose quote_lang is not English (primary subtag other than `en`)
- * carries a non-empty quote_en.
+ * carries a non-empty quote_en. Because that requirement rests on the declared quote_lang, a
+ * quote_lang whose primary subtag differs from the cited source's `language` is a warning: a
+ * mislabelled quote would otherwise escape the translation check, while documents that quote
+ * another language stay possible.
  */
 export const quoteTranslation: Rule = (ctx) => {
   const out: Issue[] = []
   for (const ref of eachEvidence(ctx)) {
     const lang = ref.evidence.quote_lang
-    const primary = (lang.split('-')[0] ?? '').toLowerCase()
+    const primary = primaryLang(lang)
+    const src = ctx.index.sourceById.get(ref.evidence.source)?.value
+    if (src !== undefined) {
+      const sourcePrimary = primaryLang(src.language)
+      if (sourcePrimary !== primary && !NO_SINGLE_LANGUAGE.has(sourcePrimary)) {
+        out.push(
+          issue(
+            'event.quote-translation',
+            atEvidence(ref, 'quote_lang'),
+            `quote_lang is "${lang}" but the source "${src.id}" is in "${src.language}"; expected the language of the quote as written (a quote not in English carries quote_en beside the original).`,
+            'warning',
+          ),
+        )
+      }
+    }
     if (primary === 'en') continue
     if ((ref.evidence.quote_en ?? '').trim() === '') {
       out.push(
@@ -191,15 +222,24 @@ export const evidenceSourceKnown: Rule = (ctx) => {
 
 /**
  * Why a source is not archived for scoring purposes, or null when it is: wayback_url and sha256
- * set, or a dataset row (docs/03 §5) whose origin dataset source has both.
+ * set and the capture not recorded as failed, or a dataset row (docs/03 §5) whose origin dataset
+ * source is archived in that sense. A capture recorded as `archive_status: failed` cannot support
+ * an event until archived (docs/06 §6), even if the record also carries a wayback_url or sha256.
+ * Shared by event.evidence-archived, event.confirmed-source-kind and structured.source-dataset.
  */
-function notArchivedReason(ctx: ValidationContext, s: Source): string | null {
+export function notArchivedReason(ctx: ValidationContext, s: Source): string | null {
+  if (s.archive_status === 'failed') {
+    return `Source "${s.id}" is a failed capture (archive_status: failed)`
+  }
   const missing = missingArchive(s)
   if (missing.length === 0) return null
   if (!isDatasetRow(s)) return `Source "${s.id}" lacks ${list(missing)}`
   if (s.origin === undefined) return `Dataset-row source "${s.id}" names no origin`
   const origin = ctx.index.sourceById.get(s.origin)
   if (!origin) return `Dataset-row source "${s.id}" names the unknown origin "${s.origin}"`
+  if (origin.value.archive_status === 'failed') {
+    return `Dataset-row source "${s.id}" has origin "${s.origin}", a failed capture (archive_status: failed)`
+  }
   const originMissing = missingArchive(origin.value)
   if (originMissing.length === 0) return null
   return `Dataset-row source "${s.id}" has origin "${s.origin}", which lacks ${list(originMissing)}`
@@ -229,18 +269,40 @@ export const evidenceArchived: Rule = (ctx) => {
   return out
 }
 
-const VIDEO_LOCATOR = /^video\s+(\d{1,2}:)?\d{1,2}:\d{2}\b/i
+/**
+ * `video h:mm:ss`, `video hh:mm:ss`, `video m:ss` or `video mm:ss`: minutes and seconds 00–59,
+ * two-digit minutes after an hour, and no further digit, colon or letter after the seconds (a
+ * range such as `video 00:12:34–00:13:10` or a note in brackets may follow).
+ */
+export const VIDEO_LOCATOR = /^video\s+(?:\d{1,2}:[0-5]\d|[0-5]?\d):[0-5]\d(?![\p{L}\p{N}:])/iu
+
+/** A locator that claims a video timestamp. */
+const VIDEO_LOCATOR_START = /^video\b/i
 
 /**
- * event.video-locator (docs/03 §5): evidence from an official-video source has a timestamp
- * locator, `video hh:mm:ss` or `video mm:ss`.
+ * event.video-locator (docs/03 §5: "Video statements need `official-video` (official channel),
+ * with a timestamp locator and a transcript"): evidence from an official-video source has a
+ * timestamp locator, `video hh:mm:ss` or `video mm:ss`; and a `video …` locator cites an
+ * official-video source, not a page, press or NGO source.
  */
 export const videoLocator: Rule = (ctx) => {
   const out: Issue[] = []
   for (const ref of eachEvidence(ctx)) {
     const src = ctx.index.sourceById.get(ref.evidence.source)
-    if (src?.value.kind !== 'official-video') continue
-    if (VIDEO_LOCATOR.test(ref.evidence.locator.trim())) continue
+    if (!src) continue
+    const locator = ref.evidence.locator.trim()
+    if (src.value.kind !== 'official-video') {
+      if (!VIDEO_LOCATOR_START.test(locator)) continue
+      out.push(
+        issue(
+          'event.video-locator',
+          atEvidence(ref, 'locator'),
+          `Locator "${ref.evidence.locator}" is a video timestamp but the source "${src.value.id}" is of kind ${src.value.kind}; expected a video statement to cite an official-video source (official channel, transcript in archive/text).`,
+        ),
+      )
+      continue
+    }
+    if (VIDEO_LOCATOR.test(locator)) continue
     out.push(
       issue(
         'event.video-locator',
@@ -256,23 +318,86 @@ export const videoLocator: Rule = (ctx) => {
 // Sources and the archive
 
 /**
- * source.archive-required (docs/03 §5, docs/02 §12.3): every source has wayback_url, sha256 and
- * retrieved_at, plus bytes and content_type once wayback_url is set. Dataset rows pointing at
- * data/structured are exempt (source.dataset-origin checks their origin). A capture recorded as
- * archive_status: failed is a warning: the source is kept but cannot support a published event
- * (docs/06 §6).
+ * A Wayback Machine snapshot (docs/03 §5 `https://web.archive.org/web/{timestamp}/{url}`,
+ * docs/06 §6): a 14-digit timestamp, an optional two-letter mode such as `id_`, then the
+ * archived URL.
+ */
+const WAYBACK_URL = /^https?:\/\/web\.archive\.org\/web\/\d{14}(?:[a-z]{2}_)?\/(\S+)$/
+
+/** A URL reduced for comparison: no scheme, no `www.`, lowercase host, no default port or trailing slash. */
+function comparableUrl(url: string): string {
+  const s = url
+    .trim()
+    .replace(/^[a-z]+:\/\//i, '')
+    .replace(/^www\./i, '')
+  const slash = s.indexOf('/')
+  const host = (slash === -1 ? s : s.slice(0, slash)).toLowerCase().replace(/:(?:80|443)$/, '')
+  const rest = slash === -1 ? '' : s.slice(slash)
+  return `${host}${rest}`.replace(/\/+$/, '')
+}
+
+/** Issues on the shape of a source's wayback_url (not null). */
+function waybackIssues(src: Located<Source>): Issue[] {
+  const s = src.value
+  if (s.wayback_url === null) return []
+  const match = WAYBACK_URL.exec(s.wayback_url)
+  if (match === null) {
+    return [
+      issue(
+        'source.archive-required',
+        atSource(src, 'wayback_url'),
+        `wayback_url ${s.wayback_url} is not a Wayback Machine snapshot; expected https://web.archive.org/web/{14-digit timestamp}/{url} as pnpm archive records it (other archives go in archive_url_alt).`,
+      ),
+    ]
+  }
+  const archived = match[1] ?? ''
+  if (!/^https?:\/\//i.test(s.url) || comparableUrl(archived) === comparableUrl(s.url)) return []
+  return [
+    issue(
+      'source.archive-required',
+      atSource(src, 'wayback_url'),
+      `wayback_url is a snapshot of ${archived}, not of the source url ${s.url}; expected a snapshot of the url (check the capture, or note the redirect in notes).`,
+      'warning',
+    ),
+  ]
+}
+
+/**
+ * source.archive-required (docs/03 §5, docs/02 §12.3, docs/06 §6): every source has wayback_url,
+ * sha256 and retrieved_at, plus bytes and content_type once wayback_url is set. A wayback_url is
+ * a Wayback Machine snapshot (error otherwise), of the source url (warning otherwise: a redirect
+ * can explain it). Dataset rows pointing at data/structured are exempt from the rest
+ * (source.dataset-origin checks their origin). A capture recorded as archive_status: failed is a
+ * warning: the source is kept but cannot support an event until archived (docs/06 §6); it records
+ * `wayback_url: null` and `sha256: null`, so a failed capture that still carries either is an
+ * error (the record contradicts itself).
  */
 export const archiveRequired: Rule = (ctx) => {
   const out: Issue[] = []
   for (const src of ctx.dataset.sources) {
     const s = src.value
+    out.push(...waybackIssues(src))
     if (isDatasetRow(s)) continue
     if (s.archive_status === 'failed') {
+      const set = [
+        ...(s.wayback_url !== null ? ['wayback_url'] : []),
+        ...(s.sha256 !== null ? ['sha256'] : []),
+      ]
+      if (set.length > 0) {
+        out.push(
+          issue(
+            'source.archive-required',
+            atSource(src, 'archive_status'),
+            `archive_status is failed but ${list(set)} ${set.length > 1 ? 'are' : 'is'} set; expected wayback_url: null and sha256: null for a failed capture (docs/06 §6), or archive_status: archived once the capture succeeded.`,
+          ),
+        )
+        continue
+      }
       out.push(
         issue(
           'source.archive-required',
           atSource(src, 'archive_status'),
-          `The capture of ${s.url} failed (archive_status: failed); the source cannot support a published event until it is archived.`,
+          `The capture of ${s.url} failed (archive_status: failed); the source cannot support a confirmed or published event until it is archived.`,
           'warning',
         ),
       )
@@ -349,26 +474,59 @@ export const textFile: Rule = (ctx) => {
 }
 
 /**
+ * Ids of the sources that support something that is or will be public: evidence of an event past
+ * `draft`, a structured row, a qualifying vote (votes.yaml), and the origin of a dataset row
+ * cited by any of these.
+ */
+function supportingSourceIds(ctx: ValidationContext): Set<string> {
+  const ids = new Set<string>()
+  for (const e of ctx.dataset.events) {
+    if (e.value.status === 'draft') continue
+    for (const ev of e.value.evidence) ids.add(ev.source)
+  }
+  for (const table of STRUCTURED_TABLE_NAMES) {
+    for (const row of ctx.dataset.structured[table] ?? []) ids.add(row.value.source)
+  }
+  for (const v of ctx.methodology.votes?.value.votes ?? []) ids.add(v.source)
+  for (const id of [...ids]) {
+    const origin = ctx.index.sourceById.get(id)?.value.origin
+    if (origin !== undefined) ids.add(origin)
+  }
+  return ids
+}
+
+/**
  * source.archive-index (docs/03 §1, docs/06 §6): archive/index.csv agrees with the source
- * records. An archived source (wayback_url set) has an index row (warning when missing) whose
- * url, wayback_url, sha256 and bytes equal the record's (bytes compared when both are set);
- * an index row naming no source record is a warning.
+ * records. The index is append-only, so a source may have several rows (a failed capture, then
+ * a successful retry; a later re-archive): the record is compared with the row whose wayback_url
+ * equals its own, else with the latest row. An archived source (wayback_url set) has an index
+ * row: the row written by `pnpm archive` is the trace that the hash came from the archiving tool,
+ * so a missing row is an error when the source supports an event past draft, a structured row
+ * or a qualifying vote, and a warning otherwise. The row's url, wayback_url, sha256 and bytes
+ * equal the record's (bytes compared when both are set). An index row naming no source record
+ * is a warning.
  */
 export const archiveIndex: Rule = (ctx) => {
   const out: Issue[] = []
+  let supporting: Set<string> | null = null
   for (const src of ctx.dataset.sources) {
     const s = src.value
     if (s.wayback_url === null) continue
-    const row = ctx.index.archiveIndexById.get(s.id)
+    const rows = ctx.index.archiveIndexRowsById.get(s.id) ?? []
+    const row = rows.find((r) => r.value.wayback_url === s.wayback_url) ?? rows.at(-1)
     // A malformed index row is already reported by schema.archive-index.
     if (!row && ctx.dataset.invalidIds.has(s.id)) continue
     if (!row) {
+      supporting ??= supportingSourceIds(ctx)
+      const needed = supporting.has(s.id)
       out.push(
         issue(
           'source.archive-index',
           atSource(src),
-          `Source "${s.id}" has a wayback_url but no row in archive/index.csv; expected the row written by pnpm archive.`,
-          'warning',
+          needed
+            ? `Source "${s.id}" has a wayback_url but no row in archive/index.csv, and it supports an event, a structured row or a qualifying vote; expected the row written by pnpm archive (the trace that the hash comes from the archiving tool).`
+            : `Source "${s.id}" has a wayback_url but no row in archive/index.csv; expected the row written by pnpm archive.`,
+          needed ? 'error' : 'warning',
         ),
       )
       continue
@@ -410,7 +568,8 @@ export const archiveIndex: Rule = (ctx) => {
 
 /**
  * source.dataset-origin (docs/03 §5): a dataset row pointing at data/structured names, in
- * origin, an existing source of kind dataset that is archived (wayback_url and sha256).
+ * origin, an existing source of kind dataset that is archived (wayback_url and sha256, capture
+ * not recorded as failed).
  */
 export const datasetOrigin: Rule = (ctx) => {
   const out: Issue[] = []
@@ -456,6 +615,14 @@ export const datasetOrigin: Rule = (ctx) => {
           'source.dataset-origin',
           at,
           `origin "${s.origin}" lacks ${list(missing)}; expected an archived dataset source.`,
+        ),
+      )
+    } else if (origin.value.archive_status === 'failed') {
+      out.push(
+        issue(
+          'source.dataset-origin',
+          at,
+          `origin "${s.origin}" is a failed capture (archive_status: failed); expected an archived dataset source.`,
         ),
       )
     }

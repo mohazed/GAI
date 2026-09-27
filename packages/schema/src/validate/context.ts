@@ -17,7 +17,7 @@ import type {
 } from '../records.js'
 
 export interface DatasetIndex {
-  /** First record per key; duplicates are reported by `id.unique`. */
+  /** First record per key (duplicates are reported by `id.unique`), except where noted. */
   countryByIso3: Map<string, Located<Country>>
   eventById: Map<string, Located<Event>>
   eventsByCountry: Map<string, Located<Event>[]>
@@ -26,7 +26,11 @@ export interface DatasetIndex {
   correctionsByEvent: Map<string, Located<Correction>[]>
   repliesByEvent: Map<string, Located<Reply>[]>
   leadById: Map<string, Located<Lead>>
-  archiveIndexById: Map<string, Located<ArchiveIndexRow>>
+  /**
+   * Every archive/index.csv row per source id, in file order. The index is append-only
+   * (docs/06 §6): a failed capture that is retried later, or a source archived again, adds a row.
+   */
+  archiveIndexRowsById: Map<string, Located<ArchiveIndexRow>[]>
 }
 
 export interface ValidationContext {
@@ -72,7 +76,7 @@ export function buildIndex(ds: Dataset): DatasetIndex {
     correctionsByEvent: groupBy(ds.corrections, (c) => [c.event]),
     repliesByEvent: groupBy(ds.replies, (r) => r.contests),
     leadById: firstBy(ds.leads, (l) => l.id),
-    archiveIndexById: firstBy(ds.archiveIndex, (r) => r.src_id),
+    archiveIndexRowsById: groupBy(ds.archiveIndex, (r) => [r.src_id]),
   }
 }
 

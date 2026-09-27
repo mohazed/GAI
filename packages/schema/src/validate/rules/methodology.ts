@@ -657,7 +657,8 @@ function passivity({ methodology: m }: ValidationContext): Issue[] {
 
 /**
  * docs/02 §2 (B1), docs/06 §2: each qualifying vote is listed once, adopted on or after
- * 2023-10-07, and cites an archived source of kind official.
+ * 2023-10-07, and cites an existing source of kind official. Whether that source is archived is
+ * checked on the source itself (source.archive-required, source.archive-index), not here.
  */
 function votes(ctx: ValidationContext): Issue[] {
   const v = ctx.methodology.votes

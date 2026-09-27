@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { containsQuote, normaliseWhitespace } from './normalise.js'
+import { containsQuote, foldName, normaliseWhitespace, quoteSearcher } from './normalise.js'
 
 describe('normaliseWhitespace', () => {
   it('collapses every kind of whitespace run into one ASCII space', () => {
@@ -101,5 +101,44 @@ describe('containsQuote', () => {
 
   it('does not insert a space where the text has none', () => {
     expect(containsQuote('Gazastreifen', 'Gaza streifen')).toBe(false)
+  })
+})
+
+describe('quoteSearcher', () => {
+  it('normalises the text once and answers like containsQuote for each quote', () => {
+    const text = 'Unter diesen\nUmständen genehmigt die Bundes\u00ADregierung bis\u00A0auf Weiteres'
+    const contains = quoteSearcher(text)
+    for (const quote of ['diesen Umständen', 'Bundesregierung bis auf', 'bis auf Weiteres']) {
+      expect(contains(quote), quote).toBe(true)
+      expect(containsQuote(text, quote), quote).toBe(true)
+    }
+    expect(contains('Bundesregierung ab sofort')).toBe(false)
+  })
+})
+
+describe('foldName', () => {
+  it('folds case, whitespace runs, U+00A0, format characters and trailing punctuation', () => {
+    for (const name of [
+      'Der Spiegel',
+      'DER SPIEGEL',
+      ' Der  Spiegel ',
+      'Der\u00A0Spiegel',
+      'Der\u202FSpiegel',
+      'Der Spie\u00ADgel',
+      'Der Spiegel.',
+      'Der Spiegel,',
+    ]) {
+      expect(foldName(name), JSON.stringify(name)).toBe('der spiegel')
+    }
+  })
+
+  it('folds compatibility forms (NFKC): fullwidth letters and ligatures', () => {
+    expect(foldName('ＲＥＵＴＥＲＳ')).toBe('reuters')
+    expect(foldName('Oﬃce')).toBe('office')
+  })
+
+  it('keeps distinct names distinct', () => {
+    expect(foldName('Reuters')).not.toBe(foldName('Der Spiegel'))
+    expect(foldName('Human Rights Watch')).not.toBe(foldName('Human Rights'))
   })
 })

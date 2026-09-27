@@ -433,6 +433,102 @@ describe('correction.required-on-edit', () => {
     expect(of('correction.kind-consistent', chain)).toEqual([])
   })
 
+  it('reports a new entry that does not record the changed field (before: {} and after: {})', () => {
+    const edits: [string, Mutate][] = [
+      [
+        'evidence',
+        (ds) => {
+          const first = event(ds).value.evidence[0]
+          if (first) first.locator = 'paragraph 7'
+        },
+      ],
+      [
+        'evidence',
+        (ds) => {
+          event(ds).value.evidence = event(ds).value.evidence.slice(0, 1)
+        },
+      ],
+      [
+        'confidence',
+        (ds) => {
+          event(ds).value.confidence = 'disputed'
+        },
+      ],
+      [
+        'points',
+        (ds) => {
+          event(ds).value.points = 8
+        },
+      ],
+    ]
+    for (const [field, edit] of edits) {
+      const found = of('correction.required-on-edit', (ds, m) => {
+        edit(ds, m)
+        event(ds).value.revision = 3
+        addCorrection(ds)
+      })
+      expect(found, field).toHaveLength(1)
+      expect(found[0]).toMatchObject({ file: EVENTS_FILE, id: EVENT_ID, path: field })
+      expect(found[0]?.message).toContain(`before.${field} and after.${field}`)
+    }
+  })
+
+  it('reports a new entry that records only an unchanged field', () => {
+    const found = of('correction.required-on-edit', (ds) => {
+      event(ds).value.confidence = 'disputed'
+      event(ds).value.revision = 3
+      addCorrection(ds, { before: { end: '2025-11-24' }, after: { end: '2025-11-24' } })
+    })
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({ file: EVENTS_FILE, id: EVENT_ID, path: 'confidence' })
+  })
+
+  it('accepts an evidence edit whose entry gives the source ids before and after', () => {
+    const locator: Mutate = (ds) => {
+      const first = event(ds).value.evidence[0]
+      if (first) first.locator = 'paragraph 7'
+      event(ds).value.revision = 3
+      const ids = event(ds).value.evidence.map((e) => e.source)
+      addCorrection(ds, { before: { evidence: ids }, after: { evidence: ids } })
+    }
+    expect(of('correction.required-on-edit', locator)).toEqual([])
+    const removed: Mutate = (ds) => {
+      const before = event(ds).value.evidence.map((e) => e.source)
+      event(ds).value.evidence = event(ds).value.evidence.slice(0, 1)
+      event(ds).value.revision = 3
+      addCorrection(ds, { before: { evidence: before }, after: { evidence: before.slice(0, 1) } })
+    }
+    expect(of('correction.required-on-edit', removed)).toEqual([])
+  })
+
+  it('accepts an evidence edit whose entry gives the full evidence entries', () => {
+    const found = of('correction.required-on-edit', (ds) => {
+      const before = structuredClone(event(ds).value.evidence)
+      event(ds).value.evidence = event(ds).value.evidence.slice(0, 1)
+      event(ds).value.revision = 3
+      addCorrection(ds, {
+        before: { evidence: before },
+        after: { evidence: structuredClone(event(ds).value.evidence) },
+      })
+    })
+    expect(found).toEqual([])
+  })
+
+  it('reports before/after evidence that does not match the base or the working tree', () => {
+    const found = of('correction.required-on-edit', (ds) => {
+      event(ds).value.evidence = event(ds).value.evidence.slice(0, 1)
+      event(ds).value.revision = 3
+      addCorrection(ds, {
+        before: { evidence: ['src_20250101_nonexistent_bogus'] },
+        after: { evidence: [] },
+      })
+    })
+    expect(found.map((i) => [i.file, i.id, i.path])).toEqual([
+      [CORRECTIONS_FILE, NEW_ID, 'before.evidence'],
+      [CORRECTIONS_FILE, NEW_ID, 'after.evidence'],
+    ])
+  })
+
   it('reports a change without a revision bump', () => {
     const found = of('correction.required-on-edit', (ds) => {
       validPointsEdit(ds)

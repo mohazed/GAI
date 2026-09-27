@@ -19,7 +19,7 @@ import {
   type VotesFile,
 } from '../methodology/schemas.js'
 import { type Located, zodIssues } from './dataset.js'
-import { parseYaml } from './parse.js'
+import { decodeUtf8, parseYaml } from './parse.js'
 
 export interface BannedWord {
   /** Lowercased, NFC. A trailing `*` means "any word starting with". */
@@ -122,13 +122,20 @@ export function loadMethodology(repoRoot: string, folderName?: string): Methodol
     return m
   }
 
+  /** Strict UTF-8 read; invalid bytes are reported as load.encoding. */
+  const readText = (file: string): string => {
+    const decoded = decodeUtf8(readFileSync(join(repoRoot, file)), file)
+    issues.push(...decoded.issues)
+    return decoded.text
+  }
+
   const load = <K extends MethodologyFileName>(fileName: K) => {
     const file = `${folder}/${fileName}`
     if (!existsSync(join(repoRoot, file))) {
       issues.push(issue('load.missing-file', { file }, `${file} is missing`))
       return null
     }
-    const parsed = parseYaml(readFileSync(join(repoRoot, file), 'utf8'), file)
+    const parsed = parseYaml(readText(file), file)
     issues.push(...parsed.issues)
     if (!parsed.ok) return null
     const result = METHODOLOGY_FILES[fileName].safeParse(parsed.value)
@@ -162,7 +169,7 @@ export function loadMethodology(repoRoot: string, folderName?: string): Methodol
   if (existsSync(join(repoRoot, bannedFile))) {
     m.bannedWords = {
       file: bannedFile,
-      entries: parseBannedWords(readFileSync(join(repoRoot, bannedFile), 'utf8')),
+      entries: parseBannedWords(readText(bannedFile)),
     }
   } else {
     issues.push(issue('load.missing-file', { file: bannedFile }, `${bannedFile} is missing`))
@@ -171,7 +178,7 @@ export function loadMethodology(repoRoot: string, folderName?: string): Methodol
   for (const lang of ['en', 'fr'] as const) {
     const file = `${folder}/methodology.${lang}.md`
     if (existsSync(join(repoRoot, file))) {
-      m.docs[lang] = { file, text: readFileSync(join(repoRoot, file), 'utf8') }
+      m.docs[lang] = { file, text: readText(file) }
     } else {
       issues.push(issue('load.missing-file', { file }, `${file} is missing`))
     }

@@ -24,6 +24,7 @@ describe('@gai/schema', () => {
     'issue',
     'formatIssue',
     'sortIssues',
+    'compareCodeUnits',
     // loaders
     'loadDataset',
     'loadMethodology',
@@ -32,7 +33,11 @@ describe('@gai/schema', () => {
     'parseYaml',
     'parseCsv',
     'resolveBaseRef',
+    'resolveBase',
+    'baseRequired',
     'loadBaseSnapshot',
+    'decodeUtf8',
+    'findRepoRoot',
     // validator
     'validate',
     'buildContext',

@@ -31,6 +31,22 @@ export const RULES = {
     doc: 'docs/03 §1',
     summary: 'A file the data tree or the methodology requires is missing.',
   },
+  'load.misplaced-file': {
+    level: 'error',
+    doc: 'docs/03 §1',
+    summary:
+      'A file inside a record directory (data/events, sources, assessments, replies, leads, structured; archive/text) does not follow its documented name pattern, so it would not be loaded.',
+  },
+  'load.symlink': {
+    level: 'error',
+    doc: 'docs/03 §1',
+    summary: 'data/ and archive/ hold regular files only; symbolic links are not followed.',
+  },
+  'load.encoding': {
+    level: 'error',
+    doc: 'docs/03 §1, §7',
+    summary: 'Data, archive text and methodology files are valid UTF-8.',
+  },
   'schema.country': { level: 'error', doc: 'docs/03 §3', summary: 'Country record shape.' },
   'schema.event': { level: 'error', doc: 'docs/03 §4', summary: 'Event record shape.' },
   'schema.source': { level: 'error', doc: 'docs/03 §5', summary: 'Source record shape.' },
@@ -346,7 +362,8 @@ export const RULES = {
   'correction.base-unavailable': {
     level: 'warning',
     doc: 'docs/03 §11',
-    summary: 'The git base ref could not be read, so edit checks were skipped.',
+    summary:
+      'The git base ref could not be read, so edit checks were skipped. pnpm validate reports it as an error when a comparison was required (--base, GAI_VALIDATE_BASE, GITHUB_BASE_REF, or any run on GitHub Actions).',
   },
 
   // Replies (docs/03 §9, docs/08 §4) -------------------------------------------------------------
@@ -519,14 +536,23 @@ export function formatIssue(i: Issue): string {
   return `${i.level.padEnd(7)} ${where}  ${i.id}  [${i.rule}]  ${i.message}${path}`
 }
 
-/** Stable order: file, line, id, rule, message. */
+/**
+ * Compares strings by UTF-16 code units, like `Array.prototype.sort` without a comparator: the
+ * order does not depend on the host locale (unlike `localeCompare`), so output is identical on
+ * every machine.
+ */
+export function compareCodeUnits(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0
+}
+
+/** Stable order: file, line, id, rule, message (code-unit order, locale-independent). */
 export function sortIssues(issues: Issue[]): Issue[] {
   return [...issues].sort(
     (a, b) =>
-      a.file.localeCompare(b.file) ||
+      compareCodeUnits(a.file, b.file) ||
       (a.line ?? 0) - (b.line ?? 0) ||
-      a.id.localeCompare(b.id) ||
-      a.rule.localeCompare(b.rule) ||
-      a.message.localeCompare(b.message),
+      compareCodeUnits(a.id, b.id) ||
+      compareCodeUnits(a.rule, b.rule) ||
+      compareCodeUnits(a.message, b.message),
   )
 }

@@ -78,8 +78,18 @@ describe('source.archive-index and malformed index rows', () => {
     expect(issues).toEqual([])
   })
 
-  it('warns about a missing row otherwise', () => {
+  it('reports a missing row otherwise: an error for a source of a published event', () => {
     const ctx = fixtureContext((ds) => {
+      ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SOURCE_2)
+    })
+    const issues = issuesOf(runRules(sourceRules, ctx), 'source.archive-index')
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', id: SOURCE_2 })
+  })
+
+  it('and a warning for a source that supports nothing public yet', () => {
+    const ctx = fixtureContext((ds) => {
+      for (const e of ds.events) e.value.status = 'draft'
       ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SOURCE_2)
     })
     const issues = issuesOf(runRules(sourceRules, ctx), 'source.archive-index')

@@ -3,30 +3,32 @@
  * exits non-zero on any error (docs/02 §12, docs/03 §4–§6).
  *
  * Options:
- *   --root <dir>        dataset root holding data/ and archive/ (default: the repository root)
- *   --base <ref>        git ref for the history checks (default: see resolveBaseRef)
+ *   --root <dir>        dataset root holding data/ and archive/, relative to the directory the
+ *                       command was run from (default: the repository root)
+ *   --base <ref>        git ref for the history checks (default: see resolveBase)
  *   --no-git            skip the history checks
  *   --strict            warnings also fail
  *   --quiet             print errors only
+ *
+ * Exit codes: 0 valid, 1 validation errors (or warnings with --strict), 2 usage error.
+ *
+ * History checks (docs/03 §11): when a comparison is required — `--base`, a non-empty
+ * `GAI_VALIDATE_BASE`, `GITHUB_BASE_REF`, or any run on GitHub Actions — a base that cannot be
+ * read is an error (`correction.base-unavailable`), so CI never passes with the edit checks off.
+ * Locally, without any of these, it stays a warning.
  */
-import { existsSync } from 'node:fs'
-import { dirname, join, relative, resolve } from 'node:path'
-import { formatIssue, type Issue } from '../issues.js'
+import { existsSync, realpathSync } from 'node:fs'
+import { join, relative, resolve } from 'node:path'
+import { compareCodeUnits, formatIssue, type Issue, sortIssues } from '../issues.js'
 import { type Dataset, loadDataset } from '../load/dataset.js'
-import { type BaseSnapshot, loadBaseSnapshot, resolveBaseRef } from '../load/git.js'
+import { type BaseSnapshot, baseRequired, loadBaseSnapshot, resolveBase } from '../load/git.js'
 import { listMethodologyVersions, loadMethodology, type Methodology } from '../load/methodology.js'
+import { findRepoRoot } from '../load/repo.js'
 import { STRUCTURED_TABLE_NAMES } from '../structured.js'
-import { buildContext, METHODOLOGY_ONLY_RULES, validate } from '../validate/index.js'
+import { buildContext, validate } from '../validate/index.js'
+import { rules as methodologyRules } from '../validate/rules/methodology.js'
 
-export function findRepoRoot(start: string): string {
-  let dir = resolve(start)
-  for (;;) {
-    if (existsSync(join(dir, 'pnpm-workspace.yaml'))) return dir
-    const parent = dirname(dir)
-    if (parent === dir) throw new Error('repository root (pnpm-workspace.yaml) not found')
-    dir = parent
-  }
-}
+export { findRepoRoot }
 
 interface Args {
   root?: string
@@ -60,7 +62,7 @@ function countBy<T>(items: T[], key: (t: T) => string): string {
   const counts = new Map<string, number>()
   for (const t of items) counts.set(key(t), (counts.get(key(t)) ?? 0) + 1)
   return [...counts.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
+    .sort(([a], [b]) => compareCodeUnits(a, b))
     .map(([k, n]) => `${k} ${n}`)
     .join(', ')
 }
@@ -87,10 +89,34 @@ function summary(ds: Dataset, m: Methodology): string[] {
   return lines
 }
 
-export function main(argv: string[]): number {
+export interface MainOptions {
+  /** Where to look for the repository root (default: the process working directory). */
+  cwd?: string
+  /**
+   * The directory the command was typed in, against which `--root` resolves (default: pnpm's
+   * `INIT_CWD`, which is that directory for `pnpm validate`, else the working directory).
+   */
+  invocationDir?: string
+  /** Environment for the base-ref decisions (default: process.env). */
+  env?: NodeJS.ProcessEnv
+}
+
+/** Real path when the path exists (so that `relative()` sees through /tmp → /private/tmp). */
+const real = (p: string): string => (existsSync(p) ? realpathSync(p) : p)
+
+export function main(argv: string[], options: MainOptions = {}): number {
   const args = parseArgs(argv)
-  const repoRoot = findRepoRoot(process.cwd())
-  const datasetRoot = resolve(repoRoot, args.root ?? '.')
+  const cwd = options.cwd ?? process.cwd()
+  const env = options.env ?? process.env
+  const repoRoot = real(findRepoRoot(cwd))
+  let datasetRoot = repoRoot
+  if (args.root !== undefined) {
+    datasetRoot = resolve(options.invocationDir ?? env.INIT_CWD ?? cwd, args.root)
+    if (!existsSync(join(datasetRoot, 'data'))) {
+      throw new Error(`--root ${args.root}: ${datasetRoot} has no data/ directory`)
+    }
+    datasetRoot = real(datasetRoot)
+  }
   const rel = relative(repoRoot, datasetRoot).split('\\').join('/')
   const prefix = rel === '' ? '' : `${rel}/`
 
@@ -101,38 +127,48 @@ export function main(argv: string[]): number {
   let base: BaseSnapshot | null = null
   let baseError: string | undefined
   let historyLine = 'history: skipped (--no-git)'
+  const required = args.git && baseRequired(args.base, env)
   if (args.git) {
-    const ref = resolveBaseRef(repoRoot, args.base)
-    if (ref === null) {
-      baseError =
-        `cannot resolve the base ref ${args.base ?? process.env.GAI_VALIDATE_BASE ?? ''}`.trim()
-      if (!args.base && !process.env.GAI_VALIDATE_BASE)
-        baseError = 'not a git work tree, or no commit yet'
-      historyLine = `history: skipped (${baseError})`
+    const resolved = resolveBase(repoRoot, args.base, env)
+    if (!resolved.ok) {
+      baseError = resolved.reason
+    } else if (prefix.startsWith('../')) {
+      baseError = `the dataset root ${datasetRoot} is outside the repository ${repoRoot}`
     } else {
       try {
-        base = loadBaseSnapshot(repoRoot, ref, prefix)
-        historyLine = `history: compared with ${args.base ?? 'base'} ${ref.slice(0, 10)}`
+        base = loadBaseSnapshot(repoRoot, resolved.ref, prefix, ds)
+        historyLine = `history: compared with commit ${resolved.ref.slice(0, 10)} (${resolved.source})`
       } catch (err) {
         baseError = (err as Error).message.split('\n')[0] ?? 'git error'
-        historyLine = `history: skipped (${baseError})`
       }
     }
+    if (baseError !== undefined) historyLine = `history: skipped (${baseError})`
   }
 
-  const issues: Issue[] = validate(buildContext(ds, current, base, baseError))
-  // Older version folders are frozen; check their own consistency.
-  for (const folder of folders.slice(0, -1)) {
-    const older = loadMethodology(repoRoot, folder)
-    issues.push(...validate(buildContext(loadDataset(datasetRoot), older), METHODOLOGY_ONLY_RULES))
+  const ctx = buildContext(ds, current, base, baseError)
+  let issues: Issue[] = validate(ctx)
+  if (required) {
+    // A comparison was required: an unreadable base fails the run (docs/03 §11, "CI refuses").
+    issues = issues.map((i) =>
+      i.rule === 'correction.base-unavailable' ? { ...i, level: 'error' as const } : i,
+    )
   }
+  // Older version folders are frozen: their own load issues and YAML consistency only. The data
+  // issues were reported above, and their docs were rendered by the renderer of their time.
+  const older: Issue[] = []
+  for (const folder of folders.slice(0, -1)) {
+    const m = loadMethodology(repoRoot, folder)
+    const olderCtx = { ...ctx, methodology: m, base: null }
+    older.push(...m.issues, ...methodologyRules.flatMap((rule) => rule(olderCtx)))
+  }
+  if (older.length > 0) issues = sortIssues([...issues, ...older])
 
   const display = (i: Issue): Issue =>
     i.file.startsWith('methodology/') || prefix === '' ? i : { ...i, file: `${prefix}${i.file}` }
   const errors = issues.filter((i) => i.level === 'error')
   const warnings = issues.filter((i) => i.level === 'warning')
 
-  console.log(`validate ${prefix === '' ? 'data/' : `${prefix}data/`} and methodology/`)
+  console.log(`validate ${prefix}data/ and methodology/`)
   for (const line of summary(ds, current)) console.log(`  ${line}`)
   console.log(`  ${historyLine}`)
   for (const i of errors) console.log(formatIssue(display(i)))

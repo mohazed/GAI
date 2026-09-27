@@ -8,7 +8,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
+  # Elsewhere a newer run replaces the older one. On main every run gets its own group and is
+  # never cancelled or dropped from the queue: each push to main is compared only with the
+  # commit before it, so a cancelled run would leave that push's diff unchecked.
+  group: ci-${{ github.ref == 'refs/heads/main' && format('main-{0}', github.run_id) || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -33,5 +36,7 @@ jobs:
         run: pnpm validate
         env:
           # Pull requests: resolveBaseRef uses the merge base with origin/$GITHUB_BASE_REF.
-          # Pushes: compare with the commit before the push (empty on a new branch).
-          GAI_VALIDATE_BASE: ${{ github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000' && github.event.before || '' }}
+          # Pushes to main: compare with the commit before the push (empty for main's first
+          # push). Pushes to any other branch: empty, so resolveBaseRef uses the merge base with
+          # origin/main and the run checks the whole branch, as the pull request run does.
+          GAI_VALIDATE_BASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.before != '0000000000000000000000000000000000000000' && github.event.before || '' }}

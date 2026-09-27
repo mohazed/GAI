@@ -73,6 +73,13 @@ const ARCHIVED = {
   retrieved_at: '2025-01-01T00:00:00Z',
 } satisfies Partial<Source>
 
+/** The archived-copy fields of ARCHIVED, with a Wayback snapshot of `url`. */
+const archivedAt = (url: string) =>
+  ({
+    ...ARCHIVED,
+    wayback_url: `https://web.archive.org/web/20250101000000id_/${url}`,
+  }) satisfies Partial<Source>
+
 const UNARCHIVED = {
   wayback_url: null,
   sha256: null,
@@ -88,7 +95,7 @@ function addVideo(ds: Dataset, patch: Partial<Source> = {}): Source {
     url: 'https://example.org/video',
     date: '2025-01-01',
     text_file: `archive/text/${VIDEO}.txt`,
-    ...ARCHIVED,
+    ...archivedAt('https://example.org/video'),
     ...patch,
   })
   setArchiveText(ds, VIDEO, 'Transcript. We call for an immediate ceasefire.')
@@ -103,7 +110,7 @@ function addDatasetRow(ds: Dataset, originPatch: Partial<Source> = {}): Source {
     url: 'https://example.org/export.json',
     date: '2025-01-01',
     text_file: `archive/text/${ORIGIN}.txt`,
-    ...ARCHIVED,
+    ...archivedAt('https://example.org/export.json'),
     ...originPatch,
   })
   setArchiveText(ds, ORIGIN, '{"rows": []}')
@@ -253,15 +260,66 @@ describe("'event.quote-in-archive'", () => {
     expect(only(issues, 'event.quote-in-archive', EVENTS_FILE, EVT).path).toBe('evidence.0.quote')
   })
 
-  it('skips row and video locators (any case, leading spaces) outside B9/B10', () => {
-    for (const locator of ['row 12', 'Row 3', '  ROW 4', 'video 00:01:02', 'Video 1:02']) {
+  it('skips a row locator (any case, leading spaces) on a dataset source outside B9/B10', () => {
+    for (const locator of ['row 12', 'Row 3', '  ROW 4']) {
       const issues = run((ds) => {
+        source(ds, SRC0).kind = 'dataset'
         const e0 = evidence(ds, 0)
         e0.quote = 'Not in the archived text.'
         e0.locator = locator
       })
       expect(issuesOf(issues, 'event.quote-in-archive'), locator).toEqual([])
     }
+  })
+
+  it('skips a dataset row cited with a row locator, and checks it with any other locator', () => {
+    const ok = run((ds) => {
+      addDatasetRow(ds)
+      const e0 = evidence(ds, 0)
+      e0.source = ROW
+      e0.quote = 'DEU,Y'
+      e0.locator = 'row 2'
+    })
+    expect(issuesOf(ok, 'event.quote-in-archive')).toEqual([])
+    const bad = run((ds) => {
+      addDatasetRow(ds)
+      const e0 = evidence(ds, 0)
+      e0.source = ROW
+      e0.quote = 'DEU,Y'
+      e0.locator = 'paragraph 2'
+    })
+    expect(only(bad, 'event.quote-in-archive', EVENTS_FILE, EVT).message).toContain('missing')
+  })
+
+  it('checks an invented quote on an official source cited with a row or video locator', () => {
+    for (const locator of ['row 1', 'Row 6', 'video 00:01:00', 'Video 1:02', 'Rowland interview']) {
+      const issues = run((ds) => {
+        const e0 = evidence(ds, 0)
+        e0.quote = 'Die Bundesregierung verhängt ein vollständiges Waffenembargo gegen Israel.'
+        e0.locator = locator
+      })
+      const i = only(issues, 'event.quote-in-archive', EVENTS_FILE, EVT)
+      expect(i.path, locator).toBe('evidence.0.quote')
+    }
+  })
+
+  it('checks a quote cited with a video locator against the official-video transcript', () => {
+    const base: Mutate = (ds) => {
+      addVideo(ds)
+      const e0 = evidence(ds, 0)
+      e0.source = VIDEO
+      e0.locator = 'video 00:01:02'
+    }
+    const ok = run((ds, m) => {
+      base(ds, m)
+      evidence(ds, 0).quote = 'We call for an immediate ceasefire.'
+    })
+    expect(issuesOf(ok, 'event.quote-in-archive')).toEqual([])
+    const bad = run((ds, m) => {
+      base(ds, m)
+      evidence(ds, 0).quote = 'We call for sanctions.'
+    })
+    only(bad, 'event.quote-in-archive', EVENTS_FILE, EVT)
   })
 
   it('still checks other locators such as page or paragraph', () => {
@@ -332,6 +390,7 @@ describe("'event.quote-translation'", () => {
   it('does not require quote_en for English quotes, with or without a region subtag', () => {
     for (const lang of ['en', 'en-GB']) {
       const issues = run((ds) => {
+        source(ds, SRC0).language = 'en'
         const e0 = evidence(ds, 0)
         e0.quote_lang = lang
         delete e0.quote_en
@@ -361,12 +420,39 @@ describe("'event.quote-translation'", () => {
   it('reads the primary subtag (pt-BR is not English; "eng" is not "en")', () => {
     for (const lang of ['pt-BR', 'eng']) {
       const issues = run((ds) => {
+        source(ds, SRC0).language = lang
         const e0 = evidence(ds, 0)
         e0.quote_lang = lang
         delete e0.quote_en
       })
-      only(issues, 'event.quote-translation', EVENTS_FILE, EVT)
+      expect(only(issues, 'event.quote-translation', EVENTS_FILE, EVT).level).toBe('error')
     }
+  })
+
+  it('warns when quote_lang differs from the language of the cited source', () => {
+    const issues = run((ds) => {
+      const e0 = evidence(ds, 0)
+      e0.quote_lang = 'en'
+      delete e0.quote_en
+    })
+    const i = only(issues, 'event.quote-translation', EVENTS_FILE, EVT)
+    expect(i.level).toBe('warning')
+    expect(i.path).toBe('evidence.0.quote_lang')
+    expect(i.message).toContain('"de"')
+  })
+
+  it('compares primary subtags only, and accepts a source in several languages (mul)', () => {
+    const regional = run((ds) => {
+      evidence(ds, 0).quote_lang = 'de-DE'
+    })
+    expect(issuesOf(regional, 'event.quote-translation')).toEqual([])
+    const multilingual = run((ds) => {
+      source(ds, SRC0).language = 'mul'
+      const e0 = evidence(ds, 0)
+      e0.quote_lang = 'en'
+      delete e0.quote_en
+    })
+    expect(issuesOf(multilingual, 'event.quote-translation')).toEqual([])
   })
 })
 
@@ -422,6 +508,23 @@ describe("'event.evidence-archived'", () => {
       evidence(ds, 0).source = FAILED
     })
     only(issues, 'event.evidence-archived', EVENTS_FILE, EVT)
+  })
+
+  it('fails for a failed capture that still carries wayback_url and sha256', () => {
+    const issues = run((ds) => {
+      source(ds, SRC0).archive_status = 'failed'
+    })
+    const i = only(issues, 'event.evidence-archived', EVENTS_FILE, EVT)
+    expect(i.path).toBe('evidence.0.source')
+    expect(i.message).toContain('archive_status: failed')
+  })
+
+  it('fails for a dataset row whose origin is a failed capture', () => {
+    const issues = run((ds) => {
+      addDatasetRow(ds, { archive_status: 'failed' })
+      evidence(ds, 0).source = ROW
+    })
+    expect(only(issues, 'event.evidence-archived', EVENTS_FILE, EVT).message).toContain(ORIGIN)
   })
 
   it('ignores events that are not published', () => {
@@ -516,11 +619,57 @@ describe("'event.video-locator'", () => {
     }
   })
 
-  it('does not apply to other source kinds', () => {
-    const issues = run((ds) => {
-      evidence(ds, 0).locator = 'paragraph 99'
-    })
-    expect(issuesOf(issues, 'event.video-locator')).toEqual([])
+  it('rejects malformed timestamps (long seconds, trailing junk, out-of-range fields)', () => {
+    for (const locator of [
+      'video 00:12:345',
+      'video 00:12:34abc',
+      'video 12:34:56:78',
+      'video 99:99',
+      'video 1:2:34',
+      'video 12:3456',
+      'video 00:60',
+    ]) {
+      const issues = run((ds) => {
+        addVideo(ds)
+        const e0 = evidence(ds, 0)
+        e0.source = VIDEO
+        e0.locator = locator
+      })
+      only(issues, 'event.video-locator', EVENTS_FILE, EVT)
+    }
+  })
+
+  it('accepts a range or a note after the timestamp', () => {
+    for (const locator of ['video 00:12:34–00:13:10', 'video 00:12:34 (German)']) {
+      const issues = run((ds) => {
+        addVideo(ds)
+        const e0 = evidence(ds, 0)
+        e0.source = VIDEO
+        e0.locator = locator
+      })
+      expect(issuesOf(issues, 'event.video-locator'), locator).toEqual([])
+    }
+  })
+
+  it('does not apply to other source kinds with other locators', () => {
+    for (const locator of ['paragraph 99', 'Videoconference transcript, p. 2']) {
+      const issues = run((ds) => {
+        evidence(ds, 0).locator = locator
+      })
+      expect(issuesOf(issues, 'event.video-locator'), locator).toEqual([])
+    }
+  })
+
+  it('fails when a video locator cites a source that is not official-video', () => {
+    for (const kind of ['press', 'official', 'ngo'] as const) {
+      const issues = run((ds) => {
+        source(ds, SRC0).kind = kind
+        evidence(ds, 0).locator = 'video 00:01:00'
+      })
+      const i = only(issues, 'event.video-locator', EVENTS_FILE, EVT)
+      expect(i.path, kind).toBe('evidence.0.locator')
+      expect(i.message, kind).toContain(`kind ${kind}`)
+    }
   })
 })
 
@@ -579,6 +728,53 @@ describe("'source.archive-required'", () => {
     const i = only(issues, 'source.archive-required', fileOf(FAILED), FAILED)
     expect(i.level).toBe('warning')
     expect(i.message).toContain('failed')
+  })
+
+  it('fails for a failed capture that still carries a wayback_url or sha256', () => {
+    for (const patch of [{ sha256: null }, { wayback_url: null }, {}]) {
+      const issues = run((ds) => {
+        const s = source(ds, SRC0)
+        s.archive_status = 'failed'
+        Object.assign(s, patch)
+      })
+      const i = only(issues, 'source.archive-required', fileOf(SRC0), SRC0)
+      expect(i.level).toBe('error')
+      expect(i.path).toBe('archive_status')
+    }
+  })
+
+  it('fails when wayback_url is not a Wayback Machine snapshot', () => {
+    for (const url of [
+      'https://example.com/not-an-archive',
+      'https://archive.ph/abcde',
+      'https://web.archive.org/web/2025/https://www.bundesregierung.de/x',
+    ]) {
+      const issues = run((ds) => {
+        source(ds, SRC0).wayback_url = url
+      })
+      const i = only(issues, 'source.archive-required', fileOf(SRC0), SRC0)
+      expect(i.level, url).toBe('error')
+      expect(i.path, url).toBe('wayback_url')
+    }
+  })
+
+  it('warns when the snapshot is of another url than the source url', () => {
+    const issues = run((ds) => {
+      source(ds, SRC0).url = 'https://www.bundesregierung.de/breg-de/other-page'
+    })
+    const i = only(issues, 'source.archive-required', fileOf(SRC0), SRC0)
+    expect(i.level).toBe('warning')
+    expect(i.message).toContain('other-page')
+  })
+
+  it('accepts a snapshot whose url differs only by scheme, www., host case or trailing slash', () => {
+    const issues = run((ds) => {
+      const s = source(ds, SRC0)
+      s.url = s.url
+        .replace('https://www.bundesregierung.de', 'http://BUNDESREGIERUNG.de')
+        .concat('/')
+    })
+    expect(issuesOf(issues, 'source.archive-required')).toEqual([])
   })
 
   it('exempts dataset rows pointing at data/structured', () => {
@@ -659,12 +855,91 @@ describe("'source.archive-index'", () => {
     expect(issuesOf(run(), 'source.archive-index')).toEqual([])
   })
 
-  it('warns when an archived source has no row in archive/index.csv', () => {
+  it('fails when a source cited by a published or reviewed event has no index row', () => {
+    for (const status of ['published', 'reviewed'] as const) {
+      const issues = run((ds) => {
+        event0(ds).status = status
+        ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SRC1)
+      })
+      const i = only(issues, 'source.archive-index', fileOf(SRC1), SRC1)
+      expect(i.level, status).toBe('error')
+      expect(i.message).toContain('pnpm archive')
+    }
+  })
+
+  it('fails when a source cited by a structured row or a qualifying vote has no index row', () => {
+    const structured = run((ds) => {
+      addSource(ds, EXTRA, { kind: 'dataset', ...archivedAt(source(ds, SRC0).url) })
+      ds.structured['gni.csv'].push({
+        value: { iso3: 'DEU', year: 2024, gni_atlas_usd: 1, source: EXTRA },
+        file: 'data/structured/gni.csv',
+        line: 2,
+      })
+    })
+    expect(only(structured, 'source.archive-index', fileOf(EXTRA), EXTRA).level).toBe('error')
+    const vote = run((ds, m) => {
+      addSource(ds, EXTRA, archivedAt(source(ds, SRC0).url))
+      if (!m.votes) throw new Error('votes.yaml missing')
+      m.votes.value.votes.push({
+        symbol: 'A/RES/TEST/1',
+        kind: 'resolution',
+        date: '2025-01-01',
+        title: { en: 'Test', fr: 'Test' },
+        subject: 'gaza',
+        counts: { yes: 0, no: 0, abstain: 0 },
+        source: EXTRA,
+        rationale: { en: 'Test', fr: 'Test' },
+      })
+    })
+    expect(only(vote, 'source.archive-index', fileOf(EXTRA), EXTRA).level).toBe('error')
+    const uncited = run((ds) => {
+      addSource(ds, EXTRA, archivedAt(source(ds, SRC0).url))
+    })
+    expect(only(uncited, 'source.archive-index', fileOf(EXTRA), EXTRA).level).toBe('warning')
+  })
+
+  it('warns when a source supporting nothing public has no index row', () => {
     const issues = run((ds) => {
+      event0(ds).status = 'draft'
       ds.archiveIndex = ds.archiveIndex.filter((r) => r.value.src_id !== SRC1)
     })
     const i = only(issues, 'source.archive-index', fileOf(SRC1), SRC1)
     expect(i.level).toBe('warning')
+  })
+
+  it('compares with the row of the same capture when a source has several rows', () => {
+    const issues = run((ds) => {
+      const s = source(ds, SRC0)
+      // A failed capture first (blank archive fields), then the archived one: index.csv is
+      // append-only.
+      const rows = ds.archiveIndex.filter((r) => r.value.src_id === SRC0)
+      const archived = rows[0]
+      if (!archived) throw new Error('index row missing')
+      ds.archiveIndex.unshift({
+        value: { ...archived.value, wayback_url: null, sha256: null, bytes: null },
+        file: 'archive/index.csv',
+        line: 2,
+      })
+      archived.line = 5
+      expect(s.wayback_url).toBe(archived.value.wayback_url)
+    })
+    expect(issuesOf(issues, 'source.archive-index')).toEqual([])
+  })
+
+  it('compares with the latest row when no row has the record wayback_url', () => {
+    const issues = run((ds) => {
+      const row = ds.archiveIndex.find((r) => r.value.src_id === SRC0)
+      if (!row) throw new Error('index row missing')
+      ds.archiveIndex.push({
+        value: { ...row.value, wayback_url: `${row.value.wayback_url}-later` },
+        file: 'archive/index.csv',
+        line: 9,
+      })
+      source(ds, SRC0).wayback_url = `${row.value.wayback_url}-other`
+    })
+    const i = only(issues, 'source.archive-index', fileOf(SRC0), SRC0)
+    expect(i.path).toBe('wayback_url')
+    expect(i.message).toContain('line 9')
   })
 
   it('fails when the index disagrees on url, wayback_url, sha256 or bytes', () => {
@@ -803,6 +1078,13 @@ describe("'source.dataset-origin'", () => {
       const issues = run((ds) => addDatasetRow(ds, patch))
       expect(only(issues, 'source.dataset-origin', fileOf(ROW), ROW).message).toContain(ORIGIN)
     }
+  })
+
+  it('fails when the origin is a failed capture', () => {
+    const issues = run((ds) => addDatasetRow(ds, { archive_status: 'failed' }))
+    expect(only(issues, 'source.dataset-origin', fileOf(ROW), ROW).message).toContain(
+      'failed capture',
+    )
   })
 
   it('does not apply to dataset sources with an http url', () => {

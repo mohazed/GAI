@@ -106,11 +106,14 @@ export function addDays(date: string, n: number): string {
   return new Date(Date.parse(`${date}T00:00:00Z`) + n * 86_400_000).toISOString().slice(0, 10)
 }
 
-/** True when `YYYYMMDD` or `YYYY-MM-DD` names a real calendar date. */
+/**
+ * True when `YYYYMMDD` or `YYYY-MM-DD` names a real calendar date. Both hyphens or neither:
+ * `2023-1007` and `202310-07` are rejected.
+ */
 export function isCalendarDate(value: string): boolean {
-  const m = /^(\d{4})-?(\d{2})-?(\d{2})$/.exec(value)
+  const m = /^(\d{4})(-?)(\d{2})\2(\d{2})$/.exec(value)
   if (!m) return false
-  const [, y, mo, d] = m
+  const [, y, , mo, d] = m
   const iso = `${y}-${mo}-${d}`
   const t = Date.parse(`${iso}T00:00:00Z`)
   return !Number.isNaN(t) && new Date(t).toISOString().slice(0, 10) === iso

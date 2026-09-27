@@ -19,14 +19,16 @@ min_abs_contribution: 2
 statuses: [published]
 
 excluded:
+  # The reasons are printed on the methodology page; their sources stay in these comments.
+  # B1: spec §2 ("votes yes at the UN and does nothing else" is Passive), docs/02 §6.
   - indicators: [B1]
     reason:
       en: >-
-        B1 votes do not qualify (spec §2: "votes yes at the UN and does nothing else" is
-        Passive).
+        B1 votes do not qualify: a country that votes yes at the UN and does nothing else is in
+        the Passive band.
       fr: >-
-        Les votes B1 ne comptent pas (cahier des charges, §2 : « vote pour à l'ONU et ne fait
-        rien d'autre » relève de la bande Passivité).
+        Les votes B1 ne comptent pas : un pays qui vote pour à l'ONU et ne fait rien d'autre
+        se situe dans la bande Passivité.
   - indicators: [A1, A2, A3, A4, A5, A6, A7, A8]
     reason:
       en: >-
@@ -36,10 +38,11 @@ excluded:
         La catégorie A ne compte jamais : vendre ou refuser des armes n'est pas le type
         d'engagement que mesure la pénalité, et les événements A6–A8 s'accompagnent presque
         toujours d'événements B ou C.
+  # E1–E3: D-12.
   - indicators: [E1, E2, E3]
     reason:
-      en: Category E is experimental and unscored in v1.0 (D-12).
-      fr: La catégorie E est expérimentale et non notée en v1.0 (D-12).
+      en: Category E is experimental and unscored in v1.0.
+      fr: La catégorie E est expérimentale et non notée en v1.0.
 
 sensitivity_points: [5, 15, 25]
 

@@ -23,12 +23,22 @@ import {
   type StructuredTableName,
 } from '../../structured.js'
 import type { Rule, ValidationContext } from '../context.js'
+import { compareEventOrder } from '../order.js'
+import { eventNotLoaded, eventsFileUnreadable, unreadableFiles } from './shared.js'
+import { notArchivedReason } from './sources.js'
+
+export { compareEventOrder } from '../order.js'
 
 /** Scored entities: the UN member states plus the Holy See, minus ISR and PSE (docs/02 §1). */
 export const UNIVERSE_SIZE = 193
 
 /** The only entries flagged `excluded` (D-10). */
 export const EXCLUDED_ISO3: readonly string[] = ['ISR', 'PSE']
+
+/** The permanent members of the Security Council (UN Charter, Art. 23). */
+export const UNSC_PERMANENT_ISO3: readonly string[] = ['CHN', 'FRA', 'GBR', 'RUS', 'USA']
+
+const COUNTRIES_FILE = 'data/countries.yaml'
 
 /** Maximum days between receiving and publishing a reply (docs/03 §9, docs/08 §4). */
 export const REPLY_DEADLINE_DAYS = 10
@@ -54,19 +64,6 @@ function where(rec: Located<unknown>): string {
 }
 
 const isBlank = (text: string | undefined): boolean => (text ?? '').trim() === ''
-
-/**
- * Order of events inside a country file: date, then id, compared by UTF-16 code units (the
- * order of a plain JavaScript sort, independent of the locale).
- */
-export function compareEventOrder(
-  a: Pick<Event, 'date' | 'id'>,
-  b: Pick<Event, 'date' | 'id'>,
-): number {
-  if (a.date !== b.date) return a.date < b.date ? -1 : 1
-  if (a.id !== b.id) return a.id < b.id ? -1 : 1
-  return 0
-}
 
 /** Rows of a structured table as plain records, for column access by name. */
 function rowsOf(ctx: ValidationContext, table: StructuredTableName) {
@@ -114,8 +111,10 @@ const idUnique: Rule = (ctx) => {
 
 /**
  * id.date-matches (docs/03 §2, §8): the date in an id is the record's date. Ids never change,
- * so an event whose date was corrected keeps an id carrying a date that a correction entry
- * names in `before.date` or `after.date`.
+ * so an event whose date was corrected keeps an id carrying its first date; the mismatch is
+ * accepted only when the event's corrections, read in log order, account for it: the first entry
+ * giving `before.date` gives the id date, and the last entry giving `after.date` gives the
+ * event's current date.
  */
 const idDateMatches: Rule = (ctx) => {
   const ds = ctx.dataset
@@ -137,18 +136,22 @@ const idDateMatches: Rule = (ctx) => {
     const parsed = parseEventId(e.value.id)
     if (parsed === null || parsed.date === e.value.date) continue
     const corrections = ctx.index.correctionsByEvent.get(e.value.id) ?? []
-    const corrected = corrections.some(
-      (c) => c.value.before.date === parsed.date || c.value.after.date === parsed.date,
-    )
-    if (!corrected) {
-      out.push(
-        issue(
-          'id.date-matches',
-          at(e, e.value.id, 'date'),
-          `event date ${e.value.date} differs from the date ${parsed.date} in the id, and no correction entry records ${parsed.date} as a before or after date; expected them to be equal`,
-        ),
-      )
+    const first = corrections.find((c) => Object.hasOwn(c.value.before, 'date'))
+    const last = corrections.findLast((c) => Object.hasOwn(c.value.after, 'date'))
+    if (first?.value.before.date === parsed.date && last?.value.after.date === e.value.date) {
+      continue
     }
+    const logged =
+      first === undefined && last === undefined
+        ? 'no correction entry records a date change'
+        : `the corrections record a date change from ${String(first?.value.before.date ?? 'nothing')} to ${String(last?.value.after.date ?? 'nothing')}`
+    out.push(
+      issue(
+        'id.date-matches',
+        at(e, e.value.id, 'date'),
+        `event date ${e.value.date} differs from the date ${parsed.date} in the id, and ${logged}; expected them to be equal, or corrections whose first before.date is ${parsed.date} and whose last after.date is ${e.value.date}`,
+      ),
+    )
   }
   for (const s of ds.sources) {
     const parsed = parseSourceId(s.value.id)
@@ -263,7 +266,8 @@ const layoutFileMatchesRecord: Rule = (ctx) => {
 
 /**
  * layout.events-sorted (docs/03 §1): inside each events file, events are in non-decreasing
- * (date, id) order (`compareEventOrder`). Only the first event out of order is reported per file.
+ * (date, id) order, ids of one date in natural order (`compareEventOrder`: `…_B9` before
+ * `…_B10`, `_2` before `_10`). Only the first event out of order is reported per file.
  */
 const layoutEventsSorted: Rule = (ctx) => {
   const byFile = new Map<string, Located<Event>[]>()
@@ -281,7 +285,7 @@ const layoutEventsSorted: Rule = (ctx) => {
           issue(
             'layout.events-sorted',
             at(e, e.value.id),
-            `event ${e.value.id} (${e.value.date}) comes after ${prev.value.id} (${prev.value.date}); expected events sorted by date, then id`,
+            `event ${e.value.id} (${e.value.date}) comes after ${prev.value.id} (${prev.value.date}); expected events sorted by date, then id in natural order`,
           ),
         )
         break
@@ -296,11 +300,27 @@ const layoutEventsSorted: Rule = (ctx) => {
 // Countries (docs/03 §3, docs/02 §1)
 
 /**
- * country.excluded (docs/03 §3, D-10): only ISR and PSE are excluded, both must be, and
- * `excluded_reason` is present exactly when `excluded` is true.
+ * country.excluded (docs/03 §1 and §3, D-10): the registry lists ISR and PSE (docs/03 §1: "193
+ * scored + ISR + PSE flagged excluded"); only they are excluded, both must be, and
+ * `excluded_reason` is present exactly when `excluded` is true. A missing ISR or PSE is not
+ * reported when countries.yaml is absent or cannot be read (the load issue covers it) or when
+ * the entry failed its schema.
  */
 const countryExcluded: Rule = (ctx) => {
+  const ds = ctx.dataset
   const out: Issue[] = []
+  if (ds.files.includes(COUNTRIES_FILE) && !unreadableFiles(ds).has(COUNTRIES_FILE)) {
+    for (const iso3 of EXCLUDED_ISO3) {
+      if (ctx.index.countryByIso3.has(iso3) || ds.invalidIds.has(iso3)) continue
+      out.push(
+        issue(
+          'country.excluded',
+          { file: COUNTRIES_FILE, id: iso3 },
+          `${iso3} is missing from countries.yaml; expected it listed with excluded: true and excluded_reason (D-10)`,
+        ),
+      )
+    }
+  }
   for (const c of ctx.dataset.countries) {
     const { iso3, excluded, excluded_reason } = c.value
     const listed = EXCLUDED_ISO3.includes(iso3)
@@ -346,8 +366,10 @@ const countryExcluded: Rule = (ctx) => {
 
 /**
  * country.membership-flags (docs/02 §1, docs/03 §3): every entry is either a UN member or an
- * observer, never both; Security Council terms have to ≥ from (to null = ongoing); dated
- * memberships have until ≥ since when both are set.
+ * observer, never both; Security Council terms have to ≥ from (to null = ongoing); only the five
+ * permanent members (UN Charter Art. 23: CHN, FRA, GBR, RUS, USA) have a permanent term, and each
+ * of them, when listed, has an ongoing one (to null), since B2's not-applicable check reads the
+ * terms; dated memberships have until ≥ since when both are set.
  */
 const countryMembershipFlags: Rule = (ctx) => {
   const out: Issue[] = []
@@ -362,7 +384,26 @@ const countryMembershipFlags: Rule = (ctx) => {
         ),
       )
     }
+    const permanentMember = UNSC_PERMANENT_ISO3.includes(iso3)
+    if (permanentMember && !memberships.unsc.some((t) => t.permanent && t.to === null)) {
+      out.push(
+        issue(
+          'country.membership-flags',
+          at(c, iso3, 'memberships.unsc'),
+          `${iso3} is a permanent member of the Security Council but has no ongoing permanent term; expected a term with permanent: true and to: null`,
+        ),
+      )
+    }
     memberships.unsc.forEach((term, i) => {
+      if (term.permanent && !permanentMember) {
+        out.push(
+          issue(
+            'country.membership-flags',
+            at(c, iso3, `memberships.unsc.${i}`),
+            `${iso3} has a permanent Security Council term; expected permanent: true only for ${UNSC_PERMANENT_ISO3.join(', ')} (UN Charter Art. 23)`,
+          ),
+        )
+      }
       if (term.to !== null && term.to < term.from) {
         out.push(
           issue(
@@ -402,7 +443,7 @@ const countryUniverseSize: Rule = (ctx) => {
   return [
     issue(
       'country.universe-size',
-      { file: 'data/countries.yaml', id: '-' },
+      { file: COUNTRIES_FILE, id: '-' },
       `countries.yaml has ${count} scored ${count === 1 ? 'entry' : 'entries'} (not excluded); expected ${UNIVERSE_SIZE}`,
     ),
   ]
@@ -501,8 +542,12 @@ const assessmentCheckedEvidence: Rule = (ctx) => {
 /**
  * assessment.not-applicable (docs/02 §8): not-applicable carries a note; on an indicator whose
  * methodology rule is `unsc_non_member` (B2), the country has no Security Council term that
- * overlaps the window. Without a clock, a term overlaps when it is ongoing (to null) or ends on
- * or after WINDOW_START, whatever its start.
+ * overlaps the window, which runs from WINDOW_START to the date of the check. Without a clock,
+ * that date is the entry's checked_at, else the assessment's last_full_check: a term overlaps
+ * when it has started by then (from ≤ that date) and is ongoing (to null) or ends on or after
+ * WINDOW_START. A state elected for a term that has not started (e.g. 2027–2028, checked in
+ * 2026) is not on the Council in the window. When neither date is set, every term that ends on
+ * or after WINDOW_START counts, whatever its start.
  */
 const assessmentNotApplicable: Rule = (ctx) => {
   const out: Issue[] = []
@@ -523,13 +568,21 @@ const assessmentNotApplicable: Rule = (ctx) => {
       }
       const rule = ctx.methodology.indicatorById.get(ind)?.not_applicable?.rule
       if (rule !== 'unsc_non_member' || country === undefined) continue
-      const term = country.value.memberships.unsc.find((t) => t.to === null || t.to >= WINDOW_START)
+      const asOf = entry.checked_at ?? a.value.last_full_check ?? null
+      const term = country.value.memberships.unsc.find(
+        (t) => (t.to === null || t.to >= WINDOW_START) && (asOf === null || t.from <= asOf),
+      )
       if (term !== undefined) {
+        const window = asOf === null ? `from ${WINDOW_START}` : `from ${WINDOW_START} to ${asOf}`
+        const hint =
+          asOf === null
+            ? ' (no checked_at or last_full_check dates the check, so a term that has not started also counts)'
+            : ''
         out.push(
           issue(
             'assessment.not-applicable',
             at(a, iso3, path),
-            `${ind} is not-applicable but ${iso3} has a Security Council term from ${term.from} to ${term.to ?? 'ongoing'} that overlaps the window from ${WINDOW_START}; expected not-applicable only for states never on the Council in the window`,
+            `${ind} is not-applicable but ${iso3} has a Security Council term from ${term.from} to ${term.to ?? 'ongoing'} that overlaps the window ${window}${hint}; expected not-applicable only for states never on the Council in the window`,
           ),
         )
       }
@@ -541,14 +594,23 @@ const assessmentNotApplicable: Rule = (ctx) => {
 /**
  * assessment.has-events-mismatch (docs/03 §6): the build sets has-events from published events,
  * so on hand-authored indicators a hand-set has-events without a published event, or another
- * status beside a published event, is overwritten (warning).
+ * status beside a published event, is overwritten (warning). "No published event" is not
+ * claimed when the country's events file cannot be read or an event of that country and
+ * indicator failed its schema (the load or schema issue covers it).
  */
 const assessmentHasEventsMismatch: Rule = (ctx) => {
   const m = ctx.methodology
   if (m.indicatorsFile === null) return []
+  const ds = ctx.dataset
+  const notLoaded = new Set<string>()
+  for (const id of ds.invalidIds) {
+    const parsed = parseEventId(id)
+    if (parsed !== null) notLoaded.add(`${parsed.iso3}\u0000${parsed.indicator}`)
+  }
   const out: Issue[] = []
   for (const a of ctx.dataset.assessments) {
     const iso3 = a.value.country
+    const unreadable = eventsFileUnreadable(ds, iso3)
     const published = new Set(
       (ctx.index.eventsByCountry.get(iso3) ?? [])
         .filter((e) => e.value.status === 'published')
@@ -558,6 +620,7 @@ const assessmentHasEventsMismatch: Rule = (ctx) => {
       if (m.indicatorById.get(ind)?.authoring !== 'hand') continue
       const path = `indicators.${ind}`
       if (entry.status === 'has-events' && !published.has(ind)) {
+        if (unreadable || notLoaded.has(`${iso3}\u0000${ind}`)) continue
         out.push(
           issue(
             'assessment.has-events-mismatch',
@@ -650,28 +713,37 @@ const replyDeadline: Rule = (ctx) => {
   return out
 }
 
-/** reply.contests-known (docs/03 §9): contested events exist and belong to the reply country. */
+/**
+ * reply.contests-known (docs/03 §9): contested events exist and belong to the reply country.
+ * Generated events (votes, vetoes, computed indicators; docs/03 §2) exist only in build outputs,
+ * so for them only the country in the id is checked. Events that failed their schema or sit in an
+ * events file that cannot be read are not reported as missing (the load issue covers them).
+ */
 const replyContestsKnown: Rule = (ctx) => {
+  const ds = ctx.dataset
+  const unreadable = unreadableFiles(ds)
   const out: Issue[] = []
-  for (const r of ctx.dataset.replies) {
+  for (const r of ds.replies) {
     r.value.contests.forEach((eventId, i) => {
       const e = ctx.index.eventById.get(eventId)
-      if (e === undefined) {
-        if (!ctx.dataset.invalidIds.has(eventId)) {
+      const parsed = parseEventId(eventId)
+      const country = e?.value.country ?? (parsed?.generated ? parsed.iso3 : undefined)
+      if (country === undefined) {
+        if (!eventNotLoaded(ds, eventId, unreadable)) {
           out.push(
             issue(
               'reply.contests-known',
               at(r, r.value.id, `contests.${i}`),
-              `contested event ${eventId} does not exist; expected an event id from data/events`,
+              `contested event ${eventId} does not exist; expected an event id from data/events or a generated event id`,
             ),
           )
         }
-      } else if (e.value.country !== r.value.country) {
+      } else if (country !== r.value.country) {
         out.push(
           issue(
             'reply.contests-known',
             at(r, r.value.id, `contests.${i}`),
-            `contested event ${eventId} belongs to ${e.value.country}; expected an event of ${r.value.country}`,
+            `contested event ${eventId} belongs to ${country}; expected an event of ${r.value.country}`,
           ),
         )
       }
@@ -683,7 +755,9 @@ const replyContestsKnown: Rule = (ctx) => {
 /**
  * reply.outcome-consistent (docs/03 §9, docs/08 §4): the outcome applies to every contested
  * event: disputed → confidence disputed; retracted → status retracted; corrected → at least one
- * corrections.yaml entry names the event. Unknown events are left to reply.contests-known.
+ * corrections.yaml entry names the event and is dated on or after the reply's received_at (a
+ * correction logged before the reply arrived did not result from it). Unknown events are left to
+ * reply.contests-known.
  */
 const replyOutcomeConsistent: Rule = (ctx) => {
   const out: Issue[] = []
@@ -712,13 +786,15 @@ const replyOutcomeConsistent: Rule = (ctx) => {
         )
       } else if (
         outcome === 'corrected' &&
-        (ctx.index.correctionsByEvent.get(eventId) ?? []).length === 0
+        !(ctx.index.correctionsByEvent.get(eventId) ?? []).some(
+          (c) => c.value.date >= r.value.received_at,
+        )
       ) {
         out.push(
           issue(
             'reply.outcome-consistent',
             loc,
-            `outcome is corrected but corrections.yaml has no entry for ${eventId}; expected a correction entry`,
+            `outcome is corrected but corrections.yaml has no entry for ${eventId} dated on or after received_at ${r.value.received_at}; expected the correction entry that resolved the reply`,
           ),
         )
       }
@@ -730,19 +806,45 @@ const replyOutcomeConsistent: Rule = (ctx) => {
 // ---------------------------------------------------------------------------------------------
 // Leads (docs/03 §10)
 
-/** lead.status (docs/03 §10): promoted:evt_… names an existing event; dropped carries a reason. */
+/**
+ * lead.status (docs/03 §10): promoted:evt_… names an existing event of the lead's country (a
+ * warning when its indicator differs from the lead's); dropped carries a reason. An event that
+ * failed its schema or sits in an events file that cannot be read is not reported as missing.
+ */
 const leadStatus: Rule = (ctx) => {
+  const ds = ctx.dataset
+  const unreadable = unreadableFiles(ds)
   const out: Issue[] = []
-  for (const l of ctx.dataset.leads) {
+  for (const l of ds.leads) {
     const { id, status } = l.value
     if (status.startsWith('promoted:')) {
       const target = status.slice('promoted:'.length)
-      if (!ctx.index.eventById.has(target) && !ctx.dataset.invalidIds.has(target)) {
+      const e = ctx.index.eventById.get(target)
+      if (e === undefined) {
+        if (!eventNotLoaded(ds, target, unreadable)) {
+          out.push(
+            issue(
+              'lead.status',
+              at(l, id, 'status'),
+              `lead is promoted to ${target}, which does not exist; expected an existing event id`,
+            ),
+          )
+        }
+      } else if (e.value.country !== l.value.country) {
         out.push(
           issue(
             'lead.status',
             at(l, id, 'status'),
-            `lead is promoted to ${target}, which does not exist; expected an existing event id`,
+            `lead of ${l.value.country} is promoted to ${target}, an event of ${e.value.country}; expected an event of ${l.value.country}`,
+          ),
+        )
+      } else if (e.value.indicator !== l.value.indicator) {
+        out.push(
+          issue(
+            'lead.status',
+            at(l, id, 'status'),
+            `lead on ${l.value.indicator} is promoted to ${target}, an event of ${e.value.indicator}; check the lead's indicator or the promoted event`,
+            'warning',
           ),
         )
       }
@@ -794,7 +896,13 @@ const leadSourceKind: Rule = (ctx) => {
 // ---------------------------------------------------------------------------------------------
 // Structured tables (docs/03 §7)
 
-/** structured.source-dataset (docs/03 §7): the source column names an existing dataset source. */
+/**
+ * structured.source-dataset (docs/03 §7: "a `src_` id of kind `dataset` whose record archives
+ * the origin"): the source column names an existing source of kind dataset that is archived
+ * (wayback_url and sha256, capture not failed, or a dataset row whose origin is archived; see
+ * `notArchivedReason`). Generated events are built from these rows, so nothing scores from an
+ * unarchived table (CLAUDE.md).
+ */
 const structuredSourceDataset: Rule = (ctx) => {
   const out: Issue[] = []
   for (const table of STRUCTURED_TABLE_NAMES) {
@@ -821,6 +929,17 @@ const structuredSourceDataset: Rule = (ctx) => {
             `source ${sourceId} is of kind ${src.value.kind}; expected kind dataset`,
           ),
         )
+      } else {
+        const reason = notArchivedReason(ctx, src.value)
+        if (reason !== null) {
+          out.push(
+            issue(
+              'structured.source-dataset',
+              loc,
+              `${reason}; expected a dataset source whose record archives the origin (wayback_url and sha256)`,
+            ),
+          )
+        }
       }
     }
   }

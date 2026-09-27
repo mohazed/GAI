@@ -2,6 +2,7 @@
  * Tests for the event rules (validate/rules/events.ts). Each rule: the valid fixtures yield no
  * issue of it, and one mutation of the fixtures makes it fire on the expected file and id.
  */
+import { createHash } from 'node:crypto'
 import { describe, expect, it } from 'vitest'
 import { issue } from '../../issues.js'
 import type { Dataset } from '../../load/dataset.js'
@@ -61,11 +62,15 @@ function addStatement(ds: Dataset, patch: Partial<Event> & { id: string }): Even
   })
 }
 
-/** Adds a copy of the first fixture source under a new id. */
+/**
+ * Adds a copy of the first fixture source under a new id, as another document: its sha256 is
+ * derived from the id unless `patch` sets one.
+ */
 function addSource(ds: Dataset, id: string, patch: Partial<Source> = {}): Source {
   const base = ds.sources[0]
   if (!base) throw new Error('fixture source missing')
-  const s: Source = { ...structuredClone(base.value), ...patch, id }
+  const sha256 = createHash('sha256').update(id).digest('hex')
+  const s: Source = { ...structuredClone(base.value), sha256, ...patch, id }
   ds.sources.push({ value: s, file: `data/sources/2025/${id}.yaml`, line: 1 })
   return s
 }
@@ -531,6 +536,69 @@ describe('event.confirmed-source-kind', () => {
     })
     expect(issuesOf(found, 'event.confirmed-source-kind')).toEqual([])
   })
+
+  it('rejects a confirmed event whose only official source is a failed capture, at any status', () => {
+    for (const status of ['draft', 'reviewed', 'published'] as const) {
+      const found = issuesOf(
+        run((ds) => {
+          addSource(ds, 'src_20250808_bundesregierung_failed-capture', {
+            archive_status: 'failed',
+            wayback_url: null,
+            sha256: null,
+            bytes: null,
+            content_type: null,
+          })
+          const e = fixtureEvent(ds)
+          e.status = status
+          e.evidence = evidenceFrom(e, ['src_20250808_bundesregierung_failed-capture'])
+        }),
+        'event.confirmed-source-kind',
+      )
+      expect(found, status).toHaveLength(1)
+      expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
+      expect(found[0]?.message).toContain('failed capture')
+    }
+  })
+
+  it('accepts a failed capture beside an archived official source', () => {
+    const found = run((ds) => {
+      addSource(ds, 'src_20250808_bundesregierung_failed-capture', {
+        archive_status: 'failed',
+        wayback_url: null,
+        sha256: null,
+      })
+      const e = fixtureEvent(ds)
+      e.evidence = evidenceFrom(e, ['src_20250808_bundesregierung_failed-capture', SRC_GAZA])
+    })
+    expect(issuesOf(found, 'event.confirmed-source-kind')).toEqual([])
+  })
+
+  it('rejects a source of kind official whose publisher_type is press or ngo', () => {
+    for (const publisher_type of ['press', 'ngo']) {
+      const found = issuesOf(
+        run((ds) => {
+          for (const src of ds.sources) {
+            src.value.publisher = 'Der Spiegel'
+            src.value.publisher_type = publisher_type
+          }
+        }),
+        'event.confirmed-source-kind',
+      )
+      expect(found, publisher_type).toHaveLength(1)
+      expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
+      expect(found[0]?.message).toContain(`publisher_type is ${publisher_type}`)
+    }
+  })
+
+  it('accepts a dataset source whatever its publisher_type', () => {
+    const found = run((ds) => {
+      for (const src of ds.sources) {
+        src.value.kind = 'dataset'
+        src.value.publisher_type = 'ngo'
+      }
+    })
+    expect(issuesOf(found, 'event.confirmed-source-kind')).toEqual([])
+  })
 })
 
 describe('event.corroborated-publishers', () => {
@@ -592,6 +660,77 @@ describe('event.corroborated-publishers', () => {
     expect(found[0]?.message).toContain('expected at least 2')
   })
 
+  it('folds whitespace runs, U+00A0, fullwidth forms and trailing punctuation in publishers', () => {
+    for (const other of ['Der  Spiegel', 'Der\u00A0Spiegel', 'Der Spiegel.', 'ＤＥＲ Spiegel']) {
+      const found = issuesOf(
+        run((ds) => {
+          addSource(ds, 'src_20250808_spiegel_one', { kind: 'press', publisher: 'Der Spiegel' })
+          addSource(ds, 'src_20250808_spiegel_two', { kind: 'press', publisher: other })
+          const e = fixtureEvent(ds)
+          e.confidence = 'corroborated'
+          e.evidence = evidenceFrom(e, ['src_20250808_spiegel_one', 'src_20250808_spiegel_two'])
+        }),
+        'event.corroborated-publishers',
+      )
+      expect(found, other).toHaveLength(1)
+      expect(found[0]?.message).toContain('1 distinct publisher(s)')
+    }
+  })
+
+  it('counts one document once, whatever the publishers its records name', () => {
+    const twice = (patch: Partial<Source>) =>
+      issuesOf(
+        run((ds) => {
+          addSource(ds, 'src_20250808_reuters_germany-exports', {
+            kind: 'press',
+            publisher: 'Reuters',
+            ...patch,
+          })
+          addSource(ds, 'src_20250808_spiegel_ruestungsexporte', {
+            kind: 'press',
+            publisher: 'Der Spiegel',
+            ...patch,
+          })
+          const e = fixtureEvent(ds)
+          e.confidence = 'corroborated'
+          e.evidence = evidenceFrom(e, [
+            'src_20250808_reuters_germany-exports',
+            'src_20250808_spiegel_ruestungsexporte',
+          ])
+        }),
+        'event.corroborated-publishers',
+      )
+    const sameHash = twice({ sha256: 'c'.repeat(64) })
+    expect(sameHash).toHaveLength(1)
+    expect(sameHash[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
+    expect(sameHash[0]?.message).toContain('same document')
+    // Without a hash, the url identifies the document (scheme and www. ignored).
+    const sameUrl = issuesOf(
+      run((ds) => {
+        addSource(ds, 'src_20250808_reuters_germany-exports', {
+          kind: 'press',
+          publisher: 'Reuters',
+          sha256: null,
+          url: 'https://www.example.org/article',
+        })
+        addSource(ds, 'src_20250808_spiegel_ruestungsexporte', {
+          kind: 'press',
+          publisher: 'Der Spiegel',
+          sha256: null,
+          url: 'http://example.org/article/',
+        })
+        const e = fixtureEvent(ds)
+        e.confidence = 'corroborated'
+        e.evidence = evidenceFrom(e, [
+          'src_20250808_reuters_germany-exports',
+          'src_20250808_spiegel_ruestungsexporte',
+        ])
+      }),
+      'event.corroborated-publishers',
+    )
+    expect(sameUrl).toHaveLength(1)
+  })
+
   it('counts every kind, with a minimum of 2, when confidence.yaml is missing', () => {
     const same = run((ds, m) => {
       m.confidence = null
@@ -644,6 +783,30 @@ describe('event.disputed-both-sides', () => {
     expect(found).toHaveLength(1)
     expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
     expect(found[0]?.message).toContain('cites 1 source(s)')
+  })
+
+  it('rejects, without a reply, two official sources of the same publisher', () => {
+    const found = issuesOf(
+      run((ds) => {
+        ds.replies = []
+        fixtureEvent(ds).confidence = 'disputed'
+      }),
+      'event.disputed-both-sides',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
+    expect(found[0]?.message).toContain('all from the publisher of the denial')
+  })
+
+  it('accepts, without a reply, an official denial and an official source of another publisher', () => {
+    const found = run((ds) => {
+      ds.replies = []
+      addSource(ds, 'src_20250808_un_gaza-statement', { publisher: 'United Nations' })
+      const e = fixtureEvent(ds)
+      e.confidence = 'disputed'
+      e.evidence = evidenceFrom(e, [SRC_GAZA, 'src_20250808_un_gaza-statement'])
+    })
+    expect(issuesOf(found, 'event.disputed-both-sides')).toEqual([])
   })
 
   it('rejects, without a reply, two sources none of which is official', () => {
@@ -746,6 +909,21 @@ describe('event.statement-duplicate', () => {
     expect(found).toHaveLength(1)
     expect(found[0]).toMatchObject({ file: FILE, id: 'evt_2025_08_08_DEU_B9_2' })
     expect(found[0]?.message).toContain('evt_2025_08_08_DEU_B9 already records')
+  })
+
+  it('folds whitespace runs, U+00A0 and trailing punctuation in the speaker name', () => {
+    for (const name of ['Friedrich  Merz', 'Friedrich\u00A0Merz', 'Friedrich Merz.']) {
+      const found = issuesOf(
+        run((ds) => {
+          addStatement(ds, { id: 'evt_2025_08_08_DEU_B9' })
+          const dup = addStatement(ds, { id: 'evt_2025_08_08_DEU_B9_2' })
+          dup.actor = { en: 'Federal Chancellor', fr: 'Chancelier fédéral', name }
+        }),
+        'event.statement-duplicate',
+      )
+      expect(found, name).toHaveLength(1)
+      expect(found[0]).toMatchObject({ file: FILE, id: 'evt_2025_08_08_DEU_B9_2' })
+    }
   })
 
   it('orders instances numerically and names the first', () => {
@@ -898,6 +1076,50 @@ describe('event.references', () => {
     )
     expect(found).toHaveLength(1)
     expect(found[0]?.message).toContain('an event of FRA')
+  })
+
+  it('rejects supersedes naming a later event, and accepts one of the same day', () => {
+    const later = issuesOf(
+      run((ds) => {
+        addEvent(ds, {
+          id: 'evt_2026_01_05_DEU_A7',
+          indicator: 'A7',
+          date: '2026-01-05',
+          end: null,
+          points: 25,
+        })
+        fixtureEvent(ds).supersedes = 'evt_2026_01_05_DEU_A7'
+      }),
+      'event.references',
+    )
+    expect(later).toHaveLength(1)
+    expect(later[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
+    expect(later[0]?.message).toContain('after this event')
+    const sameDay = run((ds) => {
+      addEvent(ds, { id: 'evt_2025_08_08_DEU_A7', indicator: 'A7', end: null, points: 25 })
+      fixtureEvent(ds).supersedes = 'evt_2025_08_08_DEU_A7'
+    })
+    expect(issuesOf(sameDay, 'event.references')).toEqual([])
+  })
+
+  it('reads the date from the id when the superseded record failed its schema', () => {
+    const found = issuesOf(
+      run((ds) => {
+        ds.invalidIds.add('evt_2026_01_05_DEU_A7')
+        fixtureEvent(ds).supersedes = 'evt_2026_01_05_DEU_A7'
+      }),
+      'event.references',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]?.message).toContain('dated 2026-01-05')
+  })
+
+  it('does not report references into an events file that cannot be parsed', () => {
+    const found = run((ds) => {
+      ds.issues.push(issue('load.yaml-syntax', { file: 'data/events/FRA.yaml' }, 'bad YAML'))
+      fixtureEvent(ds).related = ['evt_2024_01_01_FRA_A6']
+    })
+    expect(issuesOf(found, 'event.references')).toEqual([])
   })
 
   it('rejects related ids that are missing or the event itself', () => {

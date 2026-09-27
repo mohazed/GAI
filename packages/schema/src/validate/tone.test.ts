@@ -181,6 +181,47 @@ describe('findBannedWords matching rules', () => {
     expect(found).toEqual([{ term: 'bold', index: 2, match: 'bold' }])
   })
 
+  it('ignores invisible format characters inside and around a term (soft hyphen, zero-width)', () => {
+    const m = custom('brutal*', 'war crime*')
+    for (const text of [
+      'the bru\u00ADtal operation',
+      'the bru\u200Btal operation',
+      'the b\u200Dr\u2060u\uFEFFtal operation',
+      '\u200Bbrutal\u200B',
+    ]) {
+      expect(terms(text, m), JSON.stringify(text)).toEqual(['brutal*'])
+    }
+    expect(terms('war\u00AD crimes', m)).toEqual(['war crime*'])
+    // Offsets and matched text refer to the text as written.
+    const found = findBannedWords('A bru\u00ADtal act.', m)
+    expect(found).toEqual([{ term: 'brutal*', index: 2, match: 'bru\u00ADtal' }])
+    // An invisible character does not join two words into one.
+    expect(terms('brutal\u00ADity', custom('brutal'))).toEqual([])
+    expect(terms('x\u200Dbrutal', custom('brutal'))).toEqual([])
+  })
+
+  it('matches fullwidth letters and apostrophe look-alikes', () => {
+    expect(terms('the ｂｒｕｔａｌ operation', custom('brutal*'))).toEqual(['brutal*'])
+    const m = custom("crime contre l'humanité")
+    for (const apostrophe of ['\u02BC', '\u2018', '\u0060', '\u00B4', '\uFF07']) {
+      const text = `un crime contre l${apostrophe}humanité`
+      expect(matches(text, m), apostrophe).toEqual([`crime contre l${apostrophe}humanité`])
+    }
+  })
+
+  it('catches the red-team spellings with the real list', () => {
+    for (const text of [
+      'The Federal Chancellor described the bru\u00ADtal operation.',
+      'The Federal Chancellor described the bru\u200Btal operation.',
+      'The Federal Chancellor described the ｂｒｕｔａｌ operation.',
+    ]) {
+      expect(terms(text).length, JSON.stringify(text)).toBeGreaterThan(0)
+    }
+    for (const apostrophe of ['\u02BC', '\u2018']) {
+      expect(terms(`Il a parlé de crime contre l${apostrophe}humanité.`).length).toBeGreaterThan(0)
+    }
+  })
+
   it('never throws and matches nothing on an empty list or empty terms', () => {
     expect(findBannedWords('anything at all', compileBannedWords([]))).toEqual([])
     const blank = compileBannedWords([
@@ -234,6 +275,14 @@ describe('lintSummary', () => {
     ['en', 'Germany voted against the resolution\uff01'],
   ] as const)('reports an exclamation mark (%s): %s', (lang, text) => {
     const vs = lintSummary(text, lang, { matcher: REAL, ...namesFor(lang) })
+    expect(kinds(vs)).toEqual(['exclamation'])
+  })
+
+  it.each(['❗', '❕', '❢', '﹗', 'ǃ', '！', '‼'])('reports the exclamation form %s', (mark) => {
+    const vs = lintSummary(`The Federal Chancellor suspended exports${mark}`, 'en', {
+      matcher: null,
+      ...GERMANY_EN,
+    })
     expect(kinds(vs)).toEqual(['exclamation'])
   })
 
@@ -311,6 +360,9 @@ describe('checkActorFirst', () => {
     ['en', 'India abstained.'],
     ['en', 'Under-Secretary-General Tom Fletcher briefed the Council.'],
     ['en', 'Oman voted in favour.'],
+    ['en', 'Jan Lipavský announced the suspension.'],
+    ['en', 'Mid-level officials of the ministry announced the suspension.'],
+    ['fr', 'Jan Lipavský a annoncé la suspension.'],
     ['fr', 'Le Premier ministre a annoncé la reconnaissance.'],
     ['fr', 'Les États-Unis ont opposé leur veto.'],
     ['fr', 'Aucun ministre ne s’est exprimé.'],
@@ -348,6 +400,19 @@ describe('checkActorFirst', () => {
     ['fr', 'Au Conseil de sécurité, l’Allemagne a voté pour.', 'opener'],
     ['fr', 'À la suite du vote, le gouvernement a suspendu les licences.', 'opener'],
     ['fr', 'Il a suspendu les licences.', 'opener'],
+    ['en', 'Aug. 8, 2025: The Federal Chancellor suspended exports.', 'date'],
+    ['en', 'Sept 8, 2025, the Federal Chancellor suspended exports.', 'date'],
+    ['en', 'Mid-August 2025, the Federal Chancellor suspended exports.', 'date'],
+    ['en', 'Late August, the Federal Chancellor suspended exports.', 'date'],
+    ['en', 'Late on Friday the Federal Chancellor suspended exports.', 'opener'],
+    ['en', 'Early in 2025, the Federal Chancellor suspended exports.', 'opener'],
+    ['en', 'Two days later, the Federal Chancellor suspended exports.', 'date'],
+    ['en', 'A week after the vote, the Federal Chancellor suspended exports.', 'date'],
+    ['fr', 'Fin août 2025, le chancelier fédéral a suspendu les exportations.', 'date'],
+    ['fr', 'Mi-août, le chancelier fédéral a suspendu les exportations.', 'date'],
+    ['fr', 'Début 2025, le chancelier fédéral a suspendu les exportations.', 'date'],
+    ['fr', 'Janv. 2025 : le chancelier fédéral a suspendu les exportations.', 'date'],
+    ['fr', 'Deux jours plus tard, le chancelier fédéral a suspendu les exportations.', 'date'],
   ] as const)('fails (%s) %s → %s', (lang, text, reason) => {
     expect(checkActorFirst(text, lang, namesFor(lang))).toMatchObject({ reason })
   })
@@ -373,6 +438,29 @@ describe('checkActorFirst', () => {
     expect(checkActorFirst('indiana voted.', 'en', { countryName: 'India' })).toMatchObject({
       reason: 'not-capital',
     })
+  })
+
+  it('does not accept a name that is itself a date or an opener as the actor', () => {
+    const names: ActorNames = { actor: { label: 'federal government', name: 'On 8 August 2025' } }
+    expect(
+      checkActorFirst('On 8 August 2025, the federal government suspended exports.', 'en', names),
+    ).toMatchObject({ reason: 'date' })
+    const opener: ActorNames = { actor: { label: 'According to the ministry' } }
+    expect(
+      checkActorFirst('According to the ministry, exports were suspended.', 'en', opener),
+    ).toMatchObject({ reason: 'opener' })
+    // A name that starts with a month word but holds no digit is still a name.
+    expect(
+      checkActorFirst('May Mansour announced the suspension.', 'en', {
+        actor: { label: 'Minister', name: 'May Mansour' },
+      }),
+    ).toBeNull()
+    // A lowercase label is still a name.
+    expect(
+      checkActorFirst('the federal government suspended exports.', 'en', {
+        actor: { label: 'the federal government' },
+      }),
+    ).toBeNull()
   })
 
   it('ignores empty names', () => {

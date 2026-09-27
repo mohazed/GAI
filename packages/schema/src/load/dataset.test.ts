@@ -11,6 +11,7 @@ import {
   mkdtempSync,
   readFileSync,
   rmSync,
+  symlinkSync,
   writeFileSync,
 } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -181,21 +182,57 @@ describe('required files (load.missing-file)', () => {
 })
 
 describe('unexpected files (load.unexpected-file)', () => {
+  it.each(['data/foo.txt', 'archive/other.csv', 'archive/raw/page.html', 'data/events.yaml'])(
+    '%s outside the record directories: a warning',
+    (rel) => {
+      write(rel, 'x: 1\n')
+      const ds = load()
+      expect(ds.issues).toMatchObject([
+        { rule: 'load.unexpected-file', file: rel, level: 'warning' },
+      ])
+      // The rest of the tree still loads.
+      expect(ds.events).toHaveLength(1)
+      expect(ds.sources).toHaveLength(2)
+    },
+  )
+})
+
+describe("misnamed files in a record directory ('load.misplaced-file')", () => {
   it.each([
-    'data/events/DEU.yml',
-    'data/foo.txt',
-    'archive/text/x.pdf',
-    'archive/other.csv',
-    'data/structured/foo.csv',
-    'data/events/2025/DEU.yaml',
+    'data/events/FRA.yml',
+    'data/events/NOTES.txt',
+    'data/events/old/DEU.yaml',
     'data/sources/src_20250808_bundesregierung_ruestungsexporte.yaml',
-  ])('%s', (rel) => {
-    write(rel, 'x: 1\n')
+    'data/sources/2025/x/src_20250808_a_b.yaml',
+    'data/assessments/FRA.yml',
+    'data/assessments/2025/FRA.yaml',
+    'data/replies/rep_20260927_DEU_2.yaml',
+    'data/replies/DEU/rep_20260927_DEU_2.yml',
+    'data/leads/DEU.json',
+    'data/structured/foo.csv',
+    'data/structured/unga_votes.tsv',
+    'archive/text/x.pdf',
+    'archive/text/2025/src_20250808_a_b.txt',
+  ])('%s is an error and is not loaded', (rel) => {
+    write(rel, '- id: evt_2025_08_09_FRA_A6\n  points: -500\n  confidence: bogus\n')
     const ds = load()
-    expect(ds.issues).toMatchObject([{ rule: 'load.unexpected-file', file: rel, level: 'warning' }])
-    // The rest of the tree still loads.
+    expect(ds.issues).toMatchObject([{ rule: 'load.misplaced-file', file: rel, level: 'error' }])
+    expect(ds.issues[0]?.message).toContain('not loaded')
+    // The misnamed file is not loaded; the rest of the tree is.
     expect(ds.events).toHaveLength(1)
     expect(ds.sources).toHaveLength(2)
+    expect(ds.archiveTextIds.size).toBe(2)
+  })
+
+  it('a record directory file with its documented name is loaded, not reported', () => {
+    const { event } = templates()
+    write(
+      'data/events/FRA.yaml',
+      stringify([{ ...event, id: 'evt_2025_08_08_FRA_A6', country: 'FRA' }]),
+    )
+    const ds = load()
+    expect(rulesIn(ds.issues)).not.toContain('load.misplaced-file')
+    expect(ds.events).toHaveLength(2)
   })
 
   it('ignores .gitkeep, README.md, .DS_Store, data/snapshots/** and data/structured/raw/**', () => {
@@ -211,6 +248,102 @@ describe('unexpected files (load.unexpected-file)', () => {
     const ds = load()
     expect(ds.issues).toEqual([])
     expect(ds.files).toContain('data/snapshots/v0.9.0/scores.json')
+  })
+})
+
+describe("symbolic links ('load.symlink')", () => {
+  it('a directory loop is reported once and does not abort the load', () => {
+    symlinkSync('..', join(root, 'data/events/loop'))
+    const ds = load()
+    expect(ds.issues).toMatchObject([
+      { rule: 'load.symlink', file: 'data/events/loop', level: 'error' },
+    ])
+    expect(ds.events).toHaveLength(1)
+  })
+
+  it('a dangling link is reported and does not abort the load', () => {
+    symlinkSync('/nonexistent/file.yaml', join(root, 'data/events/ZZZ.yaml'))
+    const ds = load()
+    expect(ds.issues).toMatchObject([{ rule: 'load.symlink', file: 'data/events/ZZZ.yaml' }])
+    expect(ds.files).not.toContain('data/events/ZZZ.yaml')
+  })
+
+  it('a link out of the tree is not read as archive text', () => {
+    const rel = `archive/text/${SOURCE_ID}.txt`
+    const outside = join(root, 'outside.txt')
+    writeFileSync(outside, 'foreign text\n')
+    remove(rel)
+    symlinkSync(outside, join(root, rel))
+    const ds = load()
+    expect(ds.issues).toMatchObject([{ rule: 'load.symlink', file: rel }])
+    expect(ds.archiveTextIds.has(SOURCE_ID)).toBe(false)
+    expect(ds.readArchiveText(SOURCE_ID)).toBeUndefined()
+  })
+
+  it('regular files only: the fixture tree has no symlink issue', () => {
+    expect(rulesIn(load().issues)).not.toContain('load.symlink')
+  })
+})
+
+describe("invalid UTF-8 ('load.encoding')", () => {
+  it('a Latin-1 byte in an events file is an error on its line; the event still loads', () => {
+    const text = read(EVENTS_FILE)
+    const lines = text.split('\n')
+    const line = lines.findIndex((l) => l.includes('fr: ')) + 1
+    expect(line).toBeGreaterThan(0)
+    const bytes = Buffer.from(text.replace(/(fr: .*?)e/, '$1\u0000'))
+    const at = bytes.indexOf(0)
+    bytes[at] = 0xe9
+    writeFileSync(join(root, EVENTS_FILE), bytes)
+    const ds = load()
+    expect(ds.issues).toMatchObject([
+      { rule: 'load.encoding', file: EVENTS_FILE, line, level: 'error' },
+    ])
+    expect(ds.events).toHaveLength(1)
+  })
+
+  it('a Latin-1 byte in archive text and in a CSV is an error', () => {
+    const rel = `archive/text/${SOURCE_ID}.txt`
+    writeFileSync(
+      join(root, rel),
+      Buffer.concat([Buffer.from('Unter diesen Umst'), Buffer.from([0xe4]), Buffer.from('nden\n')]),
+    )
+    const csv = 'data/structured/gni.csv'
+    appendFileSync(join(root, csv), Buffer.from([0x0a, 0xff, 0x0a]))
+    const ds = load()
+    expect(ds.issues.filter((i) => i.rule === 'load.encoding')).toMatchObject([
+      { file: csv, line: 3 },
+      { file: rel, line: 1 },
+    ])
+  })
+
+  it('valid UTF-8 (accents, guillemets, narrow spaces) raises nothing', () => {
+    expect(rulesIn(load().issues)).not.toContain('load.encoding')
+  })
+})
+
+describe('invalid ids per kind', () => {
+  it('a failed assessment and a malformed index row are kept apart from countries and sources', () => {
+    write(
+      'data/assessments/XYZ.yaml',
+      stringify({ country: 'XYZ', indicators: { A1: { status: 'bogus' } } }),
+    )
+    appendFileSync(
+      join(root, INDEX_FILE),
+      `${BAD_SOURCE_ID},https://example.org/x,,nothex,12,2026-09-26T22:58:53Z,text/html\n`,
+    )
+    const ds = load()
+    expect(ds.invalid.assessment).toEqual(new Set(['XYZ']))
+    expect(ds.invalid.archiveIndex).toEqual(new Set([BAD_SOURCE_ID]))
+    expect(ds.invalid.country.size).toBe(0)
+    expect(ds.invalid.source.size).toBe(0)
+    // The union keeps its meaning for rules that have not moved to the per-kind sets.
+    expect(ds.invalidIds).toEqual(new Set(['XYZ', BAD_SOURCE_ID]))
+  })
+
+  it('the fixtures have no invalid id of any kind', () => {
+    const ds = load()
+    for (const set of Object.values(ds.invalid)) expect(set.size).toBe(0)
   })
 })
 

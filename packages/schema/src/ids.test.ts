@@ -23,6 +23,7 @@ import {
   parseSourceId,
   slugify,
 } from './ids.js'
+import { isCalendarDate } from './primitives.js'
 
 const SLUG_41 = 'a'.repeat(41)
 const SLUG_40 = 'a'.repeat(40)
@@ -176,6 +177,31 @@ describe('round trips', () => {
     expect(() => formatEventId({ ...parts, slug: SLUG_41 })).toThrow('invalid slug')
   })
 
+  it('formatEventId refuses parts its parser would reject', () => {
+    const parts = { date: '2025-08-08', iso3: 'DEU', indicator: 'A6' }
+    expect(() => formatEventId({ ...parts, date: '2025-02-30' })).toThrow('invalid event id')
+    expect(() => formatEventId({ ...parts, iso3: 'de' })).toThrow('invalid event id')
+    expect(() => formatEventId({ ...parts, indicator: 'F1' })).toThrow('invalid event id')
+    // A slug of digits only would read back as an instance number.
+    expect(() => formatEventId({ ...parts, slug: '2' })).toThrow('invalid event id')
+    expect(formatEventId({ ...parts, slug: 'es-10-21' })).toBe('evt_2025_08_08_DEU_A6_es-10-21')
+  })
+
+  it('formatCorrectionId, formatReplyId and formatLeadId emit only ids their parsers accept', () => {
+    const date = '2026-09-27'
+    expect(formatCorrectionId({ date, n: 1 })).toBe('cor_20260927_1')
+    expect(formatReplyId({ date, iso3: 'DEU', n: 2 })).toBe('rep_20260927_DEU_2')
+    expect(formatLeadId({ date, iso3: 'DEU', n: 12 })).toBe('lead_20260927_DEU_12')
+    for (const n of [0, -1, 1.5, Number.NaN]) {
+      expect(() => formatCorrectionId({ date, n })).toThrow('invalid correction id')
+      expect(() => formatReplyId({ date, iso3: 'DEU', n })).toThrow('invalid reply id')
+      expect(() => formatLeadId({ date, iso3: 'DEU', n })).toThrow('invalid lead id')
+    }
+    expect(() => formatCorrectionId({ date: '2026-02-30', n: 1 })).toThrow('invalid correction')
+    expect(() => formatReplyId({ date, iso3: 'Deu', n: 1 })).toThrow('invalid reply id')
+    expect(() => formatLeadId({ date: '2026-9-27', iso3: 'DEU', n: 1 })).toThrow('invalid lead')
+  })
+
   it('formatSourceId refuses a single segment or an invalid slug', () => {
     expect(() => formatSourceId({ date: '2025-08-08', segments: ['bundesregierung'] })).toThrow(
       'at least two slug segments',
@@ -183,6 +209,24 @@ describe('round trips', () => {
     expect(() => formatSourceId({ date: '2025-08-08', segments: ['Bund', 'x'] })).toThrow(
       'invalid slug "Bund"',
     )
+    expect(() => formatSourceId({ date: '2025-02-30', segments: ['a', 'b'] })).toThrow(
+      'invalid source id',
+    )
+  })
+})
+
+describe('isCalendarDate', () => {
+  it('accepts YYYY-MM-DD and YYYYMMDD real dates', () => {
+    expect(isCalendarDate('2023-10-07')).toBe(true)
+    expect(isCalendarDate('20231007')).toBe(true)
+    expect(isCalendarDate('2024-02-29')).toBe(true)
+  })
+
+  it('rejects half-hyphenated forms and impossible dates', () => {
+    expect(isCalendarDate('2023-1007')).toBe(false)
+    expect(isCalendarDate('202310-07')).toBe(false)
+    expect(isCalendarDate('2023-02-29')).toBe(false)
+    expect(isCalendarDate('2023-10-7')).toBe(false)
   })
 })
 

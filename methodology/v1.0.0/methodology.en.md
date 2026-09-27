@@ -12,7 +12,7 @@ The index was started by Mohamed Zouad, who maintains it and signs it. His view 
 
 ## The scale
 
-Scores run from −100 to +100 on one scale, with the same rules for every scored country. Zero is not a neutral position: it is the score of a country that has done nothing, and it lies in the Passive band. The Acting band starts at +1.
+Scores run from −100 to +100 on one scale, with the same rules for every scored country. Zero is not a neutral position: it lies in the Passive band, and the Acting band starts at +1. A country that has done nothing sits below zero, because of the passivity penalty described under Silence is negative.
 
 ### Bands
 
@@ -80,7 +80,7 @@ Announcing a review scores nothing; a suspended licence scores. Points come from
 
 ### Silence is negative
 
-A country with no qualifying event in categories B, C or D in the past 365 days receives the passivity penalty: 15 points are subtracted from its score. UN General Assembly votes do not qualify. A country that has done nothing therefore sits at −15, in the Passive band, not at 0. The methodology treats inaction, at the scale of harm in Gaza, as a choice. The penalty is described under Passivity below, and its effect on the ranking is published in the sensitivity tables.
+A country with no qualifying event in categories B, C or D in the past 365 days receives the passivity penalty: 15 points are subtracted from its score. UN General Assembly votes do not qualify. A country that has done nothing therefore sits at about −15, in the Passive band, not at 0: at −15 with no event at all, or at −12 when its recognition of the State of Palestine predates 7 October 2023 (B8, +3). The methodology treats inaction, at the scale of harm in Gaza, as a choice. The penalty is described under Passivity below, and its effect on the ranking is published in the sensitivity tables.
 
 ### Material weight beats symbolic weight
 
@@ -115,14 +115,14 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **A1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable (spec §3). Each row of data/structured/sipri_deliveries.csv cites a dataset source that archives the SIPRI release (docs/03 §7).
-- **A2** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable (spec §3). Values come from the country's own reporting to UN Comtrade; if absent or confidential, from Israel's mirror import data by origin; if both are absent, A2 is no-data, never zero (docs/02 §5, §8). Headings 8526 and 8802 enter only with a licence register, a parliamentary answer or a published investigation citing the customs code. Each row of data/structured/comtrade_a2.csv cites a dataset source that archives the origin (docs/03 §7).
-- **A3** — A document establishing that the country's companies are Tier-1 or Tier-2 suppliers of parts or maintenance for the F-35 programme: official programme documents, national ministry statements, or the UN Special Rapporteur's reports. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **A4** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable (spec §3). Each row of data/structured/sipri_orders.csv cites a dataset source that archives the SIPRI release (docs/03 §7).
-- **A5** — One confirmed instance per event: a named exercise, a documented transit (port call, overflight authorisation), a public basing agreement, or an official confirmation of intelligence sharing related to the Gaza campaign. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **A6** — The government decision or official gazette entry suspending or refusing a class of licences to Israel, or the court order with the same effect. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **A7** — The law or decree, covering both exports to and imports from Israel. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **A8** — A port authority decision or a government statement denying the transit. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+- **A1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Each row of `data/structured/sipri_deliveries.csv` cites a dataset source that archives the SIPRI release.
+- **A2** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Values come from the country's own reporting to UN Comtrade; if absent or confidential, from Israel's mirror import data by origin; if both are absent, A2 is no-data, never zero. Headings 8526 and 8802 enter only with a licence register, a parliamentary answer or a published investigation citing the customs code. Each row of `data/structured/comtrade_a2.csv` cites a dataset source that archives the origin.
+- **A3** — A document establishing that the country's companies are Tier-1 or Tier-2 suppliers of parts or maintenance for the F-35 programme: official programme documents, national ministry statements, or the UN Special Rapporteur's reports. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **A4** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Each row of `data/structured/sipri_orders.csv` cites a dataset source that archives the SIPRI release.
+- **A5** — One confirmed instance per event: a named exercise, a documented transit (port call, overflight authorisation), a public basing agreement, or an official confirmation of intelligence sharing related to the Gaza campaign. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **A6** — The government decision or official gazette entry suspending or refusing a class of licences to Israel, or the court order with the same effect. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **A7** — The law or decree, covering both exports to and imports from Israel. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **A8** — A port authority decision or a government statement denying the transit. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
 
 ### B. Diplomacy & international law (cap −40 / +45)
 
@@ -143,18 +143,18 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **B1** — Generated from data/structured/unga_votes.csv, filtered by votes.yaml; never hand-authored (D-08). Each vote row cites a dataset source that archives the UN voting record, and each qualifying vote in votes.yaml cites the archived UN press release as its official source (docs/06 §2).
-- **B2** — Generated from data/structured/unsc_vetoes.csv (rows with ceasefire: true); never hand-authored (D-08). Each row cites an archived source from the Security Council records of the vote.
-- **B3** — The declaration of intervention as registered by the ICJ, and its text: the direction of its argument decides B3 versus B4. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B4** — The official statement or formal act, or the text of the declaration of intervention arguing against the applicant's construction; a press remark without a formal act does not qualify. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B5** — An official statement by the head of government, foreign or justice minister on executing the 21 November 2024 warrants; an overflight authorisation without a stated position on the warrants is a lead. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B6** — An official statement by the head of government, foreign or justice minister on the warrants, the official record of a visit by a person under warrant hosted without arrest, or the official record of the withdrawal from the Rome Statute; an overflight authorisation without a stated position on the warrants is a lead. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B7** — The official sanctions list. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B8** — Generated from recognises_palestine.since in data/countries.yaml; never hand-authored (D-08, docs/03 §3). The recognition date recorded there comes from the foreign ministry's announcement.
-- **B9** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event carries actor.name and cites a source of kind official or official-video; the quote appears verbatim in archive/text/{source}.txt after whitespace normalisation, including for a video, whose transcript is stored there (docs/02 §12.4, docs/03 §4–§5). Same speaker, same day: one event. The speaker is the head of government or the foreign minister; statements by spokespersons do not score (docs/06 §7).
-- **B10** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event carries actor.name and cites a source of kind official or official-video; the quote appears verbatim in archive/text/{source}.txt after whitespace normalisation, including for a video, whose transcript is stored there (docs/02 §12.4, docs/03 §4–§5). Same speaker, same day: one event. The speaker is the head of government; statements by spokespersons do not score (docs/06 §7).
-- **B11** — The official sanctions list. An EU-level listing counts only for a member state that voted for it. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **B12** — The foreign ministry's announcement. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+- **B1** — Generated from `data/structured/unga_votes.csv`, filtered by `votes.yaml`; never hand-authored. Each vote row cites a dataset source that archives the UN voting record, and each qualifying vote in `votes.yaml` cites the archived UN press release as its official source.
+- **B2** — Generated from `data/structured/unsc_vetoes.csv` (rows with `ceasefire: true`); never hand-authored. Each row cites a dataset source that archives the Security Council record of the vote, such as the UN veto list or the meeting record.
+- **B3** — The declaration of intervention as registered by the ICJ, and its text: the direction of its argument decides B3 versus B4. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B4** — The official statement or formal act, or the text of the declaration of intervention arguing against the applicant's construction; a press remark without a formal act does not qualify. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B5** — An official statement by the head of government, foreign or justice minister on executing the 21 November 2024 warrants; an overflight authorisation without a stated position on the warrants is a lead. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B6** — An official statement by the head of government, foreign or justice minister on the warrants, the official record of a visit by a person under warrant hosted without arrest, or the official record of the withdrawal from the Rome Statute; an overflight authorisation without a stated position on the warrants is a lead. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B7** — The official sanctions list. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B8** — Generated from `recognises_palestine.since` in `data/countries.yaml`; never hand-authored. The recognition date recorded there comes from the foreign ministry's announcement.
+- **B9** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after whitespace normalisation, including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government or the foreign minister; statements by spokespersons do not score.
+- **B10** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after whitespace normalisation, including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government; statements by spokespersons do not score.
+- **B11** — The official sanctions list. An EU-level listing counts only for a member state that voted for it. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **B12** — The foreign ministry's announcement. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
 
 ### C. Trade & economy (cap −20 / +20)
 
@@ -169,12 +169,12 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **C1** — The government or EU decision; for an EU-level decision, the official minutes or ministerial statements recording the state's support in the Council. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **C2** — The signed agreement, from a treaty register or a ministry release. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **C3** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable (spec §3). Values come from the country's own reporting, else from Israel's mirror data (docs/02 §5). Each row of data/structured/comtrade_c3.csv cites a dataset source that archives the origin (docs/03 §7).
-- **C4** — The customs regulation. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **C5** — The decision of the fund or central bank, one event per decision batch. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **C6** — The procurement rule providing the exclusion. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+- **C1** — The government or EU decision; for an EU-level decision, the official minutes or ministerial statements recording the state's support in the Council. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **C2** — The signed agreement, from a treaty register or a ministry release. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **C3** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Values come from the country's own reporting, else from Israel's mirror data. Each row of `data/structured/comtrade_c3.csv` cites a dataset source that archives the origin.
+- **C4** — The customs regulation. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **C5** — The decision of the fund or central bank, one event per decision batch. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **C6** — The procurement rule providing the exclusion. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
 
 ### D. Humanitarian (cap −15 / +25)
 
@@ -188,11 +188,11 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **D1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable (spec §3). Rows of data/structured/fts_funding.csv (FTS, donor organisation type Government) and data/structured/gni.csv (World Bank Atlas) cite dataset sources that archive the API responses (docs/03 §7).
-- **D2** — The government announcement of the suspension, or UNRWA donor tables; the event ends on the announced resumption. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **D3** — UNRWA donor tables; the increased tier requires the annual contribution to exceed the 2022 contribution in nominal USD in those tables. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **D4** — A WHO or health ministry document on the programme, one event per programme. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **D5** — The immigration regulation, one event per legal instrument. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+- **D1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Rows of `data/structured/fts_funding.csv` (FTS, donor organisation type Government) and `data/structured/gni.csv` (World Bank Atlas) cite dataset sources that archive the API responses.
+- **D2** — The government announcement of the suspension, or UNRWA donor tables; the event ends on the announced resumption. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **D3** — UNRWA donor tables; the increased tier requires the annual contribution to exceed the 2022 contribution in nominal USD in those tables. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **D4** — A WHO or health ministry document on the programme, one event per programme. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **D5** — The immigration regulation, one event per legal instrument. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
 
 ### E. Domestic accountability (cap −10 / +10) · experimental · not scored
 
@@ -204,9 +204,9 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **E1** — A prosecutor announcement or court filing. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **E2** — The interior ministry decree or court ruling. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
-- **E3** — The court record accepting the complaint for investigation. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+- **E1** — A prosecutor announcement or court filing. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **E2** — The interior ministry decree or court ruling. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
+- **E3** — The court record accepting the complaint for investigation. Every event needs one primary document (official record, government release, court filing, dataset row). NGO and press reports count only as leads until a primary document is found, or as evidence at confidence corroborated or reported, with reduced weight.
 
 <!-- END generated:indicators -->
 
@@ -291,12 +291,12 @@ In plain language: each event contributes its points multiplied by its confidenc
 
 ### Worked example
 
-This example is illustrative. The country is hypothetical and the numbers are not data. All events are at confidence confirmed (weight 1.0).
+This example is illustrative. The country is hypothetical and the numbers are not data. All events are at confidence confirmed (weight 1.0). Figures are shown to one decimal; the computation uses full precision.
 
 | Category | Contributions | Subtotal after cap |
 |---|---|---|
 | A | A1 −22.0 (s = 0.3025, −40 × √0.3025), A3 −15, A6 +10 | −27 (within −45) |
-| B | B1 +3, +3 and −2 × 0.8 (decay) = −1.6; B10 −5; B5 +8 | +7.4 |
+| B | B1 +3, +3 and −2 × 0.8007 (decay, 462 days after the vote) = −1.6; B10 −5; B5 +8 | +7.4 |
 | C | C3 −5 | −5 |
 | D | D1 +6; D2 ended, 0; D3 +5 | +11 |
 | E | none | not summed |
@@ -358,7 +358,7 @@ Each event has one confidence level. Its weight multiplies the event's points.
 ### Evidence and sources
 
 - Evidence is a primary document: an official release, a gazette, a court filing, an official transcript or video, or a dataset row. NGO and press reports count as leads until a primary document is found, or as evidence at the reduced weight of a corroborated or reported event.
-- Every source has an archived copy: a Wayback Machine snapshot, the SHA-256 hash of the archived bytes, the retrieval timestamp and the byte count. The repository stores these and an extracted plain-text copy, not the documents. If a snapshot disappears, the hash and the extract remain, and the source is marked "archive unavailable", not removed.
+- Every source that supports a published event has an archived copy: a Wayback Machine snapshot, the SHA-256 hash of the archived bytes, the retrieval timestamp and the byte count; a dataset row relies on the archived copy of its dataset. The repository stores these and an extracted plain-text copy, not the documents. A source whose capture failed is kept, marked as such, and cannot support a published event until it is archived. If a snapshot disappears, the hash and the extract remain, and the source is marked "archive unavailable", not removed.
 - Every piece of evidence has the supporting passage, quoted verbatim from the extracted text in the original language, with a locator (page, paragraph, row or video timestamp). A translation is shown beside the original, never instead of it.
 - For a statement, the source is the transcript or the official video, not an article about it.
 - The event date is the date of the act (decision, vote, statement, delivery), not the date of the article that reports it.
@@ -371,7 +371,7 @@ Five indicators are computed from datasets and never typed in by hand: A1, A2, A
 
 ### A1 — major arms delivered to Israel
 
-For each SIPRI release, published in March of year Y+1 with data through year Y, s = TIV(country → Israel, year Y) ÷ TIV(all suppliers → Israel, year Y). Points = −40 × √s, rounded to one decimal. The value holds from the release's publication date to the next release's publication date. Before the first release after 7 October 2023 (March 2024), A1 is no-data for every country. The square root keeps secondary suppliers visible: on a linear scale a supplier with a 1 % share would score −0.4; with the root it scores −4, while the largest supplier stays near the bottom of the range.
+For each SIPRI release, published in March of year Y+1 with data through year Y, s = TIV(country → Israel, year Y) ÷ TIV(all suppliers → Israel, year Y). Points = −40 × √s, rounded to one decimal. The value holds from the release's publication date to the next release's publication date. Before the first release after 7 October 2023 (March 2024), A1 is no-data for every country. The square root keeps secondary suppliers visible: on a linear scale a supplier with a 1 % share would score −0.4; with the root it scores −4, while the largest supplier stays near the bottom of the range.
 
 ### A4 — arms purchased from Israel
 
@@ -387,7 +387,7 @@ T is the total of goods exports and imports with Israel over the trailing 12 mon
 
 ### D1 — humanitarian funding
 
-F is the total of paid and committed contributions from the country's government (donor organisation type "Government") to the OCHA-tracked flash appeals for the occupied Palestinian territory (oPt) and to the oPt pooled fund over the trailing 12 months, as recorded by the OCHA Financial Tracking Service (FTS). x = F ÷ GNI, with GNI from the World Bank (Atlas method, current US dollars, latest available year). Points by tier of x. Zero is a real zero, because FTS is the reference for government humanitarian funding; some bilateral and in-kind aid is not reported to FTS, and D4 and D5 capture part of it (see Known limitations). The value is recomputed monthly and holds for one month.
+F is the total of paid and committed contributions from the country's government (donor organisation type "Government") to the OCHA-tracked flash appeals for the occupied Palestinian territory (oPt) and to the oPt pooled fund over the trailing 12 months, as recorded by the OCHA Financial Tracking Service (FTS). x = F ÷ GNI, where GNI is the country's total gross national income, not GNI per capita, from the World Bank (Atlas method, current US dollars, latest available year). Points by tier of x. Zero is a real zero, because FTS is the reference for government humanitarian funding; some bilateral and in-kind aid is not reported to FTS, and D4 and D5 capture part of it (see Known limitations). The value is recomputed monthly and holds for one month.
 
 ### Thresholds and tiers
 
@@ -466,9 +466,9 @@ The penalty is how the rule "silence is negative" is applied. Only the passivity
 | Qualifying indicators | B2–B12, C1–C6, D1–D5 |
 | Minimum absolute contribution | 2 |
 | Event statuses | `published` |
-| Excluded: B1 | B1 votes do not qualify (spec §2: "votes yes at the UN and does nothing else" is Passive). |
+| Excluded: B1 | B1 votes do not qualify: a country that votes yes at the UN and does nothing else is in the Passive band. |
 | Excluded: A1–A8 | Category A never qualifies: selling or refusing arms is not the kind of engagement the penalty measures, and A6–A8 events almost always come with B or C events anyway. |
-| Excluded: E1–E3 | Category E is experimental and unscored in v1.0 (D-12). |
+| Excluded: E1–E3 | Category E is experimental and unscored in v1.0. |
 | Sensitivity values | 5, 15 and 25 points |
 
 <!-- END generated:passivity -->
@@ -551,9 +551,9 @@ Version 1.0.0-rc.1 is a release candidate. Before scores are displayed, the poin
 
 Every score can be rebuilt from a copy of the public repository: for a given date, the build regenerates every output byte for byte from `data/` and `methodology/`, and the published `manifest.json` records the git commit and a hash of every file. The following checks run at every build and block publication when they fail:
 
-1. Two events on the same indicator for the same country, in overlapping windows, with different points, are an error unless the indicator is scaled, that is, its points can differ between events; each event on a scaled indicator records the reason for its points.
+1. Two events on the same indicator for the same country, in overlapping windows, with different points, are an error unless the indicator is scaled, that is, its points can differ between events; each event on a scaled indicator records the reason for its points. The scaled indicators are A1, A2, A4, A5, B1, B8, B9, B11, B12, C1, C3, C4, D1 and D3.
 2. Every confirmed event has a source of kind official, court or dataset.
-3. Every source has an archived copy, a SHA-256 hash and a retrieval timestamp, and every piece of evidence has a quote.
+3. Every source has an archived copy, a SHA-256 hash and a retrieval timestamp, except a dataset row, which relies on the archived copy of its dataset, and a failed capture, which is flagged and cannot support a published event; every piece of evidence has a quote.
 4. Every B9 and B10 quote appears verbatim in the extracted text of its archived source, after whitespace normalisation; the quotes of other events must appear too, unless the source is a dataset row.
 5. The symmetry table is present and complete.
 6. Event summaries contain no word from `banned-words.txt` and no exclamation mark, are at most 200 characters long, and start with the actor.

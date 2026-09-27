@@ -33,3 +33,4 @@ export function validate(ctx: ValidationContext, rules: Rule[] = ALL_RULES): Iss
 
 export type { DatasetIndex, Rule, ValidationContext } from './context.js'
 export { buildContext, buildIndex } from './context.js'
+export { compareEventIds, compareEventOrder } from './order.js'

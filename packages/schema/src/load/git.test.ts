@@ -24,7 +24,7 @@ import { FIXTURES_ROOT, issuesOf, repoMethodology, runRules } from '../testing/h
 import { buildContext } from '../validate/context.js'
 import { rules as historyRules } from '../validate/rules/history.js'
 import { loadDataset } from './dataset.js'
-import { loadBaseSnapshot, resolveBaseRef } from './git.js'
+import { baseRequired, loadBaseSnapshot, resolveBase, resolveBaseRef } from './git.js'
 
 const EVENT_ID = 'evt_2025_08_08_DEU_A6'
 const EVENTS_FILE = 'data/events/DEU.yaml'
@@ -167,6 +167,142 @@ describe('resolveBaseRef', SLOW, () => {
   })
 })
 
+describe('resolveBase: which commit, and where it came from', SLOW, () => {
+  it('on main without a remote: HEAD, labelled as uncommitted changes only', () => {
+    const head = initRepo(repo)
+    expect(resolveBase(repo)).toEqual({
+      ok: true,
+      ref: head,
+      source: 'HEAD: uncommitted changes only',
+      head: true,
+    })
+  })
+
+  it('names the reason when there is no work tree or no commit', () => {
+    const plain = join(root, 'plain')
+    mkdirSync(plain)
+    expect(resolveBase(plain)).toEqual({ ok: false, reason: 'not a git work tree' })
+    mkdirSync(repo)
+    git(repo, ['init', '-q'])
+    expect(resolveBase(repo)).toEqual({ ok: false, reason: 'no commit yet' })
+  })
+
+  it('an empty GAI_VALIDATE_BASE (the CI expression on PRs and branches) falls through', () => {
+    const head = initRepo(repo)
+    git(repo, ['checkout', '-q', '-b', 'data/deu'])
+    editPoints(repo, 10, 8)
+    git(repo, ['commit', '-q', '-a', '-m', 'Edit points'])
+    expect(resolveBase(repo, undefined, { GAI_VALIDATE_BASE: '' })).toMatchObject({
+      ok: true,
+      ref: head,
+      source: 'merge base of HEAD and main',
+      head: false,
+    })
+  })
+
+  it('an explicit or GAI_VALIDATE_BASE ref that is not in the clone: the reason names it', () => {
+    initRepo(repo)
+    const zeros = '0'.repeat(40)
+    const env = resolveBase(repo, undefined, { GAI_VALIDATE_BASE: zeros })
+    expect(env).toMatchObject({ ok: false })
+    expect(!env.ok && env.reason).toContain(`GAI_VALIDATE_BASE ${zeros} is not a commit`)
+    const flag = resolveBase(repo, 'no-such-ref', {})
+    expect(!flag.ok && flag.reason).toContain('--base no-such-ref is not a commit')
+    expect(resolveBase(repo, 'HEAD', {})).toMatchObject({ ok: true, source: '--base HEAD' })
+  })
+
+  it('a branch with no merge base with main (unrelated history) is not compared with itself', () => {
+    initRepo(repo)
+    git(repo, ['checkout', '-q', '--orphan', 'data/t'])
+    git(repo, ['commit', '-q', '-m', 'Unrelated'])
+    const r = resolveBase(repo, undefined, {})
+    expect(r.ok).toBe(false)
+    expect(!r.ok && r.reason).toContain('branch data/t has no merge base with origin/main or main')
+    git(repo, ['checkout', '-q', '--detach'])
+    const detached = resolveBase(repo, undefined, {})
+    expect(!detached.ok && detached.reason).toContain('a detached HEAD has no merge base')
+  })
+
+  describe('in a clone (origin/main exists)', () => {
+    let work: string
+    let first: string
+
+    beforeEach(() => {
+      first = initRepo(repo)
+      work = join(root, 'work')
+      execFileSync('git', ['clone', '-q', repo, work], { stdio: 'ignore' })
+    })
+
+    it('prefers origin/main to a local main that is ahead of it', () => {
+      editPoints(work, 10, 8)
+      git(work, ['commit', '-q', '-a', '-m', 'Local, unpushed'])
+      const local = git(work, ['rev-parse', 'HEAD'])
+      // On main itself, the unpushed commit is checked too.
+      expect(resolveBase(work, undefined, {})).toMatchObject({
+        ok: true,
+        ref: first,
+        source: 'merge base of HEAD and origin/main',
+        head: false,
+      })
+      git(work, ['checkout', '-q', '-b', 'data/deu'])
+      expect(resolveBase(work, undefined, {})).toMatchObject({ ok: true, ref: first })
+      expect(local).not.toBe(first)
+    })
+
+    it('a pull request: the merge base of the detached merge commit and origin/<base>', () => {
+      git(work, ['checkout', '-q', '-b', 'data/deu'])
+      editPoints(work, 10, 8)
+      git(work, ['commit', '-q', '-a', '-m', 'Edit points'])
+      // What actions/checkout does for pull_request: a detached merge commit.
+      git(work, ['checkout', '-q', '--detach', 'origin/main'])
+      git(work, ['merge', '-q', '--no-ff', '-m', 'Merge', 'data/deu'])
+      expect(git(work, ['rev-parse', '--abbrev-ref', 'HEAD'])).toBe('HEAD')
+      expect(resolveBase(work, undefined, { GITHUB_BASE_REF: 'main' })).toEqual({
+        ok: true,
+        ref: first,
+        source: 'merge base of HEAD and origin/main',
+        head: false,
+      })
+      const historyIssuesOf = runRules(
+        historyRules,
+        buildContext(loadDataset(work), repoMethodology(), loadBaseSnapshot(work, first)),
+      )
+      expect(issuesOf(historyIssuesOf, 'correction.required-on-edit').length).toBeGreaterThan(0)
+    })
+
+    it('a single-branch clone of a data branch (no main at all) is not resolved', () => {
+      git(repo, ['checkout', '-q', '-b', 'data/t'])
+      editPoints(repo, 10, 8)
+      git(repo, ['commit', '-q', '-a', '-m', 'Edit points'])
+      const single = join(root, 'single')
+      execFileSync(
+        'git',
+        ['clone', '-q', '--single-branch', '--branch', 'data/t', `file://${repo}`, single],
+        { stdio: 'ignore' },
+      )
+      const r = resolveBase(single, undefined, {})
+      expect(r.ok).toBe(false)
+      expect(!r.ok && r.reason).toContain('branch data/t has no merge base')
+      const pr = resolveBase(single, undefined, { GITHUB_BASE_REF: 'main' })
+      expect(!pr.ok && pr.reason).toContain('no merge base between HEAD and origin/main')
+    })
+  })
+})
+
+describe('baseRequired', () => {
+  it('is true for --base, a non-empty GAI_VALIDATE_BASE, GITHUB_BASE_REF or GitHub Actions', () => {
+    expect(baseRequired('HEAD~1', {})).toBe(true)
+    expect(baseRequired(undefined, { GAI_VALIDATE_BASE: 'abc' })).toBe(true)
+    expect(baseRequired(undefined, { GITHUB_BASE_REF: 'main' })).toBe(true)
+    expect(baseRequired(undefined, { GITHUB_ACTIONS: 'true' })).toBe(true)
+  })
+
+  it('is false for a plain local run, including an empty GAI_VALIDATE_BASE', () => {
+    expect(baseRequired(undefined, {})).toBe(false)
+    expect(baseRequired(undefined, { GAI_VALIDATE_BASE: '', GITHUB_BASE_REF: '' })).toBe(false)
+  })
+})
+
 describe('loadBaseSnapshot', SLOW, () => {
   it('reads events, corrections and source, reply and lead ids with their files', () => {
     const head = initRepo(repo)
@@ -225,6 +361,51 @@ describe('loadBaseSnapshot', SLOW, () => {
   it('throws when the ref cannot be read', () => {
     initRepo(repo)
     expect(() => loadBaseSnapshot(repo, 'no-such-ref')).toThrow()
+  })
+
+  it('with the working-tree dataset: reuses unchanged files, reads changed ones from git', () => {
+    initRepo(repo)
+    editPoints(repo, 10, 8)
+    const current = loadDataset(repo)
+    const full = loadBaseSnapshot(repo, 'HEAD')
+    const fast = loadBaseSnapshot(repo, 'HEAD', '', current)
+
+    // The edited events file is read from the base: points 10, not the working tree's 8.
+    expect(fast.events.get(EVENT_ID)?.raw.points).toBe(10)
+    expect(fast.events.get(EVENT_ID)?.value).toEqual(full.events.get(EVENT_ID)?.value)
+    // The unchanged corrections log is the working-tree record itself (not re-parsed).
+    expect(fast.corrections.get(CORRECTION_ID)?.value).toBe(current.corrections[0]?.value)
+    expect(fast.corrections.get(CORRECTION_ID)?.value).toEqual(
+      full.corrections.get(CORRECTION_ID)?.value,
+    )
+    // Same ids and files everywhere.
+    const shape = (s: typeof full) => ({
+      events: [...s.events].map(([id, r]) => [id, r.file, r.raw.status]),
+      corrections: [...s.corrections].map(([id, r]) => [id, r.file]),
+      sources: [...s.sourceIds].sort(),
+      replies: [...s.replyIds].sort(),
+      leads: [...s.leadIds].sort(),
+    })
+    expect(shape(fast)).toEqual(shape(full))
+    // And the history rules agree.
+    const run = (base: typeof full) =>
+      runRules(historyRules, buildContext(current, repoMethodology(), base))
+    expect(run(fast)).toEqual(run(full))
+    expect(issuesOf(run(fast), 'correction.required-on-edit').length).toBeGreaterThan(0)
+  })
+
+  it('with the working-tree dataset: a file deleted since the base is read from git', () => {
+    initRepo(repo)
+    rmSync(join(repo, 'data/leads/DEU.yaml'))
+    const current = loadDataset(repo)
+    const fast = loadBaseSnapshot(repo, 'HEAD', '', current)
+    expect([...fast.leadIds]).toEqual([LEAD_ID])
+    expect(
+      issuesOf(
+        runRules(historyRules, buildContext(current, repoMethodology(), fast)),
+        'correction.never-delete',
+      ),
+    ).toMatchObject([{ id: LEAD_ID }])
   })
 })
 
