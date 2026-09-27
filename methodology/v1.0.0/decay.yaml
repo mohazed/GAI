@@ -1,0 +1,35 @@
+# methodology/v1.0.0/decay.yaml
+#
+# Time decay of repeatable events.
+#
+# Encodes docs/02-methodology-spec.md §3 ("repeatable: p × w × d(t − date) with d(Δ) = 1 for
+# 0 ≤ Δ ≤ 365; 1 − 0.75·(Δ−365)/365 for 365 < Δ ≤ 730; 0 for Δ > 730 or Δ < 0"; Δ in whole days)
+# and spec §4 ("Full points for 12 months, then linear decay to 25% over the next 12 months, then
+# archived (still visible, no longer scored)"). Standing and computed events do not decay.
+# Shape: packages/schema/src/methodology/schemas.ts (DecayFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+applies_to: [repeatable]
+unit: days
+plateau_days: 365
+end_days: 730
+end_weight: 0.25
+before_event: 0
+
+formula:
+  latex: 'd(\Delta) = \begin{cases} 1 & \text{if } 0 \le \Delta \le 365 \\ 1 - 0.75 \cdot \dfrac{\Delta - 365}{365} & \text{if } 365 < \Delta \le 730 \\ 0 & \text{if } \Delta > 730 \text{ or } \Delta < 0 \end{cases}'
+  text:
+    en: >-
+      Δ is the number of whole days from the date of a repeatable event to the date scored. The
+      event counts in full from its date to day 365. From day 366 its weight falls linearly,
+      reaching 0.25 on day 730. From day 731 it no longer counts in the score but stays visible
+      in the record. Standing states and computed quantities do not decay.
+    fr: >-
+      Δ est le nombre de jours entiers entre la date d'un événement répétable et la date du
+      calcul. L'événement compte pleinement de sa date jusqu'au 365e jour. À partir du 366e
+      jour, son poids décroît linéairement et atteint 0,25 au 730e jour. À partir du 731e jour,
+      il ne compte plus dans le score mais reste visible dans l'historique. Les états durables
+      et les quantités calculées ne subissent pas de décroissance.

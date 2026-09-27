@@ -1,0 +1,73 @@
+# methodology/v1.0.0/categories.yaml
+#
+# The five categories of indicators, their caps and the final clip of the score.
+#
+# Encodes the category caps of spec §3 and docs/02-methodology-spec.md §7 ("Category caps: A −45/+30,
+# B −40/+45, C −20/+20, D −15/+25. E is computed with cap −10/+10 and shown, never summed";
+# S = clip(raw, −100, +100)), with D-12 (category E experimental and unscored in v1.0).
+# Shape: packages/schema/src/methodology/schemas.ts (CategoriesFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+score_clip: {min: -100, max: 100}
+
+categories:
+  - id: A
+    name:
+      en: Arms & military
+      fr: Armes et coopération militaire
+    short:
+      en: Arms
+      fr: Armes
+    cap: {min: -45, max: 30}
+    scored: true
+    experimental: false
+
+  - id: B
+    name:
+      en: Diplomacy & international law
+      fr: Diplomatie et droit international
+    short:
+      en: Diplomacy
+      fr: Diplomatie
+    cap: {min: -40, max: 45}
+    scored: true
+    experimental: false
+
+  - id: C
+    name:
+      en: Trade & economy
+      fr: Commerce et économie
+    short:
+      en: Trade
+      fr: Commerce
+    cap: {min: -20, max: 20}
+    scored: true
+    experimental: false
+
+  - id: D
+    name:
+      en: Humanitarian
+      fr: Humanitaire
+    short:
+      en: Humanitarian
+      fr: Humanitaire
+    cap: {min: -15, max: 25}
+    scored: true
+    experimental: false
+
+  - id: E
+    name:
+      en: Domestic accountability
+      fr: Responsabilité interne
+    short:
+      en: Accountability
+      fr: Responsabilité
+    cap: {min: -10, max: 10}
+    scored: false
+    experimental: true
+    note:
+      en: "Experimental: computed and shown, not summed in v1.0 (D-12)."
+      fr: "Expérimentale : calculée et affichée, non additionnée en v1.0 (D-12)."

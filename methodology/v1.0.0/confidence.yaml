@@ -1,0 +1,67 @@
+# methodology/v1.0.0/confidence.yaml
+#
+# The four confidence levels, their weights and the evidence each requires.
+#
+# Encodes docs/02-methodology-spec.md §4 (weight and rule per level, English verbatim) and the
+# source-kind rules of docs/03-data-model.md §4 ("confirmed requires an evidence source of kind
+# official, court or dataset; corroborated requires two sources of distinct publishers"), with
+# spec §4 ("Confidence weights").
+# Shape: packages/schema/src/methodology/schemas.ts (ConfidenceFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+levels:
+  - id: confirmed
+    weight: 1.0
+    label:
+      en: Confirmed
+      fr: Confirmé
+    rule:
+      en: At least one source of kind official, court, or dataset.
+      fr: Au moins une source de type official, court ou dataset.
+    requires:
+      any_source_kind: [official, court, dataset]
+
+  - id: corroborated
+    weight: 0.7
+    label:
+      en: Corroborated
+      fr: Corroboré
+    rule:
+      en: Two independent ngo or press sources that name the underlying document.
+      fr: Deux sources indépendantes de type ngo ou press qui citent le document sous-jacent.
+    requires:
+      min_distinct_publishers: 2
+      publisher_kinds: [ngo, press]
+
+  - id: reported
+    weight: 0.4
+    label:
+      en: Reported
+      fr: Signalé
+    rule:
+      en: One credible ngo or press source; flagged on the country page.
+      fr: >-
+        Une source crédible de type ngo ou press ; l'événement est accompagné d'un
+        avertissement sur la page du pays.
+    requires:
+      flagged: true
+
+  - id: disputed
+    weight: 0.4
+    label:
+      en: Disputed
+      fr: Contesté
+    rule:
+      en: >-
+        An official denial is on record (a reply or an official source) and counter-evidence
+        exists; both sides linked.
+      fr: >-
+        Un démenti officiel est enregistré (une réponse au titre du droit de réponse ou une
+        source officielle) et des preuves contraires existent ; les deux versions sont
+        présentées, avec leurs liens.
+    requires:
+      flagged: true
+      both_sides: true

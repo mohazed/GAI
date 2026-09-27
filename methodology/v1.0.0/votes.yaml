@@ -1,0 +1,67 @@
+# methodology/v1.0.0/votes.yaml
+#
+# The qualifying UN General Assembly votes for indicator B1. Only votes listed here score; other
+# rows of data/structured/unga_votes.csv may be stored for tracking and never score (docs/03 §7).
+#
+# Encodes docs/02-methodology-spec.md §2 (B1) and docs/06-sources-playbook.md §2 ("Qualifying
+# UNGA resolutions"). Empty in 1.0.0-rc.1: the list is filled in P-14, after each vote has been
+# verified against the UN Digital Library record and the UN press release, archived and hashed.
+# Adding a resolution to this list is a minor version, since it changes scores (docs/02 §11).
+# Shape: packages/schema/src/methodology/schemas.ts (VotesFile, QualifyingVote; objects are
+# strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+#
+# Inclusion rules (docs/02 §2 B1, docs/06 §2)
+#
+# - Plenary General Assembly resolutions or decisions only, adopted by recorded vote. Committee
+#   stages are excluded; procedural votes and amendments are excluded.
+# - Subject: Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of
+#   Palestine.
+# - Adopted on or after 2023-10-07. The 12 September 2025 endorsement of the New York
+#   Declaration was adopted as a decision (A/DEC/80/506) and qualifies.
+# - A/RES/ES-10/24 (occupation as a whole, not Gaza only) and the 2026 vote on Palestine's
+#   participation in the 81st session default to included, under "status and rights of
+#   Palestine"; the inclusion is decided here with a written rationale.
+# - The recurring December Palestine items from the Fourth Committee that pre-date the war
+#   (e.g. "Peaceful settlement of the question of Palestine") are excluded.
+# - Each entry carries a one-line inclusion rationale.
+#
+# Fields of one entry (QualifyingVote)
+#
+#   symbol       required. The GA document symbol, A/RES/… or A/DEC/… (e.g. A/RES/ES-10/21,
+#                A/DEC/80/506). Unique in the list; it is the `resolution` column of
+#                unga_votes.csv.
+#   kind         required. resolution | decision.
+#   date         required. Plenary adoption date, YYYY-MM-DD, on or after 2023-10-07.
+#   title        required. {en, fr}: the official title in both languages.
+#   subject      required. gaza | unrwa | palestine-status.
+#   counts       required. {yes, no, abstain}: the recorded totals, non-negative integers, as in
+#                the voting record.
+#   draft        optional. Draft symbol (e.g. A/80/L.26, or A/C.4/80/L.17 for a Fourth
+#                Committee draft adopted in plenary).
+#   meeting      optional. Plenary meeting record symbol (A/…/PV.…).
+#   undl_record  optional. UN Digital Library record number of the voting record.
+#   source       required. Id of the archived source of kind official (the UN press release of
+#                the vote, or the official record), pattern src_{YYYYMMDD}_{publisher}_{topic}
+#                (docs/03 §2).
+#   rationale    required. {en, fr}: one line stating why the vote qualifies.
+#
+# Example of the shape (illustrative only, not an entry; the real list is written in P-14):
+#
+#   votes:
+#     - symbol: A/RES/ES-10/…
+#       kind: resolution
+#       date: YYYY-MM-DD
+#       title: {en: "…", fr: "…"}
+#       subject: gaza
+#       counts: {yes: 0, no: 0, abstain: 0}
+#       draft: A/ES-10/L.…
+#       meeting: A/ES-10/PV.…
+#       undl_record: 0
+#       source: src_YYYYMMDD_un-press_…
+#       rationale: {en: "…", fr: "…"}
+
+version: 1.0.0-rc.1
+
+votes: []

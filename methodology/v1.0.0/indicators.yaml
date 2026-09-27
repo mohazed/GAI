@@ -1,0 +1,2115 @@
+# methodology/v1.0.0/indicators.yaml
+#
+# The 34 indicators of methodology v1.0.0 (31 scored, A1–D5; 3 experimental and unscored, E1–E3):
+# definition, sign, event type, authoring, points, indicator-level cap, stacking, evidence rule,
+# primary sources and cadence.
+#
+# Encodes the indicator tables and the "Evidence rules per indicator" of spec §3 ("Gaza
+# Accountability Index — Cahier des charges.md"), with the precisions of
+# docs/02-methodology-spec.md §2 (indicator-level caps, precisions per indicator), §3 (event types),
+# §5 (computed indicators, via thresholds.yaml) and §8 (not-applicable rule), and the event rules of
+# docs/03-data-model.md §4. Names in English are the spec §3 "Indicator" cells verbatim.
+# Shape: packages/schema/src/methodology/schemas.ts (IndicatorsFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+cadences:
+  annual-march:
+    en: Annual (March)
+    fr: Annuelle (mars)
+  annual:
+    en: Annual
+    fr: Annuelle
+  quarterly:
+    en: Quarterly
+    fr: Trimestrielle
+  monthly:
+    en: Monthly
+    fr: Mensuelle
+  per-vote:
+    en: Per vote
+    fr: À chaque vote
+  on-event:
+    en: On event
+    fr: À chaque événement
+  on-change:
+    en: On change
+    fr: À chaque changement
+
+indicators:
+  # ---------------------------------------------------------------------------------------------
+  # A. Arms & military (category cap −45 / +30)
+
+  - id: A1
+    category: A
+    name:
+      en: Major conventional arms delivered to Israel, scaled by share of Israel's imports
+      fr: Armes conventionnelles majeures livrées à Israël, pondérées par la part dans les importations d'Israël
+    description:
+      en: >-
+        Major conventional arms delivered to Israel, scaled by the country's share of Israel's
+        imports of major conventional arms. A1 uses SIPRI TIV (trend-indicator values) from the
+        annual release. Points are computed by the formula a1 of thresholds.yaml (docs/02 §5).
+      fr: >-
+        Armes conventionnelles majeures livrées à Israël, pondérées par la part du pays dans les
+        importations d'armes conventionnelles majeures d'Israël. A1 utilise les TIV du SIPRI
+        (trend-indicator values, valeurs d'indicateur de tendance) tirées de la publication
+        annuelle. Les points sont calculés par la formule a1 de thresholds.yaml (docs/02 §5).
+    sign: negative
+    type: computed
+    scored: true
+    authoring: generated
+    generated_from: data/structured/sipri_deliveries.csv by the formula a1 of thresholds.yaml
+    points:
+      kind: formula
+      ref: a1
+      range: {min: -40, max: 0}
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Computed from the dataset, never typed in by hand; the formula and the raw rows are
+          downloadable (spec §3). Each row of data/structured/sipri_deliveries.csv cites a
+          dataset source that archives the SIPRI release (docs/03 §7).
+        fr: >-
+          Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
+          brutes sont téléchargeables (cahier des charges, §3). Chaque ligne de
+          data/structured/sipri_deliveries.csv cite une source de type dataset qui archive la
+          publication du SIPRI (docs/03 §7).
+    primary_sources:
+      - en: SIPRI Arms Transfers Database
+        fr: Base de données du SIPRI sur les transferts d'armes
+        url: https://www.sipri.org/databases/armstransfers
+    cadence: annual-march
+
+  - id: A2
+    category: A
+    name:
+      en: Ammunition, components, dual-use military goods exported (HS 93, 8710, 8802, 8526)
+      fr: Munitions, composants, biens militaires à double usage exportés (SH 93, 8710, 8802, 8526)
+    description:
+      en: >-
+        Ammunition, components and dual-use military goods exported to Israel, measured in
+        customs data. HS chapter 93 (arms and ammunition) and heading 8710 (tanks and armoured
+        vehicles) count fully. Headings 8526 (radar and remote-control apparatus) and 8802
+        (aircraft) count only when a licence register, a parliamentary answer or a published
+        investigation citing the customs code confirms the military nature of the flow, because
+        both headings are dominated by civil goods. Points are computed by the formula a2 of
+        thresholds.yaml (docs/02 §5).
+      fr: >-
+        Munitions, composants et biens militaires à double usage exportés vers Israël, mesurés
+        dans les données douanières. Le chapitre 93 du SH (armes et munitions) et la position
+        8710 (chars et véhicules blindés) comptent en totalité. Les positions 8526 (radar et
+        appareils de radiotélécommande) et 8802 (aéronefs) ne comptent que lorsqu'un registre de
+        licences, une réponse parlementaire ou une enquête publiée citant le code douanier
+        confirme la nature militaire du flux, car ces deux positions sont dominées par des biens
+        civils. Les points sont calculés par la formule a2 de thresholds.yaml (docs/02 §5).
+    sign: negative
+    type: computed
+    scored: true
+    authoring: generated
+    generated_from: data/structured/comtrade_a2.csv by the formula a2 of thresholds.yaml
+    points:
+      kind: formula
+      ref: a2
+      range: {min: -25, max: 0}
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Computed from the dataset, never typed in by hand; the formula and the raw rows are
+          downloadable (spec §3). Values come from the country's own reporting to UN Comtrade;
+          if absent or confidential, from Israel's mirror import data by origin; if both are
+          absent, A2 is no-data, never zero (docs/02 §5, §8). Headings 8526 and 8802 enter only
+          with a licence register, a parliamentary answer or a published investigation citing
+          the customs code. Each row of data/structured/comtrade_a2.csv cites a dataset source
+          that archives the origin (docs/03 §7).
+        fr: >-
+          Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
+          brutes sont téléchargeables (cahier des charges, §3). Les valeurs proviennent des
+          déclarations du pays lui-même à UN Comtrade ; à défaut, ou si elles sont
+          confidentielles, des données miroir des importations d'Israël par origine ; si les
+          deux manquent, A2 est « pas de données », jamais zéro (docs/02 §5, §8). Les positions
+          8526 et 8802 n'entrent qu'avec un registre de licences, une réponse parlementaire ou
+          une enquête publiée citant le code douanier. Chaque ligne de
+          data/structured/comtrade_a2.csv cite une source de type dataset qui archive l'origine
+          des données (docs/03 §7).
+    primary_sources:
+      - en: Israeli Tax Authority customs data
+        fr: Données douanières de l'Autorité fiscale israélienne
+      - en: UN Comtrade
+        fr: UN Comtrade
+      - en: National licence registers
+        fr: Registres nationaux de licences
+      - en: NGO investigations
+        fr: Enquêtes d'ONG
+    cadence: quarterly
+    notes:
+      en: >-
+        Documented deviation from spec §3, whose indicator lists HS 8802 and 8526 without
+        condition: both headings count only when the military nature of the flow is confirmed
+        (docs/00-decisions.md, "Deviations from the spec", item 6).
+      fr: >-
+        Écart documenté par rapport au cahier des charges (§3), dont l'indicateur cite les
+        positions SH 8802 et 8526 sans condition : ces deux positions ne comptent que lorsque la
+        nature militaire du flux est confirmée (docs/00-decisions.md, « Deviations from the
+        spec », point 6).
+
+  - id: A3
+    category: A
+    name:
+      en: Participation in the F-35 supply chain
+      fr: Participation à la chaîne d'approvisionnement du F-35
+    description:
+      en: >-
+        Participation in the F-35 supply chain: a standing state for the countries whose
+        companies are documented Tier-1 or Tier-2 suppliers of parts or maintenance for the
+        F-35 programme in official programme documents, national ministry statements, or the UN
+        Special Rapporteur's reports. Points −15 while the state holds. A judicial or
+        governmental halt of F-35 part exports to Israel ends the standing state (and is
+        separately an A6 event).
+      fr: >-
+        Participation à la chaîne d'approvisionnement du F-35 : état durable pour les pays dont
+        des entreprises sont des fournisseurs documentés de rang 1 ou de rang 2 de pièces ou de
+        maintenance pour le programme F-35, dans des documents officiels du programme, des
+        déclarations de ministères nationaux ou les rapports du Rapporteur spécial des Nations
+        unies. −15 points tant que l'état dure. Un arrêt judiciaire ou gouvernemental des
+        exportations de pièces de F-35 vers Israël met fin à l'état durable (et constitue par
+        ailleurs un événement A6).
+    sign: negative
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -15
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          A document establishing that the country's companies are Tier-1 or Tier-2 suppliers of
+          parts or maintenance for the F-35 programme: official programme documents, national
+          ministry statements, or the UN Special Rapporteur's reports. Every event needs one
+          primary document (official record, government release, court filing, dataset row).
+          NGO and press reports count only as leads until a primary document is found, or as
+          evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          Un document établissant que des entreprises du pays sont des fournisseurs de rang 1 ou
+          de rang 2 de pièces ou de maintenance pour le programme F-35 : documents officiels du
+          programme, déclarations de ministères nationaux ou rapports du Rapporteur spécial des
+          Nations unies. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: UN Special Rapporteur reports
+        fr: Rapports du Rapporteur spécial des Nations unies
+      - en: Lockheed supplier disclosures
+        fr: Informations publiées par Lockheed sur ses fournisseurs
+    cadence: on-change
+
+  - id: A4
+    category: A
+    name:
+      en: Arms purchased from Israel (new contracts since Oct 2023)
+      fr: Armes achetées à Israël (nouveaux contrats depuis octobre 2023)
+    description:
+      en: >-
+        Arms purchased from Israel under new contracts since October 2023. A4 uses SIPRI TIV
+        (trend-indicator values) from the annual release and counts only contracts signed on or
+        after 2023-10-07 (orders, not deliveries of pre-war orders). Points are computed by the
+        formula a4 of thresholds.yaml (docs/02 §5).
+      fr: >-
+        Armes achetées à Israël dans le cadre de nouveaux contrats depuis octobre 2023. A4 utilise
+        les TIV du SIPRI (valeurs d'indicateur de tendance) tirées de la publication annuelle et ne
+        compte que les contrats signés à partir du 7 octobre 2023 (commandes, et non livraisons de
+        commandes antérieures à la guerre). Les points sont calculés par la formule a4 de
+        thresholds.yaml (docs/02 §5).
+    sign: negative
+    type: computed
+    scored: true
+    authoring: generated
+    generated_from: data/structured/sipri_orders.csv by the formula a4 of thresholds.yaml
+    points:
+      kind: formula
+      ref: a4
+      range: {min: -15, max: 0}
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Computed from the dataset, never typed in by hand; the formula and the raw rows are
+          downloadable (spec §3). Each row of data/structured/sipri_orders.csv cites a dataset
+          source that archives the SIPRI release (docs/03 §7).
+        fr: >-
+          Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
+          brutes sont téléchargeables (cahier des charges, §3). Chaque ligne de
+          data/structured/sipri_orders.csv cite une source de type dataset qui archive la
+          publication du SIPRI (docs/03 §7).
+    primary_sources:
+      - en: SIPRI
+        fr: SIPRI
+      - en: National procurement notices
+        fr: Avis nationaux de marchés publics
+    cadence: annual
+
+  - id: A5
+    category: A
+    name:
+      en: "Military cooperation: joint exercises, intelligence sharing, basing, weapons transit via ports or airspace"
+      fr: "Coopération militaire : exercices conjoints, partage de renseignements, stationnement, transit d'armes par les ports ou l'espace aérien"
+    description:
+      en: >-
+        Military cooperation with Israel: joint exercises, intelligence sharing, basing, weapons
+        transit via ports or airspace. Counts confirmed instances only: a named exercise, a
+        documented transit (port call, overflight authorisation), a public basing agreement, or
+        an official confirmation of intelligence sharing related to the Gaza campaign. Routine
+        pre-existing NATO or bilateral arrangements are not instances unless activated for the
+        campaign. −5 per confirmed instance, cap −15.
+      fr: >-
+        Coopération militaire avec Israël : exercices conjoints, partage de renseignements,
+        stationnement, transit d'armes par les ports ou l'espace aérien. Seules les instances
+        confirmées comptent : un exercice nommé, un transit documenté (escale, autorisation de
+        survol), un accord de stationnement public, ou une confirmation officielle d'un partage
+        de renseignements lié à la campagne de Gaza. Les arrangements courants préexistants,
+        dans le cadre de l'OTAN ou bilatéraux, ne sont pas des instances, sauf s'ils sont
+        activés pour la campagne. −5 par instance confirmée, plafond −15.
+    sign: negative
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: per_instance
+      value: -5
+    scaled: true
+    indicator_cap: {min: -15, max: null}
+    stacking:
+      rule: sum
+      note:
+        en: >-
+          Indicator cap: −15, applied to the indicator's summed contributions before the
+          category clip.
+        fr: >-
+          Plafond de l'indicateur : −15, appliqué à la somme des contributions de l'indicateur
+          avant l'application du plafond de la catégorie.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          One confirmed instance per event: a named exercise, a documented transit (port call,
+          overflight authorisation), a public basing agreement, or an official confirmation of
+          intelligence sharing related to the Gaza campaign. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence
+          at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          Une instance confirmée par événement : un exercice nommé, un transit documenté (escale,
+          autorisation de survol), un accord de stationnement public, ou une confirmation
+          officielle d'un partage de renseignements lié à la campagne de Gaza. Chaque événement
+          exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
+          (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Defence ministry releases
+        fr: Communiqués des ministères de la Défense
+      - en: Investigative journalism
+        fr: Journalisme d'investigation
+    cadence: on-event
+
+  - id: A6
+    category: A
+    name:
+      en: Export licences suspended (partial)
+      fr: Licences d'exportation suspendues (suspension partielle)
+    description:
+      en: >-
+        Export licences suspended, in part: any government decision suspending or refusing a
+        class of licences to Israel, or a court order with the same effect. A7 supersedes A6 for
+        the same country (do not add).
+      fr: >-
+        Licences d'exportation suspendues en partie : toute décision gouvernementale suspendant
+        ou refusant une catégorie de licences à destination d'Israël, ou toute décision de
+        justice ayant le même effet. A7 remplace A6 pour un même pays (ne pas additionner).
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 10
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+      note:
+        en: A7 supersedes A6 for the same country (do not add).
+        fr: A7 remplace A6 pour un même pays (ne pas additionner).
+    superseded_by: [A7]
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The government decision or official gazette entry suspending or refusing a class of
+          licences to Israel, or the court order with the same effect. Every event needs one
+          primary document (official record, government release, court filing, dataset row).
+          NGO and press reports count only as leads until a primary document is found, or as
+          evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          La décision gouvernementale ou la publication au journal officiel suspendant ou
+          refusant une catégorie de licences à destination d'Israël, ou la décision de justice
+          ayant le même effet. Chaque événement exige un document primaire (acte officiel,
+          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données).
+          Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
+          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Government decision
+        fr: Décision gouvernementale
+      - en: Official gazette
+        fr: Journal officiel
+    cadence: on-event
+    notes:
+      en: >-
+        docs/02 §3 lists A6 as standing "when a suspension is open-ended"; every A6 event is
+        standing, and a suspension that ends is recorded with its end date.
+      fr: >-
+        docs/02 §3 classe A6 parmi les états durables « lorsqu'une suspension est sans terme » ;
+        tout événement A6 est un état durable, et une suspension qui prend fin est enregistrée
+        avec sa date de fin.
+
+  - id: A7
+    category: A
+    name:
+      en: Full two-way arms embargo in force
+      fr: Embargo total sur les armes, dans les deux sens, en vigueur
+    description:
+      en: >-
+        Full two-way arms embargo in force: a law or decree covering both exports to and imports
+        from Israel. A7 supersedes A6 for the same country (do not add).
+      fr: >-
+        Embargo total sur les armes, dans les deux sens, en vigueur : une loi ou un décret
+        couvrant à la fois les exportations vers Israël et les importations en provenance
+        d'Israël. A7 remplace A6 pour un même pays (ne pas additionner).
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 25
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The law or decree, covering both exports to and imports from Israel. Every event
+          needs one primary document (official record, government release, court filing,
+          dataset row). NGO and press reports count only as leads until a primary document is
+          found, or as evidence at confidence corroborated or reported, with reduced weight
+          (spec §3, docs/02 §4).
+        fr: >-
+          La loi ou le décret, couvrant à la fois les exportations vers Israël et les
+          importations en provenance d'Israël. Chaque événement exige un document primaire
+          (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu
+          de données). Les rapports d'ONG et de presse ne comptent que comme pistes tant
+          qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
+          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
+          docs/02 §4).
+    primary_sources:
+      - en: Law or decree
+        fr: Loi ou décret
+    cadence: on-event
+
+  - id: A8
+    category: A
+    name:
+      en: Transit denied to arms shipments (ports, airspace, flagged vessels)
+      fr: Transit refusé aux cargaisons d'armes (ports, espace aérien, navires sous pavillon national)
+    description:
+      en: >-
+        Transit denied to arms shipments bound for Israel (ports, airspace, flagged vessels).
+        +5 per instance, cap +10.
+      fr: >-
+        Transit refusé aux cargaisons d'armes à destination d'Israël (ports, espace aérien,
+        navires sous pavillon national). +5 par instance, plafond +10.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: per_instance
+      value: 5
+    scaled: false
+    indicator_cap: {min: null, max: 10}
+    stacking:
+      rule: sum
+      note:
+        en: >-
+          Indicator cap: +10, applied to the indicator's summed contributions before the
+          category clip.
+        fr: >-
+          Plafond de l'indicateur : +10, appliqué à la somme des contributions de l'indicateur
+          avant l'application du plafond de la catégorie.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          A port authority decision or a government statement denying the transit. Every event
+          needs one primary document (official record, government release, court filing,
+          dataset row). NGO and press reports count only as leads until a primary document is
+          found, or as evidence at confidence corroborated or reported, with reduced weight
+          (spec §3, docs/02 §4).
+        fr: >-
+          Une décision de l'autorité portuaire ou une déclaration gouvernementale refusant le
+          transit. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Port authority
+        fr: Autorité portuaire
+      - en: Government statement
+        fr: Déclaration gouvernementale
+    cadence: on-event
+
+  # ---------------------------------------------------------------------------------------------
+  # B. Diplomacy & international law (category cap −40 / +45)
+
+  - id: B1
+    category: B
+    name:
+      en: UN General Assembly votes on Gaza ceasefire, UNRWA, Palestine status
+      fr: Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA, le statut de la Palestine
+    description:
+      en: >-
+        UN General Assembly votes on Gaza ceasefire, UNRWA and Palestine status: yes +3, abstain
+        −2, no −5, absent −2, per vote. Counts only plenary General Assembly resolutions or
+        decisions adopted by recorded vote whose subject is Gaza (ceasefire, truce, humanitarian
+        access), UNRWA, or the status and rights of Palestine, adopted on or after 2023-10-07
+        (the 12 September 2025 endorsement of the New York Declaration was adopted as a
+        decision, A/DEC/80/506, and qualifies). The list of qualifying resolutions is
+        votes.yaml, each with a one-line inclusion rationale. Committee votes, procedural votes
+        and amendments are excluded. Absent is scored −2; a formal "did not participate" is
+        treated as absent.
+      fr: >-
+        Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA et
+        le statut de la Palestine : pour +3, abstention −2, contre −5, absent −2, par vote. Ne
+        comptent que les résolutions ou décisions de l'Assemblée générale adoptées en séance
+        plénière par vote enregistré dont l'objet est Gaza (cessez-le-feu, trêve, accès
+        humanitaire), l'UNRWA, ou le statut et les droits de la Palestine, adoptées à partir du
+        7 octobre 2023 (l'approbation de la Déclaration de New York le 12 septembre 2025 a été
+        adoptée sous forme de décision, A/DEC/80/506, et compte). La liste des résolutions
+        retenues figure dans votes.yaml, chacune avec une justification d'une ligne. Les votes
+        en commission, les votes de procédure et les amendements sont exclus. L'absence compte
+        −2 ; une « non-participation » formelle est traitée comme une absence.
+    sign: mixed
+    type: repeatable
+    scored: true
+    authoring: generated
+    generated_from: data/structured/unga_votes.csv filtered by methodology votes.yaml
+    points:
+      kind: tiers
+      tiers:
+        - key: 'yes'
+          value: 3
+          label:
+            en: 'Yes'
+            fr: Pour
+        - key: abstain
+          value: -2
+          label:
+            en: Abstain
+            fr: Abstention
+        - key: 'no'
+          value: -5
+          label:
+            en: 'No'
+            fr: Contre
+        - key: absent
+          value: -2
+          label:
+            en: Absent
+            fr: Absent
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+      note:
+        en: "Indicator cap: none (category cap governs)."
+        fr: "Plafond de l'indicateur : aucun (le plafond de la catégorie s'applique)."
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Generated from data/structured/unga_votes.csv, filtered by votes.yaml; never
+          hand-authored (D-08). Each vote row cites a dataset source that archives the UN voting
+          record, and each qualifying vote in votes.yaml cites the archived UN press release as
+          its official source (docs/06 §2).
+        fr: >-
+          Généré à partir de data/structured/unga_votes.csv, filtré par votes.yaml ; jamais
+          rédigé à la main (D-08). Chaque ligne de vote cite une source de type dataset qui
+          archive le relevé de vote des Nations unies, et chaque vote retenu dans votes.yaml
+          cite comme source officielle le communiqué de presse archivé des Nations unies
+          (docs/06 §2).
+    primary_sources:
+      - en: UN Digital Library voting records
+        fr: Relevés des votes de la Bibliothèque numérique des Nations unies
+        url: https://digitallibrary.un.org
+    cadence: per-vote
+    notes:
+      en: >-
+        Committee stages, procedural votes and amendments are never listed in votes.yaml. In
+        unga_votes.csv a formal "did not participate" is recorded as X (absent or non-voting)
+        and scores −2, like an absence. Resolutions not listed in votes.yaml may be stored in
+        the table for tracking and do not score (docs/03 §7).
+      fr: >-
+        Les étapes en commission, les votes de procédure et les amendements ne figurent jamais
+        dans votes.yaml. Dans unga_votes.csv, une « non-participation » formelle est enregistrée
+        comme X (absent ou non-votant) et compte −2, comme une absence. Les résolutions absentes
+        de votes.yaml peuvent être conservées dans la table pour suivi et ne sont pas notées
+        (docs/03 §7).
+
+  - id: B2
+    category: B
+    name:
+      en: UN Security Council veto of a ceasefire resolution (members only)
+      fr: Veto au Conseil de sécurité des Nations unies contre une résolution de cessez-le-feu (membres uniquement)
+    description:
+      en: >-
+        UN Security Council veto of a ceasefire resolution, −20 per veto (members only). Counts
+        any veto of a draft resolution whose operative paragraphs called for a ceasefire, a
+        humanitarian truce or pause, regardless of which permanent member cast it. Vetoes of
+        drafts on other subjects (e.g. Palestine's UN membership, 18 April 2024) and vetoes of
+        amendments (22 December 2023) are recorded in unsc_vetoes.csv with ceasefire: false and
+        tracked, not scored.
+      fr: >-
+        Veto au Conseil de sécurité des Nations unies contre une résolution de cessez-le-feu,
+        −20 par veto (membres uniquement). Compte tout veto opposé à un projet de résolution
+        dont le dispositif appelait à un cessez-le-feu, à une trêve ou à une pause humanitaire,
+        quel que soit le membre permanent qui l'a exercé. Les vetos opposés à des projets
+        portant sur d'autres sujets (par exemple l'admission de la Palestine à l'ONU, le 18 avril
+        2024) et les vetos opposés à des amendements (22 décembre 2023) sont enregistrés dans
+        unsc_vetoes.csv avec ceasefire: false, et suivis sans être notés.
+    sign: negative
+    type: repeatable
+    scored: true
+    authoring: generated
+    generated_from: "data/structured/unsc_vetoes.csv, rows with ceasefire: true"
+    points:
+      kind: fixed
+      value: -20
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable:
+      rule: unsc_non_member
+      note:
+        en: >-
+          Not applicable to states that were not on the Security Council at any point in the
+          window (docs/02 §8).
+        fr: >-
+          Sans objet pour les États qui n'ont siégé au Conseil de sécurité à aucun moment de la
+          période couverte (docs/02 §8).
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Generated from data/structured/unsc_vetoes.csv (rows with ceasefire: true); never
+          hand-authored (D-08). Each row cites an archived source from the Security Council
+          records of the vote.
+        fr: >-
+          Généré à partir de data/structured/unsc_vetoes.csv (lignes avec ceasefire: true) ;
+          jamais rédigé à la main (D-08). Chaque ligne cite une source archivée tirée des
+          documents du Conseil de sécurité relatifs au vote.
+    primary_sources:
+      - en: UNSC records
+        fr: Documents du Conseil de sécurité des Nations unies
+    cadence: per-vote
+    notes:
+      en: >-
+        Vetoes of drafts on other subjects and vetoes of amendments stay in unsc_vetoes.csv with
+        ceasefire: false (tracked, not scored). There is no indicator cap; the category cap
+        governs.
+      fr: >-
+        Les vetos opposés à des projets portant sur d'autres sujets et à des amendements restent
+        dans unsc_vetoes.csv avec ceasefire: false (suivis, non notés). Il n'y a pas de
+        plafond propre à l'indicateur ; le plafond de la catégorie s'applique.
+
+  - id: B3
+    category: B
+    name:
+      en: "ICJ genocide case: declaration of intervention filed"
+      fr: "Affaire de génocide devant la CIJ : déclaration d'intervention déposée"
+    description:
+      en: >-
+        ICJ genocide case: declaration of intervention filed in ICJ case 192 (South Africa v.
+        Israel), Article 62 or 63, counted from the date the ICJ registers the filing, only when
+        the declaration's stated construction of the Genocide Convention supports the
+        applicant's reading or the Court's provisional-measures orders (obligations to prevent,
+        scope of intent, binding character of the orders). A declaration that argues for a
+        narrower reading against the applicant is a B4 event (−15), not B3. A withdrawal ends
+        the standing state on the withdrawal date (Colombia, 18 September 2026; Nicaragua's
+        Article 62 application, withdrawn 3 April 2025). Joining a separate case (e.g.
+        Nicaragua v. Germany) is tracked under scope tag related and unscored.
+      fr: >-
+        Affaire de génocide devant la CIJ : déclaration d'intervention déposée dans l'affaire 192
+        de la CIJ (Afrique du Sud c. Israël), au titre de l'article 62 ou 63, comptée à partir
+        de la date à laquelle la CIJ enregistre le dépôt, uniquement lorsque l'interprétation de
+        la Convention sur le génocide exposée dans la déclaration soutient la lecture du
+        demandeur ou les ordonnances en indication de mesures conservatoires de la Cour
+        (obligation de prévenir, portée de l'intention, caractère contraignant des
+        ordonnances). Une déclaration qui plaide pour une lecture plus étroite, contre le
+        demandeur, est un événement B4 (−15), et non B3. Un retrait met fin à l'état durable à la
+        date du retrait (Colombie, 18 septembre 2026 ; requête à fin d'intervention du
+        Nicaragua au titre de l'article 62, retirée le 3 avril 2025). Se joindre à une autre
+        affaire (par exemple Nicaragua c. Allemagne) est suivi sous l'étiquette de portée
+        related et n'est pas noté.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 15
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The declaration of intervention as registered by the ICJ, and its text: the direction
+          of its argument decides B3 versus B4. Every event needs one primary document (official
+          record, government release, court filing, dataset row). NGO and press reports count
+          only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La déclaration d'intervention telle qu'enregistrée par la CIJ, et son texte : le sens
+          de son argumentation décide entre B3 et B4. Chaque événement exige un document
+          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
+          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
+          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
+          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
+          docs/02 §4).
+    primary_sources:
+      - en: ICJ press releases
+        fr: Communiqués de presse de la CIJ
+    cadence: on-event
+    notes:
+      en: >-
+        Decision in docs/02 §3: B3 is standing from the filing date, since intervention
+        persists; a withdrawal sets the event's end to the withdrawal date. Joining a separate
+        case is recorded with scope related and does not score in v1.0.
+      fr: >-
+        Décision de docs/02 §3 : B3 est un état durable à partir de la date de dépôt, car
+        l'intervention perdure ; un retrait fixe la fin de l'événement à la date du retrait. Se
+        joindre à une autre affaire est enregistré avec la portée related et n'est pas noté en
+        v1.0.
+
+  - id: B4
+    category: B
+    name:
+      en: Formal position rejecting or opposing ICJ provisional measures
+      fr: Position formelle rejetant les mesures conservatoires de la CIJ ou s'y opposant
+    description:
+      en: >-
+        Formal position rejecting or opposing ICJ provisional measures: an official statement
+        rejecting the ICJ's provisional-measures orders or their binding character, a formal act
+        to that effect, or a declaration of intervention filed against the applicant's
+        construction (see B3). Criticism of the case's merits in a press remark without a formal
+        act is not B4.
+      fr: >-
+        Position formelle rejetant les mesures conservatoires de la CIJ ou s'y opposant : une
+        déclaration officielle rejetant les ordonnances en indication de mesures conservatoires
+        de la CIJ ou leur caractère contraignant, un acte formel en ce sens, ou une déclaration
+        d'intervention déposée contre l'interprétation du demandeur (voir B3). Une critique du
+        fond de l'affaire dans une remarque à la presse, sans acte formel, n'est pas un B4.
+    sign: negative
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -15
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The official statement or formal act, or the text of the declaration of intervention
+          arguing against the applicant's construction; a press remark without a formal act does
+          not qualify. Every event needs one primary document (official record, government
+          release, court filing, dataset row). NGO and press reports count only as leads until a
+          primary document is found, or as evidence at confidence corroborated or reported, with
+          reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La déclaration officielle ou l'acte formel, ou le texte de la déclaration
+          d'intervention plaidant contre l'interprétation du demandeur ; une remarque à la presse
+          sans acte formel ne suffit pas. Chaque événement exige un document primaire (acte
+          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
+          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Government statement
+        fr: Déclaration gouvernementale
+    cadence: on-event
+
+  - id: B5
+    category: B
+    name:
+      en: "ICC: public commitment to execute arrest warrants"
+      fr: "CPI : engagement public à exécuter les mandats d'arrêt"
+    description:
+      en: >-
+        ICC: public commitment to execute the arrest warrants of 21 November 2024, in an
+        official statement by the head of government, foreign or justice minister. Authorising
+        an overflight is a lead, not an instance, unless accompanied by a stated position on the
+        warrants. B5 and B6 by the same country supersede each other in time: the latest formal
+        position holds.
+      fr: >-
+        CPI : engagement public à exécuter les mandats d'arrêt du 21 novembre 2024, dans une
+        déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères ou
+        du ministre de la Justice. L'autorisation d'un survol est une piste, et non une
+        instance, sauf si elle s'accompagne d'une position déclarée sur les mandats. B5 et B6
+        d'un même pays se remplacent dans le temps : la dernière position formelle prévaut.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 8
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: latest_position
+      group: [B5, B6]
+      note:
+        en: >-
+          B5 and B6 by the same country supersede each other in time: the latest formal position
+          holds.
+        fr: >-
+          B5 et B6 d'un même pays se remplacent dans le temps : la dernière position formelle
+          prévaut.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          An official statement by the head of government, foreign or justice minister on
+          executing the 21 November 2024 warrants; an overflight authorisation without a stated
+          position on the warrants is a lead. Every event needs one primary document (official
+          record, government release, court filing, dataset row). NGO and press reports count
+          only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères
+          ou du ministre de la Justice sur l'exécution des mandats du 21 novembre 2024 ; une
+          autorisation de survol sans position déclarée sur les mandats est une piste. Chaque
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
+          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
+          (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Government statement
+        fr: Déclaration gouvernementale
+    cadence: on-event
+
+  - id: B6
+    category: B
+    name:
+      en: "ICC: stated refusal to execute warrants, or hosting a wanted official"
+      fr: "CPI : refus déclaré d'exécuter les mandats, ou accueil d'un responsable visé par un mandat"
+    description:
+      en: >-
+        ICC: stated refusal to execute the arrest warrants of 21 November 2024, in an official
+        statement by the head of government, foreign or justice minister, or hosting a wanted
+        official. Hosting a person under warrant on an official visit without arrest is a B6
+        instance; withdrawal from the Rome Statute in the window (Hungary, effective 2 June
+        2026) is a B6 instance. Authorising an overflight is a lead, not an instance, unless
+        accompanied by a stated position on the warrants. B5 and B6 by the same country
+        supersede each other in time: the latest formal position holds.
+      fr: >-
+        CPI : refus déclaré d'exécuter les mandats d'arrêt du 21 novembre 2024, dans une déclaration
+        officielle du chef de gouvernement, du ministre des Affaires étrangères ou du ministre de la
+        Justice, ou accueil d'un responsable visé par un mandat. Accueillir une personne visée par
+        un mandat lors d'une visite officielle sans l'arrêter est une instance B6 ; le retrait du
+        Statut de Rome pendant la période couverte (Hongrie, effectif le 2 juin 2026) est une
+        instance B6. L'autorisation d'un survol est une piste, et non une instance, sauf si elle
+        s'accompagne d'une position déclarée sur les mandats. B5 et B6 d'un même pays se remplacent
+        dans le temps : la dernière position formelle prévaut.
+    sign: negative
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -10
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: latest_position
+      group: [B5, B6]
+      note:
+        en: >-
+          B5 and B6 by the same country supersede each other in time: the latest formal position
+          holds.
+        fr: >-
+          B5 et B6 d'un même pays se remplacent dans le temps : la dernière position formelle
+          prévaut.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          An official statement by the head of government, foreign or justice minister on the
+          warrants, the official record of a visit by a person under warrant hosted without
+          arrest, or the official record of the withdrawal from the Rome Statute; an overflight
+          authorisation without a stated position on the warrants is a lead. Every event needs
+          one primary document (official record, government release, court filing, dataset
+          row). NGO and press reports count only as leads until a primary document is found, or
+          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          Une déclaration officielle du chef de gouvernement, du ministre des Affaires étrangères
+          ou du ministre de la Justice sur les mandats, le relevé officiel d'une visite d'une
+          personne visée par un mandat accueillie sans être arrêtée, ou l'acte officiel du
+          retrait du Statut de Rome ; une autorisation de survol sans position déclarée sur les
+          mandats est une piste. Chaque événement exige un document primaire (acte officiel,
+          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
+          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
+          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Government statement
+        fr: Déclaration gouvernementale
+      - en: Visit records
+        fr: Relevés des visites
+    cadence: on-event
+
+  - id: B7
+    category: B
+    name:
+      en: Sanctions on ICC judges or prosecutors
+      fr: Sanctions contre des juges ou des procureurs de la CPI
+    description:
+      en: >-
+        Sanctions on ICC judges or prosecutors: a standing state while sanctions are in force.
+      fr: >-
+        Sanctions contre des juges ou des procureurs de la CPI : état durable tant que les
+        sanctions sont en vigueur.
+    sign: negative
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -20
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The official sanctions list. Every event needs one primary document (official record,
+          government release, court filing, dataset row). NGO and press reports count only as
+          leads until a primary document is found, or as evidence at confidence corroborated or
+          reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La liste officielle des sanctions. Chaque événement exige un document primaire (acte
+          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
+          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Official sanctions list
+        fr: Liste officielle des sanctions
+    cadence: on-event
+
+  - id: B8
+    category: B
+    name:
+      en: Recognition of the State of Palestine after Oct 2023
+      fr: Reconnaissance de l'État de Palestine après octobre 2023
+    description:
+      en: >-
+        Recognition of the State of Palestine: +8 if recognised after 2023-10-07, else +3 if
+        recognised before. One standing state only; pre-existing recognition is a standing
+        state from 2023-10-07.
+      fr: >-
+        Reconnaissance de l'État de Palestine : +8 en cas de reconnaissance après le 7 octobre 2023,
+        sinon +3 en cas de reconnaissance antérieure. Un seul état durable ; la reconnaissance
+        préexistante est un état durable à partir du 7 octobre 2023.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: generated
+    generated_from: data/countries.yaml recognises_palestine.since
+    points:
+      kind: tiers
+      tiers:
+        - key: recognised_after_window
+          value: 8
+          label:
+            en: Recognised after 2023-10-07
+            fr: Reconnaissance après le 7 octobre 2023
+        - key: pre_existing
+          value: 3
+          label:
+            en: Pre-existing recognition
+            fr: Reconnaissance préexistante
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: most_severe
+      note:
+        en: >-
+          One standing state only: +8 if recognised after 2023-10-07, else +3 if recognised
+          before (pre-existing recognition is a standing state from 2023-10-07).
+        fr: >-
+          Un seul état durable : +8 en cas de reconnaissance après le 7 octobre 2023, sinon +3 en
+          cas de reconnaissance antérieure (la reconnaissance préexistante est un état durable à
+          partir du 7 octobre 2023).
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Generated from recognises_palestine.since in data/countries.yaml; never hand-authored
+          (D-08, docs/03 §3). The recognition date recorded there comes from the foreign
+          ministry's announcement.
+        fr: >-
+          Généré à partir de recognises_palestine.since dans data/countries.yaml ; jamais rédigé
+          à la main (D-08, docs/03 §3). La date de reconnaissance qui y figure provient de
+          l'annonce du ministère des Affaires étrangères.
+    primary_sources:
+      - en: Foreign ministry
+        fr: Ministère des Affaires étrangères
+    cadence: on-event
+
+  - id: B9
+    category: B
+    name:
+      en: Head of government or foreign minister formally names violations, calls for ceasefire or an end to the blockade
+      fr: Le chef de gouvernement ou le ministre des Affaires étrangères nomme formellement des violations, appelle à un cessez-le-feu ou à la fin du blocus
+    description:
+      en: >-
+        Head of government or foreign minister formally names violations, calls for a ceasefire
+        or an end to the blockade: +2 for a formal call for ceasefire or end of blockade; +5
+        when the statement names specific violations (e.g. starvation as a method of warfare,
+        attacks on hospitals, forced displacement) or uses a legal characterisation. Same
+        speaker, same day: one event. Cap +10.
+      fr: >-
+        Le chef de gouvernement ou le ministre des Affaires étrangères nomme formellement des
+        violations, appelle à un cessez-le-feu ou à la fin du blocus : +2 pour un appel formel
+        au cessez-le-feu ou à la fin du blocus ; +5 lorsque la déclaration nomme des violations
+        précises (par exemple l'utilisation de la famine comme méthode de guerre, les attaques
+        contre des hôpitaux, les déplacements forcés) ou emploie une qualification juridique.
+        Même orateur, même jour : un seul événement. Plafond +10.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: per_instance
+      tiers:
+        - key: call
+          value: 2
+          label:
+            en: Formal call for ceasefire or end of blockade
+            fr: Appel formel au cessez-le-feu ou à la fin du blocus
+        - key: names_violations
+          value: 5
+          label:
+            en: Names specific violations or uses a legal characterisation
+            fr: Nomme des violations précises ou emploie une qualification juridique
+    scaled: true
+    indicator_cap: {min: null, max: 10}
+    stacking:
+      rule: sum
+      note:
+        en: >-
+          Indicator cap: +10, applied to the indicator's summed contributions before the
+          category clip.
+        fr: >-
+          Plafond de l'indicateur : +10, appliqué à la somme des contributions de l'indicateur
+          avant l'application du plafond de la catégorie.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: true
+      source_kinds: [official, official-video]
+      rule:
+        en: >-
+          The exact quote, the speaker, the date and the official transcript or official video
+          with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event
+          carries actor.name and cites a source of kind official or official-video; the quote
+          appears verbatim in archive/text/{source}.txt after whitespace normalisation,
+          including for a video, whose transcript is stored there (docs/02 §12.4, docs/03
+          §4–§5). Same speaker, same day: one event. The speaker is the head of government or
+          the foreign minister; statements by spokespersons do not score (docs/06 §7).
+        fr: >-
+          La citation exacte, l'orateur, la date et la transcription officielle ou la vidéo
+          officielle avec horodatage ; les paraphrases de presse ne suffisent pas (cahier des
+          charges, §3 ; docs/02 §2). L'événement porte actor.name et cite une source de type
+          official ou official-video ; la citation figure mot pour mot dans
+          archive/text/{source}.txt après normalisation des espaces, y compris pour une vidéo,
+          dont la transcription y est conservée (docs/02 §12.4, docs/03 §4–§5). Même orateur,
+          même jour : un seul événement. L'orateur est le chef de gouvernement ou le ministre
+          des Affaires étrangères ; les déclarations de porte-parole ne sont pas notées
+          (docs/06 §7).
+    primary_sources:
+      - en: Official transcript
+        fr: Transcription officielle
+    cadence: on-event
+
+  - id: B10
+    category: B
+    name:
+      en: Head of government declares unconditional support or denies documented violations
+      fr: Le chef de gouvernement déclare un soutien inconditionnel ou nie des violations documentées
+    description:
+      en: >-
+        Head of government declares unconditional support or denies documented violations: −5
+        for any B10 statement. Same speaker, same day: one event. Cap −10.
+      fr: >-
+        Le chef de gouvernement déclare un soutien inconditionnel ou nie des violations
+        documentées : −5 pour toute déclaration B10. Même orateur, même jour : un seul
+        événement. Plafond −10.
+    sign: negative
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: per_instance
+      value: -5
+    scaled: false
+    indicator_cap: {min: -10, max: null}
+    stacking:
+      rule: sum
+      note:
+        en: >-
+          Indicator cap: −10, applied to the indicator's summed contributions before the
+          category clip.
+        fr: >-
+          Plafond de l'indicateur : −10, appliqué à la somme des contributions de l'indicateur
+          avant l'application du plafond de la catégorie.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: true
+      source_kinds: [official, official-video]
+      rule:
+        en: >-
+          The exact quote, the speaker, the date and the official transcript or official video
+          with timestamp; paraphrases in press are not enough (spec §3, docs/02 §2). The event
+          carries actor.name and cites a source of kind official or official-video; the quote
+          appears verbatim in archive/text/{source}.txt after whitespace normalisation,
+          including for a video, whose transcript is stored there (docs/02 §12.4, docs/03
+          §4–§5). Same speaker, same day: one event. The speaker is the head of government;
+          statements by spokespersons do not score (docs/06 §7).
+        fr: >-
+          La citation exacte, l'orateur, la date et la transcription officielle ou la vidéo
+          officielle avec horodatage ; les paraphrases de presse ne suffisent pas (cahier des
+          charges, §3 ; docs/02 §2). L'événement porte actor.name et cite une source de type
+          official ou official-video ; la citation figure mot pour mot dans
+          archive/text/{source}.txt après normalisation des espaces, y compris pour une vidéo,
+          dont la transcription y est conservée (docs/02 §12.4, docs/03 §4–§5). Même orateur,
+          même jour : un seul événement. L'orateur est le chef de gouvernement ; les
+          déclarations de porte-parole ne sont pas notées (docs/06 §7).
+    primary_sources:
+      - en: Official transcript
+        fr: Transcription officielle
+    cadence: on-event
+
+  - id: B11
+    category: B
+    name:
+      en: Sanctions on Israeli ministers or settler entities
+      fr: Sanctions contre des ministres israéliens ou des entités de colons
+    description:
+      en: >-
+        Sanctions on Israeli ministers (+10) or settler entities (+5). Counts sanctions listings
+        by the country itself or, for EU member states, EU-level listings the state voted for;
+        a state that blocked an EU listing gets no B11 event and the block is a B10-adjacent
+        note, unscored. Ministers and settlers are separate standing states; both can hold.
+      fr: >-
+        Sanctions contre des ministres israéliens (+10) ou des entités de colons (+5). Comptent
+        les inscriptions sur une liste de sanctions par le pays lui-même ou, pour les États
+        membres de l'UE, les inscriptions au niveau de l'UE pour lesquelles l'État a voté ; un
+        État qui a bloqué une inscription de l'UE n'obtient aucun événement B11 et le blocage
+        fait l'objet d'une note apparentée à B10, non notée. Ministres et colons sont des états
+        durables distincts ; les deux peuvent être en vigueur.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: tiers
+      tiers:
+        - key: ministers
+          value: 10
+          label:
+            en: Sanctions on Israeli ministers
+            fr: Sanctions contre des ministres israéliens
+        - key: settlers
+          value: 5
+          label:
+            en: Sanctions on settler entities
+            fr: Sanctions contre des entités de colons
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: one_per_tier
+      note:
+        en: Ministers +10 and settlers +5 are separate standing states; both can hold.
+        fr: >-
+          Ministres (+10) et colons (+5) sont des états durables distincts ; les deux peuvent
+          être en vigueur.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The official sanctions list. An EU-level listing counts only for a member state that
+          voted for it. Every event needs one primary document (official record, government
+          release, court filing, dataset row). NGO and press reports count only as leads until a
+          primary document is found, or as evidence at confidence corroborated or reported, with
+          reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La liste officielle des sanctions. Une inscription au niveau de l'UE ne compte que pour
+          un État membre qui a voté pour elle. Chaque événement exige un document primaire (acte
+          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
+          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Official sanctions list
+        fr: Liste officielle des sanctions
+    cadence: on-event
+
+  - id: B12
+    category: B
+    name:
+      en: Ambassador recalled / relations downgraded / severed
+      fr: Ambassadeur rappelé / niveau des relations abaissé / relations rompues
+    description:
+      en: >-
+        Ambassador recalled (+5), relations downgraded (+8) or severed (+10). One standing state
+        only: the most severe current measure counts; they do not add.
+      fr: >-
+        Ambassadeur rappelé (+5), niveau des relations abaissé (+8) ou relations rompues (+10). Un
+        seul état durable : la mesure en vigueur la plus sévère compte ; elles ne s'additionnent
+        pas.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: tiers
+      tiers:
+        - key: recall
+          value: 5
+          label:
+            en: Ambassador recalled
+            fr: Ambassadeur rappelé
+        - key: downgrade
+          value: 8
+          label:
+            en: Relations downgraded
+            fr: Niveau des relations abaissé
+        - key: severed
+          value: 10
+          label:
+            en: Relations severed
+            fr: Relations rompues
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: most_severe
+      note:
+        en: >-
+          One standing state only: the most severe current measure counts (recall +5, downgrade
+          +8, severed +10); they do not add.
+        fr: >-
+          Un seul état durable : la mesure en vigueur la plus sévère compte (rappel de
+          l'ambassadeur +5, abaissement du niveau des relations +8, rupture des relations
+          +10) ; elles ne s'additionnent pas.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The foreign ministry's announcement. Every event needs one primary document (official
+          record, government release, court filing, dataset row). NGO and press reports count
+          only as leads until a primary document is found, or as evidence at confidence
+          corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          L'annonce du ministère des Affaires étrangères. Chaque événement exige un document
+          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
+          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
+          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
+          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
+          docs/02 §4).
+    primary_sources:
+      - en: Foreign ministry
+        fr: Ministère des Affaires étrangères
+    cadence: on-event
+
+  # ---------------------------------------------------------------------------------------------
+  # C. Trade & economy (category cap −20 / +20)
+
+  - id: C1
+    category: C
+    name:
+      en: Trade or association agreement suspended or formally reviewed
+      fr: Accord commercial ou d'association suspendu ou formellement réexaminé
+    description:
+      en: >-
+        Trade or association agreement with Israel suspended or formally reviewed: review +4,
+        suspension +10. For EU member states, an EU-level review or suspension of the
+        Association Agreement counts for every member state that supported it in the Council,
+        as recorded in official minutes or ministerial statements; states that opposed get no C1
+        event. Review +4 and suspension +10 do not add; suspension supersedes review.
+      fr: >-
+        Accord commercial ou d'association avec Israël suspendu ou formellement réexaminé :
+        réexamen +4, suspension +10. Pour les États membres de l'UE, un réexamen ou une
+        suspension de l'accord d'association au niveau de l'UE compte pour chaque État membre
+        qui l'a soutenu au Conseil, selon les procès-verbaux officiels ou les déclarations
+        ministérielles ; les États qui s'y sont opposés n'obtiennent aucun événement C1.
+        Réexamen +4 et suspension +10 ne s'additionnent pas ; la suspension l'emporte sur le
+        réexamen.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: tiers
+      tiers:
+        - key: review
+          value: 4
+          label:
+            en: Formal review
+            fr: Réexamen formel
+        - key: suspension
+          value: 10
+          label:
+            en: Suspension
+            fr: Suspension
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: most_severe
+      note:
+        en: Review +4 and suspension +10 do not add; suspension supersedes review.
+        fr: >-
+          Réexamen +4 et suspension +10 ne s'additionnent pas ; la suspension l'emporte sur le
+          réexamen.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The government or EU decision; for an EU-level decision, the official minutes or
+          ministerial statements recording the state's support in the Council. Every event needs
+          one primary document (official record, government release, court filing, dataset
+          row). NGO and press reports count only as leads until a primary document is found, or
+          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          La décision gouvernementale ou de l'UE ; pour une décision au niveau de l'UE, les
+          procès-verbaux officiels ou les déclarations ministérielles attestant le soutien de
+          l'État au Conseil. Chaque événement exige un document primaire (acte officiel,
+          communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les
+          rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun document
+          primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré » ou
+          « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Government or EU decision
+        fr: Décision gouvernementale ou de l'UE
+    cadence: on-event
+
+  - id: C2
+    category: C
+    name:
+      en: New trade, investment or cooperation agreement signed with Israel since Oct 2023
+      fr: Nouvel accord commercial, d'investissement ou de coopération signé avec Israël depuis octobre 2023
+    description:
+      en: >-
+        New trade, investment or cooperation agreement signed with Israel since October 2023.
+        A signed agreement persists: C2 is a standing state (docs/02 §3).
+      fr: >-
+        Nouvel accord commercial, d'investissement ou de coopération signé avec Israël depuis
+        octobre 2023. Un accord signé perdure : C2 est un état durable (docs/02 §3).
+    sign: negative
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -10
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The signed agreement, from a treaty register or a ministry release. Every event needs
+          one primary document (official record, government release, court filing, dataset
+          row). NGO and press reports count only as leads until a primary document is found, or
+          as evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          L'accord signé, tiré d'un registre des traités ou d'un communiqué ministériel. Chaque
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
+          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
+          (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Treaty registers
+        fr: Registres des traités
+      - en: Ministry releases
+        fr: Communiqués ministériels
+    cadence: on-event
+
+  - id: C3
+    category: C
+    name:
+      en: Bilateral trade with Israel continued at or above pre-war level
+      fr: Commerce bilatéral avec Israël maintenu au niveau d'avant-guerre ou au-dessus
+    description:
+      en: >-
+        Bilateral trade with Israel continued at or above the pre-war level, −2 to −8 scaled by
+        volume. C3 uses total goods trade (exports + imports) with Israel for the trailing 12
+        months, compared to calendar 2022. Points are computed by the formula c3 of
+        thresholds.yaml (docs/02 §5).
+      fr: >-
+        Commerce bilatéral avec Israël maintenu au niveau d'avant-guerre ou au-dessus, de −2 à
+        −8 selon le volume. C3 utilise le commerce total de marchandises (exportations +
+        importations) avec Israël sur les 12 derniers mois, comparé à l'année civile 2022. Les
+        points sont calculés par la formule c3 de thresholds.yaml (docs/02 §5).
+    sign: negative
+    type: computed
+    scored: true
+    authoring: generated
+    generated_from: data/structured/comtrade_c3.csv by the formula c3 of thresholds.yaml
+    points:
+      kind: formula
+      ref: c3
+      range: {min: -8, max: 0}
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Computed from the dataset, never typed in by hand; the formula and the raw rows are
+          downloadable (spec §3). Values come from the country's own reporting, else from
+          Israel's mirror data (docs/02 §5). Each row of data/structured/comtrade_c3.csv cites a
+          dataset source that archives the origin (docs/03 §7).
+        fr: >-
+          Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
+          brutes sont téléchargeables (cahier des charges, §3). Les valeurs proviennent des
+          déclarations du pays lui-même, à défaut des données miroir d'Israël (docs/02 §5).
+          Chaque ligne de data/structured/comtrade_c3.csv cite une source de type dataset qui
+          archive l'origine des données (docs/03 §7).
+    primary_sources:
+      - en: UN Comtrade
+        fr: UN Comtrade
+      - en: IMF DOTS
+        fr: DOTS du FMI
+    cadence: annual
+
+  - id: C4
+    category: C
+    name:
+      en: Ban on settlement goods (labelling alone +2)
+      fr: Interdiction des produits des colonies (étiquetage seul +2)
+    description:
+      en: >-
+        Ban on settlement goods +5; labelling alone +2. Labelling +2 and ban +5 do not add; the
+        ban supersedes.
+      fr: >-
+        Interdiction des produits des colonies +5 ; étiquetage seul +2. Étiquetage +2 et
+        interdiction +5 ne s'additionnent pas ; l'interdiction l'emporte.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: tiers
+      tiers:
+        - key: labelling
+          value: 2
+          label:
+            en: Labelling alone
+            fr: Étiquetage seul
+        - key: ban
+          value: 5
+          label:
+            en: Ban on settlement goods
+            fr: Interdiction des produits des colonies
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: most_severe
+      note:
+        en: Labelling +2 and ban +5 do not add; ban supersedes.
+        fr: Étiquetage +2 et interdiction +5 ne s'additionnent pas ; l'interdiction l'emporte.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The customs regulation. Every event needs one primary document (official record,
+          government release, court filing, dataset row). NGO and press reports count only as
+          leads until a primary document is found, or as evidence at confidence corroborated or
+          reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La réglementation douanière. Chaque événement exige un document primaire (acte
+          officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de
+          données). Les rapports d'ONG et de presse ne comptent que comme pistes tant qu'aucun
+          document primaire n'est trouvé, ou comme preuves au niveau de confiance « corroboré »
+          ou « signalé », avec un poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Customs regulation
+        fr: Réglementation douanière
+    cadence: on-event
+
+  - id: C5
+    category: C
+    name:
+      en: Sovereign fund or public pension divestment from named companies
+      fr: Désinvestissement d'un fonds souverain ou d'un fonds public de retraite de sociétés nommément désignées
+    description:
+      en: >-
+        Sovereign fund or public pension divestment from named companies: a decision by a
+        sovereign fund, public pension fund or central bank to exclude companies over conduct in
+        Gaza or the occupied territories, one event per decision batch.
+      fr: >-
+        Désinvestissement d'un fonds souverain ou d'un fonds public de retraite de sociétés
+        nommément désignées : une décision d'un fonds souverain, d'un fonds public de retraite
+        ou d'une banque centrale d'exclure des sociétés en raison de leurs agissements à Gaza ou
+        dans les territoires occupés, un événement par série de décisions.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The decision of the fund or central bank, one event per decision batch. Every event
+          needs one primary document (official record, government release, court filing,
+          dataset row). NGO and press reports count only as leads until a primary document is
+          found, or as evidence at confidence corroborated or reported, with reduced weight
+          (spec §3, docs/02 §4).
+        fr: >-
+          La décision du fonds ou de la banque centrale, un événement par série de décisions. Chaque
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves
+          au niveau de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des
+          charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Fund ethics council decisions
+        fr: Décisions des conseils d'éthique des fonds
+    cadence: on-event
+
+  - id: C6
+    category: C
+    name:
+      en: Public procurement exclusion of implicated companies
+      fr: Exclusion des entreprises impliquées des marchés publics
+    description:
+      en: >-
+        Exclusion of implicated companies from public procurement.
+      fr: >-
+        Exclusion des entreprises impliquées des marchés publics.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 3
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The procurement rule providing the exclusion. Every event needs one primary document
+          (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          La règle de passation des marchés publics prévoyant l'exclusion. Chaque événement
+          exige un document primaire (acte officiel, communiqué gouvernemental, pièce de
+          procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
+          (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Procurement rules
+        fr: Règles de passation des marchés publics
+    cadence: on-event
+
+  # ---------------------------------------------------------------------------------------------
+  # D. Humanitarian (category cap −15 / +25)
+
+  - id: D1
+    category: D
+    name:
+      en: Humanitarian funding to the Gaza response, scaled per capita of GNI
+      fr: Financement humanitaire de la réponse à Gaza, rapporté au RNB par habitant
+    description:
+      en: >-
+        Humanitarian funding to the Gaza response, scaled to the country's GNI: paid and
+        committed contributions from the country's government to the OCHA-tracked oPt flash
+        appeals and the oPt pooled fund in the trailing 12 months, per FTS, divided by GNI.
+        Points are computed by the formula d1 of thresholds.yaml (docs/02 §5).
+      fr: >-
+        Financement humanitaire de la réponse à Gaza, rapporté au RNB du pays : contributions
+        versées et engagées par le gouvernement du pays aux appels éclair pour le Territoire
+        palestinien occupé suivis par OCHA et au fonds commun pour le Territoire palestinien
+        occupé, sur les 12 derniers mois, selon le FTS, divisées par le RNB. Les points sont
+        calculés par la formule d1 de thresholds.yaml (docs/02 §5).
+    sign: positive
+    type: computed
+    scored: true
+    authoring: generated
+    generated_from: >-
+      data/structured/fts_funding.csv and data/structured/gni.csv by the formula d1 of
+      thresholds.yaml
+    points:
+      kind: formula
+      ref: d1
+      range: {min: 0, max: 12}
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          Computed from the dataset, never typed in by hand; the formula and the raw rows are
+          downloadable (spec §3). Rows of data/structured/fts_funding.csv (FTS, donor
+          organisation type Government) and data/structured/gni.csv (World Bank Atlas) cite
+          dataset sources that archive the API responses (docs/03 §7).
+        fr: >-
+          Calculé à partir du jeu de données, jamais saisi à la main ; la formule et les lignes
+          brutes sont téléchargeables (cahier des charges, §3). Les lignes de
+          data/structured/fts_funding.csv (FTS, type d'organisation donatrice Government) et de
+          data/structured/gni.csv (méthode Atlas de la Banque mondiale) citent des sources de
+          type dataset qui archivent les réponses des API (docs/03 §7).
+    primary_sources:
+      - en: OCHA Financial Tracking Service API
+        fr: API du Service de suivi financier (FTS) d'OCHA
+        url: https://fts.unocha.org
+    cadence: monthly
+    notes:
+      en: >-
+        Zero is a real zero: FTS is the reference for government humanitarian funding. Known
+        limitation, stated on the methodology page: some bilateral and in-kind aid is not
+        reported to FTS; D4 and D5 capture part of it.
+      fr: >-
+        Zéro est un vrai zéro : le FTS est la référence pour le financement humanitaire des
+        gouvernements. Limite connue, indiquée sur la page de méthodologie : une partie de
+        l'aide bilatérale et en nature n'est pas déclarée au FTS ; D4 et D5 en couvrent une
+        partie.
+
+  - id: D2
+    category: D
+    name:
+      en: UNRWA funding suspended
+      fr: Financement de l'UNRWA suspendu
+    description:
+      en: >-
+        UNRWA funding suspended: a standing state from the announcement to the announced
+        resumption.
+      fr: >-
+        Financement de l'UNRWA suspendu : état durable de l'annonce jusqu'à la reprise annoncée.
+    sign: negative
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: -10
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The government announcement of the suspension, or UNRWA donor tables; the event ends
+          on the announced resumption. Every event needs one primary document (official record,
+          government release, court filing, dataset row). NGO and press reports count only as
+          leads until a primary document is found, or as evidence at confidence corroborated or
+          reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          L'annonce gouvernementale de la suspension, ou les tableaux des donateurs de l'UNRWA ;
+          l'événement prend fin à la reprise annoncée. Chaque événement exige un document
+          primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire,
+          ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que comme pistes
+          tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau de confiance
+          « corroboré » ou « signalé », avec un poids réduit (cahier des charges, §3 ;
+          docs/02 §4).
+    primary_sources:
+      - en: UNRWA donor tables
+        fr: Tableaux des donateurs de l'UNRWA
+    cadence: on-event
+
+  - id: D3
+    category: D
+    name:
+      en: UNRWA funding restored / increased above 2022 level
+      fr: Financement de l'UNRWA rétabli / augmenté au-delà du niveau de 2022
+    description:
+      en: >-
+        UNRWA funding restored (+5) or increased above the 2022 level (+8), from the resumption
+        date. Increased means the annual contribution exceeds the 2022 contribution in nominal
+        USD per UNRWA donor tables. Restored +5 and increased +8 do not add; increased
+        supersedes.
+      fr: >-
+        Financement de l'UNRWA rétabli (+5) ou augmenté au-delà du niveau de 2022 (+8), à partir
+        de la date de reprise. « Augmenté » signifie que la contribution annuelle dépasse la
+        contribution de 2022 en dollars US nominaux selon les tableaux des donateurs de
+        l'UNRWA. Rétablissement +5 et augmentation +8 ne s'additionnent pas ; l'augmentation
+        l'emporte.
+    sign: positive
+    type: standing
+    scored: true
+    authoring: hand
+    points:
+      kind: tiers
+      tiers:
+        - key: restored
+          value: 5
+          label:
+            en: Funding restored
+            fr: Financement rétabli
+        - key: increased
+          value: 8
+          label:
+            en: Funding increased above the 2022 level
+            fr: Financement augmenté au-delà du niveau de 2022
+    scaled: true
+    indicator_cap: null
+    stacking:
+      rule: most_severe
+      note:
+        en: Restored +5 and increased +8 do not add; increased supersedes.
+        fr: >-
+          Rétablissement +5 et augmentation +8 ne s'additionnent pas ; l'augmentation l'emporte.
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          UNRWA donor tables; the increased tier requires the annual contribution to exceed the
+          2022 contribution in nominal USD in those tables. Every event needs one primary
+          document (official record, government release, court filing, dataset row). NGO and
+          press reports count only as leads until a primary document is found, or as evidence
+          at confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          Les tableaux des donateurs de l'UNRWA ; le palier « augmenté » exige que la
+          contribution annuelle dépasse, dans ces tableaux, la contribution de 2022 en dollars US
+          nominaux. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: UNRWA donor tables
+        fr: Tableaux des donateurs de l'UNRWA
+    cadence: on-event
+
+  - id: D4
+    category: D
+    name:
+      en: Medical evacuations hosted, field hospitals deployed
+      fr: Évacuations sanitaires accueillies, hôpitaux de campagne déployés
+    description:
+      en: >-
+        Medical evacuations hosted, field hospitals deployed: one event per programme (a field
+        hospital deployment, a medical-evacuation programme), not per patient.
+      fr: >-
+        Évacuations sanitaires accueillies, hôpitaux de campagne déployés : un événement par
+        programme (le déploiement d'un hôpital de campagne, un programme d'évacuation
+        sanitaire), et non par patient.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          A WHO or health ministry document on the programme, one event per programme. Every
+          event needs one primary document (official record, government release, court filing,
+          dataset row). NGO and press reports count only as leads until a primary document is
+          found, or as evidence at confidence corroborated or reported, with reduced weight
+          (spec §3, docs/02 §4).
+        fr: >-
+          Un document de l'OMS ou du ministère de la Santé sur le programme, un événement par
+          programme. Chaque événement exige un document primaire (acte officiel, communiqué
+          gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Les rapports
+          d'ONG et de presse ne comptent que comme pistes tant qu'aucun document primaire n'est
+          trouvé, ou comme preuves au niveau de confiance « corroboré » ou « signalé », avec un
+          poids réduit (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: WHO
+        fr: OMS
+      - en: Health ministry
+        fr: Ministère de la Santé
+    cadence: on-event
+
+  - id: D5
+    category: D
+    name:
+      en: Visa or refugee pathway opened for Gazans
+      fr: Voie d'accès par visa ou au statut de réfugié ouverte aux Gazaouis
+    description:
+      en: >-
+        Visa or refugee pathway opened for Gazans: one event per legal instrument.
+      fr: >-
+        Voie d'accès par visa ou au statut de réfugié ouverte aux Gazaouis : un événement par
+        instrument juridique.
+    sign: positive
+    type: repeatable
+    scored: true
+    authoring: hand
+    points:
+      kind: fixed
+      value: 5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The immigration regulation, one event per legal instrument. Every event needs one
+          primary document (official record, government release, court filing, dataset row).
+          NGO and press reports count only as leads until a primary document is found, or as
+          evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          La réglementation de l'immigration, un événement par instrument juridique. Chaque
+          événement exige un document primaire (acte officiel, communiqué gouvernemental, pièce
+          de procédure judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne
+          comptent que comme pistes tant qu'aucun document primaire n'est trouvé, ou comme
+          preuves au niveau de confiance « corroboré » ou « signalé », avec un poids réduit
+          (cahier des charges, §3 ; docs/02 §4).
+    primary_sources:
+      - en: Immigration regulations
+        fr: Réglementation de l'immigration
+    cadence: on-event
+
+  # ---------------------------------------------------------------------------------------------
+  # E. Domestic accountability (category cap −10 / +10; experimental, unscored in v1.0, D-12)
+
+  - id: E1
+    category: E
+    name:
+      en: Domestic investigation or prosecution of nationals or companies for conduct in Gaza
+      fr: Enquête ou poursuites nationales visant des ressortissants ou des entreprises pour des actes commis à Gaza
+    description:
+      en: >-
+        Domestic investigation or prosecution of nationals or companies for conduct in Gaza.
+        Recorded with points as listed but excluded from the score in v1.0 (D-12).
+      fr: >-
+        Enquête ou poursuites nationales visant des ressortissants ou des entreprises pour des
+        actes commis à Gaza. Indicateur enregistré avec les points indiqués mais exclu du score
+        en v1.0 (D-12).
+    sign: positive
+    type: repeatable
+    scored: false
+    authoring: hand
+    points:
+      kind: fixed
+      value: 5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          A prosecutor announcement or court filing. Every event needs one primary document
+          (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          Une annonce du parquet ou un acte de procédure judiciaire. Chaque événement exige un
+          document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
+          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
+          §3 ; docs/02 §4).
+    primary_sources:
+      - en: Prosecutor announcements
+        fr: Annonces du parquet
+      - en: Court filings
+        fr: Actes de procédure judiciaire
+    cadence: on-event
+    notes:
+      en: >-
+        Experimental: computed and shown, not summed in v1.0 (D-12). A later methodology
+        version can score it.
+      fr: >-
+        Expérimental : calculé et affiché, non additionné en v1.0 (D-12). Une version ultérieure
+        de la méthodologie peut le noter.
+
+  - id: E2
+    category: E
+    name:
+      en: Bans on Palestine solidarity protests or symbols
+      fr: Interdictions de manifestations ou de symboles de solidarité avec la Palestine
+    description:
+      en: >-
+        Bans on Palestine solidarity protests or symbols. Recorded with points as listed but
+        excluded from the score in v1.0 (D-12).
+      fr: >-
+        Interdictions de manifestations ou de symboles de solidarité avec la Palestine.
+        Indicateur enregistré avec les points indiqués mais exclu du score en v1.0 (D-12).
+    sign: negative
+    type: repeatable
+    scored: false
+    authoring: hand
+    points:
+      kind: fixed
+      value: -5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The interior ministry decree or court ruling. Every event needs one primary document
+          (official record, government release, court filing, dataset row). NGO and press
+          reports count only as leads until a primary document is found, or as evidence at
+          confidence corroborated or reported, with reduced weight (spec §3, docs/02 §4).
+        fr: >-
+          Le décret du ministère de l'Intérieur ou la décision de justice. Chaque événement exige
+          un document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
+          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
+          §3 ; docs/02 §4).
+    primary_sources:
+      - en: Interior ministry decrees
+        fr: Décrets du ministère de l'Intérieur
+      - en: Court rulings
+        fr: Décisions de justice
+    cadence: on-event
+    notes:
+      en: >-
+        Experimental: computed and shown, not summed in v1.0 (D-12). A later methodology
+        version can score it.
+      fr: >-
+        Expérimental : calculé et affiché, non additionné en v1.0 (D-12). Une version ultérieure
+        de la méthodologie peut le noter.
+
+  - id: E3
+    category: E
+    name:
+      en: Universal-jurisdiction complaints accepted for investigation
+      fr: Plaintes fondées sur la compétence universelle acceptées pour enquête
+    description:
+      en: >-
+        Universal-jurisdiction complaints accepted for investigation. Recorded with points as
+        listed but excluded from the score in v1.0 (D-12).
+      fr: >-
+        Plaintes fondées sur la compétence universelle acceptées pour enquête. Indicateur
+        enregistré avec les points indiqués mais exclu du score en v1.0 (D-12).
+    sign: positive
+    type: repeatable
+    scored: false
+    authoring: hand
+    points:
+      kind: fixed
+      value: 5
+    scaled: false
+    indicator_cap: null
+    stacking:
+      rule: sum
+    superseded_by: []
+    not_applicable: null
+    evidence:
+      requires_actor: false
+      source_kinds: null
+      rule:
+        en: >-
+          The court record accepting the complaint for investigation. Every event needs one
+          primary document (official record, government release, court filing, dataset row).
+          NGO and press reports count only as leads until a primary document is found, or as
+          evidence at confidence corroborated or reported, with reduced weight (spec §3,
+          docs/02 §4).
+        fr: >-
+          Le dossier judiciaire acceptant la plainte pour enquête. Chaque événement exige un
+          document primaire (acte officiel, communiqué gouvernemental, pièce de procédure
+          judiciaire, ligne de jeu de données). Les rapports d'ONG et de presse ne comptent que
+          comme pistes tant qu'aucun document primaire n'est trouvé, ou comme preuves au niveau
+          de confiance « corroboré » ou « signalé », avec un poids réduit (cahier des charges,
+          §3 ; docs/02 §4).
+    primary_sources:
+      - en: Court records
+        fr: Dossiers judiciaires
+    cadence: on-event
+    notes:
+      en: >-
+        Experimental: computed and shown, not summed in v1.0 (D-12). A later methodology
+        version can score it.
+      fr: >-
+        Expérimental : calculé et affiché, non additionné en v1.0 (D-12). Une version ultérieure
+        de la méthodologie peut le noter.

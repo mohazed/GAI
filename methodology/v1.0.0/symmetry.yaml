@@ -1,0 +1,172 @@
+# methodology/v1.0.0/symmetry.yaml
+#
+# The symmetry table: for each negative indicator, its positive counterpart.
+#
+# Encodes docs/02-methodology-spec.md §13 (the 15 rows; labels and notes in English verbatim) and
+# the symmetry test of spec §8 ("for each negative indicator, name the positive counterpart or
+# explain why none exists"), checked in CI per docs/02 §12.5. Every negative indicator of v1.0
+# has a counterpart, so `no_counterpart` is empty.
+# Shape: packages/schema/src/methodology/schemas.ts (SymmetryFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+pairs:
+  - negative: [A1]
+    negative_label:
+      en: A1 deliveries
+      fr: A1 livraisons
+    positive: [A7]
+    positive_label:
+      en: A7 embargo
+      fr: A7 embargo
+    note: null
+
+  - negative: [A2]
+    negative_label:
+      en: A2 components
+      fr: A2 composants
+    positive: [A6]
+    positive_label:
+      en: A6 partial suspension
+      fr: A6 suspension partielle
+    note: null
+
+  - negative: [A3]
+    negative_label:
+      en: A3 F-35
+      fr: A3 F-35
+    positive: [A6]
+    positive_label:
+      en: A6 (halt of F-35 parts)
+      fr: A6 (arrêt des pièces de F-35)
+    note: null
+
+  - negative: [A4]
+    negative_label:
+      en: A4 purchases from Israel
+      fr: A4 achats à Israël
+    positive: [A7]
+    positive_label:
+      en: A7 (two-way embargo)
+      fr: A7 (embargo dans les deux sens)
+    note: null
+
+  - negative: [A5]
+    negative_label:
+      en: A5 cooperation
+      fr: A5 coopération
+    positive: [A8]
+    positive_label:
+      en: A8 transit denied
+      fr: A8 transit refusé
+    note: null
+
+  - negative: [B1]
+    negative_label:
+      en: B1 no/abstain
+      fr: B1 contre/abstention
+    positive: [B1]
+    positive_label:
+      en: B1 yes
+      fr: B1 pour
+    note:
+      en: same indicator
+      fr: même indicateur
+
+  - negative: [B2]
+    negative_label:
+      en: B2 veto
+      fr: B2 veto
+    positive: [B3]
+    positive_label:
+      en: B3 intervention
+      fr: B3 intervention
+    note:
+      en: both are legal-institutional acts
+      fr: les deux sont des actes juridico-institutionnels
+
+  - negative: [B4]
+    negative_label:
+      en: B4 rejects ICJ
+      fr: B4 rejet de la CIJ
+    positive: [B3]
+    positive_label:
+      en: B3
+      fr: B3
+    note: null
+
+  - negative: [B6]
+    negative_label:
+      en: B6 refuses ICC
+      fr: B6 refus envers la CPI
+    positive: [B5]
+    positive_label:
+      en: B5 executes ICC
+      fr: B5 exécution des mandats de la CPI
+    note: null
+
+  - negative: [B7]
+    negative_label:
+      en: B7 sanctions ICC
+      fr: B7 sanctions contre la CPI
+    positive: [B5]
+    positive_label:
+      en: B5
+      fr: B5
+    note: null
+
+  - negative: [B10]
+    negative_label:
+      en: B10 denial
+      fr: B10 déni
+    positive: [B9]
+    positive_label:
+      en: B9 naming
+      fr: B9 dénonciation des violations
+    note: null
+
+  - negative: [C2]
+    negative_label:
+      en: C2 new agreement
+      fr: C2 nouvel accord
+    positive: [C1]
+    positive_label:
+      en: C1 suspension
+      fr: C1 suspension
+    note: null
+
+  - negative: [C3]
+    negative_label:
+      en: C3 trade as usual
+      fr: C3 commerce inchangé
+    positive: [C1, C4]
+    positive_label:
+      en: C1, C4
+      fr: C1, C4
+    note: null
+
+  - negative: [D2]
+    negative_label:
+      en: D2 UNRWA cut
+      fr: D2 financement de l'UNRWA coupé
+    positive: [D3]
+    positive_label:
+      en: D3 UNRWA restored
+      fr: D3 financement de l'UNRWA rétabli
+    note: null
+
+  - negative: [E2]
+    negative_label:
+      en: E2 protest bans
+      fr: E2 interdictions de manifestations
+    positive: [E1]
+    positive_label:
+      en: E1 investigations
+      fr: E1 enquêtes
+    note:
+      en: experimental
+      fr: expérimental
+
+no_counterpart: []

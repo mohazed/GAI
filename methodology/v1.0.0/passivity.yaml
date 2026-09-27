@@ -1,0 +1,64 @@
+# methodology/v1.0.0/passivity.yaml
+#
+# The passivity penalty: how "silence is negative" (spec §2, rule 2) is implemented.
+#
+# Encodes docs/02-methodology-spec.md §6 (points, qualifying indicators, window, minimum
+# contribution; the rule text below is §6 in English verbatim), D-11 (penalty 15, sensitivity at
+# 5, 15 and 25, published per docs/02 §10) and D-12 (category E unscored).
+# Shape: packages/schema/src/methodology/schemas.ts (PassivityFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+points: 15
+window_days: 365
+qualifying_indicators:
+  [B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, C1, C2, C3, C4, C5, C6, D1, D2, D3, D4, D5]
+min_abs_contribution: 2
+statuses: [published]
+
+excluded:
+  - indicators: [B1]
+    reason:
+      en: >-
+        B1 votes do not qualify (spec §2: "votes yes at the UN and does nothing else" is
+        Passive).
+      fr: >-
+        Les votes B1 ne comptent pas (cahier des charges, §2 : « vote pour à l'ONU et ne fait
+        rien d'autre » relève de la bande Passivité).
+  - indicators: [A1, A2, A3, A4, A5, A6, A7, A8]
+    reason:
+      en: >-
+        Category A never qualifies: selling or refusing arms is not the kind of engagement the
+        penalty measures, and A6–A8 events almost always come with B or C events anyway.
+      fr: >-
+        La catégorie A ne compte jamais : vendre ou refuser des armes n'est pas le type
+        d'engagement que mesure la pénalité, et les événements A6–A8 s'accompagnent presque
+        toujours d'événements B ou C.
+  - indicators: [E1, E2, E3]
+    reason:
+      en: Category E is experimental and unscored in v1.0 (D-12).
+      fr: La catégorie E est expérimentale et non notée en v1.0 (D-12).
+
+sensitivity_points: [5, 15, 25]
+
+rule:
+  en: >-
+    A country receives passivity = 15 at date t if it has no qualifying event in the trailing
+    365 days. A qualifying event is any published event with indicator in B2–B12, C1–C6 or
+    D1–D5, event date in (t − 365, t], and current weighted contribution of absolute value ≥ 2.
+    B1 votes do not qualify (spec §2: "votes yes at the UN and does nothing else" is Passive);
+    token funding below the +3 tier of D1 does not qualify. Category A never qualifies: selling
+    or refusing arms is not the kind of engagement the penalty measures, and A6–A8 events almost
+    always come with B or C events anyway.
+  fr: >-
+    Un pays reçoit une pénalité de passivité de 15 à la date t s'il n'a aucun événement
+    admissible au cours des 365 derniers jours. Un événement admissible est tout événement
+    publié dont l'indicateur relève de B2–B12, C1–C6 ou D1–D5, dont la date est comprise dans
+    (t − 365, t], et dont la contribution pondérée courante est, en valeur absolue, ≥ 2. Les
+    votes B1 ne comptent pas (cahier des charges, §2 : « vote pour à l'ONU et ne fait rien
+    d'autre » relève de la bande Passivité) ; un financement symbolique inférieur au palier +3
+    de D1 ne compte pas. La catégorie A ne compte jamais : vendre ou refuser des armes n'est pas
+    le type d'engagement que mesure la pénalité, et les événements A6–A8 s'accompagnent presque
+    toujours d'événements B ou C.

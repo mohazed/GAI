@@ -1,0 +1,203 @@
+# methodology/v1.0.0/thresholds.yaml
+#
+# Formulas and thresholds of the five computed indicators A1, A2, A4, C3 and D1. Each key is the
+# `points.ref` of the indicator in indicators.yaml (lowercase id).
+#
+# Encodes docs/02-methodology-spec.md §5 ("Computed indicators, exact formulas"; "All thresholds
+# are in the methodology files so they can be versioned") and the computed type of docs/02 §3
+# (valid from the source release date to the next release date).
+# Tiers are evaluated in order; the first tier whose comparison holds gives the points, else
+# `otherwise`. D1 values are in percent of GNI (0.01 means 0.0100 %).
+# Shape: packages/schema/src/methodology/schemas.ts (ThresholdsFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+formulas:
+  a1:
+    kind: sqrt_share
+    indicator: A1
+    measure:
+      en: >-
+        For SIPRI release R (published in March of year Y+1 with data through year Y):
+        s = TIV(country → Israel, year Y) / TIV(all → Israel, year Y). points = −40 × √s,
+        rounded to one decimal.
+      fr: >-
+        Pour la publication R du SIPRI (publiée en mars de l'année Y+1 avec des données
+        jusqu'à l'année Y) : s = TIV(pays → Israël, année Y) / TIV(tous → Israël, année Y).
+        points = −40 × √s, arrondi à une décimale.
+    validity:
+      en: >-
+        Valid from R's publication date to the next release's publication date. Before the
+        first post-war release (March 2024) A1 is no-data for everyone.
+      fr: >-
+        Valable de la date de parution de R jusqu'à la date de parution de la publication
+        suivante. Avant la première publication d'après-guerre (mars 2024), A1 est « pas de
+        données » pour tous.
+    notes:
+      en: >-
+        Rationale for the square root: linear scaling makes secondary suppliers invisible (a 1%
+        supplier would score −0.4); the root keeps the largest supplier near the cap and gives a
+        1% supplier −4. no_data_before is the date of the first post-war release: the SIPRI
+        press release of 11 March 2024 announcing data for 1950–2023. The release is archived as
+        a dataset source when the SIPRI tables are imported (P-14).
+      fr: >-
+        Justification de la racine carrée : une pondération linéaire rendrait invisibles les
+        fournisseurs secondaires (un fournisseur de 1 % obtiendrait −0,4) ; la racine maintient
+        le premier fournisseur près du plafond et donne −4 à un fournisseur de 1 %.
+        no_data_before est la date de la première publication d'après-guerre : le communiqué
+        du SIPRI du 11 mars 2024 annonçant les données de 1950 à 2023. Cette publication est
+        archivée comme source de données lors de l'import des tables du SIPRI (P-14).
+    scale: -40
+    decimals: 1
+    latex: '\text{points} = -40 \times \sqrt{s}, \qquad s = \frac{\mathrm{TIV}(c \to \mathrm{Israel},\ Y)}{\mathrm{TIV}(\text{all} \to \mathrm{Israel},\ Y)}'
+    no_data_before: '2024-03-11'
+
+  a2:
+    kind: tiers
+    indicator: A2
+    measure:
+      en: >-
+        V = trailing-12-month exports to Israel under HS 93 + 8710 (+ 8526/8802 when confirmed
+        military). Source: the country's own reporting to UN Comtrade; if absent or
+        confidential, Israel's mirror import data by origin; if both absent, no-data. Tiers:
+        V ≥ 100 M USD → −25; ≥ 10 M → −15; ≥ 1 M → −8; ≥ 100 k → −3; < 100 k → 0.
+      fr: >-
+        V = exportations vers Israël sur les 12 derniers mois au titre du chapitre SH 93 et de
+        la position 8710 (+ 8526/8802 lorsque leur nature militaire est confirmée). Source : les
+        déclarations du pays lui-même à UN Comtrade ; à défaut, ou si elles sont
+        confidentielles, les données miroir des importations d'Israël par origine ; si les deux
+        manquent, « pas de données ». Paliers : V ≥ 100 M USD → −25 ; ≥ 10 M → −15 ;
+        ≥ 1 M → −8 ; ≥ 100 k → −3 ; < 100 k → 0.
+    validity:
+      en: Recomputed at each Comtrade annual/quarterly release; valid until the next.
+      fr: >-
+        Recalculé à chaque publication annuelle ou trimestrielle de Comtrade ; valable jusqu'à
+        la suivante.
+    unit: usd
+    tiers:
+      - {op: gte, value: 100000000, points: -25}
+      - {op: gte, value: 10000000, points: -15}
+      - {op: gte, value: 1000000, points: -8}
+      - {op: gte, value: 100000, points: -3}
+    otherwise: 0
+    parameters:
+      hs_full: ['93', '8710']
+      hs_conditional: ['8526', '8802']
+      window: trailing-12-months
+      reporter_preference: [self, mirror]
+
+  a4:
+    kind: tiers
+    indicator: A4
+    measure:
+      en: >-
+        From the same release as A1: any new order placed with Israel in year Y with TIV > 0,
+        counting only contracts signed on or after 2023-10-07 (orders, not deliveries of
+        pre-war orders). Tiers by TIV: ≥ 500 → −15; ≥ 100 → −10; ≥ 10 → −5; > 0 → −2.
+      fr: >-
+        À partir de la même publication que A1 : toute nouvelle commande passée à Israël l'année Y
+        avec un TIV > 0, en ne comptant que les contrats signés à partir du 7 octobre 2023
+        (commandes, et non livraisons de commandes antérieures à la guerre). Paliers selon le TIV :
+        ≥ 500 → −15 ; ≥ 100 → −10 ; ≥ 10 → −5 ; > 0 → −2.
+    validity:
+      en: >-
+        As for every computed quantity, valid from the release's publication date to the next
+        release's publication date (docs/02 §3).
+      fr: >-
+        Comme toute quantité calculée, valable de la date de parution de la publication jusqu'à
+        la date de parution de la suivante (docs/02 §3).
+    unit: tiv
+    tiers:
+      - {op: gte, value: 500, points: -15}
+      - {op: gte, value: 100, points: -10}
+      - {op: gte, value: 10, points: -5}
+      - {op: gt, value: 0, points: -2}
+    otherwise: 0
+    parameters:
+      orders_signed_from: '2023-10-07'
+
+  c3:
+    kind: ratio_gated_tiers
+    indicator: C3
+    measure:
+      en: >-
+        T = trailing-12-month goods exports + imports with Israel (own reporting, else mirror).
+        r = T / T(2022). If r ≥ 0.9: tiers by T: ≥ 10 B USD → −8; ≥ 1 B → −5; ≥ 100 M → −3;
+        ≥ 10 M → −2; else 0. If r < 0.9: 0.
+      fr: >-
+        T = exportations + importations de marchandises avec Israël sur les 12 derniers mois
+        (déclarations du pays lui-même, à défaut données miroir). r = T / T(2022). Si r ≥ 0,9 :
+        paliers selon T : ≥ 10 Md USD → −8 ; ≥ 1 Md → −5 ; ≥ 100 M → −3 ; ≥ 10 M → −2 ;
+        sinon 0. Si r < 0,9 : 0.
+    validity:
+      en: >-
+        As for every computed quantity, valid from the source release date to the next release
+        date (docs/02 §3).
+      fr: >-
+        Comme toute quantité calculée, valable de la date de publication de la source jusqu'à
+        la date de la publication suivante (docs/02 §3).
+    notes:
+      en: >-
+        A drop is not rewarded here (only a decision is, via C1); a rise is not penalised beyond
+        the tier.
+      fr: >-
+        Une baisse n'est pas récompensée ici (seule une décision l'est, via C1) ; une hausse
+        n'est pas pénalisée au-delà du palier.
+    unit: usd
+    baseline_year: 2022
+    ratio_min: 0.9
+    tiers:
+      - {op: gte, value: 10000000000, points: -8}
+      - {op: gte, value: 1000000000, points: -5}
+      - {op: gte, value: 100000000, points: -3}
+      - {op: gte, value: 10000000, points: -2}
+    otherwise: 0
+    parameters:
+      window: trailing-12-months
+      reporter_preference: [self, mirror]
+
+  d1:
+    kind: tiers
+    indicator: D1
+    measure:
+      en: >-
+        F = paid + committed contributions from the country's government (donor organisation
+        type "Government") to the OCHA-tracked oPt flash appeals and the oPt pooled fund in the
+        trailing 12 months, per FTS. x = F / GNI (World Bank Atlas, current USD, latest
+        available year), in percent. Tiers: x ≥ 0.0100 % → +12; ≥ 0.0050 % → +9;
+        ≥ 0.0020 % → +6; ≥ 0.0005 % → +3; > 0 → +1; 0 → 0.
+      fr: >-
+        F = contributions versées + engagées par le gouvernement du pays (type d'organisation
+        donatrice « Government ») aux appels éclair pour le Territoire palestinien occupé suivis
+        par OCHA et au fonds commun pour le Territoire palestinien occupé sur les 12 derniers
+        mois, selon le FTS. x = F / RNB (méthode Atlas de la Banque mondiale, USD courants,
+        dernière année disponible), en pourcentage. Paliers : x ≥ 0,0100 % → +12 ;
+        ≥ 0,0050 % → +9 ; ≥ 0,0020 % → +6 ; ≥ 0,0005 % → +3 ; > 0 → +1 ; 0 → 0.
+    validity:
+      en: Recomputed monthly; valid one month.
+      fr: Recalculé chaque mois ; valable un mois.
+    notes:
+      en: >-
+        Zero is a real zero (FTS is the reference for government humanitarian funding), but the
+        methodology page states the known limitation that some bilateral and in-kind aid is not
+        reported to FTS, and that D4/D5 capture part of it. Token funding below the +3 tier
+        does not qualify against the passivity penalty (docs/02 §6).
+      fr: >-
+        Zéro est un vrai zéro (le FTS est la référence pour le financement humanitaire des
+        gouvernements), mais la page de méthodologie indique la limite connue selon laquelle
+        une partie de l'aide bilatérale et en nature n'est pas déclarée au FTS, et que D4/D5 en
+        couvrent une partie. Un financement symbolique inférieur au palier +3 ne compte pas
+        contre la pénalité de passivité (docs/02 §6).
+    unit: percent_of_gni
+    tiers:
+      - {op: gte, value: 0.01, points: 12}
+      - {op: gte, value: 0.005, points: 9}
+      - {op: gte, value: 0.002, points: 6}
+      - {op: gte, value: 0.0005, points: 3}
+      - {op: gt, value: 0, points: 1}
+    otherwise: 0
+    parameters:
+      donor_type: Government
+      window: trailing-12-months

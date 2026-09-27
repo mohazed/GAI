@@ -1,0 +1,101 @@
+# methodology/v1.0.0/bands.yaml
+#
+# The five bands of the scale, read from the rounded integer score.
+#
+# Encodes the scale table of spec §2 (band, score range, meaning, illustrative conduct; meaning
+# and illustrative conduct in English verbatim) and the display rule of
+# docs/02-methodology-spec.md §7 ("S is rounded half away from zero to an integer; the band is
+# read from the rounded integer: Sustaining ≤ −51, Enabling −50…−21, Passive −20…0, Acting 1…40,
+# Confronting ≥ 41"). Colour tokens are those of docs/05-design-system.md.
+# Shape: packages/schema/src/methodology/schemas.ts (BandsFile; objects are strict).
+#
+# Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
+
+version: 1.0.0-rc.1
+
+rounding: half-away-from-zero
+read_from: rounded-score
+
+bands:
+  - id: sustaining
+    name:
+      en: Sustaining
+      fr: Soutien
+    min: -100
+    max: -51
+    meaning:
+      en: Materially enabling the military campaign
+      fr: Rend matériellement possible la campagne militaire
+    illustrative:
+      en: Major arms supplier, active political shielding at the UN, sanctions on the ICC
+      fr: Fournisseur d'armes majeur, protection politique active à l'ONU, sanctions contre la CPI
+    colour_token: '--band-sustaining'
+
+  - id: enabling
+    name:
+      en: Enabling
+      fr: Facilitation
+    min: -50
+    max: -21
+    meaning:
+      en: Contributing without leading
+      fr: Contribue sans jouer un rôle moteur
+    illustrative:
+      en: Components in the supply chain, trade as usual, abstains on ceasefire votes, defunded UNRWA
+      fr: >-
+        Composants dans la chaîne d'approvisionnement, commerce inchangé, abstention lors des
+        votes sur le cessez-le-feu, financement de l'UNRWA supprimé
+    colour_token: '--band-enabling'
+
+  - id: passive
+    name:
+      en: Passive
+      fr: Passivité
+    min: -20
+    max: 0
+    meaning:
+      en: Silence or gestures only
+      fr: Silence ou simples gestes
+    illustrative:
+      en: No arms trade but no measures either; votes yes at the UN and does nothing else
+      fr: >-
+        Pas de commerce d'armes, mais aucune mesure non plus ; vote pour à l'ONU et ne fait
+        rien d'autre
+    colour_token: '--band-passive'
+
+  - id: acting
+    name:
+      en: Acting
+      fr: Action
+    min: 1
+    max: 40
+    meaning:
+      en: Concrete measures with a cost
+      fr: Mesures concrètes ayant un coût
+    illustrative:
+      en: >-
+        Suspended licences, restored and increased aid, formal statements naming violations,
+        recognised Palestine
+      fr: >-
+        Licences suspendues, aide rétablie et augmentée, déclarations formelles nommant des
+        violations, reconnaissance de la Palestine
+    colour_token: '--band-acting'
+
+  - id: confronting
+    name:
+      en: Confronting
+      fr: Confrontation
+    min: 41
+    max: 100
+    meaning:
+      en: Sustained action across several fronts
+      fr: Action soutenue sur plusieurs fronts
+    illustrative:
+      en: >-
+        Full arms embargo, joined or intervened in the ICJ case, sanctions on officials, trade
+        restrictions, led coalitions
+      fr: >-
+        Embargo total sur les armes, participation à l'affaire devant la CIJ ou intervention
+        dans celle-ci, sanctions contre des responsables, restrictions commerciales, coalitions
+        menées
+    colour_token: '--band-confronting'

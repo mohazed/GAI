@@ -1,0 +1,397 @@
+# banned-words.txt — tone lint for the site's own voice
+# Gaza Accountability Index, methodology v1.0.0
+#
+# Purpose
+# Event summaries, EN and FR, contain none of the terms below (docs/02 §12.6, docs/05 §7,
+# CLAUDE.md "Site voice"). A summary states a fact: {Actor} {past-tense verb} {object}{, qualifier}.
+# No judgement adjectives, no editorial adverbs, no legal characterisations in the site's own words.
+# The same list is applied, as a warning, to other text written in the site's voice (rule
+# tone.site-voice).
+#
+# Scope
+# Only the site's own voice is linted. Quotes are evidence and are never linted: a quote may
+# contain any of these words, verbatim and attributed to its speaker.
+#
+# Format
+# UTF-8, one term per line. Lines starting with # are comments; blank lines are ignored. A term
+# line holds the term and nothing else (no trailing comment).
+#
+# Matching
+# - Case-insensitive. Terms and text are compared after Unicode NFC normalisation.
+# - Whole words only: a match is never preceded or followed by a letter or a digit (\p{L}, \p{N}),
+#   so a term never matches inside a longer word ("courage*" does not match "encouraged").
+#   Hyphens, apostrophes (' and ’), spaces and punctuation are not letters: "anti-zionist" is
+#   caught by "zionis*".
+# - Multi-word phrases are allowed. A space in a phrase matches any run of whitespace, including
+#   U+00A0 and U+202F. The apostrophes ' and ’ match each other, so a phrase is listed once.
+# - A trailing * means "any word starting with": "honteu*" matches honteux, honteuse, honteuses,
+#   honteusement. It is the only wildcard. In a phrase it applies to the last word ("war crime*"
+#   matches "war crimes"). A prefix term is used only where no neutral word a summary could need
+#   starts with it; otherwise the exact forms are listed ("lâche*" would match "lâcher", "dive*"
+#   would match "divest", "barbar*" would match "Barbara", "sauvage*" would match "implantations
+#   sauvages", "appal*" would match "Appalachian").
+# - Every term applies to both the EN and the FR summary. Where one entry covers both languages
+#   (same spelling, or one prefix), it is listed once, under "EN + FR".
+#
+# Deliberately not listed (neutral terms the summaries need)
+# genocide, génocide (Genocide Convention, the ICJ case); court, crime, criminal, criminel
+# (International Criminal Court); occupation, occupied, occupying power; settlement, settler,
+# colonie, colon, colonisation; blockade, blocus; ceasefire, cessez-le-feu; famine, starvation;
+# violation; sanction; embargo; veto; unconditional, inconditionnel (the B10 wording "unconditional
+# support"; "unconditional release of all hostages" in Security Council resolutions); terrorism,
+# terrorisme (statute names, e.g. the Terrorism Act 2000 under which a proscription is an E2
+# event); regime, régime as a bare word (legal name of sanctions, export-control and trade
+# frameworks: "sanctions regime", "régime de sanctions", "régime préférentiel"; only the phrases
+# that apply it to a government are listed); indiscriminate, disproportionate, collective
+# punishment, human shields, hostage-taking (conduct defined in international humanitarian law,
+# named in B9 statements, like "starvation as a method of warfare"); extraordinary, extraordinaire
+# (institutional meeting names); catastrophe (the name of IPC Phase 5); alleged (legal hedge);
+# deplored, condemned, commended, welcomed, regretted (verbs that report what the actor did).
+#
+# Changes
+# This file is part of the methodology. It changes only through a new methodology version folder
+# and a CHANGELOG.md entry (docs/08 §1), never in place.
+
+
+# ---------------------------------------------------------------------------------------------
+# 1. Judgement adjectives and adverbs
+#    (docs/02 §12.6 examples, all present: brutal, shameful, heroic, genocidal, complicit,
+#    courageous, disgraceful. "genocidal" and "complicit" are listed in section 2.)
+# ---------------------------------------------------------------------------------------------
+
+# EN + FR (same spelling, or one prefix covers both)
+abject*
+abominabl*
+admirabl*
+brave
+brutal*
+courage*
+cruel*
+fervent*
+flagrant*
+horribl*
+horrif*
+hypocri*
+lamentabl*
+outrage*
+regrettabl*
+scandal*
+terribl*
+
+# EN
+alarming*
+appalled
+appalling*
+atrocious*
+barbaric
+barbarism
+barbarity
+blatant*
+bold
+boldly
+bravely
+bravery
+callous*
+catastrophic*
+commendabl*
+coward*
+cynic*
+damning
+decisive*
+deplorabl*
+despicabl*
+devastating*
+disgrace*
+disturbing*
+egregious*
+exemplary
+heinous*
+hero
+heroes
+heroic*
+historic
+horrendous*
+horror*
+inhumane
+intolerabl*
+irresponsibl*
+landmark
+laudable
+milestone*
+monstrous*
+principled
+reckless*
+remarkabl*
+ruthless*
+savage*
+shame
+shameful*
+shameless*
+shocking*
+staunch*
+tragedies
+tragedy
+tragic*
+unacceptabl*
+unprecedented
+
+# FR
+accablant*
+alarmant*
+atroce*
+audacieu*
+barbare*
+barbarie
+bravoure
+brutaux
+catastrophique*
+choquant*
+cruauté
+cynique*
+cynisme
+déplorabl*
+dévastateur*
+dévastatrice*
+effroyabl*
+épouvantabl*
+héroïque*
+héros
+historique*
+honte
+honteu*
+ignoble*
+impitoyabl*
+inacceptabl*
+indéfectible*
+inédit*
+infâme*
+inhumain*
+inquiétant*
+intolérabl*
+irresponsabl*
+lâche
+lâchement
+lâches
+lâcheté
+louable*
+méprisabl*
+monstrueu*
+odieu*
+remarquabl*
+révoltant*
+sans précédent
+sauvagerie
+tragédie*
+tragique*
+troublant*
+
+
+# ---------------------------------------------------------------------------------------------
+# 2. Legal characterisations in the site's own voice
+#    (CLAUDE.md, docs/05 §7: never "complicit", "guilty", "war crime". A court, a prosecutor or
+#    a government may use these words; the site quotes them, it does not adopt them.)
+# ---------------------------------------------------------------------------------------------
+
+# EN + FR (same spelling, or one prefix covers both)
+apartheid
+atrocit*
+carnage
+extermin*
+illicit*
+massacre*
+pogrom*
+
+# EN
+aggressor*
+bloodbath
+complicit
+complicity
+crime against humanity
+crimes against humanity
+ethnic cleansing
+genocidal
+guilt
+guilty
+illegal*
+murder*
+perpetrator*
+slaughter*
+unlawful*
+war crime*
+war criminal*
+
+# FR
+agresseur*
+bain de sang
+bourreau*
+complice*
+complicité*
+coupable*
+crime contre l'humanité
+crime de guerre
+crimes contre l'humanité
+crimes de guerre
+criminel de guerre
+criminels de guerre
+culpabilité
+épuration ethnique
+génocidaire*
+illégal*
+meurtre*
+meurtrier*
+meurtrière*
+nettoyage ethnique
+tuerie*
+
+
+# ---------------------------------------------------------------------------------------------
+# 3. Loaded political terms
+#    (Labels that carry one side's framing. The site names states, governments, ministers,
+#    Hamas, the West Bank, the occupied Palestinian territory. "terrorism" and bare "regime"
+#    are not listed; see the header.)
+# ---------------------------------------------------------------------------------------------
+
+# EN + FR (same spelling, or one prefix covers both)
+martyr*
+terrorist*
+
+# EN
+disputed territories
+disputed territory
+hamas regime
+israeli regime
+judea and samaria
+terror
+terrorise*
+terroriz*
+zionis*
+
+# FR
+judée et samarie
+judée-samarie
+régime du hamas
+régime israélien
+sionis*
+terreur*
+terrorisé*
+territoires disputés
+
+
+# ---------------------------------------------------------------------------------------------
+# 4. Intensifiers and editorial adverbs
+#    (docs/05 §7: no adverbs, no "notably", no "shockingly". "shockingly", "remarkably",
+#    "tragically", "brutally", "flagrantly" and the like are caught by the prefixes in section 1.)
+# ---------------------------------------------------------------------------------------------
+
+# EN
+absolutely
+at last
+belated*
+categorically
+clearly
+crucially
+deeply
+evidently
+extremely
+finally
+firmly
+fortunately
+highly
+hopefully
+importantly
+incredibly
+indeed
+ironically
+merely
+notably
+obviously
+of course
+predictably
+really
+resolutely
+sadly
+significantly
+so-called
+strongly
+supposedly
+tellingly
+thankfully
+truly
+undeniably
+undoubtedly
+unfortunately
+unquestionably
+unsurprisingly
+utterly
+very
+vigorously
+
+# FR
+absolument
+bien entendu
+bien sûr
+catégoriquement
+clairement
+de toute évidence
+enfin
+évidemment
+extrêmement
+fermement
+hautement
+hélas
+heureusement
+incontestablement
+incroyablement
+indéniablement
+malheureusement
+manifestement
+notamment
+profondément
+prétendument
+résolument
+sans aucun doute
+soi-disant
+tardivement
+tellement
+très
+tristement
+véritablement
+vigoureusement
+vraiment
+
+
+# ---------------------------------------------------------------------------------------------
+# 5. Marketing words
+#    (docs/05 §7 list, with French equivalents where they exist. "débloquer" is not the French
+#    for "unlock" here: "a débloqué des fonds" is the neutral phrase for releasing funds.)
+# ---------------------------------------------------------------------------------------------
+
+# EN + FR (same spelling, or one prefix covers both)
+explore*
+robust*
+
+# EN
+cutting edge
+cutting-edge
+delve*
+dive
+dives
+diving
+empower*
+game changer
+game-changer
+game-changing
+journey
+journeys
+leverag*
+our platform
+seamless*
+unleash*
+unlock*
+we believe
+
+# FR
+incontournable*
+notre plateforme
+nous croyons
+plongez
