@@ -27,7 +27,7 @@ Standing rule taken from these: a session's recommended defaults are adopted, an
 | B-03 | Issue labels `error-report`, `right-of-reply`, `lead` created for the issue forms. | The forms tag new issues. | Applied. |
 | B-04 | Turn on GitHub private vulnerability reporting (SECURITY.md points to it). | Security reports should not be public issues. | Scheduled: P-12 (still off on 2026-09-27). |
 | B-05 | Cloudflare values leave the local `.env`; only the two secrets in GitHub Actions. | CLAUDE.md: no secrets outside Actions. | Scheduled: P-12. |
-| B-06 | Upgrade Git (this Mac has 2.15, 2017) before the data sessions. | Newer tools may need a recent Git. | Open: author action before P-D (`brew install git`). |
+| B-06 | Upgrade Git (this Mac has 2.15, 2017) before the data sessions. | Newer tools may need a recent Git. | Applied 2026-09-27: Git 2.55.0 from Homebrew; the 2017 installer's copy in /usr/local/git was removed with its own uninstall script (it shadowed Homebrew's in PATH). |
 
 ### P-02 — Schema package and methodology v1.0.0
 
