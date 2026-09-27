@@ -9,7 +9,6 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { apiReader } from './api'
-import { eventCountsByCategory } from './events'
 import { siteMethodology } from './methodology'
 import { rankRows } from './rank'
 
@@ -39,15 +38,15 @@ describe('site ↔ API contract (fixtures build)', () => {
     expect(api.changesLatest().build_date).toBe('2026-09-27')
   })
 
-  it('counts events by category as the API counts them', () => {
+  it('publishes category counts that add up to the event total, in both files', () => {
     const api = apiReader(path.join(dir, 'v1'))
     for (const c of api.countries().countries) {
       if (c.excluded) continue
       const file = api.country(c.iso3)
       if (file.excluded) throw new Error('unexpected')
-      const byCat = eventCountsByCategory(file.event_list, file.build_date)
-      const sum = Object.values(byCat).reduce((a, b) => a + b, 0)
-      expect(sum, c.iso3).toBe(file.events.total)
+      const sum = Object.values(c.events.by_category).reduce((a, b) => a + b, 0)
+      expect(sum, c.iso3).toBe(c.events.total)
+      expect(file.events, c.iso3).toEqual(c.events)
     }
   })
 

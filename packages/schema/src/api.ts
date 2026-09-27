@@ -350,6 +350,8 @@ export const ApiEventCounts = z.strictObject({
   corroborated: Count,
   reported: Count,
   disputed: Count,
+  /** The same events by category; the five counts add up to `total` (scorecard mode, D-16). */
+  by_category: byCategory(Count),
 })
 export type ApiEventCounts = z.infer<typeof ApiEventCounts>
 

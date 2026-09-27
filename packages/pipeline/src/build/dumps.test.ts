@@ -14,6 +14,8 @@ import { parse } from 'csv-parse/sync'
 import { describe, expect, it } from 'vitest'
 import {
   ASSESSMENTS_CSV_COLUMNS,
+  COUNTRIES_CSV_COLUMNS,
+  COUNTRIES_SCORECARD_CSV_COLUMNS,
   type DumpAssessment,
   type DumpInput,
   type DumpLead,
@@ -250,7 +252,7 @@ const category = (raw: number, scored = true) => ({
   weight: 1,
 })
 
-function scoredCountry(iso3: string, iso2: string, m49: number): ApiCountryEntry {
+function scoredCountry(iso3: string, iso2: string, m49: number, score = -5): ApiCountryEntry {
   return {
     iso3,
     iso2,
@@ -260,8 +262,8 @@ function scoredCountry(iso3: string, iso2: string, m49: number): ApiCountryEntry
     excluded: false,
     methodology: VERSION,
     date: DATE,
-    score: -5,
-    score_display: -5,
+    score,
+    score_display: Math.round(score),
     band: 'passive',
     band_name: EN_FR,
     passivity_applied: true,
@@ -288,7 +290,14 @@ function scoredCountry(iso3: string, iso2: string, m49: number): ApiCountryEntry
       no_export_data: false,
       statuses: { A1: 'unchecked' },
     },
-    events: { total: 0, confirmed: 0, corroborated: 0, reported: 0, disputed: 0 },
+    events: {
+      total: 3,
+      confirmed: 2,
+      corroborated: 1,
+      reported: 0,
+      disputed: 0,
+      by_category: { A: 1, B: 2, C: 0, D: 0, E: 0 },
+    },
     last_change: null,
     latest_event: null,
     summary: EN_FR,
@@ -415,7 +424,7 @@ function input(over: Partial<DumpInput> = {}): DumpInput {
     date: DATE,
     methodology: VERSION,
     git: { sha: SHA, dirty: false },
-    countries: [EXCLUDED, scoredCountry('XBB', 'XB', 902), scoredCountry('XAA', 'XA', 901)],
+    countries: [EXCLUDED, scoredCountry('XBB', 'XB', 902, 12.5), scoredCountry('XAA', 'XA', 901)],
     events: [E_XBB, E_XAA_B1, E_XAA_RETRACTED, E_XAA_A6],
     sources: [
       source(SRC_B),
@@ -461,11 +470,13 @@ const text = (path: string): string => {
 const records = (path: string): string[][] => parse(text(path), { relax_column_count: false })
 
 describe('dumpFiles: paths and CSV conventions', () => {
-  it('produces the five files, in order', () => {
+  it('produces the seven files, in order', () => {
     expect([...files.keys()]).toEqual([
       'dumps/events.csv',
       'dumps/sources.csv',
       'dumps/assessments.csv',
+      'dumps/countries.csv',
+      'dumps/countries.scorecard.csv',
       'dumps/scores-daily-2023.csv',
       'dumps/gai-2023-10-10.json',
     ])
@@ -487,6 +498,16 @@ describe('dumpFiles: paths and CSV conventions', () => {
     )
     expect(text('dumps/scores-daily-2023.csv').split('\n')[0]).toBe(
       'date,iso3,score,score_display,band,passivity_applied,A,B,C,D,E',
+    )
+    expect(text('dumps/countries.csv').split('\n')[0]).toBe(
+      'iso3,name_en,name_fr,region,excluded,score,score_display,band,passivity_applied,' +
+        'passivity_value,A,B,C,D,E,coverage,has_events,none_found,no_data,unchecked,' +
+        'not_applicable,events,last_change',
+    )
+    expect(text('dumps/countries.scorecard.csv').split('\n')[0]).toBe(
+      'iso3,name_en,name_fr,region,excluded,coverage,has_events,none_found,no_data,unchecked,' +
+        'not_applicable,events,events_confirmed,events_corroborated,events_reported,' +
+        'events_disputed,events_A,events_B,events_C,events_D,events_E,latest_event',
     )
     expect(EVENTS_CSV_COLUMNS).toHaveLength(26)
     expect(ASSESSMENTS_CSV_COLUMNS).toHaveLength(11)
@@ -511,6 +532,8 @@ describe('dumpFiles: paths and CSV conventions', () => {
       ['dumps/events.csv', EVENTS_CSV_COLUMNS],
       ['dumps/sources.csv', SOURCES_CSV_COLUMNS],
       ['dumps/assessments.csv', ASSESSMENTS_CSV_COLUMNS],
+      ['dumps/countries.csv', COUNTRIES_CSV_COLUMNS],
+      ['dumps/countries.scorecard.csv', COUNTRIES_SCORECARD_CSV_COLUMNS],
       ['dumps/scores-daily-2023.csv', SCORES_DAILY_CSV_COLUMNS],
     ]
     for (const [path, columns] of cases) {
@@ -518,6 +541,45 @@ describe('dumpFiles: paths and CSV conventions', () => {
       expect(header).toEqual([...columns])
       for (const r of rows) expect(r).toHaveLength(columns.length)
     }
+  })
+})
+
+describe('dumps/countries.csv and countries.scorecard.csv', () => {
+  it('orders scored countries by score, highest first, excluded entities last', () => {
+    const [, ...rows] = records('dumps/countries.csv')
+    expect(rows.map((r) => r[0])).toEqual(['XBB', 'XAA', 'XEX'])
+    const col = (name: (typeof COUNTRIES_CSV_COLUMNS)[number]) =>
+      COUNTRIES_CSV_COLUMNS.indexOf(name)
+    expect(rows[0]?.[col('score')]).toBe('12.5')
+    expect(rows[0]?.[col('passivity_value')]).toBe('15')
+    expect(rows[0]?.[col('A')]).toBe('10')
+    expect(rows[0]?.[col('last_change')]).toBe('')
+    // Excluded entities: registry fields only, every score field empty.
+    expect(rows[2]?.slice(col('score'))).toEqual(
+      COUNTRIES_CSV_COLUMNS.slice(col('score')).map(() => ''),
+    )
+    expect(rows[2]?.[col('excluded')]).toBe('true')
+  })
+
+  it('leaves out everything derived from the score in the scorecard table (D-16)', () => {
+    for (const c of ['score', 'score_display', 'band', 'passivity_applied', 'A', 'last_change'])
+      expect(COUNTRIES_SCORECARD_CSV_COLUMNS as readonly string[]).not.toContain(c)
+    const [, ...rows] = records('dumps/countries.scorecard.csv')
+    expect(rows.map((r) => r[0])).toEqual(['XAA', 'XBB', 'XEX'])
+    const col = (name: (typeof COUNTRIES_SCORECARD_CSV_COLUMNS)[number]) =>
+      COUNTRIES_SCORECARD_CSV_COLUMNS.indexOf(name)
+    expect(rows[0]?.slice(col('events'), col('events_E') + 1)).toEqual([
+      '3',
+      '2',
+      '1',
+      '0',
+      '0',
+      '1',
+      '2',
+      '0',
+      '0',
+      '0',
+    ])
   })
 })
 
@@ -811,6 +873,7 @@ describe('dumpFiles: determinism and edge cases', () => {
     expect(empty.get('dumps/events.csv')).toBe(`${EVENTS_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/sources.csv')).toBe(`${SOURCES_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/assessments.csv')).toBe(`${ASSESSMENTS_CSV_COLUMNS.join(',')}\n`)
+    expect(empty.get('dumps/countries.csv')).toBe(`${COUNTRIES_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/scores-daily-2023.csv')).toBe(`${SCORES_DAILY_CSV_COLUMNS.join(',')}\n`)
     const d = ApiDumpFile.parse(JSON.parse(empty.get('dumps/gai-2023-10-10.json') ?? ''))
     expect(d).toMatchObject({ countries: [], events: [], sources: [], leads: [] })

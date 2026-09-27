@@ -44,6 +44,7 @@ import {
   type CountryScore,
   type Coverage,
   citations,
+  eventCategoryCounts,
   eventCounts,
   isIsoDate,
   type LastChange,
@@ -489,6 +490,12 @@ export function buildData(input: BuildInput): BuildOutput {
     .filter((l) => l.status === 'open')
     .sort((a, b) => byCode(a.id, b.id))
   const indicatorOrder = new Map(m.indicators.map((ind, i) => [ind.id, i]))
+  const categoryByIndicator = new Map(m.indicators.map((ind) => [ind.id, ind.category]))
+  const categoryOf = (indicator: string) => {
+    const k = categoryByIndicator.get(indicator)
+    if (k === undefined) throw new BuildError(`indicator ${indicator} is not in the methodology`)
+    return k
+  }
   const byIndicatorOrder = (a: string, b: string) =>
     (indicatorOrder.get(a) ?? 99) - (indicatorOrder.get(b) ?? 99) || byCode(a, b)
 
@@ -542,6 +549,7 @@ export function buildData(input: BuildInput): BuildOutput {
 
     const band = bandFor(sm, final.display)
     const counts = eventCounts(run.events, date, iso3)
+    const byCategory = eventCategoryCounts(run.events, date, categoryOf, iso3)
     const lc = lastChange(run.scorer, date)
     const le = latestEvent(run.events, date, iso3)
     const common = {
@@ -574,7 +582,7 @@ export function buildData(input: BuildInput): BuildOutput {
       },
       categories: apiCategories(final),
       coverage: apiCoverage(run.coverage),
-      events: { ...counts },
+      events: { ...counts, by_category: byCategory },
       last_change: apiLastChange(lc),
       latest_event: le === null ? null : { ...le },
       summary: { en: summary.en, fr: summary.fr },

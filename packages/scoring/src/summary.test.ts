@@ -2,7 +2,13 @@ import { compileBannedWords, findBannedWords, loadMethodology } from '@gai/schem
 import { describe, expect, it } from 'vitest'
 import { INDICATOR_LABELS } from './labels.js'
 import type { LastChange } from './series.js'
-import { eventCounts, type SummaryInput, summaryLine, summaryLines } from './summary.js'
+import {
+  eventCategoryCounts,
+  eventCounts,
+  type SummaryInput,
+  summaryLine,
+  summaryLines,
+} from './summary.js'
 import { ev, methodology, REPO_ROOT } from './test-helpers.js'
 
 const m = methodology()
@@ -192,6 +198,25 @@ describe('event counts (§14 events)', () => {
       reported: 1,
       disputed: 1,
     })
+  })
+
+  it('counts the same events by category; the five counts add up to the total', () => {
+    const events = [
+      ev('B1', '2026-09-12', 3),
+      ev('B9', '2026-01-01', 5, { confidence: 'reported' }),
+      ev('C5', '2026-01-01', 5),
+      ev('C5', '2026-01-02', 5, { status: 'retracted' }),
+      ev('C6', '2026-01-02', 3, { scope: ['lebanon'] }),
+      ev('D1', '2026-01-01', 4, { type: 'computed' }),
+      ev('D4', '2026-10-01', 5),
+      ev('E1', '2026-01-01', 5),
+    ]
+    const categoryOf = (id: string) => id.slice(0, 1) as 'A' | 'B' | 'C' | 'D' | 'E'
+    const byCat = eventCategoryCounts(events, '2026-09-26', categoryOf)
+    expect(byCat).toEqual({ A: 0, B: 2, C: 1, D: 0, E: 1 })
+    const sum = Object.values(byCat).reduce((a, b) => a + b, 0)
+    expect(sum).toBe(eventCounts(events, '2026-09-26').total)
+    expect(() => eventCategoryCounts(events, '2026-09-26', () => 'F' as 'A')).toThrow(RangeError)
   })
 })
 

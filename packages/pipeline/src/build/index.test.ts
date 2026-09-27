@@ -116,6 +116,8 @@ describe('buildData on the fixtures', () => {
       'dumps/events.csv',
       'dumps/sources.csv',
       'dumps/assessments.csv',
+      'dumps/countries.csv',
+      'dumps/countries.scorecard.csv',
       'dumps/scores-daily-2023.csv',
       'dumps/scores-daily-2024.csv',
       'dumps/scores-daily-2025.csv',
@@ -194,6 +196,8 @@ describe('buildData on the fixtures', () => {
       corroborated: 0,
       reported: 0,
       disputed: 0,
+      // The one counted event is the A6 suspension (the computed A2, C3 and D1 values are not acts).
+      by_category: { A: 1, B: 0, C: 0, D: 0, E: 0 },
     })
     expect(deu.last_change).toMatchObject({
       date: '2025-11-24',

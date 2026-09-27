@@ -140,6 +140,7 @@ All paths are relative to `/api/v1/`.
 | `build-notes.json` | Notes of the build |
 | `manifest.json` | Git commit, methodology, build date, and size and SHA-256 of every other file |
 | `dumps/events.csv`, `dumps/sources.csv`, `dumps/assessments.csv` | Tables of events, sources and assessments |
+| `dumps/countries.csv`, `dumps/countries.scorecard.csv` | Every country at the build date, as the ranking table shows it, with and without scores |
 | `dumps/scores-daily-{YYYY}.csv` | Daily scores, one file per year |
 | `dumps/gai-{YYYY-MM-DD}.json` | The whole published dataset at the build date |
 
@@ -153,7 +154,7 @@ Every entry of `data/countries.yaml` at the build date, by ISO3. A scored countr
 - `passivity`: `applied`; `points`, the size of the penalty, applied or not; `value`, what is subtracted (`points` when applied, else 0); `window_days`; `qualifying`, the ids of the qualifying events at the build date, by date then id.
 - `categories`: A to E, each with `raw`, `clipped`, `cap` (`min`, `max`), `capped`, `scored` and `weight` (1 at the published score).
 - `coverage`: `ratio`; the counts `applicable`, `has_events`, `none_found`, `no_data`, `unchecked`, `not_applicable`; `missing` (no-data and unchecked indicators), `no_data_ids`, `unchecked_ids`, `not_applicable_ids`, all in methodology order; `no_export_data`; `statuses`, the status of each of the 31 scored indicators.
-- `events`: the published events scoped to gaza dated on or before the build date, computed values excepted, as `total` and per confidence level.
+- `events`: the published events scoped to gaza dated on or before the build date, computed values excepted, as `total`, per confidence level, and per category in `by_category` (A to E, adding up to `total`; scorecard mode shows these counts in place of the category subtotals, D-16).
 - `last_change`: the latest day on which an event step changed the score, or `null`. `kind` is `event` or `passivity`; `event`, `indicator` and `change` (`start`, `end`, `expire`) name the step that moved S most that day; `points` is the net change of that indicator's value that day, after its cap; `effect` is what that step alone did to S, in full precision; `delta` is score(d) − score(d − 1), to one decimal; `passivity.before` and `passivity.after` give the flag on the two days. When a computed value replaces another on the same day, `points` and `effect` differ: in the real-data build, on 2026-07-01 a D1 value of +6 started as the +3 value ended, so `points` is 3, `effect` 6 and `delta` 3.
 - `latest_event`: the latest counted event (`date`, `id`, `indicator`, `points`), or `null`.
 
@@ -260,6 +261,13 @@ Example (fixtures build). `countries` keeps DEU and ISR, and leaves out PSE (1 o
       },
       "date": "2026-09-27",
       "events": {
+        "by_category": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        },
         "confirmed": 1,
         "corroborated": 0,
         "disputed": 0,
@@ -1678,6 +1686,21 @@ src_20250808_bundesregierung_ruestungsexporte-gaza,official,Bundeskanzler Friedr
 ```csv
 country,indicator,category,scored,status,hand_status,derived_status,derived_reason,checked_at,note,queries
 DEU,A2,A,true,has-events,unchecked,has-events,generated-event,,,
+```
+
+**`dumps/countries.csv`**: one row per registry entry at the build date, the file the ranking page offers as "Download CSV". Scored countries come first, by score (full precision) highest first, then ISO3; excluded entities follow by ISO3 with every score field empty. `A` to `E` are the clipped category subtotals and `passivity_value` the penalty in force, both in full precision, so that a reader can recombine the score with other weights (docs/02 §9: `S = clip(Σ w_k · k − passivity_value, −100, 100)`); `coverage` is the ratio, followed by the status counts; `events` is `events.total`; `last_change` the date of the last change of the score. Header and first two rows of the real-data build:
+
+```csv
+iso3,name_en,name_fr,region,excluded,score,score_display,band,passivity_applied,passivity_value,A,B,C,D,E,coverage,has_events,none_found,no_data,unchecked,not_applicable,events,last_change
+DEU,Germany,Allemagne,Europe,false,-2,-2,passive,false,0,-3,0,-5,6,0,0.1,3,0,0,27,1,0,2026-07-01
+ISR,Israel,Israël,Asia,true,,,,,,,,,,,,,,,,,,
+```
+
+**`dumps/countries.scorecard.csv`**: the same entries by ISO3, with nothing derived from the score (no score, band, subtotal, passivity or last change), for scorecard mode (D-16): the coverage columns, the event counts by confidence and by category (`events_A` to `events_E`) and `latest_event`, the date of the latest counted event. Header and first row of the real-data build:
+
+```csv
+iso3,name_en,name_fr,region,excluded,coverage,has_events,none_found,no_data,unchecked,not_applicable,events,events_confirmed,events_corroborated,events_reported,events_disputed,events_A,events_B,events_C,events_D,events_E,latest_event
+DEU,Germany,Allemagne,Europe,false,0.1,3,0,0,27,1,0,0,0,0,0,0,0,0,0,0,
 ```
 
 **`dumps/scores-daily-{YYYY}.csv`**: one file per year, one row per date and scored country from 2023-10-07 to the build date, by date then ISO3; `score` to one decimal, `score_display`, `band`, `passivity_applied`, and the clipped category subtotals `A` to `E` in full precision. No coverage (section 2). Header and first two rows of `scores-daily-2026.csv` in the real-data build:

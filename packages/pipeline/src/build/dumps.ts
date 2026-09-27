@@ -1,5 +1,5 @@
 /**
- * The bulk downloads of the API (docs/04 §2 step 6): four CSV tables and one JSON file holding
+ * The bulk downloads of the API (docs/04 §2 step 6): six CSV tables and one JSON file holding
  * the whole published dataset at the build date.
  *
  * - `dumps/events.csv`: one row per published event (every public status) of the scored
@@ -13,6 +13,13 @@
  *   the window start to the build date, by date then ISO3; `score` to one decimal, the clipped
  *   category subtotals A–E in full precision (docs/02 §7, §9: a reader can recompute S with other weights). Coverage is not
  *   a daily value: it is the research status at the build date (countries.json, assessments.csv).
+ * - `dumps/countries.csv`: one row per registry entry at the build date, as the ranking table
+ *   shows it (docs/05 §6 Ranking "Download CSV"): scored countries by score, highest first, then
+ *   ISO3, excluded entities after them by ISO3; the clipped category subtotals A–E and the
+ *   passivity value in full precision, so a reader can apply other weights (docs/02 §9).
+ * - `dumps/countries.scorecard.csv`: the same rows by ISO3 without anything derived from the score
+ *   (no score, band, subtotal, passivity or last change), for scorecard mode (D-16): coverage and
+ *   event counts by confidence and by category.
  * - `dumps/gai-{date}.json`: the `ApiDumpFile` (countries, events, sources, assessments,
  *   corrections, replies, open leads), canonical JSON.
  *
@@ -112,6 +119,49 @@ export const SCORES_DAILY_CSV_COLUMNS = [
   'C',
   'D',
   'E',
+] as const
+
+/** Columns shared by both country tables. */
+const COUNTRY_CSV_HEAD = ['iso3', 'name_en', 'name_fr', 'region', 'excluded'] as const
+const COUNTRY_CSV_COVERAGE = [
+  'coverage',
+  'has_events',
+  'none_found',
+  'no_data',
+  'unchecked',
+  'not_applicable',
+  'events',
+] as const
+
+export const COUNTRIES_CSV_COLUMNS = [
+  ...COUNTRY_CSV_HEAD,
+  'score',
+  'score_display',
+  'band',
+  'passivity_applied',
+  'passivity_value',
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  ...COUNTRY_CSV_COVERAGE,
+  'last_change',
+] as const
+
+export const COUNTRIES_SCORECARD_CSV_COLUMNS = [
+  ...COUNTRY_CSV_HEAD,
+  ...COUNTRY_CSV_COVERAGE,
+  'events_confirmed',
+  'events_corroborated',
+  'events_reported',
+  'events_disputed',
+  'events_A',
+  'events_B',
+  'events_C',
+  'events_D',
+  'events_E',
+  'latest_event',
 ] as const
 
 /** One country's assessment as the dump publishes it (ApiAssessment plus the country). */
@@ -247,6 +297,66 @@ const SCORE_FIELDS: Record<ScoresColumn, (s: ScoreLine) => unknown> = {
   E: (s) => s.day.clipped.E,
 }
 
+type Scored = Extract<ApiCountryEntry, { excluded: false }>
+type CountryField = (c: ApiCountryEntry, s: Scored | null) => unknown
+
+const COUNTRY_FIELDS: Record<
+  (typeof COUNTRIES_CSV_COLUMNS)[number] | (typeof COUNTRIES_SCORECARD_CSV_COLUMNS)[number],
+  CountryField
+> = {
+  iso3: (c) => c.iso3,
+  name_en: (c) => c.name.en,
+  name_fr: (c) => c.name.fr,
+  region: (c) => c.region,
+  excluded: (c) => c.excluded,
+  score: (_, s) => s?.score ?? null,
+  score_display: (_, s) => s?.score_display ?? null,
+  band: (_, s) => s?.band ?? null,
+  passivity_applied: (_, s) => s?.passivity.applied ?? null,
+  passivity_value: (_, s) => s?.passivity.value ?? null,
+  A: (_, s) => s?.categories.A.clipped ?? null,
+  B: (_, s) => s?.categories.B.clipped ?? null,
+  C: (_, s) => s?.categories.C.clipped ?? null,
+  D: (_, s) => s?.categories.D.clipped ?? null,
+  E: (_, s) => s?.categories.E.clipped ?? null,
+  coverage: (_, s) => s?.coverage.ratio ?? null,
+  has_events: (_, s) => s?.coverage.has_events ?? null,
+  none_found: (_, s) => s?.coverage.none_found ?? null,
+  no_data: (_, s) => s?.coverage.no_data ?? null,
+  unchecked: (_, s) => s?.coverage.unchecked ?? null,
+  not_applicable: (_, s) => s?.coverage.not_applicable ?? null,
+  events: (_, s) => s?.events.total ?? null,
+  events_confirmed: (_, s) => s?.events.confirmed ?? null,
+  events_corroborated: (_, s) => s?.events.corroborated ?? null,
+  events_reported: (_, s) => s?.events.reported ?? null,
+  events_disputed: (_, s) => s?.events.disputed ?? null,
+  events_A: (_, s) => s?.events.by_category.A ?? null,
+  events_B: (_, s) => s?.events.by_category.B ?? null,
+  events_C: (_, s) => s?.events.by_category.C ?? null,
+  events_D: (_, s) => s?.events.by_category.D ?? null,
+  events_E: (_, s) => s?.events.by_category.E ?? null,
+  last_change: (_, s) => s?.last_change?.date ?? null,
+  latest_event: (_, s) => s?.latest_event?.date ?? null,
+}
+
+function countryCsv(
+  columns: readonly (keyof typeof COUNTRY_FIELDS)[],
+  countries: readonly ApiCountryEntry[],
+): string {
+  return csvDocument(
+    columns,
+    countries.map((c) => columns.map((col) => COUNTRY_FIELDS[col](c, c.excluded ? null : c))),
+  )
+}
+
+/** Ranking order: scored countries by full-precision score, highest first, then ISO3. */
+function rankingOrder(countries: readonly ApiCountryEntry[]): ApiCountryEntry[] {
+  const scored = countries.filter((c): c is Scored => !c.excluded)
+  const excluded = countries.filter((c) => c.excluded)
+  scored.sort((a, b) => b.score - a.score || (a.iso3 < b.iso3 ? -1 : a.iso3 > b.iso3 ? 1 : 0))
+  return [...scored, ...excluded]
+}
+
 /** `dumps/events.csv` of events already in dump order. */
 function eventsCsv(events: readonly ApiEvent[]): string {
   return csvDocument(
@@ -319,7 +429,8 @@ function scoresDailyCsvs(input: DumpInput): [string, string][] {
 
 /**
  * The dump files, keyed by path relative to api/v1/: `dumps/events.csv`, `dumps/sources.csv`,
- * `dumps/assessments.csv`, `dumps/scores-daily-{YYYY}.csv` for each year, and
+ * `dumps/assessments.csv`, `dumps/countries.csv`, `dumps/countries.scorecard.csv`,
+ * `dumps/scores-daily-{YYYY}.csv` for each year, and
  * `dumps/gai-{date}.json`, in that order.
  */
 export function dumpFiles(input: DumpInput): Map<string, string> {
@@ -374,6 +485,8 @@ export function dumpFiles(input: DumpInput): Map<string, string> {
     ['dumps/events.csv', eventsCsv(events)],
     ['dumps/sources.csv', sourcesCsv(sources)],
     ['dumps/assessments.csv', assessmentsCsv(assessments)],
+    ['dumps/countries.csv', countryCsv(COUNTRIES_CSV_COLUMNS, rankingOrder(countries))],
+    ['dumps/countries.scorecard.csv', countryCsv(COUNTRIES_SCORECARD_CSV_COLUMNS, countries)],
     ...scoresDailyCsvs(input),
     [`dumps/gai-${input.date}.json`, jsonText(dump)],
   ])

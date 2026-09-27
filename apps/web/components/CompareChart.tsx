@@ -188,7 +188,7 @@ export interface DotsCountry {
   iso3: string
   name: LangText
   categories: Record<CategoryKey, ApiCategory>
-  /** Published events by category (`eventCountsByCategory`), shown in scorecard mode. */
+  /** Published events by category (the API's `events.by_category`), shown in scorecard mode. */
   counts: Record<CategoryKey, number>
 }
 

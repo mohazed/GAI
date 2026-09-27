@@ -19,6 +19,8 @@ import { roundHalfAwayFromZero } from './numeric.js'
 import type { LastChange } from './series.js'
 import { dayNumber } from './time.js'
 import {
+  CATEGORY_IDS,
+  type CategoryId,
   CONFIDENCE_LEVELS,
   type Confidence,
   type Lang,
@@ -71,6 +73,26 @@ export function eventCounts(
     total++
   }
   return { total, ...counts }
+}
+
+/**
+ * The counted events at `date` by category (the same events as `eventCounts`, so the five counts
+ * add up to its `total`); `categoryOf` maps an indicator id to its category (indicators.yaml).
+ * Scorecard mode shows these counts in place of the category subtotals (D-16).
+ */
+export function eventCategoryCounts(
+  events: readonly ScoringEvent[],
+  date: string,
+  categoryOf: (indicator: string) => CategoryId,
+  country?: string,
+): Record<CategoryId, number> {
+  const counts: Record<CategoryId, number> = { A: 0, B: 0, C: 0, D: 0, E: 0 }
+  for (const e of counted(events, date, country)) {
+    const k = categoryOf(e.indicator)
+    if (!CATEGORY_IDS.includes(k)) throw new RangeError(`unknown category ${k} of ${e.indicator}`)
+    counts[k]++
+  }
+  return counts
 }
 
 export interface LatestEvent {
