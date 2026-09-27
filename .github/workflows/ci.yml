@@ -31,7 +31,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm typecheck
-      - run: pnpm test
+      # One package at a time: the runner has two cores, and the scoring property tests, the
+      # schema dataset tests and the pipeline tests are each CPU-bound; run side by side they
+      # starve one another past their timeouts.
+      - run: pnpm test --concurrency=1
       - name: Validate data and methodology
         run: pnpm validate
         env:
