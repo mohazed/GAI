@@ -5,7 +5,7 @@ export const REPO_URL = 'https://github.com/mohazed/GAI'
  * The project's public contact address (docs/08 §4 right of reply, §8: a project address, never a
  * personal one). `null` until the author creates one: the About and Reply pages then send readers
  * to the GitHub issue forms and say that an address will be added. This is the one place to set
- * it (docs/10 B-139).
+ * it (docs/10 B-143).
  */
 export const CONTACT_EMAIL: string | null = null
 
