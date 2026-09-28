@@ -245,6 +245,8 @@ From P-09 (docs/10 B-125–B-132), the /data page also states: the monthly repor
 Read CLAUDE.md, docs/04-architecture.md §4, docs/05-design-system.md (ScoreGauge, Timeline).
 
 Build apps/widget with Vite: a single script /embed/v1/gai.js (< 15 KB gzipped, no dependencies, Shadow DOM, self-contained styles matching the tokens, fonts falling back to system serif/sans) that reads data-country, data-view (gauge|timeline), data-lang (en|fr), fetches /api/v1/countries/{iso3}.json from the site origin (configurable via data-origin), renders, links back to the country page, respects Phase-1 mode, and degrades to a text link if fetch fails. Copy the built file into apps/web/public/embed/v1/ during `pnpm build`. Add live examples to /embed and a Playwright test that embeds it in a blank page. Report size and browser support.
+
+From P-10 (docs/10 B-146): /embed already documents the snippet, built by `apps/web/lib/embed.ts` as one `<script src="{site}/embed/v1/gai.js" data-country="DEU" data-view="gauge" data-lang="en">` placed where the embed appears (docs/04 §4), the options table of `apps/web/content/embed.{en,fr}.md` (`data-view` default `gauge`, `data-lang` default `en`, `data-origin` default the site's origin) and the claims that the embed sets no cookie, makes one request, follows the site's mode, falls back to a link, and that several can sit on one page. Build the widget to that contract, or change the page and lib/embed.ts with it; then remove the "not published yet" line (the `status` slot and `embedPage.status` in both message files) and put the live examples at the page's `examples` slot (`app/[locale]/embed/page.tsx`), both languages, inside the page's CSP (the widget script is same-origin).
 ```
 
 ---
@@ -273,6 +275,8 @@ After the first deploy, check the response headers on Cloudflare Pages (P-07, do
 Also check (P-08, docs/10 B-114, B-119): Cloudflare Pages' redirect of a directory path without its slash keeps the query string, so that the dated permalinks `/en/country/DEU?date=…` of the citations reach `/en/country/DEU/?date=…` (scripts/serve.ts does so since P-08); the share cards under `/cards/` are served as `image/png` with the CORS header of `_headers` (they are rebuilt every night, so not immutable); a card's `og:image` URL resolves on the deployed hostname (metadataBase is the manifest's `site_url`). Report the time `scripts/cards.ts` takes in the deploy build.
 
 The stale-build notice of /changes (P-09, docs/10 B-130) is computed in the browser from the build date embedded in the page at build (the API's `manifest.json` `build_date`): after the first nightly build, check that /en/changes/ shows no notice, and that the page's "Built on" line carries the run day. The Changes page imports `app/[locale]/changes/country-filters.css`, which `scripts/filter-css.ts` writes before `next build` (part of `pnpm build`): the deploy workflow must run `pnpm build`, not `next build` alone.
+
+Also (P-10, docs/10 B-148): `sitemap.xml`, `robots.txt` and `llms.txt` are built from the manifest's `site_url`: check on the deployed host that they carry the pages.dev address (the build's `--site-url`), that `/llms.txt` is served as text/plain and `/sitemap.xml` as XML, and that the methodology formulas (MathML, docs/10 B-139) render in current Chrome, Firefox and Safari. The Data page's reproducibility command and JSON-LD carry the deployed build's commit and date: open /en/data/ after the first deploy and compare with its manifest.json.
 ```
 
 ---
@@ -293,6 +297,8 @@ After filling the registry, run pnpm build:data and pnpm build:data:check: build
 With 195 entries (P-08): the build renders 390 share cards (about 12–25 ms each measured with three entries) and 390 country pages; report both times and the size of out/ with the cards. The country pages' "Compare with peers" lists fill up with real neighbours: check two regions by hand (nearest scores in score mode, same subregion first in scorecard mode, B-117).
 
 Also with 195 entries (P-09, docs/10 B-125, B-131): `scripts/filter-css.ts` writes one country filter rule pair per registry entry into the Changes page's stylesheet (inlined into that page only): report the Changes page's HTML size before and after; the Compare page lists every scored country in its picker and in its no-JavaScript list: check both, and time a comparison of five real countries (five country files fetched) with Lighthouse's mobile throttling.
+
+Also (P-10, docs/10 B-150): a table painted before all its rows are parsed changes its column widths as longer rows arrive, which Lighthouse counts as layout shift. The ranking table's country column has a fixed share of the width in scorecard mode for that reason; with 195 rows, run Lighthouse on /en/ranking/ and /fr/ranking/ in both builds (out/ and out-kit/, whose score-mode table keeps automatic widths), and give the score-mode columns fixed shares too if it shifts.
 ```
 
 ---
@@ -322,6 +328,8 @@ Commit on branch data/structured and open a PR with a table of what was loaded, 
 Build-data wiring (P-05): pass the `a2_confirmed_military.csv` rows as `generateAll(ctx, structured, { confirmedMilitary })` in packages/pipeline/src/build/index.ts step 3 and in score-cli.ts, with a test. When the B8 generator reads recognitions.csv, add B8 to the derived statuses of packages/pipeline/src/build/assessments.ts only if the table decides a status for every country, with tests. Check the derived statuses after the imports: countries without Comtrade rows show A2/C3 no-data; a SIPRI release in force makes A1 none-found for every non-supplier (s = 0, the P-05 reading of docs/02 §5) and A4 none-found for every country that ordered nothing.
 
 Validator and engine checks adopted from the P-02 and P-03 reports (docs/10), each with positive and negative tests in packages/schema: a corrections-log entry is required when a published event's `end`, `scope` or `status` changes, as it already is for points, date, confidence and evidence (B-27); `not-applicable` is an error on an indicator without a not-applicable rule in indicators.yaml (only B2 has one) (B-28); `unsc_vetoes.csv` rows may cite an archived official source (the UN meeting record) as well as a dataset source (B-31); warnings for overlapping standing records of one country under A3, B7 or D2 (B-22, B-51), for a B5 and a B6 of one country on the same day, and for a D2 still open after a D3 starts (B-56). Run pnpm validate on data/ and fixtures/ after adding them.
+
+Also (P-10, docs/10 B-140): the methodology and data pages state the FTS attribution in `apps/web/content/computed.{en,fr}.md` ("each is to be attributed by its FTS organisation id … none is applied at this build", and the four organisations left unattributed at the 2026-09-27 fetch). Once the overrides are applied, rewrite that bullet in both languages with the overrides applied (organisation, FTS id, country, flows, amount) and the flows still unattributed after the re-run. When `a2_confirmed_military.csv` exists, change the sentence "No confirmation is recorded at this build" to state what the table holds, and add the table to `STRUCTURED_DOCS` in `apps/web/lib/api-docs.ts` (a test requires every structured table to be described). If `gni.csv` changes, the content test of the old GNI years (`apps/web/lib/content.test.ts`) fails until the list in computed.{en,fr}.md is updated.
 ```
 
 ---
@@ -370,6 +378,8 @@ Read CLAUDE.md, docs/08-governance.md §3, docs/02-methodology-spec.md, and the 
 Produce docs/calibration/{ISO3}.md for each of the ten with the worksheet table of docs/08 §3, the computed score by category, the band, the three "does it feel right" reading slots left blank for human readers, and a section "what drives this score" naming the three largest contributions. Then write docs/calibration/README.md: the ten in a table, the ranking, and a critical review of the thresholds: which rule produced a surprising result and what change (with version bump) you would propose, with the sensitivity numbers from sensitivity.json. Include in the review the implementation choices of P-04 that affect scores, with numbers: D1 moving between tiers month to month, the effect of pre-war-dated FTS flows on the windows to September 2024, the GNI year for countries whose latest World Bank year is old, the exclusion of 2023 SIPRI orders from A4, and calendar-year A2/C3 validity. Do not change methodology files in this session. Commit on main.
 
 Methodology defaults adopted from the P-02 and P-03 reports but not applied, because each changes scores (docs/10 §2): add `official-video` and `parliamentary` to the source kinds of `confirmed` (B-21); "most severe" stacking for A3, A6, A7, B3, B7 and D2 instead of sum (B-22, B-51); how a state that only votes yes should land (B-23); passivity: only contributions of +2 or more qualify (B-46), the pre-existing B8 tier does not qualify (B-47), open-ended states keep qualifying only 365 days (B-48, kept); the short indicator labels moved from packages/scoring/src/labels.ts to indicators.yaml (B-54, wording). For each, compute its effect on the ten countries and on the sensitivity tables, recommend adopt or reject, and list the adopted ones as one proposal for P-24 (a new methodology version with changelog and diff.json) to run before P-22. Record the outcome of each in docs/10.
+
+Also (P-10, docs/10 B-140, B-151): the methodology page states, in the site's own notes (`apps/web/content/readings.*.md`), where the code reads the rc.1 text in a way the text does not spell out, and where they disagree: the D1 name ("per capita of GNI" for x = F ÷ GNI), A2 and C3 described as trailing-12-month values recomputed quarterly while the build uses calendar-year annual data, A4 "signed on or after 7 October 2023" while all 2023 orders are left out, D1's GNI "latest available year" while the build takes the latest year not after the window, a standing state lifting the passivity penalty only for 365 days from its start (including the pre-existing B8 recognition, to 5 October 2024), the date-checked sentence of coverage while generated indicators carry a derived reason instead, deviations 7 and 8 of docs/00, and "most severe" chosen by points. Put the wording fixes among these (wording only, patch version) into the P-24 proposal with the others, so that the next version's methodology.{en,fr}.md says them itself; once it does, remove the matching bullets from readings.*.md and computed.*.md.
 ```
 
 ---
@@ -400,6 +410,8 @@ Read CLAUDE.md and docs/05-design-system.md fully. If the skills frontend-design
 Run the site locally with real data (pnpm build:data && pnpm dev). Visit every page in EN and FR, at 360 px, 768 px and 1280 px, with JS on and off, and with prefers-reduced-motion. Score each page against the anti-slop checklist (docs/05 §9), the component specs (§5), the copy rules (§7), the chart rules (§8) and accessibility (§10). Fix everything you can; for judgement calls, list them with a recommendation. Pay special attention to: symmetric treatment of positive and negative events, the coverage bar never separated from the gauge, the passivity line, tabular numerals and the minus sign, French punctuation, the share cards (open ten PNGs and check them), the widget. Commit fixes on main. Report a before/after table per page.
 
 Include the pages of P-09 (docs/10 B-125–B-132): Compare with one and with five countries (in score mode through the kit build, `pnpm --filter @gai/web build:kit`, and in scorecard mode), with `?w=`, and its no-JavaScript fallback; Changes with its filters (the kit's /_kit/changes/ has entries to filter); a monthly report with movers, a new event, an end and a correction. Judge the space `.compare-results` keeps before a country is chosen (70 % of the screen height, to keep CLS at zero), and the month table of /changes.
+
+Include the pages of P-10 (docs/10 B-138–B-148): the methodology page (its length, the contents list, the tables at 360 px, the MathML formulas in the three browser engines), the Data page's endpoint examples (collapsed) and downloads, About (the quoted standpoint and signature), Corrections with an entry (the kit's CorrectionsTable specimen) and empty, Reply and Embed.
 ```
 
 ---
@@ -418,6 +430,8 @@ Review every French string: messages/fr.json, methodology.fr.md, all event summa
 The share cards and the country pages show the generated summaries too (P-08): check them after the switch to country names, in both languages, on a card of a long name (Saint Vincent and the Grenadines; the name drops to 60 or 48 px) and on the scorecard variant ("Fiche · N événements · N valeurs calculées · couverture X %"). The country page shows the region only: the M49 subregion names have no French form in the registry (B-109); if the glossary adds them, show the subregion in both languages.
 
 Also (P-09): the `compare`, `changes` and `changesPage` strings of messages/fr.json, the comparison citation's French form in packages/scoring/src/citation.ts ("Comparaison : …", "(fiches d'évaluation)"), and the French monthly reports as the site renders them at /fr/changes/{YYYY-MM}/.
+
+Also (P-10): `apps/web/content/*.fr.md` (About, Données, Intégrer, Droit de réponse, the notes computed and readings), the French strings of `apps/web/lib/api-docs.ts` (endpoints and structured tables), the translation of the standpoint in `apps/web/lib/standpoint.ts`, and the message namespaces `methodologyPage`, `sensitivity`, `correctionsPage`, `aboutPage`, `contact`, `dataPage`, `embedPage`, `replyPage`. French spacing is applied to the content files at build (`frenchPunctuation`); write them with ordinary spaces. A correction's `reason` is one text, marked `lang="en"` on the Corrections page: decide whether corrections get a French reason (a schema change, with P-25).
 ```
 
 ---
@@ -436,6 +450,8 @@ Focus: CSP and headers on the live site; no secrets in git history (scan); depen
 Also (P-08): the share-card generator (scripts/cards.ts, satori and resvg) reads only the published API and the pinned @fontsource files, and resvg must not load system fonts (`loadSystemFonts: false`); the country page's JSON-LD escapes `<` (lib/country.ts); the event filters and the snapshot read only `location` values they validate (filter values against the facets present, `date` against YYYY-MM-DD and the window) and write no HTML from them.
 
 Also (P-09): the monthly reports' Markdown reader (apps/web/lib/markdown.ts) refuses every construct report.ts does not write and builds React elements, never HTML strings; the Compare page reads `?c=` and `?w=` through `parseCompare` and `parseWeights` and fetches only same-origin `countries/{ISO3}.json` for validated codes, trusting the file's shape (decide whether a client-side check is worth its bytes); the filter CSS generator accepts only ISO3 codes; the webpack setting in apps/web/next.config.ts (splitChunks limited to initial chunks) still holds after a Next.js upgrade.
+
+Also (P-10): `apps/web/components/DocMarkdown.tsx` injects KaTeX's MathML of the methodology formulas (`dangerouslySetInnerHTML`, `lib/math.ts`: `trust: false`, `strict: 'error'`, a build error on any `style` attribute) — the only HTML injected besides the JSON-LD blocks; `lib/doc.ts` accepts only http(s), site-relative, fragment and mailto link targets; the Data page's JSON-LD (`siteDatasetJsonLd`, `<` escaped) and its examples, which are the build's own files rendered as text.
 ```
 
 ---
@@ -452,6 +468,8 @@ Also (P-09): the monthly reports' Markdown reader (apps/web/lib/markdown.ts) ref
 Read CLAUDE.md, docs/01-plan.md §6, docs/08-governance.md.
 
 Verify each launch criterion of docs/01 §6 with evidence (commands and outputs): EN/FR rendering without JS on every page, Lighthouse scores on /country/DEU, counts of events/sources/assessments, zero unchecked among the 45 countries, the corrections page non-empty, a fresh-clone reproducibility test comparing manifest.json hashes, banned-word lint, the nightly workflow's last run. Fix small issues; list blocking ones. Then: write the launch note as changes/launch.md (what the site is, what it is not yet — no score displayed —, how to report errors, how to reply), add reviewers.yaml (empty is allowed at scorecard launch), tag v0.9.0-scorecard, confirm the deploy, and give me the URL and a checklist of what only I can do next (domain, reviewers, distribution per spec §9).
+
+Since P-10 (docs/10 B-142, B-143): the reviewers file exists as `methodology/reviewers.yaml` (outside the version folders, like CHANGELOG.md; schema `ReviewersFile` of @gai/schema, checked by pnpm validate, published in `methodology/index.json` `reviewers`, read by the About page); it holds an empty list, so "add reviewers.yaml" means checking it. The contact address is `CONTACT_EMAIL` in `apps/web/lib/site.ts`, null until the author creates a project address: put it on the checklist of what only the author can do.
 ```
 
 ---
@@ -482,6 +500,8 @@ Run the light protocol for {ISO3_A}, {ISO3_B}, {ISO3_C} on branch data/light-{N}
 Read CLAUDE.md, docs/08-governance.md §1, docs/02-methodology-spec.md §11, docs/01-plan.md §2 and §7.
 
 Threshold changes decided by the author: {NONE or list}. Create methodology/v1.0.0 as the final version (from the rc, applying the changes with changelog entries and a diff.json), run the full build, and check the gates: no unchecked indicator among the 45 full-protocol countries, reviewers.yaml non-empty, corrections non-empty, sensitivity tables present. If any gate fails, stop and report; do not flip. Otherwise set NEXT_PUBLIC_SHOW_SCORES=true, write changes/index-launch.md (what the number is and is not, the passivity rule in one paragraph, how to change the weights, how to cite), tag v1.0.0, deploy, and verify the ranking, compare, sliders, cite, share cards and API on the live site. Report.
+
+Reviewers (P-10, docs/10 B-142): they are listed in `methodology/reviewers.yaml` with `signed_off` entries (version, date, link to the public sign-off comment); the gate is that the list is non-empty and that each sign-off names v1.0.0. The final version folder gets its `diff.json` against rc.1 (schema `MethodologyDiffFile`, docs/10 B-141), which the methodology page shows.
 ```
 
 ---
@@ -508,6 +528,8 @@ Monthly refresh on branch data/monthly-{YYYY-MM}: run fetch:fts and fetch:worldb
 
 ```
 Read CLAUDE.md, docs/08-governance.md §1, docs/02-methodology-spec.md §11. Proposed change: {DESCRIBE}. Create methodology/v{X.Y.Z} from the current version with the change, a CHANGELOG entry with the rationale, and diff.json; build; open a PR with the diff table (every country moved ≥ 1 and why) and a draft GitHub Discussion post announcing the 14-day comment window ending {DATE+14}. Do not merge.
+
+diff.json (P-10, docs/10 B-141): write it into the new version folder, `methodology/v{X.Y.Z}/diff.json`, with `from` (the previous version), `to` (this folder's version; the loader checks it), `date` (the build date both versions were scored at) and `countries` (iso3, name EN/FR, old and new display score, cause EN/FR), every country whose display score moved by 1 or more; the build publishes it as `diff` in `methodology/{version}.json` and the methodology page shows it in its DiffViewer.
 ```
 
 ---
