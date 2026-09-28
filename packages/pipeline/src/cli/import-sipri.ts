@@ -70,6 +70,8 @@ if (ordersFile && ordersSource) {
     ['release_date', 'data_year', 'buyer_iso3'],
   )
   out.push(`sipri_orders.csv: ${o.rows.length} rows, release ${release}`)
+  if (o.nonState.length > 0)
+    out.push(`  non-state recipients skipped (SIPRI's "*" mark): ${o.nonState.join('; ')}`)
   for (const u of o.uncertainYears) out.push(`  order year marked uncertain by SIPRI: ${u}`)
 }
 process.stdout.write(`${out.join('\n')}\n`)

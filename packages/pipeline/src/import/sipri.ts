@@ -17,8 +17,17 @@
 import { foldName, iso3ForName } from '../names.js'
 
 const YEAR = /^(19[5-9]\d|20\d\d)$/
-const TOTAL = new Set(['total', 'totals'])
+/**
+ * The total row: "Total" in the P-04 shape; the export of the 2026 interface names it after the
+ * table, "Total exports to Israel" (read 2026-09-28).
+ */
+const TOTAL = /^totals?(\s|$)/
 const UNKNOWN_SUPPLIER = /^unknown/i
+/**
+ * SIPRI marks a non-state armed group with "*" and an international organisation with "**"
+ * ("African Union**"): not a state of the universe, so skipped and listed, never coded.
+ */
+const NON_STATE = /\*$/
 
 function number(cell: string | undefined): number {
   const s = (cell ?? '').replace(/[\s,]/g, '')
@@ -111,7 +120,7 @@ export function importDeliveries(
     const name = cells[0] ?? ''
     if (name === '') continue
     const values = new Map(yearCols.map(([h, i]) => [Number(h), number(cells[i])]))
-    if (TOTAL.has(foldName(name))) {
+    if (TOTAL.test(foldName(name))) {
       for (const [y, v] of values) totals.set(y, v)
       continue
     }
@@ -158,6 +167,8 @@ export type OrderRow = {
 export interface OrdersImport {
   rows: OrderRow[]
   unknownNames: string[]
+  /** Recipients SIPRI marks as non-state actors or organisations (a trailing "*"), skipped. */
+  nonState: string[]
   /** Register lines whose order year SIPRI marks uncertain. */
   uncertainYears: string[]
 }
@@ -197,11 +208,18 @@ export function importOrders(
     'SIPRI TIV for total order',
   )
   const unknown = new Set<string>()
+  const nonState = new Set<string>()
   const uncertain: string[] = []
   const sums = new Map<string, number>()
+  // The 2026 export puts SIPRI's "?" for an uncertain order year in the unnamed column after it.
+  const iYearMark = header[iYear + 1] === '' ? iYear + 1 : -1
   for (const cells of table.slice(1)) {
     if (foldName(cells[iSupplier] ?? '') !== 'israel') continue
     const name = cells[iRecipient] ?? ''
+    if (NON_STATE.test(name.trim())) {
+      nonState.add(name.trim())
+      continue
+    }
     const iso3 = iso3ForName(name)
     if (iso3 === undefined) {
       if (name !== '') unknown.add(name)
@@ -210,7 +228,8 @@ export function importOrders(
     const yearCell = cells[iYear] ?? ''
     const y = /(\d{4})/.exec(yearCell)?.[1]
     if (!y) continue
-    if (/[?()]/.test(yearCell)) uncertain.push(`${name} ${yearCell}`)
+    const mark = iYearMark === -1 ? '' : (cells[iYearMark] ?? '')
+    if (/[?()]/.test(yearCell) || mark.includes('?')) uncertain.push(`${name} ${yearCell}${mark}`)
     const k = `${iso3}\u0000${y}`
     sums.set(k, (sums.get(k) ?? 0) + number(cells[iTiv]))
   }
@@ -224,5 +243,10 @@ export function importOrders(
       source,
     }
   })
-  return { rows, unknownNames: [...unknown].sort(), uncertainYears: uncertain }
+  return {
+    rows,
+    unknownNames: [...unknown].sort(),
+    nonState: [...nonState].sort(),
+    uncertainYears: uncertain,
+  }
 }
