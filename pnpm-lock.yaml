@@ -257,6 +257,9 @@ importers:
       '@fontsource/source-sans-3':
         specifier: 5.3.0
         version: 5.3.0
+      '@gai/widget':
+        specifier: workspace:*
+        version: link:../widget
       '@lhci/cli':
         specifier: 0.15.1
         version: 0.15.1(supports-color@5.5.0)
@@ -314,12 +317,18 @@ importers:
 
   apps/widget:
     devDependencies:
+      '@gai/scoring':
+        specifier: workspace:*
+        version: link:../../packages/scoring
       '@types/node':
         specifier: 'catalog:'
         version: 22.20.4
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
+      vite:
+        specifier: 8.3.1
+        version: 8.3.1(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1)
       vitest:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@22.20.4)(vite@8.3.1(@types/node@22.20.4)(tsx@4.23.15))

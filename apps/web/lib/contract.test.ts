@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process'
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
+import { type CountryFile, readOptions, renderWidget } from '@gai/widget'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -14,6 +15,7 @@ import { CorrectionsTable } from '../components/CorrectionsTable'
 import { MonthReport, reportLinks } from '../components/MonthReport'
 import { SensitivityTables } from '../components/SensitivityTables'
 import { cardInput, loadFonts, renderCard } from '../scripts/cards'
+import { widgetConfig } from '../scripts/embed'
 import { countryFilterCss } from '../scripts/filter-css'
 import { apiReader } from './api'
 import { endpoints, exampleOf } from './api-docs'
@@ -260,5 +262,30 @@ describe('site ↔ API contract (fixtures build)', () => {
     expect(html.match(/<th scope="row"/g)?.length).toBe(
       settings + data.tables.length * data.baseline.length,
     )
+  })
+
+  it('the widget draws every country file of the build, in both modes, views and languages', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    const m = siteMethodology(api.methodology(api.manifest().methodology.version))
+    for (const c of api.countries().countries) {
+      const file = api.country(c.iso3) as CountryFile
+      for (const mode of ['score', 'scorecard'] as const)
+        for (const view of ['gauge', 'timeline'] as const)
+          for (const lang of ['en', 'fr'] as const) {
+            const o = readOptions(
+              { country: c.iso3, view, lang },
+              'https://gai.example/embed/v1/gai.js',
+              'https://news.example/',
+            )
+            const html = renderWidget(file, o, widgetConfig(mode, m))
+            expect(html, c.iso3).toContain(`https://gai.example/${lang}/country/${c.iso3}/`)
+            expect(html, c.iso3).toContain(c.name[lang].replace(/'/g, '&#39;'))
+            expect(html, c.iso3).not.toMatch(/\sstyle=|NaN|undefined/)
+            if (!c.excluded && mode === 'scorecard')
+              expect(html, c.iso3).not.toContain(`b-${c.band}`)
+            if (!c.excluded && mode === 'score' && view === 'gauge')
+              expect(html, c.iso3).toContain(`class="chip b-${c.band}"`)
+          }
+    }
   })
 })

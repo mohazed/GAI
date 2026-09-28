@@ -2,19 +2,22 @@
   "name": "@gai/widget",
   "version": "0.0.0",
   "private": true,
-  "description": "Embeddable widget script served from /embed/.",
+  "description": "Embeddable widget script served from /embed/v1/gai.js (docs/04 §4).",
   "license": "MIT",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
+    "build": "vite build",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run"
   },
   "devDependencies": {
+    "@gai/scoring": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:",
+    "vite": "8.3.1",
     "vitest": "catalog:"
   }
 }

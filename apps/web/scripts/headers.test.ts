@@ -55,6 +55,19 @@ describe('public/_headers (docs/04 §3)', () => {
     }
     expect(headersFor('/en/')['Access-Control-Allow-Origin']).toBeUndefined()
   })
+
+  it('serves the widget without the page-level headers, revalidated (docs/04 §4)', () => {
+    const h = headersFor('/embed/v1/gai.js')
+    expect(h['X-Content-Type-Options']).toBe('nosniff')
+    expect(h['Cache-Control']).toBeUndefined()
+    for (const k of [
+      'Content-Security-Policy',
+      'Permissions-Policy',
+      'Referrer-Policy',
+      'X-Frame-Options',
+    ])
+      expect(h[k], k).toBeUndefined()
+  })
 })
 
 describe('switchLocalePath', () => {

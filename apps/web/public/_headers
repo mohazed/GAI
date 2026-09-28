@@ -24,6 +24,16 @@
 /embed/*
   Access-Control-Allow-Origin: *
 
+# The widget script (docs/04 §4) runs in other sites' pages: the page-level headers mean nothing
+# on it and would add some 600 bytes to each response (the /embed page's JavaScript budget is
+# measured on the wire, docs/04 §3). It changes with each build (the site's mode is written into
+# it), so it keeps the default revalidation, not immutable.
+/embed/*
+  ! Content-Security-Policy
+  ! Permissions-Policy
+  ! Referrer-Policy
+  ! X-Frame-Options
+
 # Build assets named by content hash (scripts) or package version (fonts, scripts/fonts.ts): cached
 # for good, and without the page-level headers, which only apply to documents and would add some
 # 600 bytes to every script response (the JavaScript budget of docs/04 §3 is measured on the
