@@ -303,6 +303,8 @@ Also with 195 entries (P-09, docs/10 B-125, B-131): `scripts/filter-css.ts` writ
 Also (P-10, docs/10 B-150): a table painted before all its rows are parsed changes its column widths as longer rows arrive, which Lighthouse counts as layout shift. The ranking table's country column has a fixed share of the width in scorecard mode for that reason; with 195 rows, run Lighthouse on /en/ranking/ and /fr/ranking/ in both builds (out/ and out-kit/, whose score-mode table keeps automatic widths), and give the score-mode columns fixed shares too if it shifts.
 
 Also (P-11, docs/10 B-158): the widget (`@gai/widget` `renderWidget`) draws every real country file in both modes, views and languages without error (`lib/contract.test.ts` does it on the fixtures; do it once on the real API with 195 entries), and the /embed examples show the first scored country of the registry.
+
+Also (P-12, docs/10 B-171): CI on `main` has been red since P-10 because Lighthouse CI measures a layout shift of 0.0012 on /en/ranking/ on the GitHub runner (budget 0.001, B-103); every other step passes. Fix it first, without loosening the budget (the runner's fallback font is Liberation Sans: measure there, or reproduce with the same fonts locally), and leave CI green. After the registry lands, the push to `main` deploys it (deploy.yml, docs/04 §5): check that the deploy run's `deploy-check` passes with 195 entries (file count under 20 000, largest file, total size) and report those numbers and the upload time from the run log; check two new country pages and their cards on https://gaza-accountability-index.pages.dev.
 ```
 
 ---
@@ -334,6 +336,8 @@ Build-data wiring (P-05): pass the `a2_confirmed_military.csv` rows as `generate
 Validator and engine checks adopted from the P-02 and P-03 reports (docs/10), each with positive and negative tests in packages/schema: a corrections-log entry is required when a published event's `end`, `scope` or `status` changes, as it already is for points, date, confidence and evidence (B-27); `not-applicable` is an error on an indicator without a not-applicable rule in indicators.yaml (only B2 has one) (B-28); `unsc_vetoes.csv` rows may cite an archived official source (the UN meeting record) as well as a dataset source (B-31); warnings for overlapping standing records of one country under A3, B7 or D2 (B-22, B-51), for a B5 and a B6 of one country on the same day, and for a D2 still open after a D3 starts (B-56). Run pnpm validate on data/ and fixtures/ after adding them.
 
 Also (P-10, docs/10 B-140): the methodology and data pages state the FTS attribution in `apps/web/content/computed.{en,fr}.md` ("each is to be attributed by its FTS organisation id … none is applied at this build", and the four organisations left unattributed at the 2026-09-27 fetch). Once the overrides are applied, rewrite that bullet in both languages with the overrides applied (organisation, FTS id, country, flows, amount) and the flows still unattributed after the re-run. When `a2_confirmed_military.csv` exists, change the sentence "No confirmation is recorded at this build" to state what the table holds, and add the table to `STRUCTURED_DOCS` in `apps/web/lib/api-docs.ts` (a test requires every structured table to be described). If `gni.csv` changes, the content test of the old GNI years (`apps/web/lib/content.test.ts`) fails until the list in computed.{en,fr}.md is updated.
+
+Also (P-12, docs/10 B-162, B-165, B-172): this session's pull request is the first to get a preview deployment (deploy.yml): check that the preview's run succeeded and report its URL. The quarterly Wayback check (`pnpm check:wayback`) found that the archived FTS response `src_20260927_fts_plan-1510-p1` (plan 1510, 2026) now answers HTTP 404 at its recorded `id_` URL: the re-run of `pnpm fetch:fts` archives a new copy; say in the PR what became of the old record (it stays; never edit its hash) and run `pnpm check:wayback` at the end, listing any other failure. Report the size of `dumps/gai-{date}.json` after the tables land; if it comes near 20 MB, split it by record type and document the split in the API README (P-12 prompt).
 ```
 
 ---
@@ -418,6 +422,8 @@ Include the pages of P-09 (docs/10 B-125–B-132): Compare with one and with fiv
 Include the pages of P-10 (docs/10 B-138–B-148): the methodology page (its length, the contents list, the tables at 360 px, the MathML formulas in the three browser engines), the Data page's endpoint examples (collapsed) and downloads, About (the quoted standpoint and signature), Corrections with an entry (the kit's CorrectionsTable specimen) and empty, Reply and Embed.
 
 Include the widget (P-11, docs/10 B-155–B-157): both views in both modes (the kit build is in score mode) at 320, 480 and 1280 px, in a blank page of another origin that does not load the site's fonts, and on /embed. Decide for the site's own ScoreGauge: at 375 px in French its scale labels "−50", "0 · seuil de passivité" and "+50" run into each other (the widget drops the ±50 labels under 480 px). Re-measure the /embed page's JavaScript on the wire: 152,974 bytes of the 153,600 budget at P-11.
+
+Also (P-12, docs/10 B-169): review the deployed site (https://gaza-accountability-index.pages.dev), not only the local build; P-12 drove Playwright's Chromium, Firefox and WebKit engines, not the branded browsers: look at the methodology formulas and the /embed examples in Safari and Firefox themselves once.
 ```
 
 ---
@@ -462,6 +468,8 @@ Also (P-09): the monthly reports' Markdown reader (apps/web/lib/markdown.ts) ref
 Also (P-10): `apps/web/components/DocMarkdown.tsx` injects KaTeX's MathML of the methodology formulas (`dangerouslySetInnerHTML`, `lib/math.ts`: `trust: false`, `strict: 'error'`, a build error on any `style` attribute) — the only HTML injected besides the JSON-LD blocks; `lib/doc.ts` accepts only http(s), site-relative, fragment and mailto link targets; the Data page's JSON-LD (`siteDatasetJsonLd`, `<` escaped) and its examples, which are the build's own files rendered as text.
 
 Also (P-11, docs/10 B-159): the widget (`apps/widget/src`) builds HTML strings for its shadow root: every text of the country file must pass through `esc`; `data-country` is accepted only as `[A-Z]{3}` and `data-origin` only as an http(s) origin; a host page that enforces Trusted Types refuses its `innerHTML` (decide whether DOM calls are worth their bytes); the /embed page sets the snippet as HTML (`dangerouslySetInnerHTML` with `lib/embed.ts` values only), a third HTML injection besides the MathML and the JSON-LD; `gai.js` changes with each build and keeps the default revalidation (decide on caching, and on publishing a Subresource Integrity hash, which would change with every build).
+
+Also (P-12, docs/10 B-160–B-170): review `.github/workflows/deploy.yml`, `nightly.yml`, `wayback.yml`, `.github/actions/build-site` and `.github/scripts/*.sh` (permissions, which events get the Cloudflare secrets: pushes to `main`, the nightly cron and pull requests from branches of this repository only; untrusted strings in shell and in `gh` calls; pinned actions and the pinned wrangler; the mirror script's SSH handling), `apps/web/scripts/deploy-check.ts` and `site-env.ts`, and `pnpm check:wayback` (curl arguments built from `archive/index.csv`). Cloudflare Pages adds `Access-Control-Allow-Origin: *` to every response of the `pages.dev` host, pages included: decide whether that matters.
 ```
 
 ---
@@ -480,6 +488,8 @@ Read CLAUDE.md, docs/01-plan.md §6, docs/08-governance.md.
 Verify each launch criterion of docs/01 §6 with evidence (commands and outputs): EN/FR rendering without JS on every page, Lighthouse scores on /country/DEU, counts of events/sources/assessments, zero unchecked among the 45 countries, the corrections page non-empty, a fresh-clone reproducibility test comparing manifest.json hashes, banned-word lint, the nightly workflow's last run. Fix small issues; list blocking ones. Then: write the launch note as changes/launch.md (what the site is, what it is not yet — no score displayed —, how to report errors, how to reply), add reviewers.yaml (empty is allowed at scorecard launch), tag v0.9.0-scorecard, confirm the deploy, and give me the URL and a checklist of what only I can do next (domain, reviewers, distribution per spec §9).
 
 Since P-10 (docs/10 B-142, B-143): the reviewers file exists as `methodology/reviewers.yaml` (outside the version folders, like CHANGELOG.md; schema `ReviewersFile` of @gai/schema, checked by pnpm validate, published in `methodology/index.json` `reviewers`, read by the About page); it holds an empty list, so "add reviewers.yaml" means checking it. The contact address is `CONTACT_EMAIL` in `apps/web/lib/site.ts`, null until the author creates a project address: put it on the checklist of what only the author can do.
+
+Also (P-12, docs/10 B-173): on the author's checklist: the VPS mirror (off; enabling it needs three Actions secrets and a change of the secrets rule in CLAUDE.md, docs/04 §6 and docs/09), Cloudflare Web Analytics (off, D-19), a custom domain (then `SITE_URL` in deploy.yml and nightly.yml), CI green on `main`, the open issues "Nightly build failed" and "Archived copies failing the quarterly check" (none open at launch, or each explained).
 ```
 
 ---
@@ -514,6 +524,8 @@ Threshold changes decided by the author: {NONE or list}. Create methodology/v1.0
 Reviewers (P-10, docs/10 B-142): they are listed in `methodology/reviewers.yaml` with `signed_off` entries (version, date, link to the public sign-off comment); the gate is that the list is non-empty and that each sign-off names v1.0.0. The final version folder gets its `diff.json` against rc.1 (schema `MethodologyDiffFile`, docs/10 B-141), which the methodology page shows.
 
 After the flip (P-11, docs/10 B-154): `/embed/v1/gai.js` is rebuilt with the site and must carry the mode `score` in its config (`grep -o 'mode[^,]*'` on the file); check that the examples of /embed and a blank page with the snippet show the score, the band and the timeline's step line.
+
+Also (P-12, docs/10 B-163): the share cards and the widget now read the mode from `apps/web/.env.production` as the pages do (`scripts/site-env.ts`); after the flip, check on the deployed host that a page shows the score, `/cards/DEU.png` carries it and `curl -s …/embed/v1/gai.js | grep -o 'mode[^,]*'` prints the score mode (the deploy's `deploy-check` fails if the widget and the site disagree).
 ```
 
 ---
@@ -528,6 +540,8 @@ After the flip (P-11, docs/10 B-154): `/embed/v1/gai.js` is rebuilt with the sit
 Today is {DATE}. Read CLAUDE.md, docs/08-governance.md §6, docs/06-sources-playbook.md §2.
 
 Monthly refresh on branch data/monthly-{YYYY-MM}: run fetch:fts and fetch:worldbank once each (Save Page Now allows about five captures of a URL a day; if a capture is refused or not served, re-run the next day rather than work around it); check for new qualifying UNGA votes and UNSC vetoes since the last run (verify, archive, add to votes.yaml as a minor version if any); in March, import the new SIPRI release; quarterly, refresh Comtrade for the 45 countries; scan for new events for the 45 countries over the last 35 days (news search per indicator group, then primaries, archived); file events and update assessments' last_full_check; process any open right-of-reply or error issues per docs/08 §4–§5 (draft the reply record or the correction, do not decide outcomes for me — propose); run the quality checks; generate the monthly report and review its text; open the PR with the summary table. Target: under two hours.
+
+Also (P-12): check that every nightly run of the month succeeded (the issue "Nightly build failed" is closed) and handle the issue "Archived copies failing the quarterly check" when the quarterly run opened one (re-archive or record the problem with the source; never edit a recorded hash).
 ```
 
 ---
