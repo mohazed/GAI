@@ -1,0 +1,296 @@
+# Coverage record for Italy (docs/03 §6). P-D research session, wave 3, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-251): no web search was available to this session (the run's allowance
+# was used up); the searches were keyword filters of the Wayback CDX listings of esteri.it (press
+# archive, 25,713 URLs since 2023), governo.it (articles and media since October 2023), difesa.it
+# and aics.gov.it, direct reads of governo.it and difesa.it pages, Wayback reads of esteri.it
+# pages, and the ANSA listings of chosen days. Each `queries` entry names the listing and the
+# keywords used.
+country: ITA
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      Italy is a supplier of major arms to Israel in SIPRI's registers (the share is to be read
+      from the release once imported).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (rows existed; no fetch needed). Italy's own reports of HS 93
+      exports to Israel: USD 18,884,924 (2022, −15), 14,821,356 (2023, −15 from 2024-04-30),
+      6,363,153 (2024, −8 from 2025-03-21), 366,241 (2025, −3 from 2026-04-09); no HS 8710 row.
+      Israel's mirror imports are 4 to 8 times lower in 2022–2024 and slightly higher in 2025 (HS 93
+      USD 4,243,000 in 2022, 1,877,000 in 2023, 866,000 in 2024, 454,000 in 2025). HS 8526 (own USD 360,552 in 2025) and HS 8802 (own USD
+      250,637 in 2025) are not counted without a confirming document (docs/02 §2); counted, 2025
+      would still be −3. Disagreement reported, not corrected: the President of the Council told
+      the Senate on 15 October 2024 that no new licence has been granted since 7 October 2023 and
+      that earlier licences were reviewed case by case, some kept
+      (src_20241015_governo_replica-senato-licenze-israele); the 2024 value is consistent with
+      deliveries under earlier licences (docs/10 B-253).
+  A3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_ITA_A3 (Leonardo S.p.A. named in A/HRC/59/23, paragraph 32). No halt of F-35
+      part exports found; the President of the Council said aircraft components under earlier
+      licences were not suspended.
+    queries:
+      - A/HRC/59/23 Italy, Italian, Leonardo (archived text searched)
+      - "esteri.it and governo.it CDX listings: F-35, Cameri, Leonardo (no match)"
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. No Italian order of Israeli major arms since October 2023 was met in the documents
+      read.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, basing agreement, transit authorisation or official confirmation of
+      intelligence sharing with Israel related to the Gaza campaign was found in the Ministry of
+      Defence, Palazzo Chigi or Ministry of Foreign Affairs listings. The Under-Secretary's answer
+      in the Chamber of Deputies of September 2025 on economic and military cooperation with Israel
+      is published by the Ministry only as a summary without its content (not archived); the
+      Chamber's record was not read. Press claims of arms shipments through Italian ports were not
+      searched (no web search).
+    queries:
+      - "difesa.it CDX (primopiano, smd): israele, esercitazione, gaza"
+      - "esteri.it CDX: cooperazione militare israele (comunicato of the Under-Secretary, September 2025)"
+  A6:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_ITA_A6 (suspension of all new licences for military materiel to Israel from
+      7 October 2023, stated by the President of the Council in the Senate on 15 October 2024).
+    queries:
+      - "governo.it articles since October 2023 (148 pages read by script): licenz, esportazione di armi, forniture militari"
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No law or decree covering both arms exports to and imports from Israel. The Government
+      states that licences granted before 7 October 2023 continue to be assessed case by case
+      (A6), which is not an embargo.
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No national decision refusing transit to a named arms shipment for Israel found in the
+      government listings. Refusals by port workers or by regional and municipal authorities
+      reported in the press (2024–2025) are not acts of the national government and were not
+      searched without web search.
+    queries:
+      - "governo.it, esteri.it, difesa.it CDX listings: porto, transito, nave, armi, Israele"
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      ES-10/21, ES-10/22, ES-10/23 and ES-10/24; yes on ES-10/25, ES-10/26 and 79/232. GA/12626
+      names Italy among the delegations abstaining on ES-10/24 (agrees); the other releases of
+      2023–2024 do not name Italy. For the later votes (no rows until B-199 (1)): GA/12707
+      (A/DEC/80/506), GA/12708 (A/RES/80/1) and GA/12739 (A/RES/80/78) list the states against
+      (and for 80/1 abstaining) without Italy; the President of the Council said at the General
+      Assembly on 24 September 2025 that Italy had signed the New York Declaration
+      (src_20250924_governo_meloni-unga80). No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Italy is not among the states that filed declarations of intervention in case 192 (docs/06 §8
+      list, verified 2026-09-26).
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No Italian statement rejecting the ICJ's provisional measures or their binding character was
+      found in the governo.it and esteri.it listings.
+    queries:
+      - "governo.it, esteri.it and difesa.it CDX listings: corte-internazionale, cig, icj, giustizia-internazionale (no match)"
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No public commitment to execute the ICC warrants. The President of the Council's statement of
+      22 November 2024 (src_20241122_governo_meloni-sentenza-cpi) says she will study the Court's
+      reasons, that the G7 ministerial would discuss it, and that there can be no equivalence
+      between Israel and Hamas; the Minister of Foreign Affairs said on 21 November 2024 that Italy
+      would evaluate with its allies how to interpret the decision (ANSA report, read, not archived;
+      lead lead_20260928_ITA_2).
+    queries:
+      - "governo.it CDX: corte-penale-internazionale; esteri.it CDX (November–December 2024 items)"
+      - "ANSA listings of 21–23 November 2024: Netanyahu, Cpi, Corte"
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No formal statement of refusal to execute the warrants and no official visit of a person
+      under warrant found. docs/06 §8 lists Italy among the positions to verify (immunity or
+      refusal) and the overflights of 2025–2026 as leads; no official document stating such a
+      position was found (lead lead_20260928_ITA_2).
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No Italian sanction on ICC officials.
+  B8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv. Italy has not recognised the State of Palestine (registry
+      note; not in A/78/846). The President of the Council told the General Assembly on 24
+      September 2025 that recognition requires the release of all hostages and Hamas's exclusion
+      from government, and the Senate on 22 October 2025 that the Government would act when those
+      conditions are met; no row to add.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Six events: the President of the Council's statements of 29 February 2024 (+2), 24 September
+      2024 at the General Assembly (+2), 17 July 2025 (+5) and 3 October 2025 (+2) and her
+      General Assembly address of 24 September 2025 (+5); the Minister of Foreign Affairs'
+      signature of the joint statement of 21 July 2025 (+5). The cap (+10) holds at the build date.
+      Not filed: the joint statements of 9 and 12 August 2025 (the cap is reached either way),
+      the communications to the Senate of 22 October 2025 (Israel's retaliation "a choice we do not
+      share", not a call or a named violation) and of 11 June 2026 (the humanitarian situation in
+      Gaza called unacceptable in a speech opposing the suspension of the EU–Israel Association
+      Agreement), Palazzo Chigi notes without a named speaker (29 September 2025), and the
+      Minister's communications to the Senate of 2 October 2025 (published only as video).
+    queries:
+      - "governo.it CDX (articles and media since October 2023): gaza, palestin, israel, cessate il fuoco, assemblea generale, comunicazioni"
+      - "esteri.it CDX: dichiarazione congiunta, gaza, cessate, comunicazioni, informativa"
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement of unconditional support or denial of documented violations. The President of
+      the Council's statements of October 2023 support Israel's right to defend itself "in line
+      with international law" and ask for protection of the civilian population (communications
+      to the Senate of 25 October 2023; visit to Israel of 21 October 2023), which is not
+      unconditional support under the reading of docs/10 B-204 and B-209 (2).
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No national sanctions on Israeli ministers or settler entities. The President of the Council
+      told Parliament on 11 June 2026 that Italy supports targeted measures against violent
+      settlers and had asked that Minister Ben-Gvir be sanctioned
+      (src_20260611_governo_comunicazioni-consiglio-europeo); whether an EU listing followed was not
+      established. EU listings of violent settlers are not filed until P-15 decides how EU listings
+      adopted by unanimity count (docs/10 B-229 (3)).
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall of the ambassador, downgrade or severance. The Israeli ambassador was summoned to
+      the Ministry of Foreign Affairs or the Ministry of Defence several times (October 2024, May 2025, January, March and May 2026), which
+      is not a B12 measure.
+    queries:
+      - "esteri.it CDX: ambasciatore, richiamo, convoca"
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Italy did not support a review or suspension of the EU–Israel Association Agreement: the
+      President of the Council told Parliament on 11 June 2026 that suspending it would be wrong
+      and counterproductive (src_20260611_governo_comunicazioni-consiglio-europeo). No national
+      measure.
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No new trade, investment or cooperation agreement signed with Israel since October 2023 was
+      found in the Ministry and Palazzo Chigi listings. The 2005 memorandum of understanding on
+      defence cooperation renews tacitly and is not a new signing; whether it was renewed in 2025
+      was not established.
+    queries:
+      - "esteri.it and governo.it CDX listings: accordo, memorandum, firma, Israele"
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Own reports: 2022 USD 5,025,293,228; 2025 USD 5,199,057,555 (r = 1.035, −5 from
+      2026-04-09); 2023 r = 0.941 and 2024 r = 0.987 (−5 throughout). Israel's mirror gives the
+      same tier (2025 USD 5,330,726,000, r = 1.067). No disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No ban or labelling rule for settlement goods beyond EU law found.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No exclusion decision by an Italian public pension fund, sovereign fund or the central bank
+      found (searched in the government listings only; fund sites not searched).
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No national procurement exclusion found.
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Window 2025-09…2026-08: USD 55,369,161 ÷ GNI USD 2.479 trillion = 0.00223 % → +6
+      (from 2026-08-01); +3 or +1 in earlier windows. The Government reports larger in-kind and
+      bilateral efforts outside the oPt appeal flows (Food for Gaza, over 2,000 tonnes of flour by
+      October 2025; the Senate communications of 22 October 2025), the known FTS gap (docs/06 §7).
+  D2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_01_27_ITA_D2 (reported: the Minister's announcement of 27 January 2024 as quoted by
+      ANSA). No primary and no resumption found; lead lead_20260928_ITA_1.
+    queries:
+      - "esteri.it and governo.it CDX listings: unrwa (no page in the window)"
+      - "ANSA listings of 27–28 January 2024: unrwa"
+  D3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No restoration found. UNRWA's donor tables: 2022 total USD 18,033,970 (Programme Budget USD
+      7,306,889); 2024 total received USD 5,615,576 with no Programme Budget contribution
+      (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024). The 2025
+      table was not archived.
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Two programmes: the hospital ship Vulcano off Al Arish (evt_2023_11_30_ITA_D4) and the
+      medical evacuations to Italian hospitals from 29 January 2024 (evt_2024_01_29_ITA_D4). Both
+      have decayed to zero by the build date although the evacuations continued in 2025–2026
+      (docs/10 B-223 (3)). Airdrops and Food for Gaza deliveries are food aid, not D4.
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No immigration regulation or legal instrument opening a visa or refugee pathway for Gazans
+      was found. The Ministry's "university corridors" (from September 2025; 229 students
+      evacuated by May 2026, per its releases) combine scholarships and study visas arranged case by
+      case; no decree or regulation establishing them was found, so they are not filed (one event
+      per legal instrument).
+    queries:
+      - "esteri.it CDX: corridoi universitari, studenti palestinesi, visti"
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No domestic investigation of Italian nationals or companies for conduct in Gaza found in the government listings (judicial sites not searched).
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No national decree banning Palestine solidarity protests or symbols found in the government
+      listings. Prefectural or police-headquarters bans of individual demonstrations (2024–2025)
+      were not searched without web search.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint accepted for investigation found (judicial sites not searched).
