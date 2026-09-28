@@ -293,7 +293,10 @@ export function RankTable({
         <thead>
           <tr>
             {scoreMode ? plainHeader(t('cols.position'), 'w-8') : null}
-            {header('name', t('cols.country'))}
+            {/* Scorecard mode: the country column keeps a share of the width, so that the table's
+                columns do not change as rows with longer names (and the excluded entities) are
+                parsed after the first paint (CLS, docs/10 B-150). */}
+            {header('name', t('cols.country'), 'start', scoreMode ? '' : 'w-[45%]')}
             {scoreMode
               ? header('score', t('cols.score'), 'end')
               : header('events', t('cols.events'), 'end')}

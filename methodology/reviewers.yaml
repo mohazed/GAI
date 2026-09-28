@@ -1,0 +1,17 @@
+# reviewers.yaml — named external reviewers of the methodology (docs/08 §2).
+#
+# Two or three reviewers, at least one in international law and one with arms-trade data
+# experience, sign off on the indicator table and thresholds (not on events) before the score is
+# displayed (P-22). Each entry: name; expertise and a one-line disclosure of affiliations, in EN
+# and FR; `signed_off`, one entry per methodology version reviewed, with the date and the link to
+# the public sign-off comment; `caveat`, the reviewer's own caveat or null. The About page lists
+# them; with an empty list it says "none yet". Schema: @gai/schema `ReviewersFile`.
+#
+# Example entry (not a real reviewer):
+#   - name: Full Name
+#     expertise: { en: International law, fr: Droit international }
+#     disclosure: { en: "Professor at …; no funding from any government", fr: "…" }
+#     signed_off:
+#       - { version: 1.0.0, date: 2026-11-01, url: "https://github.com/mohazed/GAI/pull/…#issuecomment-…" }
+#     caveat: null
+reviewers: []

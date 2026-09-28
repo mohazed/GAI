@@ -66,6 +66,7 @@ function input(dataset: Dataset, over: Partial<BuildInput> = {}): BuildInput {
     methodology: METHODOLOGY,
     older: [],
     changelog: CHANGELOG,
+    reviewers: [],
     snapshots: [],
     date: DATE,
     siteUrl: SITE,

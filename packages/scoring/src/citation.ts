@@ -197,3 +197,41 @@ export function comparisonCitations(
     cite(subj, url, input.date, input.methodologyVersion, author, style, lang)
   return { apa: one('apa'), chicago: one('chicago'), plain: one('plain') }
 }
+
+export interface DatasetCitationInput {
+  /** `YYYY-MM-DD`: the build date of the dataset cited. */
+  readonly date: string
+  readonly methodologyVersion: string
+  readonly siteUrl: string
+  readonly author?: Author | undefined
+}
+
+const DATASET = {
+  en: { title: 'Dataset and API' },
+  fr: { title: 'Données et API' },
+} as const
+
+/** The permalink of the dataset: the Data page, `{site}/{lang}/data/`. */
+export function datasetPermalink(siteUrl: string, lang: Lang): string {
+  if (!/^https?:\/\/\S+$/.test(siteUrl))
+    throw new RangeError(`expected an http(s) URL, got ${siteUrl}`)
+  return `${siteUrl.replace(/\/+$/, '')}/${lang}/data/`
+}
+
+/**
+ * The three citations of the whole dataset (the Data page, docs/05 §6 Data): "Gaza
+ * Accountability Index, Dataset and API, methodology v1.0.0, as of 26 September 2026,
+ * https://…/en/data/". It names the build date; the files of that build are listed with their
+ * hashes in its manifest.json.
+ */
+export function datasetCitations(
+  input: DatasetCitationInput,
+  lang: Lang,
+): Record<CitationStyle, string> {
+  if (!isIsoDate(input.date)) throw new RangeError(`expected a date YYYY-MM-DD, got ${input.date}`)
+  const url = datasetPermalink(input.siteUrl, lang)
+  const author = input.author ?? AUTHOR
+  const one = (style: CitationStyle) =>
+    cite(DATASET[lang].title, url, input.date, input.methodologyVersion, author, style, lang)
+  return { apa: one('apa'), chicago: one('chicago'), plain: one('plain') }
+}

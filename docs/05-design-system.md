@@ -88,7 +88,7 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 **ChangesFeed.** Grouped by ISO week ("Week of 21 September 2026"); each entry a compact EventCard (date, country, indicator, summary, points). Filters: country, indicator, sign. As built (P-09, docs/10 B-131): the filters are the country page's filter links (they work without JavaScript); a computed value is listed only when its points changed, the others counted in one line per week.
 
-**MethodologyTable / VersionSelector / DiffViewer.** The indicator table rendered from YAML; a `<select>` of versions; the diff as a table: country, old score, new score, cause (indicator/threshold).
+**MethodologyTable / VersionSelector / DiffViewer.** The indicator table rendered from YAML; a `<select>` of versions; the diff as a table: country, old score, new score, cause (indicator/threshold). As built (P-10, docs/10 B-138): the methodology page shows the indicator tables of the version's own document, which the renderer generates from the YAML (`pnpm methodology:render`) and the validator keeps in step, with an anchor per indicator row (`#indicator-A1`); MethodologyTable, the compact form of the same table, stays in the kit. DiffViewer reads `diff` of `methodology/{version}.json`; a version after the first without one says so.
 
 **RightOfReplyBlock.** On the country page, beneath the events: published replies verbatim in the original language with translation, the project's response, and the outcome chip. When none: a single line with the instructions link.
 
@@ -108,15 +108,15 @@ Each component has one implementation in `apps/web/components/` (or `packages/ui
 
 **Methodology.** Version selector. Sections: Purpose and standpoint (short), The scale, Rules (conduct not promises; silence is negative; material beats symbolic), Indicator table, Formula (rendered from LaTeX via KaTeX at build, with a plain-language paragraph), Event types and decay, Confidence, Computed indicators, Passivity, Coverage, Sensitivity tables (rendered), Symmetry table, Versioning and changelog, Known limitations. FR version is a full translation.
 
-**Corrections.** The log as a table, newest first, with links to events and to the flagging issue.
+**Corrections.** The log as a table, newest first, with links to events and to the flagging issue. As built (P-10, docs/10 B-147): each row is anchored by its correction id (event cards link there) and shows the date, id and kind, the event on its country page, each changed field before → after, the reason, who flagged it (an issue reference `#n` becomes a link) and the commit that added it; with no correction, one sentence.
 
-**About.** Standpoint statement (verbatim from spec §1, signed), who maintains it (D-01), reviewers (names, one-line disclosures; "Reviewers: none yet" until there are), independence and funding, contact, hand-over note.
+**About.** Standpoint statement (verbatim from spec §1, signed), who maintains it (D-01), reviewers (names, one-line disclosures; "Reviewers: none yet" until there are), independence and funding, contact, hand-over note. As built (P-10, docs/10 B-143, B-144): the standpoint is quoted from the specification, verbatim in English, with its date and the signature "— Mohamed Zouad", a French translation beside it on the French page; a section on the countries not scored (Palestine's observer status, docs/02 §1); licences; the contact is the public issue forms until the project has an address (`CONTACT_EMAIL`, `apps/web/lib/site.ts`).
 
-**Data.** Downloads (CSV/JSON), API documentation (every endpoint with an example response), licence, citation for the dataset, reproducibility instructions (clone, `pnpm build:data`, compare `manifest.json`).
+**Data.** Downloads (CSV/JSON), API documentation (every endpoint with an example response), licence, citation for the dataset, reproducibility instructions (clone, `pnpm build:data`, compare `manifest.json`). As built (P-10, docs/10 B-145): the build line; the downloads, with the country table of the site's mode; the structured tables with their columns; every endpoint of the API README with an example cut from this build's own files, with a note of what was cut; how the site uses the data; how the computed indicators are built; the dataset's citation in three styles; the reproducibility procedure with this build's commit, date and site address.
 
-**Embed.** Widget docs with live examples and the snippet.
+**Embed.** Widget docs with live examples and the snippet. As built (P-10, docs/10 B-146): the snippet (`apps/web/lib/embed.ts`, docs/04 §4), the options and what the script does; until the widget exists (P-11) a line says the script is not published, and the live examples go at the page's `examples` slot.
 
-**Reply.** How to submit a right of reply (GitHub issue form + email), what happens, the 10-day rule.
+**Reply.** How to submit a right of reply (GitHub issue form + email), what happens, the 10-day rule. As built (P-10, docs/10 B-147): the forms for replies, errors and leads; the email line says the project has no address yet while `CONTACT_EMAIL` is null; the replies published so far, linked to their country pages.
 
 ## 7. Copy rules
 

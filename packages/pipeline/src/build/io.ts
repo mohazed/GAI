@@ -30,7 +30,7 @@ import {
   writeFileSync,
 } from 'node:fs'
 import { dirname, isAbsolute, join, posix, relative, resolve, sep } from 'node:path'
-import { listMethodologyVersions, loadDataset, loadMethodology } from '@gai/schema'
+import { listMethodologyVersions, loadDataset, loadMethodology, loadReviewers } from '@gai/schema'
 import { GENERATOR } from './manifest.js'
 import type { BuildInput, GitInfo, SnapshotFile } from './types.js'
 
@@ -302,6 +302,12 @@ export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: stri
   const older = folders.slice(0, -1).map((f) => loadMethodology(repoRoot, f))
   const changelogFile = join(repoRoot, 'methodology', 'CHANGELOG.md')
   const changelog = existsSync(changelogFile) ? readFileSync(changelogFile, 'utf8') : null
+  const reviewers = loadReviewers(repoRoot)
+  if (reviewers.value === null) {
+    throw new Error(
+      `methodology/reviewers.yaml does not match its schema (run pnpm validate): ${reviewers.issues.map((i) => i.message).join('; ')}`,
+    )
+  }
 
   const prefix = insideRoot(repoRoot, datasetRoot)
   const datasetPath = (p: string) =>
@@ -317,6 +323,7 @@ export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: stri
     methodology,
     older,
     changelog,
+    reviewers: reviewers.value.reviewers,
     snapshots: readSnapshots(datasetRoot),
     date: opts.date,
     siteUrl: opts.siteUrl,

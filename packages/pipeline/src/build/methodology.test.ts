@@ -105,6 +105,7 @@ describe('methodologyFile (methodology/{version}.json)', () => {
       symmetry: null,
       banned_words: [],
       docs: { en: null, fr: null },
+      diff: null,
     })
     expect(ApiMethodologyFile.parse(roundTrip(f))).toEqual(f)
   })
@@ -151,6 +152,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       older: [],
       changelog: CHANGELOG,
       frozen: new Set(),
+      reviewers: [],
     })
     expect(index).toEqual({
       build_date: '2026-09-27',
@@ -165,6 +167,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
         },
       ],
       changelog: CHANGELOG,
+      reviewers: [],
     })
     expect(ApiMethodologyIndex.parse(roundTrip(index))).toEqual(index)
     expect(apiSchemaFor('methodology/index.json')).toBe(ApiMethodologyIndex)
@@ -180,6 +183,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       changelog: null,
       // data/snapshots/v0.9.0/ exists; v0.8.0 was never frozen; an unrelated folder is ignored.
       frozen: new Set(['v0.9.0', 'v0.1.0']),
+      reviewers: [],
     })
     expect(index.versions).toEqual([
       {
@@ -220,6 +224,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       older: [],
       changelog: null,
       frozen: new Set(['v1.0.0']),
+      reviewers: [],
     })
     expect(index.versions[0]?.frozen).toBe('methodology/v1.0.0/')
   })
@@ -232,6 +237,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
         older: [synthetic('v0.9.0', real.version)],
         changelog: null,
         frozen: new Set(),
+        reviewers: [],
       }),
     ).toThrow(`methodology/v0.9.0 and methodology/v1.0.0 both declare methodology version`)
   })

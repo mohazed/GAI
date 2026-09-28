@@ -718,7 +718,14 @@ export function buildData(input: BuildInput): BuildOutput {
   for (const o of input.older) put(methodologyPath(o), methodologyFile(o, 'superseded'))
   put(
     'methodology/index.json',
-    methodologyIndex({ date, current: m, older: input.older, changelog: input.changelog, frozen }),
+    methodologyIndex({
+      date,
+      current: m,
+      older: input.older,
+      changelog: input.changelog,
+      frozen,
+      reviewers: input.reviewers,
+    }),
   )
   for (const s of input.snapshots) putText(`methodology/${s.path}`, s.bytes)
 

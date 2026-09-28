@@ -87,7 +87,7 @@ export function datasetJsonLd(args: {
     dateModified: file.build_date,
     temporalCoverage: `${windowStart}/${file.build_date}`,
     citation: (mode === 'score' ? file.citations.score : file.citations.scorecard)[lang].plain,
-    isPartOf: { '@type': 'Dataset', name: siteName, url: `${base}/${lang}/` },
+    isPartOf: { '@type': 'Dataset', name: siteName, url: `${base}/${lang}/data/` },
     distribution: [
       {
         '@type': 'DataDownload',
@@ -100,6 +100,47 @@ export function datasetJsonLd(args: {
         contentUrl: `${base}/api/v1/countries/${file.iso3}/events.json`,
       },
     ],
+  }
+  return JSON.stringify(record).replace(/</g, '\\u003c')
+}
+
+/**
+ * The JSON-LD Dataset of the whole index, on the Data page (docs/04 §3): the dataset's
+ * description, licence, author, version, build date, coverage in time, its citation, and the
+ * bulk downloads as distributions. `<` is escaped as on the country pages.
+ */
+export function siteDatasetJsonLd(args: {
+  lang: Lang
+  siteUrl: string
+  siteName: string
+  description: string
+  author: string
+  version: string
+  buildDate: string
+  windowStart: string
+  citation: string
+  downloads: { path: string; format: string }[]
+}): string {
+  const base = args.siteUrl.replace(/\/$/, '')
+  const record = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: args.siteName,
+    description: args.description,
+    url: `${base}/${args.lang}/data/`,
+    inLanguage: args.lang,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    isAccessibleForFree: true,
+    creator: { '@type': 'Person', name: args.author },
+    version: args.version,
+    dateModified: args.buildDate,
+    temporalCoverage: `${args.windowStart}/${args.buildDate}`,
+    citation: args.citation,
+    distribution: args.downloads.map((d) => ({
+      '@type': 'DataDownload',
+      encodingFormat: d.format,
+      contentUrl: `${base}/api/v1/${d.path}`,
+    })),
   }
   return JSON.stringify(record).replace(/</g, '\\u003c')
 }

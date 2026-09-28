@@ -1,6 +1,6 @@
 # 02 — Methodology v1.0, implementable specification
 
-This document turns spec §2–§4 into rules precise enough to code and to test. Where the spec was ambiguous, the choice is stated and justified. The public methodology page is generated from `methodology/v1.0/` files, which must agree with this document; when they conflict, fix the files.
+This document turns spec §2–§4 into rules precise enough to code and to test. Where the spec was ambiguous, the choice is stated and justified. The public methodology page is generated from `methodology/v1.0.0/` files, which must agree with this document; when they conflict, fix the files.
 
 ## 1. Universe
 
@@ -34,11 +34,11 @@ Some indicators have their own cap on top of the category cap. Applied to the in
 ### Precisions per indicator
 
 - **A1** and **A4** use SIPRI TIV (trend-indicator values) from the annual release. A4 counts only contracts signed on or after 2023-10-07 (orders, not deliveries of pre-war orders).
-- **A2** uses HS chapter 93 (arms and ammunition) and heading 8710 (tanks and armoured vehicles) fully. Headings 8526 (radar and remote-control apparatus) and 8802 (aircraft) count **only** when a licence register, a parliamentary answer or a published investigation citing the customs code confirms the military nature of the flow, because both headings are dominated by civil goods. This is a documented deviation from the spec's list (D-26 in `00-decisions.md`).
+- **A2** uses HS chapter 93 (arms and ammunition) and heading 8710 (tanks and armoured vehicles) fully. Headings 8526 (radar and remote-control apparatus) and 8802 (aircraft) count **only** when a licence register, a parliamentary answer or a published investigation citing the customs code confirms the military nature of the flow, because both headings are dominated by civil goods. This is a documented deviation from the spec's list (deviation 6 in `00-decisions.md`).
 - **A3** F-35 supply chain: a standing state for the countries whose companies are documented Tier-1 or Tier-2 suppliers of parts or maintenance for the F-35 programme in official programme documents, national ministry statements, or the UN Special Rapporteur's reports. Points −15 while the state holds. A judicial or governmental halt of F-35 part exports to Israel ends the standing state (and is separately an A6 event).
 - **A5** counts confirmed instances only: a named exercise, a documented transit (port call, overflight authorisation), a public basing agreement, or an official confirmation of intelligence sharing related to the Gaza campaign. Routine pre-existing NATO or bilateral arrangements are not instances unless activated for the campaign.
 - **A6** partial suspension: any government decision suspending or refusing a class of licences to Israel, or a court order with the same effect. **A7** full embargo: law or decree covering both exports to and imports from Israel. A7 supersedes A6 for the same country (do not add).
-- **B1** counts only **plenary General Assembly resolutions or decisions adopted by recorded vote** whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine, adopted on or after 2023-10-07 (the 12 September 2025 endorsement of the New York Declaration was adopted as a decision, A/DEC/80/506, and qualifies). The list of qualifying resolutions is `methodology/v1.0/votes.yaml`, each with a one-line inclusion rationale. Committee votes, procedural votes and amendments are excluded. Absent is scored −2; a formal "did not participate" is treated as absent.
+- **B1** counts only **plenary General Assembly resolutions or decisions adopted by recorded vote** whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine, adopted on or after 2023-10-07 (the 12 September 2025 endorsement of the New York Declaration was adopted as a decision, A/DEC/80/506, and qualifies). The list of qualifying resolutions is `methodology/v1.0.0/votes.yaml`, each with a one-line inclusion rationale. Committee votes, procedural votes and amendments are excluded. Absent is scored −2; a formal "did not participate" is treated as absent.
 - **B2** counts any veto of a draft resolution whose operative paragraphs called for a ceasefire, a humanitarian truce or pause, regardless of which permanent member cast it. Vetoes of drafts on other subjects (e.g. Palestine's UN membership, 18 April 2024) and vetoes of amendments (22 December 2023) are recorded in `unsc_vetoes.csv` with `ceasefire: false` and tracked, not scored.
 - **B3** counts declarations of intervention filed in ICJ case 192 (South Africa v. Israel), Article 62 or 63, from the date the ICJ registers the filing, **only when the declaration's stated construction of the Genocide Convention supports the applicant's reading or the Court's provisional-measures orders** (obligations to prevent, scope of intent, binding character of the orders). A declaration that argues for a narrower reading against the applicant (the United States and Hungary filed such declarations on 12 March 2026, to be verified from the texts) is a **B4** event (−15), not B3. A withdrawal ends the standing state on the withdrawal date (Colombia, 18 September 2026; Nicaragua's Article 62 application, withdrawn 3 April 2025). Joining a separate case (e.g. Nicaragua v. Germany) is tracked under scope tag `related` and unscored.
 - **B4** requires an official statement rejecting the ICJ's provisional-measures orders or their binding character, a formal act to that effect, or an intervention filed against the applicant's construction (see B3). Criticism of the case's merits in a press remark without a formal act is not B4.
@@ -65,7 +65,7 @@ Each event has exactly one `type`.
 
 Δ is in whole days. Events with `status` other than `published` contribute 0. Retracted events contribute 0 for all dates (history is recomputed; the corrections log records what changed).
 
-Which indicators use which type: standing = A3, A7, B7, B8, B11, B12, C1, C4, D2, D3 and A6 when a suspension is open-ended; repeatable = A5, A8, B1, B2, B3 (treated as standing from filing, since intervention persists — **decision: B3 is standing**), B4, B5, B6, B9, B10, C2, C5, C6, D4, D5, E1–E3; computed = A1, A2, A4, C3, D1. B3, B5/B6 (latest position holds) and C2 (a signed agreement persists) are **standing**. The `indicators.yaml` file lists the type per indicator; the schema rejects mismatches.
+Which indicators use which type: standing = A3, A6, A7, B3, B5, B6, B7, B8, B11, B12, C1, C2, C4, D2, D3; repeatable = A5, A8, B1, B2, B4, B9, B10, C5, C6, D4, D5, E1–E3; computed = A1, A2, A4, C3, D1. A6 is a standing state for every suspension, ending on the date the suspension is lifted; B3 persists from filing; B5 and B6 replace each other in time (the latest position holds); C2 persists once the agreement is signed. The `indicators.yaml` file lists the type per indicator; the schema rejects mismatches.
 
 ## 4. Confidence weights
 
@@ -109,7 +109,7 @@ Category caps: A −45/+30, B −40/+45, C −20/+20, D −15/+25. E is computed
 
 Display: `S` is rounded half away from zero to an integer; the band is read from the rounded integer: Sustaining ≤ −51, Enabling −50…−21, Passive −20…0, Acting 1…40, Confronting ≥ 41. All internal arithmetic uses full precision; JSON outputs carry both `score` (one decimal) and `score_display` (integer).
 
-**Worked example (illustrative, not data).** Germany, hypothetical date: A: A1 −22 (s = 0.30), A3 −15, A6 +10 → −27 (within −45). B: votes +3, +3, −2 (decayed ×0.8 → −1.6), B10 −5, B5 +8 → +7.4. C: C3 −5. D: D1 +6, D2 (ended) 0, D3 +5 → +11. raw = −27 + 7.4 − 5 + 11 = −13.6; no passivity. S = −13.6 → display −14, Passive.
+**Worked example (illustrative, not data).** Germany, hypothetical date: A: A1 −22 (s = 0.3025, −40 × √0.3025 = −22.0), A3 −15, A6 +10 → −27 (within −45). B: votes +3, +3, −2 (a vote 462 days old, decayed × d(462) = 0.8007 → −1.6), B10 −5, B5 +8 → +7.4. C: C3 −5. D: D1 +6, D2 (ended) 0, D3 +5 → +11. raw = −27 + 7.4 − 5 + 11 = −13.6; no passivity. S = −13.6 → display −14, Passive. (With whole days, d is never exactly 0.8, and s = 0.30 gives −21.9, not −22.)
 
 ## 8. Coverage
 
@@ -145,12 +145,12 @@ Readers can set `w_k ∈ [0, 2]` for k ∈ {A,B,C,D}, default 1. `S_user = clip(
 
 ## 12. Consistency checks (run in CI, block on failure)
 
-1. Same indicator, same country, overlapping window, different points → error unless the indicator is scaled (A5, B9, B12 tiers).
+1. Same indicator, same country, overlapping window, different points → error unless the indicator is scaled, that is, its points may differ between events and each event records `points_rationale`: A1, A2, A4, A5, B1, B8, B9, B11, B12, C1, C3, C4, D1 and D3.
 2. Every `confirmed` event has an `official`, `court` or `dataset` source.
 3. Every source has `wayback_url`, `sha256`, `retrieved_at`, `quote`.
 4. Every B9/B10 event's quote appears verbatim in `archive/text/{src}.txt` (after whitespace normalisation); other events' quotes must appear too unless the source is a dataset row.
 5. Symmetry table present and complete (§13).
-6. Tone lint: event summaries contain no word from `methodology/v1.0/banned-words.txt` (adjectives and loaded terms: brutal, shameful, heroic, genocidal, complicit, courageous, disgraceful…) and no exclamation mark; summaries are ≤ 200 characters and start with the actor.
+6. Tone lint: event summaries contain no word from `methodology/v1.0.0/banned-words.txt` (adjectives and loaded terms: brutal, shameful, heroic, genocidal, complicit, courageous, disgraceful…) and no exclamation mark; summaries are ≤ 200 characters and start with the actor.
 7. Build reproducibility: a fresh `pnpm build:data` produces byte-identical outputs (D-25).
 8. No `unchecked` indicator on any country when `NEXT_PUBLIC_SHOW_SCORES=true`.
 
@@ -176,6 +176,8 @@ Readers can set `w_k ∈ [0, 2]` for k ∈ {A,B,C,D}, default 1. `S_user = clip(
 
 ## 14. Published outputs per country (shape)
 
+Illustrative, not data. Coverage: (12 + 9) / 30 = 0.70. A generated event's id ends with a slug: for a vote, the resolution symbol without `A/RES/` (`A/RES/ES-10/21` gives `es-10-21`); `80-000` below stands for a hypothetical symbol. The published file is described field by field in `apps/web/public/api/README.md`.
+
 ```json
 {
   "iso3": "DEU", "name": {"en": "Germany", "fr": "Allemagne"},
@@ -183,9 +185,9 @@ Readers can set `w_k ∈ [0, 2]` for k ∈ {A,B,C,D}, default 1. `S_user = clip(
   "score": -13.6, "score_display": -14, "band": "passive",
   "passivity_applied": false,
   "categories": {"A": {"raw": -27, "clipped": -27}, "B": {"raw": 7.4, "clipped": 7.4}, "C": {"raw": -5, "clipped": -5}, "D": {"raw": 11, "clipped": 11}, "E": {"raw": 0, "clipped": 0, "scored": false}},
-  "coverage": {"ratio": 0.71, "applicable": 30, "has_events": 12, "none_found": 9, "no_data": 4, "unchecked": 5, "missing": ["A2", "A4", "C3", "C5"]},
+  "coverage": {"ratio": 0.70, "applicable": 30, "has_events": 12, "none_found": 9, "no_data": 4, "unchecked": 5, "missing": ["A2", "A4", "C3", "C5"]},
   "events": {"total": 14, "confirmed": 9, "corroborated": 3, "reported": 2, "disputed": 0},
-  "last_change": {"date": "2026-09-12", "event": "evt_2026_09_12_DEU_B1", "delta": 3},
-  "summary": {"en": "Score −14 (Passive). 14 events, 9 confirmed. Coverage 71%. Last change: 2026-09-12, UNGA vote (B1, +3).", "fr": "…"}
+  "last_change": {"date": "2026-09-12", "event": "evt_2026_09_12_DEU_B1_80-000", "delta": 3},
+  "summary": {"en": "Score −14 (Passive). 14 events, 9 confirmed. Coverage 70%. Last change: 2026-09-12, UNGA vote (B1, +3).", "fr": "…"}
 }
 ```

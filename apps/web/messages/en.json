@@ -497,5 +497,150 @@
     "scoreAlt": "Score {score}, {band} band",
     "methodology": "methodology v{version} · {date}",
     "scorecardComputed": "Scorecard · {count, plural, one {# event} other {# events}} · {computed, plural, one {# computed value} other {# computed values}} · coverage {pct}"
+  },
+  "methodologyPage": {
+    "metaTitle": "Methodology",
+    "metaTitleVersion": "Methodology {version}",
+    "description": "How the index scores the conduct of states regarding Gaza: indicators, points, caps, formula, decay, confidence, passivity and coverage, methodology {version}.",
+    "contents": "Contents",
+    "superseded": "This page is methodology {version}, superseded. The current version is {current}.",
+    "readCurrent": "Read the current version",
+    "files": "This version as data:",
+    "diffTitle": "Scores moved by this version",
+    "diffMissing": "No diff.json was published with version {version}: the scores it moved from version {previous} are not listed.",
+    "changelogTitle": "Changelog",
+    "changelogNote": "Every version, newest last, from methodology/CHANGELOG.md in the repository."
+  },
+  "sensitivity": {
+    "intro": "Computed at the build of {date} from the published events of {n, plural, one {# country} other {# countries}}. Spearman's ρ compares the ranking under a setting with the default ranking: 1 means the same order.",
+    "tables": {
+      "passivity": "Passivity penalty",
+      "weights": "Category weights",
+      "confidence": "Weight of reported events",
+      "statements": "Statements excluded",
+      "decay": "Decay off"
+    },
+    "variant": {
+      "passivity": "Penalty of {points}",
+      "weight": "Weight of {category} at {value}",
+      "reported": "Reported at {value}",
+      "excluded": "{indicators} at 0",
+      "decay": "d = 1 for every repeatable event"
+    },
+    "cols": {
+      "variant": "Setting",
+      "spearman": "Spearman's ρ",
+      "changed": "Display scores changed",
+      "country": "Country",
+      "default": "Default"
+    },
+    "summaryCaption": "{table}: each setting against the default ranking of {n, plural, one {# country} other {# countries}}",
+    "full": "Full ranking under each setting",
+    "fullCaption": "{table}: display score and rank of each country, by default and under each setting",
+    "none": "not computed"
+  },
+  "correctionsPage": {
+    "metaTitle": "Corrections",
+    "title": "Corrections",
+    "explain": "Every correction and retraction of a published event, newest first: what changed, why, who flagged it and when. Nothing is deleted: a retracted event stays in the record, marked retracted, and no longer scores.",
+    "report": "Anyone can report an error in an event:",
+    "form": "Report an error (public form)",
+    "built": "Log at the build of {date}, also published as",
+    "logTitle": "{count, plural, =0 {No correction} one {# correction} other {# corrections}}",
+    "empty": "No correction has been published yet. Each correction is listed here from the day it is made.",
+    "caption": "Corrections and retractions, newest first",
+    "cols": {
+      "date": "Date",
+      "event": "Event",
+      "changed": "What changed",
+      "reason": "Reason",
+      "flagged": "Flagged by"
+    },
+    "kind": {
+      "correction": "Correction",
+      "retraction": "Retraction"
+    },
+    "flaggedBy": {
+      "public": "A reader",
+      "author": "The author",
+      "reply": "A reply",
+      "reviewer": "A reviewer"
+    },
+    "issue": "Issue {ref}"
+  },
+  "aboutPage": {
+    "description": "Who maintains the Gaza Accountability Index, its standpoint, its reviewers, its funding and how to contact it.",
+    "translation": "Translation",
+    "signed": "— {author}",
+    "reviewersNone": "Reviewers: none yet. Two or three external reviewers, at least one in international law and one with experience of arms-trade data, are to review the indicator table and the thresholds before scores are displayed. Their names and a one-line disclosure of their affiliations will be listed here.",
+    "signedOff": "Signed off methodology {version} on {date}",
+    "caveat": "Caveat:"
+  },
+  "contact": {
+    "none": "The project has no email address yet; one will be listed here. Until then, write through the public forms of the repository (a GitHub account is needed):",
+    "email": "Email:",
+    "emailNote": "A message about an event is answered with a link to a public issue, unless the sender asks otherwise.",
+    "reply": "Right of reply",
+    "error": "Report an error",
+    "lead": "Submit a lead"
+  },
+  "dataPage": {
+    "description": "Downloads and API of the Gaza Accountability Index: every endpoint with an example, the structured tables, the citation of the dataset and how to reproduce a build.",
+    "build": "This build: {date}, methodology {version}, {files} files, {size}. Commit",
+    "noSha": "no commit recorded",
+    "dirty": "This build read uncommitted changes to its inputs (git.dirty is true): it cannot be reproduced from a clone.",
+    "downloadsCaption": "Bulk downloads of this build",
+    "downloadsCaptionScorecard": "Bulk downloads of this build. The country table is the scorecard version, without scores, as on the ranking page.",
+    "cols": {
+      "file": "File",
+      "holds": "Holds",
+      "size": "Size",
+      "table": "Table",
+      "columns": "Columns"
+    },
+    "dl": {
+      "events": "One row per published event of the scored countries",
+      "sources": "Every source of the dataset, with its archived copy and hash",
+      "assessments": "One row per scored country and indicator: what was checked",
+      "countries": "Every country at the build date, as the ranking table shows it, with the clipped subtotals in full precision",
+      "countriesScorecard": "Every country at the build date, as the ranking table shows it, without scores",
+      "scoresDaily": "Daily scores of every scored country in {year}",
+      "gai": "The whole published dataset in one JSON file"
+    },
+    "structuredCaption": "The structured tables of data/structured/",
+    "scorecardNote": "The files carry the computed scores in both modes of the site. While the site is in scorecard mode it does not display them; the methodology explains why.",
+    "noExample": "This build has no file of this kind yet.",
+    "example": "Example from this build:",
+    "openFile": "Open the whole file ({file})",
+    "cut": {
+      "keys": "Only {shown} of the {total} top-level keys are shown.",
+      "lines": "The first {shown} of {total} lines are shown.",
+      "lists": "{count, plural, one {One list is} other {# lists are}} cut to their first element.",
+      "strings": "{count, plural, one {One text is} other {# texts are}} cut after 240 characters.",
+      "rest": "Nothing else is changed."
+    },
+    "linux": "On Linux, use sha256sum -c --quiet - in place of shasum -a 256 -c --quiet -."
+  },
+  "embedPage": {
+    "description": "How to show a country of the Gaza Accountability Index on another site: the snippet, its options and what the script does.",
+    "status": "The embed script is not published yet: it comes with the next release of the site, at /embed/v1/gai.js. This page then shows it running. The snippet below is the one it reads.",
+    "snippetGauge": "The gauge of {country}:",
+    "snippetTimeline": "The timeline of the same country:"
+  },
+  "replyPage": {
+    "description": "How a government or another party named in an event replies to it, and what happens within 10 days.",
+    "form": "Right of reply",
+    "formNote": "(public form on GitHub).",
+    "noEmail": "By email: the project has no email address yet; one will be listed here.",
+    "email": "By email:",
+    "emailNote": "The reply is filed as a public issue, unless the sender asks otherwise; it is published either way.",
+    "none": "No reply has been published yet.",
+    "caption": "{count, plural, one {# reply} other {# replies}} published, newest first",
+    "cols": {
+      "published": "Published",
+      "country": "Country page",
+      "from": "From",
+      "outcome": "Outcome"
+    }
   }
 }

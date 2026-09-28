@@ -13,7 +13,7 @@
  * Pages: home and ranking (P-07); the country page of Germany in the real data, in both languages,
  * and Israel as an excluded entity (P-08); Compare empty and with Germany chosen (its charts
  * arrive after a fetch, inside a region that keeps its height), Changes and a monthly report
- * (P-09).
+ * (P-09); Methodology and Data in both languages, About, Corrections, Reply and Embed (P-10).
  */
 const { chromium } = require('@playwright/test')
 
@@ -32,6 +32,14 @@ const PAGES = [
   '/en/changes/',
   '/fr/changes/',
   '/en/changes/2024-06/',
+  '/en/methodology/',
+  '/fr/methodology/',
+  '/en/data/',
+  '/fr/data/',
+  '/en/about/',
+  '/en/corrections/',
+  '/en/reply/',
+  '/en/embed/',
 ]
 
 // ≤ 150 KB of JavaScript per page, transferred (gzip). The application-code share (≤ 25 KB) is

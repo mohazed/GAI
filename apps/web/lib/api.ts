@@ -9,12 +9,14 @@ import path from 'node:path'
 import {
   ApiChangesLatestFile,
   ApiChangesMonthFile,
+  ApiCorrectionsFile,
   ApiCountriesFile,
   ApiCountryFile,
   ApiManifestFile,
   ApiMethodologyFile,
   ApiMethodologyIndex,
   ApiRepliesFile,
+  ApiSensitivityFile,
 } from '@gai/schema/api'
 import type { z } from 'zod'
 
@@ -65,6 +67,10 @@ export function apiReader(dir: string) {
     changesLatest: () => read('changes/latest.json', ApiChangesLatestFile),
     changesMonth: (month: string) => read(`changes/${month}.json`, ApiChangesMonthFile),
     replies: () => read('replies.json', ApiRepliesFile),
+    corrections: () => read('corrections.json', ApiCorrectionsFile),
+    sensitivity: () => read('sensitivity.json', ApiSensitivityFile),
+    /** Whether a file of the API exists (examples of the Data page). */
+    has: (file: string) => existsSync(path.join(dir, file)),
   }
 }
 export type ApiReader = ReturnType<typeof apiReader>

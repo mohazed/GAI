@@ -13,6 +13,7 @@ import type {
   Dataset,
   Event,
   Methodology,
+  Reviewer,
 } from '@gai/schema'
 import type {
   CategoryId,
@@ -44,6 +45,8 @@ export interface BuildInput {
   older: Methodology[]
   /** methodology/CHANGELOG.md, or null. */
   changelog: string | null
+  /** methodology/reviewers.yaml `reviewers` ([] when the file is absent, docs/08 §2). */
+  reviewers: Reviewer[]
   snapshots: SnapshotFile[]
   /** Build date `YYYY-MM-DD` (UTC), on or after the window start. */
   date: string

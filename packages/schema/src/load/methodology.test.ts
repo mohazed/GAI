@@ -14,6 +14,7 @@ import {
   currentMethodologyFolder,
   listMethodologyVersions,
   loadMethodology,
+  loadReviewers,
   type Methodology,
   parseBannedWords,
 } from './methodology.js'
@@ -126,6 +127,83 @@ describe('temporary methodology roots', () => {
     const m = loadMethodology(root)
     expect(m.issues).toEqual([])
     expect(m.indicators).toHaveLength(34)
+  })
+
+  describe('diff.json (optional, docs/02 §11)', () => {
+    const diff = (to: string) => ({
+      from: '0.9.0',
+      to,
+      date: '2026-09-27',
+      countries: [
+        {
+          iso3: 'DEU',
+          name: { en: 'Germany', fr: 'Allemagne' },
+          old: -14,
+          new: -12,
+          cause: { en: 'Test: B1 list', fr: 'Test : liste B1' },
+        },
+      ],
+    })
+
+    it('absent: no diff, no issue', () => {
+      copyV1()
+      const m = loadMethodology(root)
+      expect(m.diff).toBeNull()
+      expect(m.issues).toEqual([])
+    })
+
+    it('present and valid: loaded', () => {
+      copyV1()
+      const m0 = loadMethodology(root)
+      writeFileSync(path('diff.json'), JSON.stringify(diff(m0.version)))
+      const m = loadMethodology(root)
+      expect(m.issues).toEqual([])
+      expect(m.diff?.value.countries[0]?.new).toBe(-12)
+    })
+
+    it('for another version, or not matching its schema: reported', () => {
+      copyV1()
+      writeFileSync(path('diff.json'), JSON.stringify(diff('9.9.9')))
+      expect(rulesIn(loadMethodology(root).issues)).toEqual(['schema.methodology'])
+      writeFileSync(path('diff.json'), JSON.stringify({ from: '0.9.0' }))
+      const issues = loadMethodology(root).issues
+      expect(issues.length).toBeGreaterThan(0)
+      expect(issues.every((i) => i.file === `${FOLDER}/diff.json`)).toBe(true)
+    })
+  })
+
+  describe('loadReviewers (methodology/reviewers.yaml, docs/08 §2)', () => {
+    const file = () => join(root, 'methodology', 'reviewers.yaml')
+
+    it('the repository file loads with no issue', () => {
+      const r = loadReviewers(REPO_ROOT)
+      expect(r.issues).toEqual([])
+      expect(Array.isArray(r.value?.reviewers)).toBe(true)
+    })
+
+    it('absent: none yet, no issue', () => {
+      expect(loadReviewers(root)).toEqual({ value: { reviewers: [] }, issues: [] })
+    })
+
+    it('a valid entry loads; a missing disclosure is reported', () => {
+      mkdirSync(join(root, 'methodology'), { recursive: true })
+      const entry = [
+        'reviewers:',
+        '  - name: Test Reviewer',
+        '    expertise: { en: International law, fr: Droit international }',
+        '    disclosure: { en: Test entry, fr: Entrée de test }',
+        '    signed_off:',
+        '      - { version: 1.0.0, date: 2026-11-01, url: "https://example.org/c/1" }',
+        '    caveat: null',
+        '',
+      ].join('\n')
+      writeFileSync(file(), entry)
+      expect(loadReviewers(root).value?.reviewers[0]?.name).toBe('Test Reviewer')
+      writeFileSync(file(), entry.replace(/ {4}disclosure.*\n/, ''))
+      const r = loadReviewers(root)
+      expect(r.value).toBeNull()
+      expect(rulesIn(r.issues)).toEqual(['schema.methodology'])
+    })
   })
 
   it('without a folder name, the newest folder is loaded', () => {

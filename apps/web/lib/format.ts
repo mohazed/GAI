@@ -79,3 +79,15 @@ export function frenchMessages<T>(tree: T): T {
   }
   return tree
 }
+
+/**
+ * A file size in decimal units: `830 bytes`, `412 kB`, `1.4 MB` / `830 octets`, `412 ko`,
+ * `1,4 Mo`.
+ */
+export function fileSize(bytes: number, lang: Lang): string {
+  const fr = lang === 'fr'
+  if (bytes < 1000) return `${formatInteger(bytes, lang)}${NBSP}${fr ? 'octets' : 'bytes'}`
+  if (bytes < 1_000_000)
+    return `${formatInteger(Math.round(bytes / 1000), lang)}${NBSP}${fr ? 'ko' : 'kB'}`
+  return `${plain(bytes / 1_000_000, lang, 1)}${NBSP}${fr ? 'Mo' : 'MB'}`
+}

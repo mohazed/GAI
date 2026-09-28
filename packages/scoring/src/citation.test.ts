@@ -5,6 +5,8 @@ import {
   citations,
   comparePermalink,
   comparisonCitations,
+  datasetCitations,
+  datasetPermalink,
   permalink,
 } from './citation.js'
 
@@ -134,5 +136,27 @@ describe('comparison citations (docs/05 §6 Compare)', () => {
     expect(() => comparePermalink(url, 'en', ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF'])).toThrow()
     expect(() => comparePermalink(url, 'en', ['deu'])).toThrow()
     expect(comparePermalink(url, 'fr', ['DEU'])).toBe('https://example.org/fr/compare?c=DEU')
+  })
+})
+
+describe('datasetCitations (the Data page)', () => {
+  const input = { date: '2026-09-26', methodologyVersion: '1.0.0', siteUrl: 'https://example.org/' }
+
+  it('cites the dataset at its build date, linking the Data page', () => {
+    expect(datasetCitations(input, 'en')).toEqual({
+      plain:
+        'Gaza Accountability Index, Dataset and API, methodology v1.0.0, as of 26 September 2026, https://example.org/en/data/',
+      apa: 'Zouad, M. (2026, September 26). Dataset and API (Methodology version 1.0.0) [Data set]. Gaza Accountability Index. https://example.org/en/data/',
+      chicago:
+        'Zouad, Mohamed. “Dataset and API.” Gaza Accountability Index, methodology v1.0.0, September 26, 2026. https://example.org/en/data/.',
+    })
+    expect(datasetCitations(input, 'fr').plain).toBe(
+      'Gaza Accountability Index, Données et API, méthodologie v1.0.0, au 26 septembre 2026, https://example.org/fr/data/',
+    )
+  })
+
+  it('refuses a bad date or site URL', () => {
+    expect(() => datasetCitations({ ...input, date: '2026-9-26' }, 'en')).toThrow()
+    expect(() => datasetPermalink('example.org', 'en')).toThrow()
   })
 })

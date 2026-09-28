@@ -402,6 +402,19 @@
   details > summary {
     cursor: pointer;
   }
+  /* Display math of the methodology: MathML written by KaTeX at build (lib/math.ts), laid out by
+     the browser with a system math font (no font file is loaded for it). KaTeX states the column
+     alignment of `aligned` on the table, which MathML Core does not read: the cells carry it. */
+  .doc-math math {
+    font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", math;
+    font-size: 1.125rem;
+  }
+  .doc-math mtable[columnalign="right left"] > mtr > mtd:nth-child(odd) {
+    text-align: right;
+  }
+  .doc-math mtable[columnalign="right left"] > mtr > mtd:nth-child(even) {
+    text-align: left;
+  }
   /* CSS tooltip for the gauge marker and other small SVG targets: shown on hover and focus. */
   .tip {
     position: relative;

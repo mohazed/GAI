@@ -497,5 +497,150 @@
     "scoreAlt": "Score {score}, bande {band}",
     "methodology": "méthodologie v{version} · {date}",
     "scorecardComputed": "Fiche · {count, plural, one {# événement} other {# événements}} · {computed, plural, one {# valeur calculée} other {# valeurs calculées}} · couverture {pct}"
+  },
+  "methodologyPage": {
+    "metaTitle": "Méthodologie",
+    "metaTitleVersion": "Méthodologie {version}",
+    "description": "Comment l'index note la conduite des États à l'égard de Gaza : indicateurs, points, plafonds, formule, décroissance, confiance, passivité et couverture, méthodologie {version}.",
+    "contents": "Sommaire",
+    "superseded": "Cette page présente la méthodologie {version}, remplacée. La version en vigueur est la {current}.",
+    "readCurrent": "Lire la version en vigueur",
+    "files": "Cette version sous forme de données :",
+    "diffTitle": "Scores modifiés par cette version",
+    "diffMissing": "Aucun fichier diff.json n'a été publié avec la version {version} : les scores qu'elle a modifiés par rapport à la version {previous} ne sont pas listés.",
+    "changelogTitle": "Journal des modifications",
+    "changelogNote": "Toutes les versions, la plus récente en dernier, d'après methodology/CHANGELOG.md dans le dépôt."
+  },
+  "sensitivity": {
+    "intro": "Calculés lors de la génération du {date} à partir des événements publiés de {n, plural, one {# pays} other {# pays}}. Le ρ de Spearman compare le classement obtenu avec un réglage au classement par défaut : 1 signifie le même ordre.",
+    "tables": {
+      "passivity": "Pénalité de passivité",
+      "weights": "Pondérations des catégories",
+      "confidence": "Poids des événements signalés",
+      "statements": "Déclarations exclues",
+      "decay": "Sans décroissance"
+    },
+    "variant": {
+      "passivity": "Pénalité de {points}",
+      "weight": "Pondération de {category} à {value}",
+      "reported": "Signalé à {value}",
+      "excluded": "{indicators} à 0",
+      "decay": "d = 1 pour chaque événement répétable"
+    },
+    "cols": {
+      "variant": "Réglage",
+      "spearman": "ρ de Spearman",
+      "changed": "Scores affichés modifiés",
+      "country": "Pays",
+      "default": "Par défaut"
+    },
+    "summaryCaption": "{table} : chaque réglage comparé au classement par défaut de {n, plural, one {# pays} other {# pays}}",
+    "full": "Classement complet pour chaque réglage",
+    "fullCaption": "{table} : score affiché et rang de chaque pays, par défaut et pour chaque réglage",
+    "none": "non calculé"
+  },
+  "correctionsPage": {
+    "metaTitle": "Corrections",
+    "title": "Corrections",
+    "explain": "Chaque correction et chaque retrait d'un événement publié, du plus récent au plus ancien : ce qui a changé, pourquoi, qui l'a signalé et quand. Rien n'est supprimé : un événement retiré reste dans le registre, marqué comme retiré, et ne compte plus dans le score.",
+    "report": "Chacun peut signaler une erreur dans un événement :",
+    "form": "Signaler une erreur (formulaire public)",
+    "built": "Journal à la génération du {date}, publié aussi sous la forme",
+    "logTitle": "{count, plural, =0 {Aucune correction} one {# correction} other {# corrections}}",
+    "empty": "Aucune correction n'a encore été publiée. Chaque correction figure ici dès le jour où elle est faite.",
+    "caption": "Corrections et retraits, du plus récent au plus ancien",
+    "cols": {
+      "date": "Date",
+      "event": "Événement",
+      "changed": "Ce qui a changé",
+      "reason": "Raison",
+      "flagged": "Signalé par"
+    },
+    "kind": {
+      "correction": "Correction",
+      "retraction": "Retrait"
+    },
+    "flaggedBy": {
+      "public": "Un lecteur",
+      "author": "L'auteur",
+      "reply": "Une réponse",
+      "reviewer": "Un relecteur"
+    },
+    "issue": "Ticket {ref}"
+  },
+  "aboutPage": {
+    "description": "Qui tient le Gaza Accountability Index, son point de vue, ses relecteurs, son financement et comment le contacter.",
+    "translation": "Traduction",
+    "signed": "— {author}",
+    "reviewersNone": "Relecteurs : aucun pour l'instant. Deux ou trois relecteurs extérieurs, dont au moins un spécialiste du droit international et un connaisseur des données sur le commerce des armes, doivent relire la table des indicateurs et les seuils avant que les scores ne soient affichés. Leurs noms et une déclaration d'une ligne sur leurs affiliations figureront ici.",
+    "signedOff": "A validé la méthodologie {version} le {date}",
+    "caveat": "Réserve :"
+  },
+  "contact": {
+    "none": "Le projet n'a pas encore d'adresse électronique ; elle figurera ici. D'ici là, écrivez par les formulaires publics du dépôt (un compte GitHub est nécessaire) :",
+    "email": "Courriel :",
+    "emailNote": "Un message au sujet d'un événement reçoit en réponse le lien d'un ticket public, sauf demande contraire de l'expéditeur.",
+    "reply": "Droit de réponse",
+    "error": "Signaler une erreur",
+    "lead": "Proposer une piste"
+  },
+  "dataPage": {
+    "description": "Téléchargements et API du Gaza Accountability Index : chaque point d'accès avec un exemple, les tableaux structurés, la citation du jeu de données et la façon de reproduire une génération.",
+    "build": "Cette génération : {date}, méthodologie {version}, {files} fichiers, {size}. Commit",
+    "noSha": "aucun commit enregistré",
+    "dirty": "Cette génération a lu des modifications non validées de ses entrées (git.dirty vaut true) : elle ne peut pas être reproduite à partir d'un clone.",
+    "downloadsCaption": "Téléchargements complets de cette génération",
+    "downloadsCaptionScorecard": "Téléchargements complets de cette génération. Le tableau des pays est la version « fiche », sans scores, comme sur la page du classement.",
+    "cols": {
+      "file": "Fichier",
+      "holds": "Contenu",
+      "size": "Taille",
+      "table": "Tableau",
+      "columns": "Colonnes"
+    },
+    "dl": {
+      "events": "Une ligne par événement publié des pays notés",
+      "sources": "Chaque source du jeu de données, avec sa copie archivée et son empreinte",
+      "assessments": "Une ligne par pays noté et par indicateur : ce qui a été vérifié",
+      "countries": "Chaque pays à la date de génération, comme le montre le tableau du classement, avec les sous-totaux plafonnés en pleine précision",
+      "countriesScorecard": "Chaque pays à la date de génération, comme le montre le tableau du classement, sans scores",
+      "scoresDaily": "Scores quotidiens de chaque pays noté en {year}",
+      "gai": "L'ensemble des données publiées en un fichier JSON"
+    },
+    "structuredCaption": "Les tableaux structurés de data/structured/",
+    "scorecardNote": "Les fichiers contiennent les scores calculés dans les deux modes du site. Tant que le site est en mode fiche, il ne les affiche pas ; la méthodologie explique pourquoi.",
+    "noExample": "Cette génération n'a pas encore de fichier de ce type.",
+    "example": "Exemple tiré de cette génération :",
+    "openFile": "Ouvrir le fichier complet ({file})",
+    "cut": {
+      "keys": "Seules {shown} des {total} clés de premier niveau sont montrées.",
+      "lines": "Les {shown} premières lignes sur {total} sont montrées.",
+      "lists": "{count, plural, one {Une liste est réduite} other {# listes sont réduites}} à leur premier élément.",
+      "strings": "{count, plural, one {Un texte est coupé} other {# textes sont coupés}} après 240 caractères.",
+      "rest": "Rien d'autre n'est modifié."
+    },
+    "linux": "Sous Linux, utilisez sha256sum -c --quiet - à la place de shasum -a 256 -c --quiet -."
+  },
+  "embedPage": {
+    "description": "Comment afficher un pays du Gaza Accountability Index sur un autre site : le code à insérer, ses options et ce que fait le script.",
+    "status": "Le script d'intégration n'est pas encore publié : il arrive avec la prochaine version du site, à l'adresse /embed/v1/gai.js. Cette page le montrera alors en fonctionnement. Le code ci-dessous est celui qu'il lit.",
+    "snippetGauge": "La jauge de {country} :",
+    "snippetTimeline": "La chronologie du même pays :"
+  },
+  "replyPage": {
+    "description": "Comment un gouvernement ou une autre partie citée dans un événement y répond, et ce qui se passe dans les 10 jours.",
+    "form": "Droit de réponse",
+    "formNote": "(formulaire public, GitHub).",
+    "noEmail": "Par courriel : le projet n'a pas encore d'adresse électronique ; elle figurera ici.",
+    "email": "Par courriel :",
+    "emailNote": "La réponse est enregistrée comme ticket public, sauf demande contraire de l'expéditeur ; elle est publiée dans tous les cas.",
+    "none": "Aucune réponse n'a encore été publiée.",
+    "caption": "{count, plural, one {# réponse publiée} other {# réponses publiées}}, de la plus récente à la plus ancienne",
+    "cols": {
+      "published": "Publiée le",
+      "country": "Page du pays",
+      "from": "De",
+      "outcome": "Issue"
+    }
   }
 }

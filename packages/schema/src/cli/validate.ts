@@ -22,7 +22,12 @@ import { join, relative, resolve } from 'node:path'
 import { compareCodeUnits, formatIssue, type Issue, sortIssues } from '../issues.js'
 import { type Dataset, loadDataset } from '../load/dataset.js'
 import { type BaseSnapshot, baseRequired, loadBaseSnapshot, resolveBase } from '../load/git.js'
-import { listMethodologyVersions, loadMethodology, type Methodology } from '../load/methodology.js'
+import {
+  listMethodologyVersions,
+  loadMethodology,
+  loadReviewers,
+  type Methodology,
+} from '../load/methodology.js'
 import { findRepoRoot } from '../load/repo.js'
 import { STRUCTURED_TABLE_NAMES } from '../structured.js'
 import { buildContext, validate } from '../validate/index.js'
@@ -162,6 +167,9 @@ export function main(argv: string[], options: MainOptions = {}): number {
     older.push(...m.issues, ...methodologyRules.flatMap((rule) => rule(olderCtx)))
   }
   if (older.length > 0) issues = sortIssues([...issues, ...older])
+  // methodology/reviewers.yaml (docs/08 §2): optional; when present it must match its schema.
+  const reviewerIssues = loadReviewers(repoRoot).issues
+  if (reviewerIssues.length > 0) issues = sortIssues([...issues, ...reviewerIssues])
 
   const display = (i: Issue): Issue =>
     i.file.startsWith('methodology/') || prefix === '' ? i : { ...i, file: `${prefix}${i.file}` }

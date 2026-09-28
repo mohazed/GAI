@@ -10,6 +10,7 @@ import { CiteThis } from '../../components/CiteThis'
 import { CategoryDots, CompareChart, EventDiff } from '../../components/CompareChart'
 import { ComputedRun } from '../../components/ComputedRun'
 import { ConfidenceChip } from '../../components/ConfidenceChip'
+import { CorrectionsTable } from '../../components/CorrectionsTable'
 import { CoverageBar } from '../../components/CoverageBar'
 import { DiffViewer } from '../../components/DiffViewer'
 import { EventCard, IndicatorBadge } from '../../components/EventCard'
@@ -23,6 +24,7 @@ import { RankingStrip } from '../../components/RankingStrip'
 import { RightOfReplyBlock } from '../../components/RightOfReplyBlock'
 import { ScoreGauge } from '../../components/ScoreGauge'
 import { SearchBox } from '../../components/SearchBox'
+import { SensitivityTables } from '../../components/SensitivityTables'
 import { Timeline } from '../../components/Timeline'
 import { VersionSelector } from '../../components/VersionSelector'
 import { WorldMap } from '../../components/WorldMap'
@@ -425,6 +427,28 @@ function Row({
                 },
               },
             ]}
+          />
+        </Specimen>
+
+        <Specimen
+          title="CorrectionsTable · entry, none"
+          note="the fixture correction is synthetic (fixtures/README.md)"
+        >
+          <CorrectionsTable
+            lang={lang}
+            corrections={kit.corrections().corrections}
+            names={Object.fromEntries(kit.countries().countries.map((c) => [c.iso3, c.name]))}
+            repoUrl={REPO_URL}
+            anchors={false}
+          />
+          <CorrectionsTable lang={lang} corrections={[]} names={{}} repoUrl={REPO_URL} />
+        </Specimen>
+        <Specimen title="SensitivityTables" note="fixture build: one country ranked">
+          <SensitivityTables
+            lang={lang}
+            data={kit.sensitivity()}
+            idPrefix={`kit-sens-${n}-`}
+            names={Object.fromEntries(kit.countries().countries.map((c) => [c.iso3, c.name]))}
           />
         </Specimen>
 

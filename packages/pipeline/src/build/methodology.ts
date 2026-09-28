@@ -13,6 +13,7 @@ import {
   type ApiMethodologyFile,
   type ApiMethodologyIndex,
   type Methodology,
+  type Reviewer,
   WINDOW_START,
 } from '@gai/schema'
 
@@ -79,6 +80,7 @@ export function methodologyFile(m: Methodology, status: MethodologyStatus): ApiM
     symmetry: m.symmetry?.value ?? null,
     banned_words: (m.bannedWords?.entries ?? []).map((e) => e.term),
     docs: { en: m.docs.en?.text ?? null, fr: m.docs.fr?.text ?? null },
+    diff: m.diff?.value ?? null,
   }
 }
 
@@ -93,6 +95,8 @@ export interface MethodologyIndexArgs {
   changelog: string | null
   /** Top-level folders present under data/snapshots/, e.g. `v1.0.0`. */
   frozen: ReadonlySet<string>
+  /** methodology/reviewers.yaml `reviewers` (docs/08 §2), in file order. */
+  reviewers: readonly Reviewer[]
 }
 
 /**
@@ -128,5 +132,6 @@ export function methodologyIndex(args: MethodologyIndexArgs): ApiMethodologyInde
       }
     }),
     changelog: args.changelog,
+    reviewers: [...args.reviewers],
   }
 }

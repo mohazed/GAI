@@ -373,6 +373,57 @@ export const SymmetryFile = z.strictObject({
 })
 export type SymmetryFile = z.infer<typeof SymmetryFile>
 
+// ---------------------------------------------------------------------------------------------
+// diff.json (docs/02 §11, docs/08 §1): optional, in every version folder after the first
+
+/**
+ * The scores that a new version moves, written with the version (P-24): every country whose
+ * display score differs by 1 or more between the previous version and this one, at one build
+ * date, with the cause in words (the indicators or thresholds that moved it).
+ */
+export const MethodologyDiffFile = z.strictObject({
+  /** The previous version, e.g. `1.0.0`. */
+  from: MethodologyVersion,
+  /** This folder's version, e.g. `1.1.0`. */
+  to: MethodologyVersion,
+  /** The build date both versions were scored at. */
+  date: IsoDate,
+  countries: z.array(
+    z.strictObject({
+      iso3: z.string().regex(/^[A-Z]{3}$/, 'expected an ISO 3166-1 alpha-3 code'),
+      name: LangText,
+      /** Integer display scores under `from` and `to`. */
+      old: z.number().int(),
+      new: z.number().int(),
+      cause: LangText,
+    }),
+  ),
+})
+export type MethodologyDiffFile = z.infer<typeof MethodologyDiffFile>
+
+// ---------------------------------------------------------------------------------------------
+// methodology/reviewers.yaml (docs/08 §2): outside the version folders, like CHANGELOG.md
+
+/**
+ * A named external reviewer of the indicator table and thresholds. The About page lists the name
+ * and the one-line disclosure of affiliations; a sign-off is a public comment, linked.
+ */
+export const Reviewer = z.strictObject({
+  name: NonEmpty,
+  /** Field of the review, e.g. international law, arms-trade data. */
+  expertise: LangText,
+  /** One-line disclosure of affiliations (docs/08 §2). */
+  disclosure: LangText,
+  /** Sign-offs, each on one methodology version, dated, with the link to the public comment. */
+  signed_off: z.array(z.strictObject({ version: MethodologyVersion, date: IsoDate, url: Url })),
+  /** A caveat the reviewer chose to add, shown with the name; null when none. */
+  caveat: LangText.nullable(),
+})
+export type Reviewer = z.infer<typeof Reviewer>
+
+export const ReviewersFile = z.strictObject({ reviewers: z.array(Reviewer) })
+export type ReviewersFile = z.infer<typeof ReviewersFile>
+
 /** Every YAML file of a methodology version and its schema. */
 export const METHODOLOGY_FILES = {
   'indicators.yaml': IndicatorsFile,

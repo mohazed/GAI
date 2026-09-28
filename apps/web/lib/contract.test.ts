@@ -10,10 +10,13 @@ import path from 'node:path'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { CorrectionsTable } from '../components/CorrectionsTable'
 import { MonthReport, reportLinks } from '../components/MonthReport'
+import { SensitivityTables } from '../components/SensitivityTables'
 import { cardInput, loadFonts, renderCard } from '../scripts/cards'
 import { countryFilterCss } from '../scripts/filter-css'
 import { apiReader } from './api'
+import { endpoints, exampleOf } from './api-docs'
 import { computedInForce, listItems, timelineEvents } from './event-list'
 import { siteMethodology } from './methodology'
 import { rankRows } from './rank'
@@ -210,5 +213,52 @@ describe('site ↔ API contract (fixtures build)', () => {
     }
     // The fixtures have a mover, a new event and an end (months 2025-08 and 2025-11).
     expect(linked).toBeGreaterThan(0)
+  })
+
+  it('the Data page: every endpoint has an example from the build, cut as it says', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    for (const mode of ['score', 'scorecard'] as const) {
+      for (const e of endpoints(api, mode)) {
+        expect(e.example, e.path).not.toBeNull()
+        const ex = exampleOf(api, e)
+        expect(ex?.text.length, e.path).toBeGreaterThan(0)
+        if (e.kind === 'json') expect(() => JSON.parse(ex?.text ?? ''), e.path).not.toThrow()
+      }
+    }
+  })
+
+  it('the corrections log: one row per correction, anchored by its id, linked to its event', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    const file = api.corrections()
+    expect(file.corrections.length).toBeGreaterThan(0)
+    const names = Object.fromEntries(api.countries().countries.map((c) => [c.iso3, c.name]))
+    for (const lang of ['en', 'fr'] as const) {
+      const html = renderToStaticMarkup(
+        createElement(CorrectionsTable, {
+          lang,
+          corrections: file.corrections,
+          names,
+          repoUrl: 'https://github.com/mohazed/GAI',
+        }),
+      )
+      for (const c of file.corrections) {
+        expect(html).toContain(`id="${c.id}"`)
+        expect(html).toContain(`href="/${lang}/country/${c.country}/#${c.event}"`)
+        if (c.commit !== null) expect(html).toContain(c.commit.slice(0, 7))
+      }
+    }
+  })
+
+  it('the sensitivity tables: a summary row per setting and a full ranking per table', () => {
+    const api = apiReader(path.join(dir, 'v1'))
+    const data = api.sensitivity()
+    const names = Object.fromEntries(api.countries().countries.map((c) => [c.iso3, c.name]))
+    const html = renderToStaticMarkup(createElement(SensitivityTables, { lang: 'en', data, names }))
+    expect(html.match(/<details/g)?.length).toBe(data.tables.length)
+    const settings = data.tables.reduce((n, t) => n + t.variants.length, 0)
+    // Each setting is a row of its summary table and a column of its full ranking.
+    expect(html.match(/<th scope="row"/g)?.length).toBe(
+      settings + data.tables.length * data.baseline.length,
+    )
   })
 })

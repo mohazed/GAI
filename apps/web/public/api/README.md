@@ -958,7 +958,7 @@ Example (real-data build, `scores/2026-09-27.json`), the whole file:
 
 ### 3.7 `methodology/index.json`
 
-The methodology versions and the changelog: `build_date`, `current`, `versions` (each with `version`, `folder` in the repository, `status` `current` or `superseded`, `file` in the API, and `frozen`, the API folder of the frozen outputs of a superseded version, or `null`) and `changelog`, `methodology/CHANGELOG.md` verbatim. A superseded version keeps its last outputs, copied verbatim from `data/snapshots/{folder}/` to `methodology/{folder}/`, for example `methodology/v1.0.0/` (docs/02 §11); those files follow the schemas of their own time.
+The methodology versions, the changelog and the reviewers: `build_date`, `current`, `versions` (each with `version`, `folder` in the repository, `status` `current` or `superseded`, `file` in the API, and `frozen`, the API folder of the frozen outputs of a superseded version, or `null`), `changelog`, `methodology/CHANGELOG.md` verbatim, and `reviewers`, the named external reviewers of `methodology/reviewers.yaml` (docs/08 §2; empty until there are reviewers), each with `name`, `expertise` and `disclosure` (`en`, `fr`), `signed_off` (`version`, `date`, `url` of the public sign-off) and `caveat` (`en`, `fr`, or `null`). A superseded version keeps its last outputs, copied verbatim from `data/snapshots/{folder}/` to `methodology/{folder}/`, for example `methodology/v1.0.0/` (docs/02 §11); those files follow the schemas of their own time.
 
 Example (fixtures build; the real-data build gives the same bytes). `changelog` is cut after its first paragraph (the string has 2528 characters).
 
@@ -967,6 +967,7 @@ Example (fixtures build; the real-data build gives the same bytes). `changelog` 
   "build_date": "2026-09-27",
   "changelog": "# Methodology changelog\n\nEvery change to points, caps, thresholds, decay, passivity, the qualifying-votes list, the\nsymmetry table or the universe ships as a new version folder under `methodology/` with an entry\nhere and a `diff.json` listing every country whose displayed score moved by 1 or more, with the\ncause (`docs/02-methodology-spec.md` §11, `docs/08-governance.md` §1). Major: scale, category or\nuniverse changes. Minor: indicator, point or threshold changes, new qualifying votes. Patch:\nwording.",
   "current": "1.0.0-rc.1",
+  "reviewers": [],
   "versions": [
     {
       "file": "methodology/1.0.0-rc.1.json",
@@ -997,6 +998,7 @@ The files of one version folder as parsed (docs/03 §1), for example `methodolog
 | `symmetry` | `symmetry.yaml`: the symmetry table, or `null` |
 | `banned_words` | `banned-words.txt`, in file order (280 entries in 1.0.0-rc.1) |
 | `docs` | `methodology.en.md` and `methodology.fr.md`, verbatim |
+| `diff` | `diff.json` of the folder, or `null`: `from` and `to` (the previous and this version), `date` (the build date both were scored at) and `countries`, every country whose display score moved by 1 or more, with `iso3`, `name`, `old`, `new` and `cause` (`en`, `fr`) (docs/02 §11). The first version has none. |
 
 Example (fixtures build, `methodology/1.0.0-rc.1.json`): the D1 entry of `indicators.indicators`. A hand-authored indicator has no `generated_from` key.
 

@@ -27,8 +27,10 @@ import {
   ConfidenceFile,
   DecayFile,
   IndicatorsFile,
+  MethodologyDiffFile,
   MethodologyVersion,
   PassivityFile,
+  Reviewer,
   SymmetryFile,
   ThresholdsFile,
   VotesFile,
@@ -624,6 +626,8 @@ export const ApiMethodologyIndex = z.strictObject({
   ),
   /** methodology/CHANGELOG.md, verbatim. */
   changelog: z.string().nullable(),
+  /** methodology/reviewers.yaml `reviewers` (docs/08 §2); empty until there are reviewers. */
+  reviewers: z.array(Reviewer),
 })
 export type ApiMethodologyIndex = z.infer<typeof ApiMethodologyIndex>
 
@@ -646,6 +650,8 @@ export const ApiMethodologyFile = z.strictObject({
   banned_words: z.array(z.string()),
   /** methodology.en.md and methodology.fr.md, verbatim. */
   docs: z.strictObject({ en: z.string().nullable(), fr: z.string().nullable() }),
+  /** diff.json of the folder (scores moved from the previous version), or null (docs/02 §11). */
+  diff: MethodologyDiffFile.nullable(),
 })
 export type ApiMethodologyFile = z.infer<typeof ApiMethodologyFile>
 
