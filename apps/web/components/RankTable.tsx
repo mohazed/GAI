@@ -341,7 +341,10 @@ export function RankTable({
                     {positions.get(r.iso3)}
                   </td>
                 ) : null}
-                <th scope="row" className="border-b border-rule py-2 pe-2 md:pe-3 text-start font-normal">
+                <th
+                  scope="row"
+                  className="border-b border-rule py-2 pe-2 md:pe-3 text-start font-normal"
+                >
                   <a href={`/${lang}/country/${r.iso3}/`}>{r.name[lang]}</a>
                   <span className="block font-mono text-m11 text-ink-2 md:inline md:ps-2">
                     {r.iso3}
