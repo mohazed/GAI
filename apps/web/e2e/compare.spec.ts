@@ -16,6 +16,7 @@ const TEXT = {
     add: 'Add a country',
     events: 'Events by month',
     month: 'Month',
+    noEvents: 'No events for these countries.',
     noJs: 'The comparison needs JavaScript',
     cite: 'Cite',
     remove: (c: string) => `Remove ${c}`,
@@ -29,6 +30,7 @@ const TEXT = {
     add: 'Ajouter un pays',
     events: 'Événements par mois',
     month: 'Mois',
+    noEvents: 'Aucun événement pour ces pays.',
     noJs: 'La comparaison nécessite JavaScript',
     cite: 'Citer',
     remove: (c: string) => `Retirer ${c}`,
@@ -101,8 +103,11 @@ for (const lang of LANGS) {
         const chart = page.locator('figure svg[role="img"]').first()
         await expect(chart).toHaveAttribute('aria-label', new RegExp(scored.name[lang]))
       }
-      // The table of events has one column per country.
-      await expect(page.locator('table', { hasText: t.month })).toContainText(scored.name[lang])
+      // The table of events has one column per country; a country without any event that can
+      // score (most of the registry before the research sessions, P-13) gets the empty line.
+      const table = page.locator('table', { hasText: t.month })
+      await expect(table.or(page.getByText(t.noEvents, { exact: true }))).toBeVisible()
+      if ((await table.count()) > 0) await expect(table).toContainText(scored.name[lang])
       expect(errors).toEqual([])
     })
 

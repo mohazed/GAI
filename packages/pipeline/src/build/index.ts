@@ -776,6 +776,7 @@ export function buildData(input: BuildInput): BuildOutput {
     methodology: m.version,
     git: input.git,
     countries: entries,
+    registry: ds.countries.map((c) => c.value),
     events: allEvents,
     sources: ds.sources
       .map((s) => s.value)

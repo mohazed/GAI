@@ -272,6 +272,15 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
       kind: 'csv',
     },
     {
+      path: 'dumps/registry.csv',
+      holds: t(
+        'The country registry: ISO codes, M49 region and sub-region, UN names in English and French (with the French article), memberships with their dates, the memberships held at the build date, and the date of recognition of the State of Palestine.',
+        "Le registre des pays : codes ISO, région et sous-région M49, noms de l'ONU en anglais et en français (avec l'article), appartenances avec leurs dates, appartenances à la date de génération, et date de reconnaissance de l'État de Palestine.",
+      ),
+      example: has('dumps/registry.csv'),
+      kind: 'csv',
+    },
+    {
       path: 'dumps/scores-daily-{YYYY}.csv',
       holds: t(
         'Daily scores, one file per year: one row per date and scored country, with the score, band, passivity flag and clipped subtotals. No coverage.',

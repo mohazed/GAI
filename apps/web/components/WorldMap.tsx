@@ -54,7 +54,12 @@ export function WorldMap({ lang, mode, methodology, countries }: WorldMapProps) 
   const byIso = new Map(countries.map((c) => [c.iso3, c]))
   const scoreMode = mode === 'score'
   const groups = new Map<string, string[]>()
-  for (const s of geo.shapes) groups.set(s.id, [...(groups.get(s.id) ?? []), s.d])
+  // A state too small to draw at this width is a dot (lib/map.ts dotPath); a territory outside
+  // the registry that small is left out rather than dotted.
+  for (const s of geo.shapes) {
+    if (s.dot && !byIso.has(s.id)) continue
+    groups.set(s.id, [...(groups.get(s.id) ?? []), s.d])
+  }
 
   const outside: string[] = []
   const inside: { c: MapCountry; paths: string[] }[] = []

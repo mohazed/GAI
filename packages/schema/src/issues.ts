@@ -115,6 +115,12 @@ export const RULES = {
     summary:
       'Exactly one of un_member and observer is true; permanent Security Council terms belong to CHN, FRA, GBR, RUS and USA only, and each of these has an ongoing one; terms have from ≤ to, dated memberships since ≤ until.',
   },
+  'country.name-fr-def': {
+    level: 'warning',
+    doc: 'docs/03 §3 (P-13)',
+    summary:
+      "name.fr_def is set: the French short name with the article UNTERM gives it (l'Allemagne, la France, les États-Unis d'Amérique), or the short name alone when UNTERM gives none (Cuba).",
+  },
   'country.universe-size': {
     level: 'warning',
     doc: 'docs/02 §1',

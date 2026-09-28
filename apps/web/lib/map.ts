@@ -4,12 +4,26 @@
  */
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import { geoEqualEarth, geoPath } from 'd3-geo'
+import { geoCentroid, geoEqualEarth, geoPath } from 'd3-geo'
 import type { Feature, FeatureCollection, Geometry } from 'geojson'
 import { feature } from 'topojson-client'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 
 export const MAP_WIDTH = 1000
+
+/** Radius, in map units, of the dot drawn for a state too small to draw at this width. */
+export const DOT_RADIUS = 3
+
+/**
+ * A closed circle of radius r centred on (x, y), as SVG path data with integer centre: the mark
+ * of a state whose outline collapses at the map's resolution (Andorra, the Holy See, Tuvalu…), so
+ * that every registry entry the map shows has a shape and a link (P-13, docs/10 B-183).
+ */
+export function dotPath(x: number, y: number, r = DOT_RADIUS): string {
+  const cx = Math.round(x)
+  const cy = Math.round(y)
+  return `M${cx - r},${cy}a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0Z`
+}
 
 export interface MapShape {
   /** ISO_A3_EH, or ADM0_A3 where Natural Earth has no ISO code. */
@@ -17,6 +31,8 @@ export interface MapShape {
   name: string
   excluded: boolean
   d: string
+  /** True when the outline collapsed at this width and `d` is a dot (dotPath). */
+  dot: boolean
 }
 
 export interface MapGeometry {
@@ -95,11 +111,21 @@ export function mapGeometry(): MapGeometry {
     .map((f: Feature<Geometry, Props>) => {
       const ctx = new CompactPath()
       geoPath(projection, ctx)(f)
+      let d = ctx.result()
+      let dot = false
+      if (d === '' && f.geometry !== null) {
+        const at = projection(geoCentroid(f))
+        if (at !== null) {
+          d = dotPath(at[0], at[1])
+          dot = true
+        }
+      }
       return {
         id: String(f.id),
         name: f.properties.name,
         excluded: f.properties.excluded === true,
-        d: ctx.result(),
+        d,
+        dot,
       }
     })
     .filter((s) => s.d !== '')

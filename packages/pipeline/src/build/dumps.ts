@@ -1,5 +1,5 @@
 /**
- * The bulk downloads of the API (docs/04 §2 step 6): six CSV tables and one JSON file holding
+ * The bulk downloads of the API (docs/04 §2 step 6): seven CSV tables and one JSON file holding
  * the whole published dataset at the build date.
  *
  * - `dumps/events.csv`: one row per published event (every public status) of the scored
@@ -20,6 +20,13 @@
  * - `dumps/countries.scorecard.csv`: the same rows by ISO3 without anything derived from the score
  *   (no score, band, subtotal, passivity or last change), for scorecard mode (D-16): coverage and
  *   event counts by confidence and by category.
+ * - `dumps/registry.csv`: the country registry (data/countries.yaml) by ISO3, as published at the
+ *   build date: codes, UNTERM names in EN and FR with `name_fr_def` (the French name with its
+ *   article), M49 region and sub-region, UN status, exclusion, the membership tags (Security
+ *   Council terms as `from/to` intervals joined with `;`, `..` for an open end; a dated membership
+ *   as `since/until`, one not held as `false`), the memberships held at the build date and the
+ *   date of recognition of the State of Palestine. Research notes and gov_sources are left out, as
+ *   in countries.json.
  * - `dumps/gai-{date}.json`: the `ApiDumpFile` (countries, events, sources, assessments,
  *   corrections, replies, open leads), canonical JSON.
  *
@@ -36,9 +43,11 @@ import type {
   ApiEvent,
   ApiReply,
   ApiSource,
+  Country,
 } from '@gai/schema'
 import { dayNumber, isoDate } from '@gai/scoring'
 import { csvDocument, jsonText } from './json.js'
+import { registryFields } from './normalize.js'
 import type { DayScore, GitInfo } from './types.js'
 
 export const EVENTS_CSV_COLUMNS = [
@@ -164,6 +173,31 @@ export const COUNTRIES_SCORECARD_CSV_COLUMNS = [
   'latest_event',
 ] as const
 
+export const REGISTRY_CSV_COLUMNS = [
+  'iso3',
+  'iso2',
+  'm49',
+  'name_en',
+  'name_fr',
+  'name_fr_def',
+  'region',
+  'subregion',
+  'un_member',
+  'observer',
+  'excluded',
+  'unsc',
+  'unsc_permanent',
+  'eu',
+  'nato',
+  'arab_league',
+  'oic',
+  'g20',
+  'g7',
+  'brics',
+  'member_of',
+  'recognises_palestine_since',
+] as const
+
 /** One country's assessment as the dump publishes it (ApiAssessment plus the country). */
 export interface DumpAssessment {
   country: string
@@ -188,6 +222,8 @@ export interface DumpInput {
   git: GitInfo
   /** Every registry entry (sorted by ISO3 here). */
   countries: readonly ApiCountryEntry[]
+  /** data/countries.yaml, for dumps/registry.csv (sorted by ISO3 here). */
+  registry: readonly Country[]
   /** Every published-status event of the scored countries (sorted by country, date, id here). */
   events: readonly ApiEvent[]
   /** Every source of the dataset (sorted by id here). */
@@ -349,6 +385,49 @@ function countryCsv(
   )
 }
 
+type MembershipValue = Country['memberships']['eu']
+
+/** A membership cell: `true`/`false`, or `since/until` (`..` open) for a dated one held once. */
+function membershipCell(m: MembershipValue): string | boolean {
+  if (typeof m === 'boolean') return m
+  if (m.since === null) return false
+  return `${m.since}/${m.until ?? '..'}`
+}
+
+/** `dumps/registry.csv` at `date`, entries by ISO3. */
+function registryCsv(registry: readonly Country[], date: string): string {
+  const rows = [...registry].sort(by((c) => c.iso3)).map((c) => {
+    const f = registryFields(c, date)
+    const ms = c.memberships
+    const cells: Record<(typeof REGISTRY_CSV_COLUMNS)[number], unknown> = {
+      iso3: c.iso3,
+      iso2: c.iso2,
+      m49: c.m49,
+      name_en: c.name.en,
+      name_fr: c.name.fr,
+      name_fr_def: c.name.fr_def ?? null,
+      region: c.region,
+      subregion: c.subregion,
+      un_member: c.un_member,
+      observer: c.observer,
+      excluded: c.excluded,
+      unsc: ms.unsc.map((t) => `${t.from}/${t.to ?? '..'}`).join(';'),
+      unsc_permanent: ms.unsc.some((t) => t.permanent),
+      eu: membershipCell(ms.eu),
+      nato: membershipCell(ms.nato),
+      arab_league: membershipCell(ms.arab_league),
+      oic: membershipCell(ms.oic),
+      g20: membershipCell(ms.g20),
+      g7: membershipCell(ms.g7),
+      brics: membershipCell(ms.brics),
+      member_of: f.member_of.join(';'),
+      recognises_palestine_since: c.recognises_palestine.since,
+    }
+    return REGISTRY_CSV_COLUMNS.map((col) => cells[col])
+  })
+  return csvDocument(REGISTRY_CSV_COLUMNS, rows)
+}
+
 /** Ranking order: scored countries by full-precision score, highest first, then ISO3. */
 function rankingOrder(countries: readonly ApiCountryEntry[]): ApiCountryEntry[] {
   const scored = countries.filter((c): c is Scored => !c.excluded)
@@ -430,7 +509,7 @@ function scoresDailyCsvs(input: DumpInput): [string, string][] {
 /**
  * The dump files, keyed by path relative to api/v1/: `dumps/events.csv`, `dumps/sources.csv`,
  * `dumps/assessments.csv`, `dumps/countries.csv`, `dumps/countries.scorecard.csv`,
- * `dumps/scores-daily-{YYYY}.csv` for each year, and
+ * `dumps/registry.csv`, `dumps/scores-daily-{YYYY}.csv` for each year, and
  * `dumps/gai-{date}.json`, in that order.
  */
 export function dumpFiles(input: DumpInput): Map<string, string> {
@@ -487,6 +566,7 @@ export function dumpFiles(input: DumpInput): Map<string, string> {
     ['dumps/assessments.csv', assessmentsCsv(assessments)],
     ['dumps/countries.csv', countryCsv(COUNTRIES_CSV_COLUMNS, rankingOrder(countries))],
     ['dumps/countries.scorecard.csv', countryCsv(COUNTRIES_SCORECARD_CSV_COLUMNS, countries)],
+    ['dumps/registry.csv', registryCsv(input.registry, input.date)],
     ...scoresDailyCsvs(input),
     [`dumps/gai-${input.date}.json`, jsonText(dump)],
   ])

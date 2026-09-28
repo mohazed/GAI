@@ -1,22 +1,1123 @@
 # countries.yaml — the universe of the index (docs/02 §1, docs/03 §3).
 #
-# 193 scored entities (UN member states plus the Holy See, minus Israel and Palestine), plus ISR
-# and PSE flagged `excluded: true` (D-10). P-02 seeds three entries; the full registry is built in
-# a later prompt.
+# 195 entries: the 193 UN member states and the two observer States, the Holy See (scored) and the
+# State of Palestine; ISR and PSE carry `excluded: true` (D-10), which leaves 193 scored entities.
+# Built in P-13 (2026-09-28) from the sources below; DEU, ISR and PSE keep the text checked in P-02.
 #
-# Facts verified 2026-09-27 (P-02):
-# - iso2, m49, region, subregion: UN M49 overview, https://unstats.un.org/unsd/methodology/m49/overview/
-# - name.en, name.fr: UNTERM country names, https://unterm.un.org/unterm2/en/country
-# - memberships.unsc: https://main.un.org/securitycouncil/en/content/countries-elected-members
-#   (DEU: 1977-1978, 1987-1988, 1995-1996, 2003-2004, 2011-2012, 2019-2020; not elected for
-#   2027-2028, the two Western European and Others seats went to Austria and Portugal; ISR: never
-#   elected) and https://main.un.org/securitycouncil/en/content/current-members
-# - PSE observer status: https://www.un.org/en/about-us/non-member-states (A/RES/67/19)
+# - iso2, iso3, m49, region, subregion: UN M49 overview, English table,
+#   https://unstats.un.org/unsd/methodology/m49/overview/ (read 2026-09-28). Sub-regions are the
+#   M49 sub-regions, not the intermediate regions (Caribbean, Central America, South America,
+#   and the four African intermediate regions).
+# - name.en, name.fr, name.fr_def: UNTERM country names, the export of
+#   https://unterm.un.org/unterm2/en/country (term/downloadCountries, read 2026-09-28, SHA-256
+#   3b42ac104a94c8b358f98e2269d15704f6609314a89581fff85d0c704693627d). name.en and name.fr are the
+#   short names without the article UNTERM adds in brackets ("Germany", "Allemagne");
+#   name.fr_def is the French short name with that article ("l'Allemagne", "la France",
+#   "les États-Unis d'Amérique"), the short name alone where UNTERM gives no article ("Cuba",
+#   "Malte"), and the French formal name where the short name carries a bracketed descriptor
+#   instead of an article (Bolivie, Iran, Micronésie, Pays-Bas, Venezuela). Apostrophes as UNTERM
+#   writes them.
+# - memberships.unsc: elected terms from the UN list of elected members
+#   (https://main.un.org/securitycouncil/en/content/countries-elected-members, Wayback capture
+#   2026-02-24; the live page needs JavaScript) for every term that runs in 2023 or later, from
+#   1 January of the first year to 31 December of the second; the terms of 2027-2028 from UN press
+#   release GA/12762 of 3 June 2026 (Austria, Kyrgyzstan, Portugal, Trinidad and Tobago,
+#   Zimbabwe). The five permanent members (UN Charter Art. 23) from 1945-10-24, to: null.
+# - eu: https://european-union.europa.eu/principles-countries-history/eu-countries_en (27).
+#   nato: https://www.nato.int/en/about-us/organization/nato-member-countries (32; Sweden from
+#   2024-03-07). arab_league: lasportal.org member list (Wayback capture 2025-03-24; 22 including
+#   the State of Palestine). oic: https://www.oic-oci.org/states/?lan=en (Wayback capture
+#   2026-01-14; 57 including the State of Palestine; Syria dated). g20: the 19 member countries
+#   (g20.org, read 2026-09-28; see the ZAF and POL notes). g7: the seven members. brics: the BRICS
+#   Brasil 2025 site, "About the BRICS" (Wayback capture 2026-01-06), dated for the members
+#   admitted in 2024 and 2025; Saudi Arabia not counted (see its note).
+# - recognises_palestine.since: to 2023, the annex of UN document A/78/846-S/2024/283 (letters of
+#   2 April 2024 from the chairs of the Arab Group, the OIC Group and the Non-Aligned Movement,
+#   "Recognition of the State of Palestine (1988–2023)", 140 Member States and the Holy See, with
+#   dates); from 2024, the seed list of docs/06 §8, checked against the Wikipedia list
+#   "International recognition of Palestine" (read 2026-09-28). Differences and uncertain dates
+#   carry a note. These dates are leads for B8: P-14 confirms each from an archived official
+#   statement in data/structured/recognitions.csv.
+# - gov_sources: for the 45 countries of docs/07, the foreign ministry and the head of government
+#   (and the head of state where the two differ), each URL requested on 2026-09-28; a site that
+#   refused a scripted request was checked through its latest Wayback capture (the notes say
+#   which). The other entries have none yet: the light protocol (P-21) adds them.
+
+- iso3: AFG
+  iso2: AF
+  m49: 4
+  name: {en: Afghanistan, fr: Afghanistan, fr_def: 'l''Afghanistan'}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: AGO
+  iso2: AO
+  m49: 24
+  name: {en: Angola, fr: Angola, fr_def: 'l''Angola'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-06}
+  gov_sources: []
+
+- iso3: ALB
+  iso2: AL
+  m49: 8
+  name: {en: Albania, fr: Albanie, fr_def: 'l''Albanie'}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2022-01-01, to: 2023-12-31, permanent: false}
+    eu: false
+    nato: true
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-17}
+  gov_sources: []
+
+- iso3: AND
+  iso2: AD
+  m49: 20
+  name: {en: Andorra, fr: Andorre, fr_def: 'l''Andorre'}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-22
+    note: >-
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: ARE
+  iso2: AE
+  m49: 784
+  name: {en: United Arab Emirates, fr: Émirats arabes unis, fr_def: les Émirats arabes unis}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2022-01-01, to: 2023-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics:
+      since: 2024-01-01
+      note: >-
+        Admitted by the Johannesburg Declaration of August 2023, membership effective 1 January 2024
+        (BRICS Brasil 2025 site, "About the BRICS").
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mofa.gov.ae/en', type: mfa, lang: [en]}
+    - {label: UAE Cabinet, url: 'https://uaecabinet.ae/en', type: head_of_government, lang: [en]}
+    - {label: Emirates News Agency (WAM), url: 'https://www.wam.ae/en', type: news_agency, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mofa.gov.ae/en; https://www.wam.ae/en answered 200;
+    checked by Wayback: https://uaecabinet.ae/en (Wayback capture of 2026-09-21; the direct request
+    was refused with HTTP 403 by a bot check).
+
+- iso3: ARG
+  iso2: AR
+  m49: 32
+  name: {en: Argentina, fr: Argentine, fr_def: 'l''Argentine'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2010-12-06}
+  gov_sources:
+    - {label: 'Ministerio de Relaciones Exteriores, Comercio Internacional y Culto', url: 'https://www.cancilleria.gob.ar/', type: mfa, lang: [es]}
+    - {label: 'Casa Rosada, Presidencia de la Nación', url: 'https://www.casarosada.gob.ar/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.cancilleria.gob.ar/; https://www.casarosada.gob.ar/
+    answered 200.
+
+- iso3: ARM
+  iso2: AM
+  m49: 51
+  name: {en: Armenia, fr: Arménie, fr_def: 'l''Arménie'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-06-21
+    note: >-
+      Recognition dated 2024-06-21 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: ATG
+  iso2: AG
+  m49: 28
+  name: {en: Antigua and Barbuda, fr: Antigua-et-Barbuda, fr_def: Antigua-et-Barbuda}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-09-22}
+  gov_sources: []
+
+- iso3: AUS
+  iso2: AU
+  m49: 36
+  name: {en: Australia, fr: Australie, fr_def: 'l''Australie'}
+  region: Oceania
+  subregion: Australia and New Zealand
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-21
+    note: >-
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: Department of Foreign Affairs and Trade, url: 'https://www.dfat.gov.au/', type: mfa, lang: [en]}
+    - {label: Prime Minister of Australia, url: 'https://www.pm.gov.au/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.pm.gov.au/ answered 200; checked by Wayback:
+    https://www.dfat.gov.au/ (Wayback capture of 2026-09-26; the direct request got no response).
+
+- iso3: AUT
+  iso2: AT
+  m49: 40
+  name: {en: Austria, fr: Autriche, fr_def: 'l''Autriche'}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2027-01-01, to: 2028-12-31, permanent: false}
+    eu: true
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Federal Ministry for European and International Affairs, url: 'https://www.bmeia.gv.at/en/', type: mfa, lang: [en, de]}
+    - {label: Federal Chancellery, url: 'https://www.bundeskanzleramt.gv.at/en/', type: head_of_government, lang: [en, de]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.bmeia.gv.at/en/;
+    https://www.bundeskanzleramt.gv.at/en/ answered 200.
+
+- iso3: AZE
+  iso2: AZ
+  m49: 31
+  name: {en: Azerbaijan, fr: 'Azerbaïdjan', fr_def: 'l''Azerbaïdjan'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1992-04-15}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.gov.az/en', type: mfa, lang: [en]}
+    - {label: President of the Republic of Azerbaijan, url: 'https://president.az/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mfa.gov.az/en; https://president.az/en answered 200.
+
+- iso3: BDI
+  iso2: BI
+  m49: 108
+  name: {en: Burundi, fr: Burundi, fr_def: le Burundi}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-22}
+  gov_sources: []
+
+- iso3: BEL
+  iso2: BE
+  m49: 56
+  name: {en: Belgium, fr: Belgique, fr_def: la Belgique}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      Belgium announced on 22 September 2025 that it would recognise the State of Palestine, with
+      conditions; no formal recognition found as of 2026-09-28 (lead, docs/06 §8).
+  gov_sources:
+    - {label: 'FPS Foreign Affairs, Foreign Trade and Development Cooperation', url: 'https://diplomatie.belgium.be/en', type: mfa, lang: [en, fr, nl, de]}
+    - {label: Prime Minister of Belgium, url: 'https://www.premier.be/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://diplomatie.belgium.be/en answered 200; checked by
+    Wayback: https://www.premier.be/en (Wayback capture of 2026-09-11; the direct request was
+    refused with HTTP 403).
+
+- iso3: BEN
+  iso2: BJ
+  m49: 204
+  name: {en: Benin, fr: Bénin, fr_def: le Bénin}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1989-05-12}
+  gov_sources: []
+
+- iso3: BFA
+  iso2: BF
+  m49: 854
+  name: {en: Burkina Faso, fr: Burkina Faso, fr_def: le Burkina Faso}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: BGD
+  iso2: BD
+  m49: 50
+  name: {en: Bangladesh, fr: Bangladesh, fr_def: le Bangladesh}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: BGR
+  iso2: BG
+  m49: 100
+  name: {en: Bulgaria, fr: Bulgarie, fr_def: la Bulgarie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-25}
+  gov_sources: []
+
+- iso3: BHR
+  iso2: BH
+  m49: 48
+  name: {en: Bahrain, fr: 'Bahreïn', fr_def: 'Bahreïn'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2026-01-01, to: 2027-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: BHS
+  iso2: BS
+  m49: 44
+  name: {en: Bahamas, fr: Bahamas, fr_def: Les Bahamas}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-05-07
+    note: >-
+      Recognition dated 2024-05-07 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: BIH
+  iso2: BA
+  m49: 70
+  name: {en: Bosnia and Herzegovina, fr: Bosnie-Herzégovine, fr_def: la Bosnie-Herzégovine}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1992-05-27}
+  gov_sources: []
+
+- iso3: BLR
+  iso2: BY
+  m49: 112
+  name: {en: Belarus, fr: Bélarus, fr_def: le Bélarus}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-19}
+  gov_sources: []
+
+- iso3: BLZ
+  iso2: BZ
+  m49: 84
+  name: {en: Belize, fr: Belize, fr_def: le Belize}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-09-09}
+  gov_sources: []
+
+- iso3: BOL
+  iso2: BO
+  m49: 68
+  name: {en: Bolivia (Plurinational State of), fr: Bolivie (État plurinational de), fr_def: 'l''État plurinational de Bolivie'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2010-12-17}
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores, url: 'https://cancilleria.gob.bo/mre/', type: mfa, lang: [es]}
+    - {label: Presidencia del Estado Plurinacional de Bolivia, url: 'https://presidencia.gob.bo/', type: head_of_government, lang: [es]}
+  notes: >-
+    name.fr_def is the UNTERM French formal name (l'État plurinational de Bolivie): the UNTERM
+    French short name "Bolivie (État plurinational de)" carries no article. gov_sources checked
+    2026-09-28: https://cancilleria.gob.bo/mre/; https://presidencia.gob.bo/ answered 200.
+
+- iso3: BRA
+  iso2: BR
+  m49: 76
+  name: {en: Brazil, fr: Brésil, fr_def: le Brésil}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2022-01-01, to: 2023-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: true
+  recognises_palestine:
+    since: 2011-12-03
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 1 December 2010.
+  gov_sources:
+    - {label: 'Ministério das Relações Exteriores', url: 'https://www.gov.br/mre/pt-br', type: mfa, lang: [pt]}
+    - {label: 'Presidência da República (Planalto)', url: 'https://www.gov.br/planalto/pt-br', type: head_of_government, lang: [pt]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.gov.br/mre/pt-br; https://www.gov.br/planalto/pt-br
+    answered 200.
+
+- iso3: BRB
+  iso2: BB
+  m49: 52
+  name: {en: Barbados, fr: Barbade, fr_def: la Barbade}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-04-19
+    note: >-
+      Recognition dated 2024-04-19 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: BRN
+  iso2: BN
+  m49: 96
+  name: {en: Brunei Darussalam, fr: Brunéi Darussalam, fr_def: le Brunéi Darussalam}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-17}
+  gov_sources: []
+
+- iso3: BTN
+  iso2: BT
+  m49: 64
+  name: {en: Bhutan, fr: Bhoutan, fr_def: le Bhoutan}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-25}
+  gov_sources: []
+
+- iso3: BWA
+  iso2: BW
+  m49: 72
+  name: {en: Botswana, fr: Botswana, fr_def: le Botswana}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-19}
+  gov_sources: []
+
+- iso3: CAF
+  iso2: CF
+  m49: 140
+  name: {en: Central African Republic, fr: République centrafricaine, fr_def: la République centrafricaine}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-23}
+  gov_sources: []
+
+- iso3: CAN
+  iso2: CA
+  m49: 124
+  name: {en: Canada, fr: Canada, fr_def: le Canada}
+  region: Americas
+  subregion: Northern America
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: 2025-09-21
+    note: >-
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: Global Affairs Canada, url: 'https://international.canada.ca/en/global-affairs', type: mfa, lang: [en]}
+    - {label: Prime Minister of Canada, url: 'https://www.pm.gc.ca/en', type: head_of_government, lang: [en, fr]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://international.canada.ca/en/global-affairs;
+    https://www.pm.gc.ca/en answered 200.
+
+- iso3: CHE
+  iso2: CH
+  m49: 756
+  name: {en: Switzerland, fr: Suisse, fr_def: la Suisse}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2023-01-01, to: 2024-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Federal Department of Foreign Affairs, url: 'https://www.eda.admin.ch/eda/en/home.html', type: mfa, lang: [en]}
+    - {label: Swiss Federal Council, url: 'https://www.admin.ch/gov/en/start.html', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: checked by Wayback: https://www.eda.admin.ch/eda/en/home.html
+    (Wayback capture of 2026-02-17; the direct request was refused with HTTP 403);
+    https://www.admin.ch/gov/en/start.html (Wayback capture of 2026-04-08; the direct request was
+    refused with HTTP 403).
+
+- iso3: CHL
+  iso2: CL
+  m49: 152
+  name: {en: Chile, fr: Chili, fr_def: le Chili}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-01-07}
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores, url: 'https://www.minrel.gob.cl/', type: mfa, lang: [es]}
+    - {label: Gobierno de Chile, url: 'https://www.gob.cl/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.minrel.gob.cl/ answered 200; checked by Wayback:
+    https://www.gob.cl/ (Wayback capture of 2026-04-05; the direct request was refused with HTTP 403
+    by a bot check).
+
+- iso3: CHN
+  iso2: CN
+  m49: 156
+  name: {en: China, fr: Chine, fr_def: la Chine}
+  region: Asia
+  subregion: Eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 1945-10-24, to: null, permanent: true}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: true
+  recognises_palestine: {since: 1988-11-20}
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of the People''s Republic of China', url: 'https://www.fmprc.gov.cn/eng/', type: mfa, lang: [en]}
+    - {label: The State Council, url: 'https://english.www.gov.cn/', type: head_of_government, lang: [en]}
+  notes: >-
+    Permanent seat of China (UN Charter Art. 23), held by the People's Republic of China since
+    A/RES/2758 (XXVI) of 25 October 1971; recorded from 1945-10-24 as for the other permanent
+    members. gov_sources checked 2026-09-28: https://www.fmprc.gov.cn/eng/;
+    https://english.www.gov.cn/ answered 200.
+
+- iso3: CIV
+  iso2: CI
+  m49: 384
+  name: {en: 'Côte d''Ivoire', fr: 'Côte d''Ivoire', fr_def: 'la Côte d''Ivoire'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2008-12-01}
+  gov_sources: []
+
+- iso3: CMR
+  iso2: CM
+  m49: 120
+  name: {en: Cameroon, fr: Cameroun, fr_def: le Cameroun}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: COD
+  iso2: CD
+  m49: 180
+  name: {en: Democratic Republic of the Congo, fr: République démocratique du Congo, fr_def: la République démocratique du Congo}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2026-01-01, to: 2027-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-18}
+  gov_sources: []
+
+- iso3: COG
+  iso2: CG
+  m49: 178
+  name: {en: Congo, fr: Congo, fr_def: le Congo}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-05}
+  gov_sources: []
+
+- iso3: COL
+  iso2: CO
+  m49: 170
+  name: {en: Colombia, fr: Colombie, fr_def: la Colombie}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2026-01-01, to: 2027-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2018-08-03}
+  gov_sources:
+    - {label: 'Cancillería, Ministerio de Relaciones Exteriores', url: 'https://www.cancilleria.gov.co/', type: mfa, lang: [es]}
+    - {label: 'Presidencia de la República', url: 'https://www.presidencia.gov.co/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.cancilleria.gov.co/ answered 200; checked by
+    Wayback: https://www.presidencia.gov.co/ (Wayback capture of 2026-09-20; the direct request got
+    a page that needs JavaScript).
+
+- iso3: COM
+  iso2: KM
+  m49: 174
+  name: {en: Comoros, fr: Comores, fr_def: les Comores}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: CPV
+  iso2: CV
+  m49: 132
+  name: {en: Cabo Verde, fr: Cabo Verde, fr_def: Cabo Verde}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-24}
+  gov_sources: []
+
+- iso3: CRI
+  iso2: CR
+  m49: 188
+  name: {en: Costa Rica, fr: Costa Rica, fr_def: le Costa Rica}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2008-02-05}
+  gov_sources: []
+
+- iso3: CUB
+  iso2: CU
+  m49: 192
+  name: {en: Cuba, fr: Cuba, fr_def: Cuba}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: CYP
+  iso2: CY
+  m49: 196
+  name: {en: Cyprus, fr: Chypre, fr_def: Chypre}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources: []
+
+- iso3: CZE
+  iso2: CZ
+  m49: 203
+  name: {en: Czechia, fr: Tchéquie, fr_def: la Tchéquie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 1988-11-18
+    note: >-
+      A/78/846 (annex) lists the Czech Republic from the recognition by Czechoslovakia on 18
+      November 1988; the Czech Republic declared on its independence that it would continue the
+      recognitions of Czechoslovakia, and the Ministry of Foreign Affairs lists an Embassy of the
+      State of Palestine. Its position is described as disputed in several lists (Wikipedia, AFP
+      count of July 2025). P-14 confirms it from an official Czech document.
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of the Czech Republic, url: 'https://mzv.gov.cz/en/', type: mfa, lang: [en]}
+    - {label: Government of the Czech Republic, url: 'https://vlada.gov.cz/en/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://mzv.gov.cz/en/; https://vlada.gov.cz/en/ answered 200.
 
 - iso3: DEU
   iso2: DE
   m49: 276
-  name: {en: Germany, fr: Allemagne}
+  name: {en: Germany, fr: Allemagne, fr_def: 'l''Allemagne'}
   region: Europe
   subregion: Western Europe
   un_member: true
@@ -49,10 +1150,949 @@
     https://www.bundesanzeiger.de redirects to /pub/de/start; the English versions of the Federal
     Foreign Office (/en) and the Bundesregierung (/breg-en) respond.
 
+- iso3: DJI
+  iso2: DJ
+  m49: 262
+  name: {en: Djibouti, fr: Djibouti, fr_def: Djibouti}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-17}
+  gov_sources: []
+
+- iso3: DMA
+  iso2: DM
+  m49: 212
+  name: {en: Dominica, fr: Dominique, fr_def: la Dominique}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-09-19}
+  gov_sources: []
+
+- iso3: DNK
+  iso2: DK
+  m49: 208
+  name: {en: Denmark, fr: Danemark, fr_def: le Danemark}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2025-01-01, to: 2026-12-31, permanent: false}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of Denmark, url: 'https://um.dk/en', type: mfa, lang: [en]}
+    - {label: Statsministeriet, url: 'https://stm.dk/', type: head_of_government, lang: [da]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://um.dk/en; https://stm.dk/ answered 200.
+
+- iso3: DOM
+  iso2: DO
+  m49: 214
+  name: {en: Dominican Republic, fr: République dominicaine, fr_def: la République dominicaine}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2009-07-15}
+  gov_sources: []
+
+- iso3: DZA
+  iso2: DZ
+  m49: 12
+  name: {en: Algeria, fr: Algérie, fr_def: 'l''Algérie'}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2024-01-01, to: 2025-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.gov.dz/', type: mfa, lang: [en]}
+    - {label: Présidence de la République, url: 'https://www.el-mouradia.dz/', type: head_of_state, lang: [ar, fr]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mfa.gov.dz/ answered 200; checked by Wayback:
+    https://www.el-mouradia.dz/ (Wayback capture of 2026-01-29; the direct request got no response).
+
+- iso3: ECU
+  iso2: EC
+  m49: 218
+  name: {en: Ecuador, fr: Équateur, fr_def: 'l''Équateur'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2023-01-01, to: 2024-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2010-12-27
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 24 December 2010.
+  gov_sources: []
+
+- iso3: EGY
+  iso2: EG
+  m49: 818
+  name: {en: Egypt, fr: Égypte, fr_def: 'l''Égypte'}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics:
+      since: 2024-01-01
+      note: >-
+        Admitted by the Johannesburg Declaration of August 2023, membership effective 1 January 2024
+        (BRICS Brasil 2025 site, "About the BRICS").
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.gov.eg/', type: mfa, lang: [ar]}
+    - {label: Cabinet of Egypt, url: 'https://www.cabinet.gov.eg/', type: head_of_government, lang: [ar]}
+    - {label: Presidency of the Arab Republic of Egypt, url: 'https://www.presidency.eg/en/', type: head_of_state, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mfa.gov.eg/; https://www.cabinet.gov.eg/ answered
+    200; checked by Wayback: https://www.presidency.eg/en/ (Wayback capture of 2026-09-25; the
+    direct request was refused with HTTP 403).
+
+- iso3: ERI
+  iso2: ER
+  m49: 232
+  name: {en: Eritrea, fr: Érythrée, fr_def: 'l''Érythrée'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: ESP
+  iso2: ES
+  m49: 724
+  name: {en: Spain, fr: Espagne, fr_def: 'l''Espagne'}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-05-28
+    note: >-
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: 'Ministerio de Asuntos Exteriores, Unión Europea y Cooperación', url: 'https://www.exteriores.gob.es/es/Paginas/index.aspx', type: mfa, lang: [es]}
+    - {label: 'La Moncloa, Presidencia del Gobierno', url: 'https://www.lamoncloa.gob.es/Paginas/index.aspx', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.exteriores.gob.es/es/Paginas/index.aspx;
+    https://www.lamoncloa.gob.es/Paginas/index.aspx answered 200.
+
+- iso3: EST
+  iso2: EE
+  m49: 233
+  name: {en: Estonia, fr: Estonie, fr_def: 'l''Estonie'}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: ETH
+  iso2: ET
+  m49: 231
+  name: {en: Ethiopia, fr: Éthiopie, fr_def: 'l''Éthiopie'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics:
+      since: 2024-01-01
+      note: >-
+        Admitted by the Johannesburg Declaration of August 2023, membership effective 1 January 2024
+        (BRICS Brasil 2025 site, "About the BRICS").
+  recognises_palestine: {since: 1989-02-04}
+  gov_sources: []
+
+- iso3: FIN
+  iso2: FI
+  m49: 246
+  name: {en: Finland, fr: Finlande, fr_def: la Finlande}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+  notes: >-
+    NATO: instrument of accession deposited on 4 April 2023, before the window (NATO member
+    countries page, read 2026-09-28).
+
+- iso3: FJI
+  iso2: FJ
+  m49: 242
+  name: {en: Fiji, fr: Fidji, fr_def: les Fidji}
+  region: Oceania
+  subregion: Melanesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: FRA
+  iso2: FR
+  m49: 250
+  name: {en: France, fr: France, fr_def: la France}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 1945-10-24, to: null, permanent: true}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: 2025-09-22
+    note: >-
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: 'Ministère de l''Europe et des Affaires étrangères', url: 'https://www.diplomatie.gouv.fr/fr/', type: mfa, lang: [fr, en, de]}
+    - {label: Gouvernement (Premier ministre), url: 'https://www.info.gouv.fr/', type: head_of_government, lang: [fr]}
+    - {label: Présidence de la République (Élysée), url: 'https://www.elysee.fr/', type: head_of_state, lang: [fr, en, de]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.diplomatie.gouv.fr/fr/ answered 200; checked by
+    Wayback: https://www.info.gouv.fr/ (Wayback capture of 2026-09-12; the direct request was
+    refused with HTTP 403 by a bot check); https://www.elysee.fr/ (Wayback capture of 2026-09-19;
+    the direct request answered HTTP 404).
+
+- iso3: FSM
+  iso2: FM
+  m49: 583
+  name: {en: Micronesia (Federated States of), fr: Micronésie (États fédérés de), fr_def: les États fédérés de Micronésie}
+  region: Oceania
+  subregion: Micronesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+  notes: >-
+    name.fr_def is the UNTERM French formal name (les États fédérés de Micronésie): the UNTERM
+    French short name "Micronésie (États fédérés de)" carries no article.
+
+- iso3: GAB
+  iso2: GA
+  m49: 266
+  name: {en: Gabon, fr: Gabon, fr_def: le Gabon}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2022-01-01, to: 2023-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-12}
+  gov_sources: []
+
+- iso3: GBR
+  iso2: GB
+  m49: 826
+  name: {en: United Kingdom of Great Britain and Northern Ireland, fr: 'Royaume-Uni de Grande-Bretagne et d''Irlande du Nord', fr_def: 'le Royaume-Uni de Grande-Bretagne et d''Irlande du Nord'}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 1945-10-24, to: null, permanent: true}
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: 2025-09-21
+    note: >-
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: 'Foreign, Commonwealth & Development Office', url: 'https://www.gov.uk/government/organisations/foreign-commonwealth-development-office', type: mfa, lang: [en]}
+    - {label: 'Prime Minister''s Office, 10 Downing Street', url: 'https://www.gov.uk/government/organisations/prime-ministers-office-10-downing-street', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28:
+    https://www.gov.uk/government/organisations/foreign-commonwealth-development-office;
+    https://www.gov.uk/government/organisations/prime-ministers-office-10-downing-street answered
+    200.
+
+- iso3: GEO
+  iso2: GE
+  m49: 268
+  name: {en: Georgia, fr: Géorgie, fr_def: la Géorgie}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1992-04-25}
+  gov_sources: []
+
+- iso3: GHA
+  iso2: GH
+  m49: 288
+  name: {en: Ghana, fr: Ghana, fr_def: le Ghana}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2022-01-01, to: 2023-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-29}
+  gov_sources: []
+
+- iso3: GIN
+  iso2: GN
+  m49: 324
+  name: {en: Guinea, fr: Guinée, fr_def: la Guinée}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: GMB
+  iso2: GM
+  m49: 270
+  name: {en: Gambia, fr: Gambie, fr_def: la Gambie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources: []
+
+- iso3: GNB
+  iso2: GW
+  m49: 624
+  name: {en: Guinea-Bissau, fr: Guinée-Bissau, fr_def: la Guinée-Bissau}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: GNQ
+  iso2: GQ
+  m49: 226
+  name: {en: Equatorial Guinea, fr: Guinée équatoriale, fr_def: la Guinée équatoriale}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 1989-05-01
+    note: >-
+      A/78/846 (annex) gives the month only (May 1989); the first day of the month is recorded.
+  gov_sources: []
+
+- iso3: GRC
+  iso2: GR
+  m49: 300
+  name: {en: Greece, fr: Grèce, fr_def: la Grèce}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2025-01-01, to: 2026-12-31, permanent: false}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.gr/en/', type: mfa, lang: [en]}
+    - {label: Prime Minister of the Hellenic Republic, url: 'https://www.primeminister.gr/', type: head_of_government, lang: [el, en]}
+  notes: >-
+    gov_sources checked 2026-09-28: checked by Wayback: https://www.mfa.gr/en/ (Wayback capture of
+    2026-09-17; the direct request was refused with HTTP 403); https://www.primeminister.gr/
+    (Wayback capture of 2026-08-31; the direct request was refused with HTTP 403).
+
+- iso3: GRD
+  iso2: GD
+  m49: 308
+  name: {en: Grenada, fr: Grenade, fr_def: la Grenade}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-09-25}
+  gov_sources: []
+
+- iso3: GTM
+  iso2: GT
+  m49: 320
+  name: {en: Guatemala, fr: Guatemala, fr_def: le Guatemala}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2013-04-09}
+  gov_sources: []
+
+- iso3: GUY
+  iso2: GY
+  m49: 328
+  name: {en: Guyana, fr: Guyana, fr_def: le Guyana}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2024-01-01, to: 2025-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-01-13}
+  gov_sources: []
+
+- iso3: HND
+  iso2: HN
+  m49: 340
+  name: {en: Honduras, fr: Honduras, fr_def: le Honduras}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-08-26}
+  gov_sources: []
+
+- iso3: HRV
+  iso2: HR
+  m49: 191
+  name: {en: Croatia, fr: Croatie, fr_def: la Croatie}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: HTI
+  iso2: HT
+  m49: 332
+  name: {en: Haiti, fr: 'Haïti', fr_def: 'Haïti'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2013-09-27}
+  gov_sources: []
+
+- iso3: HUN
+  iso2: HU
+  m49: 348
+  name: {en: Hungary, fr: Hongrie, fr_def: la Hongrie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-23}
+  gov_sources:
+    - {label: 'Külügyminisztérium', url: 'https://kormany.hu/kulugyminiszterium', type: mfa, lang: [hu]}
+    - {label: 'Magyarország Kormánya', url: 'https://kormany.hu/', type: head_of_government, lang: [hu]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://kormany.hu/kulugyminiszterium; https://kormany.hu/
+    answered 200.
+
+- iso3: IDN
+  iso2: ID
+  m49: 360
+  name: {en: Indonesia, fr: Indonésie, fr_def: 'l''Indonésie'}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: true
+    g7: false
+    brics:
+      since: 2025-01-06
+      note: >-
+        Formal admission as a full member announced by the Brazilian BRICS chair on 6 January 2025
+        (gov.br/planalto).
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources:
+    - {label: Kementerian Luar Negeri, url: 'https://kemlu.go.id/', type: mfa, lang: [id]}
+    - {label: Presiden Republik Indonesia, url: 'https://www.presidenri.go.id/', type: head_of_government, lang: [id]}
+    - {label: Sekretariat Kabinet (Cabinet Secretariat), url: 'https://setkab.go.id/en/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://setkab.go.id/en/ answered 200; checked by Wayback:
+    https://kemlu.go.id/ (Wayback capture of 2026-08-31; the direct request got a page that needs
+    JavaScript); https://www.presidenri.go.id/ (Wayback capture of 2025-04-24; the direct request
+    was refused with HTTP 403 by a bot check).
+
+- iso3: IND
+  iso2: IN
+  m49: 356
+  name: {en: India, fr: Inde, fr_def: 'l''Inde'}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: true
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources:
+    - {label: Ministry of External Affairs, url: 'https://www.mea.gov.in/', type: mfa, lang: [en]}
+    - {label: 'Prime Minister''s Office', url: 'https://www.pmindia.gov.in/en/', type: head_of_government, lang: [en, hi]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mea.gov.in/; https://www.pmindia.gov.in/en/ answered
+    200.
+
+- iso3: IRL
+  iso2: IE
+  m49: 372
+  name: {en: Ireland, fr: Irlande, fr_def: 'l''Irlande'}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-05-28
+    note: >-
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: Department of Foreign Affairs and Trade, url: 'https://www.ireland.ie/en/dfa/', type: mfa, lang: [en]}
+    - {label: Department of the Taoiseach, url: 'https://www.gov.ie/en/department-of-the-taoiseach/', type: head_of_government, lang: [en, ga]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.ireland.ie/en/dfa/;
+    https://www.gov.ie/en/department-of-the-taoiseach/ answered 200.
+
+- iso3: IRN
+  iso2: IR
+  m49: 364
+  name: {en: Iran (Islamic Republic of), fr: 'Iran (République islamique d'')', fr_def: 'la République islamique d''Iran'}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics:
+      since: 2024-01-01
+      note: >-
+        Admitted by the Johannesburg Declaration of August 2023, membership effective 1 January 2024
+        (BRICS Brasil 2025 site, "About the BRICS").
+  recognises_palestine:
+    since: 1989-02-04
+    note: >-
+      A/78/846 (annex) gives 4 February 1988, before the declaration of 15 November 1988; 4 February
+      1989 is the date of other lists (Wikipedia).
+  gov_sources: []
+  notes: >-
+    name.fr_def is the UNTERM French formal name (la République islamique d'Iran): the UNTERM French
+    short name "Iran (République islamique d')" carries no article. Scored like every other country;
+    direct hostilities are outside the scale (docs/07).
+
+- iso3: IRQ
+  iso2: IQ
+  m49: 368
+  name: {en: Iraq, fr: Iraq, fr_def: 'l''Iraq'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: ISL
+  iso2: IS
+  m49: 352
+  name: {en: Iceland, fr: Islande, fr_def: 'l''Islande'}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-12-15}
+  gov_sources: []
+
 - iso3: ISR
   iso2: IL
   m49: 376
-  name: {en: Israel, fr: Israël}
+  name: {en: Israel, fr: 'Israël', fr_def: 'Israël'}
   region: Asia
   subregion: Western Asia
   un_member: true
@@ -78,10 +2118,1489 @@
   gov_sources: []
   notes: Excluded from the ranking (D-10); no country page in v1.
 
+- iso3: ITA
+  iso2: IT
+  m49: 380
+  name: {en: Italy, fr: Italie, fr_def: 'l''Italie'}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministero degli Affari Esteri e della Cooperazione Internazionale, url: 'https://www.esteri.it/it/', type: mfa, lang: [it, en]}
+    - {label: Presidenza del Consiglio dei Ministri, url: 'https://www.governo.it/it', type: head_of_government, lang: [it]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.esteri.it/it/; https://www.governo.it/it answered
+    200.
+
+- iso3: JAM
+  iso2: JM
+  m49: 388
+  name: {en: Jamaica, fr: 'Jamaïque', fr_def: 'la Jamaïque'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-04-22
+    note: >-
+      Recognition dated 2024-04-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: JOR
+  iso2: JO
+  m49: 400
+  name: {en: Jordan, fr: Jordanie, fr_def: la Jordanie}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and Expatriates, url: 'https://www.mfa.gov.jo/', type: mfa, lang: [ar]}
+    - {label: Prime Ministry, url: 'https://www.pm.gov.jo/Default/Ar', type: head_of_government, lang: [ar]}
+    - {label: The Royal Hashemite Court, url: 'https://rhc.jo/en', type: head_of_state, lang: [en, ar]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mfa.gov.jo/; https://www.pm.gov.jo/Default/Ar;
+    https://rhc.jo/en answered 200.
+
+- iso3: JPN
+  iso2: JP
+  m49: 392
+  name: {en: Japan, fr: Japon, fr_def: le Japon}
+  region: Asia
+  subregion: Eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2023-01-01, to: 2024-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of Japan, url: 'https://www.mofa.go.jp/', type: mfa, lang: [en]}
+    - {label: 'Prime Minister''s Office of Japan', url: 'https://japan.kantei.go.jp/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://japan.kantei.go.jp/ answered 200; checked by Wayback:
+    https://www.mofa.go.jp/ (Wayback capture of 2026-09-11; the direct request was refused with HTTP
+    403).
+
+- iso3: KAZ
+  iso2: KZ
+  m49: 398
+  name: {en: Kazakhstan, fr: Kazakhstan, fr_def: le Kazakhstan}
+  region: Asia
+  subregion: Central Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1992-04-06}
+  gov_sources: []
+
+- iso3: KEN
+  iso2: KE
+  m49: 404
+  name: {en: Kenya, fr: Kenya, fr_def: le Kenya}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1989-05-12}
+  gov_sources: []
+
+- iso3: KGZ
+  iso2: KG
+  m49: 417
+  name: {en: Kyrgyzstan, fr: Kirghizistan, fr_def: le Kirghizistan}
+  region: Asia
+  subregion: Central Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2027-01-01, to: 2028-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 1995-11-01
+    note: >-
+      A/78/846 (annex) gives the month only (November 1995); the first day of the month is recorded.
+  gov_sources: []
+
+- iso3: KHM
+  iso2: KH
+  m49: 116
+  name: {en: Cambodia, fr: Cambodge, fr_def: le Cambodge}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: KIR
+  iso2: KI
+  m49: 296
+  name: {en: Kiribati, fr: Kiribati, fr_def: Kiribati}
+  region: Oceania
+  subregion: Micronesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: KNA
+  iso2: KN
+  m49: 659
+  name: {en: Saint Kitts and Nevis, fr: Saint-Kitts-et-Nevis, fr_def: Saint-Kitts-et-Nevis}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2019-07-29}
+  gov_sources: []
+
+- iso3: KOR
+  iso2: KR
+  m49: 410
+  name: {en: Republic of Korea, fr: République de Corée, fr_def: la République de Corée}
+  region: Asia
+  subregion: Eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2024-01-01, to: 2025-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mofa.go.kr/eng/index.do', type: mfa, lang: [en]}
+    - {label: Office of the President, url: 'https://www.president.go.kr/', type: head_of_government, lang: [ko]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.president.go.kr/ answered 200; checked by Wayback:
+    https://www.mofa.go.kr/eng/index.do (Wayback capture of 2026-09-11; the direct request ended in
+    a redirect loop).
+
+- iso3: KWT
+  iso2: KW
+  m49: 414
+  name: {en: Kuwait, fr: 'Koweït', fr_def: 'le Koweït'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: LAO
+  iso2: LA
+  m49: 418
+  name: {en: 'Lao People''s Democratic Republic', fr: République démocratique populaire lao, fr_def: la République démocratique populaire lao}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-02}
+  gov_sources: []
+
+- iso3: LBN
+  iso2: LB
+  m49: 422
+  name: {en: Lebanon, fr: Liban, fr_def: le Liban}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2008-11-30}
+  gov_sources: []
+  notes: >-
+    Scored like every other country; direct hostilities are outside the scale (docs/07).
+
+- iso3: LBR
+  iso2: LR
+  m49: 430
+  name: {en: Liberia, fr: Libéria, fr_def: le Libéria}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2026-01-01, to: 2027-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-07-19}
+  gov_sources: []
+
+- iso3: LBY
+  iso2: LY
+  m49: 434
+  name: {en: Libya, fr: Libye, fr_def: la Libye}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: LCA
+  iso2: LC
+  m49: 662
+  name: {en: Saint Lucia, fr: Sainte-Lucie, fr_def: Sainte-Lucie}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2015-09-14}
+  gov_sources: []
+
+- iso3: LIE
+  iso2: LI
+  m49: 438
+  name: {en: Liechtenstein, fr: Liechtenstein, fr_def: le Liechtenstein}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      Intent stated only; no recognition found as of 2026-09-28 (docs/06 §8).
+  gov_sources: []
+
+- iso3: LKA
+  iso2: LK
+  m49: 144
+  name: {en: Sri Lanka, fr: Sri Lanka, fr_def: Sri Lanka}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources: []
+
+- iso3: LSO
+  iso2: LS
+  m49: 426
+  name: {en: Lesotho, fr: Lesotho, fr_def: le Lesotho}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-05-03}
+  gov_sources: []
+
+- iso3: LTU
+  iso2: LT
+  m49: 440
+  name: {en: Lithuania, fr: Lituanie, fr_def: la Lituanie}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: LUX
+  iso2: LU
+  m49: 442
+  name: {en: Luxembourg, fr: Luxembourg, fr_def: le Luxembourg}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-22
+    note: >-
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: LVA
+  iso2: LV
+  m49: 428
+  name: {en: Latvia, fr: Lettonie, fr_def: la Lettonie}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2026-01-01, to: 2027-12-31, permanent: false}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: MAR
+  iso2: MA
+  m49: 504
+  name: {en: Morocco, fr: Maroc, fr_def: le Maroc}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources:
+    - {label: 'Ministère des Affaires étrangères, de la Coopération africaine et des Marocains résidant à l''étranger', url: 'https://diplomatie.ma/', type: mfa, lang: [fr, ar, en, es]}
+    - {label: Chef du Gouvernement, url: 'https://www.cg.gov.ma/fr', type: head_of_government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://diplomatie.ma/ answered 200; checked by Wayback:
+    https://www.cg.gov.ma/fr (Wayback capture of 2025-08-15; the direct request was refused with
+    HTTP 403 by a bot check).
+
+- iso3: MCO
+  iso2: MC
+  m49: 492
+  name: {en: Monaco, fr: Monaco, fr_def: Monaco}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-22
+    note: >-
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: MDA
+  iso2: MD
+  m49: 498
+  name: {en: Republic of Moldova, fr: République de Moldova, fr_def: la République de Moldova}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: MDG
+  iso2: MG
+  m49: 450
+  name: {en: Madagascar, fr: Madagascar, fr_def: Madagascar}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: MDV
+  iso2: MV
+  m49: 462
+  name: {en: Maldives, fr: Maldives, fr_def: les Maldives}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-28}
+  gov_sources: []
+
+- iso3: MEX
+  iso2: MX
+  m49: 484
+  name: {en: Mexico, fr: Mexique, fr_def: le Mexique}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2023-06-02
+    note: >-
+      Uncertain. A/78/846 (annex, 9 April 2024) lists Mexico as recognising on 2 June 2023, the day
+      the Palestinian mission in Mexico became an embassy; President Sheinbaum said on 5 February
+      2025 that Mexico recognises the State of Palestine (Wikipedia dates the recognition to that
+      day) and received the credentials of a Palestinian ambassador in March 2025; docs/06 §8 lists
+      Mexico under 2025 with the date to confirm from the SRE. The date before 7 October 2023
+      decides between the pre-existing and the new B8 tier: P-14 confirms it from an official
+      Mexican document.
+  gov_sources:
+    - {label: 'Secretaría de Relaciones Exteriores', url: 'https://www.gob.mx/sre', type: mfa, lang: [es]}
+    - {label: 'Presidencia de la República', url: 'https://www.gob.mx/presidencia', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-09-28: checked by Wayback: https://www.gob.mx/sre (Wayback capture of
+    2026-09-12; the direct request got a script challenge page); https://www.gob.mx/presidencia
+    (Wayback capture of 2026-09-14; the direct request got a script challenge page).
+
+- iso3: MHL
+  iso2: MH
+  m49: 584
+  name: {en: Marshall Islands, fr: 'Îles Marshall', fr_def: 'les Îles Marshall'}
+  region: Oceania
+  subregion: Micronesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: MKD
+  iso2: MK
+  m49: 807
+  name: {en: North Macedonia, fr: Macédoine du Nord, fr_def: la Macédoine du Nord}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: MLI
+  iso2: ML
+  m49: 466
+  name: {en: Mali, fr: Mali, fr_def: le Mali}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-21}
+  gov_sources: []
+
+- iso3: MLT
+  iso2: MT
+  m49: 470
+  name: {en: Malta, fr: Malte, fr_def: Malte}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2023-01-01, to: 2024-12-31, permanent: false}
+    eu: true
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-22
+    note: >-
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv). A/78/846 (annex, 9 April 2024) lists Malta as
+      recognising on 16 November 1988; the Government of Malta announced its recognition on 22
+      September 2025, the date recorded here.
+  gov_sources: []
+
+- iso3: MMR
+  iso2: MM
+  m49: 104
+  name: {en: Myanmar, fr: Myanmar, fr_def: le Myanmar}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: MNE
+  iso2: ME
+  m49: 499
+  name: {en: Montenegro, fr: Monténégro, fr_def: le Monténégro}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2006-07-24}
+  gov_sources: []
+
+- iso3: MNG
+  iso2: MN
+  m49: 496
+  name: {en: Mongolia, fr: Mongolie, fr_def: la Mongolie}
+  region: Asia
+  subregion: Eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-22}
+  gov_sources: []
+
+- iso3: MOZ
+  iso2: MZ
+  m49: 508
+  name: {en: Mozambique, fr: Mozambique, fr_def: le Mozambique}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2023-01-01, to: 2024-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-08}
+  gov_sources: []
+
+- iso3: MRT
+  iso2: MR
+  m49: 478
+  name: {en: Mauritania, fr: Mauritanie, fr_def: la Mauritanie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: MUS
+  iso2: MU
+  m49: 480
+  name: {en: Mauritius, fr: Maurice, fr_def: Maurice}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-17}
+  gov_sources: []
+
+- iso3: MWI
+  iso2: MW
+  m49: 454
+  name: {en: Malawi, fr: Malawi, fr_def: le Malawi}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1998-10-23}
+  gov_sources: []
+
+- iso3: MYS
+  iso2: MY
+  m49: 458
+  name: {en: Malaysia, fr: Malaisie, fr_def: la Malaisie}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.kln.gov.my/', type: mfa, lang: [en]}
+    - {label: 'Prime Minister''s Office', url: 'https://www.pmo.gov.my/ms/', type: head_of_government, lang: [ms, en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.kln.gov.my/; https://www.pmo.gov.my/ms/ answered
+    200.
+
+- iso3: NAM
+  iso2: NA
+  m49: 516
+  name: {en: Namibia, fr: Namibie, fr_def: la Namibie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-19}
+  gov_sources: []
+
+- iso3: NER
+  iso2: NE
+  m49: 562
+  name: {en: Niger, fr: Niger, fr_def: le Niger}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-24}
+  gov_sources: []
+
+- iso3: NGA
+  iso2: NG
+  m49: 566
+  name: {en: Nigeria, fr: Nigéria, fr_def: le Nigéria}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://foreignaffairs.gov.ng/', type: mfa, lang: [en]}
+    - {label: State House, url: 'https://statehouse.gov.ng/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://foreignaffairs.gov.ng/; https://statehouse.gov.ng/
+    answered 200.
+
+- iso3: NIC
+  iso2: NI
+  m49: 558
+  name: {en: Nicaragua, fr: Nicaragua, fr_def: le Nicaragua}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: NLD
+  iso2: NL
+  m49: 528
+  name: {en: Netherlands (Kingdom of the), fr: Pays-Bas (Royaume des), fr_def: le Royaume des Pays-Bas}
+  region: Europe
+  subregion: Western Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.government.nl/ministries/ministry-of-foreign-affairs', type: mfa, lang: [en]}
+    - {label: Ministerie van Buitenlandse Zaken, url: 'https://www.rijksoverheid.nl/ministeries/ministerie-van-buitenlandse-zaken', type: mfa, lang: [nl]}
+    - {label: Ministry of General Affairs (Prime Minister), url: 'https://www.government.nl/ministries/ministry-of-general-affairs', type: head_of_government, lang: [en]}
+  notes: >-
+    name.fr_def is the UNTERM French formal name (le Royaume des Pays-Bas): the UNTERM French short
+    name "Pays-Bas (Royaume des)" carries no article. gov_sources checked 2026-09-28:
+    https://www.government.nl/ministries/ministry-of-foreign-affairs;
+    https://www.rijksoverheid.nl/ministeries/ministerie-van-buitenlandse-zaken;
+    https://www.government.nl/ministries/ministry-of-general-affairs answered 200.
+
+- iso3: NOR
+  iso2: NO
+  m49: 578
+  name: {en: Norway, fr: Norvège, fr_def: la Norvège}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-05-28
+    note: >-
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.regjeringen.no/en/dep/ud/id833/', type: mfa, lang: [en, nb]}
+    - {label: Office of the Prime Minister, url: 'https://www.regjeringen.no/en/dep/smk/id875/', type: head_of_government, lang: [en, nb]}
+  notes: >-
+    gov_sources checked 2026-09-28: checked by Wayback: https://www.regjeringen.no/en/dep/ud/id833/
+    (Wayback capture of 2026-09-11; the direct request was refused with HTTP 403 by a bot check);
+    https://www.regjeringen.no/en/dep/smk/id875/ (Wayback capture of 2026-09-27; the direct request
+    was refused with HTTP 403 by a bot check).
+
+- iso3: NPL
+  iso2: NP
+  m49: 524
+  name: {en: Nepal, fr: Népal, fr_def: le Népal}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-19}
+  gov_sources: []
+
+- iso3: NRU
+  iso2: NR
+  m49: 520
+  name: {en: Naoero, fr: Naoero, fr_def: Naoero}
+  region: Oceania
+  subregion: Micronesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: NZL
+  iso2: NZ
+  m49: 554
+  name: {en: New Zealand, fr: Nouvelle-Zélande, fr_def: la Nouvelle-Zélande}
+  region: Oceania
+  subregion: Australia and New Zealand
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      Intent stated only; no recognition found as of 2026-09-28 (docs/06 §8).
+  gov_sources: []
+
+- iso3: OMN
+  iso2: OM
+  m49: 512
+  name: {en: Oman, fr: Oman, fr_def: Oman}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-13}
+  gov_sources: []
+
+- iso3: PAK
+  iso2: PK
+  m49: 586
+  name: {en: Pakistan, fr: Pakistan, fr_def: le Pakistan}
+  region: Asia
+  subregion: Southern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2025-01-01, to: 2026-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: PAN
+  iso2: PA
+  m49: 591
+  name: {en: Panama, fr: Panama, fr_def: le Panama}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2025-01-01, to: 2026-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: PER
+  iso2: PE
+  m49: 604
+  name: {en: Peru, fr: Pérou, fr_def: le Pérou}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-01-24}
+  gov_sources: []
+
+- iso3: PHL
+  iso2: PH
+  m49: 608
+  name: {en: Philippines, fr: Philippines, fr_def: les Philippines}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1989-09-04}
+  gov_sources: []
+
+- iso3: PLW
+  iso2: PW
+  m49: 585
+  name: {en: Palau, fr: Palaos, fr_def: les Palaos}
+  region: Oceania
+  subregion: Micronesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: PNG
+  iso2: PG
+  m49: 598
+  name: {en: Papua New Guinea, fr: Papouasie-Nouvelle-Guinée, fr_def: la Papouasie-Nouvelle-Guinée}
+  region: Oceania
+  subregion: Melanesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      Disputed. A/78/846 (annex, 9 April 2024) lists Papua New Guinea as recognising on 13 January
+      1995 and Wikipedia gives 4 October 1994; in July 2025 AFP reported that the foreign secretary
+      of Papua New Guinea was not aware of any position by the country to establish relations with
+      Palestine. Left null until an official statement is found (P-14).
+  gov_sources: []
+
+- iso3: POL
+  iso2: PL
+  m49: 616
+  name: {en: Poland, fr: Pologne, fr_def: la Pologne}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-14}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.gov.pl/web/diplomacy', type: mfa, lang: [en]}
+    - {label: 'Kancelaria Prezesa Rady Ministrów', url: 'https://www.gov.pl/web/premier', type: head_of_government, lang: [pl]}
+  notes: >-
+    G20: listed among the "G20 Miami 2026 State Participants" by the United States presidency
+    (g20.org, read 2026-09-28); not a member of the G20. gov_sources checked 2026-09-28:
+    https://www.gov.pl/web/diplomacy; https://www.gov.pl/web/premier answered 200.
+
+- iso3: PRK
+  iso2: KP
+  m49: 408
+  name: {en: 'Democratic People''s Republic of Korea', fr: République populaire démocratique de Corée, fr_def: la République populaire démocratique de Corée}
+  region: Asia
+  subregion: Eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 1988-11-24
+    note: >-
+      Date from Wikipedia ("International recognition of Palestine", read 2026-09-28), which cites
+      A/78/846; the annex lists the Democratic People's Republic of Korea on 24 November 1988.
+  gov_sources: []
+
+- iso3: PRT
+  iso2: PT
+  m49: 620
+  name: {en: Portugal, fr: Portugal, fr_def: le Portugal}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2027-01-01, to: 2028-12-31, permanent: false}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-21
+    note: >-
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: PRY
+  iso2: PY
+  m49: 600
+  name: {en: Paraguay, fr: Paraguay, fr_def: le Paraguay}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2011-01-29
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 25 March 2005.
+  gov_sources: []
+
 - iso3: PSE
   iso2: PS
   m49: 275
-  name: {en: State of Palestine, fr: État de Palestine}
+  name: {en: State of Palestine, fr: État de Palestine, fr_def: 'l''État de Palestine'}
   region: Asia
   subregion: Western Asia
   un_member: false
@@ -116,3 +3635,1179 @@
     http://www.lasportal.org/ar/aboutlas/Pages/CountryData.aspx, 2025-03-24). OIC: listed as
     "State of PALESTINE, Member since 1969" on https://www.oic-oci.org/states/?lan=en (Wayback
     capture 2026-01-14).
+
+- iso3: QAT
+  iso2: QA
+  m49: 634
+  name: {en: Qatar, fr: Qatar, fr_def: le Qatar}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mofa.gov.qa/en', type: mfa, lang: [en]}
+    - {label: Amiri Diwan, url: 'https://www.diwan.gov.qa/', type: head_of_state, lang: [ar]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://mofa.gov.qa/en answered 200; checked by Wayback:
+    https://www.diwan.gov.qa/ (Wayback capture of 2026-09-12; the direct request got a page that
+    needs JavaScript).
+
+- iso3: ROU
+  iso2: RO
+  m49: 642
+  name: {en: Romania, fr: Roumanie, fr_def: la Roumanie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-24}
+  gov_sources: []
+
+- iso3: RUS
+  iso2: RU
+  m49: 643
+  name: {en: Russian Federation, fr: Fédération de Russie, fr_def: la Fédération de Russie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 1945-10-24, to: null, permanent: true}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: true
+  recognises_palestine: {since: 1988-11-19}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of the Russian Federation, url: 'https://mid.ru/en/', type: mfa, lang: [en]}
+    - {label: Government of Russia, url: 'http://government.ru/en/', type: head_of_government, lang: [en]}
+    - {label: President of Russia, url: 'http://en.kremlin.ru/', type: head_of_state, lang: [en, ru]}
+  notes: >-
+    Permanent seat held by the Russian Federation as continuing the membership of the USSR (December
+    1991); recorded from 1945-10-24 as for the other permanent members. gov_sources checked
+    2026-09-28: https://mid.ru/en/; http://government.ru/en/; http://en.kremlin.ru/ answered 200.
+
+- iso3: RWA
+  iso2: RW
+  m49: 646
+  name: {en: Rwanda, fr: Rwanda, fr_def: le Rwanda}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1989-01-02}
+  gov_sources: []
+
+- iso3: SAU
+  iso2: SA
+  m49: 682
+  name: {en: Saudi Arabia, fr: Arabie saoudite, fr_def: 'l''Arabie saoudite'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: true
+    g7: false
+    brics:
+      since: null
+      note: >-
+        Listed among the eleven members on the BRICS Brasil 2025 site (Wayback capture 2026-01-06),
+        but no statement by Saudi Arabia accepting the invitation of August 2023 was found as of
+        2026-09-28; not counted as a member until one is.
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mofa.gov.sa/en/Pages/default.aspx', type: mfa, lang: [en]}
+    - {label: Saudi Press Agency, url: 'https://www.spa.gov.sa/en', type: news_agency, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mofa.gov.sa/en/Pages/default.aspx;
+    https://www.spa.gov.sa/en answered 200. No website of the Royal Court or the Council of
+    Ministers was found; statements of both are published by the Saudi Press Agency.
+
+- iso3: SDN
+  iso2: SD
+  m49: 729
+  name: {en: Sudan, fr: Soudan, fr_def: le Soudan}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-17}
+  gov_sources: []
+
+- iso3: SEN
+  iso2: SN
+  m49: 686
+  name: {en: Senegal, fr: Sénégal, fr_def: le Sénégal}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-22}
+  gov_sources: []
+
+- iso3: SGP
+  iso2: SG
+  m49: 702
+  name: {en: Singapore, fr: Singapour, fr_def: Singapour}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: SLB
+  iso2: SB
+  m49: 90
+  name: {en: Solomon Islands, fr: 'Îles Salomon', fr_def: 'les Îles Salomon'}
+  region: Oceania
+  subregion: Melanesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: SLE
+  iso2: SL
+  m49: 694
+  name: {en: Sierra Leone, fr: Sierra Leone, fr_def: la Sierra Leone}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2024-01-01, to: 2025-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-03}
+  gov_sources: []
+
+- iso3: SLV
+  iso2: SV
+  m49: 222
+  name: {en: El Salvador, fr: El Salvador, fr_def: El Salvador}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-08-25}
+  gov_sources: []
+
+- iso3: SMR
+  iso2: SM
+  m49: 674
+  name: {en: San Marino, fr: Saint-Marin, fr_def: Saint-Marin}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2025-09-23
+    note: >-
+      Recognition dated 2025-09-23 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: SOM
+  iso2: SO
+  m49: 706
+  name: {en: Somalia, fr: Somalie, fr_def: la Somalie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2025-01-01, to: 2026-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: SRB
+  iso2: RS
+  m49: 688
+  name: {en: Serbia, fr: Serbie, fr_def: la Serbie}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: SSD
+  iso2: SS
+  m49: 728
+  name: {en: South Sudan, fr: Soudan du Sud, fr_def: le Soudan du Sud}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-07-14}
+  gov_sources: []
+
+- iso3: STP
+  iso2: ST
+  m49: 678
+  name: {en: Sao Tome and Principe, fr: Sao Tomé-et-Principe, fr_def: Sao Tomé-et-Principe}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-10}
+  gov_sources: []
+
+- iso3: SUR
+  iso2: SR
+  m49: 740
+  name: {en: Suriname, fr: Suriname, fr_def: le Suriname}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-01-26}
+  gov_sources: []
+
+- iso3: SVK
+  iso2: SK
+  m49: 703
+  name: {en: Slovakia, fr: Slovaquie, fr_def: la Slovaquie}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources: []
+
+- iso3: SVN
+  iso2: SI
+  m49: 705
+  name: {en: Slovenia, fr: Slovénie, fr_def: la Slovénie}
+  region: Europe
+  subregion: Southern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2024-01-01, to: 2025-12-31, permanent: false}
+    eu: true
+    nato: true
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-06-04
+    note: >-
+      Recognition dated 2024-06-04 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources:
+    - {label: Ministry of Foreign and European Affairs, url: 'https://www.gov.si/en/state-authorities/ministries/ministry-of-foreign-and-european-affairs/', type: mfa, lang: [en, sl]}
+    - {label: Government of the Republic of Slovenia, url: 'https://www.gov.si/en/state-authorities/government/', type: head_of_government, lang: [en, sl]}
+  notes: >-
+    gov_sources checked 2026-09-28:
+    https://www.gov.si/en/state-authorities/ministries/ministry-of-foreign-and-european-affairs/;
+    https://www.gov.si/en/state-authorities/government/ answered 200.
+
+- iso3: SWE
+  iso2: SE
+  m49: 752
+  name: {en: Sweden, fr: Suède, fr_def: la Suède}
+  region: Europe
+  subregion: Northern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: true
+    nato:
+      since: 2024-03-07
+      note: >-
+        Instrument of accession deposited on 7 March 2024 (NATO member countries page, read
+        2026-09-28).
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2014-10-30}
+  gov_sources:
+    - {label: Ministry for Foreign Affairs, url: 'https://www.government.se/government-of-sweden/ministry-for-foreign-affairs/', type: mfa, lang: [en]}
+    - {label: 'Prime Minister''s Office', url: 'https://www.government.se/government-of-sweden/prime-ministers-office/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: checked by Wayback:
+    https://www.government.se/government-of-sweden/ministry-for-foreign-affairs/ (Wayback capture of
+    2026-09-21; the direct request was refused with HTTP 403 by a bot check);
+    https://www.government.se/government-of-sweden/prime-ministers-office/ (Wayback capture of
+    2026-09-21; the direct request was refused with HTTP 403 by a bot check).
+
+- iso3: SWZ
+  iso2: SZ
+  m49: 748
+  name: {en: Eswatini, fr: Eswatini, fr_def: 'l''Eswatini'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1991-07-01}
+  gov_sources: []
+
+- iso3: SYC
+  iso2: SC
+  m49: 690
+  name: {en: Seychelles, fr: Seychelles, fr_def: les Seychelles}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-18}
+  gov_sources: []
+
+- iso3: SYR
+  iso2: SY
+  m49: 760
+  name: {en: Syrian Arab Republic, fr: République arabe syrienne, fr_def: la République arabe syrienne}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic:
+      since: 2025-03-07
+      note: >-
+        Member since 1972 (OIC member states page); membership suspended in 2012 and restored by the
+        20th extraordinary session of the Council of Foreign Ministers, Jeddah, 7 March 2025.
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-07-18}
+  gov_sources: []
+  notes: >-
+    Arab League: readmitted on 7 May 2023, before the window; listed among the member states on
+    lasportal.org (Wayback capture 2025-03-24). Scored like every other country; direct hostilities
+    are outside the scale (docs/07).
+
+- iso3: TCD
+  iso2: TD
+  m49: 148
+  name: {en: Chad, fr: Tchad, fr_def: le Tchad}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-01}
+  gov_sources: []
+
+- iso3: TGO
+  iso2: TG
+  m49: 768
+  name: {en: Togo, fr: Togo, fr_def: le Togo}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-29}
+  gov_sources: []
+
+- iso3: THA
+  iso2: TH
+  m49: 764
+  name: {en: Thailand, fr: 'Thaïlande', fr_def: 'la Thaïlande'}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2012-01-18}
+  gov_sources: []
+
+- iso3: TJK
+  iso2: TJ
+  m49: 762
+  name: {en: Tajikistan, fr: Tadjikistan, fr_def: le Tadjikistan}
+  region: Asia
+  subregion: Central Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1994-04-02}
+  gov_sources: []
+
+- iso3: TKM
+  iso2: TM
+  m49: 795
+  name: {en: Turkmenistan, fr: Turkménistan, fr_def: le Turkménistan}
+  region: Asia
+  subregion: Central Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1992-04-17}
+  gov_sources: []
+
+- iso3: TLS
+  iso2: TL
+  m49: 626
+  name: {en: Timor-Leste, fr: Timor-Leste, fr_def: le Timor-Leste}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2004-03-01}
+  gov_sources: []
+
+- iso3: TON
+  iso2: TO
+  m49: 776
+  name: {en: Tonga, fr: Tonga, fr_def: les Tonga}
+  region: Oceania
+  subregion: Polynesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: TTO
+  iso2: TT
+  m49: 780
+  name: {en: Trinidad and Tobago, fr: Trinité-et-Tobago, fr_def: la Trinité-et-Tobago}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2027-01-01, to: 2028-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2024-05-02
+    note: >-
+      Recognition dated 2024-05-02 in the seed list of docs/06 §8, the same date in the Wikipedia
+      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
+      official statement in P-14 (recognitions.csv).
+  gov_sources: []
+
+- iso3: TUN
+  iso2: TN
+  m49: 788
+  name: {en: Tunisia, fr: Tunisie, fr_def: la Tunisie}
+  region: Africa
+  subregion: Northern Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+
+- iso3: TUR
+  iso2: TR
+  m49: 792
+  name: {en: 'Türkiye', fr: 'Türkiye', fr_def: 'la Türkiye'}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: true
+    arab_league: false
+    oic: true
+    g20: true
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.gov.tr/default.en.mfa', type: mfa, lang: [en]}
+    - {label: 'Presidency of the Republic of Türkiye', url: 'https://www.tccb.gov.tr/en/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.mfa.gov.tr/default.en.mfa answered 200; checked by
+    Wayback: https://www.tccb.gov.tr/en/ (Wayback capture of 2026-09-06; the direct request ended in
+    a redirect loop).
+
+- iso3: TUV
+  iso2: TV
+  m49: 798
+  name: {en: Tuvalu, fr: Tuvalu, fr_def: les Tuvalu}
+  region: Oceania
+  subregion: Polynesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: TZA
+  iso2: TZ
+  m49: 834
+  name: {en: United Republic of Tanzania, fr: République-Unie de Tanzanie, fr_def: la République-Unie de Tanzanie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-24}
+  gov_sources: []
+
+- iso3: UGA
+  iso2: UG
+  m49: 800
+  name: {en: Uganda, fr: Ouganda, fr_def: 'l''Ouganda'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-12-03}
+  gov_sources: []
+
+- iso3: UKR
+  iso2: UA
+  m49: 804
+  name: {en: Ukraine, fr: Ukraine, fr_def: 'l''Ukraine'}
+  region: Europe
+  subregion: Eastern Europe
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-19}
+  gov_sources: []
+
+- iso3: URY
+  iso2: UY
+  m49: 858
+  name: {en: Uruguay, fr: Uruguay, fr_def: 'l''Uruguay'}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2011-03-16
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 15 March 2011.
+  gov_sources: []
+
+- iso3: USA
+  iso2: US
+  m49: 840
+  name: {en: United States of America, fr: 'États-Unis d''Amérique', fr_def: 'les États-Unis d''Amérique'}
+  region: Americas
+  subregion: Northern America
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 1945-10-24, to: null, permanent: true}
+    eu: false
+    nato: true
+    arab_league: false
+    oic: false
+    g20: true
+    g7: true
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources:
+    - {label: U.S. Department of State, url: 'https://www.state.gov/', type: mfa, lang: [en]}
+    - {label: The White House, url: 'https://www.whitehouse.gov/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-09-28: https://www.state.gov/; https://www.whitehouse.gov/ answered
+    200.
+
+- iso3: UZB
+  iso2: UZ
+  m49: 860
+  name: {en: Uzbekistan, fr: Ouzbékistan, fr_def: 'l''Ouzbékistan'}
+  region: Asia
+  subregion: Central Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1994-09-25}
+  gov_sources: []
+
+- iso3: VAT
+  iso2: VA
+  m49: 336
+  name: {en: Holy See, fr: Saint-Siège, fr_def: le Saint-Siège}
+  region: Europe
+  subregion: Southern Europe
+  un_member: false
+  observer: true
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: 2015-06-26
+    note: >-
+      A/78/846 (annex) dates the Holy See to 26 June 2015, the signature of the Comprehensive
+      Agreement between the Holy See and the State of Palestine; Wikipedia gives February 2013.
+  gov_sources: []
+
+- iso3: VCT
+  iso2: VC
+  m49: 670
+  name: {en: Saint Vincent and the Grenadines, fr: Saint-Vincent-et-les Grenadines, fr_def: Saint-Vincent-et-les Grenadines}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2011-08-29}
+  gov_sources: []
+
+- iso3: VEN
+  iso2: VE
+  m49: 862
+  name: {en: Venezuela (Bolivarian Republic of), fr: Venezuela (République bolivarienne du), fr_def: la République bolivarienne du Venezuela}
+  region: Americas
+  subregion: Latin America and the Caribbean
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 2009-04-27}
+  gov_sources: []
+  notes: >-
+    name.fr_def is the UNTERM French formal name (la République bolivarienne du Venezuela): the
+    UNTERM French short name "Venezuela (République bolivarienne du)" carries no article.
+
+- iso3: VNM
+  iso2: VN
+  m49: 704
+  name: {en: Viet Nam, fr: Viet Nam, fr_def: le Viet Nam}
+  region: Asia
+  subregion: South-eastern Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-19}
+  gov_sources: []
+
+- iso3: VUT
+  iso2: VU
+  m49: 548
+  name: {en: Vanuatu, fr: Vanuatu, fr_def: Vanuatu}
+  region: Oceania
+  subregion: Melanesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1989-08-21}
+  gov_sources: []
+
+- iso3: WSM
+  iso2: WS
+  m49: 882
+  name: {en: Samoa, fr: Samoa, fr_def: le Samoa}
+  region: Oceania
+  subregion: Polynesia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine:
+    since: null
+    note: >-
+      No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
+      among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
+  gov_sources: []
+
+- iso3: YEM
+  iso2: YE
+  m49: 887
+  name: {en: Yemen, fr: Yémen, fr_def: le Yémen}
+  region: Asia
+  subregion: Western Asia
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: true
+    oic: true
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-15}
+  gov_sources: []
+  notes: >-
+    Scored like every other country; direct hostilities are outside the scale (docs/07).
+
+- iso3: ZAF
+  iso2: ZA
+  m49: 710
+  name: {en: South Africa, fr: Afrique du Sud, fr_def: 'l''Afrique du Sud'}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: true
+    g7: false
+    brics: true
+  recognises_palestine: {since: 1995-02-15}
+  gov_sources:
+    - {label: Department of International Relations and Cooperation, url: 'https://dirco.gov.za/', type: mfa, lang: [en]}
+    - {label: The Presidency, url: 'https://www.thepresidency.gov.za/', type: head_of_government, lang: [en]}
+  notes: >-
+    G20: a founding member; the United States presidency of 2026 does not list South Africa among
+    the "G20 Miami 2026 State Participants" (g20.org, read 2026-09-28). Kept as a member.
+    gov_sources checked 2026-09-28: https://dirco.gov.za/; https://www.thepresidency.gov.za/
+    answered 200.
+
+- iso3: ZMB
+  iso2: ZM
+  m49: 894
+  name: {en: Zambia, fr: Zambie, fr_def: la Zambie}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc: []
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-16}
+  gov_sources: []
+
+- iso3: ZWE
+  iso2: ZW
+  m49: 716
+  name: {en: Zimbabwe, fr: Zimbabwe, fr_def: le Zimbabwe}
+  region: Africa
+  subregion: Sub-Saharan Africa
+  un_member: true
+  observer: false
+  excluded: false
+  memberships:
+    unsc:
+      - {from: 2027-01-01, to: 2028-12-31, permanent: false}
+    eu: false
+    nato: false
+    arab_league: false
+    oic: false
+    g20: false
+    g7: false
+    brics: false
+  recognises_palestine: {since: 1988-11-29}
+  gov_sources: []

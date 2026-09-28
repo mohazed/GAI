@@ -166,6 +166,11 @@ const CASES: Record<RuleId, Case> = {
       need(ds.countries[0], 'country').value.observer = true
     },
   },
+  'country.name-fr-def': {
+    memory: (ds) => {
+      need(ds.countries[0], 'country').value.name.fr_def = undefined
+    },
+  },
   // The fixtures list one scored country of 193: a warning on the unmodified fixtures.
   'country.universe-size': { memory: () => undefined },
 

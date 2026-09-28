@@ -141,6 +141,7 @@ All paths are relative to `/api/v1/`.
 | `manifest.json` | Git commit, methodology, build date, and size and SHA-256 of every other file |
 | `dumps/events.csv`, `dumps/sources.csv`, `dumps/assessments.csv` | Tables of events, sources and assessments |
 | `dumps/countries.csv`, `dumps/countries.scorecard.csv` | Every country at the build date, as the ranking table shows it, with and without scores |
+| `dumps/registry.csv` | The country registry: codes, names, regions, memberships, recognition of Palestine |
 | `dumps/scores-daily-{YYYY}.csv` | Daily scores, one file per year |
 | `dumps/gai-{YYYY-MM-DD}.json` | The whole published dataset at the build date |
 
@@ -1703,6 +1704,13 @@ ISR,Israel,Israël,Asia,true,,,,,,,,,,,,,,,,,,
 ```csv
 iso3,name_en,name_fr,region,excluded,coverage,has_events,none_found,no_data,unchecked,not_applicable,events,events_confirmed,events_corroborated,events_reported,events_disputed,events_A,events_B,events_C,events_D,events_E,latest_event
 DEU,Germany,Allemagne,Europe,false,0.1,3,0,0,27,1,0,0,0,0,0,0,0,0,0,0,
+```
+
+**`dumps/registry.csv`**: the country registry (`data/countries.yaml`) by ISO3, as the build publishes it: `iso2`, `m49`, the UNTERM short names `name_en` and `name_fr`, `name_fr_def` (the French short name with the article UNTERM gives it, "l'Allemagne", "la France"; the name alone when UNTERM gives none, "Cuba"), the M49 `region` and `subregion`, `un_member`, `observer`, `excluded`; `unsc` lists the Security Council terms as ISO 8601 intervals `from/to` joined with `;` (`..` for an open end: the permanent members' `1945-10-24/..`), `unsc_permanent` says whether one of them is permanent; each other membership is `true`, `false`, or a dated interval `since/until` when it began or ended after 7 October 2023 (Sweden's NATO membership is `2024-03-07/..`); `member_of` lists the memberships held at the build date, joined with `;`; `recognises_palestine_since` is the date in the registry, a lead for B8 until the recognitions table confirms it. Research notes and `gov_sources` are not published. Header and the DEU row of the real-data build:
+
+```csv
+iso3,iso2,m49,name_en,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,recognises_palestine_since
+DEU,DE,276,Germany,Allemagne,l'Allemagne,Europe,Western Europe,true,false,false,,false,true,true,false,false,true,true,false,eu;nato;g20;g7,
 ```
 
 **`dumps/scores-daily-{YYYY}.csv`**: one file per year, one row per date and scored country from 2023-10-07 to the build date, by date then ISO3; `score` to one decimal, `score_display`, `band`, `passivity_applied`, and the clipped category subtotals `A` to `E` in full precision. No coverage (section 2). Header and first two rows of `scores-daily-2026.csv` in the real-data build:

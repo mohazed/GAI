@@ -64,13 +64,14 @@ function downloadHolds(path: string, t: T): string {
   if (path.startsWith('dumps/gai-')) return t('dataPage.dl.gai')
   const keys: Record<
     string,
-    'events' | 'sources' | 'assessments' | 'countries' | 'countriesScorecard'
+    'events' | 'sources' | 'assessments' | 'countries' | 'countriesScorecard' | 'registry'
   > = {
     'dumps/events.csv': 'events',
     'dumps/sources.csv': 'sources',
     'dumps/assessments.csv': 'assessments',
     'dumps/countries.csv': 'countries',
     'dumps/countries.scorecard.csv': 'countriesScorecard',
+    'dumps/registry.csv': 'registry',
   }
   const key = keys[path]
   return key === undefined ? path : t(`dataPage.dl.${key}`)

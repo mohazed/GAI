@@ -560,6 +560,53 @@ const countryMembershipFlags: Rule = (ctx) => {
   return out
 }
 
+/** The French articles UNTERM writes after a short name: (l'), (le), (la), (les), (Les). */
+const FR_ARTICLE = /^(?:l'|l’|le |la |les |Les )(?=\S)/
+
+/**
+ * country.name-fr-def (docs/03 §3, P-13): every entry has `name.fr_def`, the French name with its
+ * article, for generated French text (P-18). It either equals `name.fr` (UNTERM gives no article:
+ * Cuba, Malte) or starts with an article (l', le, la, les, Les) followed by a name; `name.fr`
+ * itself never starts with one (the article belongs in `fr_def`). A warning: the field is optional
+ * in the schema.
+ */
+const countryNameFrDef: Rule = (ctx) => {
+  const out: Issue[] = []
+  for (const c of ctx.dataset.countries) {
+    const { iso3, name } = c.value
+    const def = name.fr_def
+    if (def === undefined) {
+      out.push(
+        issue(
+          'country.name-fr-def',
+          at(c, iso3, 'name.fr_def'),
+          `${iso3} has no name.fr_def; expected the French name with its UNTERM article (e.g. "l'${name.fr}"), or "${name.fr}" when UNTERM gives none`,
+        ),
+      )
+      continue
+    }
+    if (FR_ARTICLE.test(name.fr)) {
+      out.push(
+        issue(
+          'country.name-fr-def',
+          at(c, iso3, 'name.fr'),
+          `name.fr of ${iso3} "${name.fr}" starts with an article; expected the short name without it (the article goes in name.fr_def)`,
+        ),
+      )
+    }
+    if (def !== name.fr && !FR_ARTICLE.test(def)) {
+      out.push(
+        issue(
+          'country.name-fr-def',
+          at(c, iso3, 'name.fr_def'),
+          `name.fr_def of ${iso3} "${def}" neither equals name.fr "${name.fr}" nor starts with an article; expected l', le, la, les or Les followed by the name`,
+        ),
+      )
+    }
+  }
+  return out
+}
+
 /**
  * country.universe-size (docs/02 §1): the registry lists 193 entries that are not excluded.
  * A warning until the full registry is built.
@@ -1204,6 +1251,7 @@ export const rules: Rule[] = [
   recordChronology,
   countryExcluded,
   countryMembershipFlags,
+  countryNameFrDef,
   countryUniverseSize,
   assessmentCountryKnown,
   assessmentIndicatorKnown,

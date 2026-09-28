@@ -5,7 +5,7 @@ import { geoEqualEarth, geoPath } from 'd3-geo'
 import type { FeatureCollection } from 'geojson'
 import { feature } from 'topojson-client'
 import { describe, expect, it } from 'vitest'
-import { CompactPath, mapGeometry } from './map'
+import { CompactPath, DOT_RADIUS, dotPath, mapGeometry } from './map'
 
 describe('map geometry', () => {
   it('writes integer relative paths without zero-length segments', () => {
@@ -87,5 +87,20 @@ describe('map geometry', () => {
       .shapes.map((s) => s.d)
       .join('')
     expect(gzipSync(all).length).toBeLessThan(40_000)
+  })
+  it('draws a dot for every state whose outline collapses (P-13: every scored country has a mark)', () => {
+    expect(dotPath(10.4, 20.6)).toBe(`M7,21a3,3 0 1,0 6,0a3,3 0 1,0 -6,0Z`)
+    expect(DOT_RADIUS).toBe(3)
+    const g = mapGeometry()
+    const dots = new Set(g.shapes.filter((s) => s.dot).map((s) => s.id))
+    for (const id of ['AND', 'VAT', 'TUV', 'NRU', 'MDV', 'LIE', 'MCO'])
+      expect(dots.has(id), id).toBe(true)
+    const registry = readFileSync(
+      path.join(process.cwd(), '..', '..', 'data', 'countries.yaml'),
+      'utf8',
+    )
+    const codes = [...registry.matchAll(/^- iso3: ([A-Z]{3})$/gm)].map((m) => m[1])
+    const shapes = new Set(g.shapes.map((s) => s.id))
+    expect(codes.filter((c) => !shapes.has(c as string))).toEqual([])
   })
 })

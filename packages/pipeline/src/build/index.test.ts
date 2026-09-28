@@ -119,6 +119,7 @@ describe('buildData on the fixtures', () => {
       'dumps/assessments.csv',
       'dumps/countries.csv',
       'dumps/countries.scorecard.csv',
+      'dumps/registry.csv',
       'dumps/scores-daily-2023.csv',
       'dumps/scores-daily-2024.csv',
       'dumps/scores-daily-2025.csv',

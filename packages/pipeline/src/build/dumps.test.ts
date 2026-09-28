@@ -7,6 +7,7 @@ import {
   type ApiReply,
   type ApiSource,
   apiSchemaFor,
+  type Country,
   WINDOW_START,
 } from '@gai/schema'
 import { roundHalfAwayFromZero } from '@gai/scoring'
@@ -21,6 +22,7 @@ import {
   type DumpLead,
   dumpFiles,
   EVENTS_CSV_COLUMNS,
+  REGISTRY_CSV_COLUMNS,
   SCORES_DAILY_CSV_COLUMNS,
   SOURCES_CSV_COLUMNS,
 } from './dumps.js'
@@ -419,12 +421,77 @@ const LEAD_EXTRA = {
 }
 
 /** The input in a scrambled order: the dump sorts everything itself. */
+/** Synthetic registry entries (X-prefixed codes): a permanent member, a dated one, an excluded one. */
+function registryEntry(iso3: string, over: Partial<Country> = {}): Country {
+  return {
+    iso3,
+    iso2: iso3.slice(0, 2),
+    m49: 900,
+    name: { en: `Country ${iso3}`, fr: `Pays ${iso3}`, fr_def: `le Pays ${iso3}` },
+    region: 'Europe',
+    subregion: 'Western Europe',
+    un_member: true,
+    observer: false,
+    excluded: false,
+    memberships: {
+      unsc: [],
+      eu: false,
+      nato: false,
+      arab_league: false,
+      oic: false,
+      g20: false,
+      g7: false,
+      brics: false,
+    },
+    recognises_palestine: { since: null },
+    gov_sources: [],
+    ...over,
+  }
+}
+const REGISTRY_ENTRIES: Country[] = [
+  registryEntry('XBB', {
+    memberships: {
+      unsc: [
+        { from: '2023-01-01', to: '2023-12-31', permanent: false },
+        { from: '2027-01-01', to: '2028-12-31', permanent: false },
+      ],
+      eu: true,
+      nato: { since: '2023-10-09', note: 'Joined in the window.' },
+      arab_league: false,
+      oic: { since: null, note: 'Invited, not a member.' },
+      g20: false,
+      g7: false,
+      brics: { since: '2023-01-01', until: '2023-10-08' },
+    },
+    recognises_palestine: { since: '2024-05-28', note: 'Synthetic.' },
+    notes: 'Not published.',
+  }),
+  registryEntry('XAA', {
+    memberships: {
+      unsc: [{ from: '1945-10-24', to: null, permanent: true }],
+      eu: false,
+      nato: false,
+      arab_league: true,
+      oic: true,
+      g20: true,
+      g7: false,
+      brics: false,
+    },
+    recognises_palestine: { since: '1988-11-15' },
+  }),
+  registryEntry('XZZ', {
+    excluded: true,
+    name: { en: 'Excluded, one', fr: 'Exclu', fr_def: "l'Exclu" },
+  }),
+]
+
 function input(over: Partial<DumpInput> = {}): DumpInput {
   return {
     date: DATE,
     methodology: VERSION,
     git: { sha: SHA, dirty: false },
     countries: [EXCLUDED, scoredCountry('XBB', 'XB', 902, 12.5), scoredCountry('XAA', 'XA', 901)],
+    registry: REGISTRY_ENTRIES,
     events: [E_XBB, E_XAA_B1, E_XAA_RETRACTED, E_XAA_A6],
     sources: [
       source(SRC_B),
@@ -470,13 +537,14 @@ const text = (path: string): string => {
 const records = (path: string): string[][] => parse(text(path), { relax_column_count: false })
 
 describe('dumpFiles: paths and CSV conventions', () => {
-  it('produces the seven files, in order', () => {
+  it('produces the eight files, in order', () => {
     expect([...files.keys()]).toEqual([
       'dumps/events.csv',
       'dumps/sources.csv',
       'dumps/assessments.csv',
       'dumps/countries.csv',
       'dumps/countries.scorecard.csv',
+      'dumps/registry.csv',
       'dumps/scores-daily-2023.csv',
       'dumps/gai-2023-10-10.json',
     ])
@@ -534,6 +602,7 @@ describe('dumpFiles: paths and CSV conventions', () => {
       ['dumps/assessments.csv', ASSESSMENTS_CSV_COLUMNS],
       ['dumps/countries.csv', COUNTRIES_CSV_COLUMNS],
       ['dumps/countries.scorecard.csv', COUNTRIES_SCORECARD_CSV_COLUMNS],
+      ['dumps/registry.csv', REGISTRY_CSV_COLUMNS],
       ['dumps/scores-daily-2023.csv', SCORES_DAILY_CSV_COLUMNS],
     ]
     for (const [path, columns] of cases) {
@@ -833,6 +902,36 @@ describe('dumps/gai-{date}.json', () => {
   })
 })
 
+describe('dumpFiles: registry.csv', () => {
+  it('writes the header exactly as specified', () => {
+    expect(text('dumps/registry.csv').split('\n')[0]).toBe(
+      'iso3,iso2,m49,name_en,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,' +
+        'unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,' +
+        'recognises_palestine_since',
+    )
+  })
+
+  it('writes one row per entry by ISO3, memberships as flags or intervals, held ones at the build date', () => {
+    expect(text('dumps/registry.csv').split('\n').slice(1)).toEqual([
+      'XAA,XA,900,Country XAA,Pays XAA,le Pays XAA,Europe,Western Europe,true,false,false,' +
+        '1945-10-24/..,true,false,false,true,true,true,false,false,unsc;arab_league;oic;g20,1988-11-15',
+      // Build date 2023-10-10: the 2023 term is held, NATO since 2023-10-09 is held, BRICS
+      // ended on 2023-10-08, the OIC invitation (since null) is not a membership.
+      'XBB,XB,900,Country XBB,Pays XBB,le Pays XBB,Europe,Western Europe,true,false,false,' +
+        '2023-01-01/2023-12-31;2027-01-01/2028-12-31,false,true,2023-10-09/..,false,false,false,' +
+        'false,2023-01-01/2023-10-08,unsc;eu;nato,2024-05-28',
+      'XZZ,XZ,900,"Excluded, one",Exclu,l\'Exclu,Europe,Western Europe,true,false,true,,false,' +
+        'false,false,false,false,false,false,false,,',
+      '',
+    ])
+  })
+
+  it('publishes neither notes nor gov_sources', () => {
+    expect(text('dumps/registry.csv')).not.toContain('Not published')
+    expect(text('dumps/registry.csv')).not.toContain('Synthetic.')
+  })
+})
+
 describe('dumpFiles: determinism and edge cases', () => {
   it('gives the same bytes whatever the input order', () => {
     const reversed = dumpFiles(
@@ -844,6 +943,7 @@ describe('dumpFiles: determinism and edge cases', () => {
         corrections: [...input().corrections].reverse(),
         replies: [...input().replies].reverse(),
         leads: [...input().leads].reverse(),
+        registry: [...REGISTRY_ENTRIES].reverse(),
         days: [...input().days].reverse(),
       }),
     )
@@ -867,9 +967,11 @@ describe('dumpFiles: determinism and edge cases', () => {
         corrections: [],
         replies: [],
         leads: [],
+        registry: [],
         days: [],
       }),
     )
+    expect(empty.get('dumps/registry.csv')).toBe(`${REGISTRY_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/events.csv')).toBe(`${EVENTS_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/sources.csv')).toBe(`${SOURCES_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/assessments.csv')).toBe(`${ASSESSMENTS_CSV_COLUMNS.join(',')}\n`)

@@ -595,6 +595,59 @@ describe("'country.membership-flags'", () => {
   })
 })
 
+describe("'country.name-fr-def'", () => {
+  it('passes on the fixtures (with article, elided, and without)', () => {
+    expect(of('country.name-fr-def')).toEqual([])
+  })
+
+  it('accepts the name alone when UNTERM gives no article, and each article form', () => {
+    for (const [fr, def] of [
+      ['Cuba', 'Cuba'],
+      ['France', 'la France'],
+      ['Canada', 'le Canada'],
+      ["États-Unis d'Amérique", "les États-Unis d'Amérique"],
+      ['Bahamas', 'Les Bahamas'],
+      ['Bolivie (État plurinational de)', "l'État plurinational de Bolivie"],
+    ] as const) {
+      const issues = of('country.name-fr-def', (ds) => {
+        const c = countryOf(ds, 'DEU').value
+        c.name.fr = fr
+        c.name.fr_def = def
+      })
+      expect(issues, `${fr} / ${def}`).toEqual([])
+    }
+  })
+
+  it('warns when fr_def is missing, naming the country', () => {
+    const issues = of('country.name-fr-def', (ds) => {
+      countryOf(ds, 'DEU').value.name.fr_def = undefined
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({
+      level: 'warning',
+      file: COUNTRIES_FILE,
+      id: 'DEU',
+      path: 'name.fr_def',
+    })
+  })
+
+  it('warns on an fr_def without an article that differs from the name', () => {
+    const issues = of('country.name-fr-def', (ds) => {
+      countryOf(ds, 'DEU').value.name.fr_def = 'Allemagne fédérale'
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain('neither equals name.fr')
+  })
+
+  it('warns on an article in name.fr', () => {
+    const issues = of('country.name-fr-def', (ds) => {
+      const c = countryOf(ds, 'DEU').value
+      c.name.fr = "l'Allemagne"
+    })
+    expect(issues.map((i) => i.path)).toEqual(['name.fr'])
+  })
+})
+
 describe("'country.universe-size'", () => {
   it('passes with 193 entries that are not excluded (ISR and PSE not counted)', () => {
     expect(of('country.universe-size', (ds) => addCountries(ds, 192))).toEqual([])
