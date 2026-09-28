@@ -5,9 +5,11 @@
  * directory with the result.
  *
  * Options:
- *   --date <date>      build date YYYY-MM-DD, from 2023-10-07 to today (default: today, UTC). The
- *                      date is an input, never the clock inside the build, so the same date and
- *                      inputs give the same bytes (D-25)
+ *   --date <date>      build date YYYY-MM-DD, from 2023-10-07 to today (default: GAI_BUILD_DATE
+ *                      when set, else today, UTC). The date is an input, never the clock inside
+ *                      the build, so the same date and inputs give the same bytes (D-25).
+ *                      GAI_BUILD_DATE lets `pnpm build`, which runs build:data without options,
+ *                      build for the date the deploy workflows chose (P-12)
  *   --out <dir>        output directory, relative to the directory the command was run from
  *                      (default: apps/web/public/api/v1 under the repository root). A non-empty
  *                      directory is replaced only when it holds a previous build (manifest.json)
@@ -118,7 +120,10 @@ export interface BuildRunOptions {
   invocationDir?: string
   /** Today's UTC date: the default --date and its upper bound (the entry point reads the clock). */
   today: string
-  /** Environment for NEXT_PUBLIC_SITE_URL (the entry point passes process.env over .env). */
+  /**
+   * Environment: NEXT_PUBLIC_SITE_URL (the entry point passes process.env over .env) and
+   * GAI_BUILD_DATE (the default --date; process.env only).
+   */
   env?: Readonly<Record<string, string | undefined>>
   deps?: Partial<BuildDeps>
 }
@@ -228,7 +233,11 @@ function run(args: BuildArgs, options: BuildRunOptions): BuildRunResult {
   const invocationDir = options.invocationDir ?? cwd
   const repoRoot = real(findRepoRoot(cwd))
 
-  const date = args.date ?? options.today
+  const fromEnv = options.env?.GAI_BUILD_DATE
+  if (args.date === undefined && fromEnv !== undefined && fromEnv !== '' && !isIsoDate(fromEnv)) {
+    return fail(2, `GAI_BUILD_DATE expects a date YYYY-MM-DD, got ${fromEnv}`)
+  }
+  const date = args.date ?? (fromEnv !== undefined && fromEnv !== '' ? fromEnv : options.today)
   if (!isIsoDate(date)) return fail(2, `today's date ${date} is not a date YYYY-MM-DD`)
   if (date < WINDOW_START) {
     return fail(2, `--date ${date}: the index starts on ${WINDOW_START} (docs/02 §1)`)

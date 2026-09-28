@@ -1,0 +1,52 @@
+name: Wayback check
+
+# Quarterly check of the archived copies (P-12): every recorded wayback_url of archive/index.csv
+# (the `id_` URL of the snapshot) must answer HTTP 200, and the SHA-256 of the body it serves,
+# decoded (curl --compressed), must equal the recorded sha256. Problems are listed in the issue
+# "Archived copies failing the quarterly check" (opened, or commented on when already open).
+# Needs no key: the copies are public.
+
+on:
+  schedule:
+    - cron: '0 5 1 1,4,7,10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  ISSUE_TITLE: Archived copies failing the quarterly check
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Request every recorded copy and recompute its hash
+        id: check
+        run: |
+          set +e
+          pnpm check:wayback --report "$RUNNER_TEMP/report.md"
+          code=$?
+          set -e
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          # 0: every copy answered 200 with its hash; 1: problems listed; anything else: the check
+          # itself failed.
+          [ "$code" = 0 ] || [ "$code" = 1 ]
+      - name: Open or update the issue
+        if: steps.check.outputs.code == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          printf '\nRun: %s\n' "$RUN" >> "$RUNNER_TEMP/report.md"
+          .github/scripts/issue.sh open "$ISSUE_TITLE" "$RUNNER_TEMP/report.md"

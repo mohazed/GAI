@@ -1745,6 +1745,8 @@ The command prints nothing and exits with 0 when every file matches.
 
 `pnpm build:data:check [--date YYYY-MM-DD] [--root DIR] [--site-url URL]` runs two builds in separate processes with the same date and compares every byte; CI runs it on `data/` and on `fixtures/`.
 
+The deployed builds (`.github/workflows/deploy.yml` and `nightly.yml`, docs/04 §5) run `pnpm build:data --date <run day>` and then `pnpm build` with `GAI_BUILD_DATE` set to the same day (build-data takes it as the default `--date`) and `NEXT_PUBLIC_SITE_URL=https://gaza-accountability-index.pages.dev`, from a full clone; the build logs are public in the repository's Actions tab.
+
 ## 5. Schemas
 
 The zod schemas in `packages/schema/src/api.ts` are the contract of every JSON file: `apiSchemaFor(path)` returns the schema of a path relative to `api/v1/` (`null` for CSV and Markdown files and for the frozen outputs of superseded versions), and the `Api…` types (`ApiScoredCountryFile`, `ApiEvent`, `ApiFeedEntry` and the others) describe each file. The build checks every JSON file it emits against its schema before it writes anything; a file that does not match, or a JSON file without a schema, fails the build.

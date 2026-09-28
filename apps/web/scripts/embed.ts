@@ -15,7 +15,8 @@ import { gzipSync } from 'node:zlib'
 import { CONFIG_PLACEHOLDER, type WidgetConfig } from '@gai/widget'
 import { publicApi } from '../lib/api'
 import { bandSegments, siteMethodology } from '../lib/methodology'
-import { type Mode, SITE_MODE } from '../lib/mode'
+import type { Mode } from '../lib/mode'
+import { loadSiteMode } from './site-env'
 
 export const EMBED_BUDGET_BYTES = 15 * 1024
 
@@ -52,6 +53,7 @@ export function configure(script: string, config: WidgetConfig): string {
 }
 
 function main() {
+  const mode = loadSiteMode()
   const sources = path.join(widget, 'src')
   if (
     !existsSync(dist) ||
@@ -62,7 +64,7 @@ function main() {
   }
   const manifest = publicApi.manifest()
   const methodology = siteMethodology(publicApi.methodology(manifest.methodology.version))
-  const script = configure(readFileSync(dist, 'utf8'), widgetConfig(SITE_MODE, methodology))
+  const script = configure(readFileSync(dist, 'utf8'), widgetConfig(mode, methodology))
   const gz = gzipSync(script).length
   if (gz > EMBED_BUDGET_BYTES) {
     console.error(`embed: gai.js is ${gz} bytes gzipped, above the budget of ${EMBED_BUDGET_BYTES}`)
@@ -71,7 +73,7 @@ function main() {
   mkdirSync(path.dirname(target), { recursive: true })
   writeFileSync(target, script)
   console.log(
-    `embed: gai.js ${SITE_MODE} mode, ${Buffer.byteLength(script)} bytes, ${gz} gzipped (budget ${EMBED_BUDGET_BYTES}) → ${path.relative(process.cwd(), target)}`,
+    `embed: gai.js ${mode} mode, ${Buffer.byteLength(script)} bytes, ${gz} gzipped (budget ${EMBED_BUDGET_BYTES}) → ${path.relative(process.cwd(), target)}`,
   )
 }
 

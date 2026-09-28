@@ -27,7 +27,9 @@ pnpm build:data --date 2026-10-01
 pnpm build:data:check --date 2026-10-01
 ```
 
-The same commit and date produce identical output files under `apps/web/public/api/v1/`; `manifest.json` lists the SHA-256 of each file for comparison, and `pnpm build:data:check` builds twice and compares every byte. The API is documented in `apps/web/public/api/README.md`. `pnpm build` (the site) is added in a later build step and is not yet available.
+The same commit and date produce identical output files under `apps/web/public/api/v1/`; `manifest.json` lists the SHA-256 of each file for comparison, and `pnpm build:data:check` builds twice and compares every byte. The API is documented in `apps/web/public/api/README.md`. `pnpm build` builds the API and then the static site into `apps/web/out/`.
+
+The site is published at https://gaza-accountability-index.pages.dev (Cloudflare Pages), rebuilt on every push to `main` and every night at 03:15 UTC by GitHub Actions (`.github/workflows/`); the build logs are public.
 
 ## Errors and replies
 

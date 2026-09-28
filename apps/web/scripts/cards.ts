@@ -3,7 +3,8 @@
  * rendered at build time from the published countries.json with the template of
  * scripts/card-template.tsx (satori → SVG, resvg → PNG), written to public/cards/{ISO3}.png
  * (English) and public/cards/fr/{ISO3}.png (French), which next build copies into the output.
- * The mode is the site's (NEXT_PUBLIC_SHOW_SCORES, D-16): scorecard cards carry no score. About
+ * The mode is the site's (NEXT_PUBLIC_SHOW_SCORES, D-16, read from apps/web's env files as next
+ * build reads them: scripts/site-env.ts): scorecard cards carry no score. About
  * 25 ms a card (resvg must not load the system fonts: satori has already turned text into paths).
  *
  * Fonts are the static WOFF files of the @fontsource packages (satori reads neither WOFF2 nor
@@ -25,8 +26,9 @@ import { computedInForce } from '../lib/event-list'
 import { percent } from '../lib/format'
 import { getT, type Lang, LOCALES } from '../lib/i18n'
 import { bandById, bandSegments, type SiteMethodology, siteMethodology } from '../lib/methodology'
-import { type Mode, SITE_MODE } from '../lib/mode'
+import type { Mode } from '../lib/mode'
 import { Card, type CardInput } from './card-template'
+import { loadSiteMode } from './site-env'
 
 const require = createRequire(import.meta.url)
 
@@ -165,6 +167,7 @@ export function cardFile(dir: string, lang: Lang, iso3: string): string {
 }
 
 async function main() {
+  const mode = loadSiteMode()
   const api = apiReader(PUBLIC_API_DIR)
   const manifest = api.manifest()
   const countries = api.countries()
@@ -180,13 +183,13 @@ async function main() {
     const file = api.country(entry.iso3)
     const computed = file.excluded ? 0 : computedInForce(file.event_list).length
     for (const lang of LOCALES) {
-      const input = cardInput({ entry, lang, mode: SITE_MODE, methodology, manifest, computed })
+      const input = cardInput({ entry, lang, mode, methodology, manifest, computed })
       writeFileSync(cardFile(dir, lang, entry.iso3), await renderCard(input, fonts))
       n += 1
     }
   }
   console.log(
-    `cards: ${n} share card(s), ${SITE_MODE} mode, in ${Date.now() - started} ms → ${path.relative(process.cwd(), dir)}/`,
+    `cards: ${n} share card(s), ${mode} mode, in ${Date.now() - started} ms → ${path.relative(process.cwd(), dir)}/`,
   )
 }
 

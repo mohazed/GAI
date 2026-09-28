@@ -1,0 +1,77 @@
+name: Deploy
+
+# Cloudflare Pages direct upload (docs/04 §5, D-05, D-06): every push to main publishes the site
+# to production (https://gaza-accountability-index.pages.dev); a pull request from a branch of this
+# repository gets a preview deployment (its URL is in the run summary; Cloudflare marks previews
+# noindex). Pull requests from forks get no preview: they cannot read the deploy secrets. The
+# nightly rebuild is nightly.yml. Secrets: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID only.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # The canonical origin (docs/04 §6). Previews keep it, so their canonical links, share-card
+  # URLs and citations point to production. Change it here and in nightly.yml when a domain is
+  # bought (D-02).
+  SITE_URL: https://gaza-accountability-index.pages.dev
+  PROJECT: gaza-accountability-index
+
+concurrency:
+  # Production uploads (this workflow on main and nightly.yml) queue one behind the other; a
+  # pull request's newer push replaces its older preview run.
+  group: ${{ github.event_name == 'pull_request' && format('preview-{0}', github.ref) || 'pages-production' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  deploy:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Run day (UTC)
+        id: day
+        run: echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+      - uses: ./.github/actions/build-site
+        with:
+          date: ${{ steps.day.outputs.date }}
+          site-url: ${{ env.SITE_URL }}
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+          SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+          EVENT: ${{ github.event_name }}
+          WRANGLER_SEND_METRICS: 'false'
+        run: |
+          pnpm exec wrangler pages deploy apps/web/out --project-name "$PROJECT" \
+            --branch "$BRANCH" --commit-hash "$SHA" --commit-message "$EVENT ${SHA:0:7}" \
+            --commit-dirty=false 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+          url=$(grep -oE 'https://[a-z0-9.-]+\.pages\.dev' "$RUNNER_TEMP/deploy.log" | tail -n 1)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Deployed $BRANCH: $url" >> "$GITHUB_STEP_SUMMARY"
+      - name: Check the deployment serves this build
+        env:
+          URL: ${{ github.event_name == 'pull_request' && steps.deploy.outputs.url || env.SITE_URL }}
+        run: .github/scripts/smoke.sh "$URL" apps/web/out/api/v1/manifest.json
+      # Optional mirror on the author's server (docs/04 §5): off unless the repository variable
+      # GAI_MIRROR is "true". Turning it on needs three more Actions secrets (MIRROR_SSH_KEY,
+      # MIRROR_KNOWN_HOSTS, MIRROR_TARGET), which CLAUDE.md does not allow yet: see
+      # docs/04 §5 "Mirror" before enabling it.
+      - name: Mirror to the VPS (off by default)
+        if: vars.GAI_MIRROR == 'true' && github.event_name != 'pull_request'
+        env:
+          MIRROR_SSH_KEY: ${{ secrets.MIRROR_SSH_KEY }}
+          MIRROR_KNOWN_HOSTS: ${{ secrets.MIRROR_KNOWN_HOSTS }}
+          MIRROR_TARGET: ${{ secrets.MIRROR_TARGET }}
+        run: .github/scripts/mirror.sh apps/web/out

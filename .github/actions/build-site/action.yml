@@ -1,0 +1,61 @@
+# The build shared by deploy.yml and nightly.yml (docs/04 §5): the API for one build date from the
+# real data/ tree (never fixtures/, docs/10 B-34), then the site, then the checks that must pass
+# before anything is uploaded. The caller checks out the repository with its full history
+# (fetch-depth: 0): build-data links each corrections-log entry to the mainline commit that added
+# it, which a shallow clone cannot do (P-05).
+name: Build the site
+description: build:data for a date, pnpm build, and the pre-deploy checks
+inputs:
+  date:
+    description: Build date, YYYY-MM-DD (the run day, UTC)
+    required: true
+  site-url:
+    description: The site's canonical origin (NEXT_PUBLIC_SITE_URL)
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v6
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: .nvmrc
+        cache: pnpm
+    - name: Install
+      shell: bash
+      run: pnpm install --frozen-lockfile
+    # The API first, so that a build without the full history fails in seconds, before the site.
+    - name: Build the API for the run day
+      shell: bash
+      env:
+        DATE: ${{ inputs.date }}
+        NEXT_PUBLIC_SITE_URL: ${{ inputs.site-url }}
+      run: pnpm build:data --date "$DATE"
+    - name: No history build note (full git history)
+      shell: bash
+      run: jq -e '.counts.history == 0' apps/web/public/api/v1/build-notes.json
+    # `pnpm build`, not `next build` alone: it writes the fonts, the Changes page's filter
+    # stylesheet (scripts/filter-css.ts), the widget and the share cards before next build, and the
+    # CSP and budget checks after it (docs/04 §3). Its own build:data run takes the same date from
+    # GAI_BUILD_DATE, so it writes the same bytes (D-25). The mode (NEXT_PUBLIC_SHOW_SCORES, D-16)
+    # comes from apps/web/.env.production and is not set here: flipping that one line is enough.
+    - name: Build the site
+      shell: bash
+      env:
+        GAI_BUILD_DATE: ${{ inputs.date }}
+        NEXT_PUBLIC_SITE_URL: ${{ inputs.site-url }}
+      run: pnpm build 2>&1 | tee "$RUNNER_TEMP/build.log"
+    - name: Check the output before deploying
+      shell: bash
+      env:
+        DATE: ${{ inputs.date }}
+        SITE: ${{ inputs.site-url }}
+      run: |
+        jq -e '.counts.history == 0' apps/web/out/api/v1/build-notes.json
+        pnpm --filter @gai/web deploy:check --date "$DATE" --site-url "$SITE"
+        {
+          echo "### Build $DATE"
+          echo
+          echo '```'
+          grep -E '^(build-data|cards:|embed:|done in)' "$RUNNER_TEMP/build.log" || true
+          echo '```'
+        } >> "$GITHUB_STEP_SUMMARY"

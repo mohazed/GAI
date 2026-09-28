@@ -10,6 +10,8 @@
  *
  * NEXT_PUBLIC_SITE_URL is read from the process environment, then from the repository's .env (the
  * site reads the same variable, .env.example); no other variable of .env is passed on.
+ * GAI_BUILD_DATE, the default --date, is read from the process environment only: the deploy
+ * workflows set it so that `pnpm build` builds for the run day (P-12).
  */
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -26,7 +28,10 @@ const result = runBuildData(process.argv.slice(2), {
   cwd: here,
   invocationDir,
   today,
-  env: { NEXT_PUBLIC_SITE_URL: loadEnv(findRepoRoot(here)).NEXT_PUBLIC_SITE_URL },
+  env: {
+    NEXT_PUBLIC_SITE_URL: loadEnv(findRepoRoot(here)).NEXT_PUBLIC_SITE_URL,
+    GAI_BUILD_DATE: process.env.GAI_BUILD_DATE,
+  },
 })
 process.stdout.write(result.stdout)
 if (result.code === 0 && result.stdout !== '') {

@@ -230,6 +230,15 @@ describe('runBuildData: usage errors (exit 2), nothing loaded or written', () =>
     usage(['--date', '2026-09-28'], '--date 2026-09-28 is after today (2026-09-27, UTC)')
   })
 
+  it('a malformed or out-of-range GAI_BUILD_DATE when --date is absent', () => {
+    usage([], 'GAI_BUILD_DATE expects a date YYYY-MM-DD, got 2026-9-1', {
+      GAI_BUILD_DATE: '2026-9-1',
+    })
+    usage([], '--date 2026-09-28 is after today (2026-09-27, UTC)', {
+      GAI_BUILD_DATE: '2026-09-28',
+    })
+  })
+
   it('a dataset root without data/', () => {
     usage(['--root', tmp], `--root ${tmp}: ${tmp} has no data/ directory`)
   })
@@ -284,6 +293,18 @@ describe('runBuildData: a run', () => {
     expect(calls.write).toHaveLength(1)
     expect(calls.write[0]?.outDir).toBe(join(REPO_ROOT, DEFAULT_OUT))
     expect([...(calls.write[0]?.files.keys() ?? [])]).toContain('manifest.json')
+  })
+
+  it('takes the date from GAI_BUILD_DATE when --date is absent, and --date over it', () => {
+    const a = fakeDeps()
+    expect(run([], a.deps, { GAI_BUILD_DATE: '2025-06-30' }).code).toBe(0)
+    expect(a.calls.load[0]?.date).toBe('2025-06-30')
+    const b = fakeDeps()
+    expect(run(['--date', '2024-02-29'], b.deps, { GAI_BUILD_DATE: 'not a date' }).code).toBe(0)
+    expect(b.calls.load[0]?.date).toBe('2024-02-29')
+    const c = fakeDeps()
+    expect(run([], c.deps, { GAI_BUILD_DATE: '' }).code).toBe(0)
+    expect(c.calls.load[0]?.date).toBe(TODAY)
   })
 
   it('resolves --root and --out against the invocation directory; --quiet prints nothing', () => {

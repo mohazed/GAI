@@ -18,6 +18,7 @@
     "score": "tsx packages/pipeline/src/cli/score.ts",
     "methodology:render": "tsx packages/schema/src/cli/render-methodology.ts",
     "archive": "tsx packages/pipeline/src/cli/archive.ts",
+    "check:wayback": "tsx packages/pipeline/src/cli/check-wayback.ts",
     "fetch:fts": "tsx packages/pipeline/src/cli/fetch-fts.ts",
     "fetch:worldbank": "tsx packages/pipeline/src/cli/fetch-worldbank.ts",
     "fetch:comtrade": "tsx packages/pipeline/src/cli/fetch-comtrade.ts",
@@ -31,8 +32,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
+    "tsx": "catalog:",
     "turbo": "2.11.4",
     "typescript": "catalog:",
-    "tsx": "catalog:"
+    "wrangler": "4.142.0"
   }
 }

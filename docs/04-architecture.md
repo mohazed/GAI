@@ -20,10 +20,14 @@ gaza-accountability-index/
     widget/       tiny embeddable script (vanilla TypeScript, P-11) built with Vite, served from /embed/
   .github/workflows/
     ci.yml        lint, typecheck, unit tests, validate data, build-data determinism check, build site
-    nightly.yml   cron 03:15 UTC: build-data + build site + deploy to Cloudflare Pages
-    deploy.yml    on push to main: same as nightly
-    fetch.yml     manual (workflow_dispatch): run a structured fetcher and open a PR with the updated CSV
+    deploy.yml    on push to main: build-data + build site + deploy to Cloudflare Pages; PR previews
+    nightly.yml   cron 03:15 UTC: the same for the run day; a failure opens the issue "Nightly build failed"
+    wayback.yml   quarterly: every recorded wayback_url answers 200 with its recorded SHA-256
+  .github/actions/build-site/   the build shared by deploy.yml and nightly.yml (P-12)
+  .github/scripts/              issue.sh, smoke.sh, mirror.sh
 ```
+
+No fetch workflow: the structured fetchers need the Internet Archive and Comtrade keys, which stay in the local `.env` (only the two Cloudflare secrets are in GitHub Actions); they run locally (§5).
 
 Tooling: pnpm, Turborepo, TypeScript strict, Biome (lint + format), Vitest, Playwright for a small smoke suite, Changesets not needed. Node 22.
 
@@ -83,8 +87,10 @@ As built (P-11, docs/10 B-153–B-158): `apps/widget`, vanilla TypeScript built 
 
 - **CI on every PR:** biome, tsc, vitest, `pnpm validate`, `build:data` determinism, `next build`, Playwright smoke (home, ranking, one country, compare, methodology in EN and FR; axe checks), Lighthouse CI budgets (home and ranking since P-07; the country page from P-08).
 - **Deploy:** Cloudflare Pages direct upload from GitHub Actions (`wrangler pages deploy apps/web/out`), on push to `main` and nightly. Preview deploys for PRs. Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` only.
-- **Mirror (optional):** a `rsync` step to the author's VPS with the same `out/` folder; documented, off by default.
-- **Data fetchers** run only on demand (`workflow_dispatch` or locally): `pnpm fetch:fts`, `pnpm fetch:worldbank`, `pnpm fetch:comtrade` (needs `COMTRADE_KEY` locally), `pnpm fetch:unvotes`, `pnpm import:sipri <file>`. Each writes the CSV, archives the raw response into a dataset source record, and the author commits.
+- **As built (P-12, docs/10 B-160–B-170).** The Pages project `gaza-accountability-index` (production branch `main`, https://gaza-accountability-index.pages.dev) was created with `wrangler pages project create --force`: wrangler 4.142 now offers to create a Workers project with static assets instead, and `--force` keeps a Pages project (the `pages.dev` host of D-02, the `_headers` rules as tested, branch previews); later commands go to Pages without it. wrangler is a pinned devDependency (`pnpm exec wrangler`). `deploy.yml` (push to `main`, pull requests from branches of this repository, manual) and `nightly.yml` (03:15 UTC, manual) check out the full history (`fetch-depth: 0`) and run `.github/actions/build-site`: `pnpm build:data --date <run day>`, `jq -e '.counts.history == 0'` on build-notes.json, then `pnpm build` with `GAI_BUILD_DATE=<run day>` (its own build:data run takes that date, so both write the same bytes) and `NEXT_PUBLIC_SITE_URL` set in the workflow; the mode comes from `apps/web/.env.production` alone; then `apps/web/scripts/deploy-check.ts` (build date, site URL, commit, clean checkout, no history note, every country, correction and reply of the API present in `data/` so never the fixtures, the widget in the site's mode, no `_kit`, no file above 25 MiB, at most 20 000 files). After the upload `.github/scripts/smoke.sh` waits until the host serves the new manifest and checks both languages, the CSP of a page, CORS on the API and an immutable asset without the page-level headers. A pull request's preview keeps the production `site_url` (its canonical links, citations and card URLs point to production; Cloudflare marks previews `noindex`); pull requests from forks get no preview (no secrets). Production uploads queue in one concurrency group. A failed nightly run opens the issue "Nightly build failed", or comments on it if open; the next successful run comments and closes it. Cloudflare Pages adds `Access-Control-Allow-Origin: *` to every response of a `pages.dev` host on its own, pages included (harmless for a public site without cookies); `_headers` sets it on `/api/*`, `/cards/*` and `/embed/*` so that it stays under a custom domain.
+- **Wayback check (quarterly):** `wayback.yml` (1 January, April, July, October, 05:00 UTC, and manual) runs `pnpm check:wayback`: every recorded `wayback_url` of `archive/index.csv` (the snapshot's `id_` URL) is requested with `curl --compressed`, no redirect followed; a status other than 200 (after retries on 429, 5xx and no response) is a failure, and on a 200 the SHA-256 of the decoded body is compared with the recorded `sha256`. Failures and mismatches go into the issue "Archived copies failing the quarterly check" (opened, or commented on). Rows without a `wayback_url` are counted, not checked. It needs no key.
+- **Mirror (optional):** a `rsync` step to the author's VPS with the same `out/` folder; documented, off by default. As built: `.github/scripts/mirror.sh`, run by `deploy.yml` (on `main`) and `nightly.yml` only when the repository variable `GAI_MIRROR` is `true`, with three Actions secrets `MIRROR_SSH_KEY` (a deploy-only user's ed25519 key), `MIRROR_KNOWN_HOSTS` (`ssh-keyscan -t ed25519 <host>`) and `MIRROR_TARGET` (`user@host:/path/`), `rsync --archive --delete --checksum` with strict host-key checking. Enabling it is the author's decision and first needs the secrets rule changed (CLAUDE.md "No secrets in git", §6 below, docs/09): today only the two Cloudflare secrets are allowed in Actions. The server must apply `_headers` itself (a web-server configuration with the same CSP, CORS and caching rules; `apps/web/scripts/serve.ts` shows the semantics, including the `! Header` lines).
+- **Data fetchers** run only locally, never in Actions: they need `COMTRADE_KEY` and the Internet Archive keys (`IA_ACCESS_KEY`, `IA_SECRET_KEY`), which live only in the local `.env` (§6). Procedure: on a clean `main` (or the data branch of the session), `pnpm fetch:fts`, `pnpm fetch:worldbank`, `pnpm fetch:comtrade --country XXX` as docs/06 describes, `pnpm import:unvotes <csv>` and `pnpm import:sipri <file>` for the downloaded exports. Each writes the CSV under `data/structured/`, archives every raw response with authenticated Save Page Now into a dataset source record (`data/sources/`, `archive/index.csv`); then `pnpm validate`, `pnpm build:data`, review the diff of the tables and the build notes, commit on a branch and open a pull request (merged with a merge commit). Save Page Now's limits allow about one fetch run a day (P-23).
 - **Archiver CLI:** `pnpm archive <url>` → saves to Wayback, downloads the snapshot, computes SHA-256, extracts text (HTML via readability + turndown-free plain text; PDF via pdfjs), writes `archive/text/…`, appends `archive/index.csv`, and prints a source YAML skeleton. This is the tool every data session uses.
 
 ## 6. Environment and secrets
@@ -94,7 +100,8 @@ As built (P-11, docs/10 B-153–B-158): `apps/widget`, vanilla TypeScript built 
 | `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | GitHub Actions secrets | deploy |
 | `COMTRADE_KEY` | local `.env` only | Comtrade fetcher |
 | `IA_ACCESS_KEY`, `IA_SECRET_KEY` | local `.env` only, optional | Wayback SPN2 authenticated saves (higher limits) |
-| `NEXT_PUBLIC_SHOW_SCORES` | repo `.env.production` | Phase gate |
-| `NEXT_PUBLIC_SITE_URL` | repo | canonical URLs |
+| `NEXT_PUBLIC_SHOW_SCORES` | repo `apps/web/.env.production` (B-02); read by `next build` and, through `scripts/site-env.ts`, by the card and widget scripts | Phase gate |
+| `NEXT_PUBLIC_SITE_URL` | `env` of `deploy.yml` and `nightly.yml` (`https://gaza-accountability-index.pages.dev`); locally, `.env` or the default of build-data | canonical URLs (the manifest's `site_url`) |
+| `GAI_BUILD_DATE` | set by the deploy workflows | default `--date` of build-data, so `pnpm build` builds for the run day |
 
 No LLM API key anywhere (D-03).
