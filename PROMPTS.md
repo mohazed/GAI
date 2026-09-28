@@ -277,6 +277,8 @@ Also check (P-08, docs/10 B-114, B-119): Cloudflare Pages' redirect of a directo
 The stale-build notice of /changes (P-09, docs/10 B-130) is computed in the browser from the build date embedded in the page at build (the API's `manifest.json` `build_date`): after the first nightly build, check that /en/changes/ shows no notice, and that the page's "Built on" line carries the run day. The Changes page imports `app/[locale]/changes/country-filters.css`, which `scripts/filter-css.ts` writes before `next build` (part of `pnpm build`): the deploy workflow must run `pnpm build`, not `next build` alone.
 
 Also (P-10, docs/10 B-148): `sitemap.xml`, `robots.txt` and `llms.txt` are built from the manifest's `site_url`: check on the deployed host that they carry the pages.dev address (the build's `--site-url`), that `/llms.txt` is served as text/plain and `/sitemap.xml` as XML, and that the methodology formulas (MathML, docs/10 B-139) render in current Chrome, Firefox and Safari. The Data page's reproducibility command and JSON-LD carry the deployed build's commit and date: open /en/data/ after the first deploy and compare with its manifest.json.
+
+Also (P-11, docs/10 B-154–B-158): on the deployed host, `/embed/v1/gai.js` is served as JavaScript with `Access-Control-Allow-Origin: *` and without the page-level headers (the `! Header` lines of `/embed/*` in `_headers`), and carries the mode `scorecard` in its config (written at build by `apps/web/scripts/embed.ts`; `curl -s …/embed/v1/gai.js | grep -o 'mode[^,]*'`); the live examples of /en/embed/ and /fr/embed/ draw in current Chrome, Firefox and Safari (only Chromium was tested in P-11); a blank page of another origin (for example a file served by `python3 -m http.server`) with the snippet of /embed draws the widget, and with its request to the country file blocked shows the link to the country page.
 ```
 
 ---
@@ -299,6 +301,8 @@ With 195 entries (P-08): the build renders 390 share cards (about 12–25 ms eac
 Also with 195 entries (P-09, docs/10 B-125, B-131): `scripts/filter-css.ts` writes one country filter rule pair per registry entry into the Changes page's stylesheet (inlined into that page only): report the Changes page's HTML size before and after; the Compare page lists every scored country in its picker and in its no-JavaScript list: check both, and time a comparison of five real countries (five country files fetched) with Lighthouse's mobile throttling.
 
 Also (P-10, docs/10 B-150): a table painted before all its rows are parsed changes its column widths as longer rows arrive, which Lighthouse counts as layout shift. The ranking table's country column has a fixed share of the width in scorecard mode for that reason; with 195 rows, run Lighthouse on /en/ranking/ and /fr/ranking/ in both builds (out/ and out-kit/, whose score-mode table keeps automatic widths), and give the score-mode columns fixed shares too if it shifts.
+
+Also (P-11, docs/10 B-158): the widget (`@gai/widget` `renderWidget`) draws every real country file in both modes, views and languages without error (`lib/contract.test.ts` does it on the fixtures; do it once on the real API with 195 entries), and the /embed examples show the first scored country of the registry.
 ```
 
 ---
@@ -412,6 +416,8 @@ Run the site locally with real data (pnpm build:data && pnpm dev). Visit every p
 Include the pages of P-09 (docs/10 B-125–B-132): Compare with one and with five countries (in score mode through the kit build, `pnpm --filter @gai/web build:kit`, and in scorecard mode), with `?w=`, and its no-JavaScript fallback; Changes with its filters (the kit's /_kit/changes/ has entries to filter); a monthly report with movers, a new event, an end and a correction. Judge the space `.compare-results` keeps before a country is chosen (70 % of the screen height, to keep CLS at zero), and the month table of /changes.
 
 Include the pages of P-10 (docs/10 B-138–B-148): the methodology page (its length, the contents list, the tables at 360 px, the MathML formulas in the three browser engines), the Data page's endpoint examples (collapsed) and downloads, About (the quoted standpoint and signature), Corrections with an entry (the kit's CorrectionsTable specimen) and empty, Reply and Embed.
+
+Include the widget (P-11, docs/10 B-155–B-157): both views in both modes (the kit build is in score mode) at 320, 480 and 1280 px, in a blank page of another origin that does not load the site's fonts, and on /embed. Decide for the site's own ScoreGauge: at 375 px in French its scale labels "−50", "0 · seuil de passivité" and "+50" run into each other (the widget drops the ±50 labels under 480 px). Re-measure the /embed page's JavaScript on the wire: 152,974 bytes of the 153,600 budget at P-11.
 ```
 
 ---
@@ -432,6 +438,8 @@ The share cards and the country pages show the generated summaries too (P-08): c
 Also (P-09): the `compare`, `changes` and `changesPage` strings of messages/fr.json, the comparison citation's French form in packages/scoring/src/citation.ts ("Comparaison : …", "(fiches d'évaluation)"), and the French monthly reports as the site renders them at /fr/changes/{YYYY-MM}/.
 
 Also (P-10): `apps/web/content/*.fr.md` (About, Données, Intégrer, Droit de réponse, the notes computed and readings), the French strings of `apps/web/lib/api-docs.ts` (endpoints and structured tables), the translation of the standpoint in `apps/web/lib/standpoint.ts`, and the message namespaces `methodologyPage`, `sensitivity`, `correctionsPage`, `aboutPage`, `contact`, `dataPage`, `embedPage`, `replyPage`. French spacing is applied to the content files at build (`frenchPunctuation`); write them with ordinary spaces. A correction's `reason` is one text, marked `lang="en"` on the Corrections page: decide whether corrections get a French reason (a schema change, with P-25).
+
+Also (P-11): the widget's strings (`apps/widget/src/strings.ts`, equal to messages/*.json by a test: change both together) and the lines added to `apps/web/content/embed.fr.md` and the `embedPage` namespace (the live examples, the size, the browsers and the Content-Security-Policy note).
 ```
 
 ---
@@ -452,6 +460,8 @@ Also (P-08): the share-card generator (scripts/cards.ts, satori and resvg) reads
 Also (P-09): the monthly reports' Markdown reader (apps/web/lib/markdown.ts) refuses every construct report.ts does not write and builds React elements, never HTML strings; the Compare page reads `?c=` and `?w=` through `parseCompare` and `parseWeights` and fetches only same-origin `countries/{ISO3}.json` for validated codes, trusting the file's shape (decide whether a client-side check is worth its bytes); the filter CSS generator accepts only ISO3 codes; the webpack setting in apps/web/next.config.ts (splitChunks limited to initial chunks) still holds after a Next.js upgrade.
 
 Also (P-10): `apps/web/components/DocMarkdown.tsx` injects KaTeX's MathML of the methodology formulas (`dangerouslySetInnerHTML`, `lib/math.ts`: `trust: false`, `strict: 'error'`, a build error on any `style` attribute) — the only HTML injected besides the JSON-LD blocks; `lib/doc.ts` accepts only http(s), site-relative, fragment and mailto link targets; the Data page's JSON-LD (`siteDatasetJsonLd`, `<` escaped) and its examples, which are the build's own files rendered as text.
+
+Also (P-11, docs/10 B-159): the widget (`apps/widget/src`) builds HTML strings for its shadow root: every text of the country file must pass through `esc`; `data-country` is accepted only as `[A-Z]{3}` and `data-origin` only as an http(s) origin; a host page that enforces Trusted Types refuses its `innerHTML` (decide whether DOM calls are worth their bytes); the /embed page sets the snippet as HTML (`dangerouslySetInnerHTML` with `lib/embed.ts` values only), a third HTML injection besides the MathML and the JSON-LD; `gai.js` changes with each build and keeps the default revalidation (decide on caching, and on publishing a Subresource Integrity hash, which would change with every build).
 ```
 
 ---
@@ -502,6 +512,8 @@ Read CLAUDE.md, docs/08-governance.md §1, docs/02-methodology-spec.md §11, doc
 Threshold changes decided by the author: {NONE or list}. Create methodology/v1.0.0 as the final version (from the rc, applying the changes with changelog entries and a diff.json), run the full build, and check the gates: no unchecked indicator among the 45 full-protocol countries, reviewers.yaml non-empty, corrections non-empty, sensitivity tables present. If any gate fails, stop and report; do not flip. Otherwise set NEXT_PUBLIC_SHOW_SCORES=true, write changes/index-launch.md (what the number is and is not, the passivity rule in one paragraph, how to change the weights, how to cite), tag v1.0.0, deploy, and verify the ranking, compare, sliders, cite, share cards and API on the live site. Report.
 
 Reviewers (P-10, docs/10 B-142): they are listed in `methodology/reviewers.yaml` with `signed_off` entries (version, date, link to the public sign-off comment); the gate is that the list is non-empty and that each sign-off names v1.0.0. The final version folder gets its `diff.json` against rc.1 (schema `MethodologyDiffFile`, docs/10 B-141), which the methodology page shows.
+
+After the flip (P-11, docs/10 B-154): `/embed/v1/gai.js` is rebuilt with the site and must carry the mode `score` in its config (`grep -o 'mode[^,]*'` on the file); check that the examples of /embed and a blank page with the snippet show the score, the band and the timeline's step line.
 ```
 
 ---
