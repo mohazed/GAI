@@ -1,0 +1,277 @@
+# Coverage record for South Africa (docs/03 §6). P-D research session, wave 2, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+country: ZAF
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      South Africa is not known as a supplier of major arms to Israel; the NCACC's reported position
+      (lead lead_20260928_ZAF_2) is that it approves no arms exports to Israel.
+  A2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade; the build derives the status from the rows (every value below the
+      −3 tier). Own reports: HS 93 USD 394 (2022), nothing in 2023–2025; no HS 8710 row. Israel's
+      mirror imports: HS 93 USD 8,000 (2023) and 4,000 (2024), under the USD 100,000 tier (0). The
+      conditional headings are not counted without a confirming document (docs/02 §2): own report HS
+      8526 USD 26,797 (2022), 388 (2023), 399 (2024), 8,961 (2025), HS 8802 USD 618 (2023); mirror HS
+      8526 USD 1,000–30,000 a year and HS 8802 USD 6,304,000 in 2024 (−8 if counted). No licence
+      register, parliamentary answer or investigation confirming a military nature was found, so no
+      row was added to a2_confirmed_military.csv. Comtrade rows existed, so no fetch was run.
+    queries:
+      - NCACC South Africa arms exports Israel permits 2024 National Conventional Arms Control Committee Israel no permits
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      South Africa is not a partner of the F-35 programme; no ministry statement or programme
+      document naming a South African supplier of F-35 parts or maintenance was found. A/HRC/59/23
+      (src_20250616_un-unispal_a-hrc-59-23) was searched: South Africa appears as the applicant in the
+      ICJ case, as a source of coal shipments to Israel (paragraph 57) and in historical references,
+      not as an F-35 supplier.
+    queries:
+      - A/HRC/59/23 South Africa (archived text searched)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. No South African order of Israeli major arms since October 2023 was met in this session.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, basing agreement, documented transit or official confirmation of
+      intelligence sharing with Israel found. DIRCO's statements of the period describe no military
+      cooperation; the Cabinet recalled all diplomats from Tel Aviv in November 2023.
+    queries:
+      - dirco.gov.za Israel military cooperation exercise 2024 2025 (Wayback listing of DIRCO pages since 2025-09 searched for Israel, Gaza, Palestine)
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No government decision suspending or refusing a class of licences to Israel was archived. The
+      NCACC's reported statement of November 2023 that South Africa exports no arms to Israel and the
+      Hague Group commitments of July 2025 are leads (lead_20260928_ZAF_2, lead_20260928_ZAF_3).
+    queries:
+      - NCACC South Africa arms exports Israel permits 2024 National Conventional Arms Control Committee Israel no permits
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No law or decree covering both arms exports to and imports from Israel found.
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No documented refusal of transit or port access to a named arms shipment for Israel by a
+      South African authority found. The Hague Group measures (July 2025) and activists' actions at
+      Durban port are in lead_20260928_ZAF_3.
+    queries:
+      - South Africa port Durban denied ship arms Israel 2024 2025 Transnet vessel refused docking Hague Group measures
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on all seven
+      (ES-10/21 to ES-10/26 and 79/232). The archived press releases are consistent: GA/12599 (10 May
+      2024) and GA/12670 (19 December 2024) report South Africa's delegate speaking for the texts; for
+      the five later votes (no rows until B-199 (1)), GA/12707, GA/12708 and GA/12739 list the states
+      against and abstaining without South Africa, and GA/12707 reports its delegate calling the
+      matter "long overdue"; no list was found in the extracted texts of GA/12690 and GA/12743. No
+      disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty; last term 2019–2020).
+  B3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_12_29_ZAF_B3: South Africa is the applicant in case 192 (application of 29 December
+      2023), filed as B3 under the reading of docs/10 B-231 (1), flagged for the author. South Africa
+      also joined the joint referral of the situation in Palestine to the ICC (November 2023, DIRCO
+      page listed through Wayback, not archived), an act no indicator covers.
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character; South Africa
+      requested the additional measures of March and May 2024 and cites the orders as binding
+      (src_20260312_presidency-za_notes-israel-response-icj).
+  B5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_11_21_ZAF_B5 (the Minister of Justice on enforcing the warrants; DIRCO's statement of
+      the same day). DIRCO also expressed concern at the measures taken against ICC judges (page
+      listed through Wayback, not archived).
+    queries:
+      - DIRCO statement ICC arrest warrants Netanyahu Gallant South Africa welcomes November 2024
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement of refusal to execute the warrants, no official visit of a person under warrant,
+      no withdrawal from the Rome Statute in the window.
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No South African sanction on ICC officials; South Africa has no autonomous sanctions regime of that kind.
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv, which has no row for South Africa. The registry gives
+      recognition since 1995-02-15 (pre-existing, +3 standing from 2023-10-07 once confirmed); no
+      archived official statement dates it, so no row was added and the build decides nothing from
+      the missing row (docs/03 §7). Lead lead_20260928_ZAF_1.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the Minister of International Relations and Cooperation in the National Assembly on 7
+      November 2023 (+5); the President at the General Assembly on 24 September 2024 (+5) and 23
+      September 2025 (+5); the Minister at the Human Rights Council on 23 February 2026 (+5); the
+      President at the BRICS summit on 12 September 2026 (+5, scope related: Gaza not named,
+      unscored). The indicator cap (+10) holds. Not filed: DIRCO media statements without a named
+      speaker (for example on the flotilla of May 2026), the President's statement quoted by the
+      Presidency on 12 March 2026 (no call and no violation named in his own words), the President's
+      statements of 22 September 2025 (two-state meeting) and of October 2025 on the flotilla (not
+      archived), the Minister's remarks of 21 September 2026 (public event).
+    queries:
+      - President Ramaphosa statement Gaza 2026 thepresidency.gov.za genocide Palestine
+      - Minister Ronald Lamola statement Gaza 2026 dirco.gov.za
+      - Wayback CDX listings of dirco.gov.za and thepresidency.gov.za pages (Gaza, Palestine, Israel, genocide, ICJ, ICC, UNGA, BRICS)
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement by the President or the Minister of International Relations and Cooperation of
+      unconditional support for Israel's campaign or denying documented violations found.
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No South African sanctions listing of Israeli ministers or settler entities found. The
+      expulsion of the Israeli chargé d'affaires (30 January 2026) is a diplomatic measure (B12,
+      tracked).
+  B12:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_11_06_ZAF_B12 (recall of all diplomats from Tel Aviv for consultation, recall tier);
+      evt_2026_01_30_ZAF_B12 (the Israeli chargé d'affaires declared persona non grata; grounds not
+      Gaza, scope related, unscored). The National Assembly adopted a motion on 21 November 2023 to
+      close the Israeli embassy and suspend diplomatic relations (Parliament press release, not
+      archived); the government did not implement it, so it is not a B12 act.
+    queries:
+      - dirco.gov.za South Africa recalls diplomats Tel Aviv consultation November 2023 statement
+      - '"Cabinet" statement November 2023 Israel diplomats "Tel Aviv" consultation site:gov.za'
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No review or suspension of a trade or cooperation agreement with Israel found; South Africa is
+      not party to an EU-type association agreement with Israel.
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No new trade, investment or cooperation agreement between South Africa and Israel signed since
+      7 October 2023 found in the DIRCO pages listed through Wayback.
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Own reports: 2022 USD 594,689,449; 2023 USD 403,955,865 (r = 0.679 → 0); 2024 USD
+      337,347,699 (r = 0.567 → 0); 2025 USD 409,105,158 (r = 0.688 → 0, from 2026-02-10). The 2022
+      window (before the war) was −3 until 2024-02-06. Mirror values (Israel's reports) are lower:
+      2025 USD 264,046,000 against 322,983,000 (r = 0.818). No disagreement found with the country's
+      own sources (not checked against SARS releases). South African coal exports to Israel are the
+      subject of campaigns (sabdscoalition.org factsheet of October 2025, not archived); they are in
+      the totals.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No labelling rule or ban on settlement goods adopted since 7 October 2023 found. A labelling
+      notice for products from the occupied territories dates from 2012 (general knowledge, not
+      verified or archived in this session); it would be scope west-bank and unscored in v1.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No exclusion decision by the Public Investment Corporation, the Government Employees Pension
+      Fund or the Reserve Bank over conduct in Gaza or the occupied territories found.
+    queries:
+      - Public Investment Corporation OR GEPF divest Israeli companies decision 2024 2025 South Africa Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No procurement rule or exclusion decision with legal effect against companies implicated in
+      Gaza found.
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. FTS: USD 2,754,821 on plan 1156 (one flow, 2024) and USD 2,884,200 on plan 1273
+      (three flows, 2025); window 2025-09…2026-08 USD 2,884,200 ÷ GNI USD 406,212,611,809 = 0.00071 %
+      → +3; the window 2025-06…2026-05 has no flow (no D1 event for June 2026). The 2024 flow equals
+      the UNRWA donor table's 2024 amount for South Africa (evt_2024_12_31_ZAF_D3). No government
+      announcement of other Gaza funding was archived; aid delivered by South African NGOs is not
+      government funding and was not examined.
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      South Africa did not suspend UNRWA funding: it gave USD 171,600 in 2022 and USD 2,754,821 in
+      2024 (UNRWA donor tables, src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024).
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_12_31_ZAF_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024).
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No government medical-evacuation programme or field-hospital deployment for Gaza found; DIRCO's
+      statements on evacuation concern South African citizens leaving Gaza.
+    queries:
+      - South Africa government humanitarian aid Gaza medical evacuation field hospital 2024 2025 DIRCO donation
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No legal instrument opening a visa or protection pathway for people from Gaza. Palestinian
+      ordinary-passport holders had a 90-day visa exemption (pre-existing); 153 travellers from Gaza
+      arriving on a charter flight on 12 November 2025 were admitted under it, and the Department of
+      Home Affairs withdrew the exemption in early December 2025 (press of 7–9 December), citing abuse linked to efforts to move
+      people out of Gaza (gov.za statements of 14 November and December 2025, read in search results,
+      not archived). Neither is a D5 instrument.
+    queries:
+      - Home Affairs Schreiber statement Palestinians chartered flight OR Tambo November 2025 90-day visa exemption
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      A Hawks investigation of a South African serving in the Israeli army in Gaza was reported in
+      October 2024, and DIRCO warned in December 2023 that such service could be prosecuted; no
+      official record archived (lead lead_20260928_ZAF_4).
+    queries:
+      - National Prosecuting Authority Priority Crimes Litigation Unit investigation South Africans IDF Gaza 2025 docket Hawks
+      - South Africa government warns citizens serving Israel Defence Forces prosecution December 2023 DIRCO statement
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No government decision banning Palestine solidarity protests or symbols found; none met in the searches of this session.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No universal-jurisdiction complaint over Gaza accepted for investigation found beyond the
+      reported Hawks case (E1 lead).
