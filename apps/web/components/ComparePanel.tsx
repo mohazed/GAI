@@ -132,6 +132,21 @@ export function ComparePanel({
         <h2 id={`${id}-pick`} className="text-18 font-semibold">
           {t('compare.pickTitle')}
         </h2>
+        <CountryPicker
+          lang={lang}
+          t={t}
+          countries={countries.filter((c) => !chosen.includes(c.iso3))}
+          full={chosen.length >= MAX_COMPARE}
+          onPick={add}
+        />
+      </section>
+      {/* Everything that changes after hydration or a fetch sits in this region, which keeps a
+          minimum height (app/globals.css .compare-results) so that nothing below it moves. */}
+      <div className="compare-results flex flex-col gap-4">
+        {/* The chosen countries open the results region: chips added after hydration (a
+            `?c=` of five countries wraps them onto several lines) then grow inside the region's
+            reserved height instead of pushing it and the picker down (CLS 0.031 with five
+            countries before; docs/10 B-174). */}
         <ul aria-label={t('compare.chosen')} className="flex min-h-8 flex-wrap gap-2">
           {chosen.map((iso3) => {
             const i = styleIndex.get(iso3)
@@ -140,7 +155,13 @@ export function ComparePanel({
                 key={iso3}
                 className="inline-flex min-h-8 items-center gap-2 rounded-xs border border-rule ps-2"
               >
-                {i === undefined ? null : <CompareMark style={compareStyle(i)} />}
+                {/* Before its file is in, the chip keeps the mark's 36 px, so that the name
+                    does not move when the mark appears (CLS, docs/10 B-174). */}
+                {i === undefined ? (
+                  <span aria-hidden="true" className="inline-block h-3 w-9 shrink-0" />
+                ) : (
+                  <CompareMark style={compareStyle(i)} />
+                )}
                 <a href={`/${lang}/country/${iso3}/`} className="text-16">
                   {name(iso3)}
                 </a>
@@ -156,17 +177,6 @@ export function ComparePanel({
             )
           })}
         </ul>
-        <CountryPicker
-          lang={lang}
-          t={t}
-          countries={countries.filter((c) => !chosen.includes(c.iso3))}
-          full={chosen.length >= MAX_COMPARE}
-          onPick={add}
-        />
-      </section>
-      {/* Everything that changes after hydration or a fetch sits in this region, which keeps a
-          minimum height (app/globals.css .compare-results) so that nothing below it moves. */}
-      <div className="compare-results flex flex-col gap-4">
         {dropped.length > 0 ? (
           <p className="text-14 text-ink-2">
             {t('compare.dropped', { codes: dropped.join(', '), max: MAX_COMPARE })}
@@ -310,7 +320,9 @@ function CountryPicker({
           </ul>
         ) : null}
       </div>
-      <p id={`${id}-hint`} className="text-12 text-ink-2">
+      {/* Two lines kept for the hint: the "full" message that replaces it at five countries is
+          longer and would otherwise push the results down after hydration (docs/10 B-174). */}
+      <p id={`${id}-hint`} className="min-h-[2lh] text-12 text-ink-2">
         {full ? t('compare.full', { max: MAX_COMPARE }) : t('compare.hint', { max: MAX_COMPARE })}
       </p>
     </div>

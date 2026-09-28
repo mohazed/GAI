@@ -3,10 +3,12 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import type { ReactNode } from 'react'
+import { preload } from 'react-dom'
 import { Footer } from '../../components/Footer'
 import { Masthead } from '../../components/Masthead'
 import { SvgDefs } from '../../components/SvgDefs'
 import { publicApi } from '../../lib/api'
+import { PRELOADED_FONTS } from '../../lib/fonts'
 import { clientMessages, getT, isLang, LOCALES } from '../../lib/i18n'
 import { REPO_URL } from '../../lib/site'
 
@@ -45,6 +47,9 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
   const t = getT(locale)
   const manifest = publicApi.manifest()
+  for (const href of PRELOADED_FONTS) {
+    preload(href, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
+  }
   return (
     <html lang={locale}>
       <body>

@@ -50,9 +50,9 @@ const SCRIPT_BUDGET = {
 
 const ASSERTIONS = {
   'largest-contentful-paint': ['error', { maxNumericValue: 1500 }],
-  // No layout shift from fonts or hydration (docs/04 §3). The text face swaps in over a
-  // metric-matched fallback (app/globals.css), which leaves sub-pixel movement of inline links
-  // (0.0001 to 0.0004 measured): the limit is 0.001, a hundredth of the "good" 0.1.
+  // No layout shift from fonts or hydration (docs/04 §3). Every face is font-display: optional
+  // (P-13, docs/10 B-174): a font is never swapped in after the first paint. The limit is 0.001,
+  // a hundredth of the "good" 0.1.
   'cumulative-layout-shift': ['error', { maxNumericValue: 0.001 }],
   'categories:accessibility': ['error', { minScore: 1 }],
   'categories:best-practices': ['error', { minScore: 1 }],

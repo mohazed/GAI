@@ -28,6 +28,14 @@ export interface RankTableProps {
   id?: string
 }
 
+/**
+ * The class of a filter button in `.filter-grid`: labels longer than ten characters span two
+ * tracks, decided from the label, never from its rendered width (which depends on the font).
+ */
+export function filterButton(label: string): string {
+  return label.length > 10 ? 'btn filter-wide' : 'btn'
+}
+
 const MEMBERSHIPS = ['unsc', 'eu', 'nato', 'arab_league', 'oic', 'g20', 'g7', 'brics'] as const
 
 interface Effective {
@@ -221,26 +229,33 @@ export function RankTable({
       {scored.length > 0 ? (
         <fieldset className="js-only flex flex-col gap-2">
           <legend className="text-14 font-semibold">{t('filters')}</legend>
-          <div className="flex flex-wrap items-center gap-2">
-            {regionList.map((r) => (
-              <button
-                key={r}
-                type="button"
-                className="btn"
-                aria-pressed={regions.includes(r)}
-                onClick={() => toggle(regions, setRegions, r)}
-              >
-                {t.has(`regions.${r}` as 'regions.Europe')
-                  ? t(`regions.${r}` as 'regions.Europe')
-                  : r}
-              </button>
-            ))}
+          {/* A grid of fixed tracks, not a wrapping row: in a row, each button's place depends on
+              the width of the labels before it, which changes when the text face replaces its
+              fallback (a layout shift of 0.0012 on the CI runner, 0.12 in French with 195
+              countries; docs/10 B-171, B-174). Labels longer than ten characters take two tracks. */}
+          <div className="filter-grid">
+            {regionList.map((r) => {
+              const label = t.has(`regions.${r}` as 'regions.Europe')
+                ? t(`regions.${r}` as 'regions.Europe')
+                : r
+              return (
+                <button
+                  key={r}
+                  type="button"
+                  className={filterButton(label)}
+                  aria-pressed={regions.includes(r)}
+                  onClick={() => toggle(regions, setRegions, r)}
+                >
+                  {label}
+                </button>
+              )
+            })}
             {scoreMode
               ? methodology.bands.map((b) => (
                   <button
                     key={b.id}
                     type="button"
-                    className={`btn band-${b.id}`}
+                    className={`${filterButton(b.name[lang])} band-${b.id}`}
                     aria-pressed={bands.includes(b.id)}
                     onClick={() => toggle(bands, setBands, b.id)}
                   >
@@ -253,7 +268,7 @@ export function RankTable({
               <button
                 key={m}
                 type="button"
-                className="btn"
+                className={filterButton(t(`memberships.${m}`))}
                 aria-pressed={members.includes(m)}
                 onClick={() => toggle(members, setMembers, m)}
               >
@@ -262,7 +277,7 @@ export function RankTable({
             ))}
             <button
               type="button"
-              className="btn"
+              className={filterButton(t('coverage50'))}
               aria-pressed={cov50}
               onClick={() => setCov50(!cov50)}
             >
@@ -271,7 +286,7 @@ export function RankTable({
             {filtered ? (
               <button
                 type="button"
-                className="btn"
+                className={filterButton(t('clear'))}
                 onClick={() => {
                   setRegions([])
                   setBands([])

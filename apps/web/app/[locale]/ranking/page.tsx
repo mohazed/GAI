@@ -58,11 +58,13 @@ export default async function Ranking({ params }: { params: Promise<{ locale: st
           {score ? t('ranking.explain', values) : t('ranking.explainScorecard', values)}{' '}
           <a href={`/${lang}/methodology/`}>{t('home.readMethodology')}</a>
         </p>
-        <p className="text-14 text-ink-2">
+        {/* The note on its own line: after the link on one line, its place depended on the
+            link's width, which changes when the text face swaps in (CLS, docs/10 B-174). */}
+        <p className="flex flex-col items-start text-14 text-ink-2">
           <a href={score ? RANKING_CSV.score : RANKING_CSV.scorecard} download>
             {t('ranking.csv')}
-          </a>{' '}
-          {score ? t('ranking.csvNote') : t('ranking.csvNoteScorecard')}
+          </a>
+          <span>{score ? t('ranking.csvNote') : t('ranking.csvNoteScorecard')}</span>
         </p>
       </header>
       <RankingPanel
