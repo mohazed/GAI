@@ -1,0 +1,737 @@
+# Hand-authored events for Japan (P-D research session, wave 6, 2026-09-29).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers: the Prime Minister is the head of government (Kishida Fumio to October 2024, Ishiba
+# Shigeru to October 2025, Takaichi Sanae since); the Minister for Foreign Affairs is the foreign
+# minister (Kamikawa Yoko to October 2024, Iwaya Takeshi to October 2025, Motegi Toshimitsu
+# since). Names are written family name first, as the Ministry writes them. B9 events are filed
+# only on the speaker's own formal words (statements issued in the Foreign Minister's name,
+# speeches), not on the Ministry's readouts of meetings in indirect speech, on press conference
+# answers, or on statements of the Press Secretary (docs/10 B-332; B-314, B-320, B-325 on data/wave-5).
+- id: evt_2024_01_28_JPN_D2
+  revision: 1
+  country: JPN
+  indicator: D2
+  type: standing
+  date: '2024-01-28'
+  end: '2024-04-02'
+  points: -10
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Ministry of Foreign Affairs announced that Japan suspended additional funding to UNRWA while UNRWA investigated
+      allegations against its staff.
+    fr: >-
+      Le ministère des Affaires étrangères a annoncé que le Japon suspendait tout financement supplémentaire à l'UNRWA
+      pendant l'enquête de l'UNRWA sur des accusations visant son personnel.
+  actor:
+    en: Ministry of Foreign Affairs
+    fr: Ministère des Affaires étrangères
+  evidence:
+  - source: src_20240128_mofa-jp_statement-unrwa-allegations
+    quote: >-
+      In response, Japan has decided to suspend additional funding to UNRWA for the time being while UNRWA conducts an
+      investigation into the matter and considers measures to address the allegations.
+    quote_lang: en
+    locator: line 10
+  - source: src_20240415_mofa-jp_unrwa-disbursement
+    quote: >-
+      Having announced on April 2 that it would lift the suspension on funding to UNRWA and would provide support while
+      confirming the appropriate use of its funds
+    quote_lang: en
+    locator: line 9
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_04_02_JPN_D3
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 10 of the Press Secretary's statement of 28 January 2024 re-read: Japan decided to suspend additional
+        funding to UNRWA for the time being; line 9 of the release of 15 April 2024 gives the lifting announced on 2
+        April. D2 standing with that end agrees.
+    notes: >-
+      Statement by the Press Secretary of 28 January 2024. Standing from the announcement to the announced resumption of
+      2 April 2024 (docs/02 §2 D2), which the Ministry's release of 15 April 2024 records. Ended; contributes nothing now.
+
+- id: evt_2024_04_02_JPN_D3
+  revision: 1
+  country: JPN
+  indicator: D3
+  type: standing
+  date: '2024-04-02'
+  end: '2024-12-31'
+  points: 5
+  points_rationale: >-
+    Restored tier (+5): Japan lifted its suspension of funding to UNRWA on 2 April 2024; superseded on 2024-12-31 by the
+    increased tier (evt_2024_12_31_JPN_D3).
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Government of Japan lifted its suspension of funding to UNRWA and disbursed about USD 35 million from its FY2023
+      supplementary budget.
+    fr: >-
+      Le gouvernement du Japon a levé la suspension de son financement à l'UNRWA et a versé environ 35 millions de dollars
+      de son budget supplémentaire de l'exercice 2023.
+  actor:
+    en: Government of Japan
+    fr: Gouvernement du Japon
+  evidence:
+  - source: src_20240415_mofa-jp_unrwa-disbursement
+    quote: >-
+      Having announced on April 2 that it would lift the suspension on funding to UNRWA and would provide support while
+      confirming the appropriate use of its funds, Japan has completed the disbursement of the contribution of
+      approximately US$35 million from the FY2023 supplementary budget.
+    quote_lang: en
+    locator: line 9
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_01_28_JPN_D2
+  - evt_2024_12_31_JPN_D3
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 9 of the release of 15 April 2024 re-read: the lifting announced on 2 April and the disbursement of about
+        USD 35 million. Restored tier agrees; its end on 2024-12-31 follows the increased-tier event.
+    notes: >-
+      Standing from the announced resumption of 2 April 2024 (docs/02 §2 D3), ended 2024-12-31 when UNRWA's table shows
+      the 2024 contribution above 2022 and the increased tier supersedes it (D3 tiers do not add), as Canada's events on
+      data/wave-3. The announcement of 2 April 2024 itself (the Minister's press conference of that day) was not
+      archived; the release of 15 April 2024 states it.
+
+- id: evt_2024_06_02_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2024-06-02'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister urged all parties to work toward the release of all hostages and a
+    sustainable ceasefire; no violation is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs urged all parties to work toward the release of all hostages and a sustainable
+      ceasefire in Gaza.
+    fr: >-
+      La ministre des Affaires étrangères a exhorté toutes les parties à œuvrer à la libération de tous les otages et à un
+      cessez-le-feu durable à Gaza.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Kamikawa Yoko
+  evidence:
+  - source: src_20240602_mofa-jp_statement-hostage-ceasefire-proposal
+    quote: >-
+      Japan strongly urges all parties concerned to seize this opportunity and steadily work toward the release of all
+      hostages and a sustainable ceasefire.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 10 re-read: the Foreign Minister's statement (title line 6) urges all parties to work toward the release of
+        all hostages and a sustainable ceasefire; no violation named. Call tier agrees.
+    notes: >-
+      Statement by the Foreign Minister on the proposal announced on 31 May 2024. Her statement of 11 June 2024 on
+      Security Council resolution 2735 repeats the call and is not filed separately. Decayed to zero (more than 730
+      days).
+
+- id: evt_2024_07_23_JPN_B11
+  revision: 1
+  country: JPN
+  indicator: B11
+  type: standing
+  date: '2024-07-23'
+  end: null
+  points: 5
+  points_rationale: >-
+    Settlers tier (+5): an asset freeze on four Israeli settlers involved in violent acts in the West Bank, under the
+    Foreign Exchange and Foreign Trade Act.
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: >-
+      The Government of Japan froze the assets of four Israeli settlers involved in violent acts in the West Bank.
+    fr: >-
+      Le gouvernement du Japon a gelé les avoirs de quatre colons israéliens impliqués dans des actes de violence en
+      Cisjordanie.
+  actor:
+    en: Government of Japan
+    fr: Gouvernement du Japon
+  evidence:
+  - source: src_20240723_mofa-jp_asset-freeze-settlers
+    quote: >-
+      Measures (i) and (ii) will come into effect for Israeli settlers involved in violent acts (4 individuals) designated
+      as subject to asset freeze measures by the Ministry of Foreign Affairs Notice (promulgated on July 23).
+    quote_lang: en
+    locator: line 24
+  - source: src_20240723_mofa-jp_asset-freeze-settlers
+    quote: >-
+      the Government of Japan has introduced the following measures under the Foreign Exchange and Foreign Trade Act,
+      based on the Cabinet Understanding of “Asset Freeze for Israeli settlers involved in violent acts as of July 23,
+      2024”.
+    quote_lang: en
+    locator: line 21
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Lines 21 and 24 re-read: asset freeze under the Foreign Exchange and Foreign Trade Act on four Israeli settlers
+        involved in violent acts in the West Bank, by Ministry Notice of 23 July 2024. Settlers tier and west-bank scope
+        agree; the document does not cite Gaza.
+    notes: >-
+      West Bank measure, scoped west-bank only (docs/10 B-32): tracked, unscored in v1. No delisting of the four was found
+      in the Ministry's press releases to September 2026 (end null). No Japanese sanction on Israeli ministers was found.
+
+- id: evt_2024_08_09_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2024-08-09'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister urged all parties to work toward the release of all hostages and a
+    sustainable ceasefire; no violation is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs supported the mediators' joint statement and urged all parties to work toward the
+      release of all hostages and a sustainable ceasefire.
+    fr: >-
+      La ministre des Affaires étrangères a soutenu la déclaration conjointe des médiateurs et exhorté toutes les parties
+      à œuvrer à la libération de tous les otages et à un cessez-le-feu durable.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Kamikawa Yoko
+  evidence:
+  - source: src_20240809_mofa-jp_statement-us-egypt-qatar
+    quote: >-
+      Japan strongly urges all parties concerned to seize this opportunity and steadily work toward the release of all
+      hostages and a sustainable ceasefire.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 10 re-read: the Foreign Minister's statement (title line 6) urges all parties to work toward the release of
+        all hostages and a sustainable ceasefire. Call tier agrees.
+    notes: >-
+      Statement by the Foreign Minister on the joint statement of the leaders of the United States, Egypt and Qatar.
+      Decayed to zero (more than 730 days).
+
+- id: evt_2024_10_07_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2024-10-07'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister urged all parties, including Israel, to comply with international
+    humanitarian law and to work toward a ceasefire; no specific violation is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs urged all parties, including Israel, to comply with international humanitarian law
+      and to work toward a ceasefire in Gaza.
+    fr: >-
+      Le ministre des Affaires étrangères a exhorté toutes les parties, dont Israël, à respecter le droit international
+      humanitaire et à œuvrer à un cessez-le-feu à Gaza.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Iwaya Takeshi
+  evidence:
+  - source: src_20241007_mofa-jp_statement-gaza-one-year
+    quote: >-
+      Japan continues to urge all the parties including Israel, to comply with international law, including international
+      humanitarian law, and strongly urges them to steadily work toward realization of a ceasefire.
+    quote_lang: en
+    locator: line 5
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 5 re-read: the Foreign Minister's statement (title line 1) urges all parties including Israel to comply
+        with international humanitarian law and to work toward a ceasefire; no specific violation named. Call tier
+        agrees.
+    notes: >-
+      Statement by the Foreign Minister one year after the attacks of 7 October 2023. The same statement records Japan's
+      humanitarian assistance of about USD 128 million to the Palestinian people since 7 October 2023.
+
+- id: evt_2024_12_31_JPN_D3
+  revision: 1
+  country: JPN
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: >-
+    Increased tier (+8): UNRWA's tables give USD 37,155,282 pledged (36,240,067 received) from Japan for 2024 against
+    USD 30,152,202 for 2022.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      Japan's contribution to UNRWA for 2024 exceeded its 2022 contribution in UNRWA's donor tables.
+    fr: >-
+      La contribution du Japon à l'UNRWA pour 2024 a dépassé sa contribution de 2022 dans les tableaux des donateurs de
+      l'UNRWA.
+  actor:
+    en: Government of Japan
+    fr: Gouvernement du Japon
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: >-
+      Japan 3,834,351 2,933,524 52,170 52,170 3,886,521 2,985,694 4,766,163 4,751,775 - - - - 18,027,235 18,027,235 - -
+      10,475,363 10,475,363 33,268,760 33,254,373 37,155,282 14 36,240,067 13
+    quote_lang: en
+    locator: row Japan (line 22)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Japan 4,344,999 50,560 4,395,559 16,846,434 5,550,000 3,360,209 30,152,202 6
+    quote_lang: en
+    locator: row Japan (line 15)
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_04_02_JPN_D3
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Row Japan re-read in both tables: 2024 total pledged USD 37,155,282 (rank 14) and received 36,240,067 (rank 13),
+        2022 total 30,152,202 (rank 6). Both 2024 figures exceed 2022; increased tier agrees.
+    notes: >-
+      Dated from the end of the table year, as Canada's and Greece's increased-tier events on the other wave branches.
+      The 2024 row's last four figures are the total pledged (37,155,282, rank 14) and received (36,240,067, rank 13);
+      the 2022 row's total is 30,152,202 (rank 6). Both tables were copied byte for byte from data/wave-5 (docs/10
+      B-330), not archived again. UNRWA's table for 2025 was not archived; the increased tier holds until a later table
+      shows otherwise.
+
+- id: evt_2025_01_16_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-01-16'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister urged the parties to implement the ceasefire agreement of 15 January
+    2025 steadily and in good faith; no violation is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs welcomed the Gaza ceasefire agreement and urged the parties to implement it
+      steadily and in good faith.
+    fr: >-
+      Le ministre des Affaires étrangères a salué l'accord de cessez-le-feu à Gaza et exhorté les parties à le mettre en
+      œuvre de manière constante et de bonne foi.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Iwaya Takeshi
+  evidence:
+  - source: src_20250116_mofa-jp_statement-ceasefire-agreement
+    quote: >-
+      urges the parties to implement the agreement steadily and in good faith to put an end to the unbearable suffering.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 10 re-read: the Foreign Minister's statement (title line 6) urges the parties to implement the ceasefire
+        agreement steadily and in good faith. Call tier agrees.
+    notes: >-
+      Call to implement a ceasefire agreement, read at the call tier as the ceasefire-implementation calls filed on the
+      other wave branches (docs/10 B-314 on data/wave-5).
+
+- id: evt_2025_03_26_JPN_D4
+  revision: 1
+  country: JPN
+  indicator: D4
+  type: repeatable
+  date: '2025-03-26'
+  points: 5
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Government of Japan began treating patients from Gaza at the Self Defense Forces Central Hospital, at the request
+      of the World Health Organization.
+    fr: >-
+      Le gouvernement du Japon a commencé à soigner des patients de Gaza à l'hôpital central des Forces d'autodéfense, à
+      la demande de l'Organisation mondiale de la santé.
+  actor:
+    en: Government of Japan
+    fr: Gouvernement du Japon
+  evidence:
+  - source: src_20250326_mofa-jp_medical-evacuation-gaza
+    quote: >-
+      On March 26, one Palestinian who had been hospitalized in Egypt after suffering injuries and illnesses due to the
+      conflict in the Gaza Strip was transferred to Japan and began to receive treatment in the Self Defense Forces
+      Central Hospital of the Ministry of Defense.
+    quote_lang: en
+    locator: line 8
+  - source: src_20250326_mofa-jp_medical-evacuation-gaza
+    quote: >-
+      This is part of medical assistance in response to the serious humanitarian situation in Gaza and the request from
+      the World Health Organization (WHO).
+    quote_lang: en
+    locator: line 8
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 8 re-read: first patient from Gaza transferred from Egypt on 26 March 2025 and treated at the Self Defense
+        Forces Central Hospital, at the WHO's request, a second to follow; the patients are to return after treatment.
+        One D4 programme agrees; not D5.
+    notes: >-
+      One event for the medical-evacuation programme (docs/02 §2 D4), not per patient; a second patient was to follow.
+      The release states that the patients are to return after treatment and are not intended to settle in Japan, so it
+      is not a D5 pathway. The Prime Minister's General Assembly address of 23 September 2025 refers to the medical
+      treatment of the wounded in Japan.
+
+- id: evt_2025_08_09_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-08-09'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister urged all parties to work toward a ceasefire and called on Israel to end
+    the humanitarian crisis, including starvation; starvation is described as part of the crisis, not named as a
+    violation or a method of warfare, so the call tier applies.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs urged all parties to work toward a ceasefire and called on Israel to end the
+      humanitarian crisis in Gaza, including starvation.
+    fr: >-
+      Le ministre des Affaires étrangères a exhorté toutes les parties à œuvrer à un cessez-le-feu et appelé Israël à
+      mettre fin à la crise humanitaire à Gaza, y compris la famine.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Iwaya Takeshi
+  evidence:
+  - source: src_20250809_mofa-jp_statement-gaza-city-plan
+    quote: >-
+      Japan once again urges all parties to return to negotiations and to work in good faith towards a ceasefire and the
+      release of hostages.
+    quote_lang: en
+    locator: line 9
+  - source: src_20250809_mofa-jp_statement-gaza-city-plan
+    quote: >-
+      Japan calls on Israel to take substantive measures to end the serious humanitarian crisis, including starvation, and
+      reiterates our strong demand for its full compliance with international law, including international humanitarian
+      law.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Lines 9 and 10 re-read: the Foreign Minister's statement (title line 6) urges a ceasefire and calls on Israel to
+        end the humanitarian crisis, including starvation, and to comply with international humanitarian law. Starvation
+        is not called a violation or a method of warfare; call tier agrees.
+    notes: >-
+      Statement by the Foreign Minister on Israel's decision to take control of Gaza City. Read at the call tier under the
+      standard of the other wave branches, where +5 needs a named violation or a legal characterisation (for example
+      starvation as a prohibited method of warfare).
+
+- id: evt_2025_09_17_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-09-17'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister condemned the expanded ground operations in Gaza City and called on all
+    parties to work toward a ceasefire; famine is described as part of the crisis, not named as a violation, so the call
+    tier applies.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs condemned Israel's expanded ground operations in Gaza City and called on all
+      parties to work toward a ceasefire.
+    fr: >-
+      Le ministre des Affaires étrangères a condamné l'extension des opérations terrestres d'Israël dans la ville de Gaza
+      et appelé toutes les parties à œuvrer à un cessez-le-feu.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Iwaya Takeshi
+  evidence:
+  - source: src_20250917_mofa-jp_statement-gaza-city-operations
+    quote: Japan strongly condemns these actions, which are entirely unacceptable.
+    quote_lang: en
+    locator: line 9
+  - source: src_20250917_mofa-jp_statement-gaza-city-operations
+    quote: >-
+      Furthermore, we call upon all parties, including Israel, to return to negotiations and work in good faith toward
+      achieving a ceasefire and the release of hostages.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Lines 9 and 10 re-read: the Foreign Minister's statement (title line 6) condemns the expanded ground operations
+        and calls on all parties to work toward a ceasefire; famine is described, not named as a violation. Call tier
+        agrees.
+    notes: >-
+      Statement by the Foreign Minister on the ground operations announced on 16 September 2025. The same statement urges
+      Israel to comply with international humanitarian law.
+
+- id: evt_2025_09_23_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-09-23'
+  points: 2
+  points_rationale: >-
+    Formal call for a cessation of hostilities (+2): the Prime Minister called for the immediate cessation of the Israeli
+    ground operations in Gaza City; famine is described as part of the crisis, not named as a violation.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Prime Minister told the General Assembly that Japan condemned the expanded Israeli ground operations in Gaza City
+      and called for their immediate cessation.
+    fr: >-
+      Le Premier ministre a déclaré à l'Assemblée générale que le Japon condamnait l'extension des opérations terrestres
+      israéliennes dans la ville de Gaza et appelait à leur cessation immédiate.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Ishiba Shigeru
+  evidence:
+  - source: src_20250923_kantei_unga80-address
+    quote: >-
+      The recent expansion of the Israeli ground operations in Gaza City will further aggravate the already dire
+      humanitarian crisis in Gaza, including famine. Japan condemns these actions, which are entirely unacceptable in the
+      strongest possible terms. We call for their immediate cessation.
+    quote_lang: en
+    locator: line 32
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 32 re-read: the Prime Minister's own address (provisional translation, line 1) condemns the expanded ground
+        operations in Gaza City and calls for their immediate cessation. Call tier agrees.
+    notes: >-
+      Address to the 80th session of the General Assembly, English text on the Prime Minister's Office's site. The same
+      address says the question for Japan is not whether to recognise a Palestinian state but when (B8: no recognition).
+      The Prime Minister's press conference of 24 September 2025 repeats the call (not filed: same speaker, same content,
+      press conference).
+
+- id: evt_2025_10_09_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-10-09'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire and humanitarian access (+2): the Minister urged all parties to implement the first-phase
+    agreement and to let humanitarian operations proceed without impediment throughout the Gaza Strip; no violation is
+    named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs urged all parties to implement the Gaza agreement and to let humanitarian operations
+      proceed without impediment throughout the Gaza Strip.
+    fr: >-
+      Le ministre des Affaires étrangères a exhorté toutes les parties à mettre en œuvre l'accord sur Gaza et à laisser
+      les opérations humanitaires se dérouler sans entrave dans toute la bande de Gaza.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Iwaya Takeshi
+  evidence:
+  - source: src_20251009_mofa-jp_statement-comprehensive-plan
+    quote: >-
+      Japan once again strongly urges all parties to comply with international law, including international humanitarian
+      law, and to ensure that necessary humanitarian assistance operations are carried out immediately and without any
+      impediments throughout the Gaza Strip.
+    quote_lang: en
+    locator: line 11
+  - source: src_20251009_mofa-jp_statement-comprehensive-plan
+    quote: >-
+      urges all parties concerned to implement the agreement in good faith and in a steady manner.
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Lines 10 and 11 re-read: the Foreign Minister's statement (title line 6) urges implementation of the agreement
+        and humanitarian operations without impediment throughout the Gaza Strip. Call tier agrees.
+    notes: >-
+      Statement by the Foreign Minister on the first-phase agreement under the Comprehensive Plan to End the Gaza
+      Conflict.
+
+- id: evt_2025_11_18_JPN_B9
+  revision: 1
+  country: JPN
+  indicator: B9
+  type: repeatable
+  date: '2025-11-18'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the Minister stated that priority should be placed on the maintenance of the
+    ceasefire; no violation is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister for Foreign Affairs welcomed Security Council resolution 2803 and stated that priority should be placed
+      on maintaining the ceasefire in Gaza.
+    fr: >-
+      Le ministre des Affaires étrangères a salué la résolution 2803 du Conseil de sécurité et déclaré que la priorité
+      devait aller au maintien du cessez-le-feu à Gaza.
+  actor:
+    en: Minister for Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Motegi Toshimitsu
+  evidence:
+  - source: src_20251118_mofa-jp_statement-unscr-2803
+    quote: >-
+      For the mid- to long-term peace and stability of the region, a priority should be placed on the maintenance of the
+      ceasefire.
+    quote_lang: en
+    locator: line 5
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 5 re-read: priority on the maintenance of the ceasefire. The extracted text heads the page 'Statements and
+        Messages by the Foreign Minister' (line 1) and the source title names Foreign Minister Motegi. Call tier agrees.
+    notes: >-
+      Statement by the Foreign Minister on the adoption of resolution 2803 (17 November 2025). A call to maintain the
+      ceasefire, read at the call tier as the ceasefire-implementation calls (docs/10 B-314 on data/wave-5).
