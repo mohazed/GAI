@@ -312,6 +312,37 @@ describe('text extraction', () => {
     )
   })
 
+  it('reads the prose of a content-API JSON document and leaves dataset JSON raw', async () => {
+    const api = {
+      message: 'berhasil mengambil data konten publikasi',
+      data: {
+        title: 'Menlu RI di SMU PBB',
+        slug: 'menlu-ri-di-smu-pbb',
+        thumbnail_path: 'publikasi/1790_image.jpeg',
+        content_detail:
+          '<p style="text-align:justify;"><strong>New York</strong>– “First paragraph,” said the Minister.</p><p>Second <i>paragraph</i> here.</p>',
+        views: 0,
+      },
+    }
+    const bytes = new TextEncoder().encode(
+      JSON.stringify(api).replace(/–|“|”/g, (c) => `\\u${c.charCodeAt(0).toString(16)}`),
+    )
+    const x = await extractText(bytes, 'application/json', null)
+    expect(x.method).toBe('json-content')
+    expect(x.text.split('\n')).toEqual([
+      'berhasil mengambil data konten publikasi',
+      'Menlu RI di SMU PBB',
+      'New York– “First paragraph,” said the Minister.',
+      'Second paragraph here.',
+    ])
+    const dataset = new TextEncoder().encode(
+      JSON.stringify({ data: [{ name: 'Plan 1186', amountUSD: 5 }] }),
+    )
+    const y = await extractText(dataset, 'application/json', null)
+    expect(y.method).toBe('raw')
+    expect(y.text).toBe(new TextDecoder().decode(dataset))
+  })
+
   it('reads the text layer of a PDF', async () => {
     const stream = 'BT /F1 12 Tf 72 720 Td (Hello archived PDF) Tj ET'
     const objs = [
