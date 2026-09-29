@@ -1,0 +1,378 @@
+# Coverage record for the Republic of Korea (docs/03 §6). P-D research session, wave 6, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-336): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Japan, B-331). The registry's two gov_sources were used, read by
+# script (www.mofa.go.kr answers after a cookie redirect; www.president.go.kr through its own list
+# API), read only:
+# - MOFA English site: every title of the Press Releases board (m_5676, 1,120 items from October
+#   2023 to September 2026), the Press Briefings board (m_5679, 160 opening statements, read in
+#   full and searched for Gaza, Palestin*, Israel, ICC, Criminal Court, warrant, Netanyahu, UNRWA,
+#   settler, Court of Justice, recogni*), the Ministry News board (m_5674, 370 items) and the
+#   Minister's speeches board (m_5689, all 80 speeches of the period read in full and searched for
+#   Gaza, Palestin*, Israel, UNRWA, Middle East, two-state); about 60 other items read in full (every
+#   statement and commentary of the Spokesperson on Gaza, Israel, the West Bank and the region, the
+#   Minister's meetings and telephone talks, the humanitarian-aid releases).
+# - MOFA Korean site: every title of the press-release board 보도자료 (m_4080, 3,400 items from
+#   October 2023) filtered for 가자, 팔레스타인, 이스라엘, UNRWA, 근동, 국제형사재판소, ICC,
+#   국제사법재판소, 서안, 정착민, 하마스, 라파, 중동평화, 두 국가, 인질, 휴전, 중동; the board's
+#   full-text search for 정착민, 팔레스타인 국가, UNRWA, 근동; the Spokesperson's regular briefings
+#   (외교부 브리핑, m_4078, full transcripts with questions and answers) searched in full text for
+#   ICC, 국제형사재판소, 체포영장, 네타냐후, UNRWA, 팔레스타인, 가자, 국가 승인, 정착민, 무기 수출,
+#   방산, F-35, 국제사법재판소, 제노사이드, 집단살해 (the matching briefings read); the titles of
+#   보도참고 및 설명자료 (m_24815).
+# - Office of the President (president.go.kr, Lee Jae-myung administration from June 2025): the
+#   speeches board (full-text search for 가자, 팔레스타인, 이스라엘, Gaza, Palestin; the General
+#   Assembly addresses of 23 September 2025 and 22 September 2026, the Cairo speech and the
+#   Korea-Egypt press statement of 20 November 2025 read) and the briefings board (full-text search
+#   for 체포영장, 네타냐후, 가자, 팔레스타인, 이스라엘; the matching briefings on the Gaza-bound
+#   vessels read).
+# Save Page Now answers www.mofa.go.kr irregularly (HTTP 503 and 504; two pages captured anew with
+# '&page=1', two recorded from existing captures with --capture, B-188).
+# Not searched: the press; the National Assembly (questions, answers, resolutions); the Yoon
+# administration's presidential archive (pa.go.kr, to June 2025); the Ministry of National Defense
+# and the Defense Acquisition Program Administration (F-35 industrial participation, exercises,
+# purchases of Israeli systems, export licences for A2, A6); the Ministry of Trade, Industry and
+# Energy (strategic-goods export licences); the National Pension Service and other public funds
+# (C5); the police, prosecutors and courts (E1–E3); the statements of Korea's Permanent
+# Representative at the Security Council in 2024–2025 (the Mission's site).
+country: KOR
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (Korea had rows from P-14, so no fetch was run). Korea's own reports
+      carry HS 93 exports to Israel of USD 7,349,644 (2023), 1,039,556 (2024) and 1,494,635 (2025),
+      and HS 8710 of USD 12,875 (2022), 832,173 (2023), 100,671 (2024) and 156 (2025): −8 (USD 1
+      million to 10 million) from the 2023 release (11 January 2025) to today. For 2022 Korea's own
+      report has no HS 93 row and the generated event is 0 (HS 8710 only), while Israel's mirror
+      records HS 93 imports from Korea of USD 4,072,000: reported to the author as a question on the
+      generator's per-heading fallback (docs/10 B-338 (4)); the 2022 event ended on 2025-01-11 and
+      does not count today. HS 8526 (own USD 196,385 to 1,498,358 a year; mirror 383,000 to 886,000)
+      and HS 8802 (own USD 1,550,000 in 2022; mirror 1,902,000) are not counted: no licence register,
+      parliamentary answer or investigation confirming a military nature was found, and no row was
+      added to a2_confirmed_military.csv. No Korean document on arms exports to Israel was found in
+      the sources searched (the Spokesperson's briefings mention arms exports only for the defence
+      industry in general and Russia–DPRK transfers); DAPA, MOTIE and the National Assembly were not
+      searched. Nothing Korean contradicts the generated value.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (무기 수출, 방산, F-35)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Korean companies as Tier-1 or Tier-2 suppliers of parts or
+      maintenance for the global F-35 programme was found in the sources searched; Korea is an F-35
+      operator, which A3 does not cover. The Ministry of National Defense, DAPA and industry records
+      were not searched (P-16).
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (F-35, 방산)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-902); left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, documented transit, basing agreement or confirmed intelligence sharing with
+      Israel related to the Gaza campaign was found in the Ministry's and the President's records. The
+      Ministry's contacts with Israel in the period are consular (evacuations of Korean nationals,
+      the seizure of Gaza-bound vessels carrying Korean nationals in October 2025 and May 2026) and
+      diplomatic (the Minister's meeting with the Israeli Ambassador of 20 October 2023 and telephone
+      talks of 29 October 2023 and 3 September 2025). The Ministry of National Defense was not
+      searched.
+    queries:
+      - mofa.go.kr press releases 2023-10 to 2026-09 (Israel, 이스라엘)
+      - president.go.kr briefings full text (이스라엘)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No government decision suspending or refusing a class of export licences to Israel was found in
+      the Ministry's and the President's records. DAPA, MOTIE (strategic-goods licensing) and the
+      courts were not searched.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (무기 수출, 방산)
+      - mofa.go.kr press-release titles (이스라엘)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree on an arms embargo on Israel was found.
+    queries:
+      - mofa.go.kr press-release titles (이스라엘)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of transit or port access for arms bound for Israel was found; port authorities not searched.
+    queries:
+      - mofa.go.kr press-release titles (이스라엘)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): abstention on
+      ES-10/21 and ES-10/24, yes on ES-10/22, ES-10/23, ES-10/25, ES-10/26 and 79/232. The archived
+      press releases agree where they name Korea: GA/12626 lists the Republic of Korea among the
+      abstaining delegations that explained their vote on ES-10/24. Later votes without rows
+      (B-199 (1)): GA/12690 records that the Republic of Korea explained its vote in favour of
+      ES-10/27; the press releases of A/DEC/80/506, 80/1, 80/78 and 80/116 do not name Korea and no
+      Korean record of those votes was found. No Korean document read contradicts the rows.
+    queries:
+      - archive/text UN press releases of votes.yaml (Republic of Korea)
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The Republic of Korea was an elected member of the Security Council in 2024 and 2025
+      (applicable). An elected member has no veto; unsc_vetoes.csv has no Korean row. The
+      Spokesperson said on 26 March 2024 that resolution 2728 was put forward jointly by the ten
+      elected members including Korea and that Korea was one of the co-penholders; the Minister
+      chaired the Council's meeting of 23 September 2025 on the Middle East (evt_2025_09_23_KOR_B9).
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (가자)
+      - mofa.go.kr press releases (Security Council)
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The Republic of Korea has filed no declaration of intervention in ICJ case 192 (not in the list
+      of docs/06 §8). The Ministry's records
+      mention the ICJ only for lectures by the Court's judges and Registrar (2024–2025).
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (국제사법재판소)
+      - mofa.go.kr press-release titles (국제사법재판소, ICJ)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional-measures orders or their binding character was
+      found; no intervention against the applicant's construction.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (국제사법재판소, 제노사이드, 집단살해)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the President or the Minister of Foreign Affairs on executing the warrants of
+      21 November 2024 was found; the Spokesperson's briefings of November 2024 contain no question
+      on them (the Ministry was asked about the Prosecutor's applications on 21 May 2024). At the
+      Cabinet meeting of 20 May 2026 the President, briefed on the seizure of a Gaza-bound vessel
+      carrying Korean nationals, "mentioned" the ICC arrest warrant issued for the Prime Minister of
+      Israel and said, per the Senior Presidential Spokesperson's written briefing: "최소한의
+      국제규범이라고 하는 게 있는데 다 어기고 있다. 원칙대로 해달라. 너무 많이 인내했다" ("There
+      is such a thing as minimum international norms, and they are all being violated. Please act
+      according to principle. We have been too patient.", translation;
+      src_20260520_president-kr_cabinet-meeting-briefing, line 10). The next day the Ministry's
+      Spokesperson said the remark "지적한 것" (pointed out) "국제사회에서 공개적으로 논의된 바 있는
+      쟁점 하나" (one issue publicly discussed in the international community) (briefing of 21 May
+      2026, not archived). The words state no position on executing the warrants, so no B5 event is filed;
+      flagged for the author (docs/10 B-338 (2)). Korea is a State party; the Ministry's meetings with
+      the ICC's Presidents (13 November 2023, 23 September 2025) restate support for the Court in
+      general.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (ICC, 국제형사재판소, 체포영장, 네타냐후)
+      - president.go.kr briefings full text (체포영장, 네타냐후)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of non-execution or immunity, no official visit of a person under warrant and no
+      withdrawal from the Rome Statute was found.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (ICC, 체포영장, 네타냐후)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanction on ICC officials by the Republic of Korea was found.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (ICC, 국제형사재판소)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The Republic of Korea has not recognised the State of Palestine (no row in recognitions.csv;
+      registry note of 2026-09-28). The Minister told the Security Council on 23 September 2025 that
+      Korea "is committed to recognizing Palestinian statehood at a time when it would be genuinely
+      conducive to realizing the two-state solution" (src_20250923_mofa-kr_fm-unsc-middle-east, line
+      35): intent, not recognition. No later decision was found to 29 September 2026 (the Special
+      Representative's statement at the Global Alliance meeting of 24 September 2026 restates support
+      for the two-state solution).
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (국가 승인, 팔레스타인)
+      - mofa.go.kr press releases (팔레스타인 국가)
+  B9:
+    status: has-events
+    note: >-
+      Three events at the call tier while the 2024 ones count; four in all (21 February 2024, G20;
+      29 March 2024, Iftar remarks; 26 October 2024, the seven foreign ministers' statement on the
+      UNRWA bills; 23 September 2025, Security Council). Not filed under the B9 standard (docs/10
+      B-337): the Minister's statement at the G20 of 20 February 2025 (welcomes the Gaza ceasefire
+      agreement and "hope[s] for a swift and full implementation", a hope, not a call;
+      src_20250220_mofa-kr_fm-g20-statement, line 31); his remarks at the Security Council of 25
+      September 2024 (Gaza named as a failure of the Council; the call to stop attacks on medical and
+      humanitarian personnel is addressed to all conflicts); the Ministry's readouts of his telephone
+      talks of 29 October 2023, 3 September 2025 and 18 September 2025 (calls for a humanitarian
+      pause or an immediate ceasefire in indirect speech); the statements and commentaries of the
+      MOFA Spokesperson on Gaza (19 October 2023 to 16 January 2026: calls for compliance with
+      international humanitarian law, humanitarian access and an immediate ceasefire; concern at the
+      Rafah operation of February 2024, the attack on aid workers of 2 April 2024 and the al-Tabeen
+      school of 10 August 2024); the Deputy Minister's statement at the Cairo conference of 2 December
+      2024; the President's words at the Cabinet meeting of 20 May 2026 on the seizure of a Gaza-bound
+      vessel (see B5; "너무 심하고 비인도적", "too severe and inhumane", about the detention of Korean
+      nationals, line 9 of src_20260520_president-kr_cabinet-meeting-briefing), flagged for the author
+      (B-338 (2)). The President's General Assembly addresses (2025, 2026) name only conflicts "in
+      Ukraine and the Middle East"; his Cairo speech of 20 November 2025 commends Egypt's mediation
+      and announces participation in Gaza's recovery (no call). No statement of Korea signing the
+      joint statements of 21 July, 9, 10 and 12 August 2025 archived on the other wave branches was
+      found; asked on 22 July 2025 why Korea was not among the signatories of 21 July, the
+      Spokesperson said he did not know the reason. Yoon-era presidential statements (to June 2025) were not searched.
+    queries:
+      - mofa.go.kr speeches board m_5689 full text (Gaza, Palestin*, Israel, UNRWA, Middle East)
+      - mofa.go.kr press releases m_5676 and 보도자료 titles (Gaza, 가자, 팔레스타인, 이스라엘, 휴전)
+      - president.go.kr speeches and briefings full text (가자, 팔레스타인, 이스라엘, Gaza)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's conduct or denial of violations was found.
+      The Spokesperson's statement of 7 October 2023 condemns the attacks on Israel from Gaza and
+      states concern at civilian casualties; later statements pair condemnation of Hamas with calls
+      for compliance with international humanitarian law.
+    queries:
+      - mofa.go.kr press releases m_5676 (Israel, Hamas)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanction by the Republic of Korea on Israeli ministers or on settlers was found. The
+      Spokesperson's commentaries on settlement expansion (9 March and 4 July 2024) and the West Bank
+      (13 February 2026) and the Special Representative's statement of 24 September 2026 on settler
+      violence express concern and announce no measure.
+    queries:
+      - mofa.go.kr 보도자료 full text (정착민)
+      - mofa.go.kr 외교부 브리핑 full text (정착민)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall of the ambassador or downgrade of relations was found; the Vice Minister met Israel's
+      chargé d'affaires on 9 October 2025 to request the release of a Korean national (consular).
+    queries:
+      - mofa.go.kr press-release titles (이스라엘, Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Not an EU member. No review or suspension of the Korea-Israel free trade agreement was found;
+      the Minister cited its conclusion as a sign of friendly relations in his call with the Israeli
+      Foreign Minister of 3 September 2025.
+    queries:
+      - mofa.go.kr press releases (Israel, FTA)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No agreement signed with Israel since 7 October 2023 was found in the Ministry's releases; the
+      treaty database and other ministries (science, trade) were not searched (P-16).
+    queries:
+      - mofa.go.kr press-release titles (이스라엘, 협정, MOU)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (own reports): total trade with Israel USD 3.73 billion in 2022, 3.46
+      billion in 2023 (r = 0.93, −5), 3.09 billion in 2024 (r = 0.83, 0) and 3.46 billion in 2025 (r =
+      0.93, −5, from 21 May 2026). Israel's mirror data give 4.10, 3.29, 3.44 and 3.63 billion. No
+      Korean document contradicts the values.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling or ban of settlement goods was found.
+    queries:
+      - mofa.go.kr 보도자료 full text (정착민)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by the National Pension Service or another public fund was found in the
+      sources searched; the funds' own sites were not searched (P-16).
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (이스라엘)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion related to Israel was found; the procurement service was not searched.
+    queries:
+      - mofa.go.kr press-release titles (이스라엘)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: +3 today (USD 24.42 million in the window to August 2026, 0.0012 % of GNI),
+      +1 to +6 before (USD 65 million in the window to September 2025, +6). FTS records USD 35
+      million to the 2024 plan, 35.84 million to 2025 and 8.58 million to 2026. The Government's own
+      figures are larger because they include aid outside the flash appeals (docs/06 §7): USD 2
+      million (19 October 2023), 8 million (16 January 2024) and 30 million announced in September
+      2024, "a total 40 million U.S. dollars" to December 2024 (release of 3 December 2024), and USD
+      96 million (9,600만불) of humanitarian aid to Palestine since October 2023 (Korean release of 22
+      July 2026).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The Republic of Korea did not suspend its funding to UNRWA. Asked on 30 January 2024 about the
+      allegations against UNRWA staff, the Spokesperson said the Government was following the UN's
+      investigation; the Minister appreciated the UN's efforts to resolve the allegations through a
+      transparent investigation (meeting with the Secretary-General, release of 24 February 2024). No
+      suspension was announced. UNRWA's table for 2024 records USD 20.2
+      million pledged.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (UNRWA, 팔레스타인)
+      - mofa.go.kr 보도자료 full text (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_KOR_D3), increased tier: UNRWA's tables give USD 2,182,037 for 2022
+      and USD 20,221,558 pledged (14,108,348 received) for 2024.
+    queries:
+      - archive/text UNRWA donor tables 2022 and 2024 (Republic of Korea)
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field-hospital deployment for Gaza by the Republic of Korea
+      was found; the Ministry's evacuations concern Korean nationals and their families (November
+      2023).
+    queries:
+      - mofa.go.kr press-release titles (가자, 대피, evacuation)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or residence instrument for people from Gaza was found; the Ministry of Justice was not searched.
+    queries:
+      - mofa.go.kr press-release titles (가자)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No investigation of Korean nationals or companies for conduct in Gaza was found; prosecutors and courts not searched.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (제노사이드, 집단살해)
+  E2:
+    status: unchecked
+    note: >-
+      Experimental, unscored. Police and municipal decisions on assemblies were not searched (P-16).
+      The Spokesperson's briefings of 26 May and 9 June 2026 record that the passport of a Korean
+      activist who tried to reach Gaza by sea in May 2026 had been invalidated under the travel ban on
+      Gaza: a travel-ban measure, not a protest ban; recorded here for the author.
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation was found; courts not searched.
+    queries:
+      - mofa.go.kr 외교부 브리핑 full text (제노사이드, 집단살해)
