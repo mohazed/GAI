@@ -284,6 +284,65 @@ describe('text extraction', () => {
     expect(x.text.split('\n')).toHaveLength(40)
   })
 
+  it('reads the prose of a client-rendered Next.js page whose body has no text', () => {
+    const data = {
+      props: {
+        props: { settings: { terms: 'Site terms that are not the page' } },
+        pageProps: {
+          newsDetails: {
+            uuid: 'N1995533',
+            title: 'Crown Prince Inaugurates Summit',
+            content:
+              'Riyadh, November 11, 2023, SPA -- First paragraph.\n    Second <b>paragraph</b> here.\n',
+          },
+          gcloudToken: 'abc123',
+        },
+      },
+    }
+    const page = `<html lang="en"><head><title>SPA</title></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">${JSON.stringify(data)}</script></body></html>`
+    const x = extractHtml(page)
+    expect(x.method).toBe('next-data')
+    expect(x.text.split('\n')).toEqual([
+      'Crown Prince Inaugurates Summit',
+      'Riyadh, November 11, 2023, SPA -- First paragraph.',
+      'Second paragraph here.',
+    ])
+    expect(extractHtml('<html><body><div id="__next"></div></body></html>').method).toBe(
+      'html-body',
+    )
+  })
+
+  it('reads the prose of a content-API JSON document and leaves dataset JSON raw', async () => {
+    const api = {
+      message: 'berhasil mengambil data konten publikasi',
+      data: {
+        title: 'Menlu RI di SMU PBB',
+        slug: 'menlu-ri-di-smu-pbb',
+        thumbnail_path: 'publikasi/1790_image.jpeg',
+        content_detail:
+          '<p style="text-align:justify;"><strong>New York</strong>– “First paragraph,” said the Minister.</p><p>Second <i>paragraph</i> here.</p>',
+        views: 0,
+      },
+    }
+    const bytes = new TextEncoder().encode(
+      JSON.stringify(api).replace(/–|“|”/g, (c) => `\\u${c.charCodeAt(0).toString(16)}`),
+    )
+    const x = await extractText(bytes, 'application/json', null)
+    expect(x.method).toBe('json-content')
+    expect(x.text.split('\n')).toEqual([
+      'berhasil mengambil data konten publikasi',
+      'Menlu RI di SMU PBB',
+      'New York– “First paragraph,” said the Minister.',
+      'Second paragraph here.',
+    ])
+    const dataset = new TextEncoder().encode(
+      JSON.stringify({ data: [{ name: 'Plan 1186', amountUSD: 5 }] }),
+    )
+    const y = await extractText(dataset, 'application/json', null)
+    expect(y.method).toBe('raw')
+    expect(y.text).toBe(new TextDecoder().decode(dataset))
+  })
+
   it('reads the text layer of a PDF', async () => {
     const stream = 'BT /F1 12 Tf 72 720 Td (Hello archived PDF) Tj ET'
     const objs = [
