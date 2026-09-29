@@ -1,0 +1,270 @@
+# Coverage record for the United Kingdom (docs/03 §6). P-D research session, wave 1, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+country: GBR
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (own report). United Kingdom 2025 HS 93 exports to Israel USD 399,666
+      (release of 2026-03-10; no HS 8710 row) → −3; 2023 USD 185,074 and 2024 USD 202,611, also −3.
+      HS 8526 (USD 1.29 million in 2025, own report) and 8802 do not count: no licence register,
+      parliamentary answer or investigation citing those codes was archived. The government's own
+      record is licensing data, not customs values: the Department for Business and Trade publishes
+      "Export control licensing management information for Israel" (licence decisions from 7 October
+      2023, last updated 20 April 2026; read, not archived); no figure in it is comparable with the HS
+      93 value, so no disagreement can be stated. F-35 components exported to the global pool are not
+      counted as exports to Israel in either source (A3).
+    queries:
+      - gov.uk export control licensing management information Israel
+      - gov.uk Israel export licences suspension (search API, 2024-08-30 to 2026-09-30)
+  A3: {status: has-events, checked_at: 2026-09-28}
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. No UK government procurement contract with an Israeli supplier signed since 7 October
+      2023 was looked for separately (A4 is not hand-authored).
+  A5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the Ministry of Defence's surveillance flights over Israel and Gaza for hostage location,
+      with information passed to the Israeli authorities (announced 2 December 2023, ended 10 October
+      2025). Not filed: the deployment of 12 October 2023 of P8 aircraft, surveillance assets and two
+      Royal Navy ships to the eastern Mediterranean "to support Israel" and deter escalation (a
+      regional deployment, not a named exercise, transit, basing agreement or intelligence sharing for
+      the Gaza campaign); press and NGO reports on the scale and use of the flights (lead
+      lead_20260928_GBR_2). No named joint exercise with Israel, port call or overflight authorisation
+      for arms to Israel found in an official source.
+    queries:
+      - gov.uk surveillance flights Gaza hostages Ministry of Defence
+      - Prime Minister deploys UK military to Eastern Mediterranean to support Israel October 2023
+      - Declassified UK RAF Akrotiri flights Israel Gaza surveillance Shadow R1
+  A6: {status: has-events, checked_at: 2026-09-28}
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No law or decree covering arms exports to and imports from Israel. The suspension of 2
+      September 2024 covers about 30 licences for use in Gaza (A6); the refusal policy announced on 8
+      September 2026 covers exports that materially contribute to the occupation (A6, west-bank); the
+      Foreign Secretary stated the UK opposes the BDS campaign and will keep trading with Israel within
+      the green line (8 September 2026).
+    queries:
+      - UK arms embargo Israel law 2024 2025 2026
+      - gov.uk Foreign Secretary Oral Statement on Israel-Palestine 8 September 2026 arms licences
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No UK port, airspace or flagged-vessel denial of an arms shipment to Israel found in an official source.
+    queries:
+      - UK port denied vessel arms Israel 2024 2025 2026
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on ES-10/21,
+      ES-10/22, ES-10/23 and ES-10/24, yes on ES-10/25, ES-10/26 and 79/232. Checked against the
+      archived press releases: GA/12599 reports the United Kingdom's representative saying her
+      delegation was abstaining on ES-10/23 (agrees); GA/12626 reports that the United Kingdom's
+      representative said her delegation abstained on ES-10/24 (agrees). The UK statement in the
+      General Assembly of 11 December 2024 ("We intend to vote in favour of these resolutions backing
+      UNRWA and a ceasefire in Gaza", GOV.UK title, not archived) agrees with the yes on ES-10/25 and
+      ES-10/26. Of the five later votes (no row until B-199 (1)): GA/12690 reports the UK's
+      explanation on ES-10/27 without its vote, and the UK statement of 12 June 2025 on GOV.UK ("The UK
+      voted in favour…", GOV.UK title, not archived) states a yes; GA/12739 names the United Kingdom among the
+      votes against a decolonization text, not a qualifying vote. The other releases do not list how
+      each state voted. No disagreement found.
+  B2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from unsc_vetoes.csv. The United Kingdom, a permanent member, cast no veto in the
+      window: none of the ten ceasefire vetoes or two tracked vetoes of the table is British (the
+      meeting records archived by P-14).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No declaration of intervention by the United Kingdom in case 192 (the ICJ's list through the
+      declarations of 12 March 2026, docs/06 §8). The Foreign Secretary said on 8 September 2026 that
+      the UK supports the Court in coming to its determination on genocide.
+    queries:
+      - ICJ case 192 declaration of intervention United Kingdom Article 63
+      - gov.uk International Court of Justice advisory opinion Israel statement
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official statement rejecting the ICJ's provisional-measures orders or their binding character,
+      and no intervention against the applicant.
+    queries:
+      - UK government ICJ provisional measures Israel binding statement 2024
+      - gov.uk UK statement on the ICJ's Advisory Opinion July 2024
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No commitment to execute the warrants by the Prime Minister, the Foreign Secretary or the Justice
+      Secretary in an official transcript. After 21 November 2024 the Prime Minister's spokesperson said
+      the UK "will always comply with its legal obligations" (press reports), and the government told
+      the House of Lords on 26 November 2024 that a domestic court process under the International
+      Criminal Court Act 2001 would decide (Hansard, not archived; neither is a statement by the Prime
+      Minister, the Foreign Secretary or the Justice Secretary; lead_20260928_GBR_1).
+    queries:
+      - Starmer ICC arrest warrant Netanyahu comply UK legal obligations November 2024
+      - Hansard Commons Lammy ICC arrest warrants Netanyahu International Criminal Court Act 2001
+      - gov.uk International Criminal Court arrest warrants (search API, from 2023-10-07)
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No stated refusal to execute the warrants by a qualifying office-holder and no official visit to
+      the UK by a person under warrant found.
+    queries:
+      - Netanyahu visit United Kingdom 2025 2026 ICC warrant
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: The United Kingdom has imposed no sanctions on ICC officials.
+    queries:
+      - UK sanctions International Criminal Court judges prosecutor
+  B8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv: +8 from 2025-09-21 (the Prime Minister's statement,
+      src_20250921_gov-uk_recognition-palestine). The row exists; nothing to add.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the Foreign Secretary's statements of 2 September 2024, 20 May 2025, 23 September 2025
+      (Security Council), 18 November 2025 and 8 September 2026, and the Prime Minister's statement of
+      25 July 2025 with the E3 declaration. Not filed: the Foreign Secretary's article with the German
+      Foreign Minister of 17 December 2023 (archived, src_20231217_gov-uk_cameron-baerbock-sustainable-ceasefire:
+      it argues against an immediate ceasefire and for work towards a "sustainable ceasefire", so it is
+      not read as a formal call); the Prime Minister's speech at the General Assembly of 22 September
+      2026 (Andy Burnham: "Far too little aid is getting in", read, not archived; no formal call for a
+      ceasefire or an end to the blockade and no named violation); the FCDO statement of 21 May 2026
+      summoning the Israeli chargé d'affaires (a departmental statement calling for more aid, no
+      ceasefire call or named violation); the Foreign Secretary's statement of 15 January 2026 on the
+      Palestinian committee for the administration of Gaza (not read in this session); the UK
+      Permanent Representative's statements in the Security Council (not a head of government or
+      foreign minister); earlier calls of the Foreign Secretary in July 2024 (one per period was filed,
+      the cap being +10).
+    queries:
+      - gov.uk Prime Minister statement Gaza (search API, from 2023-10-07)
+      - gov.uk Foreign Secretary Yvette Cooper Gaza 2025 2026
+      - gov.uk Foreign Secretary Cameron sustainable ceasefire Gaza
+      - gov.uk PM speech at UNGA 22 September 2026
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No declaration of unconditional support or denial of documented violations by the head of
+      government. The Prime Minister's statements of 16 October 2023 (House of Commons: "We stand with
+      Israel", with "this must be done in line with international humanitarian law") and of 19 October
+      2023 in Israel ("we also want you to win", with support "in line with international law") state
+      support together with international law, the same reading as the US session's (data/assessments/USA.yaml,
+      B10); read on GOV.UK, not archived.
+    queries:
+      - gov.uk PM statement to the House of Commons Israel and Gaza 16 October 2023
+      - gov.uk PM statement at press conference with Prime Minister Netanyahu 19 October 2023
+  B11: {status: has-events, checked_at: 2026-09-28}
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall of the UK ambassador to Israel, downgrade or severance. The FCDO summoned Israel's
+      ambassador on 20 May 2025 and its chargé d'affaires on 21 May 2026 (summoning a foreign envoy is
+      not a recall).
+    queries:
+      - gov.uk Israeli ambassador summoned recalled 2024 2025 2026
+  C1: {status: has-events, checked_at: 2026-09-28}
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new UK–Israel trade, investment or cooperation agreement signed since 7 October 2023 found on GOV.UK.
+    queries:
+      - gov.uk UK Israel agreement signed memorandum (from 2023-10-07)
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. 2025 total goods trade with Israel USD 3,736,996,683 (own report) against USD
+      5,186,780,482 in 2022: r = 0.72 < 0.9 → 0 (the event exists at zero points).
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No ban or labelling rule for settlement goods in force. The Foreign Secretary announced on 8
+      September 2026 an import ban on goods from settlements, through a sanctions regime to be
+      legislated "within 6 to 9 months" (src_20260908_gov-uk_fs-oral-statement-israel-palestine,
+      src_20260908_gov-uk_new-powers-settlements); the Prime Minister described it at the General
+      Assembly on 22 September 2026 as done ("banning trade in goods with illegal settlements"). File
+      the C4 event (scope west-bank unless the instrument cites Gaza) when the instrument is made.
+    queries:
+      - gov.uk settlement goods import ban 2026
+      - UK settlement goods labelling ban regulation
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The United Kingdom has no sovereign wealth fund; no exclusion decision by a national public
+      pension fund over conduct in Gaza found (local government pension funds are sub-national).
+    queries:
+      - UK public pension fund exclusion Israel Gaza decision
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No national procurement exclusion with legal effect found.
+    queries:
+      - UK procurement exclusion companies Israel Gaza
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Window 2025-09…2026-08: USD 79,788,842 ÷ GNI USD 3,790,859,162,035 = 0.00210 % → +6.
+      The government announced a "major package of support" for Gaza on 24 September 2026 (GOV.UK
+      title, not archived); later FTS windows will show it if reported.
+  D2: {status: has-events, checked_at: 2026-09-28}
+  D3: {status: has-events, checked_at: 2026-09-28}
+  D4: {status: has-events, checked_at: 2026-09-28}
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee instrument opened for people from Gaza. The government helped scholarship
+      students meeting the existing Immigration Rules to leave Gaza (September 2025, June 2026) and
+      admitted evacuated children's immediate families for treatment (D4); neither is a new legal
+      instrument.
+    queries:
+      - gov.uk Gaza visa scheme family
+      - gov.uk students Gaza scholarships leave Gaza Immigration Rules
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No investigation of UK nationals for conduct in Gaza announced by the police or prosecutors in an
+      official source. The Metropolitan Police War Crimes Team declined in April 2026 to investigate a
+      referral about UK nationals serving in the IDF and reversed that decision in July 2026 (press and
+      NGO reports only; lead_20260928_GBR_3).
+    queries:
+      - Metropolitan Police war crimes team investigation British nationals Gaza complaint 2025 2026
+  E2: {status: has-events, checked_at: 2026-09-28}
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint on Gaza accepted for investigation found.
+    queries:
+      - UK universal jurisdiction complaint Gaza accepted war crimes arrest warrant
