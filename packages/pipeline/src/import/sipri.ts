@@ -12,7 +12,10 @@
  * and order year into sipri_orders.csv rows. Order years marked uncertain by SIPRI (a trailing
  * "?" or brackets) are kept and listed in the report.
  *
- * Supplier and recipient names are coded with names.ts; unknown names stop the import.
+ * Supplier and recipient names are coded with names.ts; unknown names stop the import. Recipients
+ * that are not states of the universe (SIPRI's non-state marks, Taiwan, "unknown recipient(s)")
+ * are skipped and listed; an order whose "SIPRI TIV for total order" is empty (SIPRI: data not
+ * available) counts as an order of 0 TIV and is listed (docs/10 B-904).
  */
 import { foldName, iso3ForName } from '../names.js'
 
@@ -28,6 +31,13 @@ const UNKNOWN_SUPPLIER = /^unknown/i
  * ("African Union**"): not a state of the universe, so skipped and listed, never coded.
  */
 const NON_STATE = /\*$/
+/**
+ * Recipients SIPRI names that are not states of the universe (docs/10 B-904): skipped and listed
+ * like the non-state recipients, never coded. Folded names.
+ */
+const OUTSIDE_UNIVERSE = new Set(['taiwan'])
+/** SIPRI's "unknown recipient(s)": skipped and listed, like "Unknown supplier(s)" in the TIV table. */
+const UNKNOWN_RECIPIENT = /^unknown recipient/i
 
 function number(cell: string | undefined): number {
   const s = (cell ?? '').replace(/[\s,]/g, '')
@@ -171,6 +181,12 @@ export interface OrdersImport {
   nonState: string[]
   /** Register lines whose order year SIPRI marks uncertain. */
   uncertainYears: string[]
+  /** Recipients outside the universe (Taiwan), skipped: "name (n orders)". */
+  outsideUniverse: string[]
+  /** Orders placed with Israel by "unknown recipient(s)", skipped: "year designation". */
+  unknownRecipientOrders: string[]
+  /** Orders counted with 0 TIV because SIPRI gives no TIV for the total order. */
+  emptyTivOrders: string[]
 }
 
 export function importOrders(
@@ -203,12 +219,16 @@ export function importOrders(
     (h) => h.includes('order') && (h.includes('year') || h.includes('date')),
     'Year of order',
   )
+  const iDesignation = header.indexOf('weapon designation')
   const iTiv = col(
     (h) => h.includes('tiv') && h.includes('total order'),
     'SIPRI TIV for total order',
   )
   const unknown = new Set<string>()
   const nonState = new Set<string>()
+  const outside = new Map<string, number>()
+  const unknownRecipient: string[] = []
+  const emptyTiv: string[] = []
   const uncertain: string[] = []
   const sums = new Map<string, number>()
   // The 2026 export puts SIPRI's "?" for an uncertain order year in the unnamed column after it.
@@ -220,14 +240,26 @@ export function importOrders(
       nonState.add(name.trim())
       continue
     }
+    const yearCell = cells[iYear] ?? ''
+    const what = [yearCell, iDesignation === -1 ? '' : (cells[iDesignation] ?? '')]
+      .filter(Boolean)
+      .join(' ')
+    if (OUTSIDE_UNIVERSE.has(foldName(name))) {
+      outside.set(name.trim(), (outside.get(name.trim()) ?? 0) + 1)
+      continue
+    }
+    if (UNKNOWN_RECIPIENT.test(name.trim())) {
+      unknownRecipient.push(what)
+      continue
+    }
     const iso3 = iso3ForName(name)
     if (iso3 === undefined) {
       if (name !== '') unknown.add(name)
       continue
     }
-    const yearCell = cells[iYear] ?? ''
     const y = /(\d{4})/.exec(yearCell)?.[1]
     if (!y) continue
+    if ((cells[iTiv] ?? '').trim() === '') emptyTiv.push(`${name} ${what}`)
     const mark = iYearMark === -1 ? '' : (cells[iYearMark] ?? '')
     if (/[?()]/.test(yearCell) || mark.includes('?')) uncertain.push(`${name} ${yearCell}${mark}`)
     const k = `${iso3}\u0000${y}`
@@ -248,5 +280,8 @@ export function importOrders(
     unknownNames: [...unknown].sort(),
     nonState: [...nonState].sort(),
     uncertainYears: uncertain,
+    outsideUniverse: [...outside].sort().map(([n, k]) => `${n} (${k} order${k === 1 ? '' : 's'})`),
+    unknownRecipientOrders: unknownRecipient,
+    emptyTivOrders: emptyTiv,
   }
 }
