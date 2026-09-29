@@ -1,0 +1,287 @@
+# Coverage record for India (docs/03 §6). P-D research session, wave 2, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search facilities used: the Ministry of External Affairs' own listing search
+# (mea.gov.in/FrontEnd/FetchPublicationListingData, keyword search of titles across press releases,
+# speeches and statements, bilateral documents, media briefings, responses to media queries and the
+# Lok Sabha and Rajya Sabha answers), run for Gaza, Palestine, Palestinian, Israel, UNRWA, ceasefire,
+# West Asia, Middle East, Netanyahu, International Court, ICC, Rome Statute, genocide, flotilla,
+# sanction, settlement, settler, West Bank, hostages, Hamas, Rafah, humanitarian, peace, General
+# Assembly, UNGA, Knesset and related terms, from October 2023 to September 2026; then the full text
+# of every speech or statement of the Prime Minister or the Minister of External Affairs listed since
+# 7 October 2023 (429 documents) was searched for "Gaza" and "Palestin"; the Wayback CDX listings of
+# mea.gov.in, pmindia.gov.in and dea.gov.in; Press Information Bureau releases (pib.gov.in) read
+# by release id around the dates of the agreements. The session had no web search (the unattended
+# run's allowance of 200 calls was used up before it started, as for Egypt, docs/10 B-240), so press
+# and NGO claims were read only through the Wayback listings of The Wire and Scroll and the articles
+# they point to. English is the language of the official record; the Hindi versions of the same
+# releases were not searched separately.
+country: IND
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      Press reports of Hermes 900 drone structures assembled in Hyderabad by Adani-Elbit Advanced
+      Systems and delivered to Israel (2024) are recorded as a lead (lead_20260928_IND_1).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade; India had no rows, so `pnpm fetch:comtrade --reporters IND` was run
+      in this session (21 A2 and 8 C3 rows, docs/10 B-194). India's own reports of exports to
+      Israel under HS 93: USD 93,729,515 (2022), 130,159,979 (2023), 56,538,204 (2024), 48,451,872
+      (2025), so A2 is −15 from 2026-07-10 (2023: −25 from 2024-05-30 to 2025-04-25); HS 8710 USD
+      574 (2022). Disagreement reported, not corrected: Israel's mirror records far smaller imports
+      from India under HS 93 (USD 2,128,000 in 2022, 2,060,000 in 2023, 2,782,000 in 2024,
+      1,234,000 in 2025); the generator uses India's own report first (docs/02 §5). The conditional
+      headings are not counted (own HS 8526 USD 9,875,734 and HS 8802 USD 61,916 in 2025; no
+      licence register, parliamentary answer or investigation citing the customs code was found, so
+      no row in a2_confirmed_military.csv). The MEA spokesperson answered on 31 July 2026, after an
+      Amnesty International report on arms-related shipments from India to Israel, that exports of
+      dual-use items follow India's laws and international obligations (lead_20260928_IND_3); press
+      reports of ammunition-related exports by Munitions India Ltd (lead_20260928_IND_2) and of the
+      Marianne Danica's cargo of explosives from Chennai (lead_20260928_IND_4) are leads.
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      India is not a participant in the F-35 programme; the UN Special Rapporteur's report
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23) names no Indian supplier (archived text
+      searched for India, Indian, Adani); no ministry statement on F-35 parts found.
+    queries:
+      - A/HRC/59/23 India, Indian, Adani (archived text searched)
+      - mea.gov.in listing search F-35
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. India's purchases of Israeli arms continue (the defence MoU of 4 November 2025 speaks of
+      co-development and co-production, evt_2025_11_04_IND_C2); SIPRI dates orders by year.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise with Israel, public basing agreement, documented transit of military cargo
+      through Indian ports or airspace authorised for Israel, or official confirmation of
+      intelligence sharing related to the Gaza campaign was found. The India–Israel Joint Working
+      Group on defence cooperation met in Tel Aviv on 4 November 2025 and signed an MoU on defence
+      cooperation, filed as C2 (a cooperation agreement), not A5; the Joint Working Group on counter
+      terrorism (10th meeting, February 2026) is a pre-existing bilateral arrangement. Exports of
+      drone structures and munitions are A1/A2 matters (leads 1, 2, 4).
+    queries:
+      - mea.gov.in listing search Israel, Defence, Joint Statement (titles 2023-10 to 2026-09)
+      - pib.gov.in releases of 4 November 2025 and 20–22 November 2025 (Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No decision suspending or refusing a class of arms export licences to Israel found. The MEA
+      spokesperson's reply of 31 July 2026 describes the export-control framework, not a suspension
+      (lead_20260928_IND_3).
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree halting trade with Israel; a bilateral investment agreement was signed in 2025 and free-trade negotiations opened (C2).
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No port or airspace denial for arms bound to Israel found.
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      A/RES/ES-10/21 and ES-10/24, yes on ES-10/22, ES-10/23, ES-10/25, ES-10/26 and 79/232. The
+      archived press release GA/12626 names India among the delegations that abstained on
+      ES-10/24 for the text's language (agrees); GA/12548, GA/12572 and GA/12599 do not name India.
+      For the five later votes (no rows until B-199 (1)): the MEA's answers in the Rajya Sabha of
+      24 and 31 July 2025 state that India abstained on the resolution of 12 June 2025 (ES-10/27),
+      which would be −2 once the row exists; GA/12708 lists the six abstaining states on A/RES/80/1
+      without India; GA/12707 and GA/12739 do not name India against or abstaining. The MEA's
+      Rajya Sabha answer of 5 December 2024 counts 13 resolutions on Palestine since the conflict
+      began, India voting yes on 10 and abstaining on 3 (a wider set than votes.yaml). No
+      disagreement with the rows.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: India has filed no declaration of intervention in ICJ case 192 (list verified 2026-09-26, docs/06 §8); no MEA document on the case found.
+    queries:
+      - mea.gov.in listing search International Court, ICJ, genocide
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No official statement rejecting the ICJ's provisional measures or their binding character found.
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      India is not a party to the Rome Statute; no statement of the Prime Minister, the Minister of
+      External Affairs or the Minister of Law on the warrants of 21 November 2024 found.
+    queries:
+      - mea.gov.in listing search ICC, Criminal Court, Rome Statute, arrest
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement refusing to execute the warrants found, and no visit to India by a person under
+      warrant: the MEA told the Lok Sabha on 20 March 2026 that no visit of the Prime Minister of
+      Israel to India was scheduled or cancelled in the recent past. The Prime Minister of India's
+      own state visit to Israel (25–26 February 2026) is not hosting and is not B6.
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanctions on ICC officials.
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv, which has no row for India. India recognised the State of
+      Palestine in 1988 (registry: 1988-11-18); the MEA's statement of 11 June 2024
+      (src_20240611_mea_secretary-gaza-humanitarian-conference) says India was one of the first
+      countries to recognise Palestine, "as early as 1988", but no archived official document gives
+      the day, so no row is added (as South Africa and Egypt, docs/10 B-231 (7), B-241 (6)). Promote
+      with an archived official document dating the recognition (a 1988 government statement, an
+      MEA page stating the date, or the UN record).
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: five statements of the Minister of External Affairs naming Gaza and calling for a
+      ceasefire or an end to hostilities (9 September 2024, 13 November 2024, 10 December 2024,
+      27 September 2025, 14 May 2026, +2 each) and one of 25 November 2024 (Rome) that does not name
+      Gaza (scope related, unscored). Not filed: the MEA's third-person readouts of the Prime
+      Minister's meetings and calls (22 September 2024 with the President of Palestine, "called for
+      ceasefire, release of hostages"; 16 August 2024 with the Prime Minister of Israel) because B9
+      requires the speaker's exact words, not a paraphrase; unattributed MEA statements (1 March 2024
+      on the deaths in northern Gaza, 16 January 2025, 19 March 2025) and spokesperson replies
+      (spokespersons do not score); the Prime Minister's statements of 17 November 2023 (Voice of
+      Global South Summit, condemning civilian casualties) and 6 July 2025 (BRICS, the humanitarian
+      situation in Gaza a cause of grave concern), which make no formal call; the Minister's remarks
+      of 21 November 2023 (BRICS extraordinary meeting on aid reaching Gaza and international
+      humanitarian law), 15 January 2024 (humanitarian corridors), 19 January 2024 (NAM) and
+      26 February 2024 (Human Rights Council), which call for relief and respect for international
+      humanitarian law but not for a ceasefire or an end of the blockade.
+  B10:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the Prime Minister's address to the Knesset of 25 February 2026 ("India stands with
+      Israel, firmly, with full conviction, in this moment, and beyond"), read as unconditional
+      support (docs/10 B-246 (1)). Not filed: the MEA readout of the call of 10 October 2023 (the
+      people of India "stand in solidarity with Israel in this difficult hour"), a paraphrase, and
+      posts on X quoted in MEA readouts (social media is not scored); no statement denying
+      documented violations found.
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: India has imposed no sanctions on Israeli ministers or settlers; no listing found.
+    queries:
+      - mea.gov.in listing search sanction, settler, settlement, West Bank
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall or downgrade: a new Ambassador of India to Israel was appointed on 24 January 2025
+      (MEA press release), and relations were raised to a "Special Strategic Partnership" on
+      26 February 2026.
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No trade agreement with Israel suspended or reviewed; India is not an EU member.
+  C2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the Bilateral Investment Agreement (8 September 2025), the MoU on defence cooperation
+      (4 November 2025) and the fifteen agreements, memoranda and protocols signed on 26 February 2026 (one
+      event). Not filed: the Terms of Reference for the India–Israel free trade agreement, signed
+      during the Commerce Minister's visit to Israel of 20–22 November 2025 (PIB release 2192819,
+      read, not archived), a document launching negotiations rather than an agreement with content; the Framework Agreement and Implementation Protocols on
+      the temporary employment of Indian workers in Israel's construction and caregiving sectors,
+      which the MEA (Rajya Sabha answer of 7 August 2025) and the Joint Statement of 26 February
+      2026 date to "November 2023" without a day; an archived document giving the signing date would
+      make it a C2 event from that date (docs/10 B-246 (3)).
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (fetched in this session). India's own reports: total trade with
+      Israel USD 10,378,786,408 in 2022, 7,760,414,913 in 2023 (r = 0.748), 3,461,426,456 in 2024
+      (r = 0.334) and 3,528,510,334 in 2025 (r = 0.340), so C3 is 0 since 2024-05-30; the 2022 row
+      gives −8 from 2023-05-09 to 2024-05-30 (the pre-war year's release in force at the start of
+      the window). Israel's mirror records USD 6.06 bn (2022) and 4.66 bn (2025, r = 0.769), also
+      below 0.9. No disagreement with the value.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No labelling rule or ban on settlement goods found.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No exclusion decision by an Indian public fund or the Reserve Bank found.
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No procurement exclusion of companies over conduct in Gaza found.
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: one government flow from India, USD 24,528 on plan 1273 (2025), in the
+      windows July 2025–June 2026 to September 2025–August 2026 → +1 (x = 0.0000006 % of GNI USD
+      4.04 trillion); zero in the other windows. Disagreement reported, not corrected: the MEA
+      reports USD 5 million a year to UNRWA (USD 15 million released since October 2023, the latest
+      USD 2.5 million in June 2026, Rajya Sabha answer of 13 August 2026) and about 135 tonnes of
+      medicines and relief material sent in four tranches (October and November 2023, October and
+      November 2024); UNRWA's core contributions and in-kind aid are outside the FTS oPt-appeal flows
+      D1 counts (docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      India did not suspend UNRWA funding: UNRWA's donor tables show USD 5,000,000 in 2022
+      (src_20221231_unrwa_donor-ranking-2022) and in 2024 (src_20241231_unrwa_donor-ranking-2024),
+      and the MEA reports releases every year since 2023.
+  D3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No suspension to restore, and no increase above the 2022 level in UNRWA's tables (USD 5,000,000
+      in both 2022 and 2024), so neither tier applies. The Minister's remark of 9 September 2024 that
+      India had "increased our support to UNRWA" (src_20240909_mea_eam-india-gcc-ministerial) is not
+      reflected in the donor tables; the MEA reports medicines donated to UNRWA in October and
+      November 2024 (in kind, outside the tables' cash contributions).
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No field hospital deployed and no medical-evacuation programme for patients from Gaza found.
+      India sent medicines and medical supplies (not a D4 programme) and announced on 13 July 2026 a
+      speciality hospital, an artificial-limb fitment centre and a vocational institute for
+      Palestine (a development commitment, not a deployment).
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No visa or refugee pathway for people from Gaza found (the MEA's Rajya Sabha answer of 8 August 2024 was asked about asylum and does not announce one).
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No investigation of Indian nationals or companies for conduct in Gaza found.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No interior-ministry decree banning Palestine solidarity protests found. The Bombay High
+      Court's dismissal on 25 July 2025 of a party's petition against the Mumbai Police's refusal of
+      permission for a protest on Gaza is recorded as a lead (lead_20260928_IND_5): the police order
+      and the court's order are not archived. Experimental, unscored (D-12).
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction proceeding in India found.
