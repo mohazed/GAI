@@ -290,6 +290,41 @@ describe('SIPRI', () => {
     expect(r.uncertainYears).toEqual(['Angola 2004?'])
   })
 
+  // Lines of the export the author downloaded on 2026-09-29 (supplier Israel, all recipients),
+  // and one line with no TIV for the total order (none in that export; the layout SIPRI's note
+  // describes).
+  it('skips and lists Taiwan and "unknown recipient(s)"; lists orders with no TIV as 0-TIV orders', () => {
+    const register = [
+      'Recipient,Supplier,Year of order, ,Number ordered, ,Weapon designation,Weapon description,Deliveries in the Year Range, ,Year(s) of delivery,status,Comments,SIPRI TIV per unit,SIPRI TIV for total order,SIPRI TIV of delivered weapons',
+      'Taiwan,Israel,1979,?,50,?,Dvora,missile boat,50,?,1980; 1981; 1982; 1983; 1984; 1985; 1986,New,Produced under licence in Taiwan; Taiwanese designation Hai Ou,10,500,500',
+      'Taiwan,Israel,1974,?,41,?,Shafrir-2,short-range air-to-air missile,41,?,1975,New,For F-104 and F-5E combat aircraft,0.04,1.64,1.64',
+      'unknown recipient(s),Israel,2023,?,,,ROTEM,loitering munition,,,,New,For NATO member state,0,0,0',
+      'unknown recipient(s),Israel,2016,,1,?,Blackfish,anti-submarine sonar,1,?,2018,New,Recipient probably South Korea,5,5,5',
+      'Zambia,Israel,2016,?,3,?,Hermes-450,reconnaissance drone,3,?,2017,New,,2,6,6',
+      'Zambia,Israel,2019,?,10,?,Musketeer,armoured personnel carrier,,,,New,,,,',
+    ].join('\n')
+    const r = importOrders(register, 'register.csv', '2026-03-09', SRC)
+    expect(r.rows.map((x) => [x.buyer_iso3, x.data_year, x.tiv_new_orders_from_israel])).toEqual([
+      ['ZMB', 2016, 6],
+      ['ZMB', 2019, 0],
+    ])
+    expect(r.unknownNames).toEqual([])
+    expect(r.outsideUniverse).toEqual(['Taiwan (2 orders)'])
+    expect(r.unknownRecipientOrders).toEqual(['2023 ROTEM', '2016 Blackfish'])
+    expect(r.emptyTivOrders).toEqual(['Zambia 2019 Musketeer'])
+  })
+
+  it('still stops on a recipient name it cannot code', () => {
+    const register = [
+      'Recipient,Supplier,Year of order,SIPRI TIV for total order',
+      'Atlantis,Israel,2024,5',
+    ].join('\n')
+    const r = importOrders(register, 'register.csv', '2026-03-09', SRC)
+    expect(r.unknownNames).toEqual(['Atlantis'])
+    expect(r.outsideUniverse).toEqual([])
+    expect(r.rows).toEqual([])
+  })
+
   it('reads quoted and semicolon-separated CSV', () => {
     expect(looseCsv('a;"b;c";"say ""x"""\n1;2;3')).toEqual([
       ['a', 'b;c', 'say "x"'],
