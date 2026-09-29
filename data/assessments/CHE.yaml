@@ -1,0 +1,332 @@
+# Coverage record for Switzerland (docs/03 §6). P-D research session, wave 4, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-292): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Norway, Sweden and Denmark). The protocol's searches (docs/06
+# §4 step 3) were run as (1) the Federal Parliament's open data service (ws.parlament.ch, OData):
+# every business submitted since 2023-10-07 whose title holds one of 15 German terms (Gaza, Israel,
+# Paläst, UNRWA, Nahost, Westjordan, Netanyahu, Strafgerichtshof, Völkermord, Siedler, Hamas, Rafah,
+# Waffenruhe, Zweistaaten, Kriegsmaterial), 231 businesses, read in German and French with the
+# Federal Council's answers (182 with a Federal Council answer; the answers are in German or French, several only in
+# one language) and their dates; (2) the Confederation's news service (the RSS feed of
+# newsd.admin.ch, all 8,805 releases of all federal offices from 1 October 2023 to 29 September
+# 2026, in German), filtered for Gaza, Israel, Paläst, UNRWA, Nahost, Nahen Osten, Westjordan,
+# Hamas, Strafgerichtshof, Netanyahu/Netanjahu, Siedl, Rafah and Zweistaaten (108 matches, the
+# relevant ones read through Wayback); (3) the UN verbatim records (S/PV) of the Security Council
+# meetings at which the Head of the Federal Department of Foreign Affairs spoke on the Middle East
+# in 2024; (4) the SVVK-ASIR exclusion list. admin.ch, eda.admin.ch and seco.admin.ch refuse
+# scripted requests and Save Page Now (HTTP 403), so their pages were read and recorded from
+# existing Wayback captures (--capture, docs/10 B-188). Not searched: the press, the Office of the
+# Attorney General and cantonal authorities, the courts, SECO's war-material export statistics,
+# fedlex.admin.ch, the General Assembly general debate statements, the Italian-language records.
+# Each `queries` entry names the listing or search used.
+country: CHE
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Federal Council states that the authorisation criteria of the War Material Act require
+      the refusal of definitive exports of war material to Israel and that none are authorised
+      (answer to interpellation 23.4467, 14 February 2024; answer to question 25.7436, 10 June 2025).
+  A2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (Switzerland's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Own reports of HS 93 exports to Israel: USD 111,677 (2022), 189,568 (2023), 39,351 (2024),
+      151,744 (2025); HS 8710 USD 98,314 (2023). A2 is −3 from 2024-02-02 to 2025-02-14 and from
+      2026-05-14 (window 2025, V = USD 151,744), 0 in between. Disagreement reported: the Federal
+      Council states that no definitive exports of war material to Israel are authorised (23.4467,
+      25.7436); HS 93 also covers sporting and hunting weapons and ammunition, which are not war
+      material under Swiss law, and temporary exports; the generated value is kept, as for Sweden
+      (docs/10 B-284). HS 8526 (own USD 50,000–2.9 million a year) and 8802 (own up to USD 325,499)
+      not counted: no document confirming military nature was found, so no row was added to
+      a2_confirmed_military.csv. SECO's dual-use and war-material statistics were not read (seco.admin.ch
+      refuses scripted requests).
+    queries:
+      - ws.parlament.ch titles (Kriegsmaterial, Israel) — 23.4467, 24.3350, 25.3760, 25.7436, 26.3393
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Swiss companies as suppliers of parts or maintenance for the F-35
+      programme was found. Switzerland is an F-35A buyer (the Payerne basing release of 25 September
+      2024); no parliamentary answer on Swiss F-35 parts supplies to Israel was found among the 231
+      businesses.
+    queries:
+      - ws.parlament.ch business texts (F-35, F35)
+      - newsd.admin.ch releases (F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Federal Council's answers name Israeli suppliers in Swiss procurement projects
+      (the reconnaissance drone system ADS 15 and the artillery fire-control system INTAFF, answer to
+      23.4467) and state that running procurements will not be suspended (answer to motion 24.3350,
+      1 May 2024); armasuisse's chief met Elbit in November 2023 and travelled to Israel in July 2026
+      (releases of 16 November 2023 and 14 July 2026, titles read). A4 will capture orders placed in
+      the window when a SIPRI release is imported.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing related to
+      the Gaza campaign found. The Federal Council states that Switzerland limits military contacts
+      with Israel to an exchange of information on force development, mainly for running procurement
+      projects, and has no other military cooperation (answer to motion 24.3350, 1 May 2024); the
+      non-binding declaration of intent of 24 January 2013 between the DDPS and the Israeli Ministry of
+      Defence continues (answer to 24.3336, 8 May 2024); no intelligence-cooperation agreement
+      (23.4467). Procurement contacts (the armament chief's visits) are not A5 instances.
+    queries:
+      - ws.parlament.ch titles (Israel, militärisch, Zusammenarbeit) — 23.7887, 24.3336, 24.3350, 25.7591
+      - newsd.admin.ch releases (Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision in the window suspending or refusing a class of licences to Israel. Definitive
+      war-material exports to Israel were refused before the window under the War Material Act's
+      criteria (answer to 21.1039, cited in 23.4467), a pre-existing policy read as Norway and
+      Sweden (docs/10 B-278 (2), B-283 (4)). Dual-use and special military goods are assessed case
+      by case under Israel-specific criteria of the interdepartmental export control group, refusing
+      goods that could be used in the current conflicts or the occupation ("Güter, die direkt im
+      Konflikt eingesetzt werden können, werden zurzeit nicht bewilligt", answer to 24.3350, 1 May
+      2024; answers to 25.3760 of 20 August 2025 and 26.3393 of 13 May 2026); read as a case-by-case
+      practice, not the suspension of a class of licences, as Denmark (docs/10 B-288 (5)); flagged
+      (docs/10 B-293).
+    queries:
+      - ws.parlament.ch titles (Kriegsmaterial, Dual-Use, Export, Israel)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree covering exports to and imports from Israel; the Federal Council states that the Embargo Act allows only UN or EU sanctions to be taken over (23.4467, 25.3927).
+    queries:
+      - ws.parlament.ch titles (Waffenembargo, Embargo, Sanktionen)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of transit or overflight for arms shipments to Israel found (no port, transit or overflight decision found in the answers or releases).
+    queries:
+      - ws.parlament.ch titles (Israel, Transit, Überflug)
+      - newsd.admin.ch releases (Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on ES-10/21,
+      ES-10/22, ES-10/25, ES-10/26 and 79/232; abstain on ES-10/23 and ES-10/24. The Federal Council
+      states that Switzerland voted for the resolutions of 27 October and 12 December 2023 (answer to
+      interpellation 23.4533, 21 February 2024), which agrees; no document contradicting the two
+      abstentions was found. The votes of 2025–2026 have no rows yet (docs/10 B-199 (1)).
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Switzerland was an elected Security Council member for 2023–2024 (so B2 applies) and cannot cast
+      a veto. The drafts vetoed while it sat (S/2023/773, S/2023/792, S/2023/970, S/2024/173,
+      S/2024/239, S/2024/835) were vetoed by permanent members; no row of unsc_vetoes.csv concerns
+      Switzerland.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Switzerland has not filed a declaration of intervention in case 192 (the ICJ's list, docs/06 §8
+      seed). The Federal Council states that Switzerland has a restrictive practice on third-party
+      intervention in contentious proceedings and that an intervention on the substance in this case
+      is not planned (answer to question 24.7130, 4 March 2024).
+    queries:
+      - ws.parlament.ch titles (IGH, Gerichtshof, Völkermord)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement rejecting the ICJ orders or their binding character; the Federal Council calls the provisional measures binding and expects Israel to comply (answer to 25.3927, 20 August 2025; answer to 24.3377, 1 May 2024).
+    queries:
+      - ws.parlament.ch titles (IGH, Gerichtshof)
+  B5:
+    status: has-events
+    checked_at: 2026-09-29
+    note: evt_2024_12_09_CHE_B5 (the Federal Council's answer of 9 December 2024 to question 24.7795, with an immunity caveat; flagged, docs/10 B-293).
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement of refusal or immunity and no visit to Switzerland of a person under warrant found; the answer of 9 December 2024 says there is no precedent of a person sought by an ICC warrant entering Switzerland.
+    queries:
+      - ws.parlament.ch titles (Strafgerichtshof, Haftbefehl, Netanyahu)
+      - newsd.admin.ch releases (Strafgerichtshof, Netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Switzerland has not sanctioned ICC officials; motion 26.4279 (28 September 2026) asks to protect and strengthen the Court.
+    queries:
+      - ws.parlament.ch titles (Strafgerichtshof)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from recognitions.csv, which has no Switzerland row: Switzerland has not recognised
+      the State of Palestine. The Federal Council states that a bilateral recognition may be
+      considered once concrete measures towards the two-State solution begin to be implemented
+      (answers to 25.7640 and 25.7734, 15 September 2025, src_20250915_parlament_fragestunde-25-7734);
+      no recognition followed by 2026-09-29.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Eight events scoped gaza: the Federal Council's release of 1 November 2023, the Head of the
+      FDFA in the Security Council on 23 January, 29 October and 18 November 2024, the Federal
+      Council's release of 28 May 2025 and its answers of 20 August and 15 September 2025; plus one
+      West Bank event (answer of 20 May 2026). Federal Council answers repeating the same calls
+      (24.3336, 24.3377, 24.7072, 25.7322 and others) and the statements of Switzerland's Permanent
+      Representative in the Security Council were not filed separately; the Federal Council is
+      read as the head of government (docs/10 B-293). The B9 cap is reached in the trailing two years.
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support or denial found. The Federal Council recognises Israel's
+      right to ensure its security and defence, always with the requirement to respect international
+      humanitarian law (release of 1 November 2023; answer to 24.7338), which is not read as B10.
+    queries:
+      - newsd.admin.ch releases (Israel)
+      - ws.parlament.ch titles (Israel)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Swiss listing. The Federal Council has not taken over the EU's thematic sanctions on violent
+      settlers (answer to motion 24.3097, 15 May 2024; answer to motion 25.4082, 19 November 2025) and
+      states that the Embargo Act gives no basis for autonomous sanctions on Israeli ministers (answer
+      to 25.3927, 20 August 2025); the Federal Council cites the councils' votes of 8 and 11 September 2025 on motions 25.3560 and 25.3561 as supporting that practice (answer to 25.4082).
+    queries:
+      - ws.parlament.ch titles (Sanktionen, Siedler, Netanjahu)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance found; the FDFA summoned the Israeli ambassador on 21 May 2026 over the flotilla (answer to 26.4019), which is not B12.
+    queries:
+      - ws.parlament.ch titles (Botschafter, Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Switzerland is not an EU member; its trade agreement with Israel is the EFTA–Israel free trade
+      agreement, which the Federal Council keeps and presents as distinguishing the Israeli and
+      Palestinian customs territories (answer to question 25.7322, 10 June 2025). No review or
+      suspension found.
+    queries:
+      - ws.parlament.ch titles (Freihandel, Abkommen, Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No new agreement with Israel signed in the window found; the Federal Council states there is no armaments agreement with Israel (23.4467, 24.3350). Procurement contracts with Israeli suppliers are A4 (SIPRI), not C2.
+    queries:
+      - ws.parlament.ch business texts (Abkommen, accord, Israel)
+      - newsd.admin.ch releases (Israel)
+  C3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (own reporting): 2022 baseline USD 1.947 billion; r = 0.957 (2023), 0.896
+      (2024), 0.969 (2025): C3 −5 from 2024-02-02, 0 from 2025-02-14, −5 again from 2026-05-14 (T ≥ USD
+      1 billion). Israel's mirror data show a much larger baseline (USD 7.6 billion, likely including
+      precious metals and stones declared by origin). No government statement on trade volumes found;
+      no disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No labelling or ban regulation adopted in the window. The Federal Council states that origin
+      labelling is mandatory only for certain products (answer to motion 25.3560) and advises
+      persons and companies against economic activity in the settlements (answers to 26.3480 and
+      26.7720); the Federal Office for Customs publishes the EFTA list of non-eligible locations in
+      Israel for preferential origin (releases of 30 August 2024 and 11 September 2025), a
+      pre-existing customs practice. West Bank measures would be tagged `west-bank`.
+    queries:
+      - ws.parlament.ch titles (Siedlungen, Kennzeichnung, Handel)
+      - newsd.admin.ch releases (Israel - List of non eligible locations)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by the Swiss National Bank or a federal pension fund citing Gaza or the
+      occupied territories found. The Federal Council does not comment on the SNB's investments, which
+      held Elbit Systems shares on 30 June 2025 (answer to 25.7662, 15 September 2025); PUBLICA's and
+      Suva's investment decisions belong to their boards, which follow the exclusion recommendations
+      of the SVVK-ASIR association (answer to 25.3963, 26 November 2025). The SVVK-ASIR list (read
+      2026-09-29, not archived) recommends excluding Bank Hapoalim, Bank Leumi and other Israeli
+      issuers; neither the reason nor a fund's decision to apply it was found (lead_20260929_CHE_1).
+    queries:
+      - ws.parlament.ch titles (SNB, PUBLICA, Pensionskassen, Investitionen)
+      - svvk-asir.ch/de/ausschlussliste
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion of implicated companies; the Federal Council states that federal procurement evaluates offers including those of Israeli suppliers under the Public Procurement Act (24.3350).
+    queries:
+      - ws.parlament.ch titles (Beschaffung, Israel)
+  D1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: +6 in the window 2025-09…2026-08 (USD 41,264,548 ÷ GNI USD 1,003.1 billion =
+      0.0041 %), between +1 and +9 since November 2023. The Federal Council reports more than CHF 115
+      million for the occupied Palestinian territory from October 2023 to December 2024 and about CHF
+      200 million from November 2023 to the end of 2026 (answers to 25.3481 of 13 August 2025 and 26.4019 of 2 September 2026), consistent
+      with the tiers (docs/06 §7 gap for aid outside the flash appeals). No disagreement.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No announced suspension found. Parliament decided on 11 December 2023 (budget 2024) that
+      humanitarian funds for the Middle East be paid only after consulting the foreign affairs
+      committees; after the allegations of 26 January 2024 the Federal Council said it awaited the UN
+      investigations before paying UNRWA (answers to 24.7054 and 24.7059, 4 March 2024; 24.3377, 1 May
+      2024) and decided on 8 May 2024 to give CHF 10 million to UNRWA's Gaza emergency appeal instead of
+      the planned CHF 20 million contribution (answers to 24.3253 and 24.3469); in 2025 it gave CHF 10
+      million for UNRWA's programmes in Jordan, Lebanon and Syria and CHF 1 million for the Colonna
+      recommendations (answer to interpellation 25.3436, 27 August 2025). Read as a wait and a reduction, not an announced suspension,
+      as for Denmark (docs/10 B-288 (3)); flagged (docs/10 B-293).
+    queries:
+      - ws.parlament.ch titles (UNRWA)
+      - newsd.admin.ch releases (UNRWA)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Without a D2 suspension there is no resumption to date; Switzerland's contributions after 2023
+      (CHF 10 million in 2024, CHF 11 million in 2025) are below its 2022 contribution (CHF 20 million,
+      about USD 25.5 million per the question 24.3253), so the increased tier does not apply. Under the
+      alternative reading of D2 (a suspension from 26 January to 8 May 2024), D3 would be restored (+5)
+      from 8 May 2024 (docs/10 B-293).
+    queries:
+      - ws.parlament.ch titles (UNRWA)
+  D4:
+    status: has-events
+    checked_at: 2026-09-29
+    note: evt_2025_10_24_CHE_D4 (the evacuation of 20 injured children from Gaza with their relatives, 98 persons, in two operations, October and November 2025).
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or protection instrument for Gaza residents adopted. Humanitarian visas are granted case
+      by case under the existing ordinance (Art. 4 para. 2 VEV): 73 granted and 142 refused from 7
+      October 2023 to 30 May 2026 (answer to 26.4046); the Federal Council states that the existing
+      legal room and practice suffice (answer to 24.3090, 1 May 2024) and proposed to accept motion
+      25.4113 on admitting vulnerable persons from Gaza, a motion rather than an instrument.
+    queries:
+      - ws.parlament.ch titles (Visa, humanitär, Aufnahme, Familiennachzug, Gaza)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No investigation or prosecution concerning Gaza found; the Federal Council states the Office of the Attorney General examines complaints on international crimes under universal jurisdiction (answer to 26.4019). The Office's own releases were not searched.
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No federal ban on Palestine solidarity protests or symbols found; demonstrations are authorised by cantons and municipalities (answer to 25.4170, 12 November 2025), which were not searched. The federal ban of Hamas (put into force by the Federal Council, release of 30 April 2025) is not a protest ban.
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found; court and prosecution records were not searched.
