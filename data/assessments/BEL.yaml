@@ -1,0 +1,306 @@
+# Coverage record for Belgium (docs/03 §6). P-D research session, wave 3, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-271): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Italy, the Netherlands, Canada and Australia, B-251, B-256,
+# B-261, B-266). The protocol's searches (docs/06 §4 step 3) were run as (1) queries of the live
+# search facility of the FPS Foreign Affairs news pages (diplomatie.belgium.be/fr/actualites,
+# /nl/nieuws, /en/news, parameter search_term, all result pages) in French, Dutch and English:
+# Gaza, Palestine / Palestina, Israël / Israel, UNRWA, Cisjordanie, cessez-le-feu, Netanyahu,
+# "Cour pénale", CPI, "Cour internationale", génocide / genocide, "mandat d'arrêt" /
+# aanhoudingsbevel / "arrest warrant", association / associatieakkoord, colonies, importation,
+# Ben-Gvir, persona; (2) keyword filters of the Wayback CDX listings (URLs captured since
+# 2023-10-07) of the Prime Minister (premier.be/fr, 283 URLs), the Ministers of Foreign Affairs'
+# own sites (lahbib.belgium.be, 481 URLs; prevot.belgium.be, 805 URLs), the Walloon
+# Minister-President (dirupo.wallonie.be) and wallonie.be (the listing of gouvernement.wallonie.be
+# failed: the Wayback CDX service answered "temporarily offline"), with the
+# keywords gaza, palest, isra, unrwa, cpi/icc, cij/icj, netanyahu, cessez, moyen-orient /
+# midden-oosten, smotrich, ben-gvir, colon / kolonist / settler, sanction, genoc, associ, armes /
+# wapen, licence, poudre, survol, embargo; (3) reads of about 60 matching pages. premier.be,
+# lahbib.belgium.be, prevot.belgium.be and dirupo.wallonie.be refuse scripted requests or Save
+# Page Now, so their pages were read and archived from existing Wayback captures (B-188). The
+# Chamber of Representatives' records (written questions, plenary and committee reports), the
+# Belgian Official Gazette (Moniteur belge), the Flemish Government's sites and the federal
+# prosecutor were not searched (no search facility usable without web search); German, the third
+# official language, was not searched. Each `queries` entry names the listing or query used.
+country: BEL
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The regions' 2009 position refuses any arms export licence that would strengthen the military
+      capacity of the forces present, and Wallonia suspended its valid licences on 7 February 2024
+      (evt_2024_02_07_BEL_A6).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (Belgium's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Own reports of HS 93 exports to Israel: none reported for 2022–2024 and USD 3 for 2025
+      (0 points from 2026-06-03); the 2023 and 2024 values come from Israel's mirror imports (USD
+      1,000 and 10,000, 0 points). HS 8526 (own USD 152,504–242,070 a year; mirror USD 0.24–5.0
+      million) and 8802 (own USD 2,890–353,711) are not counted without a confirming document
+      (docs/02 §2); no licence register, parliamentary answer or investigation confirming a military
+      nature was found, so no row was added to a2_confirmed_military.csv. No disagreement with the
+      country's record: the regions' licence policy (evt_2024_02_07_BEL_A6) is consistent with
+      near-zero HS 93 exports. The Walloon Government's annual reports to Parliament on arms
+      licences (listed in Wayback for 2020–2022) were not read for 2023–2025.
+    queries:
+      - dirupo.wallonie.be CDX listing (Rapport armes 2020, 2021, 2022)
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official programme document, national ministry statement or UN Special Rapporteur report
+      naming Belgian companies as Tier-1 or Tier-2 suppliers of F-35 parts or maintenance was
+      found. Belgium is an F-35 customer; A/HRC/59/23 (archived) does not name Belgium. The Ministry
+      of Defence's industrial-participation pages were not searched.
+    queries:
+      - A/HRC/59/23 archived text searched for Belgium, Belgian, Belgique
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The federal government decided on 2 September 2025 that future defence purchases of
+      equipment, spare parts and maintenance should no longer be made from companies located in
+      Israel where equivalent alternatives exist, for as long as the conflict continues
+      (src_20250902_diplomatie-belgium_kern-palestine, measure 11).
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with
+      Israel related to the Gaza campaign found. The air-drop operations over Gaza (Cerulean Skies,
+      2024 and 2025) and the evacuation of Belgians from Tel Aviv are not cooperation with Israel's
+      campaign. Press reports on port or airport transit of military goods to Israel were not
+      searched (no web search).
+    queries:
+      - FPS Foreign Affairs news search Israël / Israel / Gaza (all pages)
+      - prevot.belgium.be and lahbib.belgium.be CDX listings (survol, armes, isra)
+  A6:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_02_07_BEL_A6: Wallonia suspended its valid military export licences to Israel and,
+      with the Brussels-Capital Region, extended the 2009 interregional refusal to dual-use and
+      transit licences (7 February 2024); licensing is regional in Belgium. The 2009 position
+      predates the window. The federal decision of 2 September 2025 supports extending the ban to all
+      transit, dual-use goods with a military end user and all military goods for use by Israel and
+      asks the regions for a joint decision (measure 5); no regional instrument implementing it and
+      no Flemish decision was found (the Flemish Government's sites were not searched).
+    queries:
+      - dirupo.wallonie.be CDX listing (israel, armes, licence)
+      - wallonie.be CDX listing (isra, gaza, palest, armes, licence, poudre); gouvernement.wallonie.be listing failed (Wayback CDX offline)
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No law or decree covering both arms exports to and imports from Israel. The 2 September 2025
+      decision limits future defence purchases from Israeli companies where alternatives exist
+      (measure 11) and asks the regions to widen the export ban (measure 5); neither is a two-way
+      embargo in law.
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No documented instance of transit denied. The government instructed the Minister of Foreign
+      Affairs on 2 September 2025 to refuse Israeli requests for military overflights of Belgian
+      airspace while the war continues (src_20250902_diplomatie-belgium_kern-palestine, measure 10),
+      and Wallonia and Brussels refuse transit licences that would strengthen the forces present
+      (evt_2024_02_07_BEL_A6); these are policies, not instances (as Spain's transit measures,
+      data/wave-1). A documented refusal of a given flight or shipment was not found.
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on ES-10/21,
+      ES-10/22, ES-10/23, ES-10/24, ES-10/25, ES-10/26 and 79/232. The archived UN press releases
+      never list Belgium among the states voting against or abstaining; GA/12626 reports Belgium's
+      delegate supporting ES-10/24 as in keeping with the ICJ advisory opinion, and the FPS Foreign
+      Affairs release of 11 December 2024 states that Belgium voted for the two resolutions of that
+      day (ES-10/25, ES-10/26). No disagreement. The later qualifying votes have no rows (B-199 (1));
+      their press releases (GA/12690, GA/12707, GA/12708, GA/12739, GA/12743) do not list Belgium
+      against.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_12_23_BEL_B3: declaration of intervention under Article 63 in case 192, dated 18
+      December 2025 and listed by the Court on 23 December 2025; its construction of genocidal intent
+      supports the applicant's reading (read from the archived scan, which has no text layer).
+    queries:
+      - ICJ case 192 page (archived src_20260927_icj-cij_case-192) and intervention page (live)
+      - UNISPAL copy of 192-20251223-int-01-00-fr.pdf
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement or act rejecting the ICJ's provisional measures found; Belgium's declaration recalls the orders.
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official statement by the Prime Minister or the Ministers of Foreign Affairs or Justice on
+      executing the ICC warrants of 21 November 2024 was found in the FPS Foreign Affairs news, the
+      Ministers' own sites or the Prime Minister's site. docs/06 §8 lists Belgium among the states
+      that stated execution; the statement may be in the Chamber's records or in press interviews,
+      which this session could not search. The government's decision of 2 September 2025 calls for
+      prosecution of serious violations and Belgium states repeated support for the ICC
+      (FPS Foreign Affairs statement of 13 October 2024, read, not archived), which is not a
+      position on the warrants. To re-search in P-16 (docs/10 B-275 (4)).
+    queries:
+      - FPS Foreign Affairs news search "mandat d'arrêt", aanhoudingsbevel, "arrest warrant", CPI, "Cour pénale"
+      - lahbib.belgium.be and prevot.belgium.be CDX listings (cpi, icc, netanyahu)
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No refusal to execute the warrants and no official visit by a person under ICC warrant found.
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanctions on ICC officials; Belgium states support for the Court's independence (FPS Foreign Affairs releases of 1 July 2024 and 13 October 2024).
+  B8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recognition in effect, so no row in recognitions.csv. The Prime Minister announced at the
+      conference of 22 September 2025 that Belgium joins the states announcing recognition, but that
+      legal recognition (by royal decree) will follow only once all hostages are released and Hamas
+      is removed from governance (src_20250922_premier-be_conference-deux-etats, line 10;
+      src_20250902_diplomatie-belgium_kern-palestine, section III). No royal decree of recognition
+      was found (the Moniteur belge was not searched). The UN press release PAL/2251 records the
+      same conditional position.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Eleven events: the Prime Minister's statements of 24 November 2023 (+2), 24 September 2024
+      (+5) and 22 September 2025 (+2); the Minister of Foreign Affairs' statements of 2 February
+      2024 (+5), 19 February 2024 (+2), 2 September 2025 (+5), and the joint statements of 21 July
+      2025 (+5), 12 August 2025 (+5), 27 September 2025 (+2), 28 January 2026 (+2) and 8 June 2026
+      (+2); the cap holds (+21.5 → +10). Not filed: statements of the FPS Foreign Affairs without a
+      named minister (28 October 2024, 13 October 2024, 11 December 2024), the
+      Minister for Development Cooperation's words (19 April 2024), the Minister's news item of 20
+      May 2025 (a personal view, not a formal statement), the Prime Minister's General Assembly
+      statements of 26 September 2025 (no mention of Gaza) and the Belgian statement of 23
+      September 2026 (Palestine named among other crises, no call or violation specific to Gaza),
+      and the Walloon Minister-President's statements (not a head of government or foreign minister
+      of the state).
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement of unconditional support or denial of documented violations; the statements of October 2023 and after recognise Israel's right to defend itself within international humanitarian law.
+  B11:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_09_02_BEL_B11: Ministers Ben-Gvir and Smotrich declared personae non gratae with SIS
+      registration (ministers tier; scoped gaza and west-bank). evt_2025_09_02_BEL_B11_2: the violent
+      settlers on the EU list to be declared personae non gratae (settlers tier, scope west-bank,
+      unscored). EU listings of settlers that Belgium supported are not filed (docs/10 B-229 (3)).
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall of Belgium's ambassador, downgrade or severance found. The Israeli ambassador was
+      summoned on 2 February 2024 (Enabel offices bombed), which is not a B12 measure.
+  C1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_05_20_BEL_C1 (review tier). The government decided on 2 September 2025 to vote at EU
+      level for the full suspension of the trade and research parts of the Association Agreement;
+      no suspension was adopted by the Council.
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new trade, investment or cooperation agreement between Belgium and Israel signed since 7 October 2023 found in the FPS Foreign Affairs news; the treaty database was not searched.
+    queries:
+      - FPS Foreign Affairs news search Israël / Israel (all pages)
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade. Own reports: total goods trade with Israel USD 3.117 billion in 2022,
+      2.691 billion in 2023 (r = 0.863), 2.482 billion in 2024 (r = 0.796) and 2.537 billion in 2025
+      (r = 0.814), all below 0.9, so 0 points; the mirror gives r = 0.538, 0.729 and 0.432. No
+      disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The government decided on 2 September 2025 to prepare a royal decree banning imports of goods
+      from the settlements (src_20250902_diplomatie-belgium_kern-palestine, measure 6); no adopted
+      royal decree was found (the Moniteur belge was not searched). A ban, once published, is a
+      west-bank event (unscored in v1). Not searched specifically.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No decision by a Belgian public pension fund, sovereign fund or the National Bank to exclude companies over conduct in Gaza or the occupied territories found; not searched beyond the FPS listings (no web search).
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No procurement exclusion with legal effect found. The 2 September 2025 decision asks Defence
+      to avoid future purchases from companies located in Israel where equivalent alternatives exist
+      and requests an analysis of public purchases made in Israel (measure 11); it is an instruction
+      with a condition, not an exclusion decision.
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: between +1 and +6 by month; latest window 2025-09…2026-08, USD 26,811,352
+      ÷ GNI USD 710.5 billion = 0.00377 %, +6 from 2026-09-01. The government reports EUR 7 million
+      committed for humanitarian aid to Gaza in 2025 before the additional EUR 12.5 million decided
+      on 2 September 2025 (measure 1); FTS records USD 13.1 million for the 2025 plan, so part of the
+      aid is outside the flash appeals or not yet reported (docs/06 §7 gap).
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Belgium did not suspend its UNRWA funding: the FPS Foreign Affairs announced on 19 April 2024 a
+      core contribution of EUR 27.5 million over 2024–2026, and the Prime Minister said in September
+      2024 that Belgium had never ceased supporting UNRWA (src_20240924_premier-be_discours-agnu79,
+      line 28).
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_12_31_BEL_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024).
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_07_29_BEL_D4 (medical evacuations of young patients from Gaza to Belgian hospitals
+      through B-FAST, from 29 July 2024; a second on 4 December 2024; continued by the decisions of
+      20 May and 2 September 2025). The FPS release on the WHO certification of the B-FAST field
+      hospital (September 2026) does not mention Gaza.
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee pathway for Gazans found as a legal instrument; the evacuations of Enabel's
+      staff and their families (January 2024) and of patients with their companions (D4) are
+      operations, not pathways. Immigration Office and Fedasil instructions were not searched.
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No opened investigation or prosecution found in the sources searched. The government gave the
+      federal prosecutor an injunction on 2 September 2025 to prosecute any Belgian or resident who
+      commits a serious violation of international humanitarian law in Israel or the occupied
+      Palestinian territory (measure 9), which is an instruction, not an investigation. The federal
+      prosecutor's site was not searched.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No national or municipal ban on Palestine solidarity protests found; not searched beyond the federal listings (no web search).
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found in the sources searched; the federal prosecutor and court records were not searched.

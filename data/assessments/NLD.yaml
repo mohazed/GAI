@@ -1,0 +1,388 @@
+# Coverage record for the Netherlands (docs/03 §6). P-D research session, wave 3, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-256): no web search was available to this session (the run's allowance
+# was used up, as for Italy, B-251). The protocol's searches (docs/06 §4 step 3) were run as
+# queries of the official publications repository (SRU interface of repository.overheid.nl, which
+# indexes every parliamentary paper, written answer and plenary record published on
+# zoek.officielebekendmakingen.nl): the whole of dossier 23432 "De situatie in het Midden-Oosten"
+# from 2023-10-07 (427 documents), dossier 22054 "Wapenexportbeleid" (arms export policy), dossier
+# 28498 (International Criminal Court) and title searches for Israël, Gaza, UNRWA, F-35,
+# Strafhof, Netanyahu, arrestatiebevel and "Nederlandse vlag"; plus keyword filters of the Wayback
+# CDX listings of rijksoverheid.nl news (4,747 URLs since October 2023), government.nl news (750
+# URLs) and rijksoverheid.nl documents on Israel and the Palestinian territories (656 URLs), and
+# the Government's policy page on Israel and the Palestinian territories (read 2026-09-28).
+# Each `queries` entry names the listing or the SRU query used.
+country: NLD
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Government states that since 7 October 2023 it granted two licences, for the export via
+      Germany of components of the Iron Dome air-defence system, and refused eleven licence
+      applications for military and dual-use goods with military end use in Israel
+      (src_20250728_officielebekendmakingen_kst-23432-569, lines 25–26).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade. The Netherlands had no rows before this session:
+      `pnpm fetch:comtrade --reporters NLD` was run on 2026-09-28 (18 A2 and 8 C3 rows, 34 keyed
+      calls of 500 that day). Own reports of HS 93 exports to Israel: USD 2,930 (2022), 199 (2023),
+      13,314 (2024, 0 points to 2026-03-26) and 1,666,197 (2025, −8 from 2026-03-26); HS 8710 USD
+      76,695 in 2022 only. Israel's mirror imports of HS 93: USD 1,000 (2022), 26,000 (2023), none
+      reported for 2024–2025. HS 8526 (own USD 563,345 in 2025; mirror USD 288,000) and 8802 (own
+      USD 6,885) are not counted without a confirming document (docs/02 §2); no licence register,
+      parliamentary answer or investigation confirming a military nature was found, so no row was
+      added to a2_confirmed_military.csv. Disagreement reported, not corrected: the 2025 value
+      (a 125-fold rise on 2024) sits beside the Government's statements that eleven applications
+      for military goods to Israel were refused since 7 October 2023 and that granting a licence
+      for goods that could contribute to operations in Gaza is "virtually excluded"
+      (src_20250728_officielebekendmakingen_kst-23432-569, lines 25–26); the customs heading does not
+      say what the goods were (sporting and hunting ammunition fall under HS 93). Left to the
+      author (docs/10 B-258).
+  A3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_NLD_A3, standing from 2023-10-07 and ended 2024-02-12 by the Court of
+      Appeal's order to halt F-35 part exports to Israel (docs/02 §2 A3); the European Regional
+      Warehouse at Woensdrecht and Dutch sole suppliers of F-35 components are named in the
+      Government's letter of 24 April 2024. Exports of Dutch-made components to the United States
+      and other F-35 users continue (same letter, line 19), which the rule does not count once the
+      halt to Israel is in force (docs/10 B-257 (1)).
+    queries:
+      - "SRU: dt.title=\"F-35\" AND dt.date>=2023-10-07 (20 documents; dossiers 22054 and 26488)"
+      - "SRU: w.dossiernummer==22054 AND dt.date>=2023-10-07"
+      - A/HRC/59/23 (archived text) searched for Netherlands and Dutch (no F-35 mention of the Netherlands)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. The Government's letter of 2 September 2025 on reducing dependence on the Israeli
+      defence industry (Kamerstuk 22054-462) was listed but not read in this session.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, basing agreement activated for the campaign, transit authorisation or
+      official confirmation of intelligence sharing related to the Gaza campaign was found. The
+      Netherlands–Israel status-of-forces treaty (signed 13 October 2021; approval bill 36021 in
+      Parliament 2023–2026) predates the window and is not an activation for the campaign. On the
+      Dutch-flagged vessel "Nordic" reported by the Namibian port authority to carry military goods
+      from India to Israel, the Ministers answered on 3 March 2025 that the Netherlands has no
+      policy on arms transport by Dutch-flagged ships outside sanctions, has no information on the
+      cargo, and that the last notified transit of military goods to Israel through Rotterdam
+      without transhipment dates from 4 October 2023 (Aanhangsel Handelingen 2024–2025, nr. 1490,
+      https://zoek.officielebekendmakingen.nl/ah-tk-20242025-1490.html, read, not archived). The
+      naval ship Zr.Ms. Holland was sent to the eastern Mediterranean in November 2023 for possible
+      humanitarian support around Gaza (rijksoverheid.nl news of 17 November 2023), not for
+      cooperation with Israel.
+    queries:
+      - "SRU: dt.title=\"Nederlandse vlag\" AND dt.date>=2024-01-01"
+      - "SRU: dt.title=\"Israël\" AND dt.date>=2023-10-07 AND dt.type==Kamerstuk (268 documents; titles read)"
+      - "rijksoverheid.nl news CDX listing: israel, defensie, marineschip, f-35, doorvoer"
+  A6:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_02_12_NLD_A6: the Court of Appeal of The Hague ordered on 12 February 2024 that all
+      export and transit of F-35 parts with final destination Israel stop within seven days; the
+      Government complied by excluding Israel from general licences NL007 and NL009, appealed, and
+      after the Supreme Court's judgment of 3 October 2025 (which quashed the appeal ruling and
+      ordered a reassessment, Kamerstuk 22054-466) decided on 14 November 2025 to keep Israel excluded from general licence AV009 and to reassess within
+      six months; no later reassessment letter was found in dossier 22054 to 2026-09-28, so no end.
+      Not filed as a separate A6: the withdrawal of general licence NL002 and the exclusion of
+      Israel from NL007 and NL010 on 7 April 2025 (Kamerstuk 22054-454), which moves exports to
+      Israel to individual licensing without refusing a class of licences (the case-by-case refusals
+      of eleven applications are recorded in the A6 event's notes).
+    queries:
+      - "SRU: w.dossiernummer==22054 AND dt.date>=2023-10-07 (all titles read; 417, 454, 466, 469 read in full)"
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No law or decree banning both arms exports to and imports from Israel. The Government states
+      that licences for Iron Dome components were granted after 7 October 2023
+      (src_20250728_officielebekendmakingen_kst-23432-569, line 26).
+    queries:
+      - "SRU: w.dossiernummer==22054 AND dt.date>=2023-10-07"
+      - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (titles: embargo, wapenembargo)"
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No port, airspace or flag-state refusal of an arms shipment to Israel found. The Ministers'
+      answer of 3 March 2025 (see A5) says the Netherlands applies no policy to arms transport by
+      Dutch-flagged ships outside sanctions. The court-ordered halt of F-35 part transit is filed
+      under A6, not A8 (a licensing measure, not the denial of a named shipment).
+    queries:
+      - "SRU: dt.title=\"Nederlandse vlag\" AND dt.date>=2024-01-01"
+      - "rijksoverheid.nl news CDX listing: haven, doorvoer, schip, wapen"
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      ES-10/21, ES-10/22, ES-10/23, ES-10/24 and ES-10/25 (UNRWA mandate); yes on ES-10/26 and
+      79/232. The UN press releases (GA/12548, GA/12572, GA/12599, GA/12626, GA/12667, GA/12670)
+      name the states voting against where they list any, and none names the Netherlands among
+      them; they do not name the abstaining states, so the abstentions cannot be checked against
+      them. GA/12626 records the Netherlands' representative stating reservations on ES-10/24. For
+      the later votes (no rows until B-199 (1)): GA/12707 (A/DEC/80/506) and GA/12739 (A/RES/80/78)
+      list the states against without the Netherlands; GA/12708 (A/RES/80/1) lists those against
+      and abstaining without the Netherlands. No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: no-data
+    checked_at: 2026-09-28
+    note: >-
+      The Netherlands filed a declaration of intervention under Article 63 in case 192 on 11 March
+      2026 (ICJ case page; Minister's letter of 17 March 2026,
+      src_20260317_officielebekendmakingen_kst-23432-667). docs/02 §2 scores it as B3 only if its
+      construction of the Genocide Convention supports the applicant's reading or the provisional
+      measures, and as B4 if it argues against. The Government's letter says the declaration takes
+      no position on the facts and gives "a purely legal interpretation of parts of the Genocide
+      Convention", like its interventions in The Gambia v. Myanmar and Ukraine v. Russia. The
+      declaration itself (icj-cij.org 192-20260311-int-01-00-en.pdf) could not be read or archived:
+      the ICJ answers HTTP 403, Save Page Now failed (403) on 2026-09-28, Wayback holds only 403
+      and 404 captures, UNISPAL has no copy, and the built-in browser stopped at a bot challenge
+      (not bypassed). Status no-data until the declaration is archived and read (docs/10 B-260 (2)); no
+      press claim was read, so no lead is filed.
+    queries:
+      - icj-cij.org/case/192/intervention (read 2026-09-28)
+      - "Wayback CDX: icj-cij.org/sites/default/files/case-related/192/192-20260311-int-01*; un.org/unispal/wp-content/uploads/2026/"
+      - "SRU: w.dossiernummer==23432 (letter 667)"
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No rejection of the provisional measures. The Minister of Foreign Affairs wrote on 13
+      February 2024 that the order is binding on the parties and that the Netherlands respects it
+      and calls on the parties to comply (src_20240213_officielebekendmakingen_kst-23432-511, the
+      paragraph beginning "De uitspraak is bindend"). The direction of the declaration of 11 March
+      2026 is unknown (B3).
+    queries:
+      - "SRU: w.dossiernummer==23432 (letters 511, 546, 667)"
+  B5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_11_21_NLD_B5: the Minister of Foreign Affairs told the House of Representatives on
+      21 November 2024, the day the warrants were issued, that the Netherlands executes arrest
+      warrants and complies fully with the Rome Statute. Later written answers (13 December 2024,
+      22 April 2025) repeat that the Netherlands calls on all states parties to cooperate with the
+      Court on the warrants. No later contrary position found.
+    queries:
+      - "SRU: dt.title=\"Netanyahu\" / \"arrestatiebevel\" / \"Strafhof\" AND dt.date>=2024-05-01"
+      - "Handelingen h-tk-20242025-27-4 and 27-7 (budget debate of 21 November 2024) searched for arrestatiebevel"
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No stated refusal to execute the warrants and no official visit by a person under warrant
+      found; the Minister stated that non-essential contacts with persons under warrant are avoided
+      (21 November 2024, src_20241121_officielebekendmakingen_h-tk-20242025-27-7).
+    queries:
+      - "SRU: dt.title=\"Netanyahu\" AND dt.date>=2024-05-01"
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No Dutch sanctions on ICC officials. The Netherlands is the Court's host state and reports
+      extra contributions to it (€6 million, Government policy page read 2026-09-28).
+    queries:
+      - "SRU: dt.title=\"Strafhof\" AND dt.date>=2023-10-07"
+  B8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv. The Netherlands has not recognised the State of Palestine
+      (registry note; not in A/78/846). The Government's policy page (read 2026-09-28) states that
+      recognition must serve the political process between the parties; no row to add.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Five events: the Prime Minister at the General Assembly on 26 September 2024 (+2, call for
+      an immediate ceasefire), the Minister of Foreign Affairs' letter of 7 May 2025 requesting the
+      Article 2 review (+5, the blockade contravenes international humanitarian law), his letter
+      of 18 June 2025 (+2, call to lift the blockade), the joint statement of 21 July 2025 (+5)
+      and his letter of 28 July 2025 (+5, Israel does not sufficiently meet its obligations as
+      occupying power to supply food, water and medicine). The cap holds (+19 before decay, +10
+      cap). Not filed: letters without a call or a named violation read in this session (10 October
+      2025 on the ceasefire, 21 November 2025 on the ICJ advisory opinion, 31 March 2026 on attacks
+      on aid workers, which calls for de-escalation in Lebanon); statements of the Prime Minister's
+      General Assembly speeches of 2025 and 2026 were not found on rijksoverheid.nl and
+      gadebate.un.org answered HTTP 405 to a scripted read (not read). No formal call or named
+      violation in the twelve months to 2026-09-28 was found in the documents read.
+    queries:
+      - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (letters 504–749 by title; 561, 563, 569, 572, 614, 617, 716 read)"
+      - "rijksoverheid.nl documents CDX listing: toespraken (speeches 2023-10-11, 2023-10-24, 2024-09-26)"
+      - gadebate.un.org/en/79, 80 and 81/netherlands-kingdom (HTTP 405)
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No declaration of unconditional support or denial of documented violations found. The
+      Government's statements pair Israel's right to self-defence with the obligation to respect
+      international humanitarian law (for example src_20240212_rijksoverheid_cassatie-f-35-onderdelen,
+      src_20250728_officielebekendmakingen_kst-23432-569), the reading applied to the United States
+      and Italy (docs/10 B-204, B-252 (5)). The Prime Minister's statement of 24 October 2023
+      before the European Council debate is listed on rijksoverheid.nl but could not be read (the
+      page did not load by script).
+    queries:
+      - "rijksoverheid.nl documents CDX listing: toespraken 2023-10-11, 2023-10-24"
+      - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07"
+  B11:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_07_28_NLD_B11: the Government declared Ministers Smotrich and Ben-Gvir persona non
+      grata and set out to register them as undesirable aliens in the Schengen Information System
+      (an entry ban, the national measure available without EU unanimity; docs/10 B-257 (3)). Settler
+      sanctions: the Netherlands states it initiated the EU's third package of sanctions against
+      violent settlers (agreed April 2026, listed 28 May 2026) and supported the earlier listings;
+      these are West Bank measures (scope west-bank, unscored in v1) and were not filed as events in
+      this session (the Council's acts were not archived).
+    queries:
+      - "SRU: w.dossiernummer==23432 (letters 569, 572, 749)"
+      - "rijksoverheid.nl news CDX listing: sancties, kolonisten, nederzettingen"
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The Israeli ambassador was summoned (9 April 2025, Kamerstuk 23432-560; announced again on 28
+      July 2025); no recall of the Dutch ambassador, downgrade or severance found.
+    queries:
+      - "SRU: w.dossiernummer==23432 (titles: ontbieden, ambassadeur)"
+  C1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_05_20_NLD_C1: the Netherlands asked the High Representative on 6 May 2025 to review
+      Israel's compliance with Article 2 of the Association Agreement; the Foreign Affairs Council
+      launched the review on 20 May 2025. No suspension adopted: the Netherlands states it would
+      support suspending the trade part (28 July 2025); the Commission's proposal to suspend trade
+      concessions (dossier 31985) was not adopted to 2026-09-28.
+    queries:
+      - "SRU: dt.title=\"Israël\" AND dt.date>=2023-10-07 (32623-352, 31985-F, 31985-H)"
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No new trade, investment or cooperation agreement signed with Israel since 7 October 2023.
+      The status-of-forces treaty was signed in 2021 (approval bill 36021 pending in the window).
+      The Government's inventory of instruments promoting trade with Israel (17 October 2025,
+      Kamerstuk 23432-615) was listed, not read.
+    queries:
+      - "SRU: dt.title=\"Israël\" AND dt.date>=2023-10-07 (Verdrag, overeenkomst)"
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (fetched this session). Own reports: total trade with Israel USD
+      4,294,416,254 (2022), 4,251,027,040 (2023, r = 0.990), 4,452,302,644 (2024, r = 1.037),
+      4,632,924,339 (2025, r = 1.079): −5 in each year. Israel's mirror figures are higher in 2022
+      (USD 6,717,503,000), which gives r below 0.9 in 2023 and 2025 on the mirror; the generator uses
+      the country's own report first (docs/02 §5).
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No ban or labelling rule concerning goods from Gaza. The national temporary sanctions decree
+      barring goods from Israeli settlements from the Dutch market, in force from 22 September 2026,
+      is filed as evt_2026_09_22_NLD_C4 with scope west-bank, tracked and unscored in v1; the build
+      derives has-events only from a published event scoped gaza, so the hand status is none-found
+      (docs/10 B-257 (5)).
+    queries:
+      - "SRU: w.dossiernummer==23432 (letters 749, 1266322, 1268606)"
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No exclusion decision by a Dutch sovereign fund or public pension fund over conduct in Gaza
+      was archived. The Netherlands has no sovereign fund. ABP (civil-service pension fund) and PFZW
+      exclusion pages were looked for in Wayback listings: PFZW's exclusion of Israeli banks
+      predates the window; no ABP decision page of 2024–2026 was captured. Reported sales by ABP of
+      holdings over the occupied territories (2025) were not verified without web search; left to
+      P-16 (docs/10 B-260).
+    queries:
+      - "Wayback CDX: abp.nl/over-abp/actueel/nieuws/ and abp.nl since 2024 (israel, caterpillar, gaza, bezet, uitsluit)"
+      - "Wayback CDX: pfzw.nl/over-ons/ (israel, uitsluit)"
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No national procurement exclusion of companies over conduct in Gaza or the occupied territories found in dossiers 23432 and 22054.
+    queries:
+      - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (titles: aanbesteding)"
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS. Window 2025-09…2026-08: USD 73,010,530 ÷ GNI USD 1,239,617,957,503 =
+      0.00589 % → +9. The Government reports €94.2 million of additional humanitarian aid since 7
+      October 2023, plus core contributions to the UN and the Red Cross that FTS attributes to the
+      organisations (policy page read 2026-09-28); no disagreement in kind.
+  D2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_01_27_NLD_D2: future contributions to UNRWA frozen on 27 January 2024 (the 2024
+      contribution of €19 million had already been paid); ended 25 September 2024, when the
+      Government announced it would pay the 2025 contribution in January 2025.
+    queries:
+      - "SRU: dt.title=\"UNRWA\" AND dt.date>=2023-10-07 (50 documents; 26150-211, 220, 243, 244 read)"
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_09_25_NLD_D3 (restored, +5). Not "increased": the Government's contribution stays
+      at €19 million a year, its level before the war; the 2026 budget had lowered it to €11 million
+      and the Government decided on 30–31 March 2026 to restore the €19 million (Kamerstuk 26150-243
+      and 244), noted in the event.
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Two programmes: the medical evacuation of five children from Gaza for treatment in the
+      Netherlands (29 October 2025) and the funding of the medical evacuation of about 250 children
+      to Jordan with the WHO (18 September 2026; a funded programme, not hosted, docs/10 B-257 (4)).
+      Not filed: medical equipment sent to Egypt for Gaza patients (December 2023, a supply, not an
+      evacuation or field hospital); the €25 million for regional medical capacity (October 2025,
+      funding of partners); airdrops of food (2024, 2025).
+    queries:
+      - "SRU: w.dossiernummer==23432 (letters 504, 611, 616, 629, 633, 718)"
+      - "rijksoverheid.nl news CDX listing: medische, evacuatie, ziekenhuis"
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee pathway for Gazans found. The 2024 regulation on evacuees from the Middle
+      East concerns housing for Dutch nationals and residents (Kamerstuk 23432-514); a decision and
+      departure moratorium for asylum applications from the Palestinian territories was set in
+      December 2023 (Kamerstuk 19637-3181), which suspends decisions and is not a pathway.
+    queries:
+      - "SRU: w.dossiernummer==23432 (514, 531, 533); dossier 19637 titles Palestijnse"
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No domestic investigation of Dutch nationals or companies for conduct in Gaza found in the parliamentary papers searched (the Public Prosecution Service's site was not searched).
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No national ban on Palestine solidarity protests or symbols found. Municipal emergency
+      measures (for example in Amsterdam in November 2024) are local acts and were not searched as
+      such; the Minister of Justice's talks on balancing the right to demonstrate and public order
+      (rijksoverheid.nl news of 5 November 2024) announce no ban.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found in the parliamentary papers searched (not searched on om.nl or rechtspraak.nl, which did not answer a scripted request).
