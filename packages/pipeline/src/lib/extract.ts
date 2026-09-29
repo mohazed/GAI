@@ -4,15 +4,27 @@
  * - HTML: the main content found by Readability (Mozilla's, on a linkedom DOM), turned into plain
  *   text with one line per block; when Readability finds nothing, or keeps less than 30 % of the
  *   page's text (index and case pages, where the list is the content), the whole body is used.
+ *   A page whose body has no text at all but carries its content in Next.js's `__NEXT_DATA__`
+ *   JSON (a client-rendered page, such as the Saudi Press Agency's): the prose strings of
+ *   `props.pageProps`, in document order, one line per paragraph (docs/10 B-381).
  * - PDF: the text layer of every page (pdfjs-dist), pages separated by a form feed.
- * - Anything else (JSON, CSV, plain text): the bytes decoded as text.
+ * - JSON from a content API whose strings carry HTML markup (a client-rendered site's article
+ *   API, such as the Indonesian Ministry of Foreign Affairs'): its prose strings in document
+ *   order, markup turned into text, one line per paragraph (docs/10 B-407).
+ * - Anything else (dataset JSON, CSV, plain text): the bytes decoded as text.
  *
  * The output is capped at 200 KB of UTF-8 with a marker line saying what was cut.
  */
 import { Readability } from '@mozilla/readability'
 import { parseHTML } from 'linkedom'
 
-export type ExtractMethod = 'readability' | 'html-body' | 'pdf' | 'raw'
+export type ExtractMethod =
+  | 'readability'
+  | 'html-body'
+  | 'next-data'
+  | 'json-content'
+  | 'pdf'
+  | 'raw'
 
 export interface Extracted {
   text: string
@@ -184,6 +196,73 @@ function isoDay(value: string | null | undefined): string | null {
   return Number.isNaN(t) || new Date(t).toISOString().slice(0, 10) !== m[1] ? null : m[1]
 }
 
+/**
+ * Prose strings of a JSON value: every string that contains a space (identifiers, paths and tokens
+ * have none), in document order, markup turned into text, one line per paragraph.
+ */
+export function jsonProse(value: unknown): string {
+  const lines: string[] = []
+  const walk = (v: unknown): void => {
+    if (typeof v === 'string') {
+      if (!/\s/.test(v.trim())) return
+      for (const para of v.split('\n')) {
+        let text = para
+        if (/<[a-z][^>]*>/i.test(para)) {
+          const { document: frag } = parseHTML(`<!doctype html><html><body>${para}</body></html>`)
+          text = domToText(frag.body as unknown as DomNode)
+        }
+        for (const l of text.split('\n')) if (l.trim() !== '') lines.push(l.trim())
+      }
+    } else if (Array.isArray(v)) for (const x of v) walk(x)
+    else if (v && typeof v === 'object') for (const x of Object.values(v)) walk(x)
+  }
+  walk(value)
+  return lines.join('\n')
+}
+
+/**
+ * Prose of a client-rendered Next.js page: the prose strings (`jsonProse`) of `props.pageProps`
+ * in the `__NEXT_DATA__` JSON. Empty when the page has no such data.
+ */
+export function nextDataText(html: string): string {
+  const m = /<script[^>]*id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/.exec(html)
+  if (!m?.[1]) return ''
+  let data: unknown
+  try {
+    data = JSON.parse(m[1])
+  } catch {
+    return ''
+  }
+  return jsonProse((data as { props?: { pageProps?: unknown } } | null)?.props?.pageProps)
+}
+
+/** An HTML element tag inside a JSON string: the mark of a content API rather than a dataset. */
+const JSON_MARKUP = /<(p|div|span|br|strong|em|b|i|h[1-6]|li|ul|ol|table|blockquote)\b[^>]*>/i
+
+/**
+ * Prose of a JSON document delivered by a client-rendered site's content API (such as the
+ * Indonesian Ministry of Foreign Affairs' `backpanel.kemlu.go.id`, docs/10 B-407): when at least
+ * one string carries HTML markup, the prose strings (`jsonProse`) of the whole document. Empty for
+ * JSON without markup (datasets such as FTS, Comtrade or World Bank responses), which stay raw.
+ */
+export function jsonContentText(raw: string): string {
+  let data: unknown
+  try {
+    data = JSON.parse(raw)
+  } catch {
+    return ''
+  }
+  let markup = false
+  const probe = (v: unknown): void => {
+    if (markup) return
+    if (typeof v === 'string') markup = JSON_MARKUP.test(v)
+    else if (Array.isArray(v)) for (const x of v) probe(x)
+    else if (v && typeof v === 'object') for (const x of Object.values(v)) probe(x)
+  }
+  probe(data)
+  return markup ? jsonProse(data) : ''
+}
+
 export function extractHtml(html: string): Extracted {
   const { document } = parseHTML(html)
   const title =
@@ -203,6 +282,10 @@ export function extractHtml(html: string): Extracted {
   const siteName = metaContent(document, ['meta[property="og:site_name"]'])
   const body = document.body ?? document.documentElement
   const bodyText = body ? domToText(body as unknown as DomNode) : ''
+  if (bodyText.trim() === '') {
+    const text = nextDataText(html)
+    if (text !== '') return { text, method: 'next-data', title, lang, published, siteName }
+  }
 
   let article: { content?: string | null | undefined } | null = null
   try {
@@ -289,8 +372,22 @@ export async function extractText(
     }
   }
   if (isHtml(bytes, contentType)) return extractHtml(decodeText(bytes, charset, true))
+  const decoded = decodeText(bytes, charset, false)
+  if (contentType?.includes('json') || /^\s*[[{]/.test(decoded.slice(0, 64))) {
+    const text = jsonContentText(decoded)
+    if (text !== '') {
+      return {
+        text,
+        method: 'json-content',
+        title: null,
+        lang: null,
+        published: null,
+        siteName: null,
+      }
+    }
+  }
   return {
-    text: decodeText(bytes, charset, false),
+    text: decoded,
     method: 'raw',
     title: null,
     lang: null,

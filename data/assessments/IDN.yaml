@@ -1,0 +1,322 @@
+# Coverage record for Indonesia (docs/03 §6). P-D research session, wave 9, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-407):
+# - Ministry of Foreign Affairs (Kementerian Luar Negeri, kemlu.go.id): the site is a client-rendered
+#   application whose pages carry no text in the served HTML. It loads its content from a public
+#   API (backpanel.kemlu.go.id/public-content-service/api/…), the site's own listing and article
+#   endpoints. Every item of the Ministry's sections "Berita" (3,811 items, September 2019 to
+#   September 2026), "Siaran Pers" (237), "Pidato Menteri" (222), "Pidato Presiden" (57) and
+#   "Pidato Lainnya" (38) was listed through that API with its full text (Indonesian and English);
+#   467 items dated from 7 October 2023 mention Gaza, Palestine, Israel, UNRWA, Rafah, the Courts,
+#   Netanyahu, genocide or the Board of Peace, and were searched by script for the terms of each
+#   indicator; about 40 were read in full. The article records are archived with pnpm archive
+#   through Save Page Now (the API URL of each page) and their text extracted by the new
+#   json-content method (docs/10 B-407). Save Page Now received the API's JSON.
+# - Cabinet Secretariat (setkab.go.id, English): its search RSS feed for "Gaza" (80 items,
+#   November 2024 to September 2026) listed the President's statements and remarks; the page for
+#   the remarks of 22 September 2025 was read in full, but Save Page Now captured a bot-check page
+#   instead of it (removed; not filed). The site's search pages timed
+#   out to scripted requests after the first requests; the feed does not reach back before November
+#   2024, so the statements of President Joko Widodo (to 20 October 2024) were not read on it.
+# - The President's site (presidenri.go.id) refuses scripted requests (HTTP 403, registry note).
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv, the UN press
+#   releases archived in votes.yaml, and the Ministry's country brief "Hubungan Bilateral
+#   Indonesia-Palestina" (PDF, kemlu.go.id/files/repositori).
+# - Web search (English and Indonesian): the ICC warrants, medical evacuation and the Galang Island
+#   plan, recognition of Palestine in 1988.
+# Items read in full on kemlu.go.id (Foreign Minister's statements, all filed as B9 unless noted):
+# 18 October 2023 (OIC, Jeddah), 28 November 2023 (General Assembly) with the press briefing of the
+# day, 12 December 2023 (Geneva, not filed: two weeks after a filed one), 23 January 2024 (Security
+# Council, not filed), 23 February 2024 (ICJ advisory proceedings) with the briefing of the day,
+# 4 May 2024 (OIC Summit, Banjul) with its briefing, 7 March 2025 (OIC, Jeddah), 30 April 2025 (ICJ
+# advisory proceedings) with its briefing, 15 September 2025 (Arab-Islamic summit in Doha, on
+# Israel's strike on Qatar, no Gaza passage; not filed), 26 May 2026 (Security Council) with the
+# news item of 27 May 2026, 26 September 2026 (General Assembly); the President's General Assembly
+# address of 23 September 2025 (not filed, B-408 (2)); the Ministry's items on the hospital ship
+# (13 February 2024), the International Stabilization Force (14 February 2026) and the walkout from
+# the Israeli Prime Minister's address (25 September 2026).
+# Not searched or not readable: the Ministry of Defence and the armed forces (A5, D4), the Ministry
+# of Trade and Statistics Indonesia (C3, C4), Danantara and the state pension funds (C5), the
+# Attorney General and courts (E1, E3), Parliament.
+country: IDN
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Indonesia
+      has no diplomatic relations with Israel and no record of Indonesian deliveries of arms to
+      Israel was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Indonesia had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters IDN` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-383 to B-404 on data/wave-8). The empty index row
+      the failed run appended was removed. No row, so the build shows no-data; the same command
+      resumes the fetch on another day. No row added to a2_confirmed_military.csv; no licence
+      register, parliamentary answer or investigation on Indonesian exports to Israel under HS 8526
+      or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Indonesia is not a partner, supplier or customer of the F-35 programme; no document naming
+      Indonesian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - Indonesia F-35 supplier parts company
+      - kemlu F-35 Israel
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. No official record of an Indonesian order of Israeli arms
+      in the window was found.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official record of a named exercise, a transit authorisation, a basing agreement or
+      intelligence sharing with Israel was found; Indonesia has no diplomatic relations with Israel.
+      The planned contribution of Indonesian troops to the International Stabilization Force in
+      Gaza under Security Council resolution 2803 (2025) is not cooperation with Israel's armed
+      forces (the Ministry's statement of 14 February 2026 says participation is not recognition or
+      normalisation).
+    queries:
+      - kemlu API full text 2023-10-07 to 2026-09-29, terms Israel, latihan, militer, TNI
+      - Indonesia Israel military exercise 2024 2025
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing licences for arms exports to Israel was found; no record
+      of Indonesian arms exports to Israel exists to suspend.
+    queries:
+      - Indonesia arms export Israel licence
+      - ekspor senjata Israel izin Kemhan
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - Indonesia embargo senjata Israel undang-undang
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official record of a port or airspace denial to an arms shipment bound for Israel was
+      found.
+    queries:
+      - Indonesia port denied ship arms Israel
+      - pelabuhan kapal senjata Israel ditolak
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven rows, yes on ES-10/21 to ES-10/26 and 79/232). Checked
+      against the Ministry's items (Indonesia co-sponsored and voted for the resolution of
+      27 October 2023; it mobilised support for the ceasefire resolution of 12 December 2023) and
+      the archived UN press releases for the five later votes (B-409 (1)). No difference.
+  B2:
+    status: not-applicable
+    note: "Not a Security Council member in the window (its last term was 2019-2020)."
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Indonesia filed no declaration of intervention in ICJ case 192 (not on the Court's list,
+      docs/06 §8); it is not a party to the Genocide Convention. The Foreign Minister said on
+      16 January 2024 that Indonesia supported South Africa's case. Indonesia took part in the
+      advisory proceedings of February 2024 and April 2025 (filed as B9 statements), which are not
+      case 192.
+    queries:
+      - icj-cij.org case 192 intervention Indonesia
+      - kemlu API full text, terms Afrika Selatan, Konvensi Genosida, ICJ
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No statement or act rejecting the ICJ's provisional measures was found; the Ministry supports them."
+    queries:
+      - kemlu API full text, terms ICJ, Mahkamah Internasional, provisional measures
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Indonesia is not a party to the Rome Statute. The press reports a Ministry statement of
+      November 2024 supporting the ICC warrants for Benjamin Netanyahu and Yoav Gallant and saying
+      they must be carried out in accordance with international law (lead_20260929_IDN_1); the
+      statement is not among the Ministry's items on its site (every item of November 2024 was
+      searched) and no statement of the Foreign Minister or the President on executing the warrants
+      was found.
+    queries:
+      - Indonesia Kemlu statement ICC arrest warrant Netanyahu November 2024
+      - kemlu API full text, terms Netanyahu, Gallant, Mahkamah Pidana Internasional, ICC
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No stated refusal to execute the warrants and no visit by a person under warrant was found."
+    queries:
+      - Netanyahu Indonesia visit
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Indonesia has imposed no sanctions on ICC officials."
+    queries:
+      - Indonesia sanctions ICC
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Indonesia recognised the State of Palestine after the
+      declaration of 15 November 1988; this session added the row IDN,1988-11-15 citing the
+      Ministry's country brief (src_20250902_kemlu_hubungan-bilateral-indonesia-palestina, page 1),
+      docs/10 B-192, B-409 (3). Pre-existing recognition: +3 standing from 2023-10-07.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Seven events: the Foreign Minister's statements of 18 October 2023, 28 November 2023,
+      23 February 2024, 4 May 2024, 30 April 2025, 26 May 2026 and 26 September 2026 (B-408). Filed
+      on the full texts the Ministry publishes, citing Gaza; not on the Ministry's unsigned
+      statements, the Vice Ministers' statements, or further statements in the same weeks. Two
+      statements that qualify could not be archived on 2026-09-29 and are not filed (B-408 (4)):
+      the Foreign Minister's statement at the OIC Council of Foreign Ministers in Jeddah on
+      7 March 2025 (naming Israel's blocking of aid to Gaza as a violation of international
+      humanitarian law; Save Page Now's captures were not served by the Wayback Machine within
+      the wait, three times) and the President's remarks at the two-state conference in New York
+      on 22 September 2025 (a call to end the war in Gaza, +2; the Cabinet Secretariat's page
+      answered Save Page Now with a bot-check page). The President's General Assembly address of
+      23 September 2025 names no violation and makes no ceasefire call; not filed.
+    queries:
+      - kemlu API sections Pidato Menteri, Pidato Presiden, Siaran Pers, full text 2023-10-07 to 2026-09-29
+      - setkab.go.id search feed Gaza
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel or denial of documented violations was
+      found. The President said on 22 and 23 September 2025 that Indonesia would recognise Israel
+      once Israel recognises Palestine and that Israel's security must be guaranteed within a
+      two-state solution; these are not B10 statements.
+    queries:
+      - kemlu and setkab full texts, terms Israel security, recognise Israel
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Indonesia has listed no Israeli minister or settler entity for sanctions."
+    queries:
+      - Indonesia sanctions settlers Israeli ministers
+      - sanksi pemukim Israel Indonesia
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Indonesia has never had diplomatic relations with Israel, so there is no ambassador to recall
+      and no relations to downgrade or sever; no act under B12 is possible. The Minister said on
+      5 May 2024 that there would be no diplomatic relations with Israel without Palestinian
+      independence.
+    queries:
+      - kemlu API full text, terms hubungan diplomatik dengan Israel, normalisasi
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Indonesia has no trade or association agreement with Israel to suspend or review."
+    queries:
+      - Indonesia Israel trade agreement
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel was found. The Board of Peace
+      Charter signed by the President on 22 January 2026 is a multilateral instrument, not an
+      agreement with Israel.
+    queries:
+      - Indonesia Israel agreement signed 2024 2025 2026
+      - perjanjian Indonesia Israel ditandatangani
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. No Comtrade rows for Indonesia (docs/10 B-194); the fetch of
+      2026-09-29 stopped at the reporter list (see A2). The build shows no-data until the fetch
+      succeeds.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No regulation on settlement goods (labelling or ban) was found."
+    queries:
+      - Indonesia settlement goods ban labelling regulation
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No exclusion decision by Danantara, the state pension funds or Bank Indonesia was found."
+    queries:
+      - Indonesia sovereign fund divest Israel companies Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No public procurement exclusion with legal effect was found."
+    queries:
+      - Indonesia procurement exclusion companies Israel
+  D1:
+    status: has-events
+    note: >-
+      Generated from fts_funding.csv: Indonesian government flows from the window ending May 2025
+      (USD 2,426,000), USD 14,426,000 in the windows to December 2025 and USD 12,000,000 in the
+      latest window (September 2025 to August 2026) against GNI USD 1,463,075,840,794, the +3 tier.
+      Indonesia's in-kind aid (the hospital ship's cargo of February 2024, airdrops with Jordan in
+      April 2024 and August 2025, convoys through Jordan) and USD 1 million for the treatment of
+      Palestinians in Egypt (April 2024, the Ministry's brief) are outside FTS, the limitation
+      docs/06 §7 states.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Indonesia did not suspend its UNRWA funding; it tripled it in 2024 (the Ministry, 23 September 2024)."
+    queries:
+      - kemlu API full text, term UNRWA
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: UNRWA's tables give USD 3,200,000 for 2024 against USD 200,000 for 2022, the
+      increased tier (+8, standing from 31 December 2024), as for the countries that never
+      suspended on data/wave-6 to data/wave-8.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical evacuation hosted and no field hospital deployed for Gaza was found in official
+      records. The hospital ship KRI Radjiman Wedyodiningrat delivered 242.6 tonnes of aid at
+      Al Arish on 13 February 2024 (the Ministry's item); no record of patients treated on board
+      was found. The President's plan to treat 1,000 and then 2,000 wounded Gazans in Indonesia
+      (Galang Island, announced in April and August 2025) has no official record of any patient
+      received (lead_20260929_IDN_2). The Indonesian Hospital in northern Gaza is an NGO facility.
+    queries:
+      - kemlu API full text, terms kapal rumah sakit, evakuasi medis, rumah sakit lapangan, Galang
+      - Gaza patients arrive Indonesia treatment Galang
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No visa or refugee instrument for Gazans was found; the Galang plan is described as temporary medical care, not a pathway."
+    queries:
+      - Indonesia visa Gaza Palestinians regulation
+  E1:
+    status: unchecked
+    note: "Experimental, unscored; the Attorney General and courts were not searched."
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No ban on Palestine solidarity protests or symbols was found; the Foreign Minister addressed
+      the national rally for Palestine at the National Monument on 3 August 2025 (the Ministry's
+      speech list).
+    queries:
+      - Indonesia ban Palestine protest
+      - kemlu API full text, term aksi bela Palestina
+  E3:
+    status: unchecked
+    note: "Experimental, unscored; not searched."

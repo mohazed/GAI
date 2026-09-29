@@ -13,6 +13,11 @@
  *
  * Queries: reporter → Israel (376), HS 93, 8710, 8526, 8802 and TOTAL, flows X and M, totals only
  * (customsCode C00, motCode 0, partner2Code 0); the mirror is reporter 376 → the country.
+ *
+ * Mirror queries cover several partners at once (P-14): Israel's responses for one year name up
+ * to MIRROR_BATCH partners, so a run of n reporters needs ⌈n / MIRROR_BATCH⌉ mirror captures a
+ * year instead of n. A partner gives at most 10 records (5 codes × 2 flows), so a batch stays
+ * under the preview's 500 records; a response holding 500 records may be cut and is refused.
  */
 
 export const ISRAEL_CODE = 376
@@ -20,18 +25,57 @@ export const COMTRADE_CMD = ['93', '8710', '8526', '8802', 'TOTAL'] as const
 export const ARMS_HS = ['93', '8710', '8526', '8802'] as const
 export const BASELINE_YEAR = 2022
 export const DAILY_CALL_LIMIT = 500
+/** Records returned by one preview call at most. */
+export const PREVIEW_MAX_RECORDS = 500
+/** Partners per mirror query: 45 × 10 records = 450, under PREVIEW_MAX_RECORDS. */
+export const MIRROR_BATCH = 45
 
 const QUERY_TAIL = `cmdCode=${COMTRADE_CMD.join(',')}&flowCode=X,M&customsCode=C00&motCode=0&partner2Code=0`
 
 export const REPORTERS_URL = 'https://comtradeapi.un.org/files/v1/app/reference/Reporters.json'
 
-/** Keyless preview of one reporter → partner, one year (archived). */
-export const previewUrl = (reporter: number, partner: number, year: number): string =>
-  `https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=${reporter}&partnerCode=${partner}&period=${year}&${QUERY_TAIL}`
+const codes = (c: number | readonly number[]): string =>
+  typeof c === 'number' ? String(c) : c.join(',')
 
-/** Keyed query, several years (counted, not archived). */
-export const keyedUrl = (reporter: number, partner: number, years: readonly number[]): string =>
-  `https://comtradeapi.un.org/data/v1/get/C/A/HS?reporterCode=${reporter}&partnerCode=${partner}&period=${years.join(',')}&${QUERY_TAIL}`
+/** Keyless preview of one reporter → one or several partners, one year (archived). */
+export const previewUrl = (
+  reporter: number,
+  partner: number | readonly number[],
+  year: number,
+): string =>
+  `https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=${reporter}&partnerCode=${codes(partner)}&period=${year}&${QUERY_TAIL}`
+
+/** Keyed query, one or several partners, several years (counted, not archived). */
+export const keyedUrl = (
+  reporter: number,
+  partner: number | readonly number[],
+  years: readonly number[],
+): string =>
+  `https://comtradeapi.un.org/data/v1/get/C/A/HS?reporterCode=${reporter}&partnerCode=${codes(partner)}&period=${years.join(',')}&${QUERY_TAIL}`
+
+/** Partner codes in batches of at most `size`, in the order given. */
+export function mirrorBatches(partners: readonly number[], size = MIRROR_BATCH): number[][] {
+  if (!Number.isInteger(size) || size < 1) throw new Error(`batch size ${size}`)
+  const out: number[][] = []
+  for (let i = 0; i < partners.length; i += size) out.push(partners.slice(i, i + size))
+  return out
+}
+
+/**
+ * Null when a preview response is complete; else why not: a response holding the preview's
+ * maximum of records may have been cut, so its partners would silently miss records.
+ */
+export function truncatedPreview(json: unknown): string | null {
+  const data = (json as { data?: unknown })?.data
+  if (!Array.isArray(data)) return null
+  return data.length >= PREVIEW_MAX_RECORDS
+    ? `${data.length} records, the preview maximum: the response may be cut; use smaller batches`
+    : null
+}
+
+/** The records of one partner in a multi-partner response. */
+export const recordsOfPartner = (records: readonly TradeRecord[], partner: number): TradeRecord[] =>
+  records.filter((r) => r.partner === partner)
 
 /** Data availability of the reporters' annual HS data (archived). */
 export const availabilityUrl = (reporters: readonly number[], years: readonly number[]): string =>
@@ -181,10 +225,16 @@ export function comtradeRows(input: ComtradeInput): ComtradeRows {
     },
   ]
   for (const d of directions) {
-    const baseline = d.responses.find((r) => r.year === BASELINE_YEAR)
+    // A multi-partner mirror response holds other partners' records too: keep this pair's.
+    const partner = d.reporter === 'self' ? ISRAEL_CODE : input.code
+    const responses = d.responses.map((r) => ({
+      ...r,
+      records: r.records.filter((x) => x.reporter === d.code && x.partner === partner),
+    }))
+    const baseline = responses.find((r) => r.year === BASELINE_YEAR)
     const total = (r: YearResponse | undefined, flow: 'X' | 'M') =>
       r?.records.find((x) => x.cmd === 'TOTAL' && x.flow === flow)?.value
-    for (const r of d.responses) {
+    for (const r of responses) {
       const release = input.releases.get(`${d.code}:${r.year}`)
       if (release === undefined) {
         if (r.records.length > 0)

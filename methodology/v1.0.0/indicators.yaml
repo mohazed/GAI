@@ -1005,7 +1005,7 @@ indicators:
     type: standing
     scored: true
     authoring: generated
-    generated_from: data/countries.yaml recognises_palestine.since
+    generated_from: data/structured/recognitions.csv
     points:
       kind: tiers
       tiers:
@@ -1028,7 +1028,7 @@ indicators:
           One standing state only: +8 if recognised after 2023-10-07, else +3 if recognised
           before (pre-existing recognition is a standing state from 2023-10-07).
         fr: >-
-          Un seul état durable : +8 en cas de reconnaissance après le 7 octobre 2023, sinon +3 en
+          Un seul état durable : +8 en cas de reconnaissance après le 7 octobre 2023, sinon +3 en
           cas de reconnaissance antérieure (la reconnaissance préexistante est un état durable à
           partir du 7 octobre 2023).
     superseded_by: []
@@ -1036,15 +1036,16 @@ indicators:
     evidence:
       requires_actor: false
       source_kinds: null
-      # Sources: D-08, docs/03 §3.
+      # Sources: D-08, docs/03 §3; the table replaces the registry field (B-25, P-14).
       rule:
         en: >-
-          Generated from `recognises_palestine.since` in `data/countries.yaml`; never hand-authored.
-          The recognition date recorded there comes from the foreign ministry's announcement.
+          Generated from `data/structured/recognitions.csv`; never hand-authored. Each row gives
+          the date the recognition took effect and cites the archived official statement of the
+          recognising government (or the UN record of it).
         fr: >-
-          Généré à partir de `recognises_palestine.since` dans `data/countries.yaml` ; jamais rédigé
-          à la main. La date de reconnaissance qui y figure provient de l'annonce du ministère des
-          Affaires étrangères.
+          Généré à partir de `data/structured/recognitions.csv` ; jamais rédigé à la main. Chaque
+          ligne donne la date d'effet de la reconnaissance et cite la déclaration officielle
+          archivée du gouvernement qui reconnaît (ou le document de l'ONU qui l'enregistre).
     primary_sources:
       - en: Foreign ministry
         fr: Ministère des Affaires étrangères

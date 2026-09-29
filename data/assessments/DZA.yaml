@@ -1,0 +1,334 @@
+# Coverage record for Algeria (docs/03 §6). P-D research session, wave 9, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-417):
+# - Ministry of Foreign Affairs (mfa.gov.dz): a Next.js site whose pages carry their content in the
+#   page data (__NEXT_DATA__). Its listings were read by script on 2026-09-29, in English: "News and
+#   press releases" (196 pages, of which 187 were read before the site slowed; items from June 2023
+#   to 28 September 2026), "Video news" (26 pages), "Statements" (3 pages), "Announcements" (23
+#   pages, the Ministry's statements and the Presidency's) and "Diplomacy" (6 pages, the Permanent
+#   Mission's work at the Security Council); in Arabic: the same sections except the news listing
+#   (Video news 24 of 26 pages, Statements 2 of 3, Announcements 22 of 23, Diplomacy 5 of 6). The
+#   Arabic items carry the full texts of the Minister's and the President's statements (most English
+#   items of the Video news section carry the video only). Titles and texts were searched for Gaza,
+#   Palestine, Israel, the occupation, UNRWA, the Courts, genocide, ceasefire, displacement,
+#   starvation, recognition, sanctions, arms and medical terms in English and Arabic.
+# - UN Official Document System: the Security Council's verbatim records S/PV.9534 (23 January 2024)
+#   and S/PV.9841 (20 January 2025) and the General Assembly's A/79/PV.17 (30 September 2024), where
+#   the Minister spoke; the records of the vetoed drafts already archived (S/PV.9552, 9584, 9790,
+#   9929, 10000), where Algeria spoke through its Permanent Representative; the UN press releases
+#   archived in votes.yaml. The General Assembly's records of the 80th session (September 2025) were
+#   not yet issued in the Document System (the symbol lookup returned no PDF).
+# - Presidency (el-mouradia.dz): no response to a direct request on 2026-09-29 (timeout, as the
+#   registry notes of 2026-09-28); its Wayback captures hold the site's shell, not the speeches. The
+#   President's speeches used here are those the Ministry publishes.
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv,
+#   unsc_vetoes.csv, recognitions.csv.
+# - Web search (English and French): the ICC warrants, the medical evacuation of injured Palestinians
+#   to Algeria, the Riyadh summit of November 2023.
+# Statements read (Arabic texts on the Ministry's site; the filed ones read in full): the Minister at
+# the Security Council (24 October 2023, 23 January 2024, 17 April 2024 on UNRWA, 18 April 2024,
+# 23 September 2025), the NAM Palestine Committee (17 January 2024, not filed: six days before a
+# filed one), his press conference on resolution 2728 (27 March 2024, not filed: a press conference
+# between two filed statements, naming a ceasefire call and displacement projects), the OIC
+# Executive Committee (7 August 2024), the OIC emergency session (25 August 2025, not filed: a
+# ceasefire aim and displacement plans, four weeks before a filed statement), the NAM meetings of 15
+# and 16 October 2025 (not filed: welcome the ceasefire, name no violation), his press conference of
+# 18 November 2025, the Arab League ministerial council (26 March 2026, not filed: on Lebanon, one
+# mention of crimes in Gaza), a statement of 24 May 2026 (not filed: "crimes" without a violation
+# named), the OIC Council of Foreign Ministers (27 August 2026), the Arab League Council (7 September
+# 2026) and the Arab foreign ministers' consultative meeting (22 September 2026) (neither mentions
+# Gaza); the President's speeches read on his behalf or delivered at the Arab League summit in
+# Manama (16 May 2024), the Arab-Islamic summit in Riyadh (11 November 2024), the Arab summit in
+# Baghdad (17 May 2025, no Gaza passage) and the Arab-Islamic summit in Doha (15 September 2025, not
+# filed: on Israel's strike on Qatar, eight days before a filed statement). The Minister's General
+# Assembly statements of 30 September 2025 and 28 September 2026 are on the Ministry's site as video
+# only, and the 80th and 81st sessions' verbatim records were not found; neither is filed.
+# Not searched or not readable: the Ministry of National Defence (A5, D4), the Ministry of Health (D4),
+# the Ministry of Commerce and the National Office of Statistics (C3, C4), the Fonds national
+# d'investissement and the Bank of Algeria (C5), the Ministry of Justice and courts (E1, E3), the
+# Ministry of the Interior (D5, E2), Parliament.
+country: DZA
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Algeria has
+      no diplomatic relations with Israel and no record of Algerian deliveries of arms to Israel
+      was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Algeria had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters DZA` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-407 (5) and B-412 (5)). The empty index row the
+      failed run appended was removed. No row, so the build shows no-data; the same command resumes
+      the fetch on another day. No row added to a2_confirmed_military.csv; no licence register,
+      parliamentary answer or investigation on Algerian exports to Israel under HS 8526 or 8802 was
+      found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria is not a partner, supplier or customer of the F-35 programme; no document naming
+      Algerian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - Algeria F-35 supplier parts company
+      - mfa.gov.dz listings, term F-35
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. No record of an Algerian order of Israeli arms in the window
+      was found.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official record of a named exercise, a transit authorisation, a basing agreement or
+      intelligence sharing with Israel was found; Algeria has no diplomatic relations with Israel.
+    queries:
+      - mfa.gov.dz listings 2023-10 to 2026-09, terms Israel, military, exercise
+      - Algeria Israel military cooperation 2024 2025
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing licences for arms exports to Israel was found; no record of
+      Algerian arms exports to Israel exists to suspend.
+    queries:
+      - Algeria arms export Israel licence
+      - Algérie exportation armes Israël licence
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No law or decree of the window establishing an arms embargo on Israel was found. The
+      President called for a ban on the supply of weapons to Israel (Riyadh, 11 November 2024, the
+      Ministry's page, not archivable on 2026-09-29, docs/10 B-418 (7)); a call is not an embargo.
+    queries:
+      - Algeria arms embargo Israel law decree
+      - Algérie embargo armes Israël décret
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No official record of a port or airspace denial to an arms shipment bound for Israel was found."
+    queries:
+      - Algeria port denied ship arms Israel
+      - Algérie port navire armes Israël refusé
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven rows, yes on ES-10/21 to ES-10/26 and 79/232). Algeria
+      spoke for the Arab Group or itself at the adoption of several of them (the Ministry's
+      Diplomacy items of 17 September and 11 December 2024). For the five later votes without rows
+      (docs/10 B-199 (1)): the archived UN press releases do not name Algeria among the states
+      against A/DEC/80/506 (GA/12707, whose abstentions are not listed; Algeria's representative
+      supported the Declaration's objective and rejected wording that equated the parties), or
+      among the states against or abstaining on 80/1 (GA/12708), 80/78 (GA/12739) or the vote of 17
+      September 2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list states. No
+      difference.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria was an elected Security Council member for 2024-2025 (so B2 applies) and cannot cast a
+      veto. The drafts vetoed while it sat (S/2024/173, its own draft, on 20 February 2024;
+      S/2024/239; S/2024/835; S/2025/353; S/2025/583) were vetoed by permanent members; no row of
+      unsc_vetoes.csv concerns Algeria.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06
+      §8). The Ministry welcomed the orders of 26 January 2024 and 24 May 2024 and the advisory
+      opinion of 19 July 2024 (Announcements).
+    queries:
+      - icj-cij.org case 192 intervention Algeria
+      - mfa.gov.dz Announcements, terms ICJ, Court, محكمة العدل الدولية
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No statement or act rejecting the ICJ's provisional measures was found; the Ministry welcomed them."
+    queries:
+      - mfa.gov.dz Announcements, terms ICJ, محكمة العدل الدولية
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria is not a party to the Rome Statute. The Ministry's unsigned statement of 21 November
+      2024 (Announcements) welcomed the ICC's arrest warrants and called on the Court's states
+      parties to take the measures needed to execute them; B5 needs a
+      statement by the head of government, the foreign or the justice minister, and none by the
+      President or the Minister was found in the Ministry's listings for November and December 2024.
+      Whether a Ministry statement is a B5 position is the question left open for Indonesia (docs/10
+      B-411 (2), B-421 (2)); the statement was read on the Ministry's site and not archived.
+    queries:
+      - mfa.gov.dz Announcements, term ICC, المحكمة الجنائية الدولية
+      - Algeria ICC arrest warrants Netanyahu Gallant November 2024 statement
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No stated refusal to execute the warrants and no visit by a person under warrant was found."
+    queries:
+      - Netanyahu Algeria visit
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Algeria has imposed no sanctions on ICC officials."
+    queries:
+      - Algeria sanctions ICC
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. The row DZA,1988-11-15 was added in this session (docs/10
+      B-419), citing the Minister's Security Council statement of 18 April 2024 on the Ministry's
+      site (line 20), which says Algeria hosted the declaration of the State of Palestine on 15
+      November 1988 and was the first to recognise it officially. The pre-existing tier (+3 from
+      2023-10-07) does not depend on the day.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Ten events (docs/10 B-418): the Minister of Foreign Affairs at the Security Council (24 October
+      2023, 23 January 2024, 18 April 2024, 20 January 2025 presiding, 23 September 2025), the OIC (7
+      August 2024, 27 August 2026), the General Assembly (30 September 2024) and his press conference
+      of 18 November 2025; the President at the Arab League summit (16 May 2024). The President's
+      speech to the Arab-Islamic summit in Riyadh (11 November 2024, read by the Minister; the war of
+      genocide in Gaza, a call for an arms embargo) qualifies at +5 but could not be archived on
+      2026-09-29 (docs/10 B-418 (7)) and is not filed. Filed on full texts, citing Gaza,
+      one per occasion and not for further statements in the same weeks; not on the Ministry's
+      unsigned statements or the Permanent Representative's statements at the Security Council
+      (many name violations in Gaza). Statements read and not filed are listed in the header.
+    queries:
+      - mfa.gov.dz Video news, Statements, Announcements and Diplomacy (Arabic and English), all items 2023-10 to 2026-09
+      - mfa.gov.dz News and press releases (English), items 2023-06 to 2026-09
+      - UN ODS S/PV.9534, S/PV.9841, A/79/PV.17, A/80/PV.6 to A/80/PV.20
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No statement of unconditional support for Israel or denial of documented violations was found."
+    queries:
+      - mfa.gov.dz listings, all Israel items
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria has listed no Israeli minister or settler entity for sanctions; its targeted sanctions
+      committee applies the Security Council's lists. The President called for sanctions on Israel
+      (Riyadh, 11 November 2024, not archived); a call is not a listing.
+    queries:
+      - Algeria sanctions settlers Israeli ministers
+      - mfa.gov.dz Targeted International Sanctions Committee pages
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria has never had diplomatic relations with Israel, so there is no ambassador to recall
+      and no relations to downgrade or sever; no act under B12 is possible.
+    queries:
+      - mfa.gov.dz listings, terms diplomatic relations Israel
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Algeria has no trade or association agreement with Israel to suspend or review."
+    queries:
+      - Algeria Israel trade agreement
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No trade, investment or cooperation agreement signed with Israel was found."
+    queries:
+      - Algeria Israel agreement signed 2024 2025 2026
+      - Algérie Israël accord signé
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. No Comtrade rows for Algeria (docs/10 B-194); the fetch of 2026-09-29
+      stopped at the reporter list (see A2). The build shows no-data until the fetch succeeds.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No regulation of the window on settlement goods (labelling or ban) was found.
+    queries:
+      - Algeria settlement goods ban labelling regulation
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by an Algerian public fund or the Bank of Algeria over conduct in Gaza or
+      the occupied territories was found (web search only; the funds' own sites were not searched).
+    queries:
+      - Algeria fund divest companies Israel Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No public procurement exclusion with legal effect adopted in the window was found (web search only)."
+    queries:
+      - Algérie marchés publics exclusion entreprises Israël
+  D1:
+    status: has-events
+    note: >-
+      Generated from fts_funding.csv: Algerian government flows of USD 5,000,001 in the windows
+      ending May 2025 to April 2026 (nothing before or after), against GNI USD 277,628,499,044, the
+      +3 tier; nothing in the latest windows (to August 2026). Algeria's in-kind aid and its funds
+      to the Palestinian Authority (named in the Minister's statement of 17 April 2024 on UNRWA)
+      are outside FTS, the limitation docs/06 §7 states.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Algeria did not suspend UNRWA funding; the Minister announced an exceptional contribution of
+      USD 15 million at the Security Council on 17 April 2024 (the Ministry's Diplomacy item of that
+      day) and the Ministry condemned the Israeli laws against UNRWA (29 October 2024).
+    queries:
+      - mfa.gov.dz listings, term UNRWA, الأونروا
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: UNRWA's tables give USD 15,000,000 for 2024 and no row for Algeria in 2022 (the
+      2022 table ranks donors down to USD 11), the increased tier (+8, standing from 31 December
+      2024), as for the countries that never suspended on data/wave-6 to data/wave-9 (docs/10
+      B-418).
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Press reports say injured Palestinians from Gaza were flown from El Arish to Algiers on a
+      presidential aircraft in December 2023 and treated at the Aïn Naâdja military hospital,
+      and the UN information centre cites WHO figures of 136 Gaza patients hosted by Algeria by 10
+      September 2024 (lead_20260929_DZA_1). No official Algerian record of the programme was found
+      (the Ministry's listings mention only its nationals in Gaza, 24 December 2023; the Ministry
+      of Defence and the Ministry of Health were not searched). The President's offer, reported
+      by the press, of field hospitals in Gaza once the crossings open is not a deployment.
+    queries:
+      - Algeria Gaza wounded patients evacuated treated Algerian hospitals 2024 2025
+      - blessés palestiniens Ghaza arrivée Algérie hôpital prise en charge
+      - mdn.dz blessés palestiniens Ghaza hôpital militaire Aïn Naâdja
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found; the Ministry's statements concern the
+      evacuation of Algerian nationals and their families from Gaza (24 December 2023, 20 October
+      2025).
+    queries:
+      - Algeria visa Gaza Palestinians regulation
+      - mfa.gov.dz listings, terms visa, national community in Gaza
+  E1:
+    status: unchecked
+    note: "Experimental, unscored; the Ministry of Justice and courts were not searched."
+  E2:
+    status: unchecked
+    note: "Experimental, unscored; the Ministry of the Interior was not searched."
+  E3:
+    status: unchecked
+    note: "Experimental, unscored; not searched."

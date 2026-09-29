@@ -4,6 +4,10 @@
  * the snapshot, writes archive/text/{id}.txt and a row of archive/index.csv, and prints a source
  * record to paste into data/sources/{YYYY}/{id}.yaml.
  *
+ * `--capture TS` records the existing Wayback capture TS of the URL instead of saving it anew (a
+ * file whose origin now answers Save Page Now with a bot challenge); the bytes are downloaded from
+ * that capture and hashed as usual.
+ *
  * Needs IA_ACCESS_KEY and IA_SECRET_KEY in .env; the anonymous endpoint is never called.
  * Exit codes: 0 archived, 1 capture failed (a skeleton with wayback_url: null is printed), 2 usage.
  */
@@ -15,7 +19,7 @@ import { realDeps } from '../lib/deps.js'
 import { loadEnv } from '../lib/env.js'
 import { sourcePath, sourceYaml } from '../lib/files.js'
 
-const USAGE = `usage: pnpm archive <url> [--kind ${SOURCE_KINDS.join('|')}] [--id src_…] [--root DIR]`
+const USAGE = `usage: pnpm archive <url> [--kind ${SOURCE_KINDS.join('|')}] [--id src_…] [--root DIR] [--capture YYYYMMDDhhmmss]`
 
 function fail(message: string, code = 2): never {
   process.stderr.write(`${message}\n`)
@@ -27,6 +31,7 @@ const argv = process.argv.slice(2).filter((a) => a !== '--')
 let url: string | undefined
 let kind: SourceKind | undefined
 let id: string | undefined
+let capture: string | undefined
 let root = repo
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i] as string
@@ -37,7 +42,10 @@ for (let i = 0; i < argv.length; i++) {
       fail(`--kind must be one of ${SOURCE_KINDS.join(', ')}`)
     kind = k as SourceKind
   } else if (a === '--id') id = value()
-  else if (a === '--root') root = resolve(process.env.INIT_CWD ?? process.cwd(), value())
+  else if (a === '--capture') {
+    capture = value()
+    if (!/^\d{14}$/.test(capture)) fail('--capture expects a 14-digit Wayback timestamp')
+  } else if (a === '--root') root = resolve(process.env.INIT_CWD ?? process.cwd(), value())
   else if (a.startsWith('--')) fail(`unknown option ${a}\n${USAGE}`)
   else if (url === undefined) url = a
   else fail(`one URL at a time\n${USAGE}`)
@@ -66,6 +74,8 @@ const doc = await archiveUrl({
   deps: realDeps(),
   ...(id ? { id } : {}),
   ...(kind ? { kind } : {}),
+  // A recorded capture may be a large file: allow 15 minutes for its download.
+  ...(capture ? { capture, spn: { requestTimeoutMs: 900_000 } } : {}),
 })
 const checks = skeletonChecks(doc, kind !== undefined)
 const header = [
