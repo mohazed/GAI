@@ -1,0 +1,358 @@
+# Coverage record for Hungary (docs/03 §6). P-D research session, wave 5, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-315): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Slovenia and Czechia, docs/10 B-303, B-309). Hungary changed
+# government in May 2026 (Viktor Orbán's government, Foreign Minister Péter Szijjártó, to May 2026;
+# Péter Magyar's government, Foreign Minister Anita Orbán, from May 2026). The protocol's searches
+# (docs/06 §4 step 3) were run on the two portals of the Government, which serve every ministry
+# (the Ministry of Foreign Affairs and Trade has no separate site):
+# (1) 2020-2025.kormany.hu, the archive of the previous government's site (news to 10 November
+# 2025, transcripts of the Prime Minister's speeches and interviews), through its own search API
+# (`/publicapi/global-search`, full text, up to 3,000 results a term) for Gáza, Gázai, Gázában,
+# Gázát, Gázai övezet, Izrael, Izraelt, Izraellel, Izraelnek, izraeli, Palesztina, palesztin,
+# UNRWA, Netanjahu, Netanjahut, tűzszünet, Hamász, túszok, Nemzetközi Büntetőbíróság, Római
+# Statútum, elfogatóparancs, Nemzetközi Bíróság, népirtás, Ciszjordánia, telepesek, Közel-Kelet,
+# közel-keleti, Jeruzsálem, Rafah, kétállami, Ben-Gvir, Smotrich, társulási megállapodás,
+# fegyverexport, Palesztin Állam, palesztin állam, tüntetés, demonstráció, Hamász-zászló,
+# palesztinpárti, F-35, Lockheed, embargó, tranzit, légtér, "nagykövet Izrael", befektetés,
+# kizárás, közbeszerzés, sebesült, evakuál, kórház, Hungary Helps, vízum, nyomozás, feljelentés,
+# egyetemes joghatóság, termékek, szándéknyilatkozat, megállapodás, hadiipari, katonai,
+# Honvédelmi Minisztérium, szankció (results of the broad terms filtered for Israel, Gaza and
+# Palestine; before them, 1,580 distinct items; 274 dated from 7 October 2023 that name Gaza, Israel,
+# Palestine, UNRWA, Hamas, the ICC or the ICJ, each read by title and full text, the relevant
+# ones in full);
+# (2) kormany.hu, the current site (it also holds the previous government's news from October 2025
+# to May 2026), through its search API (`/application/search`) for Gáza, Gázai övezet, Izrael,
+# izraeli, Palesztina, palesztin, UNRWA, Netanjahu, tűzszünet, Hamász, túszok, Nemzetközi
+# Büntetőbíróság, büntetőbíróságból, Római Statútum, ICC, kilépés, elfogatóparancs, Nemzetközi
+# Bíróság, Hágai, népirtás, Ciszjordánia, telepesek, Közel-Kelet, közel-keleti, humanitárius,
+# fegyverexport, Jeruzsálem, társulási megállapodás, Gaza, Israel, Palestine, Netanyahu and
+# "Orbán Anita", from 1 October 2025 (999 items, 50 relevant by title and lead) and again from
+# 13 April 2026 (53 items), and for F-35, embargó, tranzit, légtér, nagykövet, szándéknyilatkozat,
+# megállapodás, sebesült, kórház, Hungary Helps and vízum from 1 October 2025 (918 items), the
+# relevant ones read in full.
+# Also read: the ICJ's page of case 192 (read only; it answers scripted captures with HTTP 403) and
+# Hungary's declaration of intervention (UNISPAL copy); the UN Treaty Collection's status page of
+# the Rome Statute and its depositary notifications C.N.225.2025 and C.N.180.2026.
+# Not searched: the press; the National Assembly (parlament.hu: bills, votes, interpellations); the
+# Official Gazette (Magyar Közlöny); the police and prosecution service (E1–E3); the Magyar Nemzeti
+# Bank and public funds (C5); the Supervisory Authority of Regulatory Affairs, which licenses
+# military exports (A6, A7). miniszterelnok.hu and abouthungary.hu answer "under reconstruction"
+# since the change of government; their content was reached through the archive site above.
+country: HUN
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Hungary is
+      a buyer of Israeli equipment, not a supplier (see A4).
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (Hungary had rows from P-14, so no fetch was run). Hungary's own reports
+      carry HS 93 exports to Israel of USD 96,061 for 2022 and none for 2023–2025; Israel's mirror
+      data carry no HS 93 or 8710 imports from Hungary; the value is under USD 100,000 (0 points).
+      HS 8526 rows (own USD 26,885 to 85,576 a year; mirror USD 66,000 to 326,000) are not counted: no
+      licence register, parliamentary answer or investigation confirming their military nature was
+      found, and no row was added to a2_confirmed_military.csv. No Hungarian document on arms-export
+      licences to Israel was found on the government portals; the licensing authority and the
+      National Assembly were not searched.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Hungarian companies as suppliers of parts or maintenance for the
+      F-35 programme was found.
+    queries:
+      - 2020-2025.kormany.hu search (F-35, Lockheed)
+      - kormany.hu search (F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Prime Minister stated on 3 April 2025 that Hungary had bought many technologies from
+      Israel and built them into the Hungarian military and would continue this cooperation
+      (src_20250403_kormany-hu_orban-sajtonyilatkozat-netanjahu); A4 will show any new order
+      recorded by SIPRI from 2023-10-07.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or official confirmation of
+      intelligence sharing related to the Gaza campaign found. The Prime Minister's statement of 3
+      April 2025 on "defence-industrial, military-security cooperation" concerns purchases of Israeli
+      technology (A4); the interior ministers' talks of 29 February 2024 and the Interior Ministry's
+      meeting with Israel's ambassador of 24 July 2026 concern pre-existing police and
+      counter-terrorism cooperation, not the campaign.
+    queries:
+      - 2020-2025.kormany.hu search (Izrael, izraeli, Honvédelmi Minisztérium, hadiipari, katonai)
+      - kormany.hu search (Izrael, izraeli)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or refusal of a class of export licences to Israel found; no Hungarian document on
+      licences to Israel was found on the government portals (the licensing authority and parliamentary
+      answers were not searched).
+    queries:
+      - 2020-2025.kormany.hu and kormany.hu search (fegyverexport, embargó, Izrael)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No embargo on arms exports to or imports from Israel found; see A6.
+    queries:
+      - 2020-2025.kormany.hu and kormany.hu search (fegyverexport, embargó)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of airspace or transit for an arms shipment to Israel found (Hungary has no seaport).
+    queries:
+      - 2020-2025.kormany.hu and kormany.hu search (tranzit, légtér, Izrael)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): no on A/RES/ES-10/21,
+      ES-10/23, ES-10/24, ES-10/26 and 79/232; abstention on ES-10/22 and ES-10/25. The UN press
+      releases list Hungary among the states against ES-10/23 (GA/12599) and ES-10/26 (GA/12667); the
+      others do not list Hungary's vote by name; no Hungarian document contradicts the rows. The
+      Minister stated on 23 January 2025 that Hungary "voted no" on the December 2024 request for an
+      ICJ advisory opinion (src_20250123_kormany-hu_szijjarto-gazai-tuzszunet), agreeing with the
+      79/232 row. Later votes without rows (docs/10 B-199 (1)): A/DEC/80/506 (12 September 2025) —
+      against (GA/12707 lists Hungary); A/RES/80/1 (19 September 2025) — abstention (GA/12708);
+      A/RES/80/78 (5 December 2025) — against (GA/12739, both UNRWA texts); ES-10/27 and 80/116 —
+      the press releases do not name Hungary.
+  B2:
+    status: not-applicable
+    note: Hungary was not a member of the Security Council in the window.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Hungary's declaration of intervention in case 192 (12 March 2026) argues against the applicant's
+      construction and is filed as B4 (evt_2026_03_12_HUN_B4), not B3.
+    queries:
+      - icj-cij.org case 192, intervention page (read only)
+  B4:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: the declaration of intervention of 12 March 2026. Not filed as B4: the Minister's
+      statements of 9 and 22 January 2024 calling South Africa's application a "legal attack" and
+      "nonsense" (press remarks on the merits, before the provisional-measures orders, without a
+      formal act); the Government's statement of 19 July 2024 disagreeing with the ICJ's advisory
+      opinion on the occupied Palestinian territory, and Hungary's oral statement of 30 April 2025 in
+      the advisory proceedings on Israel's obligations towards the UN (src_20250430_kormany-hu_nemzetkozi-birosag-meghallgatas):
+      both concern advisory proceedings, not the provisional measures of case 192. No statement of
+      the Government formed in May 2026 on the declaration was found; the ICJ page lists no
+      withdrawal.
+    queries:
+      - 2020-2025.kormany.hu search (Nemzetközi Bíróság, népirtás, hágai)
+      - kormany.hu search (Nemzetközi Bíróság, Hágai, népirtás)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister, the Foreign Minister or the Justice Minister committing to
+      execute the warrants of 21 November 2024 was found. The Government formed in May 2026 withdrew
+      the notification of withdrawal from the Rome Statute on 29 May 2026 (C.N.180.2026), and the
+      Prime Minister told the National Assembly on 29 June 2026 that the Government had "stopped the
+      process of withdrawing from the International Criminal Court"
+      (src_20260629_kormany-hu_magyar-peter-elso-otven-nap); neither is a stated position on the
+      warrants, so no B5 event is filed (docs/10 B-316).
+    queries:
+      - kormany.hu search (Nemzetközi Büntetőbíróság, büntetőbíróságból, ICC, Netanjahu, elfogatóparancs, kilépés)
+  B6:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Three events: the Prime Minister's statement of 22 November 2024 that the warrant would have no
+      effect in Hungary; the official visit of Prime Minister Netanyahu of 2–6 April 2025 without
+      arrest; the notification of withdrawal from the Rome Statute (2 June 2025), ended on 29 May 2026
+      when it was withdrawn. Also on record, not filed separately: the Foreign Minister's statements of
+      21 November 2024 and 23 January 2025 that the invitation stood and the warrant was politically
+      motivated, the Government's decision of 3 April 2025 to withdraw (src_20250403_kormany-hu_kilepes-buntetobirosag)
+      and the National Assembly's vote of 20 May 2025. The seed list of docs/06 §8 and the B6
+      definition say the withdrawal took effect on 2 June 2026; the UN depositary record shows it
+      never did (docs/10 B-316).
+    queries:
+      - 2020-2025.kormany.hu search (Nemzetközi Büntetőbíróság, Római Statútum, elfogatóparancs, Netanjahu)
+      - treaties.un.org Rome Statute status page (read only)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions on ICC officials. The Foreign Minister called the United States' sanctions on the
+      ICC "absolutely understandable" on 7 February 2025 (Ministry release title); a statement, not a
+      listing.
+    queries:
+      - 2020-2025.kormany.hu search (Nemzetközi Büntetőbíróság, szankció)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official statement confirming a recognition of the State of Palestine, with its date, was
+      found, so no row was added to recognitions.csv (the registry's 1988-11-23 comes from the UN
+      letter A/78/846 and stays a lead, docs/10 B-199 (3)). The Prime Minister said on 9 October 2025
+      that Hungary "seemingly" recognised the Palestinians in communist times but that this was "not
+      so obvious" (src_20251009_kormany-hu_orban-interju-hetek); the Minister heading the Prime
+      Minister's Office said on 1 August 2025 that Hungary does not support a unilateral recognition.
+      Flagged for the author (docs/10 B-316).
+    queries:
+      - 2020-2025.kormany.hu search (Palesztin Állam, palesztin állam, Palesztina elismerése, elismerte Palesztinát, palesztin nagykövet)
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Three events by the Foreign Minister (4 March 2024, 23 January 2025, 11 August 2025), each at the
+      call tier. Not filed: statements reported in indirect speech (for example 22 May 2024, "everything
+      must be done to protect civilians", and 12 July 2025, support for "a ceasefire and a hostage
+      agreement"); the joint leaders' statement of 25 April 2024 on the hostages, which calls on Hamas
+      to release them (not filed for any signatory on the wave branches); statements by other ministers.
+      No call by Prime Minister Orbán or Prime Minister Magyar, or by Foreign Minister Anita Orbán, was
+      found; her joint declaration with Germany's Foreign Minister of 14 September 2026 states support
+      for Israel's right to self-defence and names no ceasefire for Gaza.
+    queries:
+      - 2020-2025.kormany.hu search (tűzszünet, Gáza, humanitárius, civil)
+      - kormany.hu search (tűzszünet, Gáza, Orbán Anita, humanitárius)
+  B10:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Two events by Prime Minister Orbán (3 January 2024, 3 April 2025). Statements by the Foreign
+      Minister and other ministers do not count (the indicator is the head of government's), for
+      example the Minister heading the Prime Minister's Office's "we fully support Israel" of 9 October
+      2023. The Prime Minister's words of 13 October 2023 (Israel's right to take steps, with a call for
+      de-escalation) are not filed. No statement by Prime Minister Magyar found.
+    queries:
+      - 2020-2025.kormany.hu search (Izrael, Netanjahu, Hamász) in the Prime Minister's transcripts
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Hungary listed no Israeli ministers or settlers. It blocked the EU listing of violent settlers at
+      the Foreign Affairs Council of 19 February 2024 (src_20240219_kormany-hu_telepesek-szankcio) and
+      the Foreign Minister stated on 12 July 2025 that Hungary opposes EU listings of Israeli persons; no
+      document showing Hungary's support for the EU settler listings adopted later was found. A
+      B10-adjacent note, unscored (docs/02 §2 B11); settler measures are west-bank scope in any case.
+    queries:
+      - 2020-2025.kormany.hu search (telepesek, szankció izraeli)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance of relations with Israel found.
+    queries:
+      - 2020-2025.kormany.hu search ("nagykövet Izrael")
+      - kormany.hu search (nagykövet)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Hungarian support for a review or suspension of the EU–Israel Association Agreement: the
+      Foreign Minister opposed suspending the political dialogue (18 November 2024,
+      src_20241118_kormany-hu_eu-izrael-parbeszed) and rejected the Commission's proposals of September
+      2025 (src_20250904_kormany-hu_izrael-ellenes-javaslatok). No position of the Government formed
+      in May 2026 found.
+    queries:
+      - 2020-2025.kormany.hu and kormany.hu search (társulási megállapodás, Izrael, szankció)
+  C2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: the letter of intent on tourism of 18 March 2025. Not filed: business forums (27
+      October 2025) and ministerial meetings without a signed instrument; the purchase contracts of
+      Israeli defence equipment (A4). No other signed agreement found.
+    queries:
+      - 2020-2025.kormany.hu search (megállapodás, szándéknyilatkozat, Izrael), results filtered for Israel
+      - kormany.hu search (megállapodás, szándéknyilatkozat)
+  C3:
+    status: has-events
+    note: >-
+      Generated. Own reports: USD 741.2 million (2022), 876.9 million (2023), 749.0 million (2024),
+      820.2 million (2025, r = 1.107): −3 in every window. Israel's mirror totals are lower (USD 503.9
+      million in 2022, 761.1 million in 2025). No Hungarian document on trade totals was found; no
+      disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on settlement goods beyond EU law found.
+    queries:
+      - 2020-2025.kormany.hu search (telepesek, Ciszjordánia, termékek)
+      - kormany.hu search (telepesek, Ciszjordánia)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No exclusion decision by a Hungarian public fund or the central bank found; the bank and the funds were not searched.
+    queries:
+      - 2020-2025.kormany.hu search (Izrael, befektetés, kizárás)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No public procurement exclusion of implicated companies found.
+    queries:
+      - 2020-2025.kormany.hu search (közbeszerzés, Izrael)
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated; the build derives none-found (no FTS flow from a Hungarian government entity on the
+      oPt flash appeals 1186, 1156, 1273 or 1510; a real zero, docs/02 §5). The Government reports aid
+      outside the appeals: half a million dollars to Egypt and the Latin Patriarchate of Jerusalem for
+      the protection of civilians by February 2024 (src_20240219_kormany-hu_telepesek-szankcio) and
+      support to Catholic Church programmes in the Gaza Strip (release of 23 July 2025), the known FTS
+      gap (docs/06 §7); no disagreement with the value as defined.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Hungary is not in UNRWA's donor tables for 2022 and 2024 (archived, as for Slovenia), so it had
+      no funding to suspend; the Foreign Minister said on 3 February 2024 that the outcome of the
+      investigation of the allegations against UNRWA staff should have consequences for the Agency's
+      financing.
+    queries:
+      - UNRWA donor tables 2022 and 2024 (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024)
+      - 2020-2025.kormany.hu search (UNRWA)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No UNRWA contribution in 2022 or 2024 (see D2).
+    queries:
+      - UNRWA donor tables 2022 and 2024
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No medical evacuation programme or field hospital for Gaza found.
+    queries:
+      - 2020-2025.kormany.hu search (sebesült, evakuál, kórház, Hungary Helps), results filtered for Gaza
+      - kormany.hu search (sebesült, kórház, Hungary Helps)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee pathway for Gazans found; the evacuations of 2023 concerned Hungarian citizens
+      and their families.
+    queries:
+      - 2020-2025.kormany.hu and kormany.hu search (Gázai övezet, vízum)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No domestic investigation of nationals or companies for conduct in Gaza found; the prosecution service was not searched.
+    queries:
+      - 2020-2025.kormany.hu search (nyomozás, feljelentés, Gáza)
+  E2:
+    status: unchecked
+    note: >-
+      Experimental, unscored. Government releases state that the Government banned demonstrations
+      "celebrating hatred and terrorism" (State Secretary, 21 October 2023) and defend the ban of a
+      pro-Palestinian demonstration challenged in court (Minister heading the Prime Minister's
+      Office, 9 November 2023); the police decisions themselves, their dates and the court rulings
+      were not searched or archived, so no event is filed (P-16, docs/10 B-319).
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the prosecution service and courts were not searched.
+    queries:
+      - 2020-2025.kormany.hu search (egyetemes joghatóság, feljelentés, Gáza)
