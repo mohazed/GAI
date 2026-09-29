@@ -1,0 +1,312 @@
+# Coverage record for the Plurinational State of Bolivia (docs/03 §6). P-D research session, wave 7, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-371): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Colombia, Chile and Mexico). Sources read, read only:
+# - Ministerio de Relaciones Exteriores (cancilleria.gob.bo/mre, WordPress; its REST API answers 401,
+#   its RSS feeds answer): the monthly archive feeds were read in full by title from October 2023 to
+#   September 2026 (901 items); the site-search feeds were run for Israel, Palestina, Gaza, genocidio
+#   and "Corte Penal" (the other terms timed out); every item whose title or search hit concerned
+#   Israel, Palestine, Gaza, genocide, the ICJ, the ICC, UNRWA, a ceasefire, the Hague Group, the
+#   Middle East, the United Nations or a speech of the President or the Foreign Minister (about 115
+#   items) was fetched and read; 12 were archived.
+# - Presidencia (presidencia.gob.bo): the site now holds only the present government's pages (58
+#   press notes); its search and REST API return nothing for Israel, Gaza or Palestina. President
+#   Arce's speeches were read in the Ministry's copies.
+# - gadebate.un.org (answered scripted requests this time): the pages of the 79th, 80th and 81st
+#   sessions were read; the Foreign Minister's statement of 25 September 2024 (PDF) was read; the
+#   President's addresses of 25 September 2025 (Arce) and 24 September 2026 (Paz) exist only as audio
+#   and AI-generated transcripts.
+# - The ICJ's report to the General Assembly, A/80/4 (documents.un.org), for the intervention.
+# - UNRWA's donor tables for 2022 and 2024 and fts_funding.csv (Bolivia is in neither).
+# Not searched: press and NGO reports (no leads were read); the Asamblea Legislativa Plurinacional and
+# the Gaceta Oficial; the Ministries of Defence, of Productive Development and of Government (A4, A5,
+# C1, C2, C4); the Dirección General de Migración (D5); the Fiscalía and the courts (E1–E3); public
+# pension funds (C5).
+country: BOL
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Bolivia is
+      not known as a supplier of arms to Israel.
+  A2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (rows from P-14; no fetch needed). Bolivia's own data for 2022–2025
+      show no export of HS 93, 8710, 8526 or 8802 to Israel (only imports of HS 8526 from Israel,
+      USD 10,344 in 2022, 32,366 in 2023 and 25,372 in 2025), and Israel's mirror data have no A2
+      row for Bolivia; comtrade_a2.csv has no Bolivian row. No row added to
+      a2_confirmed_military.csv. No Bolivian document on arms exports to Israel was found.
+    queries:
+      - cancilleria.gob.bo feeds (Israel, armas)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Bolivia is not a partner, supplier or customer of the F-35 programme; no document naming
+      Bolivian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - cancilleria.gob.bo feeds (Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. The Ministry of Defence was not searched for orders.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found. The restoration of relations of 9 December 2025
+      and the cooperation announced with Israel's President on 28 January 2026 (water purification
+      equipment donated) concern civil cooperation. The Ministry of Defence was not searched.
+    queries:
+      - cancilleria.gob.bo feeds (Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel was found. Bolivia
+      signed the Hague Group's Bogotá joint statement (July 2025), whose measures include preventing
+      the supply of arms, fuel and military technology to Israel (Ministry release of 18 July 2025,
+      archived); a commitment in a joint statement is not a government decision, and no Bolivian
+      implementing act was found (docs/10 B-372 (4)).
+    queries:
+      - cancilleria.gob.bo feeds (Israel, Grupo de La Haya, armas)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - cancilleria.gob.bo feeds (Israel, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No denial of port or airspace transit to an arms shipment bound for Israel was found
+      (Bolivia is landlocked; the Bogotá measures on ports and flags were not followed by any
+      Bolivian act found).
+    queries:
+      - cancilleria.gob.bo feeds (Israel, Grupo de La Haya)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21
+      to ES-10/26 and 79/232. The Ministry's pages agree where they speak: the communiqué of 2
+      November 2023 calls for compliance with the resolution of 27 October 2023 (ES-10/21), the
+      communiqué of 19 September 2024 welcomes ES-10/24, the release of 30 May 2025 invokes the
+      ceasefire resolution adopted in December 2024 from draft A/ES-10/L.33. For the five later votes without rows
+      (B-199 (1)), the Ministry's communiqué of 13 September 2025 welcomes the New York Declaration
+      (A/DEC/80/506) and the Foreign Minister cited its 142 votes on 26 September 2025, without
+      stating Bolivia's own vote; nothing read names Bolivia's vote on ES-10/27, 80/1, 80/78,
+      80/116 or the vote of 17 September 2026.
+  B2:
+    status: not-applicable
+    note: Not a member of the Security Council in the window (set by the build's rule).
+  B3:
+    status: has-events
+    note: >-
+      One event (evt_2024_10_08_BOL_B3): declaration of intervention under Article 63 filed on 8
+      October 2024 (A/80/4, paragraph 202), read as supporting the applicant from the Ministry's
+      release of that day and the President's BRICS address of 24 October 2024. No withdrawal was
+      found in the Ministry's pages to 28 September 2026, including under the government in office
+      from 8 November 2025; the declaration itself and the ICJ case page could not be read. Bolivia
+      also took part in the advisory proceedings on Israel's obligations regarding the United
+      Nations and other organisations in the occupied Palestinian territory (written statement; oral
+      statement of 29 April 2025; A/80/4 paragraphs 265-266); advisory proceedings are not case 192
+      and have no indicator.
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found;
+      the Ministry supported South Africa's application (communiqué of 7 January 2024) and invoked
+      the orders (1 March 2024, 29 April 2025). The government in office from 8 November 2025
+      published nothing on the case.
+    queries:
+      - cancilleria.gob.bo feeds (Corte Internacional de Justicia, CIJ, genocidio)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Bolivia is a party to the Rome Statute and, with South Africa, Bangladesh, Comoros and
+      Djibouti, referred the situation in Palestine to the Prosecutor on 17 November 2023
+      (communiqué of 7 January 2024; no indicator covers a referral). The Hague Group's founding
+      joint declaration of 31 January 2025, signed for Bolivia by its ambassador in The Hague,
+      commits the members to comply with their obligations under the Rome Statute regarding the
+      arrest warrants of 21 November 2024 (Ministry release of 1 February 2025, read, not
+      archived); B5 requires a statement by the head of government or the foreign or justice
+      minister, and none on executing the warrants was found (docs/10 B-372 (3)).
+    queries:
+      - cancilleria.gob.bo feeds (Corte Penal, CPI, Netanyahu, Grupo de La Haya)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no official visit of a person under warrant
+      was found. The government in office from 8 November 2025 restored relations with Israel and
+      its Foreign Minister met Israel's President at Davos (January 2026); neither is under warrant.
+    queries:
+      - cancilleria.gob.bo feeds (Netanyahu, Israel)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Bolivia has imposed no sanctions on ICC officials.
+    queries:
+      - cancilleria.gob.bo feeds (Corte Penal)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Bolivia had no row; the row BOL,2010-12-17 was added citing
+      the Ministry's communiqué of 3 February 2025 ("reconoce al Estado de Palestina", the source's
+      excerpt); the day is the registry's (data/countries.yaml, from A/78/846), not read in a
+      Bolivian document of December 2010 (the Foreign Minister dated diplomatic relations with
+      Palestine to 2013 on 27 August 2025): +3 standing from 2023-10-07. The restoration of
+      relations with Israel does not touch the recognition.
+  B9:
+    status: has-events
+    note: >-
+      Eight events, all scoped `gaza` (the speaker's own words, documents citing Gaza): the acting
+      Foreign Minister on 31 October 2023; the Foreign Minister on 18 April 2024 (Security Council),
+      9 May 2024, 18 July 2025 (Hague Group, Bogotá), 29 July 2025 (two-State conference) and 26
+      September 2025 (Hague Group ministerial); the President on 24 April 2024 (ALBA-TCP) and 24
+      October 2024 (BRICS). Not filed (docs/10 B-371 (3)): the Ministry's unsigned communiqués
+      (18 October 2023 with a ceasefire call and "violaciones flagrantes al Derecho Internacional
+      Humanitario"; 2 November 2023 with a ceasefire call and "crímenes de guerra y de lesa
+      humanidad"; 1 March 2024; 4 April, 10 and 13 May 2024; 19 July and 19 September 2024; 28
+      January, 3 February, 18 March, 7 and 21 May, 9 June, 13 September and 13 October 2025);
+      statements whose document does not cite Gaza (the Foreign Minister on 20 and 23 January 2024; 25 September 2024 at the General Debate
+      and at the G20 ministerial, "genocidio"; 26 September 2024; 27 August 2025; 22 September 2025;
+      the President on 8 November 2023 and 15 December 2024); the Foreign Minister's post on social
+      media of 8 October 2024; the President's General Debate address of 25 September 2025 (audio
+      and AI transcript only); the Foreign Minister's words on Land Day, 30 March 2024 ("crímenes de
+      lesa humanidad"; the page cites Gaza only in the Palestinian ambassador's words), not filed
+      because the events of 18 and 24 April 2024 already hold the B9 cap in those weeks. The government in office from 8 November 2025 made no statement on
+      Gaza in the pages read (its Foreign Ministers' addresses of 16 June and 21 September 2026 and
+      the President's General Debate summary of 24 September 2026 do not mention it).
+    queries:
+      - cancilleria.gob.bo feeds (Gaza, Palestina, genocidio, Israel, alto al fuego)
+      - gadebate.un.org Bolivia 79th, 80th, 81st sessions
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's conduct in Gaza or denial of documented
+      violations by the President or a foreign minister was found. The government in office from 8
+      November 2025 restored relations (9 December 2025: "un retorno a la confianza"), lifted the
+      visa requirement for Israelis (1 December 2025) and received Israeli donations (January
+      2026); none of these pages speaks of Gaza.
+    queries:
+      - cancilleria.gob.bo feeds (Israel)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on Israeli ministers or settler entities by Bolivia were found.
+    queries:
+      - cancilleria.gob.bo feeds (Cisjordania, Israel)
+  B12:
+    status: has-events
+    note: >-
+      One event (evt_2023_10_31_BOL_B12): diplomatic relations severed on 31 October 2023, citing
+      the offensive in the Gaza Strip, ended on 9 December 2025 by the full restoration of
+      relations announced by both foreign ministers in Washington. Designation of ambassadors was
+      announced "en el corto plazo"; no appointment was found to 28 September 2026.
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade agreement between Bolivia and Israel was found to suspend or review; none found. The
+      Ministry of Productive Development was not searched.
+    queries:
+      - cancilleria.gob.bo feeds (Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The joint declaration of 9 December 2025 restoring diplomatic relations (signed in Washington
+      by both foreign ministers; ambassadors, a high-level team on embassies, visits, political
+      dialogue) is a diplomatic act, not a trade, investment or cooperation agreement, and is not
+      filed as C2, as Colombia's restoration (docs/10 B-357 (5)); the donations announced on 28
+      January 2026 name no signed agreement. Flagged (docs/10 B-372 (1)): if the author reads the
+      declaration as a cooperation agreement, C2 is −10 from 9 December 2025.
+    queries:
+      - cancilleria.gob.bo feeds (Israel, acuerdo, memorando)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (rows from P-14). Bolivia's own totals with Israel: USD 14.69 million
+      in 2022, 8.62 million in 2023 (r = 0.59), 7.18 million in 2024 (r = 0.49) and 5.80 million in
+      2025 (r = 0.39): −2 for the 2022 release (to 9 May 2024), 0 from then on; Israel's mirror
+      totals 5.94, 6.75, 4.45 and 5.04 million. No Bolivian trade document to compare was found.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods was found (would be scoped west-bank, B-32).
+    queries:
+      - cancilleria.gob.bo feeds (Cisjordania, asentamientos)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Bolivian public fund was found in the sources searched; the
+      pension manager (Gestora Pública) and the central bank were not searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No procurement exclusion with legal effect was found; the Bogotá commitment on public
+      contracts (July 2025) was not followed by any Bolivian act found.
+    queries:
+      - cancilleria.gob.bo feeds (Grupo de La Haya, Israel)
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv has no Bolivian government flow to the oPt appeals of
+      2023–2026 (the build derives the status). Bolivia shipped 90 tonnes of food and medicine for
+      Gaza by sea to the Egyptian Red Crescent under Supreme Decree 5053 (Ministry release of 9 May
+      2024, archived); in-kind aid is outside FTS (docs/06 §7) and outside D4.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Bolivia is not in UNRWA's donor tables for 2022 or 2024 and no suspension was found; the
+      Ministry condemned the Knesset's ban on UNRWA (communiqué of 1 November 2024).
+    queries:
+      - cancilleria.gob.bo feeds (UNRWA)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Bolivian contribution to UNRWA appears in the 2022 or 2024 donor tables.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field hospital for Gaza was found. The Ministry's
+      evacuations of Bolivian nationals and their families from Israel and Gaza (October 2023 to
+      November 2025, about 120 people; two families from Gaza on 22 October 2025) are consular
+      repatriations, not D4 programmes.
+    queries:
+      - cancilleria.gob.bo feeds (Gaza, evacuación, humanitaria)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found (see D4); the Dirección General de
+      Migración was not searched.
+    queries:
+      - cancilleria.gob.bo feeds (Gaza, visa, refugiados)
+  E1:
+    status: unchecked
+    note: The Fiscalía and the courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
