@@ -147,6 +147,44 @@ describe('archiveUrl', () => {
     expect(doc).toMatchObject({ ok: false, reason: expect.stringContaining('rejected (no data)') })
     expect(() => readFileSync(join(r, 'archive/index.csv'))).toThrow()
   })
+
+  it('records an existing capture without saving anew (--capture)', async () => {
+    const r = root()
+    const csv = 'a,b\n1,2\n'
+    const net = fakeNet([
+      { match: isSnapshot, body: csv, headers: { 'content-type': 'text/csv; charset=utf-8' } },
+    ])
+    const doc = await archiveUrl({
+      url: 'https://data.example.org/files/votes.csv',
+      id: 'src_20260928_example_votes',
+      kind: 'dataset',
+      capture: '20250618161123',
+      root: r,
+      creds: CREDS,
+      deps: net.deps,
+    })
+    expect(net.calls.map((c) => c.url)).toEqual([
+      'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+    ])
+    expect(doc.ok).toBe(true)
+    if (!doc.ok) return
+    expect(doc.source).toMatchObject({
+      wayback_url:
+        'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+      sha256: sha256Hex(new TextEncoder().encode(csv)),
+      archive_status: 'archived',
+    })
+    expect(doc.source.notes).toContain('existing Wayback capture 20250618161123')
+    await expect(
+      archiveUrl({
+        url: PAGE,
+        capture: '2025',
+        root: r,
+        creds: CREDS,
+        deps: net.deps,
+      }),
+    ).rejects.toThrow(/14-digit/)
+  })
 })
 
 describe('source ids', () => {
@@ -244,6 +282,34 @@ describe('text extraction', () => {
     const list = `<html><body><ul>${Array.from({ length: 40 }, (_, i) => `<li>Item ${i}</li>`).join('')}</ul></body></html>`
     const x = extractHtml(list)
     expect(x.text.split('\n')).toHaveLength(40)
+  })
+
+  it('reads the prose of a client-rendered Next.js page whose body has no text', () => {
+    const data = {
+      props: {
+        props: { settings: { terms: 'Site terms that are not the page' } },
+        pageProps: {
+          newsDetails: {
+            uuid: 'N1995533',
+            title: 'Crown Prince Inaugurates Summit',
+            content:
+              'Riyadh, November 11, 2023, SPA -- First paragraph.\n    Second <b>paragraph</b> here.\n',
+          },
+          gcloudToken: 'abc123',
+        },
+      },
+    }
+    const page = `<html lang="en"><head><title>SPA</title></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">${JSON.stringify(data)}</script></body></html>`
+    const x = extractHtml(page)
+    expect(x.method).toBe('next-data')
+    expect(x.text.split('\n')).toEqual([
+      'Crown Prince Inaugurates Summit',
+      'Riyadh, November 11, 2023, SPA -- First paragraph.',
+      'Second paragraph here.',
+    ])
+    expect(extractHtml('<html><body><div id="__next"></div></body></html>').method).toBe(
+      'html-body',
+    )
   })
 
   it('reads the text layer of a PDF', async () => {
