@@ -1,0 +1,345 @@
+# Coverage record for Slovenia (docs/03 §6). P-D research session, wave 5, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-303): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for the wave-4 countries). The protocol's searches (docs/06 §4 step 3)
+# were run on GOV.SI, the single portal of the Government, the ministries and the Prime Minister's
+# Office: (1) the portal's own site search (`gov.si/iskanje/?q=…` and `gov.si/en/search/?q=…`, every
+# result page, news, documents and statements) for Gaza, Gazi, Gazo, Gaze, Izrael, Izraela, Izraelu,
+# Palestina, UNRWA, Netanjahu, naseljencev, naselbin, embargo, orožja, premirje, genocid,
+# kazensko sodišče, Zahodni breg, persona non grata, evakuacija, pridružitveni sporazum, and in
+# English Gaza, Israel, Palestine, Netanyahu, persona non grata, arms (about 10,500 distinct results,
+# the news items since October 2023 read by title and snippet, the relevant ones in full); (2) the
+# portal's news listing by month (`gov.si/novice/?year=…&month=…`) for July–August 2025 and
+# May–September 2026 (2,500 items), with every Government session release of May–September 2026
+# read for Israel, Palestine, Gaza, UNRWA and Netanyahu. Slovenia changed government in June 2026
+# (Robert Golob's government to 2026, then Janez Janša's, with Tanja Fajon as Minister of Foreign and
+# European Affairs to June 2026, then Tone Kajzer). Not searched: the press, the National Assembly's
+# records and answers to deputies' questions (dz-rs.si), the Official Gazette (uradni-list.si), the
+# prosecution service and courts (E1, E3), the police (E2), the Slovenian Sovereign Holding and the
+# pension fund KAD (C5). Each `queries` entry names the search terms used on GOV.SI.
+country: SVN
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build. The
+      Ministry of Defence states that Slovenia issued no licence for the export of weapons, ammunition
+      or other military equipment to Israel since the start of the war in Gaza
+      (src_20241123_gov-si_popravek-orozje-izrael).
+  A2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Slovenia had no Comtrade rows, so this session ran `pnpm fetch:comtrade
+      --reporters SVN` (9 A2 and 8 C3 rows, sources src_20260928_comtrade_svn-self-* and
+      src_20260928_comtrade_mirror-*-svn-svn-1). Slovenia's own reports carry no HS 93 or 8710 exports
+      to Israel (HS 8526 only: USD 181,465 in 2022, then 1,030, 569 and 1,864), so the generator uses
+      Israel's mirror imports of HS 93 from Slovenia: USD 174,000 (2022), 146,000 (2023), 60,000
+      (2024) and 146,000 (2025), giving −3 from 2023-02-23 to 2025-02-21, 0 to 2026-05-14, and −3 from
+      2026-05-14. Disagreement reported: the Government states that no export licence for military
+      weapons and equipment to Israel was issued from October 2023 (src_20250731_gov-si_seja-345-orozje-izrael,
+      src_20241123_gov-si_popravek-orozje-izrael) and prohibited exports from 31 July 2025 to 11 June
+      2026; HS 93 also covers sporting and hunting arms and ammunition, which are not military
+      equipment under the Defence Act, and mirror data record imports by date of entry. The generated
+      value is kept (as Sweden's and Switzerland's, docs/10 B-284, B-294 on data/wave-4). HS 8526 and
+      8802 not counted; no document confirming military nature was found, so no row was added to
+      a2_confirmed_military.csv.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No official document naming Slovenian companies as suppliers of parts or maintenance for the F-35 programme was found.
+    queries:
+      - gov.si search (F-35, Lockheed)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Ministry of Defence states that Slovenia bought no weapons, ammunition or military
+      equipment in Israel since the start of the war in Gaza and that its SPIKE anti-tank systems
+      bought in 2022 and 2023 came from Eurospike (Germany) through NSPA and a national tender
+      (src_20241123_gov-si_popravek-orozje-izrael); A4 will show any order recorded by SIPRI.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing related to the
+      Gaza campaign found. The Government's decision of 31 July 2025 instructed the Ministry of
+      Infrastructure to check the protocol for the transit of military equipment through the port of
+      Koper and the railways; no transit instance was found. The talks of June–September 2026 on
+      defence and security cooperation with Israel (src_20260924_gov-si_jansa-netanyahu) name no
+      exercise or agreement.
+    queries:
+      - gov.si search (orožja, tranzit, Luka Koper, Izrael, embargo)
+  A6:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2023_10_07_SVN_A6): no export licence for military weapons and equipment to Israel
+      issued by the Ministry of Defence from October 2023 on the ground of armed conflict (Defence Act,
+      Article 77), as the Government recorded on 31 July 2025, ended on 11 June 2026 when the new
+      Government withdrew the prohibition and the Ministry returned to applying the law and Council
+      Common Position 2008/944/CFSP case by case; superseded by A7 from 31 July 2025.
+    queries:
+      - gov.si search (orožja, embargo, dovoljenj, Izrael)
+  A7:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2025_07_31_SVN_A7): the Government's decision of 31 July 2025 prohibiting the export
+      and transit of military weapons and equipment to Israel and their import from Israel (import of
+      equipment needed for security and resilience excepted), ended by the Government's decision of 11
+      June 2026 (src_20260611_gov-si_seja-2-orozje-izrael). A7 is no longer in force.
+    queries:
+      - gov.si search (embargo, orožja, Izrael, prepoved)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of port or airspace transit for a named arms shipment to Israel found.
+    queries:
+      - gov.si search (tranzit, Luka Koper, orožja)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on all seven
+      (ES-10/21 to ES-10/26 and 79/232). No Slovenian document contradicts them: the Prime Minister
+      welcomed on 15 December 2023 the support of most EU members for the General Assembly resolution
+      demanding an immediate cessation of hostilities, and the Government's statements of 2024 describe
+      Slovenia's support for Palestine's membership and for UNRWA; the archived UN press releases name
+      no state's vote. Later votes have no rows (docs/10 B-199 (1)).
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Slovenia was an elected member of the Security Council in 2024 and 2025 (applicable). It cast no
+      veto (vetoes are cast by permanent members only); it voted for the ceasefire draft vetoed on 20
+      February 2024 (its explanation of vote, src_20240220_gov-si_izjava-glasovanje-vs); the other vetoes
+      of its term (20 November 2024, 4 June 2025, 18 September 2025) were cast by a permanent member. No unsc_vetoes.csv row concerns it.
+    queries:
+      - gov.si search (Varnostni svet, veto, resolucij, premirje)
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Slovenia filed no declaration of intervention in case 192 (South Africa v. Israel); it welcomed the
+      order of 26 January 2024. Its written and oral statements in the advisory proceedings on the
+      Occupied Palestinian Territory (February 2024) and on Israel's obligations towards the UN and
+      other organisations (May 2025) are not B3.
+    queries:
+      - gov.si search (Meddržavno sodišče, ICJ, Južna Afrika, genocid)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement rejecting the ICJ's provisional measures; the Ministry welcomed the order of 26 January 2024 and the Foreign Minister called on 27 May 2024 for full implementation of the orders.
+    queries:
+      - gov.si search (Meddržavno sodišče, začasni ukrepi, ICJ)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister or the ministers of foreign affairs or justice on executing the
+      warrants of 21 November 2024 was found on GOV.SI (the Ministry's news of November and December 2024
+      was read in full by title). The Government's measure of 25 September 2025 against Prime Minister
+      Netanyahu cites the proceedings against him for war crimes and crimes against humanity
+      (src_20250925_gov-si_session-170-netanyahu) but states no position on arrest; it is recorded under
+      B11. The Government supported the Court against US sanctions (June 2025, March 2026), which is not
+      B5. The National Assembly's records were not searched.
+    queries:
+      - gov.si search (Mednarodno kazensko sodišče, nalog za prijetje, Netanjahu, ICC)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants and no official visit to Slovenia of a person under
+      warrant. Prime Minister Janša met Prime Minister Netanyahu in New York on the margins of the General
+      Assembly on 24 September 2026 (src_20260924_gov-si_jansa-netanyahu); a meeting abroad is not hosting
+      an official visit (docs/02 §2 B5/B6).
+    queries:
+      - gov.si search (Netanjahu, Netanyahu, Mednarodno kazensko sodišče)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on ICC officials; Slovenia is a State Party and protested the US sanctions on ICC judges, among them the Slovenian judge Beti Hohler.
+    queries:
+      - gov.si search (Mednarodno kazensko sodišče, sankcije)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv (row from P-14: 2024-06-04, src_20240605_gov-si_palestine-relations).
+      Agrees with the Government's account: the Government proposed the recognition on 30 May 2024 and
+      the National Assembly adopted it on 4 June 2024 by 52 votes to none
+      (src_20250514_gov-si_podporne-aktivnosti-palestini). +8 standing.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Eight events (Foreign Minister Fajon: 29 November 2023, 27 May 2024, 20 May 2025, 7 October 2025,
+      20 October 2025, 21 April 2026; Prime Minister Golob: 27 September 2024, 4 June 2025); the cap
+      holds. Many more ministry releases report the Minister's or the Prime Minister's calls for a
+      ceasefire (October 2023 to April 2026) and were not filed separately; statements of state
+      secretaries and of the Permanent Representative are not by a B9 speaker; joint statements Slovenia
+      signed without a named Slovenian speaker are not filed. No Gaza statement of Prime Minister Janša
+      or Foreign Minister Kajzer (from June 2026) calls for a ceasefire or names a violation; the Prime
+      Minister's General Assembly address of 24 September 2026 speaks of Palestinian and Israeli civilian
+      suffering without a call, and is not B10 either.
+    queries:
+      - gov.si search (Gaza, Gazi, Gazo, premirje, genocid, Netanjahu, humanitarn)
+      - gov.si news listing, May–September 2026 (predsednik vlade, minister Kajzer)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No declaration of unconditional support or denial of documented violations by a head of government
+      or foreign minister. The Government's release of 10 October 2023 condemned Hamas's attacks and
+      expressed solidarity with Israel while calling for respect for humanitarian law (not unconditional).
+      Prime Minister Janša's statements of September 2026 (normalisation of relations; "double standards"
+      in the attention given to Gaza) deny no documented violation.
+    queries:
+      - gov.si search (solidarnost z Izraelom, Izrael, Netanyahu)
+  B11:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2025_07_17_SVN_B11), ministers tier, from the Government's decision of 17 July 2025
+      to declare Ministers Ben-Gvir and Smotrich undesirable persons, to 11 June 2026, when the new
+      Government annulled it together with the measure of 25 September 2025 against Prime Minister
+      Netanyahu and the starting points of 6 August 2025 for a ban on settlement goods, stating that
+      these decisions had never been implemented; flagged (docs/10 B-304). No settler listing by
+      Slovenia; EU listings of violent settlers are left to P-15 (docs/10 B-229 (3) on data/wave-2).
+    queries:
+      - gov.si search (persona non grata, nezaželen, Ben-Gvir, Smotrich, naseljencev, sankcije)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance of relations with Israel found; Israel opened a resident embassy in Ljubljana in September 2026.
+    queries:
+      - gov.si search (veleposlanik, veleposlaništvo Izraela, odpoklic)
+  C1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2025_05_20_SVN_C1), review tier: with Spain, Ireland and Luxembourg Slovenia asked
+      for the review of Israel's compliance with Article 2 of the Association Agreement and supported the
+      Dutch proposal at the Council of 20 May 2025, when the review was launched; later calls for a
+      suspension (Prime Minister, 4 June 2025; Foreign Minister, 21 April 2026) were not adopted by the EU.
+      The standing state has no end: the EU review is a Council act, and the new Government's
+      withdrawal of national measures (11 June 2026) does not address it.
+    queries:
+      - gov.si search (pridružitveni sporazum, 2. člen, Svet EU za zunanje zadeve)
+  C2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2026_09_09_SVN_C2): the Programme of cooperation in education, science, culture,
+      youth and sport for 2026–2030 signed by the foreign ministers of Slovenia and Israel on 9 September
+      2026, read as a cooperation agreement (as the memoranda and declarations filed for other countries,
+      docs/10 B-246 (2) on data/wave-2); flagged (docs/10 B-304).
+    queries:
+      - gov.si search (sporazum, podpis, Izrael, program sodelovanja)
+      - gov.si news listing, May–September 2026
+  C3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (fetched by this session). Own reports: total goods trade with Israel USD
+      332.4 million (2022), 324.4 million (2023), 249.4 million (2024), 288.7 million (2025); r = 0.976
+      for 2023 (−3 from 2024-04-20), 0.750 for 2024 and 0.869 for 2025 (0 from 2025-04-30). −3 on the
+      2022 report before. Israel's mirror totals are about twice as high (USD 698.1 million in 2022,
+      595.2 million in 2025) but the own report is used when present (docs/02 §5). No disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No ban or labelling rule on settlement goods in force was found. The Government adopted on 6 August
+      2025 starting points for a ban on imports of goods from illegal settlements and instructed two
+      ministries to prepare it (src_20250806_gov-si_seja-346-naselbine); no adopted ban was found, and
+      the Government annulled those starting points on 11 June 2026, stating they were never
+      implemented. A ban would in any case be scoped `west-bank` (docs/10 B-32).
+    queries:
+      - gov.si search (naselbin, naselij, uvoz, prepoved uvoza)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No exclusion decision by a sovereign or public pension fund found; the Slovenian Sovereign Holding and KAD were not searched.
+    queries:
+      - gov.si search (izključitev, pokojninski sklad, naložbe, Izrael)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect found.
+    queries:
+      - gov.si search (javno naročanje, Izrael)
+  D1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated. +6 in the window 2025-09…2026-08 (USD 2,434,027 ÷ GNI USD 75.70 billion = 0.0032 %);
+      +3 to +9 in earlier windows. The Government reports larger totals (EUR 2.55 million to UNRWA from
+      October 2023 to September 2025, material aid of EUR 2.14 million in 2024 and up to EUR 0.88
+      million in August 2025, EUR 700,000 for the children's rehabilitation project), part of it in kind
+      or outside the flash appeals (docs/06 §7 gap); no disagreement with the FTS rows as such.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Slovenia did not suspend UNRWA funding: on 30 January 2024 it joined the Secretary-General's call
+      to continue funding, said it had given UNRWA EUR 1.2 million in 2023, and that the 2024 decision
+      was still to be taken (src_20240130_gov-si_stalisce-unrwa); the Government decided a contribution of
+      EUR 500,000 on 22 February 2024.
+    queries:
+      - gov.si search (UNRWA)
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2024_12_31_SVN_D3), increased tier: UNRWA's tables give USD 50,710 for 2022 and USD
+      1,665,614 pledged and received for 2024; Slovenia never suspended, so D3 is dated from the end of the
+      first year whose contribution in UNRWA's archived tables exceeds 2022, as Spain and Norway (the
+      2023 table is not archived; the Government states EUR 1.2 million for 2023). The four-year
+      agreement of 2 September 2025 (EUR 4 million for 2025–2028) continues it.
+    queries:
+      - gov.si search (UNRWA)
+  D4:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One programme (evt_2024_09_12_SVN_D4), dated from the contract of 12 September 2024: the
+      Government-funded rehabilitation in Slovenia of about ten severely injured children from Gaza at the
+      University Rehabilitation Institute Soča, where ten children from Gaza were in rehabilitation in
+      October 2024 (src_20250514_gov-si_podporne-aktivnosti-palestini). The release of 21 October 2024
+      giving their arrival on 13 October 2024 could not be archived (Save Page Now returned a capture
+      that Wayback never served); with that date the event would still contribute about +1.4 (docs/10
+      B-307). The Ministry of Labour's 2025 report mentions the rehabilitation of seven children from Gaza
+      under the EU Civil Protection Mechanism (not archived; not filed separately).
+    queries:
+      - gov.si search (otrok iz Gaze, rehabilitacija, URI Soča, evakuacija)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for people from Gaza found. A deputy's initiative on the evacuation
+      of students from Gaza admitted to Slovenian universities was on a Government committee's agenda on
+      4 November 2025; the answer was not found on GOV.SI (the National Assembly's site was not searched).
+    queries:
+      - gov.si search (študenti iz Gaze, vizum, evakuacija)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No domestic investigation of nationals or companies for conduct in Gaza found; the prosecution service was not searched.
+    queries:
+      - gov.si search (preiskava, tožilstvo, Gaza)
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No ban on Palestine solidarity protests or symbols found; the police's releases were not searched.
+    queries:
+      - gov.si search (shod, prepoved, Palestina)
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the prosecution service and courts were not searched.
+    queries:
+      - gov.si search (univerzalna jurisdikcija, kazenska ovadba, Gaza)
