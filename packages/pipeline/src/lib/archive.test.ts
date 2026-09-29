@@ -284,6 +284,34 @@ describe('text extraction', () => {
     expect(x.text.split('\n')).toHaveLength(40)
   })
 
+  it('reads the prose of a client-rendered Next.js page whose body has no text', () => {
+    const data = {
+      props: {
+        props: { settings: { terms: 'Site terms that are not the page' } },
+        pageProps: {
+          newsDetails: {
+            uuid: 'N1995533',
+            title: 'Crown Prince Inaugurates Summit',
+            content:
+              'Riyadh, November 11, 2023, SPA -- First paragraph.\n    Second <b>paragraph</b> here.\n',
+          },
+          gcloudToken: 'abc123',
+        },
+      },
+    }
+    const page = `<html lang="en"><head><title>SPA</title></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">${JSON.stringify(data)}</script></body></html>`
+    const x = extractHtml(page)
+    expect(x.method).toBe('next-data')
+    expect(x.text.split('\n')).toEqual([
+      'Crown Prince Inaugurates Summit',
+      'Riyadh, November 11, 2023, SPA -- First paragraph.',
+      'Second paragraph here.',
+    ])
+    expect(extractHtml('<html><body><div id="__next"></div></body></html>').method).toBe(
+      'html-body',
+    )
+  })
+
   it('reads the text layer of a PDF', async () => {
     const stream = 'BT /F1 12 Tf 72 720 Td (Hello archived PDF) Tj ET'
     const objs = [
