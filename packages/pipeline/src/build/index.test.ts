@@ -11,7 +11,16 @@
  * Council), the 29 others unchecked → 1 / 30. The fixture tables are empty (not imported), so the
  * derivation leaves A1, A2, A4, C3 and D1 to the hand assessment, which has them unchecked.
  */
-import { appendFileSync, cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import {
+  appendFileSync,
+  cpSync,
+  existsSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -425,6 +434,14 @@ describe('buildData on the real structured tables', () => {
   cpSync(join(REPO_ROOT, 'archive'), join(root, 'archive'), { recursive: true })
   const f = (p: string) => join(FIXTURES, p)
   cpSync(f('data/countries.yaml'), join(root, 'data/countries.yaml'))
+  // The reduced registry holds only the fixture's countries: the hand-authored files of the data
+  // branches' countries (events, assessments, leads) would fail validation as unregistered, so the
+  // copy keeps none of them (their sources stay, as orphans, which is a warning).
+  for (const dir of ['data/events', 'data/assessments', 'data/leads']) {
+    const d = join(root, dir)
+    if (!existsSync(d)) continue
+    for (const name of readdirSync(d)) if (name.endsWith('.yaml')) rmSync(join(d, name))
+  }
   cpSync(f('data/events/DEU.yaml'), join(root, 'data/events/DEU.yaml'))
   cpSync(f('data/assessments/DEU.yaml'), join(root, 'data/assessments/DEU.yaml'))
   cpSync(f('data/corrections.yaml'), join(root, 'data/corrections.yaml'))
