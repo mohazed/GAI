@@ -145,7 +145,10 @@ describe('compileMethodology refuses what it cannot score unambiguously', () => 
     confidence: { levels: Record<string, unknown>[] }
     decay: Record<string, unknown>
     passivity: Record<string, unknown>
+    thresholds: { formulas: Record<string, Record<string, unknown>> }
   }
+  const byId = (f: Raw, id: string) =>
+    f.indicators.indicators.find((i) => i.id === id) as Record<string, unknown>
   const broken = (mutate: (f: Raw) => void) => {
     const f = repoFiles() as unknown as Raw
     mutate(f)
@@ -214,6 +217,54 @@ describe('compileMethodology refuses what it cannot score unambiguously', () => 
         b7.stacking = { rule: 'one_per_tier' }
       },
       /one_per_tier/,
+    ],
+    // P-19: the remaining refusals, so that a malformed methodology version cannot compile.
+    [
+      'a category cap that excludes 0',
+      (f) => Object.assign(f.categories.categories[0] as object, { cap: { min: 5, max: 40 } }),
+      /cap must contain 0/,
+    ],
+    [
+      'a scored indicator in the unscored category E',
+      (f) => Object.assign(byId(f, 'E1'), { scored: true }),
+      /scored in unscored category E/,
+    ],
+    [
+      'a latest_position group without the indicator itself',
+      (f) => {
+        byId(f, 'B6').stacking = { rule: 'latest_position', group: ['B7'] }
+      },
+      /does not include it/,
+    ],
+    [
+      'a band with fractional bounds',
+      (f) => Object.assign(f.bands.bands[2] as object, { max: 15.5 }),
+      /integer bounds/,
+    ],
+    [
+      'a confidence weight above 1',
+      (f) => Object.assign(f.confidence.levels[0] as object, { weight: 1.5 }),
+      /must lie in \[0, 1\]/,
+    ],
+    [
+      'a decay in fractional days',
+      (f) => Object.assign(f.decay, { plateau_days: 364.5 }),
+      /whole days/,
+    ],
+    [
+      'a passivity window of zero days',
+      (f) => Object.assign(f.passivity, { window_days: 0 }),
+      /window_days/,
+    ],
+    [
+      'a no_data_before on an unknown indicator',
+      (f) => Object.assign(f.thresholds.formulas.a1 as object, { indicator: 'A99' }),
+      /unknown indicator A99/,
+    ],
+    [
+      'a no_data_before that is not a date',
+      (f) => Object.assign(f.thresholds.formulas.a1 as object, { no_data_before: '2024-02-30' }),
+      /not a date/,
     ],
   ]
   it.each(cases)('%s', (_, mutate, message) => {

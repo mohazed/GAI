@@ -57,6 +57,9 @@ describe('computed indicators (docs/02 §5)', () => {
     expect(formulaPoints(c3, 10_000_000, 0)).toBe(-2)
     expect(ratioGatedTierPoints(0, 0, 0.9, [], 0)).toBe(0)
     expect(() => formulaPoints(c3, 1)).toThrow(RangeError)
+    // P-19: negative or non-finite measures are refused, never scored.
+    expect(() => ratioGatedTierPoints(-1, 10, 0.9, [], 0)).toThrow(RangeError)
+    expect(() => ratioGatedTierPoints(10, Number.NaN, 0.9, [], 0)).toThrow(RangeError)
   })
 
   it('D1: x = F / GNI in percent; tiers 0.0100 % → +12 … > 0 → +1', () => {
@@ -68,6 +71,8 @@ describe('computed indicators (docs/02 §5)', () => {
     expect(formulaPoints(d1, percentOfGni(80_000_000, gni))).toBe(6)
     expect(formulaPoints(d1, percentOfGni(20_000_000, gni))).toBe(3)
     expect(formulaPoints(d1, percentOfGni(19_999_999, gni))).toBe(1)
+    expect(() => percentOfGni(-1, gni)).toThrow(RangeError)
+    expect(() => percentOfGni(1, 0)).toThrow(RangeError)
     expect(formulaPoints(d1, percentOfGni(1, gni))).toBe(1)
     expect(formulaPoints(d1, percentOfGni(0, gni))).toBe(0)
     expect(() => percentOfGni(1, 0)).toThrow(RangeError)

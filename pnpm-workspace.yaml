@@ -13,13 +13,25 @@ allowBuilds:
   workerd: false
 
 catalog:
-  "@types/node": ^22.20.4
+  "@vitest/coverage-v8": 5.0.2
+  "@types/node": 22.20.4
   csv-parse: 7.0.3
   tsx: 4.23.15
-  typescript: ~6.0.3
+  typescript: 6.0.3
   vitest: 5.0.2
   yaml: 2.9.1
   zod: 4.6.5
+
+# Every direct dependency is pinned to one version (P-19); the lockfile pins the rest. Patched
+# versions of transitive dependencies with published advisories (pnpm audit, 2026-09-30), all
+# in build and test tooling, none shipped to readers: undici under wrangler's miniflare (wrangler
+# dev, not used by the deploy), fflate under satori (the share cards, reading only the pinned
+# @fontsource files) and tmp under @lhci/cli (Lighthouse CI). Remove an entry once the parent
+# package depends on a patched version itself.
+overrides:
+  undici@>=7.0.0 <7.29.1: 7.29.1
+  fflate@>=0.7.0 <0.7.5: 0.7.5
+  tmp@<0.2.7: 0.2.7
 
 minimumReleaseAgeExclude:
   - miniflare@5.20260926.0-alpha
