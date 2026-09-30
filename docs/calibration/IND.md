@@ -2,7 +2,7 @@
 
 Computed on 2026-09-30 with methodology 1.0.0-rc.1, by `pnpm calibrate --date 2026-09-30 --fts` (P-15, docs/08 §3). **Provisional**: none of this country's hand-written events is published yet; the 526 events at status `reviewed` are scored as if published (the `--preview` reading of docs/06 §4), and the one `draft` event of the dataset is left out. The numbers change when the author reviews and publishes the events, and when the incomplete structured tables below are imported; P-22 re-runs this worksheet on the published dataset before the score is shown.
 
-**Score −29.9 → display −30 (Enabling)**, position 191 of 193 scored entities (148 of which have only generated events so far). Passivity: not applied (qualifying: `evt_2025_11_04_IND_C2`, `evt_2026_02_25_IND_B10`, `evt_2026_02_26_IND_C2`, `evt_2026_05_14_IND_B9`).
+**Score −29.9 → display −30 (Enabling)**, position 190 of 193 scored entities (148 of which have only generated events so far). Passivity: not applied (qualifying: `evt_2025_11_04_IND_C2`, `evt_2026_02_25_IND_B10`, `evt_2026_02_26_IND_C2`, `evt_2026_05_14_IND_B9`).
 
 ## Worksheet
 
@@ -128,21 +128,21 @@ Position among the 193 scored entities (1 = highest), display score and band und
 
 | Variant | Display (band) | Position |
 |---|---|---|
-| rc.1 default | −30 (Enabling) | 191 |
-| passivity-5 | −30 (Enabling) | 191 |
-| passivity-15 | −30 (Enabling) | 191 |
-| passivity-25 | −30 (Enabling) | 187 |
+| rc.1 default | −30 (Enabling) | 190 |
+| passivity-5 | −30 (Enabling) | 190 |
+| passivity-15 | −30 (Enabling) | 190 |
+| passivity-25 | −30 (Enabling) | 186 |
 | weight-A-0.5 | −22 (Enabling) | 189 |
-| weight-A-1.5 | −37 (Enabling) | 191 |
-| weight-B-0.5 | −32 (Enabling) | 192 |
-| weight-B-1.5 | −28 (Enabling) | 190 |
-| weight-C-0.5 | −20 (Passive) | 187 |
-| weight-C-1.5 | −40 (Enabling) | 191 |
-| weight-D-0.5 | −30 (Enabling) | 191 |
-| weight-D-1.5 | −29 (Enabling) | 191 |
-| reported-0.2 | −30 (Enabling) | 191 |
-| reported-0.6 | −30 (Enabling) | 191 |
-| statements-excluded | −30 (Enabling) | 191 |
+| weight-A-1.5 | −37 (Enabling) | 190 |
+| weight-B-0.5 | −32 (Enabling) | 191 |
+| weight-B-1.5 | −28 (Enabling) | 189 |
+| weight-C-0.5 | −20 (Passive) | 186 |
+| weight-C-1.5 | −40 (Enabling) | 190 |
+| weight-D-0.5 | −30 (Enabling) | 190 |
+| weight-D-1.5 | −29 (Enabling) | 190 |
+| reported-0.2 | −30 (Enabling) | 190 |
+| reported-0.6 | −30 (Enabling) | 190 |
+| statements-excluded | −30 (Enabling) | 190 |
 | decay-off | −18 (Passive) | 160 |
 
 ## Questions of the country session

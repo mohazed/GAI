@@ -140,7 +140,7 @@ Position among the 193 scored entities (1 = highest), display score and band und
 | reported-0.2 | +43 (Confronting) | 8 |
 | reported-0.6 | +43 (Confronting) | 8 |
 | statements-excluded | +33 (Acting) | 8 |
-| decay-off | +41 (Confronting) | 22 |
+| decay-off | +41 (Confronting) | 21 |
 
 ## Questions of the country session
 

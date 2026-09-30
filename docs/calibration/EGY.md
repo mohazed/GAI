@@ -139,7 +139,7 @@ Position among the 193 scored entities (1 = highest), display score and band und
 | weight-D-1.5 | +9 (Acting) | 43 |
 | reported-0.2 | +9 (Acting) | 41 |
 | reported-0.6 | +9 (Acting) | 40 |
-| statements-excluded | −1 (Passive) | 43 |
+| statements-excluded | −1 (Passive) | 44 |
 | decay-off | +31 (Acting) | 26 |
 
 ## Questions of the country session
