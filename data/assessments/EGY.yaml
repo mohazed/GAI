@@ -1,0 +1,269 @@
+# Coverage record for Egypt (docs/03 §6). P-D research session, wave 2, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search facilities used: the Wayback CDX listings of presidency.eg (the English and Arabic
+# speech and event pages, captured since 2023), sis.gov.eg (the State Information Service's
+# stories in English, French and Arabic, filtered by keywords such as Gaza, Rafah, wounded, UNRWA,
+# ICJ, ICC, ship, recognition) and mfa.gov.eg (whose pages since 2025 carry numeric ids without
+# titles, so it could not be searched by topic). presidency.eg refuses direct requests (HTTP 403)
+# and a SIS story of 2023 answers 404 live, so every source was recorded from an existing Wayback
+# capture. The session's web-search allowance was already exhausted when it started (200 of 200
+# calls used by the earlier wave-2 sessions), so no general web or press search was possible:
+# the queries below are keyword filters of those listings plus direct reads of archived pages.
+country: EGY
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+  A2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (rows existed, so no fetch). No HS 93 or 8710 row in Egypt's own
+      reports or Israel's mirror for 2022–2025; the only row is a conditional heading, mirror HS
+      8526 USD 1,000 (2023), not counted without a confirming document (docs/02 §2), so the build
+      derives none-found. No licence register, parliamentary answer or investigation confirming a
+      military nature was found; no row added to a2_confirmed_military.csv.
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Egypt is not a participant in the F-35 programme; no ministry statement or UN Special
+      Rapporteur passage naming an Egyptian supplier of F-35 parts or maintenance was found.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23) was searched for Egypt: no F-35 supplier
+      entry.
+    queries:
+      - A/HRC/59/23 Egypt (archived text searched)
+      - sis.gov.eg listing filtered for F-35
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. No Egyptian order of Israeli arms since October 2023 was met in this session.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise with Israel, basing agreement, documented transit of military cargo to
+      Israel or official confirmation of intelligence sharing related to the Gaza campaign was
+      found in the official listings searched. Security coordination under the 1979 treaty and its
+      annexes (the Rafah and Philadelphi arrangements) pre-dates the window and is not an instance
+      unless activated for the campaign; the State Information Service reports Egypt's position that
+      an Israeli retaking of the Philadelphi corridor would violate the treaty (stories 190755,
+      191152). Press claims of
+      Israel-bound military cargo passing Egyptian ports could not be searched (no web search in
+      this session) and are not recorded as leads for want of a verified source; the next session
+      or P-16 should search them.
+    queries:
+      - sis.gov.eg listing filtered for military, armed forces, ship, Alexandria, denies, Philadelphi
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No decision suspending or refusing a class of arms licences to Israel found; Egypt's arms exports to Israel are not recorded in Comtrade (A2).
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree halting trade with Israel; Egypt's own reports show trade with Israel above the 2022 level (C3).
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No port or airspace denial for arms bound to Israel found in the official listings searched.
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on all seven. The
+      archived press releases are consistent: GA/12548 (27 October 2023) reports Egypt's
+      representative speaking for the text; GA/12572 (12 December 2023) reports Egypt introducing
+      draft L.27 for the Arab Group; GA/12599 (10 May 2024) reports Egypt's representative
+      welcoming the result. For the five later votes (no rows until B-199 (1)), GA/12707, GA/12708
+      and GA/12739 do not name Egypt among the states against or abstaining; Egypt does not appear
+      in the extracted texts of GA/12690 and GA/12743. No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The Ministry of Foreign Affairs announced on 12 May 2024 Egypt's intention to intervene
+      formally in support of South Africa's case (State Information Service, story 167458, read
+      through the Wayback capture of 13 June 2024, not archived). No declaration of intervention by
+      Egypt is in the ICJ's list of case 192 as verified on 2026-09-26 (docs/06 §8); the ICJ page's
+      Wayback capture of 10 September 2026 could not be read (an error page). An announced
+      intention is not a filed declaration, so no B3 event. Flagged for the author: if a filing is
+      found, B3 applies from its registration date.
+    queries:
+      - sis.gov.eg listing filtered for ICJ, Court, intervene, South Africa
+      - icj-cij.org/case/192/intervention (Wayback capture of 2026-09-10, unreadable)
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement rejecting the ICJ's orders; the government welcomed the order of 26 January 2024
+      (State Information Service, story 191330) and called on Israel to implement the provisional
+      measures (statement of 12 May 2024, story 167458).
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Egypt is not a State Party to the Rome Statute. No statement by the President, the Minister of
+      Foreign Affairs or the Minister of Justice on executing the warrants of 21 November 2024 was
+      found in the listings searched.
+    queries:
+      - sis.gov.eg listing filtered for ICC, warrant, Netanyahu
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No official visit to Egypt by a person under an ICC warrant and no statement refusing to execute the warrants found.
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanction by Egypt on ICC officials; none expected.
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv, which has no row for Egypt. The registry gives recognition
+      since 1988-11-18 (pre-existing, +3 standing from 2023-10-07 once confirmed). The State
+      Information Service's page "Egypt and the Palestinian cause" (story 136421) recounts the 1988
+      declaration of the State of Palestine but gives no date of Egypt's recognition, and no Ministry
+      of Foreign Affairs page dating it was found (the ministry's site has no searchable listing), so
+      no row was added and the build decides nothing from the missing row (docs/03 §7; as South
+      Africa, docs/10 B-231 (7)).
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Six formal statements of the President filed: the Cairo Summit for Peace (21 October 2023,
+      +5), the "Long Live Egypt-Long Live Palestine" address (23 November 2023, +2), the D-8 summit
+      (19 December 2024, +5), the press conference with the President of Viet Nam (5 August 2025,
+      +5, from the State Information Service's report, flagged), the Arab-Islamic summit in Doha
+      (15 September 2025, +5) and the anniversary of Sinai's liberation (25 April 2026, +2). B9 is at
+      its +10 cap on 2026-09-28. Not filed: the Sharm El-Sheikh Summit for Peace (13 October 2025),
+      which welcomes the agreement to end the war without a call or a named violation; the joint
+      press conference with the President of Türkiye (Presidency page speeches422026, captured in March 2026, no date printed), which asks for the
+      agreement's implementation in general terms; the Foreign Ministry's statements (the 12 May
+      2024 ICJ statement, the 11 June 2025 statement naming starvation tactics, the 24 July 2025
+      statement), which carry no named speaker (B9 requires one); and statements by the Minister of
+      Foreign Affairs reported by the State Information Service in 2024–2025, which would not raise
+      the capped value. Egypt's national statements at the General Assembly (September 2024, 2025,
+      2026) were not searched (gadebate.un.org refuses Save Page Now, B-225).
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement of unconditional support for Israel or denial of documented violations found.
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: Egypt has no sanctions list naming Israeli ministers or settler entities.
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official announcement of a recall of Egypt's ambassador to Israel, a downgrade or a
+      severance of relations was found in the Presidency and State Information Service listings;
+      the Ministry of Foreign Affairs' site could not be searched by topic. Press reports about the
+      ambassadorial posts could not be searched in this session (no web search).
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No suspension or formal review of the 1979 peace treaty, the Qualifying Industrial Zones
+      protocol or the gas arrangements with Israel found. The President warned at the Doha summit
+      (15 September 2025) that Israel's conduct "even aborts existing peace accords", which is a
+      warning, not a decision.
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No agreement signed by the Egyptian government with Israel since October 2023 was found in
+      the listings searched. Company-level gas supply contracts between Israeli producers and
+      Egyptian buyers are not state agreements unless the government signs them; they were not
+      searched in this session (no web search) and are left to P-16.
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (rows existed, so no fetch). Egypt's own reports: 2022 USD
+      2,146,668,509; 2023 2,644,744,403 (r = 1.232 → −5); 2024 3,208,716,303 (r = 1.495 → −5); 2025
+      2,641,963,409 (r = 1.231 → −5 from 2026-04-15). Israel's mirror records much less (2022 USD
+      306,108,000; 2025 890,715,000, r = 2.910, −3 if it were used). Disagreement between the two
+      reporters reported, not explained in this session (no Egyptian statement on the value of
+      trade with Israel was found); the generator uses the country's own report, as docs/02 §5
+      says.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No settlement-goods ban or labelling rule found.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No divestment decision by the Sovereign Fund of Egypt or a public pension fund over conduct in Gaza or the occupied territories found.
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No procurement exclusion with legal effect found.
+  D1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: no government flow from Egypt to the oPt appeals or pooled fund in any
+      window, so the build derives none-found (a real zero, docs/02 §5). Disagreement reported, not
+      corrected: the President states that more than 70 % of the aid that entered Gaza came from
+      Egypt (src_20250805_sis_sisi-gaza-starvation-genocide) and that the state provided 8,400 of
+      12,000 tonnes delivered by 23 November 2023 through the Egyptian Red Crescent, the National
+      Alliance for Civil Development Work and the Tahya Misr Fund
+      (src_20231123_presidency-eg_long-live-egypt-palestine); this in-kind and logistic aid is not
+      reported to FTS as government funding of the appeals, the Arab-state gap docs/06 §7 and
+      docs/07 describe.
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Egypt did not suspend UNRWA funding. Egypt does not appear in UNRWA's donor rankings for 2022
+      and 2024 (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024);
+      ministers' statements support the agency's mandate (State Information Service, stories 196055,
+      212878, 212881).
+  D3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No contribution recorded in UNRWA's donor rankings for 2022 or 2024, so no restoration or increase above the 2022 level.
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      The programme receiving wounded Palestinians from Gaza for treatment in Egypt, from 1 November
+      2023 (evt_2023_11_01_EGY_D4; expired in the score on 2026-09-28, Δ > 730 days). No field
+      hospital deployed by Egypt inside Gaza was found in an archived official document; airdrops
+      and aid convoys (State Information Service, 2024–2025) are aid deliveries, which D4 does not
+      cover.
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee instrument for Gazans found. The government rejects the displacement of
+      Palestinians to Sinai (President's addresses of 21 October 2023 and 25 April 2026); holders of
+      foreign passports crossed Rafah in transit to third countries (src_20231101_sis_first-batch-wounded-palestinians).
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No investigation of Egyptian nationals or companies for conduct in Gaza found.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No decree banning Palestine solidarity protests found in the official listings. The Ministry
+      of Foreign Affairs' statement of 11 June 2025 requiring prior approval for foreign delegations'
+      visits to the border areas near Gaza (Arish, the Rafah crossing) is a regulation of access to
+      the border zone, not a protest ban, and is not filed (State Information Service, story 209189,
+      read, not archived); press reports of the treatment of participants in the Global March to
+      Gaza (June 2025) and of arrests at protests in October 2023 could not be searched in this
+      session (no web search). Experimental, unscored (D-12).
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction proceeding in Egypt found.

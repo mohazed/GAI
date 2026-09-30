@@ -35,3 +35,18 @@ Folder `methodology/v1.0.0/`, status release candidate; scores are computed but 
 - `votes.yaml` entries also carry `quote` and `locator`: the verbatim passage of the archived UN
   press release stating the recorded vote, which becomes the press-release evidence of each
   generated B1 event. Shape only; the list is still empty and no score changes.
+
+### Within 1.0.0-rc.1: structured data (P-14, 2026-09-28)
+
+Filled while the version is a release candidate (scores not displayed, D-16), so no new folder;
+the qualifying-votes list was left empty for this session by design.
+
+- `votes.yaml` lists twelve qualifying votes from A/RES/ES-10/21 (27 October 2023) to
+  A/RES/80/116 (12 December 2025), each with its archived UN press release, verbatim quote and
+  inclusion rationale. Two are added to the seed list of docs/06 §2: A/RES/79/232 (request for
+  the ICJ advisory opinion on Israel's obligations towards the UN and UNRWA) and A/RES/80/1
+  (participation of the State of Palestine during the 80th session). The vote of 17 September
+  2026 (draft A/81/L.2) waits for its resolution symbol.
+- B8 is generated from `data/structured/recognitions.csv` (one row per recognising state, with
+  the archived official statement) instead of the registry field `recognises_palestine.since`
+  (`generated_from` and the evidence rule of `indicators.yaml`); points and stacking unchanged.
