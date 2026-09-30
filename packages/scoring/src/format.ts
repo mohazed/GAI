@@ -17,13 +17,14 @@ export const APOSTROPHE = '\u2019'
 
 /**
  * The display form of French text (docs/05 §2, P-18): a straight apostrophe between two letters
- * ("l'Allemagne", "aujourd'hui") becomes the typographic apostrophe U+2019. The data, the
+ * ("l'Allemagne", "aujourd'hui"), or after a letter before a closing parenthesis (the UNTERM form
+ * "Iran (République islamique d')"), becomes the typographic apostrophe U+2019. The data, the
  * registry and the API keep the straight apostrophe as written; the site and the widget apply
  * this when they display French. Idempotent; a quotation mark or code with no letter on one side
  * is left alone.
  */
 export function frenchApostrophes(text: string): string {
-  return text.replace(/(\p{L}\p{M}*)'(?=\p{L})/gu, `$1${APOSTROPHE}`)
+  return text.replace(/(\p{L}\p{M}*)'(?=\p{L}|\))/gu, `$1${APOSTROPHE}`)
 }
 
 /**
