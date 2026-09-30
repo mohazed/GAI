@@ -319,7 +319,9 @@ describe('loadBaseSnapshot', SLOW, () => {
     expect(snap.corrections.get(CORRECTION_ID)?.file).toBe('data/corrections.yaml')
     expect(snap.corrections.get(CORRECTION_ID)?.value?.kind).toBe('correction')
 
-    expect([...snap.sourceIds].sort()).toEqual(SOURCE_IDS)
+    expect([...snap.sourceIds].filter((id) => !id.includes('_un-press_')).sort()).toEqual(
+      SOURCE_IDS,
+    )
     expect([...snap.replyIds]).toEqual([REPLY_ID])
     expect([...snap.leadIds]).toEqual([LEAD_ID])
   })
@@ -351,7 +353,9 @@ describe('loadBaseSnapshot', SLOW, () => {
 
     const prefixed = loadBaseSnapshot(repo, 'HEAD', 'fixtures/')
     expect(prefixed.events.get(EVENT_ID)?.file).toBe(EVENTS_FILE)
-    expect([...prefixed.sourceIds].sort()).toEqual(SOURCE_IDS)
+    expect([...prefixed.sourceIds].filter((id) => !id.includes('_un-press_')).sort()).toEqual(
+      SOURCE_IDS,
+    )
 
     const nested = loadBaseSnapshot(join(repo, 'fixtures'), 'HEAD')
     expect(nested.events.get(EVENT_ID)?.file).toBe(EVENTS_FILE)

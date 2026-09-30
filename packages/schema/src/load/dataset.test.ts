@@ -45,6 +45,15 @@ afterEach(() => {
   rmSync(root, { recursive: true, force: true })
 })
 
+/**
+ * The fixture's own two sources (the DEU event's), without the UN press releases the repository's
+ * votes.yaml cites, which fixtures/ carries so that the repository methodology validates on it
+ * (P-14).
+ */
+const own = <T extends { value: { id?: string; src_id?: string } }>(list: T[]): T[] =>
+  list.filter((x) => !/_un-press_/.test(x.value.id ?? x.value.src_id ?? ''))
+const VOTE_SOURCES = 11
+
 // ---------------------------------------------------------------------------------------------
 // Helpers on the temporary copy
 
@@ -96,13 +105,17 @@ describe('the fixture tree', () => {
     expect(ds.root).toBe(root)
     expect(ds.countries).toHaveLength(3)
     expect(ds.events).toHaveLength(1)
-    expect(ds.sources).toHaveLength(2)
+    expect(own(ds.sources)).toHaveLength(2)
     expect(ds.assessments).toHaveLength(1)
     expect(ds.corrections).toHaveLength(1)
     expect(ds.replies).toHaveLength(1)
     expect(ds.leads).toHaveLength(0)
-    expect(ds.archiveIndex).toHaveLength(2)
-    expect(ds.archiveTextIds).toEqual(new Set([SOURCE_ID, SOURCE_2_ID]))
+    expect(own(ds.archiveIndex)).toHaveLength(2)
+    expect(ds.sources).toHaveLength(2 + VOTE_SOURCES)
+    expect([...ds.archiveTextIds].filter((id) => !id.includes('_un-press_'))).toEqual([
+      SOURCE_ID,
+      SOURCE_2_ID,
+    ])
     expect(ds.invalidIds.size).toBe(0)
     for (const t of STRUCTURED_TABLE_NAMES) expect(ds.structured[t], t).toEqual([])
   })
@@ -117,13 +130,13 @@ describe('the fixture tree', () => {
     expect(ds.events[0]).toMatchObject({ file: EVENTS_FILE, line: 3 })
     expect(ds.events[0]?.value.id).toBe('evt_2025_08_08_DEU_A6')
     expect(ds.corrections[0]).toMatchObject({ file: CORRECTIONS_FILE, line: 3 })
-    expect(ds.sources.map((s) => [s.file, s.line])).toEqual([
+    expect(own(ds.sources).map((s) => [s.file, s.line])).toEqual([
       [SOURCE_FILE, 1],
       [`data/sources/2025/${SOURCE_2_ID}.yaml`, 1],
     ])
     expect(ds.assessments[0]).toMatchObject({ file: 'data/assessments/DEU.yaml', line: 1 })
     expect(ds.replies[0]).toMatchObject({ file: REPLY_FILE, line: 1 })
-    expect(ds.archiveIndex.map((r) => [r.value.src_id, r.file, r.line])).toEqual([
+    expect(own(ds.archiveIndex).map((r) => [r.value.src_id, r.file, r.line])).toEqual([
       [SOURCE_ID, INDEX_FILE, 2],
       [SOURCE_2_ID, INDEX_FILE, 3],
     ])
@@ -192,7 +205,7 @@ describe('unexpected files (load.unexpected-file)', () => {
       ])
       // The rest of the tree still loads.
       expect(ds.events).toHaveLength(1)
-      expect(ds.sources).toHaveLength(2)
+      expect(own(ds.sources)).toHaveLength(2)
     },
   )
 })
@@ -220,8 +233,8 @@ describe("misnamed files in a record directory ('load.misplaced-file')", () => {
     expect(ds.issues[0]?.message).toContain('not loaded')
     // The misnamed file is not loaded; the rest of the tree is.
     expect(ds.events).toHaveLength(1)
-    expect(ds.sources).toHaveLength(2)
-    expect(ds.archiveTextIds.size).toBe(2)
+    expect(own(ds.sources)).toHaveLength(2)
+    expect(ds.archiveTextIds.size).toBe(2 + VOTE_SOURCES)
   })
 
   it('a record directory file with its documented name is loaded, not reported', () => {
@@ -430,7 +443,7 @@ describe('malformed records (schema.*)', () => {
       { rule: 'schema.source', file: rel, id: BAD_SOURCE_ID, line: 1, path: 'sha256' },
     ])
     expect(ds.invalidIds).toEqual(new Set([BAD_SOURCE_ID]))
-    expect(ds.sources).toHaveLength(2)
+    expect(own(ds.sources)).toHaveLength(2)
   })
 
   it("'schema.source': a file holding a list, or no id, falls back to the file name", () => {
@@ -553,19 +566,24 @@ describe('malformed records (schema.*)', () => {
         rule: 'schema.archive-index',
         file: INDEX_FILE,
         id: BAD_SOURCE_ID,
-        line: 4,
+        line: 4 + VOTE_SOURCES,
         path: 'sha256',
       },
     ])
     expect(ds.invalidIds).toEqual(new Set([BAD_SOURCE_ID]))
-    expect(ds.archiveIndex.map((r) => r.value.src_id)).toEqual([SOURCE_ID, SOURCE_2_ID])
+    expect(own(ds.archiveIndex).map((r) => r.value.src_id)).toEqual([SOURCE_ID, SOURCE_2_ID])
   })
 
   it("'schema.archive-index': a row with no src_id is reported as `row {line}`", () => {
     appendFileSync(join(root, INDEX_FILE), ',https://example.org/x,,,,,text/html\n')
     const ds = load()
     expect(ds.issues).toMatchObject([
-      { rule: 'schema.archive-index', id: 'row 4', line: 4, path: 'src_id' },
+      {
+        rule: 'schema.archive-index',
+        id: `row ${4 + VOTE_SOURCES}`,
+        line: 4 + VOTE_SOURCES,
+        path: 'src_id',
+      },
     ])
     expect(ds.invalidIds.size).toBe(0)
   })
@@ -605,7 +623,7 @@ describe('malformed records (schema.*)', () => {
     expect(rulesIn(ds.issues)).toEqual(['load.yaml-syntax'])
     expect(ds.issues[0]).toMatchObject({ file: EVENTS_FILE })
     expect(ds.events).toEqual([])
-    expect(ds.sources).toHaveLength(2)
+    expect(own(ds.sources)).toHaveLength(2)
   })
 
   it('a structured table whose header differs is load.csv-syntax and loads no rows', () => {

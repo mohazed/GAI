@@ -1,13 +1,13 @@
 /**
  * Assessment statuses at the build date (docs/02 §8, docs/03 §6, D-08, D-09).
  *
- * The seven generated indicators (B1, B2, A1, A2, A4, C3, D1) are measured from the tables of
+ * The eight generated indicators (B1, B2, B8, A1, A2, A4, C3, D1) are measured from the tables of
  * data/structured, so their status is read from the tables rather than taken on trust from the
  * hand-written data/assessments/{ISO3}.yaml. `deriveGeneratedStatuses` applies these rules, in
  * order, for one country as of a date; `null` means the tables say nothing and the hand status
  * stands:
  *
- * 1. Any of the seven: a published generated event of the indicator, scoped to gaza and dated on or
+ * 1. Any of the eight: a published generated event of the indicator, scoped to gaza and dated on or
  *    before the date → `has-events` (`generated-event`). Nothing else overrides it.
  * 2. A1: before `no_data_before` of formula a1 (the first post-war SIPRI release) → `no-data`
  *    (`before-first-release`, docs/02 §5: no data for anyone, whatever the table holds). Else
@@ -44,6 +44,10 @@
  * 8. B1: null unless rule 1. A vote record without the country (the Holy See, for one) is decided
  *    by the hand assessment; `b1MissingFromVotes` lists the qualifying votes whose rows omit the
  *    country, for the build notes.
+ * 9. B8: null unless rule 1. recognitions.csv holds the recognitions confirmed from an archived
+ *    official statement, not yet every recognising state, so a missing row decides nothing and
+ *    the hand status stands (P-14 prompt: B8 is derived beyond rule 1 only once the table decides
+ *    a status for every country).
  *
  * `effectiveAssessment` lays the derived statuses over the hand ones; the coverage function of
  * @gai/scoring reads the result. `disagreements` reports a hand status that the tables contradict,
@@ -74,7 +78,7 @@ import { dataYearOf, isA1ShareComputable, isDataYearRow } from '../generate/sipr
 import type { BuildNote, DerivedStatus } from './types.js'
 
 /** The indicators generated from data/structured (D-08), in code-unit order. */
-export const GENERATED_INDICATORS = ['A1', 'A2', 'A4', 'B1', 'B2', 'C3', 'D1'] as const
+export const GENERATED_INDICATORS = ['A1', 'A2', 'A4', 'B1', 'B2', 'B8', 'C3', 'D1'] as const
 export type GeneratedIndicator = (typeof GENERATED_INDICATORS)[number]
 
 /** Default of formula a4 `orders_signed_from` (docs/02 §2 A4). */
@@ -224,6 +228,7 @@ export function deriveGeneratedStatuses(
     A4: deriveA4,
     B1: () => null,
     B2: deriveB2,
+    B8: () => null,
     C3: deriveC3,
     D1: deriveD1,
   }
