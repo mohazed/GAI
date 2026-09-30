@@ -345,6 +345,14 @@ describe("'structured.unique'", () => {
         { iso3: 'DEU', year: 2024, population: 2, source: DATASET_ID },
       ])
       addRows(ds, 'unsc_vetoes.csv', [veto('USA'), veto('USA', { ceasefire: false })])
+      addRows(ds, 'recognitions.csv', [
+        { iso3: 'DEU', date: '2024-05-28', source: DATASET_ID },
+        { iso3: 'DEU', date: '2024-05-29', source: DATASET_ID },
+      ])
+      addRows(ds, 'a2_confirmed_military.csv', [
+        { iso3: 'DEU', hs: '8526', source: DATASET_ID },
+        { iso3: 'DEU', hs: '8526', source: DATASET_ID },
+      ])
     })
     expect(issues.map((i) => [i.file, i.id])).toEqual([
       ['data/structured/unsc_vetoes.csv', 'row 3'],
@@ -356,8 +364,10 @@ describe("'structured.unique'", () => {
       ['data/structured/comtrade_c3.csv', 'row 3'],
       ['data/structured/gni.csv', 'row 3'],
       ['data/structured/population.csv', 'row 3'],
+      ['data/structured/recognitions.csv', 'row 3'],
+      ['data/structured/a2_confirmed_military.csv', 'row 3'],
     ])
-    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(10)
+    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(12)
   })
 
   it('reports a resolution or a draft recorded with two dates', () => {

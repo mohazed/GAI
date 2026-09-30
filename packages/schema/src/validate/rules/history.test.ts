@@ -313,9 +313,64 @@ describe('correction.required-on-edit', () => {
     expect(
       of('correction.required-on-edit', (ds) => {
         event(ds).value.summary.en = 'The Federal Chancellor stated a test.'
-        event(ds).value.scope = ['gaza', 'region']
+        event(ds).value.points_rationale = 'A reworded rationale.'
       }),
     ).toEqual([])
+  })
+
+  it('requires an entry for an end, scope or status change, without a revision bump (B-27)', () => {
+    const base = baseOf()
+    const edits: [string, Mutate, Partial<Correction>][] = [
+      [
+        'end',
+        (ds) => {
+          event(ds).value.end = '2025-12-01'
+        },
+        { before: { end: '2025-11-24' }, after: { end: '2025-12-01' } },
+      ],
+      [
+        'scope',
+        (ds) => {
+          event(ds).value.scope = ['gaza', 'region']
+        },
+        { before: { scope: ['gaza'] }, after: { scope: ['gaza', 'region'] } },
+      ],
+      [
+        'status',
+        (ds) => {
+          event(ds).value.status = 'superseded'
+        },
+        { before: { status: 'published' }, after: { status: 'superseded' } },
+      ],
+    ]
+    for (const [field, edit, entry] of edits) {
+      const found = of('correction.required-on-edit', edit, base)
+      expect(found, field).toHaveLength(1)
+      expect(found[0], field).toMatchObject({ level: 'error', file: EVENTS_FILE, id: EVENT_ID })
+      expect(found[0]?.message, field).toContain(`${field} changed`)
+      const withEntry = of(
+        'correction.required-on-edit',
+        (ds, m) => {
+          edit(ds, m)
+          const was = base.events.get(EVENT_ID)?.raw as Record<string, unknown>
+          const fixed = { ...entry, before: { [field]: was[field] ?? null } }
+          addCorrection(ds, fixed)
+        },
+        base,
+      )
+      expect(withEntry, field).toEqual([])
+      // An entry that does not record the field is reported at the field.
+      const unrecorded = of(
+        'correction.required-on-edit',
+        (ds, m) => {
+          edit(ds, m)
+          addCorrection(ds, { before: {}, after: {} })
+        },
+        base,
+      )
+      expect(unrecorded, field).toHaveLength(1)
+      expect(unrecorded[0], field).toMatchObject({ path: field })
+    }
   })
 
   it('accepts a points change with a new correction entry and a revision bump', () => {
@@ -475,12 +530,7 @@ describe('correction.required-on-edit', () => {
     expect(found[0]).toMatchObject({ file: CORRECTIONS_FILE, id: NEW_ID, path: 'after.end' })
   })
 
-  it('checks the entry of an end-only change although end alone needs no entry', () => {
-    expect(
-      of('correction.required-on-edit', (ds) => {
-        event(ds).value.end = '2025-12-01'
-      }),
-    ).toEqual([])
+  it('checks the before/after values of an end-only change', () => {
     const found = of('correction.required-on-edit', (ds) => {
       event(ds).value.end = '2025-12-01'
       addCorrection(ds, { before: { end: '2025-11-23' }, after: { end: '2025-12-01' } })
