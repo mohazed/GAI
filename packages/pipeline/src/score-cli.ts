@@ -443,7 +443,13 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
   }
   let generated: Event[]
   try {
-    generated = generateAll(generateContext(lm), ds.structured).events
+    generated = generateAll(
+      generateContext(
+        lm,
+        ds.countries.map((c) => c.value),
+      ),
+      ds.structured,
+    ).events
   } catch (err) {
     return fail(1, `the generated events cannot be built: ${(err as Error).message}`)
   }

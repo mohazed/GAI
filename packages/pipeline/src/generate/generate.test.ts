@@ -2,9 +2,11 @@
  * Generators with hand-computed expectations (P-04 acceptance). The rows are test data built for
  * the arithmetic, not real records; every expected number is worked out in the comment beside it.
  */
+import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  Country,
   compileBannedWords,
   EventIdLike,
   Event as EventSchema,
@@ -16,7 +18,9 @@ import {
   type StructuredTableName,
 } from '@gai/schema'
 import { describe, expect, it } from 'vitest'
+import { parse } from 'yaml'
 import {
+  actorOf,
   generateA1,
   generateA2,
   generateA4,
@@ -36,6 +40,10 @@ import {
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..')
 const METHODOLOGY = loadMethodology(REPO_ROOT)
 const MATCHER = compileBannedWords(METHODOLOGY.bannedWords?.entries ?? [])
+/** The real registry (data/countries.yaml): the summaries open with its names (P-18). */
+const REGISTRY = (
+  parse(readFileSync(resolve(REPO_ROOT, 'data/countries.yaml'), 'utf8')) as unknown[]
+).map((c) => Country.parse(c))
 
 const DS = 'src_20260927_test-dataset_rows'
 const PRESS = 'src_20240101_un-press_test-vote'
@@ -54,7 +62,7 @@ const VOTE: QualifyingVote = {
 }
 
 function ctx(votes: QualifyingVote[] = [VOTE]) {
-  const c = generateContext(METHODOLOGY)
+  const c = generateContext(METHODOLOGY, REGISTRY)
   return { ...c, votes: { ...c.votes, votes } }
 }
 
@@ -112,7 +120,28 @@ describe('B1 UNGA votes', () => {
       },
       { source: PRESS, quote: VOTE.quote, quote_lang: 'en', locator: 'paragraph 1' },
     ])
-    expect(e?.summary.en).toBe('The country voted yes on General Assembly resolution A/RES/TEST/1.')
+    expect(e?.summary.en).toBe('Germany voted yes on General Assembly resolution A/RES/TEST/1.')
+    expect(e?.summary.fr).toBe(
+      "L'Allemagne a voté pour la résolution A/RES/TEST/1 de l'Assemblée générale.",
+    )
+  })
+
+  it('opens with the country, its French verb agreeing with a plural name', () => {
+    const got = Object.fromEntries(
+      generateB1(ctx(), unga).events.map((e) => [e.country, [e.summary.en, e.summary.fr]]),
+    )
+    expect(got.USA).toEqual([
+      'The United States of America voted no on General Assembly resolution A/RES/TEST/1.',
+      "Les États-Unis d'Amérique ont voté contre la résolution A/RES/TEST/1 de l'Assemblée générale.",
+    ])
+    expect(got.FRA).toEqual([
+      'France abstained on General Assembly resolution A/RES/TEST/1.',
+      "La France a opté pour l'abstention sur la résolution A/RES/TEST/1 de l'Assemblée générale.",
+    ])
+    expect(got.HUN).toEqual([
+      'Hungary did not vote on General Assembly resolution A/RES/TEST/1.',
+      "La Hongrie n'a pas pris part au vote sur la résolution A/RES/TEST/1 de l'Assemblée générale.",
+    ])
   })
 
   it('uses the votes.yaml date and says so when a row disagrees', () => {
@@ -229,10 +258,10 @@ describe('A1 SIPRI deliveries', () => {
   it('writes the share in the summary', () => {
     const e = byId(generateA1(ctx(), r).events).get('evt_2025_03_10_DEU_A1_tiv-2024')
     expect(e?.summary.en).toBe(
-      "The country delivered 30.0% of Israel's imports of major arms in 2024, per SIPRI TIV.",
+      "Germany delivered 30.0% of Israel's imports of major arms in 2024, per SIPRI TIV.",
     )
     expect(e?.summary.fr).toBe(
-      "Le pays a livré 30,0 % des importations d'armes majeures d'Israël en 2024, selon les TIV du SIPRI.",
+      "L'Allemagne a livré 30,0 % des importations d'armes majeures d'Israël en 2024, selon les TIV du SIPRI.",
     )
   })
 })
@@ -396,7 +425,10 @@ describe('A2 Comtrade military exports', () => {
       'row 3 of data/structured/comtrade_a2.csv',
     ])
     expect(e?.summary.en).toBe(
-      'The country exported USD 4.3 million of goods under HS 8526, 93 to Israel in 2023, per its report to UN Comtrade.',
+      'Germany exported USD 4.3 million of goods under HS 8526, 93 to Israel in 2023, per its report to UN Comtrade.',
+    )
+    expect(e?.summary.fr).toBe(
+      "L'Allemagne a exporté vers Israël 4,3 millions USD de marchandises (SH 8526, 93) en 2023, selon sa déclaration à UN Comtrade.",
     )
   })
 })
@@ -470,7 +502,10 @@ describe('C3 Comtrade trade as usual', () => {
     ])
     const deu = byId(out.events).get('evt_2024_02_21_DEU_C3_comtrade-2023-self')
     expect(deu?.summary.en).toBe(
-      'The country traded goods worth USD 8.8 billion with Israel in 2023, 97% of its 2022 level, per its report to UN Comtrade.',
+      'Germany traded goods worth USD 8.8 billion with Israel in 2023, 97% of its 2022 level, per its report to UN Comtrade.',
+    )
+    expect(deu?.summary.fr).toBe(
+      "L'Allemagne a échangé avec Israël 8,8 milliards USD de marchandises en 2023, soit 97 % du niveau de 2022, selon sa déclaration à UN Comtrade.",
     )
   })
 })
@@ -552,7 +587,10 @@ describe('D1 FTS funding', () => {
       'row 2 of data/structured/gni.csv',
     ])
     expect(e?.summary.en).toBe(
-      'The government paid or committed USD 600.0 million to the oPt flash appeals in the 12 months to 31 August 2025, per FTS.',
+      'Germany paid or committed USD 600.0 million to the oPt flash appeals in the 12 months to 31 August 2025, per FTS.',
+    )
+    expect(e?.summary.fr).toBe(
+      "L'Allemagne a versé ou engagé 600,0 millions USD aux appels éclair pour le TPO sur les 12 mois clos le 31 août 2025, selon le FTS.",
     )
   })
 
@@ -678,6 +716,162 @@ describe('every generated event', () => {
       'unsc_vetoes.csv': [...structured['unsc_vetoes.csv'], ...structured['unsc_vetoes.csv']],
     }
     expect(() => generateAll(ctx(), twice)).toThrow(/share the id/)
+  })
+})
+
+describe('summaries for every registry name (P-18)', () => {
+  // Every scored registry country gets the longest form of each template: the longest verbs
+  // (absent, abstain), four HS codes, amounts in the millions and billions, September dates.
+  const scored = REGISTRY.filter((c) => !c.excluded)
+  const d = { retrieved_at: '2026-09-27T10:00:00Z' }
+  const structured = {
+    'unga_votes.csv': rows(
+      'unga_votes.csv',
+      scored.flatMap((c) => [
+        { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: c.iso3, vote: 'X' as const },
+        { resolution: 'A/RES/TEST/2', date: '2024-02-01', iso3: c.iso3, vote: 'A' as const },
+      ]),
+    ),
+    'unsc_vetoes.csv': rows(
+      'unsc_vetoes.csv',
+      scored.map((c, i) => ({
+        date: '2023-10-18',
+        draft: `S/2023/${String(700 + i)}`,
+        vetoed_by: c.iso3,
+        ceasefire: true,
+      })),
+    ),
+    'fts_funding.csv': rows(
+      'fts_funding.csv',
+      scored.map((c) => ({
+        iso3: c.iso3,
+        window_start: '2025-10-01',
+        window_end: '2026-09-30',
+        usd_paid_committed: 105_066_282,
+        plan_ids: '1156',
+        ...d,
+      })),
+    ),
+    'fts_plan_totals.csv': [],
+    'sipri_deliveries.csv': rows(
+      'sipri_deliveries.csv',
+      scored.map((c) => ({
+        release_date: '2025-03-10',
+        data_year: 2024,
+        supplier_iso3: c.iso3,
+        tiv_to_israel: 1,
+        tiv_total_to_israel: 3,
+      })),
+    ),
+    'sipri_orders.csv': rows(
+      'sipri_orders.csv',
+      scored.map((c) => ({
+        release_date: '2025-03-10',
+        data_year: 2024,
+        buyer_iso3: c.iso3,
+        tiv_new_orders_from_israel: 12_345.5,
+      })),
+    ),
+    'comtrade_a2.csv': rows(
+      'comtrade_a2.csv',
+      scored.flatMap((c) =>
+        ['93', '8710', '8526', '8802'].map((hs) => ({
+          iso3: c.iso3,
+          window_start: '2024-01-01',
+          window_end: '2024-12-31',
+          release_date: '2025-03-18',
+          hs,
+          usd: 105_066_282,
+          reporter: 'mirror' as const,
+          ...d,
+        })),
+      ),
+    ),
+    'comtrade_c3.csv': rows(
+      'comtrade_c3.csv',
+      scored.map((c) => ({
+        iso3: c.iso3,
+        window_start: '2024-01-01',
+        window_end: '2024-12-31',
+        release_date: '2025-03-18',
+        usd_total: 12_345_678_901,
+        usd_2022: 10_000_000_000,
+        reporter: 'self' as const,
+        ...d,
+      })),
+    ),
+    'gni.csv': rows(
+      'gni.csv',
+      scored.map((c) => ({ iso3: c.iso3, year: 2025, gni_atlas_usd: 1_000_000_000_000 })),
+    ),
+    'population.csv': [],
+  }
+  const confirmed = new Map(scored.map((c) => [c.iso3, new Set(['8526', '8802'])]))
+  const vote2 = { ...VOTE, symbol: 'A/RES/TEST/2', date: '2024-02-01', kind: 'decision' as const }
+  const { events } = generateAll(ctx([VOTE, vote2]), structured, { confirmedMilitary: confirmed })
+  const names = new Map(REGISTRY.map((c) => [c.iso3, c.name]))
+
+  it('covers every template for every scored country', () => {
+    expect(new Set(events.map((e) => e.country)).size).toBe(193)
+    expect(events).toHaveLength(193 * 8)
+  })
+
+  it('opens with the name, stays within 200 characters and passes the tone lint', () => {
+    for (const e of events) {
+      const name = names.get(e.country)
+      for (const lang of ['en', 'fr'] as const) {
+        const text = e.summary[lang]
+        const opening =
+          lang === 'en'
+            ? actorOf(name ?? { en: '', fr: '' }).en
+            : actorOf(name ?? { en: '', fr: '' }).fr
+        expect(text.startsWith(opening), `${e.id} ${lang}: ${text}`).toBe(true)
+        expect([...text].length, `${e.id} ${lang}: ${text}`).toBeLessThanOrEqual(200)
+        expect(
+          lintSummary(text, lang, { matcher: MATCHER, countryName: name?.[lang] }),
+          `${e.id} ${lang}: ${text}`,
+        ).toEqual([])
+      }
+    }
+  })
+
+  it('writes plural French names with plural verbs and possessives', () => {
+    const usa = events.filter((e) => e.country === 'USA').map((e) => e.summary.fr)
+    expect(usa.every((t) => /^Les États-Unis d'Amérique (ont|n'ont) /.test(t))).toBe(true)
+    expect(
+      usa.some((t) =>
+        /^Les États-Unis d'Amérique ont opposé leur veto au projet de résolution S\/2023\/\d+ du Conseil de sécurité\.$/.test(
+          t,
+        ),
+      ),
+    ).toBe(true)
+    const gbr = events.filter((e) => e.country === 'GBR').map((e) => e.summary.fr)
+    expect(
+      gbr.every((t) => /^Le Royaume-Uni de Grande-Bretagne et d'Irlande du Nord (a|n'a) /.test(t)),
+    ).toBe(true)
+  })
+
+  it('actorOf: article from the registry, capitalised; plural from les', () => {
+    expect(
+      actorOf({ en: 'Bahamas', en_def: 'The Bahamas', fr: 'Bahamas', fr_def: 'Les Bahamas' }),
+    ).toEqual({
+      en: 'The Bahamas',
+      fr: 'Les Bahamas',
+      frPlural: true,
+    })
+    expect(actorOf({ en: 'Cuba', fr: 'Cuba' })).toEqual({ en: 'Cuba', fr: 'Cuba', frPlural: false })
+    expect(
+      actorOf({
+        en: 'Netherlands (Kingdom of the)',
+        en_def: 'the Kingdom of the Netherlands',
+        fr: 'Pays-Bas (Royaume des)',
+        fr_def: 'le Royaume des Pays-Bas',
+      }),
+    ).toEqual({
+      en: 'The Kingdom of the Netherlands',
+      fr: 'Le Royaume des Pays-Bas',
+      frPlural: false,
+    })
   })
 })
 

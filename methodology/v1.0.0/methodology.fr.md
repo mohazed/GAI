@@ -92,26 +92,26 @@ Les déclarations formelles sont notées : +2 ou +5 pour une déclaration qui a
 
 ### Le même protocole pour chaque pays
 
-Chaque pays fait l'objet d'une recherche selon le même protocole, qui consacre le même effort aux indicateurs positifs et négatifs et consigne ce qui a été vérifié lorsque rien n'est trouvé. Les résumés d'événements suivent un modèle unique, `{Acteur} {verbe au passé} {objet}{, précision}.`, sans adjectif ; un contrôle exécuté à chaque génération du site rejette les résumés qui contiennent un mot de la liste publiée `banned-words.txt` ou un point d'exclamation, qui dépassent 200 caractères ou qui ne commencent pas par l'acteur. Les événements positifs et négatifs ont la même mise en page. La ligne de synthèse de chaque vignette pays est produite à partir du même modèle.
+Chaque pays fait l'objet d'une recherche selon le même protocole, qui consacre le même effort aux indicateurs positifs et négatifs et consigne ce qui a été vérifié lorsque rien n'est trouvé. Les résumés d'événements suivent un modèle unique, `{Acteur} {verbe au passé} {objet}{, précision}.`, sans adjectif ; un contrôle exécuté à chaque génération du site rejette les résumés qui contiennent un mot de la liste publiée `banned-words.txt` ou un point d'exclamation, qui dépassent 200 caractères ou qui ne commencent pas par l'acteur. Les événements positifs et négatifs ont la même mise en page. La ligne de synthèse de chaque pays est produite à partir d'un même modèle.
 
 ## Table des indicateurs
 
-L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateurs des catégories A à D sont notés ; les 3 indicateurs de la catégorie E sont enregistrés et affichés, mais ne sont pas notés dans la version 1.0. Chaque ligne indique les points, le type d'événement, le plafond et la règle de cumul propres à l'indicateur, les sources primaires et la cadence de mise à jour ; les règles de preuve sont énumérées sous la table de chaque catégorie. Les noms et les valeurs en points suivent la table des indicateurs du cahier des charges du projet, précisée par les définitions ci-dessous.
+L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateurs des catégories A à D sont notés ; les 3 indicateurs de la catégorie E sont enregistrés et affichés, mais ne sont pas notés dans la version 1.0. Chaque ligne indique les points, le type d'événement, le plafond et la règle de cumul propres à l'indicateur, les sources primaires et la fréquence de mise à jour ; les règles de preuve sont énumérées sous la table de chaque catégorie. Les noms et les valeurs en points suivent la table des indicateurs du cahier des charges du projet, précisée par les définitions ci-dessous.
 
 <!-- BEGIN generated:indicators -->
 
 ### A. Armes et coopération militaire (plafond −45 / +30)
 
-| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |
+| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
 | A1 | Armes conventionnelles majeures livrées à Israël, pondérées par la part dans les importations d'Israël | de −40 à 0 (formule a1) | quantité calculée | — | [Base de données du SIPRI sur les transferts d'armes](https://www.sipri.org/databases/armstransfers) | Annuelle (mars) |
 | A2 | Munitions, composants, biens militaires à double usage exportés (SH 93, 8710, 8802, 8526) | de −25 à 0 (formule a2) | quantité calculée | — | Données douanières de l'Autorité fiscale israélienne ; UN Comtrade ; Registres nationaux de licences ; Enquêtes d'ONG | Trimestrielle |
 | A3 | Participation à la chaîne d'approvisionnement du F-35 | −15 | état durable | — | Rapports du Rapporteur spécial des Nations unies ; Informations publiées par Lockheed sur ses fournisseurs | À chaque changement |
 | A4 | Armes achetées à Israël (nouveaux contrats depuis octobre 2023) | de −15 à 0 (formule a4) | quantité calculée | — | SIPRI ; Avis nationaux de marchés publics | Annuelle |
-| A5 | Coopération militaire : exercices conjoints, partage de renseignements, stationnement, transit d'armes par les ports ou l'espace aérien | −5 par instance | événement répétable | plafond −15 | Communiqués des ministères de la Défense ; Journalisme d'investigation | À chaque événement |
+| A5 | Coopération militaire : exercices conjoints, partage de renseignements, stationnement, transit d'armes par les ports ou l'espace aérien | −5 par cas | événement répétable | plafond −15 | Communiqués des ministères de la Défense ; Journalisme d'investigation | À chaque événement |
 | A6 | Licences d'exportation suspendues (suspension partielle) | +10 | état durable | remplacé par A7 | Décision gouvernementale ; Journal officiel | À chaque événement |
 | A7 | Embargo total sur les armes, dans les deux sens, en vigueur | +25 | état durable | remplace A6 | Loi ou décret | À chaque événement |
-| A8 | Transit refusé aux cargaisons d'armes (ports, espace aérien, navires sous pavillon national) | +5 par instance | événement répétable | plafond +10 | Autorité portuaire ; Déclaration gouvernementale | À chaque événement |
+| A8 | Transit refusé aux cargaisons d'armes (ports, espace aérien, navires sous pavillon national) | +5 par cas | événement répétable | plafond +10 | Autorité portuaire ; Déclaration gouvernementale | À chaque événement |
 
 **Règles de preuve**
 
@@ -126,7 +126,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 ### B. Diplomatie et droit international (plafond −40 / +45)
 
-| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |
+| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
 | B1 | Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA, le statut de la Palestine | Pour +3 / Abstention −2 / Contre −5 / Absent −2 | événement répétable | — | [Relevés des votes de la Bibliothèque numérique des Nations unies](https://digitallibrary.un.org) | À chaque vote |
 | B2 | Veto au Conseil de sécurité des Nations unies contre une résolution de cessez-le-feu (membres uniquement) | −20 | événement répétable | — | Documents du Conseil de sécurité des Nations unies | À chaque vote |
@@ -136,8 +136,8 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 | B6 | CPI : refus déclaré d'exécuter les mandats, ou accueil d'un responsable visé par un mandat | −10 | état durable | la dernière position entre B5 et B6 prévaut | Déclaration gouvernementale ; Relevés des visites | À chaque événement |
 | B7 | Sanctions contre des juges ou des procureurs de la CPI | −20 | état durable | — | Liste officielle des sanctions | À chaque événement |
 | B8 | Reconnaissance de l'État de Palestine après octobre 2023 | Reconnaissance après le 7 octobre 2023 +8 / Reconnaissance préexistante +3 | état durable | seul le palier en vigueur le plus élevé compte | Ministère des Affaires étrangères | À chaque événement |
-| B9 | Le chef de gouvernement ou le ministre des Affaires étrangères nomme formellement des violations, appelle à un cessez-le-feu ou à la fin du blocus | Appel formel au cessez-le-feu ou à la fin du blocus +2 / Nomme des violations précises ou emploie une qualification juridique +5, par instance | événement répétable | plafond +10 | Transcription officielle | À chaque événement |
-| B10 | Le chef de gouvernement déclare un soutien inconditionnel ou nie des violations documentées | −5 par instance | événement répétable | plafond −10 | Transcription officielle | À chaque événement |
+| B9 | Le chef de gouvernement ou le ministre des Affaires étrangères nomme formellement des violations, appelle à un cessez-le-feu ou à la fin du blocus | Appel formel au cessez-le-feu ou à la fin du blocus +2 / Nomme des violations précises ou emploie une qualification juridique +5, par cas | événement répétable | plafond +10 | Transcription officielle | À chaque événement |
+| B10 | Le chef de gouvernement déclare un soutien inconditionnel ou nie des violations documentées | −5 par cas | événement répétable | plafond −10 | Transcription officielle | À chaque événement |
 | B11 | Sanctions contre des ministres israéliens ou des entités de colons | Sanctions contre des ministres israéliens +10 / Sanctions contre des entités de colons +5 | état durable | un événement par palier, les paliers s'additionnent | Liste officielle des sanctions | À chaque événement |
 | B12 | Ambassadeur rappelé / niveau des relations abaissé / relations rompues | Ambassadeur rappelé +5 / Niveau des relations abaissé +8 / Relations rompues +10 | état durable | seul le palier en vigueur le plus élevé compte | Ministère des Affaires étrangères | À chaque événement |
 
@@ -158,7 +158,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 ### C. Commerce et économie (plafond −20 / +20)
 
-| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |
+| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
 | C1 | Accord commercial ou d'association suspendu ou formellement réexaminé | Réexamen formel +4 / Suspension +10 | état durable | seul le palier en vigueur le plus élevé compte | Décision gouvernementale ou de l'UE | À chaque événement |
 | C2 | Nouvel accord commercial, d'investissement ou de coopération signé avec Israël depuis octobre 2023 | −10 | état durable | — | Registres des traités ; Communiqués ministériels | À chaque événement |
@@ -178,7 +178,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 ### D. Humanitaire (plafond −15 / +25)
 
-| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |
+| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
 | D1 | Financement humanitaire de la réponse à Gaza, rapporté au RNB par habitant | de 0 à +12 (formule d1) | quantité calculée | — | [API du Service de suivi financier (FTS) d'OCHA](https://fts.unocha.org) | Mensuelle |
 | D2 | Financement de l'UNRWA suspendu | −10 | état durable | — | Tableaux des donateurs de l'UNRWA | À chaque événement |
@@ -196,7 +196,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 ### E. Responsabilité interne (plafond −10 / +10) · expérimentale · non notée
 
-| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |
+| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
 | E1 | Enquête ou poursuites nationales visant des ressortissants ou des entreprises pour des actes commis à Gaza | +5 | événement répétable | — | Annonces du parquet ; Actes de procédure judiciaire | À chaque événement |
 | E2 | Interdictions de manifestations ou de symboles de solidarité avec la Palestine | −5 | événement répétable | — | Décrets du ministère de l'Intérieur ; Décisions de justice | À chaque événement |
@@ -235,7 +235,7 @@ Certains indicateurs ont leur propre plafond, ou une règle qui fixe la manière
 - **A1 et A4** utilisent les valeurs indicatives de tendance (TIV) de l'édition annuelle de la base de données du SIPRI sur les transferts d'armes. A4 ne compte que les contrats signés le 7 octobre 2023 ou après : des commandes nouvelles, et non les livraisons de commandes passées avant la guerre. Les deux sont calculés (voir la section « Indicateurs calculés »).
 - **A2** compte intégralement le chapitre 93 (armes et munitions) et la position 8710 (chars et véhicules blindés) du Système harmonisé (SH). Les positions 8526 (appareils de radar et de radiotélécommande) et 8802 (aéronefs) du SH ne comptent que si un registre des licences, une réponse parlementaire ou une enquête publiée citant le code douanier confirme que le flux est militaire, car ces deux positions couvrent surtout des biens civils.
 - **A3** est un état durable pour les pays dont des entreprises sont identifiées comme fournisseurs de rang 1 ou de rang 2 de pièces ou de services de maintenance du programme F-35 dans des documents officiels du programme, des déclarations de ministères nationaux ou des rapports du Rapporteur spécial des Nations unies. Il vaut −15 tant qu'il est en vigueur. L'arrêt des exportations de pièces de F-35 vers Israël, par décision judiciaire ou gouvernementale, met fin à cet état durable et constitue, par ailleurs, un événement A6.
-- **A5** ne compte que les cas confirmés : un exercice désigné par son nom, un transit documenté (escale, autorisation de survol), un accord public d'utilisation de bases, ou une confirmation officielle d'un partage de renseignement lié à la campagne militaire à Gaza. Les arrangements courants, bilatéraux ou dans le cadre de l'OTAN, antérieurs à la guerre ne constituent pas des cas, sauf s'ils sont activés pour la campagne.
+- **A5** ne compte que les cas confirmés : un exercice désigné par son nom, un transit documenté (escale, autorisation de survol), un accord public d'utilisation de bases, ou une confirmation officielle d'un partage de renseignements lié à la campagne militaire à Gaza. Les arrangements courants, bilatéraux ou dans le cadre de l'OTAN, antérieurs à la guerre ne constituent pas des cas, sauf s'ils sont activés pour la campagne.
 - **A6** correspond à toute décision gouvernementale qui suspend ou refuse une catégorie de licences d'exportation vers Israël, ou à toute décision de justice ayant le même effet. Il reste en vigueur jusqu'à la levée de la suspension.
 - **A7** correspond à une loi ou à un décret qui couvre à la fois les exportations d'armes vers Israël et les importations d'armes en provenance d'Israël.
 - **B1** compte les votes en séance plénière de l'Assemblée générale des Nations unies ; voir plus bas la section « Votes retenus de l'Assemblée générale des Nations unies ».
@@ -253,7 +253,7 @@ Certains indicateurs ont leur propre plafond, ou une règle qui fixe la manière
 - **C2** est un état durable pour un nouvel accord commercial, d'investissement ou de coopération signé avec Israël le 7 octobre 2023 ou après.
 - **C3** utilise le total des échanges de marchandises avec Israël (exportations plus importations) sur les 12 mois glissants, comparé à celui de l'année civile 2022 (voir la section « Indicateurs calculés »).
 - **C4** est un état durable pour une interdiction des produits des colonies (+5) ou pour une simple obligation d'étiquetage (+2).
-- **C5** compte les décisions par lesquelles un fonds souverain, un fonds de pension public ou une banque centrale exclut des entreprises en raison de leur conduite à Gaza ou dans les territoires occupés, à raison d'un événement par série de décisions.
+- **C5** compte les décisions par lesquelles un fonds souverain, un fonds public de retraite ou une banque centrale exclut des entreprises en raison de leur conduite à Gaza ou dans les territoires occupés, à raison d'un événement par série de décisions.
 - **C6** compte les règles ou décisions de marchés publics ayant un effet juridique qui excluent des entreprises impliquées.
 - **D1** est calculé à partir des données du service de suivi financier d'OCHA, le FTS (voir la section « Indicateurs calculés »).
 - **D2** est un état durable, de l'annonce d'une suspension du financement de l'UNRWA jusqu'à l'annonce de sa reprise.
@@ -352,8 +352,8 @@ Chaque événement a un seul niveau de confiance, dont le poids multiplie les po
 
 - **Confirmé** exige au moins une source officielle, judiciaire ou issue d'un jeu de données. Le validateur rejette un événement confirmé qui n'en a pas. Un article de presse ne peut jamais être le seul appui d'un événement confirmé.
 - **Corroboré** exige deux sources indépendantes, d'ONG ou de presse, émanant d'éditeurs distincts, qui nomment le document sous-jacent.
-- **Signalé** repose sur une seule source crédible, d'ONG ou de presse. La vignette de l'événement porte une mention d'une ligne.
-- **Contesté** s'applique lorsqu'un démenti officiel est consigné, dans une réponse ou dans une source officielle, et que des éléments contraires existent. Les deux sont accessibles par un lien depuis la vignette de l'événement, qui porte une mention d'une ligne. Un événement mis en cause par la voie du droit de réponse reste « contesté » jusqu'à sa résolution.
+- **Signalé** repose sur une seule source crédible, d'ONG ou de presse. La fiche de l'événement porte une mention d'une ligne.
+- **Contesté** s'applique lorsqu'un démenti officiel est consigné, dans une réponse ou dans une source officielle, et que des éléments contraires existent. Les deux sont accessibles par un lien depuis la fiche de l'événement, qui porte une mention d'une ligne. Un événement mis en cause par la voie du droit de réponse reste « contesté » jusqu'à sa résolution.
 
 ### Preuves et sources
 
@@ -379,15 +379,15 @@ Pour chaque édition du SIPRI, publiée en mars de l'année Y+1 avec des donnée
 
 ### A2 — exportations militaires dans les données douanières
 
-V est la valeur des exportations vers Israël sur les 12 mois glissants relevant du chapitre 93 et de la position 8710 du SH, ainsi que des positions 8526 et 8802 lorsque le caractère militaire du flux est confirmé (voir la section « Définitions par indicateur »). La source est la déclaration du pays lui-même à UN Comtrade ; si elle manque ou est confidentielle, les données miroirs des importations d'Israël par pays d'origine ; si les deux manquent, A2 est sans données (no-data). Les points sont attribués par palier de V. La valeur est recalculée à chaque édition annuelle ou trimestrielle de Comtrade et s'applique jusqu'à la suivante.
+V est la valeur des exportations vers Israël sur les 12 mois glissants relevant du chapitre 93 et de la position 8710 du SH, ainsi que des positions 8526 et 8802 lorsque le caractère militaire du flux est confirmé (voir la section « Définitions par indicateur »). La source est la déclaration du pays lui-même à UN Comtrade ; si elle manque ou est confidentielle, les données miroir des importations d'Israël par pays d'origine ; si les deux manquent, A2 est sans données (no-data). Les points sont attribués par palier de V. La valeur est recalculée à chaque édition annuelle ou trimestrielle de Comtrade et s'applique jusqu'à la suivante.
 
 ### C3 — maintien des échanges commerciaux
 
-T est le total des exportations et des importations de marchandises avec Israël sur les 12 mois glissants, d'après les déclarations du pays lui-même, ou à défaut d'après les données miroirs. r = T ÷ T(2022). Si r est au moins égal à 0,9, les points sont attribués par palier de T ; si r est inférieur à 0,9, ils sont nuls. Une baisse des échanges n'est pas récompensée ici ; seule une décision l'est, par C1. Une hausse n'est pas pénalisée au-delà du palier.
+T est le total des exportations et des importations de marchandises avec Israël sur les 12 mois glissants, d'après les déclarations du pays lui-même, ou à défaut d'après les données miroir. r = T ÷ T(2022). Si r est au moins égal à 0,9, les points sont attribués par palier de T ; si r est inférieur à 0,9, ils sont nuls. Une baisse des échanges n'est pas récompensée ici ; seule une décision l'est, par C1. Une hausse n'est pas pénalisée au-delà du palier.
 
 ### D1 — financement humanitaire
 
-F est le total des contributions versées et engagées par le gouvernement du pays (type d'organisation donatrice « Government ») aux appels éclair suivis par OCHA pour le Territoire palestinien occupé (TPO) et au fonds de financement commun pour le TPO, sur les 12 mois glissants, tel qu'enregistré par le service de suivi financier d'OCHA (FTS). x = F ÷ RNB, le RNB étant le revenu national brut total du pays, et non le RNB par habitant, selon la Banque mondiale (méthode Atlas, dollars des États-Unis courants, dernière année disponible). Les points sont attribués par palier de x. Un zéro est un vrai zéro, car FTS est la référence pour le financement humanitaire des gouvernements ; une partie de l'aide bilatérale et en nature n'est pas déclarée à FTS, et D4 et D5 en rendent compte en partie (voir la section « Limites connues »). La valeur est recalculée chaque mois et s'applique pendant un mois.
+F est le total des contributions versées et engagées par le gouvernement du pays (type d'organisation donatrice « Government ») aux appels éclair suivis par OCHA pour le Territoire palestinien occupé (TPO) et au fonds de financement commun pour le TPO, sur les 12 mois glissants, tel qu'enregistré par le service de suivi financier d'OCHA (FTS). x = F ÷ RNB, le RNB étant le revenu national brut total du pays, et non le RNB par habitant, selon la Banque mondiale (méthode Atlas, dollars des États-Unis courants, dernière année disponible). Les points sont attribués par palier de x. Un zéro est un vrai zéro, car le FTS est la référence pour le financement humanitaire des gouvernements ; une partie de l'aide bilatérale et en nature n'est pas déclarée au FTS, et D4 et D5 en rendent compte en partie (voir la section « Limites connues »). La valeur est recalculée chaque mois et s'applique pendant un mois.
 
 ### Seuils et paliers
 
@@ -491,7 +491,7 @@ La barre de couverture figure à côté de chaque score. Les segments pleins cor
 
 ### L'absence de données ne vaut pas zéro
 
-Lorsqu'un pays n'a pas de données pour A1 ou A2, sa vignette affiche « pas de données d'exportation », jamais un zéro. Un pays qui ne publie rien n'est pas noté comme s'il n'avait rien exporté : à un pays sans aucune donnée, seule la pénalité de passivité s'applique. Ainsi, l'absence de données publiées n'est pas lue comme une absence d'actes.
+Lorsqu'un pays n'a pas de données pour A1 ou A2, sa fiche affiche « pas de données d'exportation », jamais un zéro. Un pays qui ne publie rien n'est pas noté comme s'il n'avait rien exporté : à un pays sans aucune donnée, seule la pénalité de passivité s'applique. Ainsi, l'absence de données publiées n'est pas lue comme une absence d'actes.
 
 Un indicateur non vérifié déclenche un avertissement lors de la génération du site. Un pays qui a des indicateurs non vérifiés ne peut être publié qu'en mode fiche, et les scores ne sont pas affichés tant qu'un pays publié a un indicateur non vérifié.
 
@@ -543,7 +543,7 @@ Les versions de la méthodologie suivent la gestion sémantique de version.
 
 Chaque version est un dossier complet et autonome, `methodology/vX.Y.Z/`, dans le dépôt public. Chaque score porte la version qui l'a produit. Une nouvelle version recalcule l'ensemble des scores passés. Lorsqu'une version est remplacée, ses derniers résultats sont figés et restent disponibles à l'adresse `/api/v1/methodology/vX.Y.Z/…`. Chaque modification est accompagnée d'une entrée dans le journal des modifications, `methodology/CHANGELOG.md`, et d'un fichier `diff.json` qui liste chaque pays dont le score affiché a varié d'au moins 1, avec la cause.
 
-Une modification est proposée sous la forme d'une demande de fusion (pull request) accompagnée d'une justification écrite. La génération du site publie ce fichier de différences dans la demande de fusion. La proposition est annoncée sur la page [Modifications](/fr/changes) et reste ouverte aux commentaires publics pendant 14 jours dans une discussion liée ; elle n'est fusionnée qu'après ce délai. Une version majeure requiert en outre l'approbation d'au moins un relecteur nommément désigné.
+Une modification est proposée sous la forme d'une demande de fusion (pull request) accompagnée d'une justification écrite. La génération du site publie ce fichier de différences dans la demande de fusion. La proposition est annoncée sur la page [Changements](/fr/changes) et reste ouverte aux commentaires publics pendant 14 jours dans une discussion liée ; elle n'est fusionnée qu'après ce délai. Une version majeure requiert en outre l'approbation d'au moins un relecteur nommément désigné.
 
 La version 1.0.0-rc.1 est une version candidate. Avant l'affichage des scores, les points et les seuils sont testés en notant dix pays à la main, et des relecteurs externes nommément désignés examinent la table des indicateurs et les seuils ; tout ajustement est consigné dans le journal des modifications.
 
@@ -581,9 +581,9 @@ La mise en œuvre s'écarte du cahier des charges du projet sur les points suiva
 
 ## Limites connues
 
-- **Données d'exportation d'armes.** La plupart des États déclarent à UN Comtrade les données du chapitre 93 du SH comme confidentielles. Les données miroirs des importations d'Israël comblent une partie du manque, mais elles sont elles aussi partielles. Lorsqu'aucune des deux sources n'est disponible, A2 est sans données (no-data), jamais à zéro. Les États qui publient des données d'exportation sont donc évalués sur davantage de données que ceux qui n'en publient pas ; la barre de couverture montre l'écart pour chaque pays.
+- **Données d'exportation d'armes.** La plupart des États déclarent à UN Comtrade les données du chapitre 93 du SH comme confidentielles. Les données miroir des importations d'Israël comblent une partie du manque, mais elles sont elles aussi partielles. Lorsqu'aucune des deux sources n'est disponible, A2 est sans données (no-data), jamais à zéro. Les États qui publient des données d'exportation sont donc évalués sur davantage de données que ceux qui n'en publient pas ; la barre de couverture montre l'écart pour chaque pays.
 - **La TIV du SIPRI n'est pas une valeur monétaire.** Elle mesure la capacité militaire transférée, et non la valeur d'un contrat, et l'édition annuelle paraît en mars pour l'année civile précédente.
-- **Financement humanitaire.** FTS sous-estime l'aide bilatérale et en nature, y compris celle des États arabes et de la Türkiye. D4 et D5 en rendent compte en partie ; la barre de couverture et la note du pays signalent l'écart.
+- **Financement humanitaire.** Le FTS sous-estime l'aide bilatérale et en nature, y compris celle des États arabes et de la Türkiye. D4 et D5 en rendent compte en partie ; la barre de couverture et la note du pays signalent l'écart.
 - **Déclarations.** Seules les déclarations formelles et transcrites comptent. De nombreux gouvernements s'expriment par la voix de porte-parole, dont les déclarations ne sont pas notées, ou sur les réseaux sociaux, où les déclarations ne sont pas notées sauf s'il en existe une transcription officielle.
 - **Couverture de la recherche.** Les pays sont étudiés par vagues, et la couverture varie d'un pays à l'autre tant que la recherche est en cours. La barre de couverture et la liste de ce qui a été vérifié indiquent l'état de la recherche pour chaque pays.
 - **Valeurs en points.** Les points, les plafonds et les seuils sont des choix. Ils sont publiés, versionnés et ouverts aux commentaires ; les tables de sensibilité, calculées à chaque génération du site et publiées une fois les scores affichés, montrent leur effet sur le classement, et les lecteurs peuvent fixer leurs propres pondérations de catégorie.

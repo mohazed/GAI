@@ -2,13 +2,15 @@
  * Every generated event of the dataset (D-08, docs/04 §2 step 3): B1, B2, A1, A4, A2, C3 and D1
  * from the tables of data/structured and the methodology files. Pure.
  */
-import { type Dataset, EXCLUDED_ISO3, type Methodology } from '@gai/schema'
+import { type Country, type Dataset, EXCLUDED_ISO3, type Methodology } from '@gai/schema'
+import { actorOf } from './actor.js'
 import { type GenerateContext, type Generated, sortEvents } from './common.js'
 import { generateD1 } from './funding.js'
 import { generateA1, generateA4 } from './sipri.js'
 import { generateA2, generateC3 } from './trade.js'
 import { generateB1, generateB2 } from './votes.js'
 
+export * from './actor.js'
 export * from './common.js'
 export { generateD1, gniFor } from './funding.js'
 export { generateA1, generateA4 } from './sipri.js'
@@ -20,9 +22,14 @@ export interface GenerateOptions {
   confirmedMilitary?: ReadonlyMap<string, ReadonlySet<string>>
 }
 
-/** The generator context of a loaded methodology; throws when a file it needs failed to load. */
+/**
+ * The generator context of a loaded methodology and the registry (the summaries open with each
+ * country's name, actor.ts); throws when a methodology file it needs failed to load. Without a
+ * registry, summaries name countries by their codes.
+ */
 export function generateContext(
   m: Methodology,
+  countries: readonly Pick<Country, 'iso3' | 'name'>[] = [],
   excluded: Iterable<string> = EXCLUDED_ISO3,
 ): GenerateContext {
   if (m.indicatorsFile === null || m.thresholds === null || m.votes === null) {
@@ -35,6 +42,7 @@ export function generateContext(
     thresholds: m.thresholds.value,
     votes: m.votes.value,
     excluded: new Set(excluded),
+    actors: new Map(countries.map((c) => [c.iso3, actorOf(c.name)])),
   }
 }
 
@@ -58,5 +66,9 @@ export function generateAll(
     if (seen.has(e.id)) throw new Error(`two generated events share the id ${e.id}`)
     seen.add(e.id)
   }
-  return { events, notes: parts.flatMap((p) => p.notes) }
+  const unnamed = [...new Set(events.map((e) => e.country))]
+    .filter((c) => ctx.actors.size > 0 && !ctx.actors.has(c))
+    .sort()
+    .map((c) => `${c}: not in the registry; its generated summaries name it by its code ("The country ${c}")`)
+  return { events, notes: [...parts.flatMap((p) => p.notes), ...unnamed] }
 }

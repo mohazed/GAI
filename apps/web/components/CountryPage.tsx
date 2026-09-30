@@ -85,7 +85,11 @@ function CountryTitle({
   t: T
 }) {
   const members = membershipLine(file, t)
-  const region = t(`rank.regions.${file.region}` as 'rank.regions.Europe')
+  // The M49 region and sub-region, in the page's language (UN M49 names, docs/glossary.fr.md).
+  const region = t('country.regionLine', {
+    region: t(`rank.regions.${file.region}` as 'rank.regions.Europe'),
+    subregion: t(`subregions.${file.subregion}` as 'subregions.Western Europe'),
+  })
   return (
     <header className="flex flex-col gap-2 pb-8">
       <h1 className="display text-d40 md:text-d64">{file.name[lang]}</h1>

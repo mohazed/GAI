@@ -1,6 +1,10 @@
 import AxeBuilder from '@axe-core/playwright'
 import { type Browser, expect, type Page, test } from '@playwright/test'
 
+/** A French name as the site shows it: the typographic apostrophe (P-18, docs/05 §2). */
+const shown = (name: string, lang: string) =>
+  lang === 'fr' ? name.replace(/(\p{L})'(?=\p{L})/gu, '$1’') : name
+
 /**
  * Smoke tests of the country page (P-08), in English and French, with JavaScript on and off, in
  * the mode of the project: `score` (kit build) and `scorecard` (production build, D-16). Values
@@ -16,7 +20,7 @@ const TEXT = {
   fr: {
     events: 'Événements',
     checked: 'Ce qui a été vérifié',
-    excluded: 'Pourquoi',
+    excluded: 'raison de l’exclusion',
     all: 'Tous',
   },
 } as const
@@ -99,7 +103,9 @@ for (const lang of LANGS) {
       const errors = collectErrors(page)
       const { scored } = await subjects(page)
       await page.goto(`/${lang}/country/${scored.iso3}/`)
-      await expect(page.getByRole('heading', { level: 1 })).toHaveText(scored.name[lang])
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+        shown(scored.name[lang], lang),
+      )
       // The gauge is never without the coverage bar (docs/05 §5).
       await expect(page.locator('.gauge')).toHaveCount(1)
       await expect(page.locator('.coverage-bar')).toHaveCount(1)
@@ -223,7 +229,9 @@ for (const lang of LANGS) {
       const { context, page } = await noJs(browser)
       const { scored } = await subjects(page)
       await page.goto(`/${lang}/country/${scored.iso3}/`)
-      await expect(page.getByRole('heading', { level: 1 })).toHaveText(scored.name[lang])
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+        shown(scored.name[lang], lang),
+      )
       await expect(page.locator('.gauge')).toHaveCount(1)
       const items = page.locator('.ev-item')
       const total = await items.count()
@@ -247,7 +255,9 @@ for (const lang of LANGS) {
       const errors = collectErrors(page)
       const { excluded } = await subjects(page)
       await page.goto(`/${lang}/country/${excluded.iso3}/`)
-      await expect(page.getByRole('heading', { level: 1 })).toHaveText(excluded.name[lang])
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+        shown(excluded.name[lang], lang),
+      )
       await expect(page.getByRole('heading', { level: 2 })).toContainText(t.excluded)
       await expect(page.locator('.gauge')).toHaveCount(0)
       await expect(page.locator('#events')).toHaveCount(0)

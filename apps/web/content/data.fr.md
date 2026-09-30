@@ -1,6 +1,6 @@
 # Données et API
 
-Tout ce que le site montre est publié sous forme de fichiers statiques : JSON, CSV et Markdown, régénérés à chaque génération à partir du dépôt public. Les données sont publiées sous la licence Creative Commons Attribution 4.0 (CC BY 4.0). Il n'y a ni clé, ni compte, ni limite de requêtes autre que celle de l'hébergeur, et rien n'est calculé à la demande.
+Tout ce que le site montre est publié sous forme de fichiers statiques : JSON, CSV et Markdown, produits à chaque génération du site à partir du dépôt public. Les données sont publiées sous la licence Creative Commons Attribution 4.0 (CC BY 4.0). Il n'y a ni clé, ni compte, ni limite de requêtes autre que celle de l'hébergeur, et rien n'est calculé à la demande.
 
 <!-- slot:build -->
 
@@ -16,7 +16,7 @@ Les événements générés et calculés (B1, B2, B8, A1, A2, A4, C3 et D1) sont
 
 ## API
 
-Les fichiers sont servis sous `/api/v1/` avec l'en-tête `Access-Control-Allow-Origin: *`, si bien qu'une page d'un autre site peut les lire. Les fichiers JSON sont en UTF-8 avec des clés triées ; une valeur absente vaut `null`, sans que la clé manque ; les dates sont au format `YYYY-MM-DD` en UTC ; le texte destiné aux lecteurs est un objet avec `en` et `fr`. Dans le texte, un nombre négatif porte le signe moins (−15) ; dans le JSON et le CSV, les nombres portent le trait d'union ASCII (-15). Les fichiers CSV ont une ligne d'en-tête et des fins de ligne LF. La référence complète, champ par champ, est le [README de l'API](https://github.com/mohazed/GAI/blob/main/apps/web/public/api/README.md), en anglais ; les schémas sont les schémas zod de `packages/schema/src/api.ts`. Les exemples ci-dessous sont tirés des fichiers de cette génération.
+Les fichiers sont servis sous `/api/v1/` avec l'en-tête `Access-Control-Allow-Origin: *`, si bien qu'une page d'un autre site peut les lire. Les fichiers JSON sont en UTF-8 avec des clés triées ; une valeur absente vaut `null` (la clé est toujours présente) ; les dates sont au format `YYYY-MM-DD` en UTC ; le texte destiné aux lecteurs est un objet avec `en` et `fr`. Dans le texte, un nombre négatif porte le signe moins (−15) ; dans le JSON et le CSV, les nombres portent le trait d'union ASCII (-15). Les fichiers CSV ont une ligne d'en-tête et des fins de ligne LF. La référence complète, champ par champ, est le [README de l'API](https://github.com/mohazed/GAI/blob/main/apps/web/public/api/README.md), en anglais ; les schémas sont les schémas zod de `packages/schema/src/api.ts`. Les exemples ci-dessous sont tirés des fichiers de cette génération.
 
 <!-- slot:api -->
 

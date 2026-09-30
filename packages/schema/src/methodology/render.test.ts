@@ -97,7 +97,7 @@ describe('renderBlock: indicators', () => {
       '| ID | Indicator | Points | Type | Indicator cap and stacking | Primary sources | Cadence |',
     )
     expect(fr).toContain(
-      "| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Cadence |",
+      "| ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |",
     )
   })
 
@@ -111,7 +111,7 @@ describe('renderBlock: indicators', () => {
   it('renders per-instance points and the indicator cap (A5 −15, B9 +10)', () => {
     expect(cells(row(en, 'A5'))[2]).toBe('−5 per instance')
     expect(cells(row(en, 'A5'))[4]).toBe('cap −15')
-    expect(cells(row(fr, 'A5'))[2]).toBe('−5 par instance')
+    expect(cells(row(fr, 'A5'))[2]).toBe('−5 par cas')
     expect(cells(row(fr, 'A5'))[4]).toBe('plafond −15')
     expect(cells(row(en, 'B9'))[2]).toBe(
       'Formal call for ceasefire or end of blockade +2 / Names specific violations or uses a legal characterisation +5, per instance',

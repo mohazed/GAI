@@ -26,7 +26,7 @@ const H1: Record<Lang, Record<PageId, string>> = {
   fr: {
     methodology: 'Méthodologie',
     corrections: 'Corrections',
-    about: "À propos de l'index",
+    about: 'À propos de l’indice',
     data: 'Données et API',
     embed: 'Intégrer un pays',
     reply: 'Droit de réponse',
@@ -45,8 +45,8 @@ const TEXT = {
   fr: {
     contents: 'Sommaire',
     changelog: 'Journal des modifications',
-    none: "Relecteurs : aucun pour l'instant.",
-    empty: "Aucune correction n'a encore été publiée.",
+    none: 'Relecteurs : aucun pour l’instant.',
+    empty: 'Aucune correction n’a encore été publiée.',
     translation: 'Traduction',
     fullRanking: 'Classement complet pour chaque réglage',
   },

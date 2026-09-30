@@ -1,6 +1,10 @@
 import AxeBuilder from '@axe-core/playwright'
 import { type Browser, expect, type Page, test } from '@playwright/test'
 
+/** A French name as the site shows it: the typographic apostrophe (P-18, docs/05 §2). */
+const shown = (name: string, lang: string) =>
+  lang === 'fr' ? name.replace(/(\p{L})'(?=\p{L})/gu, '$1’') : name
+
 /**
  * Smoke tests of the Compare page (P-09), in English and French, with JavaScript on and off, in
  * the mode of the project: `score` (kit build) and `scorecard` (production build, D-16). The
@@ -26,14 +30,14 @@ const TEXT = {
     weights: 'Your weights',
   },
   fr: {
-    title: "Jusqu'à cinq pays côte à côte",
+    title: 'Jusqu’à cinq pays côte à côte',
     add: 'Ajouter un pays',
     events: 'Événements par mois',
     month: 'Mois',
     noEvents: 'Aucun événement pour ces pays.',
     noJs: 'La comparaison nécessite JavaScript',
     cite: 'Citer',
-    remove: (c: string) => `Retirer ${c}`,
+    remove: (c: string) => `Retirer de la comparaison : ${c}`,
     dropped: 'Non comparés',
     empty: 'Aucun pays choisi.',
     published: 'Afficher les scores publiés',
@@ -93,21 +97,29 @@ for (const lang of LANGS) {
       await expect(page.getByRole('heading', { level: 1 })).toHaveText(t.title)
       await expect(page.getByText(t.empty)).toBeVisible()
       const box = page.getByRole('combobox', { name: t.add })
-      await box.fill(scored.name[lang].slice(0, 4))
-      await expect(page.getByRole('option', { name: new RegExp(scored.name[lang]) })).toBeVisible()
+      await box.fill(shown(scored.name[lang], lang).slice(0, 4))
+      await expect(
+        page.getByRole('option', { name: new RegExp(shown(scored.name[lang], lang)) }),
+      ).toBeVisible()
       await box.press('Enter')
       await expect(page).toHaveURL(new RegExp(`/${lang}/compare/\\?c=${scored.iso3}$`))
       await expect(page.getByRole('heading', { name: t.events })).toBeVisible()
-      await expect(page.getByRole('button', { name: t.remove(scored.name[lang]) })).toBeVisible()
+      await expect(
+        page.getByRole('button', { name: t.remove(shown(scored.name[lang], lang)) }),
+      ).toBeVisible()
       if (scoreMode()) {
         const chart = page.locator('figure svg[role="img"]').first()
-        await expect(chart).toHaveAttribute('aria-label', new RegExp(scored.name[lang]))
+        await expect(chart).toHaveAttribute(
+          'aria-label',
+          new RegExp(shown(scored.name[lang], lang)),
+        )
       }
       // The table of events has one column per country; a country without any event that can
       // score (most of the registry before the research sessions, P-13) gets the empty line.
       const table = page.locator('table', { hasText: t.month })
       await expect(table.or(page.getByText(t.noEvents, { exact: true }))).toBeVisible()
-      if ((await table.count()) > 0) await expect(table).toContainText(scored.name[lang])
+      if ((await table.count()) > 0)
+        await expect(table).toContainText(shown(scored.name[lang], lang))
       expect(errors).toEqual([])
     })
 
@@ -116,10 +128,12 @@ for (const lang of LANGS) {
     }) => {
       const { scored, excluded } = await scoredAndExcluded(page)
       await page.goto(`/${lang}/compare/?c=${scored.iso3},${excluded.iso3},XXX`)
-      await expect(page.getByRole('button', { name: t.remove(scored.name[lang]) })).toBeVisible()
+      await expect(
+        page.getByRole('button', { name: t.remove(shown(scored.name[lang], lang)) }),
+      ).toBeVisible()
       await expect(page.getByText(t.dropped)).toContainText(`${excluded.iso3}, XXX`)
       await expect(page).toHaveURL(new RegExp(`\\?c=${scored.iso3}$`))
-      await page.getByRole('button', { name: t.remove(scored.name[lang]) }).click()
+      await page.getByRole('button', { name: t.remove(shown(scored.name[lang], lang)) }).click()
       await expect(page).toHaveURL(new RegExp(`/${lang}/compare/$`))
       await expect(page.getByText(t.empty)).toBeVisible()
     })
@@ -131,7 +145,7 @@ for (const lang of LANGS) {
       await expect(page.locator('[role="tabpanel"]')).toContainText(
         `/${lang}/compare?c=${scored.iso3}`,
       )
-      await expect(page.locator('[role="tabpanel"]')).toContainText(scored.name[lang])
+      await expect(page.locator('[role="tabpanel"]')).toContainText(shown(scored.name[lang], lang))
     })
 
     test('?w= weights the lines and can be reset (score mode)', async ({ page }) => {

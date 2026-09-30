@@ -12,6 +12,34 @@ export const MINUS = '−'
 export const NBSP = ' '
 /** Espace fine insécable, before `; ? ! %` and as the French thousands separator. */
 export const NNBSP = ' '
+/** U+2019, the typographic apostrophe of French text on the site (docs/05 §2, P-18). */
+export const APOSTROPHE = '\u2019'
+
+/**
+ * The display form of French text (docs/05 §2, P-18): a straight apostrophe between two letters
+ * ("l'Allemagne", "aujourd'hui") becomes the typographic apostrophe U+2019. The data, the
+ * registry and the API keep the straight apostrophe as written; the site and the widget apply
+ * this when they display French. Idempotent; a quotation mark or code with no letter on one side
+ * is left alone.
+ */
+export function frenchApostrophes(text: string): string {
+  return text.replace(/(\p{L}\p{M}*)'(?=\p{L})/gu, `$1${APOSTROPHE}`)
+}
+
+/**
+ * French typography for display (docs/05 §2): the typographic apostrophe between letters, a
+ * no-break space before `:` and inside guillemets, a narrow no-break space before `; ? ! %`.
+ * Text may be written with ordinary spaces and straight apostrophes; idempotent. The site applies
+ * it to its French messages and content and to the French text of the API data it shows; the
+ * widget to the French text of the country file.
+ */
+export function frenchTypography(text: string): string {
+  return frenchApostrophes(text)
+    .replace(/[ \u00a0\u202f]+:/g, `${NBSP}:`)
+    .replace(/[ \u00a0\u202f]+([;?!%])/g, `${NNBSP}$1`)
+    .replace(/«[ \u00a0\u202f]*/g, `«${NBSP}`)
+    .replace(/[ \u00a0\u202f]*»/g, `${NBSP}»`)
+}
 
 const MONTHS: Record<Lang, readonly string[]> = {
   en: [

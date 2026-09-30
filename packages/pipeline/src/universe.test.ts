@@ -2,7 +2,7 @@
  * The registry of data/countries.yaml against the universe of docs/02 §1 (P-13 acceptance): 193
  * scored entities plus ISR and PSE, the same codes as UNIVERSE_ISO3 (which the fetchers use to
  * keep the rows of global datasets), and every entry with its French name with article
- * (`name.fr_def`, used by generated French text, P-18).
+ * (`name.en_def` and `name.fr_def`, used by generated text, P-18).
  */
 import { readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
@@ -50,6 +50,16 @@ describe('data/countries.yaml and the universe', () => {
     expect(byIso.get('FRA')).toBe('la France')
     expect(byIso.get('USA')).toBe("les États-Unis d'Amérique")
     expect(byIso.get('CUB')).toBe('Cuba')
+  })
+
+  it('gives every entry its English name with article (name.en_def)', () => {
+    const missing = registry.filter((c) => c.name.en_def === undefined).map((c) => c.iso3)
+    expect(missing).toEqual([])
+    const byIso = new Map(registry.map((c) => [c.iso3, c.name.en_def]))
+    expect(byIso.get('DEU')).toBe('Germany')
+    expect(byIso.get('USA')).toBe('the United States of America')
+    expect(byIso.get('BHS')).toBe('The Bahamas')
+    expect(byIso.get('NLD')).toBe('the Kingdom of the Netherlands')
   })
 
   it('has unique ISO2 codes and M49 numbers', () => {

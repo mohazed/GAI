@@ -18,7 +18,9 @@ import {
   type StructuredRow,
 } from '@gai/schema'
 import { formulaPoints } from '@gai/scoring'
+import { byNumber } from './actor.js'
 import {
+  actorFor,
   baseEvent,
   type GenerateContext,
   type Generated,
@@ -90,6 +92,7 @@ export function generateA1(
     const s = r.tiv_to_israel / r.tiv_total_to_israel
     const points = formulaPoints(f, s)
     const y = r.data_year
+    const a = actorFor(ctx, r.supplier_iso3)
     events.push(
       baseEvent(
         {
@@ -107,8 +110,8 @@ export function generateA1(
           points,
           points_rationale: `SIPRI release ${r.release_date}, ${y}: TIV ${r.tiv_to_israel} of ${r.tiv_total_to_israel} delivered to Israel, s = ${s.toFixed(4)}; ${f.scale} × √s = ${signed(points)}.`,
           summary: {
-            en: `The country delivered ${percent(s, 'en')} of Israel's imports of major arms in ${y}, per SIPRI TIV.`,
-            fr: `Le pays a livré ${percent(s, 'fr')} des importations d'armes majeures d'Israël en ${y}, selon les TIV du SIPRI.`,
+            en: `${a.en} delivered ${percent(s, 'en')} of Israel's imports of major arms in ${y}, per SIPRI TIV.`,
+            fr: `${a.fr} ${byNumber(a, 'a', 'ont')} livré ${percent(s, 'fr')} des importations d'armes majeures d'Israël en ${y}, selon les TIV du SIPRI.`,
           },
           evidence: rowEvidence(
             row as Located<Record<string, unknown>>,
@@ -149,6 +152,7 @@ export function generateA4(
     if (r.tiv_new_orders_from_israel <= 0) continue
     const points = formulaPoints(f, r.tiv_new_orders_from_israel)
     const y = r.data_year
+    const a = actorFor(ctx, r.buyer_iso3)
     events.push(
       baseEvent(
         {
@@ -166,8 +170,8 @@ export function generateA4(
           points,
           points_rationale: `SIPRI release ${r.release_date}: new orders from Israel in ${y} worth ${r.tiv_new_orders_from_israel} TIV; tier ${signed(points)}.`,
           summary: {
-            en: `The country ordered major arms from Israel in ${y} worth ${tiv(r.tiv_new_orders_from_israel, 'en')} TIV, per SIPRI.`,
-            fr: `Le pays a commandé à Israël en ${y} des armes majeures d'une valeur de ${tiv(r.tiv_new_orders_from_israel, 'fr')} TIV, selon le SIPRI.`,
+            en: `${a.en} ordered major arms from Israel in ${y} worth ${tiv(r.tiv_new_orders_from_israel, 'en')} TIV, per SIPRI.`,
+            fr: `${a.fr} ${byNumber(a, 'a', 'ont')} commandé à Israël en ${y} des armes majeures d'une valeur de ${tiv(r.tiv_new_orders_from_israel, 'fr')} TIV, selon le SIPRI.`,
           },
           evidence: rowEvidence(
             row as Located<Record<string, unknown>>,

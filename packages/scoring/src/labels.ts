@@ -71,7 +71,7 @@ const LABELS: Record<string, LangText> = {
   D3: { en: 'UNRWA funding restoration', fr: "rétablissement du financement de l'UNRWA" },
   D4: {
     en: 'medical evacuation or field hospital',
-    fr: 'évacuation médicale ou hôpital de campagne',
+    fr: 'évacuation sanitaire ou hôpital de campagne',
   },
   D5: { en: 'visa or refugee pathway', fr: "voie d'accès par visa ou statut de réfugié" },
   E1: { en: 'domestic investigation or prosecution', fr: 'enquête ou poursuites nationales' },

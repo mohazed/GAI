@@ -63,7 +63,7 @@ const WORDS = {
     methodology: 'méthodologie',
     asOf: 'au',
     dataset: 'Jeu de données',
-    version: (v: string) => `méthodologie, version ${v}`,
+    version: (v: string) => `version ${v} de la méthodologie`,
     scorecard: "fiche d'évaluation",
   },
 } as const

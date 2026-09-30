@@ -4,6 +4,7 @@ import type { ApiScoredCountryFile } from '@gai/schema/api'
 import { useTranslations } from 'next-intl'
 import { type KeyboardEvent, useEffect, useId, useMemo, useState } from 'react'
 import { compareQuery, compareStyle, MAX_COMPARE, parseCompare } from '../lib/compare'
+import { frenchDisplay } from '../lib/format'
 import type { Lang } from '../lib/i18n'
 import type { SiteMethodology } from '../lib/methodology'
 import type { Mode } from '../lib/mode'
@@ -87,6 +88,7 @@ export function ComparePanel({
       setLoads((l) => ({ ...l, [iso3]: { status: 'loading' } }))
       fetch(`${apiBase}/countries/${iso3}.json`)
         .then((r) => (r.ok ? (r.json() as Promise<ApiScoredCountryFile>) : null))
+        .then((raw) => (raw === null ? null : frenchDisplay(raw)))
         .then((file) =>
           setLoads((l) => ({
             ...l,

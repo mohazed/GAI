@@ -73,13 +73,15 @@ export const GovSource = z.strictObject({
 })
 
 /**
- * UNTERM short names in EN and FR (docs/02 §1), and `fr_def`, the French short name with the
- * article UNTERM gives it ("l'Allemagne", "la France", "les États-Unis d'Amérique"; "Cuba" without
- * one), so that generated French text can name the country (P-13, P-18). Optional in the schema;
- * `country.name-fr-def` warns when it is missing and checks its form.
+ * UNTERM short names in EN and FR (docs/02 §1), and `en_def` and `fr_def`, the short names with
+ * the article UNTERM gives them ("the United States of America", "Germany"; "l'Allemagne", "la
+ * France", "les États-Unis d'Amérique"; "Cuba" without one), so that generated text can open
+ * with the country (P-13, P-18). Optional in the schema; `country.name-en-def` and
+ * `country.name-fr-def` warn when they are missing and check their form.
  */
 export const CountryName = z.strictObject({
   en: NonEmpty,
+  en_def: NonEmpty.optional(),
   fr: NonEmpty,
   fr_def: NonEmpty.optional(),
 })

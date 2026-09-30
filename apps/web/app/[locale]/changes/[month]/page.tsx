@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { MonthReport } from '../../../../components/MonthReport'
 import { publicApi } from '../../../../lib/api'
-import { monthLabel } from '../../../../lib/format'
+import { frenchPunctuation, monthLabel } from '../../../../lib/format'
 import { getT, isLang, type Lang, LOCALES } from '../../../../lib/i18n'
 import { parseMarkdown } from '../../../../lib/markdown'
 import { SITE_MODE } from '../../../../lib/mode'
@@ -12,6 +12,15 @@ import { alternatesFor } from '../../../../lib/seo'
 export const dynamicParams = false
 
 const API_BASE = '/api/v1'
+
+/**
+ * The report's Markdown in the site's display form: French typography on the French reports
+ * (docs/05 §2, P-18; the API file keeps the data's straight apostrophes).
+ */
+function reportText(path: string, lang: Lang): string {
+  const text = publicApi.text(path)
+  return lang === 'fr' ? frenchPunctuation(text) : text
+}
 
 /** One page per month of changes/latest.json `months`, in both languages. */
 export function generateStaticParams() {
@@ -33,7 +42,7 @@ function reportPath(month: string, lang: Lang): string {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale, month } = await params
   if (!isLang(locale)) return {}
-  const first = parseMarkdown(publicApi.text(reportPath(month, locale)))[0]
+  const first = parseMarkdown(reportText(reportPath(month, locale), locale))[0]
   return {
     title: first?.kind === 'heading' ? first.text : monthLabel(month, locale),
     description: getT(locale)('changesPage.reportSource', { month }),
@@ -82,7 +91,7 @@ export default async function Month({ params }: { params: Params }) {
         <MonthReport
           lang={lang}
           month={publicApi.changesMonth(month)}
-          markdown={publicApi.text(path)}
+          markdown={reportText(path, lang)}
           scorecard={SITE_MODE === 'scorecard'}
         />
       </article>

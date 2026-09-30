@@ -648,6 +648,56 @@ describe("'country.name-fr-def'", () => {
   })
 })
 
+describe("'country.name-en-def'", () => {
+  it('passes on the fixtures', () => {
+    expect(of('country.name-en-def')).toEqual([])
+  })
+
+  it('accepts the name alone and each article form', () => {
+    for (const [en, def] of [
+      ['Germany', 'Germany'],
+      ['United States of America', 'the United States of America'],
+      ['Bahamas', 'The Bahamas'],
+      ['Iran (Islamic Republic of)', 'the Islamic Republic of Iran'],
+    ] as const) {
+      const issues = of('country.name-en-def', (ds) => {
+        const c = countryOf(ds, 'DEU').value
+        c.name.en = en
+        c.name.en_def = def
+      })
+      expect(issues, `${en} / ${def}`).toEqual([])
+    }
+  })
+
+  it('warns when en_def is missing, naming the country', () => {
+    const issues = of('country.name-en-def', (ds) => {
+      countryOf(ds, 'DEU').value.name.en_def = undefined
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({
+      level: 'warning',
+      file: COUNTRIES_FILE,
+      id: 'DEU',
+      path: 'name.en_def',
+    })
+  })
+
+  it('warns on an en_def without an article that differs from the name, and on an article in name.en', () => {
+    expect(
+      of('country.name-en-def', (ds) => {
+        countryOf(ds, 'DEU').value.name.en_def = 'Federal Germany'
+      })[0]?.message,
+    ).toContain('neither equals name.en')
+    expect(
+      of('country.name-en-def', (ds) => {
+        const c = countryOf(ds, 'DEU').value
+        c.name.en = 'the Germany'
+        c.name.en_def = 'the Germany'
+      }).map((i) => i.path),
+    ).toEqual(['name.en'])
+  })
+})
+
 describe("'country.universe-size'", () => {
   it('passes with 193 entries that are not excluded (ISR and PSE not counted)', () => {
     expect(of('country.universe-size', (ds) => addCountries(ds, 192))).toEqual([])

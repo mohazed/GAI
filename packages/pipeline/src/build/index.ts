@@ -338,7 +338,13 @@ export function buildData(input: BuildInput): BuildOutput {
   // 3. Generate.
   let generated: Event[]
   try {
-    const g = generateAll(generateContext(m), ds.structured)
+    const g = generateAll(
+      generateContext(
+        m,
+        ds.countries.map((c) => c.value),
+      ),
+      ds.structured,
+    )
     generated = g.events
     for (const n of g.notes) note('generator', n, countryOfNote(n))
   } catch (err) {

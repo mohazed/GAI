@@ -2,7 +2,9 @@
  * Build-time access to the API files that `pnpm build:data` writes (docs/04 §2–§3). Server only:
  * pages read the JSON at build and never fetch at runtime (except Compare, P-09). Each file is
  * parsed with its zod schema from @gai/schema/api, so a stale or foreign API folder fails the
- * build instead of rendering wrong numbers.
+ * build instead of rendering wrong numbers, then put in the site's display form (`frenchDisplay`:
+ * French typography on the `fr` member of every text object, docs/05 §2, P-18). `text` returns a
+ * file as written.
  */
 import { existsSync, readFileSync } from 'node:fs'
 import path from 'node:path'
@@ -19,6 +21,7 @@ import {
   ApiSensitivityFile,
 } from '@gai/schema/api'
 import type { z } from 'zod'
+import { frenchDisplay } from './format'
 
 /** The API the site publishes: apps/web/public/api/v1, copied to out/api/v1 by next build. */
 export const PUBLIC_API_DIR = path.join(process.cwd(), 'public', 'api', 'v1')
@@ -42,8 +45,9 @@ export function apiReader(dir: string) {
     if (!parsed.success) {
       throw new Error(`${file} does not match its API schema: ${parsed.error.message}`)
     }
-    cache.set(file, parsed.data)
-    return parsed.data
+    const shown = frenchDisplay(parsed.data)
+    cache.set(file, shown)
+    return shown
   }
   /** A text file of the API (the monthly reports' Markdown), as written. */
   function text(file: string): string {

@@ -8,11 +8,15 @@ export interface SearchCountry {
   name: { en: string; fr: string }
 }
 
-/** Lower case without diacritics, so that "cote" finds "Côte d'Ivoire". */
+/**
+ * Lower case without diacritics, one apostrophe, so that "cote" and "cote d'ivoire" find
+ * "Côte d’Ivoire" (the French names are shown with the typographic apostrophe, P-18).
+ */
 export function fold(s: string): string {
   return s
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')
+    .replace(/[’‘]/g, "'")
     .toLowerCase()
 }
 

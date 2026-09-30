@@ -166,6 +166,11 @@ const CASES: Record<RuleId, Case> = {
       need(ds.countries[0], 'country').value.observer = true
     },
   },
+  'country.name-en-def': {
+    memory: (ds) => {
+      need(ds.countries[0], 'country').value.name.en_def = undefined
+    },
+  },
   'country.name-fr-def': {
     memory: (ds) => {
       need(ds.countries[0], 'country').value.name.fr_def = undefined

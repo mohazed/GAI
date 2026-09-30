@@ -302,11 +302,11 @@ const EN_BODY = `## New events
 
 ## Methodology
 
-Scores for every date are computed with methodology 1.0.0; a new methodology version recomputes every date.
+Scores for every date are computed with methodology v1.0.0; a new methodology version recomputes every date.
 `
 
 const EN_LINE =
-  'Gaza Accountability Index · methodology 1.0.0 · 1 September 2026 to 27 September 2026, month in progress'
+  'Gaza Accountability Index · methodology v1.0.0 · 1 September 2026 to 27 September 2026, month in progress'
 
 const FR_MOVERS = `## Évolutions des scores
 
@@ -337,7 +337,7 @@ const FR_BODY = `## Nouveaux événements
 
 1 valeur calculée recalculée sans changement (non listée).
 
-## Fins
+## Situations terminées
 
 - 2026-09-22 · Pays CCC · B11 · +10 · Le pays CCC a inscrit des entités synthétiques.
 
@@ -348,11 +348,11 @@ const FR_BODY = `## Nouveaux événements
 
 ## Méthodologie
 
-Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
+Les scores de chaque date sont calculés avec la méthodologie v1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
 `
 
 const FR_LINE =
-  'Gaza Accountability Index · méthodologie 1.0.0 · du 1er septembre 2026 au 27 septembre 2026, mois en cours'
+  'Gaza Accountability Index · méthodologie v1.0.0 · du 1er septembre 2026 au 27 septembre 2026, mois en cours'
 
 describe('monthlyReport: the four variants of a month in progress', () => {
   it('English, with scores', () => {
@@ -384,7 +384,7 @@ describe('monthlyReport: other months', () => {
   it('an empty complete month says so in every section', () => {
     expect(monthlyReport(july, EN, CTX)).toBe(`# Changes, July 2026
 
-Gaza Accountability Index · methodology 1.0.0 · 1 July 2026 to 31 July 2026
+Gaza Accountability Index · methodology v1.0.0 · 1 July 2026 to 31 July 2026
 
 ## Movers
 
@@ -404,19 +404,19 @@ None.
 
 ## Methodology
 
-Scores for every date are computed with methodology 1.0.0; a new methodology version recomputes every date.
+Scores for every date are computed with methodology v1.0.0; a new methodology version recomputes every date.
 `)
     expect(monthlyReport(july, FR_CARD, CTX)).toBe(`# Changements, juillet 2026
 
 Mode fiche d'évaluation${NB}: les scores ne sont pas affichés.
 
-Gaza Accountability Index · méthodologie 1.0.0 · du 1er juillet 2026 au 31 juillet 2026
+Gaza Accountability Index · méthodologie v1.0.0 · du 1er juillet 2026 au 31 juillet 2026
 
 ## Nouveaux événements
 
 Aucun.
 
-## Fins
+## Situations terminées
 
 Aucune.
 
@@ -426,7 +426,7 @@ Aucune.
 
 ## Méthodologie
 
-Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
+Les scores de chaque date sont calculés avec la méthodologie v1.0.0${NN}; une nouvelle version de la méthodologie recalcule toutes les dates.
 `)
     expect(monthlyReport(july, FR, CTX)).toContain(
       `## Évolutions des scores\n\nAucun score affiché n'a changé.\n\n`,
@@ -438,12 +438,12 @@ Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une n
     expect(lines(EN)).toEqual([
       '# Changes, October 2023',
       '',
-      'Gaza Accountability Index · methodology 1.0.0 · 7 October 2023 to 31 October 2023',
+      'Gaza Accountability Index · methodology v1.0.0 · 7 October 2023 to 31 October 2023',
     ])
     expect(lines(FR)).toEqual([
       '# Changements, octobre 2023',
       '',
-      'Gaza Accountability Index · méthodologie 1.0.0 · du 7 octobre 2023 au 31 octobre 2023',
+      'Gaza Accountability Index · méthodologie v1.0.0 · du 7 octobre 2023 au 31 octobre 2023',
     ])
   })
 
@@ -463,7 +463,7 @@ Les scores de chaque date sont calculés avec la méthodologie 1.0.0${NN}; une n
       '### Week of 31 August 2026\n\n1,000 computed values recomputed without change (not listed).\n\n## Ended',
     )
     expect(monthlyReport(m, FR, CTX)).toContain(
-      `### Semaine du 31 août 2026\n\n1${NN}000 valeurs calculées recalculées sans changement (non listées).\n\n## Fins`,
+      `### Semaine du 31 août 2026\n\n1${NN}000 valeurs calculées recalculées sans changement (non listées).\n\n## Situations terminées`,
     )
   })
 

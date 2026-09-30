@@ -2,7 +2,7 @@
   "common": {
     "siteName": "Gaza Accountability Index",
     "skip": "Aller au contenu",
-    "navLabel": "Principal",
+    "navLabel": "Navigation principale",
     "nav": {
       "ranking": "Classement",
       "countries": "Pays",
@@ -36,13 +36,13 @@
     "scorecard": "Les scores ne sont pas encore publiés. Chaque page pays présente les événements, leurs sources et ce qui a été vérifié.",
     "mapTitle": "Pays par bande, {date}",
     "mapTitleScorecard": "Couverture des recherches par pays, {date}",
-    "moved": "Mouvements de la semaine",
+    "moved": "Évolutions de la semaine",
     "window": "Scores du {to} comparés à ceux du {from}.",
     "up": "En hausse",
     "down": "En baisse",
     "moverCols": {
       "country": "Pays",
-      "change": "Écart",
+      "change": "Variation",
       "score": "Score avant et après"
     },
     "moverFromTo": "de {from} à {to}",
@@ -72,7 +72,7 @@
     "label": "Couverture {pct}",
     "missing": "{noData} sans données, {unchecked, plural, one {# non vérifié} other {# non vérifiés}}",
     "aria": "Couverture {pct} : {covered} indicateurs applicables vérifiés sur {applicable} ; {noData} sans données, {unchecked} non vérifiés.",
-    "pastDate": "Couverture au {date}, date de compilation. Elle n'est pas recalculée pour les dates antérieures.",
+    "pastDate": "Couverture au {date}, date de génération. Elle n'est pas recalculée pour les dates antérieures.",
     "excluded": "Non évalué : exclu de l'indice.",
     "status": {
       "has-events": "événements publiés",
@@ -83,7 +83,7 @@
     }
   },
   "categories": {
-    "caption": "Sous-totaux par catégorie, bornés par les plafonds de chaque catégorie",
+    "caption": "Sous-totaux par catégorie, dans les limites des plafonds de chaque catégorie",
     "captionScorecard": "Événements publiés par catégorie",
     "category": "Catégorie",
     "chart": "Sous-total sur l'axe de la catégorie",
@@ -109,7 +109,7 @@
       "region": "Région",
       "related": "Lié"
     },
-    "notCounted": "Non compté à la date de compilation : {reason}",
+    "notCounted": "Non compté à la date de génération : {reason}",
     "reasons": {
       "counted": "compté",
       "not-published": "non publié",
@@ -203,6 +203,25 @@
     },
     "none": "Aucun pays n'est encore classé."
   },
+  "subregions": {
+    "Australia and New Zealand": "Australie et Nouvelle-Zélande",
+    "Central Asia": "Asie centrale",
+    "Eastern Asia": "Asie orientale",
+    "Eastern Europe": "Europe orientale",
+    "Latin America and the Caribbean": "Amérique latine et Caraïbes",
+    "Melanesia": "Mélanésie",
+    "Micronesia": "Micronésie",
+    "Northern Africa": "Afrique septentrionale",
+    "Northern America": "Amérique septentrionale",
+    "Northern Europe": "Europe septentrionale",
+    "Polynesia": "Polynésie",
+    "South-eastern Asia": "Asie du Sud-Est",
+    "Southern Asia": "Asie méridionale",
+    "Southern Europe": "Europe méridionale",
+    "Sub-Saharan Africa": "Afrique subsaharienne",
+    "Western Asia": "Asie occidentale",
+    "Western Europe": "Europe occidentale"
+  },
   "ranking": {
     "metaTitle": "Classement",
     "metaTitleScorecard": "Pays",
@@ -275,7 +294,7 @@
     "all": "Tous les changements et les rapports mensuels",
     "markdown": "Rapport au format Markdown",
     "json": "Mois au format JSON",
-    "reportSource": "Généré à partir de changes/{month}.json lors de la génération du site ; le même texte est publié au format Markdown."
+    "reportSource": "Tiré de changes/{month}.json à la génération du site ; le même texte est publié au format Markdown."
   },
   "version": {
     "label": "Version de la méthodologie",
@@ -302,7 +321,7 @@
     "title": "Jusqu'à cinq pays côte à côte",
     "explain": "Scores du {from} au {to}, sous-totaux par catégorie et événements par mois, tirés du fichier de données publié de chaque pays, méthodologie v{version}.",
     "explainScorecard": "Événements publiés par catégorie et par mois, tirés du fichier de données de chaque pays, méthodologie v{version}. Les scores ne sont pas encore publiés.",
-    "dataLine": "La page lit dans le navigateur le fichier de chaque pays choisi (/api/v1/countries/ISO3.json) ; l'adresse garde le choix, de sorte qu'une comparaison peut être partagée par un lien.",
+    "dataLine": "La page lit dans le navigateur le fichier de chaque pays choisi (/api/v1/countries/ISO3.json) ; l'adresse de la page conserve la sélection, si bien qu'une comparaison peut se partager par un lien.",
     "noJsTitle": "La comparaison nécessite JavaScript",
     "noJs": "La comparaison est dessinée dans le navigateur à partir du fichier de données de chaque pays. Sans JavaScript, chaque page pays ci-dessous présente les mêmes graphiques, catégories et événements pour un pays.",
     "pickTitle": "Pays comparés",
@@ -310,7 +329,7 @@
     "add": "Ajouter un pays",
     "hint": "Nom en français ou en anglais, ou code ISO ; jusqu'à cinq pays.",
     "full": "Cinq pays au plus peuvent être comparés. Retirez-en un pour en ajouter un autre.",
-    "remove": "Retirer {country}",
+    "remove": "Retirer de la comparaison : {country}",
     "dropped": "Non comparés : {codes}. Seuls les pays notés peuvent être comparés, cinq au plus.",
     "empty": "Aucun pays choisi. Ajoutez jusqu'à cinq pays pour voir leurs scores, leurs sous-totaux par catégorie et leurs événements côte à côte.",
     "emptyScorecard": "Aucun pays choisi. Ajoutez jusqu'à cinq pays pour voir leurs événements publiés par catégorie et par mois côte à côte.",
@@ -410,15 +429,15 @@
       "published-event": "un événement publié le détermine",
       "no-published-event": "aucun événement publié, donc compté comme non vérifié",
       "unsc-rule": "fixé par la règle du Conseil de sécurité (docs/02 §8)",
-      "before-first-release": "avant la première publication du SIPRI depuis la guerre",
+      "before-first-release": "avant la première édition du SIPRI depuis la guerre",
       "generated-event": "un événement généré",
-      "no-release": "aucune publication en vigueur",
+      "no-release": "aucune édition en vigueur",
       "row-not-computable": "la ligne ne permet pas de calculer une part",
-      "release-without-deliveries": "une publication en vigueur ne mentionne aucune livraison",
+      "release-without-deliveries": "une édition en vigueur ne mentionne aucune livraison",
       "row-without-counted-exports": "des lignes sans exportations comptées",
       "no-row": "aucune ligne pour ce pays",
       "row-without-event": "une ligne qui ne donne aucun événement",
-      "release-without-orders": "une publication en vigueur ne mentionne aucune commande",
+      "release-without-orders": "une édition en vigueur ne mentionne aucune commande",
       "no-gni": "un financement mais aucun chiffre de revenu national brut",
       "no-funding": "aucun financement enregistré",
       "no-veto-power": "un membre élu, sans droit de veto",
@@ -427,16 +446,16 @@
     "repliesTitle": "Droits de réponse",
     "toolsTitle": "Citer, partager, télécharger",
     "downloadJson": "Télécharger le JSON",
-    "peersTitle": "Comparer avec des pays proches",
+    "peersTitle": "Comparer avec des pays du même groupe",
     "peersRegion": "Même région : {region}",
     "peersBand": "Même bande : {band}",
     "peersNone": "Aucun autre pays de ce groupe ne figure encore dans l'indice.",
     "compareLink": "Comparer ces pays",
-    "excludedTitle": "Pourquoi {country} n'est pas noté",
+    "excludedTitle": "{country} : raison de l'exclusion",
     "excludedBody": "L'indice note ce que les États tiers ont fait concernant Gaza. {reason}",
     "excludedMethod": "La méthodologie énonce cette exclusion et sa raison.",
     "excludedRanking": "Chaque pays noté figure dans le classement.",
-    "jsonLdDescription": "Événements, sources, couverture de la recherche et sous-totaux par catégorie de {country} dans le Gaza Accountability Index, du {from} au {to}, méthodologie v{version}."
+    "jsonLdDescription": "{country} dans le Gaza Accountability Index : événements, sources, couverture de la recherche et sous-totaux par catégorie, du {from} au {to}, méthodologie v{version}."
   },
   "gen": {
     "row": "Ligne {line} de {path}",
@@ -502,9 +521,9 @@
   "methodologyPage": {
     "metaTitle": "Méthodologie",
     "metaTitleVersion": "Méthodologie {version}",
-    "description": "Comment l'index note la conduite des États à l'égard de Gaza : indicateurs, points, plafonds, formule, décroissance, confiance, passivité et couverture, méthodologie v{version}.",
+    "description": "Comment l'indice note la conduite des États à l'égard de Gaza : indicateurs, points, plafonds, formule, décroissance, confiance, passivité et couverture, méthodologie v{version}.",
     "contents": "Sommaire",
-    "superseded": "Cette page présente la méthodologie v{version}, remplacée. La version en vigueur est la {current}.",
+    "superseded": "Cette page présente la méthodologie v{version}, remplacée. La version en vigueur est la v{current}.",
     "readCurrent": "Lire la version en vigueur",
     "files": "Cette version sous forme de données :",
     "diffTitle": "Scores modifiés par cette version",
@@ -578,7 +597,7 @@
     "caveat": "Réserve :"
   },
   "contact": {
-    "none": "Le projet n'a pas encore d'adresse électronique ; elle figurera ici. D'ici là, écrivez par les formulaires publics du dépôt (un compte GitHub est nécessaire) :",
+    "none": "Le projet n'a pas encore d'adresse électronique ; elle figurera ici. D'ici là, écrivez au moyen des formulaires publics du dépôt (un compte GitHub est nécessaire) :",
     "email": "Courriel :",
     "emailNote": "Un message au sujet d'un événement reçoit en réponse le lien d'un ticket public, sauf demande contraire de l'expéditeur.",
     "reply": "Droit de réponse",
@@ -625,9 +644,9 @@
   },
   "embedPage": {
     "description": "Comment afficher un pays du Gaza Accountability Index sur un autre site : le code à insérer, ses options et ce que fait le script.",
-    "snippetGauge": "La jauge de {country} :",
+    "snippetGauge": "La jauge ({country}) :",
     "snippetTimeline": "La chronologie du même pays :",
-    "examples": "Les deux codes ci-dessus, en fonctionnement sur cette page comme sur tout autre site. Ils lisent le fichier de {country} publié par cette génération du site.",
+    "examples": "Les deux codes ci-dessus, en fonctionnement sur cette page comme sur tout autre site. Ils lisent le fichier de données du pays ({country}) publié par cette génération du site.",
     "gauge": "Jauge",
     "timeline": "Chronologie",
     "noscript": "Les exemples ont besoin de JavaScript. Sans lui, la page du pays montre les mêmes chiffres :"
@@ -645,7 +664,7 @@
       "published": "Publiée le",
       "country": "Page du pays",
       "from": "De",
-      "outcome": "Issue"
+      "outcome": "Suite donnée"
     }
   }
 }

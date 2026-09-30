@@ -56,7 +56,7 @@ Slugs: lowercase ASCII, hyphens, ≤ 40 chars. IDs never change; a corrected eve
 - iso3: DEU
   iso2: DE
   m49: 276
-  name: {en: Germany, fr: Allemagne}
+  name: {en: Germany, en_def: Germany, fr: Allemagne, fr_def: "l'Allemagne"}   # *_def: the UNTERM name with its article, the actor of generated summaries (P-13, P-18)
   region: Europe
   subregion: Western Europe
   un_member: true

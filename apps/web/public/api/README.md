@@ -450,7 +450,7 @@ Example (fixtures build, DEU). The keys shared with the `countries.json` entry (
         "plain": "Gaza Accountability Index, Germany: −15 (Passive), methodology v1.0.0-rc.1, as of 27 September 2026, https://gaza-accountability-index.pages.dev/en/country/DEU?date=2026-09-27"
       },
       "fr": {
-        "apa": "Zouad, M. (2026, 27 septembre). Allemagne : −15 (Passivité) (méthodologie, version 1.0.0-rc.1) [Jeu de données]. Gaza Accountability Index. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27",
+        "apa": "Zouad, M. (2026, 27 septembre). Allemagne : −15 (Passivité) (version 1.0.0-rc.1 de la méthodologie) [Jeu de données]. Gaza Accountability Index. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27",
         "chicago": "Zouad, Mohamed. « Allemagne : −15 (Passivité) ». Gaza Accountability Index, méthodologie v1.0.0-rc.1, 27 septembre 2026. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27.",
         "plain": "Gaza Accountability Index, Allemagne : −15 (Passivité), méthodologie v1.0.0-rc.1, au 27 septembre 2026, https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27"
       }
@@ -462,7 +462,7 @@ Example (fixtures build, DEU). The keys shared with the `countries.json` entry (
         "plain": "Gaza Accountability Index, Germany (scorecard), methodology v1.0.0-rc.1, as of 27 September 2026, https://gaza-accountability-index.pages.dev/en/country/DEU?date=2026-09-27"
       },
       "fr": {
-        "apa": "Zouad, M. (2026, 27 septembre). Allemagne (fiche d'évaluation) (méthodologie, version 1.0.0-rc.1) [Jeu de données]. Gaza Accountability Index. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27",
+        "apa": "Zouad, M. (2026, 27 septembre). Allemagne (fiche d'évaluation) (version 1.0.0-rc.1 de la méthodologie) [Jeu de données]. Gaza Accountability Index. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27",
         "chicago": "Zouad, Mohamed. « Allemagne (fiche d'évaluation) ». Gaza Accountability Index, méthodologie v1.0.0-rc.1, 27 septembre 2026. https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27.",
         "plain": "Gaza Accountability Index, Allemagne (fiche d'évaluation), méthodologie v1.0.0-rc.1, au 27 septembre 2026, https://gaza-accountability-index.pages.dev/fr/country/DEU?date=2026-09-27"
       }
@@ -753,8 +753,8 @@ A generated D1 event (real-data build, `countries/DEU/events.json`, one of its 4
   "scored": true,
   "status": "published",
   "summary": {
-    "en": "The government paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS.",
-    "fr": "Le gouvernement a versé ou engagé 105,1 millions USD aux appels éclair pour le Territoire palestinien occupé sur les 12 mois au 31 août 2026, selon le FTS."
+    "en": "Germany paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS.",
+    "fr": "L'Allemagne a versé ou engagé 105,1 millions USD aux appels éclair pour le TPO sur les 12 mois clos le 31 août 2026, selon le FTS."
   },
   "supersedes": null,
   "type": "computed"
@@ -1128,8 +1128,8 @@ Example (real-data build). No display score changed in the 7 or 30 days to 2026-
       "points_changed": true,
       "previous_points": 3,
       "summary": {
-        "en": "The government paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.",
-        "fr": "Le gouvernement a versé ou engagé 105,1 millions USD aux appels éclair pour le Territoire palestinien occupé sur les 12 mois au 30 juin 2026, selon le FTS."
+        "en": "Germany paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.",
+        "fr": "L'Allemagne a versé ou engagé 105,1 millions USD aux appels éclair pour le TPO sur les 12 mois clos le 30 juin 2026, selon le FTS."
       },
       "type": "computed"
     }
@@ -1179,8 +1179,8 @@ Example (real-data build). No display score changed in the 7 or 30 days to 2026-
           "points_changed": false,
           "previous_points": 6,
           "summary": {
-            "en": "The government paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS.",
-            "fr": "Le gouvernement a versé ou engagé 105,1 millions USD aux appels éclair pour le Territoire palestinien occupé sur les 12 mois au 31 août 2026, selon le FTS."
+            "en": "Germany paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS.",
+            "fr": "L'Allemagne a versé ou engagé 105,1 millions USD aux appels éclair pour le TPO sur les 12 mois clos le 31 août 2026, selon le FTS."
           },
           "type": "computed"
         }
@@ -1266,8 +1266,8 @@ Example (real-data build, `changes/2026-07.json`). `weeks` keeps its first 2 wee
           "points_changed": true,
           "previous_points": 3,
           "summary": {
-            "en": "The government paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.",
-            "fr": "Le gouvernement a versé ou engagé 105,1 millions USD aux appels éclair pour le Territoire palestinien occupé sur les 12 mois au 30 juin 2026, selon le FTS."
+            "en": "Germany paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.",
+            "fr": "L'Allemagne a versé ou engagé 105,1 millions USD aux appels éclair pour le TPO sur les 12 mois clos le 30 juin 2026, selon le FTS."
           },
           "type": "computed"
         }
@@ -1297,7 +1297,7 @@ Example (real-data build, `changes/2026-07.md`), verbatim:
 ```markdown
 # Changes, July 2026
 
-Gaza Accountability Index · methodology 1.0.0-rc.1 · 1 July 2026 to 31 July 2026
+Gaza Accountability Index · methodology v1.0.0-rc.1 · 1 July 2026 to 31 July 2026
 
 ## Movers
 
@@ -1309,7 +1309,7 @@ Gaza Accountability Index · methodology 1.0.0-rc.1 · 1 July 2026 to 31 July 20
 
 ### Week of 29 June 2026
 
-- 2026-07-01 · Germany · D1 · +6 · The government paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.
+- 2026-07-01 · Germany · D1 · +6 · Germany paid or committed USD 105.1 million to the oPt flash appeals in the 12 months to 30 June 2026, per FTS.
 
 ## Ended
 
@@ -1321,7 +1321,7 @@ None.
 
 ## Methodology
 
-Scores for every date are computed with methodology 1.0.0-rc.1; a new methodology version recomputes every date.
+Scores for every date are computed with methodology v1.0.0-rc.1; a new methodology version recomputes every date.
 ```
 
 ### 3.12 `corrections.json`
@@ -1706,11 +1706,11 @@ iso3,name_en,name_fr,region,excluded,coverage,has_events,none_found,no_data,unch
 DEU,Germany,Allemagne,Europe,false,0.1,3,0,0,27,1,0,0,0,0,0,0,0,0,0,0,
 ```
 
-**`dumps/registry.csv`**: the country registry (`data/countries.yaml`) by ISO3, as the build publishes it: `iso2`, `m49`, the UNTERM short names `name_en` and `name_fr`, `name_fr_def` (the French short name with the article UNTERM gives it, "l'Allemagne", "la France"; the name alone when UNTERM gives none, "Cuba"), the M49 `region` and `subregion`, `un_member`, `observer`, `excluded`; `unsc` lists the Security Council terms as ISO 8601 intervals `from/to` joined with `;` (`..` for an open end: the permanent members' `1945-10-24/..`), `unsc_permanent` says whether one of them is permanent; each other membership is `true`, `false`, or a dated interval `since/until` when it began or ended after 7 October 2023 (Sweden's NATO membership is `2024-03-07/..`); `member_of` lists the memberships held at the build date, joined with `;`; `recognises_palestine_since` is the date in the registry, a lead for B8 until the recognitions table confirms it. Research notes and `gov_sources` are not published. Header and the DEU row of the real-data build:
+**`dumps/registry.csv`**: the country registry (`data/countries.yaml`) by ISO3, as the build publishes it: `iso2`, `m49`, the UNTERM short names `name_en` and `name_fr`, `name_en_def` and `name_fr_def` (the short name with the article UNTERM gives it, "the United States of America", "l'Allemagne", "la France"; the name alone when UNTERM gives none, "Germany", "Cuba"; the formal name for the five short names that carry a descriptor, "the Islamic Republic of Iran", "la République islamique d'Iran"), the M49 `region` and `subregion`, `un_member`, `observer`, `excluded`; `unsc` lists the Security Council terms as ISO 8601 intervals `from/to` joined with `;` (`..` for an open end: the permanent members' `1945-10-24/..`), `unsc_permanent` says whether one of them is permanent; each other membership is `true`, `false`, or a dated interval `since/until` when it began or ended after 7 October 2023 (Sweden's NATO membership is `2024-03-07/..`); `member_of` lists the memberships held at the build date, joined with `;`; `recognises_palestine_since` is the date in the registry, a lead for B8 until the recognitions table confirms it. Research notes and `gov_sources` are not published. Header and the DEU row of the real-data build:
 
 ```csv
-iso3,iso2,m49,name_en,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,recognises_palestine_since
-DEU,DE,276,Germany,Allemagne,l'Allemagne,Europe,Western Europe,true,false,false,,false,true,true,false,false,true,true,false,eu;nato;g20;g7,
+iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,recognises_palestine_since
+DEU,DE,276,Germany,Germany,Allemagne,l'Allemagne,Europe,Western Europe,true,false,false,,false,true,true,false,false,true,true,false,eu;nato;g20;g7,
 ```
 
 **`dumps/scores-daily-{YYYY}.csv`**: one file per year, one row per date and scored country from 2023-10-07 to the build date, by date then ISO3; `score` to one decimal, `score_display`, `band`, `passivity_applied`, and the clipped category subtotals `A` to `E` in full precision. No coverage (section 2). Header and first two rows of `scores-daily-2026.csv` in the real-data build:

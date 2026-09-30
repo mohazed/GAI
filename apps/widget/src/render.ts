@@ -5,7 +5,13 @@
  * the site (apps/web/lib/chart.ts); no style attribute anywhere (the site's CSP refuses them).
  * Every text from the file is escaped.
  */
-import { dayNumber, formatLongDate, formatSigned, roundHalfAwayFromZero } from '@gai/scoring'
+import {
+  dayNumber,
+  formatLongDate,
+  formatSigned,
+  frenchTypography,
+  roundHalfAwayFromZero,
+} from '@gai/scoring'
 import type { Lang, View, WidgetConfig } from './config.js'
 import { STRINGS } from './strings.js'
 
@@ -266,11 +272,36 @@ export function linkHtml(o: Options, name?: string): string {
   return `<a href="${esc(countryUrl(o))}">${esc(text)}</a>`
 }
 
+/** French typography on every string of a value. */
+function frenchAll<T>(v: T): T {
+  if (typeof v === 'string') return frenchTypography(v) as T
+  if (Array.isArray(v)) return v.map(frenchAll) as T
+  if (v === null || typeof v !== 'object') return v
+  const out: Record<string, unknown> = {}
+  for (const [k, x] of Object.entries(v)) out[k] = frenchAll(x)
+  return out as T
+}
+
+/**
+ * French typography on the `fr` member of every `{ en, fr }` text of the file, as the site shows
+ * them (docs/05 §2, P-18: the API keeps straight apostrophes and ordinary spaces as written).
+ */
+function frenchDisplay<T>(v: T): T {
+  if (Array.isArray(v)) return v.map(frenchDisplay) as T
+  if (v === null || typeof v !== 'object') return v
+  const text = 'en' in v && 'fr' in v && !('original' in v)
+  const out: Record<string, unknown> = {}
+  for (const [k, x] of Object.entries(v))
+    out[k] = text && k === 'fr' ? frenchAll(x) : frenchDisplay(x)
+  return out as T
+}
+
 /**
  * The widget for a country file, in the site's mode. Throws on a file that is not the country's
  * (the caller then keeps the link).
  */
-export function renderWidget(f: CountryFile, o: Options, c: WidgetConfig): string {
+export function renderWidget(file: CountryFile, o: Options, c: WidgetConfig): string {
+  const f = o.lang === 'fr' ? frenchDisplay(file) : file
   if (f.iso3 !== o.iso3 || typeof f.name?.[o.lang] !== 'string') throw new Error('not this country')
   const t = STRINGS[o.lang]
   const name = f.name[o.lang]

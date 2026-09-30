@@ -20,6 +20,7 @@ import {
 } from '@gai/schema'
 import { formatInteger, NNBSP, roundHalfAwayFromZero } from '@gai/scoring'
 import { csvLine } from '../lib/files.js'
+import { type Actor, codeActor } from './actor.js'
 
 export interface GenerateContext {
   indicators: IndicatorsFile['indicators']
@@ -27,6 +28,13 @@ export interface GenerateContext {
   votes: VotesFile
   /** Countries whose rows are never turned into events (ISR, PSE, D-10). */
   excluded: ReadonlySet<string>
+  /** The actor of each registry country's summaries, by ISO3 (actor.ts). */
+  actors: ReadonlyMap<string, Actor>
+}
+
+/** The actor of a country's generated summaries; a country outside the registry, by its code. */
+export function actorFor(ctx: GenerateContext, iso3: string): Actor {
+  return ctx.actors.get(iso3) ?? codeActor(iso3)
 }
 
 /** What a generator returns: the events, and notes on rows it could not use. */

@@ -13,7 +13,9 @@
  */
 import { formatEventId, type Located, STRUCTURED_TABLES, type StructuredRow } from '@gai/schema'
 import { formulaPoints } from '@gai/scoring'
+import { byNumber } from './actor.js'
 import {
+  actorFor,
   baseEvent,
   type GenerateContext,
   type Generated,
@@ -52,11 +54,18 @@ function withValidity<R>(windows: Window<R>[]): (Window<R> & { until: string | n
   return out
 }
 
-const REPORTER_TEXT: Record<Reporter, { en: string; fr: string }> = {
-  self: { en: 'per its report to UN Comtrade', fr: 'selon sa déclaration à UN Comtrade' },
+/** The source of the figures, French by the actor's number (`sa` or `leur` déclaration). */
+const REPORTER_TEXT: Record<Reporter, { en: string; fr: readonly [string, string] }> = {
+  self: {
+    en: 'per its report to UN Comtrade',
+    fr: ['selon sa déclaration à UN Comtrade', 'selon leur déclaration à UN Comtrade'],
+  },
   mirror: {
     en: "per Israel's report to UN Comtrade",
-    fr: "selon la déclaration d'Israël à UN Comtrade",
+    fr: [
+      "selon la déclaration d'Israël à UN Comtrade",
+      "selon la déclaration d'Israël à UN Comtrade",
+    ],
   },
 }
 
@@ -101,6 +110,7 @@ export function generateA2(
     const codes = [...new Set(w.rows.map((r) => r.value.hs))].sort()
     const points = formulaPoints(f, v)
     const year = w.start.slice(0, 4)
+    const a = actorFor(ctx, w.iso3)
     events.push(
       baseEvent(
         {
@@ -118,8 +128,8 @@ export function generateA2(
           points,
           points_rationale: `V = ${usdExact(v)} of exports to Israel under HS ${codes.join(' + ')}, ${w.start} to ${w.end} (${w.reporter} report); tier ${signed(points)}.`,
           summary: {
-            en: `The country exported ${money(v, 'en')} of goods under HS ${codes.join(', ')} to Israel in ${year}, ${REPORTER_TEXT[w.reporter].en}.`,
-            fr: `Le pays a exporté vers Israël ${money(v, 'fr')} de marchandises des positions SH ${codes.join(', ')} en ${year}, ${REPORTER_TEXT[w.reporter].fr}.`,
+            en: `${a.en} exported ${money(v, 'en')} of goods under HS ${codes.join(', ')} to Israel in ${year}, ${REPORTER_TEXT[w.reporter].en}.`,
+            fr: `${a.fr} ${byNumber(a, 'a', 'ont')} exporté vers Israël ${money(v, 'fr')} de marchandises (SH ${codes.join(', ')}) en ${year}, ${byNumber(a, REPORTER_TEXT[w.reporter].fr[0], REPORTER_TEXT[w.reporter].fr[1])}.`,
           },
           evidence: w.rows.flatMap((r) =>
             rowEvidence(r as Located<Record<string, unknown>>, 'comtrade_a2.csv', columns),
@@ -165,6 +175,7 @@ export function generateC3(
     const year = w.start.slice(0, 4)
     const level = ratio === null ? '' : `, ${percent(ratio, 'en', 0)} of its 2022 level`
     const levelFr = ratio === null ? '' : `, soit ${percent(ratio, 'fr', 0)} du niveau de 2022`
+    const a = actorFor(ctx, w.iso3)
     events.push(
       baseEvent(
         {
@@ -182,8 +193,8 @@ export function generateC3(
           points,
           points_rationale: `T = ${usdExact(t)}, T(2022) = ${usdExact(t0)}, r = ${ratio === null ? 'n/a' : ratio.toFixed(3)} (${w.reporter} report); ${ratio !== null && ratio < f.ratio_min ? `r < ${f.ratio_min}, 0` : `tier ${signed(points)}`}.`,
           summary: {
-            en: `The country traded goods worth ${money(t, 'en')} with Israel in ${year}${level}, ${REPORTER_TEXT[w.reporter].en}.`,
-            fr: `Le pays a échangé avec Israël des marchandises pour ${money(t, 'fr')} en ${year}${levelFr}, ${REPORTER_TEXT[w.reporter].fr}.`,
+            en: `${a.en} traded goods worth ${money(t, 'en')} with Israel in ${year}${level}, ${REPORTER_TEXT[w.reporter].en}.`,
+            fr: `${a.fr} ${byNumber(a, 'a', 'ont')} échangé avec Israël ${money(t, 'fr')} de marchandises en ${year}${levelFr}, ${byNumber(a, REPORTER_TEXT[w.reporter].fr[0], REPORTER_TEXT[w.reporter].fr[1])}.`,
           },
           evidence: rowEvidence(
             row as Located<Record<string, unknown>>,
