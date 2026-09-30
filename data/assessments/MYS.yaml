@@ -53,17 +53,9 @@ indicators:
       no diplomatic relations with Israel and no record of Malaysian deliveries of arms to Israel
       was found.
   A2:
-    status: no-data
-    checked_at: 2026-09-29
-    note: >-
-      Generated from Comtrade. Malaysia had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
-      --reporters MYS` was run on 2026-09-29 and stopped before any trade query: Save Page Now
-      refused to capture the Comtrade reporter list, already captured five times that day
-      (error:too-many-daily-captures, as docs/10 B-407 (5) for Indonesia). The empty index row the
-      failed run appended was removed. No row, so the build shows no-data; the same command resumes
-      the fetch on another day. No row added to a2_confirmed_military.csv; no licence register,
-      parliamentary answer or investigation on Malaysian exports to Israel under HS 8526 or 8802
-      was found.
+    status: "none-found"
+    checked_at: 2026-09-30
+    note: "Generated from Comtrade. P-15 fetched Malaysia (docs/10 B-437): comtrade_a2.csv has two mirror rows of HS 8526 only (USD 14,000 in 2023 and USD 1,011,000 in 2025), which count only with a confirmation of military use (docs/02 §2 A2; a2_confirmed_military.csv has none), so no export is counted and the build derives none-found; the hand status follows it (P-16 consistency check, docs/10 B-460). No licence register, parliamentary answer or investigation on Malaysian exports to Israel under HS 8526 or 8802 was found."
   A3:
     status: none-found
     checked_at: 2026-09-29

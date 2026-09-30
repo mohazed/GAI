@@ -34,16 +34,11 @@ indicators:
       B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Bolivia is
       not known as a supplier of arms to Israel.
   A2:
-    status: none-found
-    checked_at: 2026-09-29
-    note: >-
-      Generated from Comtrade (rows from P-14; no fetch needed). Bolivia's own data for 2022–2025
-      show no export of HS 93, 8710, 8526 or 8802 to Israel (only imports of HS 8526 from Israel,
-      USD 10,344 in 2022, 32,366 in 2023 and 25,372 in 2025), and Israel's mirror data have no A2
-      row for Bolivia; comtrade_a2.csv has no Bolivian row. No row added to
-      a2_confirmed_military.csv. No Bolivian document on arms exports to Israel was found.
+    status: "no-data"
+    checked_at: 2026-09-30
+    note: "Generated from Comtrade. comtrade_a2.csv has no Bolivian row: Bolivia's own data for 2022–2025 show no export of HS 93, 8710, 8526 or 8802 to Israel (only imports of HS 8526 from Israel, USD 10,344 in 2022, 32,366 in 2023 and 25,372 in 2025), and Israel's mirror data have no A2 row for Bolivia. The build derives no-data (no row) from the tables, so the hand status follows it (P-16 consistency check, docs/10 B-460). No row added to a2_confirmed_military.csv; no Bolivian document on arms exports to Israel was found."
     queries:
-      - cancilleria.gob.bo feeds (Israel, armas)
+      - "cancilleria.gob.bo feeds (Israel, armas)"
   A3:
     status: none-found
     checked_at: 2026-09-29
