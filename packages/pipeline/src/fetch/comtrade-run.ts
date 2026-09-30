@@ -1,7 +1,9 @@
 /**
- * `pnpm fetch:comtrade` runner (see comtrade.ts). Per reporter: archive the self and mirror
- * preview responses for each year, cross-check them with two keyed calls (counted against the
- * daily limit), and replace that reporter's rows in comtrade_a2.csv and comtrade_c3.csv. The
+ * `pnpm fetch:comtrade` runner (see comtrade.ts). First, Israel's mirror responses for every year,
+ * several partners per query (MIRROR_BATCH), and one keyed call cross-checking them. Then per
+ * reporter: archive the self preview responses for each year, cross-check them with one keyed
+ * call (counted against the daily limit), and replace that reporter's rows in comtrade_a2.csv and
+ * comtrade_c3.csv. The
  * counter and the reporters done are kept in `.cache/comtrade-state.json` (git-ignored), so an
  * interrupted run resumes where it stopped.
  */
@@ -19,12 +21,16 @@ import {
   DAILY_CALL_LIMIT,
   ISRAEL_CODE,
   keyedUrl,
+  MIRROR_BATCH,
+  mirrorBatches,
   parseAvailability,
   parseReporters,
   parseTrade,
   previewUrl,
   REPORTERS_URL,
   stateFor,
+  type TradeRecord,
+  truncatedPreview,
   type YearResponse,
   yearsFrom,
 } from './comtrade.js'
@@ -39,6 +45,8 @@ export interface ComtradeRunOptions {
   /** Refetch reporters already done. */
   force?: boolean
   limit?: number
+  /** Partners per mirror query (MIRROR_BATCH). */
+  mirrorBatch?: number
 }
 
 function loadState(root: string): ComtradeState | null {
@@ -56,7 +64,7 @@ function saveState(root: string, state: ComtradeState): void {
 const tradeAccept = jsonAccept((j) => {
   try {
     parseTrade(j)
-    return null
+    return truncatedPreview(j)
   } catch (err) {
     return (err as Error).message
   }
@@ -112,38 +120,81 @@ export async function runFetchComtrade(
   const releases = parseAvailability(jsonOfDataset(da))
 
   let ok = unknown.length === 0
+
+  // Israel's mirror responses: one capture per year and batch of partners.
+  const partnerCodes = run.map((r) => codes.get(r) as number)
+  const isoOf = new Map(run.map((r) => [codes.get(r) as number, r]))
+  const mirrorByYear = new Map<
+    number,
+    { sourceId: string; partners: number[]; records: TradeRecord[] }[]
+  >()
+  const mirrorFailures = new Map<number, string[]>()
+  for (const year of years) {
+    for (const batch of mirrorBatches(partnerCodes, o.mirrorBatch ?? MIRROR_BATCH)) {
+      const first = (isoOf.get(batch[0] as number) ?? '').toLowerCase()
+      const last = (isoOf.get(batch.at(-1) as number) ?? '').toLowerCase()
+      const d = await archiveDataset(ctx, {
+        url: previewUrl(ISRAEL_CODE, batch, year),
+        segments: ['comtrade', `mirror-${year}-${first}-${last}-${batch.length}`],
+        title: `UN Comtrade annual HS preview, reporter ${ISRAEL_CODE} (Israel), ${batch.length} partner(s), ${year}`,
+        publisher: PUBLISHER,
+        notes: `Partners: ${batch.map((c) => isoOf.get(c)).join(', ')}.`,
+        accept: tradeAccept,
+      })
+      if (!d.ok) {
+        for (const c of batch) {
+          const list = mirrorFailures.get(c) ?? []
+          list.push(`mirror ${year}: ${d.reason}`)
+          mirrorFailures.set(c, list)
+        }
+        continue
+      }
+      const list = mirrorByYear.get(year) ?? []
+      list.push({ sourceId: d.source.id, partners: batch, records: parseTrade(jsonOfDataset(d)) })
+      mirrorByYear.set(year, list)
+    }
+  }
+  // One keyed call cross-checks every mirror response.
+  const keyedMirror: TradeRecord[] = []
+  if (canCall(state, 1, limit)) {
+    state.calls++
+    saveState(ctx.root, state)
+    const res = await fetchBytes(ctx.deps, keyedUrl(ISRAEL_CODE, partnerCodes, years), {
+      headers: { 'Ocp-Apim-Subscription-Key': o.key },
+    })
+    if (res.status !== 200)
+      report.push(`mirror: keyed API HTTP ${res.status}; cross-check incomplete`)
+    else keyedMirror.push(...parseTrade(JSON.parse(new TextDecoder().decode(res.body))))
+  } else report.push('mirror: no keyed call left today; mirror cross-check skipped')
+
   let a2 = readTable(ctx.root, 'comtrade_a2.csv') as Record<string, unknown>[]
   let c3 = readTable(ctx.root, 'comtrade_c3.csv') as Record<string, unknown>[]
   for (const iso3 of run) {
     const code = codes.get(iso3) as number
-    if (!canCall(state, 2, limit)) {
+    if (!canCall(state, 1, limit)) {
       report.push(
         `${iso3}: stopped, ${state.calls} of ${limit} keyed calls used today; run the same command tomorrow to resume`,
       )
       ok = false
       break
     }
-    const archiveYear = async (reporter: number, partner: number, year: number, dir: string) => {
+    const self: YearResponse[] = []
+    const mirror: YearResponse[] = []
+    const failures: string[] = [...(mirrorFailures.get(code) ?? [])]
+    for (const year of years) {
       const d = await archiveDataset(ctx, {
-        url: previewUrl(reporter, partner, year),
-        segments: ['comtrade', `${iso3.toLowerCase()}-${dir}-${year}`],
-        title: `UN Comtrade annual HS preview, reporter ${reporter}, partner ${partner}, ${year}`,
+        url: previewUrl(code, ISRAEL_CODE, year),
+        segments: ['comtrade', `${iso3.toLowerCase()}-self-${year}`],
+        title: `UN Comtrade annual HS preview, reporter ${code}, partner ${ISRAEL_CODE}, ${year}`,
         publisher: PUBLISHER,
         accept: tradeAccept,
       })
-      return d
-    }
-    const self: YearResponse[] = []
-    const mirror: YearResponse[] = []
-    const failures: string[] = []
-    for (const year of years) {
-      for (const [dir, rep, par, list] of [
-        ['self', code, ISRAEL_CODE, self],
-        ['mirror', ISRAEL_CODE, code, mirror],
-      ] as const) {
-        const d = await archiveYear(rep, par, year, dir)
-        if (!d.ok) failures.push(`${dir} ${year}: ${d.reason}`)
-        else list.push({ year, sourceId: d.source.id, records: parseTrade(jsonOfDataset(d)) })
+      if (!d.ok) failures.push(`self ${year}: ${d.reason}`)
+      else self.push({ year, sourceId: d.source.id, records: parseTrade(jsonOfDataset(d)) })
+      const m = (mirrorByYear.get(year) ?? []).find((b) => b.partners.includes(code))
+      if (m !== undefined) {
+        const records = m.records.filter((r) => r.partner === code)
+        mirror.push({ year, sourceId: m.sourceId, records })
       }
     }
     if (failures.length > 0) {
@@ -155,25 +206,18 @@ export async function runFetchComtrade(
       continue
     }
 
-    // Cross-check with the keyed API.
-    const keyed = []
-    for (const [rep, par] of [
-      [code, ISRAEL_CODE],
-      [ISRAEL_CODE, code],
-    ] as const) {
-      state.calls++
-      saveState(ctx.root, state)
-      const res = await fetchBytes(ctx.deps, keyedUrl(rep, par, years), {
-        headers: { 'Ocp-Apim-Subscription-Key': o.key },
-      })
-      if (res.status !== 200) {
-        report.push(
-          `${iso3}: keyed API HTTP ${res.status} for ${rep}→${par}; cross-check incomplete`,
-        )
-        continue
-      }
-      keyed.push(...parseTrade(JSON.parse(new TextDecoder().decode(res.body))))
-    }
+    // Cross-check with the keyed API: one call for the self responses; the mirror call is shared.
+    const keyed = keyedMirror.filter((r) => r.partner === code)
+    state.calls++
+    saveState(ctx.root, state)
+    const res = await fetchBytes(ctx.deps, keyedUrl(code, ISRAEL_CODE, years), {
+      headers: { 'Ocp-Apim-Subscription-Key': o.key },
+    })
+    if (res.status !== 200) {
+      report.push(
+        `${iso3}: keyed API HTTP ${res.status} for ${code}→${ISRAEL_CODE}; cross-check incomplete`,
+      )
+    } else keyed.push(...parseTrade(JSON.parse(new TextDecoder().decode(res.body))))
     const archived = [...self, ...mirror].flatMap((r) => r.records)
     const diffs = crossCheck(archived, keyed)
 

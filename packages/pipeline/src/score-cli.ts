@@ -50,7 +50,7 @@ import {
   type ScoringMethodology,
   summaryLines,
 } from '@gai/scoring'
-import { generateAll, generateContext } from './generate/index.js'
+import { confirmedMilitaryOf, generateAll, generateContext } from './generate/index.js'
 import { scoringMethodology } from './methodology.js'
 
 export interface ScoreArgs {
@@ -443,7 +443,9 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
   }
   let generated: Event[]
   try {
-    generated = generateAll(generateContext(lm), ds.structured).events
+    generated = generateAll(generateContext(lm), ds.structured, {
+      confirmedMilitary: confirmedMilitaryOf(ds.structured['a2_confirmed_military.csv']),
+    }).events
   } catch (err) {
     return fail(1, `the generated events cannot be built: ${(err as Error).message}`)
   }
