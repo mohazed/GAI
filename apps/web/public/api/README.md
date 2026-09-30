@@ -734,7 +734,7 @@ A generated D1 event (real-data build, `countries/DEU/events.json`, one of its 4
     "fr": "Financement humanitaire de la réponse à Gaza, rapporté au RNB par habitant"
   },
   "points": 6,
-  "points_rationale": "F = USD 105066282 (2025-09-01 to 2026-08-31, plans 1186, 1156, 1273, 1510); GNI 2025 = USD 5026012352665; x = 0.00209 % of GNI; tier +6.",
+  "points_rationale": "F = USD 105,066,282 (2025-09-01 to 2026-08-31, plans 1186, 1156, 1273, 1510); GNI 2025 = USD 5,026,012,352,665; x = 0.00209% of GNI; tier +6.",
   "previous_points": 6,
   "related": [],
   "replies": [],

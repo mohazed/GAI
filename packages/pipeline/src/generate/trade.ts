@@ -21,6 +21,7 @@ import {
   percent,
   rowEvidence,
   signed,
+  usdExact,
 } from './common.js'
 import { formula } from './sipri.js'
 
@@ -115,7 +116,7 @@ export function generateA2(
           date: w.release,
           end: w.until,
           points,
-          points_rationale: `V = USD ${v} of exports to Israel under HS ${codes.join(' + ')}, ${w.start} to ${w.end} (${w.reporter} report); tier ${signed(points)}.`,
+          points_rationale: `V = ${usdExact(v)} of exports to Israel under HS ${codes.join(' + ')}, ${w.start} to ${w.end} (${w.reporter} report); tier ${signed(points)}.`,
           summary: {
             en: `The country exported ${money(v, 'en')} of goods under HS ${codes.join(', ')} to Israel in ${year}, ${REPORTER_TEXT[w.reporter].en}.`,
             fr: `Le pays a exporté vers Israël ${money(v, 'fr')} de marchandises des positions SH ${codes.join(', ')} en ${year}, ${REPORTER_TEXT[w.reporter].fr}.`,
@@ -179,7 +180,7 @@ export function generateC3(
           date: w.release,
           end: w.until,
           points,
-          points_rationale: `T = USD ${t}, T(2022) = USD ${t0}, r = ${ratio === null ? 'n/a' : ratio.toFixed(3)} (${w.reporter} report); ${ratio !== null && ratio < f.ratio_min ? `r < ${f.ratio_min}, 0` : `tier ${signed(points)}`}.`,
+          points_rationale: `T = ${usdExact(t)}, T(2022) = ${usdExact(t0)}, r = ${ratio === null ? 'n/a' : ratio.toFixed(3)} (${w.reporter} report); ${ratio !== null && ratio < f.ratio_min ? `r < ${f.ratio_min}, 0` : `tier ${signed(points)}`}.`,
           summary: {
             en: `The country traded goods worth ${money(t, 'en')} with Israel in ${year}${level}, ${REPORTER_TEXT[w.reporter].en}.`,
             fr: `Le pays a échangé avec Israël des marchandises pour ${money(t, 'fr')} en ${year}${levelFr}, ${REPORTER_TEXT[w.reporter].fr}.`,
