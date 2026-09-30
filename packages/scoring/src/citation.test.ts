@@ -42,7 +42,7 @@ describe('citations (docs/04 §3, docs/05 §5)', () => {
     expect(citations(deu, 'fr')).toEqual({
       plain:
         'Gaza Accountability Index, Allemagne : −14 (Passivité), méthodologie v1.0.0, au 26 septembre 2026, https://example.org/fr/country/DEU?date=2026-09-26',
-      apa: 'Zouad, M. (2026, 26 septembre). Allemagne : −14 (Passivité) (méthodologie, version 1.0.0) [Jeu de données]. Gaza Accountability Index. https://example.org/fr/country/DEU?date=2026-09-26',
+      apa: 'Zouad, M. (2026, 26 septembre). Allemagne : −14 (Passivité) (version 1.0.0 de la méthodologie) [Jeu de données]. Gaza Accountability Index. https://example.org/fr/country/DEU?date=2026-09-26',
       chicago:
         'Zouad, Mohamed. « Allemagne : −14 (Passivité) ». Gaza Accountability Index, méthodologie v1.0.0, 26 septembre 2026. https://example.org/fr/country/DEU?date=2026-09-26.',
     })

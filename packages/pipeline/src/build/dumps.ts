@@ -21,7 +21,7 @@
  *   (no score, band, subtotal, passivity or last change), for scorecard mode (D-16): coverage and
  *   event counts by confidence and by category.
  * - `dumps/registry.csv`: the country registry (data/countries.yaml) by ISO3, as published at the
- *   build date: codes, UNTERM names in EN and FR with `name_fr_def` (the French name with its
+ *   build date: codes, UNTERM names in EN and FR with `name_en_def` and `name_fr_def` (each name with its
  *   article), M49 region and sub-region, UN status, exclusion, the membership tags (Security
  *   Council terms as `from/to` intervals joined with `;`, `..` for an open end; a dated membership
  *   as `since/until`, one not held as `false`), the memberships held at the build date and the
@@ -178,6 +178,7 @@ export const REGISTRY_CSV_COLUMNS = [
   'iso2',
   'm49',
   'name_en',
+  'name_en_def',
   'name_fr',
   'name_fr_def',
   'region',
@@ -404,6 +405,7 @@ function registryCsv(registry: readonly Country[], date: string): string {
       iso2: c.iso2,
       m49: c.m49,
       name_en: c.name.en,
+      name_en_def: c.name.en_def ?? null,
       name_fr: c.name.fr,
       name_fr_def: c.name.fr_def ?? null,
       region: c.region,

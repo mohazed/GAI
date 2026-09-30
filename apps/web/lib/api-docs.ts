@@ -157,7 +157,7 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
       path: 'scores/{YYYY-MM-DD}.json',
       holds: t(
         'Every scored country on one date: score, band, passivity flag and clipped category subtotals. Coverage is not included (it is published for the build date only).',
-        "Chaque pays noté à une date : score, bande, indicateur de passivité et sous-totaux plafonnés par catégorie. La couverture n'y figure pas (elle n'est publiée qu'à la date de génération).",
+        "Chaque pays noté à une date : score, bande, mention de la pénalité de passivité et sous-totaux plafonnés par catégorie. La couverture n'y figure pas (elle n'est publiée qu'à la date de génération).",
       ),
       example: has(`scores/${date}.json`),
       kind: 'json',
@@ -203,7 +203,7 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
       path: 'changes/{YYYY-MM}.md, .fr.md, .scorecard.md, .scorecard.fr.md',
       holds: t(
         'The monthly report in Markdown, in English and French, with scores and without (scorecard variants).',
-        'Le rapport mensuel en Markdown, en anglais et en français, avec et sans scores (variantes « scorecard »).',
+        'Le rapport mensuel en Markdown, en anglais et en français, avec et sans scores (variantes « scorecard », pour le mode fiche).',
       ),
       example: month === null ? null : has(`changes/${month}.${report}`),
       kind: 'md',
@@ -221,7 +221,7 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
       path: 'replies.json',
       holds: t(
         'The published replies: the verbatim text in its original language with translations, the events contested, the answer of the index and the outcome.',
-        "Les réponses publiées : le texte intégral dans sa langue d'origine avec ses traductions, les événements contestés, la réponse de l'index et l'issue.",
+        "Les réponses publiées : le texte intégral dans sa langue d'origine avec ses traductions, les événements contestés, la réponse de l'indice et la suite donnée.",
       ),
       example: has('replies.json'),
       kind: 'json',
@@ -284,7 +284,7 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
       path: 'dumps/scores-daily-{YYYY}.csv',
       holds: t(
         'Daily scores, one file per year: one row per date and scored country, with the score, band, passivity flag and clipped subtotals. No coverage.',
-        "Les scores quotidiens, un fichier par année : une ligne par date et par pays noté, avec le score, la bande, l'indicateur de passivité et les sous-totaux plafonnés. Sans couverture.",
+        'Les scores quotidiens, un fichier par année : une ligne par date et par pays noté, avec le score, la bande, la mention de la pénalité de passivité et les sous-totaux plafonnés. Sans couverture.',
       ),
       example: has(`dumps/scores-daily-${year}.csv`),
       kind: 'csv',
@@ -347,7 +347,7 @@ export const STRUCTURED_DOCS: Record<StructuredTableName, LangText> = {
   ),
   'gni.csv': t(
     'Gross national income, World Bank Atlas method, current US dollars, per country and year (the denominator of D1).',
-    'Revenu national brut, méthode Atlas de la Banque mondiale, en dollars courants, par pays et année (le dénominateur de D1).',
+    'Revenu national brut, méthode Atlas de la Banque mondiale, en dollars des États-Unis courants, par pays et année (le dénominateur de D1).',
   ),
   'population.csv': t(
     'Population per country and year, from the World Bank; kept for reference, it does not score.',

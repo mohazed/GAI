@@ -1,6 +1,10 @@
 import AxeBuilder from '@axe-core/playwright'
 import { type Browser, expect, type Page, test } from '@playwright/test'
 
+/** A French name as the site shows it: the typographic apostrophe (P-18, docs/05 §2). */
+const shown = (name: string, lang: string) =>
+  lang === 'fr' ? name.replace(/(\p{L})'(?=\p{L})/gu, '$1’') : name
+
 /**
  * Smoke tests of Home and Ranking (P-07), in English and French, with JavaScript on and off, in
  * the mode of the project: `score` (kit build, scores shown) and `scorecard` (production build,
@@ -26,7 +30,7 @@ const TEXT = {
   },
   fr: {
     statement: 'Chaque gouvernement, une seule échelle, chaque point sourcé.',
-    moved: 'Mouvements de la semaine',
+    moved: 'Évolutions de la semaine',
     changed: 'Changements de la semaine',
     strip: 'Scores les plus hauts et les plus bas',
     list: 'Fiches par pays',
@@ -164,10 +168,10 @@ for (const lang of LANGS) {
         const order = [...scored].sort(
           (a, b) => (b.score ?? 0) - (a.score ?? 0) || (a.iso3 < b.iso3 ? -1 : 1),
         )
-        expect(names).toEqual(order.map((c) => c.name[lang]))
+        expect(names).toEqual(order.map((c) => shown(c.name[lang], lang)))
       } else {
         const collator = new Intl.Collator(lang)
-        expect(names).toEqual(scored.map((c) => c.name[lang]).sort(collator.compare))
+        expect(names).toEqual(scored.map((c) => shown(c.name[lang], lang)).sort(collator.compare))
         // No score or band column before the flip (D-16).
         await expect(table.locator('thead th')).toHaveCount(3)
       }

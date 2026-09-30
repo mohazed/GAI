@@ -1,6 +1,6 @@
 # Intégrer un pays
 
-Une rédaction ou une organisation peut afficher un pays de l'index sur ses propres pages : une jauge avec le score, la bande et la couverture, ou la chronologie du score depuis le 7 octobre 2023. L'intégration est un script, pas un cadre. Il lit le fichier du pays dans l'API publique, dessine dans son propre espace isolé, renvoie vers la page du pays, et montre la fiche sans score aussi longtemps que le site le fait.
+Une rédaction ou une organisation peut afficher un pays de l'indice sur ses propres pages : une jauge avec le score, la bande et la couverture, ou la chronologie du score depuis le 7 octobre 2023. L'intégration est un script, pas un cadre (iframe). Il lit le fichier du pays dans l'API publique, dessine dans son propre espace isolé, renvoie vers la page du pays, et montre la fiche sans score aussi longtemps que le site le fait.
 
 ## Le code à insérer
 
@@ -15,7 +15,7 @@ Placez le script là où l'intégration doit apparaître ; il la dessine à cet 
 | `data-country` | Le code ISO 3166-1 alpha-3 d'un pays noté, par exemple `DEU` | obligatoire |
 | `data-view` | `gauge` (score, bande et couverture) ou `timeline` (le score depuis le 7 octobre 2023) | `gauge` |
 | `data-lang` | `en` ou `fr` | `en` |
-| `data-origin` | L'adresse du site où lire les données, pour un miroir de l'index | ce site |
+| `data-origin` | L'adresse du site où lire les données, pour un miroir de l'indice | ce site |
 
 ## Ce que fait l'intégration
 

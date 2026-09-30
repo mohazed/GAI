@@ -16,15 +16,31 @@ import {
   type StructuredRow,
   slugify,
 } from '@gai/schema'
-import { baseEvent, type GenerateContext, type Generated, rowEvidence, signed } from './common.js'
+import { byNumber } from './actor.js'
+import {
+  actorFor,
+  baseEvent,
+  type GenerateContext,
+  type Generated,
+  rowEvidence,
+  signed,
+} from './common.js'
 
 const VOTE_TIER = { Y: 'yes', A: 'abstain', N: 'no', X: 'absent' } as const
 
+/**
+ * The verb of each recorded vote, French by number (singular, plural). "Opté pour l'abstention"
+ * rather than "s'est abstenu": a pronominal verb agrees in gender, which the registry does not
+ * record, while verbs conjugated with avoir agree in number only.
+ */
 const VOTE_TEXT = {
-  Y: { en: 'voted yes on', fr: 'a voté pour' },
-  N: { en: 'voted no on', fr: 'a voté contre' },
-  A: { en: 'abstained on', fr: "s'est abstenu sur" },
-  X: { en: 'did not vote on', fr: "n'a pas pris part au vote sur" },
+  Y: { en: 'voted yes on', fr: ['a voté pour', 'ont voté pour'] },
+  N: { en: 'voted no on', fr: ['a voté contre', 'ont voté contre'] },
+  A: { en: 'abstained on', fr: ["a opté pour l'abstention sur", "ont opté pour l'abstention sur"] },
+  X: {
+    en: 'did not vote on',
+    fr: ["n'a pas pris part au vote sur", "n'ont pas pris part au vote sur"],
+  },
 } as const
 
 /** `A/RES/ES-10/21` → `es-10-21`; `A/DEC/80/506` → `dec-80-506` (docs/03 §2 example). */
@@ -67,6 +83,7 @@ export function generateB1(
         ? { en: 'decision', fr: 'la décision' }
         : { en: 'resolution', fr: 'la résolution' }
     const verb = VOTE_TEXT[r.vote]
+    const a = actorFor(ctx, r.iso3)
     const evidence = [
       ...rowEvidence(row as Located<Record<string, unknown>>, 'unga_votes.csv', columns),
       { source: vote.source, quote: vote.quote, quote_lang: 'en', locator: vote.locator },
@@ -87,8 +104,8 @@ export function generateB1(
           points,
           points_rationale: `Recorded vote ${r.vote} (${tier}) on ${r.resolution}: ${signed(points)}.`,
           summary: {
-            en: `The country ${verb.en} General Assembly ${kind.en} ${r.resolution}.`,
-            fr: `Le pays ${verb.fr} ${kind.fr} ${r.resolution} de l'Assemblée générale.`,
+            en: `${a.en} ${verb.en} General Assembly ${kind.en} ${r.resolution}.`,
+            fr: `${a.fr} ${byNumber(a, verb.fr[0], verb.fr[1])} ${kind.fr} ${r.resolution} de l'Assemblée générale.`,
           },
           evidence,
         },
@@ -117,6 +134,7 @@ export function generateB2(
       )
       continue
     }
+    const a = actorFor(ctx, r.vetoed_by)
     events.push(
       baseEvent(
         {
@@ -133,8 +151,8 @@ export function generateB2(
           points,
           points_rationale: `Veto of ${r.draft}, a draft calling for a ceasefire, truce or pause: ${signed(points)}.`,
           summary: {
-            en: `The country vetoed Security Council draft resolution ${r.draft}.`,
-            fr: `Le pays a opposé son veto au projet de résolution ${r.draft} du Conseil de sécurité.`,
+            en: `${a.en} vetoed Security Council draft resolution ${r.draft}.`,
+            fr: `${a.fr} ${byNumber(a, 'a opposé son', 'ont opposé leur')} veto au projet de résolution ${r.draft} du Conseil de sécurité.`,
           },
           evidence: rowEvidence(
             row as Located<Record<string, unknown>>,

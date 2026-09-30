@@ -18,7 +18,15 @@ import {
   type StructuredRow,
   WINDOW_START,
 } from '@gai/schema'
-import { baseEvent, type GenerateContext, type Generated, rowEvidence, signed } from './common.js'
+import { byNumber } from './actor.js'
+import {
+  actorFor,
+  baseEvent,
+  type GenerateContext,
+  type Generated,
+  rowEvidence,
+  signed,
+} from './common.js'
 
 function tier(ctx: GenerateContext, key: string): number {
   const p = ctx.indicators.find((i) => i.id === 'B8')?.points
@@ -40,6 +48,8 @@ export function generateB8(
     const key = after ? 'recognised_after_window' : 'pre_existing'
     const points = tier(ctx, key)
     const start = after ? r.date : WINDOW_START
+    const a = actorFor(ctx, r.iso3)
+    const recognised = byNumber(a, 'a reconnu', 'ont reconnu')
     events.push(
       baseEvent(
         {
@@ -55,12 +65,12 @@ export function generateB8(
             : `Recognition of the State of Palestine on ${r.date}, before ${WINDOW_START}; a standing state from ${WINDOW_START}: ${signed(points)}.`,
           summary: after
             ? {
-                en: 'The country recognised the State of Palestine.',
-                fr: "Le pays a reconnu l'État de Palestine.",
+                en: `${a.en} recognised the State of Palestine.`,
+                fr: `${a.fr} ${recognised} l'État de Palestine.`,
               }
             : {
-                en: 'The country recognised the State of Palestine, before 7 October 2023.',
-                fr: "Le pays a reconnu l'État de Palestine, avant le 7 octobre 2023.",
+                en: `${a.en} recognised the State of Palestine, before 7 October 2023.`,
+                fr: `${a.fr} ${recognised} l'État de Palestine, avant le 7 octobre 2023.`,
               },
           evidence: rowEvidence(
             row as Located<Record<string, unknown>>,

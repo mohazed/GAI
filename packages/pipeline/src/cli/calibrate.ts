@@ -91,7 +91,10 @@ try {
   fail((err as Error).message, 1)
 }
 const m = compile(files)
-const ctx = generateContext(lm)
+const ctx = generateContext(
+  lm,
+  ds.countries.map((c) => c.value),
+)
 const generateWith = (structured: typeof ds.structured) =>
   generateAll(ctx, structured, {
     confirmedMilitary: confirmedMilitaryOf(structured['a2_confirmed_military.csv']),

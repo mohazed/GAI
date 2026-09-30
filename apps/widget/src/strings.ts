@@ -1,7 +1,8 @@
 /**
  * The widget's text, in English and French. Each string is the site's own (apps/web/messages,
  * the keys named beside it; a test keeps them equal), with French typography already applied:
- * no-break space before `:`, narrow no-break space before `;` and `%`.
+ * no-break space before `:`, narrow no-break space before `;` and `%`, the typographic
+ * apostrophe (P-18).
  */
 import type { Lang } from './config.js'
 
@@ -86,7 +87,7 @@ export const STRINGS: Record<Lang, Strings> = {
     site: 'Gaza Accountability Index',
     link: (name) => `Gaza Accountability Index${NBSP}: ${name}`,
     scorecard: 'Score pas encore publié · mode fiche',
-    scorecardLabel: "Échelle de −100 à +100. Le score n'est pas encore publié.",
+    scorecardLabel: 'Échelle de −100 à +100. Le score n’est pas encore publié.',
     gaugeLabel: (score, band) => `Score ${score}, bande ${band}, sur une échelle de −100 à +100.`,
     tooltip: (score, version) => `${score} · méthodologie v${version}`,
     zero: '0 · seuil de passivité',

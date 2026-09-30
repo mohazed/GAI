@@ -443,9 +443,14 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
   }
   let generated: Event[]
   try {
-    generated = generateAll(generateContext(lm), ds.structured, {
-      confirmedMilitary: confirmedMilitaryOf(ds.structured['a2_confirmed_military.csv']),
-    }).events
+    generated = generateAll(
+      generateContext(
+        lm,
+        ds.countries.map((c) => c.value),
+      ),
+      ds.structured,
+      { confirmedMilitary: confirmedMilitaryOf(ds.structured['a2_confirmed_military.csv']) },
+    ).events
   } catch (err) {
     return fail(1, `the generated events cannot be built: ${(err as Error).message}`)
   }

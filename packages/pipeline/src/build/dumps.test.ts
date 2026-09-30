@@ -427,7 +427,12 @@ function registryEntry(iso3: string, over: Partial<Country> = {}): Country {
     iso3,
     iso2: iso3.slice(0, 2),
     m49: 900,
-    name: { en: `Country ${iso3}`, fr: `Pays ${iso3}`, fr_def: `le Pays ${iso3}` },
+    name: {
+      en: `Country ${iso3}`,
+      en_def: `the Country ${iso3}`,
+      fr: `Pays ${iso3}`,
+      fr_def: `le Pays ${iso3}`,
+    },
     region: 'Europe',
     subregion: 'Western Europe',
     un_member: true,
@@ -905,7 +910,7 @@ describe('dumps/gai-{date}.json', () => {
 describe('dumpFiles: registry.csv', () => {
   it('writes the header exactly as specified', () => {
     expect(text('dumps/registry.csv').split('\n')[0]).toBe(
-      'iso3,iso2,m49,name_en,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,' +
+      'iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,' +
         'unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,' +
         'recognises_palestine_since',
     )
@@ -913,14 +918,14 @@ describe('dumpFiles: registry.csv', () => {
 
   it('writes one row per entry by ISO3, memberships as flags or intervals, held ones at the build date', () => {
     expect(text('dumps/registry.csv').split('\n').slice(1)).toEqual([
-      'XAA,XA,900,Country XAA,Pays XAA,le Pays XAA,Europe,Western Europe,true,false,false,' +
+      'XAA,XA,900,Country XAA,the Country XAA,Pays XAA,le Pays XAA,Europe,Western Europe,true,false,false,' +
         '1945-10-24/..,true,false,false,true,true,true,false,false,unsc;arab_league;oic;g20,1988-11-15',
       // Build date 2023-10-10: the 2023 term is held, NATO since 2023-10-09 is held, BRICS
       // ended on 2023-10-08, the OIC invitation (since null) is not a membership.
-      'XBB,XB,900,Country XBB,Pays XBB,le Pays XBB,Europe,Western Europe,true,false,false,' +
+      'XBB,XB,900,Country XBB,the Country XBB,Pays XBB,le Pays XBB,Europe,Western Europe,true,false,false,' +
         '2023-01-01/2023-12-31;2027-01-01/2028-12-31,false,true,2023-10-09/..,false,false,false,' +
         'false,2023-01-01/2023-10-08,unsc;eu;nato,2024-05-28',
-      'XZZ,XZ,900,"Excluded, one",Exclu,l\'Exclu,Europe,Western Europe,true,false,true,,false,' +
+      'XZZ,XZ,900,"Excluded, one",,Exclu,l\'Exclu,Europe,Western Europe,true,false,true,,false,' +
         'false,false,false,false,false,false,false,,',
       '',
     ])

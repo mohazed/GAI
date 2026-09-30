@@ -50,3 +50,14 @@ the qualifying-votes list was left empty for this session by design.
 - B8 is generated from `data/structured/recognitions.csv` (one row per recognising state, with
   the archived official statement) instead of the registry field `recognises_palestine.since`
   (`generated_from` and the evidence rule of `indicators.yaml`); points and stacking unchanged.
+
+### Within 1.0.0-rc.1: French wording (P-18, 2026-09-30)
+
+Wording only, in the French document and the French cells of the generated tables; no point,
+cap, threshold, rule or English text changes, and no score moves.
+
+- `methodology.fr.md`: "fréquence de mise à jour" for the update cadence (the table column
+  "Fréquence", as on the site) and "par cas" for "per instance"; "fiche" for the event and
+  country cards (was "vignette"); "données miroir" (invariable); "le FTS" with its article
+  throughout; "partage de renseignements"; "fonds public de retraite", as in the table of C5;
+  the Changes page named "Changements", as in the site's navigation.

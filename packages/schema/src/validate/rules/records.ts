@@ -565,6 +565,50 @@ const countryMembershipFlags: Rule = (ctx) => {
 
 /** The French articles UNTERM writes after a short name: (l'), (le), (la), (les), (Les). */
 const FR_ARTICLE = /^(?:l'|l’|le |la |les |Les )(?=\S)/
+const EN_ARTICLE = /^(?:the |The )(?=\S)/
+
+/**
+ * country.name-en-def (docs/03 §3, P-18): every entry has `name.en_def`, the English name with
+ * its article, for generated English text. It either equals `name.en` (UNTERM gives no article:
+ * Germany) or starts with "the " or "The " followed by a name; `name.en` itself never starts with
+ * one. A warning: the field is optional in the schema.
+ */
+const countryNameEnDef: Rule = (ctx) => {
+  const out: Issue[] = []
+  for (const c of ctx.dataset.countries) {
+    const { iso3, name } = c.value
+    const def = name.en_def
+    if (def === undefined) {
+      out.push(
+        issue(
+          'country.name-en-def',
+          at(c, iso3, 'name.en_def'),
+          `${iso3} has no name.en_def; expected the English name with its UNTERM article (e.g. "the ${name.en}"), or "${name.en}" when UNTERM gives none`,
+        ),
+      )
+      continue
+    }
+    if (EN_ARTICLE.test(name.en)) {
+      out.push(
+        issue(
+          'country.name-en-def',
+          at(c, iso3, 'name.en'),
+          `name.en of ${iso3} "${name.en}" starts with an article; expected the short name without it (the article goes in name.en_def)`,
+        ),
+      )
+    }
+    if (def !== name.en && !EN_ARTICLE.test(def)) {
+      out.push(
+        issue(
+          'country.name-en-def',
+          at(c, iso3, 'name.en_def'),
+          `name.en_def of ${iso3} "${def}" neither equals name.en "${name.en}" nor starts with an article; expected "the" or "The" followed by the name`,
+        ),
+      )
+    }
+  }
+  return out
+}
 
 /**
  * country.name-fr-def (docs/03 §3, P-13): every entry has `name.fr_def`, the French name with its
@@ -1269,6 +1313,7 @@ export const rules: Rule[] = [
   recordChronology,
   countryExcluded,
   countryMembershipFlags,
+  countryNameEnDef,
   countryNameFrDef,
   countryUniverseSize,
   assessmentCountryKnown,
