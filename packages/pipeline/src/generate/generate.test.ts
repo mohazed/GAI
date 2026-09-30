@@ -31,6 +31,7 @@ import {
   gniFor,
   money,
   percent,
+  usdExact,
   voteSlug,
 } from './index.js'
 
@@ -754,5 +755,12 @@ describe('summary number formats', () => {
     expect(money(250_084, 'fr')).toBe('250 084 USD')
     expect(percent(0.3, 'en')).toBe('30.0%')
     expect(percent(0.9674, 'fr', 0)).toBe('97 %')
+  })
+
+  it('exact amounts in the rationale, grouped by commas (P-17)', () => {
+    expect(usdExact(105_066_282)).toBe('USD 105,066,282')
+    expect(usdExact(5_026_012_352_665)).toBe('USD 5,026,012,352,665')
+    expect(usdExact(409)).toBe('USD 409')
+    expect(usdExact(1234.5)).toBe('USD 1,234.5')
   })
 })

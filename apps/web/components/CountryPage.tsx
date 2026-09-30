@@ -21,6 +21,7 @@ import { CoverageBar } from './CoverageBar'
 import { DateSnapshot } from './DateSnapshot'
 import { EventBrowser } from './EventBrowser'
 import { EventCard } from './EventCard'
+import { NoBreakDates } from './NoBreakDates'
 import { RightOfReplyBlock } from './RightOfReplyBlock'
 import { ScoreGauge } from './ScoreGauge'
 import { ShareThis } from './ShareThis'
@@ -122,6 +123,15 @@ export function CountryBody({
   const items = listItems(file.event_list)
   const acts = items.filter((i) => i.kind === 'event' && i.event.type !== 'computed').length
   const runs = items.length - acts
+  // Events outside the Gaza scope (West Bank, Lebanon; D-14) are listed but not counted by the
+  // summary line, which would otherwise read one number above and another here (P-17).
+  const outOfScope = items.filter(
+    (i) =>
+      i.kind === 'event' &&
+      i.event.type !== 'computed' &&
+      i.event.status === 'published' &&
+      i.event.at_build.reason === 'out-of-scope',
+  ).length
   const facets: Facets = listFacets(items, {
     indicators: methodology.indicators.map((i) => i.id),
     confidences: methodology.confidence.map((c) => c.id),
@@ -208,7 +218,9 @@ export function CountryBody({
               value={{ score: file.score, display: file.score_display, band: file.band }}
             />
             {coverage()}
-            <p className="text-18">{summary}</p>
+            <p className="text-18">
+              <NoBreakDates text={summary} />
+            </p>
             {inForce.length > 0 ? (
               <p className="text-14 text-ink-2">
                 {t('country.computedInForce', {
@@ -271,6 +283,7 @@ export function CountryBody({
               {runs > 0
                 ? t('country.eventsCountRuns', { acts, runs })
                 : t('country.eventsCount', { acts })}
+              {outOfScope > 0 ? ` ${t('country.eventsOutOfScope', { count: outOfScope })}` : ''}
             </p>
           </div>
           {items.length === 0 ? (

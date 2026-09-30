@@ -115,7 +115,8 @@ export function MethodologyPage({
       </h3>
       <p className="max-w-prose text-14 text-ink-2">{t('methodologyPage.changelogNote')}</p>
       {index.changelog === null ? null : (
-        <div className="flex flex-col gap-4">
+        // CHANGELOG.md is written in English only: marked so on the French page (P-17).
+        <div className="flex flex-col gap-4" lang={lang === 'en' ? undefined : 'en'}>
           <DocMarkdown
             blocks={parseDoc(index.changelog)}
             skipTitle

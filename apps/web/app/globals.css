@@ -471,6 +471,16 @@
   .gauge:focus .gauge-tip {
     visibility: visible;
   }
+  /* The ±50 scale labels run into "0 · seuil de passivité" on a narrow gauge (docs/10 B-159 (4),
+     decided in P-17): dropped at 480 px and under, as the widget does. */
+  .gauge {
+    container-type: inline-size;
+  }
+  @container (max-width: 480px) {
+    .gauge .gauge-mid {
+      display: none;
+    }
+  }
 }
 
 @layer utilities {

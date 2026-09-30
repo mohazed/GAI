@@ -76,7 +76,7 @@ export function QuoteFigure({ ev, lang, t }: { ev: ApiEvidence; lang: Lang; t: T
 export function SourceLine({ s, t, label }: { s: ApiSource; t: T; label?: string }) {
   return (
     <li className="flex flex-wrap items-center gap-x-2 gap-y-2">
-      <a href={s.url} title={s.title} lang={s.language}>
+      <a href={s.url} title={s.title} hrefLang={s.language}>
         {label ?? s.publisher}
       </a>
       <Dot />
@@ -196,7 +196,11 @@ export function PointsLine({
         ) : null}
       </div>
       {event.points_rationale !== null && event.points_rationale !== '' ? (
-        <p className="text-14 text-ink-2">{t('gen.rationale', { text: event.points_rationale })}</p>
+        <p className="text-14 text-ink-2">
+          {t('gen.rationale')}{' '}
+          {/* `points_rationale` is one text, in English: marked so on the French page. */}
+          <span lang={lang === 'en' ? undefined : 'en'}>{event.points_rationale}</span>
+        </p>
       ) : null}
     </div>
   )

@@ -24,6 +24,7 @@ import {
   money,
   rowEvidence,
   signed,
+  usdExact,
 } from './common.js'
 import { formula } from './sipri.js'
 
@@ -70,7 +71,7 @@ export function generateD1(
           date: start,
           end,
           points,
-          points_rationale: `F = USD ${r.usd_paid_committed} (${r.window_start} to ${r.window_end}, plans ${r.plan_ids.replaceAll(';', ', ')}); GNI ${g.value.year} = USD ${g.value.gni_atlas_usd}; x = ${x.toPrecision(3)} % of GNI; tier ${signed(points)}.`,
+          points_rationale: `F = ${usdExact(r.usd_paid_committed)} (${r.window_start} to ${r.window_end}, plans ${r.plan_ids.replaceAll(';', ', ')}); GNI ${g.value.year} = ${usdExact(g.value.gni_atlas_usd)}; x = ${x.toPrecision(3)}% of GNI; tier ${signed(points)}.`,
           summary: {
             en: `The government paid or committed ${money(r.usd_paid_committed, 'en')} to the oPt flash appeals in the 12 months to ${formatLongDate(r.window_end, 'en')}, per FTS.`,
             fr: `Le gouvernement a versé ou engagé ${money(r.usd_paid_committed, 'fr')} aux appels éclair pour le Territoire palestinien occupé sur les 12 mois au ${formatLongDate(r.window_end, 'fr')}, selon le FTS.`,

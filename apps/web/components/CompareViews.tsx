@@ -18,6 +18,9 @@ import { TooltipLayer } from './TooltipLayer'
  * message files (lib/i18n.ts, docs/10 B-101).
  */
 
+/** Longest name the 13rem label column holds beside a score at 12 px; longer names show the ISO3 code. */
+const LABEL_NAME_MAX = 26
+
 export interface CompareSeries {
   iso3: string
   name: LangText
@@ -59,7 +62,7 @@ export function CompareChartView({ lang, t, mode, methodology, series, to }: Com
   })
   return (
     <figure className="flex flex-col gap-2">
-      <div dir="ltr" className="grid grid-cols-[40px_1fr_8rem] md:grid-cols-[40px_1fr_10rem]">
+      <div dir="ltr" className="grid grid-cols-[40px_1fr_5.5rem] md:grid-cols-[40px_1fr_13rem]">
         <ScoreAxis lang={lang} />
         <TooltipLayer>
           <svg width="100%" height={CHART_HEIGHT} role="img" aria-label={aria} className="block">
@@ -103,6 +106,7 @@ export function CompareChartView({ lang, t, mode, methodology, series, to }: Com
             const st = compareStyle(i)
             const last = s.points[s.points.length - 1]
             const ly = labelYs[i] ?? 0
+            const value = last !== undefined ? ` ${signed(last.score, lang)}` : ''
             return (
               <g key={s.iso3}>
                 <line
@@ -114,9 +118,15 @@ export function CompareChartView({ lang, t, mode, methodology, series, to }: Com
                   strokeWidth={2}
                   strokeDasharray={st.dash}
                 />
-                <text x={22} y={ly + 4} fontSize={12} className="fill-ink">
-                  {s.name[lang]}
-                  {last !== undefined ? ` ${signed(last.score, lang)}` : ''}
+                {/* The name when it fits the label column (13rem from 768 px), else the ISO3
+                    code, always the code on a phone; the chips above name each line (P-17). */}
+                <text x={22} y={ly + 4} fontSize={12} className="fill-ink md:hidden">
+                  {s.iso3}
+                  {value}
+                </text>
+                <text x={22} y={ly + 4} fontSize={12} className="hidden fill-ink md:inline">
+                  {s.name[lang].length <= LABEL_NAME_MAX ? s.name[lang] : s.iso3}
+                  {value}
                 </text>
               </g>
             )
@@ -211,29 +221,33 @@ export function CategoryDotsView({ lang, t, methodology, mode, countries }: Cate
     return <CategoryCounts lang={lang} t={t} methodology={methodology} countries={countries} />
   return (
     <figure className="flex flex-col gap-2">
-      <table className="sr-only">
-        <caption>{t('chart.dotsCaption')}</caption>
-        <thead>
-          <tr>
-            <th scope="col">{t('categories.category')}</th>
-            {countries.map((c) => (
-              <th key={c.iso3} scope="col">
-                {c.name[lang]}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {methodology.categories.map((cat) => (
-            <tr key={cat.id}>
-              <th scope="row">{`${cat.id} ${cat.short[lang]}`}</th>
+      {/* A table cannot be narrower than its content, so a table marked sr-only still widened
+          the page on a phone with five countries (P-17): the wrapper is the sr-only box. */}
+      <div className="sr-only">
+        <table>
+          <caption>{t('chart.dotsCaption')}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{t('categories.category')}</th>
               {countries.map((c) => (
-                <td key={c.iso3}>{signed(c.categories[cat.id].clipped, lang)}</td>
+                <th key={c.iso3} scope="col">
+                  {c.name[lang]}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {methodology.categories.map((cat) => (
+              <tr key={cat.id}>
+                <th scope="row">{`${cat.id} ${cat.short[lang]}`}</th>
+                {countries.map((c) => (
+                  <td key={c.iso3}>{signed(c.categories[cat.id].clipped, lang)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <TooltipLayer>
         <ul aria-hidden="true" className="flex flex-col" dir="ltr">
           {methodology.categories.map((cat) => {
@@ -322,38 +336,41 @@ function CategoryCounts({
   countries: readonly DotsCountry[]
 }) {
   return (
-    <table className="w-full border-collapse text-14">
-      <caption className="sr-only">{t('compare.countsCaption')}</caption>
-      <thead>
-        <tr className="border-b border-ink">
-          <th scope="col" className="py-2 pe-4 text-start font-semibold">
-            {t('categories.category')}
-          </th>
-          {countries.map((c) => (
-            <th key={c.iso3} scope="col" className="py-2 pe-4 text-end font-semibold">
-              {c.name[lang]}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {methodology.categories.map((cat) => (
-          <tr key={cat.id} className="border-b border-rule">
-            <th
-              scope="row"
-              className={`py-2 pe-4 text-start font-normal ${cat.scored ? '' : 'text-ink-3'}`}
-            >
-              <span className="font-mono text-m13">{cat.id}</span> {cat.short[lang]}
+    // Five countries' names do not fit a phone's width: the table scrolls, the page does not.
+    <div className="overflow-x-auto">
+      <table className="w-full border-collapse text-14">
+        <caption className="sr-only">{t('compare.countsCaption')}</caption>
+        <thead>
+          <tr className="border-b border-ink">
+            <th scope="col" className="py-2 pe-4 text-start font-semibold">
+              {t('categories.category')}
             </th>
             {countries.map((c) => (
-              <td key={c.iso3} className="py-2 pe-4 text-end">
-                {t('categories.count', { count: c.counts[cat.id] })}
-              </td>
+              <th key={c.iso3} scope="col" className="py-2 pe-4 text-end font-semibold">
+                {c.name[lang]}
+              </th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {methodology.categories.map((cat) => (
+            <tr key={cat.id} className="border-b border-rule">
+              <th
+                scope="row"
+                className={`py-2 pe-4 text-start font-normal ${cat.scored ? '' : 'text-ink-3'}`}
+              >
+                <span className="font-mono text-m13">{cat.id}</span> {cat.short[lang]}
+              </th>
+              {countries.map((c) => (
+                <td key={c.iso3} className="py-2 pe-4 text-end">
+                  {t('categories.count', { count: c.counts[cat.id] })}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
@@ -398,7 +415,13 @@ export function EventDiffView({ lang, t, countries }: EventDiffProps) {
               {t('compare.month')}
             </th>
             {countries.map((c) => (
-              <th key={c.iso3} scope="col" className="py-2 pe-4 text-start font-semibold">
+              // A readable column (12rem) with several countries: the table scrolls on a phone
+              // instead of setting each summary a few words to the line (P-17).
+              <th
+                key={c.iso3}
+                scope="col"
+                className={`py-2 pe-4 text-start font-semibold ${countries.length > 1 ? 'min-w-48' : ''}`}
+              >
                 {c.name[lang]}
               </th>
             ))}

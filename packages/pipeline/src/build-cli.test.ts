@@ -28,6 +28,7 @@ import {
   DEFAULT_OUT,
   DEFAULT_SITE_URL,
   parseBuildArgs,
+  previewInput,
   resolveSiteUrl,
   runBuildData,
 } from './build-cli.js'
@@ -99,7 +100,7 @@ const run = (argv: string[], deps: Partial<BuildDeps>, env: Record<string, strin
 
 describe('parseBuildArgs', () => {
   it('has no required option', () => {
-    expect(parseBuildArgs([])).toEqual({ quiet: false })
+    expect(parseBuildArgs([])).toEqual({ preview: false, quiet: false })
   })
 
   it('reads every option, and skips the -- pnpm may pass', () => {
@@ -114,6 +115,7 @@ describe('parseBuildArgs', () => {
         'fixtures',
         '--site-url',
         'https://example.org',
+        '--preview',
         '--quiet',
       ]),
     ).toEqual({
@@ -121,8 +123,41 @@ describe('parseBuildArgs', () => {
       out: 'out/v1',
       root: 'fixtures',
       siteUrl: 'https://example.org',
+      preview: true,
       quiet: true,
     })
+  })
+
+  it('--preview builds reviewed events as published, never drafts, and says so', () => {
+    const ev = (id: string, status: string) => ({
+      file: `data/events/${id}.yaml`,
+      value: { id, status },
+    })
+    const loaded = {
+      methodology: { version: '9.9.9' },
+      dataset: {
+        events: [ev('a', 'reviewed'), ev('b', 'draft'), ev('c', 'published'), ev('d', 'retracted')],
+      },
+    } as unknown as BuildInput
+    const statuses = (i: BuildInput) => i.dataset.events.map((e) => e.value.status)
+    expect(statuses(previewInput(loaded))).toEqual(['published', 'draft', 'published', 'retracted'])
+    expect(statuses(loaded)).toEqual(['reviewed', 'draft', 'published', 'retracted'])
+
+    const { deps, calls } = fakeDeps({ load: () => loaded })
+    const r = run(['--date', '2026-09-27', '--preview'], deps)
+    expect(r.code).toBe(0)
+    expect(r.stderr).toMatch(
+      /^PREVIEW: 1 reviewed event\(s\) built as if published; local use only/,
+    )
+    expect(calls.build[0] && statuses(calls.build[0])).toEqual([
+      'published',
+      'draft',
+      'published',
+      'retracted',
+    ])
+    const plain = fakeDeps({ load: () => loaded })
+    expect(run(['--date', '2026-09-27'], plain.deps).stderr).toBe('')
+    expect(plain.calls.build[0]).toBe(loaded)
   })
 
   it('rejects unknown options, missing values and malformed dates', () => {

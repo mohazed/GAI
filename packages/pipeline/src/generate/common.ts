@@ -144,6 +144,15 @@ function decimal(x: number, decimals: number, lang: 'en' | 'fr'): string {
   return lang === 'fr' ? s.replace('.', ',') : s
 }
 
+/**
+ * `USD 105,066,282`: an exact amount of a structured table, as the English `points_rationale`
+ * quotes it, grouped by commas (docs/05 §2); decimals, if any, are kept as the table has them.
+ */
+export function usdExact(n: number): string {
+  const [int = '', frac] = String(n).split('.')
+  return `USD ${int.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}${frac === undefined ? '' : `.${frac}`}`
+}
+
 /** `USD 12.3 million`, `USD 8.4 billion`, `USD 250,000` / `12,3 millions USD`, `250 000 USD`. */
 export function money(usd: number, lang: 'en' | 'fr'): string {
   const n = Math.round(usd)

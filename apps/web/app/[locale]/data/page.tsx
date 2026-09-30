@@ -1,6 +1,7 @@
 import { AUTHOR, datasetCitations } from '@gai/scoring'
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
+import { Fragment } from 'react'
 import { DocMarkdown } from '../../../components/DocMarkdown'
 import { publicApi } from '../../../lib/api'
 import {
@@ -247,9 +248,21 @@ export default async function Data({ params }: { params: Promise<{ locale: strin
                         <a
                           href={`/api/v1/${f.path}`}
                           download
-                          className="font-mono text-m13 break-all md:break-normal md:whitespace-nowrap"
+                          className="font-mono text-m13 md:whitespace-nowrap"
                         >
-                          {f.path}
+                          {/* On a phone the name breaks after a slash, dot or hyphen, never
+                              inside a word ("dumps/ev" / "ents.csv" before P-17). */}
+                          {f.path.split(/(?<=[/.-])/).map((part, i) =>
+                            i === 0 ? (
+                              part
+                            ) : (
+                              // biome-ignore lint/suspicious/noArrayIndexKey: parts of one path
+                              <Fragment key={i}>
+                                <wbr />
+                                {part}
+                              </Fragment>
+                            ),
+                          )}
                         </a>
                       </th>
                       <td className="py-2 pe-4">{downloadHolds(f.path, t)}</td>

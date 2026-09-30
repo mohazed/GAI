@@ -47,6 +47,8 @@ export const CSS = [
   '.h,.u{border:1px solid #d6d6d0}',
   '.h{background:repeating-linear-gradient(45deg,#d6d6d0 0 2px,transparent 2px 6px)}',
   '.cv{display:flex;flex-direction:column;gap:8px}',
+  // ISO dates in the summary line never break after a hyphen (P-17).
+  '.n{white-space:nowrap}',
   '@container (max-width:480px){.q{display:none}}',
   '@media print{.bar,.sw,.chip{print-color-adjust:exact}}',
 ].join('')

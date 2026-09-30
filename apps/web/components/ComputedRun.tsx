@@ -155,7 +155,10 @@ export function ComputedRun({
                       <td className="num py-1 pe-3 text-end align-top font-mono text-m12">
                         {signed(v.points, lang)}
                       </td>
-                      <td className="min-w-48 py-1 pe-3 align-top text-12">
+                      <td
+                        className="min-w-48 py-1 pe-3 align-top text-12"
+                        lang={lang === 'en' ? undefined : 'en'}
+                      >
                         {v.points_rationale ?? ''}
                       </td>
                       <td className="py-1 align-top font-mono text-m12">

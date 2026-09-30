@@ -259,7 +259,7 @@
     "title": "Changements du {from} au {to}",
     "explain": "Événements qui ont commencé ou pris fin {weeks, plural, one {la semaine dernière} other {au cours des # dernières semaines}}, par semaine ISO, de la plus récente à la plus ancienne.",
     "computed": "Une valeur calculée (le financement humanitaire chaque mois ; les chiffres d'armement et de commerce à chaque publication des données) figure lorsque ses points changent. Les recalculs sans changement de points sont comptés, une ligne par semaine.",
-    "built": "Généré le {date} à partir des données publiées, méthodologie {version}.",
+    "built": "Généré le {date} à partir des données publiées, méthodologie v{version}.",
     "feedTitle": "{count, plural, =0 {Aucune entrée} one {# entrée} other {# entrées}} en {weeks, plural, one {# semaine} other {# semaines}}",
     "monthsTitle": "Rapports mensuels",
     "monthsNote": "De {first} à {last}, du plus récent au plus ancien. Chaque rapport présente les évolutions des scores, les nouveaux événements, les situations qui ont pris fin et les corrections d'un mois.",
@@ -300,8 +300,8 @@
     "countsCaption": "Événements publiés par catégorie et par pays",
     "metaTitle": "Comparer des pays",
     "title": "Jusqu'à cinq pays côte à côte",
-    "explain": "Scores du {from} au {to}, sous-totaux par catégorie et événements par mois, tirés du fichier de données publié de chaque pays, méthodologie {version}.",
-    "explainScorecard": "Événements publiés par catégorie et par mois, tirés du fichier de données de chaque pays, méthodologie {version}. Les scores ne sont pas encore publiés.",
+    "explain": "Scores du {from} au {to}, sous-totaux par catégorie et événements par mois, tirés du fichier de données publié de chaque pays, méthodologie v{version}.",
+    "explainScorecard": "Événements publiés par catégorie et par mois, tirés du fichier de données de chaque pays, méthodologie v{version}. Les scores ne sont pas encore publiés.",
     "dataLine": "La page lit dans le navigateur le fichier de chaque pays choisi (/api/v1/countries/ISO3.json) ; l'adresse garde le choix, de sorte qu'une comparaison peut être partagée par un lien.",
     "noJsTitle": "La comparaison nécessite JavaScript",
     "noJs": "La comparaison est dessinée dans le navigateur à partir du fichier de données de chaque pays. Sans JavaScript, chaque page pays ci-dessous présente les mêmes graphiques, catégories et événements pour un pays.",
@@ -326,7 +326,7 @@
     "citeNote": "La citation indique la date de génération, le {date}, et le lien de cette comparaison."
   },
   "methodology": {
-    "caption": "Indicateurs de la méthodologie {version}",
+    "caption": "Indicateurs de la méthodologie v{version}",
     "cols": {
       "id": "ID",
       "indicator": "Indicateur",
@@ -390,6 +390,7 @@
     "eventsTitle": "Événements",
     "eventsCount": "{acts, plural, =0 {Aucun événement} one {# événement} other {# événements}}, du plus récent au plus ancien.",
     "eventsCountRuns": "{acts, plural, =0 {Aucun événement} one {# événement} other {# événements}} et {runs, plural, one {# série} other {# séries}} de valeurs calculées, du plus récent au plus ancien.",
+    "eventsOutOfScope": "{count, plural, one {# de ces événements concerne} other {# de ces événements concernent}} uniquement la Cisjordanie ou le Liban, que l'indice enregistre sans les noter dans cette version ; le résumé ci-dessus compte les autres.",
     "eventsNone": "Aucun événement publié pour ce pays à ce jour. Le tableau des vérifications ci-dessous indique ce qui a été examiné.",
     "checkedTitle": "Ce qui a été vérifié",
     "checkedSummary": "État de la recherche pour les {count} indicateurs notés",
@@ -435,14 +436,14 @@
     "excludedBody": "L'indice note ce que les États tiers ont fait concernant Gaza. {reason}",
     "excludedMethod": "La méthodologie énonce cette exclusion et sa raison.",
     "excludedRanking": "Chaque pays noté figure dans le classement.",
-    "jsonLdDescription": "Événements, sources, couverture de la recherche et sous-totaux par catégorie de {country} dans le Gaza Accountability Index, du {from} au {to}, méthodologie {version}."
+    "jsonLdDescription": "Événements, sources, couverture de la recherche et sous-totaux par catégorie de {country} dans le Gaza Accountability Index, du {from} au {to}, méthodologie v{version}."
   },
   "gen": {
     "row": "Ligne {line} de {path}",
     "rowLink": "Voir la ligne dans le dépôt",
     "responses": "{count, plural, one {# réponse archivée} other {# réponses archivées}}",
     "retrieved": "récupérée le {date}",
-    "rationale": "Base : {text}",
+    "rationale": "Base :",
     "citedBy": "citée par {count} valeurs sur {total}"
   },
   "run": {
@@ -501,15 +502,15 @@
   "methodologyPage": {
     "metaTitle": "Méthodologie",
     "metaTitleVersion": "Méthodologie {version}",
-    "description": "Comment l'index note la conduite des États à l'égard de Gaza : indicateurs, points, plafonds, formule, décroissance, confiance, passivité et couverture, méthodologie {version}.",
+    "description": "Comment l'index note la conduite des États à l'égard de Gaza : indicateurs, points, plafonds, formule, décroissance, confiance, passivité et couverture, méthodologie v{version}.",
     "contents": "Sommaire",
-    "superseded": "Cette page présente la méthodologie {version}, remplacée. La version en vigueur est la {current}.",
+    "superseded": "Cette page présente la méthodologie v{version}, remplacée. La version en vigueur est la {current}.",
     "readCurrent": "Lire la version en vigueur",
     "files": "Cette version sous forme de données :",
     "diffTitle": "Scores modifiés par cette version",
     "diffMissing": "Aucun fichier diff.json n'a été publié avec la version {version} : les scores qu'elle a modifiés par rapport à la version {previous} ne sont pas listés.",
     "changelogTitle": "Journal des modifications",
-    "changelogNote": "Toutes les versions, la plus récente en dernier, d'après methodology/CHANGELOG.md dans le dépôt."
+    "changelogNote": "Toutes les versions, la plus récente en dernier, d'après methodology/CHANGELOG.md dans le dépôt (en anglais)."
   },
   "sensitivity": {
     "intro": "Calculés lors de la génération du {date} à partir des événements publiés de {n, plural, one {# pays} other {# pays}}. Le ρ de Spearman compare le classement obtenu avec un réglage au classement par défaut : 1 signifie le même ordre.",
@@ -573,7 +574,7 @@
     "translation": "Traduction",
     "signed": "— {author}",
     "reviewersNone": "Relecteurs : aucun pour l'instant. Deux ou trois relecteurs extérieurs, dont au moins un spécialiste du droit international et un connaisseur des données sur le commerce des armes, doivent relire la table des indicateurs et les seuils avant que les scores ne soient affichés. Leurs noms et une déclaration d'une ligne sur leurs affiliations figureront ici.",
-    "signedOff": "A validé la méthodologie {version} le {date}",
+    "signedOff": "A validé la méthodologie v{version} le {date}",
     "caveat": "Réserve :"
   },
   "contact": {
@@ -586,7 +587,7 @@
   },
   "dataPage": {
     "description": "Téléchargements et API du Gaza Accountability Index : chaque point d'accès avec un exemple, les tableaux structurés, la citation du jeu de données et la façon de reproduire une génération.",
-    "build": "Cette génération : {date}, méthodologie {version}, {files} fichiers, {size}. Commit",
+    "build": "Cette génération : {date}, méthodologie v{version}, {files} fichiers, {size}. Commit",
     "noSha": "aucun commit enregistré",
     "dirty": "Cette génération a lu des modifications non validées de ses entrées (git.dirty vaut true) : elle ne peut pas être reproduite à partir d'un clone.",
     "downloadsCaption": "Téléchargements complets de cette génération",

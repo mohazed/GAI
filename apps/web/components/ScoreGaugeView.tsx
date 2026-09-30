@@ -117,7 +117,7 @@ export function ScoreGaugeView({
               x={pct(x(v))}
               y={56}
               textAnchor={v === clip.min ? 'start' : v === clip.max ? 'end' : 'middle'}
-              className="fill-ink-2 font-mono"
+              className={`fill-ink-2 font-mono ${Math.abs(v) === 50 ? 'gauge-mid' : ''}`}
               fontSize={11}
             >
               {v === 0 ? t('gauge.zero') : v > 0 ? `+${plain(v, lang)}` : plain(v, lang)}
