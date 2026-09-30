@@ -79,10 +79,10 @@ describe('main', () => {
     expect(lines.slice(2, 9)).toEqual([
       '  countries: 3 (1 scored, 2 excluded)',
       '  events: 1 (published 1)',
-      '  sources: 2 (official 2)',
+      '  sources: 13 (official 13)',
       '  assessments: 1 · corrections: 1 · replies: 1 · leads: 0',
-      '  structured rows: unga_votes 0, unsc_vetoes 0, fts_funding 0, fts_plan_totals 0, sipri_deliveries 0, sipri_orders 0, comtrade_a2 0, comtrade_c3 0, gni 0, population 0',
-      '  archive: 2 index rows, 2 text files',
+      '  structured rows: unga_votes 0, unsc_vetoes 0, fts_funding 0, fts_plan_totals 0, sipri_deliveries 0, sipri_orders 0, comtrade_a2 0, comtrade_c3 0, gni 0, population 0, recognitions 0, a2_confirmed_military 0',
+      '  archive: 13 index rows, 13 text files',
       '  history: skipped (--no-git)',
     ])
     expect(lines.at(-1)).toMatch(/^0 error\(s\), \d+ warning\(s\)$/)

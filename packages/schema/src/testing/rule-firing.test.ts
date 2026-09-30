@@ -49,7 +49,9 @@ function need<T>(value: T | null | undefined, what: string): T {
 }
 
 const event = (ds: Dataset): Event => need(ds.events[0], 'event').value
-const source = (ds: Dataset, i = 0): Source => need(ds.sources[i], `source #${i}`).value
+/** The i-th source of the fixture event (not the vote press releases fixtures/ also carries). */
+const source = (ds: Dataset, i = 0): Source =>
+  need(ds.sources.filter((s) => !s.value.id.includes('_un-press_'))[i], `source #${i}`).value
 const ind = (m: Methodology, id: string): Indicator =>
   need(
     m.indicators.find((i) => i.id === id),
@@ -247,7 +249,7 @@ const CASES: Record<RuleId, Case> = {
   },
   'event.confirmed-source-kind': {
     memory: (ds) => {
-      for (const s of ds.sources) s.value.kind = 'press'
+      for (const s of ds.sources) if (!s.value.id.includes('_un-press_')) s.value.kind = 'press'
     },
   },
   'event.corroborated-publishers': {
@@ -321,6 +323,24 @@ const CASES: Record<RuleId, Case> = {
   },
   'event.same-points': {
     memory: (ds) => addEvent(ds, { id: 'evt_2025_08_08_DEU_A6_2', points: 5 }),
+  },
+  'event.standing-overlap': {
+    memory: (ds) => {
+      addEvent(ds, { id: 'evt_2025_08_08_DEU_B7', indicator: 'B7', end: null })
+      addEvent(ds, { id: 'evt_2025_09_01_DEU_B7', indicator: 'B7', date: '2025-09-01', end: null })
+    },
+  },
+  'event.b5-b6-same-day': {
+    memory: (ds) => {
+      addEvent(ds, { id: 'evt_2025_08_08_DEU_B5', indicator: 'B5' })
+      addEvent(ds, { id: 'evt_2025_08_08_DEU_B6', indicator: 'B6' })
+    },
+  },
+  'event.d2-open-after-d3': {
+    memory: (ds) => {
+      addEvent(ds, { id: 'evt_2024_01_27_DEU_D2', indicator: 'D2', date: '2024-01-27', end: null })
+      addEvent(ds, { id: 'evt_2024_04_24_DEU_D3', indicator: 'D3', date: '2024-04-24', end: null })
+    },
   },
 
   // Tone -------------------------------------------------------------------------------------

@@ -1,0 +1,317 @@
+# Coverage record for Australia (docs/03 §6). P-D research session, wave 3, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-266): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Italy, the Netherlands and Canada, B-251, B-256, B-261). The
+# protocol's searches (docs/06 §4 step 3) were run as keyword filters of the Wayback CDX listings
+# of the official sites, then reads of the matching pages through Wayback: the Minister for
+# Foreign Affairs (www.foreignminister.gov.au/minister/penny-wong/, 1,119 URLs first captured
+# since 2023-10-07: media releases, joint statements, speeches, transcripts, opinion pieces), the
+# Prime Minister (www.pm.gov.au/media/, 2,881 URLs), DFAT news (www.dfat.gov.au/news/, 338 URLs)
+# and country pages (www.dfat.gov.au/geo/), the Minister for Defence (www.minister.defence.gov.au/,
+# 7,573 URLs) and Defence news and export-control pages (www.defence.gov.au/news-events/,
+# /business-industry/, /defence-activities/), the Home Affairs ministers (minister.homeaffairs.gov.au,
+# immi.homeaffairs.gov.au) and the Future Fund (futurefund.gov.au). Keywords: israel, gaza,
+# palestin, unrwa, middle-east, hamas, hostage, ceasefire, two-state, settler, gvir, smotrich,
+# sanction, icc, criminal, court, icj, arms, export, permit, f-35, humanitarian, west-bank, rafah,
+# kitchen, frankcom, visa, famine. About 170 pages were read, including 27 of the 32 transcripts of the
+# Minister for Foreign Affairs first captured between 20 November 2024 and 1 March 2025 (for the
+# ICC warrants); the other 5 could not be read (Wayback timeouts). English is the
+# official language; no other language was searched. Parliament (aph.gov.au: Hansard, Senate
+# Estimates, questions on notice) and the Federal Register of Legislation were not searched.
+country: AUS
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Deputy Prime Minister and Minister for Defence said on 1 February 2024 that there are no
+      exports of weapons from Australia to Israel "and there haven't been for many, many years"
+      (Minister for Foreign Affairs' transcript of the joint press conference in Melbourne, read
+      through Wayback, not archived); Australia's delegate told the General Assembly on 18
+      September 2024 that Australia had not supplied weapons to Israel in at least the last five
+      years (src_20240918_un-press_ga12626).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (Australia's rows existed from P-14, so no fetch was needed). Own
+      reports of HS 93 exports to Israel: USD 1,116,878 (2022; HS 8710 USD 493,594), 87,426 (2023,
+      0 from 2024-02-07), 1,012,443 (2024, −8 from 2025-02-15) and 389,432 (2025, −3 from
+      2026-03-06); Israel's mirror reports USD 5,000 (2023) and 1,000 (2025) of HS 93. HS 8526
+      (own USD 0.15–0.37 million a year) and 8802 (own USD 0.04–0.11 million) are not counted
+      without a confirming document (docs/02 §2); none was found, so no row was added to
+      a2_confirmed_military.csv. Disagreement reported, not corrected: the own HS 93 value of 2024
+      (−8 tier) sits beside the Government's statements that Australia has not exported weapons to
+      Israel for many years (A1 note); HS 93 also covers sporting and hunting arms and ammunition
+      and parts, and no Defence permit data by destination were found in the listings searched.
+      Left to the author (docs/10 B-268).
+  A3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_AUS_A3, standing from 2023-10-07 on the Department of Defence's release of
+      11 April 2025 on Australian industry's F-35 production and sustainment contracts. A/HRC/59/23
+      (§32) does not name Australia. No governmental or judicial halt of F-35 part exports to
+      Israel found; the Government's statements that no weapons are exported to Israel do not
+      address F-35 components supplied to the global programme (docs/10 B-267 (1)).
+    queries:
+      - "CDX: www.defence.gov.au/news-events/ filtered f-35, israel"
+      - "CDX: www.minister.defence.gov.au/ filtered f-35, joint-strike, export, israel"
+      - "archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Australia"
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187, B-199).
+      Left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with
+      Israel for the Gaza campaign found in the Defence and foreign affairs listings. The ADF's
+      flights for Australians leaving Israel (October 2023, July 2025) and Operation Beech (Middle
+      East maritime security), known from the Defence news titles in the listing (not read), and the
+      parachutes delivered for Jordanian and Emirati airdrops
+      (src_20240315_fm-gov-au_unrwa-funding-resumed) are not cooperation with Israel's campaign.
+      Press reports on the Pine Gap facility or on F-35 parts were not searched (no web search);
+      parliamentary answers were not searched.
+    queries:
+      - "CDX: www.defence.gov.au/news-events/ and /defence-activities/ filtered israel, gaza, middle-east, beech"
+      - "CDX: www.minister.defence.gov.au/ filtered israel, gaza, middle-east"
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No government decision suspending or refusing a class of export permits to Israel, and no
+      court order with that effect, found. The Government's position in the documents read is that
+      no weapons are exported to Israel (Minister for Defence, 1 February 2024: "there are no
+      exports of weapons from Australia to Israel and there haven't been for many, many years";
+      Australia's delegate to the General Assembly, 18 September 2024), and that the defence export
+      control regime applies case by case; a statement that no weapons are exported is not a
+      decision suspending licences (docs/02 §2 A6). Senate Estimates and questions on notice on
+      Defence export permits to Israel were not searched.
+    queries:
+      - "CDX: www.defence.gov.au/business-industry/ (export controls, permits) filtered israel"
+      - "CDX: www.minister.defence.gov.au/ and www.foreignminister.gov.au/ filtered arms, export, permit"
+      - "archive/text/src_20240918_un-press_ga12626.txt (Australia's explanation of vote)"
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree prohibiting both arms exports to and imports from Israel found.
+    queries:
+      - "CDX: www.defence.gov.au/business-industry/ and www.foreignminister.gov.au/ filtered embargo, israel"
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No denial of port access or transit to a vessel or aircraft carrying arms to Israel found in the official listings; press reports were not searched (no web search).
+    queries:
+      - "CDX: www.foreignminister.gov.au/, www.pm.gov.au/media/ and www.minister.defence.gov.au/ filtered israel, arms, port, vessel"
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      ES-10/21, ES-10/24 and 79/232; yes on ES-10/22, ES-10/23, ES-10/25 and ES-10/26. The UN
+      press releases (GA/12572, GA/12599, GA/12667, GA/12670) list the states voting against
+      without Australia, which agrees with the rows; they do not name all abstainers. GA/12626
+      reports Australia's explanation of its vote on ES-10/24 (the resolution "distracts from what
+      the world needs Israel to do"), consistent with the abstention row. For the later votes (no
+      rows until B-199 (1)): GA/12690 (ES-10/27), GA/12707 (A/DEC/80/506), GA/12708 (A/RES/80/1),
+      GA/12739 (A/RES/80/78) and GA/12743 (A/RES/80/116) list the states against (for A/RES/80/1
+      also those abstaining) without Australia. No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Australia is not among the states that filed declarations of intervention in ICJ case 192
+      (src_20260927_icj-cij_case-192; docs/06 §8 list). The Minister said on 16 January 2024 that
+      Australia was not a party to the case.
+    queries:
+      - "archive/text/src_20260927_icj-cij_case-192.txt searched for Australia"
+      - "CDX: www.foreignminister.gov.au/ filtered icj, court, justice"
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official statement rejecting the ICJ's provisional-measures orders or their binding
+      character. On 16 January 2024, before the first order, the Minister said that respect for
+      the Court's independence "does not mean we accept the premise of South Africa's case"
+      (transcript of the press conference in Jordan, read through Wayback, not archived): a
+      comment on the merits without a formal act, not B4 (docs/02 §2). Later statements call the
+      orders binding (evt_2024_09_28_AUS_B9; the joint statement of 14 February 2024).
+    queries:
+      - "CDX: www.foreignminister.gov.au/ transcripts and speeches filtered icj, court"
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement by the Prime Minister or the Minister for Foreign Affairs on executing the ICC
+      warrants of 21 November 2024 found in the official listings. The Minister's opinion piece of
+      25 November 2024 speaks of "backing the independence of the International Court of Justice
+      and the International Criminal Court" without a position on execution. Five of the
+      Minister's 32 transcripts of November 2024 to March 2025 could not be read (Wayback timeouts);
+      press reports of remarks were not searched (no web search).
+    queries:
+      - "CDX: www.foreignminister.gov.au/ transcripts first captured 2024-11-20…2025-03-01 (27 of 32 read), grepped for criminal court, ICC, warrant"
+      - "CDX: www.pm.gov.au/media/ filtered icc, criminal, netanyahu"
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No official visit by a person under ICC warrant, no refusal to execute the warrants and no withdrawal from the Rome Statute found.
+    queries:
+      - "CDX: www.pm.gov.au/media/ and www.foreignminister.gov.au/ filtered netanyahu, visit, icc"
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanctions on ICC officials; Australia's sanctions releases of the period concern Russia, Iran, Myanmar, North Korea, Hamas and Israeli settlers and ministers.
+    queries:
+      - "CDX: www.foreignminister.gov.au/ media releases filtered sanction"
+  B8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv: +8 from 2025-09-21 (row from P-14,
+      src_20250921_pm-gov-au_recognises-palestine). Agrees with the Prime Minister's statement
+      ("Effective today, Sunday the 21st of September 2025, the Commonwealth of Australia formally
+      recognises the independent and sovereign State of Palestine") and the announcement of 11
+      August 2025 (src_20250811_fm-gov-au_to-recognise-palestine).
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Fifteen events: the Prime Minister's joint statements with Canada and New Zealand of 12
+      December 2023, 14 February 2024 and 26 July 2024 (+2 each), his statement of 25 July 2025
+      (+5) and the recognition announcement of 11 August 2025 (+5); the Minister for Foreign
+      Affairs' release of 4 June 2024 (+2), national statement of 28 September 2024 (+2), joint
+      statements of 21 July 2025 (+5), 9 August 2025 (+2), 12 August 2025 (+5) and 27 September
+      2025 (+2), speech of 25 September 2025 (+2), statement of 20 August 2026 (+5) and remarks of
+      23 and 24 September 2026 (+2 each). The cap (+10) holds. Not filed (same periods, read):
+      the humanitarian funding releases (their calls repeat the statements filed), the joint
+      statements on Lebanon (scope lebanon), the Minister's statement of 18 August 2025 on the
+      revocation of Australian diplomats' visas (listing only; the page could not be read), the Prime Minister's statement of 9 October 2025
+      welcoming the peace plan (read in the listing only), and the transcripts and interviews
+      (press remarks, not formal statements).
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement of unconditional support or denial found. The October 2023 statements recognise
+      Israel's right to defend itself and add that it must respect international humanitarian law
+      (joint statement of 12 December 2023), which is not B10 (docs/10 B-204 reading).
+    queries:
+      - "CDX: www.pm.gov.au/media/ and www.foreignminister.gov.au/ October–December 2023 filtered israel, hamas"
+  B11:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_06_10_AUS_B11 (ministers, +10, scoped gaza and west-bank) and
+      evt_2024_07_25_AUS_B11 (settlers, scoped west-bank, unscored in v1).
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall of the ambassador, downgrade or severance of relations. The Minister called in
+      Israel's Ambassador on 20 August 2026 (src_20260820_fm-gov-au_wck-investigation), which is
+      not a recall; Australia appointed a new Ambassador to Israel in February 2026 (media release
+      ambassador-israel-0, read in the listing only).
+    queries:
+      - "CDX: www.foreignminister.gov.au/ media releases filtered ambassador, israel"
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: Australia has no association agreement with Israel; no suspension or review of a trade agreement with Israel found.
+    queries:
+      - "CDX: www.dfat.gov.au/news/ and www.foreignminister.gov.au/ filtered israel, agreement, trade"
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new agreement with Israel signed since 2023-10-07 found in the listings (the working holiday arrangement with Israel predates the window).
+    queries:
+      - "CDX: www.dfat.gov.au/news/, www.foreignminister.gov.au/, www.pm.gov.au/media/ filtered israel, agreement, signed"
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade. Own reports: total goods trade with Israel USD 815.5 million in 2022,
+      734.3 million in 2023 (r = 0.900, −3 from 2024-02-07), 605.1 million in 2024 (r = 0.742, 0)
+      and 588.5 million in 2025 (r = 0.722, 0 from 2026-03-06); the mirror gives the same readings
+      (r = 0.854, 0.740, 0.776). No disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No labelling rule or ban on goods from Israeli settlements found; not searched specifically (West Bank measure, scope west-bank).
+    queries:
+      - "CDX: www.dfat.gov.au/news/ and www.foreignminister.gov.au/ filtered settlement, labelling"
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No exclusion decision by the Future Fund or another public fund over conduct in Gaza or the occupied territories found in the Future Fund's news-room listing; press reports on superannuation funds were not searched.
+    queries:
+      - "CDX: futurefund.gov.au (news-room) filtered exclu, israel, palestin"
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No procurement exclusion with legal effect found.
+    queries:
+      - "CDX: www.dfat.gov.au/news/ and www.defence.gov.au/business-industry/ filtered israel, procurement"
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: +3 in most months, +1 for July 2025; latest window 2025-09…2026-08, USD
+      17,733,174 ÷ GNI USD 1.771 trillion = 0.00100 %, +3 from 2026-09-01. The Government reports
+      larger totals (more than AUD 160 million committed for Gaza and Lebanon since October 2023,
+      src_20260923_fm-gov-au_call-action-children-gaza), part of it through UN agencies and NGOs
+      outside the flash appeals (docs/06 §7 gap).
+  D2:
+    status: no-data
+    checked_at: 2026-09-28
+    note: >-
+      A temporary pause of UNRWA funding is documented (the joint media release of 15 March 2024
+      lifts "its temporary pause", src_20240315_fm-gov-au_unrwa-funding-resumed; the Prime
+      Minister was asked about the suspended funding on ABC Insiders in early February 2024), but
+      no dated primary of the pause decision was found in the official listings (no release or
+      transcript of 26–31 January 2024 on it), so D2 is not filed (docs/10 B-267 (4)). It would have
+      ended on 2024-03-15 and would contribute 0 today.
+    queries:
+      - "CDX: www.foreignminister.gov.au/ and www.pm.gov.au/media/ pages first captured 2024-01-25…2024-02-15"
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_03_15_AUS_D3 (restored, +5, no end); the increased tier is not met (UNRWA tables, USD 13.8 million in 2022, 4.0 million in 2024).
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No field hospital or medical-evacuation programme of Australia's own found. The joint
+      statement of 27 September 2025 offers support for treating patients from Gaza in the West
+      Bank ("stand ready"), a conditional offer, not a programme; Australian funding of the Jordan
+      Hashemite Charity Organization for field hospitals (4 August 2025) is humanitarian funding
+      (D1's field), not a programme run by Australia.
+    queries:
+      - "CDX: www.foreignminister.gov.au/ filtered medical, evacuation, hospital, patients"
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No immigration instrument for people from Gaza found in the Home Affairs ministers' and immigration listings; visas granted under existing visitor and humanitarian subclasses are not a new legal instrument (docs/02 §2 D5). The Federal Register of Legislation was not searched.
+    queries:
+      - "CDX: minister.homeaffairs.gov.au and immi.homeaffairs.gov.au filtered gaza, palestin, israel"
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No domestic investigation of Australian nationals or companies for conduct in Gaza found in the listings searched (the Australian Federal Police and Attorney-General's sites were not searched).
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No federal ban on Palestine solidarity protests or symbols found; state-level protest rules and court decisions (New South Wales) are state acts and were not searched as such.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found in the listings searched.
