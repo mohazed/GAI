@@ -265,11 +265,15 @@ function timelineSvg(f: CountryFile, o: Options, c: WidgetConfig): string {
   return `<div class="${score ? 'tl' : ''}" role="img" aria-label="${esc(label)}" dir="ltr">${yAxis}<svg width="100%" height="${h}" overflow="visible" aria-hidden="true">${s}</svg></div>`
 }
 
-/** The link back to the country page: the whole widget before the file is read, and if it cannot be. */
-export function linkHtml(o: Options, name?: string): string {
+/** The text of the link back to the country page. */
+export function linkText(o: Options, name?: string): string {
   const who = name ?? o.iso3
-  const text = who === null ? STRINGS[o.lang].site : STRINGS[o.lang].link(who)
-  return `<a href="${esc(countryUrl(o))}">${esc(text)}</a>`
+  return who === null ? STRINGS[o.lang].site : STRINGS[o.lang].link(who)
+}
+
+/** The link back to the country page, as markup (the widget's footer). */
+export function linkHtml(o: Options, name?: string): string {
+  return `<a href="${esc(countryUrl(o))}">${esc(linkText(o, name))}</a>`
 }
 
 /** French typography on every string of a value. */

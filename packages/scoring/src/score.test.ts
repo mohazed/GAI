@@ -132,6 +132,25 @@ describe('scoreCountry', () => {
     expect(() => scoreCountry('TST', [a, { ...a }], '2025-03-01', m)).toThrow(/duplicate/)
   })
 
+  // P-19: the engine's input guards, so that a malformed event never scores silently.
+  it("throws on an event whose type is not its indicator's", () => {
+    const a = ev('C5', '2025-02-01', 5, { type: 'standing' })
+    expect(() => scoreCountry('TST', [a], '2025-03-01', m)).toThrow(/is standing but C5/)
+  })
+
+  it('throws on an event without finite points', () => {
+    for (const points of [Number.NaN, Number.POSITIVE_INFINITY]) {
+      const a = ev('C5', '2025-02-01', points)
+      expect(() => scoreCountry('TST', [a], '2025-03-01', m)).toThrow(/no finite points/)
+    }
+  })
+
+  it('refuses a negative or non-finite passivity value', () => {
+    const zero = { A: 0, B: 0, C: 0, D: 0 }
+    expect(() => combine(zero, -15, m)).toThrow(RangeError)
+    expect(() => combine(zero, Number.NaN, m)).toThrow(RangeError)
+  })
+
   it('gives every event its reason', () => {
     const events = [
       ev('C5', '2025-01-01', 5, { id: 'evt_a' }),

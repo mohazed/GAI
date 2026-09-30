@@ -6,7 +6,10 @@
 #   .github/scripts/issue.sh close "<title>" <body-file>   # comment and close, if one is open
 set -euo pipefail
 action=$1 title=$2 body=$3
-number=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+# Only an issue the workflows opened themselves (author github-actions[bot]) counts: anyone can open
+# an issue with the same title, and the reports must not land in, or close, someone else's (P-19).
+number=$(gh issue list --state open --author "app/github-actions" \
+  --search "\"$title\" in:title" --json number,title \
   --jq "map(select(.title == \"$title\")) | first | .number // empty")
 case "$action" in
   open)

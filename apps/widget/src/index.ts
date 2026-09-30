@@ -16,6 +16,7 @@ export {
   countryUrl,
   dataUrl,
   linkHtml,
+  linkText,
   type Options,
   readOptions,
   renderWidget,

@@ -8,7 +8,13 @@
  * throws without them. Rate limits (HTTP 429), server errors, timeouts and failed captures are
  * retried twice after a 60 s pause (docs/06 §6); after that the result says why it failed.
  */
-import { fetchBytes, type NetDeps, TimeoutError } from './deps.js'
+import {
+  fetchBytes,
+  MAX_DOWNLOAD_BYTES,
+  type NetDeps,
+  TimeoutError,
+  TooLargeError,
+} from './deps.js'
 
 export const SPN_ENDPOINT = 'https://web.archive.org/save'
 export const WAYBACK_WEB = 'https://web.archive.org/web'
@@ -36,6 +42,8 @@ export interface SpnOptions {
   pollTimeoutMs?: number
   /** Budget of one HTTP request, ms (120 000). */
   requestTimeoutMs?: number
+  /** Largest snapshot body read, bytes (MAX_DOWNLOAD_BYTES, 512 MiB); a larger one is refused. */
+  maxBytes?: number
   /**
    * A new capture is served only once Wayback has indexed it, which can take minutes after Save
    * Page Now reports success; the snapshot is polled at this interval (30 000 ms)…
@@ -79,6 +87,7 @@ const DEFAULTS = {
   pollIntervalMs: 5_000,
   pollTimeoutMs: 240_000,
   requestTimeoutMs: 120_000,
+  maxBytes: MAX_DOWNLOAD_BYTES,
   availabilityPollMs: 30_000,
   availabilityTimeoutMs: 300_000,
 } as const
@@ -128,11 +137,17 @@ async function withRetries<T>(
     try {
       r = await attempt()
     } catch (err) {
-      r = {
-        ok: false,
-        reason:
-          err instanceof TimeoutError ? err.message : `network error: ${(err as Error).message}`,
-      }
+      r =
+        err instanceof TooLargeError
+          ? // A document over the download limit stays over it: no retry.
+            { ok: false, final: true, reason: err.message }
+          : {
+              ok: false,
+              reason:
+                err instanceof TimeoutError
+                  ? err.message
+                  : `network error: ${(err as Error).message}`,
+            }
     }
     if (r.ok) return { ok: true, value: r.value, attempts: i + 1 }
     last = r.reason
@@ -262,7 +277,7 @@ export async function downloadSnapshot(
     async () => {
       const started = deps.now().getTime()
       for (;;) {
-        const res = await fetchBytes(deps, url, {}, o.requestTimeoutMs)
+        const res = await fetchBytes(deps, url, {}, o.requestTimeoutMs, o.maxBytes)
         if (res.status === 200) return { ok: true as const, value: res }
         if (res.status === 429)
           return { ok: false as const, reason: 'Wayback rate limit (HTTP 429)' }

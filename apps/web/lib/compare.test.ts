@@ -21,6 +21,11 @@ describe('compare helpers', () => {
       kept: ['DEU', 'FRA', 'ESP', 'ITA', 'IRL'],
       dropped: ['NOR'],
     })
+    // Text that is not a code is ignored, never named back on the page (P-19).
+    expect(parseCompare('DEU,Official statement,<b>,ABCD', scored)).toEqual({
+      kept: ['DEU'],
+      dropped: [],
+    })
   })
   it('writes ?c= and ?w= with plain commas', () => {
     expect(compareQuery([], null)).toBe('')

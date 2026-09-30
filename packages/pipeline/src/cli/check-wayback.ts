@@ -35,6 +35,13 @@ function curl(url: string, dir: string): Promise<Fetched> {
         body,
         '--write-out',
         '%{http_code} %{redirect_url}',
+        // HTTPS only, a size limit, and the URL as an option's value, never a bare argument
+        // that curl could read as an option (P-19).
+        '--proto',
+        '=https',
+        '--max-filesize',
+        String(512 * 1024 * 1024),
+        '--url',
         url,
       ],
       { maxBuffer: 1024 * 1024 },

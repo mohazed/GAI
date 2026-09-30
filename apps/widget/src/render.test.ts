@@ -5,6 +5,7 @@ import {
   countryUrl,
   dataUrl,
   linkHtml,
+  linkText,
   readOptions,
   renderWidget,
 } from './render.js'
@@ -128,6 +129,49 @@ describe('readOptions', () => {
     )
     expect(linkHtml(o)).toBe(
       '<a href="https://gai.example/fr/country/DEU/">Gaza Accountability Index : DEU</a>',
+    )
+  })
+})
+
+describe('a hostile country file (P-19: data-origin can point anywhere)', () => {
+  const X = '<img src=x onerror=alert(1)>"\''
+  // A tag, or an attribute value closed early: what escaping must prevent.
+  const UNSAFE = /<img|<script|["']\s*onerror/i
+  // Every text of the file carries markup (dates and the code stay valid, so that it renders).
+  const texts = JSON.parse(
+    JSON.stringify(file, (_k, v) =>
+      typeof v === 'string' && !/^\d{4}-\d\d-\d\d$/.test(v) && v !== 'DEU' ? `${v}${X}` : v,
+    ),
+  ) as CountryFile
+  // Markup where the file has numbers, dates and status keys.
+  const numbers = structuredClone(texts) as unknown as Record<string, unknown>
+  numbers.score = X
+  numbers.score_display = X
+  numbers.series = [{ date: X, score: X }]
+  numbers.event_list = [{ ...event('2024-01-01', 2), points: X, indicator: X }]
+  const cov = numbers.coverage as Record<string, unknown>
+  cov.ratio = X
+  cov.has_events = X
+  cov.statuses = { [X]: 'has-events', A1: X, __proto__: 'k' }
+  for (const mode of ['score', 'scorecard'] as const)
+    for (const view of ['gauge', 'timeline'] as const)
+      for (const lang of ['en', 'fr'] as const)
+        it(`escapes every text in ${mode} mode, ${view}, ${lang}`, () => {
+          const o = readOptions({ country: 'DEU', view, lang }, SCRIPT, PAGE)
+          expect(renderWidget(texts, o, config(mode))).not.toMatch(UNSAFE)
+          // Markup in a number field either renders as text or makes the render throw (the
+          // caller then keeps the link); it never reaches the markup.
+          let html = ''
+          try {
+            html = renderWidget(numbers as unknown as CountryFile, o, config(mode))
+          } catch {
+            html = ''
+          }
+          expect(html).not.toMatch(UNSAFE)
+        })
+  it('builds the fallback link text for DOM calls', () => {
+    expect(linkText(readOptions({ country: 'DEU' }, SCRIPT, PAGE))).toBe(
+      'Gaza Accountability Index: DEU',
     )
   })
 })

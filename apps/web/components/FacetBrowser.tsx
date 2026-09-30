@@ -67,6 +67,18 @@ export function visibleItems(
   )
 }
 
+/**
+ * A fragment decoded, or '' when it is not valid percent-encoding: a crafted link such as
+ * `#%E0%A4%A` must not throw during hydration (P-19).
+ */
+export function decodeHash(raw: string): string {
+  try {
+    return decodeURIComponent(raw)
+  } catch {
+    return ''
+  }
+}
+
 function filterFromLocation(facets: FacetDef[]): FacetFilter {
   const q = new URLSearchParams(window.location.search)
   const f = empty(facets)
@@ -78,7 +90,7 @@ function filterFromLocation(facets: FacetDef[]): FacetFilter {
   const m = /^#f-([a-z]+)-(.+)$/.exec(window.location.hash)
   const d = m === null ? undefined : facets.find((x) => x.key === m[1])
   if (m !== null && d !== undefined) {
-    const v = decodeURIComponent(m[2] as string)
+    const v = decodeHash(m[2] as string)
     if (d.values.some((x) => x.id === v)) f[d.param] = v
   }
   return f
@@ -97,7 +109,7 @@ function urlWith(filter: FacetFilter): string {
 
 /** Opens the <details> around the element the address points at (a value of a run). */
 function openTarget(): HTMLElement | null {
-  const id = decodeURIComponent(window.location.hash.slice(1))
+  const id = decodeHash(window.location.hash.slice(1))
   if (id === '') return null
   const el = document.getElementById(id)
   if (el === null) return null

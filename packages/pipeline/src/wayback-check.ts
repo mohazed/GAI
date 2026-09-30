@@ -38,6 +38,9 @@ export interface CheckResult {
   unhashed: string[]
 }
 
+/** The only URLs the check requests: `https://web.archive.org/web/{14 digits}id_/{url}`. */
+export const WAYBACK_ID_URL = /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/\S+$/
+
 /** Statuses worth another try: rate limit, server errors, no response. */
 const RETRY = (s: number) => s === 0 || s === 429 || s >= 500
 
@@ -79,6 +82,17 @@ export async function checkWayback(
     unhashed: [],
   }
   for (const [i, t] of targets.entries()) {
+    // Only a Wayback `id_` URL is ever requested (P-19): the URL comes from a data file and goes
+    // to curl, so anything else is reported, not fetched.
+    if (!WAYBACK_ID_URL.test(t.waybackUrl)) {
+      result.checked += 1
+      result.failures.push({
+        ...pick(t),
+        status: 0,
+        detail: 'not a Wayback id_ URL; not requested',
+      })
+      continue
+    }
     if (i > 0) await o.sleep(pause)
     let r = await o.fetch(t.waybackUrl)
     for (const wait of backoff) {

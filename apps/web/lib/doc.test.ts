@@ -74,6 +74,8 @@ describe('parseDoc (lib/doc.ts)', () => {
     expect(() => parseDoc('a *word* here')).toThrow(/emphasis/)
     expect(() => parseDoc('an _emphasis_ here')).toThrow(/emphasis/)
     expect(() => parseDoc('[x](javascript:alert(1))')).toThrow(/link target/)
+    // A protocol-relative target leaves the site (P-19).
+    expect(() => parseDoc('[x](//example.org/a)')).toThrow(/link target/)
   })
 
   it('inline: strong, code, links, escapes; underscores inside words are text', () => {

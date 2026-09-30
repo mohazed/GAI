@@ -30,12 +30,18 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    # Production takes main only: a manual run on another branch would otherwise upload that
+    # branch as production (P-19). Previews: pull requests from branches of this repository.
+    if: >-
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+      (github.event_name != 'pull_request' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          # No token left in .git/config for the steps that follow (P-19): nothing here pushes.
+          persist-credentials: false
           fetch-depth: 0
       - name: Run day (UTC)
         id: day

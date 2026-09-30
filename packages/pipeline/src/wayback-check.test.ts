@@ -82,6 +82,28 @@ describe('checkWayback (P-12 quarterly check)', () => {
     expect(text).toContain('Rows without a wayback_url (not checked): 1.')
   })
 
+  it('requests only Wayback id_ URLs and reports any other one unrequested (P-19)', async () => {
+    const asked: string[] = []
+    const r = await checkWayback(
+      [
+        row('src_a', '-K/etc/passwd', H('a')),
+        row('src_b', 'http://web.archive.org/web/20260927100000id_/https://example.org/b', H('b')),
+        row('src_c', 'https://evil.example/web/20260927100000id_/https://example.org/c', H('c')),
+        row('src_d', W('src_d'), H('d')),
+      ],
+      {
+        fetch: async (u) => {
+          asked.push(u)
+          return { status: 200, sha256: H('d'), detail: null }
+        },
+        sleep: async () => {},
+      },
+    )
+    expect(asked).toEqual([W('src_d')])
+    expect(r.failures.map((f) => f.srcId)).toEqual(['src_a', 'src_b', 'src_c'])
+    expect(r.failures[0]?.detail).toBe('not a Wayback id_ URL; not requested')
+  })
+
   it('reports no problem when every copy answers 200 with its recorded hash', async () => {
     const r = await checkWayback([row('src_a', W('src_a'), H('a'))], {
       fetch: async () => ({ status: 200, sha256: H('a'), detail: null }),

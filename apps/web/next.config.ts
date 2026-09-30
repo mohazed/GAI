@@ -37,11 +37,17 @@ const config: NextConfig = {
   // Compare results cost the country and ranking pages about 1.3 kB and 0.8 kB on the wire
   // (docs/10 B-127). Only chunks loaded at page start are considered for splitting; a module
   // shared with an on-demand chunk is copied into that chunk instead.
-  webpack(webpackConfig, { isServer }) {
+  // A production client build whose splitChunks no longer has a `chunks` function (a Next.js
+  // upgrade) fails here instead of silently losing the setting (P-19).
+  webpack(webpackConfig, { isServer, dev }) {
     const split = webpackConfig.optimization?.splitChunks
     if (!isServer && split && typeof split.chunks === 'function') {
       const pick = split.chunks as (chunk: { canBeInitial(): boolean }) => boolean
       split.chunks = (chunk: { canBeInitial(): boolean }) => pick(chunk) && chunk.canBeInitial()
+    } else if (!isServer && !dev) {
+      throw new Error(
+        'next.config.ts: the client splitChunks.chunks is not a function any more; review the initial-chunks setting (docs/10 B-127)',
+      )
     }
     return webpackConfig
   },
