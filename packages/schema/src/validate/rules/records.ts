@@ -21,6 +21,7 @@ import { addDays, daysBetween, WINDOW_START } from '../../primitives.js'
 import type { Event } from '../../records.js'
 import {
   STRUCTURED_ISO3_COLUMN,
+  STRUCTURED_SOURCE_KINDS,
   STRUCTURED_TABLE_NAMES,
   type StructuredTableName,
   splitSourceIds,
@@ -62,6 +63,8 @@ export const STRUCTURED_UNIQUE_KEYS: Record<StructuredTableName, readonly string
   'comtrade_c3.csv': ['iso3', 'window_start', 'window_end', 'reporter'],
   'gni.csv': ['iso3', 'year'],
   'population.csv': ['iso3', 'year'],
+  'recognitions.csv': ['iso3'],
+  'a2_confirmed_military.csv': ['iso3', 'hs'],
 }
 
 /** Tables whose rows record one vote each: the column naming the voted text, voted on one date. */
@@ -717,7 +720,8 @@ const assessmentCheckedEvidence: Rule = (ctx) => {
 }
 
 /**
- * assessment.not-applicable (docs/02 §8): not-applicable carries a note; on an indicator whose
+ * assessment.not-applicable (docs/02 §8, B-28): not-applicable carries a note, and is an error on
+ * an indicator whose indicators.yaml entry has no not-applicable rule; on an indicator whose
  * methodology rule is `unsc_non_member` (B2), the country has no Security Council term that
  * overlaps the window, which runs from WINDOW_START to the date of the check. Without a clock,
  * that date is the entry's checked_at, else the assessment's last_full_check: a term overlaps
@@ -743,7 +747,19 @@ const assessmentNotApplicable: Rule = (ctx) => {
           ),
         )
       }
-      const rule = ctx.methodology.indicatorById.get(ind)?.not_applicable?.rule
+      const indicator = ctx.methodology.indicatorById.get(ind)
+      const rule = indicator?.not_applicable?.rule
+      if (indicator !== undefined && rule === undefined) {
+        // B-28: only an indicator whose methodology defines a not-applicable rule can be one.
+        out.push(
+          issue(
+            'assessment.not-applicable',
+            at(a, iso3, path),
+            `${ind} is not-applicable but indicators.yaml gives ${ind} no not-applicable rule (docs/02 §8: only B2 has one); expected has-events, none-found, no-data or unchecked`,
+          ),
+        )
+        continue
+      }
       if (rule !== 'unsc_non_member' || country === undefined) continue
       const asOf = entry.checked_at ?? a.value.last_full_check ?? null
       const term = country.value.memberships.unsc.find(
@@ -1078,7 +1094,8 @@ const leadSourceKind: Rule = (ctx) => {
 
 /**
  * structured.source-dataset (docs/03 §7: "a `src_` id of kind `dataset` whose record archives
- * the origin"): each id of the source column (one, or several joined by `;`) names an existing source of kind dataset that is archived
+ * the origin"): each id of the source column (one, or several joined by `;`) names an existing
+ * source of kind dataset (or another kind the table allows, STRUCTURED_SOURCE_KINDS, B-31) that is archived
  * (wayback_url and sha256, capture not failed, or a dataset row whose origin is archived; see
  * `notArchivedReason`). Generated events are built from these rows, so nothing scores from an
  * unarchived table (CLAUDE.md).
@@ -1102,12 +1119,13 @@ const structuredSourceDataset: Rule = (ctx) => {
               ),
             )
           }
-        } else if (src.value.kind !== 'dataset') {
+        } else if (!STRUCTURED_SOURCE_KINDS[table].includes(src.value.kind)) {
+          const expected = `kind ${STRUCTURED_SOURCE_KINDS[table].join(' or ')}`
           out.push(
             issue(
               'structured.source-dataset',
               loc,
-              `source ${sourceId} is of kind ${src.value.kind}; expected kind dataset`,
+              `source ${sourceId} is of kind ${src.value.kind}; expected ${expected}`,
             ),
           )
         } else {
@@ -1117,7 +1135,7 @@ const structuredSourceDataset: Rule = (ctx) => {
               issue(
                 'structured.source-dataset',
                 loc,
-                `${reason}; expected a dataset source whose record archives the origin (wayback_url and sha256)`,
+                `${reason}; expected a ${src.value.kind} source whose record archives the origin (wayback_url and sha256)`,
               ),
             )
           }

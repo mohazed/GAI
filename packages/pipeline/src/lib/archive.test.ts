@@ -147,6 +147,44 @@ describe('archiveUrl', () => {
     expect(doc).toMatchObject({ ok: false, reason: expect.stringContaining('rejected (no data)') })
     expect(() => readFileSync(join(r, 'archive/index.csv'))).toThrow()
   })
+
+  it('records an existing capture without saving anew (--capture)', async () => {
+    const r = root()
+    const csv = 'a,b\n1,2\n'
+    const net = fakeNet([
+      { match: isSnapshot, body: csv, headers: { 'content-type': 'text/csv; charset=utf-8' } },
+    ])
+    const doc = await archiveUrl({
+      url: 'https://data.example.org/files/votes.csv',
+      id: 'src_20260928_example_votes',
+      kind: 'dataset',
+      capture: '20250618161123',
+      root: r,
+      creds: CREDS,
+      deps: net.deps,
+    })
+    expect(net.calls.map((c) => c.url)).toEqual([
+      'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+    ])
+    expect(doc.ok).toBe(true)
+    if (!doc.ok) return
+    expect(doc.source).toMatchObject({
+      wayback_url:
+        'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+      sha256: sha256Hex(new TextEncoder().encode(csv)),
+      archive_status: 'archived',
+    })
+    expect(doc.source.notes).toContain('existing Wayback capture 20250618161123')
+    await expect(
+      archiveUrl({
+        url: PAGE,
+        capture: '2025',
+        root: r,
+        creds: CREDS,
+        deps: net.deps,
+      }),
+    ).rejects.toThrow(/14-digit/)
+  })
 })
 
 describe('source ids', () => {

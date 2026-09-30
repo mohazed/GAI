@@ -17,13 +17,17 @@ import { isoSeconds } from '../lib/deps.js'
 import { writeTable } from '../lib/files.js'
 import { UNIVERSE_ISO3 } from '../universe.js'
 import {
+  FTS_ATTRIBUTION_OVERRIDES,
   FTS_LOCATION_URL,
+  FTS_ORGANIZATION_URL,
   FTS_PLAN_IDS,
   type FtsPage,
   ftsTables,
   parseFlowPage,
   parseLocations,
+  parseOrganizations,
   planPageUrl,
+  verifyOverrides,
 } from './fts.js'
 
 const PUBLISHER = 'OCHA Financial Tracking Service'
@@ -59,6 +63,18 @@ export async function runFetchFts(
   })
   if (!loc.ok) failures.push(`${FTS_LOCATION_URL}: ${loc.reason}`)
   else stamps.push(loc.source.retrieved_at ?? '')
+  const orgs = await archiveDataset(ctx, {
+    url: FTS_ORGANIZATION_URL,
+    segments: ['fts', 'organizations'],
+    title: 'OCHA FTS API v1, list of organisations',
+    publisher: PUBLISHER,
+    notes:
+      'Every FTS organisation with its categories and locations; justifies the attribution overrides of fetch:fts (FTS_ATTRIBUTION_OVERRIDES).',
+    accept: jsonAccept((j) =>
+      Array.isArray((j as { data?: unknown })?.data) ? null : 'no organisation list',
+    ),
+  })
+  if (!orgs.ok) failures.push(`${FTS_ORGANIZATION_URL}: ${orgs.reason}`)
 
   const planPages = await inPool(plans, 2, async (plan) => {
     const pages: FtsPage[] = []
@@ -97,7 +113,7 @@ export async function runFetchFts(
     return pages
   })
 
-  if (failures.length > 0 || !loc.ok) {
+  if (failures.length > 0 || !loc.ok || !orgs.ok) {
     report.push('fetch:fts FAILED; fts_funding.csv and fts_plan_totals.csv were not changed.')
     for (const f of failures) report.push(`  ${f}`)
     return { ok: false, report }
@@ -105,15 +121,27 @@ export async function runFetchFts(
 
   const pages = planPages.flat()
   const lastMonth = isoSeconds(ctx.deps.now()).slice(0, 7)
-  const tables = ftsTables({
+  const locations = parseLocations(jsonOfDataset(loc))
+  const verified = verifyOverrides(
+    FTS_ATTRIBUTION_OVERRIDES,
+    parseOrganizations(jsonOfDataset(orgs)),
+    locations,
+  )
+  const input = {
     pages,
-    locations: parseLocations(jsonOfDataset(loc)),
+    locations,
     locationSourceId: loc.source.id,
     universe: FTS_DONOR_UNIVERSE,
     plans,
     lastMonth,
     retrievedAt: stamps.sort().at(-1) ?? isoSeconds(ctx.deps.now()),
+  }
+  const tables = ftsTables({
+    ...input,
+    overrides: verified.applied,
+    organizationSourceId: orgs.source.id,
   })
+  const without = ftsTables(input)
   writeTable(ctx.root, 'fts_funding.csv', tables.windows, ['iso3', 'window_start', 'window_end'])
   writeTable(ctx.root, 'fts_plan_totals.csv', tables.plans, ['iso3', 'plan_id'])
 
@@ -130,8 +158,19 @@ export async function runFetchFts(
         (f) => f.boundary === 'incoming' && (f.status === 'paid' || f.status === 'commitment'),
       )
       .reduce((s, f) => s + f.amountUSD, 0)
+    const before = without.plans
+      .filter((r) => r.plan_id === plan)
+      .reduce((s, r) => s + r.usd_paid_committed, 0)
     report.push(
-      `  plan ${plan}: ${flows.length} flows on ${ps.length} page(s); plan funding (incoming, paid + committed, all donors) ${usd(planFunding)}; attributed government funding ${usd(govSum)} from ${gov.length} donors`,
+      `  plan ${plan}: ${flows.length} flows on ${ps.length} page(s); plan funding (incoming, paid + committed, all donors) ${usd(planFunding)}; attributed government funding ${usd(govSum)} from ${gov.length} donors (${usd(before)} without the overrides)`,
+    )
+  }
+  report.push(`  organisation list ${orgs.source.id}; overrides applied: ${verified.applied.size}`)
+  for (const p of verified.problems) report.push(`    override problem: ${p}`)
+  for (const f of tables.overriddenFlows) {
+    const name = FTS_ATTRIBUTION_OVERRIDES.find((o) => o.orgId === f.overriddenBy)?.name ?? ''
+    report.push(
+      `    override: flow ${f.flowId} (plan ${f.planId}, ${f.date}) of organisation ${f.overriddenBy} ${name} → ${f.iso3}, ${usd(f.amount)}`,
     )
   }
   const months = new Set(tables.windows.map((w) => w.window_end)).size

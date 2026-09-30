@@ -75,7 +75,7 @@ export function QuoteFigure({ ev, lang, t }: { ev: ApiEvidence; lang: Lang; t: T
 /** `Publisher · Archived copy · sha256 3f2a…e1 · date`, the evidence row of docs/05 §5. */
 export function SourceLine({ s, t, label }: { s: ApiSource; t: T; label?: string }) {
   return (
-    <li className="flex flex-wrap items-center gap-x-2">
+    <li className="flex flex-wrap items-center gap-x-2 gap-y-2">
       <a href={s.url} title={s.title} lang={s.language}>
         {label ?? s.publisher}
       </a>
@@ -280,7 +280,7 @@ export function EventCard({ lang, methodology, event, sources, gitSha = null }: 
         ))}
         <PointsLine lang={lang} methodology={methodology} event={event} t={t} />
         {listed.length > 0 ? (
-          <ul className="flex flex-col gap-1 text-14">
+          <ul className="flex flex-col gap-2 text-14">
             {sourcesOf(listed, sources).map((s) => (
               <SourceLine key={s.id} s={s} t={t} />
             ))}

@@ -353,6 +353,14 @@ export const STRUCTURED_DOCS: Record<StructuredTableName, LangText> = {
     'Population per country and year, from the World Bank; kept for reference, it does not score.',
     "Population par pays et année, selon la Banque mondiale ; conservée pour référence, elle n'est pas notée.",
   ),
+  'recognitions.csv': t(
+    'Recognitions of the State of Palestine (B8): one row per recognising state, with the date the recognition took effect and the archived official statement that confirms it; a recognition before 7 October 2023 scores +3 from that day, a later one +8 from its date.',
+    "Reconnaissances de l'État de Palestine (B8) : une ligne par État qui reconnaît, avec la date d'effet de la reconnaissance et la déclaration officielle archivée qui la confirme ; une reconnaissance antérieure au 7 octobre 2023 compte +3 à partir de ce jour, une reconnaissance postérieure +8 à partir de sa date.",
+  ),
+  'a2_confirmed_military.csv': t(
+    'Exports to Israel under HS 8526 (radar and remote-control apparatus) or 8802 (aircraft) confirmed as military by a licence register, a parliamentary answer or a published investigation citing the customs code (A2): one row per country and heading. Without a row these headings do not count in A2.',
+    'Exportations vers Israël sous les positions SH 8526 (appareils de radar et de télécommande) ou 8802 (aéronefs) dont la nature militaire est confirmée par un registre de licences, une réponse parlementaire ou une enquête publiée citant le code douanier (A2) : une ligne par pays et par position. Sans ligne, ces positions ne comptent pas dans A2.',
+  ),
 }
 
 export function structuredTables(): { name: StructuredTableName; columns: readonly string[] }[] {
