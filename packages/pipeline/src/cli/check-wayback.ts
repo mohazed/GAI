@@ -8,7 +8,7 @@
  */
 import { execFile } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { loadDataset } from '@gai/schema'
@@ -43,7 +43,9 @@ function curl(url: string, dir: string): Promise<Fetched> {
         const status = Number(code) || 0
         const redirect = rest.join(' ').trim()
         if (status === 200) {
-          const sha256 = createHash('sha256').update(readFileSync(body)).digest('hex')
+          // curl writes no file for an empty body: hash the empty body instead of failing the run.
+          const bytes = existsSync(body) ? readFileSync(body) : Buffer.alloc(0)
+          const sha256 = createHash('sha256').update(bytes).digest('hex')
           resolve({ status, sha256, detail: null })
         } else {
           const detail =
