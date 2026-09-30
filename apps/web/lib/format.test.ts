@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import { fold } from './search'
 import {
   frenchDisplay,
   frenchMessages,
@@ -12,6 +11,7 @@ import {
   signed,
   signedInt,
 } from './format'
+import { fold } from './search'
 
 describe('numbers', () => {
   it('uses the minus sign and the plus sign', () => {

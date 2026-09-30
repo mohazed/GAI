@@ -69,6 +69,9 @@ export function generateAll(
   const unnamed = [...new Set(events.map((e) => e.country))]
     .filter((c) => ctx.actors.size > 0 && !ctx.actors.has(c))
     .sort()
-    .map((c) => `${c}: not in the registry; its generated summaries name it by its code ("The country ${c}")`)
+    .map(
+      (c) =>
+        `${c}: not in the registry; its generated summaries name it by its code ("The country ${c}")`,
+    )
   return { events, notes: [...parts.flatMap((p) => p.notes), ...unnamed] }
 }

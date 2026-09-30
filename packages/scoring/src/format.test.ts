@@ -9,6 +9,9 @@ describe('frenchApostrophes (docs/05 §2, P-18)', () => {
     expect(frenchApostrophes("aujourd'hui, l'État, qu'Israël, Côte d'Ivoire")).toBe(
       'aujourd’hui, l’État, qu’Israël, Côte d’Ivoire',
     )
+    expect(frenchApostrophes("Iran (République islamique d')")).toBe(
+      'Iran (République islamique d’)',
+    )
   })
 
   it('leaves quotation marks, code and numbers alone, and is idempotent', () => {
