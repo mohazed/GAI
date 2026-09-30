@@ -1,5 +1,5 @@
 /**
- * `pnpm build:data [--date YYYY-MM-DD] [--out DIR] [--root DIR] [--site-url URL] [--quiet]` —
+ * `pnpm build:data [--date YYYY-MM-DD] [--out DIR] [--root DIR] [--site-url URL] [--preview] [--quiet]` —
  * builds the static API (docs/04 §2 steps 1–6) into apps/web/public/api/v1/: reads the inputs
  * (./build/io.ts), runs the pure build (`buildData`, ./build/index.ts) and replaces the output
  * directory with the result.
@@ -17,6 +17,10 @@
  *                      command was run from (default: the repository root); e.g. --root fixtures
  *   --site-url <url>   site origin for permalinks and citations (default: NEXT_PUBLIC_SITE_URL,
  *                      else https://gaza-accountability-index.pages.dev)
+ *   --preview          LOCAL USE ONLY: build with the `reviewed` events as if published, to look at
+ *                      the pages before the author's review (P-17). Never used by the deploy
+ *                      workflows; `deploy:check` refuses an output whose API lists an event that
+ *                      data/ does not hold as published. Drafts stay out
  *   --quiet            print nothing on success
  *
  * Exit codes: 0 built, 1 the data or methodology cannot be built (the message says why), 2 usage
@@ -35,6 +39,7 @@ export interface BuildArgs {
   out?: string
   root?: string
   siteUrl?: string
+  preview: boolean
   quiet: boolean
 }
 
@@ -43,7 +48,7 @@ export class BuildUsageError extends Error {
 }
 
 export const BUILD_USAGE =
-  'usage: pnpm build:data [--date YYYY-MM-DD] [--out DIR] [--root DIR] [--site-url URL] [--quiet]'
+  'usage: pnpm build:data [--date YYYY-MM-DD] [--out DIR] [--root DIR] [--site-url URL] [--preview] [--quiet]'
 
 /** Output directory under the repository root when --out is absent. */
 export const DEFAULT_OUT = 'apps/web/public/api/v1'
@@ -52,7 +57,7 @@ export const DEFAULT_OUT = 'apps/web/public/api/v1'
 export const DEFAULT_SITE_URL = 'https://gaza-accountability-index.pages.dev'
 
 export function parseBuildArgs(argv: readonly string[]): BuildArgs {
-  const args: BuildArgs = { quiet: false }
+  const args: BuildArgs = { preview: false, quiet: false }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     const value = () => {
@@ -67,6 +72,7 @@ export function parseBuildArgs(argv: readonly string[]): BuildArgs {
     else if (a === '--root') args.root = value()
     else if (a === '--site-url') args.siteUrl = value()
     else if (a === '--quiet') args.quiet = true
+    else if (a === '--preview') args.preview = true
     else if (a === '--') continue
     else throw new BuildUsageError(`unknown option ${a}\n${BUILD_USAGE}`)
   }
@@ -269,13 +275,21 @@ function run(args: BuildArgs, options: BuildRunOptions): BuildRunResult {
     }
   }
 
-  const input = deps.load({ repoRoot, datasetRoot, date, siteUrl })
+  const loaded = deps.load({ repoRoot, datasetRoot, date, siteUrl })
+  const input = args.preview ? previewInput(loaded) : loaded
   const output = deps.build(input)
   deps.write(out, output.files)
 
-  if (args.quiet) return { code: 0, stdout: '', stderr: '' }
+  const previewed = args.preview
+    ? loaded.dataset.events.filter((e) => e.value.status === PREVIEW_STATUS).length
+    : 0
+  const warning = args.preview
+    ? `PREVIEW: ${previewed} reviewed event(s) built as if published; local use only, never deploy this output\n`
+    : ''
+  if (args.quiet) return { code: 0, stdout: '', stderr: warning }
   return {
     code: 0,
+    stderr: warning,
     stdout: buildSummary({
       date,
       methodology: input.methodology.version,
@@ -283,6 +297,40 @@ function run(args: BuildArgs, options: BuildRunOptions): BuildRunResult {
       out: shown(repoRoot, out),
       output,
     }),
-    stderr: '',
+  }
+}
+
+/** The status `--preview` builds as if published: reviewed, never draft (a draft was not read twice). */
+export const PREVIEW_STATUS = 'reviewed'
+
+/** The reviewer `--preview` writes in memory, so that the page says what the build is. */
+export const PREVIEW_REVIEWER = 'PREVIEW, not reviewed by the author'
+
+/**
+ * The input with every reviewed event set to published (`--preview`, local use only), its review
+ * marked `PREVIEW_REVIEWER` on the build date in memory; nothing under data/ is written.
+ */
+export function previewInput(input: BuildInput): BuildInput {
+  return {
+    ...input,
+    dataset: {
+      ...input.dataset,
+      events: input.dataset.events.map((e) =>
+        e.value.status === PREVIEW_STATUS
+          ? {
+              ...e,
+              value: {
+                ...e.value,
+                status: 'published' as const,
+                review: {
+                  ...e.value.review,
+                  reviewed_by: PREVIEW_REVIEWER,
+                  reviewed_at: input.date,
+                },
+              },
+            }
+          : e,
+      ),
+    },
   }
 }

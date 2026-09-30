@@ -10,6 +10,8 @@
  *   shallow clone cannot do (P-05, docs/10 B-76; the workflows also run the prompt's jq test);
  * - the API comes from data/, never from fixtures/ (docs/10 B-34): every country, correction and
  *   reply the API publishes is in data/;
+ * - no local preview (`build:data --preview`, P-17): every hand-authored event the API publishes is
+ *   published (or corrected, superseded, retracted) in data/;
  * - the widget carries the site's mode (D-16), read as the build read it (scripts/site-env.ts);
  * - no dev-only kit in the output;
  * - Cloudflare Pages' limits: no file above 25 MiB, at most 20 000 files (docs/09).
@@ -17,7 +19,7 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import path from 'node:path'
-import { findRepoRoot, loadDataset } from '@gai/schema'
+import { findRepoRoot, loadDataset, PUBLIC_STATUSES } from '@gai/schema'
 import type { Mode } from '../lib/mode'
 import { loadSiteMode } from './site-env'
 
@@ -31,10 +33,10 @@ export interface DeployFacts {
     git: { sha: string | null; dirty: boolean | null }
   }
   historyNotes: number
-  /** Ids the API publishes. */
-  api: { countries: string[]; corrections: string[]; replies: string[] }
-  /** Ids of data/. */
-  data: { countries: string[]; corrections: string[]; replies: string[] }
+  /** Ids the API publishes; `events` are the hand-authored ones of the country files. */
+  api: { countries: string[]; corrections: string[]; replies: string[]; events: string[] }
+  /** Ids of data/; `events` are the ones whose status is public there. */
+  data: { countries: string[]; corrections: string[]; replies: string[]; events: string[] }
   /** The mode written into /embed/v1/gai.js, null when none is found. */
   widgetMode: Mode | null
   /** Every file of the output, relative POSIX path and size. */
@@ -79,6 +81,13 @@ export function deployProblems(f: DeployFacts, e: DeployExpectations): string[] 
       )
     }
   }
+  const publicEvents = new Set(f.data.events)
+  const unpublished = f.api.events.filter((id) => !publicEvents.has(id))
+  if (unpublished.length > 0) {
+    problems.push(
+      `the API publishes ${unpublished.length} event(s) that data/ does not hold as published (a build:data --preview output?): ${unpublished.slice(0, 5).join(', ')}${unpublished.length > 5 ? ', …' : ''}`,
+    )
+  }
   if (f.widgetMode !== e.mode) {
     problems.push(`embed/v1/gai.js carries mode ${f.widgetMode}, the site is in ${e.mode} mode`)
   }
@@ -122,6 +131,14 @@ function readFacts(outDir: string, repoRoot: string): DeployFacts {
   const corrections = json(path.join(api, 'corrections.json')) as { corrections: { id: string }[] }
   const replies = json(path.join(api, 'replies.json')) as { replies: { id: string }[] }
   const ds = loadDataset(repoRoot)
+  const events: string[] = []
+  for (const { iso3 } of countries.countries) {
+    const file = path.join(api, 'countries', `${iso3}.json`)
+    if (!existsSync(file)) continue
+    const c = json(file) as { event_list?: { id: string; generated: boolean }[] }
+    for (const ev of c.event_list ?? []) if (!ev.generated) events.push(ev.id)
+  }
+  const publicStatuses: readonly string[] = PUBLIC_STATUSES
   const widget = path.join(outDir, 'embed', 'v1', 'gai.js')
   return {
     manifest,
@@ -130,11 +147,15 @@ function readFacts(outDir: string, repoRoot: string): DeployFacts {
       countries: countries.countries.map((c) => c.iso3),
       corrections: corrections.corrections.map((c) => c.id),
       replies: replies.replies.map((r) => r.id),
+      events,
     },
     data: {
       countries: ds.countries.map((c) => c.value.iso3),
       corrections: ds.corrections.map((c) => c.value.id),
       replies: ds.replies.map((r) => r.value.id),
+      events: ds.events
+        .filter((e) => publicStatuses.includes(e.value.status))
+        .map((e) => e.value.id),
     },
     widgetMode: existsSync(widget) ? widgetModeOf(readFileSync(widget, 'utf8')) : null,
     files: walk(outDir),

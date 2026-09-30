@@ -16,8 +16,13 @@ const facts = (over: Partial<DeployFacts> = {}): DeployFacts => ({
     git: { sha: SHA, dirty: false },
   },
   historyNotes: 0,
-  api: { countries: ['DEU', 'FRA'], corrections: [], replies: [] },
-  data: { countries: ['DEU', 'FRA', 'ISR'], corrections: ['cor_20261001_1'], replies: [] },
+  api: { countries: ['DEU', 'FRA'], corrections: [], replies: [], events: ['evt_a'] },
+  data: {
+    countries: ['DEU', 'FRA', 'ISR'],
+    corrections: ['cor_20261001_1'],
+    replies: [],
+    events: ['evt_a', 'evt_b'],
+  },
   widgetMode: 'scorecard',
   files: [
     { path: 'index.html', bytes: 1000 },
@@ -68,12 +73,25 @@ describe('deployProblems (scripts/deploy-check.ts)', () => {
 
   it('refuses an API built from the fixtures (records data/ does not hold)', () => {
     const f = facts({
-      api: { countries: ['DEU', 'ZZZ'], corrections: ['cor_20260927_1'], replies: ['rep_x'] },
+      api: {
+        countries: ['DEU', 'ZZZ'],
+        corrections: ['cor_20260927_1'],
+        replies: ['rep_x'],
+        events: [],
+      },
     })
     expect(deployProblems(f, expected)).toEqual([
       'the API publishes countries that data/ does not hold (fixtures?): ZZZ',
       'the API publishes corrections that data/ does not hold (fixtures?): cor_20260927_1',
       'the API publishes replies that data/ does not hold (fixtures?): rep_x',
+    ])
+  })
+
+  it('refuses a local preview build (events data/ does not hold as published)', () => {
+    const ids = ['evt_a', 'evt_c', 'evt_d', 'evt_e', 'evt_f', 'evt_g', 'evt_h']
+    const f = facts({ api: { ...facts().api, events: ids } })
+    expect(deployProblems(f, expected)).toEqual([
+      'the API publishes 6 event(s) that data/ does not hold as published (a build:data --preview output?): evt_c, evt_d, evt_e, evt_f, evt_g, …',
     ])
   })
 
