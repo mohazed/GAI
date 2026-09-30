@@ -62,7 +62,9 @@ export function parseCompare(
     const code = raw.trim().toUpperCase()
     if (code === '' || kept.includes(code) || dropped.includes(code)) continue
     if (scored.has(code) && kept.length < MAX_COMPARE) kept.push(code)
-    else dropped.push(code)
+    // Only a code-shaped value is named back on the page; other text in the address is ignored
+    // (P-19: the address is anyone's text).
+    else if (/^[A-Z]{3}$/.test(code)) dropped.push(code)
   }
   return { kept, dropped }
 }

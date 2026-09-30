@@ -29,6 +29,8 @@ describe('public/_headers (docs/04 §3)', () => {
     expect(h['X-Content-Type-Options']).toBe('nosniff')
     expect(h['Referrer-Policy']).toBe('strict-origin-when-cross-origin')
     expect(h['Permissions-Policy']).toBeDefined()
+    expect(h['Strict-Transport-Security']).toBe('max-age=31536000')
+    expect(h['Cross-Origin-Opener-Policy']).toBe('same-origin')
   })
   it('serves hashed build assets immutable, without the page-level headers', () => {
     for (const p of [
@@ -43,6 +45,8 @@ describe('public/_headers (docs/04 §3)', () => {
         'Permissions-Policy',
         'Referrer-Policy',
         'X-Frame-Options',
+        'Strict-Transport-Security',
+        'Cross-Origin-Opener-Policy',
       ])
         expect(h[k], `${p} ${k}`).toBeUndefined()
     }
@@ -65,6 +69,8 @@ describe('public/_headers (docs/04 §3)', () => {
       'Permissions-Policy',
       'Referrer-Policy',
       'X-Frame-Options',
+      'Strict-Transport-Security',
+      'Cross-Origin-Opener-Policy',
     ])
       expect(h[k], k).toBeUndefined()
   })

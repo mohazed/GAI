@@ -6,7 +6,7 @@
  * stays. No dependency, no global, no font or other file loaded.
  */
 import { CONFIG_PLACEHOLDER, readConfig } from './config.js'
-import { dataUrl, linkHtml, readOptions, renderWidget } from './render.js'
+import { countryUrl, dataUrl, linkText, readOptions, renderWidget } from './render.js'
 import { CSS } from './styles.js'
 
 const config = readConfig(CONFIG_PLACEHOLDER)
@@ -29,9 +29,14 @@ function mount(script: HTMLScriptElement): void {
     style.textContent = CSS
     root.append(style)
   }
+  // The link is built with DOM calls, not markup: on a host page that enforces Trusted Types,
+  // where the rendered widget's markup is refused, the link still shows (P-19).
   const box = document.createElement('div')
   box.className = 'w'
-  box.innerHTML = linkHtml(o)
+  const link = document.createElement('a')
+  link.href = countryUrl(o)
+  link.textContent = linkText(o)
+  box.append(link)
   root.append(box)
   if (o.iso3 === null || config === null) return
   fetch(dataUrl(o), { credentials: 'omit' })

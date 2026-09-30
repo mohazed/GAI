@@ -261,7 +261,7 @@ export function parseInline(src: string): Inline[] {
       const end = close < 0 ? -1 : src.indexOf(')', close)
       if (close > i && end > close && !src.slice(i + 1, close).includes('[')) {
         const href = src.slice(close + 2, end)
-        if (!/^(https?:\/\/|\/|#|mailto:)\S+$/.test(href))
+        if (!/^(https?:\/\/|\/(?!\/)|#|mailto:)\S+$/.test(href))
           throw new DocError(`unsupported link target "${href}" in: ${src}`)
         flush()
         out.push({ t: 'link', href, children: parseInline(src.slice(i + 1, close)) })

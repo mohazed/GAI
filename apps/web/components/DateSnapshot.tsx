@@ -75,7 +75,9 @@ export function DateSnapshot({
     const from = methodology.windowStart
     const range = { from: longDate(from, lang), to: longDate(buildDate, lang) }
     if (!ISO.test(date) || Number.isNaN(Date.parse(date)) || date < from || date > buildDate) {
-      setState({ kind: 'notice', text: t('snapshot.invalid', { date, ...range }) })
+      // The address is anyone's text: at most ten characters of it are shown back (P-19).
+      const shown = date.length > 10 ? `${date.slice(0, 10)}…` : date
+      setState({ kind: 'notice', text: t('snapshot.invalid', { date: shown, ...range }) })
       return
     }
     if (mode === 'scorecard') {

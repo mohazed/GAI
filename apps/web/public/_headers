@@ -15,6 +15,13 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
   X-Frame-Options: DENY
+  Strict-Transport-Security: max-age=31536000
+  Cross-Origin-Opener-Policy: same-origin
+
+# Strict-Transport-Security (P-19): the pages.dev host is on the browsers' HSTS preload list (all of
+# .dev is); the header covers a custom domain once one is added (D-02), without includeSubDomains
+# or preload, which are the domain owner's decisions. Cross-Origin-Opener-Policy keeps pages opened
+# from the site, or opening it, out of its browsing context group.
 
 # The API, the share cards and the widget are read from other origins (docs/04 §3, §4).
 /api/*
@@ -33,6 +40,8 @@
   ! Permissions-Policy
   ! Referrer-Policy
   ! X-Frame-Options
+  ! Strict-Transport-Security
+  ! Cross-Origin-Opener-Policy
 
 # Build assets named by content hash (scripts) or package version (fonts, scripts/fonts.ts): cached
 # for good, and without the page-level headers, which only apply to documents and would add some
@@ -44,9 +53,13 @@
   ! Permissions-Policy
   ! Referrer-Policy
   ! X-Frame-Options
+  ! Strict-Transport-Security
+  ! Cross-Origin-Opener-Policy
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
   ! Content-Security-Policy
   ! Permissions-Policy
   ! Referrer-Policy
   ! X-Frame-Options
+  ! Strict-Transport-Security
+  ! Cross-Origin-Opener-Policy

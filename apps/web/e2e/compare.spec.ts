@@ -1,9 +1,12 @@
 import AxeBuilder from '@axe-core/playwright'
 import { type Browser, expect, type Page, test } from '@playwright/test'
 
-/** A French name as the site shows it: the typographic apostrophe (P-18, docs/05 §2). */
+/**
+ * A French name as the site shows it: the typographic apostrophe between letters and before a
+ * closing parenthesis, "d')" (P-18, docs/05 §2; @gai/scoring frenchApostrophes).
+ */
 const shown = (name: string, lang: string) =>
-  lang === 'fr' ? name.replace(/(\p{L})'(?=\p{L})/gu, '$1’') : name
+  lang === 'fr' ? name.replace(/(\p{L}\p{M}*)'(?=\p{L}|\))/gu, '$1’') : name
 
 /**
  * Smoke tests of the Compare page (P-09), in English and French, with JavaScript on and off, in

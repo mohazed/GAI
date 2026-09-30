@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { type FacetDef, type FacetItem, visibleItems } from './FacetBrowser'
+import { decodeHash, type FacetDef, type FacetItem, visibleItems } from './FacetBrowser'
 import { buildAge, STALE_AFTER_DAYS } from './StaleNotice'
 
 const facets: FacetDef[] = [
@@ -53,5 +53,13 @@ describe('stale build notice', () => {
     expect(buildAge('2026-09-27', built + 23 * 3_600_000)).toBe(0)
     expect(buildAge('2026-09-27', built + 3 * day + 1)).toBe(3)
     expect(buildAge('2026-09-27', built + 4 * day)).toBeGreaterThan(STALE_AFTER_DAYS)
+  })
+})
+
+describe('decodeHash (P-19)', () => {
+  it('decodes a fragment and returns empty text for malformed percent-encoding', () => {
+    expect(decodeHash('f-ind-A2')).toBe('f-ind-A2')
+    expect(decodeHash('f-cty-C%C3%B4te')).toBe('f-cty-Côte')
+    expect(decodeHash('%E0%A4%A')).toBe('')
   })
 })
