@@ -156,7 +156,7 @@ describe('renderWidget', () => {
     expect(html).toContain('2 without data, 7 unchecked')
     expect(html).toContain('Score −12 (Passive). 3 events.')
     expect(html).toContain('href="https://gai.example/en/country/DEU/"')
-    expect(html).toContain('Built on 28 September 2026 from the published data, methodology 1.0.0.')
+    expect(html).toContain('Built on 28 September 2026 from the published data, methodology v1.0.0.')
     // Coverage segments in methodology order; not-applicable left out.
     expect([...html.matchAll(/title="(\w+) ·/g)].map((m) => m[1])).toEqual([
       'A1',

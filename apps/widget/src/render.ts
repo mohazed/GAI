@@ -289,5 +289,5 @@ export function renderWidget(f: CountryFile, o: Options, c: WidgetConfig): strin
     top = `<p class="hd" aria-hidden="true"><span class="sc0">${esc(formatSigned(f.score_display ?? 0, o.lang, 0))}</span><span class="chip b-${esc(f.band ?? '')}"><span class="sw"></span>${esc(f.band_name?.[o.lang] ?? '')}</span></p>`
   } else top = ''
   const body = o.view === 'gauge' ? gaugeSvg(f, o, c) + coverageHtml(f, o) : timelineSvg(f, o, c)
-  return `<div class="w" lang="${o.lang}">${head}${top}${body}<p class="f14">${esc(summary)}</p>${foot}</div>`
+  return `<div class="w" lang="${o.lang}">${head}${top}${body}<p class="f14">${esc(summary).replace(/\d{4}-\d\d-\d\d/g, '<span class="n">$&</span>')}</p>${foot}</div>`
 }

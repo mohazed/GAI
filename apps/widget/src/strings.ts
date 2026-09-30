@@ -80,7 +80,7 @@ export const STRINGS: Record<Lang, Strings> = {
       `${country}, score from ${from} to ${to}: ${plural('en', changes, 'no change', '# change', '# changes')}; ${score} at the end.`,
     stripAria: (country, from, to, count, changes) =>
       `${country}, from ${from} to ${to}: ${plural('en', count, 'no event', '# event', '# events')} and ${plural('en', changes, 'no change', '# change', '# changes')} of computed values.`,
-    built: (date, version) => `Built on ${date} from the published data, methodology ${version}.`,
+    built: (date, version) => `Built on ${date} from the published data, methodology v${version}.`,
   },
   fr: {
     site: 'Gaza Accountability Index',
@@ -107,6 +107,6 @@ export const STRINGS: Record<Lang, Strings> = {
     stripAria: (country, from, to, count, changes) =>
       `${country}, du ${from} au ${to}${NBSP}: ${plural('fr', count, 'aucun événement', '# événement', '# événements')} et ${plural('fr', changes, 'aucun changement', '# changement', '# changements')} de valeurs calculées.`,
     built: (date, version) =>
-      `Généré le ${date} à partir des données publiées, méthodologie ${version}.`,
+      `Généré le ${date} à partir des données publiées, méthodologie v${version}.`,
   },
 }

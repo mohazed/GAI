@@ -259,7 +259,7 @@
     "title": "Changes from {from} to {to}",
     "explain": "Events that started or ended in the last {weeks, plural, one {week} other {# weeks}}, by ISO week, newest first.",
     "computed": "A computed value (humanitarian funding each month; arms and trade figures at each data release) is listed when its points change. Recomputations without a change of points are counted, one line per week.",
-    "built": "Built on {date} from the published data, methodology {version}.",
+    "built": "Built on {date} from the published data, methodology v{version}.",
     "feedTitle": "{count, plural, =0 {No entry} one {# entry} other {# entries}} in {weeks, plural, one {# week} other {# weeks}}",
     "monthsTitle": "Monthly reports",
     "monthsNote": "{first} to {last}, newest first. Each report lists the movers, the new events, the states that ended and the corrections of one month.",
@@ -300,8 +300,8 @@
     "countsCaption": "Published events by category and country",
     "metaTitle": "Compare countries",
     "title": "Up to five countries side by side",
-    "explain": "Scores from {from} to {to}, category subtotals and events by month, from each country's published data file, methodology {version}.",
-    "explainScorecard": "Published events by category and by month, from each country's published data file, methodology {version}. Scores are not published yet.",
+    "explain": "Scores from {from} to {to}, category subtotals and events by month, from each country's published data file, methodology v{version}.",
+    "explainScorecard": "Published events by category and by month, from each country's published data file, methodology v{version}. Scores are not published yet.",
     "dataLine": "The page reads the file of each country chosen (/api/v1/countries/ISO3.json) in the browser; the address keeps the choice, so a comparison can be shared as a link.",
     "noJsTitle": "The comparison needs JavaScript",
     "noJs": "The comparison is drawn in the browser from each country's data file. Without JavaScript, each country page below shows the same charts, categories and events for one country.",
@@ -326,7 +326,7 @@
     "citeNote": "The citation gives the build date, {date}, and the link to this comparison."
   },
   "methodology": {
-    "caption": "Indicators of methodology {version}",
+    "caption": "Indicators of methodology v{version}",
     "cols": {
       "id": "ID",
       "indicator": "Indicator",
@@ -390,6 +390,7 @@
     "eventsTitle": "Events",
     "eventsCount": "{acts, plural, =0 {No event} one {# event} other {# events}}, newest first.",
     "eventsCountRuns": "{acts, plural, =0 {No event} one {# event} other {# events}} and {runs, plural, one {# series} other {# series}} of computed values, newest first.",
+    "eventsOutOfScope": "{count, plural, one {# of these events concerns} other {# of these events concern}} only the West Bank or Lebanon, which the index records but does not score in this version; the summary above counts the others.",
     "eventsNone": "No events published for this country yet. The assessment table below lists what was checked.",
     "checkedTitle": "What was checked",
     "checkedSummary": "Research status of the {count} scored indicators",
@@ -435,14 +436,14 @@
     "excludedBody": "The index scores what third states have done regarding Gaza. {reason}",
     "excludedMethod": "The methodology states this exclusion and its reason.",
     "excludedRanking": "Every scored country is listed in the ranking.",
-    "jsonLdDescription": "Events, sources, research coverage and category subtotals of {country} in the Gaza Accountability Index, from {from} to {to}, methodology {version}."
+    "jsonLdDescription": "Events, sources, research coverage and category subtotals of {country} in the Gaza Accountability Index, from {from} to {to}, methodology v{version}."
   },
   "gen": {
     "row": "Row {line} of {path}",
     "rowLink": "View the row in the repository",
     "responses": "{count, plural, one {# archived response} other {# archived responses}}",
     "retrieved": "retrieved {date}",
-    "rationale": "Basis: {text}",
+    "rationale": "Basis:",
     "citedBy": "cited by {count} of {total} values"
   },
   "run": {
@@ -501,9 +502,9 @@
   "methodologyPage": {
     "metaTitle": "Methodology",
     "metaTitleVersion": "Methodology {version}",
-    "description": "How the index scores the conduct of states regarding Gaza: indicators, points, caps, formula, decay, confidence, passivity and coverage, methodology {version}.",
+    "description": "How the index scores the conduct of states regarding Gaza: indicators, points, caps, formula, decay, confidence, passivity and coverage, methodology v{version}.",
     "contents": "Contents",
-    "superseded": "This page is methodology {version}, superseded. The current version is {current}.",
+    "superseded": "This page is methodology v{version}, superseded. The current version is {current}.",
     "readCurrent": "Read the current version",
     "files": "This version as data:",
     "diffTitle": "Scores moved by this version",
@@ -573,7 +574,7 @@
     "translation": "Translation",
     "signed": "— {author}",
     "reviewersNone": "Reviewers: none yet. Two or three external reviewers, at least one in international law and one with experience of arms-trade data, are to review the indicator table and the thresholds before scores are displayed. Their names and a one-line disclosure of their affiliations will be listed here.",
-    "signedOff": "Signed off methodology {version} on {date}",
+    "signedOff": "Signed off methodology v{version} on {date}",
     "caveat": "Caveat:"
   },
   "contact": {
@@ -586,7 +587,7 @@
   },
   "dataPage": {
     "description": "Downloads and API of the Gaza Accountability Index: every endpoint with an example, the structured tables, the citation of the dataset and how to reproduce a build.",
-    "build": "This build: {date}, methodology {version}, {files} files, {size}. Commit",
+    "build": "This build: {date}, methodology v{version}, {files} files, {size}. Commit",
     "noSha": "no commit recorded",
     "dirty": "This build read uncommitted changes to its inputs (git.dirty is true): it cannot be reproduced from a clone.",
     "downloadsCaption": "Bulk downloads of this build",

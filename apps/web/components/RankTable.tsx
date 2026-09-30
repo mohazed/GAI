@@ -169,6 +169,14 @@ export function RankTable({
   const regionList = useMemo(() => [...new Set(scored.map((r) => r.region))].sort(), [scored])
   const memberList = MEMBERSHIPS.filter((m) => scored.some((r) => r.memberOf.includes(m)))
   const bandSpec = (id: string): BandSpec | undefined => methodology.bands.find((b) => b.id === id)
+  const bandChip = (band: BandSpec) => (
+    <span
+      className={`band-${band.id} band-tint inline-flex items-center gap-1.5 rounded-xs px-1.5 py-0.5 font-sans text-12 whitespace-nowrap`}
+    >
+      <span aria-hidden="true" className="band-swatch inline-block size-2" />
+      {band.name[lang]}
+    </span>
+  )
   const filtered = regions.length + bands.length + members.length > 0 || cov50
 
   const toggle = (list: string[], set: (v: string[]) => void, v: string) =>
@@ -181,7 +189,7 @@ export function RankTable({
       <th
         scope="col"
         aria-sort={ariaSort}
-        className={`sticky top-0 z-[1] border-b border-ink bg-paper py-2 pe-3 font-semibold ${align === 'end' ? 'text-end' : 'text-start'} ${extra}`}
+        className={`sticky top-0 z-[1] border-b border-ink bg-paper py-2 pe-2 md:pe-3 font-semibold ${align === 'end' ? 'text-end' : 'text-start'} ${extra}`}
       >
         {ready ? (
           <button
@@ -215,7 +223,7 @@ export function RankTable({
   const plainHeader = (label: string, extra = '') => (
     <th
       scope="col"
-      className={`sticky top-0 z-[1] border-b border-ink bg-paper py-2 pe-3 text-start font-semibold ${extra}`}
+      className={`sticky top-0 z-[1] border-b border-ink bg-paper py-2 pe-2 md:pe-3 text-start font-semibold ${extra}`}
     >
       {label}
     </th>
@@ -315,7 +323,7 @@ export function RankTable({
             {scoreMode
               ? header('score', t('cols.score'), 'end')
               : header('events', t('cols.events'), 'end')}
-            {scoreMode ? plainHeader(t('cols.band')) : null}
+            {scoreMode ? plainHeader(t('cols.band'), 'hidden lg:table-cell') : null}
             {scoreMode ? plainHeader(t('cols.categories'), 'hidden md:table-cell') : null}
             {header('coverage', t('cols.coverage'), 'end')}
             {scoreMode
@@ -337,18 +345,21 @@ export function RankTable({
             return (
               <tr key={r.iso3} className="align-top">
                 {scoreMode ? (
-                  <td className="border-b border-rule py-2 pe-3 font-mono text-m13 text-ink-2">
+                  <td className="border-b border-rule py-2 pe-2 md:pe-3 font-mono text-m13 text-ink-2">
                     {positions.get(r.iso3)}
                   </td>
                 ) : null}
-                <th scope="row" className="border-b border-rule py-2 pe-3 text-start font-normal">
+                <th
+                  scope="row"
+                  className="border-b border-rule py-2 pe-2 md:pe-3 text-start font-normal"
+                >
                   <a href={`/${lang}/country/${r.iso3}/`}>{r.name[lang]}</a>
                   <span className="block font-mono text-m11 text-ink-2 md:inline md:ps-2">
                     {r.iso3}
                   </span>
                 </th>
                 {scoreMode ? (
-                  <td className="border-b border-rule py-2 pe-3 text-end font-mono text-m13 whitespace-nowrap">
+                  <td className="border-b border-rule py-2 pe-2 md:pe-3 text-end font-mono text-m13 whitespace-nowrap">
                     <span className="num font-semibold">{e ? fmtSigned(e.display, lang) : ''}</span>
                     {e && e.delta !== 0 ? (
                       <span className="block text-m11 text-ink-2">
@@ -356,32 +367,28 @@ export function RankTable({
                         <span className="num">({fmtSigned(e.delta, lang)})</span>
                       </span>
                     ) : null}
+                    {/* Under 1024 px the band sits under the score, not in a column of its own:
+                        the French band names and headers did not fit 360 or 768 px (P-17). */}
+                    {band ? <span className="mt-1 block lg:hidden">{bandChip(band)}</span> : null}
                   </td>
                 ) : (
-                  <td className="border-b border-rule py-2 pe-3 text-end font-mono text-m13">
+                  <td className="border-b border-rule py-2 pe-2 md:pe-3 text-end font-mono text-m13">
                     {r.events ?? 0}
                   </td>
                 )}
                 {scoreMode ? (
-                  <td className="border-b border-rule py-2 pe-3">
-                    {band ? (
-                      <span
-                        className={`band-${band.id} band-tint inline-flex items-center gap-1.5 rounded-xs px-1.5 py-0.5 text-12 whitespace-nowrap`}
-                      >
-                        <span aria-hidden="true" className="band-swatch inline-block size-2" />
-                        {band.name[lang]}
-                      </span>
-                    ) : null}
+                  <td className="hidden border-b border-rule py-2 pe-2 md:pe-3 lg:table-cell">
+                    {band ? bandChip(band) : null}
                   </td>
                 ) : null}
                 {scoreMode ? (
-                  <td className="hidden border-b border-rule py-2 pe-3 md:table-cell">
+                  <td className="hidden border-b border-rule py-2 pe-2 md:pe-3 md:table-cell">
                     {r.clipped ? (
                       <MiniBars clipped={r.clipped} methodology={methodology} lang={lang} />
                     ) : null}
                   </td>
                 ) : null}
-                <td className="border-b border-rule py-2 pe-3 text-end whitespace-nowrap">
+                <td className="border-b border-rule py-2 pe-2 md:pe-3 text-end whitespace-nowrap">
                   <span className="num font-mono text-m13">
                     {fmtPercent(r.coverage ?? 0, lang)}
                   </span>
@@ -414,7 +421,7 @@ export function RankTable({
                 <th
                   scope="row"
                   colSpan={scoreMode ? 2 : 1}
-                  className="border-b border-rule py-2 pe-3 text-start font-normal"
+                  className="border-b border-rule py-2 pe-2 md:pe-3 text-start font-normal"
                 >
                   <a href={`/${lang}/country/${r.iso3}/`}>{r.name[lang]}</a>
                   <span className="block font-mono text-m11 text-ink-2 md:inline md:ps-2">

@@ -237,13 +237,26 @@ export function Card({ input }: { input: CardInput }): ReactNode {
             {input.name}
           </div>
           {input.kind === 'score' && band !== undefined ? (
-            <div style={{ display: 'flex', alignItems: 'center', marginTop: 4 }}>
+            // "−100" beside "Sustaining" ran the chip into the number (P-17): a four-character
+            // score is set at 128 px, the row may use 32 px of the column padding, and the
+            // chip wraps under the score if both still do not fit; neither is ever squeezed.
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                marginTop: 4,
+                marginRight: -32,
+              }}
+            >
               <div
                 style={{
                   display: 'flex',
+                  flexShrink: 0,
                   fontFamily: 'Newsreader',
-                  fontSize: 168,
+                  fontSize: (input.score ?? '').length > 3 ? 128 : 168,
                   lineHeight: 1,
+                  marginRight: 24,
                 }}
               >
                 {input.score}
@@ -251,8 +264,8 @@ export function Card({ input }: { input: CardInput }): ReactNode {
               <div
                 style={{
                   display: 'flex',
+                  flexShrink: 0,
                   alignItems: 'center',
-                  marginLeft: 28,
                   padding: '6px 12px',
                   borderRadius: 2,
                   backgroundColor: tint(bandColour),
