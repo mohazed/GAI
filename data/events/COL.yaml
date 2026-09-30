@@ -58,6 +58,39 @@
       Scoped `region`, unscored, flagged for the author (docs/10 B-357 (2)). The recall ended with the severance of
       relations on 2 May 2024 (the ambassador did not return).
 
+- id: evt_2023_12_31_COL_D3
+  revision: 1
+  country: COL
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Colombia's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 160,000 in 2023; no row for Colombia in the 2022 table (a 2022 contribution of zero)) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Colombia contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Colombie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Colombia 0 0 0 0 0 0 0 0 0 160,000 160,000 82"
+    quote_lang: en
+    locator: line 101 (Colombia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 101 of the 2023 table re-read: USD 160,000 in 2023; no row for Colombia in the 2022 table (a 2022 contribution of zero). D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_COL_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_COL_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_04_05_COL_B3
   revision: 1
   country: COL
@@ -433,9 +466,7 @@
         entered in the non-programme columns; the 2022 table (as of 31 December 2022) ranks 98 donors down to USD 11
         and has no Colombia row, so the 2022 contribution is zero. Colombia never suspended (D2 none-found). Increased
         tier agrees, as Brazil, Japan, Korea and China on data/wave-6.
-    notes: >-
-      The same USD 382,023 appears in FTS as Colombia's flow to the oPt appeal (fts_funding.csv, windows from June
-      2024), so D1 and D3 both reflect one contribution; flagged (docs/10 B-357 (4)).
+    notes: "The same USD 382,023 appears in FTS as Colombia's flow to the oPt appeal (fts_funding.csv, windows from June 2024), so D1 and D3 both reflect one contribution; flagged (docs/10 B-357 (4)). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_COL_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
 
 - id: evt_2025_07_15_COL_B9
   revision: 1

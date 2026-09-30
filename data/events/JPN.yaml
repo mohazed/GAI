@@ -7,6 +7,43 @@
 # only on the speaker's own formal words (statements issued in the Foreign Minister's name,
 # speeches), not on the Ministry's readouts of meetings in indirect speech, on press conference
 # answers, or on statements of the Press Secretary (docs/10 B-332; B-314, B-320, B-325 on data/wave-5).
+- id: evt_2023_12_31_JPN_D3
+  revision: 1
+  country: JPN
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-01-28'
+  points: 8
+  points_rationale: "Increased tier (+8): Japan's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 48,530,158 in 2023 against USD 30,152,202 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Japan contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution du Japon à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Japan 3,582,686 64,930 3,647,616 4,183,693 14,511,155 16,887,693 1,300,000 1,000,000 0 7,000,000 48,530,158 6"
+    quote_lang: en
+    locator: line 21 (Japan)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Japan 4,344,999 50,560 4,395,559 16,846,434 5,550,000 3,360,209 30,152,202 6"
+    quote_lang: en
+    locator: line 15 (Japan)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 21 of the 2023 table and line 15 of the 2022 table re-read: USD 48,530,158 in 2023 against USD 30,152,202 in 2022. D3 increased agrees; it ends on 2024-01-28, when the suspension of UNRWA funding began (evt_2024_01_28_JPN_D2)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-01-28, when the suspension of UNRWA funding began (evt_2024_01_28_JPN_D2). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_28_JPN_D2
   revision: 1
   country: JPN
@@ -402,12 +439,7 @@
       notes: >-
         Row Japan re-read in both tables: 2024 total pledged USD 37,155,282 (rank 14) and received 36,240,067 (rank 13),
         2022 total 30,152,202 (rank 6). Both 2024 figures exceed 2022; increased tier agrees.
-    notes: >-
-      Dated from the end of the table year, as Canada's and Greece's increased-tier events on the other wave branches.
-      The 2024 row's last four figures are the total pledged (37,155,282, rank 14) and received (36,240,067, rank 13);
-      the 2022 row's total is 30,152,202 (rank 6). Both tables were copied byte for byte from data/wave-5 (docs/10
-      B-330), not archived again. UNRWA's table for 2025 was not archived; the increased tier holds until a later table
-      shows otherwise.
+    notes: "Dated from the end of the table year, as Canada's and Greece's increased-tier events on the other wave branches. The 2024 row's last four figures are the total pledged (37,155,282, rank 14) and received (36,240,067, rank 13); the 2022 row's total is 30,152,202 (rank 6). Both tables were copied byte for byte from data/wave-5 (docs/10 B-330), not archived again. UNRWA's table for 2025 was not archived; the increased tier holds until a later table shows otherwise. P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_JPN_D3 holds the increased tier from 31 December 2023 until the suspension of January 2024."
 
 - id: evt_2025_01_16_JPN_B9
   revision: 1

@@ -46,6 +46,43 @@
       destruction of Gaza unacceptable, without naming a violation such as starvation or attacks on
       hospitals. It has decayed to zero (Δ > 730 days).
 
+- id: evt_2023_12_31_BEL_D3
+  revision: 1
+  country: BEL
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Belgium's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 15,003,330 in 2023 against USD 12,558,653 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Belgium contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Belgique à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Belgium (including Government of Flanders) 8,579,041 0 8,579,041 0 3,043,854 3,380,435 0 0 0 0 15,003,330 18"
+    quote_lang: en
+    locator: line 34 (Belgium)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Belgium (including Government of Flanders) 8,176,958 0 8,176,958 0 1,217,137 3,164,557 12,558,653 18"
+    quote_lang: en
+    locator: line 27 (Belgium)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 34 of the 2023 table and line 27 of the 2022 table re-read: USD 15,003,330 in 2023 against USD 12,558,653 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_BEL_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_BEL_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_02_02_BEL_B9
   revision: 1
   country: BEL
@@ -335,15 +372,7 @@
       at: '2026-09-28'
       verdict: agree
       notes: 'Line 28 of the 2024 table and line 27 of the 2022 table re-read: 20,496,861 pledged in 2024 against 12,558,653 in 2022. D3 increased agrees.'
-    notes: >-
-      Belgium did not suspend its UNRWA funding (D2 none-found): the Prime Minister told the
-      General Assembly in September 2024 that Belgium "never ceased" supporting UNRWA
-      (src_20240924_premier-be_discours-agnu79, line 28), so there is no resumption date; D3 is
-      dated from the end of the first calendar year whose annual contribution exceeds 2022 in
-      UNRWA's table (31 December 2024), as for Spain (evt_2024_12_31_ESP_D3 on data/wave-1). The
-      FPS Foreign Affairs announced on 19 April 2024 a flexible core contribution of EUR 27.5 million
-      over 2024–2026 (release read, not archived). Both tables were archived by wave 1 and copied
-      to this branch (docs/10 B-250).
+    notes: "Belgium did not suspend its UNRWA funding (D2 none-found): the Prime Minister told the General Assembly in September 2024 that Belgium \"never ceased\" supporting UNRWA (src_20240924_premier-be_discours-agnu79, line 28), so there is no resumption date; D3 is dated from the end of the first calendar year whose annual contribution exceeds 2022 in UNRWA's table (31 December 2024), as for Spain (evt_2024_12_31_ESP_D3 on data/wave-1). The FPS Foreign Affairs announced on 19 April 2024 a flexible core contribution of EUR 27.5 million over 2024–2026 (release read, not archived). Both tables were archived by wave 1 and copied to this branch (docs/10 B-250). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_BEL_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
 
 - id: evt_2025_05_20_BEL_C1
   revision: 1

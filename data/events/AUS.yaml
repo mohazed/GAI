@@ -76,6 +76,87 @@
       notes: "Re-read: support for a sustainable ceasefire and opposition to any siege or blockade; no specific violation named. Call tier agrees."
     notes: "Joint statement of the Prime Ministers of Australia, Canada and New Zealand, cited from the copy the Prime Minister of Canada published (the same text is at pm.gov.au/media/joint-statement-prime-ministers-australia-canada-and-new-zealand, first captured 2023-12-13, not archived again). Same reading as evt_2023_12_12_CAN_B9. Decayed to zero (more than 730 days)."
 
+- id: evt_2023_12_31_AUS_D3
+  revision: 1
+  country: AUS
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-01-27'
+  points: 8
+  points_rationale: "Increased tier (+8): Australia's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 14,542,856 in 2023 against USD 13,797,995 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Australia contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de l'Australie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Australia 14,542,856 0 14,542,856 0 0 0 0 0 0 0 14,542,856 20"
+    quote_lang: en
+    locator: line 36 (Australia)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Australia 13,797,995 0 13,797,995 0 0 0 13,797,995 16"
+    quote_lang: en
+    locator: line 25 (Australia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 36 of the 2023 table and line 25 of the 2022 table re-read: USD 14,542,856 in 2023 against USD 13,797,995 in 2022. D3 increased agrees; it ends on 2024-01-27, when the suspension of UNRWA funding began (evt_2024_01_27_AUS_D2)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-01-27, when the suspension of UNRWA funding began (evt_2024_01_27_AUS_D2). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
+- id: evt_2024_01_27_AUS_D2
+  revision: 1
+  country: AUS
+  indicator: D2
+  type: standing
+  date: '2024-01-27'
+  end: '2024-03-15'
+  points: -10
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Minister for Foreign Affairs paused the disbursement of recently announced Australian funding to UNRWA; the pause was lifted on 15 March 2024."
+    fr: "La ministre des Affaires étrangères a suspendu le versement d'un financement australien récemment annoncé à l'UNRWA ; la pause a été levée le 15 mars 2024."
+  actor:
+    en: "Minister for Foreign Affairs"
+    fr: "Ministre des Affaires étrangères"
+    name: "Penny Wong"
+  evidence:
+  - source: src_20240315_fm-gov-au_unrwa-funding-resumed
+    quote: "The decision to pause an additional $6 million in funding was taken after serious allegations were made, resulting in UNRWA's dismissal of staff alleged to have been involved in the Hamas terrorist attacks of 7 October."
+    quote_lang: en
+    locator: line 2
+  - source: src_20240315_fm-gov-au_unrwa-funding-resumed
+    quote: "Australia will lift its temporary pause on funding for the United Nations Relief and Works Agency (UNRWA), following steps to strengthen the integrity of UNRWA operations."
+    quote_lang: en
+    locator: line 1
+  - source: src_20240127_sbs_australia-pauses-unrwa-funding
+    quote: "\"While we do this, we will temporarily pause disbursement of recently announced funding.\""
+    quote_lang: en
+    locator: line 15
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_03_15_AUS_D3]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "The Minister's release of 15 March 2024 re-read (lines 1 and 2): the decision to pause the funding and its lifting; the press report of 27 January 2024 (line 15) quotes the announcement that day. D2 standing from 27 January to 15 March 2024 agrees; the date rests on the press report, the pause itself on the official release."
+    notes: "Filed in P-16 under the reading R10 of docs/calibration/README.md (a publicly stated hold or stop of UNRWA payments is D2 from its announcement to the resumption) and for symmetry with the other suspending donors: the Minister's release of 15 March 2024 records the decision to pause and lifts it; the date of the announcement (Saturday 27 January 2024, made on the Minister's social media) is from the SBS report, the official listings having no release of that day (docs/10 B-267 (4), B-270 (1)). It ends on 15 March 2024 and contributes 0 today."
+
 - id: evt_2024_02_14_AUS_B9
   revision: 1
   country: AUS
@@ -151,7 +232,7 @@
       at: '2026-09-28'
       verdict: agree
       notes: "Re-read: the joint media release of 15 March 2024 announces the lifting of the temporary pause and the disbursement of AUD 6 million to UNRWA's flash appeal. D3 restored agrees."
-    notes: "Standing from the announced resumption (docs/02 §2 D3), no end. Increased tier not met: UNRWA donor tables give USD 13,797,995 for 2022 (src_20221231_unrwa_donor-ranking-2022, line 25) and USD 3,980,546 for 2024 (src_20241231_unrwa_donor-ranking-2024, line 49). The pause itself (D2) has no dated primary in the official listings searched (docs/10 B-267)."
+    notes: "Standing from the announced resumption (docs/02 §2 D3), no end. Increased tier not met: UNRWA donor tables give USD 13,797,995 for 2022 (src_20221231_unrwa_donor-ranking-2022, line 25) and USD 3,980,546 for 2024 (src_20241231_unrwa_donor-ranking-2024, line 49). The pause itself is evt_2024_01_27_AUS_D2 (P-16: the release of 15 March 2024 records the decision to pause; the date is from the press, docs/10 B-445)."
 
 - id: evt_2024_06_04_AUS_B9
   revision: 1

@@ -52,6 +52,43 @@
       Press release of the Federal Council after its meeting of 1 November 2023, which also asked Parliament for CHF 90
       million of humanitarian aid for the region. Decayed to zero (Δ > 730 days).
 
+- id: evt_2023_12_31_CHE_D3
+  revision: 1
+  country: CHE
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-03-04'
+  points: 8
+  points_rationale: "Increased tier (+8): Switzerland's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 26,797,659 in 2023 against USD 25,534,028 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Switzerland contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Suisse à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Switzerland 24,193,670 353,789 24,547,459 0 1,108,647 0 0 0 0 1,141,553 26,797,659 12"
+    quote_lang: en
+    locator: line 27 (Switzerland)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Switzerland 23,819,475 598,407 24,417,882 0 1,006,036 110,110 25,534,028 9"
+    quote_lang: en
+    locator: line 18 (Switzerland)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 27 of the 2023 table and line 18 of the 2022 table re-read: USD 26,797,659 in 2023 against USD 25,534,028 in 2022. D3 increased agrees; it ends on 2024-03-04, when the suspension of UNRWA funding began (evt_2024_03_04_CHE_D2)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-03-04, when the suspension of UNRWA funding began (evt_2024_03_04_CHE_D2). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_23_CHE_B9
   revision: 1
   country: CHE
@@ -104,6 +141,84 @@
       Ministerial open debate of the Security Council on the situation in the Middle East, 23 January 2024, while
       Switzerland was an elected member. The record is the French verbatim record (he spoke in French); the English
       translation is the UN's (S/PV.9534, English version). Decayed to zero (Δ > 730 days).
+
+- id: evt_2024_03_04_CHE_D2
+  revision: 1
+  country: CHE
+  indicator: D2
+  type: standing
+  date: '2024-03-04'
+  end: '2024-05-08'
+  points: -10
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Federal Council told Parliament that payments to UNRWA would wait for the UN investigations and the consultation of the foreign affairs committees."
+    fr: "Le Conseil fédéral a indiqué au Parlement que les versements à l'UNRWA attendraient les enquêtes de l'ONU et la consultation des commissions de politique extérieure."
+  actor:
+    en: "Federal Council"
+    fr: "Conseil fédéral"
+    name: "Swiss Federal Council"
+  evidence:
+  - source: src_20240304_parlament_fragestunde-24-7059
+    quote: "Die Aussenpolitischen Kommissionen werden im zweiten Quartal 2024 zu den Ausgaben der ersten Tranche aus dem humanitären Kredit im Nahen Osten konsultiert. Dies beinhaltet auch den aktuellen Stand über die Gelder für die UNRWA. Anschliessend können die ersten Zahlungen erfolgen."
+    quote_lang: de
+    quote_en: "The foreign affairs committees will be consulted in the second quarter of 2024 on the spending of the first tranche of the humanitarian credit for the Middle East. This includes the current state of the funds for UNRWA. The first payments can follow afterwards."
+    locator: FederalCouncilResponseText
+  - source: src_20240508_admin-ch_unrwa-10-million-gaza
+    quote: "At its meeting on 8 May 2024, the Federal Council decided to make a contribution of CHF 10 million to the humanitarian aid appeal of the United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA)."
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_05_08_CHE_D3, evt_2023_12_31_CHE_D3]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "The Federal Council's answers of 4 March 2024 re-read: payments wait for the committees' consultation in the second quarter, including UNRWA's funds (24.7059); the release of 8 May 2024 records the decision to pay CHF 10 million. D2 standing from 4 March to 8 May 2024 agrees under R10."
+    notes: "Filed in P-16 under the reading R10 of docs/calibration/README.md, which names Switzerland's hold: a publicly stated hold of UNRWA payments is D2 from its announcement to the resumption (the session had read it as a wait, docs/10 B-293, B-296 (3)). Dated from the Federal Council's answers to Parliament of 4 March 2024, the first archived statement of the hold (the ministry's statement of late January 2024 is known from the press only), to the decision of 8 May 2024 to pay CHF 10 million (evt_2024_05_08_CHE_D3). Contributes 0 today."
+
+- id: evt_2024_05_08_CHE_D3
+  revision: 1
+  country: CHE
+  indicator: D3
+  type: standing
+  date: '2024-05-08'
+  end: null
+  points: 5
+  points_rationale: "Restored tier (+5): funding to UNRWA resumed after the hold with CHF 10 million for UNRWA's Gaza appeal; not the increased tier: UNRWA's tables give USD 25,534,028 for 2022 and USD 13,426,817 for 2024."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Federal Council decided to contribute CHF 10 million to UNRWA's humanitarian appeal for Gaza, ending its hold on payments to UNRWA."
+    fr: "Le Conseil fédéral a décidé de verser 10 millions de francs à l'appel humanitaire de l'UNRWA pour Gaza, mettant fin à la suspension de ses versements."
+  actor:
+    en: "Federal Council"
+    fr: "Conseil fédéral"
+    name: "Swiss Federal Council"
+  evidence:
+  - source: src_20240508_admin-ch_unrwa-10-million-gaza
+    quote: "At its meeting on 8 May 2024, the Federal Council decided to make a contribution of CHF 10 million to the humanitarian aid appeal of the United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA)."
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_03_04_CHE_D2]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "The release of 8 May 2024 re-read (line 2): the decision to contribute CHF 10 million to UNRWA's appeal, earmarked for Gaza. D3 restored agrees; the 2024 table (line 33) is below 2022, so not the increased tier."
+    notes: "Standing from the decision of 8 May 2024 (docs/02 §2 D3), filed with the D2 hold under R10 (P-16). Switzerland contributed CHF 11 million in 2025 (answer to interpellation 25.3436, cited in the assessment), so no end."
 
 - id: evt_2024_10_29_CHE_B9
   revision: 1

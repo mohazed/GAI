@@ -173,6 +173,43 @@
       of 20 March 2025 (read in its Wayback capture, not recorded as a source) counts 25 children treated since the start of 2024 and three patients received in a WHO/EU operation. Later operations are
       the same programme, not new events.
 
+- id: evt_2023_12_31_FRA_D3
+  revision: 1
+  country: FRA
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-01-28'
+  points: 8
+  points_rationale: "Increased tier (+8): France's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 62,421,104 in 2023 against USD 28,909,838 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "France contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la France à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "France 53,356,349 64,759 53,421,108 1,097,695 6,777,168 299,570 0 0 736,773 88,790 62,421,104 4"
+    quote_lang: en
+    locator: line 19 (France)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "France 24,159,664 16,041 24,175,705 2,119,495 2,173,913 440,725 28,909,838 7"
+    quote_lang: en
+    locator: line 16 (France)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 19 of the 2023 table and line 16 of the 2022 table re-read: USD 62,421,104 in 2023 against USD 28,909,838 in 2022. D3 increased agrees; it ends on 2024-01-28, when the suspension of UNRWA funding began (evt_2024_01_28_FRA_D2)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-01-28, when the suspension of UNRWA funding began (evt_2024_01_28_FRA_D2). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_28_FRA_D2
   revision: 1
   country: FRA
@@ -308,10 +345,9 @@
   indicator: D3
   type: standing
   date: '2024-03-28'
-  end: null
+  end: 2024-12-31
   points: 5
-  points_rationale: 'Restored tier (+5): the ministry announced a 2024 contribution of more than EUR 30 million; the increased tier (+8, annual contribution above 2022) is not established because UNRWA''s
-    donor tables were not archived in this session.'
+  points_rationale: "Restored tier (+5): the ministry announced a 2024 contribution of more than EUR 30 million; from 31 December 2024 the increased tier (evt_2024_12_31_FRA_D3) supersedes it (UNRWA's tables, checked in P-16)."
   confidence: confirmed
   scope:
   - gaza
@@ -520,6 +556,43 @@
       Prime Minister of a non-party state against an ICC request for arrest and surrender. It is a formal statement of the ministry, not a statement signed by the Minister; flagged for the author (docs/10
       B-217). The ministry''s earlier statement of 22 November 2024 only "took note" of the decisions (read, not archived). No later formal position of the President, the Prime Minister, the Foreign or
       Justice Minister superseding it was found; overflight authorisations for the Prime Minister''s aircraft are a lead (lead_20260928_FRA_2).'
+
+- id: evt_2024_12_31_FRA_D3
+  revision: 1
+  country: FRA
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): France's 2024 contribution to UNRWA (USD 42,682,118 pledged) exceeds its 2022 contribution (USD 28,909,838) in nominal USD per UNRWA's donor tables (docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "France contributed more to UNRWA in 2024 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la France à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: "and Poitiers) 2,167 2,167 212,800 212,800 214,967 214,967 4,635,990 4,408,755 - - 1,065,401 1,065,401 5,427,801 5,427,801 - - 31,337,959 31,337,959 42,467,151 42,239,915 42,682,118 10 42,454,882 8"
+    quote_lang: en
+    locator: lines 16–17 (France)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "France 24,159,664 16,041 24,175,705 2,119,495 2,173,913 440,725 28,909,838 7"
+    quote_lang: en
+    locator: line 16 (France)
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_03_28_FRA_D3, evt_2023_12_31_FRA_D3]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Lines 16–17 (France) of the 2024 table and line 16 of the 2022 table re-read: USD 42,682,118 pledged in 2024 against USD 28,909,838 in 2022. D3 increased agrees; it supersedes the restored tier (+5) from 31 December 2024."
+    notes: "UNRWA's tables for 2022 and 2024 were archived after the country session (docs/10 B-223 (2)); the P-16 check (docs/10 B-445) finds the 2024 contribution above 2022, so the increased tier holds from 31 December 2024 and the restored tier (evt_2024_03_28_FRA_D3) ends that day, as for Canada and Japan."
 
 - id: evt_2025_05_19_FRA_B9
   revision: 1

@@ -63,6 +63,43 @@
         gaza agree; specific-violations tier agrees.
     notes: ""
 
+- id: evt_2023_12_31_MYS_D3
+  revision: 1
+  country: MYS
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Malaysia's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 2,326,395 in 2023 against USD 200,000 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Malaysia contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Malaisie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Malaysia 200,000 0 200,000 0 0 15,678 0 0 0 2,110,717 2,326,395 37"
+    quote_lang: en
+    locator: line 53 (Malaysia)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Malaysia 200,000 0 200,000 0 0 0 200,000 55"
+    quote_lang: en
+    locator: line 64 (Malaysia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 53 of the 2023 table and line 64 of the 2022 table re-read: USD 2,326,395 in 2023 against USD 200,000 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_MYS_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_MYS_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_23_MYS_B9
   revision: 1
   country: MYS
@@ -440,9 +477,7 @@
         143,188 outside it (98,789 and 44,399 in two non-programme columns), 3,440,681 pledged and received (ranks 41
         and 40). The 2022 table (as of 31 December 2022) has USD 200,000 (rank 55) on line 64. Increased tier agrees,
         as for Indonesia on this branch and the countries on data/wave-6 to data/wave-8 that never suspended.
-    notes: >-
-      The Ministry announced an additional RM10 million for UNRWA on 22 March 2024 and USD 1 million on 13 July 2024
-      (items in its press listing, not archived).
+    notes: "The Ministry announced an additional RM10 million for UNRWA on 22 March 2024 and USD 1 million on 13 July 2024 (items in its press listing, not archived). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_MYS_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
 
 - id: evt_2025_03_07_MYS_B9
   revision: 1

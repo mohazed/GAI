@@ -75,6 +75,43 @@
       a denial of the documented casualty figures (B10); the same answer says innocents have been
       killed.
 
+- id: evt_2023_12_31_USA_D3
+  revision: 1
+  country: USA
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-01-26'
+  points: 8
+  points_rationale: "Increased tier (+8): the United States' 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 422,004,945 in 2023 against USD 343,937,718 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The United States contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution des États-Unis à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "USA 218,373,326 0 218,373,326 88,500,000 37,321,000 16,710,619 3,400,000 3,600,000 3,100,000 51,000,000 422,004,945 1"
+    quote_lang: en
+    locator: line 16 (USA)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "USA 221,971,188 0 221,971,188 53,524,000 65,440,000 3,002,530 343,937,718 1"
+    quote_lang: en
+    locator: line 10 (USA)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 16 of the 2023 table and line 10 of the 2022 table re-read: USD 422,004,945 in 2023 against USD 343,937,718 in 2022. D3 increased agrees; it ends on 2024-01-26, when the suspension of UNRWA funding began (evt_2024_01_26_USA_D2)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-01-26, when the suspension of UNRWA funding began (evt_2024_01_26_USA_D2). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_26_USA_D2
   revision: 1
   country: USA

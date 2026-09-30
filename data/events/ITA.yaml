@@ -143,14 +143,14 @@
   indicator: D2
   type: standing
   date: '2024-01-27'
-  end: null
+  end: 2024-05-25
   points: -10
-  confidence: reported
+  confidence: confirmed
   scope:
   - gaza
   summary:
-    en: The Government suspended its funding to UNRWA, as the Minister of Foreign Affairs announced.
-    fr: Le gouvernement a suspendu son financement de l'UNRWA, selon l'annonce du ministre des Affaires étrangères.
+    en: The Government suspended its funding to UNRWA, as the Minister of Foreign Affairs announced; the Minister ordered its resumption on 25 May 2024.
+    fr: Le gouvernement a suspendu son financement de l'UNRWA, selon l'annonce du ministre des Affaires étrangères ; le ministre en a ordonné la reprise le 25 mai 2024.
   actor:
     en: Deputy President of the Council and Minister of Foreign Affairs
     fr: Vice-président du Conseil et ministre des Affaires étrangères
@@ -161,6 +161,11 @@
     quote_lang: it
     quote_en: The Italian government has suspended funding to UNRWA, after Hamas's atrocious attack against Israel of 7 October.
     locator: line 255 (the Minister's post on X, quoted by ANSA)
+  - source: src_20240525_esteri_tajani-mustafa-unrwa
+    quote: "In aggiunta a ciò, il Ministro Tajani ha disposto la ripresa dei finanziamenti a UNRWA."
+    quote_lang: it
+    quote_en: "In addition, Minister Tajani ordered the resumption of funding to UNRWA."
+    locator: line 119
   status: reviewed
   supersedes: null
   related: []
@@ -171,16 +176,8 @@
       by: claude-opus-5-5
       at: '2026-09-28'
       verdict: agree
-      notes: 'ANSA report re-read (line 255): the Minister''s post quoted verbatim, the government suspended funding to UNRWA. D2 at reported confidence agrees; no primary found.'
-    notes: >-
-      Confidence `reported` (weight 0.4): the only archived document is the ANSA wire report
-      quoting the Minister's post on X of 27 January 2024 verbatim; no Ministry release, decree or
-      parliamentary answer recording the suspension was found (esteri.it's press archive and
-      governo.it have no UNRWA page in the window in the Wayback listings searched). UNRWA's donor
-      table for 2024 (src_20241231_unrwa_donor-ranking-2024) records no Italian contribution to
-      the Programme Budget in 2024 (USD 7,306,889 in 2022, src_20221231_unrwa_donor-ranking-2022),
-      consistent with the suspension; no announcement of a resumption was found, so the standing
-      state has no end. Lead lead_20260928_ITA_1 asks for the primary and for any resumption.
+      notes: "ANSA report re-read (line 255): the Minister's post quoted verbatim, the government suspended funding to UNRWA. P-16: the Ministry's release of 25 May 2024 re-read (line 119): the Minister ordered the resumption of funding to UNRWA. D2 from 27 January to 25 May 2024, confirmed, agrees."
+    notes: "The suspension is dated from the Minister's post on X of 27 January 2024, as quoted verbatim by ANSA (the only archived record of that day). P-16 (docs/10 B-445): the Ministry's release of 25 May 2024 (src_20240525_esteri_tajani-mustafa-unrwa, line 119) records that the Minister ordered the resumption of funding to UNRWA, which confirms the suspension from an official source (confidence raised from reported to confirmed) and ends the standing state on 25 May 2024; the restoration is evt_2024_05_25_ITA_D3. UNRWA's tables: USD 18,033,970 in 2022, USD 1,466,924 in 2023, USD 5,672,977 pledged in 2024 (no increase over 2022). Lead lead_20260928_ITA_1 is promoted."
 
 - id: evt_2024_01_29_ITA_D4
   revision: 1
@@ -311,6 +308,48 @@
       (the statement does not name the place). Read as a formal call at the lowest tier: it asks
       for a ceasefire through the negotiations rather than demanding an immediate one. Decayed to
       zero by the build date (Δ > 730 days).
+
+- id: evt_2024_05_25_ITA_D3
+  revision: 1
+  country: ITA
+  indicator: D3
+  type: standing
+  date: '2024-05-25'
+  end: null
+  points: 5
+  points_rationale: "Restored tier (+5): the Minister ordered the resumption of funding to UNRWA after the suspension of 27 January 2024; not the increased tier: UNRWA's tables give USD 18,033,970 for 2022, USD 1,466,924 for 2023 and USD 5,672,977 for 2024."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Minister of Foreign Affairs ordered the resumption of Italian funding to UNRWA, with EUR 5 million under consideration for projects."
+    fr: "Le ministre des Affaires étrangères a ordonné la reprise du financement italien de l'UNRWA, avec 5 millions d'euros envisagés pour des projets."
+  actor:
+    en: "Deputy President of the Council and Minister of Foreign Affairs"
+    fr: "Vice-président du Conseil et ministre des Affaires étrangères"
+    name: "Antonio Tajani"
+  evidence:
+  - source: src_20240525_esteri_tajani-mustafa-unrwa
+    quote: "In aggiunta a ciò, il Ministro Tajani ha disposto la ripresa dei finanziamenti a UNRWA. A seguito del lavoro svolto dalla Commissione indipendente presieduta dall’ex Ministra francese Colonna e delle misure a tutela del principio di neutralità, l’Italia sta valutando lo stanziamento di 5 milioni di euro dedicati a UNRWA: 2 milioni per progetti in Cisgiordania e 3 milioni per i rifugiati palestinesi in Siria, Libano e Giordania, Paesi che ospitano importanti comunità palestinesi in condizioni di vulnerabilità."
+    quote_lang: it
+    quote_en: "In addition, Minister Tajani ordered the resumption of funding to UNRWA. Following the work of the independent commission chaired by former French Minister Colonna and the measures protecting the principle of neutrality, Italy is considering allocating EUR 5 million to UNRWA: 2 million for projects in the West Bank and 3 million for Palestinian refugees in Syria, Lebanon and Jordan, countries that host large Palestinian communities in vulnerable conditions."
+    locator: line 119
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: "Italy - - 38,265 38,265 38,265 38,265 641,924 584,523 - - - - 2,823,591 2,823,591 - - 2,169,197 2,169,197 5,634,713 5,577,312 5,672,977 32 5,615,576 31"
+    quote_lang: en
+    locator: line 41
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_01_27_ITA_D2]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "The Ministry's release of 25 May 2024 re-read (line 119): the resumption of funding to UNRWA ordered by the Minister; UNRWA's 2024 table lists Italy's 2024 contribution. D3 restored agrees; the amounts are below 2022, so not the increased tier."
+    notes: "Standing from the Minister's decision of 25 May 2024 (docs/02 §2 D3), which ends the D2 suspension (evt_2024_01_27_ITA_D2). The resumed funds were earmarked for projects in the West Bank and for Palestinian refugees in Syria, Lebanon and Jordan, not Gaza; the indicator concerns funding to UNRWA as such, so the scope is that of the other UNRWA events. Filed in P-16 (docs/10 B-445)."
 
 - id: evt_2024_09_24_ITA_B9
   revision: 1

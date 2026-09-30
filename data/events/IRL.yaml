@@ -1,5 +1,42 @@
 # Hand-authored events for Ireland (P-D research session, wave 2, 2026-09-28).
 # Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+- id: evt_2023_12_31_IRL_D3
+  revision: 1
+  country: IRL
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Ireland's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 19,241,556 in 2023 against USD 8,509,726 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Ireland contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de l'Irlande à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Ireland 18,170,892 0 18,170,892 0 1,070,664 0 0 0 0 0 19,241,556 16"
+    quote_lang: en
+    locator: line 31 (Ireland)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Ireland 7,414,436 0 7,414,436 0 1,095,290 0 8,509,726 21"
+    quote_lang: en
+    locator: line 30 (Ireland)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 31 of the 2023 table and line 30 of the 2022 table re-read: USD 19,241,556 in 2023 against USD 8,509,726 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_IRL_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_IRL_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_01_23_IRL_B9
   revision: 1
   country: IRL
@@ -265,9 +302,7 @@
       at: '2026-09-28'
       verdict: agree
       notes: 'Row of Ireland in the 2024 table (line 26) and in the 2022 table (line 30) re-read: 21,436,227 against 8,509,726 USD. D3 increased matches.'
-    notes: 'Ireland did not suspend UNRWA funding (D2 none-found), so there is no resumption date; as for Spain (evt_2024_12_31_ESP_D3, docs/10 B-221 (5), B-223 (1)), D3 is dated from the end of the first
-      calendar year in the archived tables whose contribution exceeds 2022 (31 December 2024): USD 21,436,227 against USD 8,509,726. The 2023 table was not archived in this session. The government announced
-      EUR 20 million for UNRWA in February 2024 and again in February 2025 (press; not archived).'
+    notes: "Ireland did not suspend UNRWA funding (D2 none-found), so there is no resumption date; as for Spain (evt_2024_12_31_ESP_D3, docs/10 B-221 (5), B-223 (1)), D3 is dated from the end of the first calendar year in the archived tables whose contribution exceeds 2022 (31 December 2024): USD 21,436,227 against USD 8,509,726. The 2023 table was not archived in this session. The government announced EUR 20 million for UNRWA in February 2024 and again in February 2025 (press; not archived). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_IRL_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
 
 - id: evt_2025_01_06_IRL_B3
   revision: 1

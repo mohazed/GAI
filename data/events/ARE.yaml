@@ -157,6 +157,39 @@
       The Ministry's item of 3 December 2023 was probably published a day after the opening; the one-day difference
       does not change the score (the event is past its 730-day decay today).
 
+- id: evt_2023_12_31_ARE_D3
+  revision: 1
+  country: ARE
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): the United Arab Emirates' 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 15,000,000 in 2023; no row for the United Arab Emirates in the 2022 table (a 2022 contribution of zero)) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The United Arab Emirates contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution des Émirats arabes unis à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "UAE 0 0 0 0 0 0 0 15,000,000 0 0 15,000,000 19"
+    quote_lang: en
+    locator: line 35 (UAE)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 35 of the 2023 table re-read: USD 15,000,000 in 2023; no row for the United Arab Emirates in the 2022 table (a 2022 contribution of zero). D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_ARE_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_ARE_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
 - id: evt_2024_02_24_ARE_D4
   revision: 1
   country: ARE
@@ -305,9 +338,7 @@
         the government. The 2022 table (as of 31 December 2022, 114 lines, every donor down to USD 40,000) has no row
         for the UAE. Increased tier agrees, as for the countries on data/wave-6 and data/wave-7 that never suspended and
         for Saudi Arabia (evt_2024_12_31_SAU_D3).
-    notes: >-
-      With no 2022 row the comparison is 20,000,000 against zero (docs/10 B-388 (2)). The Foreign Minister called on the
-      donors that suspended their funding to reconsider (Ministry item of 4 February 2024, not archived).
+    notes: "With no 2022 row the comparison is 20,000,000 against zero (docs/10 B-388 (2)). The Foreign Minister called on the donors that suspended their funding to reconsider (Ministry item of 4 February 2024, not archived). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_ARE_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
 
 - id: evt_2026_02_01_ARE_B9
   revision: 1
