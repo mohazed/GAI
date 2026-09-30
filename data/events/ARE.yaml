@@ -110,6 +110,46 @@
       flights of 2025 and 2026 (Ministry items of 28 March, 14 May, 20 August, 17 September and 29 October 2025, by
       title) are part of this programme and are not filed separately.
 
+- id: evt_2023_11_21_ARE_B9
+  revision: 1
+  country: ARE
+  indicator: B9
+  type: repeatable
+  date: '2023-11-21'
+  points: 2
+  points_rationale: "Formal call for a ceasefire (+2): at the extraordinary BRICS summit the President called for the protection of civilian lives, unrestricted humanitarian access and an immediate ceasefire; no violation is named."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The President called at the BRICS leaders' online summit for the protection of civilian lives, unrestricted humanitarian access and an immediate ceasefire in Gaza."
+    fr: "Le président a appelé, lors du sommet en ligne des dirigeants des BRICS, à la protection des vies civiles, à un accès humanitaire sans restriction et à un cessez-le-feu immédiat à Gaza."
+  actor:
+    en: "President of the United Arab Emirates"
+    fr: "Président des Émirats arabes unis"
+    name: "Mohamed bin Zayed Al Nahyan"
+  evidence:
+  - source: src_20231121_mofa-ae_president-brics-ceasefire-gaza
+    quote: "Speaking during an online summit of leaders of the Brics countries, he reiterated calls for the \"protection of civilian lives, unrestricted humanitarian access, and an immediate ceasefire\"."
+    quote_lang: en
+    locator: line 211
+  - source: src_20231121_mofa-ae_president-brics-ceasefire-gaza
+    quote: "UAE President Sheikh Mohamed on Tuesday renewed calls for an immediate ceasefire in Gaza."
+    quote_lang: en
+    locator: line 206
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Lines 206 and 211 of the Ministry's item re-read: the President's quoted call for the protection of civilian lives, unrestricted humanitarian access and an immediate ceasefire in Gaza, at the BRICS summit of 21 November 2023. Call tier (+2) agrees."
+    notes: "The President is the head of state; filed in P-16 under the reading R3 of docs/calibration/README.md (the head of state, the head of government and the foreign minister speak for the state; docs/10 B-442), which 1.0.0-rc.2 writes into B9 (P-24); under 1.0.0-rc.1 B9 names the head of government or foreign minister. The session had archived the item and not filed it (docs/10 B-386 (4), B-390 (2)). It has decayed to zero (more than 730 days old)."
+
 - id: evt_2023_12_02_ARE_D4
   revision: 1
   country: ARE
@@ -536,3 +576,51 @@
         humanitarian law; line 4 rejects any plan of displacement. Specific-violations tier (forced displacement)
         agrees.
     notes: ""
+
+- id: evt_2026_09_27_ARE_B6
+  revision: 1
+  country: ARE
+  indicator: B6
+  type: standing
+  date: '2026-09-27'
+  end: null
+  points: -10
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: "The President received Israel's Prime Minister Benjamin Netanyahu, subject of an International Criminal Court arrest warrant, in Abu Dhabi."
+    fr: "Le président a reçu à Abou Dabi le Premier ministre israélien Benjamin Netanyahou, visé par un mandat d'arrêt de la Cour pénale internationale."
+  actor:
+    en: "President of the United Arab Emirates"
+    fr: "Président des Émirats arabes unis"
+    name: "Mohamed bin Zayed Al Nahyan"
+  evidence:
+  - source: src_20260928_aljazeera_uae-confirms-netanyahu-visit
+    quote: "The United Arab Emirates has confirmed that Israeli Prime Minister Benjamin Netanyahu met with President Sheikh Mohammed bin Zayed Al Nahyan during a visit to the country over the weekend."
+    quote_lang: en
+    locator: line 2
+  - source: src_20260928_aljazeera_uae-confirms-netanyahu-visit
+    quote: "“During the meeting, the two sides discussed bilateral relations between the UAE and Israel and ways to strengthen and develop them,” the official Emirates News Agency, WAM, reported on Monday."
+    quote_lang: en
+    locator: line 10
+  - source: src_20260928_cnn_netanyahu-visit-uae
+    quote: "WAM, the UAE’s state news agency, confirmed that Sheikh Mohammed and Netanyahu held a meeting in the country, marking the first time the Emiratis publicly acknowledged a visit by Netanyahu."
+    quote_lang: en
+    locator: line 5
+  - source: src_20260928_cnn_netanyahu-visit-uae
+    quote: "The Israeli Prime Minister’s office said that the meeting focused on “strengthening relations between the two countries and regional challenges.”"
+    quote_lang: en
+    locator: line 7
+  status: reviewed
+  supersedes: null
+  related: [evt_2025_02_04_USA_B6]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Both reports re-read: WAM's confirmation of the meeting in the UAE and the Israeli Prime Minister's Office's statement, each named and quoted by two independent outlets. B6 hosting a person under an ICC warrant, standing from 27 September 2026, at corroborated confidence agrees."
+    notes: "Hosting a person under an ICC arrest warrant (docs/02 §2 B6), as for the United States (evt_2025_02_04_USA_B6; the UAE is not a party to the Rome Statute, which the rule does not distinguish). The official records (the Emirates News Agency's item of 28 September 2026 and the Israeli Prime Minister's Office's statement) could not be archived (WAM refuses scripted access, docs/10 B-386 (2); no capture of the gov.il page was found), so the event rests on two independent press reports that quote both: confidence `corroborated` (docs/06 §1). Filed in P-16 on the default of docs/10 B-390 (1) (file once archived), with the press route; flagged for the author (docs/10 B-447). Lead lead_20260929_ARE_1 promoted."
