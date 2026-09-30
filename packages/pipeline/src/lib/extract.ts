@@ -228,11 +228,16 @@ export function extractHtml(html: string): Extracted {
 
 export async function extractPdf(bytes: Uint8Array): Promise<Extracted> {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
+  // Untrusted input (P-19): pdfjs 6 has no eval or `new Function` path at all (the old
+  // `isEvalSupported` option is gone; extract.test.ts checks the build for them), runs no PDF
+  // JavaScript without its sandbox, which is not loaded, and fetches nothing when given `data`.
+  // XFA forms and font loading are off.
   const task = pdfjs.getDocument({
     // pdfjs transfers the buffer it is given; a copy keeps the caller's bytes intact.
     data: new Uint8Array(bytes),
     disableFontFace: true,
     useSystemFonts: false,
+    enableXfa: false,
     verbosity: 0,
   })
   const doc = await task.promise
