@@ -1,0 +1,338 @@
+# Coverage record for Poland (docs/03 §6). P-D research session, wave 5, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-320): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Slovenia, Czechia and Hungary, docs/10 B-303, B-309, B-315).
+# GOV.PL is the single portal of the Prime Minister's Chancellery, every ministry, the embassies
+# (including the Embassy in Tel Aviv and the Representative Office in Ramallah), the Permanent
+# Mission to the UN, Polish Aid and the public prosecution offices. The protocol's searches (docs/06
+# §4 step 3) were run through the portal's own search API (`/api/data/search`, used by
+# gov.pl/web/gov/szukaj; about 250 results a query, so broad terms were also run per unit:
+# dyplomacja, diplomacy, premier, primeminister, obrona-narodowa, national-defence, onz, un,
+# polskapomoc, polishaid, izrael, israel, palestyna, palestine) for: Gaza, Gazie, Gazy, Gazą,
+# Strefa Gazy, Strefie Gazy, Strefy Gazy, Izrael, Izraela, Izraelem, Izraelu, Izraelowi, izraelski,
+# izraelskiego, izraelskie, izraelskich, izraelską, Palestyna, Palestyny, Palestynie, Palestynę,
+# palestyński, palestyńskie, palestyńskiego, Palestyńczyków, Palestyńczycy, Państwo Palestyna,
+# Państwa Palestyńskiego, UNRWA, Netanjahu, Netanyahu, zawieszenie broni, zawieszenia broni, rozejm,
+# Hamas, Hamasu, zakładników, Bliski Wschód, Bliskim Wschodzie, Międzynarodowy Trybunał Karny, MTK,
+# Międzynarodowy Trybunał Sprawiedliwości, ludobójstwo, ludobójstwa, Zachodni Brzeg, osadników,
+# osiedli, Israel, Israeli, Gaza Strip, Palestine, Palestinian, ceasefire, hostages, Middle East,
+# ICC; then portal-wide for: wspólne oświadczenie Gaza, joint statement Gaza, Tusk Gaza, Tusk
+# Izrael, Tusk Netanjahu, Soból, World Central Kitchen, Auschwitz Netanjahu, nakaz aresztowania,
+# Statut Rzymski, embargo Izrael, eksport broni Izrael, eksport uzbrojenia, licencje eksportowe,
+# F-35, ćwiczenia Izrael, osadników sankcje, umowa Izrael, porozumienie Izrael, memorandum Izrael,
+# umowa o współpracy Izrael, ewakuacja medyczna, dzieci z Gazy, leczenie pacjentów Gaza, ewakuacja
+# Strefa Gazy, wizy Gaza, umowa stowarzyszeniowa Izrael, Association Agreement Israel, Deklaracja
+# Nowojorska, New York Declaration, UNRWA wpłata, Palestyna uznanie 1988, uznała Palestynę,
+# recognised Palestine, Sikorski Gaza/Izrael/Palestyna, Rau Izrael, Szynkowski Izrael, Morawiecki
+# Izrael, Kosiniak-Kamysz Izrael, Izrael zakup, Izraelskie uzbrojenie, Elbit, Rafael, flotylla,
+# manifestacja Palestyna, zgromadzenie Palestyna, 1988 Palestyna, 14 grudnia 1988. About 11,500
+# distinct items; 676 dated from October 2023 whose title or lead names Gaza, Israel, Palestine,
+# UNRWA, Hamas, Netanyahu, the Middle East, the ICC or the ICJ were read by title and lead, and
+# about 110 in full (including the Ministry's answer of 21 March 2025 to a petition on Gaza, a
+# scanned PDF read by OCR, not archived).
+# Not searched: the press; the Sejm and Senate (interpellations, parliamentary questions, motions);
+# the President's Office (not a B9/B10 speaker); the annual reports on exports of arms and military
+# equipment and the Ministry's Department of Economic Cooperation, which licenses them (A2, A6, A7);
+# the police and municipal decisions on assemblies (E2); ZUS, PFR, the Polish Development Fund and
+# the National Bank of Poland (C5); the Public Procurement Office (C6).
+country: POL
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (Poland had rows from P-14, so no fetch was run). Poland's own reports
+      carry HS 93 exports to Israel of USD 577,953 (2022), 104,307 (2023), 54,240 (2024) and 352,208
+      (2025): −3 from 2025-03-22 to 2025-03-24, 0 from 2025-03-24, −3 from 2026-06-03 (the 2025
+      value). Israel's mirror HS 93 imports from Poland are lower (USD 16,000, none, 51,000, 7,000);
+      no HS 8710 rows. HS 8802 (own USD 35.0 million in 2024 and 8.1 million in 2025; mirror USD
+      212,000 in 2022 and 121,000 in 2024) and HS 8526 are not counted: no licence register,
+      parliamentary answer or investigation confirming a military nature was found, and no row was
+      added to a2_confirmed_military.csv. No Polish document on arms-export licences to Israel was found
+      on GOV.PL; the annual arms-export reports and the Sejm were not searched. HS 93 also covers
+      sporting and hunting arms.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Polish companies as suppliers of parts or maintenance for the F-35
+      programme was found; the Ministry of National Defence's F-35 pages concern Poland's own purchase
+      of the aircraft (first aircraft in service in June 2026).
+    queries:
+      - gov.pl search (F-35, Lockheed)
+      - gov.pl search, units obrona-narodowa, national-defence (Izrael, Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or official confirmation of
+      intelligence sharing related to the Gaza campaign found. The Minister Coordinator of Special
+      Services' meetings with Israel's ambassadors (6 February 2024, on cooperation against terrorist
+      threats; 22 July 2026, on the safety of Poles in the region) concern pre-existing cooperation;
+      the military flights of June 2025 and March 2026 evacuated Polish citizens.
+    queries:
+      - gov.pl search, units obrona-narodowa, national-defence, sluzby-specjalne (Izrael, Israel, ćwiczenia Izrael)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or refusal of a class of export licences to Israel found on GOV.PL; the licensing
+      department, the arms-export reports and parliamentary answers were not searched.
+    queries:
+      - gov.pl search (embargo Izrael, eksport broni Izrael, eksport uzbrojenia, licencje eksportowe)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No embargo on arms exports to or imports from Israel found; see A6.
+    queries:
+      - gov.pl search (embargo Izrael, eksport broni Izrael)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of port access, airspace or transit for an arms shipment to Israel found.
+    queries:
+      - gov.pl search (embargo Izrael, Izrael, Israel, flotylla)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      A/RES/ES-10/21 and ES-10/24; yes on ES-10/22, ES-10/23, ES-10/25, ES-10/26 and 79/232. The UN
+      press release GA/12548 records that Poland's representative explained its abstention on
+      ES-10/21; the Ministry's release of 10 May 2024 states that Poland voted for ES-10/23
+      (src_20240510_gov-pl_rezolucja-palestyna). No Polish document contradicts the rows. Later votes
+      without rows (docs/10 B-199 (1)): ES-10/27 (12 June 2025) — yes, per the Ministry
+      (src_20251121_gov-pl_zaangazowanie-palestyna, line 4); A/DEC/80/506 (12 September 2025) — the
+      Ministry says the Minister decided on 28 August 2025 to adopt the New York Declaration and that
+      Poland joined it in September 2025, consistent with a yes vote; A/RES/80/1, 80/78 and 80/116 —
+      the press releases do not name Poland.
+  B2:
+    status: not-applicable
+    note: Poland was not a member of the Security Council in the window.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Poland is not in the ICJ's list of declarations of intervention in case 192 (docs/06 §8).
+    queries:
+      - gov.pl search (Międzynarodowy Trybunał Sprawiedliwości, ludobójstwo, ludobójstwa)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No official statement rejecting the ICJ's provisional measures and no intervention against the applicant found.
+    queries:
+      - gov.pl search (Międzynarodowy Trybunał Sprawiedliwości, ludobójstwo)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister or the foreign or justice minister committing to execute the
+      warrants of 21 November 2024 was found. A Secretary of State of the Ministry (not a B5 speaker)
+      wrote on 27 December 2024 that Poland, as a party to the Rome Statute, respects the Court's
+      decisions, and denied having said that Israel's Prime Minister would be arrested at Auschwitz
+      (src_20241227_gov-pl_list-washington-times). The Justice Minister's meeting with the ICC
+      Registrar of 3 June 2024 predates the warrants and states no position on them.
+    queries:
+      - gov.pl search (Międzynarodowy Trybunał Karny, MTK, ICC, nakaz aresztowania, Statut Rzymski, Netanjahu, Auschwitz Netanjahu)
+  B6:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2025_01_09_POL_B6): the Council of Ministers' resolution of 9 January 2025,
+      signed by the Prime Minister, guaranteeing free and safe access for the highest representatives
+      of Israel to the ceremonies of 27 January 2025, read as a stated refusal to execute the warrant
+      for that occasion and ended the day after the ceremonies (docs/10 B-321). Israel's Prime Minister
+      did not attend. No later position found.
+    queries:
+      - gov.pl search (Netanjahu, Auschwitz Netanjahu, nakaz aresztowania, MTK)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Polish sanctions on ICC officials.
+    queries:
+      - gov.pl search (Międzynarodowy Trybunał Karny, MTK, ICC)
+  B8:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from recognitions.csv, which has no Polish row. The Ministry states that Poland
+      recognised Palestine's statehood in 1988 (src_20251121_gov-pl_zaangazowanie-palestyna, line 3;
+      also src_20240510_gov-pl_rezolucja-palestyna: recognition of the Palestinian declaration of
+      independence in 1988), but no archived official document gives the day it took effect; the
+      registry's 1988-12-14 is a lead from A/78/846. No row was added, so the build derives nothing
+      (docs/10 B-321): a row dated 1988 would give +3 from 2023-10-07.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Three gaza events on joint statements the Minister signed (21 July 2025 +5, 13 August 2025 +5,
+      22 September 2025 +2) and one West Bank event (8 September 2026, unscored). Not filed, under
+      docs/10 B-314 (the speaker's own words only): the Ministry's reports of the Minister's words in
+      indirect speech (10 January 2024, "restraint" in the military response; 2 April 2024, an
+      impartial investigation of the strike on the World Central Kitchen convoy that killed a Polish
+      citizen; 15 July 2025, condemning violations of international and humanitarian law in the
+      occupied Palestinian territories), and the Ministry's unattributed statements (18 September
+      2025, src_20250918_gov-pl_komunikat-strefa-gazy: the IDF ground operation has "no sufficient
+      military justification", with a call to protect civilians and increase aid and a reference to
+      the Commission of Inquiry's genocide finding; 20 August 2026, src_20260820_gov-pl_oswiadczenie-wck:
+      Israel's ambassador summoned after the closure of the military investigation into the convoy
+      strike; 22 May 2025, condemning violations of international humanitarian law in Gaza; 30 April
+      2026, the flotilla interception called a serious violation of international law; 28 August 2026,
+      the entry into UNRWA's Qalandia centre). The joint statement of 22 August 2025 on the E1
+      settlement plan (West Bank) is named by the Ministry but its text with Poland as signatory was
+      not archived. No statement by Prime Ministers Morawiecki or Tusk calling for a ceasefire or
+      naming violations was found on GOV.PL.
+    queries:
+      - gov.pl search (Gaza terms, Sikorski Gaza, Tusk Gaza, wspólne oświadczenie Gaza, joint statement Gaza, zawieszenie broni)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister declaring unconditional support or denying documented
+      violations found. Prime Minister Morawiecki's European Council releases of 17 and 27 October 2023
+      report the EU's joint positions (Israel's right to defend itself in accordance with international
+      law, humanitarian assistance).
+    queries:
+      - gov.pl search, units premier, primeminister (Izrael, Israel, Netanjahu, Tusk Izrael, Morawiecki Izrael)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No national sanctions listing of Israeli ministers or settlers. The Minister spoke at the Council of 15 July 2025 in favour of sanctioning extremist Israeli settlers in the West Bank and their political sponsors (Ministry's report); EU listings of violent settlers are left to P-15 (docs/10 B-229 (3) on data/wave-2) and concern the West Bank (scope west-bank, docs/10 B-32). P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_POL_B11, evt_2024_07_15_POL_B11 and evt_2026_05_28_POL_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "gov.pl search (osadników, osadników sankcje, Zachodni Brzeg)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall of Poland's ambassador or downgrade of relations. Israel's ambassador was summoned to
+      the Ministry on 20 August 2026 (src_20260820_gov-pl_oswiadczenie-wck); a summons is not a B12
+      measure.
+    queries:
+      - gov.pl search (ambasador Izraela, Izrael)
+  C1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2025_05_20_POL_C1), review tier: the Minister supported the Dutch initiative at
+      the Foreign Affairs Council of 20 May 2025. No Polish position on the Commission's proposals of
+      September 2025 to suspend trade concessions was found.
+    queries:
+      - gov.pl search (umowa stowarzyszeniowa Izrael, Association Agreement Israel, Rada do Spraw Zagranicznych)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No new trade, investment or cooperation agreement signed with Israel since October 2023 found.
+      Ministerial talks on agriculture (16 February 2024) and youth exchanges under an existing
+      agreement (22 February 2024), and Israel's phytosanitary requirements for Polish tomatoes (August
+      2024), are not new agreements.
+    queries:
+      - gov.pl search (umowa Izrael, porozumienie Izrael, memorandum Izrael, umowa o współpracy Izrael)
+      - gov.pl search, units rolnictwo, piorin, edukacja, nauka, rozwoj-technologia (Izrael)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (own reports): −5 throughout (2023 T = USD 1.50 billion, r = 0.938;
+      2024 T = 1.71 billion, r = 1.067; 2025 T = 1.91 billion, r = 1.195; baseline 2022 USD 1.60
+      billion). Israel's mirror totals are lower (USD 0.95 billion in 2022, 2.00 billion in 2025). No
+      disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No ban or labelling measure on settlement goods found. In the joint statement of 8 September
+      2026 Poland confirmed an intention to introduce national restrictions and/or support European
+      restrictions on trade in settlement goods, or to actively consider such measures
+      (src_20260908_gov-pl_oswiadczenie-dwupanstwowe): an intention, not a measure; it would be scoped
+      west-bank.
+    queries:
+      - gov.pl search (osiedli, osadników, Zachodni Brzeg)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Polish public fund or the central bank found on GOV.PL; the funds'
+      own sites (ZUS, PFR) and the National Bank of Poland were not searched.
+    queries:
+      - gov.pl search (Izrael, Israel, Zachodni Brzeg with fund and investment terms)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No exclusion of implicated companies from public procurement found; the Public Procurement Office was not searched separately.
+    queries:
+      - gov.pl search (Izrael, Elbit, Rafael)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: +1 to +3 by window (today +3: USD 5,381,741 in 2025-09…2026-08, 0.00058 %
+      of GNI USD 929.8 billion). The Minister states PLN 70 million of aid to Palestinians in
+      2023–2025 and USD 20 million in 2023–2025, about USD 11 million through UN agencies (releases of
+      20 February and 23 July 2026, not archived); the difference includes development projects in
+      the West Bank, in-kind aid and funding outside the flash appeals (docs/06 §7 gap).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Poland did not suspend UNRWA funding: the Ministry states that Polish support for UNRWA was not
+      halted in early 2024 (src_20251121_gov-pl_zaangazowanie-palestyna, line 25); it contributed USD 1
+      million in April 2024.
+    queries:
+      - gov.pl search (UNRWA, UNRWA wpłata)
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2024_12_31_POL_D3), increased tier: UNRWA's tables give USD 205,956 for 2022 and
+      USD 2,025,766 for 2024; Poland never suspended.
+    queries:
+      - gov.pl search (UNRWA)
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Polish medical-evacuation programme or field hospital found. The Ministry reports two
+      shipments of medical aid to Egyptian hospitals treating patients from Gaza, Polish experts
+      seconded to the WHO's medical-evacuation mission in Egypt, a planned in-kind supply to Jordan's
+      field hospitals in Gaza, and a training project for Palestinian medics in the West Bank; the
+      joint statement of 22 September 2025 states readiness to support treatment in the West Bank.
+      None is a Polish evacuation programme or field-hospital deployment.
+    queries:
+      - gov.pl search (ewakuacja medyczna, dzieci z Gazy, leczenie pacjentów Gaza, ewakuacja Strefa Gazy)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or refugee pathway for Gazans found; the evacuations of 2023 concerned Polish citizens.
+    queries:
+      - gov.pl search (wizy Gaza, ewakuacja Strefa Gazy)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Experimental, unscored. No investigation of Polish nationals or companies for conduct in Gaza
+      found. The Regional Prosecutor's Office in Przemyśl has investigated since 2 April 2024 the
+      killing of a Polish citizen, a World Central Kitchen volunteer, in an Israeli strike in Gaza
+      (murder with explosives, Criminal Code art. 148 § 2 pt 4; extended to 2 October 2026); it
+      concerns a Polish victim, not Polish suspects, so it is not filed as E1 (docs/10 B-322).
+    queries:
+      - gov.pl search (Soból, World Central Kitchen, Gaza terms; prosecution offices publish on GOV.PL)
+  E2:
+    status: unchecked
+    note: >-
+      Experimental, unscored. The police and municipal decisions on assemblies were not searched; the
+      GOV.PL search found no ban on Palestine solidarity protests or symbols (P-16).
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the courts were not searched.
+    queries:
+      - gov.pl search (Gaza terms, ludobójstwo, zbrodnie)

@@ -1,0 +1,221 @@
+# Coverage record for the United States of America (docs/03 §6). P-D research session, wave 1,
+# 2026-09-28. `has-events` is set by the build from published events; hand-set values below are the
+# research status for review. Generated indicators (D-08) are noted but never hand-authored.
+country: USA
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (own report). USA 2025 HS 93 exports to Israel USD 1,932,332,060 and HS
+      8710 USD 286,713,436 (release of 2026-04-22) → −25. HS 8526 (USD 17.3 million) and 8802 (USD
+      0.2 million own report; USD 223.1 million in Israel's mirror data) do not count: no licence
+      register, parliamentary answer or investigation citing those codes was found in this session.
+  A3: {status: has-events, checked_at: 2026-09-28}
+  A4:
+    status: unchecked
+    note: Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No confirmed instance with an archived primary. The Pentagon statement of 3 November 2023 on
+      unarmed UAV flights over Gaza for hostage recovery is a lead (lead_20260928_USA_1). Deliveries
+      of US-made arms are measured by A1/A2, not A5. Not filed: the THAAD deployment to Israel of
+      October 2024 (air defence against Iran, scope region) and the Civil-Military Coordination
+      Center of October 2025 (ceasefire monitoring), neither activated for the Gaza campaign.
+    queries:
+      - Pentagon statement November 2023 "unarmed UAV flights over Gaza" hostage recovery defense.gov
+      - '"Statement from Pentagon Press Secretary" Ryder "UAV flights over Gaza" November 3 2023 release'
+      - war.gov OR defense.gov transcript Ryder press briefing November 2023 "UAV flights" Gaza "hostage recovery"
+  A6: {status: has-events, checked_at: 2026-09-28}
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree covering arms exports to and imports from Israel.
+    queries:
+      - United States arms embargo Israel law 2024 2025 2026
+      - Joint Resolution of Disapproval arms sales Israel Senate vote 2024 2025
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No US port, airspace or vessel denial of arms shipments to Israel found (the Federal Maritime
+      Commission's 2024 inquiry into Spanish port refusals is the opposite and has no indicator).
+    queries:
+      - United States port denied arms shipment Israel
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): No on all seven, as in the
+      press releases. Of the five later votes, the archived press releases list the United States
+      among the states against for A/DEC/80/506 (GA/12707), A/RES/80/1 (GA/12708) and A/RES/80/78
+      (GA/12739); those of A/RES/ES-10/27 (GA/12690) and A/RES/80/116 (GA/12743) do not list the
+      states against (GA/12690 reports the US delegate urging a vote against). No row exists for these
+      five until the UNDL file is imported (B-199).
+  B2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Six ceasefire vetoes (S/2023/773, S/2023/970, S/2024/173, S/2024/835, S/2025/353,
+      S/2025/583) and two tracked, unscored (the amendment of 22 December 2023; S/2024/312 on
+      membership), matching the meeting records. No Gaza-related US veto found in 2026.
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The US declaration of intervention of 12 March 2026 in case 192 argues against the applicant's
+      construction and is filed as B4 (evt_2026_03_12_USA_B4).
+    queries:
+      - ICJ South Africa v. Israel United States declaration of intervention Article 63 March 2026
+  B4: {status: has-events, checked_at: 2026-09-28}
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No commitment to execute the warrants. The statement of 21 November 2024 by the President
+      called the warrants "outrageous" (DCPD-202401020; not archived, a rejection rather than a stated
+      refusal to execute; not filed as B6 either).
+    queries:
+      - bidenwhitehouse.archives.gov statement President Biden arrest warrants International Criminal Court November 21 2024
+      - '"Statement from President Joe Biden" ICC arrest warrants November 21 2024 outrageous'
+  B6: {status: has-events, checked_at: 2026-09-28}
+  B7: {status: has-events, checked_at: 2026-09-28}
+  B8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv. The United States has not recognised the State of Palestine
+      (not in A/78/846, no later statement found); no row to add.
+    queries:
+      - United States recognise State of Palestine 2025 2026 statement Trump administration recognition
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: the President's calls of 7 March 2024, 31 May 2024 and 29 September 2025. Not filed:
+      remarks at a campaign reception (12 December 2023, "indiscriminate bombing"; not a formal
+      statement) and the Secretary of State's press remarks of 2025–2026 on the humanitarian situation
+      (no formal call for a ceasefire or an end to the blockade found in them). No other formal call
+      by the President or the Secretary of State found in the last 12 months.
+    queries:
+      - Biden State of the Union March 7 2024 transcript "immediate ceasefire that would last for at least six weeks"
+      - bidenwhitehouse.archives.gov "Remarks by President Biden on the Middle East" May 31 2024
+      - whitehouse.gov "Comprehensive Plan to End the Gaza Conflict" September 29 2025
+      - govinfo DCPD Biden December 12 2023 campaign reception "indiscriminate bombing"
+      - state.gov Secretary Rubio statement Gaza 2026 ceasefire humanitarian
+  B10:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Filed: 25 October 2023 and 20 May 2024. Drafted and dropped at the second reading: the
+      conditional backing of 29 September 2025 (evt_2025_09_29_USA_B10, left as a draft). Not filed:
+      the remarks of 10 October 2023 (support stated together with the laws of war, so not
+      unconditional).
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No sanctions on Israeli ministers. Executive Order 14115 (1 February 2024, West Bank settler
+      sanctions, revoked 20 January 2025) is filed with scope west-bank (evt_2024_02_01_USA_B11),
+      unscored in v1 (D-14, docs/10 B-32); status none-found for the scored scope until the build
+      derives it.
+    queries:
+      - sanctions Israeli ministers Ben-Gvir Smotrich United States
+      - bidenwhitehouse.archives.gov executive order "Imposing Certain Sanctions on Persons Undermining Peace, Security, and Stability in the West Bank" February 1 2024
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No recall of the US ambassador to Israel, downgrade or severance.
+    queries:
+      - United States recalls ambassador Israel 2024 2025 2026
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No suspension or formal review of the US–Israel Free Trade Area agreement; the agreements of
+      2024–2025 extended or modified the 2004 agricultural agreement (see C2).
+    queries:
+      - US Israel free trade agreement suspend review 2024 2025
+  C2: {status: has-events, checked_at: 2026-09-28}
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. 2025 total goods trade with Israel USD 34,617,802,618 (own report) against USD
+      36,098,057,739 in 2022: r = 0.959 → −8.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No US ban or labelling rule for settlement goods in the window (the 2020 guidance on "Israel" origin marking predates it).
+    queries:
+      - United States settlement goods labelling ban 2024 2025 CBP country of origin marking West Bank
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No federal fund (the Thrift Savings Plan) exclusion; state and city pension funds are sub-national and out of scope.
+    queries:
+      - Thrift Savings Plan divest Israel companies Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No federal procurement exclusion of companies over conduct in Gaza.
+    queries:
+      - federal procurement exclusion companies Gaza Israel United States
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Window 2025-09…2026-08: USD 600,000,000 ÷ GNI USD 30,352,333,808,084 = 0.00198 %
+      → +3 (just under the 0.0020 % tier).
+  D2: {status: has-events, checked_at: 2026-09-28}
+  D3:
+    status: has-events
+    checked_at: 2026-09-30
+    note: "evt_2023_12_31_USA_D3 (P-16, docs/10 B-445): UNRWA's 2023 table gives USD 422,004,945 against USD 343,937,718 in 2022, so the increased tier holds from 31 December 2023 until the pause of 26 January 2024 (evt_2024_01_26_USA_D2). UNRWA funding not resumed since; Executive Order 14199 (4 February 2025) bars it."
+    queries:
+      - United States resume UNRWA funding 2025 2026
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No US government medical-evacuation programme or field hospital for Gaza patients found
+      (evacuations of children to the United States were run by private organisations).
+    queries:
+      - United States government medical evacuation Gaza patients program field hospital
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee pathway for Gazans. The Department of State paused visitor visas for
+      individuals from Gaza in August 2025 (no indicator for a closure).
+    queries:
+      - State Department visitor visas Gaza pause August 2025 humanitarian parole Gaza United States
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No domestic investigation or prosecution of US nationals or companies for conduct in Gaza found.
+    queries:
+      - Department of Justice investigation US citizen conduct Gaza IDF soldier prosecution United States
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No federal ban on Palestine solidarity protests or symbols found; visa revocations of student
+      protesters are a lead (lead_20260928_USA_2).
+    queries:
+      - United States federal government 2025 revoked visas students pro-Palestinian protests State Department "Catch and Revoke" official statement
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: The United States has no universal-jurisdiction case on Gaza accepted for investigation.
+    queries:
+      - universal jurisdiction complaint Gaza United States court accepted

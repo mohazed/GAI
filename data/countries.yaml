@@ -43,8 +43,9 @@
 #   "Recognition of the State of Palestine (1988–2023)", 140 Member States and the Holy See, with
 #   dates); from 2024, the seed list of docs/06 §8, checked against the Wikipedia list
 #   "International recognition of Palestine" (read 2026-09-28). Differences and uncertain dates
-#   carry a note. These dates are leads for B8: P-14 confirms each from an archived official
-#   statement in data/structured/recognitions.csv.
+#   carry a note. These dates are leads: B8 is generated from data/structured/recognitions.csv,
+#   where P-14 (2026-09-28) confirmed 18 recognitions of 2024-2025 from archived official
+#   statements (each entry's note says so); the other dates stay leads.
 # - gov_sources: for the 45 countries of docs/07, the foreign ministry and the head of government
 #   (and the head of state where the two differ), each URL requested on 2026-09-28; a site that
 #   refused a scripted request was checked through its latest Wayback capture (the notes say
@@ -135,9 +136,13 @@
   recognises_palestine:
     since: 2025-09-22
     note: >-
-      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). P-14: not
+      confirmed. The Andorran government stated at the conference of 22 September 2025 that it
+      would recognise the State of Palestine once conditions are met (the release of the
+      hostages, the disarmament of Hamas and a Palestinian government without it; Diari
+      d'Andorra, 23 September 2025, a lead); no act of recognition was found, so
+      recognitions.csv has no row and no B8 event is generated. The date stays here as a lead.
   gov_sources: []
 
 - iso3: ARE
@@ -220,9 +225,10 @@
   recognises_palestine:
     since: 2024-06-21
     note: >-
-      Recognition dated 2024-06-21 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-06-21 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20240621_mfa-am_recognition-palestine,
+      dated 2024-06-21; B8 is generated from that table, not from this field.
   gov_sources: []
 
 - iso3: ATG
@@ -267,9 +273,11 @@
   recognises_palestine:
     since: 2025-09-21
     note: >-
-      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20250921_pm-gov-au_recognises-palestine, dated 2025-09-21; B8 is generated from that
+      table, not from this field.
   gov_sources:
     - {label: Department of Foreign Affairs and Trade, url: 'https://www.dfat.gov.au/', type: mfa, lang: [en]}
     - {label: Prime Minister of Australia, url: 'https://www.pm.gov.au/', type: head_of_government, lang: [en]}
@@ -512,9 +520,10 @@
   recognises_palestine:
     since: 2024-05-07
     note: >-
-      Recognition dated 2024-05-07 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-05-07 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20240507_mofa-bs_recognizes-palestine,
+      dated 2024-05-07; B8 is generated from that table, not from this field.
   gov_sources: []
 
 - iso3: BIH
@@ -658,9 +667,11 @@
   recognises_palestine:
     since: 2024-04-19
     note: >-
-      Recognition dated 2024-04-19 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-04-19 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20240419_gisbarbados_recognises-palestine, dated 2024-04-19; B8 is generated from
+      that table, not from this field.
   gov_sources: []
 
 - iso3: BRN
@@ -768,9 +779,10 @@
   recognises_palestine:
     since: 2025-09-21
     note: >-
-      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20250921_pm-gc_recognition-palestine,
+      dated 2025-09-21; B8 is generated from that table, not from this field.
   gov_sources:
     - {label: Global Affairs Canada, url: 'https://international.canada.ca/en/global-affairs', type: mfa, lang: [en]}
     - {label: Prime Minister of Canada, url: 'https://www.pm.gc.ca/en', type: head_of_government, lang: [en, fr]}
@@ -1111,10 +1123,16 @@
     since: 1988-11-18
     note: >-
       A/78/846 (annex) lists the Czech Republic from the recognition by Czechoslovakia on 18
-      November 1988; the Czech Republic declared on its independence that it would continue the
-      recognitions of Czechoslovakia, and the Ministry of Foreign Affairs lists an Embassy of the
-      State of Palestine. Its position is described as disputed in several lists (Wikipedia, AFP
-      count of July 2025). P-14 confirms it from an official Czech document.
+      November 1988; the Czech Republic declared on its independence that it would continue
+      the recognitions of Czechoslovakia, and the Ministry of Foreign Affairs lists an Embassy
+      of the State of Palestine. Its position is described as disputed in several lists
+      (Wikipedia, AFP count of July 2025). P-14 confirms it from an official Czech document.
+      P-14: not confirmed. No official Czech statement of recognition, or of continuing the
+      Czechoslovak one, was found and archived; recognitions.csv has no row and no B8 event is
+      generated. P-D (2026-09-29): the Ministry of Foreign Affairs stated on 25 September 2025
+      that Czechoslovakia never recognised the State of Palestine and only acknowledged its
+      proclamation, a step not intended to have legal effect
+      (src_20250925_mzv-cz_position-recognising-palestine); no row is added (docs/10 B-310).
   gov_sources:
     - {label: Ministry of Foreign Affairs of the Czech Republic, url: 'https://mzv.gov.cz/en/', type: mfa, lang: [en]}
     - {label: Government of the Czech Republic, url: 'https://vlada.gov.cz/en/', type: head_of_government, lang: [en]}
@@ -1380,9 +1398,11 @@
   recognises_palestine:
     since: 2024-05-28
     note: >-
-      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20240528_lamoncloa_reconocimiento-palestina, dated 2024-05-28; B8 is generated from
+      that table, not from this field.
   gov_sources:
     - {label: 'Ministerio de Asuntos Exteriores, Unión Europea y Cooperación', url: 'https://www.exteriores.gob.es/es/Paginas/index.aspx', type: mfa, lang: [es]}
     - {label: 'La Moncloa, Presidencia del Gobierno', url: 'https://www.lamoncloa.gob.es/Paginas/index.aspx', type: head_of_government, lang: [es]}
@@ -1515,9 +1535,11 @@
   recognises_palestine:
     since: 2025-09-22
     note: >-
-      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20250922_diplomatie-gouv_reconnaissance-palestine, dated 2025-09-22; B8 is generated
+      from that table, not from this field.
   gov_sources:
     - {label: 'Ministère de l''Europe et des Affaires étrangères', url: 'https://www.diplomatie.gouv.fr/fr/', type: mfa, lang: [fr, en, de]}
     - {label: Gouvernement (Premier ministre), url: 'https://www.info.gouv.fr/', type: head_of_government, lang: [fr]}
@@ -1600,9 +1622,10 @@
   recognises_palestine:
     since: 2025-09-21
     note: >-
-      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20250921_gov-uk_recognition-palestine,
+      dated 2025-09-21; B8 is generated from that table, not from this field.
   gov_sources:
     - {label: 'Foreign, Commonwealth & Development Office', url: 'https://www.gov.uk/government/organisations/foreign-commonwealth-development-office', type: mfa, lang: [en]}
     - {label: 'Prime Minister''s Office, 10 Downing Street', url: 'https://www.gov.uk/government/organisations/prime-ministers-office-10-downing-street', type: head_of_government, lang: [en]}
@@ -1739,7 +1762,9 @@
   recognises_palestine:
     since: 1989-05-01
     note: >-
-      A/78/846 (annex) gives the month only (May 1989); the first day of the month is recorded.
+      A/78/846 (annex) gives the month only (May 1989); the first day of the month is
+      recorded. P-14: not confirmed; no official statement found for the month given by
+      A/78/846.
   gov_sources: []
 
 - iso3: GRC
@@ -1929,7 +1954,12 @@
     - {label: 'Magyarország Kormánya', url: 'https://kormany.hu/', type: head_of_government, lang: [hu]}
   notes: >-
     gov_sources checked 2026-09-28: https://kormany.hu/kulugyminiszterium; https://kormany.hu/
-    answered 200.
+    answered 200. P-D (2026-09-29): recognises_palestine.since is the A/78/846 lead; no Hungarian
+    statement confirming the recognition and its date was found, and the Prime Minister said on 9
+    October 2025 that the status was "not so obvious" (src_20251009_kormany-hu_orban-interju-hetek), so
+    recognitions.csv has no row (docs/10 B-316). The previous government's pages (to May 2026) are
+    served from https://2020-2025.kormany.hu since the change of government. Hungary withdrew its
+    notification of withdrawal from the Rome Statute on 29 May 2026 (C.N.180.2026): it remains a party.
 
 - iso3: IDN
   iso2: ID
@@ -2011,9 +2041,10 @@
   recognises_palestine:
     since: 2024-05-28
     note: >-
-      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20240528_gov-ie_recognises-palestine,
+      dated 2024-05-28; B8 is generated from that table, not from this field.
   gov_sources:
     - {label: Department of Foreign Affairs and Trade, url: 'https://www.ireland.ie/en/dfa/', type: mfa, lang: [en]}
     - {label: Department of the Taoiseach, url: 'https://www.gov.ie/en/department-of-the-taoiseach/', type: head_of_government, lang: [en, ga]}
@@ -2176,9 +2207,10 @@
   recognises_palestine:
     since: 2024-04-22
     note: >-
-      Recognition dated 2024-04-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-04-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20240422_jis_recognises-palestine,
+      dated 2024-04-22; B8 is generated from that table, not from this field.
   gov_sources: []
 
 - iso3: JOR
@@ -2304,7 +2336,9 @@
   recognises_palestine:
     since: 1995-11-01
     note: >-
-      A/78/846 (annex) gives the month only (November 1995); the first day of the month is recorded.
+      A/78/846 (annex) gives the month only (November 1995); the first day of the month is
+      recorded. P-14: not confirmed; no official statement found for the month given by
+      A/78/846.
   gov_sources: []
 
 - iso3: KHM
@@ -2647,9 +2681,11 @@
   recognises_palestine:
     since: 2025-09-22
     note: >-
-      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20250922_gouvernement-lu_recognition-palestine, dated 2025-09-22; B8 is generated
+      from that table, not from this field.
   gov_sources: []
 
 - iso3: LVA
@@ -2726,9 +2762,10 @@
   recognises_palestine:
     since: 2025-09-22
     note: >-
-      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20250922_un-press_pal2251, dated
+      2025-09-22; B8 is generated from that table, not from this field.
   gov_sources: []
 
 - iso3: MDA
@@ -2819,13 +2856,20 @@
   recognises_palestine:
     since: 2023-06-02
     note: >-
-      Uncertain. A/78/846 (annex, 9 April 2024) lists Mexico as recognising on 2 June 2023, the day
-      the Palestinian mission in Mexico became an embassy; President Sheinbaum said on 5 February
-      2025 that Mexico recognises the State of Palestine (Wikipedia dates the recognition to that
-      day) and received the credentials of a Palestinian ambassador in March 2025; docs/06 §8 lists
-      Mexico under 2025 with the date to confirm from the SRE. The date before 7 October 2023
-      decides between the pre-existing and the new B8 tier: P-14 confirms it from an official
-      Mexican document.
+      Uncertain. A/78/846 (annex, 9 April 2024) lists Mexico as recognising on 2 June 2023,
+      the day the Palestinian mission in Mexico became an embassy; President Sheinbaum said on
+      5 February 2025 that Mexico recognises the State of Palestine (Wikipedia dates the
+      recognition to that day) and received the credentials of a Palestinian ambassador in
+      March 2025; docs/06 §8 lists Mexico under 2025 with the date to confirm from the SRE.
+      The date before 7 October 2023 decides between the pre-existing and the new B8 tier:
+      P-14 confirms it from an official Mexican document. P-14: not confirmed. No Mexican
+      document dating a recognition was found: the date of A/78/846 matches the
+      reclassification of the Palestinian mission in Mexico as an embassy on 1-2 June 2023, a
+      decision of the State of Palestine announced by its Ministry of Foreign Affairs, not a
+      Mexican act; President Sheinbaum's statement of 5 February 2025 says that Mexico
+      recognises the State of Palestine without dating it. recognitions.csv has no row, so no
+      B8 event is generated until an official Mexican document dates the recognition (it
+      decides the +3 or +8 tier).
   gov_sources:
     - {label: 'Secretaría de Relaciones Exteriores', url: 'https://www.gob.mx/sre', type: mfa, lang: [es]}
     - {label: 'Presidencia de la República', url: 'https://www.gob.mx/presidencia', type: head_of_government, lang: [es]}
@@ -2927,11 +2971,13 @@
   recognises_palestine:
     since: 2025-09-22
     note: >-
-      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv). A/78/846 (annex, 9 April 2024) lists Malta as
-      recognising on 16 November 1988; the Government of Malta announced its recognition on 22
-      September 2025, the date recorded here.
+      Recognition dated 2025-09-22 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). A/78/846
+      (annex, 9 April 2024) lists Malta as recognising on 16 November 1988; the Government of
+      Malta announced its recognition on 22 September 2025, the date recorded here. Confirmed
+      in data/structured/recognitions.csv (P-14) from
+      src_20250922_gov-mt_recognition-palestine, dated 2025-09-22; B8 is generated from that
+      table, not from this field.
   gov_sources: []
 
 - iso3: MMR
@@ -3256,9 +3302,11 @@
   recognises_palestine:
     since: 2024-05-28
     note: >-
-      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-05-28 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20240528_regjeringen_recognises-palestine, dated 2024-05-28; B8 is generated from
+      that table, not from this field.
   gov_sources:
     - {label: Ministry of Foreign Affairs, url: 'https://www.regjeringen.no/en/dep/ud/id833/', type: mfa, lang: [en, nb]}
     - {label: Office of the Prime Minister, url: 'https://www.regjeringen.no/en/dep/smk/id875/', type: head_of_government, lang: [en, nb]}
@@ -3495,10 +3543,11 @@
   recognises_palestine:
     since: null
     note: >-
-      Disputed. A/78/846 (annex, 9 April 2024) lists Papua New Guinea as recognising on 13 January
-      1995 and Wikipedia gives 4 October 1994; in July 2025 AFP reported that the foreign secretary
-      of Papua New Guinea was not aware of any position by the country to establish relations with
-      Palestine. Left null until an official statement is found (P-14).
+      Disputed. A/78/846 (annex, 9 April 2024) lists Papua New Guinea as recognising on 13
+      January 1995 and Wikipedia gives 4 October 1994; in July 2025 AFP reported that the
+      foreign secretary of Papua New Guinea was not aware of any position by the country to
+      establish relations with Palestine. Left null until an official statement is found
+      (P-14). P-14: unchanged (null); nothing found that confirms a recognition.
   gov_sources: []
 
 - iso3: POL
@@ -3575,9 +3624,11 @@
   recognises_palestine:
     since: 2025-09-21
     note: >-
-      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-21 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20250921_portugal-gov_reconhece-palestina, dated 2025-09-21; B8 is generated from
+      that table, not from this field.
   gov_sources: []
 
 - iso3: PRY
@@ -3618,7 +3669,7 @@
       The affected party. The index measures the conduct of third states, so the State of
       Palestine is not scored (D-10).
     fr: >-
-      Partie affectée. L'indice mesure la conduite des États tiers, l'État de Palestine n'est donc
+      Partie touchée. L'indice mesure la conduite des États tiers, l'État de Palestine n'est donc
       pas noté (D-10).
   memberships:
     unsc: []
@@ -3929,9 +3980,11 @@
   recognises_palestine:
     since: 2025-09-23
     note: >-
-      Recognition dated 2025-09-23 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2025-09-23 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20250923_sanmarinortv_riconosce-palestina, dated 2025-09-23; B8 is generated from
+      that table, not from this field.
   gov_sources: []
 
 - iso3: SOM
@@ -4083,9 +4136,10 @@
   recognises_palestine:
     since: 2024-06-04
     note: >-
-      Recognition dated 2024-06-04 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-06-04 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from src_20240605_gov-si_palestine-relations,
+      dated 2024-06-04; B8 is generated from that table, not from this field.
   gov_sources:
     - {label: Ministry of Foreign and European Affairs, url: 'https://www.gov.si/en/state-authorities/ministries/ministry-of-foreign-and-european-affairs/', type: mfa, lang: [en, sl]}
     - {label: Government of the Republic of Slovenia, url: 'https://www.gov.si/en/state-authorities/government/', type: head_of_government, lang: [en, sl]}
@@ -4371,9 +4425,11 @@
   recognises_palestine:
     since: 2024-05-02
     note: >-
-      Recognition dated 2024-05-02 in the seed list of docs/06 §8, the same date in the Wikipedia
-      list "International recognition of Palestine" (read 2026-09-28). To be confirmed from the
-      official statement in P-14 (recognitions.csv).
+      Recognition dated 2024-05-02 in the seed list of docs/06 §8, the same date in the
+      Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
+      data/structured/recognitions.csv (P-14) from
+      src_20240502_foreign-tt_recognition-palestine, dated 2024-05-02; B8 is generated from
+      that table, not from this field.
   gov_sources: []
 
 - iso3: TUN
@@ -4610,7 +4666,11 @@
     since: 2015-06-26
     note: >-
       A/78/846 (annex) dates the Holy See to 26 June 2015, the signature of the Comprehensive
-      Agreement between the Holy See and the State of Palestine; Wikipedia gives February 2013.
+      Agreement between the Holy See and the State of Palestine; Wikipedia gives February
+      2013. P-14: not confirmed. The Comprehensive Agreement between the Holy See and the
+      State of Palestine was signed on 26 June 2015; the Vatican News article that states the
+      recognition could not be archived (Save Page Now failed on 2026-09-28), so
+      recognitions.csv has no row yet.
   gov_sources: []
 
 - iso3: VCT

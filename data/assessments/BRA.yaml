@@ -1,0 +1,307 @@
+# Coverage record for the Federative Republic of Brazil (docs/03 §6). P-D research session, wave 6, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-351): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Japan, Korea, China and Russia, B-331, B-336, B-341, B-346).
+# www.gov.br (the Ministry of Foreign Affairs, Itamaraty, and the Presidency, Planalto) answers
+# scripted requests with HTTP 429 and a CAPTCHA page (not bypassed); in the built-in browser its
+# search runs in a script that returned nothing, and the Presidency's speech listings require a
+# login. The Wayback Machine's CDX index of the two sites served as the search facility, read only:
+# - Itamaraty press notes (canais_atendimento/imprensa/notas-a-imprensa): 4,254 URL keys, filtered
+#   for gaza, palestin, israel, unrwa, oriente-medio, penal-internacional, corte-internacional, cij,
+#   genocid, flotilha, embaixador, assentament, cisjord, netanyahu, haia, consulta, convoc (205
+#   notes from 2023 to 2026 read by title, about 30 in full).
+# - Itamaraty speeches, articles and interviews of the Minister (centrais-de-conteudo/.../ministro-
+#   das-relacoes-exteriores): 329 captures, every Middle East, Gaza, Palestine, UN or Security
+#   Council item of the window read (7 in full).
+# - Planalto speeches (acompanhe-o-planalto/discursos-e-pronunciamentos): 647 URL keys, every
+#   international speech, summit address and press statement of 2023 to 2026 read for Gaza
+#   passages (about 35 in full); no capture after July 2026.
+# - gadebate.un.org: the President's General Debate statement of 22 September 2026 (read in the
+#   built-in browser; not archivable, see B9).
+# - icj-cij.org case 192 (interventions) and the ICJ press release on Brazil's declaration.
+# - UNRWA's donor tables for 2022 and 2024 (records copied from data/wave-5, B-330).
+# Not searched: the press and NGO reports (no leads were read); the National Congress (Chamber and
+# Senate); the Ministry of Defence and the armed forces (A2, A4, A5); the Ministry of Development,
+# Industry and Trade and its export-control authority (A6, C1–C6); the Ministry of Health (D4);
+# the Ministry of Justice and the Diário Oficial da União (D5, E2); the Federal Police, the Federal
+# Public Prosecutor's Office and the courts (E1–E3); the Portuguese texts of the Ministry's notes
+# on the UN votes (Wayback went offline during the session).
+country: BRA
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade, Brazil's own reports: HS 93 exports to Israel of USD 3,525,109 (2022),
+      4,468,787 (2023), 1,763,215 (2024) and 777,517 (2025), so −8 for the windows of 2022 to 2024
+      and −3 from 20 January 2026; no HS 8710 row. HS 8526 (own USD 3,494 to 4,798 a year) and
+      HS 8802 (own USD 105,735 in 2023; Israel's mirror USD 1.46 million in 2023) are not counted:
+      no licence register, parliamentary answer or investigation confirming a military flow was
+      found, and no row was added to a2_confirmed_military.csv. Israel's mirror records far lower
+      HS 93 imports from Brazil (USD 248,000 in 2022, 951,000 in 2023, 27,000 in 2024). No Brazilian
+      document on arms exports to Israel was found in the sources searched; the Ministry of Defence
+      and the export-control authority were not searched (P-16).
+    queries:
+      - Itamaraty notes and Planalto speeches CDX filters (armas, israel)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Brazil is not a partner, supplier or customer of the F-35 programme; no document naming
+      Brazilian companies as suppliers of F-35 parts or maintenance was found in the sources
+      searched.
+    queries:
+      - Itamaraty notes CDX filter (israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. Purchases of Israeli systems by the armed forces were not
+      searched (the Ministry of Defence, P-16).
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found in the Ministry's notes or the President's
+      speeches. The Ministry of Defence was not searched (P-16).
+    queries:
+      - Itamaraty notes CDX filters (israel, embaixador)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No government decision suspending or refusing licences for military exports to Israel was
+      found in the Ministry's notes or the President's speeches; the export-control authority and
+      the Diário Oficial were not searched (P-16).
+    queries:
+      - Itamaraty notes CDX filters (israel, armas)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - Itamaraty notes CDX filters (israel, armas)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - Itamaraty notes CDX filters (israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21
+      to ES-10/26 and 79/232. Brazil's own record agrees where read: the President refers to the
+      Security Council draft Brazil proposed in October 2023 and to the truce resolution
+      (evt_2023_11_21_BRA_B9), and the Ministry published notes welcoming the adoption of
+      ES-10/21 (27 October 2023), ES-10/23 (10 May 2024) and ES-10/24 (September 2024) (titles
+      read in the Wayback index; their texts could not be fetched once Wayback went offline). No
+      Brazilian document read contradicts the rows. The five later votes have no rows (B-199 (1));
+      no Brazilian document naming Brazil's vote on ES-10/27, A/DEC/80/506, 80/1, 80/78 or 80/116
+      was read.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Applicable: Brazil was an elected member of the Security Council in 2022–2023. An elected
+      member cannot cast a veto; no row in unsc_vetoes.csv. Brazil's own draft S/2023/773 on
+      humanitarian pauses was vetoed by the United States on 18 October 2023 (a US event).
+  B3:
+    status: has-events
+    note: >-
+      One event (evt_2025_09_17_BRA_B3): declaration of intervention under Article 63 filed on 17
+      September 2025 (ICJ press release 2025/41). The declaration's text could not be read (ICJ bot
+      check, no readable capture); B3 rests on Brazil's own statements of purpose (the Minister's
+      statement of 28 July 2025, the President's support for the case of 15 February 2024), docs/10
+      B-355 (2). The Ministry's notes of 26 January and 24 May 2024 on the provisional-measures
+      orders were read by title only.
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found;
+      the President and the Minister support the case (B3).
+    queries:
+      - Itamaraty notes CDX filters (cij, corte-internacional)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Brazil is a party to the Rome Statute. No statement by the President or the Minister on
+      executing the arrest warrants of 21 November 2024 was found in the sources searched (the
+      Ministry's notes list no note on the warrants; the President's General Debate statement of 22
+      September 2026 says that persecuting the International Criminal Court and its members encourages
+      impunity for the crimes, a statement against the sanctions on the Court, not on the warrants,
+      and could not be archived).
+    queries:
+      - Itamaraty notes CDX filter (penal-internacional)
+      - Planalto speeches of November 2024 to September 2026
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal to execute the warrants and no visit by a person under warrant was found.
+    queries:
+      - Itamaraty notes CDX filters (penal-internacional, netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Brazil has imposed no sanctions on ICC officials.
+    queries:
+      - Itamaraty notes CDX filter (penal-internacional)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Brazil recognised the State of Palestine in 2010 (a
+      pre-existing recognition, +3 standing from 2023-10-07). The row BRA,2010-12-03 was added in
+      this session, citing the Ministry's note of 21 September 2025 ("O Brasil, que reconhece o
+      Estado da Palestina desde 2010"); the day is that of the Ministry's note of 3 December 2010,
+      which Wayback recorded but cannot serve. The registry's 2011-12-03 (A/78/846) contradicts the
+      year (docs/10 B-353 (4), B-355 (4)).
+  B9:
+    status: has-events
+    note: >-
+      Thirteen events, all at the names-violations or legal-characterisation tier (+5): the
+      President (21 November 2023; 15 February, 24 September 2024; 17 June, 6 July, 8, 22 and 23
+      September 2025) and the Minister (30 October 2023; 29 October, 2 December 2024; 28 July 2025;
+      the joint statement of twelve Ministers of 30 April 2026). Not filed: the Ministry's press
+      notes in the name of the Government (for instance the note of 22 August 2025 condemning "o uso
+      da fome como método de guerra", and dozens of notes on attacks in Gaza from October 2023 to
+      2026), the President's press statements and remarks without a call or a named violation, and
+      the President's General Debate statement of 22 September 2026, which speaks of "genocídio
+      praticado pelo governo Netanyahu contra mulheres e crianças em Gaza": read in the built-in
+      browser on gadebate.un.org, whose PDF refuses Save Page Now (HTTP 405 twice) and has no
+      Wayback capture, so it cannot support an event (docs/10 B-355 (1)).
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement of unconditional support for Israel's operations or denial of documented violations was found.
+    queries:
+      - Planalto speeches and Itamaraty notes CDX filters (israel, gaza)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Brazil has no autonomous sanctions regime; no sanction on Israeli ministers or settler entities
+      was found. The Ministry's notes on settlements and settler violence condemn them without a
+      measure.
+    queries:
+      - Itamaraty notes CDX filters (assentament, cisjord, colonos)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No primary document on a recall of Brazil's ambassador in Tel Aviv or a downgrade of relations
+      was found in the Ministry's notes or the President's speeches. The recall of the ambassador for
+      consultations in February 2024 and his later transfer are known to this session only from
+      general knowledge and were not read in any press or official source (no web search), so no
+      lead is filed; the
+      Diário Oficial (decrees of removal) and the Ministry's own statements are to be searched (P-16,
+      docs/10 B-355 (5)).
+    queries:
+      - Itamaraty notes CDX filters (embaixador, consulta, convoc, tel-aviv, persona)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or formal review of a trade agreement with Israel (the Mercosur–Israel free
+      trade agreement) was found in the sources searched.
+    queries:
+      - Itamaraty notes CDX filters (israel, acordo)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel since 7 October 2023 was
+      found. The joint note with the Ministry of Agriculture on exports of Brazilian honey and bee
+      products to Israel (February 2025) was read by title only (a market-access note, not listed as
+      an agreement); the Brazil–Israel social security agreement dates from 2018.
+    queries:
+      - Itamaraty notes CDX filters (israel, acordo)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade, Brazil's own reports: total goods trade with Israel USD 4.10 billion
+      (2022), 2.08 billion (2023, r = 0.51), 1.95 billion (2024, r = 0.48) and 1.98 billion (2025,
+      r = 0.48), so 0 in every window after 2022 (r < 0.9). Israel's mirror gives lower totals
+      (2.34 billion in 2022, 1.60 to 1.98 billion later, r from 0.68 to 0.84); either way C3 is 0. No
+      Brazilian trade figure was found to compare.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on settlement goods was found.
+    queries:
+      - Itamaraty notes CDX filters (assentament, cisjord)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Brazilian public fund was found in the sources searched; the
+      public pension funds and the sovereign fund were not searched (P-16).
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No public procurement exclusion of companies implicated in Gaza or the settlements was found.
+    queries:
+      - Itamaraty notes CDX filters (israel)
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv and fts_plan_totals.csv have no row for Brazil, i.e. no
+      government flow from Brazil to the oPt flash appeals or the oPt pooled fund in any window, so
+      the generator writes no event (a real zero, docs/02 §5). Brazil's aid is in kind or bilateral
+      and outside FTS (docs/06 §7): the Minister cited USD 1.5 million of humanitarian aid, part of
+      it held back (evt_2024_12_02_BRA_B9), and the Ministry announced food donations flown by the
+      Air Force (30 October 2023).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Brazil did not suspend its UNRWA funding in 2024: the Ministry's note of 31 January 2024 asked
+      that the allegations not lead to reduced contributions, and the President announced a new
+      contribution on 15 February 2024. D3 increased applies (evt_2024_12_31_BRA_D3).
+    queries:
+      - Itamaraty notes CDX filter (unrwa)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_BRA_D3): increased (+8), USD 445,507 in 2024 against 75,000 in 2022
+      in UNRWA's tables. Brazil chaired UNRWA's Advisory Commission from 1 July 2025.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field hospital for Gaza was found. The evacuations of
+      Brazilian nationals and their close Palestinian relatives from Gaza (October 2023 to May 2025,
+      127 people from Gaza by the Ministry's note of 20 May 2025) are consular operations, not D4 or
+      D5, as for Russia on this branch.
+    queries:
+      - Itamaraty notes CDX filters (repatriacao, humanitari, gaza)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee pathway for people from Gaza was found in the Ministry's notes; the
+      Palestinian relatives evacuated with Brazilian nationals entered as family members. The Ministry
+      of Justice and the Diário Oficial (humanitarian-visa ordinances) were not searched (P-16).
+    queries:
+      - Itamaraty notes CDX filters (repatriacao, visto)
+  E1:
+    status: unchecked
+    note: >-
+      Experimental, unscored (D-12). Not searched: the Federal Police, the Federal Public
+      Prosecutor's Office and the federal courts (P-16).
+  E2:
+    status: unchecked
+    note: Experimental, unscored (D-12). Not searched.
+  E3:
+    status: unchecked
+    note: Experimental, unscored (D-12). Not searched.

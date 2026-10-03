@@ -8,6 +8,7 @@ import { type Issue, issue, type RuleId } from '../../issues.js'
 import type { Dataset, Located } from '../../load/dataset.js'
 import type { Methodology } from '../../load/methodology.js'
 import type { AssessmentEntry, Country, Lead, Source } from '../../records.js'
+import type { StructuredRow, StructuredTableName } from '../../structured.js'
 import { cloneEvent, fixtureContext, issuesOf, runRules } from '../../testing/harness.js'
 import { compareEventOrder, rules } from './records.js'
 
@@ -88,6 +89,17 @@ function addFtsRow(
     file: 'data/structured/fts_funding.csv',
     line: 2,
   })
+}
+
+function addRows<T extends StructuredTableName>(
+  ds: Dataset,
+  table: T,
+  rows: StructuredRow<T>[],
+): void {
+  const list = ds.structured[table] as Located<StructuredRow<T>>[]
+  for (const value of rows) {
+    list.push({ value, file: `data/structured/${table}`, line: list.length + 2 })
+  }
 }
 
 /** `n` distinct three-letter codes that are not DEU, ISR or PSE. */
@@ -882,9 +894,22 @@ describe("'assessment.not-applicable'", () => {
     const issues = of('assessment.not-applicable', (ds) => {
       term('2024-01-01', '2025-12-31')(ds)
       entries(ds).B2 = { status: 'none-found', checked_at: '2026-09-27', note: 'None.' }
-      entries(ds).A3 = { status: 'not-applicable', note: 'Test.' }
     })
     expect(issues).toEqual([])
+  })
+
+  it('is an error on an indicator without a not-applicable rule (B-28)', () => {
+    const issues = of('assessment.not-applicable', (ds) => {
+      entries(ds).A3 = { status: 'not-applicable', note: 'Test.' }
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({
+      level: 'error',
+      file: ASSESSMENT_FILE,
+      id: 'DEU',
+      path: 'indicators.A3',
+    })
+    expect(issues[0]?.message).toContain('no not-applicable rule')
   })
 })
 
@@ -1274,6 +1299,45 @@ describe("'lead.source-kind'", () => {
 })
 
 describe("'structured.source-dataset'", () => {
+  it('accepts an archived official source in unsc_vetoes and recognitions, not elsewhere (B-31)', () => {
+    const veto = {
+      date: '2023-10-18',
+      draft: 'S/2023/773',
+      vetoed_by: 'USA',
+      ceasefire: true,
+      source: SOURCE_ID,
+    }
+    const recognition = { iso3: 'DEU', date: '2024-05-28', source: SOURCE_ID }
+    expect(
+      of('structured.source-dataset', (ds) => {
+        addRows(ds, 'unsc_vetoes.csv', [veto])
+        addRows(ds, 'recognitions.csv', [recognition])
+      }),
+    ).toEqual([])
+    const issues = of('structured.source-dataset', (ds) => {
+      addFtsRow(ds, { source: SOURCE_ID })
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain('expected kind dataset')
+  })
+
+  it('accepts a parliamentary, press or ngo source in a2_confirmed_military, not in recognitions', () => {
+    const press = 'src_20260901_example_press-report'
+    expect(
+      of('structured.source-dataset', (ds) => {
+        addSource(ds, press, 'press', '2026-09-01')
+        addRows(ds, 'a2_confirmed_military.csv', [{ iso3: 'DEU', hs: '8802', source: press }])
+      }),
+    ).toEqual([])
+    const issues = of('structured.source-dataset', (ds) => {
+      addSource(ds, press, 'press', '2026-09-01')
+      addRows(ds, 'recognitions.csv', [{ iso3: 'DEU', date: '2024-05-28', source: press }])
+    })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ file: 'data/structured/recognitions.csv', path: 'source' })
+    expect(issues[0]?.message).toContain('expected kind dataset or official')
+  })
+
   it('passes on the fixtures and on a row citing a dataset source', () => {
     expect(of('structured.source-dataset')).toEqual([])
     const issues = of('structured.source-dataset', (ds) => {

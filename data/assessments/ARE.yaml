@@ -1,0 +1,340 @@
+# Coverage record for the United Arab Emirates (docs/03 §6). P-D research session, wave 8, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-386): one session of 2026-09-29, with a web search used for the gaps.
+# Sources read, read only:
+# - Ministry of Foreign Affairs (www.mofa.gov.ae, English): its news pages are rendered on the
+#   server and answer scripted requests; the news listing's own search
+#   (/en/MediaHub/News?keyword=…&fromDate=2023-10-07&toDate=2026-09-29, which matches titles and
+#   summaries and returns at most ten pages of twenty items) was harvested by script for the terms
+#   Gaza, Palestin, Israel, ceasefire, UNRWA, "Criminal Court", "Court of Justice", recogni,
+#   evacuat, hospital, "Security Council", genocide, two-state, "joint statement", Netanyahu,
+#   Chivalrous, Rafah, "Gallant Knight", starvation, "West Bank", famine and floating (563
+#   distinct items, 272 on Gaza, Palestine, Israel, the Courts, UNRWA or humanitarian aid); about
+#   40 of these were read in full (every item of the Foreign Minister on Gaza found by title, every
+#   joint statement of foreign ministers on Gaza, the medical-evacuation and field-hospital items).
+#   The Ministry publishes the statements of the President, the Foreign Minister and the Ministry;
+#   most of them report the speaker's words in indirect speech.
+# - Emirates News Agency (www.wam.ae): an Angular application whose article pages carry no text
+#   in the served HTML and whose content API refuses scripted requests (HTTP "Request Rejected");
+#   its items could not be read or archived (the item of 28 September 2026 on the Israeli Prime
+#   Minister's visit is a lead, data/leads/ARE.yaml).
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv, the UN
+#   press releases archived in votes.yaml and SC/15462.
+# - Web search: the field hospital and the floating hospital, medical evacuations, the ICC warrants,
+#   military cooperation with Israel, agreements with Israel since October 2023, the recognition of
+#   1988, residence or visa measures for Gazans, arrests over Gaza solidarity, and the Israeli Prime
+#   Minister's visit of 27 September 2026.
+# Not searched or not readable: the Emirates News Agency (above); the Cabinet (uaecabinet.ae, which
+# refuses scripted requests) and the Federal Prime Minister's own statements; the Official Gazette
+# and the Federal National Council; the Ministries of Defence and of Economy and Tourism, EDGE Group
+# (A4, A5, C2); the Abu Dhabi Investment Authority, Mubadala and the central bank (C5); the Public
+# Prosecution and courts (E1–E3); Arabic-language pages (the Ministry's English service was read;
+# the Arabic originals were not compared).
+country: ARE
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. No
+      Emirati document on arms deliveries to Israel was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. The United Arab Emirates had no Comtrade rows (docs/10 B-194); `pnpm
+      fetch:comtrade --reporters ARE` was run on 2026-09-29 and stopped before any trade query:
+      Save Page Now refused to capture the Comtrade reporter list, already captured five times that
+      day (error:too-many-daily-captures, docs/10 B-383, B-387). No row, so the build shows no-data;
+      the same command resumes the fetch on another day. No row added to a2_confirmed_military.csv;
+      no licence register, parliamentary answer or investigation on Emirati exports to Israel under
+      HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates is not a partner, supplier or customer of the F-35 programme (its
+      purchase talks were suspended in 2021); no document naming Emirati companies as suppliers of
+      F-35 parts or maintenance was found.
+    queries:
+      - mofa.gov.ae news search (Israel)
+      - UAE company F-35 supplier parts programme
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. Press reports of Emirati purchases of Israeli systems (air
+      defence, drones, counter-drone systems with EDGE subsidiaries) are the kind of order A4
+      measures; the Ministry of Defence and EDGE Group were not searched.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit, basing agreement or official confirmation of intelligence sharing
+      with Israel related to the Gaza campaign was found in the Ministry's items. Press reports of
+      Emirati aircraft in the multinational exercise Iniochos 2025 in Greece alongside Israel's air
+      force, of Israeli air-defence equipment and personnel sent to the UAE during the war with Iran
+      (2026), and of an Emirati statement of September 2026 that intelligence is shared with
+      Israel (in answer to a report on a warning before 7 October 2023) are a lead
+      (lead_20260929_ARE_2); none ties the cooperation to the Gaza campaign. The Ministry denied on
+      14 May 2026 that an Israeli military delegation had been received
+      (src_20260514_mofa-ae_denial-netanyahu-visit, archived). The Ministry of Defence was not
+      searched.
+    queries:
+      - mofa.gov.ae news search (Israel, Netanyahu)
+      - UAE Israel military cooperation 2024 2025 exercise air defence intelligence sharing Gaza war report
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel in the window was
+      found.
+    queries:
+      - mofa.gov.ae news search (Israel)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    queries:
+      - mofa.gov.ae news search (Israel)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - mofa.gov.ae news search (Israel, Gaza)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. The Ministry's items agree where they speak: it welcomed the
+      vote of 10 May 2024 on Palestine's membership (item of 11 May 2024, by title). For the five
+      later votes without rows (B-199 (1)): the Ministry's item of 23 September 2025 (not archived)
+      says the UAE co-sponsored and voted in favour of the resolution endorsing the New York
+      Declaration (A/DEC/80/506); the UN press releases archived in votes.yaml do not name the
+      United Arab Emirates among the states against A/DEC/80/506 (GA/12707), against or abstaining
+      on 80/1 (GA/12708), against 80/78 (GA/12739) or against or abstaining on the vote of
+      17 September 2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list the states. No
+      difference found.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates was an elected member of the Security Council to 31 December 2023 and
+      holds no veto. It drafted the ceasefire resolution S/2023/970 that the United States vetoed on
+      8 December 2023 (the Foreign Minister announced the draft to the Secretary-General, Ministry
+      item of 7 December 2023, by title); drafting has no indicator. Generated from
+      unsc_vetoes.csv: no Emirati row.
+    queries:
+      - unsc_vetoes.csv
+      - mofa.gov.ae news search (Security Council)
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates filed no declaration of intervention in case 192 (not in the ICJ list
+      of docs/06 §8, and no Ministry item reports one). It took part in the advisory proceedings on
+      the occupied Palestinian territory (oral statement of 21 February 2024) and on Israel's
+      obligations (hearings of December 2024 and 2025, by title); advisory proceedings are not case
+      192 and have no indicator.
+    queries:
+      - mofa.gov.ae news search ("Court of Justice")
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No rejection of the provisional-measures orders was found; the Ministry welcomed the orders of
+      26 January, 28 March and 24 May 2024 (items of 27 January, 29 March and 24 May 2024, by
+      title).
+    queries:
+      - mofa.gov.ae news search ("Court of Justice")
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates is not a party to the Rome Statute. No statement by the Foreign
+      Minister or the Prime Minister on the arrest warrants of 21 November 2024 was found (none in
+      the Ministry's items on the International Criminal Court; none in Just Security's tracker of
+      state reactions, search summary).
+    queries:
+      - mofa.gov.ae news search ("Criminal Court")
+      - UAE reaction ICC arrest warrant Netanyahu November 2024 United Arab Emirates statement
+  B6:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No statement refusing to execute the warrants was found. The President received the Israeli Prime Minister, subject of the warrant of 21 November 2024, in Abu Dhabi on 27 September 2026, as the Emirates News Agency confirmed on 28 September 2026 (per the press); the agency's item could not be read or archived (client-rendered pages, content API refusing scripted requests) and the Ministry had not published it by 29 September 2026, so the visit is a lead (lead_20260929_ARE_1), to be filed as a B6 instance (−10, as for the United States on data/wave-1) once an official record is archived (docs/10 B-388 (1)). The Ministry had denied on 14 May 2026 reports of an earlier visit by the Prime Minister (src_20260514_mofa-ae_denial-netanyahu-visit). The Foreign Minister's meeting with the Prime Minister in New York on 27 September 2025 (Ministry item of that day) was not a visit hosted by the United Arab Emirates. P-16 (docs/10 B-447): evt_2026_09_27_ARE_B6 (−10, corroborated) on two archived press reports quoting WAM's confirmation and the Israeli Prime Minister's Office's statement; lead lead_20260929_ARE_1 promoted."
+    queries:
+      - "mofa.gov.ae news search (Netanyahu, Israel)"
+      - "Netanyahu visit UAE Mohamed bin Zayed meeting confirmed WAM statement September 2026"
+      - "gov.il Prime Minister's Office statement Netanyahu met UAE President Mohamed bin Zayed Abu Dhabi September 2026"
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: The United Arab Emirates has imposed no sanctions on ICC officials.
+    queries:
+      - mofa.gov.ae news search ("Criminal Court")
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv; the United Arab Emirates has no row. The registry dates its
+      recognition to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Emirati
+      document stating the recognition and its date was found: the Ministry receives the credentials
+      of the Ambassador of the State of Palestine (item of 27 October 2025) and the Foreign Minister
+      calls on states to recognise the State of Palestine (item of 31 July 2025), which imply but do
+      not state a recognition; the Ministry's search for "recogni" returns no item on the UAE's own
+      recognition. No row added (as for Saudi Arabia, docs/10 B-382 (4)); P-16 looks for a document
+      of 1988.
+    queries:
+      - mofa.gov.ae news search (recogni, Palestin)
+      - UAE recognised State of Palestine 1988 mofa.gov.ae UAE Palestine relations
+  B9:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "Four events scoped `gaza`: the Foreign Minister's signed statement of 9 August 2024 joining the call to conclude the ceasefire deal, and the joint statements of the Foreign Ministers of eight states of 1 February 2026 (the Saudi Press Agency's text, which names the UAE), 6 August 2026 (targeting of healthcare facilities in Gaza) and 6 September 2026 (forced displacement from Gaza). One event scoped `west-bank`, unscored: the joint statement of 18 June 2026 on settler attacks. Not filed (the standard of docs/10 B-381 (4)): the Ministry's unsigned statements (for instance 18 October 2023 on Al-Ahli hospital, 27 May 2024 on Rafah, 8 August 2025 on the decision to occupy Gaza City); the Foreign Minister's words reported in indirect speech (17 October 2023 at the GCC Council, 4 November 2023 in Amman, 7 December 2023, 4 February 2024, 9 February 2024 in Riyadh, 11 May 2024, 27 September 2025 with the Israeli Prime Minister); further joint statements in the same weeks as a filed one (16 August 2026); the joint statement of 9 August 2025 on the plan to occupy Gaza, issued by states and organisations, not by named ministers; statements by ministers of state, the Assistant Minister or the Permanent Representative (the Security Council debates of 2023, the General Debates of 2024 to 2026, the advisory proceedings), who are not B9 speakers. The President, head of state, is not a B9 speaker, as the King of Saudi Arabia (docs/10 B-382); his words at the BRICS summit of 21 November 2023 calling for an immediate ceasefire (src_20231121_mofa-ae_president-brics-ceasefire-gaza, archived) are not filed (docs/10 B-386 (4)). The Prime Minister (the Vice President and Ruler of Dubai) was not searched apart from the Ministry's items. P-16: the President's call at the BRICS summit of 21 November 2023 is filed as evt_2023_11_21_ARE_B9 under R3 (docs/10 B-442)."
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel or denial of documented violations by the
+      Prime Minister or the Foreign Minister was found. The Foreign Minister's address to the Board
+      of Peace (19 February 2026, Ministry item) says the UAE worked with Israel to deliver aid to
+      Gaza; it neither declares unconditional support nor denies violations.
+    queries:
+      - mofa.gov.ae news search (Israel, Netanyahu)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions on Israeli ministers or settler entities by the United Arab Emirates were found;
+      it joined joint statements condemning settler violence and settlement decisions (for instance
+      24 July 2025 and 18 June 2026), which are not listings.
+    queries:
+      - mofa.gov.ae news search (Israel, West Bank)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates kept its diplomatic relations with Israel (Abraham Accords, 15
+      September 2020) and its ambassador: the Foreign Minister met the Israeli Prime Minister in New
+      York with the UAE Ambassador to Israel (27 September 2025), and the Ministry received the new
+      Israeli Ambassador's credentials (17 February 2025). The Ministry summoned the Israeli
+      Ambassador on 28 May 2025 (Jerusalem) and the Deputy Head of Mission on 12 September 2025 (the
+      attack on Doha); a summons is not a recall, downgrade or severance.
+    queries:
+      - mofa.gov.ae news search (Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The UAE-Israel Comprehensive Economic Partnership Agreement (signed 31 May 2022, in force 1
+      April 2023, per the Ministry of Economy's page, search summary) was neither suspended nor
+      placed under review in the window; no measure was found.
+    queries:
+      - mofa.gov.ae news search (Israel)
+      - UAE Israel agreement signed 2024 OR 2025 ministry economy CEPA new agreement Israel UAE after October 2023
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement with Israel signed in the window was found; the
+      CEPA predates it (C1). The Foreign Minister signed the Board of Peace's charter; it is not an
+      agreement with Israel and has no indicator. The Ministry of Economy and Tourism was not
+      searched beyond its CEPA page.
+    queries:
+      - mofa.gov.ae news search (Israel, agreement)
+      - UAE Israel agreement signed 2024 OR 2025 ministry economy CEPA new agreement Israel UAE after October 2023
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no Emirati row (the fetch of 2026-09-29 stopped at the reporter list,
+      see A2), so the build shows no-data. Press figures (UAE-Israel trade of about USD 3.2 billion
+      in 2024 and 2025, search summary) suggest a C3 tier once the rows exist; nothing is
+      hand-authored (D-08).
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods adopted in the window was found (would be scoped west-bank, B-32).
+    queries:
+      - mofa.gov.ae news search (Israel, West Bank)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by an Emirati public fund over conduct in Gaza or the occupied
+      territories was found in the Ministry's items; the Abu Dhabi Investment Authority, Mubadala
+      and the central bank were not searched.
+    queries:
+      - mofa.gov.ae news search (Israel)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect adopted in the window was found.
+    queries:
+      - mofa.gov.ae news search (Israel)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: fts_funding.csv carries Emirati government flows to the oPt appeals in
+      every window (plan totals USD 59,365,244 for 2023, 218,683,946 for 2024, 314,005,844 for 2025
+      and 481,495,889 for 2026); USD 783,501,733 in the window September 2025 to August 2026 against
+      GNI USD 566,397,962,015 (2024), 0.138 %, the +12 tier (+9 in three windows of 2025). The
+      Foreign Minister's figures (almost USD 3 billion of assistance to Gaza since the war started,
+      and a further USD 1.2 billion through the Board of Peace, 19 February 2026) are larger than
+      FTS's, as docs/06 §7 expects for bilateral and in-kind aid.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      The United Arab Emirates did not suspend funding of UNRWA; the Foreign Minister called on the
+      donors that had suspended funding to reconsider (meeting with the Commissioner-General, 4
+      February 2024, Ministry item), and the Ministry condemned the Knesset's ban on UNRWA (29
+      October 2024, by title).
+    queries:
+      - mofa.gov.ae news search (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_ARE_D3): UNRWA's table of 2024 gives USD 20,000,000 pledged and
+      received from the UAE (and USD 10,675 from the UAE Red Crescent Society); the United Arab
+      Emirates is not listed among the donors of UNRWA's table of 2022 (the whole table, 114 lines,
+      read), so its 2022 contribution is zero.
+  D4:
+    status: has-events
+    note: >-
+      Three events, one per programme: the medical-evacuation programme directed by the President
+      for 1,000 children and later 1,000 cancer patients with their families (first flight 18
+      November 2023; 2,127 patients and companions by 6 November 2024, 22 flights), the Emirati
+      field hospital in southern Gaza (in operation from 2 December 2023), and the floating hospital
+      at Al-Arish port in Egypt for Gaza patients (launched February 2024; operations from 24
+      February 2024 per the press). Later evacuation flights (with WHO, through 2025 and 2026) are
+      part of the first programme and are not filed separately.
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found; the evacuated patients and families are
+      admitted for treatment before their return (Ministry item of 18 November 2023), which is part
+      of the D4 programme, not a legal instrument.
+    queries:
+      - mofa.gov.ae news search (Gaza, evacuat)
+      - UAE residency visas Gaza families evacuated patients decision 2024 Palestinians from Gaza UAE residence permit
+  E1:
+    status: unchecked
+    note: The Public Prosecution and the courts were not searched (P-16).
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decree, court record or official statement banning Palestine solidarity protests or symbols
+      in the window was found; public demonstrations need prior approval generally, not by a measure
+      of the window. NGO and press reports of arrests, summonses and a deportation over Gaza
+      solidarity are a lead (lead_20260929_ARE_3).
+    queries:
+      - UAE arrests Gaza protest OR "Palestine" solidarity keffiyeh detained UAE 2024 Human Rights Watch
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
