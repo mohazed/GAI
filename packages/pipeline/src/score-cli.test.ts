@@ -277,6 +277,37 @@ describe('pnpm score with generated events', () => {
   })
 })
 
+describe('pnpm score coverage reads the structured tables as build-data does (B-489)', () => {
+  const root = join(TMP, 'derived')
+  cpSync(join(REPO_ROOT, 'fixtures'), root, { recursive: true })
+  writeFileSync(
+    join(root, 'data/structured/sipri_deliveries.csv'),
+    'release_date,data_year,supplier_iso3,tiv_to_israel,tiv_total_to_israel,source\n2026-03-09,2025,USA,490,537,src_20261005_sipri_tiv-israel-2022-2025\n',
+  )
+  const statuses = (orders: string) => {
+    writeFileSync(
+      join(root, 'data/structured/sipri_orders.csv'),
+      `release_date,data_year,buyer_iso3,tiv_new_orders_from_israel,source\n${orders}`,
+    )
+    const r = runScore(['--country', 'DEU', '--root', root, '--date', '2026-06-01', '--json'], {
+      cwd: REPO_ROOT,
+      today: '2026-06-01',
+    })
+    expect(r.code, r.stderr).toBe(0)
+    return JSON.parse(r.stdout).coverage.statuses
+  }
+
+  it('a SIPRI release in force makes A1 and A4 none-found for a country with no row', () => {
+    const s = statuses('2026-03-09,2025,USA,5,src_20261005_sipri_register-supplier-israel\n')
+    expect([s.A1, s.A4]).toEqual(['none-found', 'none-found'])
+  })
+
+  it('a 0-TIV order of the data year makes A4 no-data (B-488)', () => {
+    const s = statuses('2026-03-09,2025,DEU,0,src_20261005_sipri_register-supplier-israel\n')
+    expect([s.A1, s.A4]).toEqual(['none-found', 'no-data'])
+  })
+})
+
 describe('pnpm score errors', () => {
   it.each([
     [['--root', 'fixtures'], /--country is required/],

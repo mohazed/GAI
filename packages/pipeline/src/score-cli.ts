@@ -33,6 +33,7 @@ import {
   listMethodologyVersions,
   loadDataset,
   loadMethodology,
+  type Methodology,
 } from '@gai/schema'
 import {
   bandFor,
@@ -46,10 +47,12 @@ import {
   isIsoDate,
   type LastChange,
   lastChange,
+  onSecurityCouncil,
   roundHalfAwayFromZero,
   type ScoringMethodology,
   summaryLines,
 } from '@gai/scoring'
+import { deriveGeneratedStatuses, effectiveAssessment } from './build/assessments.js'
 import { confirmedMilitaryOf, generateAll, generateContext } from './generate/index.js'
 import { scoringMethodology } from './methodology.js'
 
@@ -192,6 +195,7 @@ interface CountryReport {
 
 function report(
   ds: Dataset,
+  lm: Methodology,
   m: ScoringMethodology,
   generated: readonly Event[],
   country: Country,
@@ -211,7 +215,19 @@ function report(
     })
   const scorer = createScorer(country.iso3, events, m)
   const score = scorer.at(date)
-  const assessment = ds.assessments.find((a) => a.value.country === country.iso3)?.value ?? null
+  const hand = ds.assessments.find((a) => a.value.country === country.iso3)?.value ?? null
+  // The statuses of the generated indicators read from the tables, laid over the hand ones, as
+  // build-data does, so the coverage printed is the one the build publishes (B-489).
+  const derived = deriveGeneratedStatuses({
+    iso3: country.iso3,
+    date,
+    structured: ds.structured,
+    generated: generated.filter((e) => e.country === country.iso3),
+    methodology: lm,
+    unscMember: onSecurityCouncil(country, m.windowStart, date),
+    permanentMember: country.memberships.unsc.some((t) => t.permanent),
+  })
+  const assessment = effectiveAssessment(hand, derived)
   const cov = coverage({ country, assessment, events, date }, m)
   const lc = lastChange(scorer, date)
   const counts = eventCounts(events, date, country.iso3)
@@ -454,7 +470,7 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
   } catch (err) {
     return fail(1, `the generated events cannot be built: ${(err as Error).message}`)
   }
-  const r = report(ds, m, generated, country, date, args.preview)
+  const r = report(ds, lm, m, generated, country, date, args.preview)
   const stdout = args.json
     ? `${JSON.stringify(reportJson(r), null, 2)}\n`
     : `${countryText(r, m, source, args.list).join('\n')}\n`
