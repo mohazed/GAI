@@ -46,7 +46,7 @@ function indicatorRowId(generated: string | null, first: string): string | undef
  * limitations), with what the site adds: the version selector and contents; under Computed
  * indicators, how the build computes them (content/computed.*.md); the sensitivity tables
  * (sensitivity.json) in score mode; under Versioning, the scores this version moved (DiffViewer,
- * from `diff`) and the changelog; and, last, how the code reads the rules
+ * from `diff`, in score mode; in scorecard mode only their number) and the changelog; and, last, how the code reads the rules
  * (content/readings.*.md).
  */
 export function MethodologyPage({
@@ -90,7 +90,17 @@ export function MethodologyPage({
       <h3 id="diff" className="mt-4 scroll-mt-8 text-18 font-semibold">
         {t('methodologyPage.diffTitle')}
       </h3>
-      {diff !== null ? (
+      {diff !== null && mode !== 'score' && diff.countries.length > 0 ? (
+        // Scorecard mode (D-16): no number on the site, so the scores a version moved are counted,
+        // not listed, as the sensitivity tables are left out.
+        <p className="text-14 text-ink-2">
+          {t('methodologyPage.diffScorecard', {
+            from: diff.from,
+            to: diff.to,
+            count: String(diff.countries.length),
+          })}
+        </p>
+      ) : diff !== null ? (
         <DiffViewer
           lang={lang}
           from={diff.from}
