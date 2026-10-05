@@ -227,3 +227,42 @@ Assessments: has-events 2 (B1, B9), none-found 17, no-data 2 (A2, C3), not-appli
 | ATG | −7 | −2 | Passive | B9 +4.9 (the statement of 2025); the passivity penalty (−15) applies: the statement is 374 days old |
 
 One band change: Slovakia moves from Passive to Acting, on joint statements of foreign ministers and the EU listing counted under R8. Read critically (docs/06 §4 step 7): the indicator cap of B9 is hit for Slovakia; the A4 gap (SIPRI order of 2024, B-536 (7)) would subtract up to 10; Ukraine's missing B9 rests on the source kind (B-534).
+
+## T-P21-06: BHS, BLZ, BRB (2026-10-06)
+
+Light protocol (docs/06 §5) for the Bahamas, Belize and Barbados. 6 events: none for the Bahamas, 4 for Belize, 2 for Barbados. One row is added to `data/structured/recognitions.csv` (Belize, 2011). Decisions and flags are in docs/10 B-541 to B-550.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_10_26_BLZ_B9 | B9 | 2023-10-26 | +2 | confirmed | official |
+| evt_2023_11_14_BLZ_B12 | B12 | 2023-11-14 | +5 (recall tier, flagged) | confirmed | official |
+| evt_2025_01_30_BLZ_B3 | B3 | 2025-01-30 | +15 | confirmed | court |
+| evt_2025_09_26_BLZ_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+| evt_2024_09_27_BRB_B9 | B9 | 2024-09-27 | +5 (flagged) | confirmed | official |
+| evt_2025_09_26_BRB_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### The Bahamas
+
+Assessments (34 indicators): has-events 2 (B1, B8, both generated), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261006_BHS_1`, B9). Sources read: the Ministry's site (its own search for Gaza, Palestine and Israel; the release of 28 October 2023; the Israeli Ambassador's call of 2021), the General Debate statements of the 78th to 81st sessions (read with a browser User-Agent; no passage on Gaza, the 2025 statement speaks of 'the agony of the Middle East' without a call), the Bahama Journal's report of the Foreign Minister's words of 11 October 2023 and web searches in English per indicator group. No event. No archived joint statement names the Bahamas; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 15 minutes on the Bahamas).
+
+### Belize
+
+Assessments: has-events 5 (B1, B3, B8, B9, B12), none-found 15 (A1, A4, B4 to B7, B10, B11, C1, C2, D1 to D5), no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 3 (`lead_20261006_BLZ_1`, B9 for statements with no named speaker; `_2`, B9 for the 81st session's statement, which does not cite Gaza (R7); `_3`, B9 for the Hague Group). Sources read: the ICJ's press release and the application and declaration of Belize (UNISPAL copies, archived), the Press Office's releases (14 and 16 November 2023, 2 February and 1 October 2024, 9 September 2011, archived), the General Debate statements of the 78th to 81st sessions (the 80th archived through its Wayback capture), the generated events and web searches in English per indicator group. No archived joint statement names Belize; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 40 minutes on Belize).
+
+### Barbados
+
+Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 1 (`lead_20261006_BRB_1`, B9: the press conference of 18 November 2023). Sources read: the Ministry's statement of 26 October 2023 (archived from its Wayback capture of 15 June 2024: the site serves a bot check to Save Page Now), the Prime Minister's Office's transcript of the address of 27 September 2024 (Wayback capture), the General Debate statements of the 78th to 81st sessions (the 79th is an image, read by OCR; the 80th archived through its Wayback capture), the generated events and web searches in English per indicator group. No archived joint statement names Barbados; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 20 minutes on Barbados).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-05 UTC (methodology 1.0.0-rc.1), the 6 reviewed events scored as if published (and Belize's pre-2023 recognition row); before them the score was +11 (Acting) for the Bahamas, −2 (Passive) for Belize and +11 (Acting) for Barbados.
+
+| Country | Before | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BHS | +11 | +11 | Acting | no event |
+| BLZ | −2 | +26 | Acting | B3 +15.0, B12 +5.0, B8 +3.0 (the added row), B9 +4.9 (the statement of 2025), passivity penalty (−15) applied: no qualifying event in the last 365 days |
+| BRB | +11 | +15 | Acting | B9 +4.9 (the statement of 2025; that of 2024 has decayed to zero), the penalty applies |
+
+One band change: Belize moves from Passive to Acting, on a well-documented ICJ filing (B3), the Ministry's measures of November 2023 (B12, tier flagged: ±3) and the recognition row. Read critically (docs/06 §4 step 7): no cap is hit; the Prime Minister's statement of the 81st session, which says 'the genocide must end' without citing Gaza (R7), is a lead that would end Belize's passivity penalty (about +46 with it).

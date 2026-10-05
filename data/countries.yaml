@@ -539,7 +539,14 @@
       Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
       data/structured/recognitions.csv (P-14) from src_20240507_mofa-bs_recognizes-palestine,
       dated 2024-05-07; B8 is generated from that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of The Bahamas, url: 'https://mofa.gov.bs/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister of The Bahamas, url: 'https://opm.gov.bs/', type: head_of_government, lang: [en]}
+    - {label: Government of The Bahamas (official portal), url: 'https://www.bahamas.gov.bs/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three pages answered 200 to a scripted request with a browser User-Agent and declare en-US (mofa.gov.bs, opm.gov.bs) or en (bahamas.gov.bs).
+    The Ministry's site has no page of statements on Gaza after the release of 28 October 2023 on the General Assembly's resolution; the Governor-General's office has no site
+    that answered (docs/10 B-541, B-544).
 
 - iso3: BIH
   iso2: BA
@@ -609,7 +616,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-09-09}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and Foreign Trade of Belize', url: 'https://mfa.gov.bz/', type: mfa, lang: [en]}
+    - {label: Government of Belize Press Office, url: 'https://www.pressoffice.gov.bz/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://mfa.gov.bz/ answered 200 (declares en-US) and https://www.pressoffice.gov.bz/ answered 200 (en-US) to a request with a browser User-Agent;
+    both answer HTTP 406 (Mod_Security) to a request without one. The Press Office publishes the Ministry's and the Cabinet's releases, which is where the Government's statements on
+    Gaza are. No site of the Prime Minister's office or of the Governor-General answered (opm.gov.bz, primeminister.gov.bz and belize.gov.bz did not, the last answered 503 'Site
+    Maintenance'), so no head_of_state or head_of_government entry is written (docs/10 B-541, B-544). The recognition of 9 September 2011 is confirmed in data/structured/recognitions.csv from the Ministry's press release of that date (src_20110909_pressoffice-bz_recognises-palestine), the row added in the light protocol (R21, docs/10 B-542).
 
 - iso3: BOL
   iso2: BO
@@ -694,7 +708,14 @@
       data/structured/recognitions.csv (P-14) from
       src_20240419_gisbarbados_recognises-palestine, dated 2024-04-19; B8 is generated from
       that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and Foreign Trade of Barbados', url: 'https://www.foreign.gov.bb/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister of Barbados, url: 'https://pmo.gov.bb/', type: head_of_government, lang: [en]}
+    - {label: Government of Barbados (official portal), url: 'https://www.gov.bb/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://www.foreign.gov.bb/ answered 200 (declares en-US) and https://www.gov.bb/ answered 200 (en). https://pmo.gov.bb/ answers HTTP 403 to a scripted
+    request: checked through its Wayback capture of 2026-02-23 (200; the page of the Prime Minister's address of 27 September 2024), which declares en-US. No site of the President
+    answered (docs/10 B-541, B-544).
 
 - iso3: BRN
   iso2: BN
