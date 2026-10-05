@@ -410,6 +410,39 @@ describe('A4 (SIPRI orders)', () => {
     expect(derive({ iso3: 'XXB', date: '2025-03-10', structured: rows }).A4).toEqual(HAS)
   })
 
+  it('is no-data when the country orders 0 TIV in the latest covering release (B-488)', () => {
+    // SIPRI writes 0 for the TIV of an order below 0.5 TIV or of unknown size: "TIV > 0" of
+    // formula a4 cannot be decided, so neither an event nor none-found.
+    const rows = tables({
+      'sipri_orders.csv': [order('2026-03-09', 'XXB', 0), order('2026-03-09', 'XXA', 0)],
+    })
+    expect(
+      generateAll(generateContext(M), rows).events.filter((e) => e.indicator === 'A4'),
+    ).toEqual([])
+    expect(derive({ iso3: 'XXB', date: '2026-03-09', structured: rows }).A4).toEqual(
+      d('no-data', 'orders-without-tiv'),
+    )
+    // A country without a row is none-found, as before.
+    expect(derive({ iso3: 'XXC', date: '2026-03-09', structured: rows }).A4).toEqual(
+      d('none-found', 'release-without-orders'),
+    )
+    // Only the data year of the latest covering release counts: a 0-TIV row of an earlier
+    // release, or of an earlier year in the same release, does not.
+    const later = tables({
+      'sipri_orders.csv': [
+        order('2025-03-10', 'XXB', 0),
+        order('2026-03-09', 'XXA', 5),
+        { ...order('2026-03-09', 'XXB', 0), data_year: 2024 },
+      ],
+    })
+    expect(derive({ iso3: 'XXB', date: '2025-06-01', structured: later }).A4).toEqual(
+      d('no-data', 'orders-without-tiv'),
+    )
+    expect(derive({ iso3: 'XXB', date: '2026-06-01', structured: later }).A4).toEqual(
+      d('none-found', 'release-without-orders'),
+    )
+  })
+
   it('reads the releases of sipri_orders.csv only', () => {
     // The 2025 release is imported for deliveries only; the orders table holds the 2024 one.
     const deliveriesOnly = tables({
