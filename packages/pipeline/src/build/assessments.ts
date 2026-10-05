@@ -32,7 +32,11 @@
  *    a1 to the date. A release covers A4 when its data year (year of release − 1) starts on or
  *    after `parameters.orders_signed_from` of formula a4 (default 2023-10-07; SIPRI dates orders
  *    by year, so the 2023 orders mix pre-war contracts). A covering release in force →
- *    `none-found` (`release-without-orders`); else `no-data` (`no-release`).
+ *    `none-found` (`release-without-orders`); except a country whose row of the data year in the
+ *    latest covering release is 0 TIV → `no-data` (`orders-without-tiv`): SIPRI lists an order
+ *    but writes 0 for its "SIPRI TIV for total order", either below 0.5 TIV or not available (the
+ *    number ordered is not known), so "TIV > 0" of formula a4 cannot be decided (B-488). No
+ *    covering release in force → `no-data` (`no-release`).
  * 6. D1: fts_funding.csv has no rows at all → null (the table was not fetched). Else a row of the
  *    country with funding above zero, whose window ended before the date, and no usable GNI (the
  *    row gniFor picks, as the generator does, is missing or zero) → `no-data` (`no-gni`); else
@@ -179,18 +183,30 @@ function deriveC3(input: DeriveInput): DerivedStatus | null {
 }
 
 function deriveA4(input: DeriveInput): DerivedStatus | null {
-  const { date } = input
+  const { iso3, date } = input
   const orders = input.structured['sipri_orders.csv']
   if (orders.length === 0) return null
   const first = firstSipriRelease(input.methodology).date
   const from = ordersSignedFrom(input.methodology)
-  const covering = orders.some(({ value: { release_date: release } }) => {
-    if (release < first || release > date) return false
-    return `${String(dataYearOf(release)).padStart(4, '0')}-01-01` >= from
-  })
-  return covering
-    ? derived('none-found', 'release-without-orders')
-    : derived('no-data', 'no-release')
+  let latest: string | undefined
+  for (const {
+    value: { release_date: release },
+  } of orders) {
+    if (release < first || release > date) continue
+    if (`${String(dataYearOf(release)).padStart(4, '0')}-01-01` < from) continue
+    if (latest === undefined || release > latest) latest = release
+  }
+  if (latest === undefined) return derived('no-data', 'no-release')
+  const zeroTiv = orders.some(
+    ({ value: r }) =>
+      r.release_date === latest &&
+      r.buyer_iso3 === iso3 &&
+      isDataYearRow(r) &&
+      r.tiv_new_orders_from_israel <= 0,
+  )
+  return zeroTiv
+    ? derived('no-data', 'orders-without-tiv')
+    : derived('none-found', 'release-without-orders')
 }
 
 function deriveD1(input: DeriveInput): DerivedStatus | null {
