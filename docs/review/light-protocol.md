@@ -183,3 +183,47 @@ Assessments: has-events 9 (A4, B1, B9, B11, C2, D1, D2, D3, D4), none-found 10, 
 | ROU | −13 | +5 | Acting | B11 +5.0, D3 restored +2.0 (reported, weight 0.4), C2 −4.0 (reported), B9 0.0 (decayed); the passivity penalty (−15) no longer applies, the Council's listing of 28 May 2026 being a qualifying event |
 
 One band change: Romania moves from Passive to Acting. Without the 28 May 2026 listing, which adds no points beside the 2024 listing (one event per tier), the penalty would apply and the score would be about −10 (Passive): the band rests on the EU listing counted under R8, as it does for Bulgaria and the 15 EU members among the 45 (B-446, B-519). Moldova's score falls by 5 points although its passivity penalty is lifted, because four C2 events reach the category cap on instruments some readers would not count (B-526): any two of the four reach the cap, and the tourism declaration of 9 September 2026, the only one inside 365 days, lifts the penalty (without it the score would be about −26). No other cap is hit.
+
+## T-P21-05: SVK, UKR, ATG (2026-10-06)
+
+Light protocol (docs/06 §5) for Slovakia, Ukraine and Antigua and Barbuda. 11 events: 9 for Slovakia, none for Ukraine, 2 for Antigua and Barbuda. Decisions and flags are in docs/10 B-532 to B-540.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_02_19_SVK_B9 | B9 | 2024-02-19 | +2 | confirmed | official |
+| evt_2024_04_19_SVK_B11 | B11 | 2024-04-19 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2024_07_15_SVK_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_12_19_SVK_D4 | D4 | 2024-12-19 (no later than) | +5 | confirmed | official |
+| evt_2025_07_21_SVK_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_08_12_SVK_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_09_27_SVK_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2026_05_28_SVK_B11 | B11 | 2026-05-28 | +5 (adds no points beside the 2024 listing) | confirmed | official |
+| evt_2026_06_08_SVK_B9 | B9 | 2026-06-08 | +2 | confirmed | official |
+| evt_2024_09_27_ATG_B9 | B9 | 2024-09-27 | +2 | confirmed | official |
+| evt_2025_09_26_ATG_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build.
+
+### Slovakia
+
+Assessments (34 indicators): has-events 5 (B1, B9, B11, D1, D4), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 9 (A3, A5 to A8, B8, C4 to C6) and the three experimental E1 to E3. Leads: 5 (`lead_20261006_SVK_1`, B9; `_2`, B5; `_3`, C1; `_4`, A4; `_5`, D5). Sources read: the Ministry of Foreign and European Affairs' release of 17 February 2026 (Wayback capture, archived), its other releases through TASR and SITA, the President's General Debate statements (79th: image of a draft, read by OCR; 80th: archived; 81st: no capture), the five joint statements already archived that name Slovakia (B-444), the Council's three settler listings (R8), UNRWA's donor tables, SIPRI's trade register and web searches in English and Slovak per indicator group. 90-minute stop note: the work finished inside the budget (about 40 minutes on Slovakia). Not filed and why: the Minister's own statements (indirect speech only, R4), the Prime Minister's criticism of the ICC (no position on executing the warrants), the President's statements (no call for a ceasefire; self-defence paired with the law of war), the Barak MX contract (A4's domain; no Slovak primary archived).
+
+### Ukraine
+
+Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 9 (A3, A5 to A8, B8, C4 to C6) and the three experimental. Leads: 3 (`lead_20261006_UKR_1`, B9; `_2`, B10; `_3`, C2). No event: the President's answer of 2 June 2024 at the Shangri-La Dialogue is archived in the organiser's transcript and a press report but B9 needs a source of kind official or official-video (the President's site answers HTTP 403); the General Debate statements have no call for a ceasefire; the protocol of the Intergovernmental Commission of 23 July 2025 is an implementing arrangement (R18). No archived joint statement names Ukraine; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 20 minutes on Ukraine). No Ukrainian government page could be read by a script (B-532 (2)).
+
+### Antigua and Barbuda
+
+Assessments: has-events 2 (B1, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 9 (A3, A5 to A8, B8, C4 to C6) and the three experimental. Leads: 2 (`lead_20261006_ATG_1`, B8; `_2`, B9). Sources read: the Prime Minister's General Debate statements of the 79th and 80th sessions (Wayback captures, archived), the Permanent Representative's statement of the 81st (no capture; no passage on Gaza), the UN's summary of the 79th session's debate, the Embassy to the United States' releases, WAFA and web searches in English per indicator group. No archived joint statement names Antigua and Barbuda; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 15 minutes on Antigua and Barbuda).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-05 UTC (methodology 1.0.0-rc.1), the 11 reviewed events scored as if published; before them the generated indicators alone gave −15 (Passive) for Slovakia, −6 (Passive) for Ukraine and −7 (Passive) for Antigua and Barbuda.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| SVK | −15 | +17 | Acting | B9 +12.6 clipped to the indicator cap (+10), B11 +5.0, D4 +2.0; the passivity penalty (−15) no longer applies: the Council's listing of 28 May 2026 and the INGO statement of 8 June 2026 are qualifying events (either alone lifts it; with neither the score is +2) |
+| UKR | −6 | −6 | Passive | no event; the passivity penalty (−15) applies |
+| ATG | −7 | −2 | Passive | B9 +4.9 (the statement of 2025); the passivity penalty (−15) applies: the statement is 374 days old |
+
+One band change: Slovakia moves from Passive to Acting, on joint statements of foreign ministers and the EU listing counted under R8. Read critically (docs/06 §4 step 7): the indicator cap of B9 is hit for Slovakia; the A4 gap (SIPRI order of 2024, B-536 (7)) would subtract up to 10; Ukraine's missing B9 rests on the source kind (B-534).

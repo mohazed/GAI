@@ -250,7 +250,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-09-22}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, Trade and Immigration', url: 'https://ab.gov.ag/detail_template.php?page=government_info/min_foreign_affairs', type: mfa, lang: [en]}
+    - {label: 'Prime Minister (Ministry of Finance, Corporate Governance and Public Private Partnerships)', url: 'https://ab.gov.ag/detail_template.php?page=government_info/min_finance', type: head_of_government, lang: [en]}
+    - {label: Government of Antigua and Barbuda (official portal), url: 'https://ab.gov.ag', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three pages of the Government's portal answered 200 and declare en. The portal has no page of the Governor-General (head of state) and
+    no site of the Prime Minister's own; the Prime Minister, Gaston Browne, is listed on the page of the Ministry of Finance he heads. The Government's statements on Palestine
+    are published by the Embassy to the United States (https://embassy.ag, 200, en-US) and in the press (docs/10 B-532, B-535).
 
 - iso3: AUS
   iso2: AU
@@ -4186,7 +4193,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-18}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign and European Affairs, url: 'https://www.mzv.sk/en', type: mfa, lang: [en]}
+    - {label: President of the Slovak Republic, url: 'https://www.prezident.sk/en/', type: head_of_state, lang: [en]}
+    - {label: Government Office of the Slovak Republic, url: 'https://www.vlada.gov.sk/', type: head_of_government, lang: [sk]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://www.prezident.sk/en/ answered 200 (lang en) and https://www.vlada.gov.sk/ answered 200 (lang sk; its English edition
+    at /en/ answers 404). https://www.mzv.sk/en answers every scripted request with HTTP 403: checked through its Wayback capture of 2025-05-28 (200), which declares
+    en-US. The Ministry's releases are read through Wayback captures or the outlets that quote them (docs/10 B-532, B-535).
 
 - iso3: SVN
   iso2: SI
@@ -4656,7 +4670,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-19}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs of Ukraine, url: 'https://mfa.gov.ua/en', type: mfa, lang: [en]}
+    - {label: President of Ukraine, url: 'https://www.president.gov.ua/en', type: head_of_state, lang: [en]}
+    - {label: Cabinet of Ministers of Ukraine, url: 'https://www.kmu.gov.ua/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://mfa.gov.ua/en answers HTTP 403 to a scripted request (a Cloudflare page that declares en-US) and so does its Wayback
+    capture of 2026-09-26; https://www.president.gov.ua/en answers 403 (a page with no lang attribute; its Wayback capture of 2026-10-05 is the same page), recorded en
+    from the address; https://www.kmu.gov.ua/en answers a bot check to a scripted request, and its Wayback capture of 2026-09-20 (200) declares en. No Ukrainian
+    government page could be read by a script (docs/10 B-532, B-535).
 
 - iso3: URY
   iso2: UY

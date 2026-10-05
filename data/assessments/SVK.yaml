@@ -1,0 +1,223 @@
+# Coverage record for Slovakia (docs/03 §6). P-21 light protocol, session T-P21-05, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign and European Affairs (mzv.sk answers every scripted request with HTTP 403: its releases were read
+#   through the Wayback capture of 11 April 2026 of one release, archived, and otherwise through the outlets that quote them), the President's General
+#   Debate statements (gadebate.un.org: the 79th session's file is an image of a draft, read by OCR; the 80th archived through its Wayback capture; the 81st has
+#   no capture), the joint statements already archived for the 45 (docs/10 B-444: five name Slovakia), the EU Council's settler listings (R8, docs/10 B-446),
+#   UNRWA's donor tables, SIPRI's trade register (archived), the generated events and the structured tables; web searches in English and in Slovak per
+#   indicator group. Time: about 40 minutes.
+# Statements read and not filed as B9 or B10: the President's General Debate statements of 24 September 2025 (Israel's right to defend itself, hostages home,
+#   'we must allow access to humanitarian aid', two states: no call for a ceasefire, archived) and of 23 September 2026 (humanitarian aid must reach Gaza,
+#   international humanitarian law must be respected, two states; no capture, a lead); the Minister's statements of 16 January 2025 (welcome of the ceasefire
+#   agreement), 10 July 2025 (support for the negotiations on a ceasefire, a call to Israel to allow humanitarian aid, as the press reports it in indirect speech),
+#   17 February 2026 (archived: Israel 'has the right to retaliate, but everything must be in compliance with international humanitarian law') and 24 September
+#   2026 (support for the ICC's independence), none with the exact words of a call in an archived text (R4).
+country: SVK
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Slovakia to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SVK
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Slovakia from Israel of data year 2025 in the release of 9 March 2026, the only data year the build reads from a release (the earlier
+      rows of that release are history). Left to the build. Flagged (docs/10 B-536 (7)): the archived trade register of that release lists a Slovak order of 2024 from Israel, six Barak MX surface-to-air
+      missile systems with 47 missiles (282 TIV, ordered 2024); the contract was signed on 23 December 2024 (TASR; the Israeli Ministry of Defense calls it the largest defence export to Slovakia).
+      A4''s tiers (docs/02 §2: 100 TIV or more is −10) would score it if the release of March 2025 (data year 2024) were imported; it is not, so the build derives none-found. lead_20261006_SVK_4.'
+    queries:
+    - sipri_orders.csv, buyer SVK
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Slovakia (lines 631 to 635)
+    - Slovensko Izrael Barak MX zmluva podpísaná december 2024
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on 4, abstention on 7 and absent on 1 of the 12 qualifying votes. The Ministry''s releases on the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Slovakia filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Slovakia
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement or act rejecting the ICJ's provisional measures was found; the declaration of 26 EU foreign ministers of 19 February 2024 that the Foreign Minister signed (filed as B9)
+      reiterates respect for the order of 26 January 2024.
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Slovakia
+    - Slovensko Medzinárodný súdny dvor predbežné opatrenia Izrael Juhoafrická republika stanovisko
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No statement of the Government on executing the warrants of 21 November 2024 was found. Prime Minister Fico wrote on 25 February 2025 (social network, as the press reports it) that
+      he did not doubt for a second that the ICC warrants for Mr Putin and Mr Netanyahu were politically motivated, asked whether the answer was to ignore them although Slovakia recognises the
+      Court''s jurisdiction, called the Court a laughing stock and asked whether it was time to abolish it; the Foreign Minister said in New York on 24 September 2026 that Slovakia supports the
+      Court''s independence (SITA). Neither states a position on executing the warrants; the posts and the Ministry''s pages are not archivable (docs/10 B-298 (2), B-536 (3)): lead_20261006_SVK_2.'
+    queries: &id001
+    - Slovakia ICC arrest warrant Netanyahu position Fico Blanár execute Rome Statute
+    - Medzinárodný trestný súd zatykač Netanjahu Slovensko Blanár OR Fico reakcia vykonať zatykač
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (no visit of the Israeli Prime Minister to Slovakia was found; his visit to Hungary of April
+      2025 is another state's). See B5 for the Prime Minister's criticism of the Court, a lead.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Slovakia has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Slovakia row. The registry dates the recognition 18 November 1988 (A/78/846 annex: Czechoslovakia''s, which Slovakia counts as its own);
+      the state''s own document with a date was not found: the President''s General Debate statement of 24 September 2025 (archived) says that Slovakia has recognised ''the right of Palestinian
+      people to decide upon their fate'' for more than three decades and has the Embassy of Palestine in Bratislava, which is not a dated act of recognition (R21, docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Five events: the Minister of Foreign and European Affairs'' signature of the declaration of 26 EU foreign ministers (19 February 2024, call tier, decayed to zero) and of four joint
+      statements of foreign ministers (21 July 2025 and 12 August 2025 at +5, 27 September 2025 and, through the states'' list of the INGO statement, 8 June 2026 at +2). The President''s General
+      Debate statements (24 September 2024: a draft in which Gaza is named among conflicts; 24 September 2025; 23 September 2026) have no call for a ceasefire or an end of the blockade; the call
+      to ''allow access to humanitarian aid'' of 2025 is not one of the two tiers (docs/02 §2 B9). The Minister''s own statements are known through the press only (R4): lead_20261006_SVK_1.'
+    queries:
+    - Slovakia Blanár Gaza ceasefire statement foreign minister humanitarian
+    - Blanár Gaza prímerie Slovensko vyzýva minister zahraničných vecí humanitárna pomoc vyhlásenie
+    - Pellegrini Valné zhromaždenie OSN Gaza vystúpenie 2025
+    - 'archive/text: joint statements naming Slovakia (Slovaquie, Slovakia, Slovakien)'
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No B10 event filed. The President's General Debate statement of 24 September 2025 says that Israel has the right to defend itself, that hostages must return home, that children and families
+      in Gaza do not feel safe and that 'the thin line between legitimate defense and unacceptable suffering is being painfully tested'; the Minister said on 17 February 2026 that 'the other side
+      has the right to retaliate, but everything must be in compliance with international humanitarian law'. Both pair the right of self-defence with the law of war, so neither is unconditional
+      support (the US reading, docs/10 B-209). No statement of the Prime Minister's on Gaza was found in an archived text.
+    queries:
+    - Fico Izrael právo na sebaobranu Gaza vyhlásenie premiér
+    - Slovakia Fico Israel unconditional support Gaza statement Prime Minister
+  B11:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024 (west-bank, unscored), 15 July 2024 and 28 May 2026 (gaza and west-bank), counted for Slovakia under R8 (docs/10 B-446);
+      the third adds no points beside the second. No national listing of settlers or ministers by Slovakia was found.'
+    queries:
+    - Slovakia sanctions violent Israeli settlers entry ban national measure
+    - consilium.europa.eu settlers sanctions 19 April 2024, 15 July 2024, 28 May 2026 (the Council's decisions, R8)
+  B12:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No recall, downgrade or severance was found; the Israeli Foreign Minister visited Bratislava on 9 July 2025 (press) and the Palestinian Foreign Minister on 17 February 2026 (Ministry
+      release, archived).
+    queries:
+    - Slovakia ambassador Israel recalled OR downgrade relations Israel Slovakia 2024 2025
+    - Slovensko veľvyslanec Izrael odvolanie vzťahy znížené
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No Slovak support for a review or suspension of the EU-Israel Association Agreement was found. The Foreign Minister told the Israeli Foreign Minister in Bratislava on 9 July 2025 that
+      Slovakia would oppose any EU proposal to suspend dialogue with Israel (Israel National News, from the Israeli Ministry''s account; lead_20261006_SVK_3): a state that opposed gets no C1 event
+      (docs/02 §2 C1).'
+    queries:
+    - Slovakia EU-Israel Association Agreement review suspend position Slovakia Council opposed OR supported
+    - Slovensko Asociačná dohoda EÚ Izrael pozastavenie Blanár
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No governmental instrument of trade, investment or cooperation with Israel signed since October 2023 that meets R18 was found. Not filed: the contract of 23 December 2024 for six Barak
+      MX systems (about EUR 560 million), signed in Tel Aviv with the Israeli Ministry of Defense, a government-to-government arms purchase that A4 measures (SIPRI order of 2024) and that no Slovak
+      primary archived here records (lead_20261006_SVK_4); the Ministry of Defence''s contract of 2021 for 3D radars pre-dates the window; the Foreign Minister and the Israeli Foreign Minister
+      discussed economic cooperation, energy, science and innovation (9 July 2025; July 2026, a State Secretary, as a search excerpt of the Ministry''s site reads) without a signed instrument
+      found.'
+    queries:
+    - Slovensko Izrael podpísali memorandum o spolupráci 2024 OR 2025 OR 2026 ministerstvo dohoda
+    - Slovakia Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 cooperation ministry
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: Government flows of USD 106,724 (plan 1186, 2023) and USD 59,879 (plan 1273, 2025) over all flow dates (fts_plan_totals.csv). Left to the build. The Ministry''s
+      release of 17 February 2026 says that Slovak aid since the outbreak of the conflict exceeded EUR 670,000, among it EUR 100,000 to the World Food Programme.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No announcement of a suspension of UNRWA funding was found: Slovakia is not on the lists of states that paused funding in January 2024, and UNRWA''s tables show a contribution in 2022
+      and 2023 and none in 2024.'
+    queries:
+    - Slovakia UNRWA funding suspended January 2024 Slovakia contribution UNRWA
+    - Slovensko UNRWA príspevok pozastavenie financovanie január 2024
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No event: UNRWA''s donor tables give USD 32,859 for 2023 against USD 52,687 for 2022 (the 2023 contribution is below the 2022 one, so no increased tier) and no row for 2024; with no
+      prior D2 there is no restored tier either (R10).'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Slovakia
+  D4:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'One event for the medical-evacuation programme (docs/02 §2 D4: one event per programme): the government aircraft that flew eight children and their carers from Gaza to Dublin on 19
+      December 2024 (the Irish Department of Health''s release, archived), eight flights by 17 February 2026 according to the Ministry of Foreign and European Affairs (release archived), run by
+      the Ministry of the Interior''s Air Unit with the EURACARE Flight & Shelter module through the EU Civil Protection Mechanism (press: TASR, Pravda, SITA). The later flights (a fourth operation
+      to Zaragoza, 13 children, in 2025) are the same programme.'
+    queries:
+    - Slovensko evakuácia pacientov Gaza vládny špeciál EURACARE deti
+    - Slovakia medical evacuation Gaza children government aircraft Ministry of Interior
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No visa or refugee instrument for Gazans was found. The Ministry arranged the assisted arrival of five Palestinian students from Gaza in December 2025 (a second operation of 2025) and
+      nine by 17 February 2026, to study on Slovak Government scholarships at Matej Bel University; scholarships and assisted arrivals are not a legal instrument (docs/02 §2 D5: one event per
+      legal instrument): lead_20261006_SVK_5.'
+    queries:
+    - Slovensko vízum OR azyl Palestínčania Gaza štipendisti príchod Slovensko
+    - Slovakia visa OR refugee pathway Gaza students scholarship arrival
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
