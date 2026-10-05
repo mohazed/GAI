@@ -475,7 +475,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-25}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.bg/en', type: mfa, lang: [en]}
+    - {label: President of the Republic of Bulgaria, url: 'https://m.president.bg/en', type: head_of_state, lang: [en]}
+    - {label: Council of Ministers, url: 'https://www.gov.bg/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://www.gov.bg/en and https://m.president.bg/en answered 200 and declare en
+    (https://www.president.bg/en redirects to a 404 page; the site's root is in Bulgarian). https://www.mfa.bg/en answers a
+    scripted request with a Radware bot-check page, and so do its news pages: checked through the Wayback capture of
+    2026-10-04 (20261004222221), which declares en; the Ministry's releases are read through Wayback captures (docs/10 B-515, B-516).
 
 - iso3: BHR
   iso2: BH
@@ -3061,7 +3069,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-22}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.gov.mn', type: mfa, lang: [mn]}
+    - {label: President of Mongolia, url: 'https://president.mn/en', type: head_of_state, lang: [en]}
+    - {label: Government of Mongolia, url: 'https://mongolia.gov.mn', type: head_of_government, lang: [mn]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://mfa.gov.mn answers 200 with a meta-refresh page (no lang attribute; the portal that
+    links to it is in Mongolian, recorded mn) that points to https://www.gov.mn/mn/organization/mfa, which answers 404 (the Wayback
+    capture of 2026-10-04 is the same); the Ministry's own pages could not be read (docs/10 B-516). https://president.mn/en answers
+    403 to a scripted request: checked through the Wayback capture of 2026-04-19, which declares en-GB (recorded en).
+    https://mongolia.gov.mn (the Government's portal, which carries the Prime Minister's pages; zasag.mn does not answer)
+    answered 200 and declares mn.
 
 - iso3: MOZ
   iso2: MZ
@@ -3625,7 +3643,16 @@
     note: >-
       Date from Wikipedia ("International recognition of Palestine", read 2026-09-28), which cites
       A/78/846; the annex lists the Democratic People's Republic of Korea on 24 November 1988.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'http://www.mfa.gov.kp', type: mfa, lang: [en]}
+    - {label: Korean Central News Agency, url: 'http://kcna.kp/en', type: news_agency, lang: [en]}
+    - {label: Naenara, url: 'http://www.naenara.com.kp', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: http://www.mfa.gov.kp (the page declares en-US; its text is Korean), http://kcna.kp/en
+    (declares en-us) and http://www.naenara.com.kp (the state portal, declares en) answered 200 to a scripted request over plain HTTP;
+    https URLs do not answer. No site of the Premier or the Cabinet was found (cabinet.gov.kp does not answer): the
+    Government speaks through KCNA, the news agency that publishes the statements of the Foreign Ministry's spokesperson and of the
+    Vice Foreign Ministers (docs/10 B-516).
 
 - iso3: PRT
   iso2: PT
