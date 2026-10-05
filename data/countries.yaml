@@ -2291,7 +2291,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1992-04-06}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.gov.kz/memleket/entities/mfa?lang=en', type: mfa, lang: [kk]}
+    - {label: President of the Republic of Kazakhstan (Akorda), url: 'https://www.akorda.kz/en', type: head_of_state, lang: [en]}
+    - {label: Prime Minister of the Republic of Kazakhstan, url: 'https://primeminister.kz/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://www.gov.kz/memleket/entities/mfa?lang=en; https://www.akorda.kz/en;
+    https://primeminister.kz/en answered 200. The gov.kz portal declares kk in its page shell and serves the
+    Ministry's texts in kk, ru and en by the lang parameter from a script-loaded interface (its HTML holds no
+    text, so a Ministry release cannot be archived as text, docs/10 B-501).
 
 - iso3: KEN
   iso2: KE
@@ -2339,7 +2347,15 @@
       A/78/846 (annex) gives the month only (November 1995); the first day of the month is
       recorded. P-14: not confirmed; no official statement found for the month given by
       A/78/846.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.gov.kg/', type: mfa, lang: [ky]}
+    - {label: President of the Kyrgyz Republic, url: 'https://president.kg/en', type: head_of_state, lang: [en]}
+    - {label: Cabinet of Ministers of the Kyrgyz Republic, url: 'https://www.gov.kg/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://president.kg/en; https://www.gov.kg/en answered 200; checked by
+    Wayback: https://mfa.gov.kg/ (the direct request answered HTTP 502 with a 429 Too Many Requests body;
+    Wayback captures of 2026-08-29 (/), 2026-09-19 (/en/) and 2026-09-06 (/ru) answered 200; the page
+    declares lang="kg", which is not an ISO 639 code, recorded here as ky).
 
 - iso3: KHM
   iso2: KH
@@ -3383,8 +3399,17 @@
   recognises_palestine:
     since: null
     note: >-
-      Intent stated only; no recognition found as of 2026-09-28 (docs/06 §8).
-  gov_sources: []
+      No recognition. The Minister of Foreign Affairs announced at the General Assembly on 26 September
+      2025 that New Zealand would not recognise the State of Palestine at this time
+      (src_20250926_mfat_national-statement-unga80); the Ministry's page repeats it (read 2026-10-05,
+      src_20261005_mfat_israel-hamas-conflict-faq). No row in data/structured/recognitions.csv.
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and Trade, url: 'https://www.mfat.govt.nz/en', type: mfa, lang: [en]}
+    - {label: Prime Minister of New Zealand (Beehive), url: 'https://www.beehive.govt.nz/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://www.mfat.govt.nz/en answered 200 (the page declares en-NZ);
+    checked by Wayback: https://www.beehive.govt.nz/ (the direct request got an Incapsula bot-check page;
+    Wayback capture of 2025-07-02, whose page declares en).
 
 - iso3: OMN
   iso2: OM

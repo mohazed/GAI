@@ -1,0 +1,579 @@
+# Hand-authored events for New Zealand (P-21 light protocol, T-P21-01, 2026-10-05).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers for B9/B10: Prime Minister Christopher Luxon and Minister of Foreign Affairs Winston Peters.
+
+- id: evt_2023_12_12_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2023-12-12'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire or for the end of restrictions on aid (+2): the three Prime Ministers support efforts towards a sustainable ceasefire and oppose any use of siege or blockade;
+    no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister, with the Prime Ministers of Australia and Canada, supported efforts towards a sustainable ceasefire in Gaza and opposed any siege or blockade.
+    fr: Le Premier ministre, avec les Premiers ministres de l'Australie et du Canada, a soutenu les efforts en faveur d'un cessez-le-feu durable à Gaza et s'est opposé à tout siège ou blocus.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Christopher Luxon
+  evidence:
+  - source: src_20231212_pm-gc_joint-statement-aus-can-nzl
+    quote: We want to see this pause resumed and support urgent international efforts towards a sustainable ceasefire.
+    quote_lang: en
+    locator: line 6
+  - source: src_20231212_pm-gc_joint-statement-aus-can-nzl
+    quote: We oppose the forcible displacement of Palestinians from Gaza, the re-occupation of Gaza, any reduction in territory, and any use of siege or blockade.
+    quote_lang: en
+    locator: line 8
+  - source: src_20261005_mfat_israel-hamas-conflict-faq
+    quote: Joint statement - Prime Ministers of New Zealand, Australia and Canada(external link) (13 December 2023)
+    quote_lang: en
+    locator: line 156
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2023_12_12_AUS_B9
+  - evt_2023_12_12_CAN_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: support for a sustainable ceasefire and opposition to any siege or blockade; no specific violation named. Call tier agrees (as evt_2023_12_12_AUS_B9).'
+    notes: Joint statement of the Prime Ministers of Australia, Canada and New Zealand, cited from the copy the Prime Minister of Canada published; the signatories are named in the source's title and in
+      the Ministry's list of statements (dated 13 December 2023 in New Zealand). Same reading as evt_2023_12_12_AUS_B9 and evt_2023_12_12_CAN_B9. Decayed to zero (more than 730 days).
+
+- id: evt_2023_12_31_NZL_D3
+  revision: 1
+  country: NZL
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: 'Increased tier (+8): New Zealand''s 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (USD 602,400 in 2023 against USD 560,800 in 2022)
+    (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: New Zealand contributed more to UNRWA in 2023 than in 2022, according to UNRWA donor tables.
+    fr: La contribution de la Nouvelle-Zélande à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: New Zealand 602,400 0 602,400 0 0 0 0 0 0 0 602,400 60
+    quote_lang: en
+    locator: line 77
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: New Zealand 560,800 0 560,800 0 0 0 560,800 42
+    quote_lang: en
+    locator: line 51
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Line 77 of the 2023 table and line 51 of the 2022 table re-read: USD 602,400 in 2023 against USD 560,800 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides
+        (evt_2024_12_31_NZL_D3).'
+    notes: 'UNRWA''s donor table for 2023 gives USD 602,400 against USD 560,800 in 2022: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022
+      (as for Norway and Azerbaijan, docs/10 B-445). New Zealand did not pause its funding: the Ministry says its NZ$1 million annual payment was disbursed as planned in 2024 (src_20261005_mfat_israel-hamas-conflict-faq),
+      so D2 is none-found and there is no restoration date. It ends on 2024-12-31, from which the 2024 table decides.'
+
+- id: evt_2024_02_14_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2024-02-14'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire or for the end of restrictions on aid (+2): an immediate humanitarian ceasefire is called for and Israel is urged not to launch a ground offensive into Rafah;
+    the statement recalls obligations and the ICJ orders without naming a violation.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister, with the Prime Ministers of Australia and Canada, called for an immediate humanitarian ceasefire and urged Israel not to launch a ground offensive into Rafah.
+    fr: Le Premier ministre, avec ses homologues de l'Australie et du Canada, a appelé à un cessez-le-feu humanitaire immédiat et a exhorté Israël à ne pas lancer d'offensive terrestre à Rafah.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Christopher Luxon
+  evidence:
+  - source: src_20240214_pm-gc_joint-statement-rafah
+    quote: An immediate humanitarian ceasefire is urgently needed.
+    quote_lang: en
+    locator: line 10
+  - source: src_20240214_pm-gc_joint-statement-rafah
+    quote: We urge the Israeli government not to go down this path.
+    quote_lang: en
+    locator: line 8
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_02_14_AUS_B9
+  - evt_2024_02_14_CAN_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: an immediate humanitarian ceasefire called for; Rafah offensive opposed; the ICJ orders called binding. Call tier agrees (as evt_2024_02_14_AUS_B9).'
+    notes: Joint statement of the three Prime Ministers on Rafah, cited from the Prime Minister of Canada's copy. Same tier as evt_2024_02_14_AUS_B9 and evt_2024_02_14_CAN_B9. Decayed to zero.
+
+- id: evt_2024_02_29_NZL_B11
+  revision: 1
+  country: NZL
+  indicator: B11
+  type: standing
+  date: '2024-02-29'
+  end: null
+  points: 5
+  points_rationale: 'Settlers tier (+5): travel bans on a number of Israeli settlers; later rounds continue the same standing state.'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Prime Minister and the Minister of Foreign Affairs announced travel bans on a number of Israeli settlers who had committed violent attacks against Palestinians in the West Bank.
+    fr: Le Premier ministre et le ministre des Affaires étrangères ont annoncé des interdictions de voyage visant des colons israéliens auteurs d'attaques violentes contre des Palestiniens en Cisjordanie.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Christopher Luxon and Winston Peters
+  evidence:
+  - source: src_20240229_beehive_travel-bans-settlers
+    quote: Prime Minister Christopher Luxon and Foreign Minister Winston Peters have announced travel bans on a number of extremist Israeli settlers who have committed violent attacks against Palestinians
+      in the West Bank.
+    quote_lang: en
+    locator: line 39
+  - source: src_20240229_beehive_travel-bans-settlers
+    quote: '"We are imposing travel bans on a number of people known to have committed violent acts. These individuals will not be able to travel to New Zealand.'
+    quote_lang: en
+    locator: line 42
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: travel bans on a number of Israeli settlers who committed violent attacks in the West Bank; no mention of Gaza. Settlers tier agrees; scope west-bank agrees.'
+    notes: 'West Bank conduct: scoped west-bank only, unscored in v1 (D-14, docs/10 B-32): the release does not cite Gaza. The Ministry''s page (src_20261005_mfat_israel-hamas-conflict-faq) counts 33 settlers
+      and two ministers under the travel ban regime; a later round of 2 June 2026 (Beehive release, not archived) extends the same standing state and is not a separate event. Beehive refuses Save Page Now:
+      recorded from the Wayback capture of the day.'
+
+- id: evt_2024_04_08_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2024-04-08'
+  points: 5
+  points_rationale: 'Statement naming specific violations (+5): the killing of humanitarian and medical workers, the destruction of health facilities and the forcible displacement of Palestinians from Gaza
+    are named, and Israel is told the ICJ provisional measures must be complied with.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs told the General Assembly that humanitarian and medical workers were being killed in Gaza and that the ICJ's provisional measures must be complied with.
+    fr: Le ministre des Affaires étrangères a déclaré à l'Assemblée générale que des travailleurs humanitaires et médicaux étaient tués à Gaza et que les mesures de la CIJ devaient être respectées.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20240408_mfat_unga-66th-plenary-statement
+    quote: Indeed, Palestinian civilians continue to bear the brunt of Israel’s military actions, humanitarian and medical workers are being killed, and health facilities and vital infrastructure have been
+      destroyed.
+    quote_lang: en
+    locator: line 8
+  - source: src_20240408_mfat_unga-66th-plenary-statement
+    quote: Israel cannot now be under any misconceptions as to its legal obligations. The provisional measures ordered by the International Court of Justice are clear and must be complied with fully and
+      immediately.
+    quote_lang: en
+    locator: line 14
+  - source: src_20240408_mfat_unga-66th-plenary-statement
+    quote: Building and expanding illegal Israeli settlements in the occupied territories and the forcible displacement of Palestinians from Gaza imperil the two-state solution, which remains the only blueprint
+      for peace that we have.
+    quote_lang: en
+    locator: line 20
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the Minister names the killing of humanitarian and medical workers and the destruction of health facilities in Gaza, the forcible displacement of Palestinians from Gaza, and the binding
+        provisional measures of the ICJ. Named-violation tier agrees.'
+    notes: Statement delivered by the Deputy Prime Minister and Minister of Foreign Affairs at the General Assembly debate of 8 April 2024 (the Beehive release of 9 April is the New Zealand date). The Minister
+      also welcomes Security Council resolution 2728 and calls on all parties to comply with it.
+
+- id: evt_2024_05_07_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2024-05-07'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): both sides are called on to agree to an immediate cessation of armed conflict; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs said it was the responsibility of Israel and Hamas to agree to an immediate cessation of armed conflict and the release of hostages.
+    fr: Le ministre des Affaires étrangères a déclaré qu'il incombait à Israël et au Hamas de convenir d'une cessation immédiate des hostilités et de la libération des otages.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20240507_beehive_ceasefire-agreement-needed-peters
+    quote: “It is the responsibility of both Israel and Hamas to agree to terms which enable an immediate cessation of armed conflict, the release of hostages, and a focus on meeting the immediate humanitarian
+      needs of the people in Gaza.
+    quote_lang: en
+    locator: line 41
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the quoted words call on both sides to agree to an immediate cessation of armed conflict and the release of hostages; no violation is named. Call tier agrees.'
+    notes: 'Release of the Minister of Foreign Affairs quoting him, on a possible offensive in Rafah. Beehive refuses Save Page Now: recorded from the Wayback capture 20240510082333.'
+
+- id: evt_2024_07_26_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2024-07-26'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): an immediate ceasefire is called for; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister, with the Prime Ministers of Australia and Canada, called for an immediate ceasefire in Gaza and an increase in the flow of assistance.
+    fr: Le Premier ministre, avec les Premiers ministres de l'Australie et du Canada, a appelé à un cessez-le-feu immédiat à Gaza et à une augmentation de l'aide acheminée.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Christopher Luxon
+  evidence:
+  - source: src_20240726_pm-gc_joint-statement-aus-can-nzl
+    quote: An immediate ceasefire is needed desperately.
+    quote_lang: en
+    locator: line 5
+  - source: src_20261005_mfat_israel-hamas-conflict-faq
+    quote: 'CANZ statement: Joint statement from the Prime Ministers of Canada, Australia and New Zealand(external link) (26 July 2024)'
+    quote_lang: en
+    locator: line 123
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_07_26_AUS_B9
+  - evt_2024_07_26_CAN_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: an immediate ceasefire and a sustained increase in assistance called for; no violation named. Call tier agrees (as evt_2024_07_26_AUS_B9).'
+    notes: Joint statement of the three Prime Ministers; the Ministry's list of statements names it as the statement of the Prime Ministers of Canada, Australia and New Zealand of 26 July 2024. Decayed
+      to zero.
+
+- id: evt_2024_12_02_NZL_B5
+  revision: 1
+  country: NZL
+  indicator: B5
+  type: standing
+  date: '2024-12-02'
+  end: null
+  points: 8
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister said New Zealand would enforce the ICC arrest warrants for Netanyahu and Gallant if either came to New Zealand.
+    fr: Le Premier ministre a déclaré que la Nouvelle-Zélande exécuterait les mandats d'arrêt de la CPI contre Netanyahou et Gallant si l'un d'eux venait en Nouvelle-Zélande.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Christopher Luxon
+  evidence:
+  - source: src_20241202_beehive_post-cabinet-press-conference
+    quote: 'PM: Yes. We support the ICC and as I’ve said to you all along, those are matters before the court, but we believe in the international rules-based system. We support the ICC and we’d be obligated
+      to do so.'
+    quote_lang: en
+    locator: line 358
+  - source: src_20241202_beehive_post-cabinet-press-conference
+    quote: 'Media: Prime Minister, the International Criminal Court a couple of weeks ago issued arrest warrants for Israeli Prime Minister Benjamin Netanyahu and the former Defence Minister, Yoav Gallant.
+      If either of them came to New Zealand, would we enforce those warrants?'
+    quote_lang: en
+    locator: line 355
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read lines 355 to 360 of the transcript: the question is whether New Zealand would enforce the warrants if Netanyahu or Gallant came; the Prime Minister answers yes, that New Zealand supports
+        the ICC and would be obligated to do so. B5 agrees (public commitment by the head of government).'
+    notes: 'Answer of the Prime Minister to a journalist''s question at the post-Cabinet press conference of 2 December 2024, from the transcript the Prime Minister''s office publishes (Hansard). The Ministry''s
+      page (src_20261005_mfat_israel-hamas-conflict-faq) later says New Zealand, like all parties to the Rome Statute, has legal obligations to the Court, without saying it would arrest. No later contrary
+      position found, so no end. Evidence is an answer to a question, not a prepared statement: flagged.'
+
+- id: evt_2024_12_31_NZL_D3
+  revision: 1
+  country: NZL
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: 'Increased tier (+8): New Zealand''s 2024 contribution to UNRWA (USD 612,400) exceeds its 2022 contribution (USD 560,800) in UNRWA''s donor tables.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: New Zealand contributed more to UNRWA in 2024 than in 2022, according to UNRWA donor tables.
+    fr: La contribution de la Nouvelle-Zélande à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: New Zealand 612,400 612,400 - - 612,400 612,400 - - - - - - - - - - - - - - 612,400 60 612,400 58
+    quote_lang: en
+    locator: line 96
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: New Zealand 560,800 0 560,800 0 0 0 560,800 42
+    quote_lang: en
+    locator: line 51
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Line 96 of the 2024 table and line 51 of the 2022 table re-read: USD 612,400 in 2024 against USD 560,800 in 2022. D3 increased agrees.'
+    notes: Dated 31 December 2024, the end of the second calendar year whose contribution in UNRWA's table exceeds 2022 (as evt_2024_12_31_NOR_D3). The 2025 table was not archived, so the state is left
+      open.
+
+- id: evt_2025_06_10_NZL_B11
+  revision: 1
+  country: NZL
+  indicator: B11
+  type: standing
+  date: '2025-06-10'
+  end: null
+  points: 10
+  points_rationale: 'Ministers tier (+10): travel bans on two serving Israeli ministers, Itamar Ben-Gvir and Bezalel Smotrich.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs, with four other foreign ministers, announced travel bans on Israeli ministers Itamar Ben-Gvir and Bezalel Smotrich.
+    fr: Le ministre des Affaires étrangères, avec quatre autres ministres des Affaires étrangères, a annoncé des interdictions de voyage visant les ministres israéliens Itamar Ben-Gvir et Bezalel Smotrich.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20250610_gov-uk_joint-statement-ben-gvir-smotrich
+    quote: Today, the Foreign Ministers of Australia, Canada, New Zealand, Norway and the United Kingdom have announced sanctions and other measures targeting Itamar Ben-Gvir and Bezalel Smotrich for inciting
+      violence against Palestinians in the West Bank.
+    quote_lang: en
+    locator: line 4
+  - source: src_20250611_beehive_travel-ban-israeli-ministers
+    quote: The bans will prevent Israel’s Finance Minister Bezalel Smotrich and National Security Minister Itamar Ben-Gvir from travelling to New Zealand.
+    quote_lang: en
+    locator: line 38
+  - source: src_20250611_beehive_travel-ban-israeli-ministers
+    quote: “The crisis in Gaza has made returning to a meaningful political process all the more urgent.
+    quote_lang: en
+    locator: line 46
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2025_06_10_AUS_B11
+  - evt_2025_06_10_CAN_B11
+  - evt_2025_06_10_NOR_B11
+  - evt_2025_06_10_GBR_B11
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the joint statement lists New Zealand among the five foreign ministers announcing measures on the two ministers; the Minister of Foreign Affairs release says travel bans prevent Smotrich
+        and Ben-Gvir from travelling to New Zealand and cites the crisis in Gaza. Ministers tier agrees; gaza scope rests on the document citing Gaza (flagged).'
+    notes: 'The listing grounds are West Bank incitement; the joint statement cites the catastrophe in Gaza and the Minister''s release cites the crisis in Gaza, so it is scoped gaza and west-bank under
+      the literal reading of docs/10 B-32 used for the other four signatories (docs/10 B-267). New Zealand''s measure is a travel ban, not an asset freeze (the Ministry: New Zealand has no legislation for
+      other autonomous sanctions). Dated 10 June 2025, the day of the joint statement; the Minister''s release carries the New Zealand date, 11 June. No lifting found, so no end.'
+
+- id: evt_2025_07_21_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2025-07-21'
+  points: 5
+  points_rationale: 'Statement naming specific violations (+5): the joint statement condemns the killing of civilians seeking aid and the denial of essential humanitarian assistance.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, called for the war in Gaza to end and condemned the killing of civilians seeking aid and the denial of assistance.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a appelé à la fin de la guerre à Gaza et a condamné la mort de civils cherchant de l'aide et le refus de l'aide.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20250721_fm-gov-au_joint-statement-opt
+    quote: We condemn the drip feeding of aid and the inhumane killing of civilians, including children, seeking to meet their most basic needs of water and food.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250721_fm-gov-au_joint-statement-opt
+    quote: The Israeli Government's denial of essential humanitarian assistance to the civilian population is unacceptable.
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2025_07_21_AUS_B9
+  - evt_2025_07_21_CAN_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the statement condemns the killing of civilians seeking aid and the denial of assistance; New Zealand is on the signatory line. Named-violation tier agrees.'
+    notes: Joint statement of 28 foreign ministers and an EU Commissioner, in the text Australia's Minister published; New Zealand's Ministry lists it as the Joint Statement on Humanitarian Situation in
+      Gaza and the Occupied Palestinian Territories (21 July 2025). Same reading as evt_2025_07_21_AUS_B9 and evt_2025_07_21_CAN_B9.
+
+- id: evt_2025_08_09_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2025-08-09'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the joint statement rejects the decision to launch a further military operation and urges an immediate and permanent ceasefire; the risk of violating
+    international humanitarian law is stated as a risk, not as a named violation.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, rejected the Israeli decision to launch a further military operation in Gaza and urged an immediate and permanent ceasefire.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a rejeté la décision israélienne de lancer une nouvelle opération militaire à Gaza et a appelé à un cessez-le-feu immédiat et permanent.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20250809_fm-gov-au_joint-statement-offensive
+    quote: We urge the parties and the international community to make all efforts to finally bring this terrible conflict to an end now, through an immediate and permanent ceasefire that enables the provision
+      of a massive, immediate and unimpeded humanitarian assistance, as the worst-case scenario of a famine is unfolding in Gaza.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250809_fm-gov-au_joint-statement-offensive
+    quote: The Foreign Ministers of Australia, Austria, Canada, France, Germany, Italy, New Zealand, Norway and the United Kingdom
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2025_08_09_AUS_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: an immediate and permanent ceasefire urged; plans said to risk violating international humanitarian law (conditional). New Zealand is on the signatory line. Call tier agrees.'
+    notes: Joint statement of foreign ministers (the page archived lists nine ministers and the EU High Representative; New Zealand's Ministry lists a Joint Foreign Ministers' statement on Gaza of 8 August
+      2025). Read at the call tier because the violation is stated as a risk, as evt_2025_08_09_AUS_B9.
+
+- id: evt_2025_09_26_NZL_B9
+  revision: 1
+  country: NZL
+  indicator: B9
+  type: repeatable
+  date: '2025-09-26'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire or for the end of restrictions on aid (+2): the Minister says New Zealand has repeatedly demanded a ceasefire and that Israel allow aid into Gaza; no violation
+    is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs told the General Assembly that New Zealand had repeatedly demanded a ceasefire and that Israel allow aid into Gaza.
+    fr: Le ministre des Affaires étrangères a déclaré à l'Assemblée générale que la Nouvelle-Zélande avait demandé à plusieurs reprises un cessez-le-feu et que Israël laisse passer l'aide à Gaza.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Winston Peters
+  evidence:
+  - source: src_20250926_mfat_national-statement-unga80
+    quote: We have, ever since the October 7 attacks, repeatedly demanded a ceasefire, the release of the remaining hostages, and for Israel to allow vital aid to flow into Gaza. That is where our focus
+      remains.
+    quote_lang: en
+    locator: line 48
+  - source: src_20250926_mfat_national-statement-unga80
+    quote: We are also revolted by what can only be described as a grossly disproportionate response from the Israeli Government.
+    quote_lang: en
+    locator: line 32
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the Minister says New Zealand has repeatedly demanded a ceasefire, the release of hostages and aid for Gaza; he calls the response grossly disproportionate and the images of famine
+        shocking. No named violation; call tier agrees, flagged.'
+    notes: 'General Debate statement of the Minister of Foreign Affairs. Read at the call tier: the statement describes the Israeli response as grossly disproportionate and the famine images as shocking,
+      but names no specific violation and uses no legal term (flagged: a reader could read ''disproportionate'' as the legal characterisation of the +5 tier). The decision not to recognise Palestine at
+      this time is recorded in the registry, not scored (no B8 event).'
+
