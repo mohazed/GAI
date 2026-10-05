@@ -28,10 +28,12 @@ import {
   bandFor,
   decayFactor,
   type MethodologyFilesInput,
+  onSecurityCouncil,
   percentOfGni,
   roundHalfAwayFromZero,
   sensitivitySuite,
 } from '@gai/scoring'
+import { deriveGeneratedStatuses, effectiveAssessment } from '../build/assessments.js'
 import {
   asPublished,
   both,
@@ -149,7 +151,22 @@ function detail(iso3: string) {
   if (s === undefined) fail(`${iso3} is not scored`, 1)
   const evs = [...(handBy.get(iso3) ?? []), ...(genBy.get(iso3) ?? [])]
   const byId = new Map(evs.map((e) => [e.id, e]))
-  const assessment = ds.assessments.find((a) => a.value.country === iso3)?.value
+  const country = registry.find((c) => c.iso3 === iso3)
+  if (country === undefined) fail(`${iso3} is not in the registry`, 1)
+  // The statuses the build publishes: the hand ones with those derived from the tables laid over
+  // them (B-489).
+  const assessment = effectiveAssessment(
+    ds.assessments.find((a) => a.value.country === iso3)?.value ?? null,
+    deriveGeneratedStatuses({
+      iso3,
+      date,
+      structured: ds.structured,
+      generated: genBy.get(iso3) ?? [],
+      methodology: lm,
+      unscMember: onSecurityCouncil(country, m.windowStart, date),
+      permanentMember: country.memberships.unsc.some((t) => t.permanent),
+    }),
+  )
   return {
     iso3,
     name: registry.find((c) => c.iso3 === iso3)?.name.en,
@@ -165,10 +182,7 @@ function detail(iso3: string) {
     ),
     indicators: s.indicators.map((i) => ({ id: i.id, raw: i.raw, value: i.value })),
     statuses: Object.fromEntries(
-      Object.entries(assessment?.indicators ?? {}).map(([k, v]) => [
-        k,
-        (v as { status: string }).status,
-      ]),
+      Object.entries(assessment.indicators).map(([k, v]) => [k, v?.status]),
     ),
     events: s.events
       .filter((e) => e.reason !== 'not-published' && e.reason !== 'out-of-scope')
