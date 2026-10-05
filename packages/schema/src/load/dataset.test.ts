@@ -248,7 +248,7 @@ describe("misnamed files in a record directory ('load.misplaced-file')", () => {
     expect(ds.events).toHaveLength(2)
   })
 
-  it('ignores .gitkeep, README.md, .DS_Store, data/snapshots/** and data/structured/raw/**', () => {
+  it('ignores .gitkeep, README.md, .DS_Store, data/snapshots/**, data/structured/raw/** and data/structured/author-downloads/**', () => {
     write('data/README.md', '# data\n')
     write('data/events/.gitkeep', '')
     write('data/events/README.md', 'notes\n')
@@ -258,6 +258,8 @@ describe("misnamed files in a record directory ('load.misplaced-file')", () => {
     write('data/snapshots/v0.9.0/events.yaml', 'not: [valid')
     write('data/structured/raw/fts_2025.json', '{}')
     write('data/structured/raw/nested/unga.csv', 'x,y\n')
+    write('data/structured/author-downloads/undl_4083529.xml', '<record/>')
+    write('data/structured/author-downloads/sipri_tiv_israel_2022-2025.csv', 'Supplier,2022\n')
     const ds = load()
     expect(ds.issues).toEqual([])
     expect(ds.files).toContain('data/snapshots/v0.9.0/scores.json')

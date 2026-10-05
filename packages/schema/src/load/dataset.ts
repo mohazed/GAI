@@ -108,7 +108,15 @@ export const REQUIRED_FILES = [
 ] as const
 
 const IGNORED = [/(^|\/)\.gitkeep$/, /(^|\/)README\.md$/, /(^|\/)\.DS_Store$/]
-const IGNORED_DIRS = ['data/snapshots/', 'data/structured/raw/']
+/**
+ * Folders whose files are not records: frozen snapshots, downloads awaiting import, and the
+ * author's browser downloads kept byte for byte so Wayback can capture them (B-903, B-486).
+ */
+const IGNORED_DIRS = [
+  'data/snapshots/',
+  'data/structured/raw/',
+  'data/structured/author-downloads/',
+]
 
 /**
  * Recursively lists the regular files under `dir` (relative to `root`), POSIX paths, in code-unit
