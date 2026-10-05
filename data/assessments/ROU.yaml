@@ -1,0 +1,233 @@
+# Coverage record for Romania (docs/03 §6). P-21 light protocol, session T-P21-04, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mae.ro and its New York mission mpnewyork.mae.ro answer every scripted request with a
+#   JavaScript bot check and their Wayback captures are bot-check pages: the Ministry's releases are known through the Romanian outlets that quote them
+#   and through search-engine excerpts of its pages), the Government (gov.ro), the Presidency (presidency.ro: same bot check), the Ministry of Health (ms.ro),
+#   the General Inspectorate for Emergency Situations (igsu.ro), the General Debate statements of the United Nations (gadebate.un.org: the 78th and 79th
+#   sessions through Wayback captures; the 80th and 81st through a direct request), the joint statements already archived for the 45 (docs/10 B-444: two
+#   name Romania), the EU Council's settler listings (R8, docs/10 B-446), UNRWA's donor tables, the generated events and the structured tables; web searches
+#   in English and in Romanian per indicator group. Time: about 25 minutes (the first country of the session, with the archiving of ten pages).
+# Statements read and not filed as B9: the Foreign Minister's General Debate statement of 27 September 2025 (an immediate ceasefire in Gaza: in the UN's file,
+#   which Save Page Now cannot capture and Wayback does not hold: lead_20261005_ROU_1); the President's of 81st session (23 September 2026: 'advance the
+#   implementation of the Peace Plan for Gaza ... and to address the humanitarian situation on the ground without delay': no call for a ceasefire or an end of
+#   the blockade); the Prime Minister's visit to Israel of 2024 (support for the efforts towards a ceasefire agreement, a post relayed by
+#   news.ro, decayed to zero; news.ro dates it 5 September 2024, HotNews 5 November 2024); the Prime Minister's words after it (conditional support for Israel's right to self-defence).
+country: ROU
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Romania to Israel.
+      Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ROU
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the
+      full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
+      is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): Romanian orders of Israeli major arms in many data years since 1993, among
+      them 192 TIV in data year 2025 (the A4 event of 9 March 2026) and 18 TIV in 2022. Left to the build. President Dan said at
+      the BSDA 2026 defence exhibition that Romania keeps the military contracts with Israel already under way (Mediafax): category
+      A is not searched in this protocol.'
+    queries:
+    - sipri_orders.csv, buyer ROU
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on 6 and abstention on 6 of the 12 qualifying votes. The Ministry''s releases on
+      the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Romania filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Romania
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found; the 19 February 2024 declaration of 26 EU foreign
+      ministers (filed as B9) reiterates respect for the order of 26 January 2024.
+    queries: &id002
+    - Romania foreign minister Odobescu Gaza ceasefire statement humanitarian 2024 mae.ro
+    - Romania Țoiu Gaza statement 2026 foreign minister Israel ceasefire
+    - Romania Gaza statement Bolojan OR "Nicușor Dan" Israel ceasefire humanitarian 2025 2026 recognize Palestine position Romania
+    - Oana Țoiu discurs Adunarea Generală ONU 27 septembrie 2025 încetarea imediată a focului Gaza eliberarea necondiționată a
+      ostaticilor text integral
+    - Iohannis semnat declarație comună liderilor 17 țări sprijin acord încetarea focului eliberare ostatici Gaza 6 iunie 2024
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No official statement of the Government on executing the warrants of 21 November 2024 was found. The Ministry of Foreign
+      Affairs'' message of 22 November 2024 (on its X account, as HotNews reports it) reiterates Romania''s principled position
+      on the Court''s independence, says that there is no equivalence between Israel, a democracy, and terrorist organisations
+      such as Hamas and Hezbollah, and states no position on executing the warrants; it names no speaker (docs/10 B-298 (2) for
+      Austria, B-517 (4) for Bulgaria): lead_20261005_ROU_2.'
+    queries: &id001
+    - România CPI mandat arestare Netanyahu poziția MAE executare Statutul de la Roma noiembrie 2024
+    - Netanyahu vizită București ședință comună guvern România Israel 2025 OR 2026 Bolojan Netanyahu invitație mandat CPI
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found. Prime Minister Ciolacu
+      invited Mr Netanyahu in January 2025 to a joint meeting of the two governments in Bucharest (HotNews, Digi24, G4Media); the
+      meeting did not take place and no visit followed (Romanian press, February 2026): an invitation is not hosting (docs/02 §2
+      B5/B6): lead_20261005_ROU_2.'
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Romania has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Romania row. The registry dates the recognition 24 November 1988 (A/78/846
+      annex); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with the pre-existing tier
+      the score would be +3 higher.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Three events, each a call at +2, all decayed to zero: the Foreign Minister''s signature of the declaration of 26 EU
+      foreign ministers (19 February 2024), the President''s signature of the leaders'' statement of 6 June 2024, and the President''s
+      General Debate statement of 25 September 2024. Flagged: the last words the end of hostilities as an ''imperative'' (docs/10
+      B-525 (5)). Not filed: the Foreign Minister''s General Debate statement of 27 September 2025 (''An immediate ceasefire in
+      Gaza, the unconditional release of all hostages, as well as adequate humanitarian assistance are merely the first steps towards
+      a permanent end to hostilities'': the UN''s file cannot be archived, lead_20261005_ROU_1); the President''s statement of
+      81st session (no call). The 78th session''s statement (2023) has no passage on Gaza.'
+    queries: *id002
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No B10 event filed. Prime Minister Ciolacu''s words after meeting Mr Netanyahu in 2024 (HotNews, 3 February 2026, dates
+      the meeting 5 November 2024; news.ro dates the Prime Minister''s visit to Israel 5 September 2024) (''We express our support
+      for the right of the State of Israel to self-defence against terrorist threats. We stress, at the same time, the importance
+      of respecting international law, humanitarian law and the need to protect all civilians'', HotNews, 3 February 2026) pair
+      the support with a call to respect the law: not unconditional (docs/02 §2 B10).'
+    queries: *id002
+  B11:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024 (west-bank, unscored), 15 July 2024 and 28 May 2026
+      (gaza and west-bank), counted for Romania under R8 (docs/10 B-446, B-519); the third adds no points beside the second. No
+      national listing of settlers or ministers by Romania was found.'
+    queries: &id003
+    - Romania sanctions Israeli settlers Romania national ban entry violent settlers OR ambassador recalled Israel Romania Țoiu
+    - consilium.europa.eu settlers sanctions 19 April 2024, 15 July 2024, 28 May 2026 (the Council's decisions, R8)
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; the relations continued (the President of Israel was received in Bucharest
+      on an official visit in June 2026, Israeli Foreign Ministry release of 9 June 2026).
+    queries: *id003
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No Romanian support for a review or suspension of the EU-Israel Association Agreement was found (the Article 2 review
+      of 20 May 2025 is an EU-level act that counts for the states that supported it in the Council, docs/02 §2 C1): no ministerial
+      statement or Council record naming Romania''s support was found.'
+    queries:
+    - România Acordul de asociere UE-Israel suspendare revizuire poziția României Țoiu OR Odobescu OR Hurezeanu articolul 2
+  C2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the memorandum of understanding on emergency wheat supplies signed in Bucharest on 12 May 2024 by Israel''s
+      Minister of Agriculture (`reported`: the Israeli ministry''s page cannot be archived; the report is the TPS agency''s, relayed
+      by Agerpres), flagged. Not filed: the memorandum on scientific cooperation (27 February 2023) and the cybersecurity memorandum
+      (7 June 2019), which pre-date the window, and the agreement of the two Olympic committees (2 April 2025), not a governmental
+      instrument.'
+    queries:
+    - Romania Israel sign agreement memorandum 2025 OR 2026 government cooperation signed Bucharest Israeli minister
+    - România Israel acord semnat memorandum cooperare 2025 2026 guvern ministru semnat Ierusalim București
+    - madr.ro Florin Barbu Avi Dichter ministrul agriculturii Israel memorandum grâu vizită București mai 2024
+    - Romania Israel cybersecurity memorandum of understanding signed Romania-Israel Cyber Security Forum Bucharest date
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: Government flows of USD 1,278,339 (plan 1156, 2024) and USD 49,296 (plan 1273, 2025) over all flow
+      dates (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the Ministry of Foreign Affairs'' announcement of 29 January 2024 that it would start no procedure for new
+      voluntary contributions to UNRWA until the investigation was completed (`corroborated` on three Romanian outlets that quote
+      the release; the Ministry''s page cannot be archived), ending no later than 19 July 2024 (docs/10 B-525 (1), (2)).'
+    queries: &id004
+    - Romania suspends funding UNRWA January 2024 Ministry of Foreign Affairs
+    - România UNRWA suspendare finanțare MAE comunicat ianuarie 2024
+    - România reia finanțarea UNRWA 2024 MAE contribuție voluntară reluare
+    - Romania resumes UNRWA funding 2024 Odobescu OR Ministry of Foreign Affairs Romania UNRWA contribution resumed after Colonna
+      report
+  D3:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Two events: increased from 31 December 2023 (USD 270,755 in 2023 against USD 210,748 in 2022), ended at the hold of
+      29 January 2024; restored from 19 July 2024 (`reported`: the UK government''s release of that day names Romania among the
+      partners that had restored their funding, and UNRWA''s table for 2024 shows USD 42,194 received from Romania), flagged. The
+      2024 contribution is below 2022: no increased tier for 2024.'
+    queries: *id004
+  D4:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event for the medical-evacuation programme: the Ministry of Health''s release of 1 October 2024 on the arrival on
+      30 September 2024 of Palestinian children from Gaza, and the IGSU release of 10 April 2025 on a further evacuation; the Ministry
+      of Foreign Affairs counted twelve humanitarian flights by 31 August 2026 (its release could not be archived): the same programme,
+      lead_20261005_ROU_4 (docs/10 B-525 (3)).'
+    queries: &id005
+    - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat primul
+      grup
+    - Romania takes eight pediatric patients from Gaza treatment Romania hospitals medical evacuation first group arrived
+    - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
+      civilă 2024 comunicat MApN
+    - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
+    queries: *id005
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -574,7 +574,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-19}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.gov.by/en/', type: mfa, lang: [en]}
+    - {label: President of the Republic of Belarus, url: 'https://president.gov.by/en', type: head_of_state, lang: [en]}
+    - {label: Council of Ministers, url: 'https://government.by/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://mfa.gov.by/en/ (the English edition; the page carries no lang attribute) and https://president.gov.by/en
+    (declares en) answered 200. https://government.by/en did not answer a scripted request from the session's network (connection failure): checked
+    through the Wayback capture of 2026-05-12 (20260512092355), which declares en (docs/10 B-524).
 
 - iso3: BLZ
   iso2: BZ
@@ -2815,7 +2822,13 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.gov.md/en', type: mfa, lang: [en]}
+    - {label: Presidency of the Republic of Moldova, url: 'https://presedinte.md/eng', type: head_of_state, lang: [en]}
+    - {label: Government of the Republic of Moldova (the Prime Minister), url: 'https://gov.md/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://mfa.gov.md/en (declares en), https://presedinte.md/eng (declares en) and https://gov.md/en (declares en)
+    answered 200; the Ministry also publishes in ro (https://mfa.gov.md/ro) and the Government in ro and ru (docs/10 B-524).
 
 - iso3: MDG
   iso2: MG
@@ -3792,7 +3805,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-24}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mae.ro/en', type: mfa, lang: [ro]}
+    - {label: Presidency of Romania, url: 'https://www.presidency.ro/en', type: head_of_state, lang: [en]}
+    - {label: Romanian Government, url: 'https://gov.ro/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://gov.ro/en answered 200 (the English edition; the page carries no lang attribute). https://www.mae.ro/en and
+    https://www.presidency.ro/en answer every scripted request with a JavaScript bot check (HTTP 503, 'Verifying your browser'), and so do their
+    Wayback captures (the latest are bot-check pages): the declared language could not be read; the Ministry's root is recorded ro, as its news items
+    are Romanian (search-engine results show English items under /en/node/ and Romanian ones under /node/), and the Presidency's English edition as en.
+    The Ministry's releases are known through the Romanian outlets that quote them (docs/10 B-523, B-524).
 
 - iso3: RUS
   iso2: RU

@@ -135,3 +135,51 @@ Assessments: has-events 5 (B1, B9, B11, D1, D3), none-found 14, no-data 2 (A2, C
 | BGR | −11 | +11 | Acting | B11 +5.0 (listing of 15 July 2024), B9 +2.0 (statement of 2025), B1 +3.6; the passivity penalty (−15) no longer applies, the Council's listing of 28 May 2026 being a qualifying event |
 
 One band change: Bulgaria moves from Passive to Acting. Without the 28 May 2026 listing, which adds no points (one event per tier), the penalty would apply and the score would be −4 (Passive): the band rests on the EU listings counted under R8, as it does for the 15 EU members among the 45 (B-446). No cap is hit.
+
+## T-P21-04: BLR, MDA, ROU (2026-10-05)
+
+Light protocol (docs/06 §5) for Belarus, the Republic of Moldova and Romania. 15 events: none for Belarus, 4 for Moldova, 11 for Romania. Decisions and flags are in docs/10 B-523 to B-531.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_03_20_MDA_C2 | C2 | 2024-03-20 | −10 | confirmed | official |
+| evt_2025_05_28_MDA_C2 | C2 | 2025-05-28 | −10 | confirmed | official |
+| evt_2025_09_03_MDA_C2 | C2 | 2025-09-03 | −10 | confirmed | official |
+| evt_2026_09_09_MDA_C2 | C2 | 2026-09-09 | −10 | confirmed | official |
+| evt_2023_12_31_ROU_D3 | D3 | 2023-12-31 to 2024-01-29 | +8 | confirmed | dataset |
+| evt_2024_01_29_ROU_D2 | D2 | 2024-01-29 to 2024-07-19 | −10 | corroborated | press |
+| evt_2024_02_19_ROU_B9 | B9 | 2024-02-19 | +2 | confirmed | official |
+| evt_2024_04_19_ROU_B11 | B11 | 2024-04-19 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2024_05_12_ROU_C2 | C2 | 2024-05-12 | −10 | reported | press |
+| evt_2024_06_06_ROU_B9 | B9 | 2024-06-06 | +2 | confirmed | official |
+| evt_2024_07_15_ROU_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_07_19_ROU_D3 | D3 | 2024-07-19 | +5 | reported | official |
+| evt_2024_09_25_ROU_B9 | B9 | 2024-09-25 | +2 | confirmed | official |
+| evt_2024_09_30_ROU_D4 | D4 | 2024-09-30 | +5 | confirmed | official |
+| evt_2026_05_28_ROU_B11 | B11 | 2026-05-28 | +5 (adds no points beside the 2024 listing) | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build.
+
+### Belarus
+
+Assessments (34 indicators): has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261005_BLR_1`, B9). Sources read: the President's site, the Foreign Minister's General Debate statements of the 78th to 81st sessions (Russian, searched for Gaza, Palestine, Israel and the Middle East and read around each hit; Wayback captures of the 78th and 79th, a direct request for the 80th and 81st), the Foreign Ministry's and the President's statements as press report them, UNRWA's donor tables (no row). No event: the Foreign Minister's statements mention Palestine in lists and, in 2024, a humanitarian catastrophe, with no call for a ceasefire; the President's interview of 15 June 2026 and his message of 29 November 2023 call for a Palestinian state and criticise Israel's conduct without a call for a ceasefire; the Ministry's statement of 13 October 2025 is a press secretary's (R3). Belarus is not an EU member, so the Council's listings do not apply, and no archived joint statement names it. 90-minute stop note: finished inside the budget (about 5 minutes on Belarus). The Foreign Ministry's own pages were not read (search excerpts and press relays only); the President's interview of 15 June 2026 was not read in full.
+
+### Moldova
+
+Assessments: has-events 2 (B1, C2), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261005_MDA_1`, C2; `_2`, B10). Sources read: the Ministry of Foreign Affairs' releases, the Embassy in Israel's page of the bilateral legal framework (archived: it lists every instrument with its date of signature, which decided the four C2 events), the Government's release on the driving-licence agreement (Wayback capture), MOLDPRES, Radio Moldova, Radio Chișinău, Europa Liberă Moldova, the General Debate statements of the 79th and 80th sessions (English, searched: no passage on Gaza), UNRWA's donor tables (no row) and web searches in English and Romanian per indicator group. Moldova is not an EU member and no archived joint statement names it. 90-minute stop note: finished inside the budget (about 10 minutes on Moldova). The Foreign Minister's, the President's and the Prime Minister's own statements on Gaza after October 2023 were searched and none that qualifies was found; the 78th and 81st General Debate statements could not be read.
+
+### Romania
+
+Assessments: has-events 9 (A4, B1, B9, B11, C2, D1, D2, D3, D4), none-found 10, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6, E1 to E3). Leads: 4 (`lead_20261005_ROU_1`, B9; `_2`, B6; `_3`, D3; `_4`, D4). Romania is an EU member: the Council's three settler listings are filed as B11 under R8 and the two joint statements already archived that name it as B9 (the declaration of 26 EU foreign ministers of 19 February 2024; the leaders' statement of 6 June 2024, signed for Romania by the President), as for Bulgaria (docs/10 B-519). The Ministry of Foreign Affairs (mae.ro) and the Presidency answer every scripted request, and their Wayback captures, with a bot check: the Ministry's releases are known through the outlets that quote them, and the Ministry of Health, the Inspectorate for Emergency Situations and the Government answer normally. 90-minute stop note: finished inside the budget (about 25 minutes on Romania, ten archived pages). Not filed and why: the Foreign Minister's General Debate statement of 27 September 2025 (the UN's file cannot be archived: Save Page Now answers 405 and Wayback holds no capture), B5/B6 for the Ministry's message of 22 November 2024 and the Prime Minister's invitation to Mr Netanyahu of January 2025 (no position on executing the warrants; no visit), the twelve medical-evacuation flights after the first (one programme, one D4 event).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-05 (methodology 1.0.0-rc.1), the 15 reviewed events scored as if published; before them the score was +3 (Acting) for Belarus, −6 (Passive) for Moldova and −13 (Passive) for Romania.
+
+| Country | Before | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BLR | +3 | +3 | Acting | no event; the passivity penalty (−15) applies |
+| MDA | −6 | −11 | Passive | C2 −40 clipped to the category cap of −20; the passivity penalty (−15) no longer applies, the tourism declaration of 9 September 2026 being a qualifying event |
+| ROU | −13 | +5 | Acting | B11 +5.0, D3 restored +2.0 (reported, weight 0.4), C2 −4.0 (reported), B9 0.0 (decayed); the passivity penalty (−15) no longer applies, the Council's listing of 28 May 2026 being a qualifying event |
+
+One band change: Romania moves from Passive to Acting. Without the 28 May 2026 listing, which adds no points beside the 2024 listing (one event per tier), the penalty would apply and the score would be about −10 (Passive): the band rests on the EU listing counted under R8, as it does for Bulgaria and the 15 EU members among the 45 (B-446, B-519). Moldova's score falls by 5 points although its passivity penalty is lifted, because four C2 events reach the category cap on instruments some readers would not count (B-526): any two of the four reach the cap, and the tourism declaration of 9 September 2026, the only one inside 365 days, lifts the penalty (without it the score would be about −26). No other cap is hit.
