@@ -1,0 +1,226 @@
+# Coverage record for Uzbekistan (docs/03 §6). P-21 light protocol, session T-P21-02, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the President's site (president.uz/en: the full texts of his addresses; four read in full and
+#   archived), the Ministry of Foreign Affairs and the Government portal (gov.uz), the General Debate statements of the United
+#   Nations (gadebate.un.org, Wayback captures of the 79th session's statement of the Foreign Minister and the 80th session's
+#   of the President in English and Russian, archived), the UN's automatic transcript of the 81st session's Day 2 sitting
+#   (read: the Head of the Administration spoke), the generated events and the structured tables; web searches in English and
+#   in Russian per indicator group. Time: about 25 minutes.
+# Statements read and not filed as B9: the Foreign Minister's General Debate speech of 25 September 2024 (no passage on Gaza);
+#   the Foreign Ministry's statement of 29 October 2023 (a ministry release without a named speaker, press); the President's
+#   address to the Board of Peace summit (19 February 2026: on the reconstruction of Gaza, no ceasefire call or violation, press);
+#   the statement of the 81st session (23 September 2026), read by the Head of the Administration of the President, who is
+#   not a B9 speaker (R3), and which does not mention Gaza.
+country: UZB
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Uzbekistan
+      to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier UZB
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until
+      a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Uzbekistan order of Israeli major arms in the register. Left to
+      the build.'
+    queries:
+    - sipri_orders.csv, buyer UZB
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). The Ministry''s releases on the votes
+      were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Uzbekistan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Uzbekistan
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Узбекистан МИД Международный суд ООН ордер МУС Нетаньяху позиция Узбекистана Газа санкции поселенцы
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Узбекистан МИД Международный суд ООН ордер МУС Нетаньяху позиция Узбекистана Газа санкции поселенцы
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No official statement of the Government on executing the warrants of 21 November 2024 was found. Two Uzbek
+      outlets relay a Ministry source who said that Uzbekistan is not a party to the Rome Statute and that the warrants
+      have no legal force on its territory (lead_20261005_UZB_1): press, unnamed speaker, not filed.'
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Узбекистан МИД Международный суд ООН ордер МУС Нетаньяху позиция Узбекистана Газа санкции поселенцы
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No official stated refusal and no hosting of a person under warrant was found; the press report of a Ministry
+      source (lead_20261005_UZB_1) says no visit of the Israeli Prime Minister is planned.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Узбекистан МИД Международный суд ООН ордер МУС Нетаньяху позиция Узбекистана Газа санкции поселенцы
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Uzbekistan has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Uzbekistan row. The registry dates the recognition 25 September
+      1994 (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher. The President said at the Arab-Islamic summit of 11 November
+      2024 that Palestinians have every right to an independent state within the 1967 borders, with East Jerusalem as
+      its capital (archived); that is not a recognition document.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Four events, each a call at +2: the President at the Organization of Turkic States summit (3 November 2023,
+      decayed to zero), at the Arab-Islamic summit in Riyadh (11 November 2024, decayed to 0.1), at the ECO summit (4
+      July 2025) and in the General Debate (23 September 2025). Flagged: the Riyadh speech says that flagrant violation
+      of international norms continues and describes hospitals and schools in ruins without naming a rule or a party,
+      read as description (a reader who counts it as a named violation or legal characterisation would file +5).'
+    queries:
+    - Mirziyoyev General Assembly 2025 speech Gaza Palestine ceasefire Uzbekistan president
+    - Mirziyoyev Gaza ceasefire statement Turkic States summit OR Organization of Islamic Cooperation Palestine president
+      Uzbekistan transcript president.uz
+    - president.uz Mirziyoyev address Extraordinary Arab-Islamic Summit Riyadh 11 November 2024
+    - Mirziyoyev Gaza statement 2026 Uzbekistan president Palestine Board of Peace
+    - Saidov Uzbekistan foreign minister Gaza Palestine statement ceasefire 2025 Uzbekistan MFA
+    - Mirziyoyev 81st session UN General Assembly September 2026 speech Gaza Palestine president.uz
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries:
+    - Mirziyoyev OR Rahmon OR Berdimuhamedov right to self-defense Israel support Hamas October 7 condemn statement Central
+      Asia president
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Uzbekistan has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; Israel's ambassador is resident in Tashkent and accredited also
+      to Tajikistan and Kyrgyzstan (press).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan Israel ambassador recalled OR severed OR downgraded relations Gaza war
+      Israeli embassy Tashkent
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No agreement or negotiation with Israel was suspended or put under review (none found); the Minister of Investment,
+      Industry and Trade met Israel's Ambassador on 29 December 2025 to discuss expanding trade and investment (press).
+    queries:
+    - Uzbekistan Israel free trade OR trade agreement OR trade turnover 2025 Israel Uzbekistan trade mission suspend OR
+      boycott
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No governmental instrument with Israel signed since October 2023 was found. Not filed: the tourism agreement
+      (17 May 2022) and the labour-migration agreement and protocol (July 2022) pre-date the window; a cooperation memorandum
+      between the Holon Institute of Technology and the New Uzbekistan University (June 2026), signed between universities,
+      not governments.'
+    queries:
+    - Uzbekistan Israel agreement signed memorandum 2024 2025 2026 Tashkent Israeli minister visit
+    - Uzbekistan Israel signed agreement 2025 OR 2026 cooperation memorandum water agriculture technology ministry signed
+      Tashkent Jerusalem
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: USD 1,500,000 to the 2023 Flash Appeal (plan 1186), December 2022 to November 2024 windows;
+      no flow in the window 2025-09 to 2026-08. The same USD 1,500,000 is the Government''s pledge to UNRWA of November
+      2023 (UNRWA''s 2023 table), so D1 and D3 reflect one contribution (docs/10 B-357 (4)).'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding was found; UNRWA's table for 2023 shows a contribution, and
+      the 2024 table has no row.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan UNRWA contribution suspended OR resumed funding 2024 statement government
+      UNRWA donor
+  D3:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the increased tier from 31 December 2023 (USD 1,500,000 in 2023 against no row, a zero, in 2022),
+      ending 2024-12-31; the 2024 table has no row of Uzbekistan, so no 2024 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Uzbekistan
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. The President said on 11 November 2024
+      that Uzbekistan was ready to provide free medical care to war-affected Palestinian children and women in its hospitals
+      (archived): a readiness, with no patient received found (lead_20261005_UZB_2).'
+    queries:
+    - Uzbekistan Gaza humanitarian aid Palestinians medical evacuation children treatment Tashkent hospitals arrived 2025
+    - Mirziyoyev Offers to Bring Wounded Palestinians to Uzbekistan for Treatment
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Uzbekistan Gaza humanitarian aid Palestinians medical evacuation children treatment Tashkent hospitals arrived 2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

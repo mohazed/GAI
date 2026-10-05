@@ -4359,7 +4359,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1994-04-02}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mfa.tj/en', type: mfa, lang: [en]}
+    - {label: President of the Republic of Tajikistan, url: 'https://www.president.tj/en', type: head_of_state, lang: [tg]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://www.mfa.tj/en answered 200 (the page declares en; the Ministry's root page
+    declares tg and the site serves tg, ru and en); https://www.president.tj/en answered 200 (a script-loaded page whose
+    HTML holds no text, so a statement there cannot be archived as text, docs/10 B-508; it declares lang="tj", not an ISO
+    639 code, recorded here as tg). No site of the Prime Minister (head of government) was found: government.tj, gov.tj and
+    prime-minister.tj did not answer, egov.tj (200) is the e-government portal; the head of government is not listed
+    (docs/10 B-508).
 
 - iso3: TKM
   iso2: TM
@@ -4380,7 +4389,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1992-04-17}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.gov.tm/en', type: mfa, lang: [en]}
+    - {label: 'Turkmenistan state portal (Golden Age), carrying the President''s decisions and releases', url: 'https://turkmenistan.gov.tm/en', type: news_agency, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://mfa.gov.tm/en and https://turkmenistan.gov.tm/en answered 200 (the Ministry's
+    pages carry no lang attribute; the English edition is recorded; the state portal declares en). The President of
+    Turkmenistan is both head of state and head of government; the presidential site president.gov.tm did not answer
+    (HTTP 000), so the state portal, which carries his releases, is listed (docs/10 B-508).
 
 - iso3: TLS
   iso2: TL
@@ -4667,7 +4683,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1994-09-25}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mfa.uz/en', type: mfa, lang: [uz]}
+    - {label: President of the Republic of Uzbekistan, url: 'https://president.uz/en', type: head_of_state, lang: [en]}
+    - {label: Government portal of the Republic of Uzbekistan, url: 'https://gov.uz/en', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-05: https://mfa.uz/en (redirects to https://gov.uz/oz/mfa/en, whose page declares uz),
+    https://president.uz/en and https://gov.uz/en answered 200. The President's site publishes the full texts of his
+    addresses in English (docs/10 B-508).
 
 - iso3: VAT
   iso2: VA
