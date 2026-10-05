@@ -139,12 +139,17 @@ describe('renderBlock: indicators', () => {
   })
 
   it('states stacking and supersede relations (A6 ← A7, B5/B6)', () => {
-    expect(cells(row(en, 'A6'))[4]).toBe('superseded by A7')
-    expect(cells(row(en, 'A7'))[4]).toBe('supersedes A6')
-    expect(cells(row(fr, 'A6'))[4]).toBe('remplacé par A7')
+    // 1.0.0-rc.2: A6 and A7 also keep the most severe of overlapping records (B-22).
+    expect(cells(row(en, 'A6'))[4]).toBe('one record counts: the most severe; superseded by A7')
+    expect(cells(row(en, 'A7'))[4]).toBe('one record counts: the most severe; supersedes A6')
+    expect(cells(row(fr, 'A6'))[4]).toBe(
+      `un seul état compte${NBSP}: le plus grave${NNBSP}; remplacé par A7`,
+    )
+    expect(cells(row(en, 'B8'))[4]).toBe('only the largest holding tier counts')
     expect(cells(row(en, 'B5'))[4]).toBe('latest position of B5 and B6 holds')
     expect(cells(row(fr, 'B6'))[4]).toBe('la dernière position entre B5 et B6 prévaut')
-    expect(cells(row(en, 'B1'))[4]).toBe('—')
+    expect(cells(row(en, 'B1'))[4]).toBe('cap −15 / +15')
+    expect(cells(row(en, 'B2'))[4]).toBe('—')
   })
 
   it('links primary sources with a URL, joins them, and names the cadence', () => {
@@ -255,12 +260,26 @@ describe('renderBlock: other tables', () => {
     expect(en).toContain('| Penalty | 15 points |')
     expect(en).toContain('| Window | 365 days, up to and including t |')
     expect(en).toContain('| Qualifying indicators | B2–B12, C1–C6, D1–D5 |')
-    expect(en).toContain('| Minimum absolute contribution | 2 |')
+    // 1.0.0-rc.2 (B-46, B-47): the sign rule and the excluded tier of B8.
+    expect(en).toContain('| Minimum contribution (positive) | +2 |')
     expect(en).toContain('| Excluded: A1–A8 |')
+    expect(en).toContain('| Excluded: B8, tier “Pre-existing recognition” |')
     expect(en).toContain('| Sensitivity values | 5, 15 and 25 points |')
     const fr = renderBlock(m, 'passivity', 'fr')
     expect(fr).toContain(`| Exclus${NBSP}: B1 |`)
     expect(fr).toContain('| Valeurs de sensibilité | 5, 15 et 25 points |')
+    expect(fr).toContain(
+      `| Exclus${NBSP}: B8, palier «${NBSP}Reconnaissance préexistante${NBSP}» |`,
+    )
+    // Without the rc.2 keys (1.0.0-rc.1): the absolute rule and no tier row.
+    const rc1 = structuredClone(m)
+    const p = rc1.passivity?.value
+    if (p === undefined) throw new Error('passivity missing')
+    p.contribution_sign = undefined
+    p.excluded = p.excluded.filter((e) => e.tiers === undefined)
+    const old = renderBlock(rc1, 'passivity', 'en')
+    expect(old).toContain('| Minimum absolute contribution | 2 |')
+    expect(old).not.toContain('tier')
   })
 
   it('symmetry: one row per pair, then negatives without counterpart', () => {

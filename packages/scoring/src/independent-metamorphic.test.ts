@@ -25,12 +25,13 @@ import { type CountryScore, createScorer, scoreCountry } from './score.js'
 import { sensitivitySuite } from './sensitivity.js'
 import { dailySeries, lastChange, type SeriesPoint, valueOn } from './series.js'
 import { eventCounts } from './summary.js'
-import { country, ev, methodology } from './test-helpers.js'
+import { country, ev, methodologyRc1 } from './test-helpers.js'
 import { addDays, dayNumber, isoDate } from './time.js'
 import { CATEGORY_IDS, CONFIDENCE_LEVELS, type ScoringEvent, WINDOW_START } from './types.js'
 import { userScore } from './weights.js'
 
-const m = methodology()
+// The docs/02 rules as written: methodology 1.0.0-rc.1 (rc.2 rules: rc2.test.ts).
+const m = methodologyRc1()
 const WS = WINDOW_START
 
 // ---------------------------------------------------------------------------------------------
@@ -330,7 +331,8 @@ describe('(a) permuting events never changes any output', () => {
         }
       }
     }
-  })
+    // About 7 s alone; under the parallel `pnpm test` of every package it passed 30 s (B-492 (4)).
+  }, 120_000)
 
   it('with same-day ties in the stacking rules (most severe, latest position, supersede)', () => {
     const focus = ['A6', 'A7', 'B5', 'B6', 'B8', 'B11', 'B12', 'C1', 'C4', 'D3', 'B10', 'D2']

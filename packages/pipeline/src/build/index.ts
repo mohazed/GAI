@@ -46,6 +46,7 @@ import {
   citations,
   eventCategoryCounts,
   eventCounts,
+  indicatorLabels,
   isIsoDate,
   type LastChange,
   lastChange,
@@ -310,8 +311,10 @@ export function buildData(input: BuildInput): BuildOutput {
     )
   }
   let sm: ScoringMethodology
+  let labels: ReturnType<typeof indicatorLabels>
   try {
     sm = scoringMethodology(m)
+    labels = indicatorLabels(sm)
   } catch (err) {
     throw new BuildError((err as Error).message)
   }
@@ -564,6 +567,7 @@ export function buildData(input: BuildInput): BuildOutput {
       coverage: run.coverage.ratio,
       lastChange: lc,
       passivityPoints: sm.passivity.points,
+      labels,
     }
     const summary = summaryLines({
       ...common,

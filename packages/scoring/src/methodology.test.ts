@@ -12,7 +12,7 @@ import type {
 import { WINDOW_START as SCHEMA_WINDOW_START } from '@gai/schema'
 import { describe, expect, it } from 'vitest'
 import { compileMethodology, type MethodologyFilesInput } from './methodology.js'
-import { methodology, repoFiles } from './test-helpers.js'
+import { methodology, methodologyRc1, repoFiles } from './test-helpers.js'
 import {
   type ScoringAssessment,
   type ScoringCountry,
@@ -98,15 +98,27 @@ describe('the compiled repository methodology agrees with docs/02', () => {
     expect(caps).toEqual({
       A5: { min: -15, max: null },
       A8: { min: null, max: 10 },
+      B1: { min: -15, max: 15 },
       B9: { min: null, max: 10 },
       B10: { min: -10, max: null },
     })
-    expect(m.indicatorById.get('B1')?.cap).toBeNull()
+    // 1.0.0-rc.2 (B-23): B1 is capped at the passivity penalty, in both directions.
+    expect(m.indicatorById.get('B1')?.cap).toEqual({
+      min: -m.passivity.points,
+      max: m.passivity.points,
+    })
   })
 
   it('stacking and supersede rules (§2)', () => {
     const rule = (id: string) => m.indicatorById.get(id)?.stacking
     for (const id of ['B8', 'B12', 'C1', 'C4', 'D3']) expect(rule(id), id).toBe('most_severe')
+    // 1.0.0-rc.2 (B-22, B-51): the standing indicators that summed in rc.1.
+    for (const id of ['A3', 'A6', 'A7', 'B3', 'B7', 'D2']) expect(rule(id), id).toBe('most_severe')
+    // 1.0.0-rc.2 (B-46, B-47): only positive contributions qualify; B8's +3 tier never does.
+    expect(m.passivity.sign).toBe('positive')
+    expect(m.passivity.excludedPoints).toEqual({ B8: [3] })
+    expect(methodologyRc1().passivity.sign).toBe('any')
+    expect(methodologyRc1().passivity.excludedPoints).toEqual({})
     expect(rule('B11')).toBe('one_per_tier')
     expect(rule('B5')).toBe('latest_position')
     expect(m.indicatorById.get('B6')?.group).toEqual(['B5', 'B6'])
