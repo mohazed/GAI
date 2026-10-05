@@ -24,6 +24,7 @@ data/
     recognitions.csv              # iso3, date, source (the government's statement): B8 (P-14)
     a2_confirmed_military.csv     # iso3, hs (8526|8802), source: A2 confirmations (P-14)
     raw/                          # downloaded files before import; not loaded (files over 25 MB git-ignored)
+    author-downloads/             # the author's browser downloads, byte for byte, archived from their commit-pinned URL (B-903, B-487); not loaded
   corrections.yaml                # public corrections and retractions log
   replies/{ISO3}/{reply_id}.yaml  # right-of-reply records
   leads/{ISO3}.yaml               # unresolved leads (press/NGO claims without a primary yet); never scored
