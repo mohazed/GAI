@@ -1100,7 +1100,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2008-02-05}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores y Culto, url: 'https://www.rree.go.cr/', type: mfa, lang: [es]}
+    - {label: Presidencia de la República de Costa Rica, url: 'https://presidencia.go.cr/', type: head_of_government, lang: [es]}
+    - {label: Ministerio de Comercio Exterior (COMEX), url: 'https://www.comex.go.cr/', type: government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://www.rree.go.cr/ answered 200 to a request with a browser User-Agent (the page declares no language; its releases are in Spanish, so es is recorded) and,
+    after a burst of requests, a Cloudflare block (HTTP 403) that Save Page Now also meets on its files; its press releases (?sec=servicios&cat=prensa&cont=593&id=N) have Wayback captures.
+    https://presidencia.go.cr/ answered 200 and declares lang="en" although its pages are in Spanish (es recorded; https://www.presidencia.go.cr answered 522 on 2026-10-06). https://www.comex.go.cr/ answered 200
+    (no language declared; es). The President is head of state and of government, so one head entry is written. The recognition of 5 February 2008 is in the Ministry's annual report 2007-2008 (rree.go.cr/files/includes/files.php?id=310),
+    which answers 403 to Save Page Now and has no Wayback capture: no row in data/structured/recognitions.csv (R21, docs/10 B-551 ff.).
 
 - iso3: CUB
   iso2: CU
@@ -1121,7 +1130,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores de Cuba (Cubaminrex), url: 'https://cubaminrex.cu/es', type: mfa, lang: [es, en]}
+    - {label: Presidencia y Gobierno de la República de Cuba, url: 'https://www.presidencia.gob.cu/es/', type: head_of_state, lang: [es]}
+    - {label: 'Cubadiplomática (embajadas y consulados de Cuba)', url: 'https://misiones.cubaminrex.cu/es', type: mfa, lang: [es, en, fr]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://cubaminrex.cu answers no request from outside Cuba (connection failure from the session's network; Save Page Now returned HTTP 502 and 503); checked through the Wayback captures
+    of 2026-10-04 of /es and /en, which declare es and en. https://www.presidencia.gob.cu/es/ answered 200 (es; it publishes the President's speeches and the Government's news; its /en/ edition answered 500) and
+    https://misiones.cubaminrex.cu/es answered 200 (es; the Ministry's portal of embassies, with its speeches and statements in es, en and fr). No separate site of the Prime Minister answered (primerministro.gob.cu), so no
+    head_of_government entry is written (as Tajikistan, docs/10 B-508). Cuba has had no diplomatic relations with Israel since 1973 (the Ministry's statements; B12 none-found). The recognition of 16 November 1988 is confirmed in
+    data/structured/recognitions.csv from the Ministry's documentation service (src_20231116_cubaminrex_cuba-palestina-reconocimiento), the row added in the light protocol (R21, docs/10 B-553).
 
 - iso3: CYP
   iso2: CY
@@ -1258,7 +1276,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-09-19}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, International Business, Trade and Energy (Government of Dominica web portal)', url: 'https://dominica.gov.dm/ministries/foreign-affairs-international-business-trade-and-energy', type: mfa, lang: [en]}
+    - {label: Head of Government (Government of Dominica web portal), url: 'https://dominica.gov.dm/about-dominica/head-of-government', type: head_of_government, lang: [en]}
+    - {label: Government of Dominica web portal, url: 'https://dominica.gov.dm/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three pages answered 200 to a request with a browser User-Agent and declare lang="en-gb" (en recorded). The Ministry has no news archive of its own; the Government's statements on
+    Gaza reach the public through Dominica News Online, DBS Radio and the CARICOM communiqués. No site of the President (head of state) was found. The recognition of 19 September 2011 has no state document archived (the registry's
+    date; R21): no row in data/structured/recognitions.csv.
 
 - iso3: DNK
   iso2: DK

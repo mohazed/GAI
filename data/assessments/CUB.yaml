@@ -1,0 +1,183 @@
+# Coverage record for Cuba (docs/03 §6). P-21 light protocol, session T-P21-07, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the ICJ's documents on Cuba's intervention (UNISPAL copies, archived), the Presidency's site (presidencia.gob.cu, 200), the Ministry's English text of the Foreign Minister's statement of
+#   15 October 2025 (cubaminrex.cu, not reachable from outside Cuba: Wayback capture), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th and 80th archived through their
+#   Wayback captures; the 81st read, no capture), the Cuban press (Cubadebate by plain HTTP, Granma and Prensa Latina through search results), the generated events and the structured tables; web searches in Spanish
+#   (the official language) and English per indicator group. Time: about 45 minutes.
+# Statements read and not filed as B9: the Foreign Minister's of the 81st session (26 September 2026: 'the genocidal crime of Zionism against the Palestinian people', Gaza not cited, R7: lead_20261006_CUB_2),
+#   his intervention at the Hague Group's high-level meeting of 25 September 2026 (a press copy only: lead_20261006_CUB_1), and the posts of the President and the Foreign Minister on X (not official transcripts).
+country: CUB
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Cuba
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Cuba
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: has-events
+    note: Cuba filed a declaration of intervention under Article 63 on 10 January 2025 (ICJ press release of 13 January 2025; the declaration, in French, archived through UNISPAL); the construction
+      of the Convention supports the applicant (one event, +15). No withdrawal found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Cuba declaration of intervention ICJ South Africa v. Israel 10 January 2025
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional measures was found; the declaration of intervention treats Israel's attitude to them as contempt.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or a justice minister on executing the warrants of 21 November 2024 was found (Cuba is not a State Party to the Rome Statute; the
+      Ministry's pages that the searches returned do not address the warrants).
+    queries: &id001
+    - Cuba cancillería saluda orden de arresto CPI Netanyahu Gallant noviembre 2024 Bruno Rodríguez
+    - Cuba statement Gaza ceasefire Foreign Minister Rodríguez Parrilla Hague Group
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Cuba has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the pre-existing standing state (+3), recognition on 16 November 1988, from the Ministry''s documentation service (src_20231116_cubaminrex_cuba-palestina-reconocimiento,
+      archived; a retrospective essay of 2023 stating the date; the row was added in this session, R21, as for Belize, Turkey and South Africa). The registry dates the recognition 1988-11-16.'
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'Four events: the President''s message of 28 October 2023 (+5, decayed), the Foreign Minister''s General Debate statements of 28 September 2024 (+5, decayed) and 26 September 2025 (+5,
+      375 days old) and his statement at the Non-Aligned Movement''s Ministerial Committee on Palestine of 15 October 2025 (+5, 356 days old: the only one of the four inside the 365-day window).
+      Not filed: lead_20261006_CUB_1 (Hague Group, 25 September 2026: +5 if an official copy is archived), _2 (81st session, R7), _3 (Hague Group joint declaration of Bogotá, signatory not named)
+      and _4 (posts on X).'
+    queries:
+    - Díaz-Canel Gaza genocidio discurso cese al fuego Cuba presidente Palestina 2025
+    - Bruno Rodríguez Parrilla Palestina Gaza genocidio canciller 2026 declaración
+    - Cuba Bogotá Conferencia Ministerial de Emergencia Palestina Grupo de La Haya julio 2025
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries:
+    - Díaz-Canel Gaza genocidio discurso cese al fuego Cuba presidente Palestina 2025
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Cuba was found (Cuba has no relations with Israel; the Hague Group's measures of July 2025 are commitments, not acts of Cuba).
+    queries:
+    - Cuba sanciones colonos israelíes OR medidas Grupo de La Haya Bogotá
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance applies in the window: Cuba broke diplomatic and consular relations with Israel in 1973 (the decision of September 1973 quoted in the Ministry''s essay,
+      archived), so there is no ambassador to recall and no relation to downgrade.'
+    queries:
+    - Cuba Israel relaciones diplomáticas ruptura 1973 cubaminrex
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel exists to review.
+    queries:
+    - Cuba Israel acuerdo comercial
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found; Cuba has no relations with Israel.
+    queries:
+    - Cuba Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Cuba to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Cuba has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - Cuba UNRWA contribution OR funding
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Cuba in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Cuba
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found; Cuba's Henry Reeve contingent is a general disaster-response brigade (no deployment to Gaza found), and Palestinian
+      students study in Cuba (a long-standing programme, not an indicator).
+    queries:
+    - Cuba brigada médica Henry Reeve Gaza oferta
+    - Cuba Gaza humanitarian aid medical Palestinian students
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Cuba visa OR refugio palestinos Gaza
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

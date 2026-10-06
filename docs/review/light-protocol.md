@@ -266,3 +266,43 @@ Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-a
 | BRB | +11 | +15 | Acting | B9 +4.9 (the statement of 2025; that of 2024 has decayed to zero), the penalty applies |
 
 One band change: Belize moves from Passive to Acting, on a well-documented ICJ filing (B3), the Ministry's measures of November 2023 (B12, tier flagged: ±3) and the recognition row. Read critically (docs/06 §4 step 7): no cap is hit; the Prime Minister's statement of the 81st session, which says 'the genocide must end' without citing Gaza (R7), is a lead that would end Belize's passivity penalty (about +46 with it).
+
+## T-P21-07: CRI, CUB, DMA (2026-10-06)
+
+Light protocol (docs/06 §5) for Costa Rica, Cuba and Dominica. 7 events: 2 for Costa Rica, 5 for Cuba, none for Dominica. One row is added to `data/structured/recognitions.csv` (Cuba, 1988). Decisions and flags are in docs/10 B-551 to B-559.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_26_CRI_B9 | B9 | 2024-09-26 | +2 (call addressed to nine conflicts, flagged) | confirmed | official |
+| evt_2025_12_08_CRI_C2 | C2 | 2025-12-08 | −10 (the release's dateline year is a misprint, flagged) | confirmed | official |
+| evt_2023_10_28_CUB_B9 | B9 | 2023-10-28 | +5 | confirmed | official |
+| evt_2024_09_28_CUB_B9 | B9 | 2024-09-28 | +5 | confirmed | official |
+| evt_2025_01_10_CUB_B3 | B3 | 2025-01-10 | +15 | confirmed | court |
+| evt_2025_09_26_CUB_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+| evt_2025_10_15_CUB_B9 | B9 | 2025-10-15 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### Costa Rica
+
+Assessments (34 indicators): has-events 3 (B1, B9, C2), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6 and the three experimental E1 to E3). Leads: 3 (`lead_20261006_CRI_1`, B10, the President's reply of 2 July 2025; `_2`, B10, the Foreign Minister's interview of 12 July 2026; `_3`, B5, the Government's reaction to the warrants). Sources read: the Ministry of Foreign Affairs and Worship's releases of 2023 to 2025 (read, Wayback captures exist; the site then blocked scripted requests), COMEX's release of the free trade agreement (archived), the General Debate statements of the 78th to 81st sessions (the 79th archived), and web searches in English and Spanish per indicator group. No archived joint statement names Costa Rica; the EU Council listings do not apply. B8 is `unchecked`: the Ministry's annual report 2007-2008 states the recognition of 5 February 2008 but cannot be archived (no row, R21). 90-minute stop note: finished inside the budget (about 30 minutes on Costa Rica).
+
+### Cuba
+
+Assessments: has-events 4 (B1, B3, B8, B9), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 4 (`lead_20261006_CUB_1`, B9, the Foreign Minister at the Hague Group's high-level meeting of 25 September 2026, press copy only; `_2`, B9, the 81st General Debate statement, which never cites Gaza (R7); `_3`, B9, the Hague Group's declaration of Bogotá, signatory not named; `_4`, posts on X). Sources read: the ICJ's press release and Cuba's declaration of intervention (UNISPAL copies, archived), the Presidency's site, the Ministry's English text of the Foreign Minister's statement of 15 October 2025 (Wayback capture: the Ministry's site is not reachable from outside Cuba), the General Debate statements of the 78th to 81st sessions (the 79th and 80th archived through their Wayback captures), the Cuban press and web searches in Spanish and English per indicator group. The only archived joint statement that names Cuba is the Colombian Ministry's release on the Hague Group's declaration (a lead); the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 45 minutes on Cuba).
+
+### Dominica
+
+Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261006_DMA_1`, B9, the Foreign Minister's radio interview of 10 October 2023; `_2`, D5, the Prime Minister's budget speech of 31 July 2025). Sources read: the Government's web portal (the Ministry's and the Head of Government's pages carry no statement on Gaza), the General Debate statements of the 78th to 81st sessions (no passage on Gaza), Dominica News Online (archived through Wayback), the CARICOM communiqués of the 46th and 48th meetings and web searches in English per indicator group. No event. No archived joint statement names Dominica; the EU Council listings do not apply. 90-minute stop note: finished inside the budget (about 20 minutes on Dominica).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 UTC (methodology 1.0.0-rc.1), the 7 reviewed events scored as if published (and Cuba's pre-existing recognition row); before them the score was −2 (Passive) for Costa Rica, +3 (Acting) for Cuba and −17 (Passive) for Dominica.
+
+| Country | Before | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| CRI | −2 | +3 (+2.6) | Acting | C2 −10.0, and the passivity penalty (−15) no longer applies because the free trade agreement is a qualifying event: net +5 on the generated B1 of +12.6 |
+| CUB | +3 | +45 (+45.0) | Confronting | B3 +15.0, B9 +9.9 (two events inside two years), B8 +3.0 (the added row), B1 +17.6; category B is clipped at its cap of +45 (raw +45.4); the passivity penalty no longer applies because of the event of 15 October 2025 |
+| DMA | −17 | −17 | Passive | no event |
+
+Two band changes. Costa Rica moves from Passive to Acting only because a negative C2 event is a qualifying event that ends the passivity penalty (the same mechanism as Moldova's tourism declaration, docs/10 B-526 (4)): without the agreement the score is −2 (Passive), with it +3 (Acting). Cuba moves from Acting to Confronting, on a well-documented ICJ filing (B3), four B9 statements (two decayed) and the pre-existing recognition; without the event of 15 October 2025, the only qualifying event inside 365 days, the penalty would apply and the score would be about +26 (Acting). Read critically (docs/06 §4 step 7): the category cap of B is hit for Cuba; the Hague Group speech of 25 September 2026 (lead) would add 0.1, the cap of B9 being +10.
