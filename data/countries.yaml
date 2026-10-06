@@ -1927,7 +1927,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2013-04-09}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores (MINEX), url: 'https://www.minex.gob.gt/', type: mfa, lang: [es]}
+    - {label: Presidencia de la República de Guatemala (Bernardo Arévalo), url: 'https://bernardoarevalo.presidencia.gob.gt/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: minex.gob.gt answers HTTP 403 to a scripted request (and its Wayback capture of 2026-08-08 is the 403 page); it was checked through the Wayback capture of 2024-06-01 (200, 352 KB, Spanish pages, no lang attribute: es
+    recorded). presidencia.gob.gt redirects to bernardoarevalo.presidencia.gob.gt (200; the page declares lang="en-US" although its texts are Spanish: es recorded). The President is head of state and of government, so one head entry
+    is written. The state news agency (agn.gt) and prensa.gob.gt answer with a bot check or HTTP 403. The recognition is not in data/structured/recognitions.csv: no state document of April 2013 is archived (R21, docs/10 B-575).
 
 - iso3: GUY
   iso2: GY
@@ -1949,7 +1955,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-01-13}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and International Cooperation, url: 'https://www.minfor.gov.gy/', type: mfa, lang: [en]}
+    - {label: Office of the President, url: 'https://op.gov.gy/', type: head_of_government, lang: [en]}
+    - {label: Department of Public Information (Government Information Agency), url: 'https://dpi.gov.gy/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three sites answered 200 to a request with a browser User-Agent; minfor.gov.gy declares lang="en", op.gov.gy and dpi.gov.gy declare "en-GB" (en recorded). The President
+    is head of state and of government, so one head entry is written; the Prime Minister's office has no site of its own that answered (pmo.gov.gy, opm.gov.gy do not answer). The Government Information Agency
+    (dpi.gov.gy) carries the Government's releases and the President's addresses. The Ministry's statements to the Security Council are on minfor.gov.gy under "un-security-council". The recognition of 13 January 2011 is in
+    data/structured/recognitions.csv from the Ministry's statement as transmitted to the Secretary-General (A/65/692, UNISPAL, archived; R21, docs/10 B-569 ff.).
 
 - iso3: HND
   iso2: HN
@@ -1970,7 +1984,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-08-26}
-  gov_sources: []
+  gov_sources:
+    - {label: Secretaría de Relaciones Exteriores y Cooperación Internacional, url: 'https://sreci.gob.hn/', type: mfa, lang: [es]}
+    - {label: Presidencia de la República de Honduras, url: 'https://www.presidencia.gob.hn/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: sreci.gob.hn (the Foreign Ministry's current site; sre.gob.hn does not answer) answered 200 and declares lang="es". presidencia.gob.hn answers HTTP 403 to a scripted request and its Wayback capture of
+    2026-08-29 is the 403 page; it was checked through the Wayback capture of 2024-10-02 (200, 3.8 MB, title "República de Honduras", declares lang="en" although its texts are Spanish: es recorded). The President is head of state and of
+    government, so one head entry is written. The recognition of 26 August 2011 is in data/structured/recognitions.csv from the President's address of 21 September 2011 and the UN Division for Palestinian Rights' chronology
+    (R21, flagged, docs/10 B-570 ff.).
 
 - iso3: HRV
   iso2: HR

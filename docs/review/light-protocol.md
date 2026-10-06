@@ -346,3 +346,46 @@ Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicabl
 | GRD | −14.2 | −14.2 (−14) | Passive | no event |
 
 One band change: the Dominican Republic moves from Acting to Passive on one flagged technical instrument (without it the preview is +5.6, Acting). Ecuador stays Passive; without the three qualifying 2026 instruments the penalty would apply and the preview would be −28 (Enabling). Read critically (docs/06 §4 step 7): the category cap of C is hit for Ecuador (raw −50, so any two instruments suffice); the Dominican band rests on one event and the Ecuadorian band on whether one of three 2026 instruments is counted; Grenada's passage of the 80th session (not filed) would add 1.96, below the 2 needed to qualify against passivity.
+
+## T-P21-09: GTM, GUY, HND (2026-10-06)
+
+Light protocol (docs/06 §5) for Guatemala, Guyana and Honduras. 10 events: 1 for Guatemala, 5 for Guyana, 4 for Honduras. Two rows are added to `data/structured/recognitions.csv` (Guyana, 2011-01-13; Honduras, 2011-08-26). Decisions and flags are in docs/10 B-569 to B-578.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_24_GTM_B9 | B9 | 2025-09-24 | +2 (President: attacks must stop, aid, end of civilian suffering; call tier, flagged) | confirmed | official |
+| evt_2024_09_25_GUY_B9 | B9 | 2024-09-25 | +5 (President, General Debate) | confirmed | official |
+| evt_2024_10_29_GUY_B9 | B9 | 2024-10-29 | +5 (Minister of Foreign Affairs, Security Council) | confirmed | official |
+| evt_2024_12_31_GUY_D3 | D3 | 2024-12-31 | +8 (UNRWA 2024 contribution against a zero in 2022) | confirmed | dataset |
+| evt_2025_09_23_GUY_B9 | B9 | 2025-09-23 | +5 (Minister of Foreign Affairs, Security Council) | confirmed | official |
+| evt_2025_09_24_GUY_B9 | B9 | 2025-09-24 | +5 (President, General Debate) | confirmed | official |
+| evt_2023_11_03_HND_B12 | B12 | 2023-11-03 to 2026-08-03 | +5 (ambassador recalled for consultations, ended; flagged) | corroborated | press (end: official) |
+| evt_2024_09_25_HND_B9 | B9 | 2024-09-25 | +5 (President, General Debate) | confirmed | official |
+| evt_2026_06_02_HND_C2 | C2 | 2026-06-02 | −10 (addendum to the Cooperation Plan with MASHAV, flagged under R18) | corroborated | press |
+| evt_2026_08_16_HND_C2 | C2 | 2026-08-16 | −10 (defense memorandum of understanding, text not public, flagged) | corroborated | press |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### Guatemala
+
+Assessments (34 indicators): has-events 2 (B1, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6 and the three experimental E1 to E3). Leads: 2 (`lead_20261006_GTM_1`, B10, the Ministry's account of the President's 'irrestricto apoyo y solidaridad' to Israel's President, Munich, 17 February 2024; `_2`, B8, EFE's report of the recognition of April 2013, no state document archived). Sources read: the Presidency's site, the General Debate statements of the 78th to 81st sessions (the 80th is the event; the 81st, the Foreign Minister's, has no passage on Gaza), the Ministry of Economy's treaties page and the Israeli embassy's bilateral-relations page (the free trade agreement of 8 September 2022 entered into force on 1 March 2024: pre-war, not filed), and web searches in Spanish and English per indicator group; the Ministry of Foreign Affairs' site and the state news agency refuse scripted requests. None of the joint statements already archived for the 45 names Guatemala (`archive/text/` searched for the name in English, French and Spanish: the hits are UN records, donor and trade tables and press items); it is not an EU member, so the Council's listings do not apply, and the Hague Group's and Bogotá declarations do not name it. 90-minute stop note: finished inside the budget (about 15 minutes of research on Guatemala).
+
+### Guyana
+
+Assessments: has-events 5 (B1, B8, B9, D1, D3), none-found 16, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 1 (`lead_20261006_GUY_1`, B9, the Permanent Representative's statements, not a B9 speaker). Sources read: the Ministry of Foreign Affairs', the Office of the President's and the Government Information Agency's sites, the General Debate statements of the 78th to 81st sessions (the 81st has no call on Gaza), the Security Council records of 29 October 2024 and 23 September 2025 (the Foreign Minister's statements), UNRWA's donor tables, the ICJ case 192 list (Guyana is not on it), and web searches in English per indicator group. Guyana sat on the Security Council in 2024 and 2025: B2 is none-found (no veto by an elected member). The statements already archived for the 45 that name Guyana are Security Council records and vote tables, no joint statement; it is not an EU member. 90-minute stop note: finished inside the budget (about 20 minutes of research on Guyana).
+
+### Honduras
+
+Assessments: has-events 5 (B1, B8, B9, B12, C2), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261006_HND_1`, B9, the Secretary of Foreign Affairs' General Debate statement of 29 September 2025, no archived copy: its Wayback capture is not served; `_2`, B9, the Hague Group's inaugural declaration of 31 January 2025, which Honduras signed and left on 3 March 2026, with no signatory named). Sources read: the Foreign Ministry's current site (sreci.gob.hn), the General Debate statements of the 78th to 81st sessions, the archived press (La Prensa, El Heraldo, EFE through Infobae, Honduras Trascendental, the Jerusalem Post), the Israeli President's release of 3 August 2026, the Israeli Defense Ministry's release as GlobalSecurity.org reproduces it, UN records for the recognition of 2011, UNRWA's donor tables, and web searches in Spanish and English per indicator group. None of the joint statements already archived for the 45 names Honduras; it is not an EU member. 90-minute stop note: finished inside the budget (about 25 minutes of research on Honduras; the session's clock was mostly Save Page Now).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 (methodology 1.0.0-rc.1), the 10 reviewed events scored as if published and the two added recognition rows; before them the generated indicators alone gave −2.2 (GTM), +2.6 (GUY) and −2.2 (HND).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| GTM | −2.2 (−2) | −0.3 (0) | Passive | B9 +1.95; the passivity penalty (−15) applies: the statement is 377 days old and its weight (+1.95) is below 2 |
+| GUY | +2.6 (+3) | +23.6 (+24) | Acting | B9 +11.2 clipped at the indicator cap of +10 (four events, two of them decayed to +1.5 and zero), D3 +8.0, B8 +3.0 (the row added), B1 +17.6; the penalty applies (the two events of September 2025 are 377 and 378 days old) |
+| HND | −2.2 (−2) | +1.8 (+2) | Acting | B8 +3.0 (the row added), C2 −14.0 (two events at weight 0.7), B1 +12.8; the two C2 events are qualifying and lift the penalty (+15), a net +1.0; B12 ended, B9 decayed |
+
+One band change (Honduras, Passive to Acting), resting on the recognition row (+3.0: without it the preview is −1.2, Passive) and on the penalty mechanism: the two negative C2 events raise the score by 1 because they end a penalty of 15. Without the C2 events the preview would be +0.8 (Acting, display +1). Read critically (docs/06 §4 step 7): the indicator cap of B9 is hit for Guyana; no single event dominates Guatemala or Honduras; Guyana's band does not depend on any one flagged reading (without the B8 row +20.6, without D3 +15.6, without the four B9 events +13.6, all Acting).
