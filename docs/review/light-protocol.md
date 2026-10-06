@@ -306,3 +306,43 @@ Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicabl
 | DMA | −17 | −17 | Passive | no event |
 
 Two band changes. Costa Rica moves from Passive to Acting only because a negative C2 event is a qualifying event that ends the passivity penalty (the same mechanism as Moldova's tourism declaration, docs/10 B-526 (4)): without the agreement the score is −2 (Passive), with it +3 (Acting). Cuba moves from Acting to Confronting, on a well-documented ICJ filing (B3), four B9 statements (two decayed) and the pre-existing recognition; without the event of 15 October 2025, the only qualifying event inside 365 days, the penalty would apply and the score would be about +26 (Acting). Read critically (docs/06 §4 step 7): the category cap of B is hit for Cuba; the Hague Group speech of 25 September 2026 (lead) would add 0.1, the cap of B9 being +10.
+
+## T-P21-08: DOM, ECU, GRD (2026-10-06)
+
+Light protocol (docs/06 §5) for the Dominican Republic, Ecuador and Grenada. 7 events: 1 for the Dominican Republic, 6 for Ecuador, none for Grenada. Two rows are added to `data/structured/recognitions.csv` (the Dominican Republic, 2009; Ecuador, 2010). The session resumed a first attempt cut off by a usage limit after the archiving: its 14 captures were kept after the hash of each Wayback replay and the extracted text were checked (docs/10 B-560 (1)). Decisions and flags are in docs/10 B-560 to B-568.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_10_31_DOM_C2 | C2 | 2024-10-31 | −10 (a technical-education agreement with MASHAV, flagged) | confirmed | official |
+| evt_2023_12_07_ECU_B9 | B9 | 2023-12-07 | +2 (a position in favour of the ceasefire, flagged) | confirmed | official |
+| evt_2024_04_03_ECU_C2 | C2 | 2024-04-03 (no later than) | −10 (labour memorandum, flagged) | confirmed | official |
+| evt_2025_05_05_ECU_C2 | C2 | 2025-05-05 (no later than) | −10 | confirmed | official |
+| evt_2026_03_30_ECU_C2 | C2 | 2026-03-30 | −10 (cooperation programme 2026-2027, flagged under R18) | confirmed | official |
+| evt_2026_08_05_ECU_C2 | C2 | 2026-08-05 | −10 (agreement to combat terrorism) | confirmed | official |
+| evt_2026_08_05_ECU_C2_2 | C2 | 2026-08-05 | −10 (joint declaration, Expanded Economic Dialogue, flagged) | confirmed | official |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### Dominican Republic
+
+Assessments (34 indicators): has-events 3 (B1, B8, C2), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: none. Sources read: the Ministry of Foreign Affairs' site (its search for Israel, Gaza and Palestina, its news items and its treaties database, archived), the Presidency's site, the General Debate statements of the 78th to 80th sessions (no passage on Gaza) and the Foreign Minister's statement to the Security Council of January 2025 (welcomes the ceasefire, no call), and web searches in Spanish and English per indicator group. No archived joint statement names the Dominican Republic; the EU Council listings do not apply. B8 rests on the Ministry's record of the communiqué establishing relations with Palestine (15 July 2009, flagged). 90-minute stop note: finished inside the budget (about 25 minutes on the Dominican Republic).
+
+### Ecuador
+
+Assessments: has-events 4 (B1, B8, B9, C2), none-found 17, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261006_ECU_1`, B9, the Foreign Minister's interview with EFE of 12 June 2024; `_2`, C2, the agreement of 5 August 2026 to begin free trade negotiations; `_3`, B10, the President's 'Tenemos los mismos enemigos' of 5 May 2025). Sources read: the Ministry of Foreign Affairs and Human Mobility's releases (archived), the Presidency's communication secretariat and the Ministry of Environment and Energy (archived), UNifeed's record of the President's stakeout, the General Debate statements of the 78th to 81st sessions (no passage on Gaza in the 80th and 81st), Plan V, Primicias and EFE through swissinfo (archived), and web searches in Spanish and English per indicator group. No archived joint statement names Ecuador; the EU Council listings do not apply. B8 rests on the Ministry's release of 2018 (24 December 2010; the registry says 27 December, left to the author). 90-minute stop note: finished inside the budget (about 45 minutes on Ecuador, after a first attempt that a usage limit cut off).
+
+### Grenada
+
+Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6, E1 to E3). Leads: none. Sources read: the Government's portal (the Ministry's and the Prime Ministers' pages carry no statement on Gaza), the Prime Minister's General Debate statements of the 78th to 80th sessions (the 80th, archived, has an education passage that names Palestine and Gaza and urges 'all parties' to come to the table, without a call for a ceasefire: not filed, docs/10 B-564) and the Permanent Representative's 81st, the CARICOM Chairman's remarks of 2024, NOW Grenada (archived), and web searches in English per indicator group. No archived joint statement names Grenada; the EU Council listings do not apply. B8 is `unchecked` (no state document for the recognition of 2011, R21). No event. 90-minute stop note: finished inside the budget (about 20 minutes on Grenada).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 UTC (methodology 1.0.0-rc.1), the 7 reviewed events scored as if published (and the two added recognition rows); before them the score was +2.6 (Acting) for the Dominican Republic, −11.0 (Passive) for Ecuador and −14.2 (Passive) for Grenada.
+
+| Country | Before | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| DOM | +2.6 | −4.4 (−4) | Passive | C2 −10.0, B8 +3.0, B1 +17.6; the passivity penalty (−15) applies: the agreement of 31 October 2024 is 705 days old, so it does not qualify |
+| ECU | −11.0 | −13.0 (−13) | Passive | B1 +4.0, B8 +3.0, B9 0.0 (decayed), C2 −50.0 clipped at the cap of −20; the penalty no longer applies because three of the five C2 events are inside 365 days |
+| GRD | −14.2 | −14.2 (−14) | Passive | no event |
+
+One band change: the Dominican Republic moves from Acting to Passive on one flagged technical instrument (without it the preview is +5.6, Acting). Ecuador stays Passive; without the three qualifying 2026 instruments the penalty would apply and the preview would be −28 (Enabling). Read critically (docs/06 §4 step 7): the category cap of C is hit for Ecuador (raw −50, so any two instruments suffice); the Dominican band rests on one event and the Ecuadorian band on whether one of three 2026 instruments is counted; Grenada's passage of the 80th session (not filed) would add 1.96, below the 2 needed to qualify against passivity.

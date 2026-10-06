@@ -1334,7 +1334,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2009-07-15}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores (MIREX), url: 'https://mirex.gob.do/', type: mfa, lang: [es]}
+    - {label: Presidencia de la República Dominicana, url: 'https://presidencia.gob.do/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: https://mirex.gob.do/ and https://presidencia.gob.do/ answered 200 to a request with a browser User-Agent and declare lang="es". The Ministry's site has a search facility (?s=) and
+    a treaties database (mirex.gob.do/tratados/, with signing dates) that records the Israeli instruments of the window. The President is head of state and of government, so one head entry is written. The recognition is dated
+    15 July 2009 in data/structured/recognitions.csv from the Ministry's treaties record of the joint communiqué establishing relations (R21, docs/10 B-560 ff.).
 
 - iso3: DZA
   iso2: DZ
@@ -1386,7 +1392,14 @@
     since: 2010-12-27
     note: >-
       Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 24 December 2010.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministerio de Relaciones Exteriores y Movilidad Humana, url: 'https://www.cancilleria.gob.ec/', type: mfa, lang: [es]}
+    - {label: Presidencia de la República del Ecuador, url: 'https://www.presidencia.gob.ec/', type: head_of_government, lang: [es]}
+    - {label: Secretaría General de Comunicación de la Presidencia, url: 'https://www.comunicacion.gob.ec/', type: government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three sites answered 200 to a request with a browser User-Agent and declare lang="es" (Save Page Now returned HTTP 503 once on each and succeeded at the retry). The President is head of state
+    and of government, so one head entry is written. The recognition date of the registry (2010-12-27, A/78/846) differs from the Ministry's own statement of 24 December 2010 (release of 3 December 2018, archived), which
+    data/structured/recognitions.csv records (R21, as Brazil's, docs/10 B-355 (4)); the registry's `since` is left unchanged for the author (docs/10 B-560 ff.). Ecuador sat on the Security Council in 2023 and 2024.
 
 - iso3: EGY
   iso2: EG
@@ -1886,7 +1899,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-09-25}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, Trade & Export Development (Government of Grenada portal)', url: 'https://www.gov.gd/mofa', type: mfa, lang: [en]}
+    - {label: 'Prime Ministers (Government of Grenada portal)', url: 'https://www.gov.gd/government/prime-ministers', type: head_of_government, lang: [en]}
+    - {label: Government of Grenada portal, url: 'https://www.gov.gd/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the three pages answered 200 to a request with a browser User-Agent and declare lang="en-gb" (en recorded). The portal has no news archive of the Ministry or of the Prime Minister's
+    office; the Government's statements on Gaza reach the public through NOW Grenada, the General Debate statements and the CARICOM communiqués. No site of the Governor-General (head of state) was found. The recognition of
+    25 September 2011 has no state document archived (the registry's date; R21): no row in data/structured/recognitions.csv.
 
 - iso3: GTM
   iso2: GT
