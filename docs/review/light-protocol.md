@@ -389,3 +389,39 @@ Assessments: has-events 5 (B1, B8, B9, B12, C2), none-found 15, no-data 2 (A2, C
 | HND | −2.2 (−2) | +1.8 (+2) | Acting | B8 +3.0 (the row added), C2 −14.0 (two events at weight 0.7), B1 +12.8; the two C2 events are qualifying and lift the penalty (+15), a net +1.0; B12 ended, B9 decayed |
 
 One band change (Honduras, Passive to Acting), resting on the recognition row (+3.0: without it the preview is −1.2, Passive) and on the penalty mechanism: the two negative C2 events raise the score by 1 because they end a penalty of 15. Without the C2 events the preview would be +0.8 (Acting, display +1). Read critically (docs/06 §4 step 7): the indicator cap of B9 is hit for Guyana; no single event dominates Guatemala or Honduras; Guyana's band does not depend on any one flagged reading (without the B8 row +20.6, without D3 +15.6, without the four B9 events +13.6, all Acting).
+
+## T-P21-10: HTI, JAM, KNA (2026-10-06)
+
+Light protocol (docs/06 §5) for Haiti, Jamaica and Saint Kitts and Nevis. 3 events: none for Haiti, 1 for Jamaica, 2 for Saint Kitts and Nevis. Two rows are added to `data/structured/recognitions.csv` (Haiti, 2013-09-27; Saint Kitts and Nevis, 2019-07-29); Jamaica's row of 2024-04-22 was already there. Decisions and flags are in docs/10 B-579 to B-587.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_27_JAM_B9 | B9 | 2024-09-27 | +2 (Foreign Minister, General Debate: immediate ceasefire in Gaza and release of hostages; call tier; decayed) | confirmed | official |
+| evt_2024_09_27_KNA_B9 | B9 | 2024-09-27 | +2 (Prime Minister, General Debate: reiterates CARICOM's call for an unconditional ceasefire in Gaza; decayed) | confirmed | official |
+| evt_2025_09_27_KNA_B9 | B9 | 2025-09-27 | +5 (Prime Minister, General Debate: 'the horrific genocide that is unfolding in Gaza', accountability, immediate and unconditional ceasefire) | confirmed | official |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### Haiti
+
+Assessments (34 indicators): has-events 2 (B1, B8), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: none. No event: the General Debate statements of the 78th to 81st sessions (French files, the first three images read by OCR) never cite Gaza, Israel or Palestine, and no statement of the Prime Minister, the President of the Presidential Council of the Transition or the Minister of Foreign Affairs on Gaza was found; the Ministry's (`mae.gouv.ht`) and the Prime Minister's (`primature.gouv.ht`) site searches return nothing. A row `HTI,2013-09-27` is added to the recognitions table from the Division for Palestinian Rights' chronology of September 2013 (UNISPAL, archived; a UN Secretariat review, flagged). Haiti is not on the ICJ case 192 list, is not an EU member, and none of the joint statements already archived for the 45 names it. 90-minute stop note: finished inside the budget (about 20 minutes of research on Haiti).
+
+### Jamaica
+
+Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261006_JAM_1`, B9, the Prime Minister's General Debate statement of 26 September 2025, which supports a ceasefire agreement in 'the Palestinian territories' and never cites Gaza, R7, with no archived copy; `_2`, B9, the Prime Minister's post-Cabinet remarks of October 2023, a humanitarian pause 'in Gaza' in indirect speech, R4). Sources read: the Ministry of Foreign Affairs and Foreign Trade's, the Office of the Prime Minister's and the Jamaica Information Service's sites, the General Debate statements of the 78th to 81st sessions (the 79th, the Foreign Minister's, is the event; the 81st has no passage on the Middle East), the Gleaner and the Observer, the Government's release of the recognition (archived), and web searches in English per indicator group; the searches' claims of a visa-waiver agreement of 2024 and of a contract with ELTA Systems were checked against the pages and are a republished article of 1967 and a pre-war contract (B-579 (4)). None of the joint statements already archived for the 45 names Jamaica; it is not an EU member; the ICJ case 192 list, the Hague Group's founding states and the Bogotá conference's participants do not include it. 90-minute stop note: finished inside the budget (about 30 minutes of research on Jamaica).
+
+### Saint Kitts and Nevis
+
+Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. Sources read: the Ministry of Foreign Affairs', the Information Service's (SKNIS: site searches for Gaza, Israel and Palestine) and the Prime Minister's (under maintenance) sites, the General Debate statements of the 78th to 81st sessions (the 79th and 80th are the events; the 81st, by the Acting Prime Minister, names Gaza in a list with no call), the Ministry's statements of 2026 on the Middle East (not Gaza), and web searches in English per indicator group. A row `KNA,2019-07-29` is added to the recognitions table from SKNIS's release of 30 July 2019 (archived). None of the joint statements already archived for the 45 names Saint Kitts and Nevis; it is not an EU member; the ICJ case 192 list, the Hague Group's founding states and the Bogotá conference's participants do not include it. 90-minute stop note: finished inside the budget (about 20 minutes of research on Saint Kitts and Nevis; the session's clock was mostly Save Page Now).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 (methodology 1.0.0-rc.1), the 3 reviewed events scored as if published and the two added recognition rows; before them the generated indicators alone gave −14.9 (HTI), +5.7 (JAM) and +2.6 (KNA).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| HTI | −14.9 (−15) | −11.9 (−12) | Passive | B8 +3.0 (the row added); the passivity penalty (−15) applies |
+| JAM | +5.7 (+6) | +5.7 (+6) | Acting | nothing: the one B9 event (27 September 2024, 739 days old) is decayed to zero; the penalty applies |
+| KNA | +2.6 (+3) | +10.5 (+10) | Acting | B9 +4.9 (27 September 2025; the 2024 event is decayed to zero), B8 +3.0 (the row added); the penalty applies because the 2025 statement is 374 days old, outside the 365-day window |
+
+No band change. Read critically (docs/06 §4 step 7): no cap is hit and no single reading decides a band (Saint Kitts and Nevis without the 2025 B9 event would be +5.6, without the B8 row +7.5, Acting both; Haiti is Passive with or without the row).

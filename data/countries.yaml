@@ -2037,7 +2037,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2013-09-27}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministère des Affaires étrangères et des Cultes, url: 'https://mae.gouv.ht/', type: mfa, lang: [fr]}
+    - {label: Primature (Prime Minister's office), url: 'https://www.primature.gouv.ht/', type: head_of_government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-10-06: both sites answered 200 to a request with a browser User-Agent; mae.gouv.ht declares lang="fr-FR" (fr recorded); primature.gouv.ht (the bare domain redirects to www.)
+    declares "en-US" although its texts are French (fr recorded, as for Honduras). The head of government is the Prime Minister; the President of the Presidential Council of the Transition
+    (2024 to 2026) spoke for Haiti at the General Debate of the 79th and 80th sessions. The Ministry's site search (?s=) finds nothing on Gaza, Israël or Palestine. The recognition of
+    27 September 2013 is in data/structured/recognitions.csv from the Division for Palestinian Rights' chronology of September 2013 (UNISPAL, archived; R21, docs/10 B-579 ff.).
 
 - iso3: HUN
   iso2: HU
@@ -2320,7 +2327,15 @@
       Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
       data/structured/recognitions.csv (P-14) from src_20240422_jis_recognises-palestine,
       dated 2024-04-22; B8 is generated from that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and Foreign Trade, url: 'https://mfaft.gov.jm/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister, url: 'https://opm.gov.jm/', type: head_of_government, lang: [en]}
+    - {label: Jamaica Information Service, url: 'https://jis.gov.jm/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: mfaft.gov.jm answered HTTP 429 to the first request and 200 to the next ones (it declares no lang attribute; its texts are English: en recorded); opm.gov.jm declares "en-US"
+    (en recorded); jis.gov.jm (the Government's information service, which carries the Prime Minister's and the Ministers' releases) answered 200. The Ministry's own pages carry few items on Gaza
+    (the recognition of April 2024 and the vote of 10 May 2024; the Prime Minister's and the Foreign Minister's other statements are in JIS and the press). The recognition of 22 April 2024 is in data/structured/recognitions.csv
+    (src_20240422_jis_recognises-palestine).
 
 - iso3: JOR
   iso2: JO
@@ -2531,7 +2546,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2019-07-29}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mofa.gov.kn/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister, url: 'https://www.pmo.gov.kn/', type: head_of_government, lang: [en]}
+    - {label: St. Kitts and Nevis Information Service (SKNIS), url: 'https://www.sknis.gov.kn/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: the four sites answered 200 to a request with a browser User-Agent; mofa.gov.kn and sknis.gov.kn declare lang="en-US" (en recorded). pmo.gov.kn answered 200 with a page
+    titled 'Site is undergoing maintenance' (3.8 KB); its entry is kept because it is the Prime Minister's office. SKNIS carries the Government's releases and the Prime Minister's addresses in full
+    (the General Debate remarks of 27 September 2024) and CARICOM's statements. The recognition of 29 July 2019 is in data/structured/recognitions.csv from SKNIS's release of 30 July 2019 (archived; R21, docs/10 B-579 ff.).
 
 - iso3: KOR
   iso2: KR
