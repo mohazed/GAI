@@ -2714,7 +2714,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2015-09-14}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of External Affairs, International Trade, Civil Aviation and Diaspora Affairs', url: 'https://externalaffairs.gov.lc/', type: mfa, lang: [en]}
+    - {label: Department of External Affairs (stlucia.gov.lc), url: 'https://www.stlucia.gov.lc/', type: mfa, lang: [en]}
+    - {label: 'Government of Saint Lucia, Prime Minister', url: 'https://www.govt.lc/prime-minister', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-06: externalaffairs.gov.lc (the Ministry's own site) gives no DNS answer from the session's network; it was checked through its Wayback capture of 2026-06-15 (200, the page
+    declares lang="en"; its news list has no item on Gaza, Israel or Palestine). stlucia.gov.lc (the Department of External Affairs) answers 200 only with certificate checking off (the
+    certificate fails scripted requests; Save Page Now captured its list of diplomatic relations), declares lang="en-US" (en recorded). govt.lc/prime-minister answers 200 and declares no
+    lang; its texts are English (en recorded). The recognition of 14 September 2015 is in data/structured/recognitions.csv from the Department's own list of diplomatic relations (archived; R21, docs/10
+    B-588 ff.).
 
 - iso3: LIE
   iso2: LI
@@ -3408,7 +3417,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.cancilleria.gob.ni/', type: mfa, lang: [es]}
+    - {label: El 19 Digital (the Government's news portal), url: 'https://www.el19digital.com/', type: head_of_government, lang: [es]}
+    - {label: 'La Gaceta, Diario Oficial (Procuraduría General de la República, pgr.gob.ni)', url: 'https://www.pgr.gob.ni/', type: gazette, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: cancilleria.gob.ni (the address the regional bodies list for the Ministry) gives no DNS answer from the session's network and its Wayback captures are of 2023 and
+    show a domain-parking page ('0.io - This is a premium name'), so the entry is unverified; es is the official language. el19digital.com answers HTTP 403 to scripted requests; its Wayback capture of
+    2026-10-05 answers 200 and declares lang="es" (it carries the Government's communiqués and the messages of the President and the co-president). elpueblopresidente.com, the presidency's other portal, is
+    not listed: its Wayback capture of 2026-10-05 is a gambling page. pgr.gob.ni redirects to pgj.gob.ni (200, lang="es"); the gazette's PDF files (www.pgr.gob.ni/PDF/…) are no longer served and were
+    read from Wayback captures (La Gaceta No. 187 of 14 October 2024). The recognition of 16 November 1988 has no row (R21: no document of the State archived).
 
 - iso3: NLD
   iso2: NL
@@ -3625,7 +3643,13 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://mire.gob.pa/', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic, url: 'https://www.presidencia.gob.pa/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: mire.gob.pa answered 200 and declares lang="es" (the Ministry's releases are searchable at ?s=). presidencia.gob.pa answers a 212-byte bot-check page (Incapsula) to
+    scripted requests; it was checked through its Wayback capture of 2026-09-29 (200, lang="es", 'Ministerio de la Presidencia de Panamá'). The President is head of state and of government. Panama
+    does not recognise the State of Palestine (no row in data/structured/recognitions.csv).
 
 - iso3: PER
   iso2: PE

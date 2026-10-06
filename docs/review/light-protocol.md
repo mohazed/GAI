@@ -425,3 +425,41 @@ Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-a
 | KNA | +2.6 (+3) | +10.5 (+10) | Acting | B9 +4.9 (27 September 2025; the 2024 event is decayed to zero), B8 +3.0 (the row added); the penalty applies because the 2025 statement is 374 days old, outside the 365-day window |
 
 No band change. Read critically (docs/06 §4 step 7): no cap is hit and no single reading decides a band (Saint Kitts and Nevis without the 2025 B9 event would be +5.6, without the B8 row +7.5, Acting both; Haiti is Passive with or without the row).
+
+## T-P21-11: LCA, NIC, PAN (2026-10-06)
+
+Light protocol (docs/06 §5) for Saint Lucia, Nicaragua and Panama. 5 events: 2 for Saint Lucia, 2 for Nicaragua, 1 for Panama. One row is added to `data/structured/recognitions.csv` (Saint Lucia, 2015-09-14). Decisions and flags are in docs/10 B-588 to B-596.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_27_LCA_B9 | B9 | 2024-09-27 | +5 (Minister for External Affairs, General Debate: killings of aid workers, UNRWA staff and journalists in Gaza, the war must end today; decayed) | confirmed | official |
+| evt_2025_09_29_LCA_B9 | B9 | 2025-09-29 | +5 (Minister for External Affairs, General Debate: 'the undeniable genocide', starvation, destruction of hospitals; 372 days old) | confirmed | official |
+| evt_2024_01_23_NIC_B3 | B3 | 2024-01-23 to 2025-04-01 | +15 (Article 62 application to intervene as a party in case 192, supporting the applicant; withdrawn, so it no longer counts) | confirmed | court |
+| evt_2024_10_11_NIC_B12 | B12 | 2024-10-11 | +10 (relations with Israel severed, Presidential Agreement 181-2024, La Gaceta of 14 October 2024) | confirmed | official |
+| evt_2026_05_27_PAN_C2 | C2 | 2026-05-27 | −10 (memorandum of understanding with Israel's MASHAV agency, signed by the Minister and Israel's ambassador) | confirmed | official |
+
+Points are the tier points before decay and weights. B1, B8, D1 and the other generated indicators are left to the build.
+
+### Saint Lucia
+
+Assessments (34 indicators): has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: none. Sources read: the Department of External Affairs' site (`stlucia.gov.lc`: its list of diplomatic relations, archived), the Ministry's own site (Wayback capture of 15 June 2026: no item on Gaza), the Government portal (`govt.lc`), the General Debate statements of the 78th to 81st sessions (the 79th and 80th, the Minister's, are the events; the Prime Minister's of the 81st names Gaza in a list of conflicts with no call and is not filed), St. Lucia Times and The Voice, and web searches in English per indicator group. A row `LCA,2015-09-14` is added to the recognitions table from the Department's own list ('Palestine (State of) 2015 (Sept 14)'). None of the joint statements already archived for the 45 names Saint Lucia; it is not an EU member; the ICJ case 192 list, the Hague Group's founding states and the Bogotá conference's participants do not include it; CARICOM's communiqués name no signatory (R3). 90-minute stop note: finished inside the budget (about 15 minutes of research on Saint Lucia).
+
+### Nicaragua
+
+Assessments: has-events 3 (B1, B3, B12), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6, E1 to E3). Leads: 4 (`lead_20261006_NIC_1` to `_3`, B9: the Foreign Ministers' General Debate statements of 30 September 2024 and 29 September 2025 and the messages of the President and Rosario Murillo of 14 November 2024 and 25 November 2025, which condemn 'genocide' against 'the Palestinian people' and never cite Gaza, R7; `_4`, B9, the Hague Group's Bogotá declaration, which names Nicaragua among its signatories with no named signatory). Sources read: the ICJ's documents on case 192 (the press release and the application, UNISPAL copies; the Court's reports A/79/4 and A/80/4), La Gaceta No. 187 of 14 October 2024 (from Wayback), the General Debate statements of the 78th to 81st sessions (Spanish and English files), the messages and statements Nicaragua published through UNISPAL, the Assembly of States Parties' list (Nicaragua is not a State Party), and web searches in Spanish and English per indicator group. The Government's sites cannot be reached from the session's network (B-588 (3)). Nicaragua v. Germany (case 193) is a separate case and is not filed (B-591 (3)). 90-minute stop note: finished inside the budget (about 25 minutes of research on Nicaragua).
+
+### Panama
+
+Assessments: has-events 2 (B1, C2), none-found 19, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261006_PAN_1`, C2, the commitments of the Herzog visit of 6 May 2026 to reinforce the free trade agreement and agree on water cooperation, with no signed instrument; `_2`, C2, the meeting with Israel's Prime Minister in New York in September 2026, with an invitation to the 'Isaac Accords' and to a United States initiative on withdrawing from the ICC, with no signed instrument and no answer found; `_3`, B9, the President's remarks of 9 October 2025 welcoming the Israel-Hamas agreement, which are not a call, R4). Sources read: the Ministry of Foreign Affairs' site (`mire.gob.pa`, site searches for Gaza, Israel and Palestina, and its releases on the Security Council and on Israel), the Presidency's (bot check; Wayback capture), the General Debate statements of the 78th to 81st sessions (the President's three never cite Gaza), the Security Council records already archived (Panama speaks through its mission, R3), La Prensa, and web searches in Spanish and English per indicator group. Panama does not recognise the State of Palestine (no row). 90-minute stop note: finished inside the budget (about 20 minutes of research on Panama).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 (methodology 1.0.0-rc.1), the 5 reviewed events scored as if published and the added recognition row; before them the generated indicators alone gave −2.4 (LCA), +2.6 (NIC) and −19.8 (PAN).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LCA | −2.4 (−2), Passive | +5.5 (+5), Acting | Passive → Acting | B9 +4.9 (29 September 2025; the 2024 event is decayed to zero), B8 +3.0 (the row added); the passivity penalty (−15) applies because the 2025 statement is 372 days old |
+| NIC | +2.6 (+3), Acting | +12.6 (+13), Acting | Acting | B12 +10.0 (standing, from 11 October 2024); the B3 event ended on 1 April 2025 and counts nothing; the penalty applies (the B12 event is 725 days old) |
+| PAN | −19.8 (−20), Passive | −14.8 (−15), Passive | Passive | C2 −10.0, and the C2 event is a qualifying event (132 days old), so the passivity penalty (−15) no longer applies: net +5.0 |
+
+One band change: Saint Lucia moves from Passive to Acting. Read critically (docs/06 §4 step 7): no cap is hit and no single reading decides Saint Lucia's band as long as one of its two additions stands (without the 2025 B9 event the score is +0.6, display +1, Acting; without the B8 row +2.5, Acting; without both −2.4, Passive). Panama's C2 event ends its penalty: without it the score is −19.8 (Passive). The reading with the largest effect is unfiled: the message of 25 November 2025 from the President of Nicaragua, if the author reads 'Palestine' as Gaza (R7), would be a +5 event inside 365 days and would end the penalty, moving Nicaragua from +13 to about +33 (Acting).
