@@ -3670,7 +3670,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-01-24}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.gob.pe/rree', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic, url: 'https://www.gob.pe/presidencia', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: both pages of the national platform gob.pe answered 200 to a request with a browser User-Agent and declare lang="es-pe" (es recorded). The President is head of state and
+    of government (the President of the Council of Ministers heads the cabinet: its releases are at gob.pe/institucion/pcm), so one head entry is written. The recognition of 24 January 2011 is in
+    data/structured/recognitions.csv from the Division for Palestinian Rights' review of January 2011 (UNISPAL, archived; R21, docs/10 B-604).
 
 - iso3: PHL
   iso2: PH
@@ -3857,8 +3863,17 @@
   recognises_palestine:
     since: 2011-01-29
     note: >-
-      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 25 March 2005.
-  gov_sources: []
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 25 March 2005. The Division for Palestinian Rights' review of January 2011 (UNISPAL, archived) records the Ministry's statement of
+      28 January 2011 that Paraguay 'expressly reiterates the recognition' of the State: recognitions.csv holds `PRY,2011-01-28` (R21, docs/10 B-604).
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.mre.gov.py/', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic, url: 'https://www.presidencia.gov.py/', type: head_of_government, lang: [es]}
+    - {label: Agencia IP (public news agency), url: 'https://www.ip.gov.py/ip/', type: government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: www.mre.gov.py answers a 3 KB bot-check page (HTTP 403) to scripted requests, and www.presidencia.gov.py does not answer from this network; both were checked through
+    their Wayback captures (mre.gov.py of 2026-10-04, 200, lang="es"; presidencia.gov.py of 2026-08-16, 200, lang="es"). ip.gov.py answered 200 and declares lang="en" although its texts are Spanish
+    (es recorded); it carries the Government's releases and the President's addresses and is the state news agency. The President is head of state and of government. Save Page Now answers HTTP 404
+    for ip.gov.py pages (they are recorded from Wayback captures with --capture) and mre.gov.py pages are recorded the same way (docs/10 B-600).
 
 - iso3: PSE
   iso2: PS
@@ -4171,7 +4186,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-08-25}
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://rree.gob.sv/', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic, url: 'https://www.presidencia.gob.sv/', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-06: both sites answer HTTP 403 with a Cloudflare challenge page ('Just a moment') to scripted requests; they were checked through Wayback captures: rree.gob.sv through its
+    page of 2025-08-14 (200, lang="es"), presidencia.gob.sv through its home page of 2026-04-22 (200, lang="es"). The President is head of state and of government. The recognition of 25 August 2011 is in
+    data/structured/recognitions.csv from the Division for Palestinian Rights' review of August 2011 (UNISPAL, archived; R21, docs/10 B-604).
 
 - iso3: SMR
   iso2: SM

@@ -463,3 +463,41 @@ Assessments: has-events 2 (B1, C2), none-found 19, no-data 2 (A2, C3), unchecked
 | PAN | −19.8 (−20), Passive | −14.8 (−15), Passive | Passive | C2 −10.0, and the C2 event is a qualifying event (132 days old), so the passivity penalty (−15) no longer applies: net +5.0 |
 
 One band change: Saint Lucia moves from Passive to Acting. Read critically (docs/06 §4 step 7): no cap is hit and no single reading decides Saint Lucia's band as long as one of its two additions stands (without the 2025 B9 event the score is +0.6, display +1, Acting; without the B8 row +2.5, Acting; without both −2.4, Passive). Panama's C2 event ends its penalty: without it the score is −19.8 (Passive). The reading with the largest effect is unfiled: the message of 25 November 2025 from the President of Nicaragua, if the author reads 'Palestine' as Gaza (R7), would be a +5 event inside 365 days and would end the penalty, moving Nicaragua from +13 to about +33 (Acting).
+
+## T-P21-12: PER, PRY, SLV (2026-10-06)
+
+Light protocol (docs/06 §5) for Peru, Paraguay and El Salvador. 5 events: 1 for Peru, 4 for Paraguay, none for El Salvador. Three rows are added to `data/structured/recognitions.csv` (Peru 2011-01-24, Paraguay 2011-01-28, El Salvador 2011-08-25). Decisions and flags are in docs/10 B-597 to B-608.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_11_21_PER_C2 | C2 | 2025-11-21 | −10 (memorandum of understanding on cybersecurity cooperation between the Presidency of the Council of Ministers' Secretariat for Government and Digital Transformation and Israel's National Cyber Directorate, signed in Lima and Tel Aviv) | confirmed | official |
+| evt_2024_12_12_PRY_C2 | C2 | 2024-12-12 | −10 (memorandum between the research bodies of Paraguay and Israel on innovation and technology, signed with other agreements by the two Foreign Ministers) | confirmed | official |
+| evt_2025_11_24_PRY_C2 | C2 | 2025-11-24 | −10 (memorandum on defense and security cooperation, signed by the Defense Minister and Israel's ambassador; weight 0.7) | corroborated | press |
+| evt_2025_11_24_PRY_C2_2 | C2 | 2025-11-24 | −10 (memorandum on diplomatic cooperation, training of diplomats, signed by the two Foreign Ministers; weight 0.4) | reported | press |
+| evt_2026_03_03_PRY_B4 | B4 | 2026-03-03 | −15 (declaration of intervention under Article 63 in South Africa v. Israel arguing the strict standard of intent and a narrow definition of genocide) | confirmed | court |
+
+Points are the tier points before decay and weights. B1, B8, A4, D1 and the other generated indicators are left to the build.
+
+### Peru
+
+Assessments (34 indicators): has-events 4 (A4, B1, B8, C2), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261006_PER_1`, C2: the Foreign Ministers' call of 3 August 2026, cooperation through Mashav, no instrument). Sources read: the Ministry's and the Presidency's pages on gob.pe (live), the Presidency of the Council of Ministers' release (archived), Andina and EFE, the General Debate statements of the 78th to 81st sessions (no Gaza), the Ministry's communiqués (Comunicado Oficial 039-25 of 15 October 2025), the SIPRI register (the 2025 PULS order, A4), the UNISPAL review of January 2011 (B8) and web searches in Spanish per indicator group. A row `PER,2011-01-24` is added to the recognitions table. None of the joint statements already archived names Peru; it is not an EU member; it is not on the ICJ case 192 list; the Hague Group and Bogotá lists do not include it. 90-minute stop note: finished inside the budget (about 30 minutes on Peru).
+
+### Paraguay
+
+Assessments: has-events 4 (B1, B4, B8, C2), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 5 (`lead_20261006_PRY_1` and `_2`, B10: the President's statements of 11 and 12 December 2024 and the Foreign Minister's of 8 February 2026, none citing Gaza, R7; `_3`, B6: Netanyahu's invitation of 24 September 2026 to withdraw from the ICC, no answer found; `_4` and `_5`, C2: other agreements known only in general terms). Sources read: the Ministry's releases (Wayback captures), Agencia IP, Paraguay TV, the General Debate statements of the 78th to 81st sessions (79th and 80th: right of Israel to defend itself, no Gaza), the ICJ's case page, Paraguay's declaration of intervention (scan, OCR) and the Court's press release, the UNISPAL review of January 2011, EFE, JNS, ABC Color, La Nación, Última Hora and La Política Online, and web searches in Spanish and English per indicator group. A row `PRY,2011-01-28` is added to the recognitions table. The Israeli embassy's reopening in Asunción and the embassy's move to Jerusalem (12 December 2024) are noted under B12: no indicator measures them. None of the joint statements already archived names Paraguay; it is not an EU member; Paraguay is on the ICJ case 192 list (B4); the Hague Group and Bogotá lists do not include it. 90-minute stop note: finished inside the budget (about 80 minutes on Paraguay, the most documented of the three).
+
+### El Salvador
+
+Assessments: has-events 2 (B1, B8), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. Sources read: the Ministry's and the Presidency's news (Wayback captures; the live sites answer a Cloudflare challenge), the General Debate statements of the 79th and 81st sessions (no Gaza; the 80th has no page on the debate site, the 78th is an image file of September 2023), the SIPRI register, the UNISPAL review of August 2011 (B8) and web searches in Spanish per indicator group. A row `SLV,2011-08-25` is added to the recognitions table. No instrument signed with Israel after 7 October 2023 was found (the agreements of 2022 pre-date the window). None of the joint statements already archived names El Salvador; it is not an EU member; it is not on the ICJ case 192 list; the Hague Group and Bogotá lists do not include it. 90-minute stop note: finished inside the budget (about 25 minutes on El Salvador).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-06 (methodology 1.0.0-rc.1), the 5 reviewed events scored as if published and the three recognition rows; before them the generated indicators alone gave −7.3 (PER), −44.3 (PRY) and +2.6 (SLV).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| PER | −7.3 (−7), Passive | +0.7 (+1), Acting | Passive → Acting | B8 +3.0 (the row added), C2 −10.0 with the passivity penalty (−15) lifted: the C2 event is a qualifying event (319 days old), net +5.0; without the memorandum the score is −4.3 (Passive) |
+| PRY | −44.3 (−44), Enabling | −60.0 (−60), Sustaining | Enabling → Sustaining | B8 +3.0, B4 −15.0 (B's floor −40 is hit: B1 −29.3 and B8 +3.0 and B4 sum to −41.3), C2 −10.0, −7.0 and −4.0 (C's floor −20 is hit: −21.0), passivity penalty lifted (three qualifying events); the boundary lies between −50 and −51: without the two memoranda of 24 November 2025 the score is −50.0 (Enabling), without the 'reported' one −57.0 (Sustaining), with the B4 event alone −40.0 and with the C2 events alone −46.3 (Enabling) |
+| SLV | +2.6 (+3), Acting | +5.6 (+6), Acting | Acting | B8 +3.0 (the row added); the passivity penalty (−15) applies |
+
+Two band changes: Peru (Passive → Acting) rests on one cybersecurity memorandum signed by a government secretary (R18, flagged); Paraguay (Enabling → Sustaining) rests on the B4 event and on the defense memorandum of 24 November 2025 at `corroborated` (the Ministry's own release is not archived). Read critically (docs/06 §4 step 7): in both cases a negative event ends a passivity penalty, so the net effect of the Peruvian memorandum is +5.0, as for Panama's (B-594). The reading with the largest effect that is unfiled is R7 for Paraguay's President and Foreign Minister (leads 1 and 2): B10 events would change no score (B is already at its floor, −40.0).
