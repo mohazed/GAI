@@ -6,7 +6,7 @@
 import { describe, expect, it } from 'vitest'
 import { bandFor, type CompiledIndicator } from './methodology.js'
 import { createScorer } from './score.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodology, methodologyRc1 } from './test-helpers.js'
 import { addDays } from './time.js'
 import { CATEGORY_IDS, CONFIDENCE_LEVELS, type ScoringEvent } from './types.js'
 import { userScore } from './weights.js'
@@ -167,9 +167,12 @@ describe('property: no score leaves [−100, 100]', () => {
   })
 
   it('reaches both ends of the scale on extreme inputs', () => {
+    // Under the rules of 1.0.0-rc.1, where B1 and the standing states of A3, B7 and D2 add up
+    // without an indicator cap, the random extremes reach both clips; the rc.2 caps keep these
+    // inputs inside, which the two tests above check.
     const seen = { top: false, bottom: false }
     for (let seed = 1001; seed <= 1200; seed++) {
-      const scorer = createScorer('TST', randomEvents(seed, true), m)
+      const scorer = createScorer('TST', randomEvents(seed, true), methodologyRc1())
       for (const d of ['2024-06-01', '2025-06-01', '2026-06-01']) {
         const s = scorer.at(d)
         if (s.exact === 100) seen.top = true

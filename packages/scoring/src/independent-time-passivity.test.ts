@@ -26,11 +26,12 @@ import {
   timeFactor,
 } from './contribution.js'
 import { createScorer, scoreCountry } from './score.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodologyRc1 } from './test-helpers.js'
 import { dayNumber, daysBetween, isIsoDate } from './time.js'
 import type { Confidence, ScoringEvent } from './types.js'
 
-const m = methodology()
+// The docs/02 rules as written: methodology 1.0.0-rc.1 (rc.2 rules: rc2.test.ts).
+const m = methodologyRc1()
 
 /** d(Δ) on the decay ramp, 365 < Δ ≤ 730, written out by hand: 1 − 0.75·(Δ − 365)/365. */
 const ramp = (delta: number) => 1 - (0.75 * (delta - 365)) / 365

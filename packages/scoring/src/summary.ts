@@ -129,6 +129,8 @@ export interface SummaryInput {
   readonly passivityPoints: number
   /** Scorecard mode only: the latest event (latestEvent()); required when `score` is null. */
   readonly latestEvent?: LatestEvent | null
+  /** Short indicator labels, from indicators.yaml `short` (indicatorLabels(), B-54). */
+  readonly labels: Readonly<Record<string, LangText>>
 }
 
 const TEXT = {
@@ -168,14 +170,19 @@ function passivityText(applied: boolean, passivityPoints: number, lang: Lang): s
   return `${applied ? t.applied : t.lifted} (${points})`
 }
 
-function lastChangeText(lc: LastChange | null, passivityPoints: number, lang: Lang): string {
+function lastChangeText(
+  lc: LastChange | null,
+  passivityPoints: number,
+  labels: Readonly<Record<string, LangText>>,
+  lang: Lang,
+): string {
   const t = TEXT[lang]
   if (lc === null) return `${t.last} ${t.none}.`
   if (lc.kind === 'passivity') {
     return `${t.last} ${lc.date}, ${passivityText(lc.passivity.after, passivityPoints, lang)}.`
   }
   const indicator = lc.indicator as string
-  let label = indicatorLabel(indicator)[lang]
+  let label = indicatorLabel(labels, indicator)[lang]
   if (lc.change === 'end') label = `${label}, ${t.ended}`
   if (lc.change === 'expire') label = `${label}, ${t.expired}`
   const toggled =
@@ -185,10 +192,14 @@ function lastChangeText(lc: LastChange | null, passivityPoints: number, lang: La
   return `${t.last} ${lc.date}, ${label} (${indicator}, ${formatSigned(lc.points ?? 0, lang)})${toggled}.`
 }
 
-function latestEventText(le: LatestEvent | null, lang: Lang): string {
+function latestEventText(
+  le: LatestEvent | null,
+  labels: Readonly<Record<string, LangText>>,
+  lang: Lang,
+): string {
   const t = TEXT[lang]
   if (le === null) return `${t.latest} ${t.none}.`
-  const label = indicatorLabel(le.indicator)[lang]
+  const label = indicatorLabel(labels, le.indicator)[lang]
   return `${t.latest} ${le.date}, ${label} (${le.indicator}, ${formatSigned(le.points, lang)}).`
 }
 
@@ -206,12 +217,12 @@ export function summaryLine(input: SummaryInput, lang: Lang): string {
   }
   parts.push(t.coverage(String(roundHalfAwayFromZero(input.coverage * 100, 0))))
   if (input.score !== null) {
-    parts.push(lastChangeText(input.lastChange, input.passivityPoints, lang))
+    parts.push(lastChangeText(input.lastChange, input.passivityPoints, input.labels, lang))
   } else {
     if (input.latestEvent === undefined) {
       throw new Error('scorecard mode (score: null) needs latestEvent')
     }
-    parts.push(latestEventText(input.latestEvent, lang))
+    parts.push(latestEventText(input.latestEvent, input.labels, lang))
   }
   return parts.join(' ')
 }

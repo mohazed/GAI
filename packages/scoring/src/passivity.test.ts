@@ -4,11 +4,12 @@
  */
 import { describe, expect, it } from 'vitest'
 import { scoreCountry } from './score.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodologyRc1 } from './test-helpers.js'
 import { addDays } from './time.js'
 import type { ScoringEvent } from './types.js'
 
-const m = methodology()
+// The docs/02 rules as written: methodology 1.0.0-rc.1 (rc.2 rules: rc2.test.ts).
+const m = methodologyRc1()
 const T = '2025-06-01'
 const passive = (events: ScoringEvent[], date = T) =>
   scoreCountry('TST', events, date, m).passivity.applied

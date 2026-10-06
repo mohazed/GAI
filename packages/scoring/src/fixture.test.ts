@@ -8,6 +8,7 @@ import { loadDataset } from '@gai/schema'
 import { describe, expect, it } from 'vitest'
 import { citation } from './citation.js'
 import { coverage } from './coverage.js'
+import { indicatorLabels } from './labels.js'
 import { bandFor } from './methodology.js'
 import { createScorer } from './score.js'
 import { lastChange } from './series.js'
@@ -64,6 +65,7 @@ describe('DEU fixture', () => {
       coverage: c.ratio,
       lastChange: lastChange(s, date),
       passivityPoints: m.passivity.points,
+      labels: indicatorLabels(m),
     }
     expect(summaryLine(input, 'en')).toBe(
       'Score −15 (Passive). 1 event, 1 confirmed. Coverage 3%. Last change: 2025-11-24, export licence suspension, ended (A6, −10).',

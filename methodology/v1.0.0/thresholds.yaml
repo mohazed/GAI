@@ -12,7 +12,7 @@
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
 
-version: 1.0.0-rc.1
+version: 1.0.0-rc.2
 
 formulas:
   a1:
@@ -61,22 +61,29 @@ formulas:
     indicator: A2
     measure:
       en: >-
-        V = trailing-12-month exports to Israel under HS 93 + 8710 (+ 8526/8802 when confirmed
-        military). Source: the country's own reporting to UN Comtrade; if absent or
+        V = exports to Israel in one calendar year under HS 93 + 8710 (+ 8526/8802 when
+        confirmed military). Source: the country's own reporting to UN Comtrade; if absent or
         confidential, Israel's mirror import data by origin; if both absent, no-data. Tiers:
         V ≥ 100 M USD → −25; ≥ 10 M → −15; ≥ 1 M → −8; ≥ 100 k → −3; < 100 k → 0.
       fr: >-
-        V = exportations vers Israël sur les 12 derniers mois au titre du chapitre SH 93 et de
-        la position 8710 (+ 8526/8802 lorsque leur nature militaire est confirmée). Source : les
+        V = exportations vers Israël sur une année civile au titre du chapitre SH 93 et de la
+        position 8710 (+ 8526/8802 lorsque leur nature militaire est confirmée). Source : les
         déclarations du pays lui-même à UN Comtrade ; à défaut, ou si elles sont
         confidentielles, les données miroir des importations d'Israël par origine ; si les deux
         manquent, « pas de données ». Paliers : V ≥ 100 M USD → −25 ; ≥ 10 M → −15 ;
         ≥ 1 M → −8 ; ≥ 100 k → −3 ; < 100 k → 0.
     validity:
-      en: Recomputed at each Comtrade annual/quarterly release; valid until the next.
+      en: >-
+        Calendar-year annual data: each value holds from the reporter's first release of that
+        year's data (Israel's, for mirror data) to its first release of the next year's. A value
+        of data year 2022 or earlier, wholly before 2023-10-07, is not in force in the window
+        (parameters.min_window_end).
       fr: >-
-        Recalculé à chaque publication annuelle ou trimestrielle de Comtrade ; valable jusqu'à
-        la suivante.
+        Données annuelles par année civile : chaque valeur vaut de la première publication des
+        données de l'année par le déclarant (par Israël, pour les données miroir) jusqu'à sa
+        première publication des données de l'année suivante. Une valeur de l'année de données
+        2022 ou antérieure, tout entière avant le 7 octobre 2023, n'est pas en vigueur dans la
+        période couverte (parameters.min_window_end).
     unit: usd
     tiers:
       - {op: gte, value: 100000000, points: -25}
@@ -87,7 +94,9 @@ formulas:
     parameters:
       hs_full: ['93', '8710']
       hs_conditional: ['8526', '8802']
-      window: trailing-12-months
+      window: calendar-year
+      # 1.0.0-rc.2 (P-04 B-63): a window whose data end before this date writes no value.
+      min_window_end: '2023-10-07'
       reporter_preference: [self, mirror]
 
   a4:
@@ -96,12 +105,15 @@ formulas:
     measure:
       en: >-
         From the same release as A1: any new order placed with Israel in year Y with TIV > 0,
-        counting only contracts signed on or after 2023-10-07 (orders, not deliveries of
-        pre-war orders). Tiers by TIV: ≥ 500 → −15; ≥ 100 → −10; ≥ 10 → −5; > 0 → −2.
+        counting only orders whose year starts on or after 2023-10-07, that is orders dated 2024
+        or later, since SIPRI dates orders by year only (orders, not deliveries of pre-war
+        orders). Tiers by TIV: ≥ 500 → −15; ≥ 100 → −10; ≥ 10 → −5; > 0 → −2.
       fr: >-
         À partir de la même publication que A1 : toute nouvelle commande passée à Israël l'année Y
-        avec un TIV > 0, en ne comptant que les contrats signés à partir du 7 octobre 2023
-        (commandes, et non livraisons de commandes antérieures à la guerre). Paliers selon le TIV :
+        avec un TIV > 0, en ne comptant que les commandes dont l'année commence le 7 octobre 2023 ou
+        après, c'est-à-dire les commandes datées de 2024 ou après, puisque le SIPRI ne date les
+        commandes que par année (commandes, et non livraisons de commandes antérieures à la
+        guerre). Paliers selon le TIV :
         ≥ 500 → −15 ; ≥ 100 → −10 ; ≥ 10 → −5 ; > 0 → −2.
     validity:
       en: >-
@@ -125,21 +137,27 @@ formulas:
     indicator: C3
     measure:
       en: >-
-        T = trailing-12-month goods exports + imports with Israel (own reporting, else mirror).
+        T = goods exports + imports with Israel in one calendar year (own reporting, else
+        mirror).
         r = T / T(2022). If r ≥ 0.9: tiers by T: ≥ 10 B USD → −8; ≥ 1 B → −5; ≥ 100 M → −3;
         ≥ 10 M → −2; else 0. If r < 0.9: 0.
       fr: >-
-        T = exportations + importations de marchandises avec Israël sur les 12 derniers mois
+        T = exportations + importations de marchandises avec Israël sur une année civile
         (déclarations du pays lui-même, à défaut données miroir). r = T / T(2022). Si r ≥ 0,9 :
         paliers selon T : ≥ 10 Md USD → −8 ; ≥ 1 Md → −5 ; ≥ 100 M → −3 ; ≥ 10 M → −2 ;
         sinon 0. Si r < 0,9 : 0.
     validity:
       en: >-
-        As for every computed quantity, valid from the source release date to the next release
-        date (docs/02 §3).
+        Calendar-year annual data, as for A2: each value holds from the reporter's first release
+        of that year's data to its first release of the next year's (docs/02 §3). A value of
+        data year 2022 or earlier is not in force in the window (parameters.min_window_end); 2022
+        stays the baseline T(2022).
       fr: >-
-        Comme toute quantité calculée, valable de la date de publication de la source jusqu'à
-        la date de la publication suivante (docs/02 §3).
+        Données annuelles par année civile, comme pour A2 : chaque valeur vaut de la première
+        publication des données de l'année par le déclarant jusqu'à sa première publication des
+        données de l'année suivante (docs/02 §3). Une valeur de l'année de données 2022 ou
+        antérieure n'est pas en vigueur dans la période couverte (parameters.min_window_end) ;
+        2022 reste l'année de référence T(2022).
     notes:
       en: >-
         A drop is not rewarded here (only a decision is, via C1); a rise is not penalised beyond
@@ -157,7 +175,9 @@ formulas:
       - {op: gte, value: 10000000, points: -2}
     otherwise: 0
     parameters:
-      window: trailing-12-months
+      window: calendar-year
+      # 1.0.0-rc.2 (P-04 B-63): a window whose data end before this date writes no value.
+      min_window_end: '2023-10-07'
       reporter_preference: [self, mirror]
 
   d1:
@@ -165,21 +185,27 @@ formulas:
     indicator: D1
     measure:
       en: >-
-        F = paid + committed contributions from the country's government (donor organisation
-        type "Government") to the OCHA-tracked oPt flash appeals and the oPt pooled fund in the
-        trailing 12 months, per FTS. x = F / GNI (World Bank Atlas, current USD, latest
-        available year), in percent. Tiers: x ≥ 0.0100 % → +12; ≥ 0.0050 % → +9;
+        F = paid + committed contributions from the country's government (FTS donor organisation
+        type "Governments") to the OCHA-tracked oPt flash appeals and the oPt pooled fund in the
+        twelve calendar months before the month, per FTS, counting flows dated on or after
+        2023-10-07. x = F / GNI (World Bank Atlas, current USD, the latest year not after the
+        window, else the most recent), in percent. Tiers: x ≥ 0.0100 % → +12; ≥ 0.0050 % → +9;
         ≥ 0.0020 % → +6; ≥ 0.0005 % → +3; > 0 → +1; 0 → 0.
       fr: >-
         F = contributions versées + engagées par le gouvernement du pays (type d'organisation
-        donatrice « Government ») aux appels éclair pour le Territoire palestinien occupé suivis
-        par OCHA et au fonds commun pour le Territoire palestinien occupé sur les 12 derniers
-        mois, selon le FTS. x = F / RNB (méthode Atlas de la Banque mondiale, USD courants,
-        dernière année disponible), en pourcentage. Paliers : x ≥ 0,0100 % → +12 ;
+        donatrice du FTS « Governments ») aux appels éclair pour le Territoire palestinien occupé
+        suivis par OCHA et au fonds commun pour le Territoire palestinien occupé au cours des
+        douze mois civils précédant le mois, selon le FTS, en ne comptant que les flux datés du
+        7 octobre 2023 ou après. x = F / RNB (méthode Atlas de la Banque mondiale, USD courants,
+        dernière année non postérieure à la fenêtre, à défaut la plus récente), en pourcentage. Paliers : x ≥ 0,0100 % → +12 ;
         ≥ 0,0050 % → +9 ; ≥ 0,0020 % → +6 ; ≥ 0,0005 % → +3 ; > 0 → +1 ; 0 → 0.
     validity:
-      en: Recomputed monthly; valid one month.
-      fr: Recalculé chaque mois ; valable un mois.
+      en: >-
+        Recomputed monthly; valid one month. A flow dated before 2023-10-07 counts in no window
+        (parameters.flows_from).
+      fr: >-
+        Recalculé chaque mois ; valable un mois. Un flux daté d'avant le 7 octobre 2023 ne compte
+        dans aucune fenêtre (parameters.flows_from).
     notes:
       en: >-
         Zero is a real zero (FTS is the reference for government humanitarian funding), but the
@@ -201,5 +227,7 @@ formulas:
       - {op: gt, value: 0, points: 1}
     otherwise: 0
     parameters:
-      donor_type: Government
-      window: trailing-12-months
+      donor_type: Governments
+      window: twelve-calendar-months-before-the-month
+      # 1.0.0-rc.2 (P-04 B-60): read by fetch:fts; earlier flows count in no window.
+      flows_from: '2023-10-07'

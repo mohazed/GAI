@@ -3,19 +3,25 @@
 # The passivity penalty: how "silence is negative" (spec §2, rule 2) is implemented.
 #
 # Encodes docs/02-methodology-spec.md §6 (points, qualifying indicators, window, minimum
-# contribution; the rule text below is §6 in English verbatim), D-11 (penalty 15, sensitivity at
-# 5, 15 and 25, published per docs/02 §10) and D-12 (category E unscored).
+# contribution), D-11 (penalty 15, sensitivity at 5, 15 and 25, published per docs/02 §10) and
+# D-12 (category E unscored), with the two changes of 1.0.0-rc.2 (docs/calibration/README.md §7,
+# items 4 and 5): only contributions of +2 or more qualify (`contribution_sign: positive`, B-46;
+# docs/02 §6 reads "absolute value"), and the pre-existing tier of B8 does not qualify (the
+# `excluded` entry with `tiers`, B-47). The rule text below is §6 with these two changes and the
+# reading of a standing state's date (B-48, B-151 (6)).
 # Shape: packages/schema/src/methodology/schemas.ts (PassivityFile; objects are strict).
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
 
-version: 1.0.0-rc.1
+version: 1.0.0-rc.2
 
 points: 15
 window_days: 365
 qualifying_indicators:
   [B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, C1, C2, C3, C4, C5, C6, D1, D2, D3, D4, D5]
 min_abs_contribution: 2
+# positive: the contribution must be +2 or more; a negative act never lifts the penalty (B-46).
+contribution_sign: positive
 statuses: [published]
 
 excluded:
@@ -38,6 +44,19 @@ excluded:
         La catégorie A ne compte jamais : vendre ou refuser des armes n'est pas le type
         d'engagement que mesure la pénalité, et les événements A6–A8 s'accompagnent presque
         toujours d'événements B ou C.
+  # B-47: the pre-existing recognition (+3, a standing state from 2023-10-07) would otherwise lift
+  # the penalty of about 100 states for their first year and drop it on 2024-10-06.
+  - indicators: [B8]
+    tiers: [pre_existing]
+    reason:
+      en: >-
+        The pre-existing recognition of the State of Palestine (B8, +3) does not qualify: it is a
+        state that predates the window, not engagement in it; a recognition after 7 October 2023
+        (+8) qualifies.
+      fr: >-
+        La reconnaissance préexistante de l'État de Palestine (B8, +3) ne compte pas : c'est un
+        état antérieur à la période couverte, et non un engagement pendant celle-ci ; une
+        reconnaissance postérieure au 7 octobre 2023 (+8) compte.
   # E1–E3: D-12.
   - indicators: [E1, E2, E3]
     reason:
@@ -50,18 +69,25 @@ rule:
   en: >-
     A country receives passivity = 15 at date t if it has no qualifying event in the trailing
     365 days. A qualifying event is any published event with indicator in B2–B12, C1–C6 or
-    D1–D5, event date in (t − 365, t], and current weighted contribution of absolute value ≥ 2.
-    B1 votes do not qualify (spec §2: "votes yes at the UN and does nothing else" is Passive);
-    token funding below the +3 tier of D1 does not qualify. Category A never qualifies: selling
-    or refusing arms is not the kind of engagement the penalty measures, and A6–A8 events almost
-    always come with B or C events anyway.
+    D1–D5, event date in (t − 365, t], and current weighted contribution of +2 or more. The date
+    of a standing state is its start date, so a standing state qualifies for 365 days from its
+    start; a state that began before 7 October 2023 is dated 7 October 2023. A negative act never
+    qualifies: adding one to a country's record never lifts the penalty. B1 votes do not qualify
+    (spec §2: "votes yes at the UN and does nothing else" is Passive); token funding below the +3
+    tier of D1 does not qualify; the pre-existing recognition of Palestine (B8, +3) does not
+    qualify. Category A never qualifies: selling or refusing arms is not the kind of engagement
+    the penalty measures, and A6–A8 events almost always come with B or C events anyway.
   fr: >-
     Un pays reçoit une pénalité de passivité de 15 à la date t s'il n'a aucun événement
     admissible au cours des 365 derniers jours. Un événement admissible est tout événement
     publié dont l'indicateur relève de B2–B12, C1–C6 ou D1–D5, dont la date est comprise dans
-    (t − 365, t], et dont la contribution pondérée courante est, en valeur absolue, ≥ 2. Les
-    votes B1 ne comptent pas (cahier des charges, §2 : « vote pour à l'ONU et ne fait rien
-    d'autre » relève de la bande Passivité) ; un financement symbolique inférieur au palier +3
-    de D1 ne compte pas. La catégorie A ne compte jamais : vendre ou refuser des armes n'est pas
-    le type d'engagement que mesure la pénalité, et les événements A6–A8 s'accompagnent presque
-    toujours d'événements B ou C.
+    (t − 365, t], et dont la contribution pondérée courante est de +2 ou plus. La date d'un état
+    durable est sa date de début : un état durable compte donc pendant 365 jours à partir de son
+    début ; un état commencé avant le 7 octobre 2023 est daté du 7 octobre 2023. Un acte négatif
+    ne compte jamais : en ajouter un au dossier d'un pays ne lève jamais la pénalité. Les votes
+    B1 ne comptent pas (cahier des charges, §2 : « vote pour à l'ONU et ne fait rien d'autre »
+    relève de la bande Passivité) ; un financement symbolique inférieur au palier +3 de D1 ne
+    compte pas ; la reconnaissance préexistante de la Palestine (B8, +3) ne compte pas. La
+    catégorie A ne compte jamais : vendre ou refuser des armes n'est pas le type d'engagement que
+    mesure la pénalité, et les événements A6–A8 s'accompagnent presque toujours d'événements B
+    ou C.

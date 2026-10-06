@@ -569,7 +569,7 @@ describe('event.confirmed-source-kind', () => {
     expect(issuesOf(found, 'event.confirmed-source-kind')).toEqual([])
   })
 
-  it('rejects a confirmed event without an official, court or dataset source', () => {
+  it('rejects a confirmed event without an official, official-video, parliamentary, court or dataset source', () => {
     const found = issuesOf(
       run((ds) => {
         setSourceKinds(ds, 'press')
@@ -578,7 +578,9 @@ describe('event.confirmed-source-kind', () => {
     )
     expect(found).toHaveLength(1)
     expect(found[0]).toMatchObject({ file: FILE, id: FIXTURE_ID })
-    expect(found[0]?.message).toContain('official, court or dataset (found press)')
+    expect(found[0]?.message).toContain(
+      'official, official-video, parliamentary, court or dataset (found press)',
+    )
   })
 
   it('falls back to official, court and dataset when confidence.yaml is missing', () => {
@@ -1342,10 +1344,18 @@ describe('event.standing-overlap (B-22, B-51)', () => {
       points: -15,
     })
 
-  it('warns when two A3, B7 or D2 records of one country hold on one day', () => {
+  /** The stacking of 1.0.0-rc.1, where A3, B7 and D2 summed. */
+  const summing = (m: Methodology) => {
+    for (const i of m.indicators) {
+      if (['A3', 'B7', 'D2'].includes(i.id)) i.stacking = { rule: 'sum' }
+    }
+  }
+
+  it('warns when two A3, B7 or D2 records of one country hold on one day and the indicator sums', () => {
     for (const indicator of ['A3', 'B7', 'D2']) {
       const found = issuesOf(
-        run((ds) => {
+        run((ds, m) => {
+          summing(m)
           standing(ds, indicator, '2024-01-01', null)
           standing(ds, indicator, '2025-02-13', '2025-12-31')
         }),
@@ -1361,10 +1371,23 @@ describe('event.standing-overlap (B-22, B-51)', () => {
     }
   })
 
-  it('is silent for records that follow each other, other indicators and withdrawn records', () => {
+  it('is silent when the indicator stacks by most severe (1.0.0-rc.2, B-22)', () => {
     expect(
       issuesOf(
         run((ds) => {
+          standing(ds, 'B7', '2024-01-01', null)
+          standing(ds, 'B7', '2025-02-13', '2025-12-31')
+        }),
+        'event.standing-overlap',
+      ),
+    ).toEqual([])
+  })
+
+  it('is silent for records that follow each other, other indicators and withdrawn records', () => {
+    expect(
+      issuesOf(
+        run((ds, m) => {
+          summing(m)
           standing(ds, 'B7', '2024-01-01', '2025-02-13')
           standing(ds, 'B7', '2025-02-13', null)
           standing(ds, 'B11', '2024-01-01', null)
