@@ -579,3 +579,41 @@ Assessments: has-events 3 (B1, B4, C2), none-found 17, no-data 2 (A2, C3), not-a
 | FJI | −36.2 (−36, Enabling) | −56.2 (−56) | Sustaining | B4 −15.0, C2 −30.0 clipped to the category cap −20 (three events, all R18); the events lift the passivity penalty (+15) |
 
 Band changes: Venezuela, Enabling to Passive; Fiji, Enabling to Sustaining. Read critically (docs/06 §4 step 7): Fiji's band needs B4 and two of its three C2 events (B4 alone gives −36.2, one C2 −46.2, both Enabling; the cap makes a third event add nothing), and all three C2 events are flagged under R18 (technical memoranda and a declaration of intent). Venezuela's band rests on B12: without it −19.8 (−20, Passive, on the boundary), without the B9 event about −13.6, without both −23.7 (Enabling); if B6 is scored (scope `gaza`) it gives −19.8 (Passive), and with B12 ended on 11 August 2026 and B6 scored −29.8 (Enabling). The twelve B1 absences (−11.7) may be the loss of Venezuela's vote under Article 19 and not a choice (B-626). Saint Vincent and the Grenadines' band does not depend on any single reading; without the 2025 B9 event it is −6.5 (Passive). The readings with the largest effect are unfiled: Saint Vincent and the Grenadines' Prime Minister's statement of 25 September 2026, if its text cites Gaza with a call, would be a B9 event inside 365 days that ends its passivity penalty (the score would be about +15, Acting).
+
+## T-P21-15: PNG, SLB, VUT (2026-10-07)
+
+Light protocol (docs/06 §5) for Papua New Guinea, Solomon Islands and Vanuatu. 5 events: 3 for Papua New Guinea, 2 for Solomon Islands, none for Vanuatu. Decisions and flags are in docs/10 B-629 to B-640.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_10_07_PNG_B9 | B9 | 2024-10-07 | +2 | confirmed | official |
+| evt_2025_08_15_PNG_B10 | B10 | 2025-08-15 | −5 | confirmed | official |
+| evt_2025_10_20_PNG_B10 | B10 | 2025-10-20 | −5 | confirmed | official |
+| evt_2024_09_27_SLB_B9 | B9 | 2024-09-27 | +5 | confirmed | official |
+| evt_2025_09_26_SLB_B9 | B9 | 2025-09-26 | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (Papua New Guinea's date is disputed and Vanuatu's has no Government document online, B-633, B-635).
+
+### Papua New Guinea
+
+Assessments (34 indicators): has-events 3 (B1, B9, B10), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 3 (`lead_20261007_PNG_1`, B9, the Prime Minister's release of 25 September 2025 in indirect speech, and the 81st session's statement, unread; `_2`, C2, a representative office announced by Israel with no signed instrument; `_3`, B10, indirect passages of three releases). Sources read: the Prime Minister's Office's releases (pmnec.gov.pg, searched for Israel, Hamas, Gaza, ceasefire, hostages, Palestinian and General Assembly), the Department of Foreign Affairs' releases (dfa.gov.pg), the General Debate statements of the 79th to 81st sessions, UN Meetings Coverage's reports of the votes (GA/12599, GA/12626 and the lists of GA/12572, GA/12667, GA/12707, GA/12739), the ICJ's case pages. Not an EU member; no archived joint statement names it; not in the Hague Group's lists. 90-minute stop note: finished inside the budget (about 30 minutes on Papua New Guinea, part of it waiting for Save Page Now, which was offline). Not filed and why: B8 (no Government document of a recognition), the release of 25 September 2025 and the indirect passages (R4), the releases of 8 October 2023 and 9 October 2025 (no Gaza, R7), the Foreign Minister's words of 3 March 2026 (not a B10 speaker; Iran), the closure of the embassy in Jerusalem (B-599).
+
+### Solomon Islands
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261007_SLB_1`, B9, Prime Minister Wale's statement to the 81st session, no capture of the file; the press reports no passage on Gaza). Sources read: the General Debate statements of the 79th and 80th sessions and their pages, GA/12712, the Ministry's foreign-affairs news listing (22 September 2023 to 9 May 2025, Wayback), the ICJ's case pages, the press on the 81st session. Not an EU member; no archived joint statement names it. 90-minute stop note: finished inside the budget (about 12 minutes on Solomon Islands). Not filed and why: the 81st session's statement (unread), the Pacific Islands Forum communiqué of September 2025 (no signatory, R3).
+
+### Vanuatu
+
+Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6 and the three experimental E1 to E3). No lead. Sources read: the General Debate statements of the 79th (French) and 80th (the Permanent Representative's) sessions, the Prime Minister's Office's press-release listing and the Ministry's news page (searched for Israel, Gaza, Palestine, Middle East), the ICJ's case pages (Vanuatu filed no written statement and made no oral statement in case 186 and is not on the case 192 list). 90-minute stop note: finished inside the budget (about 10 minutes on Vanuatu). No B9 or B10 event: the statements read have no passage on Gaza.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-07 (methodology 1.0.0-rc.1), the 5 reviewed events scored as if published; before them the generated indicators alone gave −41 (PNG), +3 (SLB) and −9 (VUT).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| PNG | −41.3 (−41) | −35.3 (−35) | Enabling | B9 +0.5, B10 −9.5 (−4.46 and −5.00), and the passivity penalty (−15) lifted by the event of 20 October 2025, inside the 365 days; B1 −26.3 stays |
+| SLB | +2.5 (+3) | +4.5 (+4) | Acting | B9 +1.95 (the 2025 event, 376 days old); the penalty (−15) still applies; the 2024 event is expired |
+| VUT | −9.0 (−9) | −9.0 (−9) | Passive | no event |
+
+No band changes. Read critically (docs/06 §4 step 7): Papua New Guinea's number depends on the 20 October 2025 B10 reading (without it −45.3, without both B10 events −40.8; every case is Enabling) and the event is a qualifying event, so a negative event raises the score by ending the passivity penalty (B-630, B-638). The three scores are dominated by B1 (−26.3, +17.5, +6.0).

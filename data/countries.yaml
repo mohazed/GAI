@@ -3757,8 +3757,20 @@
       January 1995 and Wikipedia gives 4 October 1994; in July 2025 AFP reported that the
       foreign secretary of Papua New Guinea was not aware of any position by the country to
       establish relations with Palestine. Left null until an official statement is found
-      (P-14). P-14: unchanged (null); nothing found that confirms a recognition.
-  gov_sources: []
+      (P-14). P-14: unchanged (null); nothing found that confirms a recognition. T-P21-15 (2026-10-07):
+      the Department of Foreign Affairs' site (dfa.gov.pg) and the Prime Minister's Office's site (pmnec.gov.pg),
+      searched for Palestine, Gaza and Hamas, hold no document of a recognition or of relations with
+      Palestine; no row in recognitions.csv (R21, docs/10 B-633).
+  gov_sources:
+    - {label: Department of Foreign Affairs (dfa.gov.pg), url: 'https://www.dfa.gov.pg/', type: mfa, lang: [en]}
+    - {label: Department of Prime Minister and National Executive Council (pmnec.gov.pg), url: 'https://www.pmnec.gov.pg/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: both sites answered 200 to a request with a browser User-Agent and declare
+    lang="en-US" (a template default; the texts are English). The Prime Minister's Office publishes the Prime Minister's
+    statements and releases in full (the Prime Minister is James Marape; the Foreign Minister is Justin Tkatchenko; the
+    Department's Secretary is Elias Wohengu). Save Page Now captures both sites' pages; the Prime Minister's Office's
+    releases carry the date in a byline ('October 7, 2024'), not in a meta tag. The embassy in Jerusalem (opened
+    5 September 2023) was closed temporarily on 2 March 2026 for the staff's safety: no indicator measures it (docs/10 B-599).
 
 - iso3: POL
   iso2: PL
@@ -4151,7 +4163,20 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and External Trade (mfaet.gov.sb), url: 'https://www.mfaet.gov.sb/', type: mfa, lang: [en]}
+    - {label: 'Office of the Prime Minister and Cabinet (Government portal, solomons.gov.sb)', url: 'https://solomons.gov.sb/office-of-the-prime-minister-and-cabinet/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: the Ministry's site did not answer a request with a browser User-Agent (timeout) and
+    answers HTTP 406 to a plain one; its latest good Wayback capture (2026-03-23, 200, 21,024 bytes) declares
+    lang="en-GB" and its foreign-affairs news listing (read through Wayback replays) ends at 9 May 2025. The Government
+    portal solomons.gov.sb answers a script-based bot check (Sucuri, 'You are being redirected...'; not bypassed) and
+    its Wayback captures of 2026 are the same page; its latest good capture (2025-07-29, 200) declares lang="en-GB" and
+    links the Office of the Prime Minister and Cabinet's page used here; no separate site of the Prime Minister's
+    Office was found (pmo.gov.sb did not answer and has no capture). The Prime Minister is Matthew Wale since 15 May
+    2026 (Jeremiah Manele before, to 15 May 2026, after a vote of no confidence on 22 votes to 26; Wikipedia, read);
+    the Minister for Foreign Affairs and External Trade was Peter Shanel Agovaka in 2024 and 2025 (the successor of
+    May 2026 is not stated in the sources read).
 
 - iso3: SLE
   iso2: SL
@@ -5082,7 +5107,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1989-08-21}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, International Cooperation and External Trade (mfaicet.gov.vu)', url: 'https://mfaicet.gov.vu/', type: mfa, lang: [en]}
+    - {label: Prime Minister's Office (pmo.gov.vu), url: 'https://pmo.gov.vu/en/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: both sites answered 200 to a request with a browser User-Agent and declare
+    lang="en-gb" (the texts are English, with some French; Vanuatu's official languages are Bislama, English and
+    French). The Ministry's older address mfaet.gov.vu did not answer. The Prime Minister is Jotham Napat since
+    11 February 2025 (Charlot Salwai before, from 6 October 2023; Wikipedia, read); the Foreign Minister is named
+    differently by the sources read (Marc Ati in August 2025; Matai Seremaiah on Wikipedia's page of the Prime
+    Minister of Vanuatu). The recognition date (1989-08-21, A/78/846 annex) has no document of the Government of
+    Vanuatu behind it online, so recognitions.csv has no row (R21, docs/10 B-635).
 
 - iso3: WSM
   iso2: WS
