@@ -1,0 +1,190 @@
+# Coverage record for Ukraine (docs/03 §6). P-21 light protocol, session T-P21-05, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the President's, the Ministry of Foreign Affairs' and the Cabinet's sites (president.gov.ua and mfa.gov.ua answer a scripted request with
+#   HTTP 403 and their Wayback captures are the 403 page; kmu.gov.ua answers a CAPTCHA to a scripted request but its English home page has a Wayback capture), the
+#   General Debate statements (gadebate.un.org: the 79th session's file, the 80th (a PDF whose font encoding gives no text, read by OCR) and the 81st (a print of the
+#   President's site)), the IISS Shangri-La Dialogue's transcript of 2 June 2024 (archived), UNRWA's donor tables, the generated events and the structured tables; web
+#   searches in English per indicator group (Ukrainian-language searches returned the Government's own pages, which cannot be read by a script). Time: about 20 minutes.
+# Statements read and not filed as B9: the President's answer of 2 June 2024 at the Shangri-La Dialogue (a call to end the conflict, 'will do everything for Israel to stop, to end
+#   this conflict', in the organiser's transcript and in the Kyiv Independent: no source of kind official, which B9 requires: lead_20261006_UKR_1); his General Debate statements
+#   of 24 September 2025 ('everything happening in Gaza remains without a way out'; 'hostages still haven't been freed. They must be freed'; no call) and of 2024 and 2026 (no passage on Gaza).
+country: UKR
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Ukraine to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier UKR
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Ukraine from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer UKR
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on 5 and abstention on 7 of the 12 qualifying votes. The Ministry''s releases on the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Ukraine filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Ukraine
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Ukraine
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of the President, the Prime Minister or the Foreign Minister on executing the warrants of 21 November 2024 was found.
+    queries: &id001
+    - Ukraine ICC arrest warrant Netanyahu Sybiha OR Zelensky position execute
+    - Україна ордер МКС Нетаньягу позиція МЗС
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (the Israeli Foreign Minister visited Kyiv on 22 and 23 July 2025; he is not under warrant).
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Ukraine has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Ukraine row. The registry dates the recognition 19 November 1988 (A/78/846 annex); the state''s own document was not found (president.gov.ua
+      and mfa.gov.ua cannot be read by a script). The President''s answer of 2 June 2024 (''Ukraine recognises two states, Israel and Palestine'', archived transcript) restates the recognition
+      without a date and is not a state document (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher.'
+  B9:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No B9 event filed. The President''s answer of 2 June 2024 at the Shangri-La Dialogue (call tier, +2, decayed to zero) rests on the organiser''s transcript and on a press report only;
+      B9 requires a source of kind official or official-video (the President''s site answers HTTP 403): lead_20261006_UKR_1. The General Debate statements of 25 September 2024 and of September
+      2026 have no passage on Gaza; that of 24 September 2025 (''everything happening in Gaza remains without a way out''; the hostages ''must be freed'') has no call for a ceasefire or an end
+      of the blockade; the Foreign Minister''s statements found, as search excerpts of the Ministry''s pages read, welcome the Gaza peace breakthrough and the Saudi and Turkish roles and call
+      for no ceasefire.'
+    queries:
+    - Zelensky Gaza ceasefire statement UN General Assembly Sybiha Gaza humanitarian
+    - Sybiha Gaza statement Ukraine Foreign Minister Gaza welcomes OR urges OR condemns hostages humanitarian
+    - Зеленський Газа припинення вогню заява Сибіга Газа гуманітарна
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No B10 event filed. The President's statement of 7 October 2023 (Telegram, press) that 'Israel's right to defence is indisputable' states the right of self-defence alone and is not archivable
+      (lead_20261006_UKR_2); at the Shangri-La Dialogue (2 June 2024, archived) he paired it with respect for international law and humanitarian aid for Gaza.
+    queries:
+    - Zelensky Israel Hamas attack statement October 2023 right to defend Ukraine stands with Israel
+    - Україна підтримка Ізраїль право на оборону Зеленський 7 жовтня 2023
+  B11:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No sanction of Israeli settlers or ministers by Ukraine was found (Ukraine is not an EU member; the Council's listings do not apply).
+    queries:
+    - Ukraine sanctions Israeli settlers West Bank national measure
+    - Україна санкції поселенці Західний берег
+  B12:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No recall, downgrade or severance was found; the Israeli Foreign Minister's visit to Kyiv (22 and 23 July 2025) and the intergovernmental commission of 23 July 2025 point the other way.
+    queries:
+    - Ukraine ambassador Israel recalled OR downgrade relations Israel Ukraine 2024 2025
+    - Україна посол Ізраїль відкликання відносини
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No review or suspension of the Ukraine-Israel free trade agreement (concluded before the war) was found; Ukraine is not an EU member.
+    queries:
+    - Ukraine Israel free trade agreement review OR suspend 2024 2025
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No governmental instrument with Israel signed since October 2023 that meets R18 was found. Not filed: the protocol setting out priorities that the first meeting of the Intergovernmental
+      Commission on Trade and Economic Cooperation since the full-scale war signed in Kyiv on 23 July 2025 (the Cabinet''s release answers a CAPTCHA and was read through search excerpts; lead_20261006_UKR_3):
+      a protocol of a pre-existing commission is an implementing arrangement (R18), and the strategic dialogue on the Iranian threat that the two Foreign Ministers agreed on the same days is a
+      statement, not a signed instrument.'
+    queries:
+    - Ukraine Israel agreement signed 2025 Sybiha Saar memorandum cooperation
+    - Україна Ізраїль підписали меморандум угода 2024 2025 співпраця
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: no Government flow of Ukraine to the oPt plans (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No announcement of a suspension of UNRWA funding was found: Ukraine is not on the lists of states that paused funding in January 2024 and has no row in UNRWA''s donor tables.'
+    queries:
+    - Ukraine UNRWA funding suspended January 2024 Ukraine contribution UNRWA
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No row of Ukraine in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Ukraine
+  D4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No medical-evacuation programme or field hospital for Gaza was found. The President said on 2 June 2024 that Ukraine was ready to provide humanitarian aid to Gaza; no delivery, hospital
+      or evacuation was documented in a source read.
+    queries:
+    - Ukraine Gaza humanitarian aid medical evacuation Ukrainian government
+    - Україна гуманітарна допомога Газа евакуація пацієнтів
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Україна візи палестинці Газа біженці рішення Кабмін
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

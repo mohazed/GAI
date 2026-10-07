@@ -1,0 +1,191 @@
+# Coverage record for the Dominican Republic (docs/03 §6). P-21 light protocol, session T-P21-08, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' site (mirex.gob.do, 200: its site search for Israel, Gaza and Palestina, the news items and the treaties database), the Presidency's site (presidencia.gob.do, 200),
+#   the General Debate statements of the 78th to 80th sessions (gadebate.un.org; Spanish files, no passage on Gaza; the 81st delivered on 23 September 2026 has no file yet), the Foreign Minister's statement to the Security Council
+#   of January 2025, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 25 minutes.
+# Statements read and not filed as B9: the Ministry's releases (no named speaker, R3) and the Foreign Minister's statement of January 2025 (welcomes the ceasefire, no call).
+country: DOM
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier the Dominican Republic
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer the Dominican Republic
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 and abstain on 1 of the 12 qualifying votes (A/RES/ES-10/24 of 18 September 2024, on the Court''s advisory opinion). The statements on the votes
+      were not read; the Ministry''s release of 14 May 2024 explains the yes vote of 10 May 2024 (A/RES/ES-10/23) as consistent with the country''s long-standing position.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    note: The Dominican Republic is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - República Dominicana Abinader Gaza cese al fuego Israel discurso Asamblea General ONU
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or the Foreign Minister on executing the warrants of 21 November 2024 was found (the Dominican Republic is a State Party to the Rome Statute; the Ministry's
+      site, searched for Gaza, Israel and Palestine, has no release on the warrants).
+    queries:
+    - República Dominicana Corte Penal Internacional Netanyahu orden de arresto cancillería posición Álvarez
+    - mirex.gob.do búsqueda "Israel", "Gaza", "Palestina"
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found (President Abinader met Israel''s President Isaac Herzog in San José on 9 May 2026 at the Costa Rican inauguration:
+      the President of Israel is not under a warrant).'
+    queries:
+    - República Dominicana Corte Penal Internacional Netanyahu orden de arresto cancillería posición Álvarez
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: The Dominican Republic has imposed no sanctions on ICC officials (none found).
+    queries:
+    - República Dominicana Corte Penal Internacional Netanyahu orden de arresto cancillería posición Álvarez
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the pre-existing standing state (+3), relations established with the State of Palestine by the joint communiqué of Sharm el Sheikh signed on 15 July
+      2009 by President Leonel Fernández and President Mahmoud Abbas (the Ministry''s treaties database, src_20090715_mirex_comunicado-relaciones-palestina, archived; the row was added in this
+      session, R21, flagged: a communiqué establishing diplomatic relations, which the Ministry''s release of 14 May 2024 reads as the 2009 step). The registry dates the recognition 2009-07-15.'
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: no statement of the President or the Foreign Minister with an official transcript names Gaza in a call or a violation. Read and not filed: the Ministry''s releases of 14 May
+      and 4 June 2024 and 9 and 14 October 2025 (they call for a ceasefire, urge Israel and Hamas to accept the US plan, welcome the ceasefire of October 2025; no named speaker, R3); the Foreign
+      Minister''s statement to the Security Council on Haiti, published on 24 January 2025 (it welcomes the ceasefire and hopes for the release of the remaining hostages, no call: src_20250124_mirex_alvarez-consejo-seguridad);
+      the President''s General Debate statements of the 78th to 80th sessions (no passage on Gaza or Palestine) and of the 81st (23 September 2026, read in a press copy: conflicts named only for
+      their effect on fuel prices; the UN site has no file yet).'
+    queries:
+    - República Dominicana Abinader Gaza cese al fuego Israel discurso Asamblea General ONU
+    - Abinader Gaza "alto al fuego" OR "cese al fuego" Palestina Israel presidente dominicano declaración 2025
+    - mirex.gob.do búsqueda "Gaza" y "Palestina" (sala de prensa)
+    - site mirex.gob.do Gaza cese al fuego canciller Roberto Álvarez Consejo de Seguridad
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of documented violations by the President or the Foreign Minister was found: the Ministry''s releases condemn the attack of
+      7 October 2023 and call for a ceasefire and the release of hostages (no named speaker), and the President''s post of 7 October 2023 (as Diario Libre reports it, not archived) condemns Hamas
+      and hopes that ''diplomacy is preferred to war''. The Ministry''s release of 14 October 2025 credits President Trump''s leadership: not support for Israel''s conduct.'
+    queries:
+    - Abinader Netanyahu OR "Israel" "derecho a defenderse" República Dominicana gobierno condena ataque Hamás 7 octubre 2023 comunicado
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by the Dominican Republic was found (not an EU member).
+    queries:
+    - Dominican Republic Israel recall ambassador OR sanctions settlers OR suspend agreement Gaza war government
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: relations with Israel date from 1968 and the Ministry''s release of 14 May 2024 calls Israel ''un aliado''; the Ministry''s site carries
+      releases on the end of mission of an Israeli ambassador and on the credentials of his successor (titles read).'
+    queries:
+    - Dominican Republic Israel recall ambassador OR sanctions settlers OR suspend agreement Gaza war government
+    - mirex.gob.do búsqueda "Israel" (embajador)
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (the Dominican Republic has none).
+    queries:
+    - Dominican Republic Israel recall ambassador OR sanctions settlers OR suspend agreement Gaza war government
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the agreement of 31 October 2024 with MASHAV, Israel''s development cooperation agency, on a technological education project (-10, standing; flagged as a technical instrument,
+      R18). The other Israeli instruments in the Ministry''s treaties database pre-date the war (air services 2019, Achva Academic College 6 September 2023, CEDOPEX 1997, ASCA 2010). Not filed:
+      the meeting of 9 May 2026 with Israel''s President (no instrument).'
+    queries:
+    - República Dominicana Israel firman acuerdo cooperación 2025 canciller Roberto Álvarez embajador Raslan Abu Rukun
+    - mirex.gob.do búsqueda "Israel" (tratados)
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of the Dominican Republic to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; the Dominican Republic has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - República Dominicana evacuación médica niños Gaza OR visa humanitaria palestinos OR UNRWA contribución gobierno dominicano
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of the Dominican Republic in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Dominican Republic
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - República Dominicana evacuación médica niños Gaza OR visa humanitaria palestinos OR UNRWA contribución gobierno dominicano
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - República Dominicana evacuación médica niños Gaza OR visa humanitaria palestinos OR UNRWA contribución gobierno dominicano
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

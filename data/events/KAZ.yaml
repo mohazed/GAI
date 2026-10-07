@@ -1,0 +1,224 @@
+# Hand-authored events for Kazakhstan (P-21 light protocol, T-P21-01, 2026-10-05).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers for B9/B10: President Kassym-Jomart Tokayev (head of state, R3), Prime Minister, Minister of Foreign Affairs.
+
+- id: evt_2023_12_31_KAZ_D3
+  revision: 1
+  country: KAZ
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: 'Increased tier (+8): Kazakhstan''s 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (USD 1,010,000 in 2023 against USD 10,000 in 2022)
+    (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Kazakhstan contributed more to UNRWA in 2023 than in 2022, according to UNRWA donor tables.
+    fr: La contribution du Kazakhstan à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: Kazakhstan 10,000 0 10,000 0 0 0 0 0 0 1,000,000 1,010,000 54
+    quote_lang: en
+    locator: line 71
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Kazakhstan 10,000 0 10,000 0 0 0 10,000 91
+    quote_lang: en
+    locator: line 102
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Line 71 of the 2023 table and line 102 of the 2022 table re-read: USD 1,010,000 in 2023 against USD 10,000 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides
+        (evt_2024_12_31_KAZ_D3).'
+    notes: 'UNRWA''s donor table for 2023 gives USD 1,010,000 against USD 10,000 in 2022: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022
+      (as for Norway, Azerbaijan and New Zealand, docs/10 B-445). UNRWA''s news release of November 2023 reports USD 1 million from the Government (a lead, not archived). No suspension of Kazakhstan''s
+      funding found (D2 none-found). It ends on 2024-12-31, from which the 2024 table decides.'
+
+- id: evt_2024_12_31_KAZ_D3
+  revision: 1
+  country: KAZ
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: 'Increased tier (+8): Kazakhstan''s 2024 contribution to UNRWA (USD 50,000) exceeds its 2022 contribution (USD 10,000) in UNRWA''s donor tables.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Kazakhstan contributed more to UNRWA in 2024 than in 2022, according to UNRWA donor tables.
+    fr: La contribution du Kazakhstan à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: Kazakhstan 50,000 50,000 - - 50,000 50,000 - - - - - - - - - - - - - - 50,000 99 50,000 97
+    quote_lang: en
+    locator: line 151
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Kazakhstan 10,000 0 10,000 0 0 0 10,000 91
+    quote_lang: en
+    locator: line 102
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Line 151 of the 2024 table and line 102 of the 2022 table re-read: USD 50,000 in 2024 against USD 10,000 in 2022. D3 increased agrees (by the table as written, a small amount in both years).'
+    notes: Dated 31 December 2024, the end of the second calendar year whose contribution in UNRWA's table exceeds 2022. The amounts are small (USD 50,000 against USD 10,000); the rule is the nominal comparison
+      (docs/02 §2 D3), applied as for every country. The 2025 table was not archived, so the state is left open.
+
+- id: evt_2025_09_23_KAZ_B9
+  revision: 1
+  country: KAZ
+  indicator: B9
+  type: repeatable
+  date: '2025-09-23'
+  points: 2
+  points_rationale: 'Formal call for the end of restrictions on aid (+2): unhindered humanitarian access and full protection of civilians are called for in compliance with international humanitarian law;
+    no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President told the General Assembly that the humanitarian crisis in Gaza could not be ignored and called for full protection of all civilians and unhindered humanitarian access.
+    fr: Le président a déclaré à l'Assemblée générale que la crise humanitaire à Gaza ne pouvait être ignorée et a appelé à la pleine protection de tous les civils et à un accès humanitaire sans entrave.
+  actor:
+    en: President
+    fr: Président
+    name: Kassym-Jomart Tokayev
+  evidence:
+  - source: src_20250923_akorda_tokayev-unga80-statement
+    quote: The humanitarian crisis in Gaza has reached a disastrous scale that cannot be ignored.
+    quote_lang: en
+    locator: line 39
+  - source: src_20250923_akorda_tokayev-unga80-statement
+    quote: Kazakhstan calls for full protection of all civilians, and unhindered humanitarian access in strict compliance with international humanitarian law.
+    quote_lang: en
+    locator: line 41
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: the humanitarian crisis in Gaza has reached a disastrous scale; Kazakhstan calls for protection of civilians and unhindered humanitarian access in compliance with international humanitarian
+        law; no ceasefire call, no named violation. Call tier (+2) agrees, flagged as a reading of the aid-access clause.'
+    notes: 'General Debate statement of the President, the head of state (B9 speaker under R3, docs/calibration/README.md). The President does not call for a ceasefire or name a violation: the call is for
+      unhindered humanitarian access and the protection of civilians, read as the end-of-restrictions-on-aid call (+2), as for Australia''s Minister on 23 September 2026. Other words of the President on
+      Gaza (3 June 2024: the humanitarian situation ''approaching catastrophic''; 9 October 2025: support for the ceasefire agreement) are third-person press accounts or carry no call, and are not filed.
+      Save Page Now failed: recorded from the Wayback capture 20250923235950.'
+
+- id: evt_2026_01_27_KAZ_C2
+  revision: 1
+  country: KAZ
+  indicator: C2
+  type: standing
+  date: '2026-01-27'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): a signed memorandum of cooperation in public diplomacy with the Israeli Ministry of Foreign Affairs (docs/calibration/README.md R18, one event per instrument).'
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Minister of Foreign Affairs a memorandum of understanding on cooperation in public diplomacy.
+    fr: Le ministre des Affaires étrangères a signé avec le ministre israélien des Affaires étrangères un mémorandum d'entente sur la coopération en matière de diplomatie publique.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Yermek Kosherbayev
+  evidence:
+  - source: src_20260127_qazinform_kazakhstan-israel-visa-memorandum
+    quote: The documents included memorandums of intent on a potential agreement to waive visa requirements for holders of national passports, a memorandum of understanding on cooperation in public diplomacy,
+      and a separate document on cooperation in the training of diplomatic personnel.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260127_astanatimes_kazakhstan-israel-memoranda
+    quote: Following the 12th round of political consultations between the two countries’ foreign ministries, the sides signed memoranda of cooperation on diplomatic training and public diplomacy, as well
+      as a memorandum of intent to negotiate a visa-exemption agreement for holders of national passports, aimed at boosting tourism exchanges.
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: both reports give the signing on the visit of 27 January 2026 of a document on public diplomacy between the two foreign ministers. Two publishers; C2 per instrument (R18) agrees;
+        confidence corroborated, flagged.'
+    notes: 'The Ministry of Foreign Affairs release of 27 January 2026 (gov.kz/memleket/entities/mfa/press/news/details/1148898) is the primary; the portal serves its texts by script and its HTML holds
+      none, so it cannot be archived as text (docs/10 B-501). Two press reports of different publishers (Qazinform, the national news agency; The Astana Times) give the signing on 27 January 2026 after
+      the 12th round of political consultations, with Israel''s Foreign Minister on an official visit to Astana: `corroborated` (docs/06 §1 rule 1), flagged; promote to confirmed if the Ministry''s text,
+      or Israel''s, is archived. One event per instrument (R18); the memorandum of intent to negotiate a visa-exemption agreement is not a cooperation instrument and is not filed. The two outlets are both
+      Kazakh and state-linked: their independence is limited (flagged). Cooperation in public diplomacy.'
+
+- id: evt_2026_01_27_KAZ_C2_2
+  revision: 1
+  country: KAZ
+  indicator: C2
+  type: standing
+  date: '2026-01-27'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): a signed memorandum of cooperation in diplomatic training with the Israeli Ministry of Foreign Affairs (docs/calibration/README.md R18, one event per instrument).'
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Minister of Foreign Affairs a memorandum on cooperation in the training of diplomatic personnel.
+    fr: Le ministre des Affaires étrangères a signé avec le ministre israélien des Affaires étrangères un mémorandum sur la coopération en matière de formation du personnel diplomatique.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Yermek Kosherbayev
+  evidence:
+  - source: src_20260127_qazinform_kazakhstan-israel-visa-memorandum
+    quote: The documents included memorandums of intent on a potential agreement to waive visa requirements for holders of national passports, a memorandum of understanding on cooperation in public diplomacy,
+      and a separate document on cooperation in the training of diplomatic personnel.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260127_astanatimes_kazakhstan-israel-memoranda
+    quote: Following the 12th round of political consultations between the two countries’ foreign ministries, the sides signed memoranda of cooperation on diplomatic training and public diplomacy, as well
+      as a memorandum of intent to negotiate a visa-exemption agreement for holders of national passports, aimed at boosting tourism exchanges.
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read: both reports give the signing on the visit of 27 January 2026 of a document on diplomatic training between the two foreign ministers. Two publishers; C2 per instrument (R18) agrees;
+        confidence corroborated, flagged.'
+    notes: 'The Ministry of Foreign Affairs release of 27 January 2026 (gov.kz/memleket/entities/mfa/press/news/details/1148898) is the primary; the portal serves its texts by script and its HTML holds
+      none, so it cannot be archived as text (docs/10 B-501). Two press reports of different publishers (Qazinform, the national news agency; The Astana Times) give the signing on 27 January 2026 after
+      the 12th round of political consultations, with Israel''s Foreign Minister on an official visit to Astana: `corroborated` (docs/06 §1 rule 1), flagged; promote to confirmed if the Ministry''s text,
+      or Israel''s, is archived. One event per instrument (R18); the memorandum of intent to negotiate a visa-exemption agreement is not a cooperation instrument and is not filed. The two outlets are both
+      Kazakh and state-linked: their independence is limited (flagged). Cooperation in diplomatic training.'
+

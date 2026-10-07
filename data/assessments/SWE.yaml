@@ -1,0 +1,302 @@
+# Coverage record for Sweden (docs/03 §6). P-D research session, wave 4, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-282): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Norway and the wave-3 countries). The protocol's searches
+# (docs/06 §4 step 3) were run as (1) the Government's own site search (regeringen.se/sokresultat,
+# every result page, all document types) for Gaza, Israel, Palestina, UNRWA, Västbanken,
+# bosättare, Netanyahu, "Internationella brottmålsdomstolen", "Internationella domstolen",
+# krigsmateriel, associeringsavtalet, vapenvila, tvåstatslösning, Smotrich, Ben-Gvir, evakuering,
+# Hamas, Rafah, folkmord and sanktioner (about 1,700 results, 555 distinct pages since
+# 2023-10-07), with reads of the matching statements, speeches, op-eds and press releases;
+# (2) the Riksdag's open data (data.riksdagen.se): every written-question answer (frs) and
+# interpellation (ip) since 2023-10-07 matching Gaza, Israel, Palestina, UNRWA, Västbanken,
+# Netanyahu, brottmålsdomstolen, ICC, krigsmateriel, associeringsavtalet, bosättare,
+# bosättningar, folkmord, F-35, Smotrich, Rafah, Hamas, "Internationella domstolen" and vapenvila
+# (598 documents; 177 read by title relevance), and the chamber record of the interpellation
+# debate on the ICC warrants (Protokoll 2024/25:62); (3) the Wayback listings of regeringen.se and
+# government.se news sections since 2023 (41,211 addresses) filtered by keyword; (4) Sida's news
+# pages on UNRWA; (5) AP7's exclusion list of December 2025 and the Wayback listing of the AP
+# funds' Council on Ethics (etikradet.se refused direct requests, HTTP 403). English searches on
+# government.se were refused (HTTP 403, bot check); English joint statements were found through
+# the Wayback listing and the Swedish versions on regeringen.se. Not searched: the press, the
+# Prosecution Authority and police, the Swedish Courts, the ISP licence statistics, the
+# Riksdag's other chamber records, Sámi. Each `queries` entry names the search or listing used.
+country: SWE
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Government states that in practice no licences for exports of military equipment to
+      Israel have been granted since the 1950s, apart from follow-on deliveries of materiel not
+      classed as military equipment at the original sale, and none after 10 October 2023 (written
+      answers of 12 June 2024, 20 November 2024 and 21 May 2025).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (Sweden's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Sweden's own reports: HS 93 exports to Israel USD 420,917 in 2023 (A2 −3 from
+      2024-03-06 to 2025-03-25) and USD 379 in 2024; none in 2022 and 2025; Israel's mirror HS 93
+      imports USD 1,000 (2022), 15,000 (2023) and 8,000 (2025). A2 is 0 from 2025-03-25. HS 8526
+      (own USD 341,795–799,598 a year; mirror USD 647,000–825,000) is not counted without a
+      confirming document (docs/02 §2); none was found, so no row was added to
+      a2_confirmed_military.csv. Disagreement to report: the Government states that no licence for
+      military equipment to Israel has been granted since the 1950s (except follow-on deliveries
+      of materiel not then classed as military equipment) and none after 10 October 2023, while the
+      2023 customs value under HS 93 gives −3; HS 93 also covers sporting and hunting arms and
+      ammunition, which are not military equipment under Swedish export control. The generated
+      value is kept (docs/10 B-284).
+    queries:
+      - data.riksdagen.se frs (krigsmateriel, Israel) — answers 2023/24:960, 2024/25:447, 2024/25:944, 2024/25:1156
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Sweden is not an F-35 partner and no Swedish company was found named as an F-35 part or
+      maintenance supplier in a national statement or in A/HRC/59/23 (archived on data/wave-1;
+      it names Volvo Group among heavy-machinery suppliers, not the F-35). No Riksdag question on
+      F-35 parts was found.
+    queries:
+      - data.riksdagen.se frs and ip (F-35)
+      - regeringen.se search (F-35 not among the search terms; krigsmateriel)
+      - A/HRC/59/23 text (Swed*)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Minister of Defence told the Riksdag (20 December 2023, 17 September 2025) that
+      defence procurement follows EU procurement law and that no rule allows excluding an Israeli
+      supplier as such (a contract with Elbit Systems Sweden; purchases of Israeli materiel;
+      answers read, not archived).
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with
+      Israel related to the Gaza campaign found. Procurement from Israeli suppliers is an A4 matter
+      (SIPRI), not A5.
+    queries:
+      - regeringen.se search (Israel, krigsmateriel)
+      - data.riksdagen.se frs and ip (Israel, krigsmateriel, Elbit)
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No government or ISP decision in the window suspending or refusing a class of licences to
+      Israel found. Sweden's restriction is a pre-existing practice: "I praktiken har inga
+      tillstånd lämnats sedan 1950-talet" (no licences in practice since the 1950s), with the
+      addition "Inget tillstånd har utfärdats efter den 10 oktober 2023" (answer 2024/25:447, 20
+      November 2024, read, not archived; answer 2023/24:960, src_20240612_riksdagen_svar-israels-
+      attacker-gaza). Read as Norway's and Belgium's pre-existing policies (docs/10 B-278 (2),
+      B-281 (1)). The Government said an arms embargo is not on its agenda at EU level (same
+      answer of 12 June 2024).
+    queries:
+      - data.riksdagen.se frs (krigsmateriel, Israel, vapenexport)
+      - regeringen.se search (krigsmateriel)
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree covering exports to and imports from Israel found; the Government opposes boycotts and trade sanctions (answers of 12 June and 20 November 2024).
+    queries:
+      - regeringen.se search (krigsmateriel, sanktioner)
+      - data.riksdagen.se frs (vapenexport, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No refusal of transit or port calls for arms shipments to Israel found.
+    queries:
+      - regeringen.se search (Israel, krigsmateriel)
+      - data.riksdagen.se frs and ip (Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstain on ES-10/21,
+      yes on ES-10/22, abstain on ES-10/23, abstain on ES-10/24, yes on ES-10/25, ES-10/26 and
+      79/232. The Government's record agrees where it speaks: the Minister's answer of 20
+      December 2023 states that Sweden voted yes on 12 December 2023 (ES-10/22); interpellation
+      2024/25:32 concerns Sweden's abstention on ES-10/24; GA/12626 lists Sweden among the
+      abstaining delegations that explained concerns. No disagreement. Later votes have no rows
+      (docs/10 B-199 (1)); the Minister's answers of 29 December 2025 (2025/26:323 and 325) state
+      that Sweden voted on 5 December 2025 for the two UNRWA resolutions (A/RES/80/78 is a
+      qualifying vote), which will be a yes row once imported.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Sweden has not filed a declaration of intervention in case 192 (the ICJ's list, docs/06 §8
+      seed). The Government states that the ICJ's provisional measures are binding (answers of 12
+      June 2024 and 24 September 2025).
+    queries:
+      - regeringen.se search ("Internationella domstolen")
+      - data.riksdagen.se frs and ip ("Internationella domstolen", folkmord)
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement rejecting the ICJ orders or their binding character found; the Government calls them binding.
+    queries:
+      - regeringen.se search ("Internationella domstolen")
+      - data.riksdagen.se frs and ip ("Internationella domstolen")
+  B5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2025_01_24_SWE_B5 (the Minister for Foreign Affairs in the Riksdag, 24 January 2025).
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No immunity or refusal statement, and no visit of a person under warrant, found.
+    queries:
+      - regeringen.se search (Netanyahu, "Internationella brottmålsdomstolen")
+      - data.riksdagen.se frs and ip (Netanyahu, brottmålsdomstolen, ICC)
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: Sweden has not sanctioned ICC officials; the Minister stated concern at the US sanctions and support for activating the EU blocking statute (answer of 7 May 2025, read, not archived).
+    queries:
+      - data.riksdagen.se frs (brottmålsdomstolen, ICC)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv: Sweden recognised the State of Palestine on 30 October 2014
+      (the Government's release of that day, archived from the Wayback capture of 18 September
+      2016 as src_20141030_regeringen_erkanner-palestina; row added by this session, docs/10
+      B-192), so B8 is the pre-existing tier (+3) from 2023-10-07. The present Government calls the
+      2014 decision premature but has not withdrawn it (answers of 19 and 25 October 2023, read,
+      not archived).
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Twelve events (2024-02-14 to 2026-02-18): the foreign policy statements of 2024 and 2026,
+      the statements of government policy of 2024 and 2025, the Minister's statements of 11 and 19
+      May 2025, the op-eds of 23 May and 4 September 2025, the joint statement of 22 July 2025, the
+      General Assembly statement of 25 September 2025 and two written answers to the Riksdag.
+      Other written answers repeating the same calls (for example 11 September 2024, 9 October
+      2024, 21 May 2025, 3 September 2025, 3 December 2025, 15 June 2026) were not filed as
+      separate events; the B9 cap is reached in the trailing year either way.
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement of unconditional support or denial found. The Minister of Defence wrote on 20
+      December 2023 that Israel has the right to defend itself against Hamas "i enlighet med
+      folkrätten" and that it is natural for Israeli defence companies to contribute to Israel's
+      defence (answer 2023/24:396, read, not archived); qualified by international law, so not
+      read as B10.
+    queries:
+      - regeringen.se search (Israel, Gaza)
+      - data.riksdagen.se frs (Israel, Elbit)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No Swedish listing: Sweden has no law allowing national sanctions against third countries (answer of 14 July 2026, read, not archived). The Government says it was a driving force for the EU settler listings (April and July 2024, May 2026) and pushes for EU sanctions on Israeli ministers, which were not adopted. EU settler listings are not filed until P-15 decides how EU listings adopted by unanimity count (docs/10 B-229 (3) on data/wave-2, as for Belgium). P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_SWE_B11, evt_2024_07_15_SWE_B11 and evt_2026_05_28_SWE_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "regeringen.se search (sanktioner, bosättare, Smotrich, Ben-Gvir)"
+      - "data.riksdagen.se frs (bosättare, sanktioner)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No recall, downgrade or severance found. The Ministry summoned Israel's ambassador on 27 May 2025 (statement read, not archived), which is not a B12 measure.
+    queries:
+      - regeringen.se search (Israel, ambassadör)
+  C1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2025_05_20_SWE_C1 (review tier). Sweden asked with the Netherlands in September 2025 for suspension of the trade part; no suspension was adopted.
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new agreement with Israel signed in the window found.
+    queries:
+      - regeringen.se search (Israel; överenskommelser och avtal)
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (own reporting): 2022 baseline USD 576.0 million; r = 0.890 (2023),
+      0.933 (2024) and 1.050 (2025): C3 −3 on the 2022 report, 0 from 2024-03-06, −3 from
+      2025-03-25 and −3 from 2026-05-09 (T ≥ USD 100 million). Israel's mirror data show a larger
+      2022 baseline (USD 1,296 million). No government statement on trade volumes found; no
+      disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No labelling or ban regulation adopted. On 21 April 2026 the Government proposed to the
+      European Commission higher tariffs and export certificates for settlement products (release
+      read, not archived), a proposal, not a measure; the Minister stated on 8 April 2026 that the
+      Government does not intend a national ban. West Bank measures would be tagged `west-bank`.
+    queries:
+      - regeringen.se search (Västbanken, bosättare)
+      - data.riksdagen.se frs (bosättningar, varor)
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No exclusion decision by an AP fund in the window citing Gaza or the occupied territories
+      found. AP7's list of 8 December 2025 includes Elbit Systems (criterion not tied to a date in
+      the list), and the AP funds' Council on Ethics lists a recommended exclusion of Elbit, both
+      from before the window as far as found; etikradet.se refused direct requests (HTTP 403).
+    queries:
+      - ap7.se exclusion list (December 2025) and news pages
+      - Wayback listing of etikradet.se since 2023
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No procurement exclusion found; the Minister of Defence stated that Swedish procurement law allows no exclusion of an Israeli supplier as such (answer of 17 September 2025).
+    queries:
+      - data.riksdagen.se frs and ip (upphandling, Israel)
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: +12 in the window 2025-09…2026-08 (and +12 from February 2026). The
+      Government reports over SEK 2.4 billion of humanitarian support to Gaza since October 2023
+      (its page of 28 July 2026), consistent with the upper tiers. No disagreement.
+  D2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_01_26_SWE_D2 (Sida's pause, to 9 March 2024) and evt_2024_12_20_SWE_D2 (end of core support, no end).
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_03_09_SWE_D3 (restored tier, 9 March to 20 December 2024).
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No Swedish medical-evacuation programme or field hospital found. The Government has not
+      received patients from Gaza; it donated medical supplies to Egypt through the EU Civil
+      Protection Mechanism, seconded staff to EUBAM Rafah and allocated SEK 9 million to the
+      Egyptian Red Crescent, partly for medical evacuations (answers of 11 September 2024, 9 October
+      2024, 21 August 2025, 3 and 10 September 2025; release of 19 August 2025) — funding and
+      supplies, not a Swedish programme (docs/10 B-283 (3)). The health staff sent to the region in
+      March 2026 supported Swedish citizens.
+    queries:
+      - data.riksdagen.se frs and ip (patienter från Gaza, vård, evakuering)
+      - regeringen.se search (evakuering, Gaza)
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No visa or protection instrument for Gaza residents found; the Minister for Migration referred to the ordinary asylum rules (answer of 15 November 2023).
+    queries:
+      - data.riksdagen.se frs (palestinier skydd, flyktingar)
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No opened investigation or prosecution concerning Gaza found in the Government's pages or Riksdag answers; the Prosecution Authority and police were not searched.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No ban on Palestine solidarity protests found in the Government's pages or Riksdag answers; police permit decisions were not searched.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found; court and prosecution records were not searched.

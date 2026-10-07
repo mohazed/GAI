@@ -1,0 +1,297 @@
+# Coverage record for the United Mexican States (docs/03 §6). P-D research session, wave 7, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-366): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Colombia and Chile). Sources read, read only:
+# - www.gob.mx answers scripted requests with a JavaScript proof-of-work challenge page (no CAPTCHA
+#   was shown or solved); the pages were read in the built-in browser, which loads the site as any
+#   visitor's browser does, and archived through Save Page Now.
+# - Secretaría de Relaciones Exteriores (gob.mx/sre): the press listing was read in full by title
+#   from 28 September 2026 back to May 2023 (about 1,270 items, of which 999 from 30 September 2023),
+#   filtered for Palestina, Gaza, Israel, Medio Oriente, genocidio, UNRWA, Corte Internacional, Corte
+#   Penal, CIJ, CPI, Netanyahu, Hamás, Rafah, Cisjordania, flotilla, alto al fuego, cese al fuego,
+#   Franja, humanitaria, Asamblea General, Consejo de Seguridad, Nakba, credenciales, reconoce; about
+#   25 items read in full. The Wayback CDX index of gob.mx/sre/prensa/ (7,585 captured addresses) was
+#   filtered the same way.
+# - Presidencia de la República (gob.mx/presidencia): the 1,037 transcripts (versiones
+#   estenográficas) of President Sheinbaum's term, 1 October 2024 to 28 September 2026, were read in
+#   full by script for Gaza, Palestin, Israel, genocid, Netanyahu, flotilla, UNRWA (163 with a match;
+#   the passages spoken by the President or a Secretary read by eye); the 1,247 Presidency press
+#   releases of the same period were read by title.
+# - The ICJ's report to the General Assembly, A/79/4 (documents.un.org), for the intervention.
+# - UNRWA's donor tables for 2022 and 2024 (records on this branch from data/wave-6, B-356).
+# Not readable: the President López Obrador's transcripts (lopezobrador.org.mx answers with a bot
+# challenge, not bypassed; they are not on gob.mx), so no statement of the head of government from
+# 7 October 2023 to 30 September 2024 was read; the ICJ's copy of Mexico's declaration of
+# intervention (every Wayback capture is HTTP 403); gadebate.un.org (bot check; the Foreign
+# Secretary's General Debate addresses of September 2025 and 2026 were read only as the Ministry
+# summarised them). Not searched: press and NGO reports (no leads were read); the Congress and the
+# Diario Oficial de la Federación; the Ministry of National Defence and the Navy (A4, A5); the
+# Ministry of Economy (C1, C2, C4); the migration and refugee authorities (D5); the Fiscalía and the
+# courts (E1–E3); public pension funds (C5).
+country: MEX
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Mexico is a
+      buyer of Israeli equipment, not known as a supplier.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade, fetched in this session (pnpm fetch:comtrade --reporters MEX; Mexico
+      had no rows). Mexico's own data: no HS 93 or 8710 export to Israel in 2022–2025; HS 8526 of
+      USD 1,821 in 2023. Israel's mirror imports from Mexico: HS 93 of USD 3,000 (2023) and 6,000
+      (2025), 0 points under the USD 100,000 tier; HS 8526 of USD 58,000 (2022), 417,000 (2023),
+      1,000 (2024) and 621,000 (2025), not counted: no licence register, parliamentary answer or
+      investigation confirming a military flow was found, and no row was added to
+      a2_confirmed_military.csv. No Mexican document on arms exports to Israel was found in the
+      sources searched.
+    queries:
+      - gob.mx/sre press listing (Israel)
+      - Presidency transcripts full text (Israel)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Mexico is not a partner, supplier or customer of the F-35 programme; no document naming
+      Mexican companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - gob.mx/sre press listing (Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. The Ministry of National Defence was not searched for orders.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found in the Ministry's listing or the President's
+      transcripts; the defence ministries were not searched.
+    queries:
+      - gob.mx/sre press listing (Israel)
+      - Presidency transcripts full text (Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No decision suspending or refusing a class of export licences to Israel was found.
+    queries:
+      - Presidency transcripts full text (Israel, armas, embargo)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - Presidency transcripts full text (Israel, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - gob.mx/sre press listing (Israel)
+      - Presidency transcripts full text (Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21
+      to ES-10/26 and 79/232. The Ministry's release of 1 November 2023 states that Mexico voted in
+      favour of ES-10/21 on 27 October 2023, which agrees; no Mexican document read contradicts the
+      other rows. The five later votes have no rows (B-199 (1)); no Mexican document read names
+      Mexico's vote on them, and the archived UN press releases name only the states voting against
+      or abstaining, so a yes cannot be told from an absence there.
+  B2:
+    status: not-applicable
+    note: Not a member of the Security Council in the window (set by the build's rule).
+  B3:
+    status: has-events
+    note: >-
+      One event (evt_2024_05_24_MEX_B3): declaration of intervention under Article 63 filed on 24
+      May 2024 (A/79/4, paragraph 231), read as supporting the applicant from the Foreign
+      Secretary's words at the General Debate of 2024 and the President's of 6 October 2025. No
+      withdrawal was found to 28 September 2026; the declaration itself could not be read.
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found;
+      the government welcomed the order of 26 January 2024 (unsigned communiqué of that day).
+    queries:
+      - gob.mx/sre press listing (Corte Internacional de Justicia, CIJ, genocidio)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Mexico is a party to the Rome Statute and, with Chile, referred the situation in Palestine to
+      the ICC on 18 January 2024 (Ministry release; no indicator covers a referral). No statement by
+      the President or the Foreign Secretary on executing the arrest warrants of 21 November 2024
+      was found in the Ministry's listing or in the President's transcripts (none of them mentions
+      the warrants).
+    queries:
+      - gob.mx/sre press listing (Corte Penal, CPI, Netanyahu)
+      - Presidency transcripts full text (Corte Penal, Netanyahu)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no official visit of a person under warrant
+      was found.
+    queries:
+      - Presidency transcripts full text (Netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Mexico has imposed no sanctions on ICC officials.
+    queries:
+      - gob.mx/sre press listing (Corte Penal)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Mexico had no row; the row MEX,2023-06-02 was added citing
+      the President's words of 5 February 2025 that the recognition of the Palestinian State is a
+      position held for years, from before the present governments (the source's excerpt); the day
+      is the registry's (data/countries.yaml, from A/78/846), not read in a Mexican document: +3
+      standing from 2023-10-07. The President later said her government recognised Palestine as a
+      State in full by accrediting its first ambassador (2 October 2025, 5 March 2026, 8 May 2026;
+      the credentials' date was not found in the Presidency's or the Ministry's listings), and the
+      Foreign Secretary told the General Assembly on 25 September 2026 that Mexico "reconoce al
+      Estado de Palestina". Flagged: if the author reads the accreditation as the recognition, B8
+      is +8 from its date and 0 before (docs/10 B-367 (1)).
+  B9:
+    status: has-events
+    note: >-
+      Three events, the President's own words in the Presidency's transcripts (22 September 2025,
+      6 October 2025, 8 May 2026, each a legal characterisation, +5). Not filed (docs/10 B-366 (3)):
+      the Ministry's unsigned communiqués (8 October 2023; 23 January, 26 January, 7 May 2024 on
+      Rafah with a call for a ceasefire and a finding of a serious violation of international
+      humanitarian law; 15 May 2024; 30 July 2024), the addresses of ambassadors at the United
+      Nations (26 October 2023, the Chargée d'affaires calling for a cessation of hostilities), the
+      Foreign Secretary's General Debate address of 28 September 2024 (quoted: "La humanidad se
+      quiebra en Gaza ante la inacción de la comunidad internacional", neither a ceasefire call nor
+      a named violation), the President's words of 2 October 2025 (humanitarian aid must reach Gaza;
+      same week as a filed event), 5 August 2026 ("esta ofensiva inhumana que ha hecho el Estado de
+      Israel", no call or legal characterisation) and 11 October 2024 (condemnation of "las
+      agresiones", no call). President López Obrador's statements (to 30 September 2024) could not be
+      read.
+    queries:
+      - gob.mx/sre press listing (Gaza, Palestina, genocidio, alto al fuego, cese al fuego, Rafah)
+      - Presidency transcripts full text (Gaza, Palestin, genocid)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's conduct in Gaza or denial of documented
+      violations by the President or the Foreign Secretary was found (2 October 2025: "no estamos de
+      acuerdo con esto que hizo el Estado de Israel").
+    queries:
+      - Presidency transcripts full text (Israel)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on Israeli ministers or settler entities by Mexico were found.
+    queries:
+      - gob.mx/sre press listing (Cisjordania, Israel)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Mexico kept its ambassador in Israel: the President said on 2 October 2025 that breaking
+      relations "hasta ahora no se ha planteado", and on 8 October 2025 that the Foreign Secretary
+      was in contact with the flotilla participants through "el embajador de México en Israel". No
+      recall or downgrade was found.
+    queries:
+      - Presidency transcripts full text (romper relaciones, embajador en Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Mexico and Israel have a free trade agreement (in force since 2000); no suspension or review
+      of it was found. The Ministry of Economy was not searched.
+    queries:
+      - gob.mx/sre press listing (Israel)
+      - Presidency transcripts full text (Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No new agreement signed with Israel was found in the Ministry's listing.
+    queries:
+      - gob.mx/sre press listing (Israel)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade, fetched in this session. Mexico's own totals with Israel: USD 1.198
+      billion in 2022, 1.212 billion in 2023 (r = 1.01), 1.359 billion in 2024 (r = 1.13) and 1.575
+      billion in 2025 (r = 1.32); Israel's mirror totals 620.1, 953.3, 482.8 and 1,036.4 million.
+      No Mexican trade document to compare was found.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods was found (would be scoped west-bank, B-32).
+    queries:
+      - gob.mx/sre press listing (Cisjordania, asentamientos)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Mexican public fund was found in the sources searched; the pension
+      funds and the central bank were not searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect was found.
+    queries:
+      - Presidency transcripts full text (Israel)
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv has no Mexican government flow to the oPt appeals of
+      2023–2026 (the build derives the status). No Mexican humanitarian shipment to Gaza was found in
+      the Ministry's listing (its shipments of 2024–2026 went to Cuba, Venezuela, Colombia, Chile,
+      Haiti). Bilateral and in-kind aid is outside FTS (docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Mexico did not suspend funding to UNRWA; the Ministry's release of 30 July 2024 reaffirms
+      Mexico's financial support for UNRWA and its neutrality (read, not archived).
+    queries:
+      - gob.mx/sre press listing (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_MEX_D3): increased tier, a pledge of USD 1,000,000 for 2024 against
+      USD 750,000 for 2022 (UNRWA tables); nothing received by 31 December 2024 (flagged, docs/10
+      B-367 (3)).
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field hospital for Gaza was found. On 10 December 2024 the
+      President referred to the Ministry the request of a Palestinian refugee in Mexico to evacuate
+      15 relatives with refugee recognition from Gaza; no programme followed in the sources read.
+    queries:
+      - Presidency transcripts full text (Gaza)
+      - gob.mx/sre press listing (Gaza, humanitaria)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found (see D4). Consular repatriations of
+      Mexicans from Israel (October 2023) and of the flotilla participants (October 2025, May 2026)
+      are not D5 instruments.
+    queries:
+      - gob.mx/sre press listing (Gaza, refugiados)
+  E1:
+    status: unchecked
+    note: The Fiscalía and the courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

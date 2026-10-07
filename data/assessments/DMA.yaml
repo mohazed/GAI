@@ -1,0 +1,179 @@
+# Coverage record for Dominica (docs/03 §6). P-21 light protocol, session T-P21-07, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government of Dominica web portal (dominica.gov.dm: the Ministry's and the Head of Government's pages, which carry no statement on Gaza), the General Debate statements of the
+#   78th to 81st sessions (gadebate.un.org; the 78th to 80th have Wayback captures; read, none has a passage on Gaza or Palestine: the 79th and 80th name the Middle East in a list of conflicts), Dominica News Online
+#   (the Foreign Minister's interview of 11 October 2023 and the Prime Minister's budget speech of 31 July 2025, archived through Wayback captures: the live site answers 403), CARICOM's communiqués (read, not
+#   filed), the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 20 minutes.
+country: DMA
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Dominica
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Dominica
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 6, absent on 4 (A/RES/ES-10/25 and ES-10/26 of 11 December 2024, A/RES/79/232, A/DEC/80/506) and abstain on 2 (A/RES/ES-10/27 and A/RES/80/116)
+      of the 12 qualifying votes. The statements on the votes were not read.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    note: Dominica is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-09-27).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries: &id001
+    - Dominica government Gaza ceasefire Skerrit OR Henderson statement Palestine Israel Dominica foreign affairs
+    - Dominica Prime Minister Skerrit Palestine Gaza genocide OR ceasefire OR two-state
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister or the Foreign Minister on executing the warrants of 21 November 2024 was found (Dominica is a State Party to the Rome Statute).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Dominica has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: unchecked
+    note: 'No row in recognitions.csv. The registry dates the recognition 2011-09-19; no state document was found (search results confirm the date only through secondary sources, R21): +3 to add
+      once archived.'
+  B9:
+    status: none-found
+    note: 'No filed event. The Foreign Minister''s interview on DBS Radio of 10 October 2023 (Dominica News Online, archived) calls for ''de-escalation of the tension'', a two-state solution and
+      recognises that ''Israel has the right to defend itself, but the Palestinian people also have a right to a state'': no call for a ceasefire, press only (lead_20261006_DMA_1), decayed in
+      any case. A search result drawn from the Wikipedia article on calls for a ceasefire attributes to the Prime Minister the word ''abhorrent'' and a call for a ceasefire: no primary was found.
+      The CARICOM communiqués (read on caricom.org: the 46th regular meeting urges ''an immediate and unconditional ceasefire in Gaza'', the 48th supports ''a permanent cessation of hostilities'')
+      speak for the Heads of Government as a body with no signatory named (not read as the Prime Minister''s words, R3). The General Debate statements of the 78th to 81st sessions have no passage
+      on Gaza.'
+    queries:
+    - Dominica government Gaza ceasefire Skerrit OR Henderson statement Palestine Israel Dominica foreign affairs
+    - Dominica Prime Minister Skerrit Palestine Gaza genocide OR ceasefire OR two-state
+    - gadebate.un.org Dominica 2024 2025 2026
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found; the Foreign Minister's remark that Israel has the right to defend itself (11 October 2023)
+      is paired with the Palestinian people's right to a state and a call for de-escalation (lead_20261006_DMA_1).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Dominica was found (not an EU member).
+    queries:
+    - Dominica sanctions Israeli settlers West Bank
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found.
+    queries:
+    - Dominica Israel diplomatic relations ambassador recalled
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel was found to review.
+    queries:
+    - Dominica Israel trade agreement
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found.
+    queries:
+    - Dominica Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Dominica to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Dominica has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - Dominica UNRWA contribution OR funding
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Dominica in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Dominica
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Dominica Gaza humanitarian aid medical
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: 'No visa or refugee instrument for Gazans was found: the Prime Minister said in his budget speech of 31 July 2025 that the Government would be open to engaging Qatar, Saudi Arabia and
+      the UAE ''with a view to quite possibly allowing the resettlement of a couple hundreds of Palestinians'' if funding is found (Dominica News Online, archived): an intention, not an instrument
+      (lead_20261006_DMA_2).'
+    queries:
+    - Dominica considers welcoming displaced Palestinians
+    - Dominica visa OR refugee Palestinians Gaza
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

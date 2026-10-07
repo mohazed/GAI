@@ -1,0 +1,210 @@
+# Coverage record for Turkmenistan (docs/03 §6). P-21 light protocol, session T-P21-02, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.tm/en: its news, its statements and the items on
+#   Palestine), the state portal (turkmenistan.gov.tm), the General Debate statements of the United Nations (gadebate.un.org,
+#   Wayback captures of the 79th session's statement of the Foreign Minister and the 80th session's of the President in
+#   English; the 80th session's PDF is image-only and was read by OCR, no passage on Gaza or Palestine), the generated events
+#   and the structured tables; web searches in English and in Russian per indicator group. The presidential site
+#   (president.gov.tm) did not answer. Time: about 12 minutes.
+# Statements read and not filed as B9: none on Gaza. The Ministry's statements of 2026 on the Middle East concern Iran and the
+#   passage of foreign nationals across the Turkmen-Iranian border; the Permanent Representative's address to the OIC
+#   foreign ministers' meeting of 24 September 2026 (a Permanent Representative is not a B9 speaker, R3).
+country: TKM
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Turkmenistan
+      to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TKM
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until
+      a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Turkmenistan order of Israeli major arms in the register. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer TKM
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: did not vote on ES-10/21 (27 October 2023), ES-10/22 (12 December 2023) and
+      A/RES/80/1 (19 September 2025); yes on the other nine qualifying votes. The Ministry''s releases on the votes were
+      not read.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Turkmenistan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Turkmenistan
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the Government on the warrants of 21 November 2024 was found; Turkmenistan is not a party to
+      the Rome Statute.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Turkmenistan has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Turkmenistan row. The registry dates the recognition 17 April
+      1992 (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher. The Ministry''s items on Palestine (a meeting with the
+      Palestinian Foreign Minister of 24 August 2023; the Ambassador''s credentials) record relations, not a dated recognition.'
+  B9:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of the President, the head of government (the President) or the Foreign Minister on Gaza was found:
+      the General Debate statements read (the Foreign Minister''s of 27 September 2024; the President''s of 23 September
+      2025, by OCR) have no passage on Gaza or Palestine; the Ministry''s statements of 2026 concern Iran. The Permanent
+      Representative''s OIC address of 24 September 2026 is not a B9 speaker''s (lead_20261005_TKM_1).'
+    queries:
+    - Turkmenistan Palestine Gaza Serdar Berdimuhamedov OR Meredov statement humanitarian aid Palestinian people neutrality
+    - Туркменистан Газа Палестина заявление МИД Туркменистана палестинский вопрос Бердымухамедов 2024 2025
+    - Turkmenistan Meredov Gaza ceasefire OR Palestinian statement UN General Assembly OR OIC OR Organization of Turkic
+      States
+    - Palestine Gaza Middle East statement Turkmenistan (mfa.gov.tm, turkmenistan.gov.tm)
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries:
+    - Mirziyoyev OR Rahmon OR Berdimuhamedov right to self-defense Israel support Hamas October 7 condemn statement Central
+      Asia president
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Turkmenistan has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; Israel opened its embassy in Ashgabat in 2023.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan Israel ambassador recalled OR severed OR downgraded relations Gaza war
+      Israeli embassy Tashkent
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No agreement or negotiation with Israel was suspended or put under review (none found).
+    queries:
+    - Uzbekistan Israel free trade OR trade agreement OR trade turnover 2025 Israel Uzbekistan trade mission suspend OR
+      boycott
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No agreement, memorandum or cooperation instrument signed with Israel since October 2023 was found.
+    queries:
+    - Turkmenistan Israel agreement OR memorandum signed 2024 2025 Ashgabat Israeli delegation
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Turkmen government flow to the oPt plans in any window (no row in fts_funding.csv or
+      fts_plan_totals.csv), a real zero under docs/02 §5. The President''s order of November 2025 sending medicines, clothing
+      and food to the people of Palestine on behalf of a children''s charitable foundation (mfa.gov.tm/en/news/4180) is
+      an in-kind shipment outside FTS, which records government flows to the appeals only (docs/06 §7); it is not a D4
+      programme.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding; Turkmenistan has no row in UNRWA's donor tables for 2022,
+      2023 or 2024.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan UNRWA contribution suspended OR resumed funding 2024 statement government
+      UNRWA donor
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No row for Turkmenistan in UNRWA's donor tables for 2022, 2023 and 2024 (archived), so no contribution to compare
+      and no restoration.
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Turkmenistan
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found. The shipment of medicines and medical
+      supplies to the people of Palestine ordered by the President in November 2025 (Ministry release) is an in-kind consignment,
+      not a medical-evacuation programme or a field hospital.
+    queries:
+    - Turkmenistan humanitarian aid Gaza Palestine sent Turkmen government Egypt OR Rafah 2024 2025
+    - Turkmenistan Palestine Gaza Serdar Berdimuhamedov OR Meredov statement humanitarian aid Palestinian people neutrality
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Turkmenistan humanitarian aid Gaza Palestine sent Turkmen government Egypt OR Rafah 2024 2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

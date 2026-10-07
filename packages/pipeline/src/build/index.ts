@@ -57,7 +57,7 @@ import {
   sensitivitySuite,
   summaryLines,
 } from '@gai/scoring'
-import { generateAll, generateContext } from '../generate/index.js'
+import { confirmedMilitaryOf, generateAll, generateContext } from '../generate/index.js'
 import { scoringMethodology } from '../methodology.js'
 import {
   assessmentRows,
@@ -344,6 +344,7 @@ export function buildData(input: BuildInput): BuildOutput {
         ds.countries.map((c) => c.value),
       ),
       ds.structured,
+      { confirmedMilitary: confirmedMilitaryOf(ds.structured['a2_confirmed_military.csv']) },
     )
     generated = g.events
     for (const n of g.notes) note('generator', n, countryOfNote(n))

@@ -1,0 +1,277 @@
+# Coverage record for Türkiye (docs/03 §6). P-D research session, wave 2, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search facilities used: the Wayback CDX listings of mfa.gov.tr, ticaret.gov.tr, saglik.gov.tr,
+# iletisim.gov.tr and istanbul.adalet.gov.tr (pages captured since October 2023), with web searches
+# in English and Turkish. tccb.gov.tr (the Presidency) answers scripted requests with a redirect loop
+# and Wayback holds only 302 captures of its speech pages, so the Presidency's statements were read
+# through the Directorate of Communications (iletisim.gov.tr), which reports them verbatim.
+country: TUR
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      Türkiye states that it authorises no sale to Israel of any product or service usable for
+      military purposes (src_20240409_ticaret_israile-ihracat-kisitlamasi, line 17).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade; fetched in this session (`pnpm fetch:comtrade --reporters TUR`, 15 A2
+      and 7 C3 rows; Türkiye's own report for 2025 is incomplete, "total trade not reported in both
+      flows", so 2025 uses Israel's mirror). Values: own HS 93 USD 582,382 (2022), 998,990 (2023),
+      317,206 (2024); mirror HS 93 USD 287,000 (2025) → −3 from 2026-05-14. Disagreement reported, not
+      corrected: the Directorate of Communications states that the HS 93 goods exported to Israel were
+      smoothbore hunting-gun parts, accessories and fishing equipment, not weapons of war, and that no
+      sport or hunting guns were exported since May 2023 (src_20240326_iletisim_silah-muhimmat-ihracati-iddiasi);
+      the Ministry of Trade states that no customs declaration for Israel was registered after 2 May
+      2024 and that goods for Palestinian importers pass through Israeli ports
+      (src_20250522_ticaret_israil-ticaret-iddialari), which Israel's mirror would record as imports
+      from Türkiye. The conditional headings are not counted without a confirming document (docs/02
+      §2): mirror HS 8802 USD 15,080,000 (2024; −15 if counted) and HS 8526 USD 16,000–149,000 a
+      year; no licence register, parliamentary answer or investigation confirming a military nature
+      was found, so no row was added to a2_confirmed_military.csv.
+  A3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Türkiye was removed from the F-35 programme in 2019 (before the window); no ministry statement,
+      programme document or UN Special Rapporteur passage naming a Turkish supplier of F-35 parts or
+      maintenance in the window was found. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23) was
+      searched for Türkiye: no F-35 supplier entry.
+    queries:
+      - A/HRC/59/23 Türkiye Turkey (archived text searched)
+      - F-35 Türkiye supplier parts Israel 2024 2025
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187); left to the
+      build. No Turkish order of Israeli arms since October 2023 was met in this session; all imports
+      from Israel are halted since 2 May 2024 (evt_2024_05_02_TUR_A7).
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, basing agreement, documented transit or official confirmation of
+      intelligence sharing with Israel found. The Directorate of Communications states that the
+      state conducts no military munitions trade, military training or exercise with Israel
+      (src_20240326_iletisim_silah-muhimmat-ihracati-iddiasi, line 2). Claims about the NATO radar at
+      Kürecik were not checked against a primary (routine NATO arrangements are not instances unless
+      activated for the campaign).
+    queries:
+      - İsrail askeri tatbikat Türkiye 2024 2025
+      - Kürecik radar İsrail veri paylaşımı açıklama
+  A6:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      The export restriction of 9 April 2024 (54 product groups, including aviation fuel and jet fuel)
+      is filed as A6 as a flagged reading (evt_2024_04_09_TUR_A6), ended on 2 May 2024 when the full
+      halt (A7) superseded it.
+  A7:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      The government's decision of 2 May 2024 halting all exports to and imports from Israel
+      (evt_2024_05_02_TUR_A7, flagged reading: known from the Ministry of Trade's statements; no
+      Official Gazette text found).
+  A8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      The Minister of Foreign Affairs' statement of 29 August 2025 that ships and aircraft carrying
+      arms and ammunition to Israel are denied Turkish ports and airspace (evt_2025_08_29_TUR_A8,
+      reported: the only archived source is the Assembly's report). No port-authority circular or
+      Ministry of Transport release was found (lead_20260928_TUR_3).
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on all seven. The
+      archived press releases are consistent: GA/12548 (27 October 2023) and GA/12667 (11 December
+      2024) report Türkiye's representative speaking for the texts; for the five later votes (no rows
+      until B-199 (1)), GA/12707, GA/12708 and GA/12739 list the states against and abstaining without
+      Türkiye (Türkiye's explanation in GA/12739 concerns another resolution); no list was found in the
+      extracted texts of GA/12690 and GA/12743. No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Declaration of intervention under Article 63 filed on 7 August 2024, supporting the applicant's
+      construction (evt_2024_08_07_TUR_B3). No withdrawal found.
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement rejecting the ICJ's provisional-measures orders; the government cites the orders
+      of 26 January and 28 March 2024 as legally binding (src_20240409_ticaret_israile-ihracat-kisitlamasi).
+    queries:
+      - mfa.gov.tr Uluslararası Adalet Divanı ihtiyati tedbir açıklama (Wayback listing searched)
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Türkiye is not a State Party to the Rome Statute. No official statement by the President, the
+      Minister of Foreign Affairs or the Minister of Justice committing to execute the warrants of 21
+      November 2024 was found. The warrants issued by an Istanbul court on 7 November 2025 are a domestic
+      proceeding (E3, lead_20260928_TUR_2), not a position on the ICC warrants.
+    queries:
+      - UCM Netanyahu yakalama kararı Dışişleri açıklaması Kasım 2024
+      - mfa.gov.tr International Criminal Court arrest warrants Netanyahu Gallant statement
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No visit to Türkiye by a person under an ICC warrant and no statement refusing to execute the warrants found.
+    queries:
+      - Netanyahu Türkiye ziyaret 2025
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanction by Türkiye on ICC officials; none expected.
+    queries:
+      - Türkiye sanctions ICC officials
+  B8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv. Türkiye recognised the State of Palestine on 15 November 1988;
+      the row was added in this session from the Ministry of Foreign Affairs' own page dating the
+      recognition (src_20260928_mfa-tr_political-relations-palestine), so B8 is the pre-existing tier,
+      +3 from 2023-10-07 (docs/10 B-192; the default of B-199 (3) concerned UN document A/78/846, not
+      a government's own statement). Matches the registry date.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Three formal addresses of the President filed (3 November 2023, Organization of Turkic States
+      summit; 23 September 2025 and 22 September 2026, UN General Assembly), from the Directorate of
+      Communications' verbatim reports, and the Minister of Foreign Affairs' press conference of 3
+      November 2025 (the Ministry's transcript). B9 is at its +10 cap on 2026-09-28. The Minister of Foreign Affairs' address to the Assembly of 29
+      August 2025 (starvation used as a weapon) is not filed as B9: its only archived source is the
+      Assembly's report (kind parliamentary; B9 needs an official source). The President's address to
+      the 79th General Assembly (24 September 2024) could not be archived (tccb.gov.tr; no
+      Directorate report found in Wayback). Party-group speeches (AK Parti) are not formal government
+      statements and were not filed.
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement of unconditional support for Israel or denial of documented violations found.
+  B11:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Türkiye has no sanctions list naming Israeli ministers or settler entities; the Istanbul
+      court's arrest warrants of November 2025 against Israeli officials are a criminal proceeding
+      (E3 lead), not a sanctions listing.
+    queries:
+      - Türkiye yaptırım listesi İsrailli bakanlar yerleşimci
+  B12:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Ambassador recalled on 4 November 2023 (evt_2023_11_04_TUR_B12). The President's remark of 13
+      November 2024 that Türkiye had cut trade and relations with Israel was made to journalists on
+      his aircraft and is reported by the press; no foreign ministry announcement of a downgrade or
+      severance was found (lead_20260928_TUR_1).
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The Türkiye–Israel free trade agreement (1996) was not formally suspended or reviewed; trade was
+      halted by the government decision of 2 May 2024 (A7). Flagged for the author: the halt makes the
+      agreement inoperative in practice; C1 is not filed because the indicator requires a decision on
+      the agreement itself.
+    queries:
+      - Türkiye İsrail Serbest Ticaret Anlaşması askıya alındı resmi karar 2024
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No trade, investment or cooperation agreement with Israel signed since October 2023; trade is halted.
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (fetched in this session). Own reports: 2022 USD 9,484,075,565; 2023
+      7,075,677,491 (r = 0.746 → 0); 2024 2,117,641,550 (r = 0.223 → 0). 2025 from Israel's mirror
+      (own report incomplete): USD 2,125,875,000 against a mirror 2022 of 8,039,417,000 (r = 0.264 → 0).
+      Disagreement reported: the Ministry of Trade states that trade with Israel has been zero since 2
+      May 2024 and that exports to Palestine (USD 797 million in 2024) pass through Israeli ports;
+      Israel's mirror records USD 2.1 billion of trade with Türkiye in 2025. C3 is 0 either way.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No settlement-specific ban or labelling rule; all imports from Israel are halted since 2 May
+      2024 (A7), which is not a settlement-goods measure.
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No divestment decision by the Türkiye Wealth Fund or a public pension fund over conduct in Gaza or the occupied territories found.
+    queries:
+      - Türkiye Varlık Fonu İsrail şirketleri yatırım çıkış kararı
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No procurement exclusion with legal effect found. A statement of the Directorate of
+      Communications denying that the Ministry of National Defence chose an Israeli supplier was seen
+      in search results only (not read, not archived).
+    queries:
+      - kamu ihale İsrail firmaları yasak karar 2024 2025
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS. Values: +1 in the windows December 2023 to November 2024, no value December
+      2024 to May 2025, +6 June 2025 to May 2026, +3 in June 2026, +1 from July 2026. Disagreement reported, not corrected: the government reports
+      over 100,000 tonnes of in-kind aid to Gaza by August 2025 (src_20250829_tbmm_fidan-gazze-genel-kurul),
+      delivered largely through AFAD and the Turkish Red Crescent and not reported to FTS as
+      government funding of the oPt appeals (docs/06 §7 states this known gap).
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: Türkiye did not suspend UNRWA funding; its 2024 pledges exceed its 2022 pledges (D3).
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Increased tier on pledges (evt_2024_12_31_TUR_D3), flagged: received amounts for 2024 are below
+      the 2022 pledges.
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Medical-evacuation programme from 16 November 2023 (evt_2023_11_16_TUR_D4). The eight field
+      hospitals shipped to Egypt in November 2023 were not found deployed inside Gaza in an archived
+      official document; the Türkiye–Palestine Friendship Hospital pre-dates the window.
+  D5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No visa or refugee instrument for Gazans found. The Directorate of Communications denied in
+      October–November 2023 that Palestinians from Gaza would be resettled in Türkiye (statements of
+      16 October and 7 November 2023, read, not archived).
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No investigation of Turkish nationals or companies for conduct in Gaza found.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No ban on Palestine solidarity protests or symbols found.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      The Istanbul Chief Public Prosecutor's investigation and the arrest warrants issued on 7
+      November 2025 against 37 Israeli officials, including the Prime Minister, for genocide and
+      crimes against humanity (Gaza and the Global Sumud flotilla) are reported by the press; the
+      prosecutor's own statement was not found on istanbul.adalet.gov.tr or in Wayback, so the
+      event is a lead (lead_20260928_TUR_2). Experimental, unscored (D-12).

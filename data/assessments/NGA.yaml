@@ -1,0 +1,319 @@
+# Coverage record for Nigeria (docs/03 §6). P-D research session, wave 9, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-422):
+# - Ministry of Foreign Affairs (foreignaffairs.gov.ng): a static home page over a WordPress site at
+#   /news/. Its REST API was read by script on 2026-09-29: all 702 posts dated 1 October 2023 to 28
+#   September 2026 (full texts) and all 72 press releases ("media items", many published as PDFs;
+#   the PDFs of those whose titles concern Israel, Gaza or Palestine were downloaded). The listing
+#   has gaps: no post for June 2024 or September to December 2024, and no press release between
+#   May 2024 and July 2025. Titles and texts were searched for Gaza, Palestine, Israel, UNRWA,
+#   ceasefire, Rafah, genocide, Netanyahu, two-state, ICJ, International Criminal Court, Hamas, West
+#   Bank, occupied, OIC, Arab, Riyadh, humanitarian, condemn, civilians, Jerusalem. The Wayback
+#   Machine's index of the site (October 2023 to September 2026, 6,882 URLs) was searched for the
+#   same terms.
+# - State House (statehouse.gov.ng): WordPress; its REST API was searched for gaza, palestin, israel,
+#   riyadh, saudi, arab-islamic, ceasefire, two-state, middle east, United Nations General, doha,
+#   islamic, hamas, humanitarian crisis, cairo (posts from 1 October 2023). It lists only 16 posts
+#   from September to December 2024; the Wayback Machine's index of the site for November 2023 to
+#   January 2025 (5,304 URLs) has no page on Gaza or the Arab-Islamic summits.
+# - UN Official Document System: A/79/PV.8 (24 September 2024), where the Vice-President spoke in
+#   the general debate. gadebate.un.org answers with a CAPTCHA (not attempted). UNISPAL: Nigeria's
+#   national statement at the two-state conference of 28-30 July 2025, delivered by "the
+#   representative of Nigeria" (UN press release PAL/2250, read from its Wayback capture).
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, fts_plan_totals.csv, gni.csv,
+#   unga_votes.csv, unsc_vetoes.csv, recognitions.csv, the UN press releases archived in votes.yaml.
+# - Web search (English): the Arab-Islamic summits of November 2023, November 2024 and September
+#   2025, the Minister's statement on Rafah of May 2024, the OIC Council of Foreign Ministers
+#   (June 2025), the ICC warrants, Nigeria's recognition of Palestine, agreements with Israel,
+#   humanitarian aid for Gaza.
+# Speakers (B9): President Bola Ahmed Tinubu (head of state and of government); Ministers of Foreign
+# Affairs Yusuf Maitama Tuggar (to early 2026) and Bianca Odumegwu-Ojukwu (Minister of State until
+# spring 2026, Minister by 26 May 2026). Not B9 speakers: the Vice-President, the Ministers of State,
+# the Permanent Secretary, the Permanent Representative, the Ministry's spokesperson.
+# Statements read and not filed (docs/10 B-423): the Minister's press statement of 7 October 2023
+# (a call for "de-escalation and ceasefire" between Israel and Hamas, published as an image-only
+# PDF with no text layer, so no archived text can hold its quote, and not citing Gaza); the State
+# House item of 10 November 2023 (the President "reiterated Nigeria's call for an immediate
+# ceasefire", indirect speech); the Vice-President's general-debate statements of 24 September 2024
+# (A/79/PV.8: the situation in Gaza, the two-State solution; no ceasefire call, no violation named)
+# and of 2025 (State House, 7 October 2025: violence and aggression against civilians in Gaza, the
+# two-state solution; no ceasefire call, no violation named) and 2026 (no passage on Palestine,
+# per press reports); the national statement at the two-state conference of July 2025 (the
+# Permanent Mission); the Minister of State's statement at the OIC Council of Foreign Ministers,
+# Jeddah, 27 August 2026 (reported speech on the Ministry's page: protection of civilians,
+# humanitarian access, an enduring cessation of hostilities, opposition to forced displacement);
+# the Ministers' audiences with the Palestinian and Israeli ambassadors (31 October 2023, 4 February,
+# 26 February, 17 April, 26 May, 3 August 2026).
+# Not searched or not readable: the Ministry of Defence and the armed forces (A5, D4), the Federal
+# Ministry of Industry, Trade and Investment and the National Bureau of Statistics (C3, C4), the
+# Nigeria Sovereign Investment Authority, PenCom and the Central Bank (C5), the Bureau of Public
+# Procurement (C6), the Ministry of Justice and courts (E1, E3), the Ministry of Interior and the
+# police (D5, E2), the National Assembly; the President's and the Ministry's social media accounts.
+country: NGA
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. No record of
+      Nigerian deliveries of arms to Israel was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Nigeria had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters NGA` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-407 (5), B-412 (5) and B-417 (5)). The empty
+      index row the failed run appended was removed. No row, so the build shows no-data; the same
+      command resumes the fetch on another day. No row added to a2_confirmed_military.csv; no
+      licence register, parliamentary answer or investigation on Nigerian exports to Israel under
+      HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Nigeria is not a partner, supplier or customer of the F-35 programme; no document naming
+      Nigerian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - Nigeria F-35 supplier parts company
+      - foreignaffairs.gov.ng posts 2023-10 to 2026-09, term F-35
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. Nigeria's orders of Israeli equipment in the window, if any,
+      will come from the release; none was hand-authored.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official record of a named exercise, a transit authorisation, a basing agreement or
+      intelligence sharing related to the Gaza campaign was found. The Ministry's releases record
+      bilateral talks with Israel on defence, intelligence and border security (the Minister of
+      State, 26 February 2026) and the Minister's readiness to expand cooperation in counter-terrorism
+      and intelligence sharing (3 August 2026); these concern Nigeria's own insurgency, are not
+      activated for the Gaza campaign and are not instances (docs/02 §2 A5).
+    queries:
+      - foreignaffairs.gov.ng posts 2023-10 to 2026-09, terms Israel, defence, intelligence, exercise
+      - Nigeria Israel military exercise 2024 2025
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing licences for arms exports to Israel was found; no record of
+      Nigerian arms exports to Israel exists to suspend.
+    queries:
+      - Nigeria arms export licence Israel suspended
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No law or decree establishing an arms embargo on Israel was found."
+    queries:
+      - Nigeria arms embargo Israel
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No official record of a port or airspace denial to an arms shipment bound for Israel was found."
+    queries:
+      - Nigeria port denied ship arms Israel
+      - Lagos port vessel Israel weapons refused
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven rows, yes on ES-10/21 to ES-10/26 and 79/232). For the
+      five later votes without rows (docs/10 B-199 (1)): the archived UN press releases do not name
+      Nigeria among the states against A/DEC/80/506 (GA/12707, whose abstentions are not listed) or
+      80/78 (GA/12739), or among the states against or abstaining on 80/1 (GA/12708) or the vote of
+      17 September 2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list states. No
+      difference; the Ministry's site has no item on these votes.
+  B2:
+    status: not-applicable
+    note: "Not a Security Council member in the window (last elected term 2014-2015)."
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Nigeria filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8)."
+    queries:
+      - icj-cij.org case 192 intervention Nigeria
+      - foreignaffairs.gov.ng posts, terms ICJ, Court of Justice
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No statement or act rejecting the ICJ's provisional measures was found."
+    queries:
+      - Nigeria ICJ provisional measures Israel statement
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Nigeria is a party to the Rome Statute. No statement by the President, the Minister of Foreign
+      Affairs or the Attorney General on executing the warrants of 21 November 2024 was found (the
+      Ministry's site has no post for November 2024; press compilations of state reactions do not
+      list Nigeria).
+    queries:
+      - Nigeria government reaction ICC arrest warrant Netanyahu November 2024
+      - foreignaffairs.gov.ng posts, terms ICC, International Criminal Court
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No stated refusal to execute the warrants and no visit by a person under warrant was found."
+    queries:
+      - Netanyahu visit Nigeria
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Nigeria has imposed no sanctions on ICC officials."
+    queries:
+      - Nigeria sanctions ICC officials
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv, which has no Nigerian row (docs/10 B-192). Nigeria recognised
+      the State of Palestine on 18 November 1988 (the registry's `recognises_palestine.since`), but
+      no official Nigerian document stating the recognition was found: the Ministry's items speak of
+      relations with the State of Palestine and support for its independence (4 February and 17
+      April 2026), not of the act of recognition, and no letter of Nigeria to the UN of 1988 was
+      found in UNISPAL. No row was added, so the build shows no B8 event for Nigeria until one is
+      (docs/10 B-424 (3), as for Malaysia, B-414 (2)).
+    queries:
+      - foreignaffairs.gov.ng posts, terms recognise, recognition, Palestine
+      - Nigeria recognised the State of Palestine 1988 Ministry of Foreign Affairs statement
+      - unispal Letter from Nigeria 1988 Palestine declaration of independence recognition
+  B9:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of the President or the Minister of Foreign Affairs with a formal ceasefire call
+      or a named violation in Gaza was found in an official text that can be archived and quoted
+      (docs/10 B-423). Two such statements are reported by the press and are leads: the President's
+      speech to the Arab-Islamic summit in Riyadh of 11 November 2024 (lead_20260929_NGA_1) and the
+      Minister's statement of 30 May 2024 on the Rafah strikes (lead_20260929_NGA_2); neither is on
+      the State House or Ministry sites, whose listings have gaps in 2024. The Minister's press
+      statement of 7 October 2023 (image-only PDF, not citing Gaza), the State House item of 10
+      November 2023 (indirect speech), the Vice-President's general-debate statements and the
+      statements of the Minister of State and the Permanent Mission are not B9 (see the header).
+    queries:
+      - foreignaffairs.gov.ng posts and press releases 2023-10 to 2026-09 (REST API, full texts)
+      - statehouse.gov.ng posts 2023-10 to 2026-09 (REST API search)
+      - UN ODS A/79/PV.8; UNISPAL nigeria_nyc_en.pdf; UN press PAL/2250
+      - Tinubu Riyadh Arab-Islamic summit 2023 2024 speech Gaza ceasefire
+      - Tuggar Gaza statement Rafah May 2024; Nigeria statement OIC Council of Foreign Ministers 2025
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's campaign or denial of documented
+      violations by the President or the Minister was found. The Ministers' statements on deepening
+      bilateral relations with Israel (26 February, 26 May, 3 August 2026) do not concern the Gaza
+      campaign.
+    queries:
+      - foreignaffairs.gov.ng posts, all Israel items
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "Nigeria has listed no Israeli minister or settler entity for sanctions."
+    queries:
+      - Nigeria sanctions settlers Israeli ministers
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall, downgrade or severance was found. Nigeria keeps an embassy in Israel; its new
+      ambassador presented her letters of credence to the President of Israel (the Ministry's
+      press release MFA/PR/2026/187 of 3 August 2026).
+    queries:
+      - Nigeria recalls ambassador Israel
+      - foreignaffairs.gov.ng posts, terms ambassador, Israel
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No review or suspension of a trade or cooperation agreement with Israel was found."
+    queries:
+      - Nigeria Israel agreement suspended review
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel in the window was found. The
+      political dialogue with Israel's Deputy Foreign Minister (11 August 2025) and the talks of 2026
+      on operationalising the Nigeria-Israel Joint Commission are not signed agreements.
+    queries:
+      - Nigeria Israel sign agreement memorandum of understanding 2024 2025 2026
+      - foreignaffairs.gov.ng posts, terms Israel, agreement, MoU
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. No Comtrade rows for Nigeria (docs/10 B-194); the fetch of 2026-09-29
+      stopped at the reporter list (see A2). The build shows no-data until the fetch succeeds. The
+      Israeli ambassador's figure of about USD 200 million a year of bilateral trade (the Ministry's
+      release of 3 August 2026) is not data.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No regulation on settlement goods (labelling or ban) was found."
+    queries:
+      - Nigeria settlement goods ban labelling regulation
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a Nigerian public fund or the Central Bank over conduct in Gaza or the
+      occupied territories was found (web search only; the funds' own sites were not searched).
+    queries:
+      - Nigeria Sovereign Investment Authority pension fund divest Israel Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No public procurement exclusion with legal effect was found (web search only)."
+    queries:
+      - Nigeria procurement exclusion Israeli companies
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv and fts_plan_totals.csv have no row for Nigeria, i.e. no
+      Nigerian government flow to the oPt flash appeals of 2023-2026 in any window, so the generator
+      writes no event (a real zero, docs/02 §5). No Nigerian in-kind or bilateral aid for Gaza was
+      found in the Ministry's or State House's listings.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Nigeria has no row in UNRWA's donor tables for 2022 or 2024 (both rank donors down to small
+      amounts) and no suspension was announced; there was no funding to suspend.
+    queries:
+      - UNRWA donor ranking 2022 and 2024 (archived tables), Nigeria
+      - foreignaffairs.gov.ng posts, term UNRWA
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No UNRWA contribution by Nigeria in UNRWA's tables for 2022 or 2024."
+    queries:
+      - UNRWA donor ranking 2022 and 2024 (archived tables), Nigeria
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No medical evacuation or field hospital programme for Gaza was found."
+    queries:
+      - Nigeria medical evacuation Gaza patients
+      - Nigeria humanitarian aid Gaza 2024 federal government donation
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: "No visa or refugee instrument for Gazans was found."
+    queries:
+      - Nigeria visa Gaza Palestinians
+  E1:
+    status: unchecked
+    note: "Experimental, unscored; the Ministry of Justice and courts were not searched."
+  E2:
+    status: unchecked
+    note: "Experimental, unscored; the Ministry of Interior and the police were not searched."
+  E3:
+    status: unchecked
+    note: "Experimental, unscored; not searched."

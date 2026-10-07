@@ -263,6 +263,22 @@ export const RULES = {
     summary:
       'Same indicator, same country, overlapping window, different points is an error unless the indicator is scaled.',
   },
+  'event.standing-overlap': {
+    level: 'warning',
+    doc: 'docs/10 B-22, B-51',
+    summary:
+      'Two standing records of one country under A3, B7 or D2 hold on the same day; methodology 1.0.0 adds them, so the overlap is flagged for review.',
+  },
+  'event.b5-b6-same-day': {
+    level: 'warning',
+    doc: 'docs/10 B-56',
+    summary: 'A B5 and a B6 of one country on the same day; the latest position is undecided.',
+  },
+  'event.d2-open-after-d3': {
+    level: 'warning',
+    doc: 'docs/10 B-56',
+    summary: 'A D2 suspension of one country still holds on the day a D3 of that country starts.',
+  },
 
   // Tone lint (docs/02 §12.6, docs/05 §7) --------------------------------------------------------
   'tone.banned-word': {
@@ -343,7 +359,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/02 §8',
     summary:
-      'not-applicable carries a note; on B2 (rule unsc_non_member) the state has no Security Council term overlapping the window from 2023-10-07 to the date of the check (checked_at, else last_full_check; any term ending on or after 2023-10-07 when neither is set).',
+      'not-applicable carries a note and is an error on an indicator without a not-applicable rule in indicators.yaml (B-28); on B2 (rule unsc_non_member) the state has no Security Council term overlapping the window from 2023-10-07 to the date of the check (checked_at, else last_full_check; any term ending on or after 2023-10-07 when neither is set).',
   },
   'assessment.has-events-mismatch': {
     level: 'warning',
@@ -435,7 +451,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §7',
     summary:
-      'The source column names an existing source of kind dataset that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin).',
+      'The source column names an existing source of kind dataset (official also in unsc_vetoes and recognitions; official, parliamentary, ngo or press in a2_confirmed_military: STRUCTURED_SOURCE_KINDS, B-31) that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin).',
   },
   'structured.iso3-known': {
     level: 'warning',

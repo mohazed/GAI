@@ -12,7 +12,7 @@ data/
   assessments/{ISO3}.yaml         # per-indicator research status (coverage input)
   structured/                     # tables feeding the generated indicators
     unga_votes.csv                # resolution, date, iso3, vote (Y|N|A|X)
-    unsc_vetoes.csv               # date, draft, vetoed_by, ceasefire (true), source
+    unsc_vetoes.csv               # date, draft, vetoed_by, ceasefire (true|false), source (the UN meeting record)
     fts_funding.csv               # iso3, window_start, window_end, usd_paid_committed, plan_ids, retrieved_at, source
     fts_plan_totals.csv           # iso3, plan_id, usd_paid_committed, flows, retrieved_at, source
     sipri_deliveries.csv          # release_date, data_year, supplier_iso3, tiv_to_israel, tiv_total_to_israel, source
@@ -21,6 +21,10 @@ data/
     comtrade_c3.csv               # iso3, window_start, window_end, release_date, usd_total, usd_2022, reporter, retrieved_at, source
     gni.csv                       # iso3, year, gni_atlas_usd, source
     population.csv                # iso3, year, population, source
+    recognitions.csv              # iso3, date, source (the government's statement): B8 (P-14)
+    a2_confirmed_military.csv     # iso3, hs (8526|8802), source: A2 confirmations (P-14)
+    raw/                          # downloaded files before import; not loaded (files over 25 MB git-ignored)
+    author-downloads/             # the author's browser downloads, byte for byte, archived from their commit-pinned URL (B-903, B-487); not loaded
   corrections.yaml                # public corrections and retractions log
   replies/{ISO3}/{reply_id}.yaml  # right-of-reply records
   leads/{ISO3}.yaml               # unresolved leads (press/NGO claims without a primary yet); never scored
@@ -71,7 +75,7 @@ Slugs: lowercase ASCII, hyphens, ≤ 40 chars. IDs never change; a corrected eve
     g20: true
     g7: true
     brics: false
-  recognises_palestine: {since: null}   # date or null; drives the B8 standing state
+  recognises_palestine: {since: null}   # date or null; a lead: B8 is generated from structured/recognitions.csv (P-14)
   gov_sources:                    # where the research protocol looks first
     - {label: Federal Foreign Office, url: https://www.auswaertiges-amt.de/en, type: mfa, lang: [de, en]}
     - {label: Bundesregierung, url: https://www.bundesregierung.de, type: head_of_government, lang: [de, en]}
@@ -168,11 +172,13 @@ Statuses: `has-events` (at least one published event, set automatically by the b
 
 ## 7. Structured tables
 
-CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column with a `src_` id of kind `dataset` whose record archives the origin (the API response or downloaded file, hashed). When a row is derived from several archived responses (the pages of one FTS query plus the FTS location list; a Comtrade year and its 2022 baseline plus the release-date record), the column lists every id, joined by `;`, and each one must be an archived dataset source. The generators in `packages/pipeline` produce `computed` and `repeatable` events from these tables at build time; generated events are not written into `data/events/` but are published in the API outputs and carry `generated: true`.
+CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column with a `src_` id of kind `dataset` whose record archives the origin (the API response or downloaded file, hashed); the hand tables verified against documents may cite other archived kinds (`STRUCTURED_SOURCE_KINDS`, B-31): `unsc_vetoes.csv` and `recognitions.csv` an `official` source (the UN meeting record, the government's statement), `a2_confirmed_military.csv` an `official`, `parliamentary`, `ngo` or `press` source (a licence register, a parliamentary answer or a published investigation citing the customs code). When a row is derived from several archived responses (the pages of one FTS query plus the FTS location list; a Comtrade year and its 2022 baseline plus the release-date record), the column lists every id, joined by `;`, and each one must be an archived dataset source. The generators in `packages/pipeline` produce `computed` and `repeatable` events from these tables at build time; generated events are not written into `data/events/` but are published in the API outputs and carry `generated: true`.
 
 `fts_funding.csv`: one row per donor and monthly D1 window (the twelve calendar months before the month the value applies to, docs/02 §5), zeros included for donors with funding in some window. `fts_plan_totals.csv`: the same government funding per donor and plan over all flow dates, for reference; it does not score. `comtrade_a2.csv` and `comtrade_c3.csv` windows are calendar years; `release_date` is the first release of that year's data by the reporter (Israel for mirror rows) in the Comtrade data-availability record, the date the computed event starts.
 
 `unga_votes.csv` columns: `resolution` (symbol, e.g. `A/RES/ES-10/21`), `date`, `iso3`, `vote` (`Y`, `N`, `A`, `X` = absent/non-voting), `source`. Only resolutions listed in `methodology/vX/votes.yaml` are scored; others may be stored for tracking.
+
+`recognitions.csv`: one row per state whose recognition of the State of Palestine is confirmed by an archived official statement, dated the day it took effect; B8 is +8 from that date when it is on or after 2023-10-07, else +3 from 2023-10-07. A state without a row gets no B8 event; while the table does not cover every recognising state, the build derives no B8 status from a missing row. `a2_confirmed_military.csv`: one row per country and HS heading (8526 or 8802) whose exports to Israel a document citing the customs code shows to be military; only then does the heading count in A2 (docs/02 §2).
 
 ## 8. Corrections log
 

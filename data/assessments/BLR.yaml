@@ -1,0 +1,190 @@
+# Coverage record for Belarus (docs/03 §6). P-21 light protocol, session T-P21-04, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the President's site (president.gov.by/en), the Ministry of Foreign Affairs (mfa.gov.by/en, whose pages the session read
+#   through search results and press relays), the General Debate statements of the United Nations (gadebate.un.org: the Foreign Minister's statements of
+#   the 78th and 79th sessions through Wayback captures, of the 80th and 81st by a direct request, in Russian, searched for Gaza, Palestine, Israel and the Middle East and read around each hit; Save Page Now answers HTTP 405
+#   for that site, so the 80th and 81st were not archived), the generated events and the structured tables; web searches in English and in Russian per
+#   indicator group. Time: about 5 minutes.
+# Statements read and not filed as B9: the Foreign Minister's General Debate statements (2023 to 2026: Palestine appears in lists of unresolved conflicts
+#   and, in 2024, as 'the place where a real humanitarian catastrophe has been unleashed and tens of thousands of civilians are dying', with no call for a
+#   ceasefire); the President's message of 29 November 2023 to the President of Palestine (a Palestinian state and 'a just and lasting peace in the Middle
+#   East', no ceasefire, Gaza not named); the President's remarks of 27 October 2023 (the creation of a Palestinian state as the only way out) and his
+#   interview to Al Arabiya of 15 June 2026 (criticism of Israel's conduct in Gaza, 'What Holocaust?'), with no call for a ceasefire or an end of the
+#   blockade; the Foreign Ministry press secretary's statement of 13 October 2025 welcoming the ceasefire (a spokesperson: not a B9 speaker, R3).
+country: BLR
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Belarus to Israel.
+      Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BLR
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the
+      full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
+      is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Belarusian order of Israeli major arms in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BLR
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). The Ministry''s releases on the votes were not
+      read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Belarus
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries: &id001
+    - Лукашенко сектор Газа прекращение огня заявление палестино-израильский конфликт
+    - МИД Беларуси заявление Газа Израиль прекращение огня Рыженков гуманитарная катастрофа
+    - Belarus Ryzhenkov OR Lukashenko Gaza Palestine statement ceasefire 2025 General Assembly 80th session
+    - Лукашенко призвал прекратить кровопролитие Израиль Палестина ХАМАС заявил президент Беларуси Газа гуманитарная помощь Беларусь
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus is not a State Party to the Rome Statute; no statement of the Government on the warrants of 21 November 2024
+      was found.
+    queries: *id001
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under the Gaza-situation warrants was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Belarus row. The registry dates the recognition 19 November 1988 (A/78/846
+      annex); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with the pre-existing tier
+      the score would be +3 higher. The President''s message of 29 November 2023 to the President of Palestine speaks of ''the
+      creation of the State of Palestine'' (Anadolu).'
+  B9:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No B9 event filed: no statement of the President, the Prime Minister or the Foreign Minister that calls for a ceasefire
+      or an end of the blockade, or names specific violations in such a call, was found in a document that can be archived. The
+      Foreign Minister''s General Debate statements (Russian, searched and read around each hit) mention Palestine in lists of
+      conflicts and, in 2024, a humanitarian catastrophe, with no call; the President''s interview of 15 June 2026 criticises Israel''s
+      conduct without a call for a ceasefire; the other statements read are a spokesperson''s (R3): lead_20261005_BLR_1.'
+    queries: *id001
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found; Belarus's statements criticise
+      Israel's conduct in Gaza.
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus has listed no Israeli minister or settler entity for sanctions (none found).
+    queries: *id001
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance by Belarus was found. Israel''s Foreign Ministry summoned Belarus''s ambassador over
+      the President''s remarks of 15 June 2026 (RTVI, Israeli press): an Israeli act, not scored here.'
+    queries: *id001
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus is not an EU member and has no association agreement with Israel to suspend or review (none found).
+    queries:
+    - Беларусь Израиль соглашение подписали 2025 2026 сотрудничество правительство Минск Израиль посол
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No governmental instrument with Israel signed since October 2023 was found; the Ministry's and the Embassy's pages (read
+      in search excerpts) list the visa-waiver agreement and earlier intergovernmental agreements, which pre-date the window. The
+      President's signing of Belarus's accession to the Board of Peace on 20 January 2026 (the Gaza body proposed by the United
+      States) is not an instrument with Israel.
+    queries:
+    - Беларусь Израиль соглашение подписали 2025 2026 сотрудничество правительство Минск Израиль посол
+    - Belarus Board of Peace Gaza Lukashenko signs joining statement text January 2026 president.gov.by
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans (fts_funding.csv has no row above zero). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding was found; Belarus has no row in UNRWA's donor tables for 2022, 2023
+      or 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belarus
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No row of Belarus in UNRWA''s donor tables for 2022, 2023 or 2024 (archived): no restored or increased contribution.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belarus
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries: &id002
+    - Беларусь гуманитарная помощь сектор Газа Палестина Беларусь направила помощь МЧС OR Министерство здравоохранения Газа дети
+      лечение
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries: *id002
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

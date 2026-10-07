@@ -1,0 +1,202 @@
+# Coverage record for Ecuador (docs/03 §6). P-21 light protocol, session T-P21-08, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Human Mobility's releases (cancilleria.gob.ec, 200), the Presidency's and its communication secretariat's sites (presidencia.gob.ec, comunicacion.gob.ec, 200), the Ministry of Environment
+#   and Energy's release, UNifeed's record of the President's stakeout, the General Debate statements of the 78th to 81st sessions (gadebate.un.org; Spanish files read, no Wayback capture of the 80th and 81st; the 79th is the Permanent
+#   Representative's), the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 45 minutes.
+# Statements read and not filed as B9: the Foreign Minister's EFE interview (press, lead_20261006_ECU_1), the Ministry's releases (no named speaker, R3) and the General Debate statements of 2025 and 2026 (Gaza not cited).
+country: ECU
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Ecuador
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Ecuador
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 7, abstain on 4 (A/RES/ES-10/24 of 18 September 2024, A/RES/ES-10/27 of 12 June 2025, A/DEC/80/506 of 12 September 2025 and A/RES/80/116 of 12
+      December 2025) and absent on 1 (A/RES/ES-10/23 of 10 May 2024) of the 12 qualifying votes. The statements on the votes were not read; Primicias (13 September 2025, archived) reads the abstentions
+      since September 2024 as a change of position and records that Israel made a formal complaint to Ecuador over its vote of April 2024 on Palestine''s membership in the Security Council.'
+    checked_at: '2026-10-06'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Ecuador sat on the Security Council in 2023 and 2024 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent member): the vetoes of
+      the window are those of the permanent members.'
+    queries:
+    - unsc_vetoes.csv, vetoing state Ecuador
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Ecuador is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Ecuador recall ambassador Israel OR sanctions settlers OR ICJ genocide case Ecuador position Gaza government
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or a justice minister on executing the warrants of 21 November 2024 was found (Ecuador is a State Party to the Rome Statute). Israel''s
+      Prime Minister said on 5 May 2025 that he hoped to visit Ecuador soon (Primicias, archived: it adds that the Rome Statute would oblige Ecuador to arrest him); no visit was found.'
+    queries:
+    - Ecuador Corte Penal Internacional orden de arresto Netanyahu Cancillería Ecuador posición
+    - Ecuador Noboa Israel embajada Jerusalén acuerdo cooperación Herzog 2025
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found: the President went to Jerusalem and met the Prime Minister there on 5 May 2025 (a visit by Ecuador''s President
+      to Israel, not the hosting of a person under warrant on Ecuador''s territory), and Israel''s Foreign Minister, who is not under a warrant, visited Quito on 5 August 2026.'
+    queries:
+    - Ecuador Corte Penal Internacional orden de arresto Netanyahu Cancillería Ecuador posición
+    - Ecuador Israel acuerdo firmado Noboa Netanyahu visita Quito 2026 cooperación
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Ecuador has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Ecuador Corte Penal Internacional orden de arresto Netanyahu Cancillería Ecuador posición
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the pre-existing standing state (+3), recognition on 24 December 2010 as the Ministry''s release of 3 December 2018 states it (src_20181203_cancilleria_posicion-invariable-palestina,
+      archived; the row was added in this session, R21). The registry dates the recognition 2010-12-27 (A/78/846; Wikipedia gives 24 December 2010): the Ministry''s own date is kept in the row,
+      as Brazil''s (docs/10 B-355 (4)), and countries.yaml is left to the author. No effect on the score (+3 either way).'
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'One event: the President''s answer at the stakeout of 7 December 2023 (+2, flagged: a position in favour of the ceasefire, not a call addressed to the parties; decayed to zero). Not
+      filed: the Foreign Minister''s interview with EFE of 12 June 2024 (press: lead_20261006_ECU_1); the Foreign Minister''s General Debate statement of the 80th session (25 September 2025) and
+      the President''s of the 81st (23 September 2026), neither of which cites Gaza; the Permanent Representative''s of the 79th session (not a B9 speaker, R3); the President''s words in Jerusalem
+      on 4 and 5 May 2025 and the Ministry''s releases (no call, no named violation). The Ministry''s tweet of 7 October 2024 (''Ecuador ha condenado y condena los reiterados ataques contra Israel
+      por parte de grupos terroristas de Hamas y Hezbollah, reconociendo el legítimo derecho a la defensa del Estado de Israel'', seen in a search result, not archived) has no named speaker.'
+    queries:
+    - Ecuador Noboa Israel embajada Jerusalén acuerdo cooperación Herzog 2025
+    - Noboa Gaza Israel "derecho a defenderse" OR "genocidio" OR "Hamás" presidente Ecuador declaración
+    - Sommerfeld canciller Ecuador Consejo de Seguridad Gaza intervención ministra Ecuador Medio Oriente cese al fuego
+    - cancilleria.gob.ec Ecuador comunicado Gaza Palestina Israel Cancillería rechaza condena
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No filed statement of unconditional support or denial: the President''s ''Tenemos los mismos enemigos'' (Jerusalem, 5 May 2025) names poverty, terrorism and misery as the enemies, says
+      nothing of Gaza and is a press quotation (lead_20261006_ECU_3); his ''un mundo sin terrorismo'' (Presidency''s release of 4 May 2025) and the Foreign Minister''s rejection of terrorism (EFE,
+      12 June 2024) condemn terrorism without supporting Israel''s conduct; Ecuador''s Ministry has not commented on the destruction in Gaza (Primicias, archived), which is an absence, not an
+      act.'
+    queries:
+    - Ecuador Noboa Israel embajada Jerusalén acuerdo cooperación Herzog 2025
+    - Noboa Gaza Israel "derecho a defenderse" OR "genocidio" OR "Hamás" presidente Ecuador declaración
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Ecuador was found (not an EU member).
+    queries:
+    - Ecuador recall ambassador Israel OR sanctions settlers OR ICJ genocide case Ecuador position Gaza government
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Ecuador''s embassy in Israel is open (the Presidency''s release of 4 May 2025 speaks of relations ''desde 1949'') and the Israeli Ambassador
+      signed the cooperation programme of 30 March 2026. An innovation centre in Jerusalem announced during the visit of May 2025 (the Israeli Prime Minister''s post, as Plan V prints it) is not
+      an embassy and not an indicator.'
+    queries:
+    - Ecuador recall ambassador Israel OR sanctions settlers OR ICJ genocide case Ecuador position Gaza government
+    - Ecuador Noboa Israel embajada Jerusalén acuerdo cooperación Herzog 2025
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Ecuador has none); the two Ministers agreed on 5 August 2026 to begin negotiating a free trade agreement (lead_20261006_ECU_2).
+    queries:
+    - Ecuador Israel tratado libre comercio negociación Noboa Sa'ar visita Quito agosto 2026
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'Five events: the memorandum on temporary agricultural employment of Ecuadorians in Israel (3 April 2024, flagged), the energy memorandum of understanding of May 2025 (dated 5 May),
+      the cooperation programme 2026-2027 (30 March 2026, flagged under R18), and, on 5 August 2026, the agreement on cooperation to combat terrorism and the joint declaration of the Expanded
+      Economic Dialogue (-10 each, standing). Category C is capped at -20, reached by any two of them. Not filed: the agreement to begin free trade negotiations (lead_20261006_ECU_2) and the Presidency''s
+      meetings of 4 and 5 May 2025 (no instrument named).'
+    queries:
+    - Ecuador Israel acuerdo firmado Noboa Netanyahu visita Quito 2026 cooperación
+    - Ecuador Israel tratado libre comercio negociación Noboa Sa'ar visita Quito agosto 2026
+    - Ecuador Israel acuerdo OR memorando suscrito cancillería.gob.ec 2024 2025 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Ecuador to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Ecuador has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - Ecuador evacuación médica Gaza OR visa humanitaria palestinos OR UNRWA contribución Cancillería Ecuador
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Ecuador in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Ecuador
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found (the humanitarian-aid flight to Gaza that the search returned is the Government's of 2014, before the window).
+    queries:
+    - Ecuador evacuación médica Gaza OR visa humanitaria palestinos OR UNRWA contribución Cancillería Ecuador
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Ecuador evacuación médica Gaza OR visa humanitaria palestinos OR UNRWA contribución Cancillería Ecuador
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

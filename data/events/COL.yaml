@@ -1,0 +1,567 @@
+# Hand-authored events for the Republic of Colombia (P-D research session, wave 7, 2026-09-29).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers: President Gustavo Petro (head of state and government to 7 August 2026), the Ministers of Foreign
+# Affairs Luis Gilberto Murillo (acting, then Minister, 2024) and Rosa Yolanda Villavicencio (acting from July 2025,
+# then Minister). B9 events are filed only on the speaker's own words quoted verbatim in an official publication, and
+# on joint statements the Minister agreed with counterparts (as data/wave-6, B-351 (1)); not on the Ministry's
+# unsigned communiqués issued in the name of "el Gobierno de Colombia" or "el Ministerio", nor on posts on X that the
+# Presidency reported (docs/06 §7; docs/10 B-356). Spanish texts are quoted in Spanish with this session's English
+# translation beside them, except where the Ministry published its own English version.
+
+- id: evt_2023_10_31_COL_B12
+  revision: 1
+  country: COL
+  indicator: B12
+  type: standing
+  date: '2023-10-31'
+  end: '2024-05-02'
+  points: 5
+  points_rationale: >-
+    Ambassador recalled (+5): the President called the ambassador in Israel to Bogotá for consultations, as
+    communicated on 31 October 2023; superseded on 2 May 2024 by the severance of relations (evt_2024_05_02_COL_B12).
+  confidence: confirmed
+  scope:
+  - region
+  summary:
+    en: >-
+      The President of Colombia called the ambassador in Israel to Bogotá for consultations.
+    fr: >-
+      Le président de la Colombie a rappelé l'ambassadrice en Israël à Bogota pour consultations.
+  actor:
+    en: "President of Colombia"
+    fr: "Président de la Colombie"
+    name: Gustavo Petro
+  evidence:
+  - source: src_20231108_cancilleria_embajadora-israel-consultas
+    quote: "La Embajadora de Colombia en Israel, Margarita E. Manjarrez Herrera ya se encuentra en nuestro país para atender el llamado a consultas del Presidente Gustavo Petro, tal como se comunicó el pasado 31 de octubre y en las últimas horas sostuvo una reunión con el canciller Álvaro Leyva Durán."
+    quote_lang: es
+    quote_en: "The Ambassador of Colombia in Israel, Margarita E. Manjarrez Herrera, is already in our country to answer the call for consultations of President Gustavo Petro, as communicated on 31 October last, and in the last hours held a meeting with Foreign Minister Álvaro Leyva Durán."
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_05_02_COL_B12
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Ministry news item dated 8 November 2023 (line 1); the recall was communicated on 31 October 2023, the event
+        date. The text speaks of the conflict in Israel and Palestine and of evaluating "la situación en la región"
+        (line 4) but does not cite Gaza, so the event is scoped `region` and does not score (docs/10 B-32 rule: `gaza`
+        only when the act or its document cites Gaza). The communication of 31 October itself was not found on the
+        Ministry's site.
+    notes: >-
+      Scoped `region`, unscored, flagged for the author (docs/10 B-357 (2)). The recall ended with the severance of
+      relations on 2 May 2024 (the ambassador did not return).
+
+- id: evt_2023_12_31_COL_D3
+  revision: 1
+  country: COL
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Colombia's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 160,000 in 2023; no row for Colombia in the 2022 table (a 2022 contribution of zero)) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Colombia contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Colombie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Colombia 0 0 0 0 0 0 0 0 0 160,000 160,000 82"
+    quote_lang: en
+    locator: line 101 (Colombia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 101 of the 2023 table re-read: USD 160,000 in 2023; no row for Colombia in the 2022 table (a 2022 contribution of zero). D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_COL_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_COL_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
+- id: evt_2024_04_05_COL_B3
+  revision: 1
+  country: COL
+  indicator: B3
+  type: standing
+  date: '2024-04-05'
+  end: '2026-09-18'
+  points: 15
+  points_rationale: >-
+    Declaration of intervention (+15) under Article 63 in ICJ case 192, supporting the applicant: Colombia states that
+    it intervenes to assist the Court in finding the responsibility of any State Party for failing to comply with the
+    Convention, in the situation in the Gaza Strip. Ended on 18 September 2026, when the withdrawal was filed.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The government filed a declaration of intervention in the ICJ case South Africa v. Israel on the Genocide Convention in the Gaza Strip, and withdrew it on 18 September 2026."
+    fr: "Le gouvernement a déposé devant la CIJ une déclaration d'intervention dans l'affaire de la Convention sur le génocide à Gaza (Afrique du Sud c. Israël), puis l'a retirée le 18 septembre 2026."
+  actor:
+    en: "Government of Colombia"
+    fr: "Gouvernement de la Colombie"
+  evidence:
+  - source: src_20240405_cancilleria_declaracion-intervencion-cij
+    quote: "The Government of Colombia submits the present Declaration of Intervention in the genuine belief that the States parties to the Genocide Convention should do everything in their power to contribute to ensure the prevention, suppression and punishment of genocide and therefore, to assist the Court in finding the responsibility of any State Party to the Convention, for its failure to comply with the obligations contained therein, especially in the context of such a dramatic situation as that unfolding in the Gaza Strip."
+    quote_lang: en
+    locator: lines 1894–1899 (paragraph 186)
+  - source: src_20260922_cancilleria_retiro-intervencion-cij
+    quote: "La comunicación de retiro fue radicada ante la Corte el 18 de septiembre de 2026."
+    quote_lang: es
+    quote_en: "The communication of withdrawal was filed with the Court on 18 September 2026."
+    locator: line 75
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The declaration is dated 5 April 2024 (line 1942), signed by the Agent, Ambassador Juan José Quintana; its
+        conclusion (paragraphs 185–189) states the purpose of assisting the Court in finding responsibility for
+        failure to comply with the Convention in the Gaza Strip, and paragraph 188 asks the Court to ensure the
+        existence of the Palestinian people as a protected group, citing the provisional-measures orders of 26 January
+        and 28 March 2024: the direction supports the applicant, so B3, not B4. The withdrawal (line 73 names the
+        declaration "presentada el 5 de abril de 2024"; line 75 the filing of the withdrawal on 18 September 2026)
+        ends the standing state, as docs/02 §2 states for Colombia.
+    notes: >-
+      Section IV of the declaration (paragraphs 29–183) sets out Colombia's construction of Articles I to III; it was
+      read for direction, not summarised here. The ICJ's own press releases (5 April 2024, 22 September 2026) answer
+      403 to scripted requests and were not archived.
+
+- id: evt_2024_05_02_COL_B12
+  revision: 1
+  country: COL
+  indicator: B12
+  type: standing
+  date: '2024-05-02'
+  end: '2026-08-11'
+  points: 10
+  points_rationale: >-
+    Relations severed (+10): the President's decision to break diplomatic relations with Israel from 2 May 2024,
+    citing the war in Gaza; the note verbale was delivered on 2 May 2024. Ended on 11 August 2026, when the government
+    decided to restore diplomatic relations.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The government broke diplomatic relations with Israel from 2 May 2024, citing the war in Gaza, and restored them
+      on 11 August 2026.
+    fr: >-
+      Le gouvernement a rompu les relations diplomatiques avec Israël à compter du 2 mai 2024, en invoquant la guerre à
+      Gaza, et les a rétablies le 11 août 2026.
+  actor:
+    en: "Government of Colombia"
+    fr: "Gouvernement de la Colombie"
+  evidence:
+  - source: src_20240501_cancilleria_ruptura-relaciones-israel
+    quote: "Colombia tampoco puede ser indiferente al enorme e indescriptible sufrimiento humano que esto causa, por lo cual el presidente Gustavo Petro ha anunciado la decisión de romper relaciones diplomáticas con Israel a partir del 2 de mayo."
+    quote_lang: es
+    quote_en: "Colombia cannot be indifferent to the enormous and ineffable human suffering that these actions cause, and for this reason, President Gustavo Petro has decided to break diplomatic relations with Israel as of 2 May."
+    locator: line 12 (Ministry's English version, line 28)
+  - source: src_20240503_cancilleria_nota-verbal-ruptura-relaciones
+    quote: "El Ministerio de Relaciones Exteriores de Colombia informa que el día de ayer se entregó de manera oficial al Embajador de Israel en Colombia, la Nota Verbal sobre la decisión del Gobierno de romper relaciones diplomáticas con el Estado de Israel a partir de la fecha."
+    quote_lang: es
+    quote_en: "The Ministry of Foreign Affairs of Colombia reports that yesterday the note verbale on the Government's decision to break diplomatic relations with the State of Israel from that date was officially delivered to the Ambassador of Israel in Colombia."
+    locator: line 74
+  - source: src_20260911_cancilleria_israel-exencion-visa
+    quote: "Como parte de este proceso, el 11 de agosto de 2026, Colombia decidió restablecer y fortalecer sus relaciones diplomáticas con Israel, con el propósito de recuperar y profundizar los vínculos bilaterales entre ambos Estados."
+    quote_lang: es
+    quote_en: "As part of this process, on 11 August 2026, Colombia decided to restore and strengthen its diplomatic relations with Israel, with the aim of recovering and deepening the bilateral ties between both States."
+    locator: line 6
+  status: reviewed
+  supersedes: evt_2023_10_31_COL_B12
+  related:
+  - evt_2023_10_31_COL_B12
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Press release of 1 May 2024 (line 1); line 2 places the position on the war in the Gaza Strip, line 12 the
+        decision from 2 May, the Ministry's English version at line 28 (used as quote_en). The note verbale of 2 May
+        (release of 3 May, line 74, "el día de ayer") confirms the date. The Ministry's item of 11 September 2026
+        (line 6) dates the restoration to 11 August 2026; the new ambassador of Israel presented copies of her
+        credentials on 21 August 2026 (Ministry item, not archived). Severed tier and dates agree.
+    notes: >-
+      The Ministry's release of 1 May 2024 also cites "graves acusaciones de la comisión de un genocidio" (line 11); as
+      an unsigned communiqué it is not filed as B9.
+
+- id: evt_2024_06_06_COL_B9
+  revision: 1
+  country: COL
+  indicator: B9
+  type: repeatable
+  date: '2024-06-06'
+  points: 2
+  points_rationale: "Formal call for a ceasefire (+2): the joint statement of the leaders of seventeen states fully supports the move towards a ceasefire and a hostage-release agreement and says it is time for the war to end; it names no specific violation."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The President of Colombia joined sixteen other leaders in supporting a ceasefire and hostage-release agreement for Gaza and in stating that it was time for the war to end."
+    fr: "Le président de la Colombie s'est joint à seize autres dirigeants pour soutenir un cessez-le-feu et un accord de libération des otages à Gaza et déclarer qu'il était temps que la guerre prenne fin."
+  actor:
+    en: "President of Colombia"
+    fr: "Président de la Colombie"
+    name: "Gustavo Petro"
+  evidence:
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: "we fully support the movement towards a ceasefire and hostage release deal now on the table and as outlined by President Biden on May 31, 2024."
+    quote_lang: en
+    locator: line 3
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: "It is time for the war to end and this deal is the necessary starting point."
+    quote_lang: en
+    locator: line 4
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: "Categories: Joint Statements : Argentina, Austria, Brazil, Bulgaria, Canada, Colombia"
+    quote_lang: en
+    locator: line 6
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_06_06_ARG_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Lines 3 and 4 of the archived text re-read: the support for the ceasefire and hostage-release deal and \"It is time for the war to end\"; Colombia is listed on line 6 among the states joining the United States. Call tier (+2) matches evt_2024_06_06_ARG_B9."
+    notes: "Joint statement of the leaders of seventeen states of 6 June 2024, in the Daily Compilation of Presidential Documents (DCPD-202400492). The archived text names the states; the signatory is the President. It has decayed to zero (more than 730 days old). Filed in the P-16 consistency sweep (docs/10 B-444; B-377 (4), B-380 (4))."
+
+- id: evt_2024_06_11_COL_B9
+  revision: 1
+  country: COL
+  indicator: B9
+  type: repeatable
+  date: '2024-06-11'
+  points: 5
+  points_rationale: >-
+    Legal characterisation (+5): the Minister of Foreign Affairs said that the Palestinian people face a genocide, at
+    the conference on the humanitarian response for Gaza.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister of Foreign Affairs of Colombia said at a conference on Gaza that the Palestinian people face a
+      genocide.
+    fr: >-
+      Le ministre des Affaires étrangères de la Colombie a déclaré lors d'une conférence sur Gaza que le peuple
+      palestinien fait face à un génocide.
+  actor:
+    en: "Minister of Foreign Affairs of Colombia"
+    fr: "Ministre des Affaires étrangères de la Colombie"
+    name: Luis Gilberto Murillo
+  evidence:
+  - source: src_20240611_cancilleria_murillo-conferencia-gaza-jordania
+    quote: "“El pueblo palestino hoy enfrenta un genocidio, debemos decirlo muy claramente, y la guerra es una guerra desigual que ha escalado a niveles absurdos."
+    quote_lang: es
+    quote_en: "\"The Palestinian people today face a genocide, we must say it very clearly, and the war is an unequal war that has escalated to absurd levels."
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 1 dates the address (Jordan, 11 June 2024) and names the speaker as Minister and the President's special
+        envoy at the conference "Llamado a la Acción: Respuesta humanitaria urgente para Gaza"; line 2 quotes him
+        directly. Legal-characterisation tier agrees.
+    notes: >-
+      Quoted by the Ministry from the address, which the Ministry also published as a video (not transcribed). Line 3
+      reports, in the Ministry's words, that the break of relations condemned war crimes; not used as evidence.
+
+- id: evt_2024_08_14_COL_A6
+  revision: 1
+  country: COL
+  indicator: A6
+  type: standing
+  date: '2024-08-14'
+  end: null
+  points: 10
+  points_rationale: >-
+    Partial suspension (+10): a decree prohibiting exports of thermal coal to Israel until the ICJ's provisional
+    measures in the Gaza genocide case are fully complied with; tightened by Decree 0949 of 2025 to apply without
+    exception. Filed as A6 as Türkiye's export restriction of 9 April 2024 (data/wave-2), flagged for the author.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The President signed Decree 1047 of 2024 prohibiting exports of thermal coal to Israel until the ICJ's provisional
+      measures on Gaza are complied with.
+    fr: >-
+      Le président a signé le décret 1047 de 2024 interdisant les exportations de charbon thermique vers Israël jusqu'à
+      l'exécution des mesures conservatoires de la CIJ sur Gaza.
+  actor:
+    en: "Government of Colombia (Ministry of Commerce, Industry and Tourism)"
+    fr: "Gouvernement de la Colombie (ministère du Commerce, de l'Industrie et du Tourisme)"
+  evidence:
+  - source: src_20240814_mincit_decreto-1047-carbon-israel
+    quote: "Artículo 1°. Prohibición de exportaciones. Se prohíben las exportaciones al Estado de Israel de las Hullas térmicas (Carbón), clasificadas por la subpartida arancelaria 2701 .12.00.10."
+    quote_lang: es
+    quote_en: "Article 1. Prohibition of exports. Exports to the State of Israel of thermal coal, classified under tariff subheading 2701.12.00.10, are prohibited."
+    locator: lines 250–251
+  - source: src_20240814_mincit_decreto-1047-carbon-israel
+    quote: "tendrá vigencia hasta que se cumplan a cabalidad las ordenes de medidas provisionales emitidas por la Corte Internacional de Justicia en el Proceso de la aplicación de la Convención para la Prevención y la Sanción del Delito de Genocidio en la Franja de Gaza (Sudáfrica c. Israel)."
+    quote_lang: es
+    quote_en: "shall remain in force until the provisional-measures orders issued by the International Court of Justice in the proceedings on the application of the Convention on the Prevention and Punishment of the Crime of Genocide in the Gaza Strip (South Africa v. Israel) are fully complied with."
+    locator: lines 295–298 (Article 4)
+  - source: src_20241231_mincit_decretos-2024
+    quote: "Decreto 1047 del 14 de agosto de 2024, \"por el cual se establece una prohibición a las exportaciones de carbón a Israel\"."
+    quote_lang: es
+    quote_en: "Decree 1047 of 14 August 2024, \"establishing a prohibition on exports of coal to Israel\"."
+    locator: line 15
+  - source: src_20250828_mincit_decreto-0949-carbon-israel
+    quote: "Artículo 3. A partir de la entrada en vigor del presente Decreto, queda estrictamente prohibida la realización de exportaciones de carbón al Estado de Israel bajo cualquier circunstancia."
+    quote_lang: es
+    quote_en: "Article 3. From the entry into force of this Decree, exports of coal to the State of Israel are strictly prohibited under any circumstances."
+    locator: lines 465–467
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The decree's title and Article 1 (lines 250–251) prohibit coal exports to Israel; Article 4 (lines 294–298)
+        ties the measure to the ICJ's orders in the Gaza case; the recitals (from line 44) cite the Gaza orders and
+        link coal to electricity used by Israel's military industry. The date (14 August 2024) is the Ministry's
+        listing (line 15), the decree's own date line being illegible in the scan; it entered into force five days
+        after publication in the Diario Oficial (not read). Decree 0949 of 28 August 2025 removed the exceptions
+        (Articles 1 to 3, lines 459–467). No repeal was found to 29 September 2026 (the Ministry's 2026 decree list
+        has no decree on coal or Israel). Indicator choice flagged (docs/10 B-357 (1)).
+    notes: >-
+      A6 by analogy with Türkiye's restriction of exports of product groups to Israel (evt_2024_04_09_TUR_A6 on
+      data/wave-2); coal is not a military good, so the author may read this as a trade measure outside A6 (docs/10
+      B-357 (1)). Decree 0949 of 2025 is the same standing measure, not a second event.
+
+- id: evt_2024_09_24_COL_B9
+  revision: 1
+  country: COL
+  indicator: B9
+  type: repeatable
+  date: '2024-09-24'
+  points: 5
+  points_rationale: >-
+    Legal characterisation (+5): the President told the General Assembly that the members' votes to stop the genocide
+    in Gaza are not heeded.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The President of Colombia told the UN General Assembly that the votes to stop what he called the genocide in Gaza
+      are not heeded.
+    fr: >-
+      Le président de la Colombie a déclaré à l'Assemblée générale des Nations unies que les votes pour arrêter ce qu'il
+      a appelé le génocide à Gaza ne sont pas entendus.
+  actor:
+    en: "President of Colombia"
+    fr: "Président de la Colombie"
+    name: Gustavo Petro
+  evidence:
+  - source: src_20240924_cancilleria_petro-asamblea-general-gaza
+    quote: "“No nos escuchan cuando votamos que se detenga el genocidio en Gaza. Aunque seamos la mayoría de los presidentes del mundo y representantes de la mayor parte de la humanidad, no nos escucha una minoría de presidentes que pueden detener el bombardeo."
+    quote_lang: es
+    quote_en: "\"They do not listen to us when we vote to stop the genocide in Gaza. Although we are the majority of the world's presidents and representatives of most of humanity, a minority of presidents who can stop the bombing does not listen to us."
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 2 dates the address (United Nations, 24 September 2024, 79th session of the General Assembly) and names
+        the President; line 3 quotes him directly. Legal-characterisation tier agrees.
+    notes: >-
+      The Ministry's report of the General Debate address, quoting the President verbatim; the full statement on
+      gadebate.un.org was not archived.
+
+- id: evt_2024_12_31_COL_D3
+  revision: 1
+  country: COL
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: >-
+    Increased tier (+8): UNRWA's tables give USD 382,023 pledged and received from Colombia for 2024; Colombia is not
+    among the donors of 2022 (the 2022 table lists every donor down to USD 11).
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      Colombia's contribution to UNRWA for 2024 exceeded its 2022 contribution in UNRWA's donor tables.
+    fr: "La contribution de la Colombie à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Colombia"
+    fr: "Gouvernement de la Colombie"
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: "Colombia - - - - - - - - - - - - - - - - 382,023 382,023 382,023 382,023 382,023 69 382,023 67"
+    quote_lang: en
+    locator: row Colombia (line 105)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "OFID 0 0 0 0 0 11 11 98"
+    quote_lang: en
+    locator: row OFID (line 109), the smallest donor of 2022; no row Colombia
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The 2024 table (as of 31 December 2024) has Colombia at line 105 with USD 382,023 pledged and received,
+        entered in the non-programme columns; the 2022 table (as of 31 December 2022) ranks 98 donors down to USD 11
+        and has no Colombia row, so the 2022 contribution is zero. Colombia never suspended (D2 none-found). Increased
+        tier agrees, as Brazil, Japan, Korea and China on data/wave-6.
+    notes: "The same USD 382,023 appears in FTS as Colombia's flow to the oPt appeal (fts_funding.csv, windows from June 2024), so D1 and D3 both reflect one contribution; flagged (docs/10 B-357 (4)). P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_COL_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
+
+- id: evt_2025_07_15_COL_B9
+  revision: 1
+  country: COL
+  indicator: B9
+  type: repeatable
+  date: '2025-07-15'
+  points: 5
+  points_rationale: >-
+    Legal characterisation (+5): the acting Minister of Foreign Affairs said that what is happening in Gaza is a
+    genocide, opening the Hague Group's emergency ministerial conference in Bogotá.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The acting Minister of Foreign Affairs of Colombia said that what is happening in Gaza is a genocide.
+    fr: >-
+      La ministre des Affaires étrangères par intérim de la Colombie a déclaré que ce qui se passe à Gaza est un
+      génocide.
+  actor:
+    en: "Acting Minister of Foreign Affairs of Colombia"
+    fr: "Ministre des Affaires étrangères par intérim de la Colombie"
+    name: Rosa Yolanda Villavicencio
+  evidence:
+  - source: src_20250715_cancilleria_villavicencio-grupo-la-haya
+    quote: "\"Colombia se ha pronunciado sin ambigüedades, lo que ocurre en Gaza es un genocidio, en 2018 reconocimos al Estado de Palestina y en 2024 rompimos relaciones con Israel ante el uso desproporcionado de la fuerza contra civiles, el Derecho Internacional Humanitario debe ser principio y acción, no retórica vacía\", aseguró en su intervención."
+    quote_lang: es
+    quote_en: "\"Colombia has spoken without ambiguity: what is happening in Gaza is a genocide; in 2018 we recognised the State of Palestine and in 2024 we broke relations with Israel over the disproportionate use of force against civilians; international humanitarian law must be principle and action, not empty rhetoric,\" she said in her address."
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 2 dates the address (Bogotá, 15 July 2025) and names the speaker as acting Minister ("Canciller (e)")
+        opening the conference co-chaired with South Africa; line 3 quotes her directly. An acting minister is read
+        as the foreign minister (docs/10 B-356 (2)). Tier agrees.
+    notes: >-
+      Also the source of the B8 row in recognitions.csv (the year of recognition, 2018).
+
+- id: evt_2026_04_30_COL_B9
+  revision: 1
+  country: COL
+  indicator: B9
+  type: repeatable
+  date: '2026-04-30'
+  points: 5
+  points_rationale: >-
+    Legal characterisation (+5): in a joint statement with eleven counterparts, the Minister called Israel's attacks
+    on the Global Sumud Flotilla, a humanitarian initiative on the catastrophe in Gaza, and the detention of its
+    activists flagrant violations of international law and international humanitarian law.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister of Foreign Affairs of Colombia and eleven counterparts called Israel's attacks on the Gaza flotilla
+      violations of international humanitarian law.
+    fr: >-
+      La ministre des Affaires étrangères de la Colombie et onze homologues ont qualifié les attaques d'Israël contre la
+      flottille pour Gaza de violations du droit international humanitaire.
+  actor:
+    en: "Minister of Foreign Affairs of Colombia"
+    fr: "Ministre des Affaires étrangères de la Colombie"
+    name: Rosa Yolanda Villavicencio
+  evidence:
+  - source: src_20260430_mre_joint-statement-sumud-flotilla
+    quote: "Os ataques israelenses contra as embarcações e a detenção ilegal de ativistas humanitários em águas internacionais constituem flagrantes violações do direito internacional e do direito internacional humanitário."
+    quote_lang: pt
+    quote_en: "The Israeli attacks against the vessels and the unlawful detention of humanitarian activists in international waters constitute flagrant violations of international law and international humanitarian law."
+    locator: line 337
+  - source: src_20260430_cancilleria_villavicencio-orden-san-carlos
+    quote: "Bogotá, 30 de abril de 2026. La canciller Rosa Yolanda Villavicencio condecoró al alcalde de Saint-Ouen-sur-Seine (Francia), Karim Bouamrane, con la Orden de San Carlos en grado de Oficial"
+    quote_lang: es
+    quote_en: "Bogotá, 30 April 2026. Foreign Minister Rosa Yolanda Villavicencio decorated the mayor of Saint-Ouen-sur-Seine (France), Karim Bouamrane, with the Order of San Carlos in the rank of Officer"
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Brazil's press note No. 151 carries the statement in Portuguese and in its own English version: line 341
+        names Colombia among the twelve ministers, line 342 places the flotilla's purpose in the humanitarian
+        catastrophe in Gaza, line 337 (Portuguese) and line 343 (the statement's English version, used as quote_en)
+        hold the characterisation. The Ministry's item of 30 April 2026 (line 1) names
+        Rosa Yolanda Villavicencio as Minister that day. Tier agrees; the same reading as evt_2026_04_30_BRA_B9 on
+        data/wave-6 (B-355 (3) there), flagged for the author.
+    notes: >-
+      Joint statement of twelve Ministers of Foreign Affairs, 30 April 2026, filed as the Minister's own act, as
+      Brazil's on data/wave-6. It was not found on the Colombian Ministry's site; the Brazilian publication is the
+      archived record. It is the only qualifying event of the last 365 days on this file.
