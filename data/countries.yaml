@@ -1592,7 +1592,15 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign Affairs and External Trade (foreignaffairs.gov.fj), url: 'https://www.foreignaffairs.gov.fj/', type: mfa, lang: [en]}
+    - {label: 'Fiji Government (official portal, fiji.gov.fj)', url: 'https://www.fiji.gov.fj/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: the Ministry's site answered 200 to a request with a browser User-Agent (it declares lang="en-US", a template default; the texts are English) and answers Save Page Now
+    with HTTP 403, so its pages are recorded with --capture. The Government portal fiji.gov.fj did not answer from the session's network; its latest Wayback capture (2026-08-31, 200, lang="en-US", 54,475 bytes) was
+    read, and the capture of the President's statement at the 81st session has no replay. The Prime Minister's own site (pmoffice.gov.fj) answers with a JavaScript redirect page ('You are being redirected') and
+    its Wayback captures are the same page, so it is not recorded; the Prime Minister's statements are on the Ministry's site. Fiji opened an embassy in Jerusalem on 17 September 2025 and Israel opened its embassy
+    in Suva on 2 June 2026: no indicator measures either (docs/10 B-599).
 
 - iso3: FRA
   iso2: FR
@@ -4987,8 +4995,17 @@
     g20: false
     g7: false
     brics: false
-  recognises_palestine: {since: 2011-08-29}
-  gov_sources: []
+  recognises_palestine:
+    since: 2011-08-29
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024). The Division for Palestinian Rights' review of August 2011 (UNISPAL, archived) records the announcement under 30 August ('It announced its decision in an official
+      letter to the United Nations', Ynews): recognitions.csv holds `VCT,2011-08-30` (R21, docs/10 B-624). The one day's difference is left to the author.
+  gov_sources:
+    - {label: Ministry of Foreign Affairs (foreign.gov.vc), url: 'https://foreign.gov.vc/foreign/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister (pmoffice.gov.vc), url: 'https://pmoffice.gov.vc/pmoffice/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: both pages answered 200 to a request with a browser User-Agent and declare lang="en-GB". The sites carry few releases (the Prime Minister's addresses to the General Assembly are on the
+    General Debate site); the Government portal is gov.vc. The Prime Minister is Godwin Friday since 28 November 2025 (Ralph Gonsalves before).
 
 - iso3: VEN
   iso2: VE
@@ -5008,11 +5025,22 @@
     g20: false
     g7: false
     brics: false
-  recognises_palestine: {since: 2009-04-27}
-  gov_sources: []
+  recognises_palestine:
+    since: 2009-04-27
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024). The Division for Palestinian Rights' review of April 2009 (UNISPAL, archived) records, under 26 April, that the Palestinian and Venezuelan Foreign Ministers were to sign
+      'the following day a joint communiqué establishing diplomatic relations', and President Chávez's letter of 17 September 2011 (UNISPAL, archived) confirms 'full support for the recognition of the Palestinian State':
+      recognitions.csv holds `VEN,2009-04-27` (R21, flagged, docs/10 B-624).
+  gov_sources:
+    - {label: Ministry of the People's Power for Foreign Affairs and International Trade (mppre.gob.ve), url: 'https://mppre.gob.ve/', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic (presidencia.gob.ve), url: 'https://presidencia.gob.ve/', type: head_of_government, lang: [es]}
   notes: >-
     name.fr_def is the UNTERM French formal name (la République bolivarienne du Venezuela): the
     UNTERM French short name "Venezuela (République bolivarienne du)" carries no article.
+    gov_sources checked 2026-10-07: the Ministry's site answered 200 (lang="es") and carries the Foreign Minister's and the President's statements as publications (mppre.gob.ve/publicacion/{n}-…, Save Page Now
+    captures them). The Presidency's address answers 200 with a 113-byte page that redirects to presidencia.gob.ve/Site, whose news pages (classMostrarEvento3.php?id_evento=…) answer 200; the page declares no lang
+    and its texts are Spanish (es recorded). The President is head of state and of government (Nicolás Maduro to 3 January 2026, Delcy Rodríguez acting President since). The Foreign Minister was Yván Gil until
+    mid-2026 and Félix Plasencia by August 2026 (Al Jazeera, read).
 
 - iso3: VNM
   iso2: VN

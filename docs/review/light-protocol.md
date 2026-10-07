@@ -536,3 +536,46 @@ Assessments: has-events 2 (B1, B8), none-found 18, no-data 2 (A2, C3), not-appli
 | URY | +0.5 (+1) | +3.5 (+4) | Acting | B8 +3.0 (the row added), B1 +15.5; the penalty applies |
 
 No band change. Read critically (docs/06 §4 step 7): no cap is hit and no single reading decides a band (Suriname without the B9 event is +5.5, without the B8 row +7.4, Acting both). The readings with the largest effect are unfiled: the Surinamese President's statement of 22 September 2026, if its delivered text cites Gaza with a call or a named violation, would be a B9 event inside 365 days that ends Suriname's passivity penalty (the score would be about +27 to +30, Acting); Uruguay's President's statement of 23 September 2025, if the author reads 'los territorios palestinos' as Gaza (R7), would add +1.9 or +4.8 without lifting the penalty.
+
+## T-P21-14: VCT, VEN, FJI (2026-10-07)
+
+Light protocol (docs/06 §5) for Saint Vincent and the Grenadines, Venezuela and Fiji. 10 events: 2 for Saint Vincent and the Grenadines, 4 for Venezuela (one unscored), 4 for Fiji. Decisions and flags are in docs/10 B-619 to B-628.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_27_VCT_B9 | B9 | 2024-09-27 | +5 | confirmed | official |
+| evt_2025_09_26_VCT_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+| evt_2023_10_07_VEN_B12 | B12 | 2023-10-07 (severed since 2009-01-16) | +10 | confirmed | official |
+| evt_2024_09_25_VEN_B9 | B9 | 2024-09-25 | +5 | confirmed | official |
+| evt_2025_06_17_VEN_B9 | B9 | 2025-06-17 | +5 | confirmed | official |
+| evt_2026_07_24_VEN_B6 | B6 | 2026-07-24 (scope related, unscored) | −10 | confirmed | official |
+| evt_2025_10_22_FJI_C2 | C2 | 2025-10-22 | −10 | confirmed | official |
+| evt_2026_03_12_FJI_B4 | B4 | 2026-03-12 | −15 | confirmed | court |
+| evt_2026_06_02_FJI_C2 | C2 | 2026-06-02 | −10 | confirmed | official |
+| evt_2026_06_02_FJI_C2_2 | C2 | 2026-06-02 | −10 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build. Rows added to `data/structured/recognitions.csv`: `VCT,2011-08-30` and `VEN,2009-04-27` (B8, +3 each; R21, flagged: UN Secretariat reviews).
+
+### Saint Vincent and the Grenadines
+
+Assessments (34 indicators): has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261007_VCT_1`, B9, Prime Minister Friday's statement of 25 September 2026, reported in indirect speech without Gaza). Sources read: the Prime Minister's General Debate address of the 79th session (the delegation's file, Wayback capture), UN Meetings Coverage's summary of the fourth day of the 80th session (the delegation's file of the 80th has no usable replay), the Division for Palestinian Rights' review of August 2011 (the recognition), the ICJ's case page, the press on the 81st session. Not an EU member; no archived joint statement names it; it attended the Hague Group's ministerial meeting of 26 September 2025 (Wikipedia, read), which is attendance and not a statement. 90-minute stop note: finished inside the budget (about 30 minutes on Saint Vincent and the Grenadines). Not filed and why: the 81st session's statement (indirect speech, R4, and no Gaza, R7); the statement of the 78th session (no capture).
+
+### Venezuela
+
+Assessments: has-events 5 (B1, B6, B8, B9, B12), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261007_VEN_1`, B9, the Foreign Minister's Telegram reply of November 2025 and two official texts that never cite Gaza; `_2`, C2, the continuation of technical cooperation announced on 11 August 2026 with no signed instrument; `_3`, B12, whether the consular mechanism of 11 August 2026 ends the severance). Sources read: the Ministry of Foreign Affairs' publications (mppre.gob.ve: the communiqué of 11 August 2026, the Foreign Minister's statement of 17 June 2025, the reports of 2025 on Gaza), the General Debate statements of the 79th (English) and 80th sessions (Spanish), the acting President's speech of 23 September 2026 (no passage on Gaza), UNISPAL's record of 16 January 2009 (the severance), the review of April 2009 and the President's letter of 2011 (the recognition), the depositary notification of the withdrawal from the Rome Statute, the ICJ's case page. Not an EU member; no archived joint statement names it; it attended the Hague Group's ministerial meeting of 26 September 2025 (attendance). 90-minute stop note: finished inside the budget (about 50 minutes on Venezuela); the Ministry's older publications on Gaza (2024 and early 2025) were not read one by one. Not filed and why: the 80th session's statement and the President's remarks of 7 October 2025 (R7, no Gaza), the Telegram reply (social media), the Ministry's communiqués with no named speaker (R3), the acting President's statement of the 81st session (no Gaza).
+
+### Fiji
+
+Assessments: has-events 3 (B1, B4, C2), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261007_FJI_1`, B10, the Prime Minister's statement of 13 October 2023 (R7 and 'as permitted by international law') and the Government's statement of 30 October 2023 (no named speaker); `_2`, B10, the Prime Minister's remark of 2 June 2026 that alleged violations are 'none of our business'; `_3`, B6, a possible visit of Israel's Prime Minister). Sources read: the Ministry of Foreign Affairs and External Trade's site (releases on Israel, the General Debate statements, the Prime Minister's ministerial statement), UNISPAL's copy of Fiji's declaration of intervention (read in full), the ICJ's press release of 13 March 2026, the General Debate pages of the 79th and 80th sessions, RNZ, PMN and FBC News. Not an EU member; no archived joint statement names it. 90-minute stop note: finished inside the budget (about 45 minutes on Fiji). Not filed and why: the embassy openings in Jerusalem (17 September 2025) and in Suva (2 June 2026) are not indicators (B-599); the Ambassador's interview (R3).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-07 (methodology 1.0.0-rc.1), the 10 reviewed events scored as if published (the Venezuelan B6 event has scope `related` and adds nothing) and the two recognition rows; before them the generated indicators alone gave −9 (VCT), −27 (VEN) and −36 (FJI).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| VCT | −9 (−9.5) | −1.6 (−2), with the B8 row alone −6.5 | Passive | B8 +3.0 (the row), B9 +4.9 (the statement of 26 September 2025, 376 days old); the passivity penalty (−15) applies: the B9 event is outside the 365 days; the event of 2024 is decayed to zero |
+| VEN | −26.7 (−27, Enabling) | −9.8 (−10), with the B8 row alone −23.7 | Passive | B12 +10.0 (standing since 2009, flagged), B9 +3.9 (17 June 2025, weight 0.77), B8 +3.0; B1 −11.7 (twelve absences) stays; the penalty applies |
+| FJI | −36.2 (−36, Enabling) | −56.2 (−56) | Sustaining | B4 −15.0, C2 −30.0 clipped to the category cap −20 (three events, all R18); the events lift the passivity penalty (+15) |
+
+Band changes: Venezuela, Enabling to Passive; Fiji, Enabling to Sustaining. Read critically (docs/06 §4 step 7): Fiji's band needs B4 and two of its three C2 events (B4 alone gives −36.2, one C2 −46.2, both Enabling; the cap makes a third event add nothing), and all three C2 events are flagged under R18 (technical memoranda and a declaration of intent). Venezuela's band rests on B12: without it −19.8 (−20, Passive, on the boundary), without the B9 event about −13.6, without both −23.7 (Enabling); if B6 is scored (scope `gaza`) it gives −19.8 (Passive), and with B12 ended on 11 August 2026 and B6 scored −29.8 (Enabling). The twelve B1 absences (−11.7) may be the loss of Venezuela's vote under Article 19 and not a choice (B-626). Saint Vincent and the Grenadines' band does not depend on any single reading; without the 2025 B9 event it is −6.5 (Passive). The readings with the largest effect are unfiled: Saint Vincent and the Grenadines' Prime Minister's statement of 25 September 2026, if its text cites Gaza with a call, would be a B9 event inside 365 days that ends its passivity penalty (the score would be about +15, Acting).
