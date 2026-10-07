@@ -4325,8 +4325,19 @@
     g20: false
     g7: false
     brics: false
-  recognises_palestine: {since: 2011-01-26}
-  gov_sources: []
+  recognises_palestine:
+    since: 2011-01-26
+    note: >-
+      Date from A/78/846 (annex, 9 April 2024). The Division for Palestinian Rights' report of the Montevideo meeting (UNISPAL, archived) gives Suriname's recognition as 1 February 2011 (paragraph 46,
+      the Palestinian representative's account), the Division's review of February 2011 records the President's letter under 1 February, and the Foreign Minister said on 23 October 2023 that Suriname
+      has recognised Palestine 'sinds 2011': recognitions.csv holds `SUR,2011-02-01` (R21, docs/10 B-614). The six days' difference is left to the author.
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, International Business and International Cooperation (gov.sr)', url: 'https://gov.sr/ministeries/ministerie-van-buitenlandse-zaken-internationale-handel-samenwerking/', type: mfa, lang: [nl]}
+    - {label: Cabinet of the President (gov.sr), url: 'https://gov.sr/ministeries/kabinet-van-de-president/', type: head_of_government, lang: [nl]}
+  notes: >-
+    gov_sources checked 2026-10-07: both pages of the Government portal gov.sr answered 200 to a request with a browser User-Agent. The pages declare lang="en-US" (a template default) although every text
+    is Dutch (nl recorded). The Ministry's own site (foreignaffairs.gov.sr) does not answer; the portal carries the Ministry's and the President's news. The President is head of state and of government.
+    Save Page Now captures gov.sr pages.
 
 - iso3: SVK
   iso2: SK
@@ -4688,7 +4699,13 @@
       data/structured/recognitions.csv (P-14) from
       src_20240502_foreign-tt_recognition-palestine, dated 2024-05-02; B8 is generated from
       that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: Ministry of Foreign and CARICOM Affairs, url: 'https://foreign.gov.tt/', type: mfa, lang: [en]}
+    - {label: Office of the Prime Minister, url: 'https://opm.gov.tt/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-07: foreign.gov.tt answered 200 to a request with a browser User-Agent and declares lang="en"; opm.gov.tt answered 200 (lang="en-US") but the site was rebuilt and 'is
+    currently being updated': its category pages answer 404 and the releases of earlier years are gone (the Wayback captures of the old site carry releases to 2025). The President of the Republic (otp.tt)
+    is head of state only; the Prime Minister is head of government.
 
 - iso3: TUN
   iso2: TN
@@ -4855,8 +4872,14 @@
   recognises_palestine:
     since: 2011-03-16
     note: >-
-      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 15 March 2011.
-  gov_sources: []
+      Date from A/78/846 (annex, 9 April 2024); Wikipedia gives 15 March 2011. The Division for Palestinian Rights' report of the Montevideo meeting (UNISPAL, archived) gives 15 March 2011 (paragraph
+      46, the Palestinian representative's account): recognitions.csv holds `URY,2011-03-15` (R21, docs/10 B-614). The one day's difference is left to the author.
+  gov_sources:
+    - {label: Ministry of Foreign Affairs, url: 'https://www.gub.uy/ministerio-relaciones-exteriores', type: mfa, lang: [es]}
+    - {label: Presidency of the Republic, url: 'https://www.gub.uy/presidencia', type: head_of_government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-10-07: both sections of the Government portal gub.uy answered 200 to a request with a browser User-Agent and declare lang="es". The President is head of state and of government.
+    Save Page Now captures gub.uy pages.
 
 - iso3: USA
   iso2: US

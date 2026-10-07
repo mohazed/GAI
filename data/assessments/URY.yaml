@@ -1,0 +1,207 @@
+# Coverage record for Uruguay (docs/03 §6). P-21 light protocol, session T-P21-13, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (gub.uy: its communiqués, its text of the statement of 29 July 2025, its report of the Foreign Minister's speech of 26 May 2026) and the Presidency (gub.uy: the President's General Debate text), the General Debate pages of the 78th to 80th sessions (gadebate.un.org through Wayback captures; the 81st has no capture), the ICJ's case page (read 2026-10-07), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, la diaria, Subrayado, El Popular, Infobae, Medios Públicos and Ámbito, the generated events and the structured tables; web searches in Spanish (the official language) per indicator group. Time: about 40 minutes of research on Uruguay, inside the 90-minute budget of the session.
+# No hand-authored event: nothing filed (the row of data/structured/recognitions.csv is the only addition).
+country: URY
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier URY
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists one order of Uruguay from Israel, of 1997 (15 second-hand Ti-67S tanks), none in the data year of the release of 9 March
+      2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer URY
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Uruguay
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 8 of the 12 qualifying votes, abstention on 4 (A/RES/ES-10/21 of 27 October 2023, ES-10/22 of 12 December 2023, ES-10/24 of 18 September 2024 and
+      A/RES/79/232 of 19 December 2024). A headline of Subrayado of December 2023 has the Foreign Minister of the time defending the abstention because the declaration was not balanced (a search
+      result, page not read). No disagreement found.'
+    queries:
+    - unga_votes.csv, voter URY
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: Uruguay is not on the ICJ case 192 intervention list (docs/06 §8; the Court's page read 2026-10-07).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Uruguay is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found. The Vice Foreign Minister, Valeria Csukasi, said
+      in August 2026 that Uruguay is obliged to act on the warrant if Mr Netanyahu comes (la diaria, read): not a B5 speaker (lead_20261007_URY_3); the Foreign Minister gave no statement of his
+      own. Uruguay is a State Party to the Rome Statute.'
+    queries: &id001
+    - Uruguay Corte Penal Internacional orden de captura Netanyahu postura gobierno Uruguay cumpliría
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Uruguay has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `URY,2011-03-15` is added in this session from the Division for Palestinian Rights'' report of the United Nations meeting for Latin America and
+      the Caribbean (Montevideo, 29 and 30 March 2011; UNISPAL, archived: src_20110330_un-unispal_montevideo-meeting-report-es: paragraph 46, the Palestinian representative gives ''el Uruguay,
+      el 15 de marzo de 2011'' among the recognitions; paragraph 7, Uruguay''s Foreign Minister, Luis Almagro, speaks of the ''reciente reconocimiento del Estado de Palestina''). The pre-existing
+      tier, +3 (R21). A UN Secretariat report, not the Government''s own text of 2011 (not found online), flagged: the registry''s date (2011-03-16, A/78/846) differs by one day, Wikipedia gives
+      15 March, and the row follows the archived report (docs/10 B-614). Uruguay''s statement of 29 July 2025 (archived) restates that ''en 2011 Uruguay dio un paso importante al reconocer a Palestina
+      como Estado''. Not withdrawn.'
+    queries:
+    - Uruguay reconoce Estado de Palestina 2011 Mujica cancillería comunicado
+    - UNISPAL report of the Montevideo meeting, March 2011 (archived)
+    checked_at: '2026-10-07'
+  B9:
+    status: none-found
+    note: 'No event: no B9 speaker''s own words that cite Gaza with a call or a named violation were found in an archivable official source. Read: the President''s General Debate statement of
+      23 September 2025 (Presidency''s text, archived: ''ejercer la barbarie sobre ninguna población civil'', ''instamos a la suspensión inmediata de las operaciones militares'' on ''los territorios
+      palestinos'': the word Gaza never appears, R7: lead_20261007_URY_1); the President''s of 24 September 2026 (press reports: no passage on Gaza); President Lacalle Pou''s of 26 September 2024
+      (UN Meetings Coverage''s summary: no Gaza); the statement of 29 July 2025 at the New York conference (the Ministry''s text, archived, which cites Gaza, names violations and calls for an
+      immediate and permanent ceasefire, but was delivered by the Permanent Representative, Laura Dupuy, R3: lead_20261007_URY_2); the Ministry''s communiqués with no named speaker (19 May 2025,
+      archived; 8 August 2025; 7 October 2024); the Foreign Minister''s speech to the Security Council of 26 May 2026 (the Ministry''s report: Charter principles, no Gaza) and his remarks on humanitarian
+      aid in October 2025 (indirect speech in the press). Uruguay is on Wikipedia''s list (read 2026-10-07) of the 34 states at the Hague Group''s ministerial meeting of 26 September 2025 in New
+      York; the Chair''s statement of that meeting (DIRCO, read) is issued by the Group''s chairs, names no participant and carries no signatory from Uruguay: attendance, not a statement of a
+      B9 speaker.'
+    queries:
+    - Orsi Gaza alto el fuego discurso Asamblea General ONU 2025 cancillería Lubetkin Israel
+    - Paganini canciller Uruguay discurso Asamblea General ONU septiembre 2024 Gaza Medio Oriente
+    - Lubetkin canciller Gaza genocidio declaraciones Uruguay Israel embajador Netanyahu
+    - Orsi discurso Asamblea General ONU septiembre 2026 81 período de sesiones Gaza
+    - Uruguay conferencia Nueva York solución dos Estados 29 julio 2025 intervención quién habló
+    - 'gadebate.un.org Uruguay 78th to 80th sessions, read (the 80th file has broken fonts: the Presidency''s text read instead)'
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, transcribed on an official site, was found. In October 2023 the Government''s
+      communiqué said Israel ''had the right to defend itself'' (a Government statement with no named speaker) and President Lacalle Pou posted his solidarity (social-media post, not scored, docs/06
+      §7); his statements do not cite Gaza (R7) and are more than 730 days old.'
+    queries:
+    - Lacalle Pou Israel Hamas apoyo declaración "derecho a defenderse" Uruguay presidente octubre 2023 Gaza
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Uruguay was found (not an EU member, so the Council's listings do not apply).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the Government paused the ANII agreement (August 2025) and has not recalled its ambassador or broken relations,
+      as Jewish groups and the Frente Amplio''s base ask (Resumen Latinoamericano, read; the search of October 2026 found no recall). The President named an ambassador to Palestine (Marcos Carámbula,
+      swissinfo, a search result).'
+    queries:
+    - Uruguay embajador en Israel llamado a consultas OR retira OR rompe relaciones OR "baja el nivel" Orsi gobierno Israel 2026
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: 'No suspension or review of any trade or association agreement with Israel was found: the Mercosur-Israel free trade agreement stands. The Government paused the implementation of an
+      agency''s research agreement with the Hebrew University in August 2025 (not a trade or association agreement; lead_20261007_URY_4).'
+    queries:
+    - Uruguay gobierno Orsi suspende OR revisa acuerdo comercial Israel TLC Mercosur-Israel OR compra armas Israel OR embargo
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: 'No governmental instrument signed with Israel after 7 October 2023 was found. The agreement of December 2024 between the National Agency for Research and Innovation and the Hebrew University
+      of Jerusalem has a university as counterparty and was paused in August 2025: a lead, not filed under R18 (lead_20261007_URY_4). The Israeli Embassy''s page of bilateral relations (updated
+      3 April 2024) lists nothing after the memorandum of March 2023 with a venture-capital firm.'
+    queries:
+    - Uruguay Israel convenio firmado 2024 2025 cooperación acuerdo cancillería Israel Uruguay firman
+    - Uruguay Israel acuerdo firmado diciembre 2024 ANII Universidad Hebrea Jerusalén oficina innovación firma convenio
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor URY
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Uruguay has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Uruguay
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Uruguay has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Uruguay
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Uruguay recibirá palestinos de Gaza visas humanitarias OR asilo OR evacuación médica niños heridos Gaza Uruguay gobierno
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: 'No visa or refugee instrument for Gazans was found: the Foreign Minister said in 2025 that the Government was studying ''con seriedad'' the reception of refugees from Gaza, a ''very
+      complicated'' plan that needs Israel''s authorisation, financing and guarantees (press, search results, not read in full): a study, not an opened pathway.'
+    queries:
+    - Uruguay recibirá palestinos de Gaza visas humanitarias OR asilo OR evacuación médica niños heridos Gaza Uruguay gobierno
+    - Uruguay Palestina visa refugiados gazatíes ofrecimiento Orsi acoger palestinos 2025 2026
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

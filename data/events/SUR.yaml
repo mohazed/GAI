@@ -1,0 +1,52 @@
+# Hand-authored events for Suriname (P-21 light protocol, T-P21-13, 2026-10-07).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08). B8 comes from the row SUR,2011-02-01 of data/structured/recognitions.csv.
+# Speakers for B9/B10: the President (head of state and of government: Chan Santokhi to 16 July 2025, Jennifer Geerlings-Simons since), Minister of Foreign Affairs (Albert Ramdin to May 2025, Melvin Bouva since), R3.
+- id: evt_2025_09_23_SUR_B9
+  revision: 1
+  country: SUR
+  indicator: B9
+  type: repeatable
+  date: '2025-09-23'
+  points: 5
+  points_rationale: 'Names a specific violation (+5, R6): the President, in the General Debate, speaks of grave violations of human rights, and more specifically of the rights of children, for
+    example in Gaza. No call for a ceasefire, no actor named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President of Suriname told the General Assembly of grave violations of human rights, and more specifically of the rights of children, for example in Gaza.
+    fr: La présidente du Suriname a évoqué devant l'Assemblée générale de graves violations des droits de l'homme, en particulier des droits de l'enfant, par exemple à Gaza.
+  actor:
+    en: President of Suriname
+    fr: Présidente du Suriname
+    name: Jennifer Geerlings-Simons
+  evidence:
+  - source: src_20250923_un-gadebate_sur-geerlings-simons-en
+    quote: At this moment there are increased occurrences of grave violations of human rights and more specifically the rights of children for example in Gaza.
+    quote_lang: en
+    locator: lines 84 to 87
+  - source: src_20250923_gov-sr_simons-vn-geen-militaire-agressie
+    quote: Ze verwees daarbij naar het terugkeren van oorlog in Europa, de terreur in het Midden-Oosten en de ernstige schendingen van kinderrechten, bijvoorbeeld in Gaza.
+    quote_lang: nl
+    quote_en: She referred to the return of war in Europe, the terror in the Middle East and the serious violations of the rights of children, for example in Gaza.
+    locator: last sentence
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-07'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-07'
+      verdict: agree
+      notes: 'Lines 80 to 90 of the archived text re-read in a separate pass, and the Government''s report of the delivered statement (last sentence of the archived page): the speaker is the President
+        (the file''s header; the General Debate page gives 23 September 2025). The passage is the only mention of Gaza in the statement and has no call for a ceasefire. B9 +5 agrees only on the
+        reading that ''grave violations of human rights … the rights of children … in Gaza'' names a specific violation without naming its author (R6); the file is headed ''DRAFT 10 / September
+        21, 2025, Please check against delivery'', and the Government''s own report confirms that the passage was delivered.'
+    notes: 'General Debate of the 80th session, 23 September 2025; the President is head of state and of government, a B9 speaker (R3). The text is the delegation''s English file as the General
+      Debate site publishes it (Wayback capture of 8 October 2025), headed ''DRAFT 10 / September 21, 2025 Please check against delivery''; the Government''s report (gov.sr, published the same
+      day) confirms the sentence on the violations of the rights of children ''bijvoorbeeld in Gaza''. Flagged for the author (docs/10 B-613): the +5 tier rests on reading ''grave violations of
+      human rights … the rights of children … in Gaza'' as a named violation; the passage has no call, no actor and no legal characterisation, so a reader who wants more would remove the event
+      (Suriname''s B9 score would then be zero). 379 days old on 7 October 2026: weight about 0.96, +4.8, but outside the 365 days that qualify against the passivity penalty. The President''s
+      statement of 22 September 2026 (the 81st session) is not read: lead_20261007_SUR_1. The Foreign Minister''s press conference of 23 October 2023 (archived, read) has no call for a ceasefire.'
