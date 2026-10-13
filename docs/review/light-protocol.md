@@ -688,3 +688,64 @@ Assessments: has-events 3 (B1, B3, B9), none-found 16, no-data 2 (A2, C3), not-a
 | PLW | −42.7 (−43) | −42.7 (−43) | Enabling | no event; B1 −27.7 and the passivity penalty (−15) |
 
 One band change: Libya moves from Acting to Confronting, clearing the threshold (41) by 1.1 points. It rests on three flagged items: without the April 2026 event (the minister's name is inferred) the score is +22.1 (Acting); without B3, +27.1 (Acting); without the 2025 statement, +37.3 (Acting). Coverage rises from 13% to 63% (Libya) and 67% (Nauru, Palau). Read critically (docs/06 §4 step 7): no cap is hit (Libya's category B is +42.1 of +45); for Nauru and Palau a qualifying event within 365 days would end the penalty (+15), so the readings with the largest effect are the unfiled B10 leads (B-659, B-661).
+
+## T-P21-18: SDN, TUN, EST (2026-10-13)
+
+Light protocol (docs/06 §5) for the Sudan, Tunisia and Estonia, resuming a cut-off attempt (24 captures re-fetched from Wayback, SHA-256 and byte count equal to the index rows; two source dates corrected, B-662). 28 events: 2 for the Sudan, 9 for Tunisia, 17 for Estonia. Decisions and flags are in docs/10 B-662 to B-672.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_26_SDN_B9 | B9 | 2024-09-26 (expired) | +2 | confirmed | official |
+| evt_2025_03_04_SDN_B9 | B9 | 2025-03-04 | +2 | confirmed | official |
+| evt_2023_10_18_TUN_B9 | B9 | 2023-10-18 (expired) | +5 | confirmed | official |
+| evt_2023_12_12_TUN_B9 | B9 | 2023-12-12 (expired) | +5 | confirmed | official |
+| evt_2024_01_20_TUN_B9 | B9 | 2024-01-20 (expired) | +5 | confirmed | official |
+| evt_2024_02_27_TUN_B9 | B9 | 2024-02-27 (expired) | +5 | confirmed | official |
+| evt_2023_12_03_TUN_D4 | D4 | 2023-12-03 (expired) | +5 | corroborated | press |
+| evt_2024_09_27_TUN_B9 | B9 | 2024-09-27 (expired) | +5 | confirmed | official |
+| evt_2025_09_27_TUN_B9 | B9 | 2025-09-27 | +5 | confirmed | official |
+| evt_2026_02_23_TUN_B9 | B9 | 2026-02-23 | +5 | confirmed | official |
+| evt_2026_09_26_TUN_B9 | B9 | 2026-09-26 | +5 | confirmed | official, press |
+| evt_2023_12_31_EST_D3 | D3 | 2023-12-31 (ended 2024-01-28) | +8 | confirmed | dataset |
+| evt_2024_01_28_EST_D2 | D2 | 2024-01-28 (ended 2024-05-07) | −10 | corroborated | press |
+| evt_2024_02_19_EST_B9 | B9 | 2024-02-19 (expired) | +2 | confirmed | official |
+| evt_2024_04_19_EST_B11 | B11 | 2024-04-19 | +5 (west-bank, unscored) | confirmed | official |
+| evt_2024_05_07_EST_D3 | D3 | 2024-05-07 (ended 2024-12-31) | +5 | confirmed | official |
+| evt_2024_07_15_EST_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_09_24_EST_B9 | B9 | 2024-09-24 (expired) | +2 | confirmed | official |
+| evt_2024_12_31_EST_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_19_EST_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_06_10_EST_B9 | B9 | 2025-06-10 | +5 | confirmed | official |
+| evt_2025_07_21_EST_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_08_06_EST_B9 | B9 | 2025-08-06 | +5 | confirmed | official, press |
+| evt_2025_08_12_EST_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_EST_B9 | B9 | 2025-08-21 | +5 (west-bank, unscored) | confirmed | official |
+| evt_2025_09_24_EST_B9 | B9 | 2025-09-24 | +5 | confirmed | official |
+| evt_2026_05_28_EST_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+| evt_2026_06_08_EST_B9 | B9 | 2026-06-08 | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (Sudan 1988 and Tunisia 1988 have no document that could be read; Estonia does not recognise Palestine). All 36 qualifying votes of the three countries are recorded, so no Article 19 note is needed; Tunisia's one non-vote (A/DEC/80/506, 12 September 2025) is a recorded non-vote, and Tunisia is not among the four Member States in arrears in A/80/362 (B-663).
+
+### Sudan
+
+Assessments (34 indicators): has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). No lead. Sources read: the General Debate statements of the 79th (the Assembly's verbatim record A/79/PV.11) and 80th sessions (the Prime Minister's, through the Sudan News Agency and the UN's page), the Sudan News Agency's texts of the speeches at the Cairo (4 March 2025) and Doha (15 September 2025) summits, the ICJ's and the ICC's lists (the Sudan is on neither), UNRWA's donor tables (no row), and web searches in Arabic and English for each indicator group; the Ministry of Foreign Affairs serves no site (mfa.gov.sd refuses the connection, its Wayback capture is a hosting default page) and the news agency's search does not return a result list to a scripted request. The Sudan has two rival authorities: the speakers are those of the government that represents it at the UN. 90-minute stop note: finished inside the budget (about 40 minutes on the Sudan). Not filed and why: the Doha speech and the Prime Minister's 80th statement (Gaza is cited without a call or a named violation), the Foreign Ministry's communiqués (no named speaker, R3), the Baghdad summit (led by a member of the Sovereignty Council, not a B9 speaker).
+
+### Tunisia
+
+Assessments: has-events 3 (B1, B9, D4), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 4 (`lead_20261013_TUN_1`, B9, the President's statements of 22 July and 2 October 2025 relayed in indirect speech; `_2`, B9, the Minister's delivery of the President's speech at the Cairo summit of 4 March 2025, La Presse; `_3`, B9, the Ministry's reports of 26 December 2024 and 14 January 2025 in indirect speech; `_4`, B9, its reports of 26 August, 5 September and 16 September 2025). Sources read: the Ministry of Foreign Affairs' content API (back.diplomatie.gov.tn: 427 posts read of ids 1 to 1400, in six ranges, screened for Gaza, Palestine, Israel and UNRWA; see B-667), the General Debate statements of the 79th to 81st sessions, the Human Rights Council statement of 23 February 2026, La Presse, Kapitalis, Le Courrier de l'Atlas, Webdo, L'Economiste Maghrébin and Arab News, the ICJ's and the ICC's lists (Tunisia is a state party), UNRWA's donor tables (no row), and web searches in French, Arabic and English. The 2023 bill to criminalise normalisation with Israel was not enacted: its plenary debate was suspended in November 2023 and the deputies were still calling for its approval on 7 October 2025 (archived); a draft bill is not an event. 90-minute stop note: finished inside the budget (about 70 minutes on Tunisia). Flagged: the speaker of the 81st-session statement is established by La Presse and Arab News, not by the Ministry's text; the Arabic text layers of the 79th and 80th statements are broken (quotes kept verbatim with own translations); the D4 event rests on two press publishers and the numbers of wounded differ (29 and 20 on 3 December 2023).
+
+### Estonia
+
+Assessments: has-events 6 (B1, B9, B11, D1, D2, D3), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261013_EST_1`, B9, the Ministry's reports of 11 and 23 September 2025 in indirect speech; `_2`, B5, ERR's report of the press conference of 26 November 2024 on the ICC warrants; `_3`, B9, the Ministry's report of 16 May 2026). Estonia is an EU member: the Council's three settler listings are B11 events (19 April 2024 west-bank unscored, 15 July 2024, 28 May 2026) and the joint statements already archived that name it are B9 events (B-515 to B-540 route, B-446). Sources read: the Ministry's, the President's and the Government Office's sites, the General Debate statements of the 78th to 81st sessions (the 79th through A/79/PV.8, the 80th through the President's Office), UNRWA's donor tables of 2022 to 2024, ERR News and the Jerusalem Post, the ICJ's and the ICC's lists (Estonia is a state party). 90-minute stop note: finished inside the budget (about 60 minutes on Estonia). Not filed and why: the President in Amman on 4 November 2024 and the Foreign Minister's remarks of 7 October 2024, 11 November 2025 and 17 March 2026 (no Gaza, or no call or violation), the 81st-session statement (a past position, no call), the Undersecretary's statement of 30 July 2025 (not a B9 speaker, R3).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-13 (methodology 1.0.0-rc.1), the 28 reviewed events scored as if published; before them the generated indicators alone gave +2.3 (SDN, Acting), −2.4 (TUN, Passive) and +0.4 (EST, Passive).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| SDN | +2.3 (+2) | +3.4 (+3) | Acting | B9 +1.1 (the Cairo summit event at weight 0.54; the 2024 event is expired); the passivity penalty (−15) still applies |
+| TUN | −2.4 (−2) | +22.6 (+23) | Acting | B9 reaches its cap (+10.0 of +14.8 summed) and the events of 23 February and 26 September 2026 each end the passivity penalty (+15); D4 and the 2023 and 2024 B9 events are expired |
+| EST | +0.4 (0) | +38.4 (+38) | Acting | B9 reaches its cap (+10.0 of +24.7), D3 +8.0, B11 +5.0, and the events of 28 May and 8 June 2026 end the passivity penalty (+15) |
+
+Two band changes. Tunisia moves from Passive to Acting: without the two 2026 events the score is +2.4 (Acting, penalty applied), so the band holds on the 80th-session event alone. Estonia moves from Passive to Acting at +38.4, 2.6 points under the Confronting threshold (41); without the two 2026 events (28 May and 8 June) the penalty applies and the score is about 15 points lower (Acting); the President's statement of 6 August 2025 (flagged, +5 or +2) changes nothing, B9 being capped. Coverage rises from 13% to 67% for each. Read critically (docs/06 §4 step 7): the cap on B9 hides most of Estonia's and Tunisia's B9 events; the readings with the largest effect are the Tunisian 81st-session speaker (B-665) and, for Estonia, the unconditional-support check of B10 (none found).

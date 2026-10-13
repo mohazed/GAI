@@ -1514,7 +1514,15 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (vm.ee)', url: 'https://vm.ee/en', type: mfa, lang: [en]}
+    - {label: 'Government Office, Prime Minister (valitsus.ee)', url: 'https://www.valitsus.ee/en', type: head_of_government, lang: [en]}
+    - {label: 'Office of the President of the Republic (president.ee)', url: 'https://president.ee/en', type: head_of_state, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-13: vm.ee/en, www.valitsus.ee/en and president.ee/en answered 200 with lang="en" (each site has Estonian, English and Russian editions;
+    the Estonian-language pages declare et). vm.ee, president.ee and valitsus.ee are searched through a search service (search.service.eu-live.vportal.ee) that their pages call.
+    The Prime Minister is Kristen Michal (valitsus.ee, read 2026-10-13), the President Alar Karis, the Minister of Foreign Affairs Margus Tsahkna. Estonia is an EU member:
+    the Council's three settler listings are filed as B11 (R8, docs/10 B-446).
 
 - iso3: ETH
   iso2: ET
@@ -4154,7 +4162,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-17}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and International Cooperation (mfa.gov.sd; no site is served, see notes)', url: 'http://mfa.gov.sd/', type: mfa, lang: [ar]}
+    - {label: 'Sudan News Agency, SUNA (suna.sd; the state agency, which prints the texts of the Sovereignty Council, the Prime Minister and the Foreign Ministry)', url: 'https://suna.sd/', type: news_agency, lang: [ar]}
+  notes: >-
+    gov_sources checked 2026-10-13: mfa.gov.sd (the Ministry's address in the Wikipedia infobox) refused the connection and its latest Wayback capture (2025-11-13)
+    is a hosting-panel default page; mofa.gov.sd gave no DNS answer and its Wayback capture of 2023-04-20 is also a default page, so the Ministry publishes no site that can
+    be read; suna.sd answered 200 with lang="ar" (its search page returns no list of results to a scripted request). No site of the Prime Minister, the Council of Ministers
+    or the Sovereignty Council could be found (cabinet.gov.sd, pmo.gov.sd, presidency.gov.sd, scc.gov.sd gave no answer; sudan.gov.sd gives no DNS answer), so the head
+    of government has no entry of his own. The Sudan has two rival authorities in a war; the speakers recorded for B9 and B10 are those of the government that represents
+    the Sudan at the UN: Abdel-Fattah Al-Burhan (President of the Transitional Sovereign Council, head of state), Kamil El-Tayeb Idris (Prime Minister since 31 May 2025)
+    and Mohieldin Salem (Minister of Foreign Affairs and International Cooperation since 2025).
 
 - iso3: SEN
   iso2: SN
@@ -4821,7 +4839,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, Migration and Tunisians Abroad (diplomatie.gov.tn)', url: 'https://www.diplomatie.gov.tn/', type: mfa, lang: [en, fr, ar]}
+    - {label: 'Presidency of the Government (pm.gov.tn)', url: 'https://www.pm.gov.tn/ar', type: head_of_government, lang: [ar, fr]}
+    - {label: 'Presidency of the Republic (carthage.tn)', url: 'https://www.carthage.tn/ar', type: head_of_state, lang: [ar]}
+  notes: >-
+    gov_sources checked 2026-10-13: diplomatie.gov.tn answered 200 with lang="en" (a client-rendered application: its pages carry no text, which the application reads from
+    the content API back.diplomatie.gov.tn/index.php/api/post/{id}; the API answers HTTP 429 to a burst of requests; 427 posts were read, B-667);
+    pm.gov.tn/ar answered 200 with lang="ar" (the host resolved intermittently from the session's network; the page was read with the resolved address); carthage.tn/ar
+    answered 200 with lang="ar". primature.gov.tn gave no DNS answer. The Head of Government is Sara Zaafrani Zenzri (the portal's page shows her meeting the President on
+    5 October 2026); the Minister of Foreign Affairs is Mohamed Ali Nafti (since August 2024; Nabil Ammar before).
 
 - iso3: TUR
   iso2: TR

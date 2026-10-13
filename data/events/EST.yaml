@@ -1,0 +1,777 @@
+# Hand-authored events for Estonia (P-21 light protocol, T-P21-18, 2026-10-13).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Estonia is an EU member: the Council's three settler listings are filed as B11 (R8, docs/10 B-446) and the joint statements already archived that name it as B9 (B-444).
+# Speakers for B9/B10: the President (Alar Karis), the Prime Minister (Kaja Kallas to 23 July 2024, Kristen Michal from then) and the Minister of Foreign Affairs (Margus Tsahkna) (R3).
+
+- id: evt_2023_12_31_EST_D3
+  revision: 1
+  country: EST
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-01-28'
+  points: 8
+  points_rationale: 'Increased tier (+8): Estonia''s 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (USD 121,837 in 2023; USD 90,090 in 2022)
+    (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Estonia contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables.
+    fr: La contribution de l'Estonie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: Estonia 85,288 0 85,288 0 0 0 0 0 0 36,549 121,837 89
+    quote_lang: en
+    locator: line 108
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Estonia 90,090 0 90,090 0 0 0 90,090 63
+    quote_lang: en
+    locator: line 74
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_01_28_EST_D2
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 108 of the 2023 table and line 74 of the 2022 table re-read: USD 121,837 in 2023 against USD 90,090 in 2022. D3 increased agrees; it ends on 2024-01-28, when the Minister announced
+        that Estonia would not continue funding UNRWA (evt_2024_01_28_EST_D2).'
+    notes: 'UNRWA''s donor table for 2023 (archived in P-16, docs/10 B-445) settles D3 for 2023: the increased tier holds from 31 December 2023 and ends on 2024-01-28, the date of the Minister''s
+      announcement (evt_2024_01_28_EST_D2). Filed in the light protocol (docs/10 B-662 ff.), as for the countries among the 45 that suspended.'
+
+- id: evt_2024_01_28_EST_D2
+  revision: 1
+  country: EST
+  indicator: D2
+  type: standing
+  date: '2024-01-28'
+  end: '2024-05-07'
+  points: -10
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs said Estonia would not continue funding UNRWA, after allegations against UNRWA staff.
+    fr: Le ministre des Affaires étrangères a déclaré que l'Estonie ne continuerait pas à financer l'UNRWA, après des accusations visant son personnel.
+  evidence:
+  - source: src_20240129_err_estonia-suspends-unrwa
+    quote: Concerning the recent very serious allegations against the UNRWA, Estonia will not continue with the funding of the organization.
+    quote_lang: en
+    locator: line 2
+  - source: src_20240128_jpost_estonia-japan-suspend-unrwa
+    quote: Estonia will not continue with the funding of the organization
+    quote_lang: en
+    locator: line 10
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2023_12_31_EST_D3
+  - evt_2024_05_07_EST_D3
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Re-read ERR (line 2) and The Jerusalem Post/Reuters (line 10), 28 January 2024: each quotes the Foreign Minister''s post on X with the sentence that Estonia will not continue the
+        funding. D2 standing from 28 January 2024 agrees (R10: a publicly stated hold); the end date rests on the Ministry''s own release of 7 May 2024.'
+    notes: 'Filed in the light protocol (docs/10 B-662 ff.) under R10 of docs/calibration/README.md (a publicly stated hold of UNRWA payments is D2 from its announcement to the resumption). Flagged:
+      (1) the announcement is the Foreign Minister''s post on X, which cannot be archived, so the event rests on two publishers that quote it (ERR News and Reuters in The Jerusalem Post: `corroborated`,
+      docs/06 §1 rule 1); the Ministry published no release on the hold (vm.ee searched in English and Estonian); (2) the end, 2024-05-07, is the Ministry''s own release announcing EUR 120,000
+      for four UN bodies including UNRWA ''after the international investigation'' (evt_2024_05_07_EST_D3). The funding table shows Estonia''s 2024 contributions (USD 86,300 programme budget)
+      after that date.'
+
+- id: evt_2024_02_19_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2024-02-19'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the 26 foreign ministers call for an immediate humanitarian pause leading to a sustainable ceasefire and ask Israel not to launch a military
+    operation in Rafah; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed a declaration of 26 EU foreign ministers calling for an immediate humanitarian pause leading to a sustainable ceasefire in Gaza.
+    fr: Le ministre des Affaires étrangères a signé une déclaration de 26 ministres de l'UE appelant à une pause humanitaire immédiate menant à un cessez-le-feu durable à Gaza.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20240219_lahbib-belgium_declaration-26-ministres
+    quote: Cela nécessite une pause humanitaire immédiate qui conduirait à un cessez-le-feu durable, à la libération inconditionnelle de tous les otages et à la mise en place d'une assistance
+      humanitaire.
+    quote_lang: fr
+    quote_en: This requires an immediate humanitarian pause that would lead to a sustainable ceasefire, the unconditional release of all hostages and the provision of humanitarian assistance.
+    locator: line 5
+  - source: src_20240219_lahbib-belgium_declaration-26-ministres
+    quote: du Danemark, de l'Estonie, de la Finlande
+    quote_lang: fr
+    quote_en: Denmark, Estonia, Finland
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 1 of the archived text re-read: de l''Estonie is among the signatories; line 5: the passage quoted. B9 call tier (+2) matches the events filed for the other signatories (evt_2024_02_19_SVK_B9,
+        evt_2024_02_19_BGR_B9, evt_2024_02_19_BEL_B9).'
+    notes: 'Declaration of the foreign ministers of 26 EU member states (all but Hungary) of 19 February 2024, as published on the Belgian Minister of Foreign Affairs'' website (the text archived
+      for Belgium). The signatory is read as the Foreign Minister in office on that date, Margus Tsahkna (in office since April 2023; the Ministry''s list of ministers names him on 13 October
+      2026). It has decayed to zero (more than 730 days old). Filed in the light protocol (docs/10 B-662 ff.): the same joint statement is filed for every signatory (B-444); Estonia is named on
+      line 1 (de l''Estonie). The Estonian Ministry published the declaration on 22 February 2024 (vm.ee, read, not archived).'
+
+- id: evt_2024_04_19_EST_B11
+  revision: 1
+  country: EST
+  indicator: B11
+  type: standing
+  date: '2024-04-19'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 19 April 2024 (Decision (CFSP) 2024/1175) of four settlers and two settler entities (Lehava, Hilltop Youth), adopted
+    by unanimity. West Bank only: tagged, unscored in v1 (docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on four Israeli settlers and two settler entities for human rights abuses against Palestinians in the West Bank.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre quatre colons israéliens et deux entités de colons pour des atteintes aux droits de Palestiniens en Cisjordanie.
+  evidence:
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: The Council decided today to list four persons and two entities under the EU Global Human Rights Sanctions Regime. The listed individuals and entities are responsible for serious human
+      rights abuses against Palestinians, including torture and other cruel, inhuman or degrading treatment or punishment and for the violation of right to property and to private and family life
+      of Palestinians in the West Bank.
+    quote_lang: en
+    locator: line 1
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: The listed entities are Lehava, a radical right-wing Jewish supremacist group, and Hilltop Youth, a radical youth group consisting of members known for violent acts against Palestinians
+      and their villages in the West Bank. Two leading figures of Hilltop Youth, Meir Ettinger and Elisha Yered, are also listed. Both were involved in deadly attacks against Palestinians in 2015
+      and 2023.
+    quote_lang: en
+    locator: line 2
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: Council Decision (CFSP) 2024/1175 of 19 April 2024 amending Decision (CFSP) 2020/1999 concerning restrictive measures against serious human rights violations and abuses
+    quote_lang: en
+    locator: line 11
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 1, 2 and 11 of the Council''s release re-read: the listing of four persons and two entities for abuses against Palestinians in the West Bank, and the Decision (CFSP) 2024/1175
+        of that day. B11 settlers agrees; scope west-bank (the release does not cite Gaza).'
+    notes: 'Filed in the light protocol (docs/10 B-662 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Estonia as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446). Estonia''s Foreign Minister said on 10 June 2025 that Estonia supports the EU''s measures on violent settlers and the
+      addition of new names to the list (src_20250610_vm-ee_tsahkna-palestinian-minister).'
+
+- id: evt_2024_05_07_EST_D3
+  revision: 1
+  country: EST
+  indicator: D3
+  type: standing
+  date: '2024-05-07'
+  end: '2024-12-31'
+  points: 5
+  points_rationale: 'Restored tier (+5): funding to UNRWA resumed after the hold of 28 January 2024. Not the increased tier at that date: the 2024 total is only known at the end of the year (it
+    later exceeds the 2022 level: evt_2024_12_31_EST_D3).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Ministry of Foreign Affairs announced EUR 120,000 for four UN bodies, UNRWA among them, after the international investigation of the allegations against UNRWA.
+    fr: Le ministère des Affaires étrangères a annoncé 120 000 euros pour quatre organismes de l'ONU, dont l'UNRWA, après l'enquête internationale sur les accusations visant l'UNRWA.
+  evidence:
+  - source: src_20240507_vm-ee_tsahkna-brussels-unrwa-et
+    quote: „Pärast rahvusvahelist uurimist toetab Eesti 120 000 euroga kokku nelja ÜRO organisatsiooni Gaza humanitaarolukorra leevendamiseks,“ ütles Tsahkna.
+    quote_lang: et
+    quote_en: '"After the international investigation, Estonia is supporting four UN organisations with EUR 120,000 in total to alleviate the humanitarian situation in Gaza," Tsahkna said.'
+    locator: line 181
+  - source: src_20240507_vm-ee_tsahkna-brussels-unrwa-et
+    quote: Toetus läheb võrdselt Maailma toiduprogrammile, UNICEFile, ÜRO Palestiina Põgenike Abi- ja Tööorganisatsioonile Lähis-Idas (UNRWA) ja humanitaarabi hõlbustamise mehhanismile.
+    quote_lang: et
+    quote_en: The support goes equally to the World Food Programme, UNICEF, the UN Relief and Works Agency for Palestine Refugees in the Near East (UNRWA) and the humanitarian facilitation mechanism.
+    locator: line 182
+  - source: src_20240719_gov-uk_restart-unrwa-funding
+    quote: the UK’s position is now in line with partners such as Germany, EU, Sweden, Japan, France, Canada, The Netherlands, Australia, Italy, Austria, Finland, Iceland, Romania and Estonia
+    quote_lang: en
+    locator: line 33
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_01_28_EST_D2
+  - evt_2024_12_31_EST_D3
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 181 and 182 of the Ministry''s release (Estonian) re-read: the support after the international investigation, shared equally among WFP, UNICEF, UNRWA and the humanitarian facilitation
+        mechanism; line 33 of the UK release lists Estonia among the partners whose funding is restored. D3 restored from 2024-05-07 agrees; flagged.'
+    notes: 'Filed in the light protocol (docs/10 B-662 ff.). Flagged: the Ministry''s release does not say ''resumption''; it announces a contribution that includes UNRWA ''after the international
+      investigation'' (the Colonna report was published on 22 April 2024), which is read as the end of the hold; the UK release of 19 July 2024 (a third state''s statement) and the President''s
+      Office''s release of 5 November 2024 (''restoring its support for UNRWA'', src_20241105_president-ee_karis-jordan-ceasefire) agree. The Estonian-language release has no English version.
+      The restored tier ends on 2024-12-31, when the 2024 table (evt_2024_12_31_EST_D3) settles the increased tier, as for the Netherlands and Canada (docs/10 B-445).'
+
+- id: evt_2024_07_15_EST_B11
+  revision: 1
+  country: EST
+  indicator: B11
+  type: standing
+  date: '2024-07-15'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 15 July 2024 (Decision (CFSP) 2024/1967) of five persons and three entities, among them Tzav 9 for blocking humanitarian
+    aid trucks to Gaza, adopted by unanimity. Scoped gaza as the listing cites Gaza (docs/10 B-32; B-281 (2), as Norway''s alignment, evt_2024_07_24_NOR_B11).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on five Israeli settlers and activists and three entities, including a group blocking aid trucks bound for Gaza.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre cinq colons et militants israéliens et trois entités, dont un groupe bloquant les camions d'aide destinés à Gaza.
+  evidence:
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Today the Council approved additional restrictive measures against five persons and three entities under the European Union's Global Human Rights Sanctions Regime. The listed individuals
+      and entities are responsible for serious and systematic human rights abuses against Palestinians in the West Bank, including abuse of the right of everyone to enjoy the highest attainable
+      standard of physical and mental integrity, the right to property, the right to private and family life, to freedom of religion or belief and the right to education.
+    quote_lang: en
+    locator: line 1
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Today’s designations also include Tzav 9, an Israeli group of violent activists founded in January 2024, regularly blocking humanitarian aid trucks delivering food, water and fuel to
+      Gaza. Tzav 9’s actions include violent protests, attacks against food trucks and the destruction of food.
+    quote_lang: en
+    locator: line 4
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Council Decision (CFSP) 2024/1967 of 15 July 2024 amending Decision (CFSP) 2020/1999 concerning restrictive measures against serious human rights violations and abuses (including the
+      list of sanctioned individuals and entities)
+    quote_lang: en
+    locator: line 12
+  - source: src_20240715_eur-lex_cfsp-2024-1967
+    quote: 'the following entries are added to the list of natural and legal persons, entities and bodies under heading ‘A. Natural persons’:'
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 1, 4 and 12 of the Council''s release and line 2 of the Decision re-read: five persons and three entities listed, Tzav 9 for blocking aid trucks to Gaza, Decision (CFSP) 2024/1967.
+        B11 settlers (+5) agrees; scope gaza and west-bank.'
+    notes: 'Filed in the light protocol (docs/10 B-662 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Estonia as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446). Estonia''s Foreign Minister said on 10 June 2025 that Estonia supports the EU''s measures on violent settlers and the
+      addition of new names to the list (src_20250610_vm-ee_tsahkna-palestinian-minister).'
+
+- id: evt_2024_09_24_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2024-09-24'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the President says it is ''high time for an agreement that would establish a ceasefire and allow for the release of hostages''; no violation
+    is named. A wish phrased as ''we believe it is high time'' is read as a call (flagged).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President told the General Assembly that it was high time for an agreement establishing a ceasefire in Gaza and the release of hostages.
+    fr: Le président a dit à l'Assemblée générale qu'il était grand temps de conclure un accord instaurant un cessez-le-feu à Gaza et la libération des otages.
+  actor: &id002
+    en: President of the Republic of Estonia
+    fr: Président de la République d'Estonie
+    name: Alar Karis
+  evidence:
+  - source: src_20240924_undocs_a-79-pv-8
+    quote: We believe it is high time for an agreement that would establish a ceasefire and allow for the release of hostages.
+    quote_lang: en
+    locator: lines 985 to 986
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: Lines 985 to 986 of the Assembly's verbatim record A/79/PV.8 (24 September 2024, 3 p.m.) re-read after the sentence on 'too much suffering in Gaza and the region'. Tier +2 (a call,
+        no violation named); the delegation's file on gadebate.un.org (ee_en.pdf) has the same sentence.
+    notes: 'From the Assembly''s verbatim record (English, the speaker''s own language). The event is 749 days old on 13 October 2026, so it is expired and adds nothing to the score. Flagged:
+      ''We believe it is high time for an agreement'' is a wish, filed at the call tier as other heads of state''s wishes for a ceasefire (docs/10 B-509). Filed in the light protocol (docs/10
+      B-662 ff.).'
+
+- id: evt_2024_12_31_EST_D3
+  revision: 1
+  country: EST
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: 'Increased tier (+8): Estonia''s 2024 contribution to UNRWA (USD 118,803 pledged) exceeds its 2022 contribution (USD 90,090) in nominal USD per UNRWA''s donor tables (docs/02
+    §2 D3).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Estonia contributed more to UNRWA in 2024 than in 2022, according to UNRWA's donor tables.
+    fr: La contribution de l'Estonie à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: Estonia 86,300 86,300 - - 86,300 86,300 - - - - - - - - - - 32,503 32,503 32,503 32,503 118,803 81 118,803 79
+    quote_lang: en
+    locator: line 118
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Estonia 90,090 0 90,090 0 0 0 90,090 63
+    quote_lang: en
+    locator: line 74
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_05_07_EST_D3
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 118 of the 2024 table and line 74 of the 2022 table re-read: USD 118,803 pledged and received in 2024 against USD 90,090 in 2022. D3 increased agrees; it supersedes the restored
+        tier (+5) from 31 December 2024.'
+    notes: 'UNRWA''s tables for 2022 and 2024 (docs/10 B-445): the 2024 contribution is above 2022, so the increased tier holds from 31 December 2024 and the restored tier (evt_2024_05_07_EST_D3)
+      ends that day. The 2025 table was not archived (it would decide the standing state after 2025: P-23).'
+
+- id: evt_2025_05_19_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-05-19'
+  points: 2
+  points_rationale: 'Formal call to end the blockade and for a ceasefire (+2): the donors ask the Government of Israel to ''allow a full resumption of aid into Gaza immediately'' and call an ''immediate
+    return to a ceasefire'' the way to peace; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, asked Israel to allow a full resumption of aid into Gaza and called for an immediate return to a ceasefire.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a demandé à Israël de permettre la pleine reprise de l'aide à Gaza et appelé à un retour immédiat à un cessez-le-feu.
+  actor: &id001
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20250519_vm-ee_joint-donor-statement-gaza
+    quote: allow a full resumption of aid into Gaza immediately and enable the UN and humanitarian organisations to work independently and impartially to save lives, reduce suffering and maintain
+      dignity.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250519_vm-ee_joint-donor-statement-gaza
+    quote: It is our firm conviction that an immediate return to a ceasefire and working towards the implementation of a two-state solution are the only way to bring peace and security to Israelis
+      and Palestinians and ensure long-term stability for the whole region.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250519_vm-ee_joint-donor-statement-gaza
+    quote: The Foreign Ministers of Australia, Austria, Belgium, Canada, Denmark, Estonia, Finland, France, Germany
+    quote_lang: en
+    locator: line 5
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: Lines 3 and 4 of the Ministry's copy re-read (the two messages to the Government of Israel; the signatory line naming Estonia); tier +2 (call, no violation named).
+    notes: 'Joint donor statement of 19 May 2025, in the Estonian Ministry''s own copy (it is not among the statements archived for the 45 in B-444: the statement is known for New Zealand as a
+      lead, lead_20261005_NZL_1, and is filed here because the Ministry''s own page is an archived primary that names Estonia among the signatories). Flagged for the author: the other signatories
+      among the 45 (Austria, Belgium, Canada, Denmark, Germany, Ireland, Italy, Japan, the Netherlands, Norway, Slovenia, Spain, Sweden, the United Kingdom, Australia, France) have no event for
+      this statement (P-23). Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2025_06_10_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-06-10'
+  points: 5
+  points_rationale: 'Names a violation (+5): the Foreign Minister calls blocking humanitarian aid and obstructing the work of the UN and independent aid organisations ''unacceptable'' and condemns
+    the expansion of settlements ''created in breach of international law'' on the West Bank. Gaza and West Bank in one statement (same speaker, same day).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs rejected the blocking of humanitarian aid to Gaza and the obstruction of UN and independent aid organisations.
+    fr: Le ministre des Affaires étrangères a rejeté le blocage de l'aide humanitaire à Gaza et l'entrave au travail de l'ONU et des organisations d'aide indépendantes.
+  actor: *id001
+  evidence:
+  - source: src_20250610_vm-ee_tsahkna-palestinian-minister
+    quote: “Humanitarian aid must reach those in need, and blocking it and obstructing the work of the UN and independent aid organisations is unacceptable,” the foreign minister stressed.
+    quote_lang: en
+    locator: line 6
+  - source: src_20250610_vm-ee_tsahkna-palestinian-minister
+    quote: “Estonia condemns the expansion of settlements created in breach of international law on the West Bank,” Tsahkna said
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 6 and 9 of the Ministry''s release re-read: the quoted words of the Foreign Minister on blocking aid (Gaza) and on settlements (West Bank). +5 on the same reading as the joint
+        statement''s ''denial of essential humanitarian assistance ... is unacceptable'' (evt_2025_07_21_SVK_B9).'
+    notes: 'Release of the Ministry of 10 June 2025 on the Foreign Minister''s meeting with the Palestinian Minister of State for Foreign Affairs. Flagged: ''unacceptable'' without a legal term;
+      filed at +5 as the joint statements of 21 July and 12 August 2025 (a named conduct: blocking aid), not at the call tier; at +2 the score would be 0.6 lower. The same release records Estonia''s
+      support for the EU''s measures on violent settlers. Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2025_07_21_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-07-21'
+  points: 5
+  points_rationale: 'Names specific violations (+5): the joint statement calls the denial of essential humanitarian assistance unacceptable and permanent forced displacement a violation of international
+    humanitarian law.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, said the war in Gaza must end now and called forced displacement a violation of international humanitarian law.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a déclaré que la guerre à Gaza devait cesser et qualifié le déplacement forcé de violation du droit humanitaire.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20250721_fm-gov-au_joint-statement-opt
+    quote: The Israeli Government's denial of essential humanitarian assistance to the civilian population is unacceptable.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250721_fm-gov-au_joint-statement-opt
+    quote: Permanent forced displacement is a violation of international humanitarian law.
+    quote_lang: en
+    locator: line 6
+  - source: src_20250721_fm-gov-au_joint-statement-opt
+    quote: Denmark, Estonia, Finland, France
+    quote_lang: en
+    locator: line 11
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 11 of the archived text re-read: Estonia is among the signatories; line 3 and line 6: the passages quoted. B9 +5 (violations named) matches the events filed for the other signatories
+        (evt_2025_07_21_SVN_B9, evt_2025_07_21_BEL_B9, evt_2025_07_21_POL_B9).'
+    notes: 'Joint statement of foreign ministers of 21 July 2025, as published by the Australian Minister for Foreign Affairs with its full list of signatories (the text archived for Australia;
+      the list of that copy is longer than the 25 partners named in the Estonian Ministry''s copy, which also names Estonia: vm.ee, 21 July 2025, read, not archived). Filed in the light protocol
+      (docs/10 B-662 ff.): the same joint statement is filed for every signatory (B-444); Estonia is named on line 11.'
+
+- id: evt_2025_08_06_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-08-06'
+  points: 5
+  points_rationale: 'Names a violation (+5): the President says the killing of a large proportion of civilians in Gaza ''cannot, and must not, be the cost of fighting terrorists'' and ''is not
+    acceptable'', and that aid must reach all who need it. Flagged: the passage names conduct (civilian deaths) without a legal term.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President said, beside the President of Israel, that the civilian death toll in Gaza could not be the cost of fighting terrorism.
+    fr: Le président a déclaré, aux côtés du président d'Israël, que le nombre de civils tués à Gaza ne pouvait être le prix de la lutte contre le terrorisme.
+  actor: *id002
+  evidence:
+  - source: src_20250811_president-ee_karis-herzog-statement
+    quote: A large proportion of those killed have been civilians. This cannot, and must not, be the cost of fighting terrorists. It is not acceptable.
+    quote_lang: en
+    locator: line 7
+  - source: src_20250806_err_karis-herzog-press-conference
+    quote: President Isaac Herzog visited Estonia and met with President Alar Karis in Tallinn on August 6, 2025.
+    quote_lang: en
+    locator: line 19
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: Line 7 of the President's statement re-read (the words quoted) and line 19 of ERR's report (the visit and the press conference of 6 August 2025). +5 flagged; at the call tier the
+        score would be 0.3 lower.
+    notes: 'The President''s statement at the joint press conference with President Herzog, as published by his Office (the page is dated 11 August 2025; ERR News dates the press conference on
+      Wednesday 6 August 2025 and quotes the same words). Flagged: (1) the date: the event is dated 6 August; the Office''s page carries 11 August as its publication date; (2) the tier: civilian
+      deaths ''not acceptable'' names conduct but no violation of law (+5 as ''disproportionate use of force'' in docs/10 B-541; +2 on a stricter reading). Filed in the light protocol (docs/10
+      B-662 ff.).'
+
+- id: evt_2025_08_12_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-08-12'
+  points: 5
+  points_rationale: 'Names specific violations (+5): the joint statement says famine is unfolding and calls for halting starvation, as scored for Australia (evt_2025_08_12_AUS_B9).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, said that famine was unfolding in Gaza and called for urgent action to halt starvation.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a déclaré qu'une famine sévissait à Gaza et a appelé à agir d'urgence pour y mettre fin.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20250812_fm-gov-au_joint-statement-humanitarian
+    quote: Famine is unfolding before our eyes. Urgent action is needed now to halt and reverse starvation.
+    quote_lang: en
+    locator: line 3
+  - source: src_20250812_fm-gov-au_joint-statement-humanitarian
+    quote: Denmark, Estonia, Finland, France
+    quote_lang: en
+    locator: line 7
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 3 and 7 of the joint statement re-read: famine unfolding, call to halt and reverse starvation; Estonia among the foreign ministers (line 6 of the Danish copy names it too).
+        +5 agrees with evt_2025_08_12_BEL_B9 and evt_2025_08_12_SVN_B9.'
+    notes: 'Joint statement of 12 August 2025 in the copy published by the Australian Minister for Foreign Affairs (docs/10 B-266, B-444), whose list of foreign ministers names Estonia. The Danish
+      Ministry of Foreign Affairs published a version on 13 August 2025 (src_20250813_um_joint-statement-humanitarian-gaza, 24 foreign ministers) that also names Estonia: one event for the statement,
+      dated by the first publication, as for Belgium. Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2025_08_21_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-08-21'
+  points: 5
+  points_rationale: 'Uses a legal characterisation (+5): a violation of international law. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs, with other foreign ministers, called the approval of settlement plans in the E1 area east of Jerusalem a violation of international law.
+    fr: Le ministre des Affaires étrangères, avec d'autres ministres, a qualifié l'approbation des plans de colonies dans la zone E1 à l'est de Jérusalem de violation du droit international.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20250821_um_joint-statement-e1
+    quote: The decision by the Israeli Higher Planning Committee to approve plans for settlement construction in the E1 area, East of Jerusalem, is unacceptable and a violation of international
+      law.
+    quote_lang: en
+    locator: line 6
+  - source: src_20250821_um_joint-statement-e1
+    quote: Denmark, Estonia, Finland
+    quote_lang: en
+    locator: line 4
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Line 4 of the archived text re-read: Estonia is among the signatories; line 6: the passage quoted. B9 +5 (legal characterisation), scope west-bank, matches the events filed for the
+        other signatories (evt_2025_08_21_BEL_B9, evt_2025_08_21_DNK_B9).'
+    notes: 'Joint statement of foreign ministers of 21 August 2025 on the E1 settlement plans, as published by the Danish Ministry of Foreign Affairs (the text archived for Denmark). West Bank
+      conduct, tagged and unscored in v1 (docs/10 B-32). Filed in the light protocol (docs/10 B-662 ff.): the same joint statement is filed for every signatory (B-444); Estonia is named on line
+      4.'
+
+- id: evt_2025_09_24_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2025-09-24'
+  points: 5
+  points_rationale: 'Names specific violations (+5): the President says civilians'' lives were lost to ''military action, starvation and the spread of disease'', that ''what has unfolded in Gaza
+    has crossed all red lines'' and that Israel must respect international humanitarian law and implement its commitments on aid.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President told the General Assembly that what had unfolded in Gaza had crossed all red lines and that Israel must respect international humanitarian law and allow humanitarian aid.
+    fr: Le président a dit à l'Assemblée générale que ce qui s'était passé à Gaza avait franchi toutes les lignes rouges et qu'Israël devait respecter le droit humanitaire et permettre l'aide.
+  actor: *id002
+  evidence:
+  - source: src_20250924_president-ee_karis-unga80
+    quote: I am devastated that so many innocent lives, including children’s lives have been lost due to military action, starvation and the spread of disease.
+    quote_lang: en
+    locator: line 13
+  - source: src_20250924_president-ee_karis-unga80
+    quote: And yet, what has unfolded in Gaza has crossed all red lines.
+    quote_lang: en
+    locator: line 13
+  - source: src_20250924_president-ee_karis-unga80
+    quote: Israel must fully respect international humanitarian law and implement its commitments regarding access and delivery of humanitarian aid and security of aid workers.
+    quote_lang: en
+    locator: line 14
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 13 and 14 of the President''s address as published by his Office re-read: the three passages quoted. +5 (starvation named; Israel called on to respect international humanitarian
+        law); the UN''s page of the 80th General Debate places the address on 24 September 2025.'
+    notes: Address to the General Debate of the 80th session, 24 September 2025, as published in full by the President's Office. It is 384 days old on 13 October 2026, so it does not end the passivity
+      penalty by itself (the 365-day test); the joint statement of 8 June 2026 does. Filed in the light protocol (docs/10 B-662 ff.).
+
+- id: evt_2026_05_28_EST_B11
+  revision: 1
+  country: EST
+  indicator: B11
+  type: standing
+  date: '2026-05-28'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 28 May 2026 (Implementing Regulation (EU) 2026/1177) of four settler organisations and three individuals, adopted by
+    unanimity; it lists Nachala for abuses in the West Bank and the Gaza Strip. The settler tier already holds from 15 July 2024 (one per tier), so it adds no points.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on three Israeli settler leaders and four settler organisations, one of them for efforts to resettle the Gaza Strip.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre trois dirigeants de colons israéliens et quatre organisations de colons, dont l'une pour son projet de colonisation de
+      Gaza.
+  evidence:
+  - source: src_20260528_eur-lex_reg-impl-2026-1177
+    quote: 'the following entries are added to the list of natural or legal persons, entities or bodies under the heading ‘B. Legal persons, entities and bodies’:'
+    quote_lang: en
+    locator: line 2
+  - source: src_20260528_eur-lex_reg-impl-2026-1177
+    quote: After 7 October 2023, Nachala has furthermore been at the forefront of efforts to resettle the Gaza Strip. Therefore, Nachala is responsible for facilitating and encouraging human rights
+      abuses in the West Bank and the Gaza Strip, including abuses of the right of Palestinians to self-determination, their right to property, their right to private and family life, as well
+      as the right to life and to physical health, which are of serious concern as regards the objectives of the common foreign and security policy set out in Article 21 of the Treaty on European
+      Union.
+    quote_lang: en
+    locator: line 27
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 2 and 27 of the Implementing Regulation re-read: entities added to the list, Nachala for abuses in the West Bank and the Gaza Strip, listed 28.5.2026. B11 settlers agrees;
+        it adds nothing while the 2024 listing holds.'
+    notes: 'Filed in the light protocol (docs/10 B-662 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Estonia as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446). Estonia''s Foreign Minister said on 10 June 2025 that Estonia supports the EU''s measures on violent settlers and the
+      addition of new names to the list (src_20250610_vm-ee_tsahkna-palestinian-minister).'
+
+- id: evt_2026_06_08_EST_B9
+  revision: 1
+  country: EST
+  indicator: B9
+  type: repeatable
+  date: '2026-06-08'
+  points: 2
+  points_rationale: 'Formal call to end the blockade (+2): the signatories call on Israel to comply with its obligations under international humanitarian law and say humanitarian access is non-negotiable;
+    the restrictions are described, not called violations.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs joined a joint statement calling on Israel to comply with international humanitarian law and allow humanitarian access in Gaza.
+    fr: Le ministre des Affaires étrangères s'est joint à une déclaration commune appelant Israël à respecter le droit international humanitaire et à permettre l'accès humanitaire à Gaza.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Margus Tsahkna
+  evidence:
+  - source: src_20260608_diplomatie-belgium_joint-statement-ingos
+    quote: we call on Israel, the occupying power in Gaza and the West Bank, including East Jerusalem, to comply with its obligations under international humanitarian law. Humanitarian access
+      is non-negotiable.
+    quote_lang: en
+    locator: line 6
+  - source: src_20260608_diplomatie-belgium_joint-statement-ingos
+    quote: Estonia, France, Finland
+    quote_lang: en
+    locator: line 7
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 6 and 7 of the joint statement re-read: Israel called on to comply with international humanitarian law, access non-negotiable; Estonia among the signatories. Call tier (+2)
+        agrees with evt_2026_06_08_BEL_B9 and evt_2026_06_08_SVK_B9.'
+    notes: 'Joint statement published by the Belgian FPS Foreign Affairs on 8 June 2026 (English only); the Estonian Ministry published it on 9 June 2026 (vm.ee, read, not archived). The signatories
+      are listed as states, not ministers; read as the foreign minister''s statement because it is published by the ministries as a declaration, as for Belgium (docs/10 B-272) and the other signatories;
+      flagged. Filed in the light protocol (docs/10 B-662 ff.): the same joint statement is filed for every signatory (B-444); Estonia is named on line 7.'

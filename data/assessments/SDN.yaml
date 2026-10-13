@@ -1,0 +1,195 @@
+# Coverage record for the Sudan (docs/03 §6). P-21 light protocol, session T-P21-18, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.sd and mofa.gov.sd do not serve a site: the first answers a connection error and its Wayback capture of 2025-11-13 is a hosting default page, the second no DNS answer; the Ministry's reports are read through the Sudan News Agency), SUNA (suna.sd, the state news agency, whose site search page does not return a search result list to a scripted request: pages found by web search in Arabic and English and read), the General Debate statements of the 79th and 80th sessions (the 79th through the Assembly's verbatim record A/79/PV.11; the 80th through SUNA's text and the UN's page, which names the date 25 September 2025), the ICJ's and the ICC's lists, UNRWA's donor tables and web searches in Arabic and English for each indicator group.
+# The Sudan has two rival authorities in a war: the B9/B10 speakers are those of the government that represents the Sudan at the UN: the President of the Transitional Sovereign Council (Abdel-Fattah Al-Burhan), the Prime Minister (Kamil El-Tayeb Idris from 31 May 2025) and the Minister of Foreign Affairs and International Cooperation (Mohieldin Salem from 2025). The Rapid Support Forces' parallel authority is not a B9 speaker.
+# Two B9 events. No lead.
+country: SDN
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SDN
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of this country from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for
+      the Sudan. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SDN
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Sudan (searched for Sudan: no row)'
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes, all recorded, so there is no absence and no Article 19 note (the Sudan is not among the four Member States in arrears
+      in the Secretary-General''s letter of 3 September 2025, A/80/362, archived). No explanation of vote by the President, the Prime Minister or the Foreign Minister was found; a Permanent Representative''s
+      explanation would not be a B9 or B10 speaker (R3).'
+    queries:
+    - unga_votes.csv, voter SDN
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: The Sudan is not on the ICJ case 192 intervention list (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192; docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found, and the Sudan filed no declaration of intervention.
+    queries:
+    - Sudan foreign ministry ICJ provisional measures Israel statement (web search, English and Arabic)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the head of government, the Foreign Minister or the Justice Minister committing the Sudan to execute the warrants of 21 November 2024. The Sudan is not in the Assembly
+      of States Parties'' list (archived: src_20261009_icc-asp_states-parties, read: no entry for the Sudan).'
+    queries:
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    - Sudan ICC arrest warrant Netanyahu statement
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - Sudan ICC arrest warrant Netanyahu statement
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: The Sudan has imposed no sanctions on ICC officials (none found).
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for the Sudan. The registry gives a recognition of 17 November 1988 (before the window); no document of it was read and none was added
+      to recognitions.csv.
+    queries:
+    - recognitions.csv, row SDN (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Two events, both at the call tier: the President of the Transitional Sovereign Council at the 79th General Debate, 26 September 2024 (evt_2024_09_26_SDN_B9, +2, the Assembly''s verbatim
+      record A/79/PV.11; expired, 747 days) and at the extraordinary Arab Summit in Cairo, 4 March 2025 (evt_2025_03_04_SDN_B9, +2, the Sudan News Agency''s text of the speech; 588 days old, counts at weight 0.54 and does not end the passivity penalty). Read and not filed: (1) the President at the Arab League summit in Doha, 15 September 2025 (SUNA, archived: src_20250915_suna_burhan-doha-summit):
+      Gaza appears only as the ''humanitarian tragedy'' whose settlement the attack on Qatar undermines, with no call and no violation named in Gaza (the ''flagrant violation'' named is of Qatar''s
+      sovereignty); (2) the Prime Minister at the 80th General Debate, 25 September 2025 (SUNA''s text dated 26 September, archived: src_20250926_suna_idris-unga80-speech): ''the catastrophic
+      conditions in occupied Palestine and the Gaza Strip'' warn of grave consequences, with no call and no violation named; (3) the Foreign Ministry''s statement of January 2025 welcoming the
+      entry into force of the Gaza ceasefire and its communiqué of 5 September 2024 on the Israeli Prime Minister''s remarks on Egypt (communiqués with no named speaker, R3; seen in search results,
+      not read); (4) the Arab summit in Baghdad, 17 May 2025: the Sudan''s delegation was led by a member of the Sovereignty Council, who is not a B9 speaker (R3; press, seen in search results);
+      (5) the Foreign Minister, Mohieldin Salem: no statement on Gaza found in the searches (his remarks of 25 September 2026 in New York concern the war in the Sudan).'
+    queries:
+    - Sudan foreign minister Mohieldin Salem Gaza statement ceasefire Israel 2025 2026 (web search)
+    - وزير الخارجية السوداني محيي الدين سالم غزة بيان وقف إطلاق النار إسرائيل (web search)
+    - السودان البرهان كلمة القمة العربية الإسلامية الرياض غزة سونا (web search)
+    - سونا كلمة السودان القمة العربية بغداد 2025 غزة (web search)
+    - A/79/PV.11 (archived, read)
+    - gadebate.un.org/en/80/sudan (Wayback, read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel by the President, the Prime Minister or the Foreign Minister since 7 October 2023 was found. The normalisation of relations with Israel
+      announced in 2021 and 'moved forward' in a meeting of February 2023 (before the window) was never completed; a report of April 2025 that an envoy of the President visited Israel rests on
+      one anonymous source (Al-Rakoba, relayed by Ynet; seen in a search result, not read) and is not an event.
+    queries:
+    - Sudan Israel normalisation Burhan 2025 2026 agreement Abraham Accords talks (web search)
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanctions on settlers or Israeli officials were found; the Sudan has no such list.
+    queries:
+    - Sudan Gaza medical evacuation OR visa OR sanctions settlers OR UNRWA funding Sudan government (web search)
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the Sudan has had no embassy relations with Israel and none were established in the window (see B10).'
+    queries:
+    - Sudan Israel normalisation Burhan 2025 2026 (web search)
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found; the Sudan has none in force.
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found (see B10 for the unconfirmed report of April 2025).
+    queries:
+    - Sudan Israel agreement OR memorandum signed 2024 2025 (web search)
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1186, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor SDN
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; the Sudan has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Sudan (none)
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'The Sudan has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived: src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024):
+      no contribution to compare, so D3 has no baseline (docs/10 B-445). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Sudan (none)
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found (the WHO's lists of receiving countries in the search results do not name the Sudan).
+    queries:
+    - Sudan Gaza medical evacuation (web search)
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Sudan Gaza visa humanitarian regulation (web search)
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
