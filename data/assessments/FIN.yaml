@@ -1,0 +1,243 @@
+# Coverage record for Finland (docs/03 §6). P-21 light protocol, session T-P21-19, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's and the Ministry for Foreign Affairs' sites (valtioneuvosto.fi, um.fi: a Cloudflare challenge answers every scripted request, so their pages were read through the Wayback replays of the URLs that web searches in English and Finnish returned, and recorded with --capture), presidentti.fi (read live), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th archived), the joint statements already archived for the 45 (archive/text searched for Finland, Finlande, Suomi), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Finnish per indicator group. Finland is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Time: about 70 minutes of research on Finland, inside the 90-minute budget of the session.
+# Fourteen B9 events, three B11 events, one C1 event, one C2 event, three D2/D3 events. Leads: 1 (lead_20261013_FIN_1).
+country: FIN
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier FIN
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): Finland''s rows are orders of 1999 to 2022 (TIV 1.2 to 41) and one of 2023 whose TIV is 0; none is an order of 2024 or later. Left to the build.
+      Flagged: the register (archive/text/src_20261005_sipri_register-supplier-israel.txt, lines 244 to 256) lists a 2023 order of the David''s Sling system (EUR 316 m deal) and one of the Stunner
+      missile, both with no number and no TIV, and Spike orders of 2022 (EUR 224 m, deliveries 2023 to 2025); the Israeli Ministry of Defense announced the David''s Sling contract on 12 November
+      2023 (press, seen in search results, not read), a date after 7 October 2023, but SIPRI gives the order a TIV of 0 and A4 counts the TIV of a release''s own data year (docs/10 B-536 (7)),
+      so the generated indicator carries no points. Whether the contract is an order ''on or after 2023-10-07'' is the author''s reading.'
+    queries:
+    - sipri_orders.csv, buyer FIN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Finland (read)
+    - Finland David's Sling purchase Israel agreement signed (web search; the contract date is from press, not read)
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 10 of the 12 qualifying votes and an abstention on 2 (A/RES/ES-10/21 of 27 October 2023 and A/RES/ES-10/23 of 10 May 2024). All 12 are recorded,
+      so no absence is scored and no Article 19 note is needed (Finland is not among the four Member States in arrears in the Secretary-General''s letter of 3 September 2025, A/80/362, archived:
+      src_20250903_undocs_a-80-362-article19). Finland joined the New York Declaration on 5 September 2025 and voted for it on 12 September (the Prime Minister''s reply of 30 September 2025, read).'
+    queries:
+    - unga_votes.csv, voter FIN
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'Finland is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192; docs/06 §8).
+      The advisory proceedings on Israel''s policies and practices (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    - icj-cij.org case 186 written proceedings (archived, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: 'No statement or act rejecting the ICJ''s provisional-measures orders was found. The Foreign Minister told Parliament on 22 May 2025 that the Court has ordered Israel to do all it can
+      to prevent acts leading to genocide in Gaza and that the order must be complied with (''Määräystä on noudatettava'', src_20250523_um-fi_valtonen-gaza-eduskunta): a statement for the orders,
+      not B4.'
+    queries:
+    - Valtonen ICJ provisional measures Israel Finland statement
+    - 'valtioneuvosto.fi / um.fi (through Wayback), Finnish: välitoimet, Kansainvälinen tuomioistuin'
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the Prime Minister, the Foreign Minister or the Minister of Justice committing Finland to execute the warrants of 21 November 2024 was found in searches in English and
+      Finnish. The Ministry''s and the Government''s sites cannot be searched by a script (a Cloudflare challenge) and were read only through the Wayback replays of pages that web searches returned,
+      so the absence is not shown by a site search. Finland is a state party to the Rome Statute (line 135 of the Assembly''s list, archived: src_20261009_icc-asp_states-parties).'
+    queries:
+    - Finland ICC arrest warrants Netanyahu Valtonen Finland would arrest respects ICC statement November 2024
+    - Suomi pidättäisi Netanjahun ICC pidätysmääräys ulkoministeriö Valtonen marraskuu 2024
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - Finland refuses ICC arrest warrant Netanyahu (as for B5)
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Finland has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Finland. Finland has not recognised the State of Palestine: the Government''s reply of 30 September 2025 (src_20250930_valtioneuvosto_orpo-valikysymys-palestiina,
+      read) says the Government ''is ready to proceed with the recognition of Palestine once the conditions are met'' (the release of the hostages, no role for Hamas in Palestinian governance,
+      the Palestinian Authority''s commitment to disarmament and reform) and ''does not proceed unless the conditions are met''; the Foreign Minister said to Parliament on 22 May 2025 that Finland
+      will recognise the State of Palestine at a time when it supports a lasting two-state solution as part of a wider international package (src_20250523_um-fi_valtonen-gaza-eduskunta, line 748).
+      An intention is not a recognition. Finland joined the New York Declaration (5 September 2025).'
+    queries:
+    - recognitions.csv, row FIN (none)
+    - 'valtioneuvosto.fi: Hallituksen vastaus välikysymykseen … Palestiinan valtion tunnustamisessa (archived, read)'
+    - Finland recognise Palestine government decision Orpo Valtonen 2026 (web search; Helsinki Times and Yle items seen, not read)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Fourteen events: ten joint statements (the declaration of 26 EU foreign ministers of 19 February 2024, +2, expired; the joint donor statement of 19 May 2025, +2; 21 July 2025, +5; 12
+      August 2025, +5; 21 August 2025, +5 west-bank, unscored; 27 September 2025, +2, in which the Ministers of Development Cooperation of Finland and the Netherlands also signed; 30 December
+      2025, +2; 24 February 2026, +5 west-bank, unscored; 8 June 2026, +2; 8 September 2026, +5 west-bank, unscored) and four own statements: the Foreign Minister''s speech to Parliament, 22 May
+      2025 (+5: she demands an immediate end to the blockade and says forced transfer of the population is a war crime), her speech to the Heads of Mission, 25 August 2025 (+5, flagged: ''Israel
+      has gone many times too far''), the President at the 80th General Debate, 24 September 2025 (+5: ''Israel has no right to violate international law in Palestine'', an immediate ceasefire
+      needed) and the Prime Minister''s reply to the interpellation, 30 September 2025 (+5: the military operations in Gaza ''violate international law and the UN Charter''). Read and not filed:
+      (1) the President''s 81st statement, 22 September 2026 (the delegation''s file, live, no Wayback capture; ''Gaza continues to be one of the world''s most acute humanitarian emergencies,
+      marked by mass displacement, the destruction of infrastructure and a lack of essential services'': no call and no violation named); (2) the Foreign Minister''s statement at the Human Rights
+      Council''s 55th session (February 2024, expired) and the Ministry''s statement of October 2023 (expired), seen in search results, not read; (3) the Foreign Minister''s remarks at the Foreign
+      Affairs Councils of 2024 and 2025 (releases of the Government listed in search results, not read). The other joint statements archived (9 and 10 August 2025, 28 January and 1 February 2026)
+      do not name Finland (archive/text searched).'
+    queries:
+    - valtioneuvosto.fi and um.fi, speeches and releases (through Wayback replays of the pages web searches returned)
+    - Valtonen Gaza ceasefire statement Minister for Foreign Affairs of Finland humanitarian international humanitarian law
+    - ulkoministeri Valtonen Gaza tulitauko Israel kansainvälinen oikeus lausunto
+    - President Stubb Gaza Israel statement United Nations General Assembly 2025 Finland speech
+    - gadebate.un.org Finland 78th to 81st sessions (fi_en.pdf, read; the 80th archived with its UN page)
+    - archive/text joint statements (archived) searched for Finland, Finlande, Suomi
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: every statement of support for Israel found is conditional on international law or concerns Hamas. The Prime Minister''s reply of 30 September 2025: ''Israel has the right
+      to defend its citizens against terrorist attacks within international law. At the same time international humanitarian law must be observed without compromise'' (src_20250930_valtioneuvosto_orpo-valikysymys-palestiina,
+      line 6); the Foreign Minister''s speech of 22 May 2025: ''Finland has stressed Israel''s right to defend itself within the limits of international law'' (src_20250523_um-fi_valtonen-gaza-eduskunta).
+      The Prime Minister said in 2025 that each arms deal should be subjected to critical scrutiny (Yle, 31 August 2026, read).'
+    queries:
+    - Orpo Israel right to defend itself unconditional support statement
+    - 'valtioneuvosto.fi: Orpo Israel Gaza (through Wayback)'
+    checked_at: '2026-10-13'
+  B11:
+    status: has-events
+    note: 'Three events, from the Council''s listings under R8 (docs/10 B-446): 19 April 2024 (west-bank, unscored), 15 July 2024 (gaza and west-bank) and 28 May 2026 (gaza and west-bank; adds
+      no points, but is a qualifying event). The Foreign Minister told Parliament on 22 May 2025 that Finland has imposed EU sanctions on Israel''s violent settlers, and the Prime Minister''s
+      reply of 30 September 2025 says Finland ''announced in the spring that it supports Sweden''s proposal of sanctions on Israeli ministers'' and that further sanctions on violent Israeli ministers
+      and settlers ''are measures whose support Finland has reason to consider'': an intention, not a listing. No national listing and no listing of Israeli ministers by Finland was found.'
+    queries:
+    - src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20240715_eur-lex_cfsp-2024-1967, src_20260528_eur-lex_reg-impl-2026-1177 (archived)
+    - Finland sanctions Israeli ministers Ben-Gvir Smotrich OR settlers Finland national list
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found.
+    queries:
+    - recalls ambassador Israel Finland
+    - Suomen suurlähettiläs Israel kutsuttu takaisin
+    checked_at: '2026-10-13'
+  C1:
+    status: has-events
+    note: 'One event: the EU''s review of Israel''s compliance with Article 2 of the Association Agreement, launched at the Foreign Affairs Council of 20 May 2025, which Finland asked for and
+      supported (the Foreign Minister''s speech of 22 May 2025 and the Prime Minister''s reply of 30 September 2025, both in Finnish, archived). The reply of 30 September 2025 says a partial freeze
+      of the Agreement ''is a measure whose support Finland has reason to consider'' and that the Government''s lines would go to Parliament: no suspension was adopted by the Council to 2026-10-13.'
+    queries:
+    - Finland Valtonen EU-Israel Association Agreement review Article 2 Foreign Affairs Council 20 May 2025 Finland supports
+    - assosiaatiosopimus Israel jäädyttäminen Suomi kanta (Fingo and Yle items seen in search results, not read)
+    - src_20250520_eeas_fac-press-remarks-kallas (archived)
+    checked_at: '2026-10-13'
+  C2:
+    status: has-events
+    note: 'One event, `reported` and flagged: the memorandum of understanding on defence materiel cooperation with Israel, extended to 2034 and dated February 2024, known from Yle''s report of
+      31 August 2026 and Globes'' report of 30 August 2026, which relays it (evt_2024_02_29_FIN_C2; R18: it extends a memorandum of 2013). The David''s Sling contract (12 November 2023) is an
+      arms purchase, read under A4, not a cooperation agreement. Finland''s Defence Forces seminar with Israel''s defence industry (May 2026) produced no signed document found.'
+    queries:
+    - Yle Finland Israel defence cooperation memorandum 2034 signed puolustusyhteistyö Israel sopimus
+    - Finland David's Sling purchase Israel agreement signed
+    - archive/text/src_20260831_yle_finland-israel-defence-materiel-mou.txt (read)
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Government flows of USD 6,919,366 (plan 1156), 6,370,321 (plan 1273) and 5,767,013 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the build. The
+      Prime Minister''s reply of 30 September 2025 says the Government had paid or was preparing decisions on about EUR 33.5 million of humanitarian assistance to the Palestinian territories since
+      October 2023.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor FIN
+    checked_at: '2026-10-13'
+  D2:
+    status: has-events
+    note: 'One event: the Ministry''s release of 27 January 2024 that the Minister for Foreign Trade and Development decided to suspend Finland''s payments to UNRWA (evt_2024_01_27_FIN_D2, -10),
+      ended by the release of 22 March 2024. On 27 August 2026 the Minister announced that Finland will not renew the multi-year agreement (2023-2026, EUR 5 million a year) when it expires and
+      will channel the support through other organisations (Yle and other press; the Ministry''s own text was not found): a lead (lead_20261013_FIN_1), not an event, because no payment is withheld.'
+    queries:
+    - UNRWA funding suspend Finland statement
+    - Finland suspends UNRWA funding January 2024 Ministry for Foreign Affairs Finland decision
+    - valtioneuvosto.fi UNRWA rahoitus jatkuu Suomi päätös 2024 ulkoministeriö
+    - Tavio Finland will not renew UNRWA funding agreement 2026 (web search)
+    checked_at: '2026-10-13'
+  D3:
+    status: has-events
+    note: 'One event: restored (+5) from the Ministry''s release of 22 March 2024 (evt_2024_03_22_FIN_D3). UNRWA''s tables: 2022 USD 7,807,565; 2023 USD 5,643,323; 2024 USD 5,470,460: below 2022
+      every year, so never the increased tier. The 2025 table was not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Finland
+    - src_20240322_valtioneuvosto_unrwa-continues (archived, read)
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. The Government''s reply of 30 September 2025 says the evacuation of Gazan children to Finland had been discussed
+      and that the most effective way to help is on the spot; it names EUR 1 million for the Red Cross''s field hospital in Gaza (August 2025) and EUR 1 million reserved to support patient care
+      if Israel allows evacuation to East Jerusalem: funding, not a D4 act. In June 2025 Finland collected its own nationals or residence permit holders from the Gaza border (the Icelandic Ministry''s
+      release of 25 June 2025 names Finland among the states that did): not a programme.'
+    queries:
+    - medical evacuation Gaza Finland ministry
+    - gazalaislasten evakuointi Suomeen
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Finland regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,224 @@
+# Coverage record for Lithuania (docs/03 §6). P-21 light protocol, session T-P21-19, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (urm.lt, also mfa.lt), the Government (lrv.lt) and the President's site (lrp.lt) answer a Cloudflare challenge to every scripted request and Save Page Now fails with HTTP 403: their pages were read through the Wayback captures that exist (the Ministry's release of 29 August 2025 is one) and the rest only through the press (LRT English, BNS, LSM: read live) and the General Debate statements (gadebate.un.org, the 78th to 81st sessions; the 80th archived). The joint statements already archived for the 45 (archive/text searched for Lithuania, Lituanie), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Lithuanian per indicator group. Lithuania is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Time: about 60 minutes of research on Lithuania, inside the 90-minute budget of the session.
+# Eight B9 events, three B11 events, two D3 events. Leads: 3 (lead_20261013_LTU_1 to _3).
+country: LTU
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LTU
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv): a 2025 order (Spike-NLOS missiles for Watercat missile boats built in Finland; TIV 3.75) in the release of 9 March 2026, which gives the generated
+      event evt_2026_03_09_LTU_A4_orders-2025 (-2.0). Left to the build. The register''s rows of 2022 and earlier (Boxer vehicles'' turrets and missiles from Germany) pre-date the window; deliveries
+      of 2024 and 2025 under the order of 2022 are deliveries of a pre-war order (A4 reads only orders, docs/10 B-536 (7)).'
+    queries:
+    - sipri_orders.csv, buyer LTU
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Lithuania (read)
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 6 of the 12 qualifying votes and an abstention on 6 (A/RES/ES-10/21, ES-10/22, ES-10/23, ES-10/24 and ES-10/26 and A/RES/79/232). All 12 are recorded,
+      so no absence is scored and no Article 19 note is needed (Lithuania is not among the four Member States in arrears in the Secretary-General''s letter of 3 September 2025, A/80/362, archived).
+      No explanation of vote by the President, the Prime Minister or the Foreign Minister was found; a Permanent Representative''s explanation would not be a B9 or B10 speaker (R3).'
+    queries:
+    - unga_votes.csv, voter LTU
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'Lithuania is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192; docs/06
+      §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found. The Foreign Minister's remark of May 2024 on the ICC Prosecutor's request (LRT, seen in a search result,
+      not read) concerns the ICC, not the ICJ.
+    queries:
+    - Lithuania ICJ provisional measures Israel statement Landsbergis OR Budrys
+    - 'urm.lt news search (a Cloudflare challenge: not available to a script)'
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the President, the Prime Minister, the Foreign Minister or the Minister of Justice committing Lithuania to execute the warrants of 21 November 2024 was found. The Ministry''s
+      commentary forwarded to the news agency BNS on 21 November 2024 says that the Court''s decisions are binding on member states and that once the Court issues a warrant ''its execution is
+      binding in all state parties'' (LRT, 22 November 2024, read): a Ministry commentary with no named speaker, reported by the press and not archived at the Ministry (urm.lt answers a bot check):
+      lead_20261013_LTU_2. A presidential adviser said in May 2025 that the warrant is for the Prime Minister of Israel and that relations with Israel as a country are separate (Baltic Times,
+      seen in a search result, not read). Lithuania is a state party to the Rome Statute (line 166 of the Assembly''s list, archived: src_20261009_icc-asp_states-parties).'
+    queries:
+    - Lithuania ICC arrest warrant Netanyahu Lithuanian position Budrys Nausėda Šimonytė November 2024
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Lithuania has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Lithuania. Lithuania has not recognised the State of Palestine: the Foreign Minister said on 24 April 2025 that Lithuania could
+      do so ''at the right time'' and when a majority of states do (LRT, read), and Lithuania voted for the New York Declaration on 12 September 2025 (A/DEC/80/506: yes, in unga_votes.csv); the
+      President''s address of 24 September 2025 backs a two-state solution (src_20250924_un-gadebate_ltu-nauseda-80th).'
+    queries:
+    - recognitions.csv, row LTU (none)
+    - 'LRT: Lithuanian FM equivocal about recognising Palestinian state (read)'
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Eight events, six of them joint statements: the declaration of 26 EU foreign ministers, 19 February 2024 (+2, expired); the joint donor statement, 19 May 2025 (+2); 21 July 2025 (+5);
+      12 August 2025 (+5); 21 August 2025 (+5 west-bank, unscored); 27 September 2025 (+2); and two own statements at the call tier (+2, flagged): the Foreign Minister''s words in the Ministry''s
+      release of 29 August 2025 and the President at the 80th General Debate, 24 September 2025. Read and not filed: (1) the Foreign Minister''s remarks to a parliamentary group of 16 September
+      2025 (''Our available tools have not convinced Israel to resolve the humanitarian catastrophe in Gaza … to stop the crimes being committed in the West Bank''; LRT and BNS, press only: lead_20261013_LTU_3,
+      since a B9 event needs an official source); (2) the Foreign Minister''s remarks of 25 June 2025 against reviewing the EU-Israel agreement (LRT, read; he also called the situation in Gaza
+      ''truly dire'': no call, press only); (3) the President''s 79th statement (2024, no Gaza text) and 81st statement (2026: supports efforts to ''maintain and consolidate the ceasefire'' and
+      the Comprehensive Plan; live file, no Wayback capture; no call); (4) the Foreign Minister''s visit to Israel and Palestine, 16-17 June 2026 (a working visit reported by the Ministry, search
+      results, not read; a bot check blocks the Ministry''s pages). The Prime Minister (Šimonytė, Paluckas, Ruginienė, Sinkevičius): no statement on Gaza found. The Danish copy of 13 August 2025
+      is the same statement as the one of 12 August. The other joint statements archived (9, 10 and 29 August 2025, 24 and 30 December 2025, 28 January, 1 and 24 February, 8 June and 8 September
+      2026) do not name Lithuania (archive/text searched).'
+    queries:
+    - urm.lt news search (Cloudflare challenge; pages read through Wayback captures)
+    - 'LRT English: Lithuania Gaza Budrys, Nausėda (read)'
+    - gadebate.un.org Lithuania 78th to 81st sessions (lt_en.pdf, read; the 80th archived)
+    - archive/text joint statements (archived) searched for Lithuania, Lituanie
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: B10''s speaker is the head of government and no statement of unconditional support or denial of violations by the Prime Minister was found. The Foreign Minister said on
+      25 June 2025 that ''Israel is currently in an existential fight with Iran … and needs political support to endure'' (LRT, press, not a B10 speaker).'
+    queries:
+    - Lithuania Prime Minister Israel support Gaza statement
+    - Šimonytė OR Paluckas OR Ruginienė OR Sinkevičius Israel Gaza
+    checked_at: '2026-10-13'
+  B11:
+    status: has-events
+    note: 'Three events, from the Council''s listings under R8 (docs/10 B-446): 19 April 2024 (west-bank, unscored), 15 July 2024 (gaza and west-bank) and 28 May 2026 (gaza and west-bank; adds
+      no points, but is a qualifying event). No national listing and no listing of Israeli ministers by Lithuania was found; the Foreign Minister said in September 2025 that Europe would have
+      to review its dialogue with Israel (LRT, read).'
+    queries:
+    - src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20240715_eur-lex_cfsp-2024-1967, src_20260528_eur-lex_reg-impl-2026-1177 (archived)
+    - Lithuania sanctions Israeli settlers OR ministers
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Foreign Minister met the new Israeli ambassador in September 2025 (LRT, 11 September 2025, seen in a search
+      result).
+    queries:
+    - recalls ambassador Israel Lithuania
+    - Lietuvos ambasadorius Izraelyje atšauktas
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: 'No suspension or review of any agreement with Israel supported by Lithuania. Lithuania opposed the EU''s review of Article 2 of the Association Agreement: the Foreign Minister said
+      on 24 June 2025 that ''this is not the time to review agreements or trade relations'' (LRT, 25 June 2025, read: ''Lithuania opposed the decision''); the President said in April 2026 that
+      suspension is not the best way to address the humanitarian questions (LRT, 23 April 2026, seen in a search result, not read). A state that opposed gets no C1 event (docs/02 §2 C1).'
+    queries:
+    - Lithuania Budrys EU-Israel Association Agreement review position Lithuania opposes suspension
+    - 'LRT: Lithuanian FM: Israel in existential fight, EU should not review cooperation agreement (read)'
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The Ministry's cooperation programmes in education, culture and science (2023-2025) and the memoranda on innovation and
+      cyber security date from the Foreign Minister's visit to Israel of 2023 (search results, before the window); the declaration signed during the Foreign Minister's visit of 16-17 June 2026
+      was with Palestinian and German partners on digital transformation in Palestine, not with Israel (search results, not read). The Ministry's Israel pages are behind a bot check.
+    queries:
+    - Lithuania Israel agreement signed 2024 2025 2026 memorandum cooperation Lithuanian ministry Israel sign
+    - il.mfa.lt (the embassy; blocked)
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Government flows of USD 106,914 (plan 1156), 304,681 (plan 1186), 58,685 (plan 1273) and 58,548 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the
+      build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor LTU
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: 'No suspension is established. Two reports of 28-29 January 2024 conflict (lead_20261013_LTU_1): the Latvian public broadcaster (LSM, 29 January 2024, read) says Lithuania''s Ministry
+      paused further funding to UNRWA ''in coordination with partners'', embedding the Foreign Minister''s post; LRT (29 January 2024, 17:02, read) quotes Landsbergis: ''Lithuania hasn''t made
+      any decisions on the funding because we aren''t yet in the financial period … We''re waiting for an investigation first'', and says Lithuania gives about EUR 100,000 a year. The post itself
+      could not be archived and the Ministry''s site cannot be read. UNRWA''s table of 2024 shows USD 106,914 received from Lithuania (rank 85).'
+    queries:
+    - UNRWA funding suspend Lithuania statement
+    - Lithuania suspends UNRWA funding January 2024 Ministry of Foreign Affairs Landsbergis resumes funding
+    - LSM and LRT of 29 January 2024 (read)
+    checked_at: '2026-10-13'
+  D3:
+    status: has-events
+    note: 'Two events: increased from 31 December 2023 on the 2023 table (USD 139,763 against no row in 2022; ended 31 December 2024) and from 31 December 2024 on the 2024 table (USD 106,914).
+      The 2025 table was not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Lithuania
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Lithuania ministry
+    - Gazos evakuacija Lietuva sveikatos apsaugos ministerija
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Lithuania regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

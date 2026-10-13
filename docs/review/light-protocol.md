@@ -749,3 +749,92 @@ Assessments: has-events 6 (B1, B9, B11, D1, D2, D3), none-found 14, no-data 2 (A
 | EST | +0.4 (0) | +38.4 (+38) | Acting | B9 reaches its cap (+10.0 of +24.7), D3 +8.0, B11 +5.0, and the events of 28 May and 8 June 2026 end the passivity penalty (+15) |
 
 Two band changes. Tunisia moves from Passive to Acting: without the two 2026 events the score is +2.4 (Acting, penalty applied), so the band holds on the 80th-session event alone. Estonia moves from Passive to Acting at +38.4, 2.6 points under the Confronting threshold (41); without the two 2026 events (28 May and 8 June) the penalty applies and the score is about 15 points lower (Acting); the President's statement of 6 August 2025 (flagged, +5 or +2) changes nothing, B9 being capped. Coverage rises from 13% to 67% for each. Read critically (docs/06 §4 step 7): the cap on B9 hides most of Estonia's and Tunisia's B9 events; the readings with the largest effect are the Tunisian 81st-session speaker (B-665) and, for Estonia, the unconditional-support check of B10 (none found).
+
+## T-P21-19: FIN, ISL, LTU (2026-10-13)
+
+Light protocol (docs/06 §5) for Finland, Iceland and Lithuania. No cut-off attempt had left work in the tree. 56 events: 21 for Finland, 22 for Iceland, 13 for Lithuania. Decisions and flags are in docs/10 B-674 to B-684.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_01_27_FIN_D2 | D2 | 2024-01-27 (ended 2024-03-22) | −10 | confirmed | official |
+| evt_2024_02_19_FIN_B9 | B9 | 2024-02-19 (expired) | +2 | confirmed | official |
+| evt_2024_02_29_FIN_C2 | C2 | 2024-02-29 | −10 | reported | press |
+| evt_2024_03_22_FIN_D3 | D3 | 2024-03-22 | +5 | confirmed | dataset, official |
+| evt_2024_04_19_FIN_B11 | B11 | 2024-04-19 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2024_07_15_FIN_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2025_05_19_FIN_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_05_20_FIN_C1 | C1 | 2025-05-20 | +4 | confirmed | official |
+| evt_2025_05_22_FIN_B9 | B9 | 2025-05-22 | +5 | confirmed | official |
+| evt_2025_07_21_FIN_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_08_12_FIN_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_FIN_B9 | B9 | 2025-08-21 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2025_08_25_FIN_B9 | B9 | 2025-08-25 | +5 | confirmed | official |
+| evt_2025_09_24_FIN_B9 | B9 | 2025-09-24 | +5 | confirmed | official |
+| evt_2025_09_27_FIN_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2025_09_30_FIN_B9 | B9 | 2025-09-30 | +5 | confirmed | official |
+| evt_2025_12_30_FIN_B9 | B9 | 2025-12-30 | +2 | confirmed | official |
+| evt_2026_02_24_FIN_B9 | B9 | 2026-02-24 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2026_05_28_FIN_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+| evt_2026_06_08_FIN_B9 | B9 | 2026-06-08 | +2 | confirmed | official |
+| evt_2026_09_08_FIN_B9 | B9 | 2026-09-08 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2023_12_31_ISL_D3 | D3 | 2023-12-31 (ended 2024-01-30) | +8 | confirmed | dataset |
+| evt_2024_01_30_ISL_D2 | D2 | 2024-01-30 (ended 2024-03-19) | −10 | confirmed | official |
+| evt_2024_03_19_ISL_D3 | D3 | 2024-03-19 (ended 2024-12-31) | +5 | confirmed | official |
+| evt_2024_12_31_ISL_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_07_ISL_B9 | B9 | 2025-05-07 | +5 | confirmed | official |
+| evt_2025_05_16_ISL_B9 | B9 | 2025-05-16 | +5 | confirmed | official |
+| evt_2025_05_19_ISL_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_07_21_ISL_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_07_29_ISL_B9 | B9 | 2025-07-29 | +5 | confirmed | official |
+| evt_2025_08_10_ISL_B9 | B9 | 2025-08-10 | +5 | confirmed | official |
+| evt_2025_08_12_ISL_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_ISL_B9 | B9 | 2025-08-21 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2025_08_29_ISL_B9 | B9 | 2025-08-29 | +5 | confirmed | official |
+| evt_2025_09_27_ISL_B9 | B9 | 2025-09-27 | +5 | confirmed | official |
+| evt_2025_12_24_ISL_B9 | B9 | 2025-12-24 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2025_12_30_ISL_B9 | B9 | 2025-12-30 | +2 | confirmed | official |
+| evt_2026_01_05_ISL_B9 | B9 | 2026-01-05 | +2 | confirmed | official |
+| evt_2026_01_28_ISL_B9 | B9 | 2026-01-28 | +2 | confirmed | official |
+| evt_2026_02_24_ISL_B9 | B9 | 2026-02-24 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2026_03_11_ISL_B3 | B3 | 2026-03-11 | +15 | confirmed | court, official |
+| evt_2026_06_08_ISL_B9 | B9 | 2026-06-08 | +2 | confirmed | official |
+| evt_2026_09_08_ISL_B9 | B9 | 2026-09-08 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2023_12_31_LTU_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 | confirmed | dataset |
+| evt_2024_02_19_LTU_B9 | B9 | 2024-02-19 (expired) | +2 | confirmed | official |
+| evt_2024_04_19_LTU_B11 | B11 | 2024-04-19 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2024_07_15_LTU_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_12_31_LTU_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_19_LTU_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_07_21_LTU_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_08_12_LTU_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_LTU_B9 | B9 | 2025-08-21 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2025_08_29_LTU_B9 | B9 | 2025-08-29 | +2 | confirmed | official |
+| evt_2025_09_24_LTU_B9 | B9 | 2025-09-24 | +2 | confirmed | official |
+| evt_2025_09_27_LTU_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2026_05_28_LTU_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B8 and the other generated indicators are left to the build (Iceland's B8 comes from the row added to `data/structured/recognitions.csv`, B-677 (4)). The EU members (Finland, Lithuania) have the Council's three listings as B11 events and the joint statements already archived as B9 events; Iceland, which is not an EU member, has the statements named in its own Government's texts as well. All 36 qualifying votes of the three countries are recorded (Finland yes 10 and abstained 2, Iceland yes 11 and abstained 1, Lithuania yes 6 and abstained 6), so **no missing vote and no Article 19 note is needed**.
+
+### Finland
+
+Assessments (34 indicators): has-events 8 (B1, B9, B11, C1, C2, D1, D2, D3), none-found 12, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 1 (`lead_20261013_FIN_1`, D2, the announcement of 27 August 2026 that Finland will not renew its UNRWA agreement). Sources read: the Ministry's and the Government's pages (valtioneuvosto.fi, um.fi: a Cloudflare challenge; read through Wayback replays and recorded with `--capture`), the President's site, the General Debate statements of the 78th to 81st sessions (the 80th archived with the UN's page), the Foreign Minister's speech to Parliament of 22 May 2025 (Finnish), the Prime Minister's reply to the interpellation of 30 September 2025 (Finnish), the SIPRI register, the ICJ's and the ICC's lists (Finland is a state party), UNRWA's donor tables, Yle and Globes on the defence memorandum. 90-minute stop note: finished inside the budget (about 70 minutes on Finland). Flagged: the C2 event rests on one press origin and decides the band (B-676); the 25 August 2025 speech and the 24 September 2025 statement are filed at +5 on a legal-term-free reading and a 'check against delivery' file confirmed by the UN's summary. Not filed and why: the President's 81st statement (no call), the D2 for the end of UNRWA funding (no payment withheld), the David's Sling contract (A4, TIV 0), statements of 2023 and February 2024 (expired).
+
+### Iceland
+
+Assessments: has-events 7 (B1, B3, B8, B9, D1, D2, D3), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 10 (A3, A5 to A8, C5, C6, E1 to E3). Leads: 3 (`lead_20261013_ISL_1` to `_3`: the entry ban on two Israeli ministers, the free trade agreement not to be updated, the labelling of goods from the occupied territories, all announced on 8 September 2025 and known from the press only). Sources read: the Government's news search (about 100 items on Gaza, Palestine, Israel and UNRWA, in Icelandic) and the English statements, the Foreign Minister's report to the Althing (Wayback), the declaration of intervention (a scan: OCR), the General Debate statements, UNRWA's donor tables, the SIPRI register, the ICJ's and the ICC's lists (Iceland is a state party). 90-minute stop note: finished inside the budget (about 80 minutes on Iceland). Flagged: B3 is read from an OCR text and decides the band (B-677 (2)); the R21 row rests on the Foreign Minister's report (the date of diplomatic relations 'which involves recognition'); the evacuations of permit holders are not D4 or D5 events (B-678 (3)); the joint statements filed for Iceland and not for their other signatories (B-674 (6)). Not filed and why: the address of 26 September 2026 (no archived copy), the Paris conference remarks of 12 June 2026 (indirect speech), the statements of 2023 and 2024 (expired).
+
+### Lithuania
+
+Assessments: has-events 6 (A4, B1, B9, B11, D1, D3), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261013_LTU_1` to `_3`: the conflicting reports on a UNRWA hold, the Ministry's commentary on the warrants, the Foreign Minister's remarks of 16 September 2025). Sources read: the Ministry's release of 29 August 2025 (a Wayback capture: urm.lt answers a bot check and Save Page Now fails with HTTP 403), LRT English and BNS, LSM, the General Debate statements (the 80th archived and read by OCR), UNRWA's donor tables, the SIPRI register, the ICJ's and the ICC's lists (Lithuania is a state party). 90-minute stop note: finished inside the budget (about 60 minutes on Lithuania). Flagged: both own B9 events are at the call tier on 'all sides' and 'implementation of the ceasefire' wording; no D2 event because the reports conflict; no C1 event because Lithuania opposed the review. Not filed and why: the 81st statement (no call; no Wayback capture), the Foreign Minister's remarks to lawmakers (press only), the June 2026 visit to Israel and Palestine (Ministry pages blocked).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-13 (methodology 1.0.0-rc.1), the 56 reviewed events scored as if published; before them the generated indicators alone gave +2.3 (+2, Acting) for Finland, +2.3 (+2, Acting) for Iceland and −3.5 (−4, Passive) for Lithuania.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| FIN | +2.3 (+2) | +37.3 (+37) | Acting | B9 +10.0 (cap; summed +33.5), B11 +5.0, C1 +4.0, D3 +5.0, C2 −4.0 (`reported`); the events of 30 December 2025, 28 May and 8 June 2026 end the passivity penalty (+15) |
+| ISL | +2.3 (+2) | +53.0 (+53) | Confronting | category B +45.3 clipped to +45.0 (B9 +10.0 capped from +42.7, B3 +15.0, B8 +3.0, B1 +17.3), D3 +8.0; five 2025-26 events end the penalty (+15) |
+| LTU | −3.5 (−4) | +34.5 (+34) | Acting | B9 +10.0 (capped from +15.6), B11 +5.0, D3 +8.0, A4 −2.0; the 28 May 2026 listing, which adds no points beyond the standing state of 15 July 2024, is the only qualifying event and ends the penalty (+15) |
+
+Two band changes: Iceland from Acting to Confronting, held by one reading (B3): without it the score is +38.3 (Acting), 2.7 under the threshold (41); Lithuania from Passive to Acting at +34.5, and without the 28 May 2026 listing the penalty applies and the score is +19.5 (Acting). Finland stays Acting (+2 to +37) but sits 3.7 points under the threshold with the C2 event and 0.3 over it without (+41.3, Confronting): the reading with the largest effect (B-676). Coverage rises from 13% to 67% (Finland, Lithuania) and 70% (Iceland). Read critically (docs/06 §4 step 7): B9 is capped for all three, so the call-tier and flagged tiers move nothing; for Lithuania the cap hides a +5.6 surplus.

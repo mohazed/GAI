@@ -1572,9 +1572,17 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry for Foreign Affairs (um.fi)', url: 'https://um.fi/en', type: mfa, lang: [en]}
+    - {label: 'Finnish Government and Prime Minister (valtioneuvosto.fi)', url: 'https://valtioneuvosto.fi/en/', type: head_of_government, lang: [en]}
+    - {label: 'President of the Republic of Finland (presidentti.fi)', url: 'https://www.presidentti.fi/en/', type: head_of_state, lang: [en]}
   notes: >-
-    NATO: instrument of accession deposited on 4 April 2023, before the window (NATO member
+    gov_sources checked 2026-10-13: um.fi and valtioneuvosto.fi answer HTTP 403 with a Cloudflare challenge to a scripted request (and Save Page Now cannot capture them), so they were checked through
+    their Wayback captures (um.fi/en of 2026-09-11 and valtioneuvosto.fi/en/ of 2026-10-02, both HTTP 200, redirected to the front pages, lang="en-US" as the page declares; valtioneuvosto.fi
+    also declares hreflang en, fi and sv). The Ministry's releases are published on valtioneuvosto.fi and um.fi in Finnish, Swedish and English. presidentti.fi/en answered 200 (redirect to
+    /en/home/, lang="en-US"). The Prime Minister is Petteri Orpo, the Minister for Foreign Affairs Elina Valtonen, the Minister for Foreign Trade and Development Ville Tavio (Yle, 31 August 2026,
+    read), the President Alexander Stubb. Finland is an EU member: the Council's three settler listings are filed as B11 (R8, docs/10 B-446). The Government's pages are read through Wayback
+    replays (`web/2id_/`). NATO: instrument of accession deposited on 4 April 2023, before the window (NATO member
     countries page, read 2026-09-28).
 
 - iso3: FJI
@@ -2267,7 +2275,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-12-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry for Foreign Affairs (stjornarradid.is)', url: 'https://www.stjornarradid.is/raduneyti/utanrikisraduneytid/', type: mfa, lang: [is]}
+    - {label: 'Government of Iceland, English edition (government.is)', url: 'https://www.government.is/', type: government, lang: [en]}
+    - {label: "Prime Minister's Office (stjornarradid.is)", url: 'https://www.stjornarradid.is/raduneyti/forsaetisraduneytid/', type: head_of_government, lang: [is]}
+    - {label: 'President of Iceland (forseti.is)', url: 'https://www.forseti.is/en/', type: head_of_state, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-13: stjornarradid.is (the Ministry's and the Prime Minister's Office's pages, lang="is"), government.is (the English edition of the same site, lang="en") and
+    forseti.is/en (lang="en"; the Icelandic edition declares is) answered HTTP 200 to a scripted request with a browser User-Agent. The site's news search (`/efst-a-baugi/frettir/?q=Gaza`,
+    one request per term) lists the Ministry's items on Gaza; its English edition has a search page (`/search/?q=`). The Prime Minister is Kristrún Frostadóttir, the Minister for Foreign Affairs
+    Þorgerður Katrín Gunnarsdóttir (named so in the Ministry's items of 2025 and 2026, read), the President Halla Tómasdóttir. Iceland is not an EU member (EEA/EFTA): the Council's settler listings do not apply.
 
 - iso3: ISR
   iso2: IL
@@ -2863,7 +2880,16 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (urm.lt)', url: 'https://urm.lt/en', type: mfa, lang: [en]}
+    - {label: 'Government of the Republic of Lithuania (lrv.lt)', url: 'https://lrv.lt/en/', type: head_of_government, lang: [lt]}
+  notes: >-
+    gov_sources checked 2026-10-13: urm.lt (also served as mfa.lt) and lrv.lt answer HTTP 403 with a Cloudflare challenge to a scripted request and Save Page Now fails with HTTP 403, so they were
+    checked through Wayback captures: urm.lt/en of 2026-10-05 (HTTP 200, lang="en", the Ministry's news pages are captured one by one) and lrv.lt/en/ of 2026-09-09 (HTTP 200, a 4 KB application
+    shell that declares lang="lt" with data-lang="en": no text is served to a scripted client). The President's site (lrp.lt, also president.lt) answers 403 to a scripted request and its Wayback
+    captures are 403 pages, so it has no entry. The Prime Minister is Mindaugas Sinkevičius (the Seimas approved his Government on 14 July 2026, after Prime Minister Inga Ruginienė
+    resigned on 23 June 2026; OSW analysis of 15 July 2026, read), the Minister of Foreign Affairs Kęstutis Budrys (since December 2024, kept in the Government of July 2026: OSW, read), the
+    President Gitanas Nausėda. Lithuania is an EU member: the Council's three settler listings are filed as B11 (R8, docs/10 B-446).
 
 - iso3: LUX
   iso2: LU
