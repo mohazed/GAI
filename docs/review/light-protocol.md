@@ -617,3 +617,37 @@ Assessments: has-events 1 (B1), none-found 18, no-data 2 (A2, C3), not-applicabl
 | VUT | −9.0 (−9) | −9.0 (−9) | Passive | no event |
 
 No band changes. Read critically (docs/06 §4 step 7): Papua New Guinea's number depends on the 20 October 2025 B10 reading (without it −45.3, without both B10 events −40.8; every case is Enabling) and the event is a qualifying event, so a negative event raises the score by ending the passivity penalty (B-630, B-638). The three scores are dominated by B1 (−26.3, +17.5, +6.0).
+
+## T-P21-16: FSM, KIR, MHL (2026-10-13)
+
+Light protocol (docs/06 §5) for the Federated States of Micronesia, Kiribati and the Marshall Islands. 1 event: none for the Federated States of Micronesia, none for Kiribati, 1 for the Marshall Islands. Decisions and flags are in docs/10 B-641 to B-650.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_25_MHL_B9 | B9 | 2024-09-25 (expired) | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (none of the three recognises Palestine, B-645).
+
+### Federated States of Micronesia
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 2 (`lead_20261013_FSM_1`, B9, the President's statement of 26 September 2024 on 'the conflict between Israel and Palestine', which never names Gaza; `_2`, B10, the Permanent Mission's and the Government's statements of support for Israel, none by a B10 speaker or in direct speech). Sources read: the FSM Government's site (gov.fm, searched for Israel, Gaza, Palestine, Hamas, ceasefire and Middle East), the Permanent Mission's site (unmission.fm, every post mentioning Israel, Gaza, Palestin, Hamas, antisemit, hostage or Middle East), the General Debate statements of the 79th to 81st sessions, the ICJ's and the ICC's lists. Not an EU member; no archived joint statement names it. 90-minute stop note: finished inside the budget (about 15 minutes on the Federated States of Micronesia). Not filed and why: the President's statement of 26 September 2024 (R7), the Permanent Mission's statements of 1 November 2023, 30 April 2026 and 9 September 2026 (R3), the Government's reports of 5 March and 28 April 2025 (R4, R3), the Vice-President's 81st-session statement (R3, no Gaza).
+
+### Kiribati
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). No lead. Sources read: the Ministry of Foreign Affairs and Immigration's site (40 posts, searched), the Office of Te Beretitenti's site, the General Debate statements of the 79th (the Permanent Representative's), 80th and 81st sessions, UN Meetings Coverage's report of 18 September 2024, the ICJ's and the ICC's lists (Kiribati is a state party). Not an EU member; no archived joint statement names it. 90-minute stop note: finished inside the budget (about 10 minutes on Kiribati). No B9 or B10 event: the statements read have no passage on Gaza, Palestine or Israel. Flagged: no vote recorded on 9 of the 12 qualifying votes, the reason not stated (Article 19 check to P-23, B-643).
+
+### Marshall Islands
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). No lead. Sources read: the President's General Debate statements of the 79th to 81st sessions, UN Meetings Coverage's report of 12 June 2025, the ICJ's and the ICC's lists (a state party), the Embassy in Washington's pages; no site of the Ministry or of the Office of the President could be reached (B-646). Not an EU member; no archived joint statement names it. 90-minute stop note: finished inside the budget (about 15 minutes on the Marshall Islands). Not filed and why: the 80th and 81st sessions' statements (no passage on Gaza).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-13 (methodology 1.0.0-rc.1), the one reviewed event scored as if published; before it the generated indicators alone gave −37 (FSM), −27 (KIR) and −11 (MHL).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| FSM | −36.9 (−37) | −36.9 (−37) | Enabling | no event; B1 −21.9 and the passivity penalty (−15) |
+| KIR | −26.5 (−27) | −26.5 (−27) | Enabling | no event; B1 −11.5 (nine absences) and the penalty |
+| MHL | −11.2 (−11) | −11.2 (−11) | Passive | the B9 event is 748 days old, expired; B1 +3.8 and the penalty |
+
+No band changes. Coverage rises from 13% to 67% for each. Read critically (docs/06 §4 step 7): all three scores are B1 and the passivity penalty; a qualifying event within 365 days would add 15 (less the event's own points), so the readings with the largest effect are the unread 81st-session texts and Kiribati's nine absences (B-643, B-648).
