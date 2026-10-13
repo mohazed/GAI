@@ -1,0 +1,204 @@
+# Coverage record for Libya (docs/03 §6). P-21 light protocol, session T-P21-17, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and International Cooperation's site of the Government of National Unity (foreign.gov.ly, a WordPress site whose REST search was run for غزة, فلسطين, Gaza, Palestine, Israel, إسرائيل, وقف and الباعور; it serves posts from July 2026 only), the Libyan News Agency's English search (lana.gov.ly, state press, leads only), the Prime Minister's and the Government's sites (pm.gov.ly, a maintenance page; gnu.gov.ly, no result), the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the Arabic files read, the 79th through the Assembly's verbatim record A/79/PV.9), the ICJ's case 192 declaration and press release (UNISPAL copies, archived), the joint statement of 30 April 2026 already archived for Brazil, the UN Meetings Coverage reports of the votes (archived), the Assembly of States Parties' list, the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and tables; web searches in English and Arabic per indicator group. Libya has two rival governments: the speakers are those of the government that represents Libya at the UN (the Presidential Council and the Government of National Unity); the House of Representatives, the High State Council and the eastern government are not B9 speakers. Time: about 40 minutes of research on Libya, inside the 90-minute budget of the session.
+# Four hand-authored events: evt_2024_05_10_LBY_B3, evt_2024_09_25_LBY_B9 (expired), evt_2025_09_25_LBY_B9, evt_2026_04_30_LBY_B9. Leads: 4 (lead_20261013_LBY_1 to _4).
+country: LBY
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LBY
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10 B-503);
+      the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of this country from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer LBY
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Libya
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes (all recorded, no absence, no Article 19 note). Libya''s representative spoke at the plenary of 12 June 2025 (''History did not start
+      on 7 October''; UN Meetings Coverage GA/12690, archived): a Permanent Representative is not a B9 or B10 speaker (R3), so it is a note.'
+    queries:
+    - unga_votes.csv, voter LBY
+    - press.un.org GA12690 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: has-events
+    note: 'One event: Libya''s declaration of intervention under Article 63 in ICJ case 192, filed on 10 May 2024 (evt_2024_05_10_LBY_B3, +15; the Court''s press release and the declaration, both archived).
+      The declaration supports the applicant, so B3, not B4. The Court''s page of 27 September 2026 lists it and no withdrawal.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    - Libya ICJ declaration of intervention South Africa v. Israel 10 May 2024 Article 63 Libya
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Libya's declaration of intervention is in support of the applicant (B3).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the President of the Presidential Council, the Prime Minister or the Foreign Minister on executing the warrants of 21 November 2024 was found (Arabic and English searches; the
+      Ministry''s site, which serves posts only from July 2026, and LANA''s search returned nothing). Libya is not a state party to the Rome Statute (it is not in the Assembly''s list, archived: src_20261009_icc-asp_states-parties).
+      The Libyan authorities'' own requests to the ICC (LANA, 20 September 2026) concern investigations in Libya.'
+    queries:
+    - ليبيا ترحب مذكرة توقيف نتنياهو الجنائية الدولية وزارة الخارجية الليبية بيان نوفمبر 2024
+    - foreign.gov.ly/MOFA/wp-json/wp/v2/posts?search= (غزة, فلسطين, Gaza, Palestine, Israel, إسرائيل)
+    - 'lana.gov.ly search: Gaza genocide, Israeli aggression'
+    - asp.icc-cpi.int list of States Parties (archived 13 October 2026, read; src_20261009_icc-asp_states-parties)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - ليبيا ترحب مذكرة توقيف نتنياهو الجنائية الدولية وزارة الخارجية الليبية بيان نوفمبر 2024
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Libya has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no row for Libya. The registry dates the recognition 15 November 1988 (annex of A/78/846); no Libyan document of it was found or archived, so no row
+      (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. The Presidential Council''s President and the Foreign Minister restate support for the State of Palestine
+      (the Ministry''s reports of 12 October 2026: a joint committee, a non-resident ambassador to the State of Palestine; Government reports, indirect speech).'
+    queries:
+    - recognitions.csv, row LBY (none)
+    - foreign.gov.ly posts 4253 and 4262 (read)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Three events and a fourth that has expired: (1) the President of the Presidential Council at the 79th General Debate, 25 September 2024 (evt_2024_09_25_LBY_B9, +5; the Assembly''s verbatim record
+      A/79/PV.9, English; expired, 748 days old); (2) the same speaker at the 80th, 25 September 2025 (evt_2025_09_25_LBY_B9, +5, the Arabic original); (3) the Foreign Minister (acting) in the joint statement
+      of twelve Ministers on the Global Sumud Flotilla, 30 April 2026 (evt_2026_04_30_LBY_B9, +5; the statement archived for Brazil, Colombia and Spain). Read and not filed: the President''s 81st statement
+      (23 September 2026; the Arabic file read live, no Wayback capture, not recorded): it names ''Palestine'' four times and never Gaza (R7); the Foreign Minister''s remarks at the OIC (24 September 2026,
+      ''consolidating the ceasefire in the Gaza Strip'' and humanitarian access), the Arab League Council (7 September) and the Jerusalem meeting (25 September), which the Ministry reports in indirect speech
+      with one quoted sentence on Islamic unity (R4: leads); the President''s statements of October 2023 and January 2024 (press, expired). The Prime Minister of the Government of National Unity, Abdulhamid
+      Dbeibah, has no statement in a primary source (the Prime Minister''s site is a maintenance page; press for October and November 2023, expired).'
+    queries:
+    - Libya Presidential Council Menfi Gaza statement Israel genocide Government of National Unity Dbeibah Gaza
+    - Dbeibah Gaza statement Libya prime minister Israel genocide ceasefire official government of national unity
+    - المجلس الرئاسي الليبي المنفي كلمة غزة القمة العربية الإسلامية الرياض نوفمبر 2023 رئيس المجلس الرئاسي
+    - gadebate.un.org Libya 79th to 81st sessions (ly_ar.pdf, read; A/79/PV.9 archived)
+    - foreign.gov.ly/MOFA/wp-json/wp/v2/posts?search= (غزة, فلسطين, Gaza, Palestine, Israel, إسرائيل, وقف, الباعور)
+    - 'lana.gov.ly search: Menfi Gaza, Dbeibah Gaza, Gaza ceasefire, El-Baour Palestine'
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President of the Presidential Council, the Prime Minister or the Foreign Minister was
+      found; every statement found runs the other way.'
+    queries:
+    - Dbeibah Gaza statement Libya prime minister Israel genocide ceasefire official government of national unity
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: 'No sanction of Israeli settlers or ministers by Libya was found (not an EU member). The Foreign Minister called, at the Jerusalem meeting of 25 September 2026, for ''sanctions on officials and
+      settlers'' and a ban on settlement products (the Ministry''s report, indirect speech: a lead, lead_20261013_LBY_1).'
+    queries:
+    - foreign.gov.ly post 4110 (read)
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the searches returned no diplomatic relations to downgrade. The press reported in November 2023 that port authorities at
+      Mellitah and Misrata turned away two vessels that had called at Haifa (Libya Security Monitor, read; lead_20261013_LBY_4); that is a boycott rule applied to ships, not a measure on relations.'
+    queries:
+    - Libya ports ban ships Israel Gaza oil embargo Libya government October 2023 Dbeibah
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found (Libya has none in force).
+    queries:
+    - Libya Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found (the searches returned no agreement, memorandum or declaration of intent between the two governments).
+    queries:
+    - Libya Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor LBY
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Libya has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Libya
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'Libya has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived: src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024):
+      no contribution to compare, so D3 has no baseline (docs/10 B-445). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Libya
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital of the Government for Gaza was found. A search summary mentioned an aid-ship campaign from Misrata (2025) that is a civil initiative, not read.
+    queries:
+    - Libya ship aid Gaza Egyptian port Arish Libyan government humanitarian aid ship Gaza wounded Palestinians treated in Libya
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found. A claim of a plan to resettle Gazans in Libya, which the House of Representatives' foreign committee rejected (Asharq Al-Awsat, press, seen
+      in a search result, not read), is not a Libyan Government act.
+    queries:
+    - Gaza visa humanitarian Libya regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

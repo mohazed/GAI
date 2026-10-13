@@ -651,3 +651,40 @@ Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-appli
 | MHL | −11.2 (−11) | −11.2 (−11) | Passive | the B9 event is 748 days old, expired; B1 +3.8 and the penalty |
 
 No band changes. Coverage rises from 13% to 67% for each. Read critically (docs/06 §4 step 7): all three scores are B1 and the passivity penalty; a qualifying event within 365 days would add 15 (less the event's own points), so the readings with the largest effect are the unread 81st-session texts and Kiribati's nine absences (B-643, B-648).
+
+## T-P21-17: NRU, PLW, LBY (2026-10-13)
+
+Light protocol (docs/06 §5) for Nauru (Naoero), Palau and Libya. 4 events: none for Nauru, none for Palau, 4 for Libya (one expired). Decisions and flags are in docs/10 B-651 to B-661.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_05_10_LBY_B3 | B3 | 2024-05-10 | +15 | confirmed | court |
+| evt_2024_09_25_LBY_B9 | B9 | 2024-09-25 (expired) | +5 | confirmed | official |
+| evt_2025_09_25_LBY_B9 | B9 | 2025-09-25 | +5 | confirmed | official |
+| evt_2026_04_30_LBY_B9 | B9 | 2026-04-30 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (Nauru and Palau do not recognise Palestine; Libya has no document of its recognition of 1988 that could be read, B-654). All 36 qualifying votes of the three countries are recorded, so no Article 19 note is needed (B-654).
+
+### Nauru
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and the three experimental E1 to E3). Leads: 1 (`lead_20261013_NRU_1`, B10, the Vice President and Foreign Minister's 'Our support for Israel has been unwavering' at the opening of the embassy in Jerusalem, 7 September 2026: press only, no Gaza, R7). Sources read: the Government Information Office's releases and pages (through Wayback captures and the CDX index of `nauru.gov.nr`), the President's General Debate statements of the 79th and 80th sessions (archived, no passage on Gaza), the Government's release of 22 July 2026 on an embassy in Israel (archived), the UN Meetings Coverage reports of the votes, the ICJ's case 192 and case 186 pages, the Assembly of States Parties' list (Nauru is a party), and press reports on the embassy. The EU Council listings do not apply and no archived joint statement names Nauru. 90-minute stop note: finished inside the budget (about 15 minutes on Nauru). The embassy's establishment and opening are notes, not events (B-599); Nauru voted no on 11 of the 12 qualifying votes and abstained on one.
+
+### Palau
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261013_PLW_1`, B10, the President's letter of October 2023, 'stand in solidarity with Israel', expired; `_2`, B10, the President's press conference of September 2025 defending the vote on a resolution endorsing Palestinian statehood: both known from the Island Times alone). Sources read: the General Debate statements of the 79th (delivered by the Senior Vice President and Minister of Justice), 80th (the President's: 'two peoples, Israelis and Palestinians', no Gaza) and 81st sessions, the Government's site (`palaugov.pw`, HTTP 403 to scripted requests; Wayback captures and the CDX index), the ICJ's and the ICC's lists (Palau is not a party), UN Meetings Coverage reports of the votes and web searches in English (no result in Palauan). The EU Council listings do not apply and no archived joint statement names Palau. 90-minute stop note: finished inside the budget (about 15 minutes on Palau). Palau voted no on 9 of the 12 qualifying votes and abstained on three; the embassy-in-Israel history named in the prompt was not found in any source and is not an indicator act in any case (B-599).
+
+### Libya
+
+Assessments: has-events 3 (B1, B3, B9), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B8, C4 to C6, E1 to E3). Leads: 4 (`lead_20261013_LBY_1`, B9, the Acting Foreign Minister's remarks of 24 and 25 September 2026 and 12 October 2026 in the Ministry's indirect-speech reports; `_2`, B9, the President's 81st statement, 'Palestine' without Gaza, R7; `_3`, B9, statements of October 2023 to January 2024 known from the press, expired; `_4`, A8, the refusal of vessels that had called at Haifa, November 2023, not an arms transit). Sources read: the Ministry of Foreign Affairs and International Cooperation's site (WordPress search in Arabic and English; posts from July 2026 only), the Libyan News Agency's search, the General Debate statements of the 79th to 81st sessions (the Arabic files; the Assembly's verbatim record A/79/PV.9), the ICJ press release and declaration of intervention of 10 May 2024 (UNISPAL copies), the joint statement of 30 April 2026 already archived for Brazil, the votes' press releases (the representative's statement of 12 June 2025), the ICC's list (Libya is not a party), UNRWA's tables (no row) and searches in English and Arabic. Libya has two rival governments: the speakers are those of the government that represents Libya at the UN, the Presidential Council's President, the Prime Minister of the Government of National Unity and the Foreign Minister (acting, Taher El-Baour). 90-minute stop note: finished inside the budget (about 40 minutes on Libya). Flagged: the actor's name on the joint statement of 30 April 2026 is inferred from the continuity of the post (B-651); the Arabic quote of the 80th statement is the archived text layer with reversed ligatures, beside the session's translation; the 2025 statement is 383 days old and does not end the passivity penalty.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-13 (methodology 1.0.0-rc.1), the 4 reviewed events scored as if published; before them the generated indicators alone gave +2.3 (+2, Acting) for Libya, −40.8 (−41, Enabling) for Nauru and −42.7 (−43, Enabling) for Palau.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LBY | +2.3 (+2) | +42.1 (+42) | Confronting | B3 +15.0 and B9 +9.8 (April 2026 +5.0, September 2025 +4.8; the 2024 event is expired); the April 2026 event, the only qualifying one inside 365 days, ends the passivity penalty (+15) |
+| NRU | −40.8 (−41) | −40.8 (−41) | Enabling | no event; B1 −25.8 and the passivity penalty (−15) |
+| PLW | −42.7 (−43) | −42.7 (−43) | Enabling | no event; B1 −27.7 and the passivity penalty (−15) |
+
+One band change: Libya moves from Acting to Confronting, clearing the threshold (41) by 1.1 points. It rests on three flagged items: without the April 2026 event (the minister's name is inferred) the score is +22.1 (Acting); without B3, +27.1 (Acting); without the 2025 statement, +37.3 (Acting). Coverage rises from 13% to 63% (Libya) and 67% (Nauru, Palau). Read critically (docs/06 §4 step 7): no cap is hit (Libya's category B is +42.1 of +45); for Nauru and Palau a qualifying event within 365 days would end the penalty (+15), so the readings with the largest effect are the unfiled B10 leads (B-659, B-661).

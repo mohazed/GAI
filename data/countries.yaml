@@ -2719,7 +2719,22 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and International Cooperation, Government of National Unity (foreign.gov.ly/MOFA)', url: 'https://foreign.gov.ly/MOFA/', type: mfa, lang: [ar]}
+    - {label: 'Prime Minister, Government of National Unity (pm.gov.ly)', url: 'https://pm.gov.ly/', type: head_of_government, lang: [ar]}
+    - {label: 'Libyan News Agency, LANA (lana.gov.ly; the Media Office of the Presidential Council publishes through it)', url: 'https://lana.gov.ly/', type: news_agency, lang: [ar, en]}
+  notes: >-
+    gov_sources checked 2026-10-13: foreign.gov.ly answered 200 to a request with a browser User-Agent and declares
+    lang="ar" (its posts carry the English text beneath the Arabic from 2026; the site serves posts from July 2026
+    only, and a WordPress REST search lists them: /MOFA/wp-json/wp/v2/posts?search=...); pm.gov.ly answered 200 with a
+    maintenance page ("we are currently working on developing our platform", Arabic, English and Tifinagh, lang="ar");
+    lana.gov.ly answered 200, lang="en" for the English edition, and its search (search.php?lang=en&q=...) lists the
+    agency's reports (the agency of the State, reports in indirect speech). No site of the Presidential Council could be
+    found or reached (pc.gov.ly, presidencycouncil.ly and other guesses did not answer); gnu.gov.ly (Government of National
+    Unity) answers 200 but its search returns nothing. Libya has two rival governments; the speakers recorded for B9 and
+    B10 are those of the government that represents Libya at the UN: Mohamed Younis Menfi (President of the Presidential
+    Council, head of state), Abdulhamid Dbeibah (Prime Minister of the Government of National Unity) and Taher El-Baour
+    (in charge of the Ministry of Foreign Affairs and International Cooperation, acting).
 
 - iso3: LCA
   iso2: LC
@@ -3577,7 +3592,18 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Republic of Naoero, Government Information Office: media releases (nauru.gov.nr)', url: 'https://www.nauru.gov.nr/government-information-office/media-release.aspx', type: government, lang: [en]}
+    - {label: 'Department of Foreign Affairs and Trade (nauru.gov.nr)', url: 'https://www.nauru.gov.nr/government/departments/department-of-foreign-affairs-and-trade.aspx', type: mfa, lang: [en]}
+    - {label: "The President's Office (nauru.gov.nr)", url: "https://www.nauru.gov.nr/government/the-president's-office.aspx", type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-13 through the latest Wayback captures (20260824192406, 20260803193245, 20261010164735):
+    nauru.gov.nr answers a direct request with a script redirect to /owa (a mail login page) and naurugov.nr does not
+    answer, so the pages are read at web.archive.org/web/2id_/...; each declares lang="en" (the pages are headed "The
+    Government of the Republic of Nauru" and "Naoero"). The President, David W.R. Adeang, is head of state and
+    government (re-elected 14 October 2025); the Vice President and Minister for Foreign Affairs, Trade and Justice is
+    Lionel Aingimea (press and the Government's release of 22 July 2026). The media-release page lists the six latest
+    releases; the Government's whole list of captures was read through the Wayback CDX index.
 
 - iso3: NZL
   iso2: NZ
@@ -3758,7 +3784,15 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of Palau (palaugov.pw): the President', url: 'https://www.palaugov.pw/executive-branch/president/', type: head_of_state, lang: [en]}
+    - {label: 'Government of Palau (palaugov.pw): Ministry of State', url: 'https://www.palaugov.pw/executive-branch/ministries/state/', type: mfa, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-10-13 through the latest Wayback captures (20260924095518, 20260801041542): palaugov.pw
+    answers HTTP 403 (a Cloudflare challenge) to scripted requests; the captured pages declare lang="en-US". The
+    President, Surangel S. Whipps Jr., is head of state and government (re-elected 5 November 2024); the Minister of
+    State is named by Japan's Ministry of Foreign Affairs as Gustav N. Aitaro (a release of October 2025, not archived);
+    the captured Ministry page does not name him. The official languages are Palauan and English.
 
 - iso3: PNG
   iso2: PG
