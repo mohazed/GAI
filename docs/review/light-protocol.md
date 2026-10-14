@@ -838,3 +838,56 @@ Assessments: has-events 6 (A4, B1, B9, B11, D1, D3), none-found 14, no-data 2 (A
 | LTU | −3.5 (−4) | +34.5 (+34) | Acting | B9 +10.0 (capped from +15.6), B11 +5.0, D3 +8.0, A4 −2.0; the 28 May 2026 listing, which adds no points beyond the standing state of 15 July 2024, is the only qualifying event and ends the penalty (+15) |
 
 Two band changes: Iceland from Acting to Confronting, held by one reading (B3): without it the score is +38.3 (Acting), 2.7 under the threshold (41); Lithuania from Passive to Acting at +34.5, and without the 28 May 2026 listing the penalty applies and the score is +19.5 (Acting). Finland stays Acting (+2 to +37) but sits 3.7 points under the threshold with the C2 event and 0.3 over it without (+41.3, Confronting): the reading with the largest effect (B-676). Coverage rises from 13% to 67% (Finland, Lithuania) and 70% (Iceland). Read critically (docs/06 §4 step 7): B9 is capped for all three, so the call-tier and flagged tiers move nothing; for Lithuania the cap hides a +5.6 surplus.
+
+## T-P21-20: LVA, TON, TUV (2026-10-14)
+
+Light protocol (docs/06 §5) for Latvia, Tonga and Tuvalu. A cut-off attempt of 2026-10-13 had left 11 captures, source records, Latvia's events, the three assessments and the `gov_sources` in the working tree: they were kept after every replay was fetched again (SHA-256 and byte count equal to the index rows), every source record was checked against its text and every quotation validated; two wordings (B10 reasons) and one lead (Tonga's) were corrected (docs/10 B-685). 16 events, all for Latvia: none for Tonga and Tuvalu. Decisions and flags are in docs/10 B-685 to B-693.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_LVA_D3 | D3 | 2023-12-31 (ended 2024-01-29) | +8 | confirmed | dataset |
+| evt_2024_01_29_LVA_D2 | D2 | 2024-01-29 (ended 2024-05-27) | −10 | corroborated | press |
+| evt_2024_02_19_LVA_B9 | B9 | 2024-02-19 (expired) | +2 | confirmed | official |
+| evt_2024_04_19_LVA_B11 | B11 | 2024-04-19 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2024_05_27_LVA_D3 | D3 | 2024-05-27 (ended 2024-12-31) | +5 | reported | press |
+| evt_2024_07_15_LVA_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_09_24_LVA_B9 | B9 | 2024-09-24 (expired) | +2 | confirmed | official |
+| evt_2024_12_31_LVA_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_19_LVA_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_07_02_LVA_B9 | B9 | 2025-07-02 | +2 | confirmed | official |
+| evt_2025_07_21_LVA_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_08_05_LVA_B9 | B9 | 2025-08-05 | +2 | confirmed | official |
+| evt_2025_08_12_LVA_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_LVA_B9 | B9 | 2025-08-21 (west-bank, unscored) | +5 | confirmed | official |
+| evt_2025_09_24_LVA_B9 | B9 | 2025-09-24 | +2 | confirmed | official |
+| evt_2026_05_28_LVA_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. Latvia is an EU member: the Council's three listings are B11 events and the five joint statements already archived that name it are B9 events (B-686).
+
+### Latvia
+
+Assessments (34 indicators): has-events 7 (A4, B1, B9, B11, D1, D2, D3), none-found 14, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 3 (`lead_20261014_LVA_1` to `_3`: the Foreign Minister's briefing of 28 August 2025, the Ministry's report of the Council of 11 August 2025, the Ministry's statement on the arrest warrants). Sources read: the Ministry, the Cabinet and the President's sites, LSM (Latvian and English), the Baltic Times (LETA), TVNET, Re:Baltica, ERR, the General Debate statements of the 78th to 81st sessions (the 79th and 80th read by OCR), the archived joint statements, the Council's listings, UNRWA's tables, the SIPRI register, the ICJ's and the Assembly of States Parties' pages. Stop note: about 85 minutes of research, inside the 90-minute budget.
+
+### Tonga
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 2 (`lead_20261014_TON_1` and `_2`: the Prime Minister's remarks of 3 October 2025 and the Government's reasons for its vote of 27 October 2023, press only). Sources read: the national portal (gov.to), the General Debate statements of the 78th to 81st sessions, Matangi Tonga, Kaniva Tonga, Islands Business, the generated tables. Stop note: about 25 minutes of research.
+
+### Tuvalu
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. No lead. Sources read: the Permanent Mission to the UN (un.int/tuvalu), the General Debate statements of the 78th to 81st sessions (no passage on Gaza; they ask that Taiwan take part in the UN system), the generated tables. Stop note: about 20 minutes of research.
+
+### Article 19 note (report only)
+
+Latvia: all 12 qualifying votes recorded. Tonga: no vote on 2 of 12 (A/RES/ES-10/23, A/RES/80/1). Tuvalu: no vote on 6 of 12 (A/RES/ES-10/23, ES-10/25, ES-10/26, A/RES/79/232, A/DEC/80/506, A/RES/80/1). Neither is among the four Member States in arrears in A/80/362 or on the Assembly's Article 19 page (archived), so the absences are not shown to be a loss of vote; the lists for the 2024 vote dates are not archived (P-23). The build scores a non-vote at −2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-10-14 (methodology 1.0.0-rc.1), the 16 reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LVA | −7.7 (−8) | +30.3 (+30) | Acting | A4 −5.0, B1 +12.3, B9 +10.0 (capped from +15.1), B11 +5.0, D3 +8.0; the 28 May 2026 listing is the only qualifying event and ends the passivity penalty (+15) |
+| TON | −40.9 (−41) | −40.9 (−41) | Enabling | B1 −25.9; passivity penalty −15; no event |
+| TUV | −23.7 (−24) | −23.7 (−24) | Enabling | B1 −8.7 (six non-votes weigh −6.0); passivity penalty −15; no event |
+
+One band change: Latvia from Passive to Acting; without the 28 May 2026 listing the penalty applies and the score is +15.3 (Acting). Read critically (docs/06 §4 step 7): B9 is capped for Latvia, so the flagged call-tier events move nothing.
