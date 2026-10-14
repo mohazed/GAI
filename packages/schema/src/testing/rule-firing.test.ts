@@ -330,7 +330,9 @@ const CASES: Record<RuleId, Case> = {
     memory: (ds) => addEvent(ds, { id: 'evt_2025_08_08_DEU_A6_2', points: 5 }),
   },
   'event.standing-overlap': {
-    memory: (ds) => {
+    memory: (ds, m) => {
+      // B7 summed in 1.0.0-rc.1; from rc.2 it stacks by most severe and the warning is silent.
+      ind(m, 'B7').stacking = { rule: 'sum' }
       addEvent(ds, { id: 'evt_2025_08_08_DEU_B7', indicator: 'B7', end: null })
       addEvent(ds, { id: 'evt_2025_09_01_DEU_B7', indicator: 'B7', date: '2025-09-01', end: null })
     },

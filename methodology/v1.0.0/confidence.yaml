@@ -2,6 +2,9 @@
 #
 # The four confidence levels, their weights and the evidence each requires.
 #
+# 1.0.0-rc.2: `confirmed` also accepts sources of kind official-video and parliamentary (B-21,
+# docs/calibration/README.md §7 item 1).
+#
 # Encodes docs/02-methodology-spec.md §4 (weight and rule per level, English verbatim) and the
 # source-kind rules of docs/03-data-model.md §4 ("confirmed requires an evidence source of kind
 # official, court or dataset; corroborated requires two sources of distinct publishers"), with
@@ -10,7 +13,7 @@
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
 
-version: 1.0.0-rc.1
+version: 1.0.0-rc.2
 
 levels:
   - id: confirmed
@@ -19,10 +22,14 @@ levels:
       en: Confirmed
       fr: Confirmé
     rule:
-      en: At least one source of kind official, court, or dataset.
-      fr: Au moins une source de type official, court ou dataset.
+      en: >-
+        At least one source of kind official, official-video, parliamentary, court, or dataset.
+      fr: >-
+        Au moins une source de type official, official-video, parliamentary, court ou dataset.
     requires:
-      any_source_kind: [official, court, dataset]
+      # official-video and parliamentary since 1.0.0-rc.2 (B-21): an official video or a
+      # parliamentary record is the government's own record, as good as its press release.
+      any_source_kind: [official, official-video, parliamentary, court, dataset]
 
   - id: corroborated
     weight: 0.7

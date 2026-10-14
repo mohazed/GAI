@@ -327,7 +327,10 @@ export function createScorer(
       weight: confidenceWeight(event.confidence, m, opts),
       ineligible: ineligibility(event),
       excluded: excludedSet.has(ind.id),
-      qualifyingIndicator: qualifyingSet.has(ind.id) && m.passivity.statuses.includes(event.status),
+      qualifyingIndicator:
+        qualifyingSet.has(ind.id) &&
+        m.passivity.statuses.includes(event.status) &&
+        !(m.passivity.excludedPoints[ind.id] ?? []).includes(event.points),
     })
   }
   // Indicator order, then date, then id: sums never depend on the order of the input.
@@ -582,15 +585,20 @@ function evaluate(
     if (c.id !== 'E') clipped[c.id] = cl
   }
 
-  // 6. Passivity (§6): a published event of a qualifying indicator dated in (t − window, t] whose
-  // own weighted contribution at t is at least min_abs_contribution in absolute value.
+  // 6. Passivity (§6): a published event of a qualifying indicator (not of an excluded tier)
+  // dated in (t − window, t] whose own weighted contribution at t is at least
+  // min_abs_contribution: in absolute value (sign `any`, 1.0.0-rc.1), or as a positive value
+  // (sign `positive`, 1.0.0-rc.2: a negative act never lifts the penalty, B-46).
   const qualifying = work.filter(
     (w) =>
       w.p.qualifyingIndicator &&
       w.p.ineligible === null &&
       w.p.start <= dayOf(w.p) &&
       w.p.start > dayOf(w.p) - m.passivity.windowDays &&
-      atLeast(Math.abs(w.value), m.passivity.minAbsContribution),
+      atLeast(
+        m.passivity.sign === 'positive' ? w.value : Math.abs(w.value),
+        m.passivity.minAbsContribution,
+      ),
   )
   const qualifyingIds = new Set(qualifying.map((w) => w.p.event.id))
   const applied = qualifying.length === 0

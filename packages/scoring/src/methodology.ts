@@ -48,6 +48,8 @@ export interface IndicatorInput {
   readonly id: string
   readonly category: CategoryId
   readonly name: LangText
+  /** Short label of generated text (B-54); absent in 1.0.0-rc.1 files. */
+  readonly short?: LangText | undefined
   readonly type: EventType
   readonly scored: boolean
   readonly points: PointsSpecInput
@@ -91,7 +93,16 @@ export interface MethodologyFilesInput {
     readonly window_days: number
     readonly qualifying_indicators: readonly string[]
     readonly min_abs_contribution: number
+    /** `positive`: only contributions of +min_abs_contribution or more qualify (B-46). */
+    readonly contribution_sign?: 'any' | 'positive' | undefined
     readonly statuses: readonly string[]
+    /** Entries with `tiers` exclude those tiers of a qualifying indicator (B-47). */
+    readonly excluded?:
+      | readonly {
+          readonly indicators: readonly string[]
+          readonly tiers?: readonly string[] | undefined
+        }[]
+      | undefined
     readonly sensitivity_points: readonly number[]
   }
   /**
@@ -116,6 +127,8 @@ export interface CompiledIndicator {
   readonly id: string
   readonly category: CategoryId
   readonly name: LangText
+  /** Short label of generated text (indicators.yaml `short`, B-54); null when the file has none. */
+  readonly short: LangText | null
   readonly type: EventType
   readonly scored: boolean
   /** Indicator-level cap on the summed contributions, applied before the category clip (§2). */
@@ -164,6 +177,13 @@ export interface PassivityParams {
   readonly windowDays: number
   readonly qualifying: readonly string[]
   readonly minAbsContribution: number
+  /**
+   * `any`: |p · w · d(t)| ≥ minAbsContribution qualifies (docs/02 §6, 1.0.0-rc.1); `positive`:
+   * p · w · d(t) ≥ +minAbsContribution (1.0.0-rc.2, B-46).
+   */
+  readonly sign: 'any' | 'positive'
+  /** Indicator → point values of its tiers that never qualify (B8 pre_existing, B-47). */
+  readonly excludedPoints: Readonly<Record<string, readonly number[]>>
   readonly statuses: readonly string[]
   readonly sensitivityPoints: readonly number[]
 }
@@ -285,6 +305,7 @@ export function compileMethodology(files: MethodologyFilesInput): ScoringMethodo
         id: ind.id,
         category: ind.category,
         name: frozenText(ind.name),
+        short: ind.short === undefined ? null : frozenText(ind.short),
         type: ind.type,
         scored: ind.scored,
         cap: ind.indicator_cap === null ? null : Object.freeze({ ...ind.indicator_cap }),
@@ -350,6 +371,19 @@ export function compileMethodology(files: MethodologyFilesInput): ScoringMethodo
   if (!Number.isInteger(p.window_days) || p.window_days <= 0) {
     fail('passivity window_days must be a positive whole number')
   }
+  const excludedPoints: Record<string, number[]> = {}
+  for (const e of p.excluded ?? []) {
+    if (e.tiers === undefined) continue
+    for (const id of e.indicators) {
+      const ind = indicatorById.get(id)
+      if (ind === undefined) fail(`passivity excludes tiers of unknown indicator ${id}`)
+      for (const key of e.tiers) {
+        const tier = ind.tiers.find((t) => t.key === key)
+        if (tier === undefined) fail(`passivity excludes unknown tier ${key} of ${id}`)
+        excludedPoints[id] = [...(excludedPoints[id] ?? []), tier.value]
+      }
+    }
+  }
 
   const noDataBefore: Record<string, string> = {}
   for (const f of Object.values(files.thresholds?.formulas ?? {})) {
@@ -381,6 +415,12 @@ export function compileMethodology(files: MethodologyFilesInput): ScoringMethodo
       windowDays: p.window_days,
       qualifying: Object.freeze([...p.qualifying_indicators]),
       minAbsContribution: p.min_abs_contribution,
+      sign: p.contribution_sign ?? 'any',
+      excludedPoints: Object.freeze(
+        Object.fromEntries(
+          Object.entries(excludedPoints).map(([k, v]) => [k, Object.freeze([...v].sort())]),
+        ),
+      ),
       statuses: Object.freeze([...p.statuses]),
       sensitivityPoints: Object.freeze([...p.sensitivity_points]),
     }),

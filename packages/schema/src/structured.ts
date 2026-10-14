@@ -94,6 +94,10 @@ export const FtsFundingRow = z.strictObject({
   iso3: Iso3,
   window_start: IsoDate,
   window_end: IsoDate,
+  /**
+   * Paid + committed government funding dated in the window; from methodology 1.0.0-rc.2 only
+   * flows dated on or after formula d1 `parameters.flows_from` (2023-10-07) count (fetch:fts).
+   */
   usd_paid_committed: nonNegInt('usd_paid_committed'),
   /** FTS plan ids joined by `;`, e.g. 1156;1273. */
   plan_ids: z.string().regex(/^\d+(;\d+)*$/, 'expected plan ids joined by ";"'),

@@ -15,13 +15,16 @@ import {
   positiveOnly,
   preexistingB8,
   raiseConfidence,
+  rc1Files,
   scoreVariant,
   sensitivityRows,
   standingWhileHolding,
 } from './calibrate.js'
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
-const files = methodologyFiles(loadMethodology(REPO_ROOT))
+// The proposals of P-15 were measured against 1.0.0-rc.1; the repository holds rc.2 (P-24).
+const rc2 = methodologyFiles(loadMethodology(REPO_ROOT))
+const files = rc1Files(rc2)
 const m = compile(files)
 
 /** A synthetic gaza-scoped event (codes X.. are user-assigned, not real countries). */
@@ -51,6 +54,35 @@ function ev(
 
 const one = (iso3: string, events: Event[], date: string, spec = {}) =>
   scoreVariant([{ iso3, events }], m, date, { id: 't', ...spec }).scores[0]
+
+describe('rc1Files', () => {
+  it('reverts the engine rules of rc.2: the set of the proposal on rc.1 equals rc.2', () => {
+    const r2 = compile(rc2)
+    expect(r2.passivity.sign).toBe('positive')
+    expect(m.passivity.sign).toBe('any')
+    expect(m.passivity.excludedPoints).toEqual({})
+    expect(m.indicatorById.get('B1')?.cap).toBeNull()
+    expect(m.indicatorById.get('B7')?.stacking).toBe('sum')
+    const proposal = compile(
+      cappedFiles(mostSevereFiles(files, ['A3', 'A6', 'A7', 'B3', 'B7', 'D2']), 'B1', {
+        min: -15,
+        max: 15,
+      }),
+    )
+    for (const id of ['B1', 'A3', 'B7', 'D2'])
+      expect(proposal.indicatorById.get(id)).toEqual(r2.indicatorById.get(id))
+    const events = [
+      ev('XAA', 'C2', 'standing', '2026-01-11', -10),
+      ev('XAA', 'B8', 'standing', '2023-10-07', 3),
+    ]
+    const viaProposal = one('XAA', events, '2026-06-30', {
+      methodology: proposal,
+      qualifies: both(positiveOnly, noPreexistingB8),
+    })
+    const viaRc2 = scoreVariant([{ iso3: 'XAA', events }], r2, '2026-06-30', { id: 'r2' }).scores[0]
+    expect(viaRc2).toEqual(viaProposal)
+  })
+})
 
 describe('asPublished', () => {
   it('scores the listed statuses as published and leaves the others', () => {

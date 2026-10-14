@@ -1,6 +1,6 @@
 import { compileBannedWords, findBannedWords, loadMethodology } from '@gai/schema'
 import { describe, expect, it } from 'vitest'
-import { INDICATOR_LABELS } from './labels.js'
+import { indicatorLabels } from './labels.js'
 import type { LastChange } from './series.js'
 import {
   eventCategoryCounts,
@@ -12,6 +12,7 @@ import {
 import { ev, methodology, REPO_ROOT } from './test-helpers.js'
 
 const m = methodology()
+const labels = indicatorLabels(m)
 const enabling = { en: 'Enabling', fr: 'Facilitation' }
 const counts = (total: number, confirmed: number) => ({
   total,
@@ -37,6 +38,7 @@ const base: SummaryInput = {
   coverage: 0.71,
   lastChange: vote,
   passivityPoints: 15,
+  labels,
 }
 
 describe('summary line (spec §5)', () => {
@@ -229,8 +231,8 @@ describe('tone (docs/05 §7, banned-words.txt)', () => {
   })
 
   it('every indicator has a short label in both languages, free of banned words', () => {
-    expect(Object.keys(INDICATOR_LABELS).sort()).toEqual(m.indicators.map((i) => i.id).sort())
-    for (const [id, label] of Object.entries(INDICATOR_LABELS)) {
+    expect(Object.keys(labels).sort()).toEqual(m.indicators.map((i) => i.id).sort())
+    for (const [id, label] of Object.entries(labels)) {
       expect(findBannedWords(label.en, matcher), `${id} en`).toEqual([])
       expect(findBannedWords(label.fr, matcher), `${id} fr`).toEqual([])
       expect(label.en).not.toMatch(/!/)
@@ -238,7 +240,7 @@ describe('tone (docs/05 §7, banned-words.txt)', () => {
   })
 
   it('generated lines contain no banned word', () => {
-    for (const id of Object.keys(INDICATOR_LABELS)) {
+    for (const id of Object.keys(labels)) {
       for (const change of ['start', 'end', 'expire'] as const) {
         const input = { ...base, lastChange: { ...vote, indicator: id, change } }
         for (const lang of ['en', 'fr'] as const) {

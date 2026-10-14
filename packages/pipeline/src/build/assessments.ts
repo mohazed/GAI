@@ -21,11 +21,13 @@
  *    total; generateA1 notes it) → `no-data` (`row-not-computable`). No release in force →
  *    `no-data` (`no-release`): the card says "no export data", never zero (docs/02 §8).
  * 3. A2: comtrade_a2.csv has no rows → null (not fetched). Else a row of the country released on
- *    or before the date (any HS code, either reporter) → `none-found`
+ *    or before the date (any HS code, either reporter) and in force (its window ends on or after
+ *    `parameters.min_window_end` of the formula, 1.0.0-rc.2) → `none-found`
  *    (`row-without-counted-exports`: the rows are HS 8526/8802 not confirmed as military, docs/02 §2 A2);
  *    else `no-data` (`no-row`: docs/02 §5, "if both absent, no-data").
  * 4. C3: comtrade_c3.csv has no rows → null (not fetched). Else a row of the country released on
- *    or before the date → `none-found` (`row-without-event`); else `no-data` (`no-row`).
+ *    or before the date and in force (as for A2) → `none-found` (`row-without-event`); else
+ *    `no-data` (`no-row`).
  * 5. A4: sipri_orders.csv has no rows → null (orders not imported; `pnpm import:sipri` imports
  *    them only with `--orders`, so a deliveries release says nothing about orders). Else the
  *    releases in force are the release dates of sipri_orders.csv from `no_data_before` of formula
@@ -168,17 +170,40 @@ function deriveA1(input: DeriveInput): DerivedStatus | null {
     : derived('none-found', 'release-without-deliveries')
 }
 
+/**
+ * `parameters.min_window_end` of the formula of A2 or C3 (1.0.0-rc.2): a row whose data window
+ * ends before it is not in force (generate/trade.ts), so it is no evidence of data either; '' when
+ * the version sets none (1.0.0-rc.1).
+ */
+function minWindowEnd(m: Methodology, indicator: 'A2' | 'C3'): string {
+  const f = formulaOf(m, indicator)
+  const v = f !== null && f.kind !== 'sqrt_share' ? f.parameters?.min_window_end : undefined
+  return typeof v === 'string' ? v : ''
+}
+
 function deriveA2(input: DeriveInput): DerivedStatus | null {
   const rows = input.structured['comtrade_a2.csv']
   if (rows.length === 0) return null
-  const row = rows.some((r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date)
+  const from = minWindowEnd(input.methodology, 'A2')
+  const row = rows.some(
+    (r) =>
+      r.value.iso3 === input.iso3 &&
+      r.value.release_date <= input.date &&
+      r.value.window_end >= from,
+  )
   return row ? derived('none-found', 'row-without-counted-exports') : derived('no-data', 'no-row')
 }
 
 function deriveC3(input: DeriveInput): DerivedStatus | null {
   const rows = input.structured['comtrade_c3.csv']
   if (rows.length === 0) return null
-  const row = rows.some((r) => r.value.iso3 === input.iso3 && r.value.release_date <= input.date)
+  const from = minWindowEnd(input.methodology, 'C3')
+  const row = rows.some(
+    (r) =>
+      r.value.iso3 === input.iso3 &&
+      r.value.release_date <= input.date &&
+      r.value.window_end >= from,
+  )
   return row ? derived('none-found', 'row-without-event') : derived('no-data', 'no-row')
 }
 

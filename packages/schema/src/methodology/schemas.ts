@@ -101,6 +101,13 @@ export const Indicator = z.strictObject({
   id: IndicatorId,
   category: CategoryId,
   name: LangText,
+  /**
+   * Short label of generated text (the country card's "Last change: …, UNGA vote (B1, +3)"):
+   * a noun phrase, lower case except proper names and acronyms, no adjectives (B-54). Optional
+   * so that 1.0.0-rc.1, which had none, still loads (methodology:diff); the validator requires it
+   * (methodology.indicator-set) and the build refuses an indicator without it.
+   */
+  short: LangText.optional(),
   description: LangText,
   /** Sign of every allowed per-event value; `mixed` only for B1. */
   sign: Sign,
@@ -246,10 +253,26 @@ export const PassivityFile = z.strictObject({
   /** A qualifying event's date lies in (t − window_days, t]. */
   window_days: z.number().int().positive(),
   qualifying_indicators: z.array(IndicatorId).min(1),
-  /** |p · w · d(t)| of the event at t must be at least this. */
+  /**
+   * The event's own p · w · d(t) at t must be at least this: in absolute value when
+   * `contribution_sign` is `any` (or absent, 1.0.0-rc.1), as a positive value when it is
+   * `positive` (1.0.0-rc.2, B-46: a negative act never lifts the penalty).
+   */
   min_abs_contribution: z.number().nonnegative(),
+  contribution_sign: z.enum(['any', 'positive']).optional(),
   statuses: z.array(z.literal('published')).length(1),
-  excluded: z.array(z.strictObject({ indicators: z.array(IndicatorId).min(1), reason: LangText })),
+  /**
+   * Indicators that never qualify, with the reason printed on the methodology page. An entry with
+   * `tiers` excludes only the events of those tiers of a qualifying indicator (1.0.0-rc.2, B-47:
+   * B8's pre_existing tier); the engine reads it.
+   */
+  excluded: z.array(
+    z.strictObject({
+      indicators: z.array(IndicatorId).min(1),
+      tiers: z.array(Key).min(1).optional(),
+      reason: LangText,
+    }),
+  ),
   /** Values published in the sensitivity table (docs/02 §10, D-11). */
   sensitivity_points: z.array(z.number().nonnegative()).min(1),
   rule: LangText,

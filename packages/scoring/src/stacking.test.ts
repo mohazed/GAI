@@ -4,10 +4,11 @@
  */
 import { describe, expect, it } from 'vitest'
 import { scoreCountry } from './score.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodologyRc1 } from './test-helpers.js'
 import type { ScoringEvent } from './types.js'
 
-const m = methodology()
+// The docs/02 rules as written: methodology 1.0.0-rc.1 (rc.2 rules: rc2.test.ts).
+const m = methodologyRc1()
 const at = (events: ScoringEvent[], date: string) => scoreCountry('TST', events, date, m)
 const indicator = (events: ScoringEvent[], date: string, id: string) =>
   at(events, date).indicators.find((i) => i.id === id)

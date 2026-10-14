@@ -267,7 +267,7 @@ export const RULES = {
     level: 'warning',
     doc: 'docs/10 B-22, B-51',
     summary:
-      'Two standing records of one country under A3, B7 or D2 hold on the same day; methodology 1.0.0 adds them, so the overlap is flagged for review.',
+      'Two standing records of one country under A3, B7 or D2 hold on the same day while the methodology sums that indicator (1.0.0-rc.1); the overlap is flagged for review.',
   },
   'event.b5-b6-same-day': {
     level: 'warning',
@@ -480,7 +480,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/02 §2',
     summary:
-      'Indicator ids are unique, prefixed by their category, the category exists, and scored follows the category.',
+      'Indicator ids are unique, prefixed by their category, the category exists, scored follows the category, and each has a short label.',
   },
   'methodology.indicator-points': {
     level: 'error',

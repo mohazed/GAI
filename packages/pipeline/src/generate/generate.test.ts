@@ -38,6 +38,7 @@ import {
   usdExact,
   voteSlug,
 } from './index.js'
+import { inForce } from './trade.js'
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..')
 const METHODOLOGY = loadMethodology(REPO_ROOT)
@@ -494,8 +495,30 @@ describe('C3 Comtrade trade as usual', () => {
     },
   ])
 
+  /** The context without `min_window_end` (1.0.0-rc.1): every window in force. */
+  const rc1Ctx = () => {
+    const c = ctx()
+    const formulas = Object.fromEntries(
+      Object.entries(c.thresholds.formulas).map(([k, f]) => {
+        if (f.kind === 'sqrt_share') return [k, f]
+        const { min_window_end: _, ...parameters } = f.parameters ?? {}
+        return [k, { ...f, parameters }]
+      }),
+    )
+    return { ...c, thresholds: { ...c.thresholds, formulas } }
+  }
+
+  it('leaves out the values of data year 2022 (1.0.0-rc.2, min_window_end 2023-10-07)', () => {
+    const ids = generateC3(ctx(), r).events.map((e) => e.id)
+    expect(ids).not.toContain('evt_2023_02_20_DEU_C3_comtrade-2022-self')
+    expect(ids).toContain('evt_2024_02_21_DEU_C3_comtrade-2023-self')
+    expect(generateC3(rc1Ctx(), r).events.map((e) => e.id)).toContain(
+      'evt_2023_02_20_DEU_C3_comtrade-2022-self',
+    )
+  })
+
   it('gates the tiers on r ≥ 0.9', () => {
-    const out = generateC3(ctx(), r)
+    const out = generateC3(rc1Ctx(), r)
     expect(out.events.map((e) => [e.id, e.points, e.end])).toEqual([
       ['evt_2023_02_20_DEU_C3_comtrade-2022-self', -5, '2024-02-21'],
       ['evt_2024_02_21_DEU_C3_comtrade-2023-self', -5, null],
@@ -509,6 +532,19 @@ describe('C3 Comtrade trade as usual', () => {
     expect(deu?.summary.fr).toBe(
       "L'Allemagne a échangé avec Israël 8,8 milliards USD de marchandises en 2023, soit 97 % du niveau de 2022, selon sa déclaration à UN Comtrade.",
     )
+  })
+})
+
+describe('inForce (formulas a2 and c3, parameters.min_window_end)', () => {
+  const w = (end: string) => ({ end })
+  it('keeps the windows whose data end on or after the date; all of them without the parameter', () => {
+    const ws = [w('2022-12-31'), w('2023-12-31')]
+    expect(inForce(ws, { parameters: { min_window_end: '2023-10-07' } })).toEqual([w('2023-12-31')])
+    expect(inForce(ws, { parameters: {} })).toEqual(ws)
+    expect(inForce(ws, {})).toEqual(ws)
+  })
+  it('refuses a parameter that is not a date', () => {
+    expect(() => inForce([], { parameters: { min_window_end: 2023 } })).toThrow(/must be a date/)
   })
 })
 

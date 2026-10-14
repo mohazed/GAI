@@ -147,6 +147,7 @@ describe('temporary methodology roots', () => {
 
     it('absent: no diff, no issue', () => {
       copyV1()
+      rmSync(path('diff.json'), { force: true })
       const m = loadMethodology(root)
       expect(m.diff).toBeNull()
       expect(m.issues).toEqual([])

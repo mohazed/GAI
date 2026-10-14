@@ -201,6 +201,7 @@ interface Words {
   range: (min: string, max: string) => string
   formula: string
   mostSevere: string
+  mostSevereRecord: string
   onePerTier: string
   latest: (ids: string) => string
   supersededBy: (ids: string) => string
@@ -227,8 +228,10 @@ interface Words {
   days: (n: string) => string
   qualifying: string
   minContribution: string
+  minPositiveContribution: string
   statuses: string
   excluded: (ids: string) => string
+  excludedTiers: (ids: string, tiers: string) => string
   sensitivity: string
   symmetryHeaders: readonly string[]
   none: string
@@ -259,6 +262,7 @@ const WORDS: Record<DocLang, Words> = {
     range: (min, max) => `${min} to ${max}`,
     formula: 'formula',
     mostSevere: 'only the largest holding tier counts',
+    mostSevereRecord: 'one record counts: the most severe',
     onePerTier: 'one event per tier, tiers add',
     latest: (ids) => `latest position of ${ids} holds`,
     supersededBy: (ids) => `superseded by ${ids}`,
@@ -291,8 +295,10 @@ const WORDS: Record<DocLang, Words> = {
     days: (n) => `${n} days, up to and including t`,
     qualifying: 'Qualifying indicators',
     minContribution: 'Minimum absolute contribution',
+    minPositiveContribution: 'Minimum contribution (positive)',
     statuses: 'Event statuses',
     excluded: (ids) => `Excluded: ${ids}`,
+    excludedTiers: (ids, tiers) => `Excluded: ${ids}, tier ${tiers}`,
     sensitivity: 'Sensitivity values',
     symmetryHeaders: ['Negative', 'Positive counterpart', 'Note'],
     none: 'None',
@@ -326,6 +332,7 @@ const WORDS: Record<DocLang, Words> = {
     range: (min, max) => `de ${min} à ${max}`,
     formula: 'formule',
     mostSevere: 'seul le palier en vigueur le plus élevé compte',
+    mostSevereRecord: `un seul état compte${NBSP}: le plus grave`,
     onePerTier: "un événement par palier, les paliers s'additionnent",
     latest: (ids) => `la dernière position entre ${ids} prévaut`,
     supersededBy: (ids) => `remplacé par ${ids}`,
@@ -358,8 +365,10 @@ const WORDS: Record<DocLang, Words> = {
     days: (n) => `${n} jours, jusqu'à t inclus`,
     qualifying: 'Indicateurs admissibles',
     minContribution: 'Contribution minimale en valeur absolue',
+    minPositiveContribution: 'Contribution minimale (positive)',
     statuses: 'Statuts des événements',
     excluded: (ids) => `Exclus${NBSP}: ${ids}`,
+    excludedTiers: (ids, tiers) => `Exclus${NBSP}: ${ids}, palier ${tiers}`,
     sensitivity: 'Valeurs de sensibilité',
     symmetryHeaders: ['Négatif', 'Pendant positif', 'Remarque'],
     none: 'Aucun',
@@ -404,7 +413,11 @@ function capCell(ind: Indicator, supersedes: readonly string[], lang: DocLang): 
   }
   switch (ind.stacking.rule) {
     case 'most_severe':
-      parts.push(W.mostSevere)
+      // Tiered indicators (B8, B12, …) keep their largest tier; single-value standing ones (A3,
+      // B7, …: 1.0.0-rc.2) keep one record.
+      parts.push(
+        'tiers' in ind.points && ind.points.tiers !== undefined ? W.mostSevere : W.mostSevereRecord,
+      )
       break
     case 'one_per_tier':
       parts.push(W.onePerTier)
@@ -650,6 +663,19 @@ function renderThresholds(m: Methodology, lang: DocLang): string {
 // ---------------------------------------------------------------------------------------------
 // passivity, symmetry, votes
 
+/** The label of tier `key` of the first of `ids` that has it (lower-cased), else the key. */
+function tierLabel(m: Methodology, ids: readonly string[], key: string, lang: DocLang): string {
+  for (const id of ids) {
+    const points = m.indicatorById.get(id)?.points
+    const tier = points && 'tiers' in points ? points.tiers?.find((t) => t.key === key) : undefined
+    if (tier) {
+      const label = tier.label[lang]
+      return lang === 'fr' ? `«${NBSP}${label}${NBSP}»` : `“${label}”`
+    }
+  }
+  return `\`${key}\``
+}
+
 /** Parameter | Value: the constants of passivity.yaml. */
 function renderPassivity(m: Methodology, lang: DocLang): string {
   const p = m.passivity?.value
@@ -660,9 +686,19 @@ function renderPassivity(m: Methodology, lang: DocLang): string {
     [W.penalty, W.points(n(p.points))],
     [W.window, W.days(n(p.window_days))],
     [W.qualifying, compressIds(p.qualifying_indicators)],
-    [W.minContribution, n(p.min_abs_contribution)],
+    p.contribution_sign === 'positive'
+      ? [W.minPositiveContribution, `+${n(p.min_abs_contribution)}`]
+      : [W.minContribution, n(p.min_abs_contribution)],
     [W.statuses, p.statuses.map((s) => `\`${s}\``).join(', ')],
-    ...p.excluded.map((e) => [W.excluded(compressIds(e.indicators)), e.reason[lang]]),
+    ...p.excluded.map((e) => [
+      e.tiers === undefined
+        ? W.excluded(compressIds(e.indicators))
+        : W.excludedTiers(
+            compressIds(e.indicators),
+            e.tiers.map((t) => tierLabel(m, e.indicators, t, lang)).join(', '),
+          ),
+      e.reason[lang],
+    ]),
     [W.sensitivity, W.points(joinAnd(p.sensitivity_points.map(n), lang))],
   ])
 }

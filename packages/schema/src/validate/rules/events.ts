@@ -782,13 +782,18 @@ const holds = (e: Event, day: string): boolean =>
 
 /**
  * event.standing-overlap (B-22, B-51; warning): two standing records of one country under A3, B7
- * or D2 hold on the same day. Methodology 1.0.0 sums them (each designation of B7 adds its
- * points); the "most severe" reading is scheduled for the next version (P-15, P-24), so the
- * overlap is flagged for review. The later record is reported, naming the earlier.
+ * or D2 hold on the same day while the methodology sums that indicator. Methodology
+ * 1.0.0-rc.1 summed them (each designation of B7 added its points); from 1.0.0-rc.2 the three
+ * stack by "most severe", so the warning fires only for an indicator whose stacking rule in the
+ * loaded indicators.yaml is still `sum`. The later record is reported, naming the earlier.
  */
 function standingOverlap(ctx: ValidationContext): Issue[] {
   const out: Issue[] = []
-  for (const list of byCountryIndicator(ctx, STACKING_STANDING).values()) {
+  const summed = STACKING_STANDING.filter(
+    (id) => (ctx.methodology.indicatorById.get(id)?.stacking.rule ?? 'sum') === 'sum',
+  )
+  if (summed.length === 0) return out
+  for (const list of byCountryIndicator(ctx, summed).values()) {
     for (let j = 1; j < list.length; j++) {
       const later = list[j] as LocatedEvent
       if (later.value.type !== 'standing') continue
@@ -800,7 +805,7 @@ function standingOverlap(ctx: ValidationContext): Issue[] {
         issue(
           'event.standing-overlap',
           at(later),
-          `${later.value.indicator} standing record overlaps ${earlier.value.id}, which still holds on ${later.value.date}; methodology 1.0.0 adds both (B-22), so check that two records are meant, or end the earlier one.`,
+          `${later.value.indicator} standing record overlaps ${earlier.value.id}, which still holds on ${later.value.date}; the methodology adds both (B-22), so check that two records are meant, or end the earlier one.`,
         ),
       )
     }
