@@ -17,7 +17,11 @@
  *
  * A government flow whose source location is missing or is not an entry of the universe (for
  * example a ministry recorded with the location "Occupied Palestinian Territory") is not
- * attributed and is listed in the report, never guessed.
+ * attributed and is listed in the report, never guessed, unless its source organisation is one of
+ * FTS_ATTRIBUTION_OVERRIDES (P-14): each names an FTS organisation id and the country its FTS
+ * organisation record locates it in; the runner checks every override against the archived
+ * organisation list (`/v1/public/organization`) before applying it, and the rows it changes cite
+ * that list.
  */
 import { addDays } from '@gai/schema'
 
@@ -33,6 +37,79 @@ export const FTS_LOCATION_URL = 'https://api.hpc.tools/v2/public/location'
 export const FTS_PAGE_LIMIT = 1000
 /** First month whose D1 value is published: October 2023 (docs/02 §1 window start). */
 export const FTS_FIRST_MONTH = '2023-10'
+
+/**
+ * The FTS organisation list (every organisation with its locations). The per-organisation path
+ * `/v1/public/organization/{id}` answers ResourceNotFound (2026-09-28), so the list is archived.
+ */
+export const FTS_ORGANIZATION_URL = 'https://api.hpc.tools/v1/public/organization'
+
+/**
+ * Government donors whose flows FTS records without a source location, or at a location that is
+ * not the donor's, attributed by their FTS organisation id (P-14; seen at the 2026-09-27 fetch).
+ * The Palestinian Authority (5235, "Palestinian territory, occupied") and Jersey Overseas Aid
+ * (8550, Jersey) stay unattributed: neither is a scored state.
+ */
+export const FTS_ATTRIBUTION_OVERRIDES: readonly { orgId: string; iso3: string; name: string }[] = [
+  { orgId: '2917', iso3: 'GBR', name: 'United Kingdom, Government of' },
+  { orgId: '2646', iso3: 'CHE', name: 'Swiss Development Cooperation/Swiss Humanitarian Aid' },
+  { orgId: '13052', iso3: 'QAT', name: 'Qatar Fund for Development' },
+  { orgId: '13808', iso3: 'DEU', name: 'German Federal Foreign Office Auswärtiges Amt' },
+]
+
+export interface FtsOrganization {
+  id: string
+  name: string
+  /** Location ids of the organisation record. */
+  locations: string[]
+}
+
+/** FTS organisation id → record, from `/v1/public/organization`. */
+export function parseOrganizations(json: unknown): Map<string, FtsOrganization> {
+  const data = (json as { status?: unknown; data?: unknown })?.data
+  if (!Array.isArray(data)) throw new Error('not an FTS organisation list')
+  const out = new Map<string, FtsOrganization>()
+  for (const o of data as { id?: unknown; name?: unknown; locations?: unknown }[]) {
+    if (o.id === undefined) continue
+    const locations = Array.isArray(o.locations)
+      ? (o.locations as { id?: unknown }[])
+          .filter((l) => l.id !== undefined)
+          .map((l) => String(l.id))
+      : []
+    out.set(String(o.id), { id: String(o.id), name: String(o.name ?? ''), locations })
+  }
+  return out
+}
+
+/**
+ * The overrides whose organisation record exists and is located in exactly the override's country
+ * (organisation id → ISO3), and a problem for each one that is not: an override never applies on
+ * trust.
+ */
+export function verifyOverrides(
+  overrides: readonly { orgId: string; iso3: string }[],
+  organizations: ReadonlyMap<string, FtsOrganization>,
+  locations: ReadonlyMap<string, string>,
+): { applied: Map<string, string>; problems: string[] } {
+  const applied = new Map<string, string>()
+  const problems: string[] = []
+  for (const o of overrides) {
+    const rec = organizations.get(o.orgId)
+    if (rec === undefined) {
+      problems.push(`organisation ${o.orgId}: not in the FTS organisation list; not applied`)
+      continue
+    }
+    const iso = [...new Set(rec.locations.map((l) => locations.get(l) ?? `location ${l}`))]
+    if (iso.length !== 1 || iso[0] !== o.iso3) {
+      problems.push(
+        `organisation ${o.orgId} (${rec.name}): located in ${iso.join(', ') || 'nothing'}, not ${o.iso3}; not applied`,
+      )
+      continue
+    }
+    applied.set(o.orgId, o.iso3)
+  }
+  return { applied, problems }
+}
 
 export const planPageUrl = (planId: string): string =>
   `${FTS_FLOW_URL}?planid=${planId}&limit=${FTS_PAGE_LIMIT}`
@@ -132,6 +209,8 @@ export interface GovernmentFlow {
   iso3: string
   amount: number
   date: string
+  /** The FTS organisation id whose override attributed the flow (its location did not). */
+  overriddenBy?: string
 }
 
 export interface UnattributedFlow {
@@ -156,6 +235,7 @@ export function governmentFlows(
   pages: readonly FtsPage[],
   locations: ReadonlyMap<string, string>,
   universe: ReadonlySet<string>,
+  overrides: ReadonlyMap<string, string> = new Map(),
 ): { attributed: GovernmentFlow[]; unattributed: UnattributedFlow[] } {
   const attributed: GovernmentFlow[] = []
   const unattributed: UnattributedFlow[] = []
@@ -176,8 +256,20 @@ export function governmentFlows(
           amount: f.amountUSD,
           date: f.date,
         })
+        continue
+      }
+      const org = f.sourceObjects.find((o) => o.type === 'Organization')
+      const override = org ? overrides.get(String(org.id)) : undefined
+      if (override !== undefined && universe.has(override)) {
+        attributed.push({
+          flowId: f.id,
+          planId: page.planId,
+          iso3: override,
+          amount: f.amountUSD,
+          date: f.date,
+          overriddenBy: String(org?.id),
+        })
       } else {
-        const org = f.sourceObjects.find((o) => o.type === 'Organization')
         unattributed.push({
           flowId: f.id,
           planId: page.planId,
@@ -234,6 +326,8 @@ export interface FtsTables {
   sharedFlows: string[]
   /** Attributed flows dated before 2023-10-07. */
   preWindowFlows: GovernmentFlow[]
+  /** Flows attributed by an override (FTS_ATTRIBUTION_OVERRIDES). */
+  overriddenFlows: GovernmentFlow[]
 }
 
 /**
@@ -249,8 +343,22 @@ export function ftsTables(input: {
   plans: readonly string[]
   lastMonth: string
   retrievedAt: string
+  /** Organisation id → ISO3 (verifyOverrides), and the archived organisation list they cite. */
+  overrides?: ReadonlyMap<string, string>
+  organizationSourceId?: string
 }): FtsTables {
-  const { attributed, unattributed } = governmentFlows(input.pages, input.locations, input.universe)
+  const { attributed, unattributed } = governmentFlows(
+    input.pages,
+    input.locations,
+    input.universe,
+    input.overrides,
+  )
+  // Rows of a donor with an overridden flow also cite the organisation list (P-14).
+  const overridden = new Set(attributed.filter((f) => f.overriddenBy).map((f) => f.iso3))
+  const withOrgs = (iso3: string, sources: string[]) =>
+    overridden.has(iso3) && input.organizationSourceId
+      ? [...sources, input.organizationSourceId]
+      : sources
   const pageSources = (plan: string) =>
     input.pages
       .filter((p) => p.planId === plan)
@@ -275,7 +383,7 @@ export function ftsTables(input: {
       usd_paid_committed: Math.round(v.sum),
       flows: v.n,
       retrieved_at: input.retrievedAt,
-      source: [...pageSources(plan), input.locationSourceId].join(';'),
+      source: withOrgs(iso3, [...pageSources(plan), input.locationSourceId]).join(';'),
     })
   }
 
@@ -288,7 +396,7 @@ export function ftsTables(input: {
   }
   const unique = [...seen.values()]
   const donors = [...new Set(unique.map((f) => f.iso3))].sort()
-  const allSources = [...input.plans.flatMap(pageSources), input.locationSourceId].join(';')
+  const allSources = [...input.plans.flatMap(pageSources), input.locationSourceId]
   const windows: FtsWindowRow[] = []
   for (let month = FTS_FIRST_MONTH; month <= input.lastMonth; month = addMonths(month, 1)) {
     const w = windowFor(month)
@@ -303,7 +411,7 @@ export function ftsTables(input: {
         usd_paid_committed: Math.round(sum),
         plan_ids: input.plans.join(';'),
         retrieved_at: input.retrievedAt,
-        source: allSources,
+        source: withOrgs(iso3, allSources).join(';'),
       })
     }
   }
@@ -313,5 +421,6 @@ export function ftsTables(input: {
     unattributed,
     sharedFlows: [...shared].sort(),
     preWindowFlows: unique.filter((f) => f.date < '2023-10-07'),
+    overriddenFlows: attributed.filter((f) => f.overriddenBy !== undefined),
   }
 }

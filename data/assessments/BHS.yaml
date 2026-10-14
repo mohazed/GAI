@@ -1,0 +1,188 @@
+# Coverage record for the Bahamas (docs/03 §6). P-21 light protocol, session T-P21-06, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' site (mofa.gov.bs: its own search for Gaza, Palestine and Israel, the release of 28 October 2023, the
+#   Israeli Ambassador's call of 22 November 2021), the General Debate statements of the 78th to 81st sessions (gadebate.un.org, read with a browser User-Agent; only the
+#   78th, 79th and 81st have Wayback captures and none was archived: no passage on Gaza), the generated events and the structured tables; web searches in English (the official
+#   language) per indicator group. Time: about 15 minutes.
+# Statements read and not filed as B9: the Prime Minister's of 26 September 2025 (the Middle East, the Palestinian people's aspirations, no call: not archivable) and the Foreign
+#   Minister's call of October 2023 (indirect speech, press: lead).
+country: BHS
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from the Bahamas to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier the Bahamas
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the Bahamas from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer the Bahamas
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on all 12 of the 12 qualifying votes. The Ministry''s release of 28 October 2023 (resolution ES-10/21, which the Bahamas co-sponsored) was read; no
+      disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: The Bahamas filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No statement of the Prime Minister or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found: the Ministry''s site has no page on the subject and the
+      searches returned none.'
+    queries: &id001
+    - Bahamas government statement Israel Hamas Gaza Fred Mitchell ceasefire
+    - Bahamas Prime Minister Davis Gaza humanitarian ceasefire OR genocide OR Palestinian 2025 2026
+    - 'mofa.gov.bs site search: Gaza, Palestine, Israel'
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: The Bahamas has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from recognitions.csv: recognition on 7 May 2024, from the Ministry''s release (src_20240507_mofa-bs_recognizes-palestine). The recognition is the Cabinet''s decision of that
+      date; no further document needed.'
+  B9:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No B9 event. The General Debate statements were read: the Minister''s (78th session, September 2023: before the war), the Prime Minister''s of 27 September 2024 (no passage on Gaza,
+      Palestine or the Middle East) and of 26 September 2025 (''the agony of the Middle East''; ''the aspirations of the Palestinian people for dignity and self-determination are real''; both
+      peoples have a right to security and peace; no call for a ceasefire, no mention of Gaza), and the 81st session''s (no passage). The 2025 file has no Wayback capture and cannot be archived
+      (gadebate.un.org answers Save Page Now with 405). The Foreign Minister''s words of 11 October 2023 (''We’ve called for the cessation of hostilities as soon as possible'') are known only
+      through the Bahama Journal, a press report: lead_20261006_BHS_1.'
+    queries:
+    - Bahamas government statement Israel Hamas Gaza Fred Mitchell ceasefire
+    - Bahamas Prime Minister Davis Gaza humanitarian ceasefire OR genocide OR Palestinian 2025 2026
+    - 'mofa.gov.bs site search: Gaza, Palestine, Israel'
+    - The Bahamas condemns Hamas attack Israel October 2023 Bahamas government statement
+    - Fred Mitchell Bahamas Hamas Israel cessation hostilities statement October 2023
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of unconditional support for Israel or denial of documented violations was found; the Ministry's releases read (28 October 2023 on the Assembly's resolution, 7 May 2024
+      on the recognition) concern those two acts.
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No sanction of Israeli settlers or ministers by the Bahamas was found (not an EU member).
+    queries:
+    - Bahamas sanctions Israeli settlers West Bank
+  B12:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No recall, downgrade or severance was found: Israel''s ambassador to the Bahamas is non-resident (the Ministry''s release of 22 November 2021) and the Bahamas has no mission in Israel
+      (the Minister, 11 October 2023, Bahama Journal).'
+    queries:
+    - Bahamas Israel relations ambassador 2024 2025
+    - Bahamas downgrade OR recall Israel
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No trade or association agreement with Israel was found to review (not an EU member).
+    queries:
+    - Bahamas Israel trade agreement suspended OR review
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No governmental instrument with Israel signed since October 2023 was found; the latest bilateral contact found is the Israeli Ambassador's first call of 22 November 2021 (cooperation
+      in medical technology and infrastructure discussed).
+    queries:
+    - Bahamas Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+    - 'mofa.gov.bs site search: Israel'
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: no Government flow of the Bahamas to the oPt plans (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No announcement of a suspension of UNRWA funding was found; the Bahamas has no row in UNRWA's donor tables.
+    queries:
+    - The Bahamas UNRWA contribution OR funding suspended
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No row of the Bahamas in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Bahamas
+  D4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No medical-evacuation programme or field hospital for Gaza was found. The Ministry's repatriation of Bahamians from Israel (October 2023) is a consular action, not a D4 programme.
+    queries:
+    - Bahamas Gaza humanitarian aid medical OR field hospital
+    - 'mofa.gov.bs site search: Gaza'
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Bahamas visa OR refugee Palestinians Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

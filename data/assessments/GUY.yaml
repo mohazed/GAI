@@ -1,0 +1,188 @@
+# Coverage record for Guyana (docs/03 §6). P-21 light protocol, session T-P21-09, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (minfor.gov.gy), the Office of the President (op.gov.gy) and the Government Information Agency (dpi.gov.gy), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the Security Council records of 29 October 2024 and 23 September 2025 (UNISPAL), the UNRWA donor tables, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 20 minutes of research on Guyana, inside the 90-minute budget of the session (most of the session's clock was Save Page Now).
+# Statements read and not filed as B9: the President's statement of the 81st session (24 September 2026) and the General Debate statement of 20 September 2023 (before the war: 'Palestine' paragraph on solidarity and the two-State solution).
+country: GUY
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Guyana
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026 (Guyana has no row in the register of transfers from Israel). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Guyana
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Guyana sat on the Security Council in 2024 and 2025 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent member): the vetoes of
+      the window are those of the permanent members. Its votes are not an indicator.'
+    queries:
+    - unsc_vetoes.csv, vetoing state Guyana
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Guyana is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06). Guyana's counsel (Edward Craven, 21 February 2024) argued before the Court in
+      the advisory proceedings on the occupation (not case 192; west-bank scope; counsel's words, not B9, R3).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; the President says Israel flouts the orders of the ICJ (General Debate of 25 September 2024).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Guyana President Irfaan Ali Gaza ceasefire statement Israel Palestine
+    - President Ali Guyana "Gaza" "ceasefire" OR "genocide" statement 2023 OR 2024 Office of the President Palestine rally OR summit OR donation
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or of the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found in the statements read (the General Debate statements of 2024
+      to 2026, the Security Council records of 29 October 2024 and 23 September 2025, the Government Information Agency's pages); Guyana is a State Party to the Rome Statute.
+    queries:
+    - Guyana ICC arrest warrant Netanyahu statement Guyana Rome Statute Foreign Minister Hugh Todd
+    - Guyana President Irfaan Ali Gaza ceasefire statement Israel Palestine
+    - President Ali Guyana "Gaza" "ceasefire" OR "genocide" statement 2023 OR 2024 Office of the President Palestine rally OR summit OR donation
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: &id001
+    - Guyana ICC arrest warrant Netanyahu statement Guyana Rome Statute Foreign Minister Hugh Todd
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Guyana has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `GUY,2011-01-13` is added in this session from the Ministry of Foreign Affairs'' statement of 13 January 2011 as transmitted to the Secretary-General
+      (A/65/692, UNISPAL, archived): the pre-existing tier, +3 (R21).'
+    queries:
+    - Guyana recognises State of Palestine 2011 Ministry of Foreign Affairs Guyana recognition January 2011
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'Four events: the President''s General Debate statements of 25 September 2024 and 24 September 2025 (+5 each) and the Minister of Foreign Affairs'' statements to the Security Council
+      of 29 October 2024 and 23 September 2025 (+5 each). The President''s statement of the 81st session (24 September 2026; the file `gy_en_0.pdf` on the General Debate site, read, not archived:
+      no Wayback capture, and the site fails Save Page Now, docs/10 B-523) says ''I reiterate Guyana''s call for a just and lasting solution'' and supports the two-State solution, with no call
+      for a ceasefire or end of the blockade and no named violation: not filed. The Permanent Representative''s statements (Ambassador Rodrigues-Birkett, 2024 and 2025) are not B9 events (R3):
+      lead_20261006_GUY_1.'
+    queries:
+    - Guyana President Irfaan Ali Gaza ceasefire statement Israel Palestine
+    - President Ali Guyana "Gaza" "ceasefire" OR "genocide" statement 2023 OR 2024 Office of the President Palestine rally OR summit OR donation
+    - S/PV.10003 Security Council 23 September 2025 Middle East including the Palestinian question OIC Todd Guyana verbatim record
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found; every statement read condemns the attacks of 7 October 2023 and criticises Israel's conduct
+      in Gaza.
+    queries:
+    - Guyana President Irfaan Ali Gaza ceasefire statement Israel Palestine
+    - President Ali Guyana "Gaza" "ceasefire" OR "genocide" statement 2023 OR 2024 Office of the President Palestine rally OR summit OR donation
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Guyana was found (not an EU member).
+    queries: &id002
+    - Guyana Israel diplomatic relations embassy ambassador accredited Guyana non-resident Israel 2024 2025 Guyana Foreign Minister Todd Israel relations downgrade
+    - Guyana Israel agreement OR memorandum signed 2024 OR 2025 Guyana Israel cooperation Irfaan Ali Israel visit
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Israel''s ambassador to Guyana is non-resident (relations date from 9 March 1992) and the Government''s statements ask Israel to comply
+      with the law and support a two-State solution without a measure against Israel. Calls by Guyanese columnists and a petition to sever relations (Kaieteur News, 15 October 2023 and 29 July
+      2024, Change.org) are opinion and advocacy, not Government acts.'
+    queries: *id002
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Guyana has none).
+    queries: *id002
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found (the Ministry of Foreign Affairs, the Office of the President and the Government Information Agency, searched).
+    queries: *id002
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: the Government''s flow to the oPt appeal of USD 150,000 (fts_plan_totals.csv, plan 1156), counted in the monthly windows of June to December 2025. Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Guyana has a row in UNRWA's donor table of 2024 (USD 676,531 received) and none in 2022 or 2023 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guyana
+    checked_at: '2026-10-06'
+  D3:
+    status: has-events
+    note: 'D3 increased from 31 December 2024: UNRWA''s table for 2024 gives USD 676,531 received (line 94) against no row in 2022 (a zero) and none in 2023; the 2025 table was not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guyana
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Guyana Gaza humanitarian donation OR medical evacuation OR field hospital Guyana government 2024 2025
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Guyana Gaza humanitarian donation OR medical evacuation OR field hospital Guyana government 2024 2025
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

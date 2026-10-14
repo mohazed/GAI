@@ -1,0 +1,326 @@
+# Coverage record for China (docs/03 §6). P-D research session, wave 6, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-341): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Japan and Korea, B-331, B-336). The registry's gov_sources were
+# used, read by script, read only. www.fmprc.gov.cn / www.mfa.gov.cn answer scripted requests; the
+# Ministry's list pages stop at about 1,000 items (143 pages), so the site's own search service
+# (the JSON API behind "search_eng.shtml" and "search.shtml") was used, sorted by date, from
+# October 2023 to September 2026:
+# - English site, title search: Gaza, Palestine, Palestinian, Israel, Middle East, UNRWA,
+#   two-State, Ceasefire, Rafah, Hamas, West Bank, International Criminal Court, International
+#   Court of Justice, Lebanon (652 items; the 161 whose titles name Gaza, Palestine, Israel, UNRWA,
+#   a ceasefire or the two Courts listed and the relevant ones read); full-text search: Gaza
+#   (1,160 hits), Palestine (960), UNRWA (80), every item by or about the President, the Premier or
+#   the Foreign Minister among them listed by title and the speeches read; titles "Remarks by H.E.
+#   Wang Yi", "Statement by H.E. Wang Yi", "Remarks by H.E. Li Qiang", "Speech by H.E. Li Qiang",
+#   "General Debate", "Security Council High-Level Meeting", "Two-State Solution"; full text
+#   "arms sales to Israel", "weapons to Israel", "export control Israel", "dual-use Israel",
+#   "F-35", "settler", "settlements sanctions", "recall ambassador Israel", "medical evacuation
+#   Gaza", "patients from Gaza", "humanitarian assistance Gaza airdrop", "UNRWA donation",
+#   "Rome Statute", "Israel free trade agreement", "arrest warrant" (the Spokesperson's answers
+#   of November 2024 and October 2025 read).
+# - Chinese site, title search: 加沙, 巴勒斯坦, 以色列, 近东救济工程处, 国际刑事法院, 国际法院,
+#   巴以, 停火 (154 items; those not by the Spokesperson or envoys read by title, the joint
+#   statements and the Foreign Minister's remarks read in full).
+# - The Ministry's pages "China and Palestine" and "China and Israel" (Countries and Regions).
+# - The speeches of the President (BRICS summits of November 2023, October 2024 and September
+#   2025; China-Arab States Cooperation Forum, May 2024; G20, November 2024; the joint press
+#   remarks with the President of France, May 2024), the Premier (General Assembly, September
+#   2025; East Asia Summits of 2024 and 2025; SCO heads of government, October 2024) and the
+#   Foreign Minister (General Assembly, September 2024; G20 foreign ministers, September 2024 and
+#   February 2025; Security Council high-level meetings of February 2025 and May 2026; BRICS
+#   foreign ministers, April 2025; Lanting Forum, October 2025; year-end speech, December 2025;
+#   Munich, February 2026; Human Rights Council, February 2026) read for Gaza passages.
+# Not searched: the press; the National People's Congress; the State Council's site
+# (english.www.gov.cn) beyond the Premier's speeches republished by the Ministry; the Ministry of
+# Commerce (export controls, licences, trade measures); the Ministry of National Defense
+# (exercises, cooperation); the China International Development Cooperation Agency (aid,
+# medical programmes); the National Immigration Administration (D5); the courts and public
+# security organs (E1–E3); the Permanent Mission to the UN beyond the items the Ministry's search
+# returned.
+country: CHN
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (China had rows from P-14, so no fetch was run). China's own reports
+      carry HS 93 exports to Israel of USD 10,326 (2022), 28,987 (2023), 25,170 (2024) and 9,178
+      (2025), under USD 100,000 each year: 0 throughout. Israel's mirror records HS 93 imports
+      from China of USD 1,616,000 (2022), 2,277,000 (2023), 1,625,000 (2024) and 3,207,000 (2025),
+      which would give −8 each year if the mirror were used; the generator uses the reporter's
+      own data when it exists (reported to the author with Korea's per-heading question, docs/10
+      B-343 (3)). HS 8526 (own USD 9.6 million to 16.3 million a year; mirror 7.0 million to 13.5
+      million) and HS 8802 (mirror USD 16,000 in 2022) are not counted: no licence register,
+      parliamentary answer or investigation confirming a military nature was found, and no row
+      was added to a2_confirmed_military.csv. No Chinese document on arms exports to Israel was
+      found in the sources searched; the Ministry of Commerce was not searched. Nothing Chinese
+      contradicts the generated value.
+    queries:
+      - fmprc.gov.cn full text "arms sales to Israel", "weapons to Israel", "export control Israel", "dual-use Israel"
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China is not a participant, supplier or customer in the F-35 programme; no official
+      document naming Chinese companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - fmprc.gov.cn full text "F-35"
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel was
+      found in the Ministry's records; the "China and Israel" page lists no military cooperation.
+      The Ministry of National Defense was not searched (P-16).
+    queries:
+      - fmprc.gov.cn title Israel (2023-10 to 2026-09)
+      - fmprc.gov.cn page "China and Israel"
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No government decision suspending or refusing a class of export licences to Israel was
+      found. The Ministry of Commerce, which administers export controls (the Regulations on the
+      Export Control of Dual-Use Items in force from December 2024 are general), was not searched
+      (P-16).
+    queries:
+      - fmprc.gov.cn full text "export control Israel", "dual-use Israel"
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - fmprc.gov.cn full text "weapons to Israel", "arms sales to Israel"
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No port, airspace or flag-state denial of an arms shipment to Israel was found.
+    queries:
+      - fmprc.gov.cn full text "weapons to Israel"
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. China's own statements agree: the President's remarks of
+      21 November 2023 say China supports the resolution adopted at the emergency special session
+      on 27 October (evt_2023_11_21_CHN_B9), the Foreign Minister supported Palestine's full
+      membership (ES-10/23) throughout, and the joint statement with the Arab States of 30 May
+      2024 welcomes ES-10/23. No Chinese document read contradicts the rows. The five later votes
+      have no rows (B-199 (1)); the joint statement with France of 5 December 2025 welcomes the
+      New York Declaration of 12 September 2025 (A/DEC/80/506); no Chinese record of the other
+      votes was read.
+  B2:
+    status: has-events
+    note: >-
+      Generated from unsc_vetoes.csv: China, a permanent member, vetoed the United States drafts
+      S/2023/792 (25 October 2023) and S/2024/239 (22 March 2024), both calling for humanitarian
+      pauses or a ceasefire (−20 each; both events have passed 730 days and count 0 today). The
+      meeting records agree (S/PV.9453: China's representative said China voted against
+      S/2023/792; S/PV.9584 lists China against S/2024/239). The rule scores any veto of such a
+      draft regardless of the vetoing member's stated reasons (docs/02 §2); China's explanations
+      of vote are on the record in the same documents.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China filed no declaration of intervention in ICJ case 192. It took part in the oral
+      proceedings of the advisory opinions on the Occupied Palestinian Territory (February 2024)
+      and on Israel's obligations regarding humanitarian aid (May 2025), which are not case 192.
+      The joint statement with the Arab States of 30 May 2024 supports the provisional-measures
+      orders of 26 January, 28 March and 24 May 2024 (evt_2024_05_30_CHN_B9), a statement, not an
+      intervention.
+    queries:
+      - fmprc.gov.cn title "International Court of Justice"; mfa.gov.cn title 国际法院
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement rejecting the ICJ's provisional measures or their binding character was found.
+    queries:
+      - fmprc.gov.cn title "International Court of Justice"; mfa.gov.cn title 国际法院
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China is not a party to the Rome Statute. Asked about the warrants of 21 November 2024, the
+      Spokesperson (22 November 2024) said China hopes the Court "will maintain an objective and
+      just position, lawfully perform its duties" (a spokesperson, and no position on executing
+      the warrants); on 10 October 2025 the Spokesperson restated China's opposition to all acts
+      that violate international law. No statement by the President, the Premier or the Foreign
+      Minister on the warrants was found.
+    queries:
+      - fmprc.gov.cn full text "International Criminal Court", "arrest warrant", "Rome Statute"
+      - mfa.gov.cn title 国际刑事法院
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants and no official visit by a person under warrant
+      was found (see B5).
+    queries:
+      - fmprc.gov.cn full text "International Criminal Court", "arrest warrant"
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: China has imposed no sanction on ICC judges or prosecutors.
+    queries:
+      - fmprc.gov.cn full text "International Criminal Court"
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. China recognised the State of Palestine on 20 November
+      1988 (a pre-existing recognition, +3 standing from 2023-10-07). The row CHN,1988-11-20 was
+      added in this session, citing the Ministry's page "China and Palestine"
+      (src_20260929_fmprc_china-palestine-relations), which states the date (docs/10 B-192,
+      B-343 (4)); the joint statement with France of 5 December 2025 also says China has
+      recognised the State of Palestine since 1988.
+  B9:
+    status: has-events
+    note: >-
+      Fifteen events (evt_2023_11_21 to evt_2025_12_05): three at the names-violations tier (+5:
+      the President's remarks of 21 November 2023 on collective punishment and forced transfer;
+      the joint statements with Egypt of 14 January 2024 and with the Arab States of 30 May 2024
+      on forced transfer, famine, blockade and the destruction of hospitals) and twelve at the call
+      tier (+2). Not filed (docs/10 B-342 (1)): the Ministry's accounts in indirect speech of the
+      Foreign Minister's talks and remarks, including those of 14 January 2024, 19 September 2025
+      (src_20250919_fmprc_wang-yi-three-imperatives: Israel's Gaza City plan, strikes in Qatar and
+      West Bank encroachment "seriously violate the norms of international law") and 10 October
+      2025, and of the President's messages to the United Nations of November 2023, 2024 and 2025
+      (ceasefire, UNRWA); the Foreign Minister's answers at his annual press conferences of March
+      2024, 2025 and 2026; the Spokesperson's statements (hospital attack of 17 October 2023, Rafah
+      strikes of 13 February 2024); the statements of the Permanent Representative at the Security
+      Council; the Premier's General Assembly statement of 26 September 2025 (no Gaza call);
+      speeches naming Gaza without a call (Security Council, 18 February 2025; year-end speech,
+      December 2025; Munich, 14 February 2026); the President's BRICS statement of September 2026
+      (a call for a ceasefire in the Middle East war, not Gaza). Same-day rule: the Foreign
+      Minister's remarks and the joint statement of 30 May 2024 are one event.
+    queries:
+      - fmprc.gov.cn title and full-text searches listed in the header
+      - mfa.gov.cn title 加沙, 巴勒斯坦, 巴以, 停火
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement of unconditional support for Israel or denial of a documented violation was found.
+    queries:
+      - fmprc.gov.cn title Israel; mfa.gov.cn title 以色列
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China has imposed no sanction on Israeli ministers or settler entities. Asked on 10 October
+      2025 whether China would sanction settlers or ministers, the Spokesperson restated China's
+      opposition to settlement building and announced no measure.
+    queries:
+      - fmprc.gov.cn full text "settler", "settlements sanctions"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall of the ambassador or downgrade of relations with Israel was found; the Foreign
+      Minister held talks with Israel's Foreign Minister in October 2024, February and June 2025
+      and March 2026.
+    queries:
+      - fmprc.gov.cn full text "recall ambassador Israel"; title Israel
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China and Israel have no trade or association agreement in force whose suspension or review
+      was announced; no decision on the free-trade negotiations was found.
+    queries:
+      - fmprc.gov.cn full text "Israel free trade agreement"; page "China and Israel"
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel since 7 October 2023 was
+      found; the "China and Israel" page lists agreements of 1993 to 2017. The Ministry of
+      Commerce and the Ministry of Science and Technology were not searched (P-16).
+    queries:
+      - fmprc.gov.cn page "China and Israel"; title Israel
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (China's own totals): USD 25.45 billion (2022), 23.38 billion (2023,
+      r = 0.92, −8), 22.70 billion (2024, r = 0.89, 0) and 33.72 billion (2025, r = 1.33, −8 from
+      22 September 2026). The Ministry's "China and Israel" page gives the 2024 trade as USD 22.7
+      billion, which agrees.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on settlement goods was found.
+    queries:
+      - fmprc.gov.cn full text "settlements sanctions", "settler"
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a Chinese sovereign fund or public pension fund over conduct in Gaza
+      or the occupied territories was found; the funds' own sites were not searched (P-16).
+    queries:
+      - fmprc.gov.cn full text "settlements sanctions"
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No public-procurement exclusion of companies over conduct in Gaza was found.
+    queries:
+      - fmprc.gov.cn full text "settler", "Israel"
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: China's government flows to the flash appeals total USD 1,000,000 in the
+      12-month windows ending November 2023 to October 2024, 2,000,000 in those ending May 2025 to
+      April 2026 and 3,967,421 in the window ending August 2026 (+1 in each such window; 0 in the
+      windows with no flow). The Government's own figures are larger
+      and include aid outside the flash appeals (docs/06 §7): USD 2 million and RMB 15 million of
+      supplies by November 2023 (the President, 21 November 2023), RMB 100 million and a further
+      RMB 500 million announced by the President on 30 May 2024.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      China did not suspend its funding to UNRWA; the President's message of November 2024 states
+      support for UNRWA's humanitarian assistance in Gaza.
+    queries:
+      - fmprc.gov.cn full text UNRWA; mfa.gov.cn title 近东救济工程处
+  D3:
+    status: has-events
+    note: Increased (+8) from 31 December 2024 on UNRWA's donor tables (evt_2024_12_31_CHN_D3).
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field-hospital deployment for Gaza was found in the
+      Ministry's records; China's aid is described as supplies and funds. The China International
+      Development Cooperation Agency and the National Health Commission were not searched (P-16).
+    queries:
+      - fmprc.gov.cn full text "medical evacuation Gaza", "patients from Gaza", "humanitarian assistance Gaza airdrop"
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee pathway for people from Gaza was found; the National Immigration
+      Administration was not searched (P-16).
+    queries:
+      - fmprc.gov.cn full text "patients from Gaza"
+  E1:
+    status: unchecked
+    note: Experimental, unscored. The procuratorates and courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: Experimental, unscored. Public security and assembly decisions were not searched (P-16).
+  E3:
+    status: unchecked
+    note: Experimental, unscored. The courts were not searched (P-16).

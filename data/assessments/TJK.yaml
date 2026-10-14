@@ -1,0 +1,222 @@
+# Coverage record for Tajikistan (docs/03 §6). P-21 light protocol, session T-P21-02, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.tj/en: its news, its statements list of 2025-2026 and the
+#   speeches of the President, read in English), the President's site (president.tj: a script-loaded page whose HTML holds no
+#   text, so nothing there can be read or archived as text), the General Debate statements of the United Nations
+#   (gadebate.un.org, Wayback captures of the 79th and 80th sessions; the 79th session's PDF is an image of the President's
+#   website with no text layer, read by OCR and then from the Ministry's own page of the same text), the UN's automatic
+#   transcript of the 81st session's Day 5 sitting (transcripts.un.org, read, not archivable: the page exceeds the
+#   200 KB extraction limit before the Tajik passage), the Israeli Government's news item on the tourism visit,
+#   the generated events and the structured tables; web searches in English and in Russian per indicator group.
+#   Time: about 30 minutes.
+# Statements read and not filed as B9: the Foreign Minister's speech at the 81st session (26 September 2026: lead_20261005_TJK_1,
+#   no quotable copy); the President's speech at the Arab-Islamic summit in Riyadh (11 November 2024: the Ministry's
+#   third-person account with a few quoted phrases, not the speaker's text); the Ministry's statements of 2025-2026 on the
+#   Middle East (Israel and the United States against Iran, Qatar, the Iran ceasefire), which do not concern Gaza.
+country: TJK
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Tajikistan
+      to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TJK
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until
+      a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Tajikistan order of Israeli major arms in the register. Left to
+      the build.'
+    queries:
+    - sipri_orders.csv, buyer TJK
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). The Ministry''s releases on the votes
+      were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Tajikistan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Tajikistan
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Таджикистан МИД Газа Палестина ордер МУС Нетаньяху Международный суд ООН позиция Таджикистана
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Таджикистан МИД Газа Палестина ордер МУС Нетаньяху Международный суд ООН позиция Таджикистана
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of the Government on executing the warrants of 21 November 2024 was found. Tajikistan is a party
+      to the Rome Statute (ratified 2000); the lower house of Parliament is reported to have examined terminating the
+      Statute after the authorities declined to execute the warrant for the Russian President in 2025 (lead_20261005_TJK_2):
+      a position on the Court, not on the warrants for Israel''s officials.'
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+    - Таджикистан МИД Газа Палестина ордер МУС Нетаньяху Международный суд ООН позиция Таджикистана
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal and no hosting of a person under the warrants of 21 November 2024 was found.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan ICC arrest warrant Netanyahu Rome Statute position Netanyahu visit Central
+      Asia
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Tajikistan has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Tajikistan row. The registry dates the recognition 2 April 1994
+      (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md): with
+      the pre-existing tier the score would be +3 higher. The President''s speech of 24 September 2024 (archived) and
+      the Foreign Minister''s of 26 September 2026 (the UN''s transcript) support an independent State of Palestine within
+      the 1967 borders; the Ministry''s page on relations with Palestine (mfa.tj/en/main/view/1086) was not archived.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Two events: the President''s General Debate speeches of 24 September 2024 (a hope that the parties act for
+      a ceasefire deal, +2, decayed to zero) and 23 September 2025 (a call for a lasting ceasefire in Gaza and access
+      to humanitarian aid, +2). The Foreign Minister''s speech of 26 September 2026 (the same call, +2, in the UN''s transcript)
+      is a lead without a quotable copy (lead_20261005_TJK_1): filed, it would count at full weight today and end the
+      passivity penalty. The Riyadh speech of 11 November 2024 is a lead.'
+    queries:
+    - Tajikistan Rahmon Gaza ceasefire statement United Nations General Assembly 2025 Palestine
+    - Tajikistan Ministry of Foreign Affairs Gaza Palestine statement Muhriddin ceasefire humanitarian
+    - Rahmon speech 79th session UN General Assembly Palestinian crisis no military solution Tajikistan
+    - Muhriddin statement General Debate 81st session General Assembly Tajikistan
+    - Palestine OR Gaza Tajikistan Rahmon OR Muhriddin OR Ministry of Foreign Affairs statement (mfa.tj)
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found; the Ministry's
+      statements of June 2025 condemn Israeli strikes on Iran.
+    queries:
+    - Mirziyoyev OR Rahmon OR Berdimuhamedov right to self-defense Israel support Hamas October 7 condemn statement Central
+      Asia president
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Tajikistan has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
+      sanctions Gaza
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; Israel is represented in Tajikistan by a non-resident ambassador
+      accredited from Uzbekistan (JNS).
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan Israel ambassador recalled OR severed OR downgraded relations Gaza war
+      Israeli embassy Tashkent
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No agreement or negotiation with Israel was suspended or put under review (none found); the EU's association
+      agreement does not apply.
+    queries:
+    - Uzbekistan Israel free trade OR trade agreement OR trade turnover 2025 Israel Uzbekistan trade mission suspend OR
+      boycott
+  C2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the memorandum of understanding (the Israeli Government calls it a Joint Declaration of Intent)
+      on tourism cooperation signed in Dushanbe on 18 September 2025 by the Chairman of the Committee for Tourism Development
+      and Israel''s Minister of Tourism, the first bilateral tourism instrument (primary: the Israeli Government''s news
+      item, archived; date from JNS; no Tajik record found). Flagged for the instrument''s wording.'
+    queries:
+    - Tajikistan Israel agreement signed 2024 2025 cooperation memorandum Dushanbe Israeli delegation
+    - Tajikistan Committee for Tourism Development Israel memorandum of understanding Katz Dushanbe
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Tajik government flow to the oPt plans in any window (no row in fts_funding.csv or fts_plan_totals.csv),
+      a real zero under docs/02 §5.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding; Tajikistan has no row in UNRWA's donor tables for 2022, 2023
+      or 2024.
+    queries:
+    - Uzbekistan OR Tajikistan OR Turkmenistan UNRWA contribution suspended OR resumed funding 2024 statement government
+      UNRWA donor
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No row for Tajikistan in UNRWA's donor tables for 2022, 2023 and 2024 (archived), so no contribution to compare
+      and no restoration.
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Tajikistan
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found; the Foreign Ministry's items on Palestine
+      of 2024-2026 record meetings and statements only.
+    queries:
+    - Tajikistan humanitarian aid Gaza Palestinians sent government 2024 OR 2025
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Tajikistan humanitarian aid Gaza Palestinians sent government 2024 OR 2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

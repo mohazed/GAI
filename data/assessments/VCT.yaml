@@ -1,0 +1,189 @@
+# Coverage record for Saint Vincent and the Grenadines (docs/03 §6). P-21 light protocol, session T-P21-14, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Office of the Prime Minister's and the Ministry of Foreign Affairs' sites (pmoffice.gov.vc, foreign.gov.vc: both answer 200 but carry few releases), the General Debate pages and statements of the 78th to 80th sessions (gadebate.un.org through Wayback captures; the 81st has no capture), UN Meetings Coverage's summaries of the 79th and 80th sessions, the Division for Palestinian Rights' review of August 2011 (UNISPAL, archived), the ICJ's case page (archived 25 September 2026, read), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 30 minutes of research on Saint Vincent and the Grenadines, inside the 90-minute budget of the session.
+# Two hand-authored events: evt_2024_09_27_VCT_B9 (decayed to zero) and evt_2025_09_26_VCT_B9 (flagged).
+country: VCT
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier VCT
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Saint Vincent and the Grenadines from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt)
+      has no row for it. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer VCT
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Saint Vincent and the Grenadines
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 9 of the 12 qualifying votes and no vote recorded on 3 (A/RES/79/232 of 19 December 2024, A/RES/80/78 of 5 December 2025 and A/RES/80/116 of 12
+      December 2025; scored as absent, B1). The reason for the three absences is not stated in the dataset or in the press releases archived (not checked). No other disagreement found.'
+    queries:
+    - unga_votes.csv, voter VCT
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: Saint Vincent and the Grenadines is not on the ICJ case 192 intervention list (docs/06 §8; the Court's page archived 25 September 2026, read).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Saint Vincent and the Grenadines is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister, the Foreign Minister or the Attorney-General on executing the warrants of 21 November 2024 was found.
+    queries:
+    - Saint Vincent and the Grenadines ICC arrest warrant Netanyahu Gonsalves OR Friday government position
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Saint Vincent and the Grenadines ICC arrest warrant Netanyahu Gonsalves OR Friday government position
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Saint Vincent and the Grenadines has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `VCT,2011-08-30` is added in this session. Source: the Division for Palestinian Rights'' review of August 2011 (UNISPAL, archived: src_20110831_un-unispal_dpr-chronology-august-2011,
+      line 30 and line 326: ''Saint Vincent and the Grenadines announces its recognition of a Palestinian State (30 August)''; ''It announced its decision in an official letter to the United Nations'',
+      Ynews). The pre-existing tier, +3 (R21). A UN Secretariat review that relays a news agency, not the Government''s letter itself, flagged; the registry''s date (2011-08-29, A/78/846) differs
+      by a day and is left to the author (docs/10 B-624). WAFA''s and IMEMC''s reports (search results, not archived) say the letter was received by the Palestinian representative in the same
+      days. The Government has not withdrawn the recognition: the Prime Minister''s statements of 2024 and 2025 (the General Debate, archived) speak of ''the Palestinians'' and ''Palestine''.'
+    queries:
+    - Saint Vincent and the Grenadines recognises State of Palestine August 2011 Gonsalves letter
+    - UNISPAL review of August 2011 (archived)
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'Two events: the Prime Minister''s General Debate statement of 27 September 2024 (evt_2024_09_27_VCT_B9, +5: ''the genocide in Gaza'', collective punishment, state terror; decayed to
+      zero, 740 days old) and of 26 September 2025 (evt_2025_09_26_VCT_B9, +5, flagged: the UN''s summary quotes ''the hottest part of hell is reserved for these perpetrators of genocide and those
+      who are complicit in it'', on Gaza and the West Bank; the delegation''s own file has no usable Wayback replay). Read and not filed: the General Debate statement of the 78th session (September
+      2023, no Wayback capture of the page''s files: not read); the Prime Minister Godwin Friday''s statement of 25 September 2026 (the 81st session), which the press (CMC, Jamaica Observer, read)
+      reports in indirect speech as a call for ''a permanent ceasefire in the Middle East, protection of civilians and a two-state solution'': R4 (indirect speech) and R7 (the report does not
+      cite Gaza), the text has no Wayback capture (lead_20261007_VCT_1). CARICOM''s communiqués name no signatory (R3).'
+    queries:
+    - Saint Vincent and the Grenadines Gaza ceasefire statement Prime Minister Gonsalves OR Friday General Assembly
+    - gadebate.un.org Saint Vincent and the Grenadines 78th to 80th sessions (vc_en.pdf), read for the 79th
+    - press.un.org GA/12712 (read)
+    - Gonsalves Gaza genocide statement 2025 iwnsvg OR searchlight (no result)
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister or the Foreign Minister was found.'
+    queries:
+    - Saint Vincent and the Grenadines Prime Minister support Israel right to defend itself Gaza
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Saint Vincent and the Grenadines was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found (search of the Ministry''s site and the press: no result).'
+    queries:
+    - Saint Vincent and the Grenadines ambassador Israel recalled OR relations Israel downgrade OR sever
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Saint Vincent and the Grenadines Israel agreement suspend OR review
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found (search of the press and of the Ministry''s site: no agreement, memorandum or declaration of intent).'
+    queries:
+    - Saint Vincent and the Grenadines Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor VCT
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Saint Vincent and the Grenadines has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Saint Vincent and the Grenadines
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Saint Vincent and the Grenadines has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Saint Vincent and the Grenadines
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Saint Vincent and the Grenadines ministry
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Saint Vincent and the Grenadines regulation
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

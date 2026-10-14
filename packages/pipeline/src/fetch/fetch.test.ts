@@ -2,26 +2,37 @@
  * The fetchers' transforms on small synthetic responses shaped like the real ones (field names as
  * observed on 2026-09-27); every expected total is summed by hand in the comments.
  */
-import { describe, expect, it } from 'vitest'
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+import { afterAll, describe, expect, it } from 'vitest'
+import { fakeNet, isSnapshot } from '../lib/testing.js'
 import {
   canCall,
   comtradeRows,
   crossCheck,
+  MIRROR_BATCH,
+  mirrorBatches,
   parseAvailability,
   parseReporters,
   parseTrade,
   previewUrl,
   stateFor,
   type TradeRecord,
+  truncatedPreview,
   yearsFrom,
 } from './comtrade.js'
+import { runFetchComtrade } from './comtrade-run.js'
 import {
   addMonths,
+  FTS_ATTRIBUTION_OVERRIDES,
   type FtsPage,
   ftsTables,
   governmentFlows,
   parseFlowPage,
   parseLocations,
+  parseOrganizations,
+  verifyOverrides,
   windowFor,
 } from './fts.js'
 import { FTS_DONOR_UNIVERSE } from './fts-run.js'
@@ -244,6 +255,117 @@ describe('World Bank', () => {
   })
 })
 
+describe('FTS attribution overrides (P-14)', () => {
+  const ORGS = parseOrganizations({
+    status: 'ok',
+    data: [
+      { id: 11, name: 'German Federal Foreign Office', locations: [{ id: 80, name: 'Germany' }] },
+      { id: 13, name: 'Somewhere Fund', locations: [{ id: 167 }, { id: 80 }] },
+      { id: 14, name: 'Palestinian territory, occupied', locations: [{ id: 171 }] },
+    ],
+  })
+  const pages = [
+    page('1156', [
+      // a ministry recorded at location oPt, and a government flow with no location
+      flow(
+        '6',
+        250_000,
+        '2024-03-01',
+        [gov('11', 'German Federal Foreign Office'), loc('171', 'Occupied Palestinian Territory')],
+        '1156',
+      ),
+      flow('9', 1_000_000, '2024-04-01', [gov('11', 'German Federal Foreign Office')], '1156'),
+      // the Palestinian Authority stays unattributed, whatever the table says
+      flow(
+        '10',
+        5_000_000,
+        '2024-04-01',
+        [
+          gov('14', 'Palestinian territory, occupied'),
+          loc('171', 'Occupied Palestinian Territory'),
+        ],
+        '1156',
+      ),
+      // a located flow of the same organisation keeps its location
+      flow('11', 300, '2024-05-01', [gov('11'), loc('167', 'Norway')], '1156'),
+    ]),
+  ]
+
+  it('lists the four organisations of the 2026-09-27 fetch', () => {
+    expect(FTS_ATTRIBUTION_OVERRIDES.map((o) => [o.orgId, o.iso3])).toEqual([
+      ['2917', 'GBR'],
+      ['2646', 'CHE'],
+      ['13052', 'QAT'],
+      ['13808', 'DEU'],
+    ])
+  })
+
+  it('applies an override only when the organisation record locates it in that country', () => {
+    const v = verifyOverrides(
+      [
+        { orgId: '11', iso3: 'DEU' },
+        { orgId: '12', iso3: 'DEU' },
+        { orgId: '13', iso3: 'DEU' },
+        { orgId: '14', iso3: 'DEU' },
+      ],
+      ORGS,
+      LOCATIONS,
+    )
+    expect([...v.applied]).toEqual([['11', 'DEU']])
+    expect(v.problems).toHaveLength(3)
+    expect(v.problems[0]).toContain('not in the FTS organisation list')
+    expect(v.problems[1]).toContain('located in NOR, DEU')
+    expect(v.problems[2]).toContain('located in PSE')
+  })
+
+  it('attributes the flows without a usable location, and cites the organisation list', () => {
+    const overrides = new Map([['11', 'DEU']])
+    const g = governmentFlows(pages, LOCATIONS, FTS_DONOR_UNIVERSE, overrides)
+    expect(g.attributed.map((f) => [f.flowId, f.iso3, f.overriddenBy])).toEqual([
+      ['6', 'DEU', '11'],
+      ['9', 'DEU', '11'],
+      ['11', 'NOR', undefined],
+    ])
+    expect(g.unattributed.map((f) => f.flowId)).toEqual(['10'])
+    const t = ftsTables({
+      pages,
+      locations: LOCATIONS,
+      locationSourceId: 'src_20260928_fts_locations',
+      universe: FTS_DONOR_UNIVERSE,
+      plans: ['1156'],
+      lastMonth: '2025-01',
+      retrievedAt: '2026-09-28T10:00:00Z',
+      overrides,
+      organizationSourceId: 'src_20260928_fts_organizations',
+    })
+    const deu = t.plans.find((r) => r.iso3 === 'DEU')
+    expect(deu).toMatchObject({ usd_paid_committed: 1_250_000, flows: 2 })
+    expect(deu?.source).toBe(
+      'src_20260927_fts_plan-1156-p1;src_20260928_fts_locations;src_20260928_fts_organizations',
+    )
+    // Norway's rows are not changed by an override, so they do not cite the list.
+    expect(t.plans.find((r) => r.iso3 === 'NOR')?.source).toBe(
+      'src_20260927_fts_plan-1156-p1;src_20260928_fts_locations',
+    )
+    expect(t.windows.find((w) => w.iso3 === 'DEU')?.source).toContain(
+      'src_20260928_fts_organizations',
+    )
+    expect(t.overriddenFlows.map((f) => f.flowId)).toEqual(['6', '9'])
+    // Without overrides nothing of the ministry is attributed.
+    const plain = ftsTables({
+      pages,
+      locations: LOCATIONS,
+      locationSourceId: 'src_20260928_fts_locations',
+      universe: FTS_DONOR_UNIVERSE,
+      plans: ['1156'],
+      lastMonth: '2025-01',
+      retrievedAt: '2026-09-28T10:00:00Z',
+    })
+    expect(plain.plans.find((r) => r.iso3 === 'DEU')).toBeUndefined()
+    expect(plain.unattributed.map((f) => f.flowId)).toEqual(['6', '9', '10'])
+  })
+})
+
 // ---------------------------------------------------------------------------------------------
 // Comtrade
 
@@ -419,5 +541,167 @@ describe('Comtrade', () => {
     expect(previewUrl(276, 376, 2023)).toBe(
       'https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=276&partnerCode=376&period=2023&cmdCode=93,8710,8526,8802,TOTAL&flowCode=X,M&customsCode=C00&motCode=0&partner2Code=0',
     )
+  })
+
+  it('batches mirror partners, at most 45 a query (450 records, under the preview maximum)', () => {
+    expect(MIRROR_BATCH * 10).toBeLessThan(500)
+    const partners = Array.from({ length: 100 }, (_, i) => i + 1)
+    expect(mirrorBatches(partners).map((b) => b.length)).toEqual([45, 45, 10])
+    expect(mirrorBatches([276, 251], 1)).toEqual([[276], [251]])
+    expect(mirrorBatches([])).toEqual([])
+    expect(() => mirrorBatches([1], 0)).toThrow()
+    expect(previewUrl(376, [276, 251], 2024)).toBe(
+      'https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=376&partnerCode=276,251&period=2024&cmdCode=93,8710,8526,8802,TOTAL&flowCode=X,M&customsCode=C00&motCode=0&partner2Code=0',
+    )
+  })
+
+  it('refuses a preview response holding the maximum of 500 records (it may be cut)', () => {
+    expect(truncatedPreview({ data: new Array(499).fill({}) })).toBeNull()
+    expect(truncatedPreview({ data: new Array(500).fill({}) })).toMatch(/may be cut/)
+  })
+
+  it('reads only its own partner from a multi-partner mirror response', () => {
+    const mixed: TradeRecord[] = [
+      t(376, 276, 2022, 'M', 'TOTAL', 5_000),
+      t(376, 276, 2022, 'X', 'TOTAL', 4_000),
+      t(376, 251, 2022, 'M', 'TOTAL', 9_999),
+      t(376, 251, 2022, 'X', 'TOTAL', 9_999),
+      t(376, 251, 2022, 'M', '93', 9_999),
+    ]
+    const rows = comtradeRows({
+      iso3: 'DEU',
+      code: 276,
+      self: [],
+      mirror: [
+        { year: 2022, sourceId: 'src_20260928_comtrade_mirror-2022-deu-fra-2', records: mixed },
+      ],
+      releases: new Map([['376:2022', '2023-02-23']]),
+      commonSources: [],
+      retrievedAt: '2026-09-28T10:00:00Z',
+    })
+    expect(rows.a2).toEqual([])
+    expect(rows.c3.map((r) => [r.usd_total, r.usd_2022])).toEqual([[9_000, 9_000]])
+  })
+})
+
+describe('runFetchComtrade', () => {
+  const TMP = mkdtempSync(join(tmpdir(), 'gai-comtrade-'))
+  afterAll(() => rmSync(TMP, { recursive: true, force: true }))
+
+  /** Save Page Now answering every save of `bodies`' URLs, and Wayback serving the bodies. */
+  function spn(bodies: Map<string, unknown>) {
+    let job = 0
+    const jobs = new Map<string, string>()
+    const saved: string[] = []
+    const net = fakeNet([])
+    const fetchImpl = async (input: string | URL | Request, init?: RequestInit) => {
+      const url = String(input)
+      if (url === 'https://web.archive.org/save' && init?.method === 'POST') {
+        const target = new URLSearchParams(String(init.body)).get('url') as string
+        saved.push(target)
+        const id = `job-${++job}`
+        jobs.set(id, target)
+        return new Response(JSON.stringify({ url: target, job_id: id }))
+      }
+      if (url.startsWith('https://web.archive.org/save/status/')) {
+        const target = jobs.get(url.split('/').at(-1) as string) as string
+        return new Response(
+          JSON.stringify({ status: 'success', timestamp: '20260928100000', original_url: target }),
+        )
+      }
+      if (isSnapshot(url)) {
+        const target = url.replace(/^https:\/\/web\.archive\.org\/web\/\d{14}id_\//, '')
+        const res = new Response(JSON.stringify(bodies.get(target) ?? { data: [] }), {
+          headers: { 'content-type': 'application/json' },
+        })
+        Object.defineProperty(res, 'url', { value: url })
+        return res
+      }
+      if (url.startsWith('https://comtradeapi.un.org/data/v1/get/')) {
+        return new Response(JSON.stringify({ data: [] }))
+      }
+      throw new Error(`unexpected ${url}`)
+    }
+    return { deps: { ...net.deps, fetch: fetchImpl as typeof fetch }, saved }
+  }
+
+  it('captures the mirror once a year for all partners, and the self responses per reporter', async () => {
+    const bodies = new Map<string, unknown>([
+      [
+        'https://comtradeapi.un.org/files/v1/app/reference/Reporters.json',
+        {
+          results: [
+            { reporterCode: 276, reporterCodeIsoAlpha3: 'DEU', isGroup: false },
+            { reporterCode: 251, reporterCodeIsoAlpha3: 'FRA', isGroup: false },
+          ],
+        },
+      ],
+      [
+        previewUrl(376, [276, 251], 2022),
+        {
+          data: [
+            rec(376, 276, 2022, 'M', 'TOTAL', 100),
+            rec(376, 276, 2022, 'X', 'TOTAL', 50),
+            rec(376, 251, 2022, 'M', 'TOTAL', 10),
+            rec(376, 251, 2022, 'X', 'TOTAL', 5),
+          ],
+        },
+      ],
+      [
+        previewUrl(376, [276, 251], 2023),
+        {
+          data: [
+            rec(376, 276, 2023, 'M', 'TOTAL', 90),
+            rec(376, 276, 2023, 'X', 'TOTAL', 60),
+            rec(376, 276, 2023, 'M', '93', 7),
+            rec(376, 251, 2023, 'M', 'TOTAL', 1),
+            rec(376, 251, 2023, 'X', 'TOTAL', 1),
+          ],
+        },
+      ],
+    ])
+    const da = {
+      data: [2022, 2023].flatMap((y) =>
+        [276, 251, 376].map((c) => ({
+          reporterCode: c,
+          period: String(y),
+          firstReleased: `${y + 1}-03-01T00:00:00`,
+        })),
+      ),
+    }
+    const net = spn(bodies)
+    // getDA: every availability URL answers the same record.
+    const fetchWithDa = async (input: string | URL | Request, init?: RequestInit) => {
+      const url = String(input)
+      if (url.includes('/public/v1/getDA/')) {
+        const res = new Response(JSON.stringify(da))
+        Object.defineProperty(res, 'url', { value: url })
+        return res
+      }
+      return (net.deps.fetch as (i: string, x?: RequestInit) => Promise<Response>)(url, init)
+    }
+    const result = await runFetchComtrade(
+      {
+        root: TMP,
+        creds: { access: 'AK', secret: 'SK' },
+        deps: { ...net.deps, fetch: fetchWithDa as typeof fetch },
+        spn: { pollIntervalMs: 1, retryPauseMs: 1 },
+      },
+      { reporters: ['DEU', 'FRA'], key: 'K', latestYear: 2023 },
+    )
+    expect(result.ok, result.report.join('\n')).toBe(true)
+    const previews = net.saved.filter((u) => u.includes('/public/v1/preview/'))
+    // 2 mirror captures (one a year, both partners) + 4 self captures, not 8.
+    expect(previews.filter((u) => u.includes('reporterCode=376&'))).toEqual([
+      previewUrl(376, [276, 251], 2022),
+      previewUrl(376, [276, 251], 2023),
+    ])
+    expect(previews).toHaveLength(6)
+    const c3 = readFileSync(join(TMP, 'data/structured/comtrade_c3.csv'), 'utf8')
+    expect(c3).toContain('DEU,2023-01-01,2023-12-31,2024-03-01,150,150,mirror')
+    expect(c3).toContain('FRA,2023-01-01,2023-12-31,2024-03-01,2,15,mirror')
+    const a2 = readFileSync(join(TMP, 'data/structured/comtrade_a2.csv'), 'utf8')
+    expect(a2).toContain('DEU,2023-01-01,2023-12-31,2024-03-01,93,7,mirror')
+    expect(a2).not.toContain('FRA,2023-01-01,2023-12-31,2024-03-01,93')
   })
 })

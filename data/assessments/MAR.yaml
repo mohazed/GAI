@@ -1,0 +1,310 @@
+# Coverage record for Morocco (docs/03 §6). P-D research session, wave 8, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-402):
+# - Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates (diplomatie.ma,
+#   Drupal, English and French): answers the first scripted request and then serves a JavaScript
+#   bot check ("Request Rejected" or a challenge page), which was not bypassed. Its pages were read
+#   in the built-in browser; its site search returns only the five best matches per query, so
+#   candidate items were listed from the Wayback Machine's index of the site's English and French
+#   addresses containing gaza, palestin, israel, al-qods/al-quds, unrwa, cessez or ceasefire (about
+#   175 addresses) and from web searches restricted to diplomatie.ma, and about 15 items were read
+#   in full (listed below). Fresh captures with pnpm archive succeeded (Save Page Now's crawler
+#   received the pages).
+# - UN general debate pages (gadebate.un.org) for sessions 78 to 81: the 79th-session statement of
+#   the Head of Government (30 September 2024) is an Arabic PDF whose text layer is garbled; the 80th
+#   and 81st sessions have only the UN's summaries (indirect speech), so none is filed (B-403 (3)).
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv, the UN press
+#   releases archived in votes.yaml, the joint statements of foreign ministers archived for Saudi
+#   Arabia and the United Arab Emirates (Morocco is not a signatory of those of 2026).
+# - Web search (English and French): the Foreign Minister's speeches on Gaza; the General Assembly
+#   speeches of 2025 and 2026; the field hospital and the stabilisation force; agreements with Israel;
+#   African Lion; the Maersk port calls; the liaison offices; protests and prosecutions.
+# Items read in full on diplomatie.ma: 9 November 2023 (Paris conference, speech by a Director
+# General, not a B9 speaker), 5 March 2024 (OIC, filed), 30 May 2024 (Beijing, filed), 24 June 2024
+# (medical aid), 10 September 2024 (Cairo, indirect speech only), 11 September 2025 (filed),
+# 26 March 2026 (West Bank, filed unscored); titles of the King's messages and speeches, the
+# Ministry's statements of 20 March 2025 and 9 October 2025 and the Head of Government's
+# representation of the King on 11 June 2024.
+# Not searched or not readable: Arabic pages (the Ministry's Arabic service, the Maghreb Arabe
+# Presse agency), the Head of Government's site (cg.gov.ma refuses scripted requests), the Royal
+# Armed Forces and the Administration of National Defence, the Bulletin officiel, Parliament, the
+# Ministry of Industry and Trade, the Caisse de dépôt et de gestion and pension funds (C5), the
+# Public Prosecution and courts (E1, E3).
+country: MAR
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Morocco is
+      a buyer of Israeli arms, not a supplier; no Moroccan delivery of arms to Israel was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Morocco had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters MAR` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-383, B-387, B-394 and B-397). No row, so the
+      build shows no-data; the same command resumes the fetch on another day. No row added to
+      a2_confirmed_military.csv; no licence register, parliamentary answer or investigation on
+      Moroccan exports to Israel under HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Morocco is not a partner, supplier or customer of the F-35 programme; no document naming
+      Moroccan companies as suppliers of F-35 parts or maintenance was found. The transhipment of
+      F-35 components through Moroccan ports is recorded under A5 (lead_20260929_MAR_2).
+    queries:
+      - Morocco F-35 supplier parts company
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. A4 counts orders of Israeli arms by the country: press
+      reports of Moroccan orders of Israeli systems in the window (an observation satellite, air
+      defence, artillery) are for the SIPRI release to confirm; none is hand-authored.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official record of a named exercise, a transit authorisation, a basing agreement or
+      intelligence sharing with Israel related to the Gaza campaign was archived. Two leads: the
+      IDF's participation in the US-led exercise African Lion 2025 in Morocco (press;
+      lead_20260929_MAR_1), and Maersk ships carrying F-35 components that called at Tangier Med and
+      Casablanca in November 2024 and April 2025 (press and NGO; the port authority said it did not
+      know the containers' contents; lead_20260929_MAR_2). Flagged for the author (docs/10 B-403 (4)).
+    queries:
+      - African Lion 2025 Morocco Israel IDF participation exercise
+      - Morocco Israeli warship Tangier port Maersk F-35 parts ministry response 2025
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel in the window was
+      found.
+    queries:
+      - Maroc suspension licences exportation armes Israël
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    queries:
+      - Maroc embargo armes Israël loi décret
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No denial of port, land or airspace transit to an arms shipment bound for Israel was found; the
+      Maersk ships of lead_20260929_MAR_2 were delayed by dockworkers' action, not by a state
+      decision.
+    queries:
+      - Morocco denies port call arms shipment Israel Tangier Casablanca
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. For the five later votes without rows (B-199 (1)): the UN
+      press releases archived in votes.yaml do not name Morocco among the states against
+      A/DEC/80/506 (GA/12707), against or abstaining on 80/1 (GA/12708), against 80/78 (GA/12739)
+      or against or abstaining on the vote of 17 September 2026 (GA/12784); the releases of
+      ES-10/27 and 80/116 do not list the states. No difference found.
+  B2:
+    status: not-applicable
+    note: >-
+      Morocco was not a member of the Security Council in the window (data/countries.yaml); it holds
+      no veto. Generated from unsc_vetoes.csv: no Moroccan row.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Morocco is not among the states that filed a declaration of intervention in case 192 (the ICJ's
+      list, archived as src_20260927_icj-cij_case-192). It took part in the advisory proceedings on
+      Israel's policies in the occupied territory (hearings of February 2024, per the Ministry's item
+      of 5 March 2024, line 10), which are not case 192.
+    queries:
+      - icj-cij.org case 192 declarations of intervention (archived list)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Moroccan statement rejecting the ICJ's provisional measures or their binding character was found.
+    queries:
+      - Maroc Cour internationale de justice mesures conservatoires Israël déclaration
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Morocco is not a party to the Rome Statute; no statement of the Head of Government or the
+      Foreign or Justice Minister on executing the warrants of 21 November 2024 was found.
+    queries:
+      - Maroc Cour pénale internationale mandat d'arrêt Netanyahu position Bourita
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No official visit to Morocco by a person under an ICC warrant was found.
+    queries:
+      - Netanyahu visit Morocco 2025 2026
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Morocco has imposed no sanctions on ICC officials.
+    queries:
+      - Morocco sanctions International Criminal Court officials
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv; Morocco has no row. The registry dates its recognition to 15
+      November 1988 (data/countries.yaml, from A/78/846, a lead). No Moroccan document stating the
+      recognition and its date was archived in this session; no row added (as for Saudi Arabia, the
+      United Arab Emirates, Qatar and Jordan, docs/10 B-385 (2), B-399 (5)); P-16 looks for a
+      document of 1988.
+  B9:
+    status: has-events
+    note: >-
+      Three events scoped gaza (5 March 2024, the OIC Council of Foreign Ministers; 30 May 2024, the
+      China-Arab States Cooperation Forum; 11 September 2025, a statement to the press in Rabat), each
+      +5 on the Foreign Minister's words quoted directly by the Ministry, and one West Bank event (26
+      March 2026, tagged west-bank, unscored). Not filed (docs/10 B-403 (3)): the Head of
+      Government's General Assembly statements of 30 September 2024 (Arabic PDF with a garbled text
+      layer), of 2025 and the Foreign Minister's of 22 September 2026 (the UN's summaries only, in
+      indirect speech; the videos were not transcribed); the Foreign Minister's items reported in
+      indirect speech (Cairo, 10 September 2024); the Paris conference speech of 9 November 2023 (a
+      Director General); the Ministry's unsigned statements (20 March 2025 on the resumption of
+      strikes, 9 October 2025 on the ceasefire); the King's speeches and messages (head of state,
+      B-390 (2)). Morocco is not a signatory of the joint statements of foreign ministers of 2026
+      filed for Saudi Arabia, the UAE, Qatar and Jordan.
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of the Head of Government declaring unconditional support for Israel or denying
+      documented violations was found. The joint statement of 16 September 2026 (C2) praises the
+      United States' President and the Abraham Accords; it is not a B10 statement.
+    queries:
+      - Akhannouch Israel statement support
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Moroccan sanctions on Israeli ministers or settler entities were found.
+    queries:
+      - Maroc sanctions colons israéliens ministres
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Morocco did not recall the head of its liaison office in Tel Aviv, downgrade or sever relations;
+      the staff of Israel's liaison office in Rabat left Morocco in October 2023 (press), an Israeli
+      decision. On 16 September 2026 Morocco agreed to raise the missions to embassies (C2 event).
+    queries:
+      - Morocco liaison office Tel Aviv recalled head October 2023 Israel liaison office Rabat staff withdrawn
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No review or suspension of a trade or cooperation agreement with Israel was found.
+    queries:
+      - Maroc suspension accord Israël coopération
+  C2:
+    status: has-events
+    note: >-
+      One event: the joint statement of the United States, Morocco and Israel of 16 September 2026
+      (raising the missions to embassies, investment-protection and double-taxation agreements to be
+      concluded by the end of 2026), read as a cooperation agreement as the joint declarations filed
+      for Germany and Greece (flagged, docs/10 B-403 (2)). The Ministry's items on agreements with
+      Israel found in the Wayback index predate the window (four agreements, first captured in January
+      2021; three cooperation agreements, first captured in July 2022).
+      The treaty register and the Bulletin officiel were not searched.
+    queries:
+      - Morocco Israel agreement signed 2024 2025 memorandum cooperation after October 7
+      - Morocco Israel United States trilateral agreement signed September 2026 full diplomatic relations
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no Moroccan rows (see A2: the fetch of 2026-09-29 stopped at the
+      reporter list). No-data until `pnpm fetch:comtrade --reporters MAR` succeeds.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on goods from Israeli settlements was found.
+    queries:
+      - Maroc produits des colonies interdiction étiquetage
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a Moroccan sovereign or public pension fund or the central bank was
+      found; their sites were not searched (P-16).
+    queries:
+      - Caisse de dépôt et de gestion exclusion Israël
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion of Israeli or settlement companies with legal effect was found.
+    queries:
+      - Maroc marchés publics exclusion entreprises israéliennes
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv has no Moroccan row (no flow from the Moroccan government
+      to the oPt appeals in the FTS responses of September 2026), so the build derives none-found (no
+      funding) and no D1 event; nothing is hand-authored. Morocco's aid to Gaza is in kind and
+      bilateral (food and medical products sent on the King's instructions through Egypt from
+      October 2023 and by a land route through Israel from March 2024; 40 tonnes of medical products
+      in June 2024, the Ministry's item of 24 June 2024), which FTS does not record (docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Moroccan suspension of UNRWA funding was found; Morocco is not listed among the donors of
+      UNRWA's tables for 2022 and 2024 (src_20221231_unrwa_donor-ranking-2022,
+      src_20241231_unrwa_donor-ranking-2024).
+    queries:
+      - Morocco UNRWA funding suspend statement (UNRWA donor tables 2022, 2024)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Morocco is absent from UNRWA's donor tables for 2022 and 2024 (every donor down to USD 894 in
+      2024 listed), so no restored or increased contribution is recorded; the Ministry's items
+      support UNRWA's role (5 March 2024, line 6) without a contribution.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Moroccan field hospital in the Gaza Strip or medical-evacuation programme hosted in Morocco
+      in the window was found in an official record. The military field hospital agreed on 15 July
+      2026 under the International Stabilization Force was announced for deployment on 22 September
+      2026 (press; lead_20260929_MAR_3). The medical aid of June 2024 is in kind. The field
+      hospitals of 2012 and 2018 predate the window.
+    queries:
+      - hôpital militaire de campagne marocain Gaza 2026 FAR déployé
+      - Morocco field hospital Gaza operational ordered King Mohammed VI date opened patients
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or residence instrument for people from Gaza was found; the Ministry's item on the
+      evacuation of Moroccan nationals from Gaza concerns its own citizens.
+    queries:
+      - Maroc visa humanitaire Gaza Palestiniens
+  E1:
+    status: unchecked
+    note: The Public Prosecution and the courts were not searched (P-16).
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decree, court record or official statement banning Palestine solidarity protests or symbols
+      was archived. Press reports of prosecutions of protesters and critics of normalisation (2024)
+      and of a blocked protest at the port of Casablanca (April 2025) are a lead
+      (lead_20260929_MAR_4), unscored in v1 (D-12).
+    queries:
+      - Maroc condamnation militant Gaza normalisation prison 2024 2025 manifestation interdite Palestine
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

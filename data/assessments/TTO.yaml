@@ -1,0 +1,193 @@
+# Coverage record for Trinidad and Tobago (docs/03 §6). P-21 light protocol, session T-P21-13, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign and CARICOM Affairs (foreign.gov.tt, site search) and the Office of the Prime Minister (opm.gov.tt, rebuilt: its old releases are gone), the General Debate statements of the 79th and 80th sessions (gadebate.un.org through Wayback captures; the 81st has no capture), UN Meetings Coverage of the 79th, the ICJ's case page (read 2026-10-07), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the Trinidad Guardian, Newsday, Trinidad Express and CNC3, the generated events and the structured tables; web searches in English per indicator group. Time: about 30 minutes of research on Trinidad and Tobago, inside the 90-minute budget of the session.
+# One hand-authored event: evt_2024_09_28_TTO_B9.
+country: TTO
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TTO
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Trinidad and Tobago from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no
+      row for it. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TTO
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Trinidad and Tobago
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    queries:
+    - unga_votes.csv, voter TTO
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: Trinidad and Tobago is not on the ICJ case 192 intervention list (docs/06 §8; the Court's page read 2026-10-07).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Trinidad and Tobago is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister, the Foreign Minister or the Attorney General on executing the warrants of 21 November 2024 was found (Trinidad and Tobago is a State Party to the
+      Rome Statute). The ICC mapping pages read (Just Security, JusticeInfo) have no entry for it.
+    queries: &id001
+    - Trinidad and Tobago ICC arrest warrant Netanyahu position government "Rome Statute" Trinidad Browne OR Sobers OR Persad-Bissessar
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Trinidad and Tobago has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the row `TTO,2024-05-02` (src_20240502_foreign-tt_recognition-palestine, the Ministry''s own document, archived since P-14), recognised after 7 October
+      2023: +8. Nothing added in this session. The Foreign Minister''s General Debate statement of 28 September 2024 reports that diplomatic relations were established ''just six days ago''. The
+      Government reaffirmed the recognition and the two-State policy in September 2026 (the UN Ambassador, Trinidad Guardian of 26 September 2026, read).'
+    queries:
+    - recognitions.csv, row TTO
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'One event: the Minister of Foreign and CARICOM Affairs'' General Debate statement of 28 September 2024 (evt_2024_09_28_TTO_B9, +5: the call for an immediate, full and complete ceasefire,
+      the killing of United Nations staff and civilians, ''ongoing violations of international law''; decayed to zero). Read and not filed: the Prime Minister''s statements at the General Debate
+      of the 80th session (Kamla Persad-Bissessar, 26 September 2025: crime, narcotics, Haiti, Venezuela; no passage on Gaza) and, in the press reports read, of the 81st (22 September 2026: no
+      Gaza); the 78th (September 2023) pre-dates the war; Prime Minister Rowley''s Eid-ul-Fitr message of April 2024, a call for a ceasefire in Gaza printed by the Trinidad Guardian (lead_20261007_TTO_1:
+      no official copy, and more than 730 days old); the Ambassador''s statement of 24 to 25 September 2026 on staying for the Israeli Prime Minister''s address (a Permanent Representative, R3).
+      The Ministry''s site (foreign.gov.tt) search for Gaza returned no statement.'
+    queries:
+    - Trinidad and Tobago Gaza ceasefire Prime Minister Persad-Bissessar OR Rowley OR "Amery Browne" statement General Assembly Israel
+    - Prime Minister Rowley Eid-ul-Fitr message 2024 "ceasefire" Gaza
+    - Persad-Bissessar Israel Gaza statement Trinidad and Tobago Prime Minister ceasefire OR Netanyahu OR "Palestine" 2025 2026
+    - Trinidad and Tobago Foreign Minister Sean Sobers Palestine Gaza statement Ministry of Foreign and CARICOM Affairs press release
+    - gadebate.un.org Trinidad and Tobago 79th and 80th sessions (tt_en.pdf), read
+    - 'foreign.gov.tt site search: Gaza'
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister, transcribed on an official site, was found. The Government''s
+      early support for the United States and Israel over the attack on Iran (end of February 2026, withdrawn) concerns Iran, not Gaza (Trinidad Guardian, search result, read in part); the designation
+      of Hamas, Hezbollah and the Revolutionary Guards as terrorist organisations (April to June 2026, praised by Israel''s Foreign Minister, JNS, read in part) is not an indicator.'
+    queries:
+    - Persad-Bissessar "Israel" "stands with" OR "support for Israel" OR "right to defend" Trinidad Prime Minister Hamas terrorist designation June 2026
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Trinidad and Tobago was found (not an EU member, so the Council's listings do not apply).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Government maintains relations with both Israel and Palestine (Foreign Minister Sobers, July 2026, CNC3, read).
+    queries:
+    - Trinidad and Tobago Israel agreement signed MOU 2025 OR 2026 Israeli ambassador Persad-Bissessar cooperation
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Trinidad and Tobago Israel agreement signed MOU 2025 OR 2026 Israeli ambassador Persad-Bissessar cooperation
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found. On 27 and 29 July 2026 the Foreign Minister and the Minister of Planning received Israel''s non-resident ambassador
+      and the director general of MASHAV; the two countries ''have started discussions'' on cybersecurity, smart cities, agriculture and health and agreed to explore technical cooperation projects
+      (Trinidad Express and the Ministry of Planning, read): no instrument signed (lead_20261007_TTO_2).'
+    queries:
+    - Trinidad and Tobago Israel agreement signed MOU 2025 OR 2026 Israeli ambassador Persad-Bissessar cooperation
+    - Sobers Shlein MASHAV Trinidad and Tobago meeting Israel non-resident ambassador cooperation framework July 2026
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor TTO
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Trinidad and Tobago has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Trinidad and Tobago
+    - Trinidad and Tobago UNRWA contribution OR Gaza humanitarian aid OR visa Palestinian students government donation 2024 2025
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Trinidad and Tobago has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Trinidad and Tobago
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Trinidad and Tobago UNRWA contribution OR Gaza humanitarian aid OR visa Palestinian students government donation 2024 2025
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Trinidad and Tobago UNRWA contribution OR Gaza humanitarian aid OR visa Palestinian students government donation 2024 2025
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

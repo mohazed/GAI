@@ -1,0 +1,188 @@
+# Coverage record for Belize (docs/03 §6). P-21 light protocol, session T-P21-06, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government of Belize Press Office (pressoffice.gov.bz, which answers HTTP 406 to a request without a browser User-Agent: the releases of 14 and 16 November
+#   2023 and 1 October 2024 and the Ministry's release of 9 September 2011 archived through Save Page Now; the releases of 2 February 2024, 10 May 2021 and 14 November 2023 read), the
+#   ICJ's documents on Belize's intervention (UNISPAL copies, archived), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th archived through its
+#   Wayback capture; the 79th and 81st read, no capture for the 81st), the generated events and the structured tables; web searches in English (the official language) per indicator group.
+#   Time: about 40 minutes.
+# Statements read and not filed as B9: the Foreign Minister's of 27 September 2024 and the Prime Minister's of 2026 (Gaza not cited, R7); the Government's own statements (no named speaker, R3).
+country: BLZ
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Belize to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Belize
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Belize from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Belize
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on 11 and absent on 1 of the 12 qualifying votes (A/RES/80/1 of 19 September 2025, scored as absent). The statements on the votes were not read. No
+      disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: Belize filed an application for permission to intervene (Article 62) and a declaration of intervention (Article 63) on 30 January 2025 (ICJ press release 2025/6; both documents archived
+      through UNISPAL); the construction of the Convention supports the applicant (one event, +15). No withdrawal found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Belize declaration of intervention ICJ South Africa v. Israel 30 January 2025
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No statement or act rejecting the ICJ''s provisional measures was found: the Government''s statement of 1 October 2024 says that Israel must immediately abide by the decisions of the
+      Court.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of the Prime Minister or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (Belize is a State Party to the Rome Statute, per the search
+      results; no Belizean statement in the Press Office's releases that the searches returned).
+    queries: &id001
+    - Belize welcomes ICC arrest warrants Netanyahu Gallant Belize government statement November 2024
+    - Belize Israel 2026 government statement Palestine Briceño Fonseca
+    - pressoffice.gov.bz Belize statement Gaza Israel Palestine government of Belize
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Belize has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from recognitions.csv: the pre-existing standing state (+3), recognition on 9 September 2011, from the Ministry of Foreign Affairs'' press release of that date (src_20110909_pressoffice-bz_recognises-palestine,
+      archived; the row was added in this session, R21, as for India and South Africa). The registry dates the recognition 2011-09-09.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Two events: the Foreign Minister''s statement in the Senate of 26 October 2023 (an immediate ceasefire, the release of all hostages, unimpeded humanitarian access, +2, decayed to zero)
+      and the Prime Minister''s General Debate statement of 26 September 2025 (''the genocide in Palestine must stop now'', +5; flagged: no call for a ceasefire). Not filed: the Foreign Minister''s
+      General Debate statement of the 79th session (27 September 2024: ''the war, the oppression and the inhumanity must end'', no mention of Gaza, R7; decayed in any case) and the Prime Minister''s
+      of the 81st session (''The genocide must end. The apartheid must stop.'', no mention of Gaza, R7; no Wayback capture): lead_20261006_BLZ_2. The Government''s statements of 2 February and
+      1 October 2024 (archived) and of 5 November 2024 and 19 August 2026 name no speaker (R3): not filed; the last is lead_20261006_BLZ_1.'
+    queries:
+    - Belize welcomes ICC arrest warrants Netanyahu Gallant Belize government statement November 2024
+    - Belize Israel 2026 government statement Palestine Briceño Fonseca
+    - pressoffice.gov.bz Belize statement Gaza Israel Palestine government of Belize
+    - Belize Courtenay Gaza ceasefire Senate statement 26 October 2023 Israel
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found: the Government condemned the attack of 7 October 2023 (the Prime Minister, House of Representatives,
+      13 October 2023, as the Press Office''s release of 16 November 2023 reports it) together with Israel''s conduct in Gaza.'
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No sanction of Israeli settlers or ministers by Belize was found (not an EU member); the Government's statement of 19 August 2026 on settler violence names no sanction.
+    queries:
+    - Belize sanctions Israeli settlers West Bank
+  B12:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'One event: the Ministry''s measures of 14 November 2023 (agrément withdrawn for Israel''s ambassador designate, the honorary consulates of both states suspended), at the recall tier
+      (+5), flagged; no restoration found.'
+    queries:
+    - Belize Israel diplomatic relations suspended 2023
+    - Belize Takes Measures against Israel
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No trade or association agreement with Israel was found to review (not an EU member).
+    queries:
+    - Belize Israel trade agreement suspended OR review
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No governmental instrument with Israel signed since October 2023 was found; Belize took diplomatic measures against Israel in November 2023.
+    queries:
+    - Belize Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: no Government flow of Belize to the oPt plans (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No announcement of a suspension of UNRWA funding was found; Belize has no row in UNRWA's donor tables. The Government's release of 2 February 2024 (read on the Press Office's page, not
+      archived) urges the donors that paused to reinstate their contributions.
+    queries:
+    - Belize UNRWA contribution OR funding suspended
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No row of Belize in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belize
+  D4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Belize Gaza humanitarian aid medical OR field hospital
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Belize visa OR refugee Palestinians Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

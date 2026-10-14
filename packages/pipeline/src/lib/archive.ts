@@ -32,6 +32,12 @@ export interface ArchiveRequest {
    * nothing; its Wayback URL is named in the reason.
    */
   accept?: (body: Uint8Array) => string | null
+  /**
+   * An existing Wayback capture to record instead of saving anew (`pnpm archive --capture TS`):
+   * for a file Wayback already holds whose origin no longer lets Save Page Now through (a bot
+   * challenge), so the bytes of record are the ones that capture serves. Nothing is saved.
+   */
+  capture?: string
 }
 
 export type ArchivedDocument =
@@ -145,10 +151,26 @@ export async function archiveUrl(req: ArchiveRequest): Promise<ArchivedDocument>
       `--id ${req.id} is not a source id src_{YYYYMMDD}_{publisher-slug}_{topic-slug}`,
     )
   }
-  deps.log(`archive ${req.url}: Save Page Now…`)
-  let saved = await spnSave(req.url, req.creds, deps, req.spn)
+  if (req.capture !== undefined && !/^\d{14}$/.test(req.capture)) {
+    throw new Error(`--capture ${req.capture} is not a 14-digit Wayback timestamp`)
+  }
+  deps.log(
+    req.capture === undefined
+      ? `archive ${req.url}: Save Page Now…`
+      : `archive ${req.url}: existing capture ${req.capture}…`,
+  )
+  let saved: Awaited<ReturnType<typeof spnSave>> =
+    req.capture === undefined
+      ? await spnSave(req.url, req.creds, deps, req.spn)
+      : { ok: true, capture: { timestamp: req.capture, originalUrl: req.url }, attempts: 0 }
   let snap = saved.ok ? await downloadSnapshot(saved.capture, deps, req.spn) : null
-  if (saved.ok && snap !== null && !snap.ok && req.spn?.ifNotArchivedWithin !== null) {
+  if (
+    saved.ok &&
+    snap !== null &&
+    !snap.ok &&
+    req.capture === undefined &&
+    req.spn?.ifNotArchivedWithin !== null
+  ) {
     // A reused capture that Wayback does not serve: capture anew once.
     deps.log(`  ${req.url}: ${snap.reason}; capturing anew`)
     saved = await spnSave(req.url, req.creds, deps, { ...req.spn, ifNotArchivedWithin: null })
@@ -205,6 +227,9 @@ export async function archiveUrl(req: ArchiveRequest): Promise<ArchivedDocument>
     retrieved_at: retrievedAt,
     text_file: textFile,
     notes: [
+      req.capture !== undefined
+        ? `Recorded from the existing Wayback capture ${snap.timestamp} (no new Save Page Now capture).`
+        : '',
       snap.timestamp !== saved.capture.timestamp
         ? `Save Page Now capture ${saved.capture.timestamp}; Wayback serves the identical snapshot ${snap.timestamp}.`
         : '',

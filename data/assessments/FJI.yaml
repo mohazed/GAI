@@ -1,0 +1,212 @@
+# Coverage record for Fiji (docs/03 §6). P-21 light protocol, session T-P21-14, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and External Trade's site (foreignaffairs.gov.fj: site searches for Israel, Gaza, Palestine and Jerusalem, the Prime Minister's and the Minister's statements, the General Debate statements of the 78th to 81st sessions), the General Debate pages of the 79th and 80th sessions (gadebate.un.org through Wayback), the ICJ's case page (archived 25 September 2026, read) and press release of 13 March 2026, the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (Fiji's official language for government documents; Fijian and Fiji Hindi texts were not searched) per indicator group. Time: about 45 minutes of research on Fiji, inside the 90-minute budget of the session.
+# Four hand-authored events: evt_2026_03_12_FJI_B4 and three C2 events (evt_2025_10_22_FJI_C2, evt_2026_06_02_FJI_C2, evt_2026_06_02_FJI_C2_2), all flagged under R18 for C2.
+country: FJI
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier FJI
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Fiji from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer FJI
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Fiji
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 1 of the 12 qualifying votes (ES-10/22), no on 6, abstention on 5. The Government''s statement of 30 October 2023 (the Ministry''s site, read)
+      explains the vote of 27 October 2023 (against the resolution, for the Canadian amendment). No disagreement found.'
+    queries:
+    - unga_votes.csv, voter FJI
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: 'No B3 event: Fiji''s declaration of intervention of 12 March 2026 argues against the applicant''s construction and is filed as B4 (evt_2026_03_12_FJI_B4).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; the Court's press release of 13 March 2026, archived)
+    checked_at: '2026-10-07'
+  B4:
+    status: has-events
+    note: 'One event: Fiji''s declaration of intervention in case 192 of 12 March 2026 (evt_2026_03_12_FJI_B4, -15, confirmed). Read in full (UNISPAL''s copy of the Court''s file, archived): it
+      asks the Court to disregard the ''holistic'' interpretation of the Genocide Convention, argues for the strict standard of proof and of dolus specialis, and says that a ''more lenient and
+      expansive interpretation'' proposed by South Africa and others would endanger peacekeeping. No withdrawal on the Court''s page (archived 25 September 2026). No statement rejecting the provisional-measures
+      orders or their binding character was found beside it.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; the Court's press release of 13 March 2026, archived)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: 'No statement of the Prime Minister, the Minister for Foreign Affairs or the Attorney-General on executing the warrants of 21 November 2024 was found on the Ministry''s site or in the
+      press searched. The Prime Minister said at the opening of Israel''s embassy in Suva (2 June 2026) that ''the human rights violations are being dealt with in the appropriate court of the
+      United Nations'' (RNZ, 3 June 2026, read): not a position on the warrants.'
+    queries:
+    - Fiji ICC arrest warrant Netanyahu Gallant Fiji government position OR Rabuka OR Ministry of Foreign Affairs
+    - 'foreignaffairs.gov.fj site searches: Israel, Gaza, Palestine, Jerusalem'
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found. The Prime Minister inaugurated Fiji''s embassy in Jerusalem with Israel''s Prime Minister
+      on 17 September 2025 (the Ministry''s release of 18 September, read): a visit by Fiji''s Prime Minister to Israel, not the hosting of a person under warrant. Israel''s Prime Minister has
+      not visited Fiji (Israel''s Foreign Minister opened Israel''s embassy in Suva on 2 June 2026).'
+    queries:
+    - Fiji ICC arrest warrant Netanyahu Gallant Fiji government position OR Rabuka OR Ministry of Foreign Affairs
+    - 'foreignaffairs.gov.fj site searches: Israel, Gaza, Palestine, Jerusalem'
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Fiji has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine: none found, and none in the annex of A/78/846 or the later recognitions (countries.yaml, read 2026-09-28). `data/structured/recognitions.csv`
+      has no row for Fiji. The Government''s statement of 30 October 2023 affirms Fiji''s solidarity with Israel; the Palestinian Ministry of Foreign Affairs asked Fiji to reverse the embassy
+      decision (PMN, read).'
+    queries:
+    - Fiji recognises State of Palestine
+    - recognitions.csv, row FJI (none)
+    checked_at: '2026-10-07'
+  B9:
+    status: none-found
+    note: 'No B9 event. Read and not filed: the General Debate statement of the 79th session (the President, Ratu Wiliame Katonivere, 26 September 2024): ''From Gaza, to Sudan, Ukraine, Afghanistan
+      and beyond – conflicts rage on'', no call and no violation named; the Prime Minister''s statement of the 80th session (26 September 2025, the Ministry''s text): conflicts ''in Ukraine, Gaza
+      or elsewhere'' and ''we cannot be talking about ending the war without guaranteeing Israel its right to peaceful existence'', no call and no violation named; the Minister''s statement of
+      1 March 2026 on the Middle East (restraint, dialogue; no mention of Gaza); the 78th session''s statement (September 2023) has no passage on Gaza. The President''s statement of the 81st session
+      (24 September 2026) is on maritime zones and climate according to the press (Fiji Sun, search result; the Government''s page was not reachable and has no Wayback capture): not read, no event.'
+    queries:
+    - Fiji Gaza ceasefire statement Prime Minister Rabuka OR Minister for Foreign Affairs United Nations General Assembly 2024 2025 2026
+    - 'foreignaffairs.gov.fj site searches: Gaza, Israel'
+    - gadebate.un.org Fiji 79th and 80th sessions (fj_en.pdf), read
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event. The Prime Minister''s statement of 13 October 2023 (the Ministry''s site, read; FBC News, read): ''We also stand with Israel. Israel has the right to defend itself and
+      her people'' and ''We stand firmly with the State of Israel and affirm its unequivocal right to defend itself against such indiscriminate attacks, as permitted by international law''. It
+      concerns the attack of 7 October, cites the Gaza Strip only as the place from which the rockets were fired, and states the right of self-defence ''as permitted by international law'' (as
+      for the United States, whose support stated with the laws of war was not filed, docs/10 B-209): R7 and the qualifying clause, so it is a lead (lead_20261007_FJI_1), with the Government''s
+      statement of 30 October 2023 (''Fiji Stands With Israel'', no named speaker, explains Fiji''s votes of 27 October) and the Prime Minister''s remark at the opening of Israel''s embassy on
+      2 June 2026 that alleged human rights violations by Israel in Gaza are ''none of our business'' (RNZ, press conference, no official transcript; lead_20261007_FJI_2). Not filed and why: the
+      Ambassador to Israel''s interview with the Jerusalem Post (reported in April 2026; an ambassador is not a B9 or B10 speaker, R3).'
+    queries:
+    - Fiji Prime Minister Rabuka unconditional support Israel right to defend itself Gaza
+    - 'foreignaffairs.gov.fj site searches: Israel, Gaza'
+    - Fiji stands with Israel Rabuka (FBC News, read)
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Fiji was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found; the movement is the other way: Fiji opened an embassy in Jerusalem on 17 September 2025 (the Ministry''s release
+      of 18 September, read) and Israel opened its embassy in Suva on 2 June 2026. An embassy''s opening or move is not an event of any indicator (docs/10 B-599).'
+    queries:
+    - Fiji ambassador recalled Israel OR relations Israel downgrade OR sever Fiji
+    - 'foreignaffairs.gov.fj site searches: Israel, Jerusalem'
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Fiji Israel agreement suspend OR review OR trade
+    checked_at: '2026-10-07'
+  C2:
+    status: has-events
+    note: 'Three events, all flagged under R18: the memorandum of understanding on cooperation in digital security and cybersecurity with Israel''s National Cyber Directorate (22 October 2025,
+      the Ministry''s release of 23 October); the memorandum on cooperation in diplomatic training and the declaration of intent in the field of national security (both 2 June 2026, the Ministry''s
+      release of 3 June). No other signed instrument was found: Israel''s Deputy Foreign Minister proposed agricultural internships and business programmes (the Ministry''s release of 23 October
+      2025), which are intentions; the Ministry''s release of 18 September 2025 on the Prime Minister''s meeting with Israel''s Foreign Minister records Fiji''s interest in expanding cooperation
+      with MASHAV. The Fiji Cabinet''s decision to open the embassy (February 2025) is not an instrument.'
+    queries:
+    - agreement signed Israel Fiji 2024 2025 2026 memorandum OR declaration
+    - 'foreignaffairs.gov.fj site searches: Israel, Jerusalem'
+    - 'PMN: Fiji and Israel sign cybersecurity pact (read)'
+    - 'RNZ: Fijian PM Rabuka rejects criticism over new Israeli embassy (read)'
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor FJI
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Fiji has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Fiji
+    - Fiji UNRWA funding suspend OR contribution
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Fiji has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Fiji
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Fiji ministry OR field hospital Fiji Gaza
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Fiji regulation
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

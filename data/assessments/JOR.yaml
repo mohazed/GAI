@@ -1,0 +1,325 @@
+# Coverage record for Jordan (docs/03 §6). P-D research session, wave 8, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-397): a first session of 2026-09-29 stopped at the usage limit after
+# archiving three items of the Jordan News Agency; this session re-checked them (hashes and texts
+# equal) and finished the protocol the same day, with a web search.
+# Sources read, read only:
+# - Jordan News Agency (Petra, petra.gov.jo, English service): the government's news agency, which
+#   publishes the Foreign Minister's statements and the texts of his speeches. Its site of 2026
+#   serves items from about February 2026 only; the former addresses
+#   (/Include/InnerPage.jsp?ID=…&lang=en&name=en_news) redirect to a "not available" page, so older
+#   items were found by web search restricted to petra.gov.jo and read and recorded from their
+#   existing Wayback captures (pnpm archive --capture); items without a capture could not be read.
+#   The new site's search form did not answer a scripted query (it returns the latest items).
+# - Ministry of Foreign Affairs and Expatriates (mfa.gov.jo): Arabic only; its news items are
+#   numbered pages (/news/NNNNNN) behind an ASP.NET listing with post-back paging and search, which
+#   were not harvested; its Gaza page (mfa.gov.jo/Gaza/index.html) is the site of the "Call for
+#   Action: Urgent Humanitarian Response for Gaza" conference of 11 June 2024.
+# - Royal Hashemite Court (rhc.jo): the news listing answers scripted requests with "Request
+#   Rejected" (a web application firewall); not read.
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv, the UN
+#   press releases archived in votes.yaml, the joint statements of foreign ministers archived for
+#   Saudi Arabia and the United Arab Emirates, UNifeed's WHO story of 4 March 2025.
+# - Web search (English): Safadi and the ICC warrants; the medical evacuations; the field
+#   hospitals; the water-for-energy deal and the water agreement; the ambassador; the April 2024
+#   interceptions; settler sanctions and settlement goods; protests and arrests.
+# Not searched or not readable: Arabic-language pages (Petra's Arabic service, the Ministry's news,
+#   the Prime Ministry), the Royal Hashemite Court, the Official Gazette, the House of
+#   Representatives, the Jordan Armed Forces' site, the Ministries of Defence, Industry and Trade
+#   and Water, the Social Security Investment Fund (C5), the Public Prosecution and courts (E1,
+#   E3).
+country: JOR
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. No Jordanian
+      document on arms deliveries to Israel was found.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Jordan had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters JOR` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-383, B-387 and B-394). No row, so the build shows
+      no-data; the same command resumes the fetch on another day. No row added to
+      a2_confirmed_military.csv; no licence register, parliamentary answer or investigation on
+      Jordanian exports to Israel under HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Jordan is not a partner, supplier or customer of the F-35 programme; no document naming
+      Jordanian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - Jordan F-35 supplier parts
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. No Jordanian order of Israeli weapons signed in the window
+      was found.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit, basing agreement or official confirmation of intelligence sharing
+      with Israel related to the Gaza campaign was found. The Royal Jordanian Air Force intercepted
+      Iranian drones and missiles crossing Jordanian airspace on 13-14 April 2024; the government
+      said it acted to protect its airspace and citizens (press summaries read, the cabinet's
+      statement not archived). That was a response to Iran's strike on Israel, not an act of the
+      Gaza campaign, and is not counted (docs/02 §2 A5: routine or unrelated arrangements are not
+      instances); a lead (lead_20260929_JOR_5), flagged for the author (docs/10 B-398 (4)).
+    queries:
+      - Jordan intercepted Iranian drones April 2024 statement government airspace
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel in the window was
+      found.
+    queries:
+      - Jordan arms export licences Israel suspended
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    queries:
+      - Jordan arms embargo Israel law decree
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port, land or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - Jordan denies transit arms shipment Israel Aqaba
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. The resolution of 27 October 2023 (A/RES/ES-10/21) was a
+      draft tabled by Jordan and presented by its representative (GA/12548, archived, lines 11 and
+      26). For the five later
+      votes without rows (B-199 (1)): the UN press releases archived in votes.yaml do not name
+      Jordan among the states against A/DEC/80/506 (GA/12707), against or abstaining on 80/1
+      (GA/12708), against 80/78 (GA/12739) or against or abstaining on the vote of 17 September
+      2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list the states. No difference
+      found.
+  B2:
+    status: not-applicable
+    note: >-
+      Jordan was not a member of the Security Council in the window (data/countries.yaml); it holds
+      no veto. Generated from unsc_vetoes.csv: no Jordanian row.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Jordan filed no declaration of intervention in case 192 (not in the ICJ list of docs/06 §8).
+      The Foreign Minister said in January 2024 that the government supports South Africa's case
+      (Jordan News, press, read by title only); support is not an intervention. Jordan took part in
+      the advisory proceedings of 2024 and 2025, which are not case 192 and have no indicator.
+    queries:
+      - Safadi International Court of Justice South Africa case Jordan intervention
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No rejection of the provisional-measures orders was found; Jordan's statements cite the
+      Court in support of its positions.
+    queries:
+      - Safadi International Court of Justice South Africa case Jordan intervention
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Jordan is a party to the Rome Statute. The press reports that the Foreign Minister said on
+      21 November 2024 that the ICC's decisions must be respected and implemented and that
+      Palestinians deserve justice (Al Jazeera's list of reactions, read in a search summary; his
+      words were posted on a social network, which does not score without an official transcript).
+      No agency item or Ministry statement carrying his words could be found or archived in this
+      session (the agency's items of November 2024 are served only through Wayback captures, which
+      exist for few of them). A lead (lead_20260929_JOR_1); filed, it would be a B5 standing state of
+      +8 from 21 November 2024.
+    queries:
+      - Safadi ICC arrest warrants Netanyahu "must be respected and implemented" Jordan November 2024
+      - Safadi International Criminal Court arrest warrants Netanyahu Gallant (petra.gov.jo, jordantimes.com, mfa.gov.jo)
+      - Wayback CDX listing of Petra item numbers 658xx (late November 2024)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no visit to Jordan by a person under warrant
+      were found.
+    queries:
+      - Safadi ICC arrest warrants Netanyahu "must be respected and implemented" Jordan November 2024
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Jordan has imposed no sanctions on ICC officials.
+    queries:
+      - Safadi International Criminal Court arrest warrants Netanyahu Gallant (petra.gov.jo, jordantimes.com, mfa.gov.jo)
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv; Jordan has no row. The registry dates its recognition to 16
+      November 1988 (data/countries.yaml, from A/78/846, a lead). No Jordanian document stating the
+      recognition and its date was archived in this session; no row added (as for Saudi Arabia, the
+      United Arab Emirates and Qatar, docs/10 B-385 (2), B-390 (5)); P-16 looks for a document of
+      1988.
+  B9:
+    status: has-events
+    note: >-
+      Six events scoped `gaza`, all on the Foreign Minister's own words or signature: his words at
+      the Doha Forum (10 December 2023) and at the Security Council (23 January 2024 and 11
+      September 2025), quoted directly or in full by the Jordan News Agency; and the joint
+      statements of the foreign ministers of eight states of 1 February 2026 (the Saudi Press
+      Agency's text), 6 August 2026 and 6 September 2026 (the texts archived for the United Arab
+      Emirates). One event scoped `west-bank`, unscored: the joint statement of 18 June 2026 on
+      settler attacks. Not filed (the standard of docs/10 B-381 (4)): the Minister's words reported
+      in indirect speech (for instance his call with the EU High Representative of 20 June 2024,
+      "war crimes" and starvation "as a weapon", read from its Wayback capture); statements of the
+      Ministry's spokesperson; the King's addresses (head of state, not a B9 speaker, docs/10 B-390
+      (2)); items whose Wayback capture was not found. B9 is at its +10 cap from August 2026. The
+      joint statement of nine Arab foreign ministers of 26 October 2023 is a lead for Qatar
+      (lead_20260929_QAT_1), which concerns Jordan too.
+    queries:
+      - petra.gov.jo Safadi Gaza genocide starvation 2026
+      - petra.gov.jo Safadi speech full text Gaza 2024 genocide UNRWA Security Council
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel or denial of documented violations by the
+      Prime Minister or the Foreign Minister was found.
+    queries:
+      - petra.gov.jo Safadi Gaza genocide starvation 2026
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions by Jordan on Israeli ministers or settler entities were found; Jordan condemned
+      settler attacks and ministers' statements in statements, which are not listings.
+    queries:
+      - Jordan sanctions settlers OR "settlement products" ban Jordan government decision 2024 2025
+  B12:
+    status: has-events
+    note: >-
+      One event (evt_2023_11_01_JOR_B12): the recall of the ambassador to Israel announced on 1
+      November 2023, with Israel told that its ambassador should not return; no official record of a
+      return was found to 29 September 2026, so the state is open.
+    queries:
+      - Jordan ambassador Israel return 2025 2026 still recalled Jordanian ambassador Tel Aviv
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or formal review of a trade or association agreement with Israel was found. The
+      Foreign Minister said on 16 November 2023 that Jordan would not sign the water-for-energy
+      agreement with Israel (a project under a memorandum of understanding of November 2022; press
+      only, Al Jazeera interview); declining to sign a project is not the suspension of an agreement
+      in force, and no official text was archived: a lead (lead_20260929_JOR_2), flagged for the
+      author (docs/10 B-398 (5)). The Qualifying Industrial Zones and the 1994 treaty's trade
+      provisions were not found suspended.
+    queries:
+      - Jordan will not sign water for energy agreement Israel Safadi November 2023
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No new trade, investment or cooperation agreement signed with Israel in the window was found.
+      The press reports that Israel extended in May 2024, for six months, the additional water
+      supply agreed in 2021, and that the arrangement lapsed in late 2025; an extension of an
+      earlier arrangement, with no official text found, is a lead (lead_20260929_JOR_3), not a new
+      agreement.
+    queries:
+      - Jordan Israel water agreement renewed 2024 2025 additional water supply signed extension
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no Jordanian row (the fetch of 2026-09-29 stopped at the reporter
+      list, see A2), so the build shows no-data; nothing is hand-authored (D-08).
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods adopted in the window was found (would be scoped west-bank, B-32).
+    queries:
+      - Jordan sanctions settlers OR "settlement products" ban Jordan government decision 2024 2025
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Jordanian public fund over conduct in Gaza or the occupied
+      territories was found; the Social Security Investment Fund was not searched.
+    queries:
+      - Jordan sanctions settlers OR "settlement products" ban Jordan government decision 2024 2025
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect adopted in the window was found.
+    queries:
+      - Jordan sanctions settlers OR "settlement products" ban Jordan government decision 2024 2025
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv has no Jordanian row (no flow from the Jordanian
+      government to the oPt appeals in the FTS responses of September 2026), so the build derives
+      none-found (no funding) and no D1 event; nothing is hand-authored. Jordan's aid to Gaza goes
+      mostly through the Jordan Hashemite Charity Organization's convoys, airdrops by the armed
+      forces, the field hospitals and the medical corridor (D4), in kind and bilateral, which FTS
+      does not record (docs/06 §7); flagged for the author (docs/10 B-399 (3)).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Jordan did not suspend its support of UNRWA; UNRWA's tables record its in-kind contributions
+      for 2022 and 2024 (D3).
+    queries:
+      - Jordan UNRWA funding suspend statement (UNRWA donor tables 2022, 2024)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_JOR_D3): UNRWA's table of 2024 gives USD 8,626,299 pledged and
+      received from Jordan, in kind; UNRWA's table of 2022 gives USD 4,241,081, in kind. The
+      increase is of in-kind support of a host country (docs/10 B-398 (3)).
+  D4:
+    status: has-events
+    note: >-
+      Two events: the Jordanian Field Hospital/2 in Khan Yunis (evt_2024_01_10_JOR_D4, dated from
+      the earliest archived official record; it arrived on 21 November 2023, press), and the
+      Jordanian Medical Corridor evacuating sick children from Gaza for treatment in Jordan from 4
+      March 2025 (evt_2025_03_04_JOR_D4). The field hospital in the north of the Gaza Strip
+      predates the war; later rotations and batches belong to the two programmes (one event per
+      programme, docs/02 §2).
+    queries:
+      - petra.gov.jo Jordanian field hospital Gaza Khan Younis
+      - petra.gov.jo Gaza children medical corridor Jordan evacuated since March 4, 2025
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found; the evacuees of the medical corridor enter
+      for treatment with family members and return (D4).
+    queries:
+      - Jordan medical evacuation 2,000 Gaza children King initiative first batch March 2025 Petra
+  E1:
+    status: unchecked
+    note: The Public Prosecution and the courts were not searched (P-16).
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decree, court record or official statement banning Palestine solidarity protests or symbols
+      was archived. Amnesty International reported in April 2024 arrests of protesters near the
+      Israeli embassy in Amman and restrictions on protests, including on holding the Palestinian
+      flag and some slogans (search summary); a lead (lead_20260929_JOR_4), unscored in v1 (D-12).
+    queries:
+      - Amnesty Jordan arrests Gaza solidarity protesters ban protests Israeli embassy 2024
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

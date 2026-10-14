@@ -1,0 +1,183 @@
+# Coverage record for Barbados (docs/03 §6). P-21 light protocol, session T-P21-06, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Foreign Trade's site (foreign.gov.bb: its statement of 26 October 2023; its own search returned no other page on
+#   Gaza), the Prime Minister's Office (pmo.gov.bb answers HTTP 403: the transcript of the address of 27 September 2024 recorded from its Wayback capture), the General Debate
+#   statements of the 78th to 81st sessions (gadebate.un.org; the 79th is an image read by OCR and replaced by the Office's transcript, the 80th archived through its Wayback
+#   capture, the 81st has none), the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 20 minutes.
+# Statements read and not filed as B9: the Prime Minister's address of 22 September 2023 (78th session: before the war); the 81st session's statement of 24 September 2026
+#   (no call); the Government's statement of 26 October 2023 (no named speaker, R3); the press conference of 18 November 2023 (press only).
+country: BRB
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Barbados to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Barbados
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Barbados from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Barbados
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on all 12 of the 12 qualifying votes. The Government''s statement of 26 October 2023 (the humanitarian ceasefire, the release of hostages) was read.
+      No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Barbados filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of the Prime Minister or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found.
+    queries: &id001
+    - Barbados Mottley Gaza ceasefire statement Israel Netanyahu ICC warrant
+    - Mottley genocide Gaza ceasefire Barbados Prime Minister statement 2025 OR 2026
+    - Barbados Palestine Israel 2026 OR 2025 Barbados government statement Gaza UNRWA OR ICC OR ICJ
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Barbados has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from recognitions.csv: recognition on 19 April 2024 (the Government''s release, src_20240419_gisbarbados_recognises-palestine). The diplomatic relations were established on
+      the same footing; the Foreign Minister said in May 2024 that the recognition does not affect relations with Israel (Barbados Today, 11 May 2024, read, not archived).'
+  B9:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Two events: the Prime Minister''s General Debate address of 27 September 2024 (the humanitarian catastrophe in Gaza as the result of the disproportionate use of force by Israel, +5,
+      decayed to zero; flagged: no call for a ceasefire) and of 26 September 2025 (''the genocidal destruction taking place in Gaza'', the disproportionate attacks and the failure to allow aid
+      access, +5; flagged). The statement of the 81st session (24 September 2026) names Gaza in a list of conflicts and calls for a two-state solution, with no call. The Government''s statement
+      of 26 October 2023 (an immediate humanitarian ceasefire, the release of all hostages; archived as src_20231026_foreign-gov-bb_statement-middle-east) names no speaker, so it is not filed
+      (R3); the Prime Minister''s press conference of 18 November 2023 (''the first televised genocide'') is known only through the press: lead_20261006_BRB_1.'
+    queries:
+    - Barbados Mottley Gaza ceasefire statement Israel Netanyahu ICC warrant
+    - Mottley genocide Gaza ceasefire Barbados Prime Minister statement 2025 OR 2026
+    - Barbados Palestine Israel 2026 OR 2025 Barbados government statement Gaza UNRWA OR ICC OR ICJ
+    - Mottley 79th General Assembly address Gaza disproportionate use of force full text
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found: the Government''s statement of 26 October 2023 condemns the attacks of 7 October and calls
+      for a humanitarian ceasefire, and the Prime Minister''s addresses of 2024 and 2025 condemn the actions of Hamas and Israel''s use of force.'
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No sanction of Israeli settlers or ministers by Barbados was found (not an EU member).
+    queries:
+    - Barbados sanctions Israeli settlers West Bank
+  B12:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No recall, downgrade or severance was found: the Foreign Minister said in May 2024 that the recognition of Palestine does not affect Barbados'' relationship with Israel, and Israel''s
+      Ambassador said on 11 May 2024 that the bilateral relations would not be affected (Barbados Today, read, not archived).'
+    queries:
+    - Barbados Israel relations ambassador 2024 2025
+    - Barbados downgrade OR recall Israel
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No trade or association agreement with Israel was found to review (not an EU member).
+    queries:
+    - Barbados Israel trade agreement suspended OR review
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No governmental instrument with Israel signed since October 2023 was found.
+    queries:
+    - Barbados Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: no Government flow of Barbados to the oPt plans (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No announcement of a suspension of UNRWA funding was found; Barbados has no row in UNRWA's donor tables.
+    queries:
+    - Barbados UNRWA contribution OR funding suspended
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No row of Barbados in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Barbados
+  D4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Barbados Gaza humanitarian aid medical OR field hospital
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Barbados visa OR refugee Palestinians Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,214 @@
+# Coverage record for the Federated States of Micronesia (docs/03 §6). P-21 light protocol, session T-P21-16, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the FSM Government's site (gov.fm: its search for Israel, Gaza, Palestine, Hamas, ceasefire and Middle East; the executive page and the posts on Israel), the Permanent Mission's site (unmission.fm: the WordPress search for Israel, Gaza, Palestin, Hamas, antisemit, hostage and Middle East, every hit of 2023 to 2026 read, six of them recorded as sources), the General Debate pages and statements of the 79th to 81st sessions (gadebate.un.org: the 79th through Wayback captures, the 80th and 81st files read live), UN Meetings Coverage's reports of the votes already archived, the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 15 minutes of research on the Federated States of Micronesia, inside the 90-minute budget of the session.
+# No hand-authored event: the President's address of 26 September 2024 never cites Gaza (R7) and the statements of support for Israel are the Permanent Mission's (R3) or the Government's reports in indirect speech (R4); two leads.
+country: FSM
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier FSM
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the Federated States of Micronesia from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt)
+      has no row for it. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer FSM
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Vanuatu
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 9 of the 12 qualifying votes, an abstention on 2 (A/RES/ES-10/26 of 11 December 2024 and A/RES/80/78 of 5 December 2025) and no vote recorded on
+      1 (A/RES/80/1 of 19 September 2025; scored as absent, B1). Its Permanent Representative explained the position at the tenth emergency special session on 1 November 2023 (archived: src_20231101_unmission-fm_ess10-lippwe-statement:
+      ''we support Israel''s right to defend its territory and its people'', a call for ''the immediate unconditional release of the hostages held by Hamas'' and for both sides to respect international
+      humanitarian law); a Permanent Representative is not a B9 or B10 speaker (R3), so it is a note. A blog of The Times of Israel (27 July 2025, press; the Wayback copy was read) says, citing
+      the UN Watch database, that Micronesia has not cast a vote against Israel in ten years; the vote table agrees for the window (never yes).'
+    queries:
+    - unga_votes.csv, voter FSM
+    - 'unmission.fm: statement of 1 November 2023 (archived, read)'
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'The Federated States of Micronesia is not on the ICJ case 192 intervention list (docs/06 §8; the Court''s page archived 25 September 2026, read; the Court''s press release of 13 March
+      2026, archived). Its participation in the advisory proceedings on Israel''s policies and practices (case 186, 2023-2024) would not be a B3 or B4 event (docs/02 §2: case 192 only); the Court''s
+      list of written statements (archived: src_20261007_icj-cij_case-186-written-proceedings) and its press release on the oral hearings (archived: src_20240226_un-unispal_icj-186-hearings-conclusion)
+      do not name it.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written and oral statements (archived pages, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; the Federated States of Micronesia is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the President or of the Secretary of Foreign Affairs on executing the warrants of 21 November 2024 was found (gov.fm and unmission.fm searched for Israel, Hamas and
+      Middle East: no such text). The Federated States of Micronesia is not among the states parties to the Rome Statute (the Assembly''s list, archived: src_20261009_icc-asp_states-parties, read).'
+    queries:
+    - Micronesia ICC arrest warrant Netanyahu Simina OR Secretary Foreign Affairs government position
+    - 'gov.fm and unmission.fm site searches (ICC, warrant: no result)'
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found; the President has not met the Prime Minister of Israel in the sources read.
+    queries:
+    - Micronesia ICC arrest warrant Netanyahu Simina OR Secretary Foreign Affairs government position
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: The Federated States of Micronesia has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for the Federated States of Micronesia, and none was added. The registry''s note records
+      that it is not in the annex of A/78/846 (recognitions to 2023) nor among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28); the Government''s own pages (gov.fm, unmission.fm)
+      state support for ''the two-State solution'', ''Israel and a State of Palestine living side by side'' (the Deputy Permanent Representative, 30 April 2026) without recognising Palestine.
+      The Government''s list of diplomatic relations (gov.fm/diplomatic-relations) was not read for a Palestine entry.'
+    queries:
+    - 'gov.fm search: Palestine (no result)'
+    - 'unmission.fm search: Palestin (read)'
+    - recognitions.csv, row FSM (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President''s address to the 79th session (26 September 2024; the delegation''s file and the Mission''s copy archived) condemns the attack of 7 October, says every nation
+      has the right to defend its people and territory and urges ''the immediate and safe release of hostages and cessation of hostilities'' in a passage on ''the ongoing conflicts in Ukraine
+      and between Israel and Palestine'': it never uses the word Gaza (R7, docs/10 B-32), so it is a lead (`lead_20261013_FSM_1`), as Jamaica''s and Uruguay''s ''the Palestinian territories''.
+      The President''s address to the 80th session (25 September 2025, the delegation''s file read live; no Wayback capture) has no passage on Gaza, Israel or Palestine; the 81st session''s statement
+      was delivered by the Vice-President, Aren Palik (26 September 2026; the Mission''s copy read live; not a B9 speaker, R3), and its only mention of the region is ''Instability in the Middle
+      East and volatile fuel prices''. The Government''s report of the President''s meeting with Israel''s ambassador (5 March 2025, archived) gives his words on ''the Israel-Gaza conflict'' and
+      a two-State solution in indirect speech (R4).'
+    queries:
+    - Micronesia Gaza ceasefire statement President Simina OR Secretary Foreign Affairs
+    - 'gov.fm search: Gaza, Israel, Hamas, ceasefire (read)'
+    - 'unmission.fm search: Gaza, Israel, Palestin, hostage (read)'
+    - gadebate.un.org Micronesia 79th to 81st sessions (fm_en.pdf, read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel, or denial of documented violations, in the words of the President or of the Secretary of Foreign Affairs and citing Gaza
+      was found. Context, flagged: the Federated States of Micronesia is among the states closest to Israel in the Assembly (nine ''no'' votes of twelve), and its Government says so, through speakers
+      who are not B10 speakers (R3) or in indirect speech (R4): the Permanent Representative on 1 November 2023 and on 9 September 2026 (''Micronesia has long stood with Israel in international
+      fora'', at the inaugural meeting of the UN Task Force on Combating Antisemitism), the Third Committee statements of the delegation on 24 October 2023 (''I wish to unequivocally condemn the
+      abhorrent attack by the terrorist organization Hamas'') and of the Permanent Representative on 30 October 2024 (on the Commission of Inquiry; read live, not recorded as sources), the Deputy
+      Permanent Representative on 30 April 2026 (''Micronesia unequivocally affirms Israel''s right to defend itself'', with a call that self-defence respect international humanitarian law; no
+      Gaza), the Government''s reports of 5 March and 28 April 2025 (''Micronesia has been consistent with its support of the State of Israel at a multilateral level''): all archived, none filed
+      (`lead_20261013_FSM_2`). The President''s own words (26 September 2024) join the right of defence to a call for cessation of hostilities and for the protection of civilians, and do not cite
+      Gaza.'
+    queries:
+    - Micronesia President Simina support Israel Gaza Hamas statement
+    - 'unmission.fm and gov.fm searches: Israel, Hamas, antisemit (read)'
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by the Federated States of Micronesia was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found; the Government''s reports show the opposite: Israel''s ambassador presented credentials in Palikir on 5 March 2025
+      and the new ambassador of the Federated States of Micronesia (cross-accredited from Washington) presented his on 28 April 2025 in Jerusalem (both archived). Neither is an indicator.'
+    queries:
+    - Micronesia ambassador Israel recalled OR relations Israel downgrade OR sever
+    - 'gov.fm search: Israel (read)'
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Micronesia Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The President told Israel's ambassador on 5 March 2025 that the country 'is keen on re-engaging with Israel to explore
+      a more progressive and productive partnership' (water management, fisheries, scholarships; the Government's report, archived), an intention and not a signed agreement; the only agreements
+      found on the Mission's site are of 2001 (the visa waiver and a 'Summary of Discussions' of the President's state visit).
+    queries:
+    - Micronesia Israel agreement OR memorandum signed 2024 2025 2026
+    - 'gov.fm and unmission.fm searches: Israel (read)'
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor FSM
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; the Federated States of Micronesia has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Micronesia
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'The Federated States of Micronesia has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Micronesia
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Micronesia ministry
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Micronesia regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

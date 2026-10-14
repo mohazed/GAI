@@ -1,0 +1,339 @@
+# Coverage record for Greece (docs/03 §6). P-D research session, wave 5, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-325): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Slovenia, Czechia, Hungary and Poland, docs/10 B-303, B-309,
+# B-315, B-320). mfa.gr and primeminister.gr refuse scripted requests (HTTP 403) but answer in the
+# built-in browser, where both sites' WordPress search API (`/wp-json/wp/v2/posts?search=…`, full
+# text, posts from 2023-10-06) was read, read-only. mfa.gr (the Ministry's current site holds its
+# releases, statements, speeches, interviews and parliamentary answers since 2023, Greek): Γάζα,
+# Γάζας, Gaza, Ισραήλ, Ισραήλ Γάζα, Παλαιστίνη, Παλαιστιν, UNRWA, Νετανιάχου, Netanyahu, Χαμάς,
+# εκεχειρία, ανθρωπιστική, Μέση Ανατολή, Israel, Palestin, ceasefire (484 posts, read by title, all
+# searched in full text for ceasefire, famine, displacement, hospital, ICC and warrant terms, about
+# 40 read in full); then Μνημόνιο Ισραήλ, υπογραφή Ισραήλ, συμφωνία Ισραήλ, Ισραηλινό ομόλογο,
+# Ισραηλινό, Ισραηλινή, UNRWA, Ποινικό Δικαστήριο, Διεθνές Δικαστήριο, Διεθνούς Δικαστηρίου,
+# εποίκων, κυρώσεις, Συμφωνία Σύνδεσης, αναγνώριση Παλαιστινιακού, στολίσκο, ιατρική εκκένωση,
+# παιδιά από τη Γάζα, Global Sumud (175 posts). primeminister.gr (Greek and English): Γάζα, Γάζας,
+# Gaza, Ισραήλ, Παλαιστιν, UNRWA, Νετανιάχου, Netanyahu, Χαμάς, εκεχειρία, κατάπαυση, Μέση
+# Ανατολή, Israel, Palestin, ceasefire (480 posts; 250 naming Gaza, Palestine or Netanyahu read by
+# title, the speeches, joint declarations and statements with Israeli or Palestinian leaders in
+# full), then searched in full text for ICC, warrant, Association Agreement, sanctions, UNRWA,
+# recognition, memorandum and genocide terms. Save Page Now is refused by both sites (HTTP 403), so
+# every source was recorded from an existing Wayback capture (`--capture`, B-188).
+# Not searched: the press; the Hellenic Parliament (questions, answers and resolutions beyond those
+# the Ministry publishes); the Ministry of National Defence (mod.mil.gr has no search API reachable
+# from the browser; exercises, basing, transit and the purchases of Israeli systems); the Ministry
+# of Development's export licensing (A2, A6); the Hellenic Police and the courts (E1–E3); the Bank
+# of Greece, the Hellenic Development Bank of Investments and public pension funds (C5); the ports
+# of Piraeus and Thessaloniki (A5, A8); hellenicaid.mfa.gr (humanitarian aid records).
+country: GRC
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (Greece had rows from P-14, so no fetch was run). Greece's own reports
+      carry HS 93 exports to Israel of USD 16,278 (2022), 2,823 (2023) and 814 (2025), and HS 8710
+      (tanks and armoured fighting vehicles, and parts) of USD 361,741 in 2025: −3 from 2026-07-13
+      (the 2025 value, V ≥ 100,000); 0 before. Israel's mirror HS 93 imports from Greece are USD
+      16,000 (2022), 21,000 (2023), 47,000 (2024) and 69,000 (2025). HS 8526 (own USD 20,620, 813,
+      39,443 and 18,545) is not counted: no licence register, parliamentary answer or investigation
+      confirming a military nature was found, and no row was added to a2_confirmed_military.csv. No
+      Greek document on arms-export licences to Israel was found on the two sites searched; the
+      Ministry of Development's licensing records and Parliament were not searched. Reported, not
+      disputed: nothing Greek contradicts the HS 8710 row.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Greek companies as suppliers of parts or maintenance for the F-35
+      programme was found in the sources searched. The Ministry of National Defence and industry
+      participation records were not searched.
+    queries:
+      - mfa.gr and primeminister.gr full-text search (Israel, Ισραήλ; read for F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Prime Minister spoke with Prime Minister Netanyahu of "defence cooperation" on 30
+      March 2025, 22 December 2025 and 24 September 2026 (primeminister.gr); Greece's orders of Israeli
+      weapons systems since October 2023 were not researched from primary documents and belong to
+      A4, never to C2.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise with Israel, transit authorisation, basing agreement or official
+      confirmation of intelligence sharing related to the Gaza campaign was found in the sources
+      searched. The Joint Declaration of 22 December 2025 (src_20251222_primeminister-gr_joint-
+      declaration-trilateral-israel, line 9) agrees to reinforce "ongoing" trilateral cooperation on
+      security, defence and military matters, a pre-existing arrangement, and announces a 2026 joint
+      exercise on marine pollution (civil); Greece's participation in the US-led Civil-Military
+      Coordination Center for Gaza is not cooperation with Israel's campaign. The Ministry of
+      National Defence and the ports were not searched (P-16).
+    queries:
+      - mfa.gr and primeminister.gr full-text search (Israel, Ισραήλ)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing licences for military exports to Israel found; the
+      Prime Minister stated on 17 September 2025 that he was not sure a suspension of the EU-Israel
+      agreement served Europe's and Greece's interests (primeminister.gr/2025/09/17/36953, not
+      archived). Export licensing records were not searched.
+    queries:
+      - mfa.gr search (κυρώσεις, Ισραήλ); primeminister.gr full-text search (sanctions, αναστολή)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree on an arms embargo on Israel found.
+    queries:
+      - mfa.gr and primeminister.gr search (Ισραήλ, Israel)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official denial of transit or port access to a vessel carrying arms to Israel found. Port
+      authorities and the Ministry of Maritime Affairs were not searched.
+    queries:
+      - mfa.gr and primeminister.gr search (Ισραήλ, Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      A/RES/ES-10/21 and 79/232; yes on ES-10/22, ES-10/23, ES-10/24, ES-10/25 and ES-10/26. The UN
+      press release GA/12626 records that Greece's delegate voted in favour of ES-10/24; the other press
+      releases do not name Greece; the Minister explained the abstention on ES-10/21 in an interview of
+      5 November 2023 (mfa.gr, not archived). No Greek document contradicts the rows. Later votes without
+      rows (docs/10 B-199 (1)): the Minister told Parliament on 16 October 2025 that Greece voted for
+      the ceasefire resolution of 12 June 2025 (ES-10/27) and for the two-state text of 12 September
+      2025 (A/DEC/80/506) (mfa.gr, not archived); A/RES/80/1, 80/78 and 80/116 are not named.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Greece has been an elected member of the Security Council since 1 January 2025 (applicable). It
+      cast no veto; it voted in favour of the ceasefire drafts vetoed on 4 June 2025 (S/PV.9929) and
+      18 September 2025 (S/PV.10000), both vetoed by a permanent member. No unsc_vetoes.csv row
+      concerns it.
+    queries:
+      - archived S/PV.9929 and S/PV.10000 (voting lists)
+      - mfa.gr search (Συμβούλιο Ασφαλείας, Γάζα)
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Greece is not in the ICJ's list of declarations of intervention in case 192 (docs/06 §8).
+    queries:
+      - mfa.gr search (Διεθνές Δικαστήριο, Διεθνούς Δικαστηρίου)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character and no
+      intervention against the applicant found. The Prime Minister said on 28 May 2024 that Greece is
+      bound by the decisions of "the International Court" (answer on the ICC prosecutor's request;
+      primeminister.gr/2024/05/28/34348, not archived).
+    queries:
+      - mfa.gr search (Διεθνές Δικαστήριο, Διεθνούς Δικαστηρίου); primeminister.gr full-text search (Δικαστήριο)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No commitment to execute the ICC warrants of 21 November 2024 by the Prime Minister or the
+      foreign or justice minister found. On 14 December 2024 the Minister of Foreign Affairs told
+      Parliament that Greece "respects the jurisdiction" of the Court but that "at this moment the
+      immediately useful is not the implementation of this decision", but a ceasefire
+      (src_20241214_mfa-gr_omilia-vouli-proypologismos, line 37): neither a commitment to execute nor a
+      stated refusal; flagged (docs/10 B-326 (1)). On 28 May 2024, before the warrants, the Prime
+      Minister said Greece is bound by the Court's decisions.
+    queries:
+      - mfa.gr search (Ποινικό Δικαστήριο, ένταλμα, Νετανιάχου)
+      - primeminister.gr full-text search (Ποινικό Δικαστήριο, ένταλμα, ICC, arrest warrant)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants and no official visit to Greece by a person under
+      warrant found. The Prime Minister met Prime Minister Netanyahu in Jerusalem (30 March 2025, 22
+      December 2025) and in New York (24 September 2026): not hosting. The Minister's statement of 14
+      December 2024 is recorded under B5 (flagged). Overflights of Greek airspace were not researched
+      (leads only, docs/06 §8).
+    queries:
+      - mfa.gr search (Ποινικό Δικαστήριο, ένταλμα, Νετανιάχου)
+      - primeminister.gr full-text search (Netanyahu, Νετανιάχου)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Greek sanctions on ICC officials (none would be expected of a state party).
+    queries:
+      - mfa.gr search (Ποινικό Δικαστήριο)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Greece has not recognised the State of Palestine (registry note; no row in recognitions.csv).
+      The Minister said on 7 June 2024 that recognition should come within the peace process, not as a
+      bilateral or unilateral act, and on 2 June 2025 that the two-state solution should be the object
+      of international recognition (src_20250602_mfa-gr_apantisi-vouli-gaza).
+    queries:
+      - mfa.gr search (αναγνώριση Παλαιστινιακού); primeminister.gr full-text search (recognition)
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Six gaza events and one west-bank event (unscored). Prime Minister: 21 October 2023 (Cairo Peace
+      Summit, +5), 26 September 2024 (General Assembly, +2), 26 September 2025 (General Assembly,
+      +5). Minister of Foreign Affairs: 15 February 2024 (+2), 12 August 2025 (joint statement, +5),
+      22 August 2025 (joint statement on E1, west-bank), 23 September 2025 (Security Council, +2).
+      Not filed (docs/10 B-325): interviews, even when the Minister names violations (Al Arabiya, 12
+      January 2024: forced displacement and collective punishment "prohibited by International Law";
+      7 June 2024: a "disproportionate reaction"); the Prime Minister's interview of 17 September 2025
+      (a "public call" to stop the operation in Gaza); the Office's reports of the Prime Minister's
+      words in indirect speech (30 March 2025, Jerusalem: the need for the cessation of Israeli
+      operations in Gaza); the Ministry's unattributed announcement of 18 October 2023 on the hospital
+      in Gaza; the joint statement on the protection of civilians of 22 May 2025 (delivered by the
+      Minister for 80 delegations, general). The joint statement of 21 July 2025 is not filed (docs/10
+      B-326 (4)). The Prime Minister's speech of 25 September 2026 (West Bank actions "illegal under
+      international law") could not be archived (no Wayback capture; Save Page Now refused with HTTP
+      403) and is not filed.
+    queries:
+      - mfa.gr search (Γάζα, κατάπαυση, εκεχειρία, λιμός, εκτοπισμός, Κοινή δήλωση)
+      - primeminister.gr full-text search (Gaza, ceasefire, Γάζα, κατάπαυση)
+  B10:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: the Joint Declaration of 22 December 2025 signed by the Prime Minister, rejecting
+      "unfounded allegations against Israel" (flagged, docs/10 B-326 (2)). The Prime Minister's words
+      in Jerusalem on 23 October 2023 ("you can count on our support, on our help") refer to
+      international law and the humanitarian cost and are not filed (standard of docs/10 B-308). His
+      answer of 17 September 2025 that he would not use the term genocide, in the same answer calling
+      the situation in Gaza impermissible, is not a denial of documented violations.
+    queries:
+      - primeminister.gr full-text search (Netanyahu, Israel, genocide, γενοκτονία)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No national sanctions listing of Israeli ministers or settlers. EU listings of violent settlers are left to P-15 (docs/10 B-229 (3) on data/wave-2) and concern the West Bank (scope west-bank, docs/10 B-32). P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_GRC_B11, evt_2024_07_15_GRC_B11 and evt_2026_05_28_GRC_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "mfa.gr search (κυρώσεις, εποίκων)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance of relations with Israel found; relations are described as a strategic partnership throughout.
+    queries:
+      - mfa.gr search (Ισραηλινό, Ισραηλινή, Πρέσβη του Ισραήλ)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Greek support for a review or suspension of the EU-Israel Association Agreement found. The
+      Minister told Parliament on 2 June 2025 that there had never been a vote on the question
+      (src_20250602_mfa-gr_apantisi-vouli-gaza); the Prime Minister said on 17 September 2025 that he
+      was not sure a suspension served Europe's and Greece's interests and that Greece would decide on
+      the final proposal (primeminister.gr/2025/09/17/36953, not archived).
+    queries:
+      - mfa.gr search (Συμφωνία Σύνδεσης); primeminister.gr full-text search (Association Agreement, Συμφωνία Σύνδεσης, αναστολή)
+  C2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: the Joint Declaration of the 10th Trilateral Summit of Israel, Greece and Cyprus of 22
+      December 2025 (annual leaders' summit, working groups), read as a cooperation agreement
+      (flagged, docs/10 B-326 (3)). No bilateral memorandum or agreement with Israel was found on the
+      Ministry's site; the Ministry of National Defence, the Ministry of Development and the other
+      ministries were not searched.
+    queries:
+      - mfa.gr search (Μνημόνιο Ισραήλ, υπογραφή Ισραήλ, συμφωνία Ισραήλ)
+      - primeminister.gr full-text search (Memorandum, agreement, Μνημόνιο)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (own reports): −5 on the 2022 report, 0 on the 2023 report (T = USD 1.09
+      billion, r = 0.756), −5 from 2025-02-25 (2024 T = 1.54 billion, r = 1.069; 2025 T = 1.53
+      billion, r = 1.056; baseline 2022 USD 1.44 billion). Israel's mirror totals are similar (USD
+      1.25 billion in 2022, 1.49 billion in 2025). No disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling measure on settlement goods found (it would be scoped west-bank).
+    queries:
+      - mfa.gr search (εποίκων, κυρώσεις)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a Greek public fund found in the sources searched; the Bank of Greece,
+      the Hellenic Development Bank of Investments and the public pension funds were not searched (P-16).
+    queries:
+      - mfa.gr and primeminister.gr search (Ισραήλ, Israel)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion concerning Israel found.
+    queries:
+      - mfa.gr and primeminister.gr search (Ισραήλ, Israel)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: +1 in the windows with a flow (USD 53,022 to the 2024 plan; USD 352,941 to
+      the 2026 plan; today +1: 0.00013 % of GNI USD 264.1 billion), 0 in the others. The Ministry
+      reports aid outside the flash appeals (EUR 200,000 through the WHO on 2 December 2024, in-kind
+      shipments through Egypt and Jordan, air drops in 2025, contributions to UNICEF and
+      UNRWA), the known FTS gap (docs/06 §7); hellenicaid.mfa.gr was not searched.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Greece did not suspend UNRWA funding: the Minister told Parliament on 2 June 2025 that Greece
+      supported UNRWA "when many European countries and other Western countries were against it"
+      (src_20250602_mfa-gr_apantisi-vouli-gaza, line 3).
+    queries:
+      - mfa.gr search (UNRWA); primeminister.gr search (UNRWA)
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event (evt_2024_12_31_GRC_D3), increased tier: USD 85,784 for 2024 against USD 30,864 for
+      2022 in UNRWA's archived tables.
+    queries:
+      - UNRWA donor tables 2022 and 2024 (archived by wave 1)
+  D4:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One programme (evt_2025_02_26_GRC_D4): the medical evacuation of children from Gaza to Greek
+      hospitals, from the operation of 26 February 2025. No Greek field hospital deployment found (the
+      Minister spoke on 15 February 2024 of expediting field hospitals with the Palestinian Authority).
+    queries:
+      - mfa.gr search (ιατρική εκκένωση, παιδιά από τη Γάζα)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or refugee pathway instrument for people from Gaza found; the evacuated children's companions were housed by the Ministry of Migration (D4).
+    queries:
+      - mfa.gr search (παιδιά από τη Γάζα, Γάζα)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Experimental, unscored. No investigation of Greek nationals or companies for conduct in Gaza
+      found; the prosecution service and courts were not searched.
+    queries:
+      - mfa.gr search (Γάζα)
+  E2:
+    status: unchecked
+    note: >-
+      Experimental, unscored. The Hellenic Police's decisions on assemblies were not searched (P-16).
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the courts were not searched.
+    queries:
+      - mfa.gr search (Γάζα)

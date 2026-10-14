@@ -2,8 +2,9 @@
  * Row schemas for the structured tables in `data/structured/` (docs/03 §1 and §7).
  *
  * CSV, UTF-8, header row, ISO dates, USD as integers. Every table has a `source` column holding
- * the id of a `dataset` source that archives the origin, or several ids joined by `;` when the row
- * is derived from more than one archived response. Columns are listed in file order; the
+ * the id of a `dataset` source that archives the origin (or, in the hand tables, an archived
+ * document: STRUCTURED_SOURCE_KINDS), or several ids joined by `;` when the row is derived from
+ * more than one archived response. Columns are listed in file order; the
  * loader rejects a header that differs.
  */
 import { z } from 'zod'
@@ -178,6 +179,28 @@ export const PopulationRow = z.strictObject({
   source: SourceIdList,
 })
 
+/**
+ * Recognition of the State of Palestine (B8, B-25): one row per recognising state, dated the day
+ * the recognition took effect, citing the archived official statement (kind official, B-31), or a
+ * dataset source. A state with no row does not recognise Palestine.
+ */
+export const RecognitionRow = z.strictObject({
+  iso3: Iso3,
+  date: IsoDate,
+  source: SourceIdList,
+})
+
+/**
+ * HS 8526 and 8802 exports to Israel confirmed as military (docs/02 §2 A2, B-30): one row per
+ * country and heading, citing the archived licence register, parliamentary answer or published
+ * investigation that names the customs code. Without a row those headings do not count in A2.
+ */
+export const A2ConfirmedMilitaryRow = z.strictObject({
+  iso3: Iso3,
+  hs: z.enum(['8526', '8802'], { error: 'expected 8526 or 8802 (docs/02 §2 A2)' }),
+  source: SourceIdList,
+})
+
 /** Every structured table: file name → columns in order and the row schema. */
 export const STRUCTURED_TABLES = {
   'unga_votes.csv': {
@@ -255,6 +278,14 @@ export const STRUCTURED_TABLES = {
     columns: ['iso3', 'year', 'population', 'source'],
     row: PopulationRow,
   },
+  'recognitions.csv': {
+    columns: ['iso3', 'date', 'source'],
+    row: RecognitionRow,
+  },
+  'a2_confirmed_military.csv': {
+    columns: ['iso3', 'hs', 'source'],
+    row: A2ConfirmedMilitaryRow,
+  },
 } as const satisfies Record<string, { columns: readonly string[]; row: z.ZodType }>
 
 export type StructuredTableName = keyof typeof STRUCTURED_TABLES
@@ -275,4 +306,27 @@ export const STRUCTURED_ISO3_COLUMN: Record<StructuredTableName, string> = {
   'comtrade_c3.csv': 'iso3',
   'gni.csv': 'iso3',
   'population.csv': 'iso3',
+  'recognitions.csv': 'iso3',
+  'a2_confirmed_military.csv': 'iso3',
+}
+
+/**
+ * Source kinds a table's `source` column may cite (docs/03 §7): a dataset source, except in the
+ * hand tables verified against documents (B-31): a veto against the UN meeting record, a
+ * recognition against the government's statement, an A2 confirmation against a licence register,
+ * a parliamentary answer or a published investigation (docs/02 §2 A2).
+ */
+export const STRUCTURED_SOURCE_KINDS: Record<StructuredTableName, readonly string[]> = {
+  'unga_votes.csv': ['dataset'],
+  'unsc_vetoes.csv': ['dataset', 'official'],
+  'fts_funding.csv': ['dataset'],
+  'fts_plan_totals.csv': ['dataset'],
+  'sipri_deliveries.csv': ['dataset'],
+  'sipri_orders.csv': ['dataset'],
+  'comtrade_a2.csv': ['dataset'],
+  'comtrade_c3.csv': ['dataset'],
+  'gni.csv': ['dataset'],
+  'population.csv': ['dataset'],
+  'recognitions.csv': ['dataset', 'official'],
+  'a2_confirmed_military.csv': ['official', 'parliamentary', 'ngo', 'press', 'dataset'],
 }

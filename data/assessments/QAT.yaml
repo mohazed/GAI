@@ -1,0 +1,333 @@
+# Coverage record for Qatar (docs/03 §6). P-D research session, wave 8, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-391): one session of 2026-09-29, with a web search used for the gaps.
+# Sources read, read only:
+# - Ministry of Foreign Affairs (mofa.gov.qa, English): its pages are rendered on the server and
+#   answer scripted requests. The site search (/en/search?indexCatalogue=mofasite&searchQuery=…,
+#   twenty items a page, every page read) was harvested by script for the terms Gaza, Palestinian,
+#   Israeli, UNRWA, "Criminal Court", "Court of Justice", "arrest warrant", recognition,
+#   evacuation, wounded, "field hospital", genocide, "joint statement", Netanyahu, "West Bank",
+#   starvation, famine, ceasefire, "Security Council" and "State of Palestine" (3,498 distinct
+#   items, 1,350 dated 7 October 2023 or later, titles and summaries read); the lists "Prime
+#   Minister Speeches" and "Press Conferences" were read through the site's own listing API
+#   (/api/DynamicItems): every speech (16) and every press conference (18) of the Prime Minister and
+#   Minister of Foreign Affairs from October 2023 was read in full, with about 40 news items. The
+#   Ministry publishes the Prime Minister's speeches and press-conference remarks as transcripts in
+#   the first person; its news items report his words mostly in indirect speech.
+# - Save Page Now answered every capture request for mofa.gov.qa on 2026-09-29 with "not-found"
+#   (HTTP 404 to the Internet Archive's crawler, while the pages answer 200 to a browser); pages were
+#   archived from existing Wayback captures (`pnpm archive --capture`) where one exists, and the
+#   others are not filed (docs/10 B-392).
+# - Amiri Diwan (diwan.gov.qa): needs JavaScript (registry note); the Amir's statements were read in
+#   the Ministry's items only.
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, gni.csv, unga_votes.csv, the UN
+#   press releases archived in votes.yaml, and the joint statements of foreign ministers archived
+#   for Saudi Arabia and the United Arab Emirates.
+# - Web search: the medical-evacuation programme, the State Department's transcripts of the joint
+#   press availabilities of October 2023, the joint statement of nine Arab foreign ministers of 26
+#   October 2023.
+# Not searched or not readable: the Amiri Diwan's own site, the Qatar News Agency (qna.org.qa), the
+#   Official Gazette (Al Meezan), the Shura Council, the Ministry of Defence, the Qatar Investment
+#   Authority (C5), the Public Prosecution and courts (E1, E3), Arabic-language pages (the Ministry's
+#   English service was read; the Arabic originals were not compared).
+country: QAT
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. No Qatari
+      document on arms deliveries to Israel was found; Qatar has had no diplomatic relations with
+      Israel since 2009.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Qatar had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters QAT` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-383 and B-387). No row, so the build shows
+      no-data; the same command resumes the fetch on another day. No row added to
+      a2_confirmed_military.csv; no licence register, parliamentary answer or investigation on
+      Qatari exports to Israel under HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar is not a partner, supplier or customer of the F-35 programme; no document naming Qatari
+      companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. No Qatari order of Israeli weapons was found.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit, basing agreement or official confirmation of intelligence sharing
+      with Israel related to the Gaza campaign was found. The Ministry's items on Israel concern the
+      mediation, the Israeli strike on Doha of 9 September 2025 (condemned as a violation of Qatar's
+      sovereignty) and statements on Gaza. The Ministry of Defence was not searched.
+    queries:
+      - mofa.gov.qa site search (Israeli, Netanyahu)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel in the window was
+      found.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - mofa.gov.qa site search (Israeli, Gaza)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. The Ministry's items agree where they speak (Qatar's
+      representative spoke for the resolution of 27 October 2023, GA/12548, archived). For the five
+      later votes without rows (B-199 (1)): the UN press releases archived in votes.yaml do not name
+      Qatar among the states against A/DEC/80/506 (GA/12707), against or abstaining on 80/1
+      (GA/12708), against 80/78 (GA/12739) or against or abstaining on the vote of 17 September
+      2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list the states. No difference
+      found.
+  B2:
+    status: not-applicable
+    note: >-
+      Qatar was not a member of the Security Council in the window (data/countries.yaml); it holds
+      no veto. Generated from unsc_vetoes.csv: no Qatari row.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar filed no declaration of intervention in case 192 (not in the ICJ list of docs/06 §8, and
+      no Ministry item reports one). It took part in the advisory proceedings on Israel's
+      obligations in relation to the United Nations and other organisations (written statement of
+      28 February 2025, oral statement of 1 May 2025, Ministry items by title); advisory proceedings
+      are not case 192 and have no indicator.
+    queries:
+      - mofa.gov.qa site search ("Court of Justice")
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No rejection of the provisional-measures orders was found; the Ministry's items cite the
+      Court's orders and opinions in support of its positions.
+    queries:
+      - mofa.gov.qa site search ("Court of Justice")
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar is not a party to the Rome Statute (it joined the 23rd Assembly of States Parties as an
+      observer, Ministry item of 3 December 2024, by title). No statement by the Prime Minister and
+      Minister of Foreign Affairs on the arrest warrants of 21 November 2024 was found in the
+      Ministry's items; the site search for "arrest warrant" returns two items, neither of them
+      his.
+    queries:
+      - mofa.gov.qa site search ("Criminal Court", "arrest warrant")
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no visit to Qatar by a person under warrant
+      were found.
+    queries:
+      - mofa.gov.qa site search ("Criminal Court", Netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Qatar has imposed no sanctions on ICC officials.
+    queries:
+      - mofa.gov.qa site search ("Criminal Court")
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv; Qatar has no row. The registry dates its recognition to 16
+      November 1988 (data/countries.yaml, from A/78/846, a lead). No Qatari document stating the
+      recognition and its date was found: the site search for "recognition" and "State of Palestine"
+      returns Qatar's calls on other states to recognise Palestine and its welcome of their
+      recognitions, not its own. No row added (as for Saudi Arabia and the United Arab Emirates,
+      docs/10 B-382 (4), B-387 (5)); P-16 looks for a document of 1988.
+    queries:
+      - mofa.gov.qa site search (recognition, "State of Palestine")
+  B9:
+    status: has-events
+    note: >-
+      Eleven events scoped `gaza`, all on the Prime Minister and Minister of Foreign Affairs' own
+      words: his remarks at the joint press availability with the US Secretary of State in Doha of
+      13 October 2023 (the State Department's transcript), his press-conference remarks of 6
+      February 2024 and 12 June 2024 (with the US Secretary of State), 28 August 2025 (with the
+      Egyptian Foreign Minister, Cairo) and 12 May 2026 (with Türkiye's Foreign Minister), his
+      speeches at the Summit of the Future (22 September 2024), the Doha Forum (7 December 2024) and
+      the two-state solution conference (28 July 2025); and the joint statements of the foreign
+      ministers of eight states of 1 February 2026 (the Saudi Press Agency's text), 6 August 2026 and
+      6 September 2026 (the texts archived for the United Arab Emirates). One event scoped
+      `west-bank`, unscored: the joint statement of 18 June 2026 on settler attacks. Not filed (the
+      standard of docs/10 B-381 (4)): the Ministry's unsigned statements; the words of the Official
+      Spokesperson (the Adviser to the Prime Minister, Majed Al-Ansari); the Prime Minister's words
+      reported in indirect speech (for instance 5 November 2023 with the French Foreign Minister,
+      "genocidal practices", and 7 January 2024 with the US Secretary of State); statements in the
+      same weeks as a filed one (the Security Council speech of 11 September 2025 on the Israeli
+      strike on Doha, which cites "the ongoing genocide in Gaza"; the press conference with the
+      Egyptian Foreign Minister of 20 August 2026; the high-level meeting of 23 September 2026);
+      statements by the Ministers of State and the Permanent Representative, who are not B9
+      speakers. The press conference with Türkiye's Foreign Minister in Doha (27 April 2025, per
+      the Ministry's list; "We cannot accept the starvation of the brotherly Palestinian people")
+      is archived (src_20250427_mofa-qa_pm-press-conference-turkiye) but not filed: its page carries
+      no date and the dated news item of that day could not be archived (docs/10 B-392). The Amir,
+      head of state, is not a B9 speaker (docs/10 B-390 (2)); his addresses (the General Assembly,
+      the Arab-Islamic summits) and the call of 8 August 2024 with the Presidents of Egypt and the
+      United States were not filed. The joint statement of nine Arab foreign ministers of 26
+      October 2023 is a lead (lead_20260929_QAT_1).
+    queries:
+      - mofa.gov.qa site search (Gaza, ceasefire, genocide, starvation, famine, "joint statement")
+      - mofa.gov.qa Prime Minister Speeches and Press Conferences (every item from October 2023)
+      - state.gov Secretary Blinken Qatari Prime Minister joint press availability Doha October 13 2023 transcript
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel or denial of documented violations by the
+      Prime Minister and Minister of Foreign Affairs was found.
+    queries:
+      - mofa.gov.qa site search (Israeli, Netanyahu)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions by Qatar on Israeli ministers or settler entities were found; Qatar condemned
+      settler attacks and settlement decisions in statements, which are not listings.
+    queries:
+      - mofa.gov.qa site search ("West Bank")
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar has had no diplomatic relations or trade office with Israel since 2009; no recall,
+      downgrade or severance was possible or found in the window.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar has no trade or association agreement with Israel to suspend or review; no measure was
+      found.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No agreement with Israel signed in the window was found. The Prime Minister signed the
+      document of Qatar's accession to the Board of Peace (22 January 2026, Ministry item by title);
+      it is not an agreement with Israel and has no indicator.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no Qatari row (the fetch of 2026-09-29 stopped at the reporter list,
+      see A2), so the build shows no-data; nothing is hand-authored (D-08).
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods adopted in the window was found (would be scoped west-bank, B-32).
+    queries:
+      - mofa.gov.qa site search ("West Bank")
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Qatari public fund over conduct in Gaza or the occupied
+      territories was found in the Ministry's items; the Qatar Investment Authority was not
+      searched.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect adopted in the window was found.
+    queries:
+      - mofa.gov.qa site search (Israeli)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: fts_funding.csv carries Qatari government flows in every window; USD
+      261,930,830 in September 2025 to August 2026 against GNI USD 220,925,653,211 (2025), 0.119 %,
+      the +12 tier (+1 in the windows to mid-2024, +6 from October 2024, +12 from October 2025).
+      Qatar's own figures for Gaza (aid flights, the fuel land bridge of 2025, the pledge of a
+      further USD 100 million of 26 September 2024) are larger than FTS's for 2023 and 2024, as
+      docs/06 §7 expects for bilateral and in-kind aid.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Qatar did not suspend funding of UNRWA; the Ministry warned of the consequences of the
+      suspensions (item of 27 January 2024, by title) and the Prime Minister said in Doha on 6
+      February 2024 that the suspension "will have catastrophic consequences" (press-conference
+      transcript, not archived: Save Page Now refused the page, docs/10 B-392).
+    queries:
+      - mofa.gov.qa site search (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_QAT_D3): UNRWA's table of 2024 gives USD 50,664,265 pledged and
+      41,787,120 received from Qatar (including Qatar Charity and Qatar Red Crescent), of which USD
+      34,274,424 to the programme budget; UNRWA's table of 2022 gives USD 10,500,000 for Qatar. The
+      Minister of State for International Cooperation said on 26 September 2024 that Qatar has
+      continuously increased its donations to UNRWA (archived). The QFFD-UNRWA agreement of 17 June
+      2025 (USD 20 million for 2025-2026, Ministry item by title) is later than the comparison year.
+  D4:
+    status: has-events
+    note: >-
+      One event (evt_2023_12_25_QAT_D4): the Amir's initiative to treat 1,500 wounded Palestinians
+      from Gaza in Doha, dated from the earliest archived official record of the programme in
+      operation (the fifth batch, 25 December 2023); the first flight was earlier in December 2023
+      (press; not confirmed from an archived primary). Later batches (to the 21st batch of 4 April
+      2024 and beyond, Ministry items by title) are part of the programme. The field hospitals
+      flown to Al-Arish for delivery to Gaza (14 November 2023) were not filed: no primary confirms
+      a deployment inside Gaza. Qatar's evacuations of Palestinians holding Qatari residency and of
+      foreign nationals are not medical programmes.
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found; the evacuation of Palestinians holding
+      Qatari residency (Ministry items of 21 November and 1 December 2023) and the treatment of the
+      wounded in Doha (D4) are not new legal instruments.
+    queries:
+      - mofa.gov.qa site search (evacuation, wounded)
+  E1:
+    status: unchecked
+    note: The Public Prosecution and the courts were not searched (P-16).
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decree, court record or official statement banning Palestine solidarity protests or symbols
+      in the window was found in the Ministry's items; no NGO or press report of such a ban was met
+      in the searches.
+    queries:
+      - mofa.gov.qa site search (Gaza)
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

@@ -28,7 +28,8 @@
     "build:data:check": "tsx packages/pipeline/src/cli/build-data-check.ts",
     "publish:events": "tsx packages/pipeline/src/cli/publish-events.ts",
     "build": "pnpm build:data && turbo run build",
-    "dev": "pnpm --filter @gai/web dev"
+    "dev": "pnpm --filter @gai/web dev",
+    "calibrate": "tsx packages/pipeline/src/cli/calibrate.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",

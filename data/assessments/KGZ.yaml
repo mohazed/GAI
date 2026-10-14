@@ -1,0 +1,199 @@
+# Coverage record for Kyrgyzstan (docs/03 §6). P-21 light protocol, session T-P21-01, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.kg: answers HTTP 502 to scripted requests; read
+#   through Wayback captures of its home pages only), the President's site (president.kg: a script-loaded interface with no
+#   text in its HTML, so statements are not readable or archivable there), the General Debate statements of the United
+#   Nations (gadebate.un.org, Wayback capture of the 80th session in Russian and English, archived), the generated
+#   events and the structured tables; web searches in English and in Russian (the working language of the Government)
+#   per indicator group. Time: about 8 minutes.
+# Statements read and not filed as B9: the Ministry's statement on the escalation of October 2023 (calling the parties to
+#   cease hostilities, a ministry release without a named speaker, press) and the Minister's meeting with Palestine's
+#   ambassador of 16 November 2023 (a press account of what the Minister said, lead_20261005_KGZ_1).
+country: KGZ
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from
+      Kyrgyzstan to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KGZ
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data
+      until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Kyrgyz order of Israeli major arms in the register. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer KGZ
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote. The Ministry''s releases on the votes were
+      not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window: elected for 2027–2028 (countries.yaml memberships.unsc,
+      from 2027-01-01).'
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kyrgyzstan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+      The President asked in the General Assembly for an international judicial investigation by the ICJ (evt_2025_09_23_KGZ_B9),
+      which is not a filing.
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Kyrgyzstan
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position
+    - Казахстан Кыргызстан МИД Международный суд ООН дело ЮАР против Израиля
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - Казахстан Кыргызстан МИД Международный суд ООН дело ЮАР против Израиля
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the Government on executing the warrants of 21 November 2024 was found.
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position
+    - Казахстан Кыргызстан МИД Международный суд ООН ордер МУС Нетаньяху позиция
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kyrgyzstan has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Kyrgyz row. The registry gives the month November 1995
+      (A/78/846 annex) and records that no official statement was found for it (P-14); the President said in the
+      General Assembly that Kyrgyzstan supports Palestine''s independence on the 1967 borders (statement of 23 September
+      2025) and an earlier press item has him say Kyrgyzstan recognises it (AKIpress, not read). No row (R21, docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher.'
+    queries:
+    - Kyrgyzstan Japarov Gaza Palestine statement ceasefire Kyrgyz Foreign Ministry Israel
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the President''s General Debate statement of 23 September 2025 (demand for an end to the genocide
+      against the Palestinians, +5). The President addressed the 81st session on 22 September 2026 and touched on
+      Palestine (press): the General Debate site''s text for the 81st session was not captured by Wayback (lead_20261005_KGZ_1).'
+    queries:
+    - Kyrgyzstan Japarov Gaza Palestine statement ceasefire Kyrgyz Foreign Ministry Israel
+    - president.kg Жапаров Генеральная Ассамблея ООН 2025 выступление геноцид палестинцев Газа
+    - Кулубаев МИД Кыргызстана Газа Палестина заявление прекращение огня выступление министр иностранных дел Кыргызстана
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries:
+    - Tokayev OR Japarov Israel "right to self-defense" support Israel Gaza statement unconditional president
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kyrgyzstan has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; Israel's ambassador to Kazakhstan is also accredited to Kyrgyzstan
+      (non-resident, press).
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  C1:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No agreement, memorandum or cooperation instrument signed with Israel since October 2023 was found.
+    queries:
+    - Кыргызстан Израиль соглашение меморандум подписали 2024 2025 2026 МИД Кулубаев Израиль
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Kyrgyz government flow to the oPt plans in any window (no row in fts_funding.csv
+      or fts_plan_totals.csv), a real zero under docs/02 §5. The Ministry of Emergency Situations delivered humanitarian
+      aid on behalf of citizens'' collections (mchs.gov.kg, press): not a government flow in FTS.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding; Kyrgyzstan has no row in UNRWA's donor tables for 2022,
+      2023 or 2024.
+    queries:
+    - Kyrgyzstan humanitarian aid Gaza UNRWA contribution Kyrgyz government Palestinians 2024 2025
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No row for Kyrgyzstan in UNRWA's donor tables for 2022, 2023 and 2024 (archived), so no contribution to
+      compare and no restoration.
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Kyrgyzstan
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Кыргызстан гуманитарная помощь Газа палестинцы лечение виза эвакуация МИД Кыргызстана 2024 2025
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Кыргызстан гуманитарная помощь Газа палестинцы лечение виза эвакуация МИД Кыргызстана 2024 2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

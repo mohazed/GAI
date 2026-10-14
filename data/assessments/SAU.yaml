@@ -1,0 +1,328 @@
+# Coverage record for the Kingdom of Saudi Arabia (docs/03 §6). P-D research session, wave 8, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-381): the first session of 2026-09-29 had no web search (the run's
+# allowance of 200 calls was used up, as for the wave-7 countries); it stopped on a network error
+# and a second session of the same day finished the protocol with a web search, used for the gaps
+# listed below (A5, B5, B8, D4, E2) and for the leads in data/leads/SAU.yaml. Sources read, read only:
+# - Saudi Press Agency (www.spa.gov.sa, the official news agency; the Royal Court, the Council of
+#   Ministers and the Ministry of Foreign Affairs publish through it). Its pages are rendered in the
+#   browser from the agency's public API (portalapi.spa.gov.sa/api/v1/news/search, GET, the search
+#   the site's own search page calls). English titles from 7 October 2023 to 28 September 2026 were
+#   harvested for the terms Gaza (2,299 items), Palestin, Israel, ceasefire, genocide, UNRWA,
+#   "Criminal Court", "Court of Justice", "Crown Prince", recogni, evacuat, hospital, medical,
+#   "air bridge", "Security Council" and "General Assembly" (12,135 distinct items); the bodies of
+#   the 1,530 items on Gaza, Palestine, Israel, the Courts or UNRWA not issued by other bodies
+#   (OIC, Arab League, GCC secretariat, Arab Parliament, Muslim World League, other states), and of
+#   the Crown Prince's speeches and summit items, were fetched and searched by script; about 60
+#   were read in full. Every speech of the Crown Prince and Prime Minister and every General
+#   Assembly and Security Council statement of the Foreign Minister in the window was read.
+# - Ministry of Foreign Affairs (www.mofa.gov.sa): the English statements page answers but lists
+#   few items after 2023; the Ministry's statements are published by the Saudi Press Agency.
+# - UNRWA's donor tables for 2022 and 2024, fts_funding.csv, unga_votes.csv.
+# - Web search (second session): Saudi interceptions of Iranian drones (A5), Saudi reactions to the
+#   ICC warrants (B5, including Just Security's tracker of state reactions), the recognition of 1988
+#   (B8), medical evacuations to Saudi Arabia (D4, WHO's receiving-country figures), arrests over
+#   Gaza posts (E2); UN meetings coverage SC/15462 (archived) for the date of the Council statement.
+# Not searched: press and NGO reports beyond those searches; the Shura Council, the Umm Al-Qura
+# gazette and the Bureau of Experts (laws and decrees); the Ministries of Defence, Commerce and
+# Investment, and the General Authority for Military Industries (A4, A5, C1, C2, C4); the Public
+# Investment Fund (C5); the Public Prosecution and courts (E1–E3); Arabic-language pages (the
+# agency's English service carries the statements read; the Arabic originals were not compared).
+country: SAU
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Saudi
+      Arabia has no diplomatic relations with Israel and is not known as a supplier of arms to it.
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Saudi Arabia had no Comtrade rows (docs/10 B-194); `pnpm
+      fetch:comtrade --reporters SAU` was run on 2026-09-29 and stopped before any trade query:
+      Save Page Now refused to capture the Comtrade reporter list, already captured five times that
+      day by the earlier sessions (error:too-many-daily-captures, docs/10 B-383). No row, so the
+      build shows no-data; the same command resumes the fetch on another day. No row added to
+      a2_confirmed_military.csv; no Saudi document on arms exports to Israel was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Saudi Arabia is not a partner, supplier or customer of the F-35 programme; no document naming
+      Saudi companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - spa.gov.sa titles (Israel) and item bodies (F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902); left to the build. The Ministry of Defence and the General Authority
+      for Military Industries were not searched.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found in the agency's items. Press reports on Saudi
+      Arabia's role during Iran's missile and drone attacks on Israel of April 2024 are a lead
+      (lead_20260929_SAU_1: reported interceptions, denied by unnamed sources); no Saudi official
+      document on them was found, and an interception of Iranian projectiles is not cooperation
+      activated for the Gaza campaign. The Ministry of Defence was not searched.
+    queries:
+      - spa.gov.sa titles (Israel, Gaza)
+      - Saudi Arabia intercepted Iranian drones Israel April 2024 report
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel in the window was
+      found; Saudi Arabia has no diplomatic or declared trade relations with Israel, and no
+      measure adopted since 7 October 2023 was found.
+    queries:
+      - spa.gov.sa titles (Israel)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    queries:
+      - spa.gov.sa titles (Israel)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - spa.gov.sa titles (Israel, Gaza)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. The agency's items agree where they speak: the Foreign
+      Minister thanked states for their vote on the resolution of 27 October 2023 (items of 30
+      October 2023, by title), and the Ministry welcomed 79/232 (the item of 20 December 2024,
+      "Saudi Arabia Welcomes UN Adoption of a Resolution on Israel's Obligations", by title). For the five
+      later votes without rows (B-199 (1)): the Kingdom co-chaired the conference whose New York
+      Declaration A/DEC/80/506 endorsed, and the Foreign Minister's UNGA 80 address (28 September
+      2025) praised it; no item read states Saudi Arabia's own vote on ES-10/27, A/DEC/80/506,
+      80/1, 80/78, 80/116 or the vote of 17 September 2026. The UN press releases archived in
+      votes.yaml agree as far as they name states: Saudi Arabia is not among the states against or
+      abstaining on 80/1 (GA/12708) nor among those against 80/78 (GA/12739), and France's representative
+      introduced A/DEC/80/506 also speaking for Saudi Arabia (GA/12707); the releases of ES-10/27 and 80/116 do not list the
+      states. No difference found.
+  B2:
+    status: not-applicable
+    note: Not a member of the Security Council in the window (set by the build's rule).
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Saudi Arabia filed no declaration of intervention in case 192 (not in the ICJ list of
+      docs/06 §8, and no agency item reports one). It took part in the advisory proceedings (the
+      ambassador's oral submission of 21 February 2024, in the proceedings on the occupied
+      Palestinian territory; the sitting of 29 April 2025 on Israel's obligations, by title);
+      advisory proceedings are not case 192 and have no indicator.
+    queries:
+      - spa.gov.sa titles (Court of Justice, ICJ)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No rejection of the provisional-measures orders was found; the Ministry welcomed the orders
+      of 26 January, 28 March and 24 May 2024 (items of 26 January, 29 March and 24 May 2024).
+    queries:
+      - spa.gov.sa titles (Court of Justice)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Saudi Arabia is not a party to the Rome Statute. No statement by the Crown Prince and Prime
+      Minister or the Foreign Minister on the arrest warrants of 21 November 2024 was found (the
+      agency's items on the warrants are the Arab Parliament's, 24 November 2024).
+    queries:
+      - spa.gov.sa titles (Criminal Court) and item bodies (arrest warrant)
+      - Saudi Arabia statement ICC arrest warrant Netanyahu November 2024 Saudi foreign ministry
+      - justsecurity.org, Mapping State Reactions to the ICC Arrest Warrants (Saudi Arabia not listed)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement refusing to execute the warrants and no visit of a person under warrant was found.
+    queries:
+      - spa.gov.sa titles (Criminal Court) and item bodies (arrest warrant)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Saudi Arabia has imposed no sanctions on ICC officials.
+    queries:
+      - spa.gov.sa titles (Criminal Court)
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv; Saudi Arabia has no row. The registry dates its recognition
+      to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Saudi statement stating
+      the Kingdom's own recognition was found in the items searched ("recogni", 1988): the
+      Kingdom's statements call on states "that have not yet recognized" the State of Palestine to
+      do so (Ministry statement of 7 February 2024, archived; the Crown Prince at the Arab Summit of
+      16 May 2024) and it accredits a non-resident ambassador to the State of Palestine (items of
+      22 November 2023 onward), which imply but do not state a recognition. No row added (docs/10
+      B-382 (4)); the build derives nothing from a missing row. P-16 looks for a Saudi document of
+      1988 or a statement of the recognition.
+    queries:
+      - spa.gov.sa titles (recogni) and item bodies (recognized the State of Palestine, 1988, State of Palestine)
+      - Saudi Arabia recognized State of Palestine 1988 official statement date recognition
+  B9:
+    status: has-events
+    note: >-
+      Seven events, all scoped `gaza` (the speaker's own words in full texts of speeches or direct
+      quotes published by the Saudi Press Agency, documents citing Gaza): the Foreign Minister at
+      the Security Council (24 October 2023, the day of the Council's meeting per SC/15462), the Crown Prince and
+      Prime Minister at the Joint Arab-Islamic Extraordinary Summit (11 November 2023) and the Arab
+      Summit in Manama (16 May 2024), the Foreign Minister at the General Assembly (28 September
+      2024), the Crown Prince at the Shura Council (10 September 2025), the joint statement of the
+      Foreign Ministers of eight states on the Gaza ceasefire (1 February 2026) and the Foreign
+      Minister at the General Assembly (26 September 2026). Not filed (docs/10 B-381 (4)): the
+      Ministry's unsigned statements (for instance 16 November 2023 on Al-Shifa hospital), the
+      Council of Ministers' statements, the Foreign Minister's words reported in indirect speech
+      (9 November 2023; 4 March 2025 at the Extraordinary Arab Summit; 29 July 2025 at the
+      two-State conference; 25 August 2025 at the OIC, "starvation, displacement, and genocide"),
+      further statements in the same weeks as a filed one (the Foreign Minister at the Security
+      Council, 30 November 2023 and 27 September 2024), and statements whose document does not cite
+      Gaza (B-32 read literally, as B-371 (4)): the Crown Prince at the Shura Council (18 September
+      2024, "the crimes of the Israeli occupation authority") and at the Extraordinary Arab and
+      Islamic Summit (11 November 2024, "the genocide perpetrated by Israel against the Palestinian
+      people"), and the Foreign Minister at the General Assembly (28 September 2025, "war crimes
+      and acts of genocide"). The King, head of state, is not a B9 speaker; the Crown Prince has
+      been Prime Minister since September 2022.
+    queries:
+      - spa.gov.sa titles (Gaza, Palestin, ceasefire, genocide, Crown Prince, General Assembly, Security Council)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel or denial of documented violations by the
+      Crown Prince and Prime Minister was found.
+    queries:
+      - spa.gov.sa titles (Israel, Crown Prince)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions on Israeli ministers or settler entities by Saudi Arabia were found; the Kingdom
+      joined joint statements condemning settler violence and settlement decisions (for instance 18
+      June 2026, by title), which are not listings.
+    queries:
+      - spa.gov.sa titles (Israel, Palestin) and item bodies (sanction)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Saudi Arabia has no diplomatic relations with Israel, so there was nothing to recall,
+      downgrade or sever. The Ministry's statement of 7 February 2024 (archived) says there will be
+      no diplomatic relations with Israel unless an independent Palestinian State is recognised and
+      the aggression on the Gaza Strip stops, and the Crown Prince repeated the condition at the
+      Shura Council (18 September 2024); a condition on future relations is not a B12 measure.
+    queries:
+      - spa.gov.sa titles (Israel) and item bodies (normalization)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No trade or cooperation agreement between Saudi Arabia and Israel exists to suspend or review.
+    queries:
+      - spa.gov.sa titles (Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No agreement with Israel was signed in the window. The Foreign Minister signed the founding
+      charter of the Board of Peace on 22 January 2026 (agency item of that day); it is not an
+      agreement with Israel and has no indicator.
+    queries:
+      - spa.gov.sa titles (Israel)
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no Saudi row (the fetch of 2026-09-29 stopped at the reporter list,
+      see A2 and docs/10 B-383), so the build shows no-data. Saudi Arabia declares no trade with
+      Israel; whether Israel's mirror data carry Saudi flows will be known when the fetch runs.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods adopted in the window was found (would be scoped west-bank, B-32).
+    queries:
+      - spa.gov.sa titles (Israel, Palestin) and item bodies (boycott)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Saudi public fund over conduct in Gaza or the occupied territories
+      was found in the agency's items; the Public Investment Fund and the central bank were not
+      searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect adopted in the window was found.
+    queries:
+      - spa.gov.sa titles (Israel)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: fts_funding.csv carries Saudi government flows to the oPt appeals in 36
+      monthly windows (USD 19,470,371 in the window September 2025 to August 2026; plan totals USD
+      17,000,000 for 2023, 69,928,664 for 2024, 17,557,092 for 2025 and 13,994,623 for 2026);
+      with GNI USD 1,333,696,983,986 (2025) the latest share is 0.00146 %, the +3 tier. The
+      Foreign Minister's UNGA 79 address gives about USD 185 million delivered through KSrelief
+      since October 2023 and USD 106 million of agreements with UN and international organisations
+      (not all reported to FTS, docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Saudi Arabia did not suspend its funding of UNRWA; the Foreign Minister said at the General
+      Assembly (28 September 2024) that the Kingdom remains committed to supporting UNRWA, and the
+      Kingdom joined the statement of 12 December 2025 affirming UNRWA's role.
+    queries:
+      - spa.gov.sa titles (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_SAU_D3): UNRWA's tables give USD 42,279,765 pledged and received
+      from Saudi Arabia (including KSrelief) for 2024 against USD 27,000,000 for 2022.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical evacuation hosted in Saudi Arabia and no field hospital deployed by it in Gaza was
+      found. KSrelief funds the treatment in Jordan of cancer patients evacuated from Gaza (an
+      agreement of July 2024 with the King Hussein Cancer Foundation for 150 patients; items of 31
+      December 2025 and 24 May 2026); the evacuations are hosted by Jordan, so not filed as a Saudi
+      D4 event (docs/10 B-382 (3)).
+    queries:
+      - spa.gov.sa titles (evacuat, hospital, medical, Gaza)
+      - Saudi Arabia medical evacuation Gaza patients treated in Saudi hospitals KSrelief 2025
+      - WHO medical evacuations Gaza receiving countries (Saudi Arabia not among the receiving countries in the figures to 10 September 2025)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+      - spa.gov.sa titles (Gaza) and item bodies (visa)
+  E1:
+    status: unchecked
+    note: The Public Prosecution and the courts were not searched (P-16).
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decree, court record or official statement banning Palestine solidarity protests or
+      symbols in the window was found; public demonstrations are prohibited generally, not by a
+      measure of the window. Press reports of arrests over Gaza posts and of a pilgrim who raised
+      the Palestinian flag are a lead (lead_20260929_SAU_2).
+    queries:
+      - Saudi Arabia arrested Gaza Palestine solidarity social media posts 2024 2025 Human Rights Watch Amnesty
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

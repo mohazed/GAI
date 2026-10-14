@@ -40,6 +40,53 @@ describe('universe and names', () => {
 })
 
 describe('UN votes', () => {
+  // The header of the UN Digital Library bulk file (record 4060887) as read on 2026-09-28: the
+  // file of 31 March 2025 (corr. 1, archived) and the file of 6 February 2026, which adds
+  // `vote_note` after `subjects`. Non-voting is `X` in `ms_vote`.
+  it('reads the real bulk header and rows (2026 layout)', () => {
+    const csv = [
+      'undl_id,ms_code,ms_name,ms_vote,date,session,resolution,draft,committee_report,meeting,title,agenda_title,subjects,vote_note,total_yes,total_no,total_abstentions,total_non_voting,total_ms,undl_link',
+      '4025240,AFG,AFGHANISTAN,Y,2023-10-27,ES-10,A/RES/ES-10/21,A/ES-10/L.25,,A/ES-10/PV.41,Protection of civilians and upholding legal and humanitarian obligations : resolution / adopted by the General Assembly,Illegal Israeli actions,TERRITORIES OCCUPIED BY ISRAEL--SETTLEMENT POLICY,,120.0,14.0,45.0,14.0,193.0,https://digitallibrary.un.org/record/4025240',
+      '4025240,BEN,BENIN,X,2023-10-27,ES-10,A/RES/ES-10/21,A/ES-10/L.25,,A/ES-10/PV.41,Protection of civilians and upholding legal and humanitarian obligations : resolution / adopted by the General Assembly,Illegal Israeli actions,TERRITORIES OCCUPIED BY ISRAEL--SETTLEMENT POLICY,,120.0,14.0,45.0,14.0,193.0,https://digitallibrary.un.org/record/4025240',
+    ].join('\n')
+    expect(parseVotesCsv(csv, 'bulk.csv').votes).toEqual([
+      { symbol: 'A/RES/ES-10/21', date: '2023-10-27', iso3: 'AFG', vote: 'Y' },
+      { symbol: 'A/RES/ES-10/21', date: '2023-10-27', iso3: 'BEN', vote: 'X' },
+    ])
+  })
+
+  it('reads a real MARCXML voting record: 967 $a is a number, $c the code, no $d for non-voting', () => {
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+<record>
+  <controlfield tag="001">4025240</controlfield>
+  <datafield tag="269" ind1=" " ind2=" ">
+    <subfield code="a">2023-10-27</subfield>
+  </datafield>
+  <datafield tag="791" ind1=" " ind2=" ">
+    <subfield code="a">A/RES/ES-10/21</subfield>
+    <subfield code="b">A/</subfield>
+    <subfield code="c">10emsp</subfield>
+  </datafield>
+  <datafield tag="967" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="c">ALB</subfield>
+    <subfield code="d">A</subfield>
+    <subfield code="e">ALBANIA</subfield>
+  </datafield>
+  <datafield tag="967" ind1=" " ind2=" ">
+    <subfield code="a">19</subfield>
+    <subfield code="c">BEN</subfield>
+    <subfield code="e">BENIN</subfield>
+  </datafield>
+</record>
+</collection>`
+    expect(parseVotesFile(xml, 'rec.xml').votes).toEqual([
+      { symbol: 'A/RES/ES-10/21', date: '2023-10-27', iso3: 'ALB', vote: 'A' },
+      { symbol: 'A/RES/ES-10/21', date: '2023-10-27', iso3: 'BEN', vote: 'X' },
+    ])
+  })
+
   const qualifying = [
     { symbol: 'A/RES/ES-10/21', date: '2023-10-27', counts: { yes: 2, no: 1, abstain: 1 } },
     { symbol: 'A/RES/ES-10/22', date: '2023-12-12', counts: { yes: 1, no: 0, abstain: 0 } },
@@ -181,6 +228,101 @@ describe('SIPRI', () => {
       ['AZE', 2025, 10],
     ])
     expect(r.uncertainYears).toEqual(['Azerbaijan (2025)'])
+  })
+
+  // Excerpts of the exports of the SIPRI interface read on 2026-09-28 (armstransfers.sipri.org,
+  // "Import/Export values", recipient Israel by supplier, 2022–2025; "Transfer register",
+  // supplier Israel): title lines, header and rows as the site writes them, fewer rows.
+  const REAL_TIV = [
+    'Volume of transfers of major arms',
+    'Figures are in millions of SIPRI trend-indicator values (TIVs).',
+    "A '0' indicates that the volume of deliveries is between 0 and 0.5 million SIPRI TIV. An empty field indicates that no deliveries have been identified.",
+    'Figures may not add up to stated totals due to the conventions of rounding.',
+    'For the method used for the SIPRI TIV see <https://www.sipri.org/databases/armstransfers/sources-and-methods>.',
+    '',
+    'Source: SIPRI Arms Transfers Database (c) SIPRI.',
+    'Data generated: 28 Sep 2026 9:10:08 AM',
+    '',
+    'Supplier,2022,2023,2024,2025,2022-2025,Percentage,Sum total years,Percentage of total',
+    'United States,430,459,186,490,1565,63%,1565,63%',
+    'Germany,398,399,35,36,867,35%,867,35%',
+    'Italy,6,6,16,11,38,1.5%,38,1.5%',
+    'Total exports to Israel,833,863,237,537,2470,100%,2470,',
+    '',
+  ].join('\n')
+
+  it('reads the real TIV export: "Total exports to Israel" is the total row', () => {
+    const r = importDeliveries(REAL_TIV, 'tiv.csv', '2026-03-09', SRC)
+    expect(r.years).toEqual([2022, 2023, 2024, 2025])
+    expect(r.unknownNames).toEqual([])
+    expect(r.summedTotals).toBe(false)
+    expect(
+      r.rows
+        .filter((x) => x.data_year === 2025)
+        .map((x) => [x.supplier_iso3, x.tiv_to_israel, x.tiv_total_to_israel]),
+    ).toEqual([
+      ['USA', 490, 537],
+      ['DEU', 36, 537],
+      ['ITA', 11, 537],
+    ])
+  })
+
+  it('reads the real trade register: the "?" of an uncertain order year sits in its own column', () => {
+    const register = [
+      "Transfers of major conventional arms from Israel   to All countries . Deals with deliveries made for the year range 'Not specified' to 'Not specified' ",
+      "A '?' in a column indicates uncertain data. The 'Deliveries in the Year Range' and the 'Year(s) of deliveries' refer only to deliveries in the selected year(s).",
+      'SIPRI trend-indicator values (TIVs) are in millions.',
+      '',
+      'Source: SIPRI Arms Transfers Database (c) SIPRI.',
+      'Data generated: 28 Sep 2026 9:10:31 AM',
+      'Recipient,Supplier,Year of order, ,Number ordered, ,Weapon designation,Weapon description,Deliveries in the Year Range, ,Year(s) of delivery,status,Comments,SIPRI TIV per unit,SIPRI TIV for total order,SIPRI TIV of delivered weapons',
+      'African Union**,Israel,2017,,3,,Aerostar,reconnaissance drone,3,?,2018,New,For use by AU peacekeeping forces in Somalia; financed by USA,0.1,0.3,0.3',
+      'Angola,Israel,2004,?,8,?,Bell-212,helicopter,8,?,2004; 2005,Second hand,Second-hand,1.48,11.84,11.84',
+      'Angola,Israel,2015,,4,,Super Dvora,patrol boat,4,?,2016,New,Super Dvora Mk-3 version,5.25,21,21',
+    ].join('\n')
+    const r = importOrders(register, 'register.csv', '2026-03-09', SRC)
+    expect(r.rows.map((x) => [x.buyer_iso3, x.data_year, x.tiv_new_orders_from_israel])).toEqual([
+      ['AGO', 2004, 11.84],
+      ['AGO', 2015, 21],
+    ])
+    expect(r.nonState).toEqual(['African Union**'])
+    expect(r.unknownNames).toEqual([])
+    expect(r.uncertainYears).toEqual(['Angola 2004?'])
+  })
+
+  // Lines of the export the author downloaded on 2026-09-29 (supplier Israel, all recipients),
+  // and one line with no TIV for the total order (none in that export; the layout SIPRI's note
+  // describes).
+  it('skips and lists Taiwan and "unknown recipient(s)"; lists orders with no TIV as 0-TIV orders', () => {
+    const register = [
+      'Recipient,Supplier,Year of order, ,Number ordered, ,Weapon designation,Weapon description,Deliveries in the Year Range, ,Year(s) of delivery,status,Comments,SIPRI TIV per unit,SIPRI TIV for total order,SIPRI TIV of delivered weapons',
+      'Taiwan,Israel,1979,?,50,?,Dvora,missile boat,50,?,1980; 1981; 1982; 1983; 1984; 1985; 1986,New,Produced under licence in Taiwan; Taiwanese designation Hai Ou,10,500,500',
+      'Taiwan,Israel,1974,?,41,?,Shafrir-2,short-range air-to-air missile,41,?,1975,New,For F-104 and F-5E combat aircraft,0.04,1.64,1.64',
+      'unknown recipient(s),Israel,2023,?,,,ROTEM,loitering munition,,,,New,For NATO member state,0,0,0',
+      'unknown recipient(s),Israel,2016,,1,?,Blackfish,anti-submarine sonar,1,?,2018,New,Recipient probably South Korea,5,5,5',
+      'Zambia,Israel,2016,?,3,?,Hermes-450,reconnaissance drone,3,?,2017,New,,2,6,6',
+      'Zambia,Israel,2019,?,10,?,Musketeer,armoured personnel carrier,,,,New,,,,',
+    ].join('\n')
+    const r = importOrders(register, 'register.csv', '2026-03-09', SRC)
+    expect(r.rows.map((x) => [x.buyer_iso3, x.data_year, x.tiv_new_orders_from_israel])).toEqual([
+      ['ZMB', 2016, 6],
+      ['ZMB', 2019, 0],
+    ])
+    expect(r.unknownNames).toEqual([])
+    expect(r.outsideUniverse).toEqual(['Taiwan (2 orders)'])
+    expect(r.unknownRecipientOrders).toEqual(['2023 ROTEM', '2016 Blackfish'])
+    expect(r.emptyTivOrders).toEqual(['Zambia 2019 Musketeer'])
+  })
+
+  it('still stops on a recipient name it cannot code', () => {
+    const register = [
+      'Recipient,Supplier,Year of order,SIPRI TIV for total order',
+      'Atlantis,Israel,2024,5',
+    ].join('\n')
+    const r = importOrders(register, 'register.csv', '2026-03-09', SRC)
+    expect(r.unknownNames).toEqual(['Atlantis'])
+    expect(r.outsideUniverse).toEqual([])
+    expect(r.rows).toEqual([])
   })
 
   it('reads quoted and semicolon-separated CSV', () => {

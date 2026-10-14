@@ -1,0 +1,192 @@
+# Coverage record for Guatemala (docs/03 §6). P-21 light protocol, session T-P21-09, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (bernardoarevalo.presidencia.gob.gt, 200), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; file `gt_es.pdf`), the Ministry of Economy's treaties page and the Israeli embassy's bilateral-relations page, the UNRWA donor tables, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. The Ministry of Foreign Affairs' site (minex.gob.gt) and the state news agency (agn.gt) refuse scripted requests. Time: about 15 minutes of research on Guatemala, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: the President's General Debate statement of 24 September 2024 (no call on Gaza) and the Foreign Minister's of the 81st session (no passage on Gaza).
+country: GTM
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Guatemala
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders of Guatemala from Israel of 1974, 1976 and 1982 (armoured personnel carriers and transport aircraft), none in the
+      data year of the release of 9 March 2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Guatemala
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Guatemala
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 8, no on 2 (A/RES/ES-10/21 of 27 October 2023 and ES-10/22 of 12 December 2023, under the previous Government), abstention on 2 (A/RES/ES-10/24
+      and A/DEC/80/506) of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Guatemala is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (Guatemala is a State Party to the Rome Statute, ratified in
+      2012).
+    queries: &id001
+    - Guatemala Corte Penal Internacional orden de arresto Netanyahu postura Guatemala Cancillería Martínez
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Guatemala Corte Penal Internacional orden de arresto Netanyahu postura Guatemala Cancillería Martínez
+    - Guatemala embajada Jerusalén Arévalo Israel visita Sa'ar OR Herzog OR Netanyahu 2026
+    - President Herzog visit Guatemala Arévalo agreements signed 2026 first Israeli president to visit Guatemala
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Guatemala has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: unchecked
+    note: 'No row in recognitions.csv. The registry dates the recognition 2013-04-09; EFE (Plaza Pública, 11 April 2013, read, not archived) reports that Guatemala recognised Palestine ''esta
+      semana'', announced by the Foreign Minister Fernando Carrera by videoconference from the UN, and the UN Division for Palestinian Rights'' chronology of April 2013 relays the President''s
+      Office through a press report (entry of 10 April); no state document of the date was archived (R21): +3 to add once the Ministry''s or the President''s statement is archived.'
+    queries:
+    - Guatemala reconoce Estado de Palestina 9 abril 2013 comunicado Ministerio de Relaciones Exteriores Guatemala reconocimiento Palestina
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 24 September 2025 (+2, call tier), archived through the Presidency''s report. Not filed: the President''s General Debate statement
+      of 24 September 2024 (''No podemos aceptar ninguna violación a la Carta ... ni en Ucrania, ni en Gaza ...'': a rejection of violations anywhere, not a call on Gaza); the Foreign Ministry''s
+      statements (one of a date not read that, in a search result, ''urge[s] the parties to agree on an immediate ceasefire''; the welcome of the ceasefire of 15 January 2025) carry no named speaker
+      (R3); the Foreign Minister''s General Debate statement of the 81st session (25 September 2026, read) has no passage on Gaza. The Ministry''s site (minex.gob.gt) and the state news agency
+      (agn.gt) answer scripted requests with HTTP 403 or a bot check, so these statements are known through the press and are not archived.'
+    queries: &id002
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of documented violations with a named speaker''s exact words was found. The Foreign Ministry''s account of the President''s
+      meeting with Israel''s President at the Munich Security Conference (17 February 2024: ''su irrestricto apoyo y solidaridad ante este tiempo desafiante'', as EFE quotes the Ministry) is in
+      the Ministry''s wording, not the President''s (R4), and is support and solidarity in a ''challenging time'', not for Israel''s conduct: lead_20261006_GTM_1; decayed to zero in any case.'
+    queries:
+    - Arévalo Israel febrero 2024 apoyo Israel embajada Jerusalén reafirma Guatemala presidente declaraciones Gaza "Arévalo"
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Guatemala was found (not an EU member).
+    queries: *id002
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Guatemala moved its embassy to Jerusalem on 16 May 2018 (the Israeli embassy''s bilateral page), where it stays; the Government''s statements
+      keep relations with Israel (the Ministry''s statement ''reitera su buena relación bilateral con el Estado de Israel'', agn.gt, not readable).'
+    queries: &id003
+    - Guatemala Israel acuerdo firmado 2025 OR 2026 Cancillería Guatemala Israel memorando cooperación Arévalo
+    - Guatemala embajada Jerusalén Arévalo Israel visita Sa'ar OR Herzog OR Netanyahu 2026
+    - President Herzog visit Guatemala Arévalo agreements signed 2026 first Israeli president to visit Guatemala
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association agreement with Israel exists to review or suspend; the free trade agreement is a C2 matter.
+    queries: *id003
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: 'No governmental instrument with Israel signed since October 2023 was found. The free trade agreement was signed on 8 September 2022 and entered into force on 1 March 2024 (the Ministry
+      of Economy''s page and the Israeli embassy''s page, read): a pre-war instrument, not filed under R18 (a reader who counts the entry into force as a new instrument would add a C2 event of
+      -10, dated 1 March 2024, 949 days old, which would not end the passivity penalty). A reported visit of Israel''s President to Guatemala with agreements in May 2026, which one search summary
+      gave, was not confirmed: the Israeli sources found (titles read: the embassy''s release ''President Herzog concludes official visit to Central America'', 10 May 2026, and a JNS item) give
+      his trip of 6 to 10 May 2026 as Panama and Costa Rica.'
+    queries: *id003
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Guatemala to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Guatemala has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guatemala
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Guatemala in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guatemala
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Guatemala UNRWA contribución OR retira OR suspende Guatemala evacuación médica Gaza OR guatemaltecos Gaza evacuados Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Guatemala UNRWA contribución OR retira OR suspende Guatemala evacuación médica Gaza OR guatemaltecos Gaza evacuados Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

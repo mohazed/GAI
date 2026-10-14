@@ -1,0 +1,335 @@
+# Coverage record for the Russian Federation (docs/03 §6). P-D research session, wave 6, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-346): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Japan, Korea and China, B-331, B-336, B-341). The registry's
+# gov_sources were used, read by script, read only, from October 2023 to September 2026:
+# - en.kremlin.ru (the President): the site's own search, every result page, for Gaza (95
+#   items, the 60 of the window read for Gaza passages), Palestine, Palestinian, "Middle East",
+#   ceasefire, UNRWA, two-state (268 items of the window, the 209 not already read searched for
+#   Gaza, Palestin, UNRWA), "International Criminal Court", Netanyahu, "arms Israel", "sanctions
+#   Israel", "medical evacuation", "recognised Palestine", "1988 Palestine"; the site's search
+#   joins words with OR, so the last queries returned mostly unrelated items, read by title.
+# - government.ru (the Prime Minister): the site's search for Gaza and Palestine (the two
+#   meetings of the window read: no Gaza passage in the Prime Minister's own words).
+# - mid.ru (the Ministry of Foreign Affairs): not readable by script (an F5 bot challenge answers
+#   every request with a JavaScript page), and its Wayback captures are the same 3 KB challenge
+#   pages, so its texts cannot be archived; not searched (docs/10 B-346 (2)).
+# - russiaun.ru (the Permanent Mission to the United Nations, part of the Ministry): the English
+#   list of all statements, 69 pages from September 2026 back to June 2023 (1,104 titles), every
+#   title by or naming the Foreign Minister or the President read, and the 60 items whose titles
+#   name Palestine, the Middle East, Gaza or UNRWA searched for "1988" and recognition.
+# - gadebate.un.org: the Foreign Minister's General Debate statements of 2024, 2025 and 2026 (the
+#   PDFs of 2024 and 2026 have no usable text layer; that of 2025 could not be archived).
+# - UN press releases of the qualifying votes (archived in votes.yaml) for Russia's explanations.
+# - UNRWA's donor tables for 2022, 2023 and 2024 (Wayback copies).
+# Not searched: the press and NGO reports (no leads were read); the State Duma and Federation
+# Council; the Ministry of Defence, the Federal Service for Military-Technical Cooperation and
+# Rosoboronexport (A2, A4–A6); the Ministry of Industry and Trade and the customs service (A6,
+# C1–C6); EMERCOM and the Ministry of Health beyond the Kremlin's records (D4); the Ministry of
+# Internal Affairs (D5); the Investigative Committee, the Prosecutor General and the courts
+# (E1–E3); the Kremlin's /supplement/ documents (joint statements), which its search does not
+# return.
+country: RUS
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade. Russia has not reported trade with Israel to Comtrade for 2022–2025
+      (no own rows, docs/10 B-194), so Israel's mirror is used: HS 93 imports from Russia of USD
+      30,000 (2022) and 5,000 (2025), none in 2023 and 2024, and no HS 8710 row; under USD 100,000,
+      so 0 throughout. The mirror has no HS 8526 or 8802 imports from Russia (only Israeli exports
+      of HS 8526 to Russia, USD 57,000 to 491,000 a year, which A2 does not count); no row was added
+      to a2_confirmed_military.csv. No Russian document on arms exports to Israel was found in the
+      sources searched; the Federal Service for Military-Technical Cooperation was not searched.
+    queries:
+      - en.kremlin.ru search "arms Israel", "sanctions Israel"
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia is not a participant, supplier or customer in the F-35 programme; no document naming
+      Russian companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - en.kremlin.ru search "arms Israel"
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found in the President's records (the telephone
+      conversations with the Prime Minister of Israel of October 2023 to January 2026 concern the
+      situation in the region, the evacuation of Russian citizens and hostages). The Ministry of
+      Defence was not searched (P-16).
+    queries:
+      - en.kremlin.ru search Netanyahu, "arms Israel"
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No government decision suspending or refusing a class of export licences to Israel was found.
+      The Federal Service for Military-Technical Cooperation was not searched (P-16).
+    queries:
+      - en.kremlin.ru search "arms Israel", "sanctions Israel"
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - en.kremlin.ru search "arms Israel", "sanctions Israel"
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No port, airspace or flag-state denial of an arms shipment to Israel was found.
+    queries:
+      - en.kremlin.ru search "arms Israel"
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21
+      to ES-10/26 and 79/232. The press releases agree where they name Russia: GA/12548 (27 October
+      2023, Russia's speaker called the adoption "extremely important and necessary") and GA/12599
+      (10 May 2024, explanation before the vote); the President's speech of 21 November 2023 refers
+      to the vote on the humanitarian truce (evt_2023_11_21_RUS_B9). No Russian document read
+      contradicts the rows. The five later votes have no rows (B-199 (1)): GA/12690 records Russia's
+      explanation before its vote on ES-10/27 (12 June 2025), GA/12708 Russia's delegate on the visa
+      denial before 80/1 (19 September 2025), GA/12743 Russia welcoming the adoption of 80/116 on the
+      ICJ advisory opinion (12 December 2025, with a reservation on advisory opinions), and GA/12784
+      Russia's vote in favour on the participation of Palestine (17 September 2026); Russia is not
+      named in GA/12707 (A/DEC/80/506) or GA/12739 (80/78).
+  B2:
+    status: has-events
+    note: >-
+      Generated from unsc_vetoes.csv: Russia, a permanent member, vetoed the United States drafts
+      S/2023/792 (25 October 2023) and S/2024/239 (22 March 2024), both calling for humanitarian
+      pauses or a ceasefire (−20 each; both have passed 730 days and count 0 today). The meeting
+      records S/PV.9453 and S/PV.9584 (archived in P-14) are the sources. The rule scores any veto of
+      such a draft regardless of the vetoing member's stated reasons (docs/02 §2); the Foreign
+      Minister's statements filed under B9 give Russia's own account of its ceasefire drafts. No
+      Russian veto of a Gaza draft since March 2024 was found.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia filed no declaration of intervention in ICJ case 192 (the Court's list, docs/06 §8,
+      names none). No statement in the sources read on the provisional-measures orders was found.
+    queries:
+      - russiaun.ru statement titles (all, October 2023 to September 2026)
+      - en.kremlin.ru search Gaza, Palestine
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found.
+      The Russian delegate's reservation at the General Assembly on 12 December 2025 (GA/12743:
+      advisory opinions "do not and cannot create international legal obligations per se")
+      concerns advisory opinions, not the orders in case 192, and was made by a delegate.
+    queries:
+      - russiaun.ru statement titles
+      - UN press release GA/12743
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia is not a party to the Rome Statute. No statement by the President, the Prime Minister
+      or the Foreign Minister on executing the warrants of 21 November 2024 was found in the
+      President's records or the Mission's statements; the Ministry's site could not be read.
+    queries:
+      - en.kremlin.ru search "International Criminal Court", Netanyahu
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants and no official visit to Russia by a person under
+      warrant was found; the President's contacts with the Prime Minister of Israel in the window
+      are telephone conversations.
+    queries:
+      - en.kremlin.ru search Netanyahu, "International Criminal Court"
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Russian sanction or measure against ICC officials related to the Situation in the State of
+      Palestine was found in the sources searched.
+    queries:
+      - en.kremlin.ru search "International Criminal Court"
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. The Soviet Union recognised the State of Palestine in 1988 and
+      Russia maintains that position (a pre-existing recognition, +3 standing from 2023-10-07). The
+      row RUS,1988-11-19 was added in this session, citing the President's opening remarks at the
+      Russian-Palestinian talks of 22 January 2026 (src_20260122_kremlin_russia-palestine-talks),
+      which state the year; the day is the registry's (data/countries.yaml, a lead), as no archived
+      Russian document gives it (docs/10 B-348 (4), B-350 (4)).
+  B9:
+    status: has-events
+    note: >-
+      Nine events (evt_2023_10_13 to evt_2025_09_27): one at the call tier (+2: the President's CIS
+      address of 13 October 2023) and eight at the names-violations tier (+5): the President's
+      remarks of 30 October 2023 (collective responsibility, indiscriminate killing), 21 November
+      2023 (mass expulsion of civilians) and 10 May 2025 (ban on humanitarian aid, electricity), and
+      the Foreign Minister's statements at the Security Council (23 January, 17 July and 27
+      September 2024) and the General Assembly (28 September 2024, 27 September 2025) naming the
+      collective punishment of the Palestinians, forcible relocation, blockade and starvation. Not
+      filed (docs/10 B-347 (1)): the Kremlin's accounts of telephone conversations (with the
+      Presidents of Brazil, 23 October 2023, of Türkiye, 24 October 2023, of Egypt, 14 November
+      2023, of the UAE, 5 February 2024, of Iran, 16 April 2024: a ceasefire, an end to the
+      bloodshed or strikes on residential areas, in indirect speech); the President's answers to questions (Valdai, 2 October 2025 and 7 November 2024;
+      Results of the Year, December 2023 and 2024; news agencies, June 2024 and 2025; news
+      conferences); the President's remarks naming Gaza without a call (extraordinary G20 summit, 22
+      November 2023; BRICS Plus, 24 October 2024; SCO, 4 July 2024; Russia–Central Asia summit, 9
+      October 2025, a hope that the United States plan be implemented; the Security Council meeting
+      of 21 January 2026 on the Board of Peace); his greetings to the Arab League summits (16 May
+      2024, 17 May 2025) and to the President of Palestine (28 November 2023), which name no call;
+      the Foreign Minister's General Debate statement of 26 September 2026 (civilians "continue to
+      lose their lives", no call); statements of the Permanent Representative and his deputies at
+      the Security Council; the Ministry's Spokesperson. Same-day rule: the Foreign Minister's
+      statements of 27 and 28 September 2024 are different days, hence two events.
+    queries:
+      - en.kremlin.ru search Gaza, Palestine, Palestinian, "Middle East", ceasefire, UNRWA, two-state
+      - russiaun.ru statement titles naming the Foreign Minister or the President
+      - government.ru search Gaza, Palestine
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement of unconditional support for Israel or denial of a documented violation was found.
+    queries:
+      - en.kremlin.ru search Netanyahu, Gaza
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia has imposed no sanction on Israeli ministers or settler entities; the Foreign Minister's
+      statements condemn settlement activity and settler violence without a measure.
+    queries:
+      - en.kremlin.ru search "sanctions Israel"
+      - russiaun.ru statement titles
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall of the ambassador or downgrade of relations with Israel was found; the President
+      held telephone conversations with the Prime Minister of Israel in October and December 2023,
+      May, June, July, August, October and November 2025 and January 2026, and received the
+      credentials of Israel's Ambassador on 5 November 2024.
+    queries:
+      - en.kremlin.ru search Netanyahu; "Ceremony to present letters of credence" (5 November 2024)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia and Israel have no trade or association agreement in force whose suspension or review
+      was announced. Not an EU member.
+    queries:
+      - en.kremlin.ru search "sanctions Israel", Netanyahu
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel since 7 October 2023 was
+      found in the President's records; the Ministry's treaty pages could not be read and the
+      Ministry of Economic Development was not searched (P-16).
+    queries:
+      - en.kremlin.ru search Netanyahu, "sanctions Israel"
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade, Israel's mirror (Russia has not reported, docs/10 B-194): total goods
+      trade USD 1.05 billion (2022), 2.93 billion (2023, r = 2.80, −5 from 8 March 2024), 0.71 billion
+      (2024, r = 0.68, 0 from 21 February 2025) and 2.85 billion (2025, r = 2.72, −5 from 14 May 2026).
+      The swings come from Israel's imports from Russia (USD 0.39, 2.34, 0.24 and 2.36 billion); no
+      Russian figure was found to compare.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on settlement goods was found.
+    queries:
+      - en.kremlin.ru search "sanctions Israel"
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a Russian sovereign fund, public pension fund or the central bank over
+      conduct in Gaza or the occupied territories was found; the funds' sites were not searched
+      (P-16).
+    queries:
+      - en.kremlin.ru search "sanctions Israel"
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No public-procurement exclusion of companies over conduct in Gaza was found.
+    queries:
+      - en.kremlin.ru search "sanctions Israel"
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: Russia's government flows to the flash appeals total USD 2,000,000 in the
+      12-month window ending November 2023, 4,000,000 in those ending December 2023 to October 2024,
+      2,000,000 in those ending November 2024 and April to December 2025, and 4,000,000 in those
+      ending January to August 2026 (+1 in each window with a flow, about 0.0001 % of GNI; 0 in the
+      windows ending December 2024 to March 2025). The President's own figures are in kind and outside FTS (docs/06
+      §7): over 800 tonnes of cargo in around 32 humanitarian missions (22 January 2026), 30,000
+      tonnes of wheat (the President of Palestine, 10 May 2025).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No announcement suspending Russia's funding to UNRWA was found. UNRWA's donor tables list
+      Russia at USD 2,000,000 for 2022 and 2,000,000 for 2023 and do not list it for 2024 (no
+      contribution recorded), which is not an announced suspension; the Foreign Minister reaffirmed
+      UNRWA's mandate at the Security Council on 17 July 2024.
+    queries:
+      - UNRWA donor tables 2022, 2023, 2024 (Wayback)
+      - en.kremlin.ru search UNRWA
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Russia never suspended (no restoration) and its contributions did not exceed its 2022
+      contribution: USD 2,000,000 in 2022 and in 2023, none recorded for 2024 in UNRWA's tables; the
+      2025 table could not be found in the Wayback Machine (no increase event can be filed).
+    queries:
+      - UNRWA donor tables 2022, 2023, 2024 (Wayback); unrwa.org file listing in the Wayback CDX index
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field-hospital deployment for Gaza was found. The Emergencies
+      Ministry evacuated Russian citizens and their family members from Gaza (the President's meeting
+      with Government members, 22 November 2023) and flew aid to El Arish; the President said in
+      December 2023 that a Russian hospital in Gaza was discussed with Egypt and Israel and that
+      Israel judged it unsafe (answers to questions, not a programme). EMERCOM and the Ministry of
+      Health were not searched (P-16).
+    queries:
+      - en.kremlin.ru search Gaza, "medical evacuation"
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for people from Gaza was found; the evacuation of Russian citizens
+      and their family members (November 2023) is consular, not an instrument for Gaza's residents.
+      The Ministry of Internal Affairs was not searched (P-16).
+    queries:
+      - en.kremlin.ru search Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored. The Investigative Committee and the courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: Experimental, unscored. Assembly decisions were not searched (P-16).
+  E3:
+    status: unchecked
+    note: Experimental, unscored. The courts were not searched (P-16).

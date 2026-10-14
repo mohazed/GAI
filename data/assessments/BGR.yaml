@@ -1,0 +1,226 @@
+# Coverage record for Bulgaria (docs/03 §6). P-21 light protocol, session T-P21-03, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.bg: every news page answers a scripted request with a Radware
+#   bot check, so its releases were read through Wayback captures), the Council of Ministers (gov.bg, archived), the President's
+#   site, the General Debate statements of the United Nations (gadebate.un.org, Wayback captures of the 78th to 80th sessions;
+#   the 81st has none), the joint statements already archived for the 45 (docs/10 B-444: two name Bulgaria), the EU Council's
+#   settler listings (R8, docs/10 B-446), UNRWA's donor tables, the generated events and the structured tables; web searches in
+#   English and in Bulgarian per indicator group. Time: about 15 minutes.
+# Statements read and not filed as B9: the Ministry's positions of 8 August 2025 (concern at the expansion of the military
+#   operation: calls for a ceasefire that disarms Hamas, unrestricted humanitarian access), 9 October 2025 and January 2026 (mfa.bg news 46789; they
+#   welcome the ceasefire agreement and the second phase of the plan) and the Ministry's reply to BNT of 24 July 2025, all
+#   ministry texts without a named speaker (docs/10 B-298 (1) for Austria); the Foreign Minister's remarks of 11 August 2025 (press,
+#   BTA); the Prime Minister's words of 10 October 2025 welcoming the ceasefire (press); the Prime Minister's meeting with
+#   President Abbas's envoy of 16 July 2026 (press; support for efforts to end hostilities, no call); the joint
+#   statement of the President of Bulgaria and the Prime Minister of Japan of 20 May 2025, as reported by Anadolu (support for the
+#   implementation of the ceasefire).
+country: BGR
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Bulgaria to
+      Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BGR
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of
+      the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch.
+      Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): one Bulgarian order of Israeli major arms, of data year 2008 (3.5 TIV),
+      before the window. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BGR
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on 4 and abstention on 8 of the 12 qualifying votes. The Ministry''s releases
+      on the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Bulgaria filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Bulgaria
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found; the 19 February 2024 declaration of 26 EU
+      foreign ministers (filed as B9) reiterates respect for the order of 26 January 2024.
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No official statement of the Government on executing the warrants of 21 November 2024 was found. The Ministry''s
+      statement of 21 November 2024 (relayed by Novinite, News.bg, Sega, OFFNews; its page on mfa.bg could not be read: bot
+      check) says that Bulgaria supports the Court''s independence and opposes attempts at its political use and that the
+      warrants do not distinguish between the attack of 7 October and acts of self-defence; it names no speaker and states
+      no position on executing them (docs/10 B-298 (2) for Austria): lead_20261005_BGR_1.'
+    queries: &id001
+    - Bulgaria ICC arrest warrant Netanyahu position Bulgarian government airspace Rome Statute
+    - Позиция на МВнР Международния наказателен съд заповеди за арест Нетаняху Галант Деиф политическа манипулация
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (no visit of the Israeli
+      Prime Minister to Bulgaria was found). See B5 for the Ministry's statement of criticism, a lead.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Bulgaria has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Bulgaria row. The registry dates the recognition 25 November 1988
+      (A/78/846 annex); the state''s own document was not found (the Ministry''s page ''Bulgaria does not make distinctions
+      in its friendships with Palestine and Israel'' is not a recognition document), so no row (R21, docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Four events, each a call at +2: the Foreign Minister''s signature of the declaration of 26 EU foreign ministers
+      (19 February 2024, decayed to zero), the Prime Minister''s of the leaders'' statement of 6 June 2024 (decayed to zero),
+      the President''s General Debate statement (25 September 2024, decayed to zero) and the Prime Minister''s General Debate
+      statement (26 September 2025, inside the decay window). Flagged: the last words the ceasefire as a need (''are urgently
+      needed''), read as the call tier. The 78th session''s statement (2023) has no passage on Gaza.'
+    queries: &id002
+    - Bulgaria Foreign Ministry Gaza ceasefire statement Georg Georgiev OR Zhelyazkov Israel Palestine
+    - България позиция Газа примирие Министерство на външните работи Израел Палестина 2025
+    - Bulgaria Petrova-Chamova Gaza OR Palestine statement foreign minister 2026 ceasefire OR humanitarian
+    - Bulgaria President Iotova OR Radev Gaza statement ceasefire humanitarian Palestinians president.bg
+    - Denkov Netanyahu Jerusalem visit November 2023 Bulgaria prime minister full support Israel
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No B10 event filed. The Government''s release of 6 November 2023 on the Prime Minister''s visit to Jerusalem (archived:
+      src_20231106_gov-bg_denkov-israel-visit) says in its own words that Israel has Bulgaria''s ''full support'' and that
+      ''we stand by your side''; the Prime Minister''s quoted words are ''We recognize your right to defend the State of Israel
+      and your people. You have every right to fight against the terrorists'', with calls for the release of the hostages
+      and for Hamas to be eliminated. B9 and B10 need the speaker''s exact words (R4): the phrase ''full support'' is the
+      release''s, so nothing is filed (lead_20261005_BGR_2); it would be decayed to zero in any case.'
+    queries: *id002
+  B11:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024 (west-bank, unscored), 15 July 2024 and 28 May
+      2026 (gaza and west-bank), counted for Bulgaria under R8 (docs/10 B-446); the third adds no points beside the second.
+      No national listing of settlers or ministers by Bulgaria was found.'
+    queries:
+    - Bulgaria sanctions violent Israeli settlers entry ban national measure OR recall ambassador from Israel OR downgrade
+      relations Israel Bulgaria 2024 2025
+    - consilium.europa.eu settlers sanctions 19 April 2024, 15 July 2024, 28 May 2026 (the Council's decisions, R8)
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; Israel's ambassador is resident in Sofia (the Deputy Minister of Foreign
+      Affairs received him, mfa.bg news 48756).
+    queries:
+    - Bulgaria sanctions violent Israeli settlers entry ban national measure OR recall ambassador from Israel OR downgrade
+      relations Israel Bulgaria 2024 2025
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No Bulgarian support for a review or suspension of the EU-Israel Association Agreement was found (the Article 2
+      review of 20 May 2025 is an EU-level act that counts for the states that supported it in the Council, docs/02 §2 C1):
+      no ministerial statement or Council record naming Bulgaria''s support was found.'
+    queries:
+    - Bulgaria EU-Israel Association Agreement review suspend position Bulgaria Council vote Article 2 Bulgaria opposed OR
+      supported
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No governmental instrument with Israel signed since October 2023 that meets R18 was found. Not filed: the plan
+      of cooperation on maternal and child health signed on 13 November 2024 by the interim Minister of Health and Israel''s
+      ambassador, which the press describes as building on the existing health agreement (an implementing arrangement of a
+      pre-war convention, R18; lead_20261005_BGR_3); the water cooperation agreement (signed 24 March 2021, in force 29 July
+      2024 according to the press), the tourism agreement (January 2023) and the energy memorandum (2020) pre-date the window.'
+    queries:
+    - България Израел подписаха споразумение меморандум 2025 министър сътрудничество Израел България подписване
+    - Bulgaria Israel defence agreement OR memorandum signed 2024 OR 2025 OR 2026 Bulgarian ministry Israeli ministry sign
+      cooperation
+    - Bulgaria Israel energy memorandum of understanding signed
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: Government flows of USD 218,998 (plan 1156, 2024), USD 57,937 (plan 1273, 2025) and USD 247,696
+      (plan 1510, 2026) over all flow dates (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No announcement of a suspension of UNRWA funding was found: Bulgaria is not on the lists of states that paused
+      funding in January 2024, and UNRWA''s tables show a contribution in 2023 and none in 2024.'
+    queries:
+    - Bulgaria UNRWA funding suspended January 2024 Bulgaria contribution UNRWA
+    - България УНРВА финансиране спира OR възстановява правителство
+  D3:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the increased tier from 31 December 2023 (USD 107,875 in 2023 against USD 26,652 in 2022), ending 2024-12-31;
+      the 2024 table has no row of Bulgaria, so no 2024 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Bulgaria
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found. A Bulgarian press report (dir.bg) says that
+      the Palestinian Ambassador asked the Bulgarian authorities to treat children injured in Gaza; no acceptance or arrival
+      was found. Bulgaria evacuated its own citizens and their families from Gaza (Ministry release; not D4, which concerns
+      Gazans).
+    queries:
+    - Bulgaria Gaza humanitarian aid medical evacuation children Bulgaria hospital treatment Palestinian OR Gaza
+    - България лечение ранени деца от Газа болница евакуация Палестина българска помощ Газа хуманитарна помощ правителство
+      реши
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - България визи палестинци Газа бежанци убежище хуманитарен визи Ивицата Газа решение Министерски съвет
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

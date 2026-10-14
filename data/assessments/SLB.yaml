@@ -1,0 +1,197 @@
+# Coverage record for Solomon Islands (docs/03 §6). P-21 light protocol, session T-P21-15, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and External Trade's site (mfaet.gov.sb: answers HTTP 406 to a scripted request, so its foreign-affairs news listing was read through Wayback replays, 22 September 2023 to 9 May 2025), the Government portal (solomons.gov.sb: a script-based bot check, not bypassed; its Wayback captures of 2026 are the check page), the General Debate pages and statements of the 78th to 81st sessions (gadebate.un.org through Wayback captures; the 81st session's file has none), UN Meetings Coverage (GA/12599, GA/12712, archived), the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 12 minutes of research on Solomon Islands, inside the 90-minute budget of the session.
+# Two hand-authored events: evt_2024_09_27_SLB_B9 (decayed to zero) and evt_2025_09_26_SLB_B9 (flagged: date).
+country: SLB
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SLB
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10 B-503);
+      the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Solomon Islands from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer SLB
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Solomon Islands
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and no vote recorded on A/RES/ES-10/23 of 10 May 2024 (the admission of Palestine; scored as absent, B1, and decayed to zero).
+      The reason for the absence is not stated in the dataset or in the press release archived (GA/12599, which does not name Solomon Islands): the arrears rule of Article 19 of the Charter has not been
+      checked (docs/10 B-626, for P-23). No other disagreement found.'
+    queries:
+    - unga_votes.csv, voter SLB
+    - press.un.org GA/12599 (archived, read)
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: 'Solomon Islands is not on the ICJ case 192 intervention list (docs/06 §8; the Court''s page archived 25 September 2026, read; the Court''s press release of 13 March 2026, archived). Its written
+      statements and oral statements in the advisory proceedings on Israel''s policies and practices (case 186, 2023-2024) are not B3 or B4 events (docs/02 §2: case 192 only); the Court''s list of written
+      statements (archived: src_20261007_icj-cij_case-186-written-proceedings) and its press release on the oral hearings (archived: src_20240226_un-unispal_icj-186-hearings-conclusion) do not name Solomon
+      Islands either.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written and oral statements (archived pages, read)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Solomon Islands is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister or the Minister for Foreign Affairs on executing the warrants of 21 November 2024 was found. Solomon Islands signed the Rome Statute on 3 December 1998 and is
+      not among the states parties (Wikipedia's list, read; not a primary).
+    queries:
+    - Solomon Islands ICC arrest warrant Netanyahu Manele OR Agovaka OR Wale government position
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Solomon Islands ICC arrest warrant Netanyahu Manele OR Agovaka OR Wale government position
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Solomon Islands has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine found: `data/structured/recognitions.csv` has no row for Solomon Islands and the registry records none (not in the annex of A/78/846 nor among the later
+      recognitions). The General Debate statements of 2024 and 2025 ''reiterate its long-standing position'' on a two-state solution with ''Israel and Palestine living side by side'', which states no recognition.
+      The Ministry''s foreign-affairs news (22 September 2023 to 9 May 2025) names neither Palestine nor Israel.'
+    queries:
+    - Solomon Islands recognises State of Palestine
+    - recognitions.csv, row SLB (none)
+    - mfaet.gov.sb foreign-affairs news listing (Wayback, read)
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'Two events: the Foreign Minister''s General Debate statement of 27 September 2024 (evt_2024_09_27_SLB_B9, +5: ''collective punishment on the Gaza population by Israel'', decayed to zero, 740
+      days old) and the Prime Minister''s of 26 September 2025 (evt_2025_09_26_SLB_B9, +2, flagged: ''immediate cease fire in Gaza'', the file says 27 September, the UN''s page 26 September; 376 days old).
+      Read and not filed: the 78th session''s statement (September 2023, before the window); the Prime Minister Matthew Wale''s statement to the 81st session (about 25 to 28 September 2026): the press (Islands
+      Business, PINA, read) reports passages on West Papua, the veto, decolonisation and the ocean and none on Gaza, and the delegation''s file has no Wayback capture (lead_20261007_SLB_1: to read at the
+      next maintenance). The Pacific Islands Forum Leaders'' communiqué of 12 September 2025 (Honiara) was not read: a communiqué names no signatory (R3). The Ministry''s foreign-affairs news listing (22
+      September 2023 to 9 May 2025, Wayback, read) has no item on Gaza, Palestine or Israel.'
+    queries:
+    - Solomon Islands Gaza Israel Manele OR Agovaka statement Palestine ceasefire
+    - gadebate.un.org Solomon Islands 78th to 81st sessions (sb_en.pdf, read for the 79th and 80th)
+    - press.un.org GA/12712 (read)
+    - mfaet.gov.sb foreign-affairs news listing (Wayback, read)
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found; the Government''s statements condemn ''all the violence and
+      carnage from all parties including the terror attack on Israel by Hamas'' and reaffirm the two-state solution.'
+    queries:
+    - Solomon Islands Prime Minister support Israel right to defend itself Gaza
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Solomon Islands was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found (the Ministry''s site and the press: no result).'
+    queries:
+    - Solomon Islands ambassador Israel recalled OR relations Israel downgrade OR sever
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Solomon Islands Israel agreement suspend OR review
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found (the Ministry''s news listing and the press: no agreement, memorandum or declaration of intent; the agreements of 2026 that the
+      press names are with the United States).'
+    queries:
+    - Solomon Islands Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor SLB
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Solomon Islands has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Solomon Islands
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Solomon Islands has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Solomon Islands
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Solomon Islands ministry
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Solomon Islands regulation
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

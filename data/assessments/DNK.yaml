@@ -1,0 +1,328 @@
+# Coverage record for Denmark (docs/03 §6). P-D research session, wave 4, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-287): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Norway and Sweden). The protocol's searches (docs/06 §4 step 3)
+# were run as (1) the Ministry of Foreign Affairs' press room (the via.ritzau.dk press room that
+# um.dk/nyheder embeds; its JSON listing of all 400 releases since September 2023) filtered for
+# Gaza, Israel, Palæstina, palæstinensisk, UNRWA, Mellemøsten, Vestbredden, Straffedomstol,
+# Netanyahu, Hamas, bosættere, Libanon, tostatsløsning, våbenhvile, humanitær, Smotrich, Ben-Gvir,
+# Rafah and Jerusalem (118 releases matched; the Gaza-related ones read); (2) the Prime Minister's
+# Office's speeches (stm.dk list search for Gaza, Israel and Palæstina; 8 speeches since October
+# 2023 matched, 7 read); (3) the Folketing's open data (oda.ft.dk): every document since 2023-10-07 whose
+# title contains Gaza, Israel, israelsk, Palæstina, palæstinensisk, UNRWA, Vestbredden,
+# Netanyahu, Straffedomstol, F-35, bosætte, folkedrab, Rafah, Smotrich, Ben-Gvir,
+# associeringsaftale, våbenhvile or Terma (1,775 documents, 314 ministers' answers among them),
+# with the answers read where Wayback holds a capture: ft.dk answers scripted requests with a
+# Cloudflare challenge and refuses Save Page Now (HTTP 403), so only the 71 relevant answers that
+# Wayback had captured could be read (about 25 of them read in full), and two were archived with --capture (docs/10 B-188);
+# (4) the archived UN meeting records of the two vetoes of 2025 (S/PV.9929, S/PV.10000) and the
+# UN press releases of votes.yaml. Not searched: the press, the Danish Police and the
+# prosecution service, the courts (the NGOs' F-35 case), ATP's and other pension funds' own
+# pages, retsinformation.dk, the Ministry of Defence's and the Danish Business Authority's pages,
+# um.dk/en, the General Assembly general debate statements. Each `queries` entry names the
+# listing or search used.
+country: DNK
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Minister for Foreign Affairs states that direct exports of military equipment to Israel
+      are assessed case by case and, since 25 March 2024, on a very restrictive line (answers of 15
+      January and 3 May 2024).
+  A2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (Denmark's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Denmark's own reports: HS 93 exports to Israel USD 31,736 (2024) and USD 57,632 (2025),
+      HS 8710 USD 21,814 (2025), none in 2022 and 2023; Israel's mirror HS 93 imports USD 17,000
+      (2023). Every window is under USD 100,000, so A2 is 0 throughout. HS 8526 (own USD
+      65,722–1,083,325 a year; mirror USD 73,000–2,069,000) is not counted without a confirming
+      document (docs/02 §2); none was found, so no row was added to a2_confirmed_military.csv. The
+      Folketing's answers on MyDefence's portable drone equipment exported to Israel (January and
+      February 2024, read through Wayback, not archived) say the Defence Acquisition and Logistics
+      Organisation assessed it as not falling within the military categories, which is not a
+      confirmation of military nature. No disagreement with the Government's statements.
+    queries:
+      - oda.ft.dk titles (eksport, våben, Israel, MyDefence) — URU 82, 83, 97, 107, S 438
+  A3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: evt_2023_10_07_DNK_A3 (standing, the Minister for Foreign Affairs' speaking notes of 13 September 2024 on Danish subcontractors' exports to the F-35 programme).
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Folketing's records show questions on Danish purchases of Israeli systems (the
+      Minister of Defence's answers on David's Sling, 7 April 2024, and on an Israeli drone-defence
+      purchase, 24 October 2025; titles read, answers not archived), which A4 will capture from
+      SIPRI when a release is imported.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with
+      Israel related to the Gaza campaign found. A.P. Møller-Mærsk's transport of military
+      equipment to Israel is a private company's conduct: the Minister states that Danish
+      companies must follow international rules and that the Ministry cannot dictate what they do
+      beyond that (S 883, 31 March 2025, read through Wayback, not archived); the Ministry's
+      contacts on Mærsk's port calls in Spain (URU 89, 90, 92, 23 April 2025, titles read) and the
+      Israeli exhibitors at the Defence Acquisition and Logistics Organisation's industry days (S
+      1177, S 1260) are named here for the author, not as A5 instances. The F-35 spare-parts depot
+      at Skrydstrup is part of A3.
+    queries:
+      - oda.ft.dk titles (Mærsk, havn, anløb, DALO, øvelse, overflyvning)
+      - via.ritzau.dk press room of the Ministry of Foreign Affairs (Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision in the window suspending or refusing a class of licences to Israel. On 25 March
+      2024 the Ministry of Foreign Affairs tightened its approach to exports of military equipment
+      and dual-use items to Israel ("en meget restriktiv linje"; such exports are "som
+      udgangspunkt" problematic), but applications are still assessed case by case and the Minister
+      states that the tightening does not mean Denmark will suspend all exports of military
+      equipment to Israel (answers to URU 180 and 181 of 3 May 2024 and S 1235 of 17 September 2024,
+      read through Wayback, not archived). Since 14 February 2024 the police consult the Ministry
+      on F-35 component exports, which are still assessed with the United States as recipient.
+      Read as a case-by-case practice, not a suspension of a class of licences (docs/10 B-288 (5)).
+    queries:
+      - oda.ft.dk titles (eksport, våben, Israel, F-35, suspendere)
+      - via.ritzau.dk press room (eksport, våben)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree covering exports to and imports from Israel found.
+    queries:
+      - oda.ft.dk titles (våbenembargo, embargo, Israel)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No refusal of transit or port calls for arms shipments to Israel found; the Folketing asked in
+      October 2025 whether Denmark would follow Spain's closure of its ports to ships carrying fuel
+      for Israel's military (EUU 163, title read, answer not archived).
+    queries:
+      - oda.ft.dk titles (havn, anløb, transit, Mærsk)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstain on ES-10/21 and
+      ES-10/24; yes on ES-10/22, ES-10/23, ES-10/25, ES-10/26 and 79/232. The archived UN press
+      releases do not list abstentions by name, so they neither confirm nor contradict the two
+      abstentions; the Folketing's question S 257 of November 2023 ("Danmarks manglende støtte til
+      FN-resolutionen om en humanitær våbenhvile") agrees with the abstention on ES-10/21. No
+      disagreement found. The votes of 2025–2026 have no rows yet (docs/10 B-199 (1)).
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Denmark is an elected Security Council member for 2025–2026 (so B2 applies) and cannot cast a
+      veto. It co-sponsored and voted for the two drafts the United States vetoed while it sat, S/2025/353
+      (4 June 2025, S/PV.9929) and S/2025/583 (18 September 2025, S/PV.10000), both archived as the
+      vetoes' sources in unsc_vetoes.csv. No row concerns Denmark.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Denmark has not filed a declaration of intervention in case 192 (the ICJ's list, docs/06 §8
+      seed). The Minister stated on 12 June 2024 that Denmark had not decided whether to intervene
+      and that there is no general obligation to intervene, and that the Government has called on
+      Israel to comply with the binding orders (S 1039, read through Wayback, not archived).
+    queries:
+      - oda.ft.dk titles (Domstol, folkedrab, intervention)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement rejecting the ICJ orders or their binding character found; the Minister calls them binding (S 1039, 12 June 2024).
+    queries:
+      - oda.ft.dk titles (Domstol, ICJ, kendelse)
+  B5:
+    status: has-events
+    checked_at: 2026-09-29
+    note: evt_2024_11_29_DNK_B5 (the Minister of Justice's written answer S 336, 29 November 2024).
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal statement and no visit of a person under warrant found.
+    queries:
+      - oda.ft.dk titles (Straffedomstol, arrestordre, Netanyahu)
+      - via.ritzau.dk press room (Netanyahu, Straffedomstol)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Denmark has not sanctioned ICC officials; the Folketing's questions concern the United States' sanctions (S 656, S 1123, S 242).
+    queries:
+      - oda.ft.dk titles (Straffedomstol, ICC, sanktioner)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from recognitions.csv, which has no Denmark row: Denmark has not recognised the
+      State of Palestine. The Prime Minister told the Folketing on 7 October 2025 that Denmark is
+      ready to recognise a Palestinian state once Hamas has released the hostages, disarmed and no
+      longer plays a role in Gaza, and the Palestinian Authority has carried out reforms
+      (src_20251007_stm_aabningstale-2025, lines 376–377); no recognition followed by 2026-09-29.
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Nine events scoped gaza (2023-12-15, 2024-03-14, 2024-05-29, 2024-10-01, 2024-12-02,
+      2025-05-21, 2025-07-21, 2025-08-13, 2025-10-07) plus two West Bank events (2025-08-21,
+      2026-02-24), from the Ministry's releases and joint statements and the Prime Minister's
+      speeches to the Folketing. Other joint statements that Denmark signed (Nordic statements of
+      12 April and 4 July 2024; the offer to treat patients from Gaza in the West Bank, 23 September
+      2025) and the Ministry's humanitarian-aid releases were not filed separately. The statements
+      of Denmark's Permanent Representative in the Security Council are not by the head of
+      government or foreign minister and were not filed. The B9 cap is reached in the trailing year.
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support or denial found. The Prime Minister said "Denmark stands
+      with Israel in this difficult time" in Copenhagen's synagogue on 14 October 2023, after the
+      attack of 7 October; the Minister said on 12 November 2023 that Israel's self-defence must
+      respect international humanitarian law. Neither is read as B10.
+    queries:
+      - stm.dk speeches (Israel)
+      - via.ritzau.dk press room (Israel)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No Danish listing. The Minister states that the Government has backed the EU's sanctions on extremist settlers from the start (S 1202, 3 September 2024; S 555, 29 January 2025, read through Wayback, not archived); EU settler listings are not filed until P-15 (as for Sweden, docs/10 B-283 (5)). The Folketing asked in June 2025 whether Denmark would join the entry bans of Norway, the United Kingdom, New Zealand, Canada and Australia on two Israeli ministers (S 1248, title read); no Danish ban was found. P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_DNK_B11, evt_2024_07_15_DNK_B11 and evt_2026_05_28_DNK_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "oda.ft.dk titles (sanktion, bosætte, indrejseforbud, Smotrich, Ben-Gvir)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance found.
+    queries:
+      - via.ritzau.dk press room (ambassadør, Israel)
+      - oda.ft.dk titles (ambassadør)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No archived primary shows Denmark supporting a review or suspension in the Council. The
+      Minister opposed suspending the association agreement on 7 November 2024 (S 203) and 17
+      February 2025 (S 657), both read through Wayback, not archived. Later documents on Denmark's
+      position were found in the Folketing's records but could not be read: the answers of May 2025
+      on the Dutch request for a review (S 1083, S 1084, S 1124), of September 2025 (EUU 134) and
+      the Government's basic memorandum of 22 October 2025 on the Commission's proposal to suspend
+      trade provisions (KOM(2025) 0890) have no Wayback capture, and ft.dk refuses Save Page Now.
+      Flagged (docs/10 B-288 (6)).
+    queries:
+      - oda.ft.dk titles (associeringsaftale)
+      - via.ritzau.dk press room (associeringsaftale, EU, Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No new trade, investment or cooperation agreement with Israel signed in the window found; defence purchases from Israeli suppliers are A4 (SIPRI), not C2.
+    queries:
+      - via.ritzau.dk press room (Israel, aftale)
+      - oda.ft.dk titles (Israel, aftale)
+  C3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (own reporting): 2022 baseline USD 339.9 million; r = 1.024 (2023),
+      1.278 (2024) and 1.397 (2025): C3 −3 from 2024-02-13 and on each later release (T ≥ USD 100
+      million). Israel's mirror data show a larger baseline (USD 599.7 million). No government
+      statement on trade volumes found; no disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No labelling or ban regulation adopted in the window. The Folketing asked in September 2025
+      about higher tariffs on and a ban of settlement goods (S 1502–S 1506) and about updating the
+      Ministry's guidance on trade and investment in the settlements (URU 115); the answers were not
+      archived (no capture or a 404 capture). West Bank measures would be tagged `west-bank`.
+    queries:
+      - oda.ft.dk titles (bosættelser, varer, told, mærkning)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by a public pension fund or the central bank in the window citing Gaza
+      or the occupied territories found. The Folketing's questions on ATP concern its investment in
+      the defence company Terma (S 210, BEU 199 and 201); the other Danish pension companies named
+      in the press are labour-market or commercial funds, not public funds (as KLP for Norway,
+      docs/10 B-281 (4)). ATP's own pages were not searched.
+    queries:
+      - oda.ft.dk titles (ATP, pension, investering, Israel)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion of implicated companies found.
+    queries:
+      - oda.ft.dk titles (udbud, indkøb, Israel)
+  D1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: +9 in the window 2025-09…2026-08 (USD 35,392,474 ÷ GNI USD 463.9 billion =
+      0.0076 %), between +6 and +12 since November 2023. The Ministry reports about DKK 700 million
+      of humanitarian support to the Palestine crisis from 2023 to December 2024 (release of 2
+      December 2024), consistent with the tiers. No disagreement.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Denmark did not announce a suspension. Its planned 2024 core contribution (DKK 105 million)
+      was due in the first quarter; the Ministry's fact sheet of 1 February 2024 says the Government
+      could await the UN investigation before paying, and the Ministry announced the payment on 14
+      March 2024 after UN steps (src_20240314_um_udbetaler-unrwa). Read as a wait for a payment not
+      yet due, not a suspension (docs/10 B-288 (3)); the fact sheet lists Denmark apart from the
+      donors that suspended.
+    queries:
+      - via.ritzau.dk press room (UNRWA)
+      - oda.ft.dk titles (UNRWA)
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: evt_2024_12_31_DNK_D3 (increased tier, from 31 December 2024).
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Danish medical-evacuation programme or field hospital. The Government decided not to
+      receive medically evacuated patients from Gaza (the Minister of the Interior and Health, S
+      1365, 25 August 2025; the Minister of Justice, S 1287, 9 July 2025; read through Wayback, not
+      archived). Denmark funded the ICRC's field hospital in Gaza with DKK 5 million (release of 14
+      May 2024; Danish Red Cross staff), offered staff, equipment and funding for treatment of Gaza
+      patients in the West Bank (joint statement of 23 September 2025), and its Hercules aircraft
+      dropped aid over Gaza (the Prime Minister's speech of 5 September 2025): funding, offers and
+      airdrops, not a Danish medical-evacuation programme or field-hospital deployment, as for
+      Sweden (docs/10 B-283 (3)).
+    queries:
+      - oda.ft.dk titles (patient, evakuering, felthospital)
+      - via.ritzau.dk press room (felthospital, patienter, medicinsk)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or protection instrument for Gaza residents found. The immigration authorities put
+      asylum cases of stateless Palestinians from Gaza on hold in autumn 2023 (UUI 49, 134, 188,
+      titles read), which is not a pathway opened.
+    queries:
+      - oda.ft.dk titles (asyl, opholdstilladelse, familiesammenføring, visum, Gaza)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No investigation or prosecution concerning Gaza found in the Folketing's records or the Ministry's releases; the police and prosecution service were not searched.
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No ban on Palestine solidarity protests or symbols found in the Folketing's records; the
+      questions concern policing of demonstrations, the masking ban and charges after a
+      demonstration at Terma (August 2026). Police decisions were not searched.
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found; court and prosecution records were not searched.

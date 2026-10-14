@@ -1330,3 +1330,123 @@ it('uses the second fixture source in the fixtures', () => {
   const ctx = fixtureContext()
   expect(ctx.dataset.events[0]?.value.evidence.map((e) => e.source)).toEqual([SRC_GAZA, SRC_LIFT])
 })
+
+describe('event.standing-overlap (B-22, B-51)', () => {
+  const standing = (ds: Dataset, indicator: string, date: string, end: string | null) =>
+    addEvent(ds, {
+      id: `evt_${date.replaceAll('-', '_')}_DEU_${indicator}`,
+      indicator,
+      type: 'standing',
+      date,
+      end,
+      points: -15,
+    })
+
+  it('warns when two A3, B7 or D2 records of one country hold on one day', () => {
+    for (const indicator of ['A3', 'B7', 'D2']) {
+      const found = issuesOf(
+        run((ds) => {
+          standing(ds, indicator, '2024-01-01', null)
+          standing(ds, indicator, '2025-02-13', '2025-12-31')
+        }),
+        'event.standing-overlap',
+      )
+      expect(found, indicator).toHaveLength(1)
+      expect(found[0]).toMatchObject({
+        level: 'warning',
+        file: FILE,
+        id: `evt_2025_02_13_DEU_${indicator}`,
+      })
+      expect(found[0]?.message).toContain(`evt_2024_01_01_DEU_${indicator}`)
+    }
+  })
+
+  it('is silent for records that follow each other, other indicators and withdrawn records', () => {
+    expect(
+      issuesOf(
+        run((ds) => {
+          standing(ds, 'B7', '2024-01-01', '2025-02-13')
+          standing(ds, 'B7', '2025-02-13', null)
+          standing(ds, 'B11', '2024-01-01', null)
+          standing(ds, 'B11', '2025-01-01', null)
+          standing(ds, 'A3', '2024-01-01', null).status = 'retracted'
+          standing(ds, 'A3', '2025-01-01', null)
+        }),
+        'event.standing-overlap',
+      ),
+    ).toEqual([])
+  })
+})
+
+describe('event.b5-b6-same-day (B-56)', () => {
+  it('warns on a B6 dated the day of a B5 of the same country', () => {
+    const found = issuesOf(
+      run((ds) => {
+        addEvent(ds, { id: 'evt_2024_11_21_DEU_B5', indicator: 'B5', date: '2024-11-21' })
+        addEvent(ds, { id: 'evt_2024_11_21_DEU_B6', indicator: 'B6', date: '2024-11-21' })
+      }),
+      'event.b5-b6-same-day',
+    )
+    expect(found).toHaveLength(1)
+    expect(found[0]).toMatchObject({ level: 'warning', id: 'evt_2024_11_21_DEU_B6' })
+  })
+
+  it('is silent on different days', () => {
+    expect(
+      issuesOf(
+        run((ds) => {
+          addEvent(ds, { id: 'evt_2024_11_21_DEU_B5', indicator: 'B5', date: '2024-11-21' })
+          addEvent(ds, { id: 'evt_2025_02_20_DEU_B6', indicator: 'B6', date: '2025-02-20' })
+        }),
+        'event.b5-b6-same-day',
+      ),
+    ).toEqual([])
+  })
+})
+
+describe('event.d2-open-after-d3 (B-56)', () => {
+  const d2 = (ds: Dataset, end: string | null) =>
+    addEvent(ds, {
+      id: 'evt_2024_01_27_DEU_D2',
+      indicator: 'D2',
+      type: 'standing',
+      date: '2024-01-27',
+      end,
+      points: -8,
+    })
+  const d3 = (ds: Dataset) =>
+    addEvent(ds, {
+      id: 'evt_2024_04_24_DEU_D3',
+      indicator: 'D3',
+      type: 'standing',
+      date: '2024-04-24',
+      end: null,
+      points: 5,
+    })
+
+  it('warns on a D2 still open, or ending later, when a D3 starts', () => {
+    for (const end of [null, '2024-06-01']) {
+      const found = issuesOf(
+        run((ds) => {
+          d2(ds, end)
+          d3(ds)
+        }),
+        'event.d2-open-after-d3',
+      )
+      expect(found, String(end)).toHaveLength(1)
+      expect(found[0]).toMatchObject({ level: 'warning', id: 'evt_2024_01_27_DEU_D2' })
+    }
+  })
+
+  it('is silent when the D2 ends on or before the D3 starts', () => {
+    expect(
+      issuesOf(
+        run((ds) => {
+          d2(ds, '2024-04-24')
+          d3(ds)
+        }),
+        'event.d2-open-after-d3',
+      ),
+    ).toEqual([])
+  })
+})

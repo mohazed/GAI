@@ -1,0 +1,221 @@
+# Coverage record for Papua New Guinea (docs/03 §6). P-21 light protocol, session T-P21-15, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Department of Foreign Affairs' site (dfa.gov.pg: searched for Israel, Gaza, Palestine and Jerusalem; the releases on the embassy in Jerusalem), the Prime Minister's Office's site (pmnec.gov.pg: its releases on Israel, Hamas, Gaza and the General Assembly, searched and read), the General Debate pages and statements of the 79th to 81st sessions (gadebate.un.org through Wayback captures), UN Meetings Coverage's reports of the votes (GA/12599, GA/12626, archived), the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 30 minutes of research on Papua New Guinea (the Save Page Now service was offline for part of it), inside the 90-minute budget of the session.
+# Three hand-authored events: evt_2024_10_07_PNG_B9 (weight 0.25 on 7 October 2026, flagged), evt_2025_08_15_PNG_B10 and evt_2025_10_20_PNG_B10 (both flagged; the second is a qualifying event).
+country: PNG
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PNG
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10 B-503);
+      the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has one row for Papua New Guinea as a buyer from Israel: three Arava transport
+      aircraft ordered in 1984 and delivered from 1986 ($10 m deal): outside the window, and A4 reads the orders of a release''s own data year (docs/10 B-536 (7)), so no order of 2024 or later is recorded.
+      Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PNG
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Papua New Guinea
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 11 of the 12 qualifying votes (A/RES/ES-10/21 of 27 October 2023 to A/RES/80/116 of 12 December 2025, the vote on 19 September 2025 excepted) and an abstention
+      on A/RES/80/1 of 19 September 2025 (the A/80/L.2/Rev.1 vote: 145 in favour, 5 against, 6 abstentions, GA/12708). Its representative explained the no votes on the admission of Palestine (10 May 2024:
+      any rights granted ''must be accorded in a manner that is fully compliant with the Charter'') and on the resolution that followed the advisory opinion (18 September 2024: the draft ''demands that
+      Israel make unilateral concessions without any reciprocal steps'') in statements archived as UN Meetings Coverage (GA/12599, GA/12626); a Permanent Representative is not a B9 or B10 speaker (R3),
+      so they are not events. The votes of 12 December 2023, 11 December 2024, 12 September 2025 and 5 December 2025 list Papua New Guinea among those against (GA/12572, GA/12667, GA/12707, GA/12739). Flagged:
+      the Prime Minister''s Office release of 25 September 2025 says the Prime Minister ''welcomed the adoption of the New York Declaration'', which Papua New Guinea voted against on 12 September 2025 (A/DEC/80/506),
+      and the release of 29 October 2025 says he ''voted against the Two-State Solution'' (docs/10 B-632).'
+    queries:
+    - unga_votes.csv, voter PNG
+    - press.un.org GA/12599, GA/12626 (archived, read)
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: 'Papua New Guinea is not on the ICJ case 192 intervention list (docs/06 §8; the Court''s page archived 25 September 2026, read; the Court''s press release of 13 March 2026, archived). Its written
+      statements and oral statements in the advisory proceedings on Israel''s policies and practices (case 186, 2023-2024) are not B3 or B4 events (docs/02 §2: case 192 only); the Court''s list of written
+      statements (archived: src_20261007_icj-cij_case-186-written-proceedings) and its press release on the oral hearings (archived: src_20240226_un-unispal_icj-186-hearings-conclusion) do not name Papua
+      New Guinea either.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written and oral statements (archived pages, read)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Papua New Guinea is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister, the Foreign Minister or the Department on executing the warrants of 21 November 2024 was found. Papua New Guinea signed the Rome Statute but is not among the
+      states parties (Wikipedia's list, read; not a primary).
+    queries:
+    - Papua New Guinea ICC arrest warrant Netanyahu Marape OR Tkatchenko government position
+    - 'dfa.gov.pg and pmnec.gov.pg site searches (ICC, warrant: no result)'
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Papua New Guinea ICC arrest warrant Netanyahu Marape OR Tkatchenko government position
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Papua New Guinea has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for Papua New Guinea, and none was added. The registry''s note records a dispute (A/78/846 gives
+      13 January 1995, Wikipedia 4 October 1994, and in July 2025 the foreign secretary told AFP he was not aware of any position to establish relations with Palestine). The Department''s site (dfa.gov.pg)
+      and the Prime Minister''s Office site (pmnec.gov.pg), searched for Palestine, give no document of a recognition; the Prime Minister''s releases of 2024 and 2025 speak of ''the Israeli and Palestinian
+      peoples'' and ''Israel and Palestine'' and the release of 25 September 2025 of ''legitimate rights of the Palestinian people'' without stating one. R21: no row; the registry stays null (docs/10 B-178,
+      B-633).'
+    queries:
+    - 'dfa.gov.pg search: Palestine, Gaza (no result)'
+    - 'pmnec.gov.pg search: Palestinian, Gaza, Hamas (read)'
+    - recognitions.csv, row PNG (none)
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'One event: the Prime Minister''s statement of 7 October 2024 (evt_2024_10_07_PNG_B9, +2: ''There must be a ceasefire.'', flagged: tied to the end of the campaigns of Hamas and Hezbollah; 730
+      days old on 7 October 2026: weight 0.25, +0.5 that day, expired from the next). Read and not filed: the General Debate statements of the 79th session (27 September 2024; the delegation''s file, archived)
+      and the 80th (the Prime Minister''s Office''s text, archived) have no passage on Gaza, Palestine, Israel or a ceasefire; the 81st session''s statement (25 September 2026) has no usable capture of
+      the delegation''s file and the UN''s summary of the statement and the Prime Minister''s Office''s releases of 27 and 29 September 2026 (read) do not mention Gaza, and the second names Israel only
+      among the countries of his meetings on the margins (the text itself was not read: lead_20261007_PNG_1 notes it); the release of 8 October 2023 (archived: condemns the attack, ''cautioned Israel on
+      its response'', no Gaza; older than 730 days); the release of 25 September 2025 (indirect speech: ''appealed to Israel to "give peace a chance" by joining calls for a truce'', R4; lead_20261007_PNG_1);
+      the release of 9 October 2025 (the quoted sentences name Hamas and ''its people'' but not Gaza, R7). The Prime Minister''s words of 3 March 2026 (ABC Pacific, read, press, not archived) hope for ''an
+      amicable truce ... between all parties concerned'' in the Middle East in the context of the war with Iran, not Gaza. The Prime Minister''s Office''s releases were searched for Gaza, Hamas, ceasefire,
+      hostages and Palestinian (pmnec.gov.pg search).'
+    queries:
+    - Papua New Guinea Gaza ceasefire statement Prime Minister Marape
+    - 'pmnec.gov.pg search: Israel, Gaza, Hamas, ceasefire, hostages, Palestinian, General Assembly (read)'
+    - gadebate.un.org Papua New Guinea 79th to 81st sessions (read)
+    checked_at: '2026-10-07'
+  B10:
+    status: has-events
+    note: 'Two events, both flagged (docs/10 B-630): the Prime Minister''s words of 15 August 2025 (evt_2025_08_15_PNG_B10, -5: ''among the few nations that have consistently stood in support of Israel'';
+      ''The responsibility for ending the current suffering in Gaza lies squarely with Hamas.''; 418 days old, weight 0.89) and of 20 October 2025 (evt_2025_10_20_PNG_B10, -5: ''Papua New Guinea stands
+      with Israel during these difficult times''; 352 days old, weight 1, inside the 365 days, so it is a qualifying event and ends the passivity penalty). Both rest on the Prime Minister''s Office''s releases,
+      which print the words in quotation marks. Read against them: the same releases support ''any peace process that brings lasting security and dignity to both the Israeli and Palestinian peoples'' and
+      call the situation ''tragic and unnecessary''; the Prime Minister''s own statement of 7 October 2024 asks for a ceasefire and the release of hostages. Not filed: the release of 8 October 2023 (older
+      than 730 days, no Gaza) and the Foreign Minister''s statement of 3 March 2026 (''we have supported the United States and Israel from day one'', ABC Pacific, 3 March 2026, read, press, not archived:
+      the Foreign Minister is not a B10 speaker, and the statement concerns Iran). The Department''s release on the Israel-Iran war (''Port Moresby, Friday 13th June 2025'', read, not archived) is the Secretary''s,
+      not the Prime Minister''s.'
+    queries:
+    - Papua New Guinea Prime Minister Marape support Israel Gaza Hamas responsibility
+    - 'pmnec.gov.pg search: Israel, Hamas (read)'
+    - 'dfa.gov.pg search: Israel (read)'
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Papua New Guinea was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found. The Department''s release of 2 March 2026 (archived) announces the temporary closure of the embassy in Jerusalem for the
+      staff''s safety during the war between the United States, Israel and Iran and the move of its operations to Port Moresby: a closure for security, not a diplomatic measure against Israel, and an embassy
+      move is not an indicator act (docs/10 B-599). The embassy in Jerusalem was opened on 5 September 2023, before the window (the Prime Minister''s Office''s releases of 5 and 6 September 2023, read,
+      not archived), and the foreign policy white paper''s release of 17 March 2026 (read, not archived) lists ''strengthening existing representation in Jerusalem (Israel)''.'
+    queries:
+    - Papua New Guinea ambassador Israel recalled OR relations downgrade OR sever
+    - 'dfa.gov.pg search: Jerusalem, Israel (read)'
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Papua New Guinea Israel agreement suspend OR review
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The Prime Minister's Office's release of 29 October 2025 says Israel's Deputy Foreign Minister 'reconfirmed Israel's commitment
+      to continue assisting' in science and technology, agriculture, health, small business and women's empowerment (no instrument named), and the Jerusalem Post of 10 June 2026 (press, read) reports that
+      Israel's Foreign Minister announced a representative office in Papua New Guinea after a call with the Prime Minister, with no signed agreement (lead_20261007_PNG_2).
+    queries:
+    - Papua New Guinea Israel agreement OR memorandum signed 2024 2025 2026
+    - 'pmnec.gov.pg search: Israel (read)'
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PNG
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Papua New Guinea has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Papua New Guinea
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Papua New Guinea has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Papua New Guinea
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Papua New Guinea ministry
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Papua New Guinea regulation
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

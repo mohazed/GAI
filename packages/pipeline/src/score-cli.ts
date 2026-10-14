@@ -53,7 +53,7 @@ import {
   summaryLines,
 } from '@gai/scoring'
 import { deriveGeneratedStatuses, effectiveAssessment } from './build/assessments.js'
-import { generateAll, generateContext } from './generate/index.js'
+import { confirmedMilitaryOf, generateAll, generateContext } from './generate/index.js'
 import { scoringMethodology } from './methodology.js'
 
 export interface ScoreArgs {
@@ -465,6 +465,7 @@ function run(args: ScoreArgs, options: ScoreRunOptions): ScoreRunResult {
         ds.countries.map((c) => c.value),
       ),
       ds.structured,
+      { confirmedMilitary: confirmedMilitaryOf(ds.structured['a2_confirmed_military.csv']) },
     ).events
   } catch (err) {
     return fail(1, `the generated events cannot be built: ${(err as Error).message}`)

@@ -1,0 +1,220 @@
+# Coverage record for Paraguay (docs/03 §6). P-21 light protocol, session T-P21-12, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mre.gov.py: its pages through Wayback captures, the live site answers a bot check), the Presidency (presidencia.gov.py through Wayback captures; the host does not answer from this network), Agencia IP (ip.gov.py) and Paraguay TV (paraguaytv.gov.py), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the ICJ's case page and Paraguay's declaration, the SIPRI register, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 80 minutes of research on Paraguay, inside the 90-minute budget of the session.
+# Statements read and not filed as B9 or B10: see B9 and B10 (R7: no Gaza in the document).
+country: PRY
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PRY
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists one order of Paraguay from Israel, of 2011 (an EL/M-2106NG air-search radar, comment ''PYG14 b ($3.5 m) deal''), none in
+      the data year of the release of 9 March 2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PRY
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Paraguay
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 11 of the 12 qualifying votes, abstained on A/RES/ES-10/23 (10 May 2024). The statements on the votes were not read. No disagreement found.'
+    queries:
+    - unga_votes.csv, voter PRY
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: 'Paraguay''s declaration of intervention (Article 63, filed 3 March 2026) is on the Court''s list, but it argues against the applicant''s construction: it is a B4 event, not B3 (docs/02
+      §2 B3, B4).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: has-events
+    note: 'One event: Paraguay''s declaration of intervention of 3 March 2026 (-15, evt_2026_03_03_PRY_B4; the declaration on UNISPAL, scanned and read by OCR, and the Court''s press release,
+      archived). The Court''s case page lists the declaration under 3 March 2026 and no withdrawal (page read 2026-10-06).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    - Paraguay declaration of intervention ICJ South Africa v. Israel 3 March 2026 Article 63 Genocide Convention
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found (Paraguay is a party to the Rome Statute). Israel''s
+      Prime Minister thanked Paraguay for its support at the Knesset on 11 December 2024, ''tras la decisión de la CPI'' (La Política Online, read; the Knesset''s text is unreachable): those are
+      Israeli words. The invitation of 24 September 2026 to withdraw from the Court is lead_20261006_PRY_3; no Paraguayan answer was found.'
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant: Israel''s Prime Minister has not visited Paraguay (the President went to Israel in December 2024),
+      and the meeting of 24 September 2026 was held in New York on the margins of the General Assembly. Netanyahu''s invitation to withdraw from the Court (his office''s statement, as ABC Color
+      reports) was met, as far as found, by no Government answer (lead_20261006_PRY_3).'
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Paraguay has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `PRY,2011-01-28` is added in this session from the Division for Palestinian Rights'' review of January 2011 (UNISPAL, archived, line 298: ''Paraguay''s
+      Ministry of Foreign Affairs said in a statement: "The Republic of Paraguay expressly reiterates the recognition of [the Palestinian] State as free and independent with the borders of 4 June
+      1967"'', AFP, under 28 January): the pre-existing tier, +3 (R21). A UN Secretariat review, not the Government''s own text, flagged; the statement says ''reiterates'', so the recognition
+      may predate it; the registry''s date (2011-01-29, A/78/846, docs/10 B-178) and Wikipedia''s (2005) differ and change no score. The Government of 2023 to 2026 has not withdrawn it (no statement
+      found).'
+    queries:
+    - Paraguay reconoce Estado de Palestina 2011 Ministerio de Relaciones Exteriores
+    - UNISPAL Chronological Review of Events January 2011 (archived)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: the President''s General Debate statements of the 79th (September 2024), 80th (September 2025) and 81st sessions (September 2026), read in full (`py_es.pdf`, `py_es_1.pdf`),
+      never cite Gaza (R7). The 79th and 80th say that Paraguay ''reafirma'' Israel''s right to defend itself, reject ''equiparar'' the responsibility of Israel''s elected authorities and Hamas,
+      and call for a solution that ''alivie la situación humanitaria [en territorio palestino en la 80.ª], ponga fin a la violencia y garantice la liberación inmediata de los rehenes'': a call
+      that does not cite Gaza (the 80th says ''territorio palestino''), so not a B9 event under R7 and not an exact-words call for a ceasefire (R4). The 81st calls for ''el cese inmediato de los
+      ataques'' and the opening of the Strait of Hormuz and does not cite Gaza. The Ministry''s release on a virtual meeting of Latin American foreign ministers with Israel''s Foreign Minister
+      on the attacks of Iran (Wayback capture of 15 April 2026; ''su reconocimiento al derecho del Estado de Israel a garantizar la seguridad y la defensa de su población'') is in the Ministry''s
+      name, with no named speaker (R3). The Foreign Minister''s remarks of 8 February 2026 are lead_20261006_PRY_2.'
+    queries:
+    - gadebate.un.org Paraguay 78th to 81st sessions (py_es.pdf, py_es_1.pdf), read
+    - Peña Gaza "Paraguay" presidente declaración Gaza Hamás cese al fuego ayuda humanitaria 2025
+    - canciller Ramírez Lezcano Gaza Paraguay declaración Consejo de Seguridad ONU Israel derecho a defenderse
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No B10 event under R7 (the document must cite Gaza). Read and not filed: the President''s General Debate statements of the 79th and 80th sessions (the right of Israel to defend itself,
+      Hamas and Hezbollah named terrorist organisations; no mention of Gaza); the embassy ceremony and the address to the Knesset of 11 and 12 December 2024 (lead_20261006_PRY_1); the Presidency''s
+      report of the speech on receiving the American Jewish Committee''s Gesher award (April 2025: ''No abandonaremos a Israel'', the attacks of 7 October condemned; Wayback capture of 3 August
+      2025, read, no mention of Gaza); the Foreign Minister''s words of 24 November 2025 (''el más firme apoyo al derecho de Israel a defender su soberanía y su seguridad'', Agencia IP, archived)
+      and of 8 February 2026 (lead_20261006_PRY_2). The unconditional character of the support is stated in the President''s own words (''vamos a estar con Israel pase lo que pase''); the author
+      may revisit R7 for Paraguay (docs/10 B-599): several of them would then count (B10''s cap is -10).'
+    queries:
+    - Peña Gaza "Paraguay" presidente declaración Gaza Hamás cese al fuego ayuda humanitaria 2025
+    - Peña discurso Knéset 11 diciembre 2024 Paraguay presidente Gaza rehenes
+    - canciller Ramírez Lezcano Gaza Paraguay declaración Consejo de Seguridad ONU Israel derecho a defenderse
+    - presidencia.gov.py Peña Israel Jerusalén Netanyahu
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Paraguay was found (not an EU member).
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found. The opposite: Israel reopened its embassy in Asunción in 2024 (Agencia IP, 18 September 2024, headline only, page not read) and Paraguay
+      moved its embassy from Tel Aviv to Jerusalem on 12 December 2024 (Agencia IP, archived). No indicator measures an upgrade of relations or the location of an embassy (B12 is a recall, a downgrade
+      or a severance), so the move is no event; noted for the author (docs/10 B-599), as for Argentina''s announcement.'
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    - Paraguay embajada Jerusalén traslado Peña inauguración diciembre 2024
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found; the MERCOSUR–Israel free trade agreement stands.
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'Three events: the memorandum between the research bodies of Paraguay and Israel, signed with other agreements on 12 December 2024 (-10, `confirmed` on the Ministry''s release); the
+      memorandum on defense and security cooperation (24 November 2025, `corroborated`); the memorandum on cooperation in diplomacy (24 November 2025, `reported`). All three flagged under R18
+      (docs/10 B-598). Not filed: the other agreements of 12 December 2024 (energy, innovation, science and technology: no title or text, lead_20261006_PRY_4), the seven agreements the Israeli
+      Embassy counts and the announced cybersecurity agreements, the tourism cooperation of February 2025 and a company''s contract with the Ministry of Education (lead_20261006_PRY_5). A signed
+      amendment of the free trade agreement or an instrument under the Isaac Accords would be further events (lead_20261006_PRY_3).'
+    queries:
+    - Peña Netanyahu Paraguay Israel acuerdo firmado memorando cooperación 2025 2026 Cancillería
+    - Paraguay Israel convenio firmado 2025 Ramírez Lezcano Sa'ar acuerdos firmados visita Asunción noviembre 2025 memorándum seguridad
+    - Paraguay e Israel firman acuerdo 2026 cooperación agua agricultura defensa visita ministro israelí Asunción
+    - Paraguay Israel memorándum de entendimiento firmado MEC OR MITIC OR Ministerio de Agricultura OR Salud OR Industria 2025
+    - mre.gov.py noviembre 2025 canciller Israel Gideon Sa'ar visita oficial Paraguay firma memorándum
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Paraguay in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PRY
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Paraguay has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Paraguay
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'Paraguay has no row in UNRWA''s donor tables of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Paraguay
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

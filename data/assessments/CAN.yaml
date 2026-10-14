@@ -1,0 +1,326 @@
+# Coverage record for Canada (docs/03 §6). P-D research session, wave 3, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-261): no web search was available to this session (the run's allowance
+# was used up, as for Italy and the Netherlands, B-251, B-256). The protocol's searches (docs/06
+# §4 step 3) were run as keyword filters of the Wayback CDX listings of the official sites, then
+# reads of the matching pages: Global Affairs Canada news (www.canada.ca/en/global-affairs/news/,
+# 1,328 URLs from October 2023), the Prime Minister's news (www.pm.gc.ca/en/news/, 2,705 URLs from
+# October 2023: statements, speeches, readouts, releases), international.canada.ca (1,306 URLs:
+# export-control reports) and international.gc.ca (41,315 URLs: country pages, export-control
+# pages), National Defence news and the F-35 pages (canada.ca and ised-isde.canada.ca), and
+# Immigration, Refugees and Citizenship Canada news and public policies. Keywords: israel, gaza,
+# palestin, unrwa, west-bank, settler, hamas, icj, icc, criminal-court, arms, export, ceasefire,
+# hostage, netanyahu, two-state, humanitarian, f-35, sanction. English only: every page used has a
+# French version on the same sites (official languages), not searched separately. The House of
+# Commons publication search (ourcommons.ca) answered 403 to a scripted request, so Hansard and
+# written answers were not searched.
+country: CAN
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      Canada's report to Parliament for 2023 records exports of military goods and technology to
+      Israel of CAD 30.6 million in 2023, only non-lethal items after 7 October 2023
+      (src_20240531_gac_military-goods-2023).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (Canada's rows existed from P-14, so no fetch was needed). Own
+      reports of HS 93 exports to Israel: USD 188,889 (2022), 106,554 (2023, −3 from 2024-02-14),
+      288,524 (2024, −3 from 2025-02-27) and 500,673 (2025, −3 from 2026-04-21); HS 8710 USD 25,335
+      (2023) and 176,642 (2024). HS 8526 (own USD 2.5 million in 2025) and 8802 (own USD 4.7
+      million in 2025) are not counted without a confirming document (docs/02 §2); the export
+      reports to Parliament give values by Export Control List item, not by customs code, so no
+      row was added to a2_confirmed_military.csv. Disagreement reported, not corrected: the
+      Government's own reports record exports of military goods and technology (Export Control
+      List Group 2, parts and components included) to Israel of CAD 30.6 million in 2023
+      (src_20240531_gac_military-goods-2023), CAD 18.9 million in 2024 (the 2024 report, read, not
+      archived) and CAD 14.7 million in 2025 (src_20260512_gac_strategic-goods-2025), values that would reach the −15 tier if they were
+      customs values in HS 93; the Government states that permits issued since 7 October 2023 were
+      for non-lethal items. Left to the author (docs/10 B-263).
+  A3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_CAN_A3, standing from 2023-10-07 on the Minister of National Defence's
+      statement that every F-35 produced includes Canadian components
+      (src_20230109_dnd_f-35-acquisition). A/HRC/59/23 does not name Canada. No halt of F-35 part
+      exports to Israel found.
+    queries:
+      - "CDX: canada.ca/en/department-national-defence/news/ and services/procurement/fighter-jets, filtered f-35"
+      - "CDX: ised-isde.canada.ca/site/aerospace-defence (F-35 industrial participation pages)"
+      - "archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Canada"
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187, B-199).
+      Left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with
+      Israel for the Gaza campaign found in the defence and foreign affairs listings. The Canadian
+      Armed Forces' humanitarian airdrops over Gaza (August 2025) and the donation of cargo
+      parachutes to the Royal Jordanian Air Force (src_20240308_gac_unrwa-resumption) are
+      humanitarian, not cooperation with Israel. Parliamentary answers on overflights and transit
+      were not searched (Hansard not reachable by script).
+    queries:
+      - "CDX: canada.ca/en/department-national-defence/news/ filtered israel, gaza, middle-east"
+      - "CDX: canada.ca/en/global-affairs/news/ filtered israel, gaza, arms"
+  A6:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_01_08_CAN_A6: no new permits for military goods to Israel that could be used in
+      Gaza since 8 January 2024, with a limited number of existing permits suspended in 2024; no
+      end.
+    queries:
+      - "CDX: international.canada.ca/en/global-affairs/corporate/reports/export-import-controls/ (military-goods-2023, strategic-goods-2024, strategic-goods-2025, administration-2024)"
+      - "CDX: canada.ca/en/global-affairs/news/ filtered arms, export"
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree prohibiting both arms exports to and imports from Israel; the measure in force is a permit policy (A6).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ and international.canada.ca export-control pages filtered israel, embargo"
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No denial of port access or transit to a vessel or aircraft carrying arms to Israel found in the official listings; press reports of shipments through Canada were not searched (no web search).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ and pm.gc.ca/en/news/ filtered israel, arms, port"
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      ES-10/21, ES-10/23, ES-10/24 and 79/232; yes on ES-10/22, ES-10/25 and ES-10/26. The UN press
+      releases (GA/12572, GA/12599, GA/12667) list the states voting against without Canada, which
+      agrees with the rows; they do not name abstainers. GA/12548 records the United States–Canada
+      amendment to ES-10/21 (condemnation of Hamas's attack) and lists no states by vote.
+      GA/12670 names Canada among the states voting against a different text (permanent sovereignty
+      over natural resources, A/79/445, not a qualifying vote), not against 79/232. For the later
+      votes (no rows until B-199 (1)): GA/12707 (A/DEC/80/506), GA/12708 (A/RES/80/1) and GA/12739
+      (A/RES/80/78) list the states against (and for A/RES/80/1 those abstaining) without Canada.
+      No disagreement found.
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Canada has not filed a declaration of intervention in ICJ case 192 (not in the Court's list
+      of 2026-09-26, docs/06 §8; no Global Affairs Canada release on an intervention in the case).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered icj, court, justice"
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No rejection of the provisional measures or their binding character. The Minister's
+      statement of 12 January 2024 says Canada's support for the Court "does not mean we accept the
+      premise of the case" (src_20240112_gac_joly-icj-statement), criticism of the merits without a
+      formal act (docs/02 §2 B4); the Prime Ministers' statement of 14 February 2024 and the
+      Minister's speech of 18 March 2024 call the orders binding.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered icj, international-court"
+      - "CDX: pm.gc.ca/en/news/ filtered icj"
+  B5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No official statement (release, speech or transcript) by the Prime Minister, the Minister of
+      Foreign Affairs or the Minister of Justice on executing the warrants of 21 November 2024 found
+      in the Global Affairs Canada or Prime Minister's listings. The joint statement in support of
+      the International Criminal Court (June 2024) predates the warrants. Remarks to the press on
+      the warrants, if any, were not searched (no web search, Hansard not reachable); to be
+      re-searched (docs/10 B-265 (4)).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered icc, criminal-court, netanyahu, warrant"
+      - "CDX: pm.gc.ca/en/news/ filtered icc, criminal, netanyahu"
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement refusing execution and no official visit of a person under warrant found.
+      Overflights by the aircraft of the Prime Minister of Israel (docs/06 §8) are a lead without a
+      press source read in this session.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ and pm.gc.ca/en/news/ filtered netanyahu, icc"
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No Canadian sanctions on ICC officials; Canada co-signed the joint statement in support of the Court of June 2024.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered criminal-court, sanctions"
+  B8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv: Canada recognised the State of Palestine on 2025-09-21
+      (src_20250921_pm-gc_recognition-palestine, row added by P-14); +8 from that date. The Prime
+      Minister's statement of 30 July 2025 announced the intention; no disagreement.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Twelve events: the Prime Minister's statements of 12 December 2023, 14 February 2024, 26 July
+      2024 (with Australia and New Zealand, +2 each), 19 May 2025 (with the United Kingdom and
+      France, +5), 8 August 2025 (+2) and 21 September 2025 (+5); the Minister of Foreign Affairs'
+      speech of 18 March 2024 (+2), statements of 14 November 2024 (+2), 21 July 2025 (+5),
+      30 December 2025 (+2), 28 January 2026 (+2) and 21 August 2026 (+5). The cap (+10) holds. Not
+      filed: the Minister's statement of 12 January 2024 (supports efforts towards a sustainable
+      ceasefire, mainly on the ICJ case), the foreign ministers' statements of 26 October 2024
+      (UNRWA legislation), 19 May 2025 (donors), 9 August 2025 (same decision as the Prime
+      Minister's of 8 August), 22 September 2025 (medical evacuations) and 26 September 2025
+      (journalists), the Minister's statement of 28 July 2025 and the Prime Minister's of 30 July
+      2025 and 13 October 2025 (weaker or repeated calls; the cap is reached), and the leaders'
+      statements on the West Bank of 22 May, 20 August and 8 September 2026 (West Bank conduct,
+      not searched for, docs/10 B-262 (6)).
+    queries:
+      - "CDX: pm.gc.ca/en/news/statements|speeches filtered israel, gaza, palestin, ceasefire, joint-statement"
+      - "CDX: canada.ca/en/global-affairs/news/ filtered gaza, israel, palestin, statement"
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No statement of unconditional support or denial. The statements of October 2023 onward
+      support Israel's right to defend itself "in accordance with international law" or subject to
+      humanitarian law (for example src_20240112_gac_joly-icj-statement), which is not B10 (reading
+      of docs/10 B-204 on data/wave-1). The Minister's statement of 2 August 2025 rejects a report on
+      Canadian arms exports, not violations in Gaza.
+    queries:
+      - "CDX: pm.gc.ca/en/news/statements filtered israel, hamas"
+      - "CDX: canada.ca/en/global-affairs/news/ filtered israel, hamas"
+  B11:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_06_10_CAN_B11 (ministers Ben-Gvir and Smotrich, +10, scoped gaza and west-bank) and
+      evt_2024_05_16_CAN_B11 (extremist settlers, +5, scoped west-bank only, unscored). Five rounds
+      of settler listings (May, June and September 2024, June 2025, June 2026).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered sanction, settler, ben-gvir"
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No recall of Canada's ambassador, downgrade or severance of relations with Israel found; the relocation of embassy staff's dependent children (August 2024) is a security measure.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered ambassador, embassy, israel"
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No review or suspension of the Canada–Israel Free Trade Agreement found. (Canada is not an EU member; the EU–Israel Association Agreement does not apply.)
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ and international.gc.ca trade-agreements pages filtered israel, free-trade"
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new trade, investment or cooperation agreement signed with Israel since 7 October 2023 found in the foreign affairs and Prime Minister's listings.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered israel, agreement"
+      - "CDX: pm.gc.ca/en/news/ filtered israel"
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade. Own reports of total trade with Israel: USD 1.615 billion (2022),
+      1.389 billion (2023, r = 0.860, 0 points), 1.345 billion (2024, r = 0.833, 0) and 1.523
+      billion (2025, r = 0.943, −5 from 2026-04-21). Israel's mirror would give r = 0.694 for 2025
+      (0 points); the own report is used first (docs/02 §5). No disagreement with Canadian sources
+      checked.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No new labelling rule or ban on settlement goods in force. The leaders of Canada, France and
+      the United Kingdom announced on 8 September 2026 that they "will therefore take steps to ban
+      the importation of goods from settlements" (pm.gc.ca joint statement, not archived): an
+      intention, no instrument yet; C4 when made (docs/10 B-265 (3)). West Bank conduct.
+    queries:
+      - "CDX: pm.gc.ca/en/news/statements filtered settlement, two-state"
+      - "CDX: canada.ca/en/global-affairs/news/ filtered settlement"
+  C5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No exclusion decision by CPP Investments, a public pension fund or the Bank of Canada over conduct in Gaza or the occupied territories found; the funds' own sites were not searched (no web search).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered divest, pension"
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No federal procurement exclusion of companies over conduct in Gaza found.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered procurement"
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: +6 for the window 2025-09…2026-08 (USD 57,515,414 ÷ GNI USD 2.350
+      trillion = 0.00245 %). The Government reports larger totals (more than CAD 500 million
+      allocated since October 2023 in the Global Affairs Canada release of 12 June 2026, read, not
+      archived; over CAD 340 million by 30 July 2025 in the Prime Minister's statement of that
+      day), which include development and peace funding outside the flash appeals (docs/06 §7).
+  D2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_01_26_CAN_D2, 26 January to 8 March 2024 (ended).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered unrwa"
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_03_08_CAN_D3 (restored, 8 March 2024) superseded by evt_2024_12_31_CAN_D3
+      (increased: USD 37.6 million in 2024 against 23.7 million in 2022, UNRWA donor tables).
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered unrwa"
+      - "UNRWA donor tables 2022 and 2024 (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024)"
+  D4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No Canadian field hospital or medical-evacuation programme found. Canada signed the foreign
+      ministers' offer of 22 September 2025 to support the treatment of Gaza patients in the West
+      Bank (an offer, not a programme) and funds partners' health assistance (D1); the airdrops of
+      August 2025 are not D4.
+    queries:
+      - "CDX: canada.ca/en/global-affairs/news/ filtered medical, evacuation, hospital, gaza"
+      - "CDX: canada.ca/en/department-national-defence/news/ filtered gaza"
+  D5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Three temporary public policies under section 25.2 of the Immigration and Refugee Protection
+      Act: the extended-family pathway (9 January 2024) and the entry facilitations of 23 April
+      2025 and 24 April 2026. Not filed: the public policies of December 2023 for people affected
+      in Israel and the Palestinian territories (fee-exempt permits for immediate family, not Gaza
+      only) and their 2025 extension.
+    queries:
+      - "CDX: canada.ca/en/immigration-refugees-citizenship/news/ filtered gaza, palestin"
+      - "CDX: canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/ filtered gaza, palestin"
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No domestic investigation of Canadian nationals or companies for conduct in Gaza found in the official listings (RCMP and Department of Justice sites not searched).
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No federal ban on Palestine solidarity protests or symbols found; municipal by-laws on demonstrations near places of worship are local acts and were not searched as such.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No universal-jurisdiction complaint over Gaza accepted for investigation found. The 2025
+      report to Parliament records a judicial review (filed 5 March 2024) of permits for Israel
+      and an action in the Ontario Superior Court of Justice (November 2024) alleging that Canada
+      failed to prevent genocide; these are cases against the Government, not complaints against
+      individuals.

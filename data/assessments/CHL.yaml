@@ -1,0 +1,322 @@
+# Coverage record for the Republic of Chile (docs/03 §6). P-D research session, wave 7, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-361): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Colombia). Sources read, read only:
+# - www.minrel.gob.cl (Ministry of Foreign Affairs) answers scripted requests. Its press-room
+#   listing was read in full by title (93 pages, 3,680 items, January 2018 to 28 September 2026),
+#   and its site search (prontus_search.cgi) was run for Gaza, Israel, Palestina, Corte Penal
+#   Internacional, Corte Internacional de Justicia, genocidio, UNRWA, Netanyahu, flotilla, La Haya,
+#   Medio Oriente, Hamas, Cisjordania, embajador, asentamientos, alto el fuego, Rafah, FIDAE,
+#   agregados militares (785 distinct items from October 2023, every one read in full by script
+#   and filtered for Gaza, Israel, Palestin, genocid, UNRWA, Rafah, Hamas; 158 relevant, about 70
+#   read by eye). The ambassador designations of 2023 to 2026 were read in full.
+# - prensa.presidencia.cl (Presidency press site, which keeps the Boric-era speeches and
+#   communiqués) answers scripted requests. Its search was run for Gaza, Palestina, Israel,
+#   Netanyahu, genocidio, Corte Penal and FIDAE (about 140 items; the 72 items of President Boric's
+#   and President Kast's terms read in full by script, the Gaza passages read by eye).
+# - UNRWA's donor tables for 2022 and 2024 (records on this branch from data/wave-6, B-356).
+# Not readable: gadebate.un.org and www.gob.cl answer scripted requests with a bot check (not
+# bypassed); the Wayback Machine went offline several times during the session. The ICJ's copy of
+# Chile's declaration of intervention exists in Wayback only as HTTP 403 captures. www.defensa.cl
+# now serves only 2026 pages; its 2024 pages (FIDAE) were not found in Wayback while it answered.
+# Not searched: press and NGO reports (no leads were read); the Congress (the Chamber answers 403;
+# the Senate was not searched); the Diario Oficial and the Ley Chile database; the customs service;
+# the Ministry of Health (D4); the migration service (D5); the Fiscalía, the courts and the police
+# (E1–E3); the public pension funds and the central bank (C5).
+country: CHL
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Chile is a
+      buyer of Israeli arms, not known as a supplier.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade, fetched in this session (pnpm fetch:comtrade --reporters CHL; Chile
+      had no rows): Chile's own HS 93 exports to Israel of USD 45,000 in 2023 (0 points, under the
+      USD 100,000 tier); no HS 93 or 8710 row for 2022, 2024 or 2025. HS 8526 (Israel's mirror
+      imports of USD 1,000 in 2022) is not counted: no licence register, parliamentary answer or
+      investigation confirming a military flow was found, and no row was added to
+      a2_confirmed_military.csv. No Chilean document on arms exports to Israel was found in the
+      sources searched.
+    queries:
+      - minrel.gob.cl site search (Israel, armas)
+      - prensa.presidencia.cl search (Israel)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Chile is not a partner, supplier or customer of the F-35 programme; no document naming
+      Chilean companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - minrel.gob.cl site search (Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. In his annual address of 1 June 2025 the President said he
+      had instructed the Minister of Defence to present a plan to diversify defence purchases so as
+      to stop depending on Israeli industry (src_20250601_presidencia_cuenta-publica-2025): a plan,
+      not a decision on orders; not filed. The Ministry of Defence was not searched for orders.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found. On 28 May 2025 the government withdrew its
+      military, defence and air attachés from the embassy in Tel Aviv, citing the situation in
+      Gaza (src_20250528_minrel_retiro-agregados-militares-israel; recorded in the note of
+      evt_2023_10_31_CHL_B12; docs/10 B-362 (2)). The Foreign Minister's meeting with Israel's
+      Foreign Minister of 7 August 2026 spoke of cooperation in technology, digital health, water
+      and renewable energy, not defence.
+    queries:
+      - minrel.gob.cl site search (agregados militares, Israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of export licences to Israel was found. The
+      President said on 1 June 2025 that Chile supported Spain's proposal of an arms embargo on
+      Israel, and on 17 December 2024 and 1 June 2025 that his government had suspended Israel's
+      participation in the FIDAE air and defence fair (April 2024); the fair exclusion is not a
+      licence decision, and the Ministry of Defence's own act could not be read (docs/10 B-362
+      (3)).
+    queries:
+      - minrel.gob.cl site search (FIDAE, embargo)
+      - prensa.presidencia.cl search (FIDAE)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - prensa.presidencia.cl search (Israel, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - minrel.gob.cl site search (Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on
+      ES-10/21 to ES-10/26 and 79/232. No Chilean document read contradicts them (the President
+      told the General Assembly on 24 September 2024 that Chile called for an immediate ceasefire).
+      The five later votes have no rows (B-199 (1)); Chile is named in none of the lists of states
+      voting against or abstaining in the archived press releases of ES-10/27, A/DEC/80/506, 80/1,
+      80/78 and 80/116 (which name those states only), so no difference was found, but a yes cannot
+      be told from an absence there.
+  B2:
+    status: not-applicable
+    note: Not a member of the Security Council in the window (set by the build's rule).
+  B3:
+    status: has-events
+    note: >-
+      One event (evt_2024_09_12_CHL_B3): declaration of intervention under Article 63 filed on 12
+      September 2024 (the Ministry's release), supporting the applicant. No withdrawal was found in
+      the Ministry's or the Presidency's pages to 28 September 2026 (the government in office from
+      11 March 2026 has published nothing on the case); the declaration itself (ICJ PDF) could not
+      be read (Wayback holds only HTTP 403 captures).
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found;
+      the Ministry welcomed the orders of 26 January and 24 May 2024 (unsigned communiqués) and the
+      Foreign Minister called on 29 November 2024 for compliance with them.
+    queries:
+      - minrel.gob.cl site search (Corte Internacional de Justicia)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Chile is a party to the Rome Statute and, with Mexico, referred the situation in Palestine
+      to the ICC on 18 January 2024 (Ministry release; no indicator covers a referral). No
+      statement by the President or the Foreign Minister on executing the arrest warrants of 21
+      November 2024 was found. The Foreign Minister said on 29 November 2024 that the decisions of
+      the ICJ and the ICC are binding and called for cooperation with the Prosecutor's
+      investigation (src_20241129_minrel_canciller-dia-solidaridad-palestina), and the President
+      recalled the warrants on 1 June 2025 without a statement on executing them; neither is read
+      as B5 (as Ireland's supporting statements on data/wave-2, B-226); flagged (docs/10 B-362
+      (4)).
+    queries:
+      - minrel.gob.cl site search (Corte Penal Internacional, Netanyahu)
+      - prensa.presidencia.cl search (Corte Penal, Netanyahu)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no official visit of a person under
+      warrant was found. President Kast met Israel's President Isaac Herzog in Costa Rica on 8 May
+      2026 (Herzog is not under an ICC warrant).
+    queries:
+      - prensa.presidencia.cl search (Netanyahu, Herzog)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Chile has imposed no sanctions on ICC officials.
+    queries:
+      - minrel.gob.cl site search (Corte Penal Internacional)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Chile had no row; the row CHL,2011-01-07 was added citing
+      the President's address of 26 February 2026 ("el expresidente Piñera fue el presidente que
+      reconoció a Palestina como un Estado soberano ... el año 2011", the source's excerpt). The day
+      is the registry's (data/countries.yaml, from A/78/846); no Chilean document of January 2011
+      was read. +3 standing from 2023-10-07.
+  B9:
+    status: has-events
+    note: >-
+      Ten events: the President's own words in the Presidency's transcripts (1 June 2024, 24
+      September 2024, 17 December 2024, 1 June 2025, 23 September 2025, 14 October 2025, 26 February
+      2026) and the Foreign Minister's quoted words in the Ministry's releases (11 June
+      2024, 29 November 2024, 29 July 2025). Not filed (docs/10 B-361 (4)): the Ministry's unsigned
+      communiqués (for instance 31 October and 15 November 2023, 27 May 2024, 13 November 2024, 5
+      and 20 May 2025, 22 July 2025, 8 and 25 August 2025), many of which call for a ceasefire or
+      name violations; readouts in indirect speech (26 September 2024); the President's
+      statement of 2 May 2024 after receiving the UN Secretary-General (a ceasefire call, +2; Save
+      Page Now failed twice and Wayback holds no capture, so not filed); his other
+      speeches with Gaza passages in the same weeks as a filed event (10 and 15 June 2024, 25
+      September 2024, 21 July 2025 with the joint declaration of the "Democracia Siempre" meeting,
+      11 September 2025). No statement of the government in office from 11 March 2026 calls for a
+      ceasefire or names a violation; its communiqué of 20 May 2026 protested to Israel's
+      ambassador over the treatment of detained Chilean flotilla participants (consular, unsigned).
+    queries:
+      - minrel.gob.cl site search (Gaza, genocidio, Palestina, alto el fuego)
+      - prensa.presidencia.cl search (Gaza, Palestina, genocidio, Netanyahu)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's conduct in Gaza or denial of documented
+      violations by the head of government or the Foreign Minister was found, including for the
+      government in office from 11 March 2026 (meetings with Israel's ambassador, 25 March 2026,
+      and Foreign Minister, 7 August 2026, are protocol readouts; on 28 September 2026 the Ministry
+      delivered a note of protest to Israel's ambassador over public remarks on Chile's internal
+      affairs).
+    queries:
+      - minrel.gob.cl site search (Israel)
+      - prensa.presidencia.cl search (Israel, Herzog)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No sanctions on Israeli ministers or settler entities by Chile were found. The Ministry
+      condemned settlement approvals on 22 August and 26 December 2025 (unsigned communiqués;
+      West Bank).
+    queries:
+      - minrel.gob.cl site search (asentamientos, Cisjordania)
+  B12:
+    status: has-events
+    note: >-
+      One event (evt_2023_10_31_CHL_B12): the ambassador in Israel recalled for consultations on
+      31 October 2023, citing Gaza, to 4 June 2026, when the President in office from 11 March 2026
+      designated a new ambassador to Israel with agrément. The withdrawal of the military, defence
+      and air attachés on 28 May 2025 is recorded in the event's note, not as a downgrade tier
+      (docs/10 B-362 (2)).
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Chile and Israel have no trade agreement to suspend; no suspension or review of any
+      agreement with Israel was found.
+    queries:
+      - minrel.gob.cl site search (Israel, acuerdo)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No new agreement signed with Israel was found; the Foreign Ministers' meeting of 7 August
+      2026 discussed cooperation without a signature.
+    queries:
+      - minrel.gob.cl site search (Israel)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade, fetched in this session. Chile's own totals with Israel: USD 256.9
+      million in 2022, 231.7 million in 2023 (r = 0.90), 294.9 million in 2024 (r = 1.15), 199.3
+      million in 2025 (r = 0.78); Israel's mirror totals 248.8, 249.6, 267.9 and 242.7 million. On
+      own data C3 is −3 (tier ≥ USD 100 million with r ≥ 0.9) for the 2023 and 2024 values and 0
+      from the 2025 release (13 March 2026). No Chilean document on trade with Israel was found to
+      compare.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No ban or labelling rule on settlement goods is in force. On 1 June 2025 the President said
+      he would sponsor and give urgency to the bill prohibiting imports of products of the
+      occupied territories (src_20250601_presidencia_cuenta-publica-2025); no enacted law was
+      found (the Congress and the Diario Oficial were not searched; P-16). A ban would be scoped
+      `west-bank` (B-32).
+    queries:
+      - prensa.presidencia.cl search (Palestina)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Chilean public fund was found in the sources searched; the
+      pension and sovereign funds and the central bank were not searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No procurement exclusion with legal effect was found. The suspension of Israel's
+      participation in FIDAE 2024 (the President's words of 17 December 2024 and 1 June 2025) is
+      an exclusion from a state-run fair, not a procurement rule, and its act was not read (docs/10
+      B-362 (3)).
+    queries:
+      - prensa.presidencia.cl search (FIDAE)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: Chile's government flows of USD 100,000 to the 2024 appeal (plan 1156)
+      and 100,000 to the 2025 appeal (plan 1273): +1 in the windows that contain them. The Ministry
+      announced USD 100,000 through UNFPA on 2 January 2024, consistent with the first. Bilateral
+      aid is outside FTS (docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Chile did not suspend funding to UNRWA; it announced USD 200,000 for UNRWA on 24 October 2023
+      (Ministry item) and pledged USD 20,000 for 2024 (UNRWA table).
+    queries:
+      - minrel.gob.cl site search (UNRWA)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_CHL_D3): increased tier, USD 20,000 for 2024 against USD 12,500 for
+      2022 (UNRWA tables), as data/wave-6 and Colombia for countries that never suspended.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field hospital was found. On 13 September 2025 the
+      Ministry reported that 68 Palestinians with close ties in Chile (36 minors) had arrived after
+      an evacuation from Gaza organised by the government from 10 September 2025; the release
+      names no medical purpose and no legal instrument, so it is neither D4 nor D5; flagged (docs/10
+      B-362 (5)).
+    queries:
+      - minrel.gob.cl site search (Gaza, evacuados)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found (see D4 for the evacuation of September
+      2025). Consular evacuations of Chileans from Israel in October 2023 are not D5 instruments.
+    queries:
+      - minrel.gob.cl site search (Gaza, visa)
+  E1:
+    status: unchecked
+    note: The Fiscalía and the courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

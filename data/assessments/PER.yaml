@@ -1,0 +1,204 @@
+# Coverage record for Peru (docs/03 §6). P-21 light protocol, session T-P21-12, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (gob.pe/rree, live, 200) and the Presidency (gob.pe/presidencia), the Presidency of the Council of Ministers' news (gob.pe/institucion/pcm), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the ICJ's case page, the SIPRI register, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 30 minutes of research on Peru, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: none cites Gaza by a B9 speaker (see B9).
+country: PER
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PER
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): orders from Israel in data year 2025, 9 PULS multiple rocket launchers (SIPRI TIV 19.8; comment ''$60 m deal; delivery
+      planned 2027-2028'') and 3 Predator Hawk missiles ''for PULS multiple rocket launchers'' (TIV 3), TIV 22.8 in all; the register''s earlier rows (1996, 2009, 2014, 2016) pre-date the war.
+      The event evt_2026_03_09_PER_A4_orders-2025 (-5) is computed by the build. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PER
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Peru
+    - Perú Elbit PULS contrato Ejército del Perú lanzacohetes Israel 2025 firma contrato Ministerio de Defensa
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes, absent on A/RES/80/1 (19 September 2025). The statements on the votes were not read. No disagreement found. A vote
+      of September 2026 on a video address by the Palestinian President, on which the press reports that Peru abstained (Resumen Latinoamericano, 26 September 2026), is not yet in the table (docs/10
+      B-503; P-23).'
+    queries:
+    - unga_votes.csv, voter PER
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Peru is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Peru is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found (Peru is a party to the Rome Statute). The Ministry's
+      reaction to the United States' sanctions on ICC judges, which the press reports (RPP, headline only, page not read), concerns the Court's independence and is not a statement on the warrants.
+    queries:
+    - Perú Cancillería CPI orden de arresto Netanyahu Perú cumplirá OR ejecutaría OR posición gobierno peruano Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Perú Cancillería CPI orden de arresto Netanyahu Perú cumplirá OR ejecutaría OR posición gobierno peruano Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Peru has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Perú Cancillería CPI orden de arresto Netanyahu Perú cumplirá OR ejecutaría OR posición gobierno peruano Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `PER,2011-01-24` is added in this session from the Division for Palestinian Rights'' review of January 2011 (UNISPAL, archived, line 19 and line
+      258: ''Peru announced its recognition of a "free and sovereign" State of Palestine, Foreign Minister José Antonio Belaunde said'', AFP, 24 January): the pre-existing tier, +3 (R21). A UN
+      Secretariat review, not the Government''s own text, flagged: the Ministry''s communiqué of 24 January 2011 was not found online. The registry''s date (2011-01-24) agrees. The Government
+      of September 2026 has not withdrawn the recognition (no statement found).'
+    queries:
+    - Perú reconoce Estado de Palestina 2011 comunicado Cancillería
+    - UNISPAL Chronological Review of Events January 2011 (archived)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: no B9 speaker named Gaza with a call or a violation. The General Debate statements of the 78th to 81st sessions (the Foreign Minister''s of September 2024, President Boluarte''s
+      of 23 September 2025, President Fujimori''s of September 2026), read in full (`pe_es.pdf`), never cite Gaza, Palestine or Israel. The Ministry''s communiqués (Comunicado Oficial 039-25 of
+      15 October 2025 on gob.pe, read, welcomes ''el cese al fuego'' and the release of hostages in the Gaza Strip; the welcome of the Security Council''s resolution on a ceasefire, Radio Nacional,
+      12 June 2024, read) are in the Government''s name with no named speaker (R3) and welcome agreements rather than call for a ceasefire (R4).'
+    queries:
+    - Perú Cancillería Gaza comunicado cese al fuego gob.pe rree
+    - canciller Elmer Schialer Gaza Perú declaración cese al fuego Palestina Israel
+    - Hugo de Zela canciller Perú Gaza Palestina Israel declaración reconocimiento Palestina Perú 2025
+    - Boluarte Gaza "Perú" presidenta declaración alto el fuego Palestina Israel mensaje conflicto Medio Oriente discurso
+    - Perú Cancillería comunicado Gaza hambruna ayuda humanitaria llamado alto el fuego "Perú" ministro Relaciones Exteriores 2025
+    - gadebate.un.org Peru 78th to 81st sessions (pe_es.pdf), read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found. President Balcázar's remarks of April 2026 on the Jewish people and the
+      Second World War (Gestión, search result, page not read) do not concern Gaza.
+    queries:
+    - Boluarte Gaza "Perú" presidenta declaración alto el fuego Palestina Israel mensaje conflicto Medio Oriente discurso
+    - Perú sanciones colonos israelíes OR "retira embajador" OR "llama a consultas" OR "suspende" acuerdo Israel gobierno peruano Gaza medidas embargo
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Peru was found (not an EU member).
+    queries:
+    - Perú sanciones colonos israelíes OR "retira embajador" OR "llama a consultas" OR "suspende" acuerdo Israel gobierno peruano Gaza medidas embargo
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the Foreign Ministers of Peru and Israel spoke by telephone on 3 August 2026 (El Peruano, read; lead_20261006_PER_1)
+      and Foreign Minister Carlos Pareja called the diplomatic episode over President Balcázar''s remarks on the Jewish people ''superada'' (Gestión, headline only, page not read).'
+    queries:
+    - Perú sanciones colonos israelíes OR "retira embajador" OR "llama a consultas" OR "suspende" acuerdo Israel gobierno peruano Gaza medidas embargo
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Perú sanciones colonos israelíes OR "retira embajador" OR "llama a consultas" OR "suspende" acuerdo Israel gobierno peruano Gaza medidas embargo
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the memorandum of understanding on cybersecurity between the Presidency of the Council of Ministers and Israel''s National Cyber Directorate, signed 21 November 2025 (-10,
+      standing, flagged under R18; the Presidency''s release on gob.pe, Andina and EFE, archived). Not filed: the Foreign Ministers'' call of 3 August 2026, which announced cooperation through
+      Mashav with no instrument (lead_20261006_PER_1); the memorandum on defense industrial cooperation of 2008, approved by the Plenary of Congress (Congress news of 18 November 2021, read; before
+      the window); the rocket-launcher contract with Elbit Systems and the Army''s arms factory (A4, generated); the cybersecurity event of Israel''s trade mission in Lima (August 2026, AJN, read:
+      an activity under the memorandum).'
+    queries:
+    - Perú Israel acuerdo firmado memorándum cooperación 2025 2026 Cancillería peruana embajador Israel
+    - Perú País Digital Dirección Nacional de Ciberseguridad de Israel memorando de entendimiento firma gob.pe
+    - Keiko Fujimori Israel embajada Jerusalén Gaza política exterior Perú canciller 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Peru in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PER
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Peru has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Peru
+    - Perú ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno peruano Cancillería
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'Peru has no row in UNRWA''s donor tables of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Peru
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Perú ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno peruano Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Perú ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno peruano Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
