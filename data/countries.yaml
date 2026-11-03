@@ -2692,7 +2692,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-02}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.la)', url: 'http://mofa.gov.la/', type: mfa, lang: [lo]}
+    - {label: 'Lao News Agency, KPL (kpl.gov.la): the Prime Minister and the Government', url: 'https://kpl.gov.la/EN/', type: news_agency, lang: [en, lo]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.la does not answer from outside Laos (no HTTP answer to a scripted request) and was checked through its Wayback capture of 18 October 2026 (HTTP 200;
+    the page declares lang="la" and its text is Lao, so lang is lo); the Prime Minister's office site (laogov.gov.la) is not entered: its only 2025 capture says the site is temporarily unavailable. KPL
+    (kpl.gov.la/EN) answered HTTP 200 to a request with a browser User-Agent and declares lang="en-US"; it reports the Prime Minister's statements, with the General Debate statement of the 80th session
+    printed on the Permanent Mission's page (un.int/lao, HTTP 200, lang="en"). The Prime Minister is Sonexay Siphandone; the Deputy Prime Minister and Minister of Foreign Affairs is Thongsavanh Phomvihane
+    (the 81st General Debate file and the UN's page, read).
 
 - iso3: LBN
   iso2: LB
@@ -3274,7 +3282,15 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.mm)', url: 'https://www.mofa.gov.mm/', type: mfa, lang: [my, en]}
+    - {label: 'Global New Light of Myanmar (gnlm.com.mm): the state newspaper, reporting the President and the Government', url: 'https://www.gnlm.com.mm/', type: news_agency, lang: [en, my]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.mm answered HTTP 200 to a request with a browser User-Agent and declares lang="my-MM" (the front page carries Burmese and English); gnlm.com.mm answered
+    HTTP 403 to a script and was checked through its Wayback capture of 16 October 2026 (HTTP 200, lang="en-US"). The President's office site (president.gov.mm) did not answer and has no Wayback capture,
+    so it is not entered. The President is Min Aung Hlaing (sworn in on 10 April 2026; search results naming The Star and Xinhua, not read in full); before that the State Administration Council held power
+    from the coup of 1 February 2021. Myanmar's seat at the United Nations is held by the delegation of Ambassador Kyaw Moe Tun (search results), a point the author should read for the choice of B9/B10
+    speakers (docs/10 B-707).
 
 - iso3: MNE
   iso2: ME
@@ -3817,7 +3833,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1989-09-04}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Department of Foreign Affairs (dfa.gov.ph), not readable by script', url: 'https://dfa.gov.ph/', type: mfa, lang: [en]}
+    - {label: 'Presidential Communications Office (pco.gov.ph): the President, not readable by script', url: 'https://pco.gov.ph/', type: head_of_government, lang: [en]}
+    - {label: 'Philippine News Agency (pna.gov.ph): reports of the President and the Department', url: 'https://www.pna.gov.ph/', type: news_agency, lang: [en]}
+    - {label: 'Department of Foreign Affairs, PH Voices in UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph): the General Debate statements', url: 'https://sites.google.com/dfa.gov.ph/ungarchiveph/home', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: dfa.gov.ph, pco.gov.ph and op-proper.gov.ph answer HTTP 403 with a Cloudflare challenge ('Just a moment...') to a scripted request, and their Wayback captures are
+    the same challenge page (dfa.gov.ph of 24 July 2026, pco.gov.ph of 3 November 2025), so the two entries are the Government's addresses as the releases of 2025 print them and their contents were not
+    read; pna.gov.ph answered HTTP 200 (lang="en") but renders articles by script (an article URL answers 404 to a script); the Department's UNGA archive answered HTTP 200 (a Google Sites page) and
+    holds the statement of the 80th session (src_20250927_dfa-ungarchive_phl-lazaro-80). The President is Ferdinand R. Marcos Jr.; the Secretary of Foreign Affairs is Ma. Theresa P. Lazaro (the
+    80th and 81st General Debate statements). Releases are read through news outlets and the mirrors of GlobalSecurity.org (docs/10 B-705).
 
 - iso3: PLW
   iso2: PW

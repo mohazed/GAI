@@ -932,3 +932,43 @@ Samoa: no vote on 4 of 12 (A/RES/ES-10/21, ES-10/23, ES-10/27, A/RES/80/1). Camb
 | WSM | −22.7 (−23) | −22.7 (−23) | Enabling | no event; B1 with four non-votes; passivity penalty applies |
 
 No band change. Read critically (docs/06 §4 step 7): Brunei's score rests on the two 2026 events; without the 26 September 2026 reading the 22 August 2026 event alone still ends the penalty.
+
+## T-P21-22: LAO, MMR, PHL (2026-11-04)
+
+Light protocol (docs/06 §5) for the Lao People's Democratic Republic, Myanmar and the Philippines, by a fresh Sonnet 5.5 session of the finish run. Two documents archived (the Lao Prime Minister's 79th General Debate statement from the existing Wayback capture; the Department of Foreign Affairs' archive page of the Philippines' 80th statement with Save Page Now; both replays fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256; the failed capture of the Philippines' 81st file, HTTP 405, removed by its exact id). 3 events (Lao PDR 1, Philippines 2), none for Myanmar; 4 leads. Decisions and flags are in docs/10 B-704 to B-710. The session took about 35 minutes by the machine's clock; B7 and B11 are `unchecked` for the three countries and D4 and D5 for the Lao PDR and Myanmar.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_27_LAO_B9 | B9 | 2024-09-27 (expired) | +2 | confirmed | official |
+| evt_2024_12_31_PHL_D3 | D3 | 2024-12-31 | +8 | confirmed | official |
+| evt_2025_09_27_PHL_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build.
+
+### Lao People's Democratic Republic
+
+Assessments (34 indicators): has-events 2 (B1, B9), none-found 13, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 16 (A3, A5 to A8, B7, B8, B11, C4 to C6, D4, D5, E1 to E3). Lead: 1 (`lead_20261104_LAO_1`: the 2nd ASEAN-GCC Summit of 27 May 2025, whose final statement was not found). Sources read: the General Debate statements of the 78th, 79th and 81st sessions (live files), the 80th on the Permanent Mission's page, KPL, Bernama. Not filed: the 78th, 80th and 81st statements (R7 or no call).
+
+### Myanmar
+
+Assessments: has-events 1 (B1), none-found 14, no-data 2, not-applicable 1, unchecked 16 (as for the Lao PDR). No event and no lead: the General Debate statements could not be read, the Ministry's statement of 6 March 2026 names neither Gaza nor Israel, no statement of the President on Gaza was found. Whose statements count (the government in office or the delegation that holds the seat) is flagged in B-707.
+
+### Philippines
+
+Assessments: has-events 4 (A4, B1, B9, D3), none-found 13 (including D4 and D5), no-data 2, not-applicable 1, unchecked 14 (A3, A5 to A8, B7, B8, B11, C4 to C6, E1 to E3). Leads: 3 (`lead_20261104_PHL_1` Lazaro's 81st statement, `_2` President Marcos at the ASEAN-GCC Summit of 27 May 2025, `_3` the Department's statement of 25 August 2025). Sources read: the Department's UNGA archive, the General Debate statements of the 78th to 81st sessions (live files), UNISPAL's file of the statement at the two-state conference, GMA News, Philstar, Inquirer, Daily Tribune, Khaleej Times, PTV News, GlobalSecurity.org.
+
+### Article 19 note (report only)
+
+All twelve qualifying votes are recorded for the three countries; nothing to report (the Philippines abstained on A/RES/ES-10/21).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LAO | +1.5 (+2) | +1.5 (+2) | Acting | the 2024 event is beyond 730 days; passivity penalty applies |
+| MMR | +1.5 (+2) | +1.5 (+2) | Acting | no event; passivity penalty applies |
+| PHL | −3.5 (−3) | +6.4 (+6) | Passive to Acting | D3 +8.0, B9 +1.8; A4 −5.0 and the passivity penalty −15 remain |
+
+One band change: the Philippines from Passive to Acting. Read critically (docs/06 §4 step 7): D3 alone accounts for the change (without it the score is −1.6, Passive); it rests on a doubling of a USD 50,000 contribution to UNRWA (B-708 (4)). The B9 event is 403 days old and does not end the passivity penalty.
