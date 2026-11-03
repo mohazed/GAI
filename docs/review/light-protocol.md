@@ -891,3 +891,44 @@ Latvia: all 12 qualifying votes recorded. Tonga: no vote on 2 of 12 (A/RES/ES-10
 | TUV | −23.7 (−24) | −23.7 (−24) | Enabling | B1 −8.7 (six non-votes weigh −6.0); passivity penalty −15; no event |
 
 One band change: Latvia from Passive to Acting; without the 28 May 2026 listing the penalty applies and the score is +15.3 (Acting). Read critically (docs/06 §4 step 7): B9 is capped for Latvia, so the flagged call-tier events move nothing.
+
+## T-P21-21: WSM, BRN, KHM (2026-11-04)
+
+Light protocol (docs/06 §5) for Samoa, Brunei Darussalam and Cambodia, by a fresh Sonnet 5.5 session of the finish run. Seven documents archived (six with Wayback captures read with `--capture` or Save Page Now; every replay fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256). 4 events (Brunei 3, Cambodia 1), none for Samoa; 4 leads. Decisions and flags are in docs/10 B-696 to B-703. The session ran about ten minutes over its 90-minute budget; B7, B11, D4 and D5 are `unchecked` for the three countries.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_27_BRN_B9 | B9 | 2025-09-27 | +5 | confirmed | official |
+| evt_2026_08_22_BRN_B9 | B9 | 2026-08-22 | +5 | confirmed | official |
+| evt_2026_09_26_BRN_B9 | B9 | 2026-09-26 | +5 | confirmed | official |
+| evt_2024_09_28_KHM_B9 | B9 | 2024-09-28 (expired) | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build.
+
+### Samoa
+
+Assessments (34 indicators): has-events 1 (B1), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 16 (A3, A5 to A8, B7, B8, B11, C4 to C6, D4, D5, E1 to E3). Leads: 2 (`lead_20261104_WSM_1` the Prime Minister's declarations of support for Israel, Talamua Online; `_2` the instruction to prepare an office in Jerusalem, Samoa Observer). Sources read: the Government portal and the Ministry (site searches), the General Debate statements of the 78th to 80th sessions, the Government's release of 23 October 2025, Talamua Online, the Samoa Observer, Middle East Eye. Stop note: about 30 minutes of research.
+
+### Brunei Darussalam
+
+Assessments: has-events 3 (B1, B9, D1), none-found 12, no-data 2, not-applicable 1, unchecked 16. Lead: 1 (`lead_20261104_BRN_1`: the Sultan's titah of 20 October 2023 and the joint statement of 27 August 2025, press only). Sources read: the Ministry's Press Room (items 1199, 1229, 1234), the General Debate statements of the 78th, 80th and 81st sessions, The Star (Borneo Bulletin, Bernama). Stop note: about 35 minutes of research.
+
+### Cambodia
+
+Assessments: has-events 2 (B1, B9), none-found 13, no-data 2, not-applicable 1, unchecked 16 (with B7, B8, B11, D4, D5 as for Samoa). Lead: 1 (`lead_20261104_KHM_1`: the education memorandum of 20 February 2025, press only; the labour agreement of 1 December 2025 is not filed because its only source could not be read). Sources read: AKP, the Council of Ministers' press unit, the General Debate statements of the 79th and 81st sessions, Asia News Network, Open Development Cambodia, B2B Cambodia. Stop note: about 30 minutes of research.
+
+### Article 19 note (report only)
+
+Samoa: no vote on 4 of 12 (A/RES/ES-10/21, ES-10/23, ES-10/27, A/RES/80/1). Cambodia: no vote on 1 of 12 (A/RES/ES-10/21). Brunei: all 12 recorded. Neither Samoa nor Cambodia is among the four Member States in arrears on the General Assembly's page (archived) or in A/80/362, so the absences are not shown to be a loss of vote; the build scores a non-vote at -2 (B-701).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BRN | +1.5 (+2) | +26.5 (+27) | Acting | B9 +10.0 (cap; summed +14.6 from three events), the 22 August and 26 September 2026 events end the passivity penalty (+15) |
+| KHM | +1.5 (+2) | +1.5 (+2) | Acting | the 2024 event is beyond 730 days; passivity penalty applies |
+| WSM | −22.7 (−23) | −22.7 (−23) | Enabling | no event; B1 with four non-votes; passivity penalty applies |
+
+No band change. Read critically (docs/06 §4 step 7): Brunei's score rests on the two 2026 events; without the 26 September 2026 reading the 22 August 2026 event alone still ends the penalty.

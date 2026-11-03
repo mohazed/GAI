@@ -736,7 +736,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-17}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mfa.gov.bn): Press Room', url: 'https://www.mfa.gov.bn/site/home.aspx', type: mfa, lang: [en]}
+    - {label: "Prime Minister's Office (pmo.gov.bn): the Sultan and Yang Di-Pertuan", url: 'https://www.pmo.gov.bn/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: both sites answered HTTP 200 to a request with a browser User-Agent and declare lang="en-GB" (mfa.gov.bn) and lang="en-US" (pmo.gov.bn); the Ministry's Press Room
+    items (news.aspx?id=N) print the Ministers' addresses and the joint statements and accept Save Page Now. His Majesty the Sultan is head of state and Prime Minister; the Minister of Foreign Affairs is
+    HRH Prince 'Abdul Mateen since 4 June 2026 (press reports of 5-8 June 2026, read), the Sultan having held the portfolio before; Dato Erywan Pehin Yusof is Minister of Foreign Affairs II. borneobulletin.com.bn
+    answers HTTP 403 to a script.
 
 - iso3: BTN
   iso2: BT
@@ -2543,7 +2550,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-21}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and International Cooperation (mfaic.gov.kh)', url: 'https://mfaic.gov.kh/en', type: mfa, lang: [en, km]}
+    - {label: 'Council of Ministers, Press and Quick Reaction Unit (pressocm.gov.kh): the Prime Minister', url: 'https://pressocm.gov.kh/en/', type: head_of_government, lang: [en, km]}
+  notes: >-
+    gov_sources checked 2026-11-04: pressocm.gov.kh/en answered HTTP 200 to a request with a browser User-Agent and declares lang="en"; mfaic.gov.kh answered HTTP 503 to a script and was checked through its
+    Wayback capture of 17 October 2026 (HTTP 200, lang="en"). AKP (akp.gov.kh, the national news agency, HTTP 200, lang="en") reports the Prime Minister's and Ministers' meetings in indirect speech. The
+    Prime Minister is Hun Manet (since 22 August 2023); the Minister of Foreign Affairs and International Cooperation was Sok Chenda Sophea until 20 November 2024 and is Prak Sokhonn, Deputy Prime Minister,
+    since (search results and the General Debate files, read).
 
 - iso3: KIR
   iso2: KI
@@ -5280,7 +5294,14 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and Trade (mfat.gov.ws)', url: 'https://www.mfat.gov.ws/', type: mfa, lang: [en]}
+    - {label: 'Government of Samoa (samoagovt.ws): the Prime Minister, speeches and releases', url: 'https://www.samoagovt.ws/', type: head_of_government, lang: [en, sm]}
+  notes: >-
+    gov_sources checked 2026-11-04: both sites answered HTTP 200 to a request with a browser User-Agent and declare lang="en-GB" (mfat.gov.ws) and lang="en-US" (samoagovt.ws; many items are in Samoan).
+    The Prime Minister, La'aulialemalietoa Leuatea Polataivao Fosi Schmidt (sworn in 16 September 2025), holds the foreign affairs and trade portfolio himself (samoagovt.ws directory page, read); the Deputy
+    Prime Minister is Mulipola Anarosa Ale Molioo (since 2026, after Toelupe Poumulinuku Onesemo resigned on 30 March 2026, per search results, not read); the Head of State is the O le Ao o le Malo.
+    Fiame Naomi Mata'afa was Prime Minister and held the same portfolio until September 2025. pmo.gov.ws does not resolve.
 
 - iso3: YEM
   iso2: YE

@@ -1,0 +1,176 @@
+# Coverage record for Brunei Darussalam (docs/03 §6). P-21 light protocol, session T-P21-21, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.bn: HTTP 200 to a browser User-Agent; Press Room items read by id and title), the General Debate statements of the 78th, 80th and 81st sessions (gadebate.un.org; the 79th has no Brunei file), the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on the Sultan's, the Ministry's and the Ministers' statements. Not searched individually: B7, B11, D4, D5. Time: about 35 minutes of research on Brunei, inside the 90-minute budget of the session.
+country: BRN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BRN
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached
+      this one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BRN
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter BRN
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Brunei is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Brunei; docs/06 §8). The advisory
+      proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Brunei)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the sources read.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Brunei is not a state party to the Rome Statute (the Assembly of States Parties'' list, archived, searched for Brunei: no entry); no statement on the warrants of 21 November 2024 was
+      found.'
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on ICC officials by Brunei appeared in any source read.
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no row for Brunei. The registry gives 17 November 1988 (A/78/846 annex) and records no official statement for it (P-14); the Minister of Foreign
+      Affairs II said at the 80th General Debate (27 September 2025) that ''Recognising the State of Palestine, and supporting its full membership in the UN, is not a reward'' and Brunei voted
+      yes on A/DEC/80/506 (the New York Declaration). No row (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher.'
+    queries:
+    - recognitions.csv, row BRN (none)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Three B9 events (+5 each, B9 capped at +10): the Minister of Foreign Affairs II''s address of 27 September 2025 (evt_2025_09_27_BRN_B9), the Sultan''s joint statement with Malaysia''s
+      Prime Minister of 22 August 2026 (evt_2026_08_22_BRN_B9) and the Minister of Foreign Affairs'' address of 26 September 2026 (evt_2026_09_26_BRN_B9). Not filed: the Sultan''s titah at the
+      ASEAN-GCC summit of 20 October 2023 and the joint statement of the 26th consultation of 27 August 2025 (press only: lead_20261104_BRN_1); the Ministry''s Press Room statements (13 August,
+      9 and 13 October 2025 and others, on the Ministry''s item list) are Ministry statements, not a named speaker''s, so they do not score (R3); the 78th session''s address (23 September 2023)
+      predates the window; Brunei has no file at the 79th session. Brunei, Indonesia and Malaysia issued a statement at APEC on 17-18 November 2023 calling for a humanitarian truce (press, search
+      result, not read; the leaders who issued it are not named in the result).'
+    queries:
+    - gadebate.un.org Brunei 78th, 80th, 81st sessions (bn_en.pdf, read)
+    - 'mfa.gov.bn Press Room items 1076-1234 searched by title (read: 1199, 1229, 1234)'
+    - Brunei Sultan Gaza statement ceasefire (web searches)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Sultan was found.
+    queries:
+    - Brunei Sultan Israel (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Brunei appeared in any source read.
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; no diplomatic relations between Brunei and Israel were found either (a search result states that Brunei has none;
+      not read).
+    queries:
+    - Brunei Israel relations (web searches)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Brunei; none was suspended or reviewed (none found).
+    queries:
+    - Brunei Israel trade agreement (web searches)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found.
+    queries:
+    - Brunei Israel agreement signed (web searches)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Brunei''s Government flow of USD 100,000 (1 flow) to plan 1273 in fts_plan_totals.csv; the build scores it as monthly D1 rows. Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor BRN
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings (archived) give Brunei Darussalam USD 411,329 for 2022 (line 55, rank 46), 214,712 for 2023 (line 98, rank 79) and 114,712 for 2024 (line 120, rank 83): the
+      contributions continued; no suspension was announced in the sources read.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Brunei Darussalam
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No restoration or increase: Brunei''s contributions of 2023 (USD 214,712) and 2024 (USD 114,712) are below its 2022 contribution (USD 411,329) in UNRWA''s donor rankings (archived).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Brunei Darussalam
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+  D5:
+    status: unchecked
+    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
