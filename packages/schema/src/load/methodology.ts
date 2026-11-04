@@ -15,6 +15,7 @@ import {
   MethodologyDiffFile,
   type MethodologyFileName,
   type PassivityFile,
+  ProposalsFile,
   ReviewersFile,
   type SymmetryFile,
   type ThresholdsFile,
@@ -243,6 +244,34 @@ export function loadReviewers(repoRoot: string): {
   if (!result.success) {
     issues.push(
       ...zodIssues('schema.methodology', result.error, { file: REVIEWERS_FILE, id: 'reviewers' }),
+    )
+    return { value: null, issues }
+  }
+  return { value: result.data, issues }
+}
+
+/** `methodology/proposals.yaml`, outside the version folders (docs/08 §1 step 3). */
+export const PROPOSALS_FILE = 'methodology/proposals.yaml'
+
+/**
+ * Loads the open methodology proposals. A missing file means none (an empty list, no issue); a
+ * file that does not parse or match its schema gives `value: null` and issues.
+ */
+export function loadProposals(repoRoot: string): {
+  value: ProposalsFile | null
+  issues: Issue[]
+} {
+  const full = join(repoRoot, PROPOSALS_FILE)
+  if (!existsSync(full)) return { value: { proposals: [] }, issues: [] }
+  const decoded = decodeUtf8(readFileSync(full), PROPOSALS_FILE)
+  const issues: Issue[] = [...decoded.issues]
+  const parsed = parseYaml(decoded.text, PROPOSALS_FILE)
+  issues.push(...parsed.issues)
+  if (!parsed.ok) return { value: null, issues }
+  const result = ProposalsFile.safeParse(parsed.value)
+  if (!result.success) {
+    issues.push(
+      ...zodIssues('schema.methodology', result.error, { file: PROPOSALS_FILE, id: 'proposals' }),
     )
     return { value: null, issues }
   }

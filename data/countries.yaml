@@ -6,8 +6,14 @@
 #
 # - iso2, iso3, m49, region, subregion: UN M49 overview, English table,
 #   https://unstats.un.org/unsd/methodology/m49/overview/ (read 2026-09-28). Sub-regions are the
-#   M49 sub-regions, not the intermediate regions (Caribbean, Central America, South America,
-#   and the four African intermediate regions).
+#   M49 sub-regions; the intermediate regions are in `intermediate_region` (P-20, 2026-11-04).
+# - intermediate_region: the "Intermediate Region Name" column of the same table, English (page
+#   read 2026-11-04, SHA-256 b9048114f6e7f2abda83bf03d4263c9d7cd1bd7230e3d0461025ee7839a7a1fb, the
+#   page of 1,721,575 bytes that also holds the French table cited in docs/10 B-469). M49 divides
+#   two sub-regions further: Sub-Saharan Africa (Eastern Africa 18, Middle Africa 9, Southern
+#   Africa 5, Western Africa 16) and Latin America and the Caribbean (Caribbean 13, Central
+#   America 8, South America 12); the 114 other entries have null. Region and sub-region of all
+#   195 entries were compared with the same table again at that date: no difference.
 # - name.en, name.fr, name.fr_def: UNTERM country names, the export of
 #   https://unterm.un.org/unterm2/en/country (term/downloadCountries, read 2026-09-28, SHA-256
 #   3b42ac104a94c8b358f98e2269d15704f6609314a89581fff85d0c704693627d). name.en and name.fr are the
@@ -57,6 +63,7 @@
   name: {en: Afghanistan, en_def: Afghanistan, fr: Afghanistan, fr_def: 'l''Afghanistan'}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -85,6 +92,7 @@
   name: {en: Angola, en_def: Angola, fr: Angola, fr_def: 'l''Angola'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -115,6 +123,7 @@
   name: {en: Albania, en_def: Albania, fr: Albanie, fr_def: 'l''Albanie'}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -145,6 +154,7 @@
   name: {en: Andorra, en_def: Andorra, fr: Andorre, fr_def: 'l''Andorre'}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -181,6 +191,7 @@
   name: {en: United Arab Emirates, en_def: the United Arab Emirates, fr: Émirats arabes unis, fr_def: les Émirats arabes unis}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -214,6 +225,7 @@
   name: {en: Argentina, en_def: Argentina, fr: Argentine, fr_def: 'l''Argentine'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -240,6 +252,7 @@
   name: {en: Armenia, en_def: Armenia, fr: Arménie, fr_def: 'l''Arménie'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -274,6 +287,7 @@
   name: {en: Antigua and Barbuda, en_def: Antigua and Barbuda, fr: Antigua-et-Barbuda, fr_def: Antigua-et-Barbuda}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -302,6 +316,7 @@
   name: {en: Australia, en_def: Australia, fr: Australie, fr_def: 'l''Australie'}
   region: Oceania
   subregion: Australia and New Zealand
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -335,6 +350,7 @@
   name: {en: Austria, en_def: Austria, fr: Autriche, fr_def: 'l''Autriche'}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -366,6 +382,7 @@
   name: {en: Azerbaijan, en_def: Azerbaijan, fr: 'Azerbaïdjan', fr_def: 'l''Azerbaïdjan'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -391,6 +408,7 @@
   name: {en: Burundi, en_def: Burundi, fr: Burundi, fr_def: le Burundi}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -421,6 +439,7 @@
   name: {en: Belgium, en_def: Belgium, fr: Belgique, fr_def: la Belgique}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -452,6 +471,7 @@
   name: {en: Benin, en_def: Benin, fr: Bénin, fr_def: le Bénin}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -482,6 +502,7 @@
   name: {en: Burkina Faso, en_def: Burkina Faso, fr: Burkina Faso, fr_def: le Burkina Faso}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -512,6 +533,7 @@
   name: {en: Bangladesh, en_def: Bangladesh, fr: Bangladesh, fr_def: le Bangladesh}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -541,6 +563,7 @@
   name: {en: Bulgaria, en_def: Bulgaria, fr: Bulgarie, fr_def: la Bulgarie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -570,6 +593,7 @@
   name: {en: Bahrain, en_def: Bahrain, fr: 'Bahreïn', fr_def: 'Bahreïn'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -600,6 +624,7 @@
   name: {en: Bahamas, en_def: The Bahamas, fr: Bahamas, fr_def: Les Bahamas}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -634,6 +659,7 @@
   name: {en: Bosnia and Herzegovina, en_def: Bosnia and Herzegovina, fr: Bosnie-Herzégovine, fr_def: la Bosnie-Herzégovine}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -663,6 +689,7 @@
   name: {en: Belarus, en_def: Belarus, fr: Bélarus, fr_def: le Bélarus}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -691,6 +718,7 @@
   name: {en: Belize, en_def: Belize, fr: Belize, fr_def: le Belize}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -719,6 +747,7 @@
   name: {en: Bolivia (Plurinational State of), en_def: the Plurinational State of Bolivia, fr: Bolivie (État plurinational de), fr_def: 'l''État plurinational de Bolivie'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -746,6 +775,7 @@
   name: {en: Brazil, en_def: Brazil, fr: Brésil, fr_def: le Brésil}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -776,6 +806,7 @@
   name: {en: Barbados, en_def: Barbados, fr: Barbade, fr_def: la Barbade}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -811,6 +842,7 @@
   name: {en: Brunei Darussalam, en_def: Brunei Darussalam, fr: Brunéi Darussalam, fr_def: le Brunéi Darussalam}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -839,6 +871,7 @@
   name: {en: Bhutan, en_def: Bhutan, fr: Bhoutan, fr_def: le Bhoutan}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -866,6 +899,7 @@
   name: {en: Botswana, en_def: Botswana, fr: Botswana, fr_def: le Botswana}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Southern Africa
   un_member: true
   observer: false
   excluded: false
@@ -895,6 +929,7 @@
   name: {en: Central African Republic, en_def: the Central African Republic, fr: République centrafricaine, fr_def: la République centrafricaine}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -924,6 +959,7 @@
   name: {en: Canada, en_def: Canada, fr: Canada, fr_def: le Canada}
   region: Americas
   subregion: Northern America
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -956,6 +992,7 @@
   name: {en: Switzerland, en_def: Switzerland, fr: Suisse, fr_def: la Suisse}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -989,6 +1026,7 @@
   name: {en: Chile, en_def: Chile, fr: Chili, fr_def: le Chili}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -1016,6 +1054,7 @@
   name: {en: China, en_def: China, fr: Chine, fr_def: la Chine}
   region: Asia
   subregion: Eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1045,6 +1084,7 @@
   name: {en: 'Côte d''Ivoire', en_def: 'Côte d''Ivoire', fr: 'Côte d''Ivoire', fr_def: 'la Côte d''Ivoire'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -1075,6 +1115,7 @@
   name: {en: Cameroon, en_def: Cameroon, fr: Cameroun, fr_def: le Cameroun}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -1109,6 +1150,7 @@
   name: {en: Democratic Republic of the Congo, en_def: the Democratic Republic of the Congo, fr: République démocratique du Congo, fr_def: la République démocratique du Congo}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -1140,6 +1182,7 @@
   name: {en: Congo, en_def: the Congo, fr: Congo, fr_def: le Congo}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -1169,6 +1212,7 @@
   name: {en: Colombia, en_def: Colombia, fr: Colombie, fr_def: la Colombie}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -1197,6 +1241,7 @@
   name: {en: Comoros, en_def: the Comoros, fr: Comores, fr_def: les Comores}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -1224,6 +1269,7 @@
   name: {en: Cabo Verde, en_def: Cabo Verde, fr: Cabo Verde, fr_def: Cabo Verde}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -1250,6 +1296,7 @@
   name: {en: Costa Rica, en_def: Costa Rica, fr: Costa Rica, fr_def: le Costa Rica}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -1280,6 +1327,7 @@
   name: {en: Cuba, en_def: Cuba, fr: Cuba, fr_def: Cuba}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -1310,6 +1358,7 @@
   name: {en: Cyprus, en_def: Cyprus, fr: Chypre, fr_def: Chypre}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1340,6 +1389,7 @@
   name: {en: Czechia, en_def: Czechia, fr: Tchéquie, fr_def: la Tchéquie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1378,6 +1428,7 @@
   name: {en: Germany, en_def: Germany, fr: Allemagne, fr_def: 'l''Allemagne'}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1414,6 +1465,7 @@
   name: {en: Djibouti, en_def: Djibouti, fr: Djibouti, fr_def: Djibouti}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -1442,6 +1494,7 @@
   name: {en: Dominica, en_def: Dominica, fr: Dominique, fr_def: la Dominique}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -1470,6 +1523,7 @@
   name: {en: Denmark, en_def: Denmark, fr: Danemark, fr_def: le Danemark}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1500,6 +1554,7 @@
   name: {en: Dominican Republic, en_def: the Dominican Republic, fr: République dominicaine, fr_def: la République dominicaine}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -1527,6 +1582,7 @@
   name: {en: Algeria, en_def: Algeria, fr: Algérie, fr_def: 'l''Algérie'}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1554,6 +1610,7 @@
   name: {en: Ecuador, en_def: Ecuador, fr: Équateur, fr_def: 'l''Équateur'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -1586,6 +1643,7 @@
   name: {en: Egypt, en_def: Egypt, fr: Égypte, fr_def: 'l''Égypte'}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1618,6 +1676,7 @@
   name: {en: Eritrea, en_def: Eritrea, fr: Érythrée, fr_def: 'l''Érythrée'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -1650,6 +1709,7 @@
   name: {en: Spain, en_def: Spain, fr: Espagne, fr_def: 'l''Espagne'}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1683,6 +1743,7 @@
   name: {en: Estonia, en_def: Estonia, fr: Estonie, fr_def: 'l''Estonie'}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1716,6 +1777,7 @@
   name: {en: Ethiopia, en_def: Ethiopia, fr: Éthiopie, fr_def: 'l''Éthiopie'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -1751,6 +1813,7 @@
   name: {en: Finland, en_def: Finland, fr: Finlande, fr_def: la Finlande}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1787,6 +1850,7 @@
   name: {en: Fiji, en_def: Fiji, fr: Fidji, fr_def: les Fidji}
   region: Oceania
   subregion: Melanesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1820,6 +1884,7 @@
   name: {en: France, en_def: France, fr: France, fr_def: la France}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1857,6 +1922,7 @@
   name: {en: Micronesia (Federated States of), en_def: the Federated States of Micronesia, fr: Micronésie (États fédérés de), fr_def: les États fédérés de Micronésie}
   region: Oceania
   subregion: Micronesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1895,6 +1961,7 @@
   name: {en: Gabon, en_def: Gabon, fr: Gabon, fr_def: le Gabon}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -1927,6 +1994,7 @@
   name: {en: United Kingdom of Great Britain and Northern Ireland, en_def: the United Kingdom of Great Britain and Northern Ireland, fr: 'Royaume-Uni de Grande-Bretagne et d''Irlande du Nord', fr_def: 'le Royaume-Uni de Grande-Bretagne et d''Irlande du Nord'}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1962,6 +2030,7 @@
   name: {en: Georgia, en_def: Georgia, fr: Géorgie, fr_def: la Géorgie}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -1990,6 +2059,7 @@
   name: {en: Ghana, en_def: Ghana, fr: Ghana, fr_def: le Ghana}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -2018,6 +2088,7 @@
   name: {en: Guinea, en_def: Guinea, fr: Guinée, fr_def: la Guinée}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -2048,6 +2119,7 @@
   name: {en: Gambia, en_def: the Gambia, fr: Gambie, fr_def: la Gambie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -2076,6 +2148,7 @@
   name: {en: Guinea-Bissau, en_def: Guinea-Bissau, fr: Guinée-Bissau, fr_def: la Guinée-Bissau}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -2105,6 +2178,7 @@
   name: {en: Equatorial Guinea, en_def: Equatorial Guinea, fr: Guinée équatoriale, fr_def: la Guinée équatoriale}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -2137,6 +2211,7 @@
   name: {en: Greece, en_def: Greece, fr: Grèce, fr_def: la Grèce}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2169,6 +2244,7 @@
   name: {en: Grenada, en_def: Grenada, fr: Grenade, fr_def: la Grenade}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -2197,6 +2273,7 @@
   name: {en: Guatemala, en_def: Guatemala, fr: Guatemala, fr_def: le Guatemala}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -2224,6 +2301,7 @@
   name: {en: Guyana, en_def: Guyana, fr: Guyana, fr_def: le Guyana}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -2254,6 +2332,7 @@
   name: {en: Honduras, en_def: Honduras, fr: Honduras, fr_def: le Honduras}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -2282,6 +2361,7 @@
   name: {en: Croatia, en_def: Croatia, fr: Croatie, fr_def: la Croatie}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2315,6 +2395,7 @@
   name: {en: Haiti, en_def: Haiti, fr: 'Haïti', fr_def: 'Haïti'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -2343,6 +2424,7 @@
   name: {en: Hungary, en_def: Hungary, fr: Hongrie, fr_def: la Hongrie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2374,6 +2456,7 @@
   name: {en: Indonesia, en_def: Indonesia, fr: Indonésie, fr_def: 'l''Indonésie'}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2407,6 +2490,7 @@
   name: {en: India, en_def: India, fr: Inde, fr_def: 'l''Inde'}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2433,6 +2517,7 @@
   name: {en: Ireland, en_def: Ireland, fr: Irlande, fr_def: 'l''Irlande'}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2465,6 +2550,7 @@
   name: {en: Iran (Islamic Republic of), en_def: the Islamic Republic of Iran, fr: 'Iran (République islamique d'')', fr_def: 'la République islamique d''Iran'}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2506,6 +2592,7 @@
   name: {en: Iraq, en_def: Iraq, fr: Iraq, fr_def: 'l''Iraq'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2534,6 +2621,7 @@
   name: {en: Iceland, en_def: Iceland, fr: Islande, fr_def: 'l''Islande'}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2564,6 +2652,7 @@
   name: {en: Israel, en_def: Israel, fr: 'Israël', fr_def: 'Israël'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: true
@@ -2593,6 +2682,7 @@
   name: {en: Italy, en_def: Italy, fr: Italie, fr_def: 'l''Italie'}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2623,6 +2713,7 @@
   name: {en: Jamaica, en_def: Jamaica, fr: 'Jamaïque', fr_def: 'la Jamaïque'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -2658,6 +2749,7 @@
   name: {en: Jordan, en_def: Jordan, fr: Jordanie, fr_def: la Jordanie}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2685,6 +2777,7 @@
   name: {en: Japan, en_def: Japan, fr: Japon, fr_def: le Japon}
   region: Asia
   subregion: Eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2717,6 +2810,7 @@
   name: {en: Kazakhstan, en_def: Kazakhstan, fr: Kazakhstan, fr_def: le Kazakhstan}
   region: Asia
   subregion: Central Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2746,6 +2840,7 @@
   name: {en: Kenya, en_def: Kenya, fr: Kenya, fr_def: le Kenya}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -2774,6 +2869,7 @@
   name: {en: Kyrgyzstan, en_def: Kyrgyzstan, fr: Kirghizistan, fr_def: le Kirghizistan}
   region: Asia
   subregion: Central Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2809,6 +2905,7 @@
   name: {en: Cambodia, en_def: Cambodia, fr: Cambodge, fr_def: le Cambodge}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2837,6 +2934,7 @@
   name: {en: Kiribati, en_def: Kiribati, fr: Kiribati, fr_def: Kiribati}
   region: Oceania
   subregion: Micronesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2870,6 +2968,7 @@
   name: {en: Saint Kitts and Nevis, en_def: Saint Kitts and Nevis, fr: Saint-Kitts-et-Nevis, fr_def: Saint-Kitts-et-Nevis}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -2898,6 +2997,7 @@
   name: {en: Republic of Korea, en_def: the Republic of Korea, fr: République de Corée, fr_def: la République de Corée}
   region: Asia
   subregion: Eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2930,6 +3030,7 @@
   name: {en: Kuwait, en_def: Kuwait, fr: 'Koweït', fr_def: 'le Koweït'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2959,6 +3060,7 @@
   name: {en: 'Lao People''s Democratic Republic', en_def: 'the Lao People''s Democratic Republic', fr: République démocratique populaire lao, fr_def: la République démocratique populaire lao}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -2988,6 +3090,7 @@
   name: {en: Lebanon, en_def: Lebanon, fr: Liban, fr_def: le Liban}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3019,6 +3122,7 @@
   name: {en: Liberia, en_def: Liberia, fr: Libéria, fr_def: le Libéria}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -3048,6 +3152,7 @@
   name: {en: Libya, en_def: Libya, fr: Libye, fr_def: la Libye}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3084,6 +3189,7 @@
   name: {en: Saint Lucia, en_def: Saint Lucia, fr: Sainte-Lucie, fr_def: Sainte-Lucie}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -3114,6 +3220,7 @@
   name: {en: Liechtenstein, en_def: Liechtenstein, fr: Liechtenstein, fr_def: le Liechtenstein}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3144,6 +3251,7 @@
   name: {en: Sri Lanka, en_def: Sri Lanka, fr: Sri Lanka, fr_def: Sri Lanka}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3172,6 +3280,7 @@
   name: {en: Lesotho, en_def: Lesotho, fr: Lesotho, fr_def: le Lesotho}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Southern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3200,6 +3309,7 @@
   name: {en: Lithuania, en_def: Lithuania, fr: Lituanie, fr_def: la Lituanie}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3234,6 +3344,7 @@
   name: {en: Luxembourg, en_def: Luxembourg, fr: Luxembourg, fr_def: le Luxembourg}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3269,6 +3380,7 @@
   name: {en: Latvia, en_def: Latvia, fr: Lettonie, fr_def: la Lettonie}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3305,6 +3417,7 @@
   name: {en: Morocco, en_def: Morocco, fr: Maroc, fr_def: le Maroc}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3332,6 +3445,7 @@
   name: {en: Monaco, en_def: Monaco, fr: Monaco, fr_def: Monaco}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3366,6 +3480,7 @@
   name: {en: Republic of Moldova, en_def: the Republic of Moldova, fr: République de Moldova, fr_def: la République de Moldova}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3397,6 +3512,7 @@
   name: {en: Madagascar, en_def: Madagascar, fr: Madagascar, fr_def: Madagascar}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3424,6 +3540,7 @@
   name: {en: Maldives, en_def: Maldives, fr: Maldives, fr_def: les Maldives}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3451,6 +3568,7 @@
   name: {en: Mexico, en_def: Mexico, fr: Mexique, fr_def: le Mexique}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -3494,6 +3612,7 @@
   name: {en: Marshall Islands, en_def: the Marshall Islands, fr: 'Îles Marshall', fr_def: 'les Îles Marshall'}
   region: Oceania
   subregion: Micronesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3529,6 +3648,7 @@
   name: {en: North Macedonia, en_def: North Macedonia, fr: Macédoine du Nord, fr_def: la Macédoine du Nord}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3560,6 +3680,7 @@
   name: {en: Mali, en_def: Mali, fr: Mali, fr_def: le Mali}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -3588,6 +3709,7 @@
   name: {en: Malta, en_def: Malta, fr: Malte, fr_def: Malte}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3626,6 +3748,7 @@
   name: {en: Myanmar, en_def: Myanmar, fr: Myanmar, fr_def: le Myanmar}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3659,6 +3782,7 @@
   name: {en: Montenegro, en_def: Montenegro, fr: Monténégro, fr_def: le Monténégro}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3689,6 +3813,7 @@
   name: {en: Mongolia, en_def: Mongolia, fr: Mongolie, fr_def: la Mongolie}
   region: Asia
   subregion: Eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3720,6 +3845,7 @@
   name: {en: Mozambique, en_def: Mozambique, fr: Mozambique, fr_def: le Mozambique}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3750,6 +3876,7 @@
   name: {en: Mauritania, en_def: Mauritania, fr: Mauritanie, fr_def: la Mauritanie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -3780,6 +3907,7 @@
   name: {en: Mauritius, en_def: Mauritius, fr: Maurice, fr_def: Maurice}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3809,6 +3937,7 @@
   name: {en: Malawi, en_def: Malawi, fr: Malawi, fr_def: le Malawi}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3835,6 +3964,7 @@
   name: {en: Malaysia, en_def: Malaysia, fr: Malaisie, fr_def: la Malaisie}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -3861,6 +3991,7 @@
   name: {en: Namibia, en_def: Namibia, fr: Namibie, fr_def: la Namibie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Southern Africa
   un_member: true
   observer: false
   excluded: false
@@ -3888,6 +4019,7 @@
   name: {en: Niger, en_def: the Niger, fr: Niger, fr_def: le Niger}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -3918,6 +4050,7 @@
   name: {en: Nigeria, en_def: Nigeria, fr: Nigéria, fr_def: le Nigéria}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -3944,6 +4077,7 @@
   name: {en: Nicaragua, en_def: Nicaragua, fr: Nicaragua, fr_def: le Nicaragua}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -3974,6 +4108,7 @@
   name: {en: Netherlands (Kingdom of the), en_def: the Kingdom of the Netherlands, fr: Pays-Bas (Royaume des), fr_def: le Royaume des Pays-Bas}
   region: Europe
   subregion: Western Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4008,6 +4143,7 @@
   name: {en: Norway, en_def: Norway, fr: Norvège, fr_def: la Norvège}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4043,6 +4179,7 @@
   name: {en: Nepal, en_def: Nepal, fr: Népal, fr_def: le Népal}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4069,6 +4206,7 @@
   name: {en: Naoero, en_def: Naoero, fr: Naoero, fr_def: Naoero}
   region: Oceania
   subregion: Micronesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4105,6 +4243,7 @@
   name: {en: New Zealand, en_def: New Zealand, fr: Nouvelle-Zélande, fr_def: la Nouvelle-Zélande}
   region: Oceania
   subregion: Australia and New Zealand
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4138,6 +4277,7 @@
   name: {en: Oman, en_def: Oman, fr: Oman, fr_def: Oman}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4168,6 +4308,7 @@
   name: {en: Pakistan, en_def: Pakistan, fr: Pakistan, fr_def: le Pakistan}
   region: Asia
   subregion: Southern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4195,6 +4336,7 @@
   name: {en: Panama, en_def: Panama, fr: Panama, fr_def: le Panama}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -4227,6 +4369,7 @@
   name: {en: Peru, en_def: Peru, fr: Pérou, fr_def: le Pérou}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -4254,6 +4397,7 @@
   name: {en: Philippines, en_def: the Philippines, fr: Philippines, fr_def: les Philippines}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4285,6 +4429,7 @@
   name: {en: Palau, en_def: Palau, fr: Palaos, fr_def: les Palaos}
   region: Oceania
   subregion: Micronesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4318,6 +4463,7 @@
   name: {en: Papua New Guinea, en_def: Papua New Guinea, fr: Papouasie-Nouvelle-Guinée, fr_def: la Papouasie-Nouvelle-Guinée}
   region: Oceania
   subregion: Melanesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4358,6 +4504,7 @@
   name: {en: Poland, en_def: Poland, fr: Pologne, fr_def: la Pologne}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4385,6 +4532,7 @@
   name: {en: 'Democratic People''s Republic of Korea', en_def: 'the Democratic People''s Republic of Korea', fr: République populaire démocratique de Corée, fr_def: la République populaire démocratique de Corée}
   region: Asia
   subregion: Eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4419,6 +4567,7 @@
   name: {en: Portugal, en_def: Portugal, fr: Portugal, fr_def: le Portugal}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4457,6 +4606,7 @@
   name: {en: Paraguay, en_def: Paraguay, fr: Paraguay, fr_def: le Paraguay}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -4490,6 +4640,7 @@
   name: {en: State of Palestine, en_def: the State of Palestine, fr: État de Palestine, fr_def: 'l''État de Palestine'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: false
   observer: true
   excluded: true
@@ -4529,6 +4680,7 @@
   name: {en: Qatar, en_def: Qatar, fr: Qatar, fr_def: le Qatar}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4556,6 +4708,7 @@
   name: {en: Romania, en_def: Romania, fr: Roumanie, fr_def: la Roumanie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4586,6 +4739,7 @@
   name: {en: Russian Federation, en_def: the Russian Federation, fr: Fédération de Russie, fr_def: la Fédération de Russie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4615,6 +4769,7 @@
   name: {en: Rwanda, en_def: Rwanda, fr: Rwanda, fr_def: le Rwanda}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -4644,6 +4799,7 @@
   name: {en: Saudi Arabia, en_def: Saudi Arabia, fr: Arabie saoudite, fr_def: 'l''Arabie saoudite'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4676,6 +4832,7 @@
   name: {en: Sudan, en_def: the Sudan, fr: Soudan, fr_def: le Soudan}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4707,6 +4864,7 @@
   name: {en: Senegal, en_def: Senegal, fr: Sénégal, fr_def: le Sénégal}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -4738,6 +4896,7 @@
   name: {en: Singapore, en_def: Singapore, fr: Singapour, fr_def: Singapour}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4770,6 +4929,7 @@
   name: {en: Solomon Islands, en_def: Solomon Islands, fr: 'Îles Salomon', fr_def: 'les Îles Salomon'}
   region: Oceania
   subregion: Melanesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4808,6 +4968,7 @@
   name: {en: Sierra Leone, en_def: Sierra Leone, fr: Sierra Leone, fr_def: la Sierra Leone}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -4836,6 +4997,7 @@
   name: {en: El Salvador, en_def: El Salvador, fr: El Salvador, fr_def: El Salvador}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Central America
   un_member: true
   observer: false
   excluded: false
@@ -4863,6 +5025,7 @@
   name: {en: San Marino, en_def: San Marino, fr: Saint-Marin, fr_def: Saint-Marin}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4900,6 +5063,7 @@
   name: {en: Somalia, en_def: Somalia, fr: Somalie, fr_def: la Somalie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -4932,6 +5096,7 @@
   name: {en: Serbia, en_def: Serbia, fr: Serbie, fr_def: la Serbie}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -4962,6 +5127,7 @@
   name: {en: South Sudan, en_def: South Sudan, fr: Soudan du Sud, fr_def: le Soudan du Sud}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -4988,6 +5154,7 @@
   name: {en: Sao Tome and Principe, en_def: Sao Tome and Principe, fr: Sao Tomé-et-Principe, fr_def: Sao Tomé-et-Principe}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -5018,6 +5185,7 @@
   name: {en: Suriname, en_def: Suriname, fr: Suriname, fr_def: le Suriname}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -5050,6 +5218,7 @@
   name: {en: Slovakia, en_def: Slovakia, fr: Slovaquie, fr_def: la Slovaquie}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5078,6 +5247,7 @@
   name: {en: Slovenia, en_def: Slovenia, fr: Slovénie, fr_def: la Slovénie}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5112,6 +5282,7 @@
   name: {en: Sweden, en_def: Sweden, fr: Suède, fr_def: la Suède}
   region: Europe
   subregion: Northern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5145,6 +5316,7 @@
   name: {en: Eswatini, en_def: Eswatini, fr: Eswatini, fr_def: 'l''Eswatini'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Southern Africa
   un_member: true
   observer: false
   excluded: false
@@ -5172,6 +5344,7 @@
   name: {en: Seychelles, en_def: Seychelles, fr: Seychelles, fr_def: les Seychelles}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -5200,6 +5373,7 @@
   name: {en: Syrian Arab Republic, en_def: the Syrian Arab Republic, fr: République arabe syrienne, fr_def: la République arabe syrienne}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5235,6 +5409,7 @@
   name: {en: Chad, en_def: Chad, fr: Tchad, fr_def: le Tchad}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Middle Africa
   un_member: true
   observer: false
   excluded: false
@@ -5263,6 +5438,7 @@
   name: {en: Togo, en_def: Togo, fr: Togo, fr_def: le Togo}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Western Africa
   un_member: true
   observer: false
   excluded: false
@@ -5292,6 +5468,7 @@
   name: {en: Thailand, en_def: Thailand, fr: 'Thaïlande', fr_def: 'la Thaïlande'}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5319,6 +5496,7 @@
   name: {en: Tajikistan, en_def: Tajikistan, fr: Tadjikistan, fr_def: le Tadjikistan}
   region: Asia
   subregion: Central Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5349,6 +5527,7 @@
   name: {en: Turkmenistan, en_def: Turkmenistan, fr: Turkménistan, fr_def: le Turkménistan}
   region: Asia
   subregion: Central Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5377,6 +5556,7 @@
   name: {en: Timor-Leste, en_def: Timor-Leste, fr: Timor-Leste, fr_def: le Timor-Leste}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5405,6 +5585,7 @@
   name: {en: Tonga, en_def: Tonga, fr: Tonga, fr_def: les Tonga}
   region: Oceania
   subregion: Polynesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5437,6 +5618,7 @@
   name: {en: Trinidad and Tobago, en_def: Trinidad and Tobago, fr: Trinité-et-Tobago, fr_def: la Trinité-et-Tobago}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -5472,6 +5654,7 @@
   name: {en: Tunisia, en_def: Tunisia, fr: Tunisie, fr_def: la Tunisie}
   region: Africa
   subregion: Northern Africa
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5502,6 +5685,7 @@
   name: {en: 'Türkiye', en_def: Türkiye, fr: 'Türkiye', fr_def: 'la Türkiye'}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5529,6 +5713,7 @@
   name: {en: Tuvalu, en_def: Tuvalu, fr: Tuvalu, fr_def: les Tuvalu}
   region: Oceania
   subregion: Polynesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5560,6 +5745,7 @@
   name: {en: United Republic of Tanzania, en_def: the United Republic of Tanzania, fr: République-Unie de Tanzanie, fr_def: la République-Unie de Tanzanie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -5591,6 +5777,7 @@
   name: {en: Uganda, en_def: Uganda, fr: Ouganda, fr_def: 'l''Ouganda'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -5619,6 +5806,7 @@
   name: {en: Ukraine, en_def: Ukraine, fr: Ukraine, fr_def: 'l''Ukraine'}
   region: Europe
   subregion: Eastern Europe
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5648,6 +5836,7 @@
   name: {en: Uruguay, en_def: Uruguay, fr: Uruguay, fr_def: 'l''Uruguay'}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -5678,6 +5867,7 @@
   name: {en: United States of America, en_def: the United States of America, fr: 'États-Unis d''Amérique', fr_def: 'les États-Unis d''Amérique'}
   region: Americas
   subregion: Northern America
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5709,6 +5899,7 @@
   name: {en: Uzbekistan, en_def: Uzbekistan, fr: Ouzbékistan, fr_def: 'l''Ouzbékistan'}
   region: Asia
   subregion: Central Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5737,6 +5928,7 @@
   name: {en: Holy See, en_def: the Holy See, fr: Saint-Siège, fr_def: le Saint-Siège}
   region: Europe
   subregion: Southern Europe
+  intermediate_region: null
   un_member: false
   observer: true
   excluded: false
@@ -5775,6 +5967,7 @@
   name: {en: Saint Vincent and the Grenadines, en_def: Saint Vincent and the Grenadines, fr: Saint-Vincent-et-les Grenadines, fr_def: Saint-Vincent-et-les Grenadines}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: Caribbean
   un_member: true
   observer: false
   excluded: false
@@ -5805,6 +5998,7 @@
   name: {en: Venezuela (Bolivarian Republic of), en_def: the Bolivarian Republic of Venezuela, fr: Venezuela (République bolivarienne du), fr_def: la République bolivarienne du Venezuela}
   region: Americas
   subregion: Latin America and the Caribbean
+  intermediate_region: South America
   un_member: true
   observer: false
   excluded: false
@@ -5840,6 +6034,7 @@
   name: {en: Viet Nam, en_def: Viet Nam, fr: Viet Nam, fr_def: le Viet Nam}
   region: Asia
   subregion: South-eastern Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5868,6 +6063,7 @@
   name: {en: Vanuatu, en_def: Vanuatu, fr: Vanuatu, fr_def: Vanuatu}
   region: Oceania
   subregion: Melanesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5899,6 +6095,7 @@
   name: {en: Samoa, en_def: Samoa, fr: Samoa, fr_def: le Samoa}
   region: Oceania
   subregion: Polynesia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5931,6 +6128,7 @@
   name: {en: Yemen, en_def: Yemen, fr: Yémen, fr_def: le Yémen}
   region: Asia
   subregion: Western Asia
+  intermediate_region: null
   un_member: true
   observer: false
   excluded: false
@@ -5960,6 +6158,7 @@
   name: {en: South Africa, en_def: South Africa, fr: Afrique du Sud, fr_def: 'l''Afrique du Sud'}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Southern Africa
   un_member: true
   observer: false
   excluded: false
@@ -5988,6 +6187,7 @@
   name: {en: Zambia, en_def: Zambia, fr: Zambie, fr_def: la Zambie}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false
@@ -6016,6 +6216,7 @@
   name: {en: Zimbabwe, en_def: Zimbabwe, fr: Zimbabwe, fr_def: le Zimbabwe}
   region: Africa
   subregion: Sub-Saharan Africa
+  intermediate_region: Eastern Africa
   un_member: true
   observer: false
   excluded: false

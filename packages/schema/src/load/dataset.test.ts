@@ -124,8 +124,8 @@ describe('the fixture tree', () => {
     const ds = load()
     expect(ds.countries.map((c) => [c.value.iso3, c.file, c.line])).toEqual([
       ['DEU', COUNTRIES_FILE, 16],
-      ['ISR', COUNTRIES_FILE, 52],
-      ['PSE', COUNTRIES_FILE, 81],
+      ['ISR', COUNTRIES_FILE, 53],
+      ['PSE', COUNTRIES_FILE, 83],
     ])
     expect(ds.events[0]).toMatchObject({ file: EVENTS_FILE, line: 3 })
     expect(ds.events[0]?.value.id).toBe('evt_2025_08_08_DEU_A6')
@@ -372,6 +372,7 @@ describe('malformed records (schema.*)', () => {
         name: { en: 'Test country', fr: 'Pays de test' },
         region: 'Test',
         subregion: 'Test',
+        intermediate_region: null,
         un_member: false,
         observer: false,
         excluded: false,

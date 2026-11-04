@@ -94,6 +94,14 @@ export const Country = z.strictObject({
   name: CountryName,
   region: NonEmpty,
   subregion: NonEmpty,
+  /**
+   * The M49 intermediate region (UN Statistics Division, the same table as `region` and
+   * `subregion`), for the entries M49 divides further: the four intermediate regions of Sub-Saharan
+   * Africa (Eastern, Middle, Southern and Western Africa) and the three of Latin America and the
+   * Caribbean (Caribbean, Central America, South America); null for every other entry (P-20,
+   * docs/10 B-861).
+   */
+  intermediate_region: NonEmpty.nullable(),
   un_member: z.boolean(),
   observer: z.boolean(),
   /** true only for ISR and PSE (D-10), with `excluded_reason`. */

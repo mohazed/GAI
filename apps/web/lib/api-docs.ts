@@ -165,8 +165,8 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
     {
       path: 'methodology/index.json',
       holds: t(
-        'The methodology versions, current and superseded, the changelog, and the named reviewers.',
-        'Les versions de la méthodologie, en vigueur et remplacées, le journal des modifications et les relecteurs nommés.',
+        'The methodology versions, current and superseded, the changelog, the named reviewers and the changes open for comment.',
+        'Les versions de la méthodologie, en vigueur et remplacées, le journal des modifications, les relecteurs nommés et les modifications ouvertes aux commentaires.',
       ),
       example: has('methodology/index.json'),
       kind: 'json',

@@ -437,6 +437,7 @@ describe('registryFields', () => {
     name: true,
     region: true,
     subregion: true,
+    intermediate_region: true,
     un_member: true,
     observer: true,
     memberships: true,

@@ -109,6 +109,27 @@ for (const lang of LANGS) {
       expect(errors).toEqual([])
     })
 
+    test('the methodology proposals open for comment are announced, and only those', async ({
+      page,
+    }) => {
+      const res = await page.request.get('/api/v1/methodology/index.json')
+      expect(res.status()).toBe(200)
+      const index = (await res.json()) as {
+        proposals: { version: string; pr_url: string; comment_until: string }[]
+      }
+      await page.goto(`/${lang}/changes/`)
+      if (index.proposals.length === 0) {
+        await expect(page.locator('#proposed')).toHaveCount(0)
+        return
+      }
+      const section = page.locator('#proposed')
+      await expect(section.getByRole('heading', { level: 2 })).toBeVisible()
+      for (const p of index.proposals) {
+        await expect(section).toContainText(p.version)
+        await expect(section.locator(`a[href="${p.pr_url}"]`)).toHaveCount(1)
+      }
+    })
+
     test('a build older than three days shows the stale notice', async ({ page }) => {
       const l = await latest(page)
       await page.clock.setFixedTime(new Date(Date.parse(`${l.build_date}T12:00:00Z`) + 5 * DAY))

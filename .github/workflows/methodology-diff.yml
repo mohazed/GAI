@@ -1,0 +1,79 @@
+name: Methodology diff
+
+# docs/08 §1 step 2: on a pull request that changes `methodology/`, run `pnpm methodology:diff
+# --from origin/<base>` (every country whose displayed score moves by 1 or more under the change,
+# with the cause) and post its table as a comment on the pull request, updated in place on every
+# push. The table is also written to the job summary, which is the fallback where the token
+# cannot comment (a pull request from a fork gets a read-only token): the run never fails for
+# that. The command is published events only (docs/10 B-141); a change to a file other than a new
+# version folder (the changelog, the reviewers, proposals.yaml) makes the diff say that both refs
+# declare the same version, and the comment then says so instead of a table.
+
+on:
+  pull_request:
+    paths:
+      - 'methodology/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: methodology-diff-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          # The base branch is read with `git archive` by the command.
+          fetch-depth: 0
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Diff against the base branch
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          marker='<!-- gai-methodology-diff -->'
+          {
+            echo "$marker"
+            echo "### Methodology diff"
+            echo
+          } > diff.md
+          if ! node -e "process.exit(require('./package.json').scripts['methodology:diff'] ? 0 : 1)"; then
+            echo "This checkout has no \`pnpm methodology:diff\` command (it is added by the pull request that proposes 1.0.0-rc.2); no table was produced." >> diff.md
+          elif pnpm methodology:diff --from "origin/$BASE_REF" --date "$(date -u +%F)" > table.txt 2> err.txt; then
+            echo "Base \`$BASE_REF\`, published events only, scored on $(date -u +%F)." >> diff.md
+            echo >> diff.md
+            cat table.txt >> diff.md
+          else
+            echo "\`pnpm methodology:diff --from origin/$BASE_REF\` did not produce a table:" >> diff.md
+            echo >> diff.md
+            echo '```' >> diff.md
+            tail -n 5 err.txt >> diff.md
+            echo '```' >> diff.md
+          fi
+          cat diff.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Comment on the pull request
+        # Best effort: a read-only token (forks) leaves the table in the job summary only.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          id=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq '[.[] | select(.body | startswith("<!-- gai-methodology-diff -->")) | .id] | first // empty')
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" -F body=@diff.md > /dev/null
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -F body=@diff.md > /dev/null
+          fi
