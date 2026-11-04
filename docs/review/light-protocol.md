@@ -1660,3 +1660,47 @@ No band change. Read critically (docs/06 §4 step 7): Benin's Enabling band rest
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23: the web searches per indicator group (French, English), Benin's Presidency and Government news, the African Union's texts of the Burundian President's speeches as Chairperson, the Sahel states' announcement on the ICC, the Burkinabè press, UNRWA's 2025 table, Comtrade for the three.
+
+## T-P21-32: BWA, CAF, CIV (2026-11-04)
+
+Light protocol (docs/06 §5) for Botswana, the Central African Republic and Côte d'Ivoire (group 32, Task B in the Claude track, B-694), by a fresh Sonnet 5.5 session of the finish run (docs/10 B-780 to B-784). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-31): the session read the UN's General Debate files of the 79th to 81st sessions live (Botswana in English, the Central African Republic and Côte d'Ivoire in French; the Central African 81st file by OCR), the Governments' sites that answer scripts (the Botswana Government's press-release database filtered by title and the Daily News search; the Central African Primature's WordPress API and the Government portal; the Ivorian Presidency's WordPress site), the Embassy of Israel in Abidjan's page, the UN Treaty Collection's status page for the Rome Statute, the records and joint statements already archived (grep of `archive/text` for the three names), the generated tables, UNRWA tables, FTS, the SIPRI register and the ICJ and ICC lists.
+
+No event and no lead were filed. One row was added to `data/structured/recognitions.csv` (Botswana, 19 December 1988, from the Ministry's notice of 19 March 2017 as the Government's newspaper published it; docs/10 B-783).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| none | | | | | |
+
+Six documents were archived (four General Debate files by `--capture`: Botswana's 79th, the Central African Republic's 79th and 80th, Côte d'Ivoire's 80th Foreign Minister's statement; the Israeli embassy's page and the Daily News notice by Save Page Now); every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Botswana
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19 (B11, B12, C2, D4 and D5 on title searches of the Government's press-release database only, said in each note), no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. President Masisi's 79th statement (25 September 2024) condemns attacks on civilians 'on both sides', voices concern at the situation in the Gaza Strip and abhors attacks on UNRWA installations, with no ceasefire call and no party named: not a B9 tier (the reading of Samoa's statement, flagged; docs/10 B-780); President Boko's 80th welcomes four recognitions and states solidarity with the Palestinian people; the 81st names none of Gaza, Palestine, Israel. B1: two non-votes (A/RES/80/1, A/RES/80/78). The SIPRI register lists two older orders from Israel (1991; 2016, delivered 2019 to 2023), before the window. Not searched: the Ministry of International Relations (did not answer), the Botswana press, the 'Statement of Shared Commitments on UNRWA' (P-23).
+
+### Central African Republic
+
+Assessments: has-events 1 (B1), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 16 (A3, A5 to A8, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Leads: none. President Touadéra's three General Debate statements never name Gaza (the 79th lists 'l'Israël et le Hamas' among the wars; the 80th speaks of 'les violences persistantes entre Israël et la Palestine'; the 81st has nothing): R7. The Primature's site has no item on the conflict. B1: eight non-votes and one abstention of the twelve qualifying votes (-11.0; flagged for the author, docs/10 B-781). The Ministry and the Presidency do not answer, so five indicators are left `unchecked` with the reason.
+
+### Côte d'Ivoire
+
+Assessments: has-events 1 (B1), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 16 (A3, A5 to A8, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Leads: none. The 80th statement (Foreign Minister Adom) never names Gaza; the 79th and 81st were delivered by Vice President Koné (R3: not B9), the 81st speaking of 'la reprise des hostilités au Proche et au Moyen-Orient'. B1: yes on all twelve votes. The Embassy of Israel's page lists no agreement signed since October 2023 (a timeline only). The Ivorian Government's sites could not be searched (the Presidency's posts end in October 2023).
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Botswana two non-votes (A/RES/80/1, A/RES/80/78), the Central African Republic eight non-votes (A/RES/ES-10/24 to A/RES/80/78) and one abstention (A/RES/80/116), Côte d'Ivoire none. None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BWA | -8.0 (-8) | -5.0 (-5) | Passive, unchanged | the recognition row adds B8 +3.0 (standing from 2023-10-07); the passivity penalty (-15) still applies |
+| CAF | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | no event; B1 -11.0 (eight non-votes, one abstention) and the passivity penalty (-15) |
+| CIV | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; B1 +16.5 less the passivity penalty (-15) |
+
+No band change. Read critically (docs/06 §4 step 7): the Central African Republic's Enabling band rests on the build's treatment of nine non-supporting votes and the passivity penalty; Côte d'Ivoire's Acting band rests on B1 alone and a +1.5 raw score, so any scored event in either direction changes it.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23: the web searches per indicator group (English, French), the Botswana Ministry of International Relations' site and press, the Central African Ministry of Foreign Affairs and Presidency, the Ivorian Government's news and the OIC's communiques, Botswana's 80th and the three states' 81st General Debate files (no Wayback replay), UNRWA's 2025 table, Comtrade for the three, the Government documents for the recognition dates of the Central African Republic and Côte d'Ivoire; for Task V and the Chad session: the withdrawals by Chad (27 July 2026) and Nauru (23 September 2026) listed on the Rome Statute status page.

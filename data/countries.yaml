@@ -879,7 +879,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-19}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of Botswana (portal and press releases)', url: 'https://www.gov.bw/', type: government, lang: [en]}
+    - {label: 'Daily News (Government newspaper)', url: 'https://dailynews.gov.bw/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.gov.bw (lang="en"; its press-release listing /press-release takes a
+    title filter, ?title=) and dailynews.gov.bw (lang="en"; site search /sitesearch?srch-term=) answered HTTP 200
+    to a request with a browser User-Agent. The Ministry of International Relations' page on gov.bw did not answer
+    (timeouts). The President is Duma Gideon Boko (the 80th and 81st General Debate files) and the Minister of
+    International Relations Phenyo Butale (gov.bw leadership page, unchanged by the cabinet notice of 4 June 2026).
 
 - iso3: CAF
   iso2: CF
@@ -900,7 +908,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-23}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Primature of the Central African Republic', url: 'https://primature.cf/', type: government, lang: [fr]}
+    - {label: 'Government portal of the Central African Republic', url: 'https://www.gouv.cf/', type: government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: primature.cf (a WordPress site declaring lang="fr-FR", current to 3 November
+    2026, searched through /wp-json/wp/v2/posts?search=) and gouv.cf (Drupal, lang="fr") answered HTTP 200 to a
+    request with a browser User-Agent. The Ministry of Foreign Affairs (diplomatie.gouv.cf) and the Presidency
+    (presidencecentrafrique.cf, presidence.cf) did not answer. The President is Faustin Archange Touadéra
+    and the Prime Minister Félix Moloua (primature.cf).
 
 - iso3: CAN
   iso2: CA
@@ -1042,7 +1058,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2008-12-01}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Côte d''Ivoire', url: 'https://www.diplomatie.gouv.ci/', type: mfa, lang: [fr]}
+    - {label: 'Government portal of Côte d''Ivoire', url: 'https://www.gouv.ci/', type: government, lang: [fr]}
+    - {label: 'Presidency of the Republic of Côte d''Ivoire', url: 'https://www.presidence.ci/', type: head_of_state, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.diplomatie.gouv.ci (an introduction page, lang="fr"), www.gouv.ci
+    (lang="fr", a search form that posts a session token) and www.presidence.ci (a WordPress site declaring
+    lang="fr-FR" whose posts end on 23 October 2023) answered HTTP 200 to a request with a browser User-Agent.
+    The Foreign Minister is Kacou Houadja Léon Adom (the 80th General Debate file); the 79th and 81st statements
+    were delivered by Vice President Tiémoko Meyliet Koné.
 
 - iso3: CMR
   iso2: CM

@@ -1,0 +1,188 @@
+# Coverage record for the Central African Republic (docs/03 §6). P-21 light protocol, session T-P21-32, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent; the 81st file is an image and was read by OCR), the Primature's WordPress site (primature.cf, searched through its REST API) and the Government portal (gouv.cf), the Assembly's verbatim records and UN coverage already archived, the joint statements already archived (grep of archive/text for the country's name), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the UN Treaty Collection's status page for the Rome Statute and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49, T-P21-31): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
+# No event. Leads: none.
+country: CAF
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier CAF
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by the Central African Republic from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer CAF
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Central African Republic (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on A/RES/ES-10/21 (27 October 2023), ES-10/22 and ES-10/23; recorded as non-voting (`X`) on the next eight votes (A/RES/ES-10/24 of 18 September 2024
+      to A/RES/80/78 of 5 December 2025) and as an abstention (`A`) on A/RES/80/116 (12 December 2025), each scored -2 by the build (docs/10 B-690), so B1 is -11.0 and, with the passivity penalty
+      (-15), the preview is -26.0 (Enabling). The Central African Republic is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the
+      Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360); the reason for the eight non-votes was not established (flagged for the author, docs/10 B-781).'
+    queries:
+    - unga_votes.csv, country CAF
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Central African Republic is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192,
+      searched). Case 186 (advisory proceedings) is not B3 or B4; Central African Republic is not in the list of written statements read earlier (src_20261007_icj-cij_case-186-written-proceedings,
+      searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Central African Republic (not found)
+    - archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt, Central African Republic (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Central African Republic supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Central African Republic is a state party to the Rome Statute (since 3 October 2001; src_20261009_icc-asp_states-parties, searched). No statement on the warrants of 21 November 2024
+      by a B5 speaker was found in the sources read.
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Central African Republic (found: state party)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person under warrant was found in the sources read. The UN Treaty Collection status page for the Rome Statute (chapter XVIII-10,
+      read on 2026-11-04, not archived) lists no withdrawal notification by Central African Republic (it lists Burundi 2016, Hungary (withdrawn), Niger 18 June 2026, Burkina Faso and Mali 24 June
+      2026, Venezuela 24 July 2026, Chad 27 July 2026 and Nauru 23 September 2026).
+    queries:
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Central African Republic were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for the Central African Republic. The registry gives 23 December 1988 (countries.yaml recognises_palestine); no Government document
+      of the date was read, so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, CAF
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. The Central African Republic''s President, Faustin Archange Touadéra (head of state; a B9 speaker, R3), gave all three General Debate statements; none names Gaza. (1)
+      79th, 26 September 2024 (src_20240926_un-gadebate_caf-touadera-fr): the passage on ''les guerres entre la Russie et l''Ukraine, entre l''Israël et le Hamas, au Soudan et à l''Est de la République
+      Démocratique du Congo'' urges ''les parties en conflit dans diverses régions du monde'' to dialogue and diplomacy: no Gaza, no ceasefire call, no violation (R7). (2) 80th, 24 September 2025
+      (src_20250924_un-gadebate_caf-touadera-fr): ''Au Moyen-Orient, les violences persistantes entre Israël et la Palestine plongent des générations entières dans la douleur et compromettent
+      les espoirs de coexistence pacifique'': no Gaza, no call, no violation (R7). (3) 81st, dated 23 September 2026 on the UN''s page and 28 September 2026 on the file''s own heading (the UN''s
+      record followed, flagged; live file read by OCR at 130 dpi, 9 pages, no text layer, no Wayback replay: not archived): no occurrence of Gaza, Palestine, Israël, Moyen-Orient, cessez-le-feu
+      or Hamas. The Prime Minister (head of government), Félix Moloua: the Primature''s WordPress site (primature.cf, current to 3 November 2026, searched through /wp-json/wp/v2/posts?search=)
+      returns nothing for Palestine, Palestinien, Moyen-Orient, Hamas, cessez-le-feu, CPI, Netanyahu, UNRWA or génocide, one item for Gaza (26 January 2026, a thanksgiving service, no passage
+      on Gaza in its text) and two for Israël (1 June 2026, a sermon at a thanksgiving service that cites Israel as an example of hard work: not a statement on the conflict). The Government portal''s
+      search (gouv.cf/search/node?keys=Gaza) returns no result. On 5 December 2025 the Central African Republic abstained on the Fourth Committee''s draft A/C.4/80/L.18 (Palestine refugees'' properties
+      and their revenues; src_20251205_un-press_ga12739), a vote, not a statement. Not searched: the Ministry of Foreign Affairs (diplomatie.gouv.cf) and the Presidency (presidencecentrafrique.cf),
+      which do not answer from this network (P-23).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cf_fr.pdf (read live; 79th and 80th archived by --capture; 81st read by OCR; cf_en 404)
+    - primature.cf/wp-json/wp/v2/posts?search={Gaza,Palestine,Palestinien,Israël,Israel,Moyen-Orient,Hamas,cessez-le-feu,CPI,Netanyahu,UNRWA,génocide}
+    - gouv.cf/search/node?keys=Gaza
+    - archive/text/src_20240926_undocs_a-79-pv-11.txt (the President's address)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read; the Prime Minister''s site has no item
+      on the subject.'
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of Foreign Affairs (diplomatie.gouv.cf) and the Presidency (presidencecentrafrique.cf) do not answer from this network; the Primature''s site and the Government
+      portal were searched for Gaza, Palestine and Israel (see B9) and nothing in them or in the General Debate statements bears on it (P-23).'
+    checked_at: '2026-11-04'
+  B12:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of Foreign Affairs (diplomatie.gouv.cf) does not answer from this network; the Primature''s site and the Government portal show nothing on Israel or Palestine
+      (see B9) (P-23).'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Central African Republic is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of Foreign Affairs (diplomatie.gouv.cf) does not answer from this network, and no treaty register or Israeli embassy list for the Central African Republic
+      was read; the Primature''s site returns nothing for Israël (see B9) (P-23).'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Central African Republic to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor CAF
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Central African Republic has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched: Central African Republic not found)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Central African Republic in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of Foreign Affairs and the Ministry of Health sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of Foreign Affairs and the Ministry of the Interior sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
