@@ -236,6 +236,19 @@ for (const lang of LANGS) {
       await expect(page.locator(`a[download][href="/api/v1/dumps/${hidden}"]`)).toHaveCount(0)
       const dl = await page.request.get('/api/v1/dumps/events.csv')
       expect(dl.status()).toBe(200)
+      // The JSON dump is split (docs/10 B-71): the main file lists its parts, each downloadable
+      // from the Data page and under the 25 MiB Cloudflare Pages serves.
+      const dump = await json<{ parts: { path: string; record: string; count: number }[] }>(
+        page,
+        `dumps/gai-${manifest.build_date}.json`,
+      )
+      expect(dump.parts[0]?.record).toBe('sources')
+      for (const part of dump.parts) {
+        await expect(page.locator(`a[download][href="/api/v1/${part.path}"]`)).toHaveCount(1)
+        const res = await page.request.get(`/api/v1/${part.path}`)
+        expect(res.status(), part.path).toBe(200)
+        expect((await res.body()).length, part.path).toBeLessThan(25 * 1024 * 1024)
+      }
       const ld = JSON.parse(
         (await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}',
       ) as { '@type': string; distribution: { contentUrl: string }[]; dateModified: string }

@@ -27,8 +27,14 @@
  *   as `since/until`, one not held as `false`), the memberships held at the build date and the
  *   date of recognition of the State of Palestine. Research notes and gov_sources are left out, as
  *   in countries.json.
- * - `dumps/gai-{date}.json`: the `ApiDumpFile` (countries, events, sources, assessments,
- *   corrections, replies, open leads), canonical JSON.
+ * - `dumps/gai-{date}.json`: the `ApiDumpFile` (countries, assessments, corrections, replies,
+ *   open leads, and `parts`, the list of the files below), canonical JSON.
+ * - `dumps/gai-{date}-sources.json`: the `ApiDumpSourcesFile`, every source by id.
+ * - `dumps/gai-{date}-events-{YYYY}.json`: the `ApiDumpEventsFile`, the events dated in that
+ *   calendar year (only years that have events), by country, date, id. The events and the
+ *   sources, the bulk of the dataset, are kept out of the main file so that every file stays
+ *   far below the 25 MiB Cloudflare Pages serves however many events there are (docs/10 B-71,
+ *   B-490; the whole dataset was 26.5 MB in one file by the end of Phase 1).
  *
  * CSV conventions (json.ts `csvDocument`, docs/03 §7): UTF-8, header row, LF line endings, final
  * LF; a field is quoted when it holds a comma, a quote or a line break; booleans are `true` and
@@ -39,7 +45,10 @@ import type {
   ApiAssessmentRow,
   ApiCorrection,
   ApiCountryEntry,
+  ApiDumpEventsFile,
   ApiDumpFile,
+  ApiDumpPart,
+  ApiDumpSourcesFile,
   ApiEvent,
   ApiReply,
   ApiSource,
@@ -509,10 +518,51 @@ function scoresDailyCsvs(input: DumpInput): [string, string][] {
 }
 
 /**
+ * The JSON dump: the sources in one file and the events in one file per calendar year of their
+ * date, each canonical JSON, and the main file that lists them in `parts`. Returned as [path,
+ * text] pairs, the main file last.
+ */
+function jsonDumps(
+  input: DumpInput,
+  rest: Omit<ApiDumpFile, 'parts'>,
+  events: readonly ApiEvent[],
+  sources: readonly ApiSource[],
+): [string, string][] {
+  const stem = `dumps/gai-${input.date}`
+  const parts: ApiDumpPart[] = []
+  const files: [string, string][] = []
+
+  const sourcesPath = `${stem}-sources.json`
+  const sourcesFile: ApiDumpSourcesFile = { build_date: input.date, sources: [...sources] }
+  parts.push({ record: 'sources', path: sourcesPath, year: null, count: sources.length })
+  files.push([sourcesPath, jsonText(sourcesFile)])
+
+  const years = new Map<number, ApiEvent[]>()
+  for (const e of events) {
+    const year = Number(e.date.slice(0, 4))
+    const list = years.get(year)
+    if (list === undefined) years.set(year, [e])
+    else list.push(e)
+  }
+  for (const year of [...years.keys()].sort((a, b) => a - b)) {
+    const list = years.get(year) as ApiEvent[]
+    const path = `${stem}-events-${year}.json`
+    const eventsFile: ApiDumpEventsFile = { build_date: input.date, year, events: list }
+    parts.push({ record: 'events', path, year, count: list.length })
+    files.push([path, jsonText(eventsFile)])
+  }
+
+  const main: ApiDumpFile = { ...rest, parts }
+  files.push([`${stem}.json`, jsonText(main)])
+  return files
+}
+
+/**
  * The dump files, keyed by path relative to api/v1/: `dumps/events.csv`, `dumps/sources.csv`,
  * `dumps/assessments.csv`, `dumps/countries.csv`, `dumps/countries.scorecard.csv`,
- * `dumps/registry.csv`, `dumps/scores-daily-{YYYY}.csv` for each year, and
- * `dumps/gai-{date}.json`, in that order.
+ * `dumps/registry.csv`, `dumps/scores-daily-{YYYY}.csv` for each year, then the JSON dump:
+ * `dumps/gai-{date}-sources.json`, `dumps/gai-{date}-events-{YYYY}.json` for each year with
+ * events, and `dumps/gai-{date}.json`, in that order.
  */
 export function dumpFiles(input: DumpInput): Map<string, string> {
   const countries = [...input.countries].sort(by((c) => c.iso3))
@@ -544,13 +594,11 @@ export function dumpFiles(input: DumpInput): Map<string, string> {
     ),
   )
 
-  const dump: ApiDumpFile = {
+  const rest: Omit<ApiDumpFile, 'parts'> = {
     build_date: input.date,
     methodology: input.methodology,
     git: { sha: input.git.sha, dirty: input.git.dirty },
     countries,
-    events,
-    sources,
     assessments: assessments.map((a) => ({
       country: a.country,
       protocol_version: a.protocol_version,
@@ -570,6 +618,6 @@ export function dumpFiles(input: DumpInput): Map<string, string> {
     ['dumps/countries.scorecard.csv', countryCsv(COUNTRIES_SCORECARD_CSV_COLUMNS, countries)],
     ['dumps/registry.csv', registryCsv(input.registry, input.date)],
     ...scoresDailyCsvs(input),
-    [`dumps/gai-${input.date}.json`, jsonText(dump)],
+    ...jsonDumps(input, rest, events, sources),
   ])
 }
