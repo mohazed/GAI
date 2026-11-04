@@ -70,9 +70,10 @@ const file: CountryFile = {
     },
   },
   series: [
-    { date: '2023-10-07', score: 0 },
-    { date: '2024-01-15', score: -10 },
-    { date: '2025-06-01', score: -12.4 },
+    { date: '2023-10-07', score: 0, score_display: 0 },
+    { date: '2024-01-15', score: -10, score_display: -10 },
+    // −12.45… exact: −12.5 to one decimal, −12 displayed (docs/10 B-865).
+    { date: '2025-06-01', score: -12.5, score_display: -12 },
   ],
   event_list: [
     event('2024-01-15', -10),
@@ -234,7 +235,7 @@ describe('renderWidget', () => {
     expect(html).toContain('r="2.25"')
     expect(html).toContain('Summary &#60;b&#62;2024-01-15&#60;/b&#62;')
     expect(html).toContain(
-      'aria-label="Germany, score from 7 October 2023 to 28 September 2026: 2 changes; −12.4 at the end."',
+      'aria-label="Germany, score from 7 October 2023 to 28 September 2026: 2 changes; −12 at the end."',
     )
     expect(html).toContain('>2024</text>')
   })
