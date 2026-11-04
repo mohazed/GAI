@@ -6,6 +6,7 @@
 import { describe, expect, it } from 'vitest'
 import { coverage } from './coverage.js'
 import { ratioGatedTierPoints } from './formula.js'
+import { indicatorLabels } from './labels.js'
 import { createScorer, scoreCountry } from './score.js'
 import { sensitivitySuite } from './sensitivity.js'
 import { lastChange } from './series.js'
@@ -77,6 +78,7 @@ describe('last change: attributed by its effect on S, not by the indicator that 
         coverage: 0.1,
         lastChange: lc,
         passivityPoints: 15,
+        labels: indicatorLabels(methodology()),
       },
       'en',
     )

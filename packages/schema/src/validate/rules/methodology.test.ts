@@ -846,6 +846,15 @@ describe('methodology.decay', () => {
 // ---------------------------------------------------------------------------------------------
 // methodology.passivity
 
+describe('methodology.indicator-set: short labels (B-54)', () => {
+  it('reports an indicator without a short label', () => {
+    const issues = check((_ds, m) => {
+      ind(m, 'C5').short = undefined
+    })
+    expectIssue(issues, 'methodology.indicator-set', 'indicators.yaml', 'C5', /short label/)
+  })
+})
+
 describe('methodology.passivity', () => {
   const rule = 'methodology.passivity'
 
@@ -872,6 +881,22 @@ describe('methodology.passivity', () => {
       need(need(m.passivity, 'passivity.yaml').value.excluded[0], 'excluded').indicators.push('D9')
     })
     expectIssue(issues, 'methodology.passivity', 'passivity.yaml', 'D9', /excluded indicator/)
+  })
+
+  it('accepts excluded tiers of a qualifying indicator (B8 pre_existing, 1.0.0-rc.2)', () => {
+    const p = need(repoMethodology().passivity, 'passivity.yaml').value
+    expect(p.excluded.some((e) => e.tiers?.includes('pre_existing'))).toBe(true)
+    expect(issuesOf(CLEAN, 'methodology.passivity')).toEqual([])
+  })
+
+  it('reports excluded tiers of a non-qualifying indicator or an unknown tier', () => {
+    const issues = check((_ds, m) => {
+      const p = need(m.passivity, 'passivity.yaml').value
+      p.excluded.push({ indicators: ['B1'], tiers: ['yes'], reason: { en: 'x', fr: 'x' } })
+      p.excluded.push({ indicators: ['B12'], tiers: ['nonesuch'], reason: { en: 'x', fr: 'x' } })
+    })
+    expectIssue(issues, 'methodology.passivity', 'passivity.yaml', 'B1', /not a qualifying/)
+    expectIssue(issues, 'methodology.passivity', 'passivity.yaml', 'B12', /no tier nonesuch/)
   })
 
   it('reports an indicator both qualifying and excluded', () => {
@@ -1122,6 +1147,8 @@ describe('methodology.banned-words', () => {
 // §7 score and bands, §10 sensitivity, §13 symmetry), spec §2 (scale), §3 (indicator tables) and
 // §4, and the P-02 encoding decisions (authoring, tier keys, stacking names). If the YAML
 // disagrees, the YAML is what needs fixing (docs/02: "when they conflict, fix the files").
+// Exceptions: the rule changes of 1.0.0-rc.2 (methodology/CHANGELOG.md, docs/calibration §7),
+// each marked "rc.2" below.
 
 type ExpectedPoints =
   | { fixed: number }
@@ -1146,20 +1173,22 @@ const INDICATOR_TABLE: Row[] = [
   // A. Arms & military (cap −45 / +30). A6 standing (open-ended suspension, docs/02 §3).
   ['A1', 'computed', 'negative', { formula: [-40, 0] }, null, 'sum', 'generated', 'annual-march'],
   ['A2', 'computed', 'negative', { formula: [-25, 0] }, null, 'sum', 'generated', 'quarterly'],
-  ['A3', 'standing', 'negative', { fixed: -15 }, null, 'sum', 'hand', 'on-change'],
+  // rc.2 (B-22, B-51): A3, A6, A7, B3, B7 and D2 stack by most severe.
+  ['A3', 'standing', 'negative', { fixed: -15 }, null, 'most_severe', 'hand', 'on-change'],
   ['A4', 'computed', 'negative', { formula: [-15, 0] }, null, 'sum', 'generated', 'annual'],
   ['A5', 'repeatable', 'negative', { perInstance: -5 }, [-15, null], 'sum', 'hand', 'on-event'],
-  ['A6', 'standing', 'positive', { fixed: 10 }, null, 'sum', 'hand', 'on-event'],
-  ['A7', 'standing', 'positive', { fixed: 25 }, null, 'sum', 'hand', 'on-event'],
+  ['A6', 'standing', 'positive', { fixed: 10 }, null, 'most_severe', 'hand', 'on-event'],
+  ['A7', 'standing', 'positive', { fixed: 25 }, null, 'most_severe', 'hand', 'on-event'],
   ['A8', 'repeatable', 'positive', { perInstance: 5 }, [null, 10], 'sum', 'hand', 'on-event'],
   // B. Diplomacy & international law (cap −40 / +45). B3, B5/B6 standing (docs/02 §3).
-  ['B1', 'repeatable', 'mixed', { tiers: { yes: 3, abstain: -2, no: -5, absent: -2 } }, null, 'sum', 'generated', 'per-vote'],
+  // rc.2 (B-23): B1 capped at −15…+15.
+  ['B1', 'repeatable', 'mixed', { tiers: { yes: 3, abstain: -2, no: -5, absent: -2 } }, [-15, 15], 'sum', 'generated', 'per-vote'],
   ['B2', 'repeatable', 'negative', { fixed: -20 }, null, 'sum', 'generated', 'per-vote'],
-  ['B3', 'standing', 'positive', { fixed: 15 }, null, 'sum', 'hand', 'on-event'],
+  ['B3', 'standing', 'positive', { fixed: 15 }, null, 'most_severe', 'hand', 'on-event'],
   ['B4', 'repeatable', 'negative', { fixed: -15 }, null, 'sum', 'hand', 'on-event'],
   ['B5', 'standing', 'positive', { fixed: 8 }, null, 'latest_position', 'hand', 'on-event'],
   ['B6', 'standing', 'negative', { fixed: -10 }, null, 'latest_position', 'hand', 'on-event'],
-  ['B7', 'standing', 'negative', { fixed: -20 }, null, 'sum', 'hand', 'on-event'],
+  ['B7', 'standing', 'negative', { fixed: -20 }, null, 'most_severe', 'hand', 'on-event'],
   ['B8', 'standing', 'positive', { tiers: { recognised_after_window: 8, pre_existing: 3 } }, null, 'most_severe', 'generated', 'on-event'],
   ['B9', 'repeatable', 'positive', { perInstanceTiers: { call: 2, names_violations: 5 } }, [null, 10], 'sum', 'hand', 'on-event'],
   ['B10', 'repeatable', 'negative', { perInstance: -5 }, [-10, null], 'sum', 'hand', 'on-event'],
@@ -1174,7 +1203,7 @@ const INDICATOR_TABLE: Row[] = [
   ['C6', 'repeatable', 'positive', { fixed: 3 }, null, 'sum', 'hand', 'on-event'],
   // D. Humanitarian (cap −15 / +25).
   ['D1', 'computed', 'positive', { formula: [0, 12] }, null, 'sum', 'generated', 'monthly'],
-  ['D2', 'standing', 'negative', { fixed: -10 }, null, 'sum', 'hand', 'on-event'],
+  ['D2', 'standing', 'negative', { fixed: -10 }, null, 'most_severe', 'hand', 'on-event'],
   ['D3', 'standing', 'positive', { tiers: { restored: 5, increased: 8 } }, null, 'most_severe', 'hand', 'on-event'],
   ['D4', 'repeatable', 'positive', { fixed: 5 }, null, 'sum', 'hand', 'on-event'],
   ['D5', 'repeatable', 'positive', { fixed: 5 }, null, 'sum', 'hand', 'on-event'],
@@ -1279,9 +1308,16 @@ describe('v1.0.0 matches docs/02', () => {
       const rows = specIndicatorRows()
       const cadences = need(v1.indicatorsFile, 'v1.0.0 indicators.yaml').value.cadences
       expect([...rows.keys()]).toEqual(INDICATOR_TABLE.map(([id]) => id))
+      // rc.2: B9 and B10 name the head of state too (R3, B-442); D1 is a share of GNI (B-33).
+      const renamed: Record<string, string> = {
+        B9: 'Head of state, head of government or foreign minister formally names violations, calls for ceasefire or an end to the blockade',
+        B10: 'Head of state, head of government or foreign minister declares unconditional support or denies documented violations',
+        D1: 'Humanitarian funding to the Gaza response, as a share of GNI',
+      }
       for (const [id, row] of rows) {
         const i = get(id)
-        expect(i.name.en, id).toBe(row.name)
+        expect(row.name, id).not.toBe(renamed[id])
+        expect(i.name.en, id).toBe(renamed[id] ?? row.name)
         expect(cadences[i.cadence]?.en, id).toBe(row.cadence)
       }
     })
@@ -1348,8 +1384,9 @@ describe('v1.0.0 matches docs/02', () => {
       ['disputed', 0.4],
     ])
     const [confirmed, corroborated, reported, disputed] = levels
+    // rc.2 (B-21): official videos and parliamentary records support confirmed too.
     expect(new Set(confirmed?.requires.any_source_kind)).toEqual(
-      new Set(['official', 'court', 'dataset']),
+      new Set(['official', 'official-video', 'parliamentary', 'court', 'dataset']),
     )
     expect(corroborated?.requires.min_distinct_publishers).toBe(2)
     expect(new Set(corroborated?.requires.publisher_kinds)).toEqual(new Set(['ngo', 'press']))
@@ -1379,9 +1416,14 @@ describe('v1.0.0 matches docs/02', () => {
       ...range('C', 1, 6),
       ...range('D', 1, 5),
     ])
-    expect(new Set(p.excluded.flatMap((e) => e.indicators))).toEqual(
-      new Set(['B1', ...range('A', 1, 8), ...range('E', 1, 3)]),
-    )
+    expect(
+      new Set(p.excluded.filter((e) => e.tiers === undefined).flatMap((e) => e.indicators)),
+    ).toEqual(new Set(['B1', ...range('A', 1, 8), ...range('E', 1, 3)]))
+    // rc.2 (B-46, B-47): positive contributions only; B8's pre-existing tier never qualifies.
+    expect(p.contribution_sign).toBe('positive')
+    expect(p.excluded.filter((e) => e.tiers !== undefined)).toMatchObject([
+      { indicators: ['B8'], tiers: ['pre_existing'] },
+    ])
     expect(p.sensitivity_points).toEqual([5, 15, 25])
   })
 

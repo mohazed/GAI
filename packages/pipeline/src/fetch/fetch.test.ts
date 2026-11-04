@@ -27,11 +27,13 @@ import {
   addMonths,
   FTS_ATTRIBUTION_OVERRIDES,
   type FtsPage,
+  flowsFromOf,
   ftsTables,
   governmentFlows,
   parseFlowPage,
   parseLocations,
   parseOrganizations,
+  rebuildWindows,
   verifyOverrides,
   windowFor,
 } from './fts.js'
@@ -190,6 +192,57 @@ describe('FTS', () => {
     ])
     expect(t.sharedFlows).toEqual(['1'])
     expect(t.preWindowFlows.map((f) => f.flowId)).toEqual(['7'])
+  })
+
+  const input = {
+    pages,
+    locations: LOCATIONS,
+    locationSourceId: 'src_20260927_fts_locations',
+    universe: FTS_DONOR_UNIVERSE,
+    plans: ['1186', '1156'],
+    lastMonth: '2024-04',
+    retrievedAt: '2026-09-27T10:00:00Z',
+  }
+
+  it('flowsFrom (formula d1 flows_from, 1.0.0-rc.2): an earlier flow counts in no window', () => {
+    const t = ftsTables({ ...input, flowsFrom: '2023-10-07' })
+    const nor = (end: string) => t.windows.find((w) => w.iso3 === 'NOR' && w.window_end === end)
+    // NOR's flow of 2023-02-28 no longer counts; its rows stay, at zero (same rows as rc.1).
+    expect(nor('2023-09-30')?.usd_paid_committed).toBe(0)
+    expect(t.windows).toHaveLength(14)
+    expect(
+      t.windows.find((w) => w.iso3 === 'DEU' && w.window_end === '2024-03-31')?.usd_paid_committed,
+    ).toBe(3_500_000)
+    // Plan totals stay over all flow dates; the earlier flows are listed.
+    expect(t.plans.find((p) => p.iso3 === 'NOR')?.usd_paid_committed).toBe(100_000)
+    expect(t.preWindowFlows.map((f) => f.flowId)).toEqual(['7'])
+    expect(() => ftsTables({ ...input, flowsFrom: '7 Oct' })).toThrow(/must be a date/)
+  })
+
+  it('flowsFromOf reads formula d1 parameters.flows_from', () => {
+    const th = (parameters: Record<string, unknown>) => ({ formulas: { d1: { parameters } } })
+    expect(flowsFromOf(th({ flows_from: '2023-10-07' }))).toBe('2023-10-07')
+    expect(flowsFromOf(th({}))).toBeUndefined()
+    expect(flowsFromOf(undefined)).toBeUndefined()
+    expect(() => flowsFromOf(th({ flows_from: 2023 }))).toThrow(/must be a date/)
+  })
+
+  it('rebuildWindows: checks the table against the archived pages, then applies flowsFrom', () => {
+    const committed = ftsTables(input).windows
+    const r = rebuildWindows(committed, input, '2023-10-07')
+    expect(r.changed.map((c) => [c.iso3, c.window_end, c.from, c.to])).toEqual([
+      ['NOR', '2023-09-30', 100_000, 0],
+      ['NOR', '2023-10-31', 100_000, 0],
+      ['NOR', '2023-11-30', 100_000, 0],
+      ['NOR', '2023-12-31', 100_000, 0],
+      ['NOR', '2024-01-31', 100_000, 0],
+    ])
+    expect(r.rows.map((x) => x.retrieved_at)).toEqual(committed.map((x) => x.retrieved_at))
+    // A second run on the rebuilt table changes nothing.
+    expect(rebuildWindows(r.rows, input, '2023-10-07').changed).toEqual([])
+    // A table the pages do not rebuild is refused.
+    const wrong = committed.map((x, i) => (i === 0 ? { ...x, usd_paid_committed: 1 } : x))
+    expect(() => rebuildWindows(wrong, input, '2023-10-07')).toThrow(/do not rebuild/)
   })
 
   it('window arithmetic', () => {

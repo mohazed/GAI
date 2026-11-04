@@ -17,11 +17,12 @@ import {
   type ScoreOptions,
   scoreCountry,
 } from './index.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodologyRc1 } from './test-helpers.js'
 import type { ScoringEvent } from './types.js'
 import { formatWeights, parseWeights, userScore } from './weights.js'
 
-const m = methodology()
+// The docs/02 rules as written: methodology 1.0.0-rc.1 (rc.2 rules: rc2.test.ts).
+const m = methodologyRc1()
 
 const at = (events: readonly ScoringEvent[], date: string, options: ScoreOptions = {}) =>
   scoreCountry('TST', events, date, m, options)
