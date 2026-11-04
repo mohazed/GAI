@@ -1852,7 +1852,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1992-04-25}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Georgia', url: 'https://mfa.gov.ge/en', type: mfa, lang: [en, ka]}
+    - {label: 'Government of Georgia (gov.ge): the Prime Minister and the Government', url: 'https://www.gov.ge/', type: head_of_government, lang: [ka]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.ge/en answered HTTP 200 to a request with a browser User-Agent (lang="en"; one request answered 522 a few minutes earlier) and lists 'Statements by MFA'
+    (/en/statements-by-mfa) and news (/en/news), with no search that a script can use (the query parameters do not filter); the Minister of Foreign Affairs and Vice Prime Minister is Maka Botchorishvili
+    (the Ministry's news items). gov.ge did not answer from this network; its latest Wayback capture (20250424181924, xml:lang="ka", 10,748 bytes) is the Government's home page. The President's site
+    (president.gov.ge) did not answer and its latest Wayback capture is a server's default page (703 bytes), so it is not listed. The President named in the 80th General Debate file is Mikheil Kavelashvili.
 
 - iso3: GHA
   iso2: GH
@@ -2353,7 +2360,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Prime Minister''s Media Office (pmo.iq)', url: 'https://pmo.iq/', type: head_of_government, lang: [ar, en]}
+    - {label: 'Ministry of Foreign Affairs of the Republic of Iraq', url: 'https://www.mofa.gov.iq/', type: mfa, lang: [ar]}
+  notes: >-
+    gov_sources checked 2026-11-04: pmo.iq answered HTTP 200 to a request with a browser User-Agent (Arabic pages; an English version at ?lang=en), titled for the Prime Minister Ali Falih al-Zaidi; its
+    items are reached by ?article=N, while its listings (?topic=6, statements) and its search (POST ?search) are served by script, so a script reads only the latest items. mofa.gov.iq answered HTTP 530;
+    its latest Wayback capture (20261017071621, lang="ar") is the Ministry's home page. The Presidency (presidency.iq) answered a Cloudflare challenge (403) live and in its latest Wayback capture
+    (20260418121517), so it is not listed. The President of the Republic named in the 80th General Debate file is Abdul Latif Jamal Rashid.
 
 - iso3: ISL
   iso2: IS
@@ -2763,7 +2777,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Amiri Diwan (da.gov.kw): the Amir', url: 'https://www.da.gov.kw/ar/', type: head_of_state, lang: [ar]}
+    - {label: 'General Secretariat of the Council of Ministers (cmgs.gov.kw)', url: 'https://www.cmgs.gov.kw/', type: head_of_government, lang: [ar]}
+    - {label: 'Ministry of Foreign Affairs of the State of Kuwait', url: 'https://www.mofa.gov.kw/en/', type: mfa, lang: [en, ar]}
+  notes: >-
+    gov_sources checked 2026-11-04: da.gov.kw answered HTTP 200 to a request with a browser User-Agent (redirect to /ar/, lang="ar", title 'الديوان الأميري'); cmgs.gov.kw answered HTTP 200 (dir="rtl",
+    the General Secretariat of the Council of Ministers' home page). mofa.gov.kw answered a Cloudflare challenge ('Just a moment...', 403) and its Wayback captures of 2023, 2025 and 2026 are the same
+    challenge page, so its content could not be checked from this network (listed as the Ministry's address; P-23). The Kuwait News Agency (kuna.net.kw) answered the same challenge. The Amir named in
+    the 81st General Debate file is Mishal Al-Ahmad Al-Jaber Al-Sabah; the Minister of Foreign Affairs in July 2025 was Abdullah Ali al-Yahya (src_20250729_unispal_two-state-conference-day-two-release).
 
 - iso3: LAO
   iso2: LA

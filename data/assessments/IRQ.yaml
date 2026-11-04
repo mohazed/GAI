@@ -1,0 +1,161 @@
+# Coverage record for Iraq (docs/03 §6). P-21 light protocol, session T-P21-47, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, Arabic: the English files answer 404; Wayback captures checked), the UN Security Council records and Meetings Coverage already archived (grep for Iraq), the joint statements already archived (grep for Iraq, العراق), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Prime Minister's Office (pmo.iq, which answers a script but serves its listings and search by script, so only the latest items, all of the Prime Minister Ali Falih al-Zaidi, were read). The Ministry of Foreign Affairs (mofa.gov.iq) answered HTTP 530 and the Presidency (presidency.iq) 403. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): no press item in Arabic or English was read. These gaps are scheduled for P-23.
+# Two events (B9, D3). Leads: none.
+country: IRQ
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier IRQ'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): Iraq''s only order from Israel in the register is of 2022 (archive/text/src_20261005_sipri_register-supplier-israel.txt, line 411: 108 SandCat armoured personnel carriers, ''T-KAT version; from Czech production line'', delivered 2023, 15.12 TIV). An order of an earlier data year is not scored (the A4 data-year gap, B-536 (7)); reported for P-23 and the author. Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer IRQ'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Iraq (searched)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on ten qualifying votes, an abstention on A/RES/ES-10/21 (27 October 2023, −2, decayed) and no vote recorded on A/DEC/80/506 (12 September 2025), scored at −2 like an abstention whatever the reason (B-690). Iraq is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched), so the absence is not explained by Article 19 (Article 19 note in docs/review/light-protocol.md, for P-23).'
+    queries:
+    - 'unga_votes.csv, country IRQ'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Iraq is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Iraq). Iraq presented an oral statement in the advisory proceedings of February 2024 (case 186; src_20240226_un-unispal_icj-186-hearings-conclusion, line 17), which is not B3 or B4.'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Iraq (not found)'
+    - 'archive/text/src_20240226_un-unispal_icj-186-hearings-conclusion.txt, Iraq'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No statement or act rejecting the ICJ''s provisional-measures orders was found in the sources read.'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Iraq is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the sources read (the Ministry''s site could not be reached; P-23).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Iraq (not found)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'Iraq is not a state party, so a hosting is not a state party''s act; no statement on the warrants was found in the sources read.'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Iraq were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Iraq. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, IRQ'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the President Abdul Latif Jamal Rashid''s 80th General Debate statement (23 September 2025, +5, flagged: starvation and displacement of Palestinian civilians named, a call to stop them immediately, Gaza cited), archived from its Wayback capture. Not filed: the 79th statement (September 2024; Arabic, the file names no speaker and its text layer is garbled; it speaks of the displacement of millions, ''collective starvation'' and attacks on UNRWA in Gaza; more than 730 days old, so no score effect; P-23 may file it from the UN''s page of the speaker); the 81st statement (September 2026: the Palestinian question, self-determination and humanitarian access, no Gaza, R7). The UN''s Meetings Coverage of the conclusion of the Security Council''s open debate begun on 23 January 2024 (SC/15570, read through Wayback) reports Iraq''s representative, not a minister (R3). The Prime Minister''s and the Foreign Minister''s statements of 2023 to 2026 (the Arab League summit hosted in Baghdad in 2025, the Arab-Islamic summits) were not reached: pmo.iq lists only its latest items and mofa.gov.iq answers 530 (P-23).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/iq_ar.pdf (read live; iq_en.pdf 404)'
+    - 'web.archive.org CDX for the 79th and 80th files'
+    - 'web.archive.org/web/20240125002153id_/https://press.un.org/en/2024/sc15570.doc.htm (read, Iraq)'
+    - 'archive/text: joint statements, grep Iraq, العراق'
+    - 'pmo.iq (home page, ?topic=6; POST ?search=غزة returned the home listing)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the President, the Prime Minister or the Foreign Minister was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Iraq on settlers or settler entities were found in the sources read.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance in the window was found: Iraq has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed.'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Iraq is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the sources read.'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Iraqi Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events of 2025 and 2026, all ended at the build date). Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor IRQ'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: no row for Iraq in 2022 or 2023, USD 25,000,000 in 2024. No announced suspension was found.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2024): UNRWA''s table for 2024 gives USD 25,000,000 for Iraq against no row in 2022 (zero baseline, B-445; flagged with the column and the D1 overlap).'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (read)'
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Iraq and no field hospital deployed by Iraq was read in a primary (not searched beyond the General Debate texts; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

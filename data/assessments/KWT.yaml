@@ -1,0 +1,161 @@
+# Coverage record for Kuwait (docs/03 §6). P-21 light protocol, session T-P21-47, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, Arabic: the English files and the 80th Arabic file answer 404), the UN Security Council records already archived (S/PV.9534, S/PV.10003) and the UN's Meetings Coverage of those days read through Wayback (SC/15569, SC/16178), the joint statements already archived (grep for Kuwait, الكويت), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. The Ministry of Foreign Affairs (mofa.gov.kw) and the Kuwait News Agency (kuna.net.kw) answered a Cloudflare challenge (403, 'Just a moment...'), which is not bypassed; the Amiri Diwan (da.gov.kw) and the Council of Ministers (cmgs.gov.kw) answered but were not searched item by item. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): no press item in Arabic or English was read. These gaps are scheduled for P-23.
+# One event (D3). Leads: none.
+country: KWT
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier KWT'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Kuwait from Israel (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Kuwait: not found). Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer KWT'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Kuwait (searched)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded; Kuwait is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - 'unga_votes.csv, country KWT'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Kuwait is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Kuwait). Kuwait took part in the advisory proceedings on Israel''s policies and practices (case 186: a written statement of 25 July 2023, src_20261007_icj-cij_case-186-written-proceedings line 171, and an oral statement in February 2024, src_20240226_un-unispal_icj-186-hearings-conclusion line 17), which are not B3 or B4.'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Kuwait (not found)'
+    - 'archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt, Kuwait'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No statement or act rejecting the ICJ''s provisional-measures orders was found in the sources read.'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Kuwait is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the sources read (the Ministry''s site could not be reached; P-23).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Kuwait (not found)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'Kuwait is not a state party, so a hosting is not a state party''s act; no statement on the warrants was found in the sources read.'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Kuwait were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Kuwait. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, KWT'
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) The joint statement of nine Arab foreign ministers of 26 October 2023 (src_20231026_fm-gov-om_arab-fms-joint-statement, line 1, names ''the State of Kuwait''), filed for the other signatories (+5, decayed, evt_2023_10_26_BHR_B9), is not filed for Kuwait because no archived document names Kuwait''s Foreign Minister on that date and a B9 event needs the speaker''s name (the minister of July 2025, Abdullah Ali al-Yahya, is not proof of the post in 2023): Task V or P-23 files it once a primary names the minister (no score effect: decayed). (2) The General Debate statements of the 79th (26 September 2024) and 81st (24 September 2026) sessions were delivered by the Crown Prince, Sabah Khalid Al-Hamad Al-Sabah, the 81st as the Amir''s representative (files'' headings): not a B9 speaker (R3); the 80th has no file on the UN''s site. (3) At the Council''s open debate of 23 January 2024 (S/PV.9534, line 3358, ''Sheikh Al-Sabah (Kuwait)'') the speaker was the Deputy Minister for Foreign Affairs, Sheikh Jarrah Jaber Al-Ahmad Al-Sabah (UN Meetings Coverage SC/15569, read through Wayback): not a B9 speaker (R3). (4) At the high-level open debate of 23 September 2025 (S/PV.10003, from line 1405, ''Mr. Al-Sabah (Kuwait)'', for the Gulf Cooperation Council: ''What is happening in the Gaza Strip is no less than a living example of genocide'', a call ''to end the aggression immediately'') the record does not give the speaker''s office, and the Wayback copy of the day''s Meetings Coverage (SC/16178, 17,558 bytes, an early version) does not name him: not filed until his office is read in a primary (P-23; it would be a +5 event if he is the head of government or the foreign minister). (5) The Foreign Minister Abdullah Ali al-Yahya''s address at the two-State conference (29 July 2025) is reported in indirect speech in the UN''s press release (src_20250729_unispal_two-state-conference-day-two-release, line 36; R4) and does not cite Gaza there; its text was not found (P-23).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/kw_ar.pdf (read live; 80/kw_ar.pdf and kw_en.pdf 404)'
+    - 'archive/text/src_20240123_undocs_s-pv-9534.txt, src_20250923_undocs_s-pv-10003.txt (Kuwait)'
+    - 'web.archive.org/web/20240124210617id_/https://press.un.org/en/2024/sc15569.doc.htm (read)'
+    - 'web.archive.org/web/20250923180951id_/https://press.un.org/en/2025/sc16178.doc.htm (read)'
+    - 'archive/text: joint statements, grep Kuwait, الكويت'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the Amir, the Prime Minister or the Foreign Minister was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Kuwait on settlers or settler entities were found in the sources read.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance in the window was found: Kuwait has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed.'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Kuwait is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the sources read.'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Kuwaiti Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events of 2025 and 2026, all ended at the build date). Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor KWT'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 12,000,000 in 2022, 2,000,000 in 2023 and 27,000,000 in 2024. No announced suspension was found; the lower 2023 amount is not read as a suspension (D2 needs an announcement).'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2024): UNRWA''s table for 2024 gives USD 27,000,000 for Kuwait against USD 12,000,000 in 2022 (flagged with the column and the D1 overlap); the 2023 amount (USD 2,000,000) is below 2022, so no 2023 event.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (read)'
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Kuwait and no field hospital deployed by Kuwait was read in a primary (not searched beyond the General Debate texts; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

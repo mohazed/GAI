@@ -1453,3 +1453,47 @@ Cyprus's orders from Israel in SIPRI's register are of 2002 and 2021 (lines 178 
 | CYP | +1.5 (+1) | +24.5 (+24) | Acting, unchanged | B9 at its cap (+10.0); B11 +5.0; D3 +8.0; B10 −5.0; C2 −10.0; four qualifying events inside 365 days end the passivity penalty; without B10 and C2 +39.5 (Acting; Confronting begins at +41) |
 
 No band change. Read critically (docs/06 §4 step 7): Cyprus's B10 and C2 rest on the same reading of the trilateral declaration with Israel as Greece's (flagged, B-326); its B9 cap is reached with or without the decayed and flagged readings.
+
+## T-P21-47: GEO, IRQ, KWT (2026-11-04)
+
+Light protocol (docs/06 §5) for Georgia, Iraq and Kuwait, by a fresh Opus 5.5 session of the finish run (docs/10 B-760 to B-764). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): the session read the UN's General Debate files (read live; Iraq's and Kuwait's in Arabic only), the Security Council records and joint statements already archived, the UN's Meetings Coverage of two Council debates through Wayback, the Georgian Ministry's listings and the Iraqi Prime Minister's Office's latest items, and records what it did not search, for P-23. One document archived, from its existing Wayback capture with `--capture` (Iraq's 80th General Debate file; the replay fetched again with `curl --compressed` equals the live file in bytes and SHA-256). No failed row was left in `archive/index.csv`.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_12_31_IRQ_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_09_23_IRQ_B9 | B9 | 2025-09-23 | +5 (flagged tier) | confirmed | official (General Debate file, Arabic) |
+| evt_2024_12_31_KWT_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (the registry dates, Georgia 1992 and Iraq and Kuwait 1988, have no Government document in this session).
+
+### Georgia
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: none. Sources read: the General Debate files of the 79th to 81st sessions (no mention of Gaza, Palestine or Israel; the 80th by the President, Mikheil Kavelashvili), the Ministry's 'Statements by MFA' and news listings (first pages), the joint statements and UN records already archived, the Israeli President's release of 3 August 2026 on new ambassadors (Georgia's ambassador, no indicator), UNRWA tables (no row), FTS, the SIPRI register (orders of 2004 to 2008), the ICJ and ICC lists (a state party). Not searched: the press, Georgian-language sources, the Ministry's and the Government's items one by one (gov.ge and president.gov.ge did not answer).
+
+### Iraq
+
+Assessments: has-events 4 (B1, B9, D1, D3), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the General Debate files of the 79th (no speaker named, garbled, more than 730 days old), 80th (the President, archived) and 81st sessions (no Gaza, R7), the UN's Meetings Coverage of the Council's January 2024 debate (Iraq's representative, R3), the joint statements already archived (none names Iraq), UNRWA tables, FTS, the SIPRI register (a 2022 order: A4 data-year gap), the ICJ and ICC lists (not a party; case 186 oral statement), pmo.iq's latest items (the Prime Minister Ali Falih al-Zaidi). Not reachable: mofa.gov.iq (530), presidency.iq (challenge). Not searched: the press, the Prime Minister's and Foreign Minister's statements of 2023 to 2026.
+
+### Kuwait
+
+Assessments: has-events 3 (B1, D1, D3), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the General Debate files of the 79th and 81st sessions (the Crown Prince, R3; no 80th file), S/PV.9534 and S/PV.10003 with the UN's Meetings Coverage of those days through Wayback (the Deputy Foreign Minister in January 2024, R3; an unidentified 'Mr. Al-Sabah' in September 2025, not filed), the joint statement of 26 October 2023 (names Kuwait; not filed: no archived document names the Foreign Minister on that date), the UN's release of the two-State conference of 29 July 2025 (indirect speech, R4), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (not a party; case 186 statements). Not reachable: mofa.gov.kw and kuna.net.kw (Cloudflare challenge). Not searched: the press, the Amiri Diwan's and the Council of Ministers' items.
+
+### Article 19 note (report only)
+
+Georgia has no vote recorded on A/DEC/80/506 (12 September 2025) and A/RES/80/1 (19 September 2025), Iraq none on A/DEC/80/506; neither is among the Member States in arrears in the Secretary-General's letter of 3 September 2025 (A/80/362). The build scores each absence at −2 like an abstention (B-690). Kuwait has the twelve votes recorded.
+
+### A4 data-year gap (report only)
+
+Iraq ordered 108 SandCat armoured personnel carriers from Israel in 2022 ('T-KAT version; from Czech production line', delivered 2023, 15.12 TIV; SIPRI register line 411): an order of an earlier data year, not scored (B-536 (7)). Georgia's orders are of 2004 to 2008; Kuwait has none.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| GEO | −21.0 (−21) | −21.0 (−21) | Enabling, unchanged | no event; nine abstentions and two absences on the qualifying votes; the passivity penalty (−15) applies |
+| IRQ | −3.0 (−3) | +9.6 (+10) | Passive → Acting | B9 +4.6 (decay 0.91); D3 +8.0; without the B9 +5.0, without the D3 +1.6 (both Acting); the passivity penalty still applies (the B9 is 407 days old) |
+| KWT | +1.5 (+1) | +9.5 (+9) | Acting, unchanged | D3 +8.0; the passivity penalty applies |
+
+One band change (Iraq). Read critically (docs/06 §4 step 7): Iraq's band moves with either event alone; the B9's +5 tier rests on naming starvation and displacement without a legal qualifier (flagged; +2 at the call tier would give about +6.9, still Acting), and both D3 amounts sit in the column pair read, not with certainty, as the oPt flash appeal.
