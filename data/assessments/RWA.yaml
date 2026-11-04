@@ -1,0 +1,194 @@
+# Coverage record for Rwanda (docs/03 §6). P-21 light protocol, session T-P21-41, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; the 79th statement by the Permanent Representative is a scan with no text layer and is not a B9 speaker's; the 80th and 81st files read
+# live: neither names Gaza, Palestine or Israel), the Ministry's news list (minaffet.gov.rw/updates/news, 24 pages read by title), the President's site (paulkagame.rw, search /?s=Gaza: six result pages read by title, the remarks
+# of 11 June 2024 read and archived), the ICJ's case 192 page (live and archived copy), the UN Treaty Collection's status page of the Rome Statute (live; Rwanda is not a State Party), the generated tables, UNRWA donor rankings
+# (2022 to 2024) and the Article 19 documents. Web searches were not available to this session: nothing is filed from a press item; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: evt_2024_06_11_RWA_B9 (expired, flagged). Leads: none. See docs/10 B-822 and B-824.
+country: RWA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier RWA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm
+      fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer RWA
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eight of the twelve qualifying votes, abstention on A/RES/ES-10/24 and A/RES/79/232, no vote recorded (non-vote) on A/RES/ES-10/21 and A/RES/80/116. The
+      country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      A/81/360); compare the UN''s voting records before the score is read (the two non-votes score -2 each).'
+    queries:
+    - unga_votes.csv, country RWA
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Rwanda is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Rwanda is not a State Party to the Rome Statute (the UN Treaty Collection''s status page, read live on 2026-11-04: no signature or ratification listed). No statement on the warrants of 21 November
+      2024 by a B5 speaker was found in the Ministry''s news list, the President''s site or the General Debate statements.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    - paulkagame.rw /?s=Gaza (six result pages)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute (Rwanda is not a party) was found in the sources read.
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Rwanda were found in the sources read.
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Rwanda. The registry gives a recognition since 2 January 1989, before the window; no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, RWA (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'evt_2024_06_11_RWA_B9 (+2, flagged, expired): President Paul Kagame at the International Conference on Urgent Humanitarian Response for Gaza (Jordan, 11 June 2024, src_20240611_paulkagame_remarks-gaza-conference-jordan):
+      Rwanda''s ''modest contribution to the tireless diplomatic and mediation initiatives ... to achieve a ceasefire in Gaza'' and schools and hospitals ''should neither be used by combatants, nor targeted
+      by military operations''. Read and not filed: the 80th General Debate statement (25 September 2025, the Foreign Minister, Olivier Nduhungirehe, rw_en.pdf; Wayback capture 20260120000626 with the live
+      file''s SHA-256) and the 81st (23 September 2026, the Prime Minister, Justin Nsengiyumva; the file has no Wayback capture): neither names Gaza, Palestine or Israel (R7). The 79th (30 September 2024)
+      was delivered by the Permanent Representative (R3) and its file is a scan. The Ministry''s news list (240 items) has no item on Gaza, Palestine or Israel by title; the President''s site has no other
+      Gaza remarks among the six result pages of its search (the Kwibohora31 media conversation of 4 July 2025, the Unity Club speech of 16 November 2024, the Thanksgiving Prayer Breakfast speech of 15
+      September 2024 and a Kinyarwanda address on the state of the nation contain none of the words Gaza, Palestin, Israel).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/rwanda and gastatements/{79,80,81}/rw_en.pdf
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    - paulkagame.rw /?s=Gaza (six result pages read by title; four speeches searched for Gaza, Palestin and Israel)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in the General Debate
+      statements, the Ministry''s news list and the President''s site read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities by Rwanda were found in the Ministry's news list read by title.
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the Ministry's news list read by title or in the General Debate statements.
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Rwanda is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the sources read.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in the Ministry's news list read by title; the treaty register and the Ministry's press statements not listed in the news pages were
+      not read (P-23).
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor RWA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Rwanda was found in the sources read.
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    queries:
+    - minaffet.gov.rw /updates/news pages 1 to 24 (240 items from October 2023 to October 2026, read by title)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

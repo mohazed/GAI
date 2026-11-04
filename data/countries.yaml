@@ -3901,7 +3901,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-24}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of the Niger (head of state; speeches and messages)', url: 'https://presidence.ne/', type: head_of_state, lang: [fr]}
+    - {label: 'Agence nigérienne de presse (ANP; state news agency)', url: 'https://www.anp.ne/', type: news_agency, lang: [fr]}
+    - {label: 'Le Sahel (state daily newspaper)', url: 'https://www.lesahel.org/', type: news_agency, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidence.ne (lang="fr"; a static site whose speeches list is served by script from /api/index.php?action=discours: 12 items of 2025 and 2026, none on Gaza or Palestine), www.anp.ne (lang="fr-FR"; its REST
+    search /wp-json/wp/v2/posts did not connect) and www.lesahel.org (lang="fr-FR"; WordPress with an open REST search, /wp-json/wp/v2/posts?search=; it is the state daily, so its items are kind press) answered HTTP 200 to a request with a browser User-Agent.
+    The Ministry of Foreign Affairs (diplomatie.gouv.ne), the Government portal (gouv.ne) and the Prime Minister's site (primature.gouv.ne) did not answer, so no Ministry or head-of-government site is listed. The President
+    is General Abdourahamane Tiani (head of state); the Prime Minister is Ali Mahaman Lamine Zeine (the 80th and 81st General Debate statements); the Minister for Foreign Affairs, Cooperation and Nigeriens Abroad is
+    Bakary Yaou Sangaré (the 79th statement; A/79/PV.17). The Niger ratified the Rome Statute on 11 April 2002 and notified its withdrawal on 18 June 2026 (C.N.251.2026).
 
 - iso3: NGA
   iso2: NG
@@ -4619,7 +4628,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1989-01-02}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and International Cooperation of Rwanda', url: 'https://www.minaffet.gov.rw/', type: mfa, lang: [en]}
+    - {label: "Office of the Prime Minister of Rwanda (head of government)", url: 'https://www.primature.gov.rw/', type: head_of_government, lang: [en]}
+    - {label: 'Paul Kagame, President of the Republic of Rwanda (head of state; speeches)', url: 'https://www.paulkagame.rw/', type: head_of_state, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.minaffet.gov.rw (lang="en_US"; TYPO3; the news list /updates/news/page?tx_news_pi1[currentPage]=N answers without the cHash parameter, 10 items a page, pages 1 to 24 reach October 2023),
+    www.primature.gov.rw (lang="en-US") and www.paulkagame.rw (lang="en-US"; search /?s=; paulkagame.com redirects to it) answered HTTP 200 to a request with a browser User-Agent. The Presidency's
+    own domain (presidency.gov.rw) did not answer. The President is Paul Kagame (head of state); the Prime Minister is Justin Nsengiyumva (head of government; the 81st General Debate page); the Minister for Foreign
+    Affairs and International Cooperation is Olivier Nduhungirehe (the 80th statement). Rwanda is not a State Party to the Rome Statute (the UN Treaty Collection's status page, read 2026-11-04).
 
 - iso3: SAU
   iso2: SA
@@ -4703,7 +4720,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-22}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Senegal (head of state)', url: 'https://www.presidence.sn/', type: head_of_state, lang: [fr, en]}
+    - {label: 'Government of Senegal, Prime Minister (head of government; Council of Ministers communiqués)', url: 'https://www.primature.sn/', type: head_of_government, lang: [fr]}
+    - {label: 'Ministry of African Integration and Foreign Affairs of Senegal', url: 'https://www.diplomatie.gouv.sn/', type: mfa, lang: [fr]}
+    - {label: 'Agence de presse sénégalaise (APS; state news agency)', url: 'https://aps.sn/', type: news_agency, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.presidence.sn (lang="fr"; an Angular application whose articles load by script from an API that was not found, so the Presidency's texts are read through the UN's General Debate
+    files), www.primature.sn (lang="fr"; Drupal 9; sec.gouv.sn redirects to it; its site search /search/node?keys= works and lists the Council of Ministers' communiqués and the Government's releases), www.diplomatie.gouv.sn
+    (lang="fr"; Drupal 10; the news list /actualites?page=N holds three pages from September 2026, its site search returns an error) and aps.sn (lang="fr-FR"; its REST search /wp-json/wp/v2/posts answers 401) answered HTTP 200 to a
+    request with a browser User-Agent. The President is Bassirou Diomaye Diakhar Faye (head of state); the Prime Minister (head of government) was Ousmane Sonko in the Government's reports of 2025 and is named Ahmadou Alhaminou Mohamed Lo on the Government's listing of a Déclaration de politique générale of 2026. Senegal ratified the Rome Statute on 2 February 1999
+    and chairs the UN Committee on the Exercise of the Inalienable Rights of the Palestinian People.
 
 - iso3: SGP
   iso2: SG

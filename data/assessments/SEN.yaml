@@ -1,0 +1,201 @@
+# Coverage record for Senegal (docs/03 §6). P-21 light protocol, session T-P21-41, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; the 79th and 80th files recorded from their Wayback captures, the 81st file read live, no Wayback capture), the Government's site
+# (primature.sn, Drupal: the site search for eight terms and every Council of Ministers communique and Government release it returned, read), the Ministry's news list (diplomatie.gouv.sn/actualites, three pages from
+# September 2026), the Presidency's site (presidence.sn, an application whose texts load by script: not searchable), the ICJ's case 192 page (live and archived copy), the UN Treaty Collection's status page of the Rome
+# Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024) and the Article 19 documents. Web searches were not available to this session: nothing is filed from a press item; the 'one search per indicator
+# group' of docs/06 §5 is left for P-23.
+# Events: evt_2024_09_25_SEN_B9 (expired), evt_2025_09_24_SEN_B9 (flagged). Leads: none. See docs/10 B-823 and B-824.
+country: SEN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SEN
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm
+      fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SEN
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or
+      on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country SEN
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Senegal is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Senegal signed the Rome Statute on 18 July 1998 and ratified it on 2 February 1999 (the UN Treaty Collection''s status page, read live on 2026-11-04). No statement on the warrants of 21 November
+      2024 by a B5 speaker was found: the Government''s site search for Cour pénale internationale and CPI returns the Council of Ministers of 29 April 2026 (a bill to ratify the amendments to Article 8
+      of the Statute, not the warrants) and the Presidential Investment Council. The 80th General Debate statement (lines 160 to 165) refers to the Statutes of the ICJ and the ICC in a passage on multilateralism
+      and takes no position on the warrants. The Presidency''s texts of the period were not searchable.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Senegal was found: the Treaty Collection''s page lists no withdrawal notification
+      by Senegal.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Senegal were found in the sources read.
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Senegal. The registry gives a recognition since 22 November 1988, before the window; no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, SEN (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'evt_2024_09_25_SEN_B9 (+2, expired, flagged R7) and evt_2025_09_24_SEN_B9 (+5, flagged): President Bassirou Diomaye Diakhar Faye in the General Debate of the 79th session (25 September 2024:
+      ''appelle à un cessez-le-feu immédiat et durable'', as Chair of the Committee on the Exercise of the Inalienable Rights of the Palestinian People) and of the 80th (24 September 2025: ''Gaza ne vit
+      plus'', men, women and children ''privés de nourriture, d’eau et de soins de santé'', ''ferme condamnation de cette tragédie''). Read and not filed: (1) the 81st statement (24 September 2026, the
+      President; sn_en.pdf and sn_fr.pdf, printouts of the Presidency''s page of 25 September 2026 that give the full text, read live): ''In Gaza, as throughout all occupied Palestinian territories, the
+      human suffering is unacceptable, and the systematic violation of international law is intolerable'' and ''The time has come to act to put an end to the horror of massacres and destruction''. It is
+      a +5 reading (a violation named as systematic, a call to end massacres) by a B9 speaker (R3, head of state), **not filed because the document cannot be archived**: the UN''s file has no Wayback capture
+      and Save Page Now answers 405 (the attempt of 2026-11-04 failed and its index row was removed), and the Presidency''s page loads its text by script from an API that was not found, so no archived copy
+      carries the words (docs/10 B-823; for the author and Task C: file it as a B9 event of +5 if an archived copy is made). (2) The Prime Minister''s Office''s reports in indirect speech (R4): the audience
+      of the UN Committee (a Wednesday, 9 July, no year on the page: 2025), where the Prime Minister ''a réitéré le soutien indéfectible du Sénégal à la cause palestinienne''; the audience of the President
+      of Türkiye, where the two ''ont exprimé ensemble leur indignation et condamné le génocide qui se déroule en Palestine'' (undated in the text read); the Council of Ministers of 1 October 2025, where
+      the Prime Minister congratulates the President on his ''prises de position fermes et courageuses [...] particulièrement à Gaza''; the Council of 11 June 2025, where the President announces he will
+      attend the Conference on Palestine of 17 to 19 June 2025. The Foreign Minister is not quoted in a statement. The Presidency''s own texts of the period were not searchable.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/senegal and gastatements/{79,80,81}/sn_{fr,en}.pdf
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in the General Debate
+      statements and the Government''s results read. The Ministry''s communique on Israel''s attack on Doha (primature.sn, communiques-officiels) condemns it and concerns Qatar, not Gaza.'
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities by Senegal were found in the Government's results read.
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the Government's results read or in the General Debate statements; the Council of Ministers of 15 October 2025 records a
+      communication by the Minister of Foreign Affairs on the ceasefire agreement of 9 October 2025 between Israel and Hamas, with no measure.
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Senegal is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the sources read.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in the Government's results read; the Presidency's texts, the Ministry's lists and the treaty register were not read (P-23).
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor SEN
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Senegal was found in the Government's results read.
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the Government's results read.
+    queries:
+    - 'primature.sn /search/node?keys=: Palestine, Gaza, Israël, israélien, Cour pénale internationale, CPI, cessez-le-feu, palestinien (every result read)'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

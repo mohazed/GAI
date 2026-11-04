@@ -2076,3 +2076,51 @@ No band change. Read critically (docs/06 §4 step 7): Namibia's rise rests on th
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English), the Government sources of Namibia and Malawi when their sites answer, the Presidency of Namibia's statements and the Hague Group's founding declaration, Mauritius's Ministry lists, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
+
+## T-P21-41 — Niger, Rwanda, Senegal (2026-11-04)
+
+Light protocol, group 41, eleventh sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-820 to B-824). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the UN's General Debate pages and files of the 79th to 81st sessions (live; three files and the Niger page recorded from existing Wayback captures, whose byte counts and SHA-256 equal the live files'), Senegal's Government site (`primature.sn`, site search and every result), Rwanda's Ministry news list (24 pages by title) and the President's site, Niger's Presidency list and the state daily Le Sahel (press), the ICJ's case 192 page (live and archived), the Treaty Collection's page on the Rome Statute and the notification C.N.251.2026 (live) and the generated tables. Niger's Ministry, Government portal and Prime Minister's site did not answer; Senegal's Presidency loads its texts by script; the indicators a Government source would decide are `unchecked` for Niger with the reason.
+
+Five events (Niger 2, Rwanda 1, Senegal 2), no lead.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_27_NER_B9 | B9 | 2025-09-27 | +5 (the Prime Minister: 'le peuple nigérien condamne sans réserve le génocide israélien à Gaza'; flagged) | confirmed | official (the UN's General Debate text) |
+| evt_2026_06_18_NER_B6 | B6 | 2026-06-18 | -10, scope `related`, unscored (withdrawal from the Rome Statute, C.N.251.2026; the quoted reason names neither Gaza nor the warrants; flagged) | confirmed | official (UN depositary notification) |
+| evt_2024_06_11_RWA_B9 | B9 | 2024-06-11 | +2 (the President at the Gaza humanitarian conference: efforts 'to achieve a ceasefire in Gaza'; flagged; expired, 876 days) | confirmed | official (the President's site) |
+| evt_2024_09_25_SEN_B9 | B9 | 2024-09-25 | +2 (the President: 'appelle à un cessez-le-feu immédiat et durable'; R7 flagged; expired, 770 days) | confirmed | official (the UN's General Debate text) |
+| evt_2025_09_24_SEN_B9 | B9 | 2025-09-24 | +5 (the President: 'Gaza ne vit plus', people 'privés de nourriture, d'eau et de soins de santé', condemnation; flagged) | confirmed | official (the UN's General Debate text) |
+
+Six documents were archived: the Niger 80th General Debate file (Wayback capture 20251111053852) and the Niger page of the General Debate site (20251008034732), Senegal's 79th and 80th files (20241211072108 and 20260120002803), the depositary notification C.N.251.2026 (20260710191619) and the Rwandan President's remarks of 11 June 2024 (Save Page Now, 44,760 bytes). Every replay was fetched again with curl --compressed and equals the index row. One attempted capture (Senegal's 81st file, HTTP 405) failed and its index row was removed by exact id.
+
+### Niger
+
+Assessments (34 indicators): has-events 3 (B1, B6, B9), none-found 10, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 18 (A3, A5 to A8, B5, B7, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Events: two. Leads: none. The 80th statement (Prime Minister) uses 'le génocide israélien à Gaza'; the 79th (Foreign Minister) names Palestine only; the 81st (Prime Minister) names Gaza with a call for civilian protection and humanitarian access (neither tier). The withdrawal from the Rome Statute is filed with scope `related`.
+
+### Rwanda
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: one (expired). Leads: none. The 80th and 81st General Debate statements name none of Gaza, Palestine and Israel; the Ministry's news list has no item on them; Rwanda is not a State Party to the Rome Statute.
+
+### Senegal
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: two. Leads: none. The 81st statement (24 September 2026: 'the systematic violation of international law is intolerable', 'put an end to the horror of massacres and destruction') reads as a +5 event but cannot be archived (docs/10 B-823), so it is not filed.
+
+### Article 19 note (report only)
+
+Niger and Senegal have the twelve qualifying votes recorded; Rwanda has no vote recorded on A/RES/ES-10/21 and A/RES/80/116 (and abstentions on two). None of the three is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| NER | +1.5 (+1) | +6.1 (+6) | Acting, unchanged | the B9 event of 27 September 2025 (+4.6 after decay); B1 (+16.5) and the passivity penalty (-15) stay. If the author scores the B6 withdrawal (scope `gaza`): +11.1 (+11), Acting |
+| RWA | -5.2 (-5) | -5.2 (-5) | Passive, unchanged | the only event is expired; B1 (+9.8) and the passivity penalty (-15) |
+| SEN | +1.5 (+1) | +6.1 (+6) | Acting, unchanged | the B9 event of 24 September 2025 (+4.6); B1 (+16.5) and the passivity penalty (-15) stay. The unarchived 81st statement would add about +5 (B9 cap +10) |
+
+No band change. Read critically (docs/06 §4 step 7): Niger's and Senegal's rises rest on one flagged B9 reading each; Rwanda's score rests on B1 (with two non-votes) and the passivity penalty alone.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English and French), Niger's Ministry statements when its sites answer, the Presidency of Senegal's texts and an archived copy of the 81st statement, the Hague Group's founding declaration, Rwanda's Ministry press statements outside the news list, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
