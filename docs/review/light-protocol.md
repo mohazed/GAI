@@ -1497,3 +1497,52 @@ Iraq ordered 108 SandCat armoured personnel carriers from Israel in 2022 ('T-KAT
 | KWT | +1.5 (+1) | +9.5 (+9) | Acting, unchanged | D3 +8.0; the passivity penalty applies |
 
 One band change (Iraq). Read critically (docs/06 §4 step 7): Iraq's band moves with either event alone; the B9's +5 tier rests on naming starvation and displacement without a legal qualifier (flagged; +2 at the call tier would give about +6.9, still Acting), and both D3 amounts sit in the column pair read, not with certainty, as the oPt flash appeal.
+
+## T-P21-48: LBN, OMN, SYR (2026-11-04)
+
+Light protocol (docs/06 §5) for Lebanon, Oman and the Syrian Arab Republic, by a fresh Opus 5.5 session of the finish run (docs/10 B-765 to B-769). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-46 and T-P21-47): the session read the UN's General Debate files (read live; Oman's 80th, a scan, by OCR), the joint statements and UN records already archived, the Omani Ministry's WordPress API (309 posts on Gaza by title, eight opened) and the Lebanese Presidency's media search, and records what it did not search, for P-23. Four documents archived, all from existing Wayback captures with `--capture` (the 80th General Debate files of Syria and Lebanon, equal to the live files; two pages of the Omani Ministry); every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256. No failed row was left in `archive/index.csv`.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_LBN_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 (flagged: host in-kind) | confirmed | dataset (UNRWA tables) |
+| evt_2024_12_31_LBN_D3 | D3 | 2024-12-31 | +8 (flagged: host in-kind) | confirmed | dataset (UNRWA tables) |
+| evt_2025_09_23_LBN_B9 | B9 | 2025-09-23 | +2 (flagged tier) | confirmed | official (General Debate file, French) |
+| evt_2023_10_26_OMN_B9 | B9 | 2023-10-26 | +5 (decayed; minister by continuity, flagged) | confirmed | official (the Omani Ministry's text of the joint statement) |
+| evt_2023_12_31_OMN_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_11_23_OMN_B9 | B9 | 2025-11-23 | +5 (flagged tier) | confirmed | official (the Ministry's text of the Foreign Minister's talk) |
+| evt_2026_06_29_OMN_B9 | B9 | 2026-06-29 | +2 (flagged: ceasefire in force) | confirmed | official (the Ministry's text of the joint declaration) |
+| evt_2025_09_24_SYR_B9 | B9 | 2025-09-24 | +2 (flagged tier and speaker) | confirmed | official (General Debate file, English) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (registry dates Lebanon 2008, Oman 1988, Syria 2011; no Government document of the date in this session).
+
+### Lebanon
+
+Assessments (34 indicators): has-events 3 (B1, B9, D3), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3); D1 none-found (generated). Leads: none. Sources read: the General Debate files of the 79th (the Foreign Minister, Arabic, expired), 80th (the President, French, archived) and 81st sessions (Arabic, no speaker named, no call), S/PV.9763 (Lebanon's representative, R3), the joint statements already archived (none names Lebanon), the Presidency's two items on Gaza (indirect speech, R4), UNRWA tables, FTS, the SIPRI register (transfers of 1976 to 1987 to non-state groups), the ICJ and ICC lists (not a party). Not reachable: pcm.gov.lb, mfa.gov.lb. Not searched: the press, the Prime Ministers' and Foreign Ministers' statements of 2023 to 2026.
+
+### Oman
+
+Assessments: has-events 4 (B1, B9, D1, D3), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the General Debate files of the 79th (ceasefire call and 'genocidal policies', expired), 80th (a scan read by OCR: no Gaza, R7) and 81st sessions (no Gaza, R7), the joint statement of 26 October 2023 (the Ministry's own text), GA/12639 (the Foreign Minister named in the post), the Ministry's API listing and eight posts (the Foreign Minister's Oslo Forum talk; the joint declarations with France, Spain and India; the press conferences in Ankara and with Pakistan, indirect speech; the Munich and Gulf-security items, no Gaza statement in the Minister's words), UNRWA tables, FTS (plan 1156), the SIPRI register (none), the ICJ and ICC lists (not a party). Not searched: the press, the Ministry's other posts item by item, the Sultan's addresses, the Royal Court (did not answer).
+
+### Syrian Arab Republic
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11; D1 none-found (generated). Leads: none. Sources read: the General Debate files of the 79th (the former government's Foreign Minister, expired), 80th (the President Ahmed al-Sharaa, English, archived) and 81st sessions (Arabic, garbled text layer, normalised: no Gaza), the joint statements already archived (none names Syria), UNRWA tables (in-kind amounts below 2022), FTS, the SIPRI register (none), the ICJ and ICC lists (not a party). Not reached: mofaex.gov.sy (script-rendered), the Presidency (no site answered). Not searched: SANA, the press.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded (all yes); none is among the Member States in arrears in A/80/362.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LBN | +1.5 (+1) | +11.3 (+11) | Acting, unchanged | D3 2024 +8.0; B9 +1.8 (decay 0.91); the 2023 D3 ended; the passivity penalty (−15) still applies |
+| OMN | +1.5 (+1) | +23.5 (+23) | Acting, unchanged | B9 +5.0 (Oslo Forum talk) and +2.0 (French declaration), both qualifying events, end the passivity penalty; without the talk +18.5, without the declaration +21.5, without both +1.5; the 2023 B9 and D3 add nothing |
+| SYR | +1.5 (+1) | +3.3 (+3) | Acting, unchanged | B9 +1.8 (decay 0.92); the passivity penalty still applies |
+
+No band change. Read critically (docs/06 §4 step 7): Oman's +22 rests on two flagged B9 readings, and either alone ends the passivity penalty (worth +15); Lebanon's +10 rests mostly on an in-kind host contribution (flagged as Jordan's); all three B9 call-tier readings ('an immediate end to the tragedy unfolding in Gaza', 'an immediate end to the war', 'maintenance of the ceasefire') are flagged.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23: the web searches per indicator group (English, Arabic, French), the Omani Ministry's posts one by one, the Lebanese Council of Ministers and Ministry, the Syrian Ministry and SANA, UNRWA's 2025 table, Comtrade for the three.

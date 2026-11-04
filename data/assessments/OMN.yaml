@@ -1,0 +1,173 @@
+# Coverage record for Oman (docs/03 §6). P-21 light protocol, session T-P21-48, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Ministry of Foreign Affairs (fm.gov.om, a WordPress site that answers a browser User-Agent: its API /wp-json/wp/v2/posts?search=Gaza listed 309 items, whose titles were read and whose items of September 2025 to October 2026 with the Minister or the Sultan were opened). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-46 and T-P21-47): no press item in Arabic, English or French was read. These gaps are scheduled for P-23.
+# Four events (B9 x3, D3). Leads: none.
+country: OMN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier OMN'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Oman from Israel in the register. Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer OMN'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Oman (not found)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on the twelve qualifying votes (the votes of 2023 and the first half of 2024 have decayed). Oman has all twelve votes recorded and is not among the Member States
+      in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched).'
+    queries:
+    - 'unga_votes.csv, country OMN'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Oman is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Oman).'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Oman (not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No filing by Oman supporting the respondent in ICJ case 192 (same page).'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Oman is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the sources
+      read (P-23).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Oman (not found)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'Oman is not a state party, so a hosting is not a state party''s act; no statement against the warrants was found in the sources read.'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Oman were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Oman. The registry gives 13 December 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is
+      added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, OMN'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Three events: the nine Arab foreign ministers'' joint statement of 26 October 2023, published by the Omani Ministry (+5, the Minister named by the continuity of the post, flagged; decayed); the
+      Foreign Minister Badr Albusaidi''s talk to the Muscat Retreat of the Oslo Forum (23 November 2025, +5: ''clearly illegal actions such as … Israel''s invasion of Gaza'', flagged); the Joint Omani French
+      declaration of 29 June 2026 (the Sultan, +2: ''maintenance of the ceasefire'', flagged). Not filed: the 79th General Debate statement (28 September 2024, ''genocidal policies'' and a ceasefire call
+      in Gaza; more than 730 days old, no score effect); the 80th statement (27 September 2025, a scan read by OCR, no speaker named: genocide, starvation and blockade against ''the Palestinian people''
+      and a call to lift the siege, but Gaza is never named, R7; no press source, so no lead); the 81st statement (26 September 2026: crimes and violations against the Palestinian people, no Gaza, R7);
+      the Ministry''s report of the Minister''s press conference in Ankara (8 January 2026, a call for an immediate and permanent ceasefire in the Gaza Strip in indirect speech, R4); the joint statements
+      of the Sultan''s visits to Spain (5 November 2025) and of India''s Prime Minister (18 December 2025), which call for aid delivery while a ceasefire is in force and contain no ceasefire call or end-of-blockade
+      call (the Cyprus reading of 6 May 2026, B-756, filed such a call at the call tier: Task V aligns the two); the Ministry''s own statements with no named speaker (R3); Oman''s part in the GCC statement
+      read by Kuwait at S/PV.10003 (not Oman''s speaker).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/om_{en,ar}.pdf (read live; the 80th by OCR)'
+    - 'fm.gov.om/wp-json/wp/v2/posts?search=Gaza (309 items; posts 31623, 62165, 60163, 37335, 35382, 49674, 31170, 33745 read)'
+    - 'web.archive.org CDX for fm.gov.om/en/31623/ and /49674/'
+    - 'archive/text: joint statements and UN records, grep Oman, Albusaidi'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Oman on settlers or settler entities were found in the sources read.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'Oman has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed.'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Oman is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the sources read.'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: an Omani Government flow to the Gaza response (plan 1156, USD 1,000,000) appears in fts_plan_totals.csv (monthly generated events of November 2024 to March 2025, all ended
+      at the build date). Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor OMN'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 316,422 in 2022, USD 3,266,422 in 2023, USD 216,421 in 2024 (lower than 2022, not an announced suspension). No announced suspension was found.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2023 to 31 December 2024): UNRWA''s table for 2023 gives USD 3,266,422 against USD 316,422 in 2022 (the programme budget rose from USD 100,000 to USD
+      3,050,000); the 2024 amount (USD 216,421) is below 2022, so the tier ends and no 2024 event is filed.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (read)'
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Oman and no field hospital deployed by Oman was read in a primary (the Ministry''s API listing was read by title only for these; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'
+  E2:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'
+  E3:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'

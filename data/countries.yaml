@@ -2835,9 +2835,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2008-11-30}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Lebanon', url: 'https://www.presidency.gov.lb/', type: head_of_state, lang: [ar]}
+    - {label: 'Presidency of the Council of Ministers of Lebanon', url: 'https://www.pcm.gov.lb/', type: head_of_government, lang: [ar]}
   notes: >-
-    Scored like every other country; direct hostilities are outside the scale (docs/07).
+    Scored like every other country; direct hostilities are outside the scale (docs/07). gov_sources checked
+    2026-11-04: presidency.gov.lb answered HTTP 200 to a request with a browser User-Agent (lang="ar"; its media
+    search /media?q=… lists items). pcm.gov.lb did not answer from this network (no response within 25 seconds);
+    its latest Wayback capture (20261019223819) is a redirect page ('Object moved'), so the address is kept from the
+    Presidency's own link to it. The Ministry of Foreign Affairs and Emigrants (mfa.gov.lb) did not answer and its
+    Wayback captures since May 2026 are a default web-server page ('Welcome to nginx!'), so it is not listed (a
+    placeholder is not a source, T-P21-16).
 
 - iso3: LBR
   iso2: LR
@@ -3885,7 +3893,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-13}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of the Sultanate of Oman', url: 'https://www.fm.gov.om/', type: mfa, lang: [en, ar]}
+    - {label: 'Oman News Agency', url: 'https://omannews.gov.om/', type: news_agency, lang: [ar]}
+  notes: >-
+    gov_sources checked 2026-11-04: fm.gov.om answered HTTP 200 to a request with a browser User-Agent (English
+    pages under /en/, lang="en-US"; Arabic pages) and lists its posts through the WordPress API
+    (/wp-json/wp/v2/posts?search=…). The Sultan is head of state and presides over the Council of Ministers; the
+    Royal Court's site (diwan.gov.om) did not answer and its latest Wayback capture is of 2021, so it is not
+    listed; the Oman News Agency (omannews.gov.om, lang="ar") answered HTTP 200 and carries the Sultan's and the
+    Government's news.
 
 - iso3: PAK
   iso2: PK
@@ -4881,11 +4898,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-07-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and Expatriates of the Syrian Arab Republic', url: 'https://mofaex.gov.sy/', type: mfa, lang: [ar]}
+    - {label: 'Syrian Arab News Agency (SANA)', url: 'https://sana.sy/en/', type: news_agency, lang: [en]}
   notes: >-
     Arab League: readmitted on 7 May 2023, before the window; listed among the member states on
     lasportal.org (Wayback capture 2025-03-24). Scored like every other country; direct hostilities
-    are outside the scale (docs/07).
+    are outside the scale (docs/07). gov_sources checked 2026-11-04: mofaex.gov.sy answered HTTP 200 to a
+    request with a browser User-Agent (lang="ar"; a script-rendered application) and sana.sy/en answered HTTP
+    200 (lang="en-US"; the state news agency, which also has an Arabic site). The Presidency (presidency.sy)
+    did not answer and has no Wayback capture, so it is not listed; the B9/B10 speakers are those of the
+    government that holds the UN seat (docs/10 B-768).
 
 - iso3: TCD
   iso2: TD
