@@ -2267,3 +2267,47 @@ No band change. Read critically (docs/06 §4 step 7): Chad's rise rests on a rec
 ### 90-minute stop note
 
 The session ran slightly over the limit because Save Page Now failed for `presidence.td` three times (about 20 minutes). Left for P-23 and Task V: the web searches per indicator group (English, French, Swahili), an archived copy of the Chad President's speech of 11 November 2024, a documented end of Chad's B12, the Chadian Prime Minister's and Ministry's sources, Togo's Ministry and Government sources, Tanzania's Prime Minister's and Ministry's own pages, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.
+
+## T-P21-45 — Uganda, Zambia, Zimbabwe (2026-11-04)
+
+Light protocol, group 45, fifteenth and last sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-841 to B-847). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the UN's General Debate pages and files of the 79th to 81st sessions (Zambia's 79th and Zimbabwe's 81st are scans, read by OCR), Uganda's Ministry of Foreign Affairs and Parliament (Drupal site search), Zambia's Ministry (WordPress site search), Chimp Reports, The Independent (Uganda), Zambia Monitor and Diggers (WordPress REST search, kind press), the ICJ's case 192 page (live and archived copy), the archived ASP list, UNRWA donor tables (2022 to 2024) and the Article 19 documents. Zimbabwe's Government sites did not answer (the Ministry answers HTTP 503) and Uganda's State House answered 526.
+
+One event (Zimbabwe) and one lead (Uganda); none for Zambia.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_12_31_ZWE_D3 | D3 | 2024-12-31 | +8 (UNRWA's 2024 donor table: USD 500,000 against no 2022 row; standing, open; no-2022-row precedent, B-445, B-679) | confirmed | ngo (UNRWA donor ranking, archived earlier) |
+
+No new document was archived (the event cites the UNRWA table of 31 December 2024, already in `archive/index.csv`); `archive/index.csv` is unchanged.
+
+### Uganda
+
+Assessments (34 indicators): has-events 1 (B1), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 14 (A3, A5 to A8, B7, B11, C4 to C6, D4, E1 to E3). Events: none. Leads: one (A5: Parliament's approval of 6 August 2026 of a deployment of UPDF troops to the Gaza Strip within a proposed US-backed stabilisation force; no indicator defines it). State Party to the Rome Statute; not on the case 192 list. Not filed: the President's statement of 22 June 2025 on the Iran-Israel war and the Ministry's statement of 21 September 2026 (two-state solution, no Gaza: R7); the 80th General Debate statement (a Vice President: R3); the Permanent Representative's statement for the Non-Aligned Movement at the Security Council (April 2026, not a B9 speaker).
+
+### Zambia
+
+Assessments: has-events 1 (B1), none-found 16, no-data 2, not-applicable 1, unchecked 14 (A3, A5 to A8, B7, B11, C4 to C6, D4, E1 to E3). Events: none. Leads: none. The Foreign Minister's three General Debate statements do not mention Gaza or Palestine. Relations with Israel recorded as notes: the framework agreement of 2023 (before the window), Israel's resident embassy opened on 21 August 2025, the Israeli President's state visit of 10 and 11 November 2025; no agreement signed since October 2023 was found (the State House record was not reachable). State Party to the Rome Statute; not on the case 192 list.
+
+### Zimbabwe
+
+Assessments: has-events 2 (B1, D3), none-found 12, no-data 2, not-applicable 1 (B2: Council term from 1 January 2027), unchecked 17 (A3, A5 to A8, B7, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Events: one (D3). Leads: none. The 79th and 80th General Debate statements name Palestine and the two-state solution but not Gaza (R7); the 81st (a scan, read by OCR) names neither. Not a State Party to the Rome Statute; not on the case 192 list.
+
+### Article 19 note (report only)
+
+None of the three is named in A/80/362 or on the Assembly's page of October 2026. Uganda and Zimbabwe have a vote on all twelve qualifying votes. Zambia has an abstention (A/RES/ES-10/21), two 'yes' votes (ES-10/22, ES-10/23) and nine non-votes (ES-10/24 to A/RES/80/116); arrears do not explain them and the reason is not known (B-846). The arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| UGA | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | B1 +16.5 and the passivity penalty (-15); no event |
+| ZMB | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | B1 -11.0 (nine non-votes and an abstention) and the passivity penalty (-15); no event |
+| ZWE | +1.5 (+1) | +9.5 (+9) | Acting, unchanged | D3 +8.0 (standing); B1 +16.5 and the passivity penalty (-15) stay. Without the event: +1.5 |
+
+No band change. Read critically (docs/06 §4 step 7): Zimbabwe's rise rests on a USD 500,000 contribution read against an absent 2022 row; Zambia's band rests on non-votes whose cause is unknown (if B1 counted nothing for them it would be -15, Passive).
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group, Zimbabwe's Government sources, Uganda's State House addresses (including the NAM summit of January 2024), Zambia's State House record of the Herzog visit, B7, B11 and D4 for the three, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.

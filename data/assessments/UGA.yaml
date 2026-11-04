@@ -1,0 +1,198 @@
+# Coverage record for Uganda (docs/03 §6). P-21 light protocol, session T-P21-45, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the Ministry of Foreign Affairs (mofa.go.ug, Drupal; its site search /search/node?keys=), Parliament (parliament.go.ug, the same search), Chimp Reports and The Independent (chimpreports.com and independent.co.ug, WordPress REST search, kind press), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Presidency's site (statehouse.go.ug) answered HTTP 526 on 2026-11-04. No web search was available.
+# Events: none. Leads: see data/leads/UGA.yaml. See docs/10 B-843, B-844, B-847.
+country: UGA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier UGA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs (docs/10 B-718) cover about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists ten orders by Uganda from Israel (data years 1964 to 2021, latest 2021), none from October 2023
+      on. Left to the build; the data-year gap of B-536 (7) does not apply (no order in a data year from 2023).'
+    queries:
+    - sipri_orders.csv, buyer UGA
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Noted while reading: on 6 August 2026 Uganda''s Parliament approved a Government motion authorising
+      the deployment of UPDF troops to the Gaza Strip as part of a proposed international stabilisation force backed by the United States (Parliament''s news item 4536 and Chimp Reports, press,
+      6 August 2026; read, not archived). No indicator of docs/02 defines participation in that force (A5 covers joint exercises, intelligence sharing, basing and weapons transit with Israel),
+      so nothing is filed; lead_20261104_UGA_1 and docs/10 B-844 put the question to the author.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes, all ''Y'' (each +3; B1 +16.5 after decay). Uganda is not named in the Secretary-General''s letter of 3
+      September 2025 (A/80/362) or on the Assembly''s page of October 2026 (Article 19). Left to the build.'
+    queries:
+    - unga_votes.csv, country UGA
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Uganda is a State Party (the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties, line 222). No statement on the Netanyahu or Gallant warrants was found:
+      the Ministry''s site has one item on the ICC (8 December 2025, the Minister of Justice''s meeting with the Court''s President at the 24th Assembly, expressing regret at the sanctions on
+      the Court''s judges and officials; no warrant named), and the General Debate statements do not mention the Court.'
+    queries:
+    - 'mofa.go.ug /search/node?keys=: International Criminal Court, arrest warrant, Netanyahu, International Court of Justice (the item of 8 December 2025 read)'
+    - src_20261009_icc-asp_states-parties (searched)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found in the sources read.
+    queries:
+    - mofa.go.ug searches (see B5)
+    - 'chimpreports.com and independent.co.ug REST searches: Gaza, Israel, Palestine (titles read)'
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: the Presidency''s site (statehouse.go.ug) answered HTTP 526 on 2026-11-04 and Uganda''s other Government sources have no searchable record on this subject; the Ministry''s
+      site search (see B5) found nothing on sanctions (docs/10 B-844; P-23).'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Uganda. The registry gives a recognition since 3 December 1988 (before the window); no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, UGA (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. (1) 79th General Debate (Prime Minister Robinah Nabbanja, ug_en.pdf): no mention of Gaza or Palestine. (2) 80th (Vice President Jessica Alupo, 2025): ''On the question
+      of Palestine, we urge the international community to give renewed priority to the realization of the internationally endorsed Two-State Solution'': a Vice President, not a B9 speaker (R3),
+      and no Gaza (R7). (3) 81st (the file is headed as the statement of President Yoweri Museveni; the UN''s page names Vice President Alupo as the speaker, 23 September 2026): no mention of
+      Gaza or Palestine. (4) The President''s statement of 22 June 2025 on the Iran-Israel war (Ministry''s site, official PDF; as Chairman of the Non-Aligned Movement) asks why the Israelis refused
+      the two-state solution and names Gaza only in a historical aside (''the Philistines of Gaza''): not about the war in Gaza (R7). (5) The Ministry''s statement of 21 September 2026 on the
+      Middle East (''accept the State of Israel and the rights of the Palestinians to have their own State'') names no Gaza and is a Ministry statement. (6) Ambassador Adonia Ayebare''s statement
+      for the Non-Aligned Movement at the Security Council (Chimp Reports, press, 29 April 2026) demands an immediate ceasefire in Gaza: a Permanent Representative at the time, not a B9 speaker
+      (R3). Mr Ayebare is the Minister of Foreign Affairs on the Ministry''s site on 2026-11-04; no statement of his as Minister on Gaza was found.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/uganda and gastatements/{79,80,81}/ug_en.pdf (read)
+    - 'mofa.go.ug /search/node?keys=: Gaza (no result), Palestine, Israel, Middle East, ceasefire, Hamas (no result), humanitarian, Rafah (no result), genocide (no result), Zionist (no result),
+      NAM summit, Kampala Declaration (results read)'
+    - 'chimpreports.com /wp-json/wp/v2/posts?search=: Gaza, Israel, Palestine, Ayebare, NAM summit (titles read; the items of 6 March, 29 April, 6 August and 25 September 2026 read)'
+    - 'independent.co.ug /wp-json/wp/v2/posts?search=: Gaza, NAM summit, Non-Aligned (titles read)'
+    - 'parliament.go.ug /search/node?keys=: Gaza, stabilisation force, UPDF deployment'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Prime Minister was found. The Chief of Defence Forces, General
+      Muhoozi Kainerugaba, is reported (Chimp Reports, 26 March 2026) as saying Uganda would back Israel if threatened in the Iran conflict; he is not a B10 speaker (R3). The President''s statement
+      of 22 June 2025 says Uganda has good relations with both Israel and Iran.'
+    queries:
+    - mofa.go.ug searches (see B9)
+    - chimpreports.com searches (see B9)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no Government source of Uganda carries a searchable record of statements on this subject (the Presidency''s site answered HTTP 526; the Ministry''s site search found nothing
+      on sanctions) (docs/10 B-844; P-23).'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the President received the credentials of Israel''s new Ambassador, Gideon Behar, on 27 February 2026 (Ministry''s
+      site). The missions linked from the Ministry''s home page include none in Israel.'
+    queries:
+    - 'mofa.go.ug /search/node?keys=: Israel (four results read)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Uganda is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement with Israel signed since October 2023 was found on the Ministry''s site (search: Israel, four results, none an agreement) or in the press titles read. Not found is not
+      the same as absent: the Presidency''s site was unreachable (HTTP 526). The memorial to Yoni Netanyahu at the Old Entebbe Terminal (unveiled 1 August 2026 by the Chief of Defence Forces,
+      Chimp Reports) is not an agreement.'
+    queries:
+    - 'mofa.go.ug /search/node?keys=: Israel'
+    - chimpreports.com searches (see B9)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor UGA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Uganda in UNRWA's donor rankings for 2022, 2023 or 2024 (searched); no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - 'mofa.go.ug /search/node?keys=: UNRWA (no result)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Uganda in UNRWA's donor rankings for 2022, 2023 or 2024. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no Government source of Uganda carries a searchable record of statements on this subject (docs/10 B-844; P-23). The proposed deployment of troops to the Gaza Strip (see
+      A5) is not a field hospital or an evacuation programme.'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was found on the Ministry''s site (search: visa Palestinians, no result).'
+    queries:
+    - 'mofa.go.ug /search/node?keys=: visa Palestinians'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
