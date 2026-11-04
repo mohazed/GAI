@@ -2029,3 +2029,50 @@ No band change. Read critically (docs/06 §4 step 7): the three scores rest main
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Arabic), the unreachable Mali sites, the Presidency of Mozambique and its Security Council statements, a Presidency or Arab League text for Mauritania's two summit speeches, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
+
+## T-P21-40 — Mauritius, Malawi, Namibia (2026-11-04)
+
+Light protocol, group 40, tenth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-816 to B-819). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read Mauritius's Prime Minister's Office (the Cabinet's highlights), the Malawian Government portal, the UN's General Debate pages and files of the 79th to 81st sessions (live; the files recorded from existing Wayback captures, whose byte counts and SHA-256 equal the live files'), the ICJ's case 192 page (archived and live), Namibia's declaration of intervention (the UNISPAL copy), the Treaty Collection's page on the Rome Statute (live), Infobae's report of the Bogota conference and the generated tables. The Presidency, the Ministry and the Government portal of Namibia, and the Ministry, State House and news agency of Malawi, did not answer; the indicators a Government source would decide are `unchecked` with the reason.
+
+Three events (Namibia) and one lead (Namibia).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_25_NAM_B9 | B9 | 2024-09-25 | +5 (the President: 'Namibia believes that Israel, by intent and by action, is committing genocide', and 'continues to call for a ceasefire'; expired, 770 days) | confirmed | official (the UN's General Debate text) |
+| evt_2025_09_24_NAM_B9 | B9 | 2025-09-24 | +5 (the President reports the Commission of Inquiry's finding of genocide and says access to aid in Gaza is 'severely limited'; flagged for the tier) | confirmed | official (the UN's General Debate text) |
+| evt_2026_03_12_NAM_B3 | B3 | 2026-03-12 | +15 (declaration of intervention under Article 63 in case 192, read by direction: the applicant's construction) | confirmed | court (ICJ document, UNISPAL copy) and the Court's page |
+| lead_20261104_NAM_1 | lead, B9 | 2025-07-16 | Namibia is one of twelve signatories of the Hague Group's Bogota declaration; no Namibian signatory named | press (Infobae) |
+
+Eight documents were archived: six General Debate files (Namibia's 79th, 80th and 81st from the Wayback captures 20241111150001, 20260118023820 and 20260924160044; Mauritius's 79th and 80th from 20250211092627 and 20260120002501; Malawi's 79th from 20241109111144), Namibia's declaration (Save Page Now capture of the UNISPAL copy, 714,578 bytes) and the Cabinet highlights of Mauritius of 22 August 2025 (393,715 bytes). Every replay was fetched again with curl --compressed and equals the index row.
+
+### Mauritius
+
+Assessments (34 indicators): has-events 2 (B1, D1), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B5, C4 to C6, E1 to E3). Events: none. Leads: none. The President's 79th statement names Gaza ('heart wrenching') with no call and no violation; the Minister's 80th and 81st support the Palestinian cause and the two-State solution without naming Gaza; the Cabinet endorsed the New York Declaration on 22 August 2025 (a Cabinet decision, not a B9 speaker). The Ministry's lists load by script and were not read.
+
+### Malawi
+
+Assessments: has-events 1 (B1), none-found 11, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 19 (A3, A5 to A8, B5, B7, B10 to B12, C2, C4 to C6, D4, D5, E1 to E3). Events: none. Leads: none. The 79th statement names Palestine only in a list of conflicts; the 80th (Permanent Representative) and the 81st (Foreign Minister) name none of Gaza, Palestine or Israel. Five of twelve qualifying votes have no recorded vote (not Article 19 on the documents read).
+
+### Namibia
+
+Assessments: has-events 3 (B1, B3, B9), none-found 9, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 19 (A3, A5 to A8, B5, B7, B10 to B12, C2, C4 to C6, D4, D5, E1 to E3). Events: three. Leads: one. Filed for the 79th and 80th statements of the President (head of state and head of government); the 81st ('an end to the atrocities being committed in Gaza') is not filed (neither tier). Namibia's declaration of intervention supports the applicant's construction.
+
+### Article 19 note (report only)
+
+Mauritius and Namibia have the twelve qualifying votes recorded; Malawi has no vote recorded on five (A/RES/79/232, A/DEC/80/506, A/RES/80/1, A/RES/80/78, A/RES/80/116). None of the three is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| MUS | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; B1 (+16.5) and the passivity penalty (-15) |
+| MWI | -24.4 (-24) | -24.4 (-24) | Enabling, unchanged | no event; B1 (-9.4) and the passivity penalty (-15) |
+| NAM | +1.5 (+1) | +36.1 (+36) | Acting, unchanged | B3 +15 (qualifying: ends the passivity penalty, +15), the B9 event of 24 September 2025 (+4.6 after decay); B1 (+16.5). Without the flagged B9 event: +31.5 (+32), Acting |
+
+No band change. Read critically (docs/06 §4 step 7): Namibia's rise rests on the B3 declaration (which also lifts the passivity penalty) and on one flagged B9 reading; Mauritius's and Malawi's scores rest on B1 and the passivity penalty alone, and Malawi's B1 depends on five non-votes.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English), the Government sources of Namibia and Malawi when their sites answer, the Presidency of Namibia's statements and the Hague Group's founding declaration, Mauritius's Ministry lists, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.

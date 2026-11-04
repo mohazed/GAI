@@ -1,0 +1,181 @@
+# Coverage record for Malawi (docs/03 §6). P-21 light protocol, session T-P21-40, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; live, the 79th recorded from its Wayback capture), the Government portal (malawi.gov.mw, Joomla; its search for Gaza, Palestine and Israel), the ICJ's case 192
+# page (archived copy and live), the UN Treaty Collection's status page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Ministry's, State House's and the news agency's sites
+# did not answer on 2026-11-04. Web searches were not available to this session (the run's search budget was spent): nothing is filed from a press item; the indicators a Government source would decide are `unchecked` with the reason, not
+# `none-found` (docs/10 B-757).
+# Events: none. Leads: none. See docs/10 B-818.
+country: MWI
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MWI
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MWI
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on ES-10/21 (27 October 2023) and ES-10/25 (11 December 2024); abstained on ES-10/22, ES-10/23, ES-10/26 and ES-10/27; no on ES-10/24 (18 September
+      2024); no vote recorded on A/RES/79/232, A/DEC/80/506, A/RES/80/1, A/RES/80/78 and A/RES/80/116 (five of the twelve; the build scores a non-vote at -2, docs/10 B-775 to B-779). The country
+      is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (A/81/360), so the non-votes are not
+      Article 19 losses of vote on those documents; the reason was not found. Compare the UN''s voting records before the score is read.'
+    queries:
+    - unga_votes.csv, country MWI
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Malawi is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Its written statement in the advisory proceedings of case 186 (listed on the Court's page, archived as src_20261007_icj-cij_case-186-written-proceedings) is not an indicator act.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: unchecked
+    note: Malawi ratified the Rome Statute on 19 September 2002 (the UN Treaty Collection's status page, read live on 2026-11-04). No statement on the warrants of 21 November 2024 by a B5 speaker
+      was found in the sources read; the Government portal (malawi.gov.mw, Joomla) answers but holds items of 2021 and 2022 only (its search for Gaza, Palestine and Israel returns two unrelated
+      hits for the name 'Zan gaza nga Chikhosi'); the Ministry of Foreign Affairs (mofa.gov.mw), State House (statehouse.mw), the Malawi News Agency (manaonline.gov.mw) and Parliament did not
+      answer a scripted request on 2026-11-04.
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - malawi.gov.mw/index.php/component/search/?searchword=Gaza, Palestine, Israel
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Malawi was found: the Treaty Collection''s page lists no withdrawal
+      notification by Malawi.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Malawi. The registry gives a recognition since 23 October 1998, before the window, with no Government document read (R21, left for P-23).
+      No recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, MWI (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President at the 79th session was Lazarus Chakwera; the 81st statement was delivered by the Minister of Foreign Affairs, George Chaponda (the General Debate page; R3).
+      (1) 79th statement, 26 September 2024, the President (src_20240926_un-gadebate_mw-chakwera-ag79): Palestine is named once, in a list of conflicts that arise from weak governance (''unwinnable
+      conflict in Eastern Europe, in Palestine, in Eastern DRC, and counting''); Gaza is not named, no call, no violation (R7). (2) 80th statement, 29 September 2025: delivered by the Permanent
+      Representative (not a B9 speaker, R3); the file (gastatements/80/mw_en.pdf, read live, same SHA-256 as the Wayback capture 20260118023944; not recorded) names none of Gaza, Palestine, Israel
+      or the Middle East. (3) 81st statement, 28 September 2026, the Minister of Foreign Affairs (gastatements/81/mw_en.pdf, read live; the Wayback capture of 30 September 2026 is the 405 page;
+      not recorded): names none of them either. The Government''s own sites could not be searched (see B5).'
+    queries:
+    - 'gadebate.un.org/en/{79,80,81}/malawi and gastatements/{79,80,81}/mw_en.pdf (grep: Gaza, Palestin, Israel, Middle East)'
+    - 'malawi.gov.mw search: Gaza, Palestine, Israel (no relevant hit)'
+    checked_at: '2026-11-04'
+  B10:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5); the General Debate statements read contain no statement of unconditional support for Israel.'
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  B12:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5). Malawi''s relations with Israel are not documented in the archived sources and no web search was available; left for
+      P-23.'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Malawi is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5); no treaty register was read (P-23).'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Malawi in fts_plan_totals.csv and no government flow to the oPt appeal in fts_funding.csv. Left to the build.'
+    queries:
+    - fts_funding.csv, donor MWI
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Not searched: Malawi''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
