@@ -1886,3 +1886,50 @@ One band change (the Gambia), resting on the Ministry's release of the Foreign M
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English and French), the text of the Gambian Foreign Minister's statements (Istanbul, June 2025; Jeddah, 25 August 2025) and the OIC's record of the President's Summit address, the Gambia's 81st statement, the Ghanaian President's words at the Non-Aligned summit and his 81st statement, Guinea's 80th file, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
+
+## T-P21-37 — Guinea-Bissau, Equatorial Guinea, Kenya (2026-11-04)
+
+Light protocol, group 37, seventh sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-802 to B-806). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Governments' own sites (Kenya's Presidency through its REST API and the Ministry's lists; Guinea-Bissau's Presidency sitemap, Ministry and state news agency; Equatorial Guinea's press office), the UN's General Debate pages and files of the 79th to 81st sessions (live; the files recorded from existing Wayback captures, whose SHA-256 equal the live files'), the ICJ's case 192 page and the Treaty Collection's page on the Rome Statute (live) and the generated tables.
+
+One event (Kenya) and three leads (Kenya).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_24_KEN_B9 | B9 | 2025-09-24 | +2 (call for a permanent ceasefire; flagged for the 'disproportionate military operations' wording) | confirmed | official (the UN's General Debate text; the Presidency's report as second source) |
+| lead_20261104_KEN_1 | lead, B9 | 2025-01-29 | the President at the visit of Egypt's President: 'committed to UN Security Council Resolution 2728 ... which calls for an immediate ceasefire', Gaza not named in the quotation | press (Presidency's report) |
+| lead_20261104_KEN_2 | lead, B9 | 2025-04-26 | joint statement with China: 'the two sides ... oppose the forced transfer of people in Gaza' | press (Ministry's copy of the joint statement) |
+| lead_20261104_KEN_3 | lead, C2 | 2024-03-07 | Cabinet approval of an MOU between the ICT ministry and Israel's National Cyber Directorate, no signing found | press (Presidency's report) |
+
+Fourteen documents were archived (Kenya: the 79th and 80th General Debate files recorded from Wayback captures 20241211073009 and 20251026192526, the Presidency's reports of 24 September 2025, 29 January 2025 and the Cabinet of 7 March 2024, the Ministry's copy of the joint statement with China and its item of 7 February 2026; Guinea-Bissau: the 79th and 80th files recorded from captures 20241111140847 and 20260103192646, and three reports of the state news agency ANG; Equatorial Guinea: two reports of the Government's press office). Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Kenya
+
+Assessments (34 indicators): has-events 3 (B1, B9, D1), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: one (B9, the President, 24 September 2025). Leads: three. The President's 80th General Debate statement calls for the release of Israeli hostages and 'a permanent ceasefire' after expressing concern at 'the humanitarian catastrophe in Gaza' and at civilians 'caught in the devastation of disproportionate military operations' (the wording the Marshall Islands' event read at +5; here kept at the call tier, flagged). The 79th statement (26 September 2024) names Gaza in a list of conflicts; the 81st (23 September 2026) names neither Gaza nor Palestine. The Prime Cabinet Secretary and Cabinet Secretary for Foreign and Diaspora Affairs has no statement on Gaza in the Ministry's lists. Kenya is not on the Court's list of interveners in case 192; it is a state party to the Rome Statute and no statement on the warrants was found. B1: eleven yes votes and one abstention (ES-10/24). SIPRI: a 2024 order of 45 TIV from Israel is outside the build's data year (the A4 data-year gap). `mfa.go.ke` carries hidden gambling keywords in its HTML.
+
+### Guinea-Bissau
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. President Embaló's 79th (25 September 2024) and 80th (25 September 2025) General Debate statements name Gaza only in passing (a visit to Israel and Palestine; a list of conflicts); the 81st was by the Prime Minister and has no file. The state news agency reports the President's appeal for a ceasefire (10 October 2023, indirect speech), his visit to Israel (3 March 2024, the first by a Bissau-Guinean head of state) and to Ramallah (4 March 2024, the Grand Collar of the State of Palestine); no quotation of his words, no Gaza in his words, no agreement. The Presidency's and the Ministry's sites do not cover the window. Signatory, not a party, to the Rome Statute; not on the Court's list of interveners. B1: seven yes votes and five non-votes.
+
+### Equatorial Guinea
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. The General Debate statements of the 79th to 81st sessions were delivered by the Vice President and do not name Gaza, Palestine or Israel. The Government reports a donation of EUR 500,000 to the Red Crescent of Egypt for Gaza (28 December 2023; handed over in Cairo on 14 June 2024): not an FTS flow, so D1 (generated) does not count it. Neither a party to the Rome Statute nor a signatory; not on the Court's list of interveners. B1: four yes votes, one abstention and seven non-votes.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Guinea-Bissau five non-votes, Equatorial Guinea seven non-votes and an abstention, Kenya an abstention. None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| GNB | -15.8 (-16) | -15.8 (-16) | Passive, unchanged | no event; B1 (-0.8, five non-votes) and the passivity penalty (-15) |
+| GNQ | -22.7 (-23) | -22.7 (-23) | Enabling, unchanged | no event; B1 (-7.7, seven non-votes and an abstention) and the passivity penalty (-15) |
+| KEN | +1.5 (+1) | +3.3 (+3) | Acting, unchanged | the B9 event of 24 September 2025 (+1.83); B1 (+16.5); passivity (-15) still applies. At +5 about +6.1 (+6), Acting |
+
+No band change. Read critically (docs/06 §4 step 7): Equatorial Guinea's Enabling band and Guinea-Bissau's Passive band rest on non-votes that no source read explains, and on the passivity penalty; Kenya's score rests on its votes in B1.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Spanish), the Kenyan Ministry's items from October 2023 to August 2024 (not listed on its site), the signing of the Kenya-Israel cyber MOU, the Government documents for the three recognition dates, Guinea-Bissau's 81st statement and Government sites for 2024 to 2026, Equatorial Guinea's non-votes, the Article 19 check, the A4 data-year gap for Kenya, and Comtrade for the three.

@@ -2089,7 +2089,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-21}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of Guinea-Bissau (Gabinete do Presidente; head of state)', url: 'https://www.presidencia.gw/', type: head_of_state, lang: [pt]}
+    - {label: 'Ministry of Foreign Affairs, International Cooperation and Communities of Guinea-Bissau', url: 'https://mne.gw/', type: mfa, lang: [pt]}
+    - {label: 'Agência de Notícias da Guiné (ANG; the state news agency)', url: 'https://ang.gw/', type: news_agency, lang: [pt]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidencia.gw (lang="pt"; a Wix site with no search; the news sitemap lists 84 items and its last change is 7 May 2025, none with Gaza, Palestine or Israel in
+    its address) and mne.gw (lang="pt-PT"; WordPress with an open REST API, /wp-json/wp/v2/posts?search=; the latest post is dated 7 December 2023, so it is not a source for the window) answered HTTP
+    200 to a request with a browser User-Agent. The President in the 79th and 80th sessions of the General Debate was Úmaro Sissoco Embaló; the Prime Minister who spoke in the 81st (25 September
+    2026) was Ilídio Vieira Té (the UN's page). ang.gw (lang="pt-BR" in its markup, text in Portuguese; WordPress with an open REST API, /wp-json/wp/v2/posts?search=) is the state news agency and carries the President's activities, citing the Presidency's Facebook page; it is the only Government source that covers the window, and its reports are kind press (leads, not scoring evidence). No Government site of Guinea-Bissau answered with a news list for the window other than the agency.
 
 - iso3: GNQ
   iso2: GQ
@@ -2115,7 +2123,13 @@
       A/78/846 (annex) gives the month only (May 1989); the first day of the month is
       recorded. P-14: not confirmed; no official statement found for the month given by
       A/78/846.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of Equatorial Guinea, Oficina de Información y Prensa (guineaecuatorialpress.com; the Government''s institutional site, with the Presidency and Vice Presidency sections)', url: 'https://www.guineaecuatorialpress.com/', type: government, lang: [es]}
+  notes: >-
+    gov_sources checked 2026-11-04: guineaecuatorialpress.com (lang="es"; gob.gq redirects to it; Laravel; the search at /busqueda is a POST form with a session token, 15 results a page; the pages
+    carry the article's own date) answered HTTP 200 to a request with a browser User-Agent. No Ministry of Foreign Affairs or Presidency site of Equatorial Guinea answered (the addresses tried:
+    exteriores.gob.gq, maec.gob.gq, asuntosexteriores.gob.gq, minexteriores.gob.gq, presidencia.gob.gq, guineaecuatorial.gob.gq). The head of state is President Obiang Nguema Mbasogo; the
+    General Debate statements of the 79th to 81st sessions were delivered by the Vice President, Teodoro Nguema Obiang Mangue (the 80th speaks in the President's name).
 
 - iso3: GRC
   iso2: GR
@@ -2745,7 +2759,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1989-05-12}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Office of the President of Kenya (President.go.ke; head of state and head of government)', url: 'https://www.president.go.ke/', type: head_of_state, lang: [en]}
+    - {label: 'Ministry of Foreign and Diaspora Affairs of Kenya', url: 'https://mfa.go.ke/', type: mfa, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: president.go.ke (lang="en-US"; WordPress with an open REST API, /wp-json/wp/v2/posts?search=, full text) and mfa.go.ke (lang="en"; Drupal; the site search does
+    not return a results page to a scripted request; the lists /speeches-statements, /press-release and /allnews?page=N carry the Ministry's items and files) answered HTTP 200 to a request with a
+    browser User-Agent. The President, William Samoei Ruto, is head of state and head of government; the Prime Cabinet Secretary and Cabinet Secretary for Foreign and Diaspora Affairs is Musalia
+    Mudavadi (the Ministry's page of 7 February 2026). The Kenya News Agency (kenyanews.go.ke, WordPress; its search is fuzzy) was read for county-level items only.
 
 - iso3: KGZ
   iso2: KG
