@@ -2314,7 +2314,7 @@ The session finished within the limit. Left for P-23 and Task V: the web searche
 
 ## Verification of 2026-11
 
-HANDOFF.md Task V: a second check, by a fresh Opus 5.5 session, of every event, lead and recognition row filed by the light-protocol sessions, which Sonnet 5.5 ran. Session T-VERIFY-1 (2026-11-04) covers groups 5 to 26 (66 countries); T-VERIFY-2 covers groups 27 to 49. Build-log row: docs/10 B-848. No event changed status; `review.reviewed_by` is not set; nothing is published.
+HANDOFF.md Task V: a second check, by a fresh Opus 5.5 session, of every event, lead and recognition row filed by the light-protocol sessions, which Sonnet 5.5 ran. Session T-VERIFY-1 (2026-11-04) covers groups 5 to 26 (66 countries); T-VERIFY-2 (2026-11-04) covers groups 27 to 49 (70 countries). Build-log rows: docs/10 B-848 and B-849. No event changed status; `review.reviewed_by` is not set; nothing is published.
 
 ### T-VERIFY-1: groups 5 to 26 (2026-11-04)
 
@@ -2541,3 +2541,244 @@ Each changed event's `review.notes` now ends with a "Verification of 2026-11 (T-
 - Leads were checked for sourcing and live URLs, not re-researched; the claims stay unverified, as leads are by definition.
 - The French summaries were read for gender, capitals and the glossary's terms; a native reader's pass stays with the author (Part 4, item 4).
 - Groups 27 to 49 are T-VERIFY-2's. Passed on: the French summary of `evt_2025_10_07_PRT_B9` begins "Le Président de la République" (glossary: lower case).
+
+### T-VERIFY-2: groups 27 to 49 (2026-11-04)
+
+**What was checked, and how.** The same checklist as T-VERIFY-1 (Task B2), by a fresh Opus 5.5 session, applied to the 70 countries of groups 27 to 49 (group 49 with Monaco folded in): 168 events filed by the light-protocol sessions (all `reviewed`), 32 leads and the 4 recognition rows these sessions added to `data/structured/recognitions.csv` (AGO, BWA, GAB, VAT). Groups 46 to 49 and 24 to 26 were run by Opus 5.5 and groups 27 to 45 by Sonnet 5.5; all are checked alike.
+
+1. **Quote at the locator.** A script normalised each quote and its `archive/text/<source>.txt` as the validator does and mapped each quote's position to line numbers; `page …` and `paragraph …` locators were checked by hand (the Namibian declaration's page numbers are page headers in the extracted text).
+2. **Captures.** The 117 sources cited by these events and recognition rows were fetched again from their `wayback_url` with `curl --compressed`, one at a time, and byte count and SHA-256 compared with the source record and `archive/index.csv` (all three agree for every source). Archived texts under 1,500 characters or with bot-check wording were read (three short texts, all genuine: the Botswana notice, the Niger depositary notification, the Liechtenstein curriculum vitae).
+3. **Speaker and wording (R3, R4, R7).** Every event was read with its quotes, rationale and notes, clustered by statement so that one joint statement filed for several signatories was read once and its signatory line checked per country. For B9 and B10 scoped `gaza`, a script measured the distance from each quote to the nearest mention of Gaza (Arabic, Greek and the Slavic case forms included) in the archived document.
+4. **Date and tier.** Event dates compared with source dates (four gaps over three days, all explained: a year-only list, depositary notifications after the action); the UNRWA D3 tiers re-read against the 2022, 2023 and 2024 donor tables for all 25 D3 events; tiers compared across countries for the same wording.
+5. **Scope tags.** The ten `west-bank`-only events read for conduct in Gaza (none); `gaza` scopes as in 3.
+6. **French summaries.** Gender and capitals against `docs/glossary.fr.md`.
+7. **Leads.** Every lead read for its claim and sourcing; each lead source URL fetched live once.
+8. **Signatories.** For every joint statement filed in these groups, the archived text was searched for the other states of groups 27 to 49 to find signatories left without the event (same treatment for every signatory, B-444).
+
+**Result.** Every quote is verbatim in its archived text and at its locator, after one locator fix (Namibia). Every replay equals its record. No invented quote, source, date or speaker was found. No B9 or B10 scoped `gaza` rests on a document without Gaza. Four French summaries had a capital on the title (corrected). Three joint statements co-signed by Malta and Portugal, archived for other signatories, had not been filed for them: three events added (no score change, both countries are at the B9 cap). Serbia's signature of the leaders' statement of 6 June 2024 has no named signatory: recorded, not filed.
+
+**Replays.** 117 of 117 sources: the replay fetched again equals the record (three needed a second fetch after a time-out). No capture of these groups is missing from the Wayback index.
+
+**Leads.** 32 leads, all open; every source is kind `press` (Government information services such as the Presidencies of Ghana, Kenya and Liberia and the state news agency of Mauritania are entered with kind press, as the validator requires for a lead; their texts are archived where the lead says so). Of 37 lead source URLs, 36 answer HTTP 200 live; `dailynews.co.tz` (lead_20261104_TZA_1) answers 500 and has a Wayback copy of 15 July 2026. No lead rests on an address that does not exist.
+
+### Table per country (groups 27 to 49)
+
+Columns as for groups 5 to 26. Events and evidence items count the events after this session's additions (MLT 19 + 2, PRT 20 + 1).
+
+#### Group 27: ALB, AND, BIH
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| ALB | 3 | 5: 5 / 5 | 3: 3 | 2 (2/2 URLs answer 200) | none filed by the session | No finding. The two C2 memoranda stay flagged under R18 (tourism; health). |
+| AND | 5 | 10: 10 / 10 | 6: 6 | 0 | none filed by the session | No finding. |
+| BIH | 1 | 3: 3 / 3 | 1: 1 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. The address names Gaza in the Bosnian genitive ('u pojasu Gaze'); the Chairman of the Presidency as head of state stays flagged (R3). |
+
+#### Group 28: HRV, MKD, MLT
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| HRV | 12 | 22: 22 / 22 | 13: 13 | 0 | none filed by the session | No change. evt_2024_09_27_HRV_B9 (negotiations to end hostilities, no ceasefire named) and evt_2025_09_09_HRV_B9 stay flagged at the call tier. |
+| MKD | 1 | 3: 3 / 3 | 2: 2 | 0 | none filed by the session | No finding. The C2 event rests on two press publishers with no primary (confidence reported, flagged). |
+| MLT | 21 | 48: 48 / 48 | 23: 23 | 1 (3/3 URLs answer 200) | none filed by the session | Two joint statements that name Malta, archived and filed for other signatories, had not been filed: evt_2025_05_16_MLT_B9 (the seven Prime Ministers' statement, Robert Abela on line 14, +5) and evt_2026_01_05_MLT_B9 (UNRWA and NGOs, Malta on line 133, +2, minister's name by continuity, flagged) added. B9 at the +10 cap before and after: provisional +56 unchanged. Assessment note updated. |
+
+#### Group 29: MNE, PRT, SMR
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| MNE | 3 | 3: 3 / 3 | 3: 3 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| PRT | 21 | 49: 49 / 49 | 23: 23 | 2 (2/2 URLs answer 200) | none filed by the session | (1) evt_2025_10_07_PRT_B9: summary.fr 'Le Président' changed to 'Le président' (passed on by T-VERIFY-1). (2) The six foreign ministers' letter of 14 December 2025 (Paulo Rangel on lines 25 and 26; the Luxembourg event listed the signatories for Task V) had not been filed: evt_2025_12_14_PRT_B9 added (+5). B9 at the +10 cap before and after: provisional +47.5 unchanged. (3) The B9 assessment note counted eleven joint statements for twelve; corrected. |
+| SMR | 3 | 4: 4 / 4 | 3: 3 | 2 (2/2 URLs answer 200) | none filed by the session | Two French summaries: 'Le Secrétaire d'État' changed to 'Le secrétaire d'État' (glossary: lower case). |
+
+#### Group 30: SRB, VAT, AGO
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SRB | 1 | 1: 1 / 1 | 1: 1 | 1 (1/1 URLs answer 200) | none filed by the session | Serbia is named among the seventeen states of the leaders' joint statement of 6 June 2024 (src_20240606_govinfo_dcpd-202400492, line 6; filed for Portugal, Romania and others). The text names states, not signatories, and either the President or the Prime Minister may have signed for Serbia: no speaker is established (R3), so no event is filed; the statement is past 730 days (no score effect). Recorded in the B9 assessment note, for the author. |
+| VAT | 4 | 8: 8 / 8 | 4: 4 | 1 (1/1 URLs answer 200) | 2015-06-26 (1 source(s), replay equal 1/1) | evt_2024_09_28_VAT_B9: summary.fr 'Le Secrétaire d'État' changed to 'Le secrétaire d'État'. Cardinal Parolin as the head-of-government equivalent stays flagged (R3, B-736). Recognition row (26 June 2015) read in the joint communiqué on the signing of the Comprehensive Agreement with the State of Palestine: recognition implied by the treaty, flagged. |
+| AGO | 3 | 7: 7 / 7 | 4: 4 | 1 (1/1 URLs answer 200) | 1988-12-06 (1 source(s), replay equal 1/1) | No finding. Recognition row (6 December 1988) read in the President's address of 22 September 2025 (UNISPAL copy, line 83). |
+
+#### Group 31: BDI, BEN, BFA
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| BDI | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No event. The lead's source is the Presidency's own report, entered with kind press (the Government's information service), as the sessions of groups 31 to 45 did. |
+| BEN | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| BFA | 1 | 2: 2 / 2 | 1: 1 | 0 | none filed by the session | No change. The withdrawal from the Rome Statute stays scoped related and flagged (B6, B-776). |
+
+#### Group 32: BWA, CAF, CIV
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| BWA | 0 | 0: 0 / 0 | 0: 0 | 0 | 1988-12-19 (1 source(s), replay equal 1/1) | No event. Recognition row (19 December 1988) read in the Ministry's notice as the Daily News printed it on 19 March 2017 (line 5): a Government statement relayed by the state daily, flagged. |
+| CAF | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| CIV | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+
+#### Group 33: CMR, COD, COG
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| CMR | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| COD | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| COG | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+
+#### Group 34: COM, CPV, DJI
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| COM | 4 | 6: 6 / 6 | 5: 5 | 0 | none filed by the session | No finding. The declaration of intervention (B3) matches the Court's case page. |
+| CPV | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| DJI | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+
+#### Group 35: ERI, ETH, GAB
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| ERI | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| ETH | 0 | 0: 0 / 0 | 0: 0 | 1 (3/3 URLs answer 200) | none filed by the session | No finding. |
+| GAB | 0 | 0: 0 / 0 | 0: 0 | 0 | 1988-12-12 (1 source(s), replay equal 1/1) | No event. Recognition row (12 December 1988) read in the President's General Debate address of 25 September 2025 (line 45). |
+
+#### Group 36: GHA, GIN, GMB
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| GHA | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| GIN | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| GMB | 3 | 4: 4 / 4 | 3: 3 | 0 | none filed by the session | No finding. |
+
+#### Group 37: GNB, GNQ, KEN
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| GNB | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| GNQ | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| KEN | 1 | 3: 3 / 3 | 2: 2 | 3 (3/3 URLs answer 200) | none filed by the session | No change. evt_2025_09_24_KEN_B9 ('disproportionate military operations', no party named) stays at the call tier, flagged; see the cross-country tier note below. |
+
+#### Group 38: LBR, LSO, MDG
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| LBR | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| LSO | 3 | 5: 5 / 5 | 3: 3 | 1 (1/1 URLs answer 200) | none filed by the session | No change. evt_2024_09_26_LSO_B9 ('human rights violations in Gaza') stays at the call tier, flagged (expired, no effect). |
+| MDG | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+
+#### Group 39: MLI, MOZ, MRT
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| MLI | 1 | 2: 2 / 2 | 1: 1 | 0 | none filed by the session | No change. As Burkina Faso (B6, related, flagged). |
+| MOZ | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| MRT | 1 | 5: 5 / 5 | 1: 1 | 3 (3/3 URLs answer 200) | none filed by the session | No change. The Arabic text layer of the 80th General Debate file has broken ligatures ('اإلبادة'); the quotes match the archived text as extracted: flagged, as Tunisia's (B-673 (2)). |
+
+#### Group 40: MUS, MWI, NAM
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| MUS | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| MWI | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| NAM | 3 | 13: 13 / 13 | 4: 4 | 1 (1/1 URLs answer 200) | none filed by the session | evt_2024_09_25_NAM_B9: the second quote is on lines 111 to 113, not 110 to 112; corrected. The page locators of evt_2026_03_12_NAM_B3 checked against the page headers of the archived declaration: correct. |
+
+#### Group 41: NER, RWA, SEN
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| NER | 2 | 5: 5 / 5 | 3: 3 | 0 | none filed by the session | No change. B6 as Burkina Faso; the Prime Minister of the transitional Government as head of government stays flagged. |
+| RWA | 1 | 3: 3 / 3 | 1: 1 | 0 | none filed by the session | No finding. |
+| SEN | 2 | 7: 7 / 7 | 2: 2 | 0 | none filed by the session | No finding. |
+
+#### Group 42: SLE, SOM, SSD
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SLE | 6 | 14: 14 / 14 | 6: 6 | 0 | none filed by the session | No finding. |
+| SOM | 4 | 11: 11 / 11 | 5: 5 | 0 | none filed by the session | No finding. The date of evt_2025_09_25_SOM_B9 (file headed 24 September) stays flagged. |
+| SSD | 1 | 4: 4 / 4 | 3: 3 | 2 (3/3 URLs answer 200) | none filed by the session | No change. The C2 memorandum rests on two press publishers with no primary (corroborated, flagged). |
+
+#### Group 43: STP, SWZ, SYC
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| STP | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| SWZ | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| SYC | 1 | 2: 2 / 2 | 1: 1 | 2 (2/2 URLs answer 200) | none filed by the session | No change. R7 and R4 flags of evt_2023_11_10_SYC_B9 stay (expired, no effect). |
+
+#### Group 44: TCD, TGO, TZA
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| TCD | 2 | 6: 6 / 6 | 2: 2 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| TGO | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| TZA | 0 | 0: 0 / 0 | 0: 0 | 1 (0/1 URLs answer 200; other: 500) | none filed by the session | No event. The lead's Daily News URL answers HTTP 500 live; the Wayback Machine holds a copy (15 July 2026). |
+
+#### Group 45: UGA, ZMB, ZWE
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| UGA | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| ZMB | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| ZWE | 1 | 1: 1 / 1 | 1: 1 | 0 | none filed by the session | No finding. |
+
+#### Group 46: ARM, BHR, CYP
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| ARM | 1 | 1: 1 / 1 | 1: 1 | 0 | none filed by the session | No finding. |
+| BHR | 2 | 6: 6 / 6 | 3: 3 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| CYP | 16 | 40: 40 / 40 | 17: 17 | 0 | none filed by the session | No finding. The joint declaration of 22 December 2025 (B10 and C2) stays flagged. |
+
+#### Group 47: GEO, IRQ, KWT
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| GEO | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| IRQ | 2 | 5: 5 / 5 | 2: 2 | 0 | none filed by the session | No change. The Arabic text layer of the General Debate file has broken ligatures ('لإلنسانية', 'ال يطاق'); the quotes match the archived text as extracted: flagged, as Mauritania's. |
+| KWT | 1 | 2: 2 / 2 | 2: 2 | 0 | none filed by the session | No finding. |
+
+#### Group 48: LBN, OMN, SYR
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| LBN | 3 | 5: 5 / 5 | 4: 4 | 0 | none filed by the session | No finding. |
+| OMN | 4 | 10: 10 / 10 | 5: 5 | 0 | none filed by the session | No finding. |
+| SYR | 1 | 1: 1 / 1 | 1: 1 | 0 | none filed by the session | No finding. |
+
+#### Group 49: YEM, LIE, LUX, MCO
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| YEM | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No event. No finding. |
+| LIE | 4 | 11: 11 / 11 | 6: 6 | 0 | none filed by the session | No finding. |
+| LUX | 21 | 54: 54 / 54 | 23: 23 | 0 | none filed by the session | No finding. The signatories listed for Task V in evt_2025_12_14_LUX_B9: Portugal filed (above); Spain, Belgium and Slovenia are full-protocol countries, left to P-23. |
+| MCO | 1 | 2: 2 / 2 | 2: 2 | 0 | none filed by the session | No finding. |
+#### Fixes made in place (events `reviewed`, unpublished: no corrections.yaml entry, revision unchanged)
+
+| Event | Field | Before | After | Why |
+|---|---|---|---|---|
+| evt_2024_09_25_NAM_B9 | locator (second quote) | paragraph 11 (lines 110 to 112) | paragraph 11 (lines 111 to 113) | the quote begins on line 111 of the archived text |
+| evt_2025_10_07_PRT_B9 | summary.fr | Le Président de la République | Le président de la République | glossary: lower case (passed on by T-VERIFY-1) |
+| evt_2024_09_28_SMR_B9, evt_2025_07_30_SMR_B9 | summary.fr | Le Secrétaire d'État | Le secrétaire d'État | glossary: lower case |
+| evt_2024_09_28_VAT_B9 | summary.fr | Le Secrétaire d'État | Le secrétaire d'État | glossary: lower case |
+
+#### Events added (joint statements already archived and filed for other signatories)
+
+| Event | Indicator | Date | Points | Confidence | Source kind | Why |
+|---|---|---|---|---|---|---|
+| evt_2025_05_16_MLT_B9 | B9 | 2025-05-16 | +5 | confirmed | official | seven Prime Ministers' statement, signed by Robert Abela (line 14); filed for ISL and LUX |
+| evt_2025_12_14_PRT_B9 | B9 | 2025-12-14 | +5 | confirmed | official | six foreign ministers' letter to the High Representative, signed by Paulo Rangel (lines 25 and 26); filed for IRL and LUX |
+| evt_2026_01_05_MLT_B9 | B9 | 2026-01-05 | +2 | confirmed | official | statement of seven states on UNRWA and NGOs, Malta named on line 133; filed for ISL and LUX; the minister's name rests on the continuity of the post (flagged) |
+
+Each carries tier, speaker reading, flags and scope of the counterpart events, with a second reading recorded. Provisional scores (`pnpm score --preview`) before and after: Malta +56, Portugal +47.5; the B9 sums (31.8 to 37.0, 22.8 to 27.8) are above the +10 cap either way.
+
+Each changed event's `review.notes` ends with a "Verification of 2026-11 (T-VERIFY-2, docs/10 B-849)" sentence; the B9 assessment notes of MLT, PRT and SRB say what changed.
+
+#### Cross-country reading flagged for the author
+
+- **Wording on proportionality or indiscriminate attacks, no party named, at the call tier (+2):** evt_2025_09_24_KEN_B9 ('disproportionate military operations'), evt_2023_11_10_SYC_B9 ('indiscriminate attacks', condemned on both sides), evt_2024_09_28_VAT_B9 ('raises many questions about its proportionality'), evt_2024_09_26_LSO_B9 ('human rights violations in Gaza'); against evt_2024_04_18_SLE_B9 ('without distinction, proportionality', the military response of Israel) and evt_2025_09_22_AGO_B9 ('the disproportionate reaction of the State of Israel') at +5, where a party is named. Default adopted: kept as filed (the party named decides the tier); only the Kenyan event is still within 730 days, and Kenya has no other B9 event in force, so +5 would add 3 points before decay. The author decides one reading.
+- **Recognition rows** resting on a treaty with the State of Palestine (VAT, 2015) or on a Government notice relayed by the state daily (BWA): kept, flagged, as the rows resting on diplomatic relations (B-848 (6)).
+- **Arabic General Debate files with broken text layers** (MRT 80th, IRQ 80th): quotes match the text as extracted; the author may wish to compare them with the PDF page images, as for Tunisia (B-673 (2)).
+- **Signatories without the event outside these groups** (found while checking signatories; for P-23): Thailand on the leaders' statement of 6 June 2024 (group 23); Ireland, Norway, Slovenia and Spain on the statements of 16 May 2025 and 5 January 2026; Spain, Belgium and Slovenia on the letter of 14 December 2025 (full-protocol countries).
+
+#### Not done in this session
+
+- Leads were checked for sourcing and live URLs, not re-researched.
+- The French summaries were read for gender, capitals and the glossary's terms; a native reader's pass stays with the author (Part 4, item 4).
+- The joint-statement signatory gaps of countries outside groups 27 to 49 were not filed (P-23).
