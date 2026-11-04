@@ -5248,7 +5248,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-01}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Chad (head of state; daily summaries, speeches and messages)', url: 'https://presidence.td/', type: head_of_state, lang: [fr]}
+    - {label: 'Tchadinfos (news site; kind press)', url: 'https://tchadinfos.com/', type: other, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidence.td (lang="fr-FR"; WordPress, open REST search /wp-json/wp/v2/posts?search= with full texts; Save Page Now answers HTTP 403, so pages are archived only from existing Wayback captures) and tchadinfos.com
+    (lang="fr-FR"; WordPress REST) answered HTTP 200 to a request with a browser User-Agent. The Ministry's address diplomatie.gouv.td answers with an empty directory listing and the Prime Minister's site
+    (primature.td) did not answer. The President is Mahamat Idriss Deby Itno (head of state); the Prime Minister is Allamaye Halina (named so by the UN's General Debate pages of 25 September 2024 and 25 September 2025); the Minister of State for Foreign Affairs was Mahamat Saleh Annadif in November 2023. Chad is a State
+    Party to the Rome Statute (the Assembly of States Parties' list, archived 2026-10-09).
 
 - iso3: TGO
   iso2: TG
@@ -5269,7 +5276,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-29}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Togo (head of state)', url: 'https://presidence.gouv.tg/', type: head_of_state, lang: [fr]}
+    - {label: 'Ministry of Foreign Affairs, Cooperation, African Integration and Togolese Abroad', url: 'https://diplomatie.gouv.tg/', type: mfa, lang: [fr]}
+    - {label: 'Republic of Togo (the Government''s news magazine)', url: 'https://www.republicoftogo.com/', type: government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidence.gouv.tg (lang="fr-FR"; WordPress, REST search over 21 posts), diplomatie.gouv.tg (lang="fr"; a script-rendered page: the request returns the shell, no news could be read) and www.republicoftogo.com
+    (lang="fr-FR"; eZ Platform; its search /content/search?SearchText= returns the latest items whatever the term) answered HTTP 200 to a request with a browser User-Agent. The head of state is the President of the Republic, Jean-Lucien Kwassi
+    Lanyo Savi de Tove (Presidency, March and October 2025 posts); the head of government is the President of the Council of Ministers, Faure Essozimna Gnassingbe (since May 2025; President of the Republic at the 79th General Debate); the Minister
+    of Foreign Affairs is Robert Dussey (80th and 81st General Debate). Togo has no entry on the Assembly of States Parties' list (archived 2026-10-09).
 
 - iso3: THA
   iso2: TH
@@ -5558,7 +5573,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-24}
-  gov_sources: []
+  gov_sources:
+    - {label: 'State House of the United Republic of Tanzania (Ikulu; head of state, speeches as PDFs)', url: 'https://www.ikulu.go.tz/', type: head_of_state, lang: [sw, en]}
+    - {label: 'Prime Minister''s Office of Tanzania', url: 'https://www.pmo.go.tz/', type: head_of_government, lang: [sw]}
+    - {label: 'Ministry of Foreign Affairs and East African Cooperation', url: 'https://www.foreign.go.tz/', type: mfa, lang: [en]}
+    - {label: 'Ministry of Foreign Affairs and East African Cooperation (news blog)', url: 'https://mfatanzania.blogspot.com/', type: mfa, lang: [sw, en]}
+    - {label: 'Daily News (state-owned daily; kind press)', url: 'https://dailynews.co.tz/', type: other, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.ikulu.go.tz (lang="sw"; Laravel, lists /news and /speeches with 16 pages of PDFs, no search), www.pmo.go.tz (lang="sw"; home page only), www.foreign.go.tz (lang="en"; the old name www.mfaea.go.tz did not
+    answer; the site links five posts of the Ministry's blog), mfatanzania.blogspot.com (Blogger; full-text feed /feeds/posts/default?q=) and dailynews.co.tz (lang="en-US"; WordPress REST) answered HTTP 200 to a request with a browser User-Agent.
+    The President is Samia Suluhu Hassan (head of state and of government; sworn in again 3 November 2025); the Prime Minister was Kassim Majaliwa (79th General Debate); the Ministers of Foreign Affairs were January Makamba (January 2024) and
+    Mahmoud Thabit Kombo (Ministry's blog, November 2024 to 2025). Tanzania is a State Party to the Rome Statute (the Assembly of States Parties' list, archived 2026-10-09).
 
 - iso3: UGA
   iso2: UG

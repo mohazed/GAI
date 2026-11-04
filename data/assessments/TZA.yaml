@@ -1,0 +1,196 @@
+# Coverage record for the United Republic of Tanzania (docs/03 §6). P-21 light protocol, session T-P21-44, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the Presidency's speeches (ikulu.go.tz, 262 speeches and messages as PDFs, 40 dated from 7 October 2023; 38 downloaded and searched by script), the Ministry's blog (mfatanzania.blogspot.com, Blogger full-text feed; the Ministry's site foreign.go.tz lists only five posts), the Daily News (dailynews.co.tz, state-owned, WordPress REST, kind press), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Prime Minister's site (pmo.go.tz) has no search that answered. No web search was available.
+# Events: none. Leads: see data/leads/TZA.yaml. See docs/10 B-839, B-840.
+country: TZA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TZA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs (docs/10 B-718) cover about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TZA
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes: 10 ''Y'' and 2 ''X'' (non-votes: A/RES/80/1 of 19 September 2025 and A/RES/80/116 of 12 December 2025);
+      each non-Y scores -2 (B1 +7.0 after decay). Tanzania is not named in the Secretary-General''s letter of 3 September 2025 (A/80/362) or on the Assembly''s page of October 2026 (Article 19).
+      Left to the build.'
+    queries:
+    - unga_votes.csv, country TZA
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Tanzania is a State Party (the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties, ''United Republic of Tanzania''). No statement on the warrants was found
+      in the Ministry''s blog (search: Netanyahu, ICC, Mahakama ya Kimataifa) or the General Debate statements.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'mfatanzania.blogspot.com /feeds/posts/default?q=: Netanyahu, ICC, ICJ, Mahakama ya Kimataifa (no result)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found in the sources read.
+    queries:
+    - mfatanzania.blogspot.com searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
+      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Tanzania. The registry gives a recognition since 24 November 1988 (before the window; no recognition document was found in the sources read,
+      so no row is added: R21); no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, TZA (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. (1) 79th General Debate statement (Prime Minister Kassim Majaliwa, 27 September 2024; tz_en.pdf): no mention of Gaza or Palestine. (2) The 80th (Vice President Philip Mpango,
+      25 September 2025: ''Tanzania stands in solidarity with the people of Palestine'') and the 81st (Vice President Deogratius Ndejembi, 22 September 2026: ''protracted conflict and humanitarian
+      suffering in Gaza'', ''the protection of civilians, unhindered humanitarian assistance'') are statements by a Vice President, not a B9 speaker (R3). (3) The President''s remarks at the diplomatic
+      corps'' reception of 7 February 2024 (Presidency PDF, first person): ''Tanzania is concerned by the ongoing war in Palestine which is causing the uncalled for, senseless killing of innocent
+      children and civilians … We also call for a cessation of hostilities and resumption of humanitarian aid access'': the text never names Gaza (R7) and is 1,001 days old (expired); an `official`
+      source cannot support a lead. (4) The Daily News of 18 April 2024 quotes the President''s words with Turkiye''s President (''We reiterate our call for an immediate cessation of hostilities
+      in Palestine''): press, no Gaza (R7), a lead (lead_20261104_TZA_1). (5) The Presidency''s statement at the African-Saudi Summit (10 November 2023) and at COP28 (2 December 2023) do not mention
+      Gaza or Palestine. (6) A senior Ministry official (the Ambassador Mbarouk, Ministry''s blog, 9 January 2024) says Tanzania has supported all the UN resolutions seeking an end to the fighting:
+      not a B9 speaker.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/united-republic-tanzania and gastatements/{79,80,81}/tz_en.pdf (read)
+    - ikulu.go.tz /speeches pages 1 to 16 (262 speeches and messages; of the 40 PDFs dated from 7 October 2023, 38 were downloaded and searched for Gaza, Palestin, Israel, Hamas (an honorary-degree
+      address of 10 October 2023 and a university graduation address of 24 November 2024 were not); the match of 7 February 2024 read)
+    - 'mfatanzania.blogspot.com /feeds/posts/default?q=: Gaza, Palestina, Palestine, Israel, Israeli, Hamas, Mashariki ya Kati (contents read)'
+    - 'dailynews.co.tz /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinian, Israel, Hamas, Middle East, ceasefire (titles read; the posts of 9 October 2023, 14 October 2023, 19 February
+      2024 and 18 April 2024 read)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Prime Minister was found in the sources read (the Ministry''s
+      notice of 14 October 2023 on evacuating Tanzanians from Israel takes no position).'
+    queries:
+    - ikulu.go.tz speeches (see B9)
+    - dailynews.co.tz searches (see B9)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
+      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: Tanzania''s embassy in Tel Aviv is listed on the Ministry''s site (il.tzembassy.go.tz) and the Ministry''s press
+      statement of 14 October 2023 (as quoted by the Daily News) gives the embassy''s contact details to Tanzanians in Israel.'
+    queries:
+    - foreign.go.tz (home page read)
+    - mfatanzania.blogspot.com searches (see B9)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Tanzania is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement with Israel signed since October 2023 was found in the Ministry''s blog (search: Israel, Israeli) or the Daily News (titles read).'
+    queries:
+    - 'mfatanzania.blogspot.com /feeds/posts/default?q=: Israel, Israeli'
+    - 'dailynews.co.tz /wp-json/wp/v2/posts?search=: Israel agreement, Israel MoU, Israel cooperation, Israeli ambassador (titles read)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor TZA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Tanzania in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Tanzania in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
+      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the Ministry's blog or the Daily News titles read.
+    queries:
+    - mfatanzania.blogspot.com searches (see B9)
+    - dailynews.co.tz searches (see B9)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

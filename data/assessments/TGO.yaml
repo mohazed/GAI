@@ -1,0 +1,183 @@
+# Coverage record for Togo (docs/03 §6). P-21 light protocol, session T-P21-44, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the Presidency's site (presidence.gouv.tg, WordPress, REST search over its 21 posts), republicoftogo.com (the Government's news magazine: its search ignores the term), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. diplomatie.gouv.tg (the Ministry) is a script-rendered page. No web search was available.
+# Events: none. Leads: none. See docs/10 B-838, B-840.
+country: TGO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TGO
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs (docs/10 B-718) cover about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TGO
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes: 3 ''Y'' (A/DEC/80/506, A/RES/80/1, A/RES/80/78), 6 ''A'' (abstentions: ES-10/22, ES-10/25, ES-10/26, 79/232,
+      ES-10/27, 80/116) and 3 ''X'' (non-votes: ES-10/21, ES-10/23, ES-10/24); each non-Y scores -2 (B1 +3.0 after decay). Togo is not named in the Secretary-General''s letter of 3 September 2025
+      (A/80/362) or on the Assembly''s page of October 2026 (Article 19). Left to the build.'
+    queries:
+    - unga_votes.csv, country TGO
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Togo has no entry on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties: the list runs from Timor-Leste to Trinidad and Tobago). No statement on the
+      warrants was found in the General Debate statements or the Presidency''s posts.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'presidence.gouv.tg /wp-json/wp/v2/posts?search=: Israël, Palestine, palestinien, Moyen-Orient'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country has no entry on the ASP list).
+    queries:
+    - presidence.gouv.tg searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: no searchable Government source of Togo answered (the Presidency''s site presidence.gouv.tg holds 21 posts; republicoftogo.com''s search returns the latest items whatever
+      the term; diplomatie.gouv.tg is a script-rendered page that no request could read) and no Wayback capture was read (docs/10 B-838; P-23).'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Togo. The registry gives a recognition since 29 November 1988 (before the window; no recognition document was found in the sources read,
+      so no row is added: R21). The Presidency received the credentials of the State of Palestine''s Ambassador on 4 March 2026 (an embassy in Lome is announced): no recognition after 7 October
+      2023 was found.'
+    queries:
+    - recognitions.csv, TGO (no row)
+    - presidence.gouv.tg post 420530 (read)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: No B9 event. The 79th General Debate statement (President Faure Essozimna Gnassingbe, 25 September 2024; gastatements/79/tg_fr.pdf), the 80th (Foreign Minister Robert Dussey, 26 September
+      2025; tg_fl.pdf) and the 81st (Foreign Minister Dussey, 25 September 2026; tg_fr.pdf) do not mention Gaza, Palestine, Israel or the Middle East (text layers searched for Gaza, Palestin,
+      Israel, Moyen-Orient, Proche-Orient, conflit). The Presidency's site (21 posts) has no statement on Gaza.
+    queries:
+    - gadebate.un.org/en/{79,80,81}/togo and gastatements/79/tg_fr.pdf, 80/tg_fl.pdf, 81/tg_fr.pdf (read)
+    - 'presidence.gouv.tg /wp-json/wp/v2/posts?search=: Gaza, Israël, Palestine, palestinien, Palestiniens, Moyen-Orient'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the head of government (the President of the Council, Faure Gnassingbe, since May
+      2025) was found in the sources read. Tchadinfos of 10 November 2023 lists Togo among the governments that supported Israel after 7 October 2023, without a source: not a document, not filed.'
+    queries:
+    - presidence.gouv.tg searches (see B9)
+    - tchadinfos.com post 271498 (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no searchable Government source of Togo answered (the Presidency''s site presidence.gouv.tg holds 21 posts; republicoftogo.com''s search returns the latest items whatever
+      the term; diplomatie.gouv.tg is a script-rendered page that no request could read) and no Wayback capture was read (docs/10 B-838; P-23).'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the President of the Republic accredited Israel''s new Ambassador (Simoon-Clement Seroussi) on 10 October 2025
+      (Presidency, post 420505, read in full).'
+    queries:
+    - presidence.gouv.tg post 420505 (read)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Togo is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Not searched: no searchable Government source of Togo answered (the Presidency''s site presidence.gouv.tg holds 21 posts; republicoftogo.com''s search returns the latest items whatever
+      the term; diplomatie.gouv.tg is a script-rendered page that no request could read) and no Wayback capture was read (docs/10 B-838; P-23).'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor TGO
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Togo in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Togo in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no searchable Government source of Togo answered (the Presidency''s site presidence.gouv.tg holds 21 posts; republicoftogo.com''s search returns the latest items whatever
+      the term; diplomatie.gouv.tg is a script-rendered page that no request could read) and no Wayback capture was read (docs/10 B-838; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Not searched: no searchable Government source of Togo answered (the Presidency''s site presidence.gouv.tg holds 21 posts; republicoftogo.com''s search returns the latest items whatever
+      the term; diplomatie.gouv.tg is a script-rendered page that no request could read) and no Wayback capture was read (docs/10 B-838; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

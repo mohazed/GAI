@@ -2222,3 +2222,48 @@ No band change. Read critically (docs/06 §4 step 7): the two Enabling bands res
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, Portuguese, French), the Foreign Affairs department's release of 12 January 2024 and the National Assembly's record for Seychelles, a Ministry source for Sao Tome and Principe and Eswatini, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.
+
+## T-P21-44 — Chad, Togo, United Republic of Tanzania (2026-11-04)
+
+Light protocol, group 44, fourteenth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-835 to B-840). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Chadian Presidency (WordPress REST search; the daily summaries and the Head of State's speeches), Tchadinfos, Togo's Presidency (21 posts), the Tanzanian Presidency's speeches (PDFs, searched by script), the Ministry's blog, the Daily News, the UN's General Debate pages and files of the 79th to 81st sessions (Chad's three files are scans, read by OCR), the ICJ's case 192 page, the archived ASP list, UNRWA donor tables and the Article 19 documents. No Foreign Ministry site of the three answered usefully; Chad's Prime Minister's site did not answer.
+
+Two events (both Chad) and two leads (one Chad, one Tanzania); none for Togo and Tanzania.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_11_04_TCD_B12 | B12 | 2023-11-04 | +5 (the Ministry of Foreign Affairs recalls the Chargé d'Affaires in Israel for consultations; standing, open; flagged: a Chargé d'Affaires, not an ambassador) | confirmed | official (the Presidency's daily summary of 6 November 2023) |
+| evt_2025_09_25_TCD_B9 | B9 | 2025-09-25 | +5 (the President's message to the 80th General Debate, read by the Prime Minister: 'bombardements indiscriminés', 'destruction systématique d’infrastructures vitales' at Gaza; flagged under R3 and the tier) | confirmed | official (the delegation's file on gadebate.un.org, a scan read by OCR) |
+
+Two documents were archived, both from existing Wayback captures with `--capture` (Save Page Now answers 403 for `presidence.td` and 405 for `gadebate.un.org`); the replays were fetched again with curl --compressed and equal the index rows (35,632 bytes, SHA-256 73ac0445…; 874,087 bytes, SHA-256 93308851…). The Chadian file's text in `archive/text` is OCR, corrected against the page images at the quoted passages.
+
+### Chad
+
+Assessments (34 indicators): has-events 3 (B1, B9, B12), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: two. Leads: one (the Foreign Minister's words of 10 November 2023, Tchadinfos, expired). State Party to the Rome Statute; not on the case 192 list. Not filed: the President's speech of 11 November 2024 at the Arab-Islamic summit (a +2 call naming Gaza; no archived copy exists: B-837 (1)), the New Year message of 31 December 2023 (R7), the Presidency's report of the summit of 11 November 2023 (R4), the 79th and 81st General Debate statements.
+
+### Togo
+
+Assessments: has-events 1 (B1), none-found 14, no-data 2, not-applicable 1, unchecked 16 (A3, A5 to A8, B7, B11, C2, C4 to C6, D4, D5, E1 to E3). Events: none. Leads: none. The three General Debate statements do not mention Gaza, Palestine or Israel; the Presidency's posts record the Israeli Ambassador's credentials (10 October 2025) and the Palestinian Ambassador's (4 March 2026). No entry on the ASP list.
+
+### United Republic of Tanzania
+
+Assessments: has-events 1 (B1), none-found 16, no-data 2, not-applicable 1, unchecked 14 (A3, A5 to A8, B7, B11, C4 to C6, D4, E1 to E3). Events: none. Leads: one (the Daily News of 18 April 2024, R7, expired). The President's remarks of 7 February 2024 call for a cessation of hostilities and never name Gaza (R7); the 80th and 81st General Debate statements are the Vice President's. State Party to the Rome Statute; not on the case 192 list.
+
+### Article 19 note (report only)
+
+None of the three is named in A/80/362 or on the Assembly's page of October 2026. Chad has a vote on all twelve qualifying votes; Togo has three non-votes (A/RES/ES-10/21, ES-10/23, ES-10/24) and Tanzania two (A/RES/80/1, A/RES/80/116). The arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| TCD | +1.5 (+1) | +11.1 (+11) | Acting, unchanged | B12 +5.0 (standing) and B9 +4.6 (+5 at 0.918 of its weight); B1 +16.5 and the passivity penalty (-15) stay. Without B9: +6.5; without both: +1.5 |
+| TGO | -12.0 (-12) | -12.0 (-12) | Passive, unchanged | B1 +3.0 and the passivity penalty (-15) |
+| TZA | -8.0 (-8) | -8.0 (-8) | Passive, unchanged | B1 +7.0 and the passivity penalty (-15) |
+
+No band change. Read critically (docs/06 §4 step 7): Chad's rise rests on a recall of a Chargé d'Affaires (flagged) and on a +5 reading of 'indiscriminés' and 'systématique' that a stricter reader would not make; neither changes the band.
+
+### 90-minute stop note
+
+The session ran slightly over the limit because Save Page Now failed for `presidence.td` three times (about 20 minutes). Left for P-23 and Task V: the web searches per indicator group (English, French, Swahili), an archived copy of the Chad President's speech of 11 November 2024, a documented end of Chad's B12, the Chadian Prime Minister's and Ministry's sources, Togo's Ministry and Government sources, Tanzania's Prime Minister's and Ministry's own pages, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.
