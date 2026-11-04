@@ -1135,3 +1135,66 @@ All twelve qualifying votes are recorded for the three states and none is in the
 | MLT | +9.5 (+9) | +56.0 (+56) | Acting to Confronting | B9 at the cap, B11, C1 +4, D3 ×2, D4 +5, A8 +5; without A8, C1 and D4 +47.5 (Confronting); without A8, C1, D4 and D3 +39.5 (Acting); the three Council listings and the generated rows only +29.5 (Acting) |
 
 Three band changes. Read critically (docs/06 §4 step 7): Croatia's rests on one EU Council decision filed under R8; North Macedonia's on a press-only report of agreements and a rule that lets a negative event end a penalty; Malta's on several flagged items (the D4 date, the single-word tier of 22 September 2025, the press-corroborated A8, the mechanical D3 events).
+
+## T-P21-29: MNE, PRT, SMR (2026-11-04)
+
+Light protocol (docs/06 §5) for Montenegro, Portugal and San Marino, by a fresh Sonnet 5.5 session of the finish run (docs/10 B-729 to B-733). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Six documents archived (five from existing Wayback captures, one with Save Page Now; every replay fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256; one failed Save Page Now attempt removed by its exact id). 26 events (Portugal 20, Montenegro 3, San Marino 3), 5 leads (Portugal 2, Montenegro 1, San Marino 2), no recognition row.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_MNE_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset |
+| evt_2024_12_31_MNE_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_09_25_MNE_B9 | B9 | 2025-09-25 | +2 | confirmed | official |
+| evt_2023_12_31_PRT_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset |
+| evt_2024_02_19_PRT_B9 | B9 | 2024-02-19 | +2 | confirmed | official |
+| evt_2024_04_19_PRT_B11 | B11 | 2024-04-19 | +5 | confirmed | official |
+| evt_2024_06_06_PRT_B9 | B9 | 2024-06-06 | +2 | confirmed | official |
+| evt_2024_07_15_PRT_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_09_26_PRT_B9 | B9 | 2024-09-26 | +2 | confirmed | official |
+| evt_2024_10_21_PRT_B9 | B9 | 2024-10-21 | +2 | confirmed | official |
+| evt_2024_12_31_PRT_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_19_PRT_B9 | B9 | 2025-05-19 | +2 | confirmed | official |
+| evt_2025_07_21_PRT_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_07_30_PRT_B9 | B9 | 2025-07-30 | +2 | confirmed | official |
+| evt_2025_08_10_PRT_B9 | B9 | 2025-08-10 | +5 | confirmed | official |
+| evt_2025_08_12_PRT_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_PRT_B9 | B9 | 2025-08-21 | +5 | confirmed | official |
+| evt_2025_09_27_PRT_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2025_10_07_PRT_B9 | B9 | 2025-10-07 | +2 | confirmed | official |
+| evt_2026_01_28_PRT_B9 | B9 | 2026-01-28 | +2 | confirmed | dataset |
+| evt_2026_05_28_PRT_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+| evt_2026_06_08_PRT_B9 | B9 | 2026-06-08 | +2 | confirmed | official |
+| evt_2026_09_08_PRT_B9 | B9 | 2026-09-08 | +5 | confirmed | official |
+| evt_2024_09_28_SMR_B9 | B9 | 2024-09-28 | +2 | confirmed | official |
+| evt_2024_12_31_SMR_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_07_30_SMR_B9 | B9 | 2025-07-30 | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build.
+
+### Portugal
+
+Assessments (34 indicators): has-events 6 (B1, B8, B9, B11, D1, D3), none-found 13, no-data 2 (A2, C3), not-applicable 1 (B2: Portugal's Security Council term starts in 2027), unchecked 12 (A3, A5 to A8, C4 to C6, D5 and E1 to E3). Leads: 2 (`lead_20261104_PRT_1`, the Foreign Minister's support for suspending the Association Agreement, C1; `lead_20261104_PRT_2`, the ICC warrants, B5; both press only). Sources read: the Ministry's portal (about 70 pages listed by its site search, those since October 2023 read), the Government's and the Presidency's pages, the General Debate statements of the 79th to 81st sessions, ECO and DN (Lusa) for the two leads, UNRWA's tables, SIPRI, the ICJ and ICC lists. Not read: the Assembly of the Republic's records, the Portuguese press beyond the pages cited, the Council of Ministers' communiqués, the President's statements after 9 March 2026.
+
+### Montenegro
+
+Assessments: has-events 4 (B1, B9, D1, D3), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: 1 (`lead_20261104_MNE_1`, the Deputy Prime Minister's statement of 27 September 2024: rank under R3 unconfirmed). Sources read: the General Debate statements of the 79th to 81st sessions, the President's page of the 80th statement (Wayback), UNRWA's tables, SIPRI, the ICJ and ICC lists, web searches in English and Montenegrin. Not read: gov.me, the Ministry's and the President's own news (no scripted access from this network), the Parliament's records, the Montenegrin press beyond search results.
+
+### San Marino
+
+Assessments: has-events 5 (B1, B8, B9, D1, D3), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 2 (`lead_20261104_SMR_1` and `_2`, the 80th and 81st General Debate statements, which have no archived text; the 80th would be +5 and 403 days old, the 81st +2 and inside 365 days). Sources read: the Foreign Secretariat's pages and releases (esteri.sm, libertas.sm, San Marino RTV), the General Debate statements of the 79th to 81st sessions (the 79th archived), the Global Affairs Canada text of the New York Call, UNRWA's tables, SIPRI, the ICJ and ICC lists. Not read: the Great and General Council's records, the Captains Regent's pages, the Italian-language press beyond the pages cited.
+
+### Article 19 note (report only)
+
+All twelve qualifying votes are recorded for the three states and none is in the Secretary-General's letter of 3 September 2025 (A/80/362): no Article 19 case. San Marino abstained on A/RES/ES-10/21 (27 October 2023).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only. The sensitivity rows are scored on a scratch copy of the data with `--root`.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| PRT | +9.5 (+9) | +47.5 (+47) | Acting to Confronting | the passivity penalty (−15) ends (the 28 January 2026 and 8 June 2026 joint statements and the Council's listing of 28 May 2026 are qualifying events inside 365 days); B9 at the cap (+10), B11 +5, D3 +8; without the eleven joint-statement events +39.4 (Acting); the three listings and D3 only +37.5 (Acting); the joint statements and listings without the three own B9 events and D3 +39.5 (Acting); without the joint statements and listings +19.4 (Acting, passivity applied) |
+| MNE | +1.5 (+1) | +11.3 (+11) | Acting, unchanged | D3 +8 and the President's B9 (+1.6 after decay); the passivity penalty still applies (no qualifying event in the last 365 days) |
+| SMR | +9.5 (+9) | +19.1 (+19) | Acting, unchanged | D3 +8 and the New York Call (+1.6 after decay); the 79th statement is older than 730 days; the passivity penalty still applies. An archived 81st statement (+2, 26 September 2026, inside 365 days) could end it |
+
+One band change. Read critically (docs/06 §4 step 7): Portugal's rests on the joint statements filed under B-444 and the Council's listings under R8, on three flagged own events (the Prime Minister's, the 2+2 declaration, the President's) and on the mechanical D3 events; San Marino's unfiled 81st statement could end its passivity penalty and its 80th would add +5.

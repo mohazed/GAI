@@ -1,0 +1,194 @@
+# Coverage record for Montenegro (docs/03 §6). P-21 light protocol, session T-P21-29, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the 79th archived, the 80th through the President's page), the President's page of the 80th statement (predsjednik.me, read through its Wayback capture), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Montenegrin. Not read: the Government's, the Ministry's and the President's own news (gov.me and predsjednik.me did not answer a scripted request from this network; the pages the searches found were read when a Wayback capture existed), the Parliament's records, the Montenegrin press beyond search results.
+# One B9 event, two D3 events. Leads: one (B9, the Deputy Prime Minister's statement of 27 September 2024). Montenegro is an EU candidate: no Council listing or EU joint statement is filed.
+country: MNE
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MNE
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): one order by Montenegro from Israel, of 2023 (CARDOM 120 mm mortars, a SPEAR Mk-2 version for JLTV vehicles from the USA; TIV 0; archive/text/src_20261005_sipri_register-supplier-israel.txt,
+      line 475), which is not an order of the release''s own data year and has TIV 0: not scored (docs/10 B-536 (7)). Left to the build. A Palestinian embassy letter of April 2026 asks the Government
+      to inform the public about arms trade with Israel (web search result, not read).'
+    queries:
+    - sipri_orders.csv, buyer MNE
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Montenegro (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 qualifying votes are recorded; Montenegro is not among the Member States in arrears in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country MNE
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Montenegro is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched
+      for Montenegro and Crna Gora).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Montenegro (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - 'web search: Crna Gora Gaza Izrael saopštenje'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Montenegro is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, line 178). A web search in Montenegrin found no
+      statement by the Prime Minister or the Foreign Minister on the arrest warrants for Mr Netanyahu and Mr Gallant; the Government's and the Ministry's sites could not be read from this network
+      (see countries.yaml).
+    queries:
+    - 'web search: Crna Gora Međunarodni krivični sud nalog za hapšenje Netanjahu'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - 'web search: Crna Gora Međunarodni krivični sud nalog za hapšenje Netanjahu'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Montenegro were found.
+    queries:
+    - 'web search: Crna Gora Međunarodni krivični sud nalog za hapšenje Netanjahu'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Montenegro. The registry gives 24 July 2006 as the date of recognition (countries.yaml recognises_palestine); no Government document
+      of that date was found, so no row is added (R21).
+    queries:
+    - recognitions.csv, MNE
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the President''s address to the 80th General Assembly (25 September 2025, +2). Not filed: the 79th General Debate statement (27 September 2024) by Filip Ivanović, Deputy
+      Prime Minister ''for Foreign and European Affairs'' on the UN''s page, who ''calls for a humanitarian ceasefire in Gaza'' and condemns the interruption of water, food and energy supplies
+      to Gaza: a Deputy Prime Minister is neither head of government nor foreign minister under R3, and the Minister of Foreign Affairs in September 2024 may have been Ervin Ibrahimović, in office
+      from 23 July 2024 (web-search summary, not confirmed by a Government page): lead lead_20261104_MNE_1, +2 if the author reads the rank as foreign minister; the President''s 81st statement
+      (23 September 2026) says that in Gaza ''humanitarian assistance must reach those in need safely and without obstruction'' with no ceasefire call and no named violation (neither tier; its
+      file has no Wayback replay); the Ministry''s statement of 14 August 2024 supporting the joint statement of the United States, Egypt and Qatar (a web-search summary of a news report; no named
+      speaker).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/montenegro (read)
+    - 'web search: Crna Gora Ministarstvo vanjskih poslova Gaza Izrael saopštenje'
+    - 'web search: Milatović Generalna skupština UN 2025 prekid vatre'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the President, the Prime Minister or the Foreign Minister was found in the sources read; the General Debate
+      statements condemn the attack of 7 October 2023 and call for the release of hostages, the 81st adding that Israelis 'deserve lasting security' and that the disarmament of Hamas is an important
+      element of a settlement (no condition on Israel, no support for the war).
+    queries:
+    - gadebate.un.org/en/{79,80,81}/montenegro (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'Montenegro is an EU candidate, not a member: the Council''s settler listings are not its decisions (R8), and no national sanctions on settlers were found.'
+    queries:
+    - 'web search: Crna Gora sankcije doseljenici'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found.
+    queries:
+    - 'web search: Crna Gora Izrael ambasador'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Montenegro is not a party to the EU-Israel Association Agreement; no statement on it was found.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No signed instrument of cooperation with Israel since October 2023 was found. A web search listed a tourism memorandum agreed in principle by the two tourism ministers (undated in the
+      result), the defence memorandum of 2018 and the supply contracts of 2019 and 2023 (before the window or without a dated primary document), and a visit of a Deputy Prime Minister to Israel
+      (a Government release, undated, no instrument): none filed.'
+    queries:
+    - 'web search: Montenegro Israel agreement signed memorandum cooperation 2025 2026'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Montenegrin Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor MNE
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have a 2023 and a 2024 row for Montenegro and none in 2022; no suspension of a Montenegrin contribution was found.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events (D3 increased, from 31 December 2023): USD 50,000 in the 2023 table and USD 10,000 in the 2024 table, against no row in 2022 (a zero baseline, flagged).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Montenegro was found.
+    queries:
+    - 'web search: Crna Gora Gaza pomoć djeca liječenje'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Montenegro was found.
+    queries:
+    - 'web search: Crna Gora Gaza pomoć'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

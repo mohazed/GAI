@@ -3354,7 +3354,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2006-07-24}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Montenegro (gov.me/mvp): news and releases of the Minister of Foreign Affairs', url: 'https://www.gov.me/en/mvp', type: mfa, lang: [cnr, en]}
+    - {label: 'Government of Montenegro (gov.me): the Prime Minister and the Government', url: 'https://www.gov.me/en/prime-minister', type: head_of_government, lang: [en, cnr]}
+    - {label: 'Office of the President of Montenegro (predsjednik.me): statements and addresses of the President', url: 'https://predsjednik.me/', type: head_of_state, lang: [cnr]}
+  notes: >-
+    gov_sources checked 2026-11-04 through the Wayback captures of the pages: gov.me and predsjednik.me did not answer a scripted request from this network (no response in 25 seconds), and their
+    captures of 12 to 22 October 2026 are good (gov.me/en/mvp: lang="en"; gov.me/mvp: lang="cnr-Latn-ME"; gov.me/en/prime-minister: lang="en"; predsjednik.me: lang="sr-Latn-ME"). The President's
+    pages are script-rendered (the text sits in embedded JSON). The President is Jakov Milatović; the Prime Minister Milojko Spajić and the Minister of Foreign Affairs Ervin Ibrahimović (Deputy Prime
+    Minister) according to a web-search summary that the Government's own pages have not confirmed (flagged); the speaker of the 79th General Debate statement, Filip Ivanović, was the Deputy Prime
+    Minister for Foreign and European Affairs.
 
 - iso3: MNG
   iso2: MN
@@ -4049,7 +4058,16 @@
       data/structured/recognitions.csv (P-14) from
       src_20250921_portugal-gov_reconhece-palestina, dated 2025-09-21; B8 is generated from
       that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (portaldiplomatico.mne.gov.pt, Portal Diplomático): press releases and news of the Minister of State and Foreign Affairs', url: 'https://portaldiplomatico.mne.gov.pt/', type: mfa, lang: [pt, en]}
+    - {label: 'Portuguese Government (portugal.gov.pt): the Prime Minister, the Council of Ministers and the Government''s communiqués', url: 'https://portugal.gov.pt/', type: head_of_government, lang: [pt]}
+    - {label: 'Presidency of the Republic (presidencia.pt): statements, addresses and news of the President', url: 'https://www.presidencia.pt/', type: head_of_state, lang: [pt]}
+  notes: >-
+    gov_sources checked 2026-11-04: all three sites answered HTTP 200 to a request with a browser User-Agent (portaldiplomatico.mne.gov.pt declares lang="pt-pt", portugal.gov.pt lang="pt",
+    presidencia.pt lang="pt-PT"). The Ministry's portal has a site search (/index.php?option=com_finder&q=Gaza) that lists its press releases and dates each page in a time element. The Prime Minister
+    is Luís Montenegro (the 25th Constitutional Government, since June 2025), the Minister of State and Foreign Affairs Paulo Rangel (the Ministry's pages) and the President Marcelo Rebelo de Sousa
+    (the Presidency's pages up to 9 March 2026: the Presidency's archive of his term is headed 'de 9 de março de 2016 a 9 de março de 2026', so his term ended on that date; his successor was not
+    identified in this session, so the President's statements after that date were not searched).
 
 - iso3: PRY
   iso2: PY
@@ -4459,7 +4477,16 @@
       data/structured/recognitions.csv (P-14) from
       src_20250923_sanmarinortv_riconosce-palestina, dated 2025-09-23; B8 is generated from
       that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Secretariat of State for Foreign and Political Affairs (esteri.sm): releases and news of the Secretary of State', url: 'https://www.esteri.sm/', type: mfa, lang: [it]}
+    - {label: 'Government of the Republic of San Marino (gov.sm): the Congress of State, the Government''s portal', url: 'https://www.gov.sm/', type: head_of_government, lang: [it]}
+    - {label: 'Great and General Council (consigliograndeegenerale.sm): the Parliament''s records and reports of the sessions', url: 'https://www.consigliograndeegenerale.sm/', type: other, lang: [it]}
+  notes: >-
+    gov_sources checked 2026-11-04: esteri.sm, gov.sm and consigliograndeegenerale.sm answered HTTP 200 to a request with a browser User-Agent (gov.sm declares lang="it"; esteri.sm and
+    consigliograndeegenerale.sm declare none, their text is Italian). San Marino has two Captains Regent as heads of state (rotating every six months) and no head of government: the Congress of State
+    is collegial, so the B9/B10 speakers are the Captains Regent and the Secretary of State for Foreign Affairs, Luca Beccari (the General Debate statements of 28 September 2024, 27 September
+    2025 and 26 September 2026 and the Secretariat's releases). The Captains Regent's own site (reggenza.sm) did not answer on 2026-11-04. The Secretariat's releases reach the public through
+    San Marino RTV (sanmarinortv.sm, section Comunicati) and libertas.sm.
 
 - iso3: SOM
   iso2: SO
