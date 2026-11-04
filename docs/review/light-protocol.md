@@ -1748,3 +1748,49 @@ No band change. Read critically (docs/06 §4 step 7): the two Enabling bands res
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23: the web searches per indicator group (English, French), the Ministry of External Relations of Cameroon (does not answer), the Cameroonian and Congolese press, the OIC's and the African Union's communiques, the DRC's Presidency (503) and the Congo's Ministry and Presidency sites, the unarchived 80th and 81st Cameroonian, 81st Congolese and 81st DRC General Debate files, the Security Council meetings under the DRC's presidency of July 2026, UNRWA's 2025 table, Comtrade for the three, the Government documents for the recognition dates of the DRC (18 December 1988), the Congo (5 December 1988) and Cameroon (none in the registry), the unexplained non-votes of B1.
+
+
+## T-P21-34: COM, CPV, DJI (2026-11-04)
+
+Light protocol (docs/06 §5) for the Comoros, Cabo Verde and Djibouti (group 34, Task B in the Claude track, B-694), by a fresh Sonnet 5.5 session of the finish run (docs/10 B-789 to B-792). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent): the session read the Comoros' Presidency site through its search page, the Government portal of Cabo Verde through its REST API, the Presidency of Djibouti's list of articles, the UN's General Debate pages and files through Wayback (the live `gadebate.un.org` answers a bot check to scripted requests; it was not worked around), the ICJ's case 192 page and the Comoros' declaration of intervention (UNISPAL copy), the Assembly of States Parties' list, the generated tables, UNRWA tables, the SIPRI register and the Article 19 documents.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_11_27_COM_B9 | B9 | 2024-11-27 | +5 | confirmed | official (Presidency's page of the speech) |
+| evt_2025_09_24_COM_B9 | B9 | 2025-09-24 | +5 | confirmed | official (Presidency's page of the speech) |
+| evt_2025_10_31_COM_B3 | B3 | 2025-10-31 | +15 | confirmed | court listing and the declaration (UNISPAL copy) |
+| evt_2026_10_29_COM_B9 | B9 | 2026-10-29 | +5 (flagged tier and date) | confirmed | official (Presidency's page of the speech) |
+
+Nine documents were archived (the Comoros' Presidency pages of the speeches of 17 February 2024, 27 November 2024, 24 September 2025, 24 September 2026 and 29 October 2026; the Government of Cabo Verde's communiqué of 1 November 2023 and the Prime Minister's speech of 26 September 2025; the Presidency of Djibouti's release of 22 September 2025; the Comoros' declaration of intervention). The MEDays page was first recorded as a bot-check page; that row was removed by exact id (B-208) and the page recorded from the existing Wayback capture 20241203170337. Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Comoros
+
+Assessments (34 indicators): has-events 3 (B1, B3, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: 4 (see the table). President Azali Assoumani named a genocide in Gaza at the MEDays forum in Tangier (27 November 2024) and at the 80th General Debate (24 September 2025); at the third Russia-Africa summit (29 October 2026) he said a genocide continued in Palestine and called for the protection of civilians in Gaza (flagged tier and date, docs/10 B-789). The Comoros filed a declaration of intervention in ICJ case 192 (listed 31 October 2025; the direction is this session's reading, flagged). Not filed: the African Union speech of 17 February 2024 and the 81st General Debate statement (Palestine, no Gaza, R7), the 79th General Debate statement (the speaker is the President in the file and the Foreign Minister in the UN's page; expired), the Presidency's third-person reports (R4). B1: ten yes votes, two non-votes. State party to the Rome Statute. The Ministry of Foreign Affairs has no site that answers.
+
+### Cabo Verde
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. President Neves (79th) and Prime Minister Correia e Silva (80th) never name Gaza; the Prime Minister's 80th sentence is the two-State solution. The Government's communiqué of 1 November 2023 (no named speaker; support for Israel's right to defend itself conditional on international humanitarian law) is not B10 (flagged, docs/10 B-790). B1: nine yes votes, two abstentions, one non-vote. State party to the Rome Statute; not on the Court's list of interveners.
+
+### Djibouti
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. The Presidency's release of 22 September 2025 summarises, in the third person, President Guelleh's statement at the Trusteeship Council conference, including that a UN inquiry confirmed a genocide in Gaza (indirect speech, R4; the statement's text was not found, docs/10 B-791). The 80th General Debate statement was delivered by the Permanent Representative (not a B9 speaker). B1: twelve yes votes of twelve. State party to the Rome Statute; written statement in case 186 (2023), not B3 or B4.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: the Comoros two non-votes (A/RES/79/232, A/RES/ES-10/27), Cabo Verde one (A/RES/80/116) and Djibouti none. None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| COM | -4 (Passive) | +36.3 (+36) | Passive to Acting | B3 +15 (standing from 31 October 2025), two B9 events of 2024 and 2025 and one of 2026 (cap +10); the October 2026 event is the only qualifying event of the last 365 days, so passivity (-15) is not applied; without it +17.3 (Acting) |
+| CPV | -3.5 (-4) | -3.5 (-4) | Passive, unchanged | no event; B1 and the passivity penalty (-15) |
+| DJI | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; twelve yes votes in B1 and the passivity penalty (-15) |
+
+One band change (the Comoros), resting on the B3 direction and the third B9 event (both flagged). Read critically (docs/06 §4 step 7): Cabo Verde's and Djibouti's bands rest on B1 and the passivity penalty, not on any act found in the window; the Djibouti Presidency's third-person release of 22 September 2025 could change that if the statement's text is found.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Arabic), the Comoros' Ministry of Foreign Affairs, the 79th General Debate statement of the Comoros (speaker), the 81st General Debate files of the three, the text of President Guelleh's statement of 22 September 2025, Cabo Verde's Ministry and its pages of 22 January and 14 April 2024 (read, not archived), the Article 19 check, Comtrade for the three and the Government documents for the recognition dates.
