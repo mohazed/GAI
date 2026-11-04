@@ -2311,3 +2311,233 @@ No band change. Read critically (docs/06 §4 step 7): Zimbabwe's rise rests on a
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group, Zimbabwe's Government sources, Uganda's State House addresses (including the NAM summit of January 2024), Zambia's State House record of the Herzog visit, B7, B11 and D4 for the three, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.
+
+## Verification of 2026-11
+
+HANDOFF.md Task V: a second check, by a fresh Opus 5.5 session, of every event, lead and recognition row filed by the light-protocol sessions, which Sonnet 5.5 ran. Session T-VERIFY-1 (2026-11-04) covers groups 5 to 26 (66 countries); T-VERIFY-2 covers groups 27 to 49. Build-log row: docs/10 B-848. No event changed status; `review.reviewed_by` is not set; nothing is published.
+
+### T-VERIFY-1: groups 5 to 26 (2026-11-04)
+
+**What was checked, and how.** The checklist of Task B2 (T-VERIFY-AG), applied to 218 events (all `reviewed`), 112 leads and the 18 recognition rows these sessions added to `data/structured/recognitions.csv`.
+
+1. **Quote at the locator.** A script normalised each quote and `archive/text/<source>.txt` as the validator does (NFC, whitespace runs collapsed, invisible characters removed), confirmed every quote is in the text, and mapped its position back to line numbers to compare with the `line …` locators; `paragraph …` and `page …` locators were checked by hand against the line or paragraph number.
+2. **Captures.** Every source cited by these events and recognition rows (219 sources) was fetched again from its `wayback_url` with `curl --compressed`, one at a time, and its byte count and SHA-256 compared with the source record (which the validator ties to `archive/index.csv`). Archived texts under 1,500 characters or with bot-check wording near the top were opened and read.
+3. **Speaker and wording (R3, R4, R7).** Every event was read with its quotes, points rationale and notes. For B9 and B10 events scoped `gaza`, a script measured the distance from each quote to the nearest mention of Gaza in the archived document; documents without one were read.
+4. **Date and tier.** Event dates compared with source dates (gaps over three days read in the notes); UNRWA D3 tiers re-read against the 2022, 2023 and 2024 donor tables; tiers compared across countries for the same wording.
+5. **Scope tags.** `west-bank`-only events checked for quotes about Gaza; `gaza` scopes checked as in 3.
+6. **French summaries.** Gender and capitals of every named speaker's summary against `docs/glossary.fr.md`; the tone lint is the validator's.
+7. **Leads.** Every lead read for its claim and sourcing (only press or NGO sources, or archived records); each lead source URL fetched live once to catch dead or invented addresses.
+8. **Recognition rows.** Each row's date found in its archived source text.
+
+**Result.** Every quote is verbatim in its archived text. Three events had wrong line locators (corrected). Two B9 events cite documents that do not name Gaza (scope changed to `related` under R7, as `evt_2024_11_25_IND_B9`). Eight French summaries had a wrong gender or capital (corrected). Every replay that answered equals its record (exceptions below). No invented quote, source, date or speaker was found.
+
+**Replays.** 216 of the 219 sources: the replay fetched again equals the record (byte count and SHA-256; six needed a second fetch after a time-out). Three captures made by Save Page Now on 3 November 2026 are not yet in the Wayback index: `src_20250927_dfa-ungarchive_phl-lazaro-80` (`evt_2025_09_27_PHL_B9`) and `src_20260926_mfa-bn_prince-mateen-unga81` (`evt_2026_09_26_BRN_B9`) answer HTTP 404 at their timestamps, and `src_20260227_mfa-sg_cos-2026-speeches` (`evt_2026_02_27_SGP_B9`) is redirected to the capture of 10 October 2026 (1,137,186 bytes against 1,136,472 recorded). The CDX index lists none of the three timestamps, a usual delay for captures a day old; the sessions recorded an equal replay right after capture, and the archived texts are in `archive/text/`. Left open: re-fetch the three in P-23 (Wayback item, T-P23-4) and re-archive any that stays absent.
+
+**Leads.** 112 leads (111 open, one promoted to `evt_2026_02_07_IRN_B9`); every source is press, NGO or an archived record. Of 163 distinct lead URLs, 147 answer HTTP 200 live; 14 answer 403, 406 or time out (news sites behind bot checks); `radiorebelde.cu` (lead_20261006_CUB_2) answers 404 and `samoaobserver.ws` (lead_20261104_WSM_2) 500, and both have Wayback copies (28 September 2026, 15 February 2026). No lead rests on an address that does not exist.
+
+### Table per country (groups 5 to 26)
+
+Columns: events filed; evidence items with the quote found verbatim and at its locator (after the fixes below); distinct sources cited by the events and whether the replay equals the record; leads and their live URLs; the recognition row the session added, if any; findings.
+
+#### Group 5: SVK, UKR, ATG
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SVK | 9 | 22: 22 / 22 | 11: 11 | 5 (8/9 URLs answer 200; other: 403) | none filed by the session | No finding. |
+| UKR | 0 | 0: 0 / 0 | 0: 0 | 3 (1/2 URLs answer 200; other: 403) | none filed by the session | No event. lead_20261006_UKR_3 quotes the Cabinet's words from a search excerpt (kmu.gov.ua answers a CAPTCHA): acceptable for a lead, never for an event. |
+| ATG | 2 | 6: 6 / 6 | 2: 2 | 2 (1/2 URLs answer 200; other: 403) | none filed by the session | No finding. |
+
+#### Group 6: BHS, BLZ, BRB
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| BHS | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| BLZ | 4 | 11: 11 / 11 | 5: 5 | 3 (3/3 URLs answer 200) | 2011-09-09 (1 source(s), replay equal 1/1) | No finding. Recognition row read in the Press Office's release of 9 September 2011. |
+| BRB | 2 | 4: 4 / 4 | 2: 2 | 1 (0/1 URLs answer 200; other: 000) | none filed by the session | No finding. |
+
+#### Group 7: CRI, CUB, DMA
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| CRI | 2 | 6: 6 / 6 | 4: 4 | 3 (4/4 URLs answer 200) | none filed by the session | No finding. |
+| CUB | 5 | 13: 13 / 13 | 6: 6 | 4 (6/7 URLs answer 200; other: 404) | 1988-11-16 (1 source(s), replay equal 1/1) | (1) evt_2025_01_10_CUB_B3: the three locators of the declaration were one line early; corrected to lines 146, 854, 277. (2) evt_2024_09_28_CUB_B9: the archived Spanish file names no Gaza ('el pueblo palestino' only): scope gaza changed to related under R7 (B-234 (2)); decayed, no score change. Recognition row (16 November 1988) read in the Ministry's text. |
+| DMA | 0 | 0: 0 / 0 | 0: 0 | 2 (1/2 URLs answer 200; other: 403) | none filed by the session | No finding. |
+
+#### Group 8: DOM, ECU, GRD
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| DOM | 1 | 4: 4 / 4 | 2: 2 | 0 | 2009-07-15 (1 source(s), replay equal 1/1) | No finding on the event. Recognition row rests on the joint communiqué establishing diplomatic relations with the State of Palestine (15 July 2009): recognition implied by the relations, flagged. |
+| ECU | 6 | 13: 13 / 13 | 6: 6 | 3 (4/4 URLs answer 200) | 2010-12-24 (1 source(s), replay equal 1/1) | evt_2026_08_05_ECU_C2_2: the EFE quote is on line 180, not 176 (the headline); corrected. Recognition row (24 December 2010) read in the Cancillería's page of 3 December 2018. |
+| GRD | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+
+#### Group 9: GTM, GUY, HND
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| GTM | 1 | 2: 2 / 2 | 1: 1 | 2 (2/2 URLs answer 200) | none filed by the session | No finding. |
+| GUY | 5 | 12: 12 / 12 | 5: 5 | 1 (1/1 URLs answer 200) | 2011-01-13 (1 source(s), replay equal 1/1) | evt_2024_10_29_GUY_B9: the third quote is on lines 837 to 841 (Mr. Todd's statement, lines 808 to 900), not line 1810; corrected. Recognition row read in Guyana's letter A/65/692 (UNISPAL copy). |
+| HND | 4 | 9: 9 / 9 | 9: 9 | 2 (2/2 URLs answer 200) | 2011-08-26 (2 source(s), replay equal 2/2) | No finding on the events. Recognition row (26 August 2011) rests on the UN Division for Palestinian Rights' chronology and the President's General Assembly excerpt: a UN Secretariat chronology, flagged (R21). |
+
+#### Group 10: HTI, JAM, KNA
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| HTI | 0 | 0: 0 / 0 | 0: 0 | 0 | 2013-09-27 (1 source(s), replay equal 1/1) | No event. Recognition row (27 September 2013) rests on the UN chronology of September 2013 (ceremony at UN Headquarters): flagged (R21). |
+| JAM | 1 | 1: 1 / 1 | 1: 1 | 2 (3/3 URLs answer 200) | none filed by the session | No finding. |
+| KNA | 2 | 3: 3 / 3 | 2: 2 | 0 | 2019-07-29 (1 source(s), replay equal 1/1) | No finding. Recognition row dated by the agreement establishing diplomatic relations (SKNIS, 30 July 2019): recognition implied by the relations, flagged. |
+
+#### Group 11: LCA, NIC, PAN
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| LCA | 2 | 6: 6 / 6 | 2: 2 | 0 | 2015-09-14 (1 source(s), replay equal 1/1) | No finding. Recognition row dated by the Department of External Affairs' list of diplomatic relations ('Palestine (State of) 2015 (Sept 14)'): recognition implied by the relations, flagged. |
+| NIC | 2 | 6: 6 / 6 | 4: 4 | 4 (4/4 URLs answer 200) | none filed by the session | No finding. |
+| PAN | 1 | 3: 3 / 3 | 2: 2 | 3 (5/5 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 12: PER, PRY, SLV
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| PER | 1 | 4: 4 / 4 | 3: 3 | 1 (1/1 URLs answer 200) | 2011-01-24 (1 source(s), replay equal 1/1) | No finding on the event. Recognition row (24 January 2011) rests on the UN chronology of January 2011: flagged (R21). |
+| PRY | 4 | 11: 11 / 11 | 7: 7 | 5 (10/10 URLs answer 200) | 2011-01-28 (1 source(s), replay equal 1/1) | No finding on the events. Recognition row (28 January 2011) rests on the UN chronology quoting the Ministry's statement: flagged (R21). |
+| SLV | 0 | 0: 0 / 0 | 0: 0 | 0 | 2011-08-25 (1 source(s), replay equal 1/1) | No event. Recognition row (25 August 2011) rests on the UN chronology of August 2011: flagged (R21). |
+
+#### Group 13: SUR, TTO, URY
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SUR | 1 | 2: 2 / 2 | 2: 2 | 3 (3/4 URLs answer 200; other: 403) | 2011-02-01 (3 source(s), replay equal 3/3) | No finding on the event. Recognition row (1 February 2011) rests on the UN Montevideo meeting report (a UN Secretariat text); the February 2011 chronology and the 2023 Government page do not state the date: flagged (R21). |
+| TTO | 1 | 4: 4 / 4 | 2: 2 | 2 (3/4 URLs answer 200; other: 000) | none filed by the session | No finding. |
+| URY | 0 | 0: 0 / 0 | 0: 0 | 4 (8/8 URLs answer 200) | 2011-03-15 (1 source(s), replay equal 1/1) | No event. Recognition row (15 March 2011) rests on the UN Montevideo meeting report: flagged (R21). |
+
+#### Group 14: VCT, VEN, FJI
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| VCT | 2 | 5: 5 / 5 | 2: 2 | 1 (1/1 URLs answer 200) | 2011-08-30 (1 source(s), replay equal 1/1) | evt_2025_09_26_VCT_B9 rests on the UN Meetings Coverage (GA/12712), which prints the Prime Minister's words in quotation marks (direct speech): kept, flagged. Recognition row (30 August 2011) rests on the UN chronology: flagged (R21). |
+| VEN | 4 | 10: 10 / 10 | 5: 5 | 3 (4/4 URLs answer 200) | 2009-04-27 (2 source(s), replay equal 2/2) | No change. B12 (pre-window severance) and B6 scope stay flagged (B-628). Recognition row (27 April 2009) rests on the UN review of April 2009 relaying AFP on a joint communiqué establishing relations with the PA, and the 2011 note verbale: flagged (R21, B-628). |
+| FJI | 4 | 12: 12 / 12 | 4: 4 | 3 (4/4 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 15: PNG, SLB, VUT
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| PNG | 3 | 7: 7 / 7 | 3: 3 | 3 (3/3 URLs answer 200) | none filed by the session | No change. The conditional ceasefire call and the two B10 events stay flagged (B-629, B-630). |
+| SLB | 2 | 4: 4 / 4 | 2: 2 | 1 (2/2 URLs answer 200) | none filed by the session | No finding. |
+| VUT | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+
+#### Group 16: FSM, KIR, MHL
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| FSM | 0 | 0: 0 / 0 | 0: 0 | 2 (1/2 URLs answer 200; other: 403) | none filed by the session | No finding. |
+| KIR | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+| MHL | 1 | 1: 1 / 1 | 1: 1 | 0 | none filed by the session | French summary: 'La Présidente' changed to 'La présidente' (glossary: lower case). |
+
+#### Group 17: NRU, PLW, LBY
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| NRU | 0 | 0: 0 / 0 | 0: 0 | 1 (3/3 URLs answer 200) | none filed by the session | No finding. |
+| PLW | 0 | 0: 0 / 0 | 0: 0 | 2 (2/2 URLs answer 200) | none filed by the session | No finding. |
+| LBY | 4 | 7: 7 / 7 | 5: 5 | 4 (10/10 URLs answer 200) | none filed by the session | No change. Speakers of the rival-authority setting stay flagged (B-661). |
+
+#### Group 18: SDN, TUN, EST
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SDN | 2 | 3: 3 / 3 | 2: 2 | 0 | none filed by the session | No finding. |
+| TUN | 9 | 21: 21 / 21 | 15: 15 | 4 (7/8 URLs answer 200; other: 403) | none filed by the session | No change. The Arabic quotes of the 79th and 80th General Debate files carry broken text layers (stay flagged, B-673 (2)). |
+| EST | 17 | 40: 40 / 40 | 22: 22 | 3 (4/4 URLs answer 200) | none filed by the session | No change. Tier readings of 'not acceptable' (6 August 2025) and 'crossed all red lines' (24 September 2025) at +5 stay flagged; see the cross-country tier note below. |
+
+#### Group 19: FIN, ISL, LTU
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| FIN | 21 | 53: 53 / 53 | 26: 26 | 1 (2/2 URLs answer 200) | none filed by the session | No change. evt_2025_08_25_FIN_B9 ('gone many times too far') at +5 and evt_2024_02_29_FIN_C2 (one press origin, day not known) stay flagged; see the cross-country tier note below. |
+| ISL | 22 | 55: 55 / 55 | 24: 24 | 3 (2/2 URLs answer 200) | 2011-12-15 (1 source(s), replay equal 1/1) | No finding. Recognition row (15 December 2011) read in the Foreign Minister's report to the Althing (2024). |
+| LTU | 13 | 30: 30 / 30 | 15: 15 | 3 (3/4 URLs answer 200; other: 403) | none filed by the session | No finding. |
+
+#### Group 20: LVA, TON, TUV
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| LVA | 16 | 33: 33 / 33 | 19: 19 | 3 (3/5 URLs answer 200; other: 403, 403) | none filed by the session | French summaries: four joint-statement events of the Foreign Minister Baiba Braže said 'Le ministre'; corrected to 'La ministre' (evt_2025_05_19, 07_21, 08_12, 08_21). Three 'Le Président' changed to 'Le président' (glossary). |
+| TON | 0 | 0: 0 / 0 | 0: 0 | 2 (3/3 URLs answer 200) | none filed by the session | No finding. |
+| TUV | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+
+#### Group 21: WSM, BRN, KHM
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| WSM | 0 | 0: 0 / 0 | 0: 0 | 2 (2/3 URLs answer 200; other: 500) | none filed by the session | No finding. |
+| BRN | 3 | 6: 6 / 6 | 3: 2 | 1 (2/2 URLs answer 200) | none filed by the session | evt_2026_08_22_BRN_B9: the archived joint statement names no Gaza (the Palestinian issue, people and statehood only): scope gaza changed to related under R7 (B-234 (2)). Provisional score +26.5 to +26.1 (B9 sum 14.6 to 9.6, under the cap), band Acting unchanged. The event's flag says the Malaysian counterpart is filed: data/events/MYS.yaml has no event of that day. |
+| KHM | 1 | 1: 1 / 1 | 1: 1 | 1 (2/2 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 22: LAO, MMR, PHL
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| LAO | 1 | 1: 1 / 1 | 1: 1 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| MMR | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+| PHL | 2 | 4: 4 / 4 | 3: 2 | 3 (6/7 URLs answer 200; other: 403) | none filed by the session | No finding. |
+
+#### Group 23: SGP, THA, TLS
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| SGP | 8 | 11: 11 / 11 | 8: 7 | 0 | none filed by the session | No change. evt_2024_02_29_SGP_B9 reads 'gone too far' at the call tier (+2), unlike FIN and EST (+5): see the cross-country tier note below. evt_2023_12_31_SGP_D3 (earthquake-appeal column) stays flagged. |
+| THA | 2 | 4: 4 / 4 | 3: 3 | 2 (2/2 URLs answer 200) | 2012-01-17 (1 source(s), replay equal 1/1) | No finding. Recognition row (17 January 2012) read in the Ministry's release of 12 January 2024. |
+| TLS | 1 | 3: 3 / 3 | 1: 1 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 24: VNM, AFG, BGD
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| VNM | 1 | 1: 1 / 1 | 1: 1 | 0 | none filed by the session | No finding. |
+| AFG | 0 | 0: 0 / 0 | 0: 0 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| BGD | 3 | 10: 10 / 10 | 5: 5 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 25: BTN, IRN, LKA
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| BTN | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+| IRN | 3 | 9: 9 / 9 | 3: 3 | 1 (1/1 URLs answer 200) | none filed by the session | No finding. |
+| LKA | 4 | 6: 6 / 6 | 5: 5 | 1 (2/2 URLs answer 200) | none filed by the session | No finding. |
+
+#### Group 26: MDV, NPL, PAK
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads (source URLs fetched live) | Recognition row | Findings and fixes |
+|---|---|---|---|---|---|---|
+| MDV | 4 | 10: 10 / 10 | 6: 6 | 2 (1/2 URLs answer 200; other: 406) | none filed by the session | No finding. |
+| NPL | 0 | 0: 0 / 0 | 0: 0 | 0 | none filed by the session | No finding. |
+| PAK | 9 | 20: 20 / 20 | 10: 10 | 0 | none filed by the session | No finding. |
+
+#### Fixes made in place (events `reviewed`, unpublished: no corrections.yaml entry, revision unchanged)
+
+| Event | Field | Before | After | Why |
+|---|---|---|---|---|
+| evt_2025_01_10_CUB_B3 | three locators | lines 145, 853, 276 | lines 146, 854, 277 | the quotes begin one line later in the archived text |
+| evt_2026_08_05_ECU_C2_2 | locator (EFE) | line 176 | line 180 | line 176 is the headline, in other words |
+| evt_2024_10_29_GUY_B9 | locator (third quote) | line 1810 | lines 837 to 841 | the passage is in Mr. Todd's statement (lines 808 to 900) |
+| evt_2024_09_28_CUB_B9 | scope | gaza | related | the archived file names no Gaza (R7, B-234 (2)); decayed to zero, no score change |
+| evt_2026_08_22_BRN_B9 | scope | gaza | related | the archived joint statement names no Gaza (R7, B-234 (2)); Brunei +26.5 to +26.1 provisional, Acting unchanged |
+| four LVA joint-statement B9 events of Baiba Braže (19 May, 21 July, 12 August, 21 August 2025) | summary.fr | Le ministre | La ministre | the Minister is a woman |
+| evt_2024_09_24_LVA_B9, evt_2025_08_05_LVA_B9, evt_2025_09_24_LVA_B9 | summary.fr | Le Président | Le président | glossary: lower case |
+| evt_2024_09_25_MHL_B9 | summary.fr | La Présidente | La présidente | glossary: lower case |
+
+Each changed event's `review.notes` now ends with a "Verification of 2026-11 (T-VERIFY-1)" sentence; locator-only fixes are noted in CUB, ECU and GUY.
+
+#### Cross-country reading flagged for the author
+
+- **Tier of criticism without a legal term.** "Israel's military response has gone too far" is filed at the call tier (+2) for Singapore (evt_2024_02_29_SGP_B9, which also calls for a ceasefire), while "Israel has gone many times too far" (evt_2025_08_25_FIN_B9), "crossed all red lines" (evt_2025_09_24_EST_B9) and "not acceptable" (evt_2025_08_06_EST_B9) are filed at +5 as named conduct. Default adopted: kept as filed; no score moves (the Singapore event is past 730 days; Finland's and Estonia's B9 are at the +10 cap without them). The author decides one reading for all four.
+- **Recognition rows resting on UN Secretariat texts** (R21 flag): HND, HTI, PER, PRY, SLV, VCT, VEN (the Division for Palestinian Rights' chronologies), SUR and URY (the UN Montevideo meeting report). Rows dated by the establishment of diplomatic relations: DOM, KNA, LCA (and ISL by the Government's own statement that relations imply recognition). Default adopted: kept, flagged.
+- **A UN press summary as B9 evidence**: evt_2025_09_26_VCT_B9 (direct quotation in GA/12712). Default adopted: kept.
+
+#### Not done in this session
+
+- Leads were checked for sourcing and live URLs, not re-researched; the claims stay unverified, as leads are by definition.
+- The French summaries were read for gender, capitals and the glossary's terms; a native reader's pass stays with the author (Part 4, item 4).
+- Groups 27 to 49 are T-VERIFY-2's. Passed on: the French summary of `evt_2025_10_07_PRT_B9` begins "Le Président de la République" (glossary: lower case).
