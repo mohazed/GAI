@@ -1,0 +1,192 @@
+# Coverage record for Sierra Leone (docs/03 §6). P-21 light protocol, session T-P21-42, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the verbatim records of the Security Council's meetings on the Palestinian question from S/PV.9440 to S/PV.10255 (downloaded from the UN Official Document System, read by title and by the speakers called on as a minister; the Foreign Minister's statements of 18 April 2024, 20 January, 29 April and 23 September 2025 read in full), the State House's site (statehouse.gov.sl, WordPress REST search per term), the ICJ's case 192 page (live and archived copy), the ASP's list of States Parties (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Ministry of Foreign Affairs and International Cooperation's site (mofaic.gov.sl) did not answer. Web searches were not available to this session: nothing is filed from a press item.
+# Events: six B9 events (two expired, one flagged for the tier, one flagged for the speaker). Leads: none. See docs/10 B-825, B-826.
+country: SLE
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier RWA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer RWA
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360); compare the UN''s voting records before the score is read (no disagreement found).'
+    queries:
+    - unga_votes.csv, country SLE
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Sierra Leone sat on the Security Council in 2024 and 2025 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent member): the vetoes
+      of the window are those of the permanent members. Its votes are not an indicator.'
+    queries:
+    - unsc_vetoes.csv, vetoing state Sierra Leone
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Sierra Leone is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Sierra Leone is a State Party to the Rome Statute (the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties). No statement on the warrants of 21 November
+      2024 by a B5 speaker was found: State House''s site search (statehouse.gov.sl, WordPress REST) for ICC, Gaza, Palestine, Palestinian, Israel, ceasefire, Hamas, Netanyahu, two-state, UNRWA,
+      Jerusalem returns three posts (the President''s presidency of the Security Council on 17 November 2025, twice, and the Antalya forum of April 2025), none on the warrants; the Ministry''s
+      site did not answer (docs/10 B-826). The President''s address of 17 November 2025 to the Council (S/PV.10045) says the Rome Statute classifies deliberate starvation as a war crime, a general
+      statement that takes no position on the warrants.'
+    queries:
+    - 'statehouse.gov.sl /wp-json/wp/v2/posts?search=: ICC, Gaza, Palestine, Palestinian, Israel, ceasefire, Hamas, Netanyahu, two-state, UNRWA, Jerusalem (every result read)'
+    - src_20261009_icc-asp_states-parties (searched)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Sierra Leone was found in the sources read (the Assembly's list of
+      2026-10-09 still names it a State Party; State House's search above).
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - statehouse.gov.sl search (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched beyond State House''s site (no result on sanctions or ICC officials): the Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not answer
+      (the connection fails; the Wayback captures of July 2025 are redirects), so its releases were not read (docs/10 B-826; P-23).'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Sierra Leone. The registry gives a recognition since 3 December 1988, before the window; no recognition after 7 October 2023 was found in
+      the sources read. The President''s 80th General Debate statement welcomes ''all Member States that have recently announced their long overdue recognition of the State of Palestine'' (point
+      32): a welcome, not an act of Sierra Leone.'
+    queries:
+    - recognitions.csv, SLE (no row)
+    - src_20250924_un-gadebate_sl-bio-ag80 (searched)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'evt_2024_04_18_SLE_B9 (+5, expired; Foreign Minister, S/PV.9608), evt_2024_09_24_SLE_B9 (+2, flagged, expired; President, 79th General Debate), evt_2025_01_20_SLE_B9 (+5; Foreign Minister,
+      S/PV.9841), evt_2025_04_29_SLE_B9 (+5; Foreign Minister, S/PV.9907), evt_2025_09_23_SLE_B9 (+5; Foreign Minister, S/PV.10003), evt_2025_09_24_SLE_B9 (+5, flagged; President, 80th General
+      Debate). Read and not filed: the President''s address to the Council''s open debate of 17 November 2025 on conflict-related food insecurity (S/PV.10045: ''From Gaza to the Sahel, from the
+      Sudan to Ukraine, and in parts of Haiti, hunger has been weaponized'' and ''starvation is not collateral damage; it is a crime'' in a general statement with no call and no named act in Gaza;
+      a reader who reads it as naming starvation in Gaza would add +5, with no effect on the score because B9 is at its cap of +10); the Permanent Representative''s explanation of vote on resolution
+      2803 (S/PV.10046, 17 November 2025; she or he speaks ''in my capacity as the representative of Sierra Leone'', not a B9 speaker); the Foreign Minister''s statement at the Council''s high-level
+      debate of 25 September 2024 (S/PV.9732: Gaza in a list of conflicts, no call and no act); the 81st General Debate statement (22 September 2026: the Palestinian people''s right to self-determination
+      and a two-State solution, no Gaza). The Foreign Minister''s other Council statements were read through the Palestinian-question meetings S/PV.9440 to S/PV.10255 (a scan of the verbatim records
+      by title and speaker): the four meetings above are the ones that call him as a minister.'
+    queries:
+    - 'documents.un.org S/PV.9440 to S/PV.10255: titles, dates and the speakers called on as a minister of Sierra Leone'
+    - gadebate.un.org/en/{79,80,81}/sierra-leone and gastatements/{79,80,81}/sl_en*.pdf
+    - statehouse.gov.sl search (see B5)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Foreign Minister was found. The Foreign Minister''s statements
+      support ''Israel''s right to exist in peace and security'' (S/PV.10003) alongside the calls and the named violations; the Index files that sentence on the same terms as every country and
+      it is not unconditional support.'
+    queries:
+    - gadebate.un.org statements (see B9)
+    - documents.un.org S/PV.9608, 9841, 9907, 10003 (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched beyond State House''s site (no result on sanctions on Israeli ministers or settler entities): the Ministry''s site did not answer (see B7).'
+  B12:
+    status: unchecked
+    note: 'Not searched beyond State House''s site: no result on a recall, downgrade or severance. The Ministry''s site did not answer (see B7).'
+  C1:
+    status: none-found
+    note: Sierra Leone is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the sources read.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Not searched beyond State House''s site (no agreement with Israel among its Gaza, Palestine and Israel results): the Ministry''s site and the treaty records did not answer or were not
+      read (see B7).'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor RWA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: The 2024 table lists Sierra Leone at USD 10,000 pledged and none received (src_20241231_unrwa_donor-ranking-2024, line 168); no row in 2022 or 2023; no announced suspension was found.
+      The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'D3 ''increased above 2022'' is not filed: UNRWA''s 2024 table lists Sierra Leone at USD 10,000 pledged and no amount received (line 168), with no row in 2022 or 2023. The Index''s precedent
+      (docs/10 B-445, B-357 (4), B-679) files D3 +8 where a country has a row in a later table and none in 2022; here the row is a pledge with nothing received, so no contribution is filed (flagged,
+      docs/10 B-826). If the author reads the pledge as a contribution, D3 +8 would stand from 31 December 2024, for the record (the 365-day period for passivity ended on 31 December 2025); no
+      effect on the preview score.'
+    queries:
+    - archive/text/src_20241231_unrwa_donor-ranking-2024.txt (line 168)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched beyond State House''s site (no result on a medical-evacuation programme or a field hospital): the Ministry''s site did not answer (see B7).'
+  D5:
+    status: unchecked
+    note: 'Not searched beyond State House''s site (no result on a visa or refugee pathway for Gazans): the Ministry''s site did not answer (see B7).'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

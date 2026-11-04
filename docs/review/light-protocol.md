@@ -2124,3 +2124,57 @@ No band change. Read critically (docs/06 §4 step 7): Niger's and Senegal's rise
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English and French), Niger's Ministry statements when its sites answer, the Presidency of Senegal's texts and an archived copy of the 81st statement, the Hague Group's founding declaration, Rwanda's Ministry press statements outside the news list, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
+
+## T-P21-42 — Sierra Leone, Somalia, South Sudan (2026-11-04)
+
+Light protocol, group 42, twelfth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-825 to B-829). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the UN's General Debate pages and files of the 79th to 81st sessions (live), the Security Council's verbatim records S/PV.9440 to S/PV.10255 (805 records downloaded from the UN Official Document System, one at a time, read by title and by the speakers called on as a minister of the three countries), State House of Sierra Leone's site (WordPress REST search), Somalia's Ministry and Presidency sites, two Juba news sites for South Sudan (Radio Tamazuj, Eye Radio; kind press), the ICJ's case 192 page (live and archived), the archived ASP list and UNRWA donor tables and the Article 19 documents. Sierra Leone's Ministry site and every official site of South Sudan did not answer.
+
+Eleven events (Sierra Leone 6, Somalia 4, South Sudan 1) and two leads (South Sudan).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_04_18_SLE_B9 | B9 | 2024-04-18 | +5 (Foreign Minister, S/PV.9608: 'without distinction, proportionality or the protection of civilians'; expired, 930 days) | confirmed | official (Council record) |
+| evt_2024_09_24_SLE_B9 | B9 | 2024-09-24 | +2 (the President, 79th General Debate: 'The need for a ceasefire in Gaza … is not just pressing but urgent'; flagged; expired, 771 days) | confirmed | official (the UN's General Debate text) |
+| evt_2025_01_20_SLE_B9 | B9 | 2025-01-20 | +5 (Foreign Minister, S/PV.9841: 'repeated violations of international law', 'collective punishment') | confirmed | official (Council record) |
+| evt_2025_04_29_SLE_B9 | B9 | 2025-04-29 | +5 (Foreign Minister, S/PV.9907: incendiary weapons, 'The total blockade of humanitarian aid') | confirmed | official (Council record) |
+| evt_2025_09_23_SLE_B9 | B9 | 2025-09-23 | +5 (Foreign Minister, S/PV.10003: 'a blatant violation of the Charter', permanent ceasefire, lifting of aid restrictions) | confirmed | official (Council record) |
+| evt_2025_09_24_SLE_B9 | B9 | 2025-09-24 | +5 (the President, 80th General Debate: 'A preventable genocide was not prevented'; 'Ceasefire now in Gaza!'; flagged) | confirmed | official (the UN's General Debate text) |
+| evt_2024_09_27_SOM_B9 | B9 | 2024-09-27 | +5 (the Prime Minister, 79th General Debate: 'the continuous violations of international law by the Israeli government'; expired, 768 days) | confirmed | official (the UN's General Debate text) |
+| evt_2025_01_20_SOM_B9 | B9 | 2025-01-20 | +2 (Foreign Minister, S/PV.9841: 'lifting the blockade on the Gaza Strip' as a root cause; flagged) | confirmed | official (Council record) |
+| evt_2025_09_23_SOM_B9 | B9 | 2025-09-23 | +5 (Foreign Minister, S/PV.10003: 'the use of hunger as a collective punishment is a grave violation of international law') | confirmed | official (Council record) |
+| evt_2025_09_25_SOM_B9 | B9 | 2025-09-25 | +2 (the President, 80th General Debate: 'an immediate and lasting ceasefire'; flagged; dated by the General Debate page) | confirmed | official (the UN's General Debate text and page) |
+| evt_2025_08_13_SSD_C2 | C2 | 2025-08-13 | -10 (memorandum of understanding on bilateral cooperation with Israel, signed in Juba; counts -7.0 at the weight of corroborated; flagged) | corroborated | press (Radio Tamazuj, Eye Radio) |
+
+Ten documents were archived: the four General Debate files (Wayback captures 20241012042050, 20260201054228, 20250717095315, 20251008042446, each with the live file's byte count and SHA-256) and Somalia's 80th page (20251207222446) by `--capture`; the Council's records S/PV.9608 (an existing capture of 20260806051756) and S/PV.9907, and the three press articles, by Save Page Now. Every replay was fetched again with curl --compressed and equals its index row (byte count and SHA-256).
+
+### Sierra Leone
+
+Assessments (34 indicators): has-events 2 (B1, B9), none-found 13, no-data 2 (A2, C3), unchecked 17 (A3, A5 to A8, B7, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Events: six. Leads: none. A Council member in 2024 and 2025; State Party to the Rome Statute. The Ministry's site did not answer, so the indicators that only its releases would settle are `unchecked`. Not filed: the President's address of 17 November 2025 (S/PV.10045: Gaza in a list of places where 'hunger has been weaponized'), the Permanent Representative's explanation of vote on resolution 2803 (S/PV.10046), the 81st General Debate statement (no Gaza); D3 not filed on a USD 10,000 pledge with nothing received (B-826).
+
+### Somalia
+
+Assessments: has-events 2 (B1, B9), none-found 19, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: four. Leads: none. A Council member in 2025 and 2026; not a State Party to the Rome Statute. The Ministry's reports of the Foreign Minister's remarks at the OIC emergency meeting (25 August 2025) and the Arab-Islamic meetings in Doha are indirect speech and are not filed.
+
+### South Sudan
+
+Assessments: has-events 2 (B1, C2), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 14 (A3, A5 to A8, B7, B11, C4 to C6, D4, E1 to E3). Events: one. Leads: two. No B9: the 79th and 81st General Debate statements name neither Gaza nor Palestine, the 80th was the Vice-President's. The C2 event rests on two press publishers and no primary document (B-828).
+
+### Article 19 note (report only)
+
+Sierra Leone has the twelve qualifying votes recorded; Somalia has two non-votes (A/RES/ES-10/24, A/RES/80/1); South Sudan has two non-votes (A/RES/ES-10/23, A/RES/80/1) and ten abstentions. None of the three is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| SLE | +1.5 (+1) | +11.5 (+11) | Acting, unchanged | B9 reaches its cap of +10 on four counted events (the Foreign Minister's of 20 January, 29 April and 23 September 2025 and the President's of 24 September 2025); B1 (+16.5) and the passivity penalty (-15) stay |
+| SOM | -3.0 (-3) | +4.2 (+4) | **Passive -> Acting** | B9 +7.2: the Foreign Minister's event of 23 September 2025 (+4.6 after decay) alone gives about +1.6 (Acting); the two flagged +2 events add +2.7 |
+| SSD | -26.0 (-26) | -33.0 (-33) | Enabling, unchanged | C2 -7.0 (the memorandum, confidence corroborated at weight 0.7); B1 (-11.0) and the passivity penalty (-15) stay. Without the press-only C2 event: -26 |
+
+One band change (Somalia, Passive to Acting). Read critically (docs/06 §4 step 7): Somalia's change rests on a solid +5 reading from the Council's record; Sierra Leone's rise rests on four B9 events of which one is the President's flagged reading; South Sudan's fall rests on a press-only instrument.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Arabic, Somali), the Government sources of Sierra Leone (Ministry) and South Sudan (all) when their sites answer, Somalia's Prime Minister's site, the OIC and Arab League communiqués, a primary for South Sudan's memorandum, the Hague Group declaration, the Government documents for the recognition dates, the 2025 UNRWA table, the Article 19 check, and Comtrade for the three.
