@@ -24,8 +24,8 @@ Light protocol (docs/06 §5) for New Zealand, Kazakhstan and Kyrgyzstan. 19 even
 | evt_2023_12_31_KAZ_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset |
 | evt_2024_12_31_KAZ_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
 | evt_2025_09_23_KAZ_B9 | B9 | 2025-09-23 | +2 | confirmed | official |
-| evt_2026_01_27_KAZ_C2 | C2 | 2026-01-27 | −10 | corroborated | press |
-| evt_2026_01_27_KAZ_C2_2 | C2 | 2026-01-27 | −10 | corroborated | press |
+| evt_2026_01_27_KAZ_C2 | C2 | 2026-01-27 | −10 | confirmed (was corroborated; the Ministry's release archived 2026-11-04, B-853) | official, press |
+| evt_2026_01_27_KAZ_C2_2 | C2 | 2026-01-27 | −10 | confirmed (was corroborated; the Ministry's release archived 2026-11-04, B-853) | official, press |
 | evt_2025_09_23_KGZ_B9 | B9 | 2025-09-23 | +5 | confirmed | official |
 
 Points are the tier points before decay and weights. B1, D1 and the other generated indicators are left to the build.
