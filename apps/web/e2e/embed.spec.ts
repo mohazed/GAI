@@ -9,7 +9,7 @@ import { expect, type Page, test } from '@playwright/test'
  * (kit) and the scorecard build (production, D-16). Also the live examples of /embed.
  */
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 interface Entry {
   iso3: string
