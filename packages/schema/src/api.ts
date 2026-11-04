@@ -919,14 +919,33 @@ export const ApiManifestFile = z.strictObject({
 })
 export type ApiManifestFile = z.infer<typeof ApiManifestFile>
 
-/** dumps/gai-{YYYY-MM-DD}.json: the whole published dataset at the build date. */
+/**
+ * The parts of the JSON dump kept in files of their own, listed in the main file (`parts`): the
+ * sources (`dumps/gai-{date}-sources.json`) and the events, one file per calendar year of the
+ * event's date (`dumps/gai-{date}-events-{YYYY}.json`). Split from the main file so that every
+ * file stays far below the 25 MiB Cloudflare Pages serves, however many events the index holds
+ * (docs/10 B-71, B-490).
+ */
+export const ApiDumpPart = z.strictObject({
+  record: z.enum(['events', 'sources']),
+  /** Path relative to api/v1/. */
+  path: NonEmpty,
+  /** The calendar year of the events in the file; null for the sources. */
+  year: Int.nullable(),
+  /** Number of records in the file. */
+  count: Count,
+})
+export type ApiDumpPart = z.infer<typeof ApiDumpPart>
+
+/**
+ * dumps/gai-{YYYY-MM-DD}.json: the published dataset at the build date, without the two bulky
+ * record types, which `parts` lists with their paths: read the main file, then each part.
+ */
 export const ApiDumpFile = z.strictObject({
   build_date: IsoDate,
   methodology: MethodologyVersion,
   git: ApiGitInfo,
   countries: z.array(ApiCountryEntry),
-  events: z.array(ApiEvent),
-  sources: z.array(ApiSource),
   assessments: z.array(
     z.strictObject({
       country: Iso3,
@@ -938,8 +957,24 @@ export const ApiDumpFile = z.strictObject({
   corrections: z.array(ApiCorrection),
   replies: z.array(ApiReply),
   leads: z.array(z.strictObject({ id: LeadId, country: Iso3, indicator: IndicatorId })),
+  parts: z.array(ApiDumpPart),
 })
 export type ApiDumpFile = z.infer<typeof ApiDumpFile>
+
+/** dumps/gai-{YYYY-MM-DD}-sources.json: every source of the dataset, by id. */
+export const ApiDumpSourcesFile = z.strictObject({
+  build_date: IsoDate,
+  sources: z.array(ApiSource),
+})
+export type ApiDumpSourcesFile = z.infer<typeof ApiDumpSourcesFile>
+
+/** dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json: the events dated in one year, by country, date, id. */
+export const ApiDumpEventsFile = z.strictObject({
+  build_date: IsoDate,
+  year: Int,
+  events: z.array(ApiEvent),
+})
+export type ApiDumpEventsFile = z.infer<typeof ApiDumpEventsFile>
 
 // ---------------------------------------------------------------------------------------------
 // Path → schema
@@ -1006,7 +1041,17 @@ export const API_FILES: readonly ApiFileSpec[] = [
   {
     pattern: /^dumps\/gai-\d{4}-\d{2}-\d{2}\.json$/,
     schema: ApiDumpFile,
-    description: 'full dataset dump',
+    description: 'dataset dump, main file',
+  },
+  {
+    pattern: /^dumps\/gai-\d{4}-\d{2}-\d{2}-sources\.json$/,
+    schema: ApiDumpSourcesFile,
+    description: 'dataset dump, sources',
+  },
+  {
+    pattern: /^dumps\/gai-\d{4}-\d{2}-\d{2}-events-\d{4}\.json$/,
+    schema: ApiDumpEventsFile,
+    description: 'dataset dump, events of one year',
   },
 ]
 

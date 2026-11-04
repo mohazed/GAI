@@ -143,7 +143,9 @@ All paths are relative to `/api/v1/`.
 | `dumps/countries.csv`, `dumps/countries.scorecard.csv` | Every country at the build date, as the ranking table shows it, with and without scores |
 | `dumps/registry.csv` | The country registry: codes, names, regions, memberships, recognition of Palestine |
 | `dumps/scores-daily-{YYYY}.csv` | Daily scores, one file per year |
-| `dumps/gai-{YYYY-MM-DD}.json` | The whole published dataset at the build date |
+| `dumps/gai-{YYYY-MM-DD}.json` | The published dataset at the build date in JSON: the main file, which lists the next two kinds in `parts` |
+| `dumps/gai-{YYYY-MM-DD}-sources.json` | Every source of the dataset |
+| `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json` | The events dated in one calendar year |
 
 ### 3.1 `countries.json`
 
@@ -1721,17 +1723,18 @@ date,iso3,score,score_display,band,passivity_applied,A,B,C,D,E
 2026-01-02,DEU,-5,-5,passive,false,-3,0,-5,3,0
 ```
 
-**`dumps/gai-{YYYY-MM-DD}.json`**: the whole published dataset at the build date, in one JSON file. Top-level keys:
+**`dumps/gai-{YYYY-MM-DD}.json`, `dumps/gai-{YYYY-MM-DD}-sources.json`, `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json`**: the published dataset at the build date in JSON, in several files so that none nears the 25 MiB that Cloudflare Pages serves however many events the index holds (the whole dataset in one file was 26.5 MB at the end of Phase 1). The main file holds, as top-level keys:
 
 | Key | Holds |
 |---|---|
 | `build_date`, `methodology`, `git` | As in `manifest.json` (`methodology` is the version string) |
 | `countries` | Every registry entry, as in `countries.json` |
-| `events` | Every published event of the scored countries, as in section 3.3 |
-| `sources` | Every source of the dataset, as in section 3.3 |
 | `assessments` | One per scored country: `country`, `protocol_version`, `last_full_check`, `indicators` (the rows of section 3.2) |
 | `corrections`, `replies` | As in `corrections.json` and `replies.json` |
 | `leads` | Open leads: `id`, `country`, `indicator` |
+| `parts` | The other files of the dump, one entry each: `record` (`sources` or `events`), `path` (relative to `api/v1/`), `year` (the calendar year of the events in the file; `null` for the sources) and `count` (the number of records in the file). The sources file comes first, then the events files by year; only years that have events have a file |
+
+`dumps/gai-{YYYY-MM-DD}-sources.json` holds `build_date` and `sources`, every source of the dataset by id, as in section 3.3. `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json` holds `build_date`, `year` and `events`, the published events of the scored countries whose date falls in that year, by country, date and id, as in section 3.3. To rebuild the whole dataset in one object, read the main file, then each file of `parts`. `dumps/events.csv` and `dumps/sources.csv` hold the same events and sources in one table each.
 
 ## 4. Reproducing a build
 

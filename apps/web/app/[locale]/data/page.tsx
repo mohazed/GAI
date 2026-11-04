@@ -47,9 +47,13 @@ function downloads(files: { path: string; bytes: number }[]) {
           ? 2
           : p === countryTable
             ? 3
-            : p.startsWith('dumps/gai-')
+            : /^dumps\/gai-[\d-]{10}\.json$/.test(p)
               ? 4
-              : 5
+              : /^dumps\/gai-[\d-]{10}-sources\.json$/.test(p)
+                ? 4.1
+                : p.startsWith('dumps/gai-')
+                  ? 4.2
+                  : 5
   return files
     .filter(
       (f) =>
@@ -62,7 +66,12 @@ function downloads(files: { path: string; bytes: number }[]) {
 function downloadHolds(path: string, t: T): string {
   if (path.startsWith('dumps/scores-daily-'))
     return t('dataPage.dl.scoresDaily', { year: path.slice(19, 23) })
-  if (path.startsWith('dumps/gai-')) return t('dataPage.dl.gai')
+  if (path.startsWith('dumps/gai-')) {
+    // dumps/gai-{YYYY-MM-DD}.json, …-sources.json, …-events-{YYYY}.json (the JSON dump's parts).
+    const part = /^dumps\/gai-\d{4}-\d{2}-\d{2}-(sources|events-(\d{4}))\.json$/.exec(path)
+    if (part?.[2] !== undefined) return t('dataPage.dl.gaiEvents', { year: part[2] })
+    return part === null ? t('dataPage.dl.gai') : t('dataPage.dl.gaiSources')
+  }
   const keys: Record<
     string,
     'events' | 'sources' | 'assessments' | 'countries' | 'countriesScorecard' | 'registry'
