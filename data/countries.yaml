@@ -404,7 +404,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-22}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Burundi', url: 'https://presidence.gov.bi/', type: head_of_state, lang: [fr]}
+    - {label: 'Ministry of Foreign Affairs of Burundi', url: 'https://www.mae.gov.bi/', type: mfa, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidence.gov.bi and mae.gov.bi answered HTTP 200 to a request with a
+    browser User-Agent (both WordPress sites declaring lang="fr-FR"; Kirundi items also appear on the
+    Presidency's site) and list every post on a word through /wp-json/wp/v2/posts?search=. The President,
+    Évariste Ndayishimiye, is Chairperson of the African Union for 2026 (the 81st General Debate file); the
+    Ministry's minister is of Foreign Affairs, Regional Integration and Development Cooperation (Édouard
+    Bizimana in the 80th General Debate file).
 
 - iso3: BEL
   iso2: BE
@@ -456,7 +465,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1989-05-12}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Benin', url: 'https://diplomatie.gouv.bj/', type: mfa, lang: [fr]}
+    - {label: 'Government of the Republic of Benin', url: 'https://www.gouv.bj/', type: government, lang: [fr]}
+    - {label: 'Presidency of the Republic of Benin', url: 'https://presidence.bj/', type: head_of_state, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: diplomatie.gouv.bj (a landing page with no news items, lang="fr"),
+    www.gouv.bj and presidence.bj (both script-rendered, lang="fr") answered HTTP 200 to a request with a
+    browser User-Agent; www.diplomatie.gouv.bj and www.presidence.bj did not answer. The Foreign Minister of the
+    79th General Debate was Olushegun Adjadi Bakari (UN Meetings Coverage GA/12639); the 80th and 81st
+    statements were delivered by the Permanent Representative.
 
 - iso3: BFA
   iso2: BF
@@ -477,7 +495,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-21}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Burkina Faso', url: 'https://diplomatie.gov.bf/', type: mfa, lang: [fr]}
+    - {label: 'Government Information Service of Burkina Faso', url: 'https://gouvernement.gov.bf/', type: government, lang: [fr]}
+    - {label: 'Presidency of Faso', url: 'https://www.presidencedufaso.bf/', type: head_of_state, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: diplomatie.gov.bf (mae.gov.bf redirects to it), gouvernement.gov.bf and
+    www.presidencedufaso.bf answered HTTP 200 to a request with a browser User-Agent (lang="fr-FR"); the first
+    two list every post on a word through /wp-json/wp/v2/posts?search=, the Presidency's REST API is closed to
+    unauthenticated requests. The Foreign Minister is Karamoko Jean-Marie Traoré (the Ministry's front page and
+    the 81st General Debate file) and the Prime Minister Rimtalba Jean Emmanuel Ouédraogo (the 80th file).
 
 - iso3: BGD
   iso2: BD

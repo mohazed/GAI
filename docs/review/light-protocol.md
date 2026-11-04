@@ -1618,3 +1618,45 @@ One band change. Read critically (docs/06 §4 step 7): Luxembourg's Confronting 
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23: the web searches per indicator group (English, French, German, Arabic), the Luxembourg and Liechtenstein Government releases item by item, Liechtenstein's alignment with the EU listings, Monaco's 81st General Debate statement (a capture or the Government's copy), Yemen's Chairman's summit speeches on Saba, UNRWA's 2025 table, Comtrade for the four.
+
+## T-P21-31: BDI, BEN, BFA (2026-11-04)
+
+Light protocol (docs/06 §5) for Burundi, Benin and Burkina Faso (group 31, the first group of Task B in the Claude track, B-694), by a fresh Sonnet 5.5 session of the finish run (docs/10 B-775 to B-779). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): the session read the UN's General Debate files live (the 79th to 81st sessions, all French), the records and joint statements already archived (grep of `archive/text` for the three names, with and without accents), the Governments' sites that answer scripts (the Burundian Presidency and Ministry, the Burkinabè Ministry and Government Information Service, searched through their WordPress APIs), the UN Treaty Collection's status page for the Rome Statute, the generated tables, UNRWA tables, FTS, the SIPRI register and the ICJ and ICC lists.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2026_06_24_BFA_B6 | B6 | 2026-06-24 | -10 (scope `related`, unscored; flagged) | confirmed | official (UN depositary notification C.N.263.2026) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (the registry's dates of 22 December 1988, 12 May 1989 and 21 November 1988 have no Government document of the date in this session). Two documents were archived (the depositary notification by `--capture 20260802081235`; the Burundian Presidency's report of 22 December 2023 by Save Page Now); both replays fetched again with `curl --compressed` equal their index rows in bytes and SHA-256.
+
+### Burundi
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). One lead (`lead_20261104_BDI_1`, B10): the Presidency's report of 22 December 2023 of the audience for Israel's special envoy, in indirect speech (R4), 1,048 days old; not filed. General Debate statements: the 79th and 81st (the President, as Chairperson of the African Union) name neither Gaza nor Palestine; the 80th (Foreign Minister Bizimana) names 'les horreurs que nous observons à Gaza' with no call and no named violation. Not a state party to the Rome Statute since 27 October 2017. Not searched: the African Union's texts of the President's speeches as Chairperson, the Official Gazette, one search per indicator group in French and English (P-23).
+
+### Benin
+
+Assessments: has-events 1 (B1), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 16 (A3, A5 to A8, B11, B12, C2, C4 to C6, D4, D5, E1 to E3). Leads: none. The 79th statement was delivered by the Foreign Minister (GA/12639): it condemned the attacks of 7 October 2023 and called for dialogue with two States, with no ceasefire call; the 80th and 81st were delivered by the Permanent Representative (R3). B1: ten non-votes of the twelve qualifying votes, scored -2 each by the build (flagged for the author, B-777). The Ministry's site is a landing page and the Presidency's and Government's portals cannot be searched, so five indicators are left `unchecked` with the reason.
+
+### Burkina Faso
+
+Assessments: has-events 2 (B1, B6), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. B6: the withdrawal from the Rome Statute notified on 24 June 2026 (scope `related`, unscored, the default of Venezuela's, B-622 (3); if the author scores it, the preview goes from -6.9 to -1.9 because the event ends the passivity penalty). General Debate statements: the 79th (Foreign Minister) and 80th (Prime Minister) never name Gaza (R7); the 81st (Foreign Minister, for the Confederation of Sahel States) names 'les populations civiles de Gaza' with no call and no named violation. Not searched: the Presidency of Faso's news (its REST API is closed), the Burkinabè press, the Sahel states' joint announcement of September 2025 on the ICC, the Official Journal (P-23).
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Burundi two non-votes (A/RES/ES-10/21, A/RES/80/1), Burkina Faso five (ES-10/21, ES-10/22, ES-10/25, 79/232, 80/116), Benin ten (all but ES-10/22 and ES-10/23). None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BDI | -3.0 (-3) | -3.0 (-3) | Passive, unchanged | no event; the passivity penalty (-15) applies |
+| BEN | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | no event; B1 -11.0 (ten non-votes) and the passivity penalty (-15) |
+| BFA | -6.9 (-7) | -6.9 (-7) | Passive, unchanged | B6 is out of scope (`related`); with the scope `gaza` the score would be -1.9 (Passive): the B6 event, a negative qualifying event, ends the passivity penalty |
+
+No band change. Read critically (docs/06 §4 step 7): Benin's Enabling band rests on the build's treatment of ten non-votes at -2 each and on the passivity penalty; nothing hand-authored moves it.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23: the web searches per indicator group (French, English), Benin's Presidency and Government news, the African Union's texts of the Burundian President's speeches as Chairperson, the Sahel states' announcement on the ICC, the Burkinabè press, UNRWA's 2025 table, Comtrade for the three.
