@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { ChangesFeed } from '../../../components/ChangesFeed'
 import { StaleNotice } from '../../../components/StaleNotice'
 import { publicApi } from '../../../lib/api'
-import { longDate, monthLabel } from '../../../lib/format'
+import { frenchPunctuation, longDate, monthLabel } from '../../../lib/format'
 import { getT, isLang } from '../../../lib/i18n'
 import { siteMethodology } from '../../../lib/methodology'
 import { SITE_MODE } from '../../../lib/mode'
@@ -36,7 +36,9 @@ export async function generateMetadata({
 /**
  * Changes (docs/05 §6): the ChangesFeed of the latest weeks (changes/latest.json), by ISO week
  * with its filters; the build date and, once JavaScript runs, a notice when the build is more
- * than three days old; then the months, each linking its monthly report (/changes/{YYYY-MM}/).
+ * than three days old; the methodology changes open for comment, when there are any
+ * (methodology/proposals.yaml, docs/08 §1 step 3: "Proposed: v1.1.0, comment until …"); then the
+ * months, each linking its monthly report (/changes/{YYYY-MM}/).
  */
 export default async function Changes({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: lang } = await params
@@ -45,6 +47,7 @@ export default async function Changes({ params }: { params: Promise<{ locale: st
   const t = getT(lang)
   const latest = publicApi.changesLatest()
   const manifest = publicApi.manifest()
+  const proposals = publicApi.methodologyIndex().proposals
   const methodology = siteMethodology(publicApi.methodology(latest.methodology))
   const weeks = latest.weeks
   const from = weeks[weeks.length - 1]?.from ?? latest.build_date
@@ -75,6 +78,41 @@ export default async function Changes({ params }: { params: Promise<{ locale: st
           dateLabel={longDate(manifest.build_date, lang)}
         />
       </header>
+      {proposals.length === 0 ? null : (
+        <section
+          id="proposed"
+          aria-labelledby="proposed-title"
+          className="flex max-w-prose flex-col gap-4 border-t border-rule pt-6"
+        >
+          <h2 id="proposed-title" className="text-18 font-semibold">
+            {t('changesPage.proposedTitle')}
+          </h2>
+          <ul className="flex flex-col gap-6">
+            {proposals.map((p) => (
+              <li key={p.version} className="flex flex-col gap-1">
+                <p className="text-16 font-semibold">
+                  {t('changesPage.proposedLine', {
+                    version: p.version,
+                    date: longDate(p.comment_until, lang),
+                  })}
+                </p>
+                <p className="text-16">
+                  {lang === 'fr' ? frenchPunctuation(p.summary.fr) : p.summary.en}
+                </p>
+                <p className="text-14">
+                  <a href={p.pr_url}>{t('changesPage.proposedPr')}</a>
+                  {' · '}
+                  {p.discussion_url === null ? (
+                    <span className="text-ink-2">{t('changesPage.proposedNoDiscussion')}</span>
+                  ) : (
+                    <a href={p.discussion_url}>{t('changesPage.proposedDiscussion')}</a>
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <section id="feed" aria-labelledby="feed-title" className="flex flex-col gap-4">
         <h2 id="feed-title" className="text-18 font-semibold">
           {t('changesPage.feedTitle', { count: listed, weeks: weeks.length })}

@@ -424,6 +424,31 @@ export type Reviewer = z.infer<typeof Reviewer>
 export const ReviewersFile = z.strictObject({ reviewers: z.array(Reviewer) })
 export type ReviewersFile = z.infer<typeof ReviewersFile>
 
+// ---------------------------------------------------------------------------------------------
+// methodology/proposals.yaml (docs/08 §1 step 3): the open proposals, outside the version folders
+
+/**
+ * A methodology change under comment: the pull request that holds the new version folder, the
+ * Discussion (null until posted) and the last day of the 14-day window. The Changes page announces
+ * it ("Proposed: v1.1.0, comment until 2026-11-14") while the entry is in the file; the merge, or
+ * the withdrawal, of the pull request removes it.
+ */
+export const Proposal = z.strictObject({
+  version: MethodologyVersion,
+  pr_url: Url,
+  discussion_url: Url.nullable(),
+  /** Day the pull request was opened. */
+  opened: IsoDate,
+  /** Last day of the comment window (docs/08 §1 step 3: 14 days after the Discussion opens). */
+  comment_until: IsoDate,
+  /** One or two sentences: what changes. */
+  summary: LangText,
+})
+export type Proposal = z.infer<typeof Proposal>
+
+export const ProposalsFile = z.strictObject({ proposals: z.array(Proposal) })
+export type ProposalsFile = z.infer<typeof ProposalsFile>
+
 /** Every YAML file of a methodology version and its schema. */
 export const METHODOLOGY_FILES = {
   'indicators.yaml': IndicatorsFile,

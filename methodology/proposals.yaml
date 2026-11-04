@@ -1,0 +1,20 @@
+# proposals.yaml — methodology changes open for comment (docs/08 §1 step 3).
+#
+# One entry while a pull request that changes `methodology/` is open, from the day the Discussion is
+# posted to the merge or the withdrawal of the pull request; the Changes page shows each entry as
+# "Proposed: v1.1.0, comment until 2026-11-14" with the links, and methodology/index.json carries
+# the list (`proposals`). The file is empty when no proposal is open. The pull request itself
+# carries the diff table: the `Methodology diff` workflow (.github/workflows/methodology-diff.yml)
+# posts `pnpm methodology:diff --from <base>` as a comment on every pull request that touches
+# methodology/ (docs/08 §1 step 2). Schema: @gai/schema `ProposalsFile`.
+#
+# Entry (an example, not a proposal):
+#   - version: 1.1.0
+#     pr_url: "https://github.com/mohazed/GAI/pull/0"
+#     discussion_url: null            # the Discussion's link once it is posted
+#     opened: 2026-11-01
+#     comment_until: 2026-11-15       # 14 days after the Discussion opens
+#     summary:
+#       en: One sentence on what changes.
+#       fr: Une phrase sur ce qui change.
+proposals: []

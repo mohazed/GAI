@@ -14,6 +14,7 @@ import {
   currentMethodologyFolder,
   listMethodologyVersions,
   loadMethodology,
+  loadProposals,
   loadReviewers,
   type Methodology,
   parseBannedWords,
@@ -201,6 +202,46 @@ describe('temporary methodology roots', () => {
       expect(loadReviewers(root).value?.reviewers[0]?.name).toBe('Test Reviewer')
       writeFileSync(file(), entry.replace(/ {4}disclosure.*\n/, ''))
       const r = loadReviewers(root)
+      expect(r.value).toBeNull()
+      expect(rulesIn(r.issues)).toEqual(['schema.methodology'])
+    })
+  })
+
+  describe('loadProposals (methodology/proposals.yaml, docs/08 §1 step 3)', () => {
+    const file = () => join(root, 'methodology', 'proposals.yaml')
+
+    it('the repository file loads with no issue', () => {
+      const r = loadProposals(REPO_ROOT)
+      expect(r.issues).toEqual([])
+      expect(Array.isArray(r.value?.proposals)).toBe(true)
+    })
+
+    it('absent: no proposal, no issue', () => {
+      expect(loadProposals(root)).toEqual({ value: { proposals: [] }, issues: [] })
+    })
+
+    it('a valid entry loads; a missing comment date is reported', () => {
+      mkdirSync(join(root, 'methodology'), { recursive: true })
+      const entry = [
+        'proposals:',
+        '  - version: 1.1.0',
+        '    pr_url: "https://example.org/pull/1"',
+        '    discussion_url: null',
+        '    opened: 2026-11-01',
+        '    comment_until: 2026-11-15',
+        '    summary: { en: One change., fr: Un changement. }',
+        '',
+      ].join('\n')
+      writeFileSync(file(), entry)
+      const ok = loadProposals(root)
+      expect(ok.issues).toEqual([])
+      expect(ok.value?.proposals[0]).toMatchObject({
+        version: '1.1.0',
+        discussion_url: null,
+        comment_until: '2026-11-15',
+      })
+      writeFileSync(file(), entry.replace(/ {4}comment_until.*\n/, ''))
+      const r = loadProposals(root)
       expect(r.value).toBeNull()
       expect(rulesIn(r.issues)).toEqual(['schema.methodology'])
     })

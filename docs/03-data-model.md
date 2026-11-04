@@ -59,6 +59,7 @@ Slugs: lowercase ASCII, hyphens, ≤ 40 chars. IDs never change; a corrected eve
   name: {en: Germany, en_def: Germany, fr: Allemagne, fr_def: "l'Allemagne"}   # *_def: the UNTERM name with its article, the actor of generated summaries (P-13, P-18)
   region: Europe
   subregion: Western Europe
+  intermediate_region: null       # the M49 intermediate region where M49 gives one (Eastern Africa, Caribbean…; 81 entries), else null (P-20)
   un_member: true
   observer: false
   excluded: false                 # true only for ISR, PSE, with `excluded_reason`

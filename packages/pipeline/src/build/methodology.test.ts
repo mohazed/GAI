@@ -153,6 +153,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       changelog: CHANGELOG,
       frozen: new Set(),
       reviewers: [],
+      proposals: [],
     })
     expect(index).toEqual({
       build_date: '2026-09-27',
@@ -168,9 +169,32 @@ describe('methodologyIndex (methodology/index.json)', () => {
       ],
       changelog: CHANGELOG,
       reviewers: [],
+      proposals: [],
     })
     expect(ApiMethodologyIndex.parse(roundTrip(index))).toEqual(index)
     expect(apiSchemaFor('methodology/index.json')).toBe(ApiMethodologyIndex)
+  })
+
+  it('carries the open proposals as given', () => {
+    const proposal = {
+      version: '1.1.0',
+      pr_url: 'https://example.org/pull/1',
+      discussion_url: null,
+      opened: '2026-11-01',
+      comment_until: '2026-11-15',
+      summary: { en: 'One change.', fr: 'Un changement.' },
+    }
+    const index = methodologyIndex({
+      date: '2026-09-27',
+      current: real,
+      older: [],
+      changelog: null,
+      frozen: new Set(),
+      reviewers: [],
+      proposals: [proposal],
+    })
+    expect(index.proposals).toEqual([proposal])
+    expect(ApiMethodologyIndex.parse(roundTrip(index))).toEqual(index)
   })
 
   it('lists older versions first (superseded, oldest first) and points to frozen snapshots', () => {
@@ -184,6 +208,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       // data/snapshots/v0.9.0/ exists; v0.8.0 was never frozen; an unrelated folder is ignored.
       frozen: new Set(['v0.9.0', 'v0.1.0']),
       reviewers: [],
+      proposals: [],
     })
     expect(index.versions).toEqual([
       {
@@ -225,6 +250,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
       changelog: null,
       frozen: new Set(['v1.0.0']),
       reviewers: [],
+      proposals: [],
     })
     expect(index.versions[0]?.frozen).toBe('methodology/v1.0.0/')
   })
@@ -238,6 +264,7 @@ describe('methodologyIndex (methodology/index.json)', () => {
         changelog: null,
         frozen: new Set(),
         reviewers: [],
+        proposals: [],
       }),
     ).toThrow(`methodology/v0.9.0 and methodology/v1.0.0 both declare methodology version`)
   })

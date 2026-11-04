@@ -30,6 +30,7 @@ import {
   MethodologyDiffFile,
   MethodologyVersion,
   PassivityFile,
+  Proposal,
   Reviewer,
   SymmetryFile,
   ThresholdsFile,
@@ -282,6 +283,8 @@ const RegistryFields = {
   name: LangText,
   region: NonEmpty,
   subregion: NonEmpty,
+  /** The M49 intermediate region where M49 gives one (Eastern Africa, Caribbean…), else null. */
+  intermediate_region: NonEmpty.nullable(),
   un_member: z.boolean(),
   observer: z.boolean(),
   memberships: z.strictObject({
@@ -628,6 +631,11 @@ export const ApiMethodologyIndex = z.strictObject({
   changelog: z.string().nullable(),
   /** methodology/reviewers.yaml `reviewers` (docs/08 §2); empty until there are reviewers. */
   reviewers: z.array(Reviewer),
+  /**
+   * methodology/proposals.yaml `proposals` (docs/08 §1 step 3): the methodology changes under
+   * comment, announced on the Changes page; empty when none is open.
+   */
+  proposals: z.array(Proposal),
 })
 export type ApiMethodologyIndex = z.infer<typeof ApiMethodologyIndex>
 

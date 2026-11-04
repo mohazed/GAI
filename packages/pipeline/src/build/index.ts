@@ -731,6 +731,7 @@ export function buildData(input: BuildInput): BuildOutput {
       changelog: input.changelog,
       frozen,
       reviewers: input.reviewers,
+      proposals: input.proposals,
     }),
   )
   for (const s of input.snapshots) putText(`methodology/${s.path}`, s.bytes)
