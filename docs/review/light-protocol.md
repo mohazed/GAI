@@ -1340,3 +1340,56 @@ Iran's orders from Israel in SIPRI's register are of 1985 and 1986 (lines 408 to
 | LKA | +1.5 (+1) | +21.3 (+21) | Acting, unchanged | D3 +8.0; B9 +1.8 and +2.0; C2 −7.0; the 81st General Debate statement and the C2 event are inside 365 days and end the passivity penalty; without the C2 event +28.3, without the 81st statement +19.3, without both +11.3 |
 
 One band change (Iran, Passive to Acting). Read critically (docs/06 §4 step 7): Iran's band change rests on two General Debate addresses (one expired) and the Foreign Minister's speech at a broadcaster's forum, filed from the Ministry's own text; the 80th address alone keeps Iran at +1.6, the bottom of Acting. Sri Lanka's C2 event rests on two press reports of one Government release, flagged under R18 as a labour-recruitment memorandum between employment agencies.
+## T-P21-26: MDV, NPL, PAK (2026-11-04)
+
+Light protocol (docs/06 §5) for Maldives, Nepal and Pakistan, by a fresh Opus 5.5 session of the finish run (docs/10 B-750 to B-754). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent): the session read the primaries it could reach directly and records what it did not search, for P-23. Five documents archived (Pakistan's 80th and 81st General Debate files and the Maldives' ICJ declaration and the ICJ press release from existing Wayback captures with `--capture`, the Maldivian President's summit speech with Save Page Now); every replay fetched again with `curl --compressed` and equal to its index row in bytes and SHA-256. One failed capture (the Maldives' 80th General Debate file, 405) was removed from `archive/index.csv` by its exact id.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_10_01_MDV_B3 | B3 | 2024-10-01 | +15 | confirmed | court (ICJ declaration and press release, UNISPAL copies) |
+| evt_2024_12_31_MDV_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_09_15_MDV_B9 | B9 | 2025-09-15 | +5 | confirmed | official (President's Office) |
+| evt_2026_04_30_MDV_B9 | B9 | 2026-04-30 | +5 | confirmed | official (joint statement, Brazil's Ministry) |
+| evt_2024_12_31_PAK_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_09_23_PAK_B9 | B9 | 2025-09-23 | +2 | confirmed | official (S/PV.10003) |
+| evt_2025_09_26_PAK_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+| evt_2026_02_01_PAK_B9 | B9 | 2026-02-01 | +2 | confirmed | official (joint statement, SPA) |
+| evt_2026_04_30_PAK_B9 | B9 | 2026-04-30 | +5 | confirmed | official (joint statement, Brazil's Ministry) |
+| evt_2026_06_18_PAK_B9 | B9 | 2026-06-18 | +5 (west-bank, unscored) | confirmed | official (joint statement, UAE Ministry) |
+| evt_2026_08_06_PAK_B9 | B9 | 2026-08-06 | +5 | confirmed | official (joint statement, UAE Ministry) |
+| evt_2026_09_06_PAK_B9 | B9 | 2026-09-06 | +5 | confirmed | official (joint statement, UAE Ministry) |
+| evt_2026_09_25_PAK_B9 | B9 | 2026-09-25 | +5 (west-bank, unscored) | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (the registry's dates of 1988 have no Government document in this session).
+
+### Maldives
+
+Assessments (34 indicators): has-events 5 (B1, B3, B9, D1, D3), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: 2 (`lead_20261104_MDV_1`, the Foreign Minister's 80th General Debate statement with no capture; `lead_20261104_MDV_2`, the President's World Humanitarian Day message in indirect speech). Sources read: the General Debate files of the 79th (the President, expired), 80th (the Foreign Minister, no capture) and 81st sessions (the Vice President, R3), the President's Office's site search for Gaza, Palestine, Israeli passport, arrest warrant and Criminal Court (items read), the ICJ declaration and press release (archived), the Court's report A/80/4, UNRWA tables, FTS, the SIPRI register, the Assembly of States Parties' list (a party). The Foreign Ministry's site answers 403.
+
+### Nepal
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the General Debate files of the 79th (the Prime Minister: no Gaza), 80th (the Permanent Representative, R3) and 81st sessions (the Prime Minister: no Gaza), the Ministry's home page and press-release titles (texts served by script), UNRWA tables (no row), FTS (no flow), the SIPRI register (an order of 1969), the ICJ and ICC lists.
+
+### Pakistan
+
+Assessments: has-events 3 (B1, B9, D3), none-found 18 (B2 generated: a Council member in 2025 and 2026), no-data 2 (A2, C3), unchecked 11. Leads: none. Sources read: the General Debate files of the 79th (expired), 80th and 81st sessions (archived), the Security Council records already archived (S/PV.9841, 9929 and 10000: the Permanent Representative, R3; S/PV.10003: the Foreign Minister), the joint statements already archived, UNRWA tables, FTS (no flow), the SIPRI register, the ICJ and ICC lists. Not searched: the Ministry's and the Prime Minister's Office's releases item by item, Urdu sources, OIC and summit texts (B9 is at its cap).
+
+### Article 19 note (report only)
+
+All three have the twelve qualifying votes recorded (Nepal abstained on A/RES/ES-10/24, the others voted yes on each); none is among the Member States in arrears in the Secretary-General's letter of 3 September 2025 (A/80/362).
+
+### A4 data-year gap (report only)
+
+Nepal's only order from Israel in SIPRI's register is of 1969 (line 493); the Maldives and Pakistan have none.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| MDV | +1 | +49.0 (+49) | Acting to Confronting | B3 +15.0; B9 +9.5; D3 +8.0; the flotilla statement is inside 365 days and ends the passivity penalty (−15); without B3 +34 (Acting), without D3 +41 (Confronting) |
+| NPL | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; the passivity penalty (−15) applies |
+| PAK | +1 | +34.5 (+34) | Acting, unchanged | B9 at its cap (+10.0); D3 +8.0; four joint statements inside 365 days end the passivity penalty; without D3 +26.5 |
+
+One band change (the Maldives, Acting to Confronting). Read critically (docs/06 §4 step 7): the Maldives' band rests on the ICJ declaration (B3, whose direction is read from its construction of Articles I to IV and flagged for its restatement of the strict standard of intent) and on a D3 increase whose 2024 amount equals its FTS flow; Pakistan's D3 rests on an increase of USD 2,984 over 2022.

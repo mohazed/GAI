@@ -3177,7 +3177,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-28}
-  gov_sources: []
+  gov_sources:
+    - {label: "The President's Office (presidency.gov.mv)", url: 'https://presidency.gov.mv/', type: head_of_state, lang: [en, dv]}
+    - {label: 'Ministry of Foreign Affairs (foreign.gov.mv)', url: 'https://foreign.gov.mv/index.php/en/', type: mfa, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidency.gov.mv answered HTTP 200 (no lang attribute on the English pages; a Dhivehi version is at /home/dv/); its site search is served by
+    /api/Search/SearchResults?search=… (HTML). The President, head of state and head of government, is Mohamed Muizzu (from 17 November 2023). foreign.gov.mv answers HTTP 403 to scripted requests
+    (lang="en-US" on the 403 page) and was checked through its Wayback capture of 2026-04-24 (status 200).
 
 - iso3: MEX
   iso2: MX
@@ -3738,7 +3744,12 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-19}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.np)', url: 'https://mofa.gov.np/', type: mfa, lang: [en]}
+    - {label: 'Office of the Prime Minister and Council of Ministers (opmcm.gov.np)', url: 'https://www.opmcm.gov.np/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.np and www.opmcm.gov.np answered HTTP 200 (lang="en"; opmcm.gov.np/en/ answers 404; the Nepali pages were not checked). The Ministry's press releases
+    (/content/{id}/…) serve their text by script. The Prime Minister in office is Balendra Shah (the speaker of the 81st General Debate statement, 24 September 2026).
 
 - iso3: NRU
   iso2: NR
@@ -3850,7 +3861,12 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.pk)', url: 'https://mofa.gov.pk/', type: mfa, lang: [en]}
+    - {label: "Prime Minister's Office (pmo.gov.pk)", url: 'https://pmo.gov.pk/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.pk (lang="en") and pmo.gov.pk (no lang attribute, English) answered HTTP 200. The Prime Minister is Shehbaz Sharif (from 4 March 2024) and the Deputy
+    Prime Minister and Minister of Foreign Affairs Mohammad Ishaq Dar.
 
 - iso3: PAN
   iso2: PA
