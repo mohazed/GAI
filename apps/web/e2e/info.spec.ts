@@ -55,7 +55,7 @@ const TEXT = {
 const STANDPOINT =
   'The About page states openly that the project was started by someone who believes the response of most governments has been inadequate.'
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 async function json<T>(page: Page, path: string): Promise<T> {
   const res = await page.request.get(`/api/v1/${path}`)

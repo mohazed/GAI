@@ -46,7 +46,7 @@ interface MonthFile {
   }[]
 }
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 async function latest(page: Page): Promise<Latest> {
   const res = await page.request.get('/api/v1/changes/latest.json')
