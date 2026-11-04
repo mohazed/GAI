@@ -113,7 +113,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-17}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Prime Minister (kryeministria.al): the Government of Albania, news and statements of the Prime Minister', url: 'https://kryeministria.al/en/', type: head_of_government, lang: [en, sq]}
+    - {label: 'Ministry for Europe and Foreign Affairs (punetejashtme.gov.al): statements and news', url: 'https://punetejashtme.gov.al/en/', type: mfa, lang: [en, sq]}
+  notes: >-
+    gov_sources checked 2026-11-04: kryeministria.al answers a bot check (Incapsula, a 212-byte page) to scripts and was checked through its Wayback capture of 21 October 2026 (HTTP 200, 937,156 bytes, lang="en-US",
+    the Albanian Government Council of Ministers' page naming the Prime Minister Edi Rama); its news items were not read. punetejashtme.gov.al answers the same bot check live and in its Wayback capture of 15 October 2026 (a
+    212-byte challenge page), so its contents were not read; it is entered as the Ministry's official address (the Ministry, named Ministria për Evropën dhe Punët e Jashtme, is the one the Government's pages list) and
+    its pages cannot be searched by script. The Presidency's site (president.al) answers HTTP 403 (a Cloudflare challenge) and has no usable Wayback copy of the General Debate page; the President is Bajram Begaj. The
+    Prime Minister is Edi Rama (the General Debate pages of the 79th and 81st sessions, read).
 
 - iso3: AND
   iso2: AD
@@ -143,7 +151,13 @@
       hostages, the disarmament of Hamas and a Palestinian government without it; Diari
       d'Andorra, 23 September 2025, a lead); no act of recognition was found, so
       recognitions.csv has no row and no B8 event is generated. The date stays here as a lead.
-  gov_sources: []
+  gov_sources:
+    - {label: "Ministry of Foreign Affairs (govern.ad): releases, speeches and news of the Minister for Foreign Affairs", url: 'https://www.govern.ad/ca/ministeris-i-secretaries-d-estat/ministeri-d-afers-exteriors', type: mfa, lang: [ca]}
+    - {label: "Head of Government (govern.ad): Xavier Espot Zamora, the Govern d'Andorra's news and public agenda", url: 'https://www.govern.ad/ca/govern/el-cap-del-govern', type: head_of_government, lang: [ca]}
+  notes: >-
+    gov_sources checked 2026-11-04: both pages answered HTTP 200 to a request with a browser User-Agent (the Ministry's page after a redirect from exteriors.ad) and declare lang="ca-ES"; the portal also serves
+    English pages (govern.ad/en/…) for some sections. The Head of Government is Xavier Espot Zamora and the Minister for Foreign Affairs Imma Tor Faus (the pages' headings and the Govern's releases of 29 July 2025
+    and 12 June 2026, read). The portal's releases are in Catalan; the Ministry's page lists its news.
 
 - iso3: ARE
   iso2: AE
@@ -567,7 +581,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1992-05-27}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mvp.gov.ba): news and statements of the Minister for Foreign Affairs', url: 'https://mvp.gov.ba/bs', type: mfa, lang: [bs, hr, sr, en]}
+    - {label: 'Council of Ministers (vijeceministara.gov.ba): the Chairwoman of the Council of Ministers, the head of government', url: 'https://vijeceministara.gov.ba/hr', type: head_of_government, lang: [bs, hr, sr, en]}
+    - {label: 'Permanent Mission to the United Nations (bhmissionun.org): statements, including the General Debate addresses of the Chairman of the Presidency', url: 'https://bhmissionun.org/', type: un_mission, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mvp.gov.ba (redirect to /bs, HTTP 200, 250,452 bytes) and vijeceministara.gov.ba (redirect to /hr, HTTP 200, 323,274 bytes, lang="hr") answered a request with a browser User-Agent;
+    bhmissionun.org answered and its WordPress content API lists the posts that mention Gaza or Palestine. The Presidency's site (predsjednistvo.ba) did not answer and its Wayback capture is an error page. The state is
+    headed by a three-member Presidency whose Chairman rotates (Željko Komšić on 25 September 2025, Denis Bećirović on 25 September 2024 and 22 September 2026, the UN's pages of the statements); the Chairwoman of the
+    Council of Ministers is Borjana Krišto (the Council's page, search result).
 
 - iso3: BLR
   iso2: BY

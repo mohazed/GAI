@@ -1,0 +1,203 @@
+# Coverage record for Andorra (docs/03 §6). P-21 light protocol, session T-P21-27, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Govern d'Andorra's portal (govern.ad, HTTP 200, pages in Catalan; its releases read through web searches restricted to the site), the General Debate statements of the 80th and 81st sessions (the 78th and 79th have no Andorran file at gadebate.un.org; HTTP 404), the Minister's address at the two-State conference (UNISPAL), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English, Catalan and Spanish. Not searched in French. Time: see Albania.
+country: AND
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier AND
+    checked_at: '2026-11-04'
+  A2:
+    status: none-found
+    note: 'Generated from Comtrade (the run of 2026-11-04, docs/10 B-718): six A2 rows (HS 8526 only: the reporter-side USD 17,341 for 2023, 329,933 for 2024 and 74,659 for 2025; the mirror USD 9,000, 339,000
+      and 39,000), no flow large enough to score; the build shows none-found. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer AND
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and ''X'' (not voting) on A/RES/80/1 (19 September 2025), which the build scores at -2 whatever the reason. Article 19 note:
+      whether Andorra''s non-vote is a matter of Article 19 was not checked (the check belongs to the monthly run, docs/10 B-626).'
+    queries:
+    - unga_votes.csv, voter AND
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Andorra is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Andorra; docs/06 §8). The advisory proceedings
+      (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Andorra)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Andorra is a state party to the Rome Statute (the Assembly of States Parties' list, archived, line 89). No statement of the Head of Government or the Minister for Foreign Affairs on the warrants
+      of 21 November 2024 was found (web search in Catalan and Spanish returned none for Andorra); a position would need an archived Government text.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Andorra)'
+    - Andorra Govern Tribunal Penal Internacional ordre d'arrest Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Andorra were found; the Head of Government's 81st General Debate statement says Andorra supports "more than ever, the efforts of the International
+      Criminal Court to identify those responsible for the gravest crimes" (live file, read; no mention of Gaza or Israel).
+    queries:
+    - Andorra sanctions International Criminal Court (web search)
+    - gadebate.un.org Andorra 81st (live file read)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Andorra. On 22 September 2025 the Minister for Foreign Affairs announced at the UN conference that Andorra would recognise the State of Palestine
+      and the Head of Government said in the 80th General Debate (26 September 2025, OCR of the live file, no Wayback replay) 'last Monday we decided to recognize the State of Palestine ... This much-needed
+      gesture will take full diplomatic effect once a series of conditions are met, such as the release of hostages, the disarmament of Hamas, and the establishment of a Palestinian government that excludes
+      Hamas'. A conditional announcement is not a recognition (docs/10 B-720); no act of recognition was found, so no row and no B8 event. The registry's date 2025-09-22 stays as a lead (countries.yaml).
+      The Govern's release of 12 June 2026 speaks of 'the recent decision to recognise the State of Palestine' (indirect speech, read).
+    queries:
+    - recognitions.csv, row AND (none)
+    - govern.ad release of 12 June 2026 (read)
+    - gadebate.un.org Andorra 80th (OCR, live file read)
+    - 'un.org/unispal GA meeting coverage 22 September 2025 (archived: src_20250922_un-press_pal2251)'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Three events: the Minister''s address at the high-level conference of 29 July 2025 (+5), the joint statement of the 15 foreign ministers (''New York Call'') of 30 July 2025 (+2) and the joint
+      statement of 12 August 2025 on aid to Gaza (+5, famine); the B9 sum is +9.7 today, the three events being 462 to 449 days old (the cap is +10). Not filed: (1) the Head of Government''s 80th General
+      Debate statement (26 September 2025, the live file''s OCR, which has no Wayback replay): ''the situation in Gaza strikes us with severity'', ''respect for international humanitarian law by all parties'',
+      condemnation of ''all attacks against the civilian population'' and of the attacks of 7 October 2023: it names Gaza but no violation by a party and calls for no ceasefire, so neither tier applies;
+      (2) the Head of Government''s 81st statement (23 September 2026): the two-State solution only; no Gaza; (3) the Minister''s remarks at the Paris conference of civil societies (12 June 2026, the Govern''s
+      release, indirect speech: R4); (4) the Minister''s statements at the UN meeting of 22 September 2025 (UN Meetings Coverage, indirect speech); (5) the statements of the 85 states on the West Bank (February
+      2026; the speaker is not a B9 speaker, search result, not read).'
+    queries:
+    - govern.ad releases (site search through a web search)
+    - un.org/unispal fWLQMVfEDG_nyc_fr.pdf (archived)
+    - gadebate.un.org Andorra 80th and 81st (live files; the 80th by OCR)
+    - Imma Tor Gaza Israel (web searches in Catalan and Spanish)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Head of Government was found; the statements read call for respect for international humanitarian law by all parties
+      and condemn the attacks of 7 October 2023.
+    queries:
+    - Andorra Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions or travel bans on Israeli ministers or settlers by Andorra were found (Andorra is not an EU member).
+    queries:
+    - Andorra sanctions Israel settlers ministers (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; Andorra and Israel have no embassy in each other's country (Israel's embassy in Madrid serves Andorra, search results) and
+      the Minister said in 2024 that "the conditions are not met" for recognition (press, search result).
+    queries:
+    - Andorra Israel relations ambassador (web search)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement of Andorra with Israel is known to exist; none was suspended or reviewed.
+    queries:
+    - Andorra Israel trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found in the sources read (search results show a 2017 business meeting and a 2021 report on innovation cooperation, no treaty).
+    queries:
+    - Andorra Israel acord conveni signat 2024 2025 (web search in Catalan)
+    checked_at: '2026-11-04'
+  C3:
+    status: has-events
+    note: 'Generated from Comtrade (the run of 2026-11-04, docs/10 B-718): seven C3 rows (the reporter''s own total trade with Israel USD 119,222 in 2022, 123,264 in 2023, 1,540,011 in 2024 and 656,503
+      in 2025); the build computes the events. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor AND
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Andorra that falls to a suspension: no contribution was found suspended (searched for Andorra; no statement of a hold
+      appeared in the sources read).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Andorra
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events (D3 increased, from 31 December 2023, then from 31 December 2024): UNRWA''s table for 2023 gives USD 49,308 for Andorra, all in the Gaza Flash Appeal column, and its table for 2024
+      USD 42,146 pledged and 16,104 received, against no row in the 2022 table. A mechanical reading of small amounts, flagged as for Thailand (docs/10 B-711). The Govern''s release of 29 July 2025 says
+      Andorra made emergency contributions through UNRWA in December 2023 and November 2024.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Andorra
+    - govern.ad release of 29 July 2025 (archived)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Andorra was found in the search results read.
+    queries:
+    - Gaza medical evacuation Andorra (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Andorra was found in the search results read.
+    queries:
+    - Gaza refugees visa Andorra (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

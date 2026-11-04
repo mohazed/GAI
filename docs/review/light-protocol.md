@@ -1020,3 +1020,49 @@ All twelve qualifying votes are recorded for the three countries; nothing to rep
 | TLS | −2.0 (−2) | +2.5 (+3) | Passive to Acting | B9 +4.6 (one event, 406 days old); the passivity penalty −15 remains |
 
 Three band changes (Passive to Acting for all three). Read critically (docs/06 §4 step 7): Singapore's change rests on two +5 events and one qualifying event; without the 27 February 2026 event the score is +5.8 (Acting), without the two B9 and D4 events it would be Passive; Thailand's change rests on D3 (a mechanical reading of UNRWA's tables) and on the recognition row (without the row −0.5, Passive; without D3 −5.5); Timor-Leste's rests on one joint declaration (without it Passive).
+
+## T-P21-27: ALB, AND, BIH (2026-11-04)
+
+Light protocol (docs/06 §5) for Albania, Andorra and Bosnia and Herzegovina, by a fresh Sonnet 5.5 session of the finish run, which also ran the day's Comtrade fetch for 12 reporters (docs/10 B-718: rows for 10, none for WSM and TLS). Seven documents archived (two with Save Page Now, five from existing Wayback captures; every replay fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256); one failed capture (the 81st General Debate file of Bosnia, HTTP 405) removed by its exact id. 9 events (Albania 3, Andorra 5, Bosnia and Herzegovina 1), 3 leads (Albania 2, Bosnia 1), no recognition row.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_12_31_ALB_C2 | C2 | 2024-12-31 (no later than) | −10 | confirmed | official (embassy list) |
+| evt_2025_03_25_ALB_C2 | C2 | 2025-03-25 | −10 | confirmed | official (embassy list) and press |
+| evt_2025_09_24_ALB_B9 | B9 | 2025-09-24 | +2 | confirmed | official (OCR of a printout) |
+| evt_2023_12_31_AND_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset (UNRWA table) |
+| evt_2024_12_31_AND_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA table) |
+| evt_2025_07_29_AND_B9 | B9 | 2025-07-29 | +5 | confirmed | official |
+| evt_2025_07_30_AND_B9 | B9 | 2025-07-30 | +2 | confirmed | official |
+| evt_2025_08_12_AND_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_09_25_BIH_B9 | B9 | 2025-09-25 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build.
+
+### Albania
+
+Assessments (34 indicators): has-events 4 (B1, B9, C2, C3), none-found 18, no-data 1 (A2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: 2 (`lead_20261104_ALB_1` the medical evacuation of one child from Gaza, January 2025; `_2` the Prime Minister's address to the Knesset, 26 January 2026, a B10 question). Sources read: the 78th to 81st General Debate statements (the 80th, the President's, by OCR), A/79/PV.14, the Israeli Embassy's list of agreements, The Jerusalem Post, the Albanian Media and Information Agency (read, not archived), Periskopi, Daily Sabah, euronews.al. Not read: the Government's own sites (kryeministria.al, punetejashtme.gov.al, president.al: bot checks), the Albanian-language press.
+
+### Andorra
+
+Assessments: has-events 4 (B1, B9, C3, D3), none-found 18, not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the Govern d'Andorra's releases of 29 July 2025 and 12 June 2026, the Minister's address (UNISPAL), the joint statements of 30 July and 12 August 2025, the 80th and 81st General Debate statements (the 80th by OCR), the generated tables and UNRWA's tables. Not read: Catalan-language press beyond search results; the Butlletí Oficial.
+
+### Bosnia and Herzegovina
+
+Assessments: has-events 4 (A2, B1, B9, C3), none-found 18 (B2 not-applicable: 1), unchecked 11. Leads: 1 (`lead_20261104_BIH_1`, the Chairman of the Presidency's 81st General Debate statement, 22 September 2026, with no archivable official copy). Sources read: the 78th to 81st General Debate statements (live files; the 79th and 80th have Wayback replays), the Permanent Mission's site (content API), press reports of the Foreign Minister's remarks (search results, not read in full). Not read: the Presidency's site (no answer), the Foreign Ministry's own releases.
+
+### Article 19 note (report only)
+
+All twelve qualifying votes are recorded for Albania and Bosnia and Herzegovina. Andorra has a recorded non-vote on A/RES/80/1 (19 September 2025), which the build scores at −2 whatever the reason; whether it is an Article 19 case was not checked (B-626, the monthly run).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only (with the Comtrade rows fetched today).
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| ALB | −22.6 (−23) | −40.8 (−41) | Enabling | C2 −20.0 (two events at the category cap), B9 +1.8; the passivity penalty −15 remains; without the C2 events −21 (Enabling) |
+| AND | −3.0 (−3) | +14.7 (+15) | Passive to Acting | B9 +9.7, D3 +8.0; the passivity penalty −15 remains; without the D3 events +7, without the B9 events +5 (Acting either way) |
+| BIH | +11.5 (+11) | +16.1 (+16) | Acting | B9 +4.6 (one event, 405 days old); the Comtrade C3 event of 2026-03-10 is a qualifying event, so no passivity penalty before or after |
+
+One band change: Andorra from Passive to Acting. Read critically (docs/06 §4 step 7): either event group alone moves Andorra (the D3 events are a mechanical reading of small UNRWA amounts, the B9 events rest on the Minister's address of 29 July 2025 and two joint statements, all older than 365 days).
