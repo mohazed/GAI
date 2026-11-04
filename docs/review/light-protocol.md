@@ -1066,3 +1066,72 @@ All twelve qualifying votes are recorded for Albania and Bosnia and Herzegovina.
 | BIH | +11.5 (+11) | +16.1 (+16) | Acting | B9 +4.6 (one event, 405 days old); the Comtrade C3 event of 2026-03-10 is a qualifying event, so no passivity penalty before or after |
 
 One band change: Andorra from Passive to Acting. Read critically (docs/06 §4 step 7): either event group alone moves Andorra (the D3 events are a mechanical reading of small UNRWA amounts, the B9 events rest on the Minister's address of 29 July 2025 and two joint statements, all older than 365 days).
+
+## T-P21-28: HRV, MKD, MLT (2026-11-04)
+
+Light protocol (docs/06 §5) for Croatia, North Macedonia and Malta, by a fresh Sonnet 5.5 session of the finish run (docs/10 B-723 to B-728). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). 19 documents archived (15 from existing Wayback captures, 4 with Save Page Now; every replay fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256; one stub capture of the Jerusalem Post page removed by its exact id). 32 events (Croatia 12, Malta 19, North Macedonia 1), 1 lead (Malta), no recognition row.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_HRV_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset |
+| evt_2024_02_19_HRV_B9 | B9 | 2024-02-19 | +2 | confirmed | official |
+| evt_2024_04_19_HRV_B11 | B11 | 2024-04-19 | +5 | confirmed | official |
+| evt_2024_07_15_HRV_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_09_27_HRV_B9 | B9 | 2024-09-27 | +2 | confirmed | official |
+| evt_2025_01_17_HRV_C2 | C2 | 2025-01-17 | −10 | confirmed | official |
+| evt_2025_09_09_HRV_B9 | B9 | 2025-09-09 | +2 | confirmed | official |
+| evt_2025_09_16_HRV_B9 | B9 | 2025-09-16 | +5 | confirmed | official |
+| evt_2025_09_24_HRV_B9 | B9 | 2025-09-24 | +2 | confirmed | official |
+| evt_2025_09_27_HRV_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2026_02_25_HRV_B9 | B9 | 2026-02-25 | +5 | confirmed | official |
+| evt_2026_05_28_HRV_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+| evt_2026_08_24_MKD_C2 | C2 | 2026-08-24 | −10 | reported | press |
+| evt_2023_12_31_MLT_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset |
+| evt_2024_02_19_MLT_B9 | B9 | 2024-02-19 | +2 | confirmed | official |
+| evt_2024_04_19_MLT_B11 | B11 | 2024-04-19 | +5 | confirmed | official |
+| evt_2024_07_15_MLT_B11 | B11 | 2024-07-15 | +5 | confirmed | official |
+| evt_2024_10_07_MLT_A8 | A8 | 2024-10-07 | +5 | corroborated | press |
+| evt_2024_12_31_MLT_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset |
+| evt_2025_05_20_MLT_C1 | C1 | 2025-05-20 | +4 | confirmed | official |
+| evt_2025_07_21_MLT_B9 | B9 | 2025-07-21 | +5 | confirmed | official |
+| evt_2025_07_30_MLT_B9 | B9 | 2025-07-30 | +2 | confirmed | official |
+| evt_2025_08_10_MLT_B9 | B9 | 2025-08-10 | +5 | confirmed | official |
+| evt_2025_08_12_MLT_B9 | B9 | 2025-08-12 | +5 | confirmed | official |
+| evt_2025_08_21_MLT_B9 | B9 | 2025-08-21 | +5 | confirmed | official |
+| evt_2025_09_22_MLT_B9 | B9 | 2025-09-22 | +5 | confirmed | official |
+| evt_2025_09_22_MLT_D4 | D4 | 2025-09-22 | +5 | confirmed | official |
+| evt_2025_09_26_MLT_B9 | B9 | 2025-09-26 | +5 | confirmed | official |
+| evt_2025_09_27_MLT_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2025_12_03_MLT_B9 | B9 | 2025-12-03 | +5 | confirmed | official |
+| evt_2026_05_28_MLT_B11 | B11 | 2026-05-28 | +5 | confirmed | official |
+| evt_2026_09_25_MLT_B9 | B9 | 2026-09-25 | +2 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build.
+
+### Croatia
+
+Assessments (34 indicators): has-events 6 (B1, B9, B11, C2, D1, D3), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none (the President's and the Government's texts are official sources). Sources read: the Ministry's releases of 27 and 30 August and 9 September 2025, the President's site (about a dozen items of about 70 listed for Gaza, Palestine and Israel), the General Debate statements of the 78th to 81st sessions, the State Secretary's address at the two-state conference, the Ministry of the Sea's release of 17 January 2025, UNRWA's tables, SIPRI, the ICJ and ICC lists. Not read: the Croatian-language press beyond search results, the Sabor's records, `hina.hr` (bot check).
+
+### North Macedonia
+
+Assessments: has-events 2 (B1, C2), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: the General Debate statements of the 78th to 81st sessions (none cites Gaza, Palestine or Israel), the Jerusalem Post's reports of 25 and 28 August 2026, a digest of Macedonian headlines, the Western Wall Heritage Foundation's page, UNRWA's tables, SIPRI, the ICJ and ICC lists. Not read: the Ministry's and the Government's own news (client-rendered sites), the Macedonian- and Albanian-language press, MIA's pages.
+
+### Malta
+
+Assessments: has-events 9 (A8, B1, B8, B9, B11, C1, D1, D3, D4), none-found 13 (B2 among them: Malta sat on the Security Council and cast no veto), no-data 2 (A2, C3), unchecked 10. Leads: 1 (`lead_20261104_MLT_1`, the dates of the first arrivals of children from Gaza). Sources read: the Prime Minister's release PR251629 and his General Debate addresses of the 79th to 81st sessions (the 80th and 81st archived), the Foreign Minister's article in the Ministry's review of December 2025, MaltaToday and Lovin Malta, UNRWA's tables, SIPRI, the ICJ and ICC lists. Not read: the Department of Information's and the Ministry's own pages (HTTP 403), Maltese and Italian sources.
+
+### Article 19 note (report only)
+
+All twelve qualifying votes are recorded for the three states and none is in the Secretary-General's letter of 3 September 2025 (A/80/362): no Article 19 case.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only. The sensitivity rows are scored on a scratch copy of the data with `--root`.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| HRV | −5.2 (−5) | +14.8 (+15) | Passive to Acting | the Council's B11 listing of 28 May 2026 ends the passivity penalty (−15) and alone gives +14.8; the B9 events (cap +10) and the C2 event (−10) offset; without the President's three B9 events +8.4 (Acting) |
+| MKD | −24.0 (−24) | −13.0 (−13) | Enabling to Passive | the C2 event (reported, −4 after weighting) is a qualifying event inside 365 days and ends the passivity penalty (−15); without it −24 |
+| MLT | +9.5 (+9) | +56.0 (+56) | Acting to Confronting | B9 at the cap, B11, C1 +4, D3 ×2, D4 +5, A8 +5; without A8, C1 and D4 +47.5 (Confronting); without A8, C1, D4 and D3 +39.5 (Acting); the three Council listings and the generated rows only +29.5 (Acting) |
+
+Three band changes. Read critically (docs/06 §4 step 7): Croatia's rests on one EU Council decision filed under R8; North Macedonia's on a press-only report of agreements and a rule that lets a negative event end a penalty; Malta's on several flagged items (the D4 date, the single-word tier of 22 September 2025, the press-corroborated A8, the mechanical D3 events).

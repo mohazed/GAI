@@ -1,0 +1,218 @@
+# Coverage record for Croatia (docs/03 §6). P-21 light protocol, session T-P21-28, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign and European Affairs (mvep.gov.hr, HTTP 200; releases read through web searches and by address), the Government (vlada.gov.hr), the President's site (predsjednik.hr/en, searched through its content API for Gaza, Palestine and Israel: about 70 items listed, about a dozen read), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th archived, the 80th through the President's page), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Croatian. Not read: the Croatian-language press beyond search results, the Sabor's records, hina.hr (a bot check). Croatia is an EU member: the three Council listings (B11) and two joint statements (B9) are filed as for the other members (R8, B-444, B-446).
+# Seven B9 events, three B11 events, one C2 event, one D3 event. Leads: none (the Government's and the President's texts are official sources, which a lead does not accept).
+country: HRV
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier HRV
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): rows for Croatia of 2006 (Hermes-450 drones) and 2017 (UT-25/UT-30 turrets, TIV 4.8) and no order of the release''s own data year since the
+      war. The register also lists a Spike-MR/LR anti-tank missile order of 2023 with TIV 0 and delivery planned for 2026 (archive/text/src_20261005_sipri_register-supplier-israel.txt, line 177);
+      a 0-TIV order is not scored, as for India and Poland (docs/10 B-536 (7)). Left to the build. The Defence Minister''s visit to Israel in February 2026 and the talks on the David''s Sling
+      system (March 2026) produced no signed order in the sources read.'
+    queries:
+    - sipri_orders.csv, buyer HRV
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Croatia (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: on 23 February 2026 the President stated that in May 2025 he ordered the termination
+      of any cooperation between the Croatian Armed Forces and the Israeli Army and called on the Government to end every form of arms trade with Israel (src_20260223_predsjednik_armed-forces-israel).
+      A5 counts confirmed instances of cooperation with Israel, not their termination; no Government decision to match the order was found.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: the President called on the Government (23 February 2026) to suspend all planned
+      arms contracts with Israel; no Government decision suspending or refusing licences was found, and the Defence Minister said on 25 March 2026 that the David''s Sling system ''is not an option''
+      because of the President''s order (press, search results, not read).'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 7 of the 12 qualifying votes, an abstention on 4 and one no. All 12 are recorded, so no absence is scored; Croatia is not among the four Member
+      States in arrears in the Secretary-General''s letter of 3 September 2025 (A/80/362, src_20250903_undocs_a-80-362-article19, archived). The President stated on 28 and 30 October 2023 that
+      the Government did not consult him on the vote of 27 October 2023 (predsjednik.hr, titles read).'
+    queries:
+    - unga_votes.csv, voter HRV
+    - A/80/362 (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Croatia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for
+      Croatia and Hrvatska).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived 27 September 2026, searched for Croatia)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Croatia is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, line 120). No statement by the Prime Minister or the
+      Foreign Minister on the arrest warrants for Mr Netanyahu and Mr Gallant was found in the sources read.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Croatia)'
+    - Croatia ICC arrest warrant Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Croatia were found.
+    queries:
+    - Croatia sanctions International Criminal Court (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Croatia. Croatia has not recognised the State of Palestine: the President called for it on 28 August 2024, 18 June 2025, 27 August
+      2025 and 22 September 2025 (predsjednik.hr, read for the last three) and said he would support a proposal of the Government to the Sabor; the Prime Minister''s position, reported in search
+      results (not read), is that recognition depends on an agreement between the two sides. Left to the build.'
+    queries:
+    - recognitions.csv, row HRV (none)
+    - predsjednik.hr content API, search Palestine
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Seven events: the declaration of 26 EU foreign ministers (19 February 2024, +2), the Prime Minister''s General Debate address (27 September 2024, +2, flagged), the Prime Minister''s
+      words after receiving Israel''s Foreign Minister (9 September 2025, +2, flagged), the President''s answers to journalists (16 September 2025, +5), the President''s General Debate address
+      (24 September 2025, +2), the joint statement on patients (27 September 2025, +2) and the President''s remarks of 25 February 2026 (+5). Not filed: the Ministry''s releases of 27 August and
+      30 August 2025 (indirect speech, R4); the President''s remarks of 18 September 2025 (''The Israeli government continues to massacre people in Gaza'', with a call to ban European exports
+      of lethal weapons to Israel: no tier of docs/02 §2 beyond the characterisation filed on 16 September), 22 September 2025 (''a murderous regime''), 18 June 2025 (the Israeli leadership ''criminals'',
+      said in a statement on the escalation with Iran), 11 March 2026 (''What is killing in Gaza but terrorism'') and 23 February 2026 (''unacceptable actions and unprecedented trampling of all
+      norms of international humanitarian law'', which does not cite Gaza, R7); the State Secretary''s address at the two-state conference (29 July 2025, not a B9 speaker, R3). The Prime Minister''s
+      General Debate address of 22 September 2026 (the 81st session, read live, hr_en.pdf, no usable Wayback replay) supports a negotiated two-state solution and lists humanitarian assistance
+      in Gaza among Croatia''s actions, without a call: not filed. The Prime Minister did not say the word ceasefire in a quotation.'
+    queries:
+    - predsjednik.hr content API, search Gaza, Palestine, Israel (about a dozen items read)
+    - mvep.gov.hr releases (by address and web search)
+    - gadebate.un.org 78th to 81st sessions (Croatia)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Foreign Minister was found in the sources read: the Prime Minister''s quotations
+      call for a ceasefire in indirect speech and for unhindered aid. The Foreign Minister''s visit to Jerusalem in October 2023 and the Prime Minister''s meetings with the World Jewish Congress
+      are known only from headlines in search results (not read); statements of that month would be older than 730 days.'
+    queries:
+    - Plenković Izrael potpora (web search in Croatian)
+    - Croatia Israel support statement (web search)
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024, 15 July 2024 and 28 May 2026, adopted by unanimity (R8, B-446). No national sanctions by Croatia were found.'
+    queries:
+    - archive/text of the Council decisions (src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20260528_eur-lex_reg-impl-2026-1177)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found. On 6 March 2026 the Israeli Ambassador was summoned to the Office of the President over his remarks on the Iranian
+      embassy (not about Gaza), and on 18 May 2026 the Office of the President stated that Israel''s proposed new ambassador ''has not received, nor will he receive, the consent of the President
+      of the Republic ... due to the policies pursued by the current Israeli authorities'' (src_20260518_predsjednik_israel-ambassador-consent). Refusing consent to a successor does not recall,
+      downgrade or sever anything while the Ambassador is in post, and the Government did not say it shared the refusal: listed for the author as a reading to decide (default: no B12 event).'
+    queries:
+    - Croatia Israel ambassador recalled downgraded (web search)
+    - predsjednik.hr content API, search Israel
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Croatia is reported among the member states that opposed the review of Article 2 of the EU-Israel Association Agreement at the Foreign Affairs Council of 20 May 2025 (MaltaToday, 21
+      May 2025, relaying Euronews'' diplomatic sources: ''Bulgaria, Croatia, Cyprus, the Czech Republic, Germany, Greece, Hungary, Italy and Lithuania were said to be against''); states that opposed
+      get no C1 event (docs/02 §2 C1).'
+    queries:
+    - EU Association Agreement review Croatia position (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'One event: the memorandum of cooperation in electronic communications and postal services between the Ministry of the Sea, Transport and Infrastructure and Israel''s Ministry of Communications,
+      signed on 17 January 2025 (flagged under R18). The strategic partnership memorandum of 28 December 2020 and the development cooperation memorandum of 29 May 2023 pre-date the war. No signed
+      instrument followed the Defence Minister''s visit to Israel of February 2026 in the sources read.'
+    queries:
+    - Croatia Israel memorandum sporazum potpisan 2024 2025 2026 (web searches)
+    - mmpi.gov.hr press release of 17 January 2025 (archived)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Croatian Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Government states EUR 4 million of aid by 9 September 2025,
+      including EUR 1 million for children through UNICEF and 400 tonnes of flour (src_20250909_mvep_plenkovic-sa-ar-two-state).'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor HRV
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have a 2023 row for Croatia and none in 2022 or 2024; no suspension of a Croatian contribution was found.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Croatia
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2023 to 31 December 2024): UNRWA''s table for 2023 gives USD 269,687 for Croatia in the Gaza flash appeal column against no row in 2022; the
+      2024 table has no row, which equals the 2022 level, so there is no event from 31 December 2024. The 2025 table is not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Croatia
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans and no field hospital deployed by Croatia was found. The State Secretary for Political Affairs said on 29 July 2025 that Croatia ''is ready
+      to offer psychological rehabilitation to children from Gaza by hosting them in Croatia'' (UNISPAL, read, not archived), and the Ministry announced the same readiness at the end of July 2025
+      according to search results (index.hr, Hina; not read): a readiness, not a programme, and no arrival was found.'
+    queries:
+    - Gaza medical evacuation Croatia (web search in English and Croatian)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Croatia was found.
+    queries:
+    - Gaza refugees visa Croatia (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

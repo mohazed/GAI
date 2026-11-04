@@ -2079,7 +2079,15 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign and European Affairs (mvep.gov.hr): releases and news of the Minister, in Croatian and English', url: 'https://mvep.gov.hr/', type: mfa, lang: [hr, en]}
+    - {label: 'Government of the Republic of Croatia (vlada.gov.hr/en): the Prime Minister and the Government, news and statements', url: 'https://vlada.gov.hr/en', type: head_of_government, lang: [en, hr]}
+    - {label: 'Office of the President of the Republic (predsjednik.hr/en): statements and addresses of the President', url: 'https://www.predsjednik.hr/en/', type: head_of_state, lang: [en, hr]}
+  notes: >-
+    gov_sources checked 2026-11-04: all three sites answered HTTP 200 to a request with a browser User-Agent. mvep.gov.hr declares no lang attribute on its home page (its text is Croatian, its press
+    releases are published in English and Croatian); vlada.gov.hr/en declares lang="en" (vlada.gov.hr, lang="hr"); predsjednik.hr/en serves a WordPress site with a content API
+    (/en/wp-json/wp/v2/news?search=…) that lists every item on a word. The Prime Minister is Andrej Plenković, the Minister of Foreign and European Affairs Gordan Grlić Radman (the Ministry's releases
+    of 30 August and 9 September 2025) and the President Zoran Milanović (the President's site).
 
 - iso3: HTI
   iso2: HT
@@ -3227,7 +3235,13 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and Foreign Trade (mfa.gov.mk): news and statements of the Minister', url: 'https://mfa.gov.mk/', type: mfa, lang: [mk]}
+    - {label: 'Government of the Republic of North Macedonia (vlada.mk): news and statements of the Prime Minister', url: 'https://vlada.mk/', type: head_of_government, lang: [mk]}
+  notes: >-
+    gov_sources checked 2026-11-04: both sites answered HTTP 200 to a request with a browser User-Agent; neither declares a lang attribute on its home page and both are in Macedonian (the Government's
+    site offers an English version at vlada.mk/?ln=en-gb, which returned the same Macedonian home page to a script). Both are client-rendered Laravel/Livewire applications: the home pages name the
+    Minister Timčo Mucunski (mfa.gov.mk) and the Prime Minister Hristijan Mickoski (vlada.mk), but their news items are not reachable by script, so no Ministry release was read.
 
 - iso3: MLI
   iso2: ML
@@ -3279,7 +3293,14 @@
       in data/structured/recognitions.csv (P-14) from
       src_20250922_gov-mt_recognition-palestine, dated 2025-09-22; B8 is generated from that
       table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry for Foreign Affairs and Tourism (foreign.gov.mt): press releases, speeches and The Malta Review of Foreign Affairs', url: 'https://foreign.gov.mt/', type: mfa, lang: [en]}
+    - {label: 'Office of the Prime Minister (primeminister.gov.mt): the Prime Minister, Robert Abela, news and statements', url: 'https://primeminister.gov.mt/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: foreign.gov.mt, primeminister.gov.mt and www.gov.mt (the Department of Information's press releases) answer HTTP 403 (a bot challenge, 5,655 bytes) to a request with
+    a browser User-Agent and to Save Page Now, so they were checked through their Wayback captures (foreign.gov.mt of 21 October 2026 and primeminister.gov.mt of 11 January 2026, both HTTP 200 with
+    lang="en-US"; the second names Robert Abela). Files on foreign.gov.mt (the Review of December 2025) and the Department of Information's release PR251629 have good Wayback captures. The Deputy Prime Minister
+    and Minister for Foreign Affairs and Tourism is Ian Borg (the Ministry's journal of December 2025 and a Government release of May 2026, read in search results).
 
 - iso3: MMR
   iso2: MM
