@@ -1247,3 +1247,48 @@ Serbia: orders from Israel of 2022 to 2024 in SIPRI's register (lines 583 to 587
 | AGO | +1.5 (+1) | +14.5 (+14) | Acting, unchanged | B8 +3.0 and three B9 events (+1.8, +4.6, +4.6); the passivity penalty still applies (the last B9 is 407 days old) |
 
 One band change. Read critically (docs/06 §4 step 7): Serbia's rests on one `reported` C2 event of a single origin, filed 'no later than' the day of the report and flagged as a technical instrument; the author may remove it (the band returns to Passive). The Holy See's B9 events rest on the rank reading of B-736 (the Pope as head of state; the Secretary of State as head-of-government equivalent). Angola's two +5 events are the President's own legal characterisation and named violations, in texts of the Presidency.
+
+## T-P21-24: VNM, AFG, BGD (2026-11-04)
+
+Light protocol (docs/06 §5) for Viet Nam, Afghanistan and Bangladesh, by a fresh Opus 5.5 session of the finish run (docs/10 B-740 to B-744). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Five documents archived (three from existing Wayback captures with `--capture`, two with Save Page Now; every replay fetched again with `curl --compressed` and equal to its index row in bytes and SHA-256).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_12_31_VNM_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA table) |
+| evt_2024_09_27_BGD_B9 | B9 | 2024-09-27 | +5 | confirmed | official |
+| evt_2025_07_29_BGD_B9 | B9 | 2025-07-29 | +5 | confirmed | official |
+| evt_2026_02_26_BGD_B9 | B9 | 2026-02-26 | +2 | confirmed | official (name from press) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (the registry's 1988 dates have no Government document in this session).
+
+### Viet Nam
+
+Assessments (34 indicators): has-events 3 (B1, D1, D3), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: none. Sources read: the delegation's General Debate files of the 79th to 81st sessions (none cites Gaza; the 80th calls for 'ceasefires … in conflict zones' and speaks of 'the Palestinian people': R7), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists; web searches in English and Vietnamese. The Ministry's statements on Gaza are the spokesperson's (R3).
+
+### Afghanistan
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1 (`lead_20261104_AFG_1`, the Taliban leader's Eid message of June 2025, FDD's Long War Journal). Sources read: the General Debate files (none exists for the 79th to 81st sessions), the Taliban authorities' Ministry of Foreign Affairs (`mfa.gov.af/en`, statements on Gaza with no named speaker), UNRWA tables, the SIPRI register, the ICJ and ICC lists, the Secretary-General's Article 19 letter. The Taliban authorities do not hold the UN seat: their statements are leads until the author decides (B-742).
+
+### Bangladesh
+
+Assessments: has-events 3 (B1, B9, D1), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1 (`lead_20261104_BGD_1`, the Chief Adviser's 80th General Debate address, UNB). Sources read: the General Debate pages and files of the 79th to 81st sessions (the 79th archived), the Ministry's press-release listing and its Permanent Mission to the OIC (the Foreign Minister's statement of 26 February 2026, archived), UNISPAL's text of the Foreign Adviser's statement at the two-State conference and the UN's press release (archived), UNRWA tables (USD 50,000 a year, no D3), FTS, the SIPRI register, the ICJ and ICC lists.
+
+### Article 19 note (report only)
+
+Viet Nam and Bangladesh have all twelve qualifying votes recorded (yes on each). Afghanistan has yes on A/RES/ES-10/21 and ES-10/22 and no vote on the ten from A/RES/ES-10/23 (10 May 2024) to A/RES/80/116; it is one of the four Member States in arrears under Article 19 in the Secretary-General's letter of 3 September 2025 (A/80/362, line 25: minimum payment USD 448,288) and on the Assembly's Article 19 page of 2026. The build scores each absence at −2 (−20 points before decay; −11.0 of B1 counted on 2026-11-04). The votes are those of the mission that holds the seat.
+
+### A4 data-year gap (report only)
+
+Viet Nam's orders from Israel in SIPRI's register are of 2006 to 2018 (lines 833 to 841), none in the window. Bangladesh and Afghanistan have no orders from Israel.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| VNM | +1.5 (+1) | +9.5 (+9) | Acting, unchanged | D3 +8.0; the passivity penalty still applies (the D3 event is 673 days old) |
+| AFG | −26.0 (−26) | −26.0 (−26) | Enabling, unchanged | no event; B1 −11.0 from ten absences under Article 19 arrears and the passivity penalty (−15) |
+| BGD | +1.5 (+1) | +22.5 (+22) | Acting, unchanged | B9 +4.0 (29 July 2025, decayed) and +2.0 (26 February 2026); the OIC statement is inside 365 days and ends the passivity penalty (−15); without it the score is +5.5 |
+
+No band change. Read critically (docs/06 §4 step 7): Bangladesh's +22.5 rests on the OIC statement, whose speaker is unnamed in the official text (named by one press report) and whose call is made while a ceasefire was formally in force; and on the reading of the interim Government's Chief Adviser and Foreign Adviser as head of government and foreign minister (B-741). Afghanistan's −26 is mostly the Article 19 absences and the passivity penalty; its speakers are the author's decision (B-742).

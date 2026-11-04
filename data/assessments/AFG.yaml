@@ -1,0 +1,177 @@
+# Coverage record for Afghanistan (docs/03 §6). P-21 light protocol, session T-P21-24, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (none exists), the Taliban authorities' Ministry of Foreign Affairs (mfa.gov.af/en, site search for Gaza, titles read), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the Secretary-General's Article 19 letter; web searches in English. Not searched: Pashto and Dari sources, the statements of the Permanent Mission at the United Nations (its site did not answer), the Taliban authorities' statements item by item.
+# No event. Leads: one (B9, the leader's message of June 2025). Rival authorities: the speaker question is the author's (docs/10 B-742).
+country: AFG
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier AFG
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Afghanistan from Israel in the register (the register''s rows that name Afghanistan are other states'' orders ''for use in Afghanistan'',
+      2007 to 2012). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer AFG
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Afghanistan (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on the first two qualifying votes (A/RES/ES-10/21 and ES-10/22) and no vote recorded on the ten from A/RES/ES-10/23 (10 May 2024) to A/RES/80/116, each scored
+      −2 by the build whatever the reason. Afghanistan is among the four Member States in arrears under Article 19 in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19,
+      line 25: minimum payment USD 448,288) and on the Assembly''s Article 19 page of 2026 (src_20261013_un-ga_article19-page), so the absences are probably a loss of vote, not a choice: reported for the
+      Article 19 check (B-626; P-23, P-24). The votes are those of the delegation that holds Afghanistan''s seat (appointed by the former Islamic Republic).'
+    queries:
+    - unga_votes.csv, country AFG
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Afghanistan is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Afghanistan).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Afghanistan (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - mfa.gov.af/en/?s=Gaza (read)
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Afghanistan is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, line 87). No statement on the warrants of 21 November 2024 by a B5
+      speaker was found; the Taliban authorities' positions are not read as the state's (docs/10 B-742).
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Afghanistan (read)
+    - mfa.gov.af/en/?s=Gaza (read)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - mfa.gov.af/en/?s=Gaza (read)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors were found.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Afghanistan. The registry gives a date of 1988 (countries.yaml recognises_palestine); no Government document of that date was found, so no
+      row is added (R21).
+    queries:
+    - recognitions.csv, AFG
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. Afghanistan made no General Debate statement in the 79th to 81st sessions (no delegation file: gadebate.un.org …/{79,80,81}/af_en.pdf answer 404). The Taliban authorities'' Ministry
+      of Foreign Affairs (mfa.gov.af/en, ''IEA-MoFA'') published about a dozen statements on Gaza from 2023 to 2025 (its site search for Gaza lists, among others, the statements on the Rafah tent camp,
+      the Kamal Adwan hospital, the displacement of Gaza''s residents and the resumption of attacks in March 2025): they name no speaker (R3) and are statements of de facto authorities that do not hold
+      Afghanistan''s United Nations seat; the leader''s Eid message of June 2025 is a lead (lead_20261104_AFG_1). Default adopted (docs/10 B-742): statements of the Taliban authorities are not filed as
+      Afghanistan''s B9/B10 events until the author decides whose statements count; flagged with Myanmar''s reading (B-707), which went the other way for a government in office that the UN seat does not
+      represent.'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/af_en.pdf (404)
+    - mfa.gov.af/en/?s=Gaza (read)
+    - 'web search: Muttaqi Gaza statement Islamic Emirate foreign minister Israel 2025'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel by any Afghan authority was found.
+    queries:
+    - mfa.gov.af/en/?s=Gaza (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Afghanistan is not an EU member (R8) and no sanctions on settlers or Israeli ministers were found.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: Afghanistan has no diplomatic relations with Israel (none to recall or sever).
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Afghanistan is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel was found; Afghanistan has no diplomatic relations with Israel.
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv for this donor. Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor AFG
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'Afghanistan has no row in UNRWA''s donor tables of 2022, 2023 and 2024 (archived, searched for Afghanistan): no baseline and no suspension.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Afghanistan (not found)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No D3 event: no row in the 2022, 2023 or 2024 UNRWA tables.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Afghanistan (not found)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gazans was found.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans was found.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

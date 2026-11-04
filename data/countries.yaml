@@ -70,7 +70,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of the Taliban authorities ("Islamic Emirate"), English pages (mfa.gov.af/en)', url: 'https://mfa.gov.af/en/', type: mfa, lang: [en]}
+    - {label: 'Permanent Mission of Afghanistan to the United Nations (appointed by the former Islamic Republic), read through Wayback', url: 'http://www.afghanistan-un.org/', type: mission, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.af answered HTTP 200 (the home page lang="ps", the English section /en/ lang="en-US"; its site search /en/?s=Gaza lists the Ministry's statements on Gaza
+    of 2023 to 2025, none with a named speaker); the Taliban authorities' Prime Minister's Office (pmo.gov.af) answered a Cloudflare challenge ('Just a moment...') and alemarahenglish.af HTTP 403, so
+    no head-of-government entry is given; the Permanent Mission's site (afghanistan-un.org) did not answer from this network and has a Wayback capture of 12 May 2026 (status 200). Afghanistan's United
+    Nations seat is held by the mission of the former Islamic Republic while the Taliban authorities govern; whose statements count for B9/B10 is the author's decision (docs/10 B-742).
 
 - iso3: AGO
   iso2: AO
@@ -484,7 +491,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.bd): press releases', url: 'https://mofa.gov.bd/pages/press-releases', type: mfa, lang: [en, bn]}
+    - {label: "Prime Minister's Office (pmo.gov.bd)", url: 'https://pmo.gov.bd/', type: head_of_government, lang: [en]}
+    - {label: 'Permanent Mission of Bangladesh to the OIC, Jeddah (oicpm.mofa.gov.bd): the Foreign Minister''s OIC statements', url: 'https://oicpm.mofa.gov.bd/', type: mission, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.bd, its press-release listing (/pages/press-releases, items in English and Bengali), pmo.gov.bd and oicpm.mofa.gov.bd answered HTTP 200 with lang="en";
+    the press-release listing has no site search; cao.gov.bd (the Chief Adviser's Office of the interim Government) did not answer. The Prime Minister is Tarique Rahman (the 81st General Debate statement
+    of 24 September 2026); the interim Government of Chief Adviser Muhammad Yunus (8 August 2024 to February 2026) had a Foreign Adviser, Touhid Hossain; the Foreign Minister in February 2026 was Dr
+    Khalilur Rahman (The Financial Express, 28 February 2026), who presides over the 81st session of the General Assembly (Viet Nam's 81st statement): the Foreign Minister after September 2026 was not checked.
 
 - iso3: BGR
   iso2: BG
@@ -5381,7 +5396,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-19}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.vn)', url: 'https://mofa.gov.vn/', type: mfa, lang: [vi]}
+    - {label: 'Government portal (chinhphu.vn)', url: 'https://chinhphu.vn/', type: head_of_government, lang: [vi]}
+    - {label: 'Government news, English (en.baochinhphu.vn)', url: 'https://en.baochinhphu.vn/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.vn (lang="vi-VN"), chinhphu.vn (lang="vi") and en.baochinhphu.vn (lang="en") answered HTTP 200; en.mofa.gov.vn did not answer and president.gov.vn answered a
+    Cloudflare challenge. The President is To Lam (the 81st General Debate statement of 22 September 2026; Luong Cuong delivered the 80th); a search result (Quan doi nhan dan, 12 August 2026) names the
+    Prime Minister as Le Minh Hung, not checked on a Government page; the Minister of Foreign Affairs in 2025 was Bui Thanh Son, also a Deputy Prime Minister.
 
 - iso3: VUT
   iso2: VU
