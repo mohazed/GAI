@@ -2957,7 +2957,13 @@
     since: null
     note: >-
       Intent stated only; no recognition found as of 2026-09-28 (docs/06 §8).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Principality of Liechtenstein', url: 'https://www.regierung.li/en/', type: government, lang: [en, de]}
+  notes: >-
+    gov_sources checked 2026-11-04: regierung.li answered HTTP 200 to a request with a browser User-Agent (the
+    English pages declare lang="de"); it lists the members of the Government (the Prime Minister Brigitte Haas,
+    the Deputy Prime Minister Sabine Monauni, responsible for the Ministry of Foreign Affairs, Environment and
+    Culture) and the press releases (/medienportal-page/16444/press-releases). llv.li answered HTTP 403.
 
 - iso3: LKA
   iso2: LK
@@ -3068,7 +3074,14 @@
       data/structured/recognitions.csv (P-14) from
       src_20250922_gouvernement-lu_recognition-palestine, dated 2025-09-22; B8 is generated
       from that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Grand Duchy of Luxembourg', url: 'https://gouvernement.lu/en.html', type: government, lang: [en, fr]}
+    - {label: 'Ministry of Foreign and European Affairs, Defence, Development Cooperation and Foreign Trade', url: 'https://mae.gouvernement.lu/en.html', type: mfa, lang: [en, fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: gouvernement.lu and mae.gouvernement.lu (maee.gouvernement.lu redirects to it)
+    answered HTTP 200 to a request with a browser User-Agent (lang="en" on the English pages; French pages under
+    /fr.html). The Prime Minister is Luc Frieden and the Deputy Prime Minister and Minister for Foreign Affairs
+    Xavier Bettel (signature lines of the archived joint statements of 2025).
 
 - iso3: LVA
   iso2: LV
@@ -3158,7 +3171,14 @@
       Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
       data/structured/recognitions.csv (P-14) from src_20250922_un-press_pal2251, dated
       2025-09-22; B8 is generated from that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Principality of Monaco', url: 'https://www.gouv.mc/', type: government, lang: [fr]}
+    - {label: 'Prince’s Palace of Monaco', url: 'https://www.palais.mc/fr', type: head_of_state, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: gouv.mc answers HTTP 403 to a scripted request; its Wayback capture of
+    18 October 2026 is the Government's portal ('Portail Officiel du Gouvernement Princier de Monaco',
+    lang="fr-FR", 704,261 bytes); palais.mc answered HTTP 200 (lang="fr"). The Minister of State heads the
+    Government; external relations are a Government Counsellor-Minister's portfolio within gouv.mc.
 
 - iso3: MDA
   iso2: MD
@@ -5593,9 +5613,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Saba News Agency (Yemen News Agency)', url: 'https://www.sabanew.net/', type: news_agency, lang: [ar]}
   notes: >-
-    Scored like every other country; direct hostilities are outside the scale (docs/07).
+    Scored like every other country; direct hostilities are outside the scale (docs/07). gov_sources checked
+    2026-11-04: Saba (sabanew.net, the news agency of the Government that holds the UN seat; its front page reports
+    the Presidential Leadership Council's Chairman) answered HTTP 200 to a request with a browser User-Agent
+    (lang="en" declared, Arabic content). mofa.gov.ye is the ministry of the de facto authorities in Sana'a (its
+    Wayback capture of 8 August 2025 names the 'Government of Change and Construction') and is not listed; no
+    site of the Government's Ministry of Foreign Affairs or of the Presidency was reached in this session.
 
 - iso3: ZAF
   iso2: ZA

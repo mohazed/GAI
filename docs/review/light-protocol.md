@@ -1546,3 +1546,75 @@ No band change. Read critically (docs/06 §4 step 7): Oman's +22 rests on two fl
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23: the web searches per indicator group (English, Arabic, French), the Omani Ministry's posts one by one, the Lebanese Council of Ministers and Ministry, the Syrian Ministry and SANA, UNRWA's 2025 table, Comtrade for the three.
+
+## T-P21-49: YEM, LIE, LUX, MCO (2026-11-04)
+
+Light protocol (docs/06 §5) for Yemen, Liechtenstein, Luxembourg and Monaco (group 49 with the former group 50, Monaco, folded in), by a fresh Opus 5.5 session of the finish run (docs/10 B-770 to B-774). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the four has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): the session read the UN's General Debate files live, the joint statements and UN records already archived (grep of `archive/text` for the four names), the generated tables, the UNRWA tables, the ICJ and ICC lists and the Governments' sites, and records what it did not search, for P-23. Two documents archived: Luxembourg's 80th General Debate file (`--capture 20251002052836`, equal to the live file) and the Liechtenstein Government's page of the Deputy Prime Minister (Save Page Now); both replays fetched again with `curl --compressed` equal their index rows in bytes and SHA-256. No failed row was left in `archive/index.csv`.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_LIE_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 (small increase, flagged) | confirmed | dataset (UNRWA tables) |
+| evt_2024_12_31_LIE_D3 | D3 | 2024-12-31 | +8 (ninth column pair, flagged) | confirmed | dataset (UNRWA tables) |
+| evt_2025_07_21_LIE_B9 | B9 | 2025-07-21 | +5 (minister by continuity, flagged) | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_08_12_LIE_B9 | B9 | 2025-08-12 | +5 (minister by continuity, flagged) | confirmed | official (joint statement, archived for another signatory) |
+| evt_2023_12_31_LUX_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2024_02_19_LUX_B9 | B9 | 2024-02-19 | +2 (decayed) | confirmed | official (joint statement, archived for another signatory) |
+| evt_2024_04_19_LUX_B11 | B11 | 2024-04-19 | +5 (west-bank, unscored) | confirmed | official (Council release) |
+| evt_2024_07_15_LUX_B11 | B11 | 2024-07-15 | +5 | confirmed | official (Council release, EUR-Lex) |
+| evt_2024_12_31_LUX_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_05_07_LUX_B9 | B9 | 2025-05-07 | +5 | confirmed | official (joint statement, signature line) |
+| evt_2025_05_16_LUX_B9 | B9 | 2025-05-16 | +5 (the Prime Minister) | confirmed | official (joint statement, signature line) |
+| evt_2025_05_19_LUX_B9 | B9 | 2025-05-19 | +2 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_07_21_LUX_B9 | B9 | 2025-07-21 | +5 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_07_30_LUX_B9 | B9 | 2025-07-30 | +2 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_08_10_LUX_B9 | B9 | 2025-08-10 | +5 | confirmed | official (joint statement, signature line) |
+| evt_2025_08_12_LUX_B9 | B9 | 2025-08-12 | +5 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_08_21_LUX_B9 | B9 | 2025-08-21 | +5 (west-bank, unscored) | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_08_29_LUX_B9 | B9 | 2025-08-29 | +5 | confirmed | official (joint statement, signature line) |
+| evt_2025_09_26_LUX_B9 | B9 | 2025-09-26 | +2 (flagged tier) | confirmed | official (General Debate file) |
+| evt_2025_09_27_LUX_B9 | B9 | 2025-09-27 | +2 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2025_12_14_LUX_B9 | B9 | 2025-12-14 | +5 (the Irish reading, flagged) | confirmed | official (letter, signature block) |
+| evt_2026_01_05_LUX_B9 | B9 | 2026-01-05 | +2 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2026_02_24_LUX_B9 | B9 | 2026-02-24 | +5 (west-bank, unscored) | confirmed | official (joint statement, archived for another signatory) |
+| evt_2026_05_28_LUX_B11 | B11 | 2026-05-28 | +5 (same tier, no points) | confirmed | official (EUR-Lex) |
+| evt_2026_06_08_LUX_B9 | B9 | 2026-06-08 | +2 | confirmed | official (joint statement, archived for another signatory) |
+| evt_2023_12_31_MCO_D3 | D3 | 2023-12-31 (ended 2024-12-31) | +8 (Projects column, flagged) | confirmed | dataset (UNRWA tables) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (Luxembourg's and Monaco's rows of 22 September 2025 exist; Liechtenstein has not recognised; Yemen's 1988 recognition has no Government document of the date in this session). Where a joint statement does not name Luxembourg's Foreign Minister, Xavier Bettel is named by the continuity of the post (he signs four of the archived texts); Liechtenstein's Sabine Monauni is named from the Government's archived page and the continuity of the post (both flagged).
+
+### Yemen
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. The B9/B10 speakers are those of the Government that holds the UN seat (the Presidential Leadership Council; flagged, as Libya and Syria); the de facto authorities in Sana'a are not the state's speakers and their ministry's site (`mofa.gov.ye`) is not registered. Sources read: the General Debate files of the 79th (the Chairman Rashad al-Alimi: the Israeli war on the Palestinian people must stop, no Gaza, R7; older than 730 days), 80th (Gaza named as a moral test, no call; no usable capture) and 81st sessions (garbled text layer, no capture), the joint statements already archived (none names Yemen as a signatory), UNRWA tables (no row), FTS, the SIPRI register, the ICJ and ICC lists. Not searched: Saba's reports of the Chairman's summit speeches, the Foreign Minister's statements, the press.
+
+### Liechtenstein
+
+Assessments: has-events 4 (B1, B9, D1, D3), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 12 (A3, A5 to A8, B11, C4 to C6, E1 to E3). Leads: none. Sources read: the 81st General Debate file (no Gaza; the 79th and 80th have no file), the joint statements already archived (two name Liechtenstein), the Government's site (members of the Government; the Foreign Minister's page archived), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (a state party). Not searched: the Government's press releases item by item, the law gazette for an alignment with the EU settler listings (B11 left `unchecked`).
+
+### Luxembourg
+
+Assessments: has-events 6 (B1, B8, B9, B11, D1, D3), none-found 14, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. Sources read: the 80th General Debate file (the Prime Minister; the 79th and 81st have no file), the fifteen joint statements already archived that name Luxembourg, the Government's release of the recognition (no named speaker, R3), the Council's three listings, UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (a state party). Not searched: the Government's and the Ministry's releases item by item (C1 position, B5 on the warrants, D4), the press.
+
+### Monaco
+
+Assessments: has-events 3 (B1, B8, D3), none-found 16, no-data 3 (A2, C3, D1), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. Sources read: the General Debate files of the 79th (the Sovereign Prince, no Gaza) and 81st sessions (the Minister of State: 'appelle toutes les parties à consolider ce cessez-le-feu fragile' in Gaza, a call-tier reading, but no Wayback capture and no press source, so neither an event nor a lead), the joint statements already archived (none names Monaco), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (not a party). Not reached: gouv.mc (HTTP 403 to a script; registered from its Wayback capture).
+
+### Article 19 note (report only)
+
+The four have the twelve qualifying votes recorded; Monaco has a non-vote on A/DEC/80/506 (12 September 2025), scored −2 by the build (B-690), and is not among the Member States in arrears in A/80/362, so the non-vote is not explained by Article 19. Liechtenstein abstained on ES-10/24.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| YEM | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; the passivity penalty (−15) applies |
+| LIE | +1.5 (+1) | +17.5 (+18) | Acting, unchanged | B9 +8.05 (two statements, decay 0.78 and 0.83); D3 2024 +8.0; the passivity penalty still applies (the latest B9 is 449 days old) |
+| LUX | +9.5 (+9) | +47.5 (+47) | Acting to Confronting | B9 +10 (capped; sum +38.4), B11 +5, D3 2024 +8; four qualifying events inside 365 days (B9 of 14 December 2025, 5 January and 8 June 2026; B11 of 28 May 2026) end the passivity penalty (+15); without the B9 events +37.5 (Acting) |
+| MCO | +5.0 (+5) | +5.0 (+5) | Acting, unchanged | the 2023 D3 ended on 2024-12-31; the passivity penalty applies |
+
+One band change. Read critically (docs/06 §4 step 7): Luxembourg's Confronting band rests on the B9 cap reached by the joint statements every EU signatory has (B-444) and on the B11 listings; without the B9 events it stays Acting. The Luxembourg General Debate reading and the Kallas-letter reading are flagged; Liechtenstein's and Monaco's D3 increases are small or in non-programme columns (flagged).
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23: the web searches per indicator group (English, French, German, Arabic), the Luxembourg and Liechtenstein Government releases item by item, Liechtenstein's alignment with the EU listings, Monaco's 81st General Debate statement (a capture or the Government's copy), Yemen's Chairman's summit speeches on Saba, UNRWA's 2025 table, Comtrade for the four.
