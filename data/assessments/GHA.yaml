@@ -1,0 +1,208 @@
+# Coverage record for Ghana (docs/03 §6). P-21 light protocol, session T-P21-36, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (presidency.gov.gh, WordPress REST API: /wp-json/wp/v2/posts?search= for Gaza, Palestine, Palestinian, Israel, genocide, ceasefire, hostages, UNRWA, two-state, Netanyahu, International Criminal Court, ICC, Iran, Qatar, Hamas,
+# Belgrade, Non-Aligned, General Assembly, UNGA, United Nations; the pages that matched opened), the Ministry of Foreign Affairs' site (mfa.gov.gh, REST API: Gaza, Palestine, Palestinian, Israel, Israeli, flotilla, Middle East, Qatar, Iran, Hamas, ICC, UNRWA, two-state;
+# site search /?s= for six words; the releases on Israel and Palestine opened), the UN's General Debate pages (79th and 80th read through Wayback; 81st not captured, live site bot-checked) and files, the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome
+# Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31 to T-P21-35 and T-P21-46 to T-P21-49):
+# no press item outside the Government's own sites was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none; one lead (B9), see docs/10 B-798.
+country: GHA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier GHA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists two older orders by Ghana from Israel (data years 1959, 0.02 TIV, and
+      1972, 7 TIV); A4 reads only the rows of a release''s own data year (docs/10 B-536 (7)), so they are noted, not scored. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer GHA (rows of 1959 and 1972)
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Ghana (found: two older orders)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country GHA
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: Ghana was a non-permanent member of the Security Council from 1 January 2022 to 31 December 2023 (countries.yaml memberships.unsc), so the first months of the window fall in its term;
+      unsc_vetoes.csv holds no veto by Ghana.
+    queries:
+    - unsc_vetoes.csv, GHA (not found)
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Ghana is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Case 186 (advisory proceedings) is not B3 or B4.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Ghana supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Ghana is a state party to the Rome Statute (signed 18 July 1998, ratified 20 December 1999: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 142); no withdrawal is recorded. No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Presidency''s searches for International Criminal Court, ICC and Netanyahu
+      found one unrelated item (a swearing-in of 10 February 2026) and the Ministry''s searches for ICC found items of 2018 to 2025 on other subjects.'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Ghana (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'presidency.gov.gh REST search: International Criminal Court, ICC, Netanyahu, arrest warrant'
+    - 'mfa.gov.gh REST search: ICC, International Criminal Court'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal by Ghana was found in the sources read.
+    queries:
+    - 'presidency.gov.gh REST search: Netanyahu, arrest warrant (none)'
+    - 'mfa.gov.gh REST search: ICC'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Ghana were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Ghana. The registry gives a recognition since 29 November 1988, before the window; the President''s 80th statement says that Ghana "has long
+      recognised the state of Palestine" (src_20250925_un-gadebate_gh-mahama-ag80, line 144) without a date, and no Government document with the date was read (R21, left for P-23). No recognition
+      after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, GHA (no row)
+    - archive/text/src_20250925_un-gadebate_gh-mahama-ag80.txt (read)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed; one lead (lead_20261104_GHA_1). (1) The President, John Dramani Mahama, is head of state and head of government (R3). His 80th General Debate statement (25 September
+      2025, src_20250925_un-gadebate_gh-mahama-ag80, lines 143 to 148) deplores the denial of visas to President Abbas, states that Ghana "has long recognised the state of Palestine and supported
+      a two-state solution" and speaks of "hundreds of thousands of innocent people who have been facing collective punishment and forced starvation for no reason other than the fact that they
+      are Palestinian"; it never names Gaza (R7), so no event (read as citing Gaza it would be a +5 event, 405 days old: flagged for the author, in the lead). (2) At the 65th anniversary summit
+      of the Non-Aligned Movement in Belgrade (1 September 2026) the Presidency''s report puts the call on Gaza in indirect speech (src_20260901_presidency-gh_mahama-nam-belgrade, line 3; R4):
+      the lead. (3) President Nana Addo Dankwa Akufo-Addo''s 79th statement (25 September 2024, src_20240925_un-gadebate_gh-akufo-addo-ag79, line 117; 770 days, expired) names Gaza only to say
+      that the Security Council "is struggling to make a decisive intervention in the tragic, ongoing war in Gaza": no call, no violation, neither tier. (4) The 81st statement (September 2026):
+      the UN''s page has no Wayback capture and the live site answers a bot check (not worked around), so the text was not read; the Presidency''s search for Gaza returns no report of the Assembly
+      week. (5) The Ministry''s releases on Palestine and Israel are meetings (the Deputy Minister with the Ambassador of Palestine, 5 November 2025: "Ghana''s position for a two-state solution";
+      the Non-Aligned Movement mid-term review, 22 October 2025: "the question of Palestine").'
+    queries:
+    - 'presidency.gov.gh REST search: Gaza (2 hits: 1 September 2026, 7 November 2025), Palestine, Palestinian, Israel (1), genocide (3), ceasefire, hostages, two-state, Hamas (none)'
+    - 'presidency.gov.gh REST search: Belgrade, Non-Aligned, General Assembly, UNGA, United Nations (the pages that matched opened)'
+    - 'mfa.gov.gh REST search: Gaza (none), Palestine, Palestinian, Israel, Hamas; site search /?s='
+    - gadebate.un.org/en/{79,80}/ghana and gastatements/{79,80}/ (Wayback replays; the 81st has no capture)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the Presidency''s or the Ministry''s items read. The
+      Ministry''s release of 24 September 2025 (Deputy Minister receiving the Israeli Ambassador) and the Presidency''s item of 27 June 2026 (a remark on "US-Israel-Iran tensions" and the economy)
+      are not B10.'
+    queries:
+    - 'presidency.gov.gh REST search: Israel, Gaza'
+    - 'mfa.gov.gh REST search: Israel, Israeli'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the sources read. This rests on the Presidency's and the Ministry's searches only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found. The Ministry''s releases show contacts continuing: the Deputy Minister received the Israeli Ambassador on 24 September 2025 (the Ministry''s
+      release of 25 September 2025, read, not archived) and led the delegation to the 3rd Ghana-Israel Political Dialogue in Jerusalem on 21 January 2026 (src_20260123_mfa-gh_ghana-israel-political-dialogue);
+      neither is an act under B12. This rests on the Presidency''s and the Ministry''s searches only (P-23).'
+    queries:
+    - 'mfa.gov.gh REST search: Israel, Israeli (releases of 2025 and 2026 opened)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Ghana is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found. The Ministry''s release of the 3rd Ghana-Israel Political Dialogue (Jerusalem, 21 January 2026, src_20260123_mfa-gh_ghana-israel-political-dialogue;
+      co-chaired by Israel''s Deputy Minister for Foreign Affairs) lists diplomatic cooperation, trade and investment, security, innovation, agriculture and capacity-building as topics and reports
+      that both sides "agreed to sustain regular consultations": no signing. No treaty register was read (P-23).'
+    queries:
+    - 'mfa.gov.gh REST search: Israel (releases opened)'
+    - 'presidency.gov.gh REST search: Israel (one item, economy)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of GHA to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor GHA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Ghana has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Ghana in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Ghana was found in the sources read. The Presidency's item of 7 November 2025 on humanitarian support (Jamaica,
+      Cuba, Sudan) does not concern Gaza.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

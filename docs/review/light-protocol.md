@@ -1839,3 +1839,50 @@ No band change. Read critically (docs/06 §4 step 7): all three bands rest on B1
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Amharic, Tigrinya), Eritrea's Ministry of Foreign Affairs and Presidency (no site found), the Prime Minister of Ethiopia's posts, Ethiopia's BRICS declarations, the Ministry's releases of the March 2025 visit to Israel, the Government documents for the Ethiopian recognition date, the Article 19 check, and Comtrade for the three.
+
+## T-P21-36 — Ghana, Guinea, the Gambia (2026-11-04)
+
+Light protocol, group 36, sixth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-798 to B-801). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Governments' own sites through their REST APIs and site searches (Ghana's Presidency and Ministry; Guinea's Presidency, Government portal, Ministry and Prime Minister's site; the Gambia's State House and Ministry), the UN's General Debate pages and files of the 79th and 80th sessions through Wayback (the live `gadebate.un.org` answers scripted requests with a bot check, not worked around), the ICJ's case 192 page (live), the Treaty Collection's page on the Rome Statute (live) and the generated tables.
+
+Three events (the Gambia) and one lead (Ghana).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_05_04_GMB_B9 | B9 | 2024-05-04 | +5 (flagged tier; expired, weight zero) | confirmed | official (State House's page of the President's address) |
+| evt_2025_06_06_GMB_B9 | B9 | 2025-06-06 | +2 (flagged: 'such atrocities') | confirmed | official (State House's page of the President's message) |
+| evt_2025_08_25_GMB_B9 | B9 | 2025-08-25 | +5 (flagged: Ministry's release with two quoted passages) | confirmed | official (Ministry's release of 27 August 2025) |
+| lead_20261104_GHA_1 | lead, B9 | 2026-09-01 | the President at the Non-Aligned summit, Gaza in the Presidency's indirect speech | press (Presidency's report) |
+
+Eleven documents were archived (Ghana: the Presidency's report of 1 September 2026, the Ministry's release of 23 January 2026, and the 79th and 80th General Debate files recorded from Wayback captures 20250424210546 and 20251217131154; Guinea: the Government's texts of the Prime Minister's 79th and the President's 81st speeches; the Gambia: State House's address of 4 May 2024, Koriteh message of 9 April 2024, 79th statement and Eid al-Adha message of 6 June 2025, and the Ministry's release of 27 August 2025). Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Ghana
+
+Assessments (34 indicators): has-events 1 (B1), none-found 20, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: one (B9). The President's 80th General Debate statement (25 September 2025) deplores the denial of visas to President Abbas and speaks of people facing 'collective punishment and forced starvation' because they are Palestinian, never naming Gaza (R7: read as citing Gaza it would be +5, flagged); at the Non-Aligned summit in Belgrade (1 September 2026) the Presidency's report puts the call on Gaza in indirect speech (the lead). President Akufo-Addo's 79th names Gaza in a passage on Security Council reform (neither tier; expired). The Ministry's releases on Palestine and Israel are meetings (the third Ghana-Israel Political Dialogue in Jerusalem, 21 January 2026: no signing). B1: twelve yes votes. Security Council member to 31 December 2023 (no veto). State party to the Rome Statute; not on the Court's list of interveners.
+
+### Guinea
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Events: none. Leads: none. The President's 81st General Debate statement (24 September 2026, the Government's text) names none of Gaza, Palestine or Israel; the Prime Minister's 79th (28 September 2024; expired) lists 'entre Israël et la Palestine' among wars with no call; the 80th was by the Minister of State, Secretary-General of the Presidency (not a B9 speaker; the file has no capture and was not read). The four Government sites' searches found no statement on the war and no agreement with Israel. B1: twelve yes votes. State party to the Rome Statute; not on the Court's list of interveners.
+
+### The Gambia
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Events: three (see the table). President Barrow, Chairman of the OIC since the Banjul Summit of May 2024, commended South Africa's case before the ICJ and said that impunity for 'grave violations of international law, such as those committed against the Palestinian people, will not be tolerated' (4 May 2024, expired); called upon Israel 'to cease its military operations and ensure unhindered access for humanitarian aid' to Gaza (Eid al-Adha message, 6 June 2025); and Foreign Minister Njie told the OIC Council of Foreign Ministers in Jeddah (25 August 2025) that 'forceful displacement of the Palestinian people' and the destruction of their homes would not bring peace (the Ministry's release prints the passage in quotation marks). Not filed: the Koriteh message of 9 April 2024 (never names Gaza), the 79th statement (no call), the 80th (Vice President), Foreign Minister Tangara's Istanbul statement (indirect speech). B1: eleven yes votes and one non-vote (A/RES/80/1). State party to the Rome Statute; not on the Court's list of interveners.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: the Gambia one non-vote (A/RES/80/1), Ghana and Guinea none. None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| GHA | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; twelve yes votes in B1 and the passivity penalty (-15) |
+| GIN | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | no event; twelve yes votes in B1 and the passivity penalty (-15) |
+| GMB | -3.0 (-3) | +2.6 (+3) | Passive to Acting | B9 events of June 2025 (+1.38) and August 2025 (+4.27); the 2024 event is expired; passivity (-15) still applies. Without the August event about -1.6 (Passive) |
+
+One band change (the Gambia), resting on the Ministry's release of the Foreign Minister's statement (flagged tier and source). Read critically (docs/06 §4 step 7): Ghana's and Guinea's bands rest on B1 and the passivity penalty, not on any act found in the window; Ghana's lead could change that if the President's words are found.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English and French), the text of the Gambian Foreign Minister's statements (Istanbul, June 2025; Jeddah, 25 August 2025) and the OIC's record of the President's Summit address, the Gambia's 81st statement, the Ghanaian President's words at the Non-Aligned summit and his 81st statement, Guinea's 80th file, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
