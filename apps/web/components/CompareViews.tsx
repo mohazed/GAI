@@ -26,9 +26,11 @@ export interface CompareSeries {
   name: LangText
   /**
    * Change points of the daily score (`series` of countries/{ISO3}.json), or of the score with
-   * the reader's weights (docs/02 §9).
+   * the reader's weights (docs/02 §9). `score` is to one decimal (the table beneath the chart);
+   * `score_display`, the integer read from the full-precision score, labels the end of the line,
+   * as the ranking, the country page and the share card show it (P-22 dry run, docs/10 B-865).
    */
-  points: readonly { date: string; score: number }[]
+  points: readonly { date: string; score: number; score_display: number }[]
 }
 
 export interface CompareChartProps {
@@ -106,7 +108,7 @@ export function CompareChartView({ lang, t, mode, methodology, series, to }: Com
             const st = compareStyle(i)
             const last = s.points[s.points.length - 1]
             const ly = labelYs[i] ?? 0
-            const value = last !== undefined ? ` ${signed(last.score, lang)}` : ''
+            const value = last !== undefined ? ` ${signed(last.score_display, lang)}` : ''
             return (
               <g key={s.iso3}>
                 <line

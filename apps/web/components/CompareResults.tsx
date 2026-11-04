@@ -52,17 +52,17 @@ function weightedPoints(
 ): CompareSeries['points'] {
   if (isDefaultWeights(weights)) return file.series
   const model = combineModel(methodology)
-  return file.series.map((p) => ({
-    date: p.date,
-    score: userScore(
+  return file.series.map((p) => {
+    const s = userScore(
       {
         categories: p.categories,
         passivity: { value: p.passivity_applied ? methodology.passivityPoints : 0 },
       },
       weights,
       model,
-    ).score,
-  }))
+    )
+    return { date: p.date, score: s.score, score_display: s.display }
+  })
 }
 
 /**
