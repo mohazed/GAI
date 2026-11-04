@@ -1,0 +1,203 @@
+# Coverage record for Gabon (docs/03 §6). P-21 light protocol, session T-P21-35, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (presidence.ga, WordPress REST API: /wp-json/wp/v2/posts?search= for Gaza, Palestine, Palestinien, Israël, génocide, Hamas, cessez-le-feu, Proche-Orient, Netanyahou, Cour pénale, CPI, CIJ, UNRWA, humanitaire, Liban, Iran), the Ministry of Foreign Affairs' site (diplomatie.gouv.ga, site search /?s= for Gaza, Palestine, Israël; five notes opened), the Gabonese Press Agency (agpgabon.ga, REST API: Palestine, Israël, Gaza Gabon, génocide, cessez-le-feu, Cour pénale internationale), the Government portal (gouvernement.ga), the UN's General Debate pages and files of the 79th to 81st sessions (read live), the ICJ's case 192 page (live, and the copy archived on 2026-09-27), the Assembly of States Parties' list, the UN Treaty Collection's status page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31 to T-P21-34 and T-P21-46 to T-P21-49): no press item outside the Gabonese Press Agency was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none; see docs/10 B-795 and B-796 (a recognition row). Leads: none.
+country: GAB
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier GAB
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Gabon from Israel in the register. The register lists one order of 2014 by an unnamed African recipient (45 RAM Mk-3 armoured reconnaissance
+      vehicles, ''probably Chad or Gabon''); it is not attributed to Gabon and its data year is before the window (docs/10 B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer GAB (not found)
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Gabon (found once: the unnamed recipient)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on ten of the twelve qualifying votes; non-voting (`X`) on A/RES/79/232 (19 December 2024) and A/RES/80/1 (19 September 2025), each scored -2 by the
+      build (docs/10 B-690); the two non-votes were not explained. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on
+      the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country GAB
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: Gabon was a non-permanent member of the Security Council from 1 January 2022 to 31 December 2023 (countries.yaml memberships.unsc), so the first months of the window fall in its term;
+      unsc_vetoes.csv holds no veto by Gabon.
+    queries:
+    - unsc_vetoes.csv, GAB (not found)
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Gabon is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Case 186 (advisory proceedings) is not B3 or B4.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Gabon supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Gabon is a state party to the Rome Statute (signed 22 December 1998, ratified 20 September 2000: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 138); no withdrawal is recorded. No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Presidency''s searches for Cour pénale (six Council of Ministers communiqués,
+      none mentioning Gaza, Israel or Palestine) and CPI (none) found nothing, and the Gabonese Press Agency''s item of 4 August 2026 on states urged to leave the Statute does not mention Gabon.'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Gabon (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'presidence.ga REST search: Cour pénale, CPI'
+    - 'agpgabon.ga REST search: Cour pénale internationale mandat, CPI Netanyahou'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal by Gabon was found in the sources read.
+    queries:
+    - 'presidence.ga REST search: Cour pénale, Netanyahou (none)'
+    - agpgabon.ga REST search
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Gabon were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: one row for Gabon, 12 December 1988, added by this session (R21; docs/10 B-796) on the President''s General Debate speech of 25 September 2025 as the
+      Presidency prints it (src_20250925_presidence-ga_oligui-ag80): ''Le 12 décembre 1988, le Gabon reconnaissait officiellement l’État de Palestine'' (the registry''s date). The build counts
+      it as a standing B8 event of +3.0 from 2023-10-07.'
+    queries:
+    - recognitions.csv, GAB
+    - archive/text/src_20250925_presidence-ga_oligui-ag80.txt (found, line 45)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) The President, Brice Clotaire Oligui Nguema, is head of state and head of government (the Presidency''s titles: ''Chef de l’État, Chef du Gouvernement'') and a B9
+      speaker under R3. His 80th General Debate speech (25 September 2025, src_20250925_presidence-ga_oligui-ag80, archived) states the recognition of 12 December 1988 and support for the two-State
+      solution ''entre Israéliens et Palestiniens'' and never names Gaza or a ceasefire (R7). His 79th speech (Presidency''s page of 23 September 2024, src_20240923_presidence-ga_oligui-ag79,
+      archived; the UN''s page gives 26 September 2024; 769 days old, expired) says ''je voudrais nous inviter à ne pas détourner les yeux de Gaza. Il est plus que jamais temps que s’installe
+      une paix définitive en vue de la coexistence harmonieuse des États palestiniens et israéliens'': Gaza is named but there is no call for a ceasefire or an end of the blockade and no violation
+      (neither tier; read as Samoa''s and Botswana''s passages were, flagged). (2) The 81st statement (26 September 2026) was delivered by the Foreign Minister, Marie-Edith Tassyla-Ye-Doumbeneny;
+      the French file (gastatements/81/ga_fr.pdf, read live) names none of Gaza, Palestine or Israel. (3) The Deputy Permanent Representative''s statement at the Security Council briefing of 19
+      December 2023 (''Ce bain de sang doit cesser'', src_20231219_diplomatie-ga_cs-bain-de-sang, archived) is not a B9 speaker''s (R3) and is expired (1,051 days). (4) The Gabonese Press Agency''s
+      item of 14 June 2025 and the Ministry''s note on the vote of 12 June 2025 report a vote for ''un cessez-le-feu immédiat, inconditionnel et permanent'' (B1, generated), not a speaker''s statement.'
+    queries:
+    - 'presidence.ga REST search: Gaza (1 hit), Palestine (1), Palestinien (2), Israël (1), génocide, Hamas, cessez-le-feu, Proche-Orient, Netanyahou (none)'
+    - diplomatie.gouv.ga/?s=Gaza, Palestine, Israël (five notes opened)
+    - 'agpgabon.ga REST search: Palestine, Israël, Gaza Gabon, génocide, cessez-le-feu'
+    - gadebate.un.org/en/{79,80,81}/gabon and gastatements/{79,80,81}/ga_fr.pdf (read live)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the Presidency''s, the Ministry''s or the Press Agency''s
+      items read.'
+    queries:
+    - 'presidence.ga REST search: Israël, Gaza'
+    - diplomatie.gouv.ga/?s=Israël
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the sources read. This rests on the Presidency's, the Ministry's and the Press Agency's searches only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found. The Council of Ministers of 14 May 2024 agreed to the agrément of Mr Amnon Kalmar as Israel''s Ambassador to Gabon with residence in Yaoundé
+      (src_20240514_presidence-ga_conseil-ministres, communiqué of the Presidency): an accreditation, not an act under B12 (B-599). This rests on the Presidency''s, the Ministry''s and the Press
+      Agency''s searches only (P-23).'
+    queries:
+    - 'presidence.ga REST search: Israël (one hit, the communiqué of 14 May 2024)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Gabon is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found. The Ministry's media-analysis note on the reception of MASHAV's Director General by the Prime Minister of the Transition
+      on 16 December 2024 (src_20241216_diplomatie-ga_gabon-israel-mashav, archived) lists sectors of interest (health, education, agriculture, innovation, sustainable development, gender equality)
+      and records no signing. No treaty register was read (P-23).
+    queries:
+    - archive/text/src_20241216_diplomatie-ga_gabon-israel-mashav.txt (read)
+    - diplomatie.gouv.ga/?s=Israël, Palestine
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Gabon to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor GAB
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Gabon has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Gabon in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Gabon was found in the sources read.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

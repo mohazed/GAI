@@ -1794,3 +1794,48 @@ One band change (the Comoros), resting on the B3 direction and the third B9 even
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Arabic), the Comoros' Ministry of Foreign Affairs, the 79th General Debate statement of the Comoros (speaker), the 81st General Debate files of the three, the text of President Guelleh's statement of 22 September 2025, Cabo Verde's Ministry and its pages of 22 January and 14 April 2024 (read, not archived), the Article 19 check, Comtrade for the three and the Government documents for the recognition dates.
+
+## T-P21-35 — Eritrea, Ethiopia, Gabon (2026-11-04)
+
+Light protocol, group 35, fifth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session. Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Eritrean Ministry of Information's portal through its site search, the Ethiopian Ministry's JSON endpoints and the Ethiopian News Agency's search, the Gabonese Presidency's and Press Agency's REST APIs and the Ministry's site search, the UN's General Debate pages and files of the 79th to 81st sessions (live; the Ethiopian files, which are image scans, by OCR), the ICJ's case 192 page (live), the Assembly of States Parties' list and the Treaty Collection's page, the generated tables, UNRWA tables, the SIPRI register and the Article 19 documents.
+
+No event was filed. One lead (Ethiopia, C2) and one recognition row (Gabon).
+
+| Row | Kind | Date | Detail | Source kind |
+|---|---|---|---|---|
+| GAB, 1988-12-12 | recognition (R21) | 2025-09-25 (speech) | President Oligui Nguema: 'Le 12 décembre 1988, le Gabon reconnaissait officiellement l’État de Palestine' (+3.0 standing B8 from 2023-10-07 in the build) | official (Presidency's page of the General Debate speech) |
+| lead_20261104_ETH_1 | lead, C2 | 2025-03 to 2026-09 | Ethiopia-Israel ministerial contacts and cooperation reports, no signing found | press (Ethiopian News Agency) |
+
+Eight documents were archived (Gabon: the President's 79th and 80th General Debate speeches, the Council of Ministers' communiqué of 14 May 2024, the Ministry's notes of 16 December 2024 and 19 December 2023; Eritrea: the Ministry of Information's press statement of 19 January 2025; Ethiopia: the Ethiopian News Agency's reports of 5 May 2025 and 12 October 2026). Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Eritrea
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. The Foreign Minister's 80th and 81st General Debate statements name neither Gaza nor Palestine; his 79th and his Non-Aligned Movement statement of 23 September 2024 are expired. The Ministry of Information's press statement of 19 January 2025 (no named speaker) welcomes the ceasefire agreement and urges support for 'an independent Palestinian State' (not B9). B1: eleven yes votes, one non-vote. Not a state party to the Rome Statute (signed 1998). Docs/10 B-793.
+
+### Ethiopia
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Events: none. Leads: one (C2). The President's 80th General Debate passage (25 September 2025) affirms the Palestinian people's right to self-determination, calls for direct negotiation among 'the warring parties' and humanitarian access, and names neither Gaza nor a ceasefire (neither tier, flagged); the 79th and 81st name none of Gaza, Palestine or Israel. The Ethiopian News Agency reports frequent contacts with Israel's Government (talks on trade, energy and agriculture in March and May 2025; the Prime Minister's call with Mr Netanyahu on 12 October 2026), none of which names Gaza or reports a signing. B1: five yes votes, seven abstentions. Not a state party to the Rome Statute. Docs/10 B-794.
+
+### Gabon
+
+Assessments: has-events 1 (B1), none-found 20, no-data 2 (A2, C3), unchecked 11. Events: none. Leads: none. The President's 80th General Debate speech states the recognition of 12 December 1988 (a recognition row) and the two-State solution without naming Gaza; his 79th asks the Assembly 'de ne pas détourner les yeux de Gaza' with no call (neither tier; expired). The 81st statement, by the Foreign Minister, names none of Gaza, Palestine or Israel. The Deputy Permanent Representative's statement at the Security Council on 19 December 2023 ('Ce bain de sang doit cesser') is not a B9 speaker's. B1: ten yes votes, two non-votes. State party to the Rome Statute (ratified 2000). Docs/10 B-795, B-796.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Eritrea one non-vote (A/DEC/80/506), Ethiopia seven abstentions, Gabon two non-votes (A/RES/79/232, A/RES/80/1). None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote and an abstention at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1).
+
+| Country | Before (generated only) | With the reviewed events and the recognition row | Band | What moves it |
+|---|---|---|---|---|
+| ERI | -3.0 (-3) | -3.0 (-3) | Passive, unchanged | no event; B1 and the passivity penalty (-15) |
+| ETH | -18.2 (-18) | -18.2 (-18) | Passive, unchanged | no event; seven abstentions in B1 and the passivity penalty (-15) |
+| GAB | -4.8 (-5) | -1.8 (-2) | Passive, unchanged | the recognition row (B8 +3.0 standing); B1 and the passivity penalty (-15) |
+
+No band change. Read critically (docs/06 §4 step 7): all three bands rest on B1 and the passivity penalty, not on any act found in the window; Gabon's change comes from a recognition of 1988.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Amharic, Tigrinya), Eritrea's Ministry of Foreign Affairs and Presidency (no site found), the Prime Minister of Ethiopia's posts, Ethiopia's BRICS declarations, the Ministry's releases of the March 2025 visit to Israel, the Government documents for the Ethiopian recognition date, the Article 19 check, and Comtrade for the three.

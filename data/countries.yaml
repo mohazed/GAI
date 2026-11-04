@@ -1635,7 +1635,14 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Information of Eritrea (shabait.com; the Government''s official news portal)', url: 'https://www.shabait.com/', type: government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: shabait.com (lang="en-US"; WordPress, site search at /?s=, 10 results a page) answered HTTP 200 to a
+    request with a browser User-Agent; it prints the President's interviews and speeches, the Foreign Minister's statements and the Ministry
+    of Information's press statements. No site of the Ministry of Foreign Affairs answered (mofa.gov.er, eritrea-mofa.org) and no site of the
+    Presidency was found: the President, Isaias Afwerki, is head of state and head of government and the Foreign Minister is Osman Saleh
+    Mohammed (UN General Debate pages, 79th to 81st sessions).
 
 - iso3: ESP
   iso2: ES
@@ -1726,7 +1733,17 @@
         Admitted by the Johannesburg Declaration of August 2023, membership effective 1 January 2024
         (BRICS Brasil 2025 site, "About the BRICS").
   recognises_palestine: {since: 1989-02-04}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Ethiopia (mfa.gov.et)', url: 'https://mfa.gov.et/', type: mfa, lang: [en]}
+    - {label: 'Office of the Prime Minister of Ethiopia (pmo.gov.et)', url: 'https://pmo.gov.et/', type: head_of_government, lang: [en]}
+    - {label: 'Ethiopian News Agency (ENA), English', url: 'https://www.ena.et/web/eng/', type: news_agency, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.et (lang="en") and pmo.gov.et (lang="en") answered HTTP 200 to a request with a browser User-Agent
+    but are single-page applications that load their content by script; the Ministry's JSON endpoints (mfa.gov.et/api/news/, /pressrelease/,
+    /pressbriefing/, /bilateral/) list only recent items (32 news items, the latest of 29 October 2026) and the Prime Minister's site has no
+    readable text. ena.et (lang="en-US", Liferay; search at /web/eng/search?q=) is the state news agency and prints the Ministry's and the
+    Prime Minister's posts. The Prime Minister is Abiy Ahmed, the Foreign Minister Gedion Timothewos, the President (head of state) Taye
+    Atske Selassie (UN General Debate pages).
 
 - iso3: FIN
   iso2: FI
@@ -1892,7 +1909,17 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-12}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Gabonese Republic (head of state and head of government)', url: 'https://presidence.ga/', type: head_of_state, lang: [fr]}
+    - {label: 'Ministry of Foreign Affairs of Gabon', url: 'https://diplomatie.gouv.ga/', type: mfa, lang: [en]}
+    - {label: 'Gabonese Press Agency (AGP)', url: 'https://agpgabon.ga/', type: news_agency, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidence.ga (lang="fr-FR"; WordPress with an open REST API: /wp-json/wp/v2/posts?search=), diplomatie.gouv.ga
+    (the page declares lang="en-US" but its text is French; a site search at /?s=, REST API closed) and agpgabon.ga (lang="fr-FR"; REST API open)
+    answered HTTP 200 to a request with a browser User-Agent; gouvernement.ga (lang="fr-FR") answers too and holds Government notices. The
+    President, Brice Clotaire Oligui Nguema, is head of state and head of government (the Presidency's own titles, 'Chef de l’État, Chef du Gouvernement'); the
+    Foreign Minister is Marie-Edith Tassyla-Ye-Doumbeneny (UN General Debate page, 81st session). The Ministry's pages print the date of their
+    last republication (22 September 2026), not their own.
 
 - iso3: GBR
   iso2: GB
