@@ -1,0 +1,200 @@
+# Coverage record for Timor-Leste (docs/03 §6). P-21 light protocol, session T-P21-23, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's portal (timor-leste.gov.tl, HTTP 200, site search in Portuguese), the state news agency Tatoli (en.tatoli.tl, searched through its content API), the General Debate statements of the 78th to 81st sessions (gadebate.un.org, live files), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Portuguese. Not searched in Tetum. Time: see Singapore.
+country: TLS
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TLS
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached this
+      one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TLS
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and an abstention on A/RES/ES-10/27 (12 June 2025). Article 19 note: not applicable (all 12 votes recorded). FLAG: Lusa''s
+      headline of 14 June 2025, ''Timor-Leste retifica voto na resolução da ONU a exigir cessar-fogo em Gaza'' (read; the text is for subscribers), and press reports found by search (APSN and UCA News,
+      search results) say the delegation reversed its abstention and voted in favour the next day; the Assembly''s voting record (archived: src_20261005_undl_voting-es-10-27) shows an abstention, which
+      the build scores at -2. Whether the record was amended is a question for P-23 and the author.'
+    queries:
+    - unga_votes.csv, voter TLS
+    - A/80/362 and the Article 19 page (archived, read)
+    - lusa.pt Timor-Leste retifica voto Gaza (headline read, 2026-11-04)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Timor-Leste is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Timor-Leste; docs/06 §8). The advisory
+      proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Timor-Leste)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Timor-Leste is a state party to the Rome Statute (the Assembly of States Parties' list, archived, line 218). No statement of the Prime Minister, the President or the Foreign Minister on the warrants
+      of 21 November 2024 was found (web searches in English and Portuguese returned none for Timor-Leste); a position would need an archived Government text.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Timor-Leste)'
+    - Timor-Leste Tribunal Penal Internacional mandado de captura Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Timor-Leste were found; no statement of the Government on the United States' sanctions on ICC officials (June 2025 onward) appeared in the search results
+      read.
+    queries:
+    - Timor-Leste sanctions International Criminal Court judges prosecutor (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Timor-Leste. The registry gives 1 March 2004; the Foreign Minister''s General Debate statement of the 80th session says ''Timor-Leste recognized
+      the State of Palestine in 2004, two years after its own independence'' (a retrospective sentence with a year only, read in the live file), and the Government''s portal prints no document of the date.
+      No row (R21): with the pre-existing tier the score would be +3 higher.'
+    queries:
+    - recognitions.csv, row TLS (none)
+    - gadebate.un.org/sites/default/files/gastatements/80/tl_en.pdf (read live)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the joint declaration of the Prime Minister and the Prime Minister of Malaysia of 24 September 2025 (+5: concern at the humanitarian catastrophe in the Gaza Strip ''caused by acts
+      of genocide committed by Israel'', the blockade and famine named, a permanent ceasefire called for). Not filed: (1) the Foreign Minister''s General Debate statement of the 80th session (the roadmap''s
+      ''immediate ceasefire in Gaza'', the ''situation of famine and genocide … officially declared'', ''deeply concerned by the intensification of Israel''s military offensive in Gaza''): read in the live
+      file (tl_en.pdf, 347,167 bytes) but the file has no Wayback replay (the replay is a 2,589-byte HTTP 405 page), Save Page Now answers 405 for gadebate.un.org, and no Government or press copy was found:
+      a B9 event at +5 if an archived copy is found (P-23); (2) the President''s press statement of 14 September 2025, known from the state news agency Tatoli: lead_20261104_TLS_1; (3) the Prime Minister''s
+      79th General Debate statement (79th session, expired): ''calls for an immediate end to the genocide'' in the passage on ''the conflict between Israel and Palestine'', never naming Gaza (R7); (4) the
+      President''s 81st statement (it cites ''Israeli-occupied territories, Gaza and West Bank'' for the two-State solution and speaks of ''the killing of Palestinians'' and ''the bombing of a school or
+      a hospital'' without a call or a named party tied to Gaza: R7, no call); (5) the Deputy Permanent Representative''s statement at the two-State conference of 30 July 2025 (R3); (6) the Foreign Minister''s
+      remarks at the ministerial meeting of the Global Alliance for the two-State solution (24 September 2026: protection of civilians, humanitarian access; no call, Tatoli and the Government''s portal).'
+    queries:
+    - gadebate.un.org Timor-Leste 78th to 81st sessions (live files read for Gaza, Palestine, Israel, ceasefire; the 79th and 81st have Wayback replays equal to the live files, the 80th has none)
+    - 'timor-leste.gov.tl site search: Gaza, Palestina, Israel, cessar-fogo, genocídio'
+    - 'en.tatoli.tl wp-json search: Gaza, Palestine, Bendito, Ramos-Horta'
+    - un.org/unispal timor_nyc_en.pdf (the two-State conference statement, 30 July 2025)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister, the President or the Foreign Minister was found; every statement read is critical of Israel's conduct.
+    queries:
+    - Timor-Leste Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions or travel bans on Israeli ministers or settlers by Timor-Leste were found.
+    queries:
+    - Timor-Leste sanctions Israel settlers ministers (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Government's portal search results list consular items for Timorese in Israel (the renewal of passports, the safety of
+      students; item titles read) and no embassy or ambassador change.
+    queries:
+    - Timor-Leste Israel embassy ambassador (web search)
+    - 'timor-leste.gov.tl site search: Israel'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Timor-Leste; none was suspended or reviewed (none found).
+    queries:
+    - Timor-Leste Israel trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found in the sources read.
+    queries:
+    - Timor-Leste Israel agreement signed 2024 2025 2026 (web searches)
+    - 'timor-leste.gov.tl site search: Israel'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor TLS
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Timor-Leste: no contribution to suspend (searched for Timor-Leste).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Timor-Leste
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Timor-Leste: no contribution to restore or increase (searched for Timor-Leste).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Timor-Leste
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Timor-Leste was found in the search results read.
+    queries:
+    - Gaza medical evacuation Timor-Leste (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Timor-Leste was found in the search results read (the only results on Timor-Leste concerned tourist visa rules).
+    queries:
+    - Gaza medical evacuation OR visa OR refugees Gazans Timor-Leste (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,214 @@
+# Coverage record for Singapore (docs/03 §6). P-21 light protocol, session T-P21-23, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.sg, HTTP 200: press statements, transcripts and the Committee of Supply speeches, searched through the search engine restricted to the Ministry's domain), the Prime Minister's Office (pmo.gov.sg), the Ministry of Defence (mindef.gov.sg), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th also on the Ministry's page), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not searched in Malay, Mandarin or Tamil. Time: see the build-log row of the session.
+country: SGP
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SGP
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached this
+      one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): Singapore''s order of five Hermes-900 reconnaissance drones from Israel (2025, TIV 15) is the release''s data year 2025 and the
+      build scores it as A4. The register also lists the Blue Spear anti-ship missile order of 2023 (TIV 125, for the modernised Formidable frigates), which the build does not score (the A4 data-year gap,
+      docs/10 B-536 (7)). Left to the build; not hand-authored.'
+    queries:
+    - sipri_orders.csv, buyer SGP
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Singapore of 2023 and later
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter SGP
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Singapore is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived, searched for Singapore; docs/06 §8). The Minister
+      told Parliament on 22 September 2025 that the matter of genocide in Gaza "is currently before the International Court of Justice, which is the appropriate forum" (paragraph 10): a remark, not a filing.
+      The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Singapore)'
+    - src_20250922_mfa-sg_ministerial-statement-middle-east, paragraph 10
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; the Minister said on 29 February 2024 that Singapore had voted for the two General Assembly resolutions on the protection
+      of civilians and a humanitarian ceasefire, and has called for compliance with international humanitarian law.
+    queries:
+    - as for B3
+    - Singapore Ministry of Foreign Affairs ICJ provisional measures Gaza (web search)
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Singapore is not a state party to the Rome Statute (the Assembly of States Parties' list, archived, searched); no statement of the Minister or the Prime Minister on the warrants of 21 November
+      2024 was found in the Ministry's releases and the search results read.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Singapore)'
+    - Singapore Ministry of Foreign Affairs ICC arrest warrants Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (not a state party).
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Singapore were found; no statement of the Government on the United States' sanctions on ICC officials (June 2025 onward) appeared in the search results
+      read.
+    queries:
+    - Singapore sanctions International Criminal Court judges prosecutor (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Singapore: Singapore has not recognised the State of Palestine. The Minister told Parliament on 22 September 2025: ''we will recognise the
+      State of Palestine when it has an effective government that accepts Israel''s right to exist and categorically renounces terrorism'' (paragraph 16 and the General Debate statement of 27 September
+      2025, paragraph 14), and in July 2024 that Singapore was prepared in principle to recognise (The Star and CNA via search results, not read in full); Singapore voted yes on A/DEC/80/506. No recognition
+      and no row.'
+    queries:
+    - recognitions.csv, row SGP (none)
+    - src_20250922_mfa-sg_ministerial-statement-middle-east, paragraph 16
+    - src_20250927_mfa-sg_national-statement-80th-unga, paragraph 14
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Five B9 events: the Minister for Foreign Affairs'' Committee of Supply speech of 29 February 2024 (+2, expired), the General Debate statements of 28 September 2024 (+2, expired) and 27 September
+      2025 (+2, ''hopes'' wording), the ministerial statement to Parliament of 22 September 2025 (+5, the denial of aid named as a violation of international humanitarian law) and the Committee of Supply
+      speech of 27 February 2026 (+5, ''Israel''s military response has breached international humanitarian law''). Not filed as B9: the Prime Minister''s statements of 2023 to April 2024 (the Deputy Prime
+      Minister''s remarks of November 2023 and the April 2024 call for a humanitarian ceasefire, read only through search results; older than 730 days), the written replies to parliamentary questions (8
+      May 2024, 4 February 2025, 8 April 2025: the Minister''s written words, found by search, not read), and the Ministry''s press statements with no named speaker (R3). Singapore''s 81st General Debate
+      statement (26 September 2026) names neither Gaza nor Palestine.'
+    queries:
+    - mfa.gov.sg newsroom, searches for Gaza, Israel, Palestine, ceasefire (web search with the Ministry's domain)
+    - 'gadebate.un.org Singapore 78th to 81st sessions (files read; the 81st statement''s PDF text layer is garbled: read by OCR at 130 dpi, no passage on Gaza)'
+    - pmo.gov.sg Gaza Israel Wong (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Minister for Foreign Affairs was found. The Minister's statements that Singapore 'recognised
+      Israel's right of self-defence in accordance with international law and the UN Charter' (22 September 2025, paragraph 7) are conditional on compliance with international humanitarian law, so not B10.
+    queries:
+    - mfa.gov.sg Gaza Israel self-defence (web search)
+    - src_20250922_mfa-sg_ministerial-statement-middle-east, paragraphs 4 to 8
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'One event: targeted financial sanctions and entry bans on four Israeli individuals named by the Ministry on 21 November 2025 (settlers tier, scope west-bank, unscored in rc.1). Announced to Parliament
+      on 22 September 2025. No sanctions on Israeli ministers were found.'
+    queries:
+    - mfa.gov.sg targeted sanctions settlers (web search)
+    - src_20251121_mfa-sg_targeted-sanctions-settlers
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found. The Minister told Parliament on 22 September 2025 that cutting diplomatic ties ''will diminish our ability to communicate
+      with Israel and serve no practical purpose'' (paragraph 29). The Minister also said that Singapore had ''called out'' Israel''s airstrikes in Doha as a blatant violation of Qatar''s sovereignty (paragraph
+      30): a statement, not a B12 act.'
+    queries:
+    - mfa.gov.sg Israel ambassador recall downgrade (web search)
+    - src_20250922_mfa-sg_ministerial-statement-middle-east, paragraphs 29 and 30
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is suspended or reviewed by Singapore (none found); Singapore has no free-trade agreement with Israel in the sources read.
+    queries:
+    - Singapore Israel free trade agreement suspend review (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found: the web searches returned agreements of 2016 (MASHAV) and March 2022 (an artificial-intelligence memorandum) only. The Minister
+      told Parliament that the security relationship with Israel ''remains invaluable'' (22 September 2025, paragraph 5): a statement, not an instrument.'
+    queries:
+    - Singapore Israel agreement signed memorandum 2024 2025 2026 (web searches)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_plan_totals.csv): the Government''s flows to the Gaza response are recorded; the build makes them D1 events. Left to the build. The Ministry reports ten tranches of humanitarian
+      assistance by 22 September 2025 and eleven (over S$25 million with Singaporeans'' donations) by 27 February 2026.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor SGP
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) show Singapore only in 2023 (USD 50,000); no suspension of funding was announced in any source read.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Singapore
+    - Singapore UNRWA funding suspend January 2024 (web search)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event on the mechanical reading: Singapore''s 2023 row (USD 50,000) against no row in 2022 (an increased tier from 31 December 2023 to 31 December 2024, as for Lithuania). FLAG: the amount
+      is entered in the column ''Syria Flash Appeal-Earthquake'' (the appeal for the earthquake of February 2023), not in the programme budget or the Gaza emergency appeal, and the 2024 table has no row
+      for Singapore, whose General Debate statement of 28 September 2024 says the Government''s Gaza contributions were ''including through UNICEF and UNRWA''. The author decides whether the tier should
+      rest on the earthquake appeal.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Singapore
+    checked_at: '2026-11-04'
+  D4:
+    status: has-events
+    note: 'One event: the Singapore Armed Forces and the Ministry of Health announced on 16 April 2025 a medical contingent to treat Palestinians and other civilians from Gaza in Egyptian hospitals (an
+      advance team left on 16 April; flagged as a deployed medical team, not a field hospital or an evacuation to Singapore). The earlier two-person SAF team aboard the French hospital ship Dixmude at El-Arish
+      (January 2024) is a separate deployment, not filed.'
+    queries:
+    - mindef.gov.sg Gaza medical Egypt (web search)
+    - src_20250416_mindef_medical-contingent-egypt
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Singapore was found in the search results read (the only results on Singapore concerned tourist visa rules).
+    queries:
+    - Gaza medical evacuation OR visa OR refugees Gazans Singapore (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

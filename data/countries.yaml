@@ -4294,7 +4294,14 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mfa.gov.sg): press statements, transcripts, ministerial statements', url: 'https://www.mfa.gov.sg/', type: mfa, lang: [en]}
+    - {label: "Prime Minister's Office (pmo.gov.sg): the Prime Minister's statements", url: 'https://www.pmo.gov.sg/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.sg and pmo.gov.sg answered HTTP 200 to a request with a browser User-Agent and declare lang="en"; the Ministry's newsroom lists its press statements, the
+    Minister's speeches and replies in Parliament and the General Debate statements, all accepted by Save Page Now. The Prime Minister is Lawrence Wong and the Minister for Foreign Affairs is Vivian
+    Balakrishnan (the Ministry's transcripts of 22 September 2025 and 27 February 2026, read; the Prime Minister's name is from search results of the Prime Minister's Office). The Ministry of Defence
+    (mindef.gov.sg, HTTP 200, lang="en") publishes the Armed Forces' Gaza relief missions and is not entered as a source of statements.
 
 - iso3: SLB
   iso2: SB
@@ -4755,7 +4762,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2012-01-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mfa.go.th/en): news items, statements, General Debate statements', url: 'https://www.mfa.go.th/en', type: mfa, lang: [en, th]}
+    - {label: 'Government of Thailand (thaigov.go.th): the Prime Minister', url: 'https://www.thaigov.go.th/', type: head_of_government, lang: [th]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.go.th/en answered HTTP 200 to a request with a browser User-Agent; the page declares lang="th" while its news items are in English (the Ministry publishes
+    both languages under /en and /th). thaigov.go.th answered HTTP 403 to a script and was checked through its Wayback capture of 28 September 2026 (HTTP 200, lang="th"); its contents were not read. The
+    Minister of Foreign Affairs at the 80th General Debate was Sihasak Phuangketkeow and the Prime Minister at the 81st was Anutin Charnvirakul (the Ministry's pages of those statements, read).
 
 - iso3: TJK
   iso2: TJ
@@ -4834,7 +4847,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2004-03-01}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of Timor-Leste (timor-leste.gov.tl): communiqués of the Prime Minister and the Ministers, in Portuguese, English and Tetum', url: 'https://timor-leste.gov.tl/', type: head_of_government, lang: [pt, en, tet]}
+    - {label: 'Tatoli, Agência Noticiosa de Timor-Leste (en.tatoli.tl): the state news agency, reports of the President, the Prime Minister and the Foreign Minister', url: 'https://en.tatoli.tl/', type: news_agency, lang: [en, pt, tet]}
+  notes: >-
+    gov_sources checked 2026-11-04: timor-leste.gov.tl answered HTTP 200 to a request with a browser User-Agent and declares lang="en" (its pages carry Portuguese, English and Tetum versions chosen
+    by a lang parameter; its site search is /?s=term); en.tatoli.tl answered HTTP 200 (lang="en-US") and its content API (/wp-json/wp/v2/posts?search=term) lists the agency's English reports. The
+    Presidency's site (presidenciarepublica.tl) and a Ministry of Foreign Affairs site (mfac.gov.tl) did not answer. The Prime Minister is Kay Rala Xanana Gusmão, the President José Ramos-Horta
+    and the Minister for Foreign Affairs and Cooperation Bendito dos Santos Freitas (the Government's portal and the General Debate statements, read).
 
 - iso3: TON
   iso2: TO

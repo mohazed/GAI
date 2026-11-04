@@ -972,3 +972,51 @@ All twelve qualifying votes are recorded for the three countries; nothing to rep
 | PHL | −3.5 (−3) | +6.4 (+6) | Passive to Acting | D3 +8.0, B9 +1.8; A4 −5.0 and the passivity penalty −15 remain |
 
 One band change: the Philippines from Passive to Acting. Read critically (docs/06 §4 step 7): D3 alone accounts for the change (without it the score is −1.6, Passive); it rests on a doubling of a USD 50,000 contribution to UNRWA (B-708 (4)). The B9 event is 403 days old and does not end the passivity penalty.
+
+## T-P21-23: SGP, THA, TLS (2026-11-04)
+
+Light protocol (docs/06 §5) for Singapore, Thailand and Timor-Leste, by a fresh Sonnet 5.5 session of the finish run. Nine documents archived (eight with Save Page Now, one, the 79th General Debate file, from the existing Wayback capture 20250718095152; every replay fetched again with `curl --compressed` and equal to the index rows in bytes and SHA-256; one failed capture, the 80th General Debate file of Singapore, HTTP 405, removed by its exact id and replaced by the Ministry's own page of the statement). 11 events (Singapore 8, Thailand 2, Timor-Leste 1) and one recognition row (Thailand); 3 leads. Decisions and flags are in docs/10 B-711 to B-717. The session took about 45 minutes by the machine's clock; A3, A5 to A8, C4 to C6 and E1 to E3 are `unchecked` for the three countries as in earlier sessions.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_12_31_SGP_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset (UNRWA table) |
+| evt_2024_02_29_SGP_B9 | B9 | 2024-02-29 (expired) | +2 | confirmed | official |
+| evt_2024_09_28_SGP_B9 | B9 | 2024-09-28 (expired) | +2 | confirmed | official |
+| evt_2025_04_16_SGP_D4 | D4 | 2025-04-16 | +5 | confirmed | official |
+| evt_2025_09_22_SGP_B9 | B9 | 2025-09-22 | +5 | confirmed | official |
+| evt_2025_09_27_SGP_B9 | B9 | 2025-09-27 | +2 | confirmed | official |
+| evt_2025_11_21_SGP_B11 | B11 | 2025-11-21 | +5 (west-bank, unscored) | confirmed | official |
+| evt_2026_02_27_SGP_B9 | B9 | 2026-02-27 | +5 | confirmed | official |
+| evt_2023_12_31_THA_D3 | D3 | 2023-12-31 to 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2024_12_31_THA_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_09_24_TLS_B9 | B9 | 2025-09-24 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build; the recognition row `THA,2012-01-17` (R21, the Ministry's own page) feeds B8.
+
+### Singapore
+
+Assessments (34 indicators): has-events 7 (A4, B1, B9, B11, D1, D3, D4), none-found 13, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. Sources read: the Ministry of Foreign Affairs' press statements, transcripts and Committee of Supply speeches (2024, 2026), the ministerial statement of 22 September 2025, the Ministry of Defence's release of 16 April 2025, the General Debate statements of the 78th to 81st sessions, search results on the Prime Minister's Office, and The Star's report of the ministerial statement. Not searched in Malay, Mandarin or Tamil.
+
+### Thailand
+
+Assessments: has-events 5 (A4, B1, B8, D1, D3), none-found 15, no-data 2, not-applicable 1, unchecked 11 (as for Singapore). Leads: 2 (`lead_20261104_THA_1` the joint statement of the 17 countries with hostages, 7 June 2024; `_2` the Prime Minister at the ASEAN-GCC summit, 20 October 2023; both older than 730 days). Sources read: the Ministry of Foreign Affairs' pages (the news item of 12 January 2024, the statement of 18 November 2023, the General Debate statements of the 78th to 81st sessions), Thai Newsroom, The Nation; the Prime Minister's site was not readable by script.
+
+### Timor-Leste
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2, not-applicable 1, unchecked 11. Lead: 1 (`lead_20261104_TLS_1`: the President's press statement of 14 September 2025, Tatoli). Not filed: the Foreign Minister's 80th General Debate statement (no archived copy possible: B-715). Sources read: the Government's portal, Tatoli (content API), the General Debate statements of the 78th to 81st sessions, the Deputy Permanent Representative's statement at the two-State conference (UNISPAL).
+
+### Article 19 note (report only)
+
+All twelve qualifying votes are recorded for the three countries; nothing to report under Article 19. Timor-Leste abstained on A/RES/ES-10/27 (12 June 2025) in the Assembly's record, and a Lusa headline of 14 June 2025 says the delegation corrected its vote (B-715 (6)).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| SGP | −3.5 (−3) | +24.4 (+24) | Passive to Acting | B9 +10.0 (cap; summed +11.4 from three events inside 730 days), D4 +2.9; the 27 February 2026 B9 event is the only qualifying event and ends the passivity penalty (+15); the B11 event is west-bank and unscored |
+| THA | −8.5 (−8) | +2.5 (+2) | Passive to Acting | D3 +8.0 and B8 +3.0 (the new recognition row); A4 −10.0 and the passivity penalty −15 remain |
+| TLS | −2.0 (−2) | +2.5 (+3) | Passive to Acting | B9 +4.6 (one event, 406 days old); the passivity penalty −15 remains |
+
+Three band changes (Passive to Acting for all three). Read critically (docs/06 §4 step 7): Singapore's change rests on two +5 events and one qualifying event; without the 27 February 2026 event the score is +5.8 (Acting), without the two B9 and D4 events it would be Passive; Thailand's change rests on D3 (a mechanical reading of UNRWA's tables) and on the recognition row (without the row −0.5, Passive; without D3 −5.5); Timor-Leste's rests on one joint declaration (without it Passive).
