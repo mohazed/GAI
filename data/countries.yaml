@@ -5001,7 +5001,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-10}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Sao Tome and Principe (head of state)', url: 'https://presidencia.st/', type: head_of_state, lang: [pt]}
+    - {label: 'Citizens portal of the Government of Sao Tome and Principe', url: 'https://gov.st/', type: government, lang: [pt, en]}
+    - {label: 'STP-Press (news site that reprints the Government communiques and the Council of Ministers decisions)', url: 'https://www.stp-press.st/', type: other, lang: [pt]}
+  notes: >-
+    gov_sources checked 2026-11-04: presidencia.st (no lang attribute on the page; Portuguese; a landing page with an official agenda), gov.st (lang="pt"; a Next.js citizens' services portal with a short list of updates, no news on foreign policy)
+    and www.stp-press.st (lang="en" on the page, content in Portuguese; WordPress, open REST search /wp-json/wp/v2/posts?search=) answered HTTP 200 to a request with a browser User-Agent. No Ministry of Foreign Affairs site answered
+    (mnec.gov.st and the other names tried: connection failed). The President is Carlos Vila Nova (head of state); the Prime Minister is Americo Ramos (80th General Debate); the Minister of State and for Foreign Affairs, Cooperation and
+    Communities is Ilza Maria dos Santos Amado Vaz (81st General Debate) and was Gareth Guadalupe in October 2023. Sao Tome and Principe is not on the Assembly of States Parties' list (archived 2026-10-09) and is named in the Secretary-General's
+    letter on Article 19 (A/80/362).
 
 - iso3: SUR
   iso2: SR
@@ -5149,7 +5158,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1991-07-01}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Kingdom of Eswatini (portal)', url: 'https://www.gov.sz/', type: government, lang: [en]}
+    - {label: 'Times of Eswatini (newspaper)', url: 'https://times.co.sz/', type: other, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.gov.sz did not answer from here (connection failed); its Wayback capture of 2026-09-16 (web.archive.org/web/2id_/https://www.gov.sz/, lang="en-gb", Joomla) is the home page, which lists the Ministry of Foreign
+    Affairs and International Cooperation and the Deputy Prime Minister's Office among its ministries; no Ministry site was found. times.co.sz (lang="en-ZA"; WordPress, open REST search) answered HTTP 200 to a request with a browser User-Agent.
+    The head of state is King Mswati III; the Prime Minister is Russell Mmiso Dlamini (79th General Debate). Eswatini is not on the Assembly of States Parties' list (archived 2026-10-09).
 
 - iso3: SYC
   iso2: SC
@@ -5170,7 +5185,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'State House Seychelles, Office of the President (head of state and of government)', url: 'https://www.statehouse.gov.sc/', type: head_of_state, lang: [en]}
+    - {label: 'Seychelles Nation (state-owned daily; carries the Foreign Affairs department''s releases)', url: 'https://www.nation.sc/', type: other, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.statehouse.gov.sc (lang="en"; news, speeches and messages lists, a site search /search?search_q=, an RSS feed /rss/news) and www.nation.sc (lang="bg" on the page, content in English; a site search /search?search_q=)
+    answered HTTP 200 to a request with a browser User-Agent. No Ministry of Foreign Affairs site answered (www.mfa.gov.sc: connection failed; www.mofa.gov.sc is the Ministry of Fisheries and Agriculture); the National Assembly's site shows a maintenance
+    page; Seychelles News Agency answers HTTP 403. The President is Patrick Herminie (head of state and of government; sworn in on 26 October 2025) and was Wavel Ramkalawan until then; the Minister for Foreign Affairs and Tourism was Sylvestre Radegonde
+    (Nation, November 2023 to September 2025). Seychelles is a State Party to the Rome Statute (line 206 of the Assembly of States Parties' list, archived 2026-10-09).
 
 - iso3: SYR
   iso2: SY

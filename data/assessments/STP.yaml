@@ -1,0 +1,185 @@
+# Coverage record for Sao Tome and Principe (docs/03 §6). P-21 light protocol, session T-P21-43, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the REST search of STP-Press (stp-press.st, a news site that reprints the Government's communiques, kind press), the Presidency's site (presidencia.st: an agenda page only), the Government's citizens' portal (gov.st: services, no news), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Ministry site answered.
+# Events: none. Leads: none. See docs/10 B-832, B-834.
+country: STP
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier STP
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer STP
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on all twelve qualifying votes (each scores -2; B1 -11.0 after decay). Sao Tome and Principe is named in the Secretary-General''s
+      letter of 3 September 2025 (A/80/362: arrears under Article 19, minimum payment USD 785,653; src_20250903_undocs_a-80-362-article19) and on the Assembly''s page of October 2026 (A/81/360;
+      resolution 81/2 of 12 October 2026 permits it to vote until the end of the 81st session; src_20261013_un-ga_article19-page). The non-votes may therefore be a loss of vote and not a choice;
+      the arrears lists for the earlier vote dates (2023, 2024) were not checked. The Nation of 31 October 2023 lists the country among the 14 states that did not vote on A/RES/ES-10/21. Report
+      only (docs/10 B-832): the author decides how B1 treats a state without a vote.'
+    queries:
+    - unga_votes.csv, country STP
+    - src_20250903_undocs_a-80-362-article19 (named)
+    - src_20261013_un-ga_article19-page (named)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Sao Tome and Principe is not on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties). No statement on the warrants was found in the General Debate statements
+      or the press search below.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'stp-press.st /wp-json/wp/v2/posts?search=: Gaza, Palestina, Israel, Hamas (titles read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country is not a State Party).
+    queries:
+    - stp-press.st searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: no Government site of Sao Tome and Principe carries news (presidencia.st shows an agenda page; gov.st is a citizens'' services portal; no Ministry site answered) and no
+      Wayback capture was read (docs/10 B-832; P-23).'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Sao Tome and Principe. The registry gives a recognition since 10 December 1988 (before the window; no recognition document was found in the
+      sources read, so no row is added: R21); no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, STP (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The 79th General Debate statement (the President, Carlos Vila Nova, 26 September 2024; Portuguese, gastatements/79/st_pt.pdf) says the world sees an escalation of conflicts
+      ''such as the recent worsening of the situation in the Gaza Strip and in Lebanon'' and appeals to respect for State sovereignty and more diplomatic effort for the peaceful resolution of
+      conflicts: concern with no call for a ceasefire, no violation named and no party (neither tier; flagged as Samoa''s and Botswana''s). The 80th (the Prime Minister, Americo Ramos, 25 September
+      2025) has no file on the General Debate site; the UN''s summary and the STP-Press report of 26 September 2025 quote ''a peaceful and lasting solution to the Israeli-Palestinian conflict''
+      based on two States, without naming Gaza (R7). The 81st (the Minister of State and for Foreign Affairs, Ilza Vaz, 26 September 2026; Portuguese) speaks of the Middle East, ''full access
+      to humanitarian assistance'', ''the release of the hostages'' and two States, without naming Gaza (R7). The Government''s communique of 29 October 2023 (Council of Ministers, signed by the
+      Foreign Minister Gareth Guadalupe; STP-Press) ''makes a vehement appeal to both parties to join efforts for an urgent dialogue'': dialogue, not a ceasefire, and a communique, not a speaker''s
+      statement.'
+    queries:
+    - 'gadebate.un.org/en/{79,80,81}/sao-tome-and-principe and gastatements/{79,81}/st_{fr,pt}.pdf (read; 80th: no file)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search=: Gaza, Palestina, Israel, Hamas (titles read; the posts of 29 October 2023, 26 September 2025 and 10 February 2026 read in full)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found in the sources read.'
+    queries:
+    - stp-press.st searches (see B9)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no Government source of Sao Tome and Principe was readable (see B7).'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the President accredited a new Israeli ambassador (Leo Vinavezky) on 10 February 2026 (STP-Press). Official sources
+      not read (see B7).'
+    queries:
+    - stp-press.st /wp-json/wp/v2/posts?search=Israel (titles read; the post of 10 February 2026 read in full)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Sao Tome and Principe is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement with Israel signed since October 2023 was found in the STP-Press titles (the post of 29 July 2022 on sending patients to Israel for treatment is before the window). Official
+      sources not read (see B7).
+    queries:
+    - stp-press.st /wp-json/wp/v2/posts?search=Israel (titles read)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor STP
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Sao Tome and Principe in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Sao Tome and Principe in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no Government source of Sao Tome and Principe was readable (see B7).'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the STP-Press titles read. Official sources not read (see B7).
+    queries:
+    - stp-press.st searches (see B9)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

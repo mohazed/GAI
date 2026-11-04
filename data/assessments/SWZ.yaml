@@ -1,0 +1,179 @@
+# Coverage record for Eswatini (docs/03 §6). P-21 light protocol, session T-P21-43, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the REST search of the Times of Eswatini (times.co.sz) and Eswatini Post (eswatinipost.com), both kind press, the Government portal (www.gov.sz: connection failed; the Wayback capture of 2026-09-16 is the home page only), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Ministry site was found.
+# Events: none. Leads: none. See docs/10 B-833, B-834.
+country: SWZ
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SWZ
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SWZ
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on all twelve qualifying votes (each scores -2; B1 -11.0 after decay). The country is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (A/81/360; src_20261013_un-ga_article19-page); the Nation of 31 October 2023
+      lists Eswatini among the 14 states that did not vote on A/RES/ES-10/21. The arrears lists for the earlier vote dates were not checked: compare the UN''s voting records before the score is
+      read.'
+    queries:
+    - unga_votes.csv, country SWZ
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Eswatini is not on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties). No statement on the warrants was found in the General Debate statements or
+      the press search below.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'times.co.sz and eswatinipost.com /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinian, Israel, Hamas, Netanyahu, Jerusalem, UNRWA (titles and excerpts read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country is not a State Party).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: the Government portal (www.gov.sz) did not answer from here (connection failed; its Wayback capture of 2026-09-16 is the home page only) and no Ministry site was found
+      (docs/10 B-833; P-23).'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Eswatini. The registry gives a recognition since 1 July 1991 (before the window; no recognition document was found in the sources read, so
+      no row is added: R21); no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, SWZ (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The 80th General Debate statement (King Mswati III, head of state, 25 September 2025; English, gastatements/80/sz_en.pdf) proposes ad hoc committees and says that in the
+      Middle East ''the team could ask the Palestinians what it will take to release the hostages'' and should ''engage the Israelis to ascertain what it would also take for them to stop the bombardment
+      to avoid loss of more innocent lives, widespread destruction of property, and a growing refugee crisis'': no call for a ceasefire, no violation named, and Gaza is not named (R7); the 79th
+      (Prime Minister Russell Dlamini, 27 September 2024) and the 81st (the King, 23 September 2026) do not mention Gaza or Palestine. The Times of Eswatini''s and Eswatini Post''s search results
+      are world news and the King''s UN reports; none reports a B9 statement.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/eswatini and gastatements/{79,80,81}/sz_en.pdf (read)
+    - times.co.sz and eswatinipost.com searches (see B5; titles and excerpts read; the UN reports of 20 to 24 September 2026 listed)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found in the sources read.'
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no Government source of Eswatini was readable (see B7).'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the press results read. Official sources not read (see B7).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Eswatini is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement with Israel signed since October 2023 was found in the press results read. Official sources not read (see B7).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor SWZ
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Eswatini in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Eswatini in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no Government source of Eswatini was readable (see B7).'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the press results read. Official sources not read (see B7).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

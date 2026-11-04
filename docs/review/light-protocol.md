@@ -2178,3 +2178,47 @@ One band change (Somalia, Passive to Acting). Read critically (docs/06 §4 step 
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Arabic, Somali), the Government sources of Sierra Leone (Ministry) and South Sudan (all) when their sites answer, Somalia's Prime Minister's site, the OIC and Arab League communiqués, a primary for South Sudan's memorandum, the Hague Group declaration, the Government documents for the recognition dates, the 2025 UNRWA table, the Article 19 check, and Comtrade for the three.
+
+## T-P21-43 — Sao Tome and Principe, Eswatini, Seychelles (2026-11-04)
+
+Light protocol, group 43, thirteenth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-830 to B-834). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the UN's General Debate pages and files of the 79th to 81st sessions (live), State House Seychelles (site search; the 122 speeches and messages from id 5950), Seychelles Nation, STP-Press, the Times of Eswatini and Eswatini Post (WordPress REST searches), the ICJ's case 192 page (live and archived), the archived ASP list, UNRWA donor tables and Article 19 documents. No Foreign Ministry site of the three answered.
+
+One event (Seychelles) and two leads (Seychelles); none for Sao Tome and Principe and Eswatini.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_11_10_SYC_B9 | B9 | 2023-11-10 | +2 (the President, First Saudi-African Summit: 'an immediate cessation of hostilities'; flagged under R7; expired, 1,090 days) | confirmed | official (State House report) |
+
+One document was archived: the State House item of 10 November 2023, by Save Page Now; its replay was fetched again with curl --compressed and equals the index row (39,484 bytes, SHA-256 812259fc...). The General Debate files read were not archived because no event rests on them.
+
+### Sao Tome and Principe
+
+Assessments (34 indicators): has-events 1 (B1), none-found 16, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 14 (A3, A5 to A8, B7, B11, C4 to C6, D4, E1 to E3). Events: none. Leads: none. No B9: the 79th statement (the President) voices concern at 'the recent worsening of the situation in the Gaza Strip and in Lebanon' with no call; the 80th (the Prime Minister) and 81st (the Foreign Minister) name the Israeli-Palestinian conflict and the Middle East, not Gaza (R7). The Government's communique of 29 October 2023 appeals for dialogue between 'both parties'. No Ministry site answers (B7, B11, D4 `unchecked`).
+
+### Eswatini
+
+Assessments: has-events 1 (B1), none-found 16, no-data 2, not-applicable 1, unchecked 14 (same list). Events: none. Leads: none. The King's 80th statement proposes ad hoc committees and refers to 'the bombardment' in the Middle East without naming Gaza and without a call (B-833). The Government portal did not answer.
+
+### Seychelles
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2, not-applicable 1, unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: one. Leads: two (the Foreign Minister's statements of 20 November 2023 and 11 January 2024, known only from the Nation in indirect speech). State Party to the Rome Statute; not on the case 192 list.
+
+### Article 19 note (report only)
+
+Sao Tome and Principe is named in A/80/362 (3 September 2025) and on the Assembly's page of October 2026 (A/81/360; resolution 81/2 of 12 October 2026 lets it vote until the end of the 81st session); it has a non-vote on all twelve qualifying votes. Eswatini has a non-vote on all twelve and is not named in either document. Seychelles has one non-vote (A/RES/ES-10/21) and is not named. The arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| STP | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | B1 -11.0 (twelve non-votes) and the passivity penalty (-15). Without the B1 non-votes (if the author treats a state not entitled to vote as having no B1 event): -15, band Passive |
+| SWZ | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | B1 -11.0 (twelve non-votes) and the passivity penalty (-15) |
+| SYC | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | The B9 event is expired (1,090 days) and adds nothing; B1 +16.5 and the passivity penalty (-15) stay |
+
+No band change. Read critically (docs/06 §4 step 7): the two Enabling bands rest entirely on non-votes in the General Assembly; Sao Tome and Principe's may be a loss of vote under Article 19 (B-832).
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, Portuguese, French), the Foreign Affairs department's release of 12 January 2024 and the National Assembly's record for Seychelles, a Ministry source for Sao Tome and Principe and Eswatini, the arrears lists of 2023 and 2024, the 2025 UNRWA table, and Comtrade for the three.
