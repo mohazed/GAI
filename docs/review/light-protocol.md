@@ -1981,3 +1981,51 @@ No band change. Read critically (docs/06 §4 step 7): Madagascar's and Liberia's
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Sesotho), Liberia's statements in the Security Council since January 2026, Madagascar's Presidency and Prime Minister's items, a native reading of Lesotho's Sesotho statement, Lesotho's embassy list and treaty page, the Government documents for the three recognition dates, the non-votes of Liberia and Madagascar, the Article 19 check, the A4 data-year gap for Liberia, and Comtrade for the three.
+
+## T-P21-39 — Mali, Mozambique, Mauritania (2026-11-04)
+
+Light protocol, group 39, ninth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-812 to B-815). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Governments' own sites and state agencies (Mali's Presidency and AMAP through their REST search; Mozambique's Ministry and Government portal; Mauritania's Ministry by its site search, the state agency AMI by its REST search), the UN's General Debate pages and files of the 79th to 81st sessions (live; the files recorded from existing Wayback captures, whose byte counts equal the live files'), the ICJ's case 192 page and the Treaty Collection's page on the Rome Statute (live) and the generated tables.
+
+Two events (Mali, Mauritania) and three leads (Mauritania).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_27_MRT_B9 | B9 | 2025-09-27 | +5 (the Minister of Foreign Affairs: 'the war of genocide to which our people of Gaza are subjected', condemnation of the aggression; no call for a ceasefire; flagged for the tier and the extraction faults) | confirmed | official (the UN's General Debate text, Arabic) |
+| evt_2026_06_24_MLI_B6 | B6 | 2026-06-24 | -10, scope `related` (unscored): withdrawal from the Rome Statute, effective 24 June 2027 | confirmed | official (depositary notification C.N.264.2026) |
+| lead_20261104_MRT_1 | lead, B9 | 2024-11-11 | the President at the Arab-Islamic summit in Riyadh: condemnation of 'what Israel is doing in Palestine by way of genocide and destruction' and an immediate ceasefire (full text printed by the state agency) | press (AMI) |
+| lead_20261104_MRT_2 | lead, B9 | 2025-03-04 | the President at the Arab summit in Cairo: killing, destruction and genocide in the Gaza Strip, support for the ceasefire agreement (full text printed by the state agency) | press (AMI) |
+| lead_20261104_MRT_3 | lead, B9 | 2025-06-21 | the Minister at the OIC Council of Foreign Ministers, Istanbul (the Ministry's indirect-speech report) | press (the Ministry's report) |
+
+Eleven documents were archived: Mali (the 79th, 80th and 81st General Debate files, recorded from the Wayback captures 20240930072203, 20260118012314 and 20261003061316; notification C.N.264.2026 from the capture 20261006064626), Mozambique (the 80th file from the capture 20251008140704), Mauritania (the 79th, 80th and 81st files from the captures 20250810031326, 20260119233006 and 20261004070749; two AMI pages and the Ministry's report of 21 June 2025 by new Save Page Now captures). Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Mali
+
+Assessments (34 indicators): has-events 2 (B1, B6), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: one (B6, scope `related`). Leads: none. The 79th General Debate statement was delivered by a Deputy Prime Minister (not a B9 speaker) and does not name Gaza; the Prime Minister's 80th statement does not mention Palestine; the Foreign Minister's 81st reaffirms 'soutien total au peuple palestinien' with no call. State party to the Rome Statute until 24 June 2027; not on the Court's list of interveners. B1: twelve yes votes. The Prime Minister's and the Ministry's sites did not answer.
+
+### Mozambique
+
+Assessments: has-events 1 (B1), none-found 20, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. The President's 80th and 81st statements support the two-State solution without naming Gaza; the 79th was delivered by the Deputy Minister. Security Council member in 2023 and 2024 (B2 `none-found`, no veto). Signed the Rome Statute (28 December 2000), not a party; not on the Court's list of interveners. B1: eleven yes votes and a non-vote on A/RES/79/232 (19 December 2024).
+
+### Mauritania
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: one (B9). Leads: three. The Minister's 80th statement calls what Gaza is subjected to a war of genocide; the President's 79th statement ('war of genocide against the unarmed Palestinian people', Gaza not named) and the Minister's 81st (atrocities and systematic destruction in 'the Palestinian territories', Resolution 2803 on Gaza) are not filed (R7); the President's speeches at the Riyadh and Cairo summits are leads because only the state agency prints them. Not a party to the Rome Statute; not on the Court's list of interveners. B1: twelve yes votes.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded except Mozambique's non-vote on A/RES/79/232 (19 December 2024), scored -2 by the build (B-690). None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| MLI | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | the B6 event has scope `related` and is unscored; B1 (+16.5) and the passivity penalty (-15). If the author reads B6 as scoring the withdrawal (scope `gaza`), it ends the passivity penalty and the score is +6.5 (+6), Acting either way |
+| MOZ | -0.2 (0) | -0.2 (0) | Passive, unchanged | no event; B1 (+14.8) and the passivity penalty (-15) |
+| MRT | +1.5 (+1) | +6.1 (+6) | Acting, unchanged | the B9 event of 27 September 2025 (+4.6 after decay); B1 (+16.5); the passivity penalty (-15) still applies because the event is older than 365 days |
+
+No band change. Read critically (docs/06 §4 step 7): the three scores rest mainly on B1 (the Assembly votes) and the passivity penalty; Mauritania's rise rests on one B9 event at the legal-characterisation tier, flagged, and its two stronger-looking speeches are leads because of their source kind.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Arabic), the unreachable Mali sites, the Presidency of Mozambique and its Security Council statements, a Presidency or Arab League text for Mauritania's two summit speeches, the Government documents for the three recognition dates, the Article 19 check, and Comtrade for the three.
