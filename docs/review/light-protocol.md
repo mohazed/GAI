@@ -1198,3 +1198,52 @@ All twelve qualifying votes are recorded for the three states and none is in the
 | SMR | +9.5 (+9) | +19.1 (+19) | Acting, unchanged | D3 +8 and the New York Call (+1.6 after decay); the 79th statement is older than 730 days; the passivity penalty still applies. An archived 81st statement (+2, 26 September 2026, inside 365 days) could end it |
 
 One band change. Read critically (docs/06 §4 step 7): Portugal's rests on the joint statements filed under B-444 and the Council's listings under R8, on three flagged own events (the Prime Minister's, the 2+2 declaration, the President's) and on the mechanical D3 events; San Marino's unfiled 81st statement could end its passivity penalty and its 80th would add +5.
+
+## T-P21-30: SRB, VAT, AGO (2026-11-04)
+
+Light protocol (docs/06 §5) for Serbia, the Holy See and Angola, by a fresh Sonnet 5.5 session of the finish run (docs/10 B-734 to B-739). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Ten documents archived (two from existing Wayback captures, the Angolan Presidency's PDFs and the Holy See's 79th General Debate file counted as captures; the rest with Save Page Now; every replay fetched again with `curl --compressed` and equal to its index row in bytes and SHA-256); two attempts removed by exact id (the Embassy of Angola in South Africa's page: HTTP 403 from Save Page Now; the verbatim record A/79/PV.7, whose extracted text is cut at 200 KB before the Angolan address).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2026_04_29_SRB_C2 | C2 | 2026-04-29 | −10 | reported | press |
+| evt_2024_09_28_VAT_B9 | B9 | 2024-09-28 | +2 | confirmed | official |
+| evt_2024_12_25_VAT_B9 | B9 | 2024-12-25 | +2 | confirmed | official |
+| evt_2025_07_20_VAT_B9 | B9 | 2025-07-20 | +5 | confirmed | official |
+| evt_2025_07_27_VAT_B9 | B9 | 2025-07-27 | +2 | confirmed | official |
+| evt_2025_09_04_AGO_B9 | B9 | 2025-09-04 | +2 | confirmed | official |
+| evt_2025_09_22_AGO_B9 | B9 | 2025-09-22 | +5 | confirmed | official |
+| evt_2025_09_23_AGO_B9 | B9 | 2025-09-23 | +5 | confirmed | official |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. Two rows were added to `data/structured/recognitions.csv` (Angola 1988-12-06 from the President's address of 22 September 2025; the Holy See 2015-06-26 from the Press Office's bulletin of that date), both flagged.
+
+### Serbia
+
+Assessments (34 indicators): has-events 2 (B1, C2), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: 1 (`lead_20261104_SRB_1`, the Elbit Systems contracts and the drone venture, press without a primary). Sources read: the Ministry of Foreign Affairs' releases (mfa.gov.rs/en), the General Debate statements of the 79th to 81st sessions (read live; the 80th and 81st have no Wayback replay), BIRN's report as republished by 021.rs (archived), UNRWA tables, the SIPRI register, the ICJ and ICC lists. One C2 event, `reported`, flagged R18 and single origin; it ends the passivity penalty.
+
+### Holy See
+
+Assessments: has-events 2 (B8, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1 (`lead_20261104_VAT_1`, the Bambino Gesù hospital's admissions of children from Gaza, D4, Vatican News). Sources read: the Pope's texts on vatican.va (Angelus, audiences, Urbi et Orbi, 2023 to 2026), the General Debate statements of the 79th to 81st sessions (the 79th archived), the Press Office's bulletin of 26 June 2015 (archived), UNRWA tables (USD 20,000 in each of 2022, 2023, 2024: no D3), the ICJ and ICC lists. No event is inside 365 days.
+
+### Angola
+
+Assessments: has-events 3 (B1, B8, B9), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1 (`lead_20261104_AGO_1`, the Cairo summit address of 4 March 2025, Ver Angola). Sources read: the Presidency's press centre (PDFs of the addresses of 22 and 23 September 2025, archived), UNISPAL's English text of the address of 22 September 2025 (archived), the UAE Ministry's joint statement of 4 September 2025 (archived), the Embassy pages that print the addresses of 24 September 2024 and 22 September 2026, the delegation's General Debate files (79th to 81st, read live), UNRWA tables, the SIPRI register, the ICJ and ICC lists.
+
+### Article 19 note (report only)
+
+Serbia and Angola have all twelve qualifying votes recorded and neither is in the Secretary-General's letter of 3 September 2025 (A/80/362): no Article 19 case. The Holy See is a non-member observer state and has no vote on resolutions (B1 `none-found`, not an absence).
+
+### A4 data-year gap (report only)
+
+Serbia: orders from Israel of 2022 to 2024 in SIPRI's register (lines 583 to 587 of the archived export; TIV 0 to 3) are not in the release's own data year and are not scored (docs/10 B-536 (7)). Angola's two orders (2004, 2015) predate the window.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| SRB | −5.2 (−5) | +5.8 (+6) | Passive to Acting | the reported C2 event (−10 × 0.4 = −4.0) is a qualifying event inside 365 days and ends the passivity penalty (−15); without it the score stays −5.2 (Passive) |
+| VAT | −15.0 (−15) | −5.8 (−6) | Passive, unchanged | B8 +3.0 (the 2015 row) and three B9 events still counted (+0.7, +3.9, +1.6); the passivity penalty still applies (no event inside 365 days) |
+| AGO | +1.5 (+1) | +14.5 (+14) | Acting, unchanged | B8 +3.0 and three B9 events (+1.8, +4.6, +4.6); the passivity penalty still applies (the last B9 is 407 days old) |
+
+One band change. Read critically (docs/06 §4 step 7): Serbia's rests on one `reported` C2 event of a single origin, filed 'no later than' the day of the report and flagged as a technical instrument; the author may remove it (the band returns to Passive). The Holy See's B9 events rest on the rank reading of B-736 (the Pope as head of state; the Secretary of State as head-of-government equivalent). Angola's two +5 events are the President's own legal characterisation and named violations, in texts of the Presidency.

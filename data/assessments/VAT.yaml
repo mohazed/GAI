@@ -1,0 +1,187 @@
+# Coverage record for the Holy See (docs/03 §6). P-21 light protocol, session T-P21-30, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Pope's texts on vatican.va (Angelus, audiences, Urbi et Orbi, 2023 to 2026, English; read), the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the 79th archived, the 80th and 81st read live), the Holy See Press Office's bulletin of 26 June 2015, the generated tables, UNRWA donor rankings (2022 to 2024), the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not read: L'Osservatore Romano, Vatican News beyond the pages found by search, the Holy See's statements in the Security Council (the observer state does not sit on it).
+# Four B9 events and one recognition row (flagged). One lead (D4, the Bambino Gesù hospital). The Holy See is a non-member observer state and not an EU member: B1 and B11 do not apply; its heads are the Pope (head of state), the Secretary of State (read as head-of-government equivalent) and the Secretary for Relations with States (read as foreign-minister equivalent), flagged in docs/10 B-736.
+country: VAT
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier VAT
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches about
+      12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by the Holy See from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer VAT
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: none-found
+    note: 'The Holy See is a non-member observer state (countries.yaml observer: true): it has no vote on General Assembly resolutions, so unga_votes.csv has no row for it. Not a case of Article 19 arrears
+      (the Secretary-General''s letter of 3 September 2025 lists Member States only).'
+    queries:
+    - unga_votes.csv, country VAT (no rows)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (an observer state; countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'The Holy See is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Holy
+      See).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Holy See (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - 'web search: Holy See ICJ Gaza provisional measures'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: The Holy See is not a state party to the Rome Statute (it is not on the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, searched for Holy See). No statement on
+      the warrants of 21 November 2024 by the Pope, the Secretary of State or the Secretary for Relations with States was found.
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Holy See (not found)
+    - 'web search: Holy See ICC arrest warrant Netanyahu Parolin'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - 'web search: Holy See ICC arrest warrant Netanyahu Parolin'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by the Holy See were found.
+    queries:
+    - 'web search: Holy See ICC arrest warrant Netanyahu Parolin'
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv. The registry dates the recognition of Palestine to 26 June 2015, the signing of the Comprehensive Agreement between the Holy See and the State of Palestine (A/78/846;
+      the Holy See Press Office''s bulletin of that date prints the joint statement, Archbishop Gallagher''s address and the Palestinian Foreign Minister''s speech). Row added by this session from src_20150626_vatican_accordo-globale-santa-sede-palestina
+      (R21, flagged: docs/10 B-736). Left to the build.'
+    queries:
+    - recognitions.csv, VAT
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Four events: the Secretary of State''s General Debate address of 28 September 2024 (+2, expired by age on 2026-11-04), the Pope''s Christmas message of 25 December 2024 (+2), the Angelus of 20
+      July 2025 (+5) and that of 27 July 2025 (+2). Not filed: the 80th General Debate statement (Archbishop Gallagher, Secretary for Relations with States, 29 September 2025), which quotes the Pope''s
+      words of 27 August 2025 (''a permanent ceasefire'', ''prohibitions of collective punishment, indiscriminate use of force, and the forced displacement'') under the heading Middle East without citing
+      Gaza (R7; the file va_en.pdf, 373,754 bytes, has no Wayback replay), nor the General Audience of 27 August 2025 itself (''the conflict in the Holy Land'': no Gaza, R7); the Angelus of 26 July 2026
+      (Gaza and the West Bank named; ''a return to negotiations'': no ceasefire call and no named violation); the 81st statement (Cardinal Parolin, 26 September 2026: ''concerned about the dire humanitarian
+      crisis, the widespread destruction, mass displacement'' in Gaza, a call for an end to violence in the West Bank, no ceasefire call for Gaza; the file va_en.pdf, 226,403 bytes, has no replay). No event
+      is inside 365 days, so the passivity penalty still applies.'
+    queries:
+    - vatican.va Angelus and audience texts of 2023 to 2026 (read)
+    - gadebate.un.org/en/{79,80,81}/holy-see (read)
+    - 'web search: Pope Leo XIV Gaza ceasefire Angelus'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Pope, the Secretary of State or the Secretary for Relations with States was found.
+    queries:
+    - vatican.va texts (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: The Holy See is not an EU member and has no sanctions regime; no sanctions on settlers or Israeli ministers were found.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found.
+    queries:
+    - 'web search: Holy See Israel nuncio recalled'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: The Holy See is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No signed instrument of cooperation with Israel since October 2023 was found in the sources read; the Fundamental Agreement of 1993 predates the window.
+    queries:
+    - 'web search: Holy See Israel agreement 2024 2025'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor VAT
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have a row for the Holy See each year (USD 20,000); no suspension of a contribution was found.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No D3 event: the Holy See''s contribution is USD 20,000 in the 2022 table (line 95), 20,000 in the 2023 table (line 135) and 20,000 in the 2024 table (line 161), so 2024 does not exceed 2022
+      in nominal USD.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No D4 event filed. Vatican News of 14 August 2025 (read) reports that the Bambino Gesù Paediatric Hospital in Rome, a Holy See institution, had taken charge of 20 minors from Gaza since October
+      2023, three of them arriving on 13 August 2025 on flights that Italy''s authorities organise (the programme is Italy''s); whether the hospital''s admissions are a Holy See programme under D4 is the
+      author''s reading, and no official Holy See text of a programme was found: lead lead_20261104_VAT_1.'
+    queries:
+    - vaticannews.va 2025-08 Bambino Gesù Gaza (read)
+    - 'web search: Bambino Gesù hospital children from Gaza evacuated Rome'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by the Holy See as a state was found.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

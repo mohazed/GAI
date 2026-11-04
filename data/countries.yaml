@@ -91,7 +91,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-06}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Centro de Imprensa da Presidência da República (Plataforma CIPRA, plataformacipra.gov.ao): PDFs of the President''s addresses and releases', url: 'https://plataformacipra.gov.ao/', type: head_of_state, lang: [pt]}
+    - {label: 'Ministério das Relações Exteriores (mirex.gov.ao): the Minister''s releases; the Embassies'' pages (for example africadosul.mirex.gov.ao) print the President''s addresses', url: 'https://www.mirex.gov.ao/', type: mfa, lang: [pt]}
+  notes: >-
+    gov_sources checked 2026-11-04: plataformacipra.gov.ao answered HTTP 200 (a login page; its PDF files under /public/ficheiros/arquivos/ are public and have Wayback captures); www.mirex.gov.ao,
+    www.presidencia.gov.ao and www.governo.gov.ao did not answer a scripted request from this network within 25 seconds; the Embassy pages africadosul.mirex.gov.ao and marrocos.mirex.gov.ao answer a
+    browser User-Agent (HTTP 200, lang pt) but Save Page Now answers 403 and Wayback has no capture of them. ANGOP (angop.ao) answered HTTP 503. The President is João Manuel Gonçalves Lourenço,
+    who is both head of state and head of government, and the Minister of External Relations is Téte António (in post since 9 April 2020; a web-search summary dated 2026 says he still is, not
+    confirmed by a Government page).
+
 
 - iso3: ALB
   iso2: AL
@@ -4529,7 +4538,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of the Republic of Serbia (mfa.gov.rs): statements and news of the Minister of Foreign Affairs', url: 'https://www.mfa.gov.rs/en', type: mfa, lang: [en, sr]}
+    - {label: 'Government of the Republic of Serbia (srbija.gov.rs): the Prime Minister and the Government', url: 'https://www.srbija.gov.rs/', type: head_of_government, lang: [sr]}
+    - {label: 'Office of the President of the Republic of Serbia (predsednik.rs): statements and addresses of the President', url: 'https://www.predsednik.rs/', type: head_of_state, lang: [sr]}
+  notes: >-
+    gov_sources checked 2026-11-04: all three sites answered HTTP 200 to a request with a browser User-Agent (mfa.gov.rs/en declares lang="en", srbija.gov.rs lang="sr"; predsednik.rs declares none
+    and is a script-rendered page). The President is Aleksandar Vučić and the Prime Minister Đuro Macut (since 16 April 2025), the Minister of Foreign Affairs Marko Đurić (the Ministry's pages).
+    According to web-search results the President dissolved the Assembly in September 2026 and called parliamentary elections for 25 October 2026; their result and any change of Government were not
+    found in this session (flagged for P-23).
+
 
 - iso3: SSD
   iso2: SS
@@ -5267,8 +5285,17 @@
       2013. P-14: not confirmed. The Comprehensive Agreement between the Holy See and the
       State of Palestine was signed on 26 June 2015; the Vatican News article that states the
       recognition could not be archived (Save Page Now failed on 2026-09-28), so
-      recognitions.csv has no row yet.
-  gov_sources: []
+      recognitions.csv has a row since T-P21-30 (2026-11-04), dated 2015-06-26 from the Holy See Press Office's bulletin of that date
+      (src_20150626_vatican_accordo-globale-santa-sede-palestina); flagged (docs/10 B-736).
+  gov_sources:
+    - {label: 'Holy See (vatican.va): the Pope''s addresses, Angelus and audiences, Urbi et Orbi messages', url: 'https://www.vatican.va/content/vatican/en.html', type: head_of_state, lang: [en, it]}
+    - {label: 'Holy See Press Office (press.vatican.va): bulletins, joint statements and the Secretariat of State''s releases', url: 'https://press.vatican.va/content/salastampa/en.html', type: mfa, lang: [en, it]}
+  notes: >-
+    gov_sources checked 2026-11-04: vatican.va answered HTTP 200 to a request with a browser User-Agent (lang="en"); press.vatican.va answered a 193-byte stub to the English home page URL tried but
+    served the bulletin of 26 June 2015 (HTTP 200, Italian URL) and was saved by Save Page Now. The Holy See has no head of government by that title: the Secretary of State (Cardinal Pietro Parolin)
+    and the Secretary for Relations with States and International Organizations (Archbishop Paul Richard Gallagher) are read as the head-of-government and foreign-minister equivalents under R3,
+    flagged (docs/10 B-736). The Pope is Leo XIV since 8 May 2025 (Francis before).
+
 
 - iso3: VCT
   iso2: VC

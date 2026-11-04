@@ -1,0 +1,199 @@
+# Coverage record for Serbia (docs/03 §6). P-21 light protocol, session T-P21-30, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' statements (mfa.gov.rs/en, HTTP 200; about a dozen releases on Israel, Gaza and Egypt read), the General Debate statements of the 79th to 81st sessions (gadebate.un.org, read live; none has a Wayback replay for the 80th and 81st), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Serbian. Not read: predsednik.rs (script-rendered), the Open Parliament page of the committee session of 29 April 2026 (bot challenge), the Serbian press beyond the pages cited.
+# One C2 event (reported). Leads: one (C2, the Elbit contracts and the drone venture). Serbia is an EU candidate, not a member.
+country: SRB
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SRB
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches about
+      12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Serbia from Israel of 2022 to 2024 (RPS-42 radars for the PASARS air-defence systems, SkyStriker loitering munitions, EXTRA
+      missiles, PULS rocket launchers and Hermes-900 drones; archive/text/src_20261005_sipri_register-supplier-israel.txt, lines 583 to 587; TIV of the orders 0 to 3, none in the release''s own data year).
+      Not scored (docs/10 B-536 (7)): the data-year gap is reported for the author. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SRB
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Serbia (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 8 and abstentions on 4 of the 12 qualifying votes (A/RES/ES-10/21, ES-10/24, 79/232 and 80/116). All 12 are recorded; Serbia is not among the Member States
+      in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country SRB
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Serbia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Serbia).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Serbia (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - 'web search: Serbia ICJ Gaza provisional measures Vučić'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Serbia is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, line 205). No statement by the President, the Prime Minister or
+      the Foreign Minister on the warrants of 21 November 2024 for Mr Netanyahu and Mr Gallant was found; the only Serbian statements on an ICC warrant that the searches returned concern the warrant for
+      Mr Putin (March 2023, President Vučić).
+    queries:
+    - 'web search: Serbia ICC arrest warrant Netanyahu Vučić Đurić'
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Serbia (read)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found. The President of Israel, who is not under warrant, visited Belgrade on 11 September 2024.
+    queries:
+    - 'web search: Serbia ICC arrest warrant Netanyahu Vučić Đurić'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Serbia were found.
+    queries:
+    - 'web search: Serbia ICC arrest warrant Netanyahu Vučić Đurić'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Serbia. The registry gives 16 November 1988 as the date of recognition by the Socialist Federal Republic of Yugoslavia (countries.yaml recognises_palestine);
+      no Government document of that date was found, so no row is added (R21).
+    queries:
+    - recognitions.csv, SRB
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 statement by the President, the Prime Minister or the Foreign Minister was found. The 80th General Debate statement (President Vučić, in the delegation file rs_en.pdf, 275,210 bytes, not
+      archived: Wayback has no replay) says only that ''it was mostly spoken here about Palestine and Israel. Both are our friends'' and takes no side; the 79th and 81st statements do not cite Gaza. The
+      Foreign Minister''s call with Israel''s Foreign Minister (5 February 2025, mfa.gov.rs) says in the Ministry''s words that Serbia ''strongly supports the ceasefire agreement in the Gaza Strip'' (indirect
+      speech, R4, and a Government text with no named quotation: not B9); his meeting with Egypt''s Foreign Minister (22 January 2025) offers ''additional help to the people in Gaza'' with no call.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/serbia (read)
+    - mfa.gov.rs statements of 2024 to 2026 (read)
+    - 'web search: Vučić Gaza Israel Serbia position ceasefire statement'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read. The Minister's and the President's statements on Israel concern bilateral
+      relations, the hostage Alon Ohel (a Serbian national, for whose release the Minister said on 5 February 2025 that Serbia would continue to advocate) and a strategic partnership (see C2); the President's
+      'sincere friendship' remarks are reported by the press only (not read).
+    queries:
+    - mfa.gov.rs statements (read)
+    - 'web search: Vučić Herzog Belgrade Serbia stands with Israel'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'Serbia is not an EU member: the Council''s settler listings are not its decisions (R8), and no national sanctions on settlers or Israeli ministers were found.'
+    queries:
+    - 'web search: Serbia sanctions settlers Israel'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Foreign Minister's visit to Israel of 28 to 30 April 2026 'elevated' relations to a strategic partnership (the Ministry's
+      release of 30 April 2026).
+    queries:
+    - mfa.gov.rs statements of 28 and 30 April 2026 (read)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Serbia is not a party to the EU-Israel Association Agreement; no statement on it was found.
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'One event (C2 reported, 2026-04-29): the General Security Agreement of the two defence ministries on classified information, known from BIRN''s report as republished by 021.rs (src_20260429_021-rs_birn-sporazum-srbija-izrael-tajni-podaci;
+      flagged R18, single origin). Lead for the other instruments: the Elbit Systems contracts (USD 335 million in early 2025; USD 1.6 billion, August 2025) and the drone production venture confirmed by
+      the President in 2026 (press only, no primary). The Ministry of Foreign Affairs'' releases of 28 and 30 April 2026 speak of a free trade agreement ''under negotiation'', a strategic dialogue and a
+      Serbian-Israeli Business Council, none signed as an instrument; a memorandum on military, defence and defence-industrial cooperation signed in Tel Aviv on 24 July 2017 predates the window. The Open
+      Parliament page of the committee session answers a bot challenge.'
+    queries:
+    - mfa.gov.rs statements of 28 and 30 April 2026 (read)
+    - 'web search: Serbia Israel agreement signed 2024 2025'
+    - 'web search: Srbija Izrael sporazum potpisan memorandum'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build. Serbia''s Government adopted a conclusion of 10 May
+      2024 sending goods worth close to EUR 3 million to the State of Palestine and EUR 10,000 to UNESCO''s emergency programme for Gaza (the Ministry''s release of that date, read, not archived); in-kind
+      aid and a UNESCO payment are not an UNRWA or D4 act.'
+    queries:
+    - fts_plan_totals.csv, donor SRB
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'Serbia has no row in UNRWA''s donor rankings of 2022, 2023 and 2024 (archived: src_20221231, src_20231231 and src_20241231 unrwa donor rankings, searched for Serbia); no suspension was found.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Serbia (not found)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No D3 event: Serbia has no row in the 2022, 2023 or 2024 UNRWA tables (no baseline, no increase).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Serbia (not found)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Serbia was found; the Government sent humanitarian goods by two flights on 10 and 11 May 2024 (not an indicator act).
+    queries:
+    - 'web search: Srbija Gaza humanitarna pomoć lečenje'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Serbia was found.
+    queries:
+    - 'web search: Srbija Gaza vize izbeglice'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
