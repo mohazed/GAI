@@ -1393,3 +1393,63 @@ Nepal's only order from Israel in SIPRI's register is of 1969 (line 493); the Ma
 | PAK | +1 | +34.5 (+34) | Acting, unchanged | B9 at its cap (+10.0); D3 +8.0; four joint statements inside 365 days end the passivity penalty; without D3 +26.5 |
 
 One band change (the Maldives, Acting to Confronting). Read critically (docs/06 §4 step 7): the Maldives' band rests on the ICJ declaration (B3, whose direction is read from its construction of Articles I to IV and flagged for its restatement of the strict standard of intent) and on a D3 increase whose 2024 amount equals its FTS flow; Pakistan's D3 rests on an increase of USD 2,984 over 2022.
+
+## T-P21-46: ARM, BHR, CYP (2026-11-04)
+
+Light protocol (docs/06 §5) for Armenia, Bahrain and Cyprus, by a fresh Opus 5.5 session of the finish run (docs/10 B-755 to B-759). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26): the session read the Government portals it could reach (gov.cy's WordPress search API, mfa.am's site search), the UN's General Debate files and the texts already archived, and records what it did not search, for P-23. Five documents archived, all from existing Wayback captures with `--capture` (Cyprus's 79th General Debate file and four gov.cy pages; gov.cy refuses Save Page Now with 403); every replay fetched again with `curl --compressed` and equal to its index row in bytes and SHA-256. Two failed Save Page Now rows (gov.cy, 403; Bahrain's 80th General Debate file, 405) were removed from `archive/index.csv` by their exact ids.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2023_10_26_BHR_B9 | B9 | 2023-10-26 | +5 (decayed) | confirmed | official (joint statement, Omani Ministry) |
+| evt_2023_12_31_BHR_D3 | D3 | 2023-12-31 | +8 (ended 2024-12-31) | confirmed | dataset (UNRWA tables) |
+| evt_2024_12_31_ARM_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2023_12_31_CYP_D3 | D3 | 2023-12-31 | +8 (ended 2024-12-31) | confirmed | dataset (UNRWA tables) |
+| evt_2024_02_19_CYP_B9 | B9 | 2024-02-19 | +2 (decayed) | confirmed | official (joint declaration, Belgian Ministry) |
+| evt_2024_04_19_CYP_B11 | B11 | 2024-04-19 | +5 (west-bank, unscored) | confirmed | official (EU Council) |
+| evt_2024_07_15_CYP_B11 | B11 | 2024-07-15 | +5 | confirmed | official (EU Council, EUR-Lex) |
+| evt_2024_09_25_CYP_B9 | B9 | 2024-09-25 | +2 (decayed) | confirmed | official (General Debate file) |
+| evt_2024_11_27_CYP_B9 | B9 | 2024-11-27 | +2 | confirmed | official (joint declaration, gov.cy) |
+| evt_2024_12_31_CYP_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA tables) |
+| evt_2025_01_09_CYP_B9 | B9 | 2025-01-09 | +2 | confirmed | official (joint declaration, gov.cy) |
+| evt_2025_07_21_CYP_B9 | B9 | 2025-07-21 | +5 | confirmed | official (joint statement, Australian Minister) |
+| evt_2025_08_12_CYP_B9 | B9 | 2025-08-12 | +5 | confirmed | official (joint statement, Australian Minister) |
+| evt_2025_09_24_CYP_B9 | B9 | 2025-09-24 | +2 | confirmed | official (gov.cy, President's address) |
+| evt_2025_09_27_CYP_B9 | B9 | 2025-09-27 | +2 | confirmed | official (joint statement, Australian Minister) |
+| evt_2025_12_22_CYP_B10 | B10 | 2025-12-22 | −5 | confirmed | official (joint declaration, Greek Prime Minister's office) |
+| evt_2025_12_22_CYP_C2 | C2 | 2025-12-22 | −10 | confirmed | official (joint declaration, Greek Prime Minister's office) |
+| evt_2026_05_06_CYP_B9 | B9 | 2026-05-06 | +2 | confirmed | official (joint declaration, gov.cy) |
+| evt_2026_05_28_CYP_B11 | B11 | 2026-05-28 | +5 (same tier, no points) | confirmed | official (EUR-Lex) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (Armenia's row of 21 June 2024 exists; Cyprus's and Bahrain's registry dates of 1988 have no Government document in this session).
+
+### Armenia
+
+Assessments (34 indicators): has-events 3 (B1, B8, D3), none-found 17, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: none. Sources read: the Ministry's site search (mfa.am/en/search, Gaza, Israel, Palestine, ceasefire; the Minister's interviews, speeches and press conferences that mention Gaza read), the General Debate files of the 79th and 81st sessions (the Prime Minister: no Gaza; no 80th file), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (a state party). Not searched: the press, Armenian-language sources, the Prime Minister's and President's sites item by item.
+
+### Bahrain
+
+Assessments: has-events 3 (B1, B9, D3), none-found 17 (B2 generated: a Council member in 2026 and 2027), no-data 2 (A2, C3), unchecked 12 (B12 and the eleven of the protocol). Leads: 1 (`lead_20261104_BHR_1`, the Foreign Minister's 80th General Debate statement, no usable capture). Sources read: the General Debate files of the 79th (the Crown Prince and Prime Minister, Arabic, garbled), 80th (the Foreign Minister, no usable capture) and 81st sessions (no Gaza), GA/12712, the joint statements already archived, UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (not a party). The Ministry (`mofa.gov.bh`) and the news agency (`bna.bh`) answer 405 from this network: no Government release was read, so B12 (the ambassadors after October 2023) is left unchecked for P-23.
+
+### Cyprus
+
+Assessments: has-events 7 (B1, B9, B10, B11, C2, D1, D3), none-found 13 (B8 among them), no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: none. Sources read: gov.cy's search API (Gaza, ceasefire, Palestin*, Criminal Court, Association Agreement, Netanyahu, UNRWA, evacuation; the items on Gaza, Israel and the trilateral summits read), the General Debate files of the 79th to 81st sessions (the 80th by OCR; the gov.cy page archived), the joint statements already archived, UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists (a state party). Not archivable: the Al-Alamein declaration of 8 September 2026 (no capture, gov.cy refuses Save Page Now). Not searched: the press, Greek-language sources, the Government Spokesman's statements (R3).
+
+### Article 19 note (report only)
+
+All three have the twelve qualifying votes recorded (yes on each, except Cyprus's vote on A/RES/ES-10/21, recorded as an abstention, −2.0 and decayed); none is among the Member States in arrears in the Secretary-General's letter of 3 September 2025 (A/80/362).
+
+### A4 data-year gap (report only)
+
+Cyprus's orders from Israel in SIPRI's register are of 2002 and 2021 (lines 178 to 180; the 2021 Barak-MX system was delivered in 2024); Armenia and Bahrain have none.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| ARM | +9.5 (+9) | +17.5 (+17) | Acting, unchanged | D3 +8.0; no qualifying event inside 365 days, the passivity penalty (−15) applies |
+| BHR | +1.5 (+1) | +1.5 (+1) | Acting, unchanged | the B9 of 2023 has decayed and the D3 tier ended on 2024-12-31; the passivity penalty applies |
+| CYP | +1.5 (+1) | +24.5 (+24) | Acting, unchanged | B9 at its cap (+10.0); B11 +5.0; D3 +8.0; B10 −5.0; C2 −10.0; four qualifying events inside 365 days end the passivity penalty; without B10 and C2 +39.5 (Acting; Confronting begins at +41) |
+
+No band change. Read critically (docs/06 §4 step 7): Cyprus's B10 and C2 rest on the same reading of the trilateral declaration with Israel as Greece's (flagged, B-326); its B9 cap is reached with or without the decayed and flagged readings.

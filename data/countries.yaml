@@ -259,7 +259,14 @@
       Wikipedia list "International recognition of Palestine" (read 2026-09-28). Confirmed in
       data/structured/recognitions.csv (P-14) from src_20240621_mfa-am_recognition-palestine,
       dated 2024-06-21; B8 is generated from that table, not from this field.
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and International Trade (mfa.am): press releases, speeches, interviews and statements of the Minister', url: 'https://www.mfa.am/en/', type: mfa, lang: [en, hy]}
+    - {label: 'Prime Minister of the Republic of Armenia (primeminister.am): statements, speeches and news of the Prime Minister', url: 'https://www.primeminister.am/en/', type: head_of_government, lang: [en]}
+    - {label: 'President of the Republic of Armenia (president.am): statements and news of the President', url: 'https://www.president.am/en/', type: head_of_state, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: the three sites answered HTTP 200 to a request with a browser User-Agent (mfa.am/en declares lang="hy" on its English pages, primeminister.am/en and
+    president.am/en lang="en"). The Ministry's site search (mfa.am/en/search?q=Gaza) lists its items on a word with their dated URLs. Speakers read: the Prime Minister Nikol Pashinyan and the
+    Minister Ararat Mirzoyan (the General Debate files of the 79th and 81st sessions and the Ministry's pages); the President Vahagn Khachaturyan (not read item by item).
 
 - iso3: ATG
   iso2: AG
@@ -550,7 +557,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-15}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (mofa.gov.bh): news and statements of the Minister of Foreign Affairs', url: 'https://www.mofa.gov.bh/', type: mfa, lang: [en, ar]}
+    - {label: 'Prime Minister''s Office (pmo.gov.bh): the Crown Prince and Prime Minister', url: 'https://www.pmo.gov.bh/', type: head_of_government, lang: [ar]}
+    - {label: 'Bahrain News Agency (bna.bh): the state news agency, which prints the statements of the King, the Crown Prince and Prime Minister and the Ministers', url: 'https://www.bna.bh/en/', type: news_agency, lang: [en, ar]}
+  notes: >-
+    gov_sources checked 2026-11-04: mofa.gov.bh and bna.bh answered HTTP 405 to a request with a browser User-Agent from this network, and their latest Wayback captures (September to October
+    2026 for mofa.gov.bh, March to August 2026 for bna.bh) are 405 pages too; their last good captures were read instead (mofa.gov.bh 20260304094323, lang="en-US", title 'Ministry of Foreign
+    Affairs | Home'; bna.bh/en 20260301134014, lang="en"). pmo.gov.bh was checked through its Wayback capture 20261016193846 (HTTP 200, lang="ar"). The King's Court has no site in this list.
+    The Minister of Foreign Affairs is Abdullatif bin Rashid Al Zayani (the 81st General Debate file and GA/12712).
 
 - iso3: BHS
   iso2: BS
@@ -1219,7 +1234,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of the Republic of Cyprus (gov.cy): statements, speeches and joint declarations of the President of the Republic and the Ministry of Foreign Affairs', url: 'https://www.gov.cy/en/', type: head_of_state, lang: [en, el]}
+    - {label: 'Ministry of Foreign Affairs (mfa.gov.cy)', url: 'https://www.mfa.gov.cy/', type: mfa, lang: [el, en]}
+    - {label: 'Presidency of the Republic (presidency.gov.cy)', url: 'https://www.presidency.gov.cy/', type: head_of_government, lang: [el, en]}
+  notes: >-
+    gov_sources checked 2026-11-04: gov.cy/en answered HTTP 200 to a request with a browser User-Agent (lang="en-US") and lists every item on a word through its WordPress API
+    (/en/wp-json/wp/v2/search?search=Gaza; text by /wp-json/wp/v2/posts/{id}); it refuses Save Page Now (HTTP 403), so its pages are recorded from Wayback captures with --capture.
+    mfa.gov.cy and presidency.gov.cy answered HTTP 200 with pages of about 4 KB (lang="el") that lead to gov.cy, where the Ministry's and the Presidency's texts are published. The President
+    of the Republic, Nikos Christodoulides, is head of state and of government (one entry, typed head_of_state; the Presidency's entry is typed head_of_government for the same office).
+    The Minister of Foreign Affairs is Constantinos Kombos (gov.cy pages of 17 November 2023 and 19 January 2026).
 
 - iso3: CZE
   iso2: CZ

@@ -1,0 +1,186 @@
+# Coverage record for Armenia (docs/03 §6). P-21 light protocol, session T-P21-46, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and International Trade's site search (mfa.am/en/search?q=, read for Gaza, Israel, Palestine and ceasefire: about 45 items since October 2023 listed, the Minister's interviews, speeches and press conferences that mention Gaza read), the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live), the joint statements already archived (grep for Armenia), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26): nothing was searched in the press, in Armenian or in English, and the Prime Minister's and President's sites were not read item by item (P-23).
+# One event (D3). Leads: none.
+country: ARM
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ARM
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Armenia from Israel (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Armenia: not found). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer ARM
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Armenia (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 qualifying votes are recorded; Armenia is not among the Member States in arrears in the Secretary-General''s letter of 3
+      September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country ARM
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Armenia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Armenia).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Armenia (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the Ministry's items read.
+    queries:
+    - mfa.am/en/search?q=Gaza
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Armenia is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, line 92). No statement on the warrants of 21 November 2024 by the President,
+      the Prime Minister or the Foreign Minister was found in the Ministry's search results (not searched in the press; P-23).
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Armenia
+    - mfa.am/en/search?q=Gaza, Israel
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found in the Ministry's items read.
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Armenia were found.
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: Armenia recognised the State of Palestine on 21 June 2024 (the Ministry''s statement, src_20240621_mfa-am_recognition-palestine). Left to the build.'
+    queries:
+    - recognitions.csv, ARM
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No statement by the President, the Prime Minister or the Foreign Minister that cites Gaza with a call for a ceasefire or a named violation was found. The Prime Minister''s General Debate addresses
+      of the 79th (26 September 2024) and 81st sessions never mention Gaza, Israel or Palestine, and the 80th session has no file for Armenia. The Foreign Minister''s answers to journalists printed by the
+      Ministry (joint press conference with Germany''s Foreign Minister, 3 November 2023: ''we call on the parties not to target at least the civilian population'' and ''to put an end to hostilities as
+      soon as possible''; Al Jazeera interview, 30 April 2024: ''We are lobbying for a peaceful settlement and the end of hostilities'') answer questions about Gaza without naming it themselves and speak
+      of ''all possible conflicts'' (R7; both decayed, not filed). The Ministry''s statement of 21 June 2024 on the recognition says Armenia ''has joined the resolutions of the UN General Assembly calling
+      for an immediate ceasefire in Gaza'' (no named speaker, R3). The Deputy Foreign Minister''s speech at the two-State conference (30 July 2025) and the Deputy Ministers'' and the Secretary General''s
+      statements are not B9 (R3).'
+    queries:
+    - mfa.am/en/search?q=Gaza, Israel, Palestine, ceasefire
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,81}/am_en.pdf (read live; 80th: no file)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations was found in the Ministry's items read.
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions by Armenia on settlers or settler entities were found in the Ministry's items read.
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel in the window was found in the Ministry's items read.
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Armenia is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument of cooperation with Israel signed since October 2023 was found in the Ministry's items read (not searched further; P-23).
+    queries:
+    - mfa.am/en/search?q=Israel
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Armenian Government flow to the Gaza response in fts_plan_totals.csv. Left to the build. The Foreign Minister told Arab News (18 April 2024, the Ministry''s transcript)
+      that the Government ''sent humanitarian assistance to refugees from Gaza'' (no amount, not reported to FTS).'
+    queries:
+    - fts_plan_totals.csv, donor ARM
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: no row for Armenia in 2022 or 2023, USD 20,000 in 2024; no announced suspension was found.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2024): UNRWA''s table for 2024 gives USD 20,000 for Armenia against no row in 2022 (zero baseline, B-445).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Armenia and no field hospital deployed by Armenia was found in the Ministry's items read (not searched further; P-23).
+    queries:
+    - mfa.am/en/search?q=Gaza
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the Ministry's items read (not searched further; P-23).
+    queries:
+    - mfa.am/en/search?q=Gaza
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

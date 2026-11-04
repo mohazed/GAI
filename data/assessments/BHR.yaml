@@ -1,0 +1,175 @@
+# Coverage record for Bahrain (docs/03 §6). P-21 light protocol, session T-P21-46, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, English and Arabic; Wayback captures checked), the UN's Meetings Coverage already archived (GA/12712), the joint statements already archived (grep for Bahrain, Bahreïn, البحرين), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. The Ministry of Foreign Affairs (mofa.gov.bh) and the Bahrain News Agency (bna.bh) answered HTTP 405 to every request from this network and their recent Wayback captures are 405 pages; web searches were not available to this session (the run's search budget was spent, as for T-P21-26): no Bahraini Government release and no press item in Arabic or English was read. These gaps are scheduled for P-23.
+# Two events (B9, D3). Leads: one (B9).
+country: BHR
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BHR
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Bahrain from Israel (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Bahrain: not found). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BHR
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Bahrain (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 qualifying votes are recorded; Bahrain is not among the Member States in arrears in the Secretary-General''s letter of 3
+      September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country BHR
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv: Bahrain is an elected Council member from 1 January 2026 to 31 December 2027 (countries.yaml; GA/12712 reports its election) and cast no veto (elected members
+      have none). Left to the build. Its Council statements of 2026 were not read (P-23).'
+    queries:
+    - unsc_vetoes.csv, BHR
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Bahrain is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Bahrain).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Bahrain (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the sources read (the Government's releases could not be reached; P-23).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Bahrain is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the
+      sources read.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Bahrain (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: Bahrain is not a state party, so a hosting is not a state party's act; no statement on the warrants was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Bahrain were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Bahrain. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read (the Ministry's
+      site cannot be reached), so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, BHR
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the joint statement of nine Arab foreign ministers of 26 October 2023 (+5, decayed), already archived and filed for the six signatories among the 45. Not filed: the Foreign Minister''s
+      80th General Debate statement (26 September 2025: ''calls for a comprehensive and lasting ceasefire in the Gaza Strip''), whose files have no usable Wayback replay and which Save Page Now refuses
+      (405): a lead (lead_20261104_BHR_1); the Crown Prince and Prime Minister''s 79th General Debate address (Arabic only, its text layer garbled: the passage on Gaza calls for ''an immediate ceasefire'',
+      a call-tier reading, decayed; its three Wayback captures differ in size from the live file of 833,540 bytes and none was recorded; P-23); the Foreign Minister''s 81st address (26 September 2026: the
+      Palestinian cause, the two-State solution and the Board of Peace, no Gaza, R7). The King''s opening address at the Manama Arab League summit (16 May 2024) and the Manama Declaration were not reached
+      (bna.bh answers 405; the Saudi and Algerian addresses at that summit archived for other countries are not Bahrain''s words).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bh_{en,ar}.pdf (read live)
+    - web.archive.org CDX for the 79th and 80th files
+    - 'archive/text: joint statements, grep Bahrain'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the King, the Crown Prince and Prime Minister or the Foreign Minister was found in the sources read (limited: the Government''s
+      releases could not be reached).'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions by Bahrain on settlers or settler entities were found in the sources read.
+    checked_at: '2026-11-04'
+  B12:
+    status: unchecked
+    note: 'No recall, downgrade or severance was read in a Government primary. The status of ambassadors between Bahrain and Israel after October 2023 (announcements by the Council of Representatives or
+      the Government) was not checked in any source: mofa.gov.bh and bna.bh answer 405 from this network and no web search was available. Nothing is filed and no lead is opened (no source read); scheduled
+      for P-23 as the first search for Bahrain (B12, with the Government''s own text and dates).'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Bahrain is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument of cooperation with Israel signed since October 2023 was read in a primary (the Abraham Accords declaration and the agreements of 2020 to 2022 are before the window; not searched
+      further; P-23).
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Bahraini Government flow to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor BHR
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 50,000 in 2022 and 3,050,000 in 2023; no row in 2024. No announced suspension was found (the absence of a 2024 row is not read as a suspension).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, 31 December 2023 to 31 December 2024): UNRWA''s table for 2023 gives USD 3,050,000 for Bahrain against USD 50,000 in 2022; the increase is in the ''Projects'' column
+      (flagged).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Bahrain and no field hospital deployed by Bahrain was read in a primary (not searched beyond the General Debate texts; P-23).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

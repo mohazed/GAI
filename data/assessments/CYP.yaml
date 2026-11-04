@@ -1,0 +1,208 @@
+# Coverage record for Cyprus (docs/03 §6). P-21 light protocol, session T-P21-46, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government portal gov.cy (its WordPress search API /en/wp-json/wp/v2/search, read for Gaza, ceasefire, Palestin*, Criminal Court, Association Agreement, Netanyahu, UNRWA and 'evacuation Gaza': about 300 items listed, the items on Gaza, Israel and the trilateral summits read through /wp-json/wp/v2/posts/{id}), the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live), the joint statements already archived (grep for Cyprus, Chypre, Cipro), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26): nothing was searched in the press, in Greek or in English, beyond the Government's own portal.
+# Cyprus is an EU member: the three Council listings (B11) and the joint statements that name it (B9) are filed as for the other members (R8, B-444, B-446).
+# Nine B9 events, three B11 events, one B10, one C2, two D3 (sixteen in all). Leads: none.
+country: CYP
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier CYP
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Cyprus from Israel of 2002 (Searcher drones) and 2021 (one Barak-MX surface-to-air missile system and 75 Barak-LRAD missiles,
+      delivered in 2024; archive/text/src_20261005_sipri_register-supplier-israel.txt, lines 178 to 180). Orders placed before the window are not A4 events (docs/10 B-536 (7)); the 2024 deliveries of the
+      2021 order are a supplier''s delivery to Cyprus, not an order. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer CYP
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Cyprus (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven qualifying votes and an abstention on A/RES/ES-10/21 (27 October 2023, −2, decayed). All 12 qualifying votes are recorded; Cyprus is not among the
+      Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country CYP
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Cyprus is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Cyprus).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Cyprus (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders by Cyprus was found in the gov.cy items read.
+    queries:
+    - 'gov.cy search API: Gaza, Criminal Court'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Cyprus is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, line 121). No statement on the warrants of 21 November 2024 by the President
+      or the Minister of Foreign Affairs was found on gov.cy (the search for 'Criminal Court' lists no such item); the press was not searched (P-23).
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Cyprus
+    - 'gov.cy search API: Criminal Court'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found in the gov.cy items read. The President met the Prime Minister of Israel in Jerusalem on 22 December
+      2025 (the trilateral summit); a visit abroad by the state party's head of state is not a hosting (B6 is not filed).
+    queries:
+    - 'gov.cy search API: Netanyahu, Criminal Court'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Cyprus were found.
+    queries:
+    - 'gov.cy search API: Criminal Court'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Cyprus. The registry gives 18 November 1988 (countries.yaml recognises_palestine); the Minister of Foreign Affairs said on 19 January 2026
+      that Cyprus 'recognised the right of self-determination of Palestinian people back in 1988' (gov.cy, read, not archived), which gives no day and does not name the recognition of the State, so no row
+      is added (R21; P-23).
+    queries:
+    - recognitions.csv, CYP
+    - gov.cy item 97137 (read)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Nine events. Four joint statements already archived that name Cyprus (19 February 2024 +2, decayed; 21 July 2025 +5; 12 August 2025 +5; 27 September 2025 +2); the President''s General Debate
+      addresses of 25 September 2024 (+2, decayed) and 24 September 2025 (+2; the gov.cy page, the UN''s file being a garbled printout of it); the joint declarations of the trilateral summits with Jordan
+      and Greece of 27 November 2024 (+2) and 6 May 2026 (+2, inside 365 days) and with Egypt and Greece published on 9 January 2025 (+2). B9 is at its cap of +10. Not filed: the President''s 81st General
+      Debate address (24 September 2026: the Amalthea corridor and ''the devastating humanitarian situation in Gaza'', no call); the Al-Alamein declaration with Egypt and Greece (gov.cy, 8 September 2026:
+      ''humanitarian assistance must reach the civilian population safely, rapidly and at scale'', a call-tier reading) has no Wayback capture and gov.cy refuses Save Page Now (403), so it is noted here
+      (an official text cannot be a lead); the President''s intervention at the Dead Sea conference of 11 June 2024 (''we hope that the roadmap for an immediate ceasefire … will be accepted'', a hope at
+      the call tier, decayed: the CDX query failed, not archived); the Minister''s statement of 19 January 2026 after the Egypt-Cyprus-Greece meeting (welcomes the second phase of the peace plan, no call);
+      the Minister''s statement of 20 December 2023 with Israel''s Foreign Minister (civilians ''must be protected in accordance with international humanitarian law'', no call); the President''s press remarks
+      of 22 December 2025 (support for the 20-point plan). Not read item by item: the Government Spokesman''s statements (R3), the President''s statements to the press after the European Councils.'
+    queries:
+    - 'gov.cy search API: Gaza, ceasefire, Palestin*, Netanyahu'
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cy_en.pdf (read live; the 80th by OCR)
+    - 'archive/text: joint statements, grep Cyprus, Chypre, Cipro'
+    checked_at: '2026-11-04'
+  B10:
+    status: has-events
+    note: 'One event: the joint declaration of the 10th Trilateral Summit of Israel, Greece and Cyprus (Jerusalem, 22 December 2025), which ''reject[s] unfounded allegations against Israel'' in the paragraph
+      on Gaza, filed for Cyprus exactly as for Greece (evt_2025_12_22_GRC_B10, docs/10 B-326 (2)); flagged. No other statement of unconditional support was found: the President''s statements with Israel''s
+      leaders of May and September 2023 are before the window.'
+    queries:
+    - archive/text/src_20251222_primeminister-gr_joint-declaration-trilateral-israel.txt (read)
+    - 'gov.cy search API: Netanyahu'
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024, 15 July 2024 and 28 May 2026, adopted by unanimity (R8, B-446); Cyprus held the Council Presidency from January to June 2026.
+      No national sanctions by Cyprus were found.'
+    queries:
+    - 'gov.cy search API: Gaza'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the gov.cy items read; the President and the Minister met Israel's leaders in the window (20 December 2023, 22 December
+      2025).
+    queries:
+    - 'gov.cy search API: Netanyahu, Gaza'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No Government text on Cyprus's position on the review or suspension of the EU-Israel Association Agreement was found on gov.cy (the search for 'Association Agreement' lists none on Israel); the
+      press was not searched (P-23).
+    queries:
+    - 'gov.cy search API: Association Agreement'
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'One event: the joint declaration of 22 December 2025 with Israel and Greece (annual leaders'' summit, reinforced security, defence and military cooperation, trilateral working groups), filed
+      as for Greece (evt_2025_12_22_GRC_C2) and flagged under R18. It is a qualifying event inside 365 days. Other instruments with Israel signed since October 2023 were not searched beyond gov.cy (P-23).'
+    queries:
+    - archive/text/src_20251222_primeminister-gr_joint-declaration-trilateral-israel.txt (read)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Cypriot Government flows to the Gaza response appear in fts_plan_totals.csv (four plan rows). Left to the build. The President said at the 81st General Debate that Cyprus
+      dedicated more than 25% of its humanitarian assistance budget to Palestine and set up the Amalthea maritime corridor (the 81st file, read live, not archived); the corridor is a delivery route, not
+      a D4 programme.'
+    queries:
+    - fts_plan_totals.csv, donor CYP
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have a row for Cyprus in each year (USD 101,000, 657,000 and 754,000); no suspension of a Cypriot contribution was found.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events (D3 increased, from 31 December 2023): UNRWA''s table for 2023 gives USD 657,000 for Cyprus against USD 101,000 in 2022, and the 2024 table USD 754,000.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No Government programme of medical evacuation of Gazans hosted in Cyprus and no field hospital deployed by Cyprus was found in the gov.cy items read. The Amalthea maritime corridor (from March
+      2024) carries aid to Gaza; it is not a medical evacuation or a field hospital (D4's definition) and is noted under D1. Cyprus's role as an evacuation hub for foreign nationals (the President's 80th
+      address) concerns consular evacuations.
+    queries:
+    - 'gov.cy search API: Gaza, evacuation Gaza'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the gov.cy items read (not searched further; P-23).
+    queries:
+    - 'gov.cy search API: Gaza'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
