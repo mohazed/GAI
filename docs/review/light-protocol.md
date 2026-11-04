@@ -1933,3 +1933,51 @@ No band change. Read critically (docs/06 §4 step 7): Equatorial Guinea's Enabli
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Portuguese, Spanish), the Kenyan Ministry's items from October 2023 to August 2024 (not listed on its site), the signing of the Kenya-Israel cyber MOU, the Government documents for the three recognition dates, Guinea-Bissau's 81st statement and Government sites for 2024 to 2026, Equatorial Guinea's non-votes, the Article 19 check, the A4 data-year gap for Kenya, and Comtrade for the three.
+
+## T-P21-38 — Liberia, Lesotho, Madagascar (2026-11-04)
+
+Light protocol, group 38, eighth sub-Saharan group in the Claude track (Task B, B-694), run by a Sonnet 5.5 session of the finish run (docs/10 B-807 to B-811). Comtrade step skipped (COMTRADE-20261104 present; none of the three has rows). Web searches were not available (the run's search budget was spent): the session read the Governments' own sites (Liberia's Executive Mansion and Ministry by their lists; Lesotho's portal through its REST API and the Ministry's site; Madagascar's Ministry through its site search), the UN's General Debate pages and files of the 79th to 81st sessions (live; the files recorded from existing Wayback captures, whose byte counts equal the live files'), the ICJ's case 192 page and the Treaty Collection's page on the Rome Statute (live) and the generated tables.
+
+Three events (Lesotho) and two leads (Lesotho, Liberia).
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_26_LSO_B9 | B9 | 2025-09-26 | +2 (the Prime Minister: call for a permanent ceasefire and the release of all remaining hostages) | confirmed | official (the Government's page printing the full statement; the UN's file has no Wayback capture) |
+| evt_2024_09_26_LSO_B9 | B9 | 2024-09-26 | +2 (the King: 'we renew our call for a ceasefire'; flagged for 'human rights violations in Gaza'; expired) | confirmed | official (the UN's General Debate text) |
+| evt_2023_11_14_LSO_B9 | B9 | 2023-11-14 | +5 (the Minister of Foreign Affairs, in Sesotho: immediate ceasefire; 'disproportionate force', 'collective punishment'; flagged for the Sesotho reading and the date; expired) | confirmed | official (the Government's portal, PDF) |
+| lead_20261104_LSO_1 | lead, B9 | 2026-09-25 | the Prime Minister's 81st statement welcomes 'the ceasefire framework' (file) while the Government's summary says 'Ceasefire in Gaza NOW' | press (the Government's information service) |
+| lead_20261104_LBR_1 | lead, B9 | 2024-04-15 | the President 'urged both Israel and Hamas to adhere to ... Resolution 2728' (indirect speech, Gaza not named; expired) | press (the Executive Mansion's report) |
+
+Six documents were archived (Lesotho: the 79th General Debate file recorded from the Wayback capture 20241111145827, the Government's page of the 80th statement from the capture 20260210005203, the Sesotho statement of November 2023 by a new Save Page Now capture; Liberia: the 79th and 80th files from captures 20250718102306 and 20251008124633 and the Executive Mansion's report of 15 April 2024 from the capture 20260106040900). Every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Liberia
+
+Assessments (34 indicators): has-events 1 (B1), none-found 20, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: one. President Boakai's 79th statement (25 September 2024) calls for 'an immediate ceasefire in the Middle East' without naming Gaza; the 80th supports mediation of the Israeli-Palestinian conflict and the two-state solution; the 81st (an image PDF, read by OCR) says nothing on the war. Liberia sits on the Security Council from January 2026 (B2 generated, no veto); its statements in the Council were not read. State party to the Rome Statute; not on the Court's list of interveners. B1: five yes votes, one no (12 December 2023), one abstention and five non-votes. SIPRI: a 2024 order of 0.24 TIV from Israel is outside the build's data year.
+
+### Lesotho
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: three (B9). Leads: one. The King (79th), the Prime Minister (80th) and the Minister of Foreign Affairs (statement to the National Assembly, November 2023) call for a ceasefire; the Prime Minister's 81st statement welcomes the ceasefire framework in Gaza and calls for a lasting solution on the 1967 borders. State party to the Rome Statute; not on the Court's list of interveners. B1: eleven yes votes and one non-vote (12 December 2025).
+
+### Madagascar
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Events: none. Leads: none. The three General Debate statements (Prime Minister Ntsay 2024, President Rajoelina 2025, President of the Refoundation Randrianirina 2026) do not name Gaza, Palestine or Israel; the Ministry's site search returns no statement on the war. The Presidency's and the Prime Minister's sites could not be read. State party to the Rome Statute; not on the Court's list of interveners. B1: six yes votes and six non-votes.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Liberia five non-votes, a no and an abstention, Lesotho one non-vote, Madagascar six non-votes. None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| LBR | -12.5 (-13) | -12.5 (-13) | Passive, unchanged | no event; B1 (+2.5) and the passivity penalty (-15) |
+| LSO | -3.5 (-4) | -1.7 (-2) | Passive, unchanged | the B9 event of 26 September 2025 (+1.84; the two older events are expired); B1 (+11.5); passivity (-15) still applies because the event is older than 365 days |
+| MDG | -18.2 (-18) | -18.2 (-18) | Passive, unchanged | no event; B1 (-3.2) and the passivity penalty (-15) |
+
+No band change. Read critically (docs/06 §4 step 7): Madagascar's and Liberia's scores rest on their votes in B1 and the passivity penalty, and on non-votes that no source read explains; Lesotho's rests on B1 and a single counted B9 event.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23 and Task V: the web searches per indicator group (English, French, Sesotho), Liberia's statements in the Security Council since January 2026, Madagascar's Presidency and Prime Minister's items, a native reading of Lesotho's Sesotho statement, Lesotho's embassy list and treaty page, the Government documents for the three recognition dates, the non-votes of Liberia and Madagascar, the Article 19 check, the A4 data-year gap for Liberia, and Comtrade for the three.

@@ -3033,7 +3033,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-07-19}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Executive Mansion of Liberia (the Presidency; head of state and head of government)', url: 'https://www.emansion.gov.lr/', type: head_of_state, lang: [en]}
+    - {label: 'Ministry of Foreign Affairs of Liberia', url: 'https://mofa.gov.lr/', type: mfa, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: emansion.gov.lr (lang="en"; Drupal 10; the site search returns an empty page, the press-release list /media-center/press-release is paged) and mofa.gov.lr (lang="en";
+    Drupal 10; /search/node returns an empty page, the lists /media-center/press-releases, /press-briefings and /publications/document-type/speeches are paged) answered HTTP 200 to a request with a
+    browser User-Agent. The President is Joseph Nyuma Boakai (head of state and head of government); the Foreign Minister is Sara Beysolow Nyanti (the Ministry's items). Liberia sits on the Security
+    Council from 1 January 2026 to 31 December 2027.
 
 - iso3: LBY
   iso2: LY
@@ -3178,7 +3185,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 2011-05-03}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Government of Lesotho (gov.ls; the Government portal, with the Office of the King and the Office of the Prime Minister)', url: 'https://www.gov.ls/', type: government, lang: [en]}
+    - {label: 'Ministry of Foreign Affairs and International Relations of Lesotho', url: 'https://foreignaffairs.gov.ls/', type: mfa, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: gov.ls (lang="en-US"; WordPress with an open REST API, /wp-json/wp/v2/posts?search=, full text; it prints the Prime Minister's speeches in full and the Minister's statements
+    as PDFs through a download manager; it answers slowly, Save Page Now got HTTP 504 and 503 on it) and foreignaffairs.gov.ls (ASP.NET, no lang attribute, text in English; /Post, /Documents and /Home/Docs
+    list few items) answered HTTP 200 to a request with a browser User-Agent. The earlier addresses foreign.gov.ls and pmoffice.gov.ls did not answer. The head of state is King Letsie III, the Prime Minister
+    Samuel Ntsokoane Matekane and the Minister of Foreign Affairs and International Relations Lejone Mpotjoane (the Government's pages).
 
 - iso3: LTU
   iso2: LT
@@ -3396,7 +3410,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-16}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of Madagascar', url: 'https://www.diplomatie.gov.mg/', type: mfa, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: diplomatie.gov.mg (lang="fr-fr"; Joomla with a full-text site search, /index.php/component/search/?searchword=) answered HTTP 200 to a request with a browser User-Agent.
+    The Presidency (presidence.gov.mg) did not answer (connection timeout; its Wayback capture of 17 October 2026 is a 404) and the Prime Minister's site (primature.gov.mg) answers 502, so no Presidency or
+    Primature source is listed. The President of the Refoundation of the Republic is Michaël Randrianirina (the UN's General Debate page of the 81st session; the previous President, Andry Rajoelina, spoke
+    in the 80th) and the Minister of Foreign Affairs is Alice N'Diaye (the Ministry's page).
 
 - iso3: MDV
   iso2: MV
