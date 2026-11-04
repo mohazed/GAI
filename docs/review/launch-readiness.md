@@ -2,7 +2,7 @@
 
 What this is: the verification of every launch criterion of `docs/01-plan.md` §6, with the evidence of each, run on `main` against the live site (https://gaza-accountability-index.pages.dev) and on `data/phase1` with a local preview build (the 1,235 reviewed events shown as if published; never deployed). Nothing was published, tagged, merged or deployed from a preview build. The tag `v0.9.0-scorecard` was not created and the site was not launched: the "Before" line of P-20 is not met (no event published, the corrections log empty, the calibration worksheet not posted), and publishing is the author's step (HANDOFF Part 4).
 
-Commits of the run: `main` 762ccbe (e2e), d7868e8 (dump split), 86a5909 (intermediate region, methodology workflow and notice); `data/phase1` ca4fb3a (assessment statuses), 4d9f15f (merge of `main`), and the log and this file.
+Commits of the run: `main` 762ccbe (e2e), d7868e8 (dump split), 86a5909 (intermediate region, methodology workflow and notice); `data/phase1` ca4fb3a (assessment statuses), 4d9f15f (merge of `main`), 8de43b7 (this file, the launch note, the build log).
 
 ## 1. The criteria
 
@@ -19,7 +19,7 @@ Commits of the run: `main` 762ccbe (e2e), d7868e8 (dump split), 86a5909 (interme
 | No banned word in any summary | `pnpm validate` (tone rule): 0 errors. A second scan with the 280 terms of `methodology/v1.0.0/banned-words.txt` over the 12,910 English and French summaries of the preview build (events and country summaries): 0 hits (the scanner caught `brutal`, `shameful`, `honteusement` and `lâche` in a control sentence). | Met |
 | Design critique pass passed | P-17 (B-461 to B-475) ran the critique and the anti-slop checklist on a preview build; every build since enforces the design tokens (no colour outside them, no style attribute, no `oklch`, no Inter: `postbuild.ts`). Nothing changed in the design in this run. | Met |
 | The nightly workflow's last run | 39 nightly runs, all successful; the last on 2026-11-04 10:51 UTC (run 41816977146). | Met |
-| CI green on `main` and on PR #11 | {CI} | {CI_STATE} |
+| CI green on `main` and on PR #11 | `main`: green at 762ccbe (run 41921109698), d7868e8 (41922058249) and 86a5909 (41924874746), each with the browser tests, Lighthouse and the deploy. `data/phase1`: red on every push of 2026-11-04 until the end-to-end fix (B-862); green at 8de43b7, push run 41927496713 and PR #11 run 41927502534. The deploy workflow on PR #11 is green too. | Met |
 
 Other checks of the P-20 prompt:
 
@@ -41,7 +41,6 @@ Other checks of the P-20 prompt:
 2. **The corrections log is empty.** Evidence: `data/corrections.yaml`, the live Corrections page. Docs/08 §5 asks for the project's own first entries, found during the backfill; the backfill's corrections were all made on unpublished events, in place. After publishing, the author's sampled review (Part 4, item 1) is the natural source of the first entry; a correction can be recorded only for a published event.
 3. **No hand-researched event is published** (0 of 1,235): the scorecard shows computed values only. This is Part 4, item 1.
 4. **The calibration worksheet has not been posted to readers** (Part 4, item 6), so the three "does the band feel right" slots are blank.
-5. **CI on `data/phase1` must be green after the merge of `main`** (see the table above); until then PR #11 cannot be merged.
 
 None of these can be lifted by a default: each needs the author or a published event.
 
