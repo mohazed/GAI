@@ -1,0 +1,174 @@
+# Coverage record for Bhutan (docs/03 §6). P-21 light protocol, session T-P21-25, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate pages and files of the 79th to 81st sessions (gadebate.un.org, read live), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not searched: Dzongkha-language sources, the Ministry of Foreign Affairs and External Trade (mfa.gov.bt) and the Prime Minister's Office (pmo.gov.bt), which did not answer from this network (Wayback captures exist; P-23), Kuensel item by item.
+# No event. Leads: none.
+country: BTN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BTN
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Bhutan from Israel in the register (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Bhutan: no row). Left to the
+      build.'
+    queries:
+    - sipri_orders.csv, buyer BTN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Bhutan (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes; recorded as not voting (X) on A/DEC/80/506 (12 September 2025), scored -2 by the build. All 12 are recorded; Bhutan is not
+      among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so the absence is not an Article 19 loss of vote.'
+    queries:
+    - unga_votes.csv, country BTN
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Bhutan is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Bhutan).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Bhutan (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Bhutan is not a state party to the Rome Statute (the Assembly of States Parties'' list, src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November
+      2024 was found.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Bhutan (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or the Prosecutor were found.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Bhutan. The registry gives 25 December 1988 (countries.yaml recognises_palestine); no Government document of the date was found in this session,
+      so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, BTN
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'The Prime Minister''s General Debate addresses of the 79th (27 September 2024), 80th (26 September 2025) and 81st (22 September 2026) sessions were read in the delegation files: none mentions
+      Gaza, Palestine, Israel or a ceasefire (the 81st is about Gelephu Mindfulness City). No statement on Gaza by the King, the Prime Minister or the Foreign Minister was found; the Ministry''s site (mfa.gov.bt)
+      and the Prime Minister''s Office (pmo.gov.bt) did not answer from this network and were not read item by item (P-23).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/bhutan and the delegation files bt_en.pdf of the 79th to 81st sessions (read live)
+    - 'web search: Bhutan government statement Gaza ceasefire Prime Minister Tshering Tobgay Israel Palestine'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found.
+    queries:
+    - 'web search: Bhutan government statement Gaza ceasefire Prime Minister Tshering Tobgay Israel Palestine'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Bhutan is not an EU member (R8) and no national sanctions on settlers or Israeli ministers were found.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: Bhutan and Israel established diplomatic relations on 12 December 2020 (notes verbales exchanged in New Delhi, press reports); no recall, downgrade or severance was found.
+    queries: &id001
+    - 'web search: Bhutan Israel agreement signed 2024 OR 2025 OR 2026 memorandum cooperation Bhutan Ministry of Foreign Affairs Israel'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Bhutan is not a party to the EU-Israel Association Agreement; no statement on it was found.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel since 7 October 2023 was found: the searches return only the establishment of relations of December 2020. The Israeli Embassy in New Delhi''s list of agreements
+      was not read (P-23).'
+    queries: *id001
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_plan_totals.csv): no flow from Bhutan to the Gaza response. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor BTN
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022 to 2024 have no row for Bhutan: no funding to suspend.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Bhutan (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No row for Bhutan in UNRWA''s donor rankings of 2022 to 2024: no increase. The 2025 table is not archived (P-23).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Bhutan (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital was found.
+    queries:
+    - 'web search: Bhutan government statement Gaza ceasefire Prime Minister Tshering Tobgay Israel Palestine'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found.
+    queries:
+    - 'web search: Bhutan government statement Gaza ceasefire Prime Minister Tshering Tobgay Israel Palestine'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

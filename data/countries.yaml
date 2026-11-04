@@ -810,7 +810,13 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-25}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs and External Trade (mfa.gov.bt)', url: 'https://www.mfa.gov.bt/', type: mfa, lang: [en]}
+    - {label: 'Office of the Prime Minister and Cabinet (pmo.gov.bt)', url: 'https://pmo.gov.bt/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.bt and pmo.gov.bt did not answer scripted requests from this network (no connection) and were checked through their latest Wayback captures (mfa.gov.bt
+    20261017102248, title 'Ministry of Foreign Affairs and External Trade', lang="en-US"; pmo.gov.bt 20261005004200, title 'PMO – Office of the Prime Minister and Cabinet', lang="en-US"; the capture
+    of 20261025011828 answered 'Temporarily Offline'). The Prime Minister is Tshering Tobgay (the 79th to 81st General Debate addresses); the Foreign Minister was not checked in this session.
 
 - iso3: BWA
   iso2: BW
@@ -2290,11 +2296,19 @@
     note: >-
       A/78/846 (annex) gives 4 February 1988, before the declaration of 15 November 1988; 4 February
       1989 is the date of other lists (Wikipedia).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs (en.mfa.gov.ir), English pages', url: 'https://en.mfa.gov.ir/', type: mfa, lang: [en, fa]}
+    - {label: 'President of the Islamic Republic of Iran (president.ir), English pages', url: 'https://president.ir/en', type: head_of_government, lang: [en]}
   notes: >-
     name.fr_def is the UNTERM French formal name (la République islamique d'Iran): the UNTERM French
     short name "Iran (République islamique d')" carries no article. Scored like every other country;
-    direct hostilities are outside the scale (docs/07).
+    direct hostilities are outside the scale (docs/07). gov_sources checked 2026-11-04: president.ir/en
+    answered HTTP 200 (items in English, many in indirect speech); en.mfa.gov.ir answers scripted requests
+    with a cookie challenge (HTTP 307 to itself), not bypassed, and was checked through its Wayback capture
+    20260923054406 (lang="en"). The President is Masoud Pezeshkian (from 28 July 2024), read as head of
+    government; the Supreme Leader Ali Khamenei was killed on 28 February 2026 and Mojtaba Khamenei was
+    named on 8 March 2026 (press reports; the UN's summary of the 81st General Debate statement); the
+    Foreign Minister is Abbas Araghchi.
 
 - iso3: IRQ
   iso2: IQ
@@ -2910,7 +2924,14 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-11-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, Foreign Employment and Tourism (mfa.gov.lk): Minister''s statements', url: 'https://www.mfa.gov.lk/en/news/minister-statement', type: mfa, lang: [en]}
+    - {label: 'Presidential Secretariat (presidentsoffice.gov.lk)', url: 'https://www.presidentsoffice.gov.lk/', type: head_of_state, lang: [en]}
+    - {label: "Prime Minister's Office (pmoffice.gov.lk)", url: 'https://www.pmoffice.gov.lk/', type: head_of_government, lang: [en]}
+  notes: >-
+    gov_sources checked 2026-11-04: mfa.gov.lk (redirects to www.mfa.gov.lk; the old WordPress addresses ?p=N redirect to the home page), its Minister's statements listing, presidentsoffice.gov.lk
+    (lang="en-LK") and pmoffice.gov.lk (lang="en", a script-rendered application) answered HTTP 200. The President, head of state and head of government, is Anura Kumara Dissanayake (from 23 September
+    2024); the Prime Minister is Harini Amarasuriya; the Minister of Foreign Affairs, Foreign Employment and Tourism is Vijitha Herath (the 81st General Debate statement).
 
 - iso3: LSO
   iso2: LS

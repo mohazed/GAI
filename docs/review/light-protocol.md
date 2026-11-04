@@ -1292,3 +1292,51 @@ Viet Nam's orders from Israel in SIPRI's register are of 2006 to 2018 (lines 833
 | BGD | +1.5 (+1) | +22.5 (+22) | Acting, unchanged | B9 +4.0 (29 July 2025, decayed) and +2.0 (26 February 2026); the OIC statement is inside 365 days and ends the passivity penalty (−15); without it the score is +5.5 |
 
 No band change. Read critically (docs/06 §4 step 7): Bangladesh's +22.5 rests on the OIC statement, whose speaker is unnamed in the official text (named by one press report) and whose call is made while a ceasefire was formally in force; and on the reading of the interim Government's Chief Adviser and Foreign Adviser as head of government and foreign minister (B-741). Afghanistan's −26 is mostly the Article 19 absences and the passivity penalty; its speakers are the author's decision (B-742).
+
+## T-P21-25: BTN, IRN, LKA (2026-11-04)
+
+Light protocol (docs/06 §5) for Bhutan, the Islamic Republic of Iran and Sri Lanka, by a fresh Opus 5.5 session of the finish run (docs/10 B-745 to B-749). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Seven documents archived (three General Debate files from existing Wayback captures with `--capture`, four pages with Save Page Now: the Sri Lankan Ministry's page of the Foreign Minister's 81st General Debate statement, the Iranian Ministry's text of the Foreign Minister's Al Jazeera Forum speech, two Colombo press reports of the service-sector memorandum); every replay fetched again with `curl --compressed` and equal to its index row in bytes and SHA-256.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_09_24_IRN_B9 | B9 | 2024-09-24 | +5 | confirmed | official |
+| evt_2025_09_24_IRN_B9 | B9 | 2025-09-24 | +5 | confirmed | official |
+| evt_2026_02_07_IRN_B9 | B9 | 2026-02-07 | +5 | confirmed | official (Ministry, embassy page) |
+| evt_2024_12_31_LKA_D3 | D3 | 2024-12-31 | +8 | confirmed | dataset (UNRWA table) |
+| evt_2025_09_24_LKA_B9 | B9 | 2025-09-24 | +2 | confirmed | official |
+| evt_2025_12_22_LKA_C2 | C2 | 2025-12-22 | −10 | corroborated | press (two publishers, one release) |
+| evt_2026_09_28_LKA_B9 | B9 | 2026-09-28 | +2 | confirmed | official (Ministry) |
+
+Points are the tier points before decay and weights. B1, D1, A1, A4, B2, B8 and the other generated indicators are left to the build. No row was added to `data/structured/recognitions.csv` (the registry's dates of 1988 and 1989 have no Government document in this session).
+
+### Bhutan
+
+Assessments (34 indicators): has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6 and E1 to E3). Leads: none. Sources read: the Prime Minister's General Debate addresses of the 79th to 81st sessions (none mentions Gaza, Palestine or Israel), UNRWA tables (no row), FTS (no flow), the SIPRI register, the ICJ and ICC lists; web searches in English. The Ministry (`mfa.gov.bt`) and the Prime Minister's Office (`pmo.gov.bt`) did not answer from this network and were checked through Wayback captures only.
+
+### Iran
+
+Assessments: has-events 2 (B1, B9), none-found 18, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1, promoted (`lead_20261104_IRN_1` → `evt_2026_02_07_IRN_B9`). Sources read: the President's General Debate files of the 79th and 80th sessions (archived) and the UN's page of the 81st (no file), the President's English site (items in indirect speech, R4), the Foreign Ministry's text of the Al Jazeera Forum speech on its Embassy in Sri Lanka's pages (archived; the Ministry's sites answer scripts with a cookie challenge, not bypassed), UNRWA tables (no row), FTS (no flow), the SIPRI register (orders of 1985 and 1986 only), the ICJ and ICC lists.
+
+### Sri Lanka
+
+Assessments: has-events 5 (B1, B9, C2, D1, D3), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11. Leads: 1 (`lead_20261104_LKA_1`, the construction-sector memorandum, Ada Derana). Sources read: the General Debate files of the 79th (the Permanent Representative: R3), 80th (the President, archived) and 81st sessions (the Foreign Minister, archived from the Ministry's page), the Ministry's listing of the Minister's statements (the remarks of 14 October 2024, a call for a ceasefire, expired), the press reports of the Deputy Foreign Minister's visit to Israel of December 2025 (archived), UNRWA tables, FTS, the SIPRI register, the ICJ and ICC lists.
+
+### Article 19 note (report only)
+
+Sri Lanka has all twelve qualifying votes recorded (yes on each). Bhutan and Iran have yes on eleven and are recorded as not voting (X) on A/DEC/80/506 (12 September 2025, the decision on the participation of the State of Palestine's President by video); neither is among the Member States in arrears in the Secretary-General's letter of 3 September 2025 (A/80/362), so the absence is not an Article 19 loss of vote. The build scores it at −2.
+
+### A4 data-year gap (report only)
+
+Iran's orders from Israel in SIPRI's register are of 1985 and 1986 (lines 408 to 410), none in the window. Bhutan and Sri Lanka have no orders from Israel.
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; the "before" column is the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| BTN | −3.0 (−3) | −3.0 (−3) | Passive, unchanged | no event; the passivity penalty (−15) applies |
+| IRN | −3.0 (−3) | +21.6 (+22) | Passive to Acting | B9 +4.6 (24 September 2025, decayed) and +5.0 (7 February 2026); the Al Jazeera Forum speech is inside 365 days and ends the passivity penalty (−15); without it the score is +1.6 (Acting) |
+| LKA | +1.5 (+1) | +21.3 (+21) | Acting, unchanged | D3 +8.0; B9 +1.8 and +2.0; C2 −7.0; the 81st General Debate statement and the C2 event are inside 365 days and end the passivity penalty; without the C2 event +28.3, without the 81st statement +19.3, without both +11.3 |
+
+One band change (Iran, Passive to Acting). Read critically (docs/06 §4 step 7): Iran's band change rests on two General Debate addresses (one expired) and the Foreign Minister's speech at a broadcaster's forum, filed from the Ministry's own text; the 80th address alone keeps Iran at +1.6, the bottom of Acting. Sri Lanka's C2 event rests on two press reports of one Government release, flagged under R18 as a labour-recruitment memorandum between employment agencies.
