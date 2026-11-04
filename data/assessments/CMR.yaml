@@ -1,0 +1,191 @@
+# Coverage record for Cameroon (docs/03 §6). P-21 light protocol, session T-P21-33, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live; the 79th archived by --capture), the Presidency's site (prc.cm, a Joomla site, searched through /fr/component/search/ for nine terms), the Embassy of Israel in Yaounde's page, the UN Treaty Collection's status page for the Rome Statute, the joint statements and UN records already archived (grep of archive/text for the country's name: none is a joint statement signed by Cameroon), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31, T-P21-32 and T-P21-46 to T-P21-49): no press item was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# No event. Leads: none.
+country: CMR
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier CMR
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Cameroon from Israel of data years 1985, 1996, 2000, 2006, 2008, 2013, 2014 and 2015, all before the window; no
+      order dated 2023 or later. Not scored (B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer CMR
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Cameroon (found: orders of 1985 to 2015)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: an abstention on nine of the twelve qualifying votes (A/RES/ES-10/21, ES-10/22, ES-10/24, ES-10/25, ES-10/26, A/RES/79/232, A/RES/ES-10/27, A/DEC/80/506
+      and A/RES/80/78) and non-voting (`X`) on A/RES/ES-10/23 (10 May 2024), A/RES/80/1 (19 September 2025) and A/RES/80/116 (12 December 2025), each scored -2 by the build (docs/10 B-690): B1
+      is -11.0 and, with the passivity penalty (-15), the preview is -26.0 (Enabling). Cameroon is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360); the three non-votes were not explained (docs/10 B-785). Its abstention on A/C.4/80/L.18 (Palestine
+      refugees'' properties and their revenues, 5 December 2025) is recorded in src_20251205_un-press_ga12739.'
+    queries:
+    - unga_votes.csv, country CMR
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Cameroon is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched).
+      Case 186 (advisory proceedings) is not B3 or B4; Cameroon is not in the list of written statements read earlier (src_20261007_icj-cij_case-186-written-proceedings, searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Cameroon supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Cameroon is not a state party to the Rome Statute: it signed on 17 July 1998 and has no ratification (the UN Treaty Collection''s status page, chapter XVIII-10, read on 2026-11-04,
+      not archived; not listed in src_20261009_icc-asp_states-parties). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the sources read.'
+    queries:
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Cameroon (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person under warrant was found in the sources read; Cameroon is not a state party, so no withdrawal is possible (see B5).
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Cameroon were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Cameroon. The registry has no recognition date for Cameroon (countries.yaml recognises_palestine: none found as of 2026-09-28).
+      The Presidency''s site prints messages from Mahmoud Abbas, ''Président de l''État de Palestine'', to the Head of State for the national day of 20 May (2021, 2022, 2023), which are not a
+      document of recognition; no row is added (R21; P-23).'
+    queries:
+    - recognitions.csv, CMR
+    - prc.cm/fr/component/search/?searchword=Palestine
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) The 79th General Debate statement (27 September 2024, src_20240927_un-gadebate_cmr-mbella-mbella-fr; Mbella Mbella, Minister of External Relations and the President''s
+      personal representative, a B9 speaker under R3) lists ''SOUDAN, GAZA, LIBAN ET UKRAINE'' as examples of conflicts and tension spots: no ceasefire call, no violation, no party (R7 satisfied,
+      no tier). The 80th (25 September 2025; President Biya''s statement read by the same Minister) and the 81st (26 September 2026; President Biya''s statement read by the same Minister), read
+      live and not archived (no Wayback replay), speak of wars and conflicts in general and never name Gaza, Palestine, Israël or the Middle East. (2) The President, Paul Biya (head of state),
+      in his reply to the diplomatic corps of 10 January 2025 (src_20250110_prc-cm_biya-voeux-corps-diplomatique) lists ''L''Ukraine, le Soudan, le Liban, Gaza, Haïti'' among theatres of a human
+      tragedy: no call, no violation. His message of end of year 2023 speaks of ''la résurgence, en octobre dernier, du conflit israélo-palestinien'' (the Presidency''s page 6957, read live, not
+      archived; Gaza not named, no call). (3) Philémon Yang of Cameroon, as President of the General Assembly''s 79th session, said on 12 June 2025 ''After 20 months of war, the horrors in Gaza
+      must end'' (src_20250612_un-press_ga12690): an officer of the Assembly, not a B9 speaker of the State (R3); a note only. The Prime Minister''s services site (spm.gov.cm) is a one-page entrance
+      with nothing to search. Not searched: the Ministry of External Relations (does not answer), the Cameroonian press, the OIC''s communiques (Cameroon is an OIC member; P-23).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cm_fr.pdf (read live; 79th archived by --capture; cm_en 404)
+    - prc.cm/fr/component/search/?searchword={Gaza,Palestine,Palestinien,Israël,Hamas,cessez-le-feu,Moyen-Orient,UNRWA,Netanyahu}
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations was found in the sources read. The President''s message of condolence to Israel''s
+      President Isaac Herzog of 9 October 2023 (the Presidency''s site, 10 October 2023, published as an image: ''l''effroyable bilan humain causé par l''attaque armée du Groupe islamiste Palestinien
+      "Le Hamas", survenue dans la banlieue de Gaza'', condolences and wishes for the release of the hostages) states no support for Israel''s conduct and denies nothing: not B10 (the Embassy
+      of Israel''s page quotes it, src_20240711_embassies-il_cmr-bilateral-relations). The President''s congratulatory messages to Mr Herzog for Israel''s national day (14 May 2024, 1 May 2025,
+      22 April 2026) are routine. No text copy of the image exists, so none is archived.'
+    queries:
+    - prc.cm/fr/component/search/?searchword={Hamas,Israël,Netanyahu}
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of External Relations (minrex.gov.cm) does not answer from this network and has no recent Wayback capture; the Presidency''s site search returns no sanction
+      or listing (see B10) (P-23).'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found. The Presidency's report of 29 November 2024 (src_20241129_prc-cm_lettres-de-creance) records that Israel's designated ambassador, Amnon Kalmar,
+      presented his credentials with seven other heads of mission; the Embassy of Israel in Yaoundé's page (src_20240711_embassies-il_cmr-bilateral-relations) shows an embassy in activity. The
+      Ministry's own site did not answer.
+    queries:
+    - prc.cm/fr/component/search/?searchword=Israël (lettres de créance, audiences)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Cameroon is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of External Relations (minrex.gov.cm), which signs the agreements, does not answer from this network. The Presidency''s search for Israël returns messages
+      and a credentials ceremony only, and the Embassy of Israel''s page (src_20240711_embassies-il_cmr-bilateral-relations) is a timeline of cooperation projects ending in 2023, not a list of
+      agreements, and shows none signed since October 2023 (P-23).'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Cameroon to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor CMR
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Cameroon has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Cameroon in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of External Relations and the Ministry of Public Health sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Left unchecked: the Ministry of External Relations and the Ministry of Territorial Administration sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

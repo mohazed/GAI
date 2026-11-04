@@ -1704,3 +1704,47 @@ No band change. Read critically (docs/06 §4 step 7): the Central African Republ
 ### 90-minute stop note
 
 The session finished within the limit. Left for P-23: the web searches per indicator group (English, French), the Botswana Ministry of International Relations' site and press, the Central African Ministry of Foreign Affairs and Presidency, the Ivorian Government's news and the OIC's communiques, Botswana's 80th and the three states' 81st General Debate files (no Wayback replay), UNRWA's 2025 table, Comtrade for the three, the Government documents for the recognition dates of the Central African Republic and Côte d'Ivoire; for Task V and the Chad session: the withdrawals by Chad (27 July 2026) and Nauru (23 September 2026) listed on the Rome Statute status page.
+
+## T-P21-33: CMR, COD, COG (2026-11-04)
+
+Light protocol (docs/06 §5) for Cameroon, the Democratic Republic of the Congo and the Congo (group 33, Task B in the Claude track, B-694), by a fresh Sonnet 5.5 session of the finish run (docs/10 B-785 to B-788). The Comtrade step was skipped (the line COMTRADE-20261104 is in `reports.jsonl`; none of the three has rows). Web searches were not available to this session (the run's search budget was spent, as for T-P21-31 and T-P21-32): the session read the UN's General Debate files of the 79th to 81st sessions live (French; the `_en` files return 404), the Presidency of Cameroon's site search, the Congolese Ministry's and Primature's WordPress sites and the Congo's Government portal through their REST APIs, the Embassy of Israel in Yaounde's page, the UN Treaty Collection's status page for the Rome Statute, the records and joint statements already archived (grep of `archive/text` for the three names: none is a joint statement signed by one of them), the generated tables, UNRWA tables, FTS, the SIPRI register and the ICJ and ICC lists.
+
+No event and no lead were filed. No row was added to `data/structured/recognitions.csv`.
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| none | | | | | |
+
+Ten documents were archived (five General Debate files by `--capture`: the Democratic Republic of the Congo's 79th and 80th, the Congo's 79th and 80th, Cameroon's 79th; the Presidency of Cameroon's reply to the diplomatic corps of 10 January 2025 and its report of the credentials ceremony of 29 November 2024; the Congo's two replies to the diplomatic corps of 5 January 2024 and 6 January 2025, the second by `--capture` after Save Page Now answered 503 and 504; the Israeli embassy's page); every replay fetched again with `curl --compressed` equals its index row in bytes and SHA-256.
+
+### Cameroon
+
+Assessments (34 indicators): has-events 1 (B1), none-found 15, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 15 (A3, A5 to A8, B11, C2, C4 to C6, D4, D5, E1 to E3). Leads: none. The 79th statement (Minister Mbella Mbella) names Gaza in a list of conflicts with no call; the 80th and 81st never name Gaza; President Biya's reply to the diplomatic corps of 10 January 2025 lists Gaza among tragedies, no call. His letter of condolence to Mr Herzog of 9 October 2023 (an image on the Presidency's site) is not B10 (flagged, docs/10 B-785); the President of the General Assembly's statement of 12 June 2025 is an officer's, not B9. B12: Israel's ambassador presented his credentials on 29 November 2024. B1: nine abstentions and three non-votes (-11.0). Not a state party to the Rome Statute (signed 1998). The Ministry of External Relations does not answer, so four indicators are left `unchecked` with the reason.
+
+### Democratic Republic of the Congo
+
+Assessments: has-events 1 (B1), none-found 20, no-data 2 (A2, C3), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. President Tshisekedi's 79th statement calls Gaza 'le terrible drame' and the 80th says the war between Israël and Hamas 'ravage la bande de Gaza': no call, no violation, neither B9 tier (flagged, docs/10 B-786); the 81st (Prime Minister Suminwa) names none. The Ministry's and the Primature's sites have no item on the conflict. Security Council member from 2026 (first presidency of the Council in July 2026); no veto after 18 September 2025 in the table. B1: two yes votes, four abstentions, six non-votes (-11.0). State party to the Rome Statute since 2002. B11, B12, C2, D4 and D5 are `none-found` on those two sites only, said in each note; the Presidency answers 503.
+
+### Congo
+
+Assessments: has-events 1 (B1), none-found 19, no-data 2 (A2, C3), not-applicable 1 (B2), unchecked 11 (A3, A5 to A8, C4 to C6, E1 to E3). Leads: none. The 79th statement (Foreign Minister Gakosso) lists 'en Palestine'; the 80th (President Sassou N'Guesso) supports the two-State solution 'au Moyen-Orient'; the 81st calls for 'une solution politique juste et durable au Moyen-Orient': none names Gaza (R7). The President's reply to the diplomatic corps of 5 January 2024 names Gaza in a statement of concern and support for mediation and aid delivery, with no ceasefire call: neither B9 tier (flagged, docs/10 B-787; 1,034 days old, it would move nothing). B1: seven yes votes and five non-votes (+5.2). State party to the Rome Statute since 2004. B11, B12, C2, D4 and D5 are `none-found` on the Government portal only, said in each note.
+
+### Article 19 note (report only)
+
+The three have the twelve qualifying votes recorded: Cameroon nine abstentions and three non-votes (A/RES/ES-10/23, A/RES/80/1, A/RES/80/116), the Democratic Republic of the Congo six non-votes (A/RES/ES-10/23, ES-10/25, ES-10/26, A/RES/79/232, A/RES/80/1, A/RES/80/116), the Congo five (A/RES/ES-10/23, ES-10/24, A/RES/79/232, A/RES/80/1, A/RES/80/78). None is named in A/80/362 (3 September 2025) or on the Assembly's page of October 2026 (A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked. The build scores a non-vote at -2 (B-690).
+
+### Score effects (provisional)
+
+`pnpm score --country X --preview` on 2026-11-04 (methodology 1.0.0-rc.1), the reviewed events scored as if published; no event was filed, so the preview equals the generated events only.
+
+| Country | Before (generated only) | With the reviewed events | Band | What moves it |
+|---|---|---|---|---|
+| CMR | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | no event; B1 -11.0 (nine abstentions, three non-votes) and the passivity penalty (-15) |
+| COD | -26.0 (-26) | -26.0 (-26) | Enabling, unchanged | no event; B1 -11.0 (four abstentions, six non-votes) and the passivity penalty (-15) |
+| COG | -9.8 (-10) | -9.8 (-10) | Passive, unchanged | no event; B1 +5.2 (seven yes votes, five non-votes) less the passivity penalty (-15) |
+
+No band change. Read critically (docs/06 §4 step 7): the two Enabling bands rest on the build's treatment of non-supporting votes and the passivity penalty, not on any act in the window; the Democratic Republic of the Congo sits on the Security Council in 2026 and the sources read give no act of it on Gaza.
+
+### 90-minute stop note
+
+The session finished within the limit. Left for P-23: the web searches per indicator group (English, French), the Ministry of External Relations of Cameroon (does not answer), the Cameroonian and Congolese press, the OIC's and the African Union's communiques, the DRC's Presidency (503) and the Congo's Ministry and Presidency sites, the unarchived 80th and 81st Cameroonian, 81st Congolese and 81st DRC General Debate files, the Security Council meetings under the DRC's presidency of July 2026, UNRWA's 2025 table, Comtrade for the three, the Government documents for the recognition dates of the DRC (18 December 1988), the Congo (5 December 1988) and Cameroon (none in the registry), the unexplained non-votes of B1.

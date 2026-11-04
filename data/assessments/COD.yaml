@@ -1,0 +1,195 @@
+# Coverage record for the Democratic Republic of the Congo (docs/03 §6). P-21 light protocol, session T-P21-33, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live; the 79th and 80th archived by --capture), the Ministry of Foreign Affairs' and the Primature's WordPress sites (searched through /wp-json/wp/v2/ for the terms listed in B9), the UN Treaty Collection's status page for the Rome Statute, the joint statements and UN records already archived (grep of archive/text for the country's name: none is a joint statement signed by the Democratic Republic of the Congo), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31, T-P21-32 and T-P21-46 to T-P21-49): no press item was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# No event. Leads: none.
+country: COD
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier COD
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists one order by the Democratic Republic of the Congo from Israel (data year 1963), before the window; no order dated 2023 or
+      later. Not scored (B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer COD
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Democratic Republic of the Congo (found: 1963)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on A/RES/ES-10/21 (27 October 2023) and ES-10/22; an abstention on A/RES/ES-10/24, A/RES/ES-10/27, A/DEC/80/506 and A/RES/80/78; non-voting (`X`)
+      on six votes (A/RES/ES-10/23, ES-10/25, ES-10/26, A/RES/79/232, A/RES/80/1, A/RES/80/116). Each non-supporting vote is scored -2 by the build (docs/10 B-690): B1 is -11.0 and, with the passivity
+      penalty (-15), the preview is -26.0 (Enabling). The Democratic Republic of the Congo is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360); the reasons for the six non-votes were not established (docs/10 B-786). Its abstention on A/C.4/80/L.18
+      (Palestine refugees'' properties and their revenues, 5 December 2025) is recorded in src_20251205_un-press_ga12739.'
+    queries:
+    - unga_votes.csv, country COD
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: 'Generated: the Democratic Republic of the Congo is a member of the Security Council from 2026-01-01 to 2027-12-31 (countries.yaml memberships.unsc). unsc_vetoes.csv has no veto of a
+      draft resolution after 18 September 2025, so no vetoed ceasefire draft fell in its term to date; an elected member has no veto. The Ministry''s site reports its first presidency of the Council
+      in July 2026 (diplomatie.gouv.cd, 3 July 2026; the meetings were not read). Left to the build.'
+    queries:
+    - unsc_vetoes.csv (last row 2025-09-18)
+    - diplomatie.gouv.cd/wp-json/wp/v2/posts?search=Moyen-Orient
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Democratic Republic of the Congo is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192,
+      searched). Case 186 (advisory proceedings) is not B3 or B4; Democratic Republic of the Congo is not in the list of written statements read earlier (src_20261007_icj-cij_case-186-written-proceedings,
+      searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Democratic Republic of the Congo supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'The Democratic Republic of the Congo is a state party to the Rome Statute (signed 8 September 2000, ratified 11 April 2002: the UN Treaty Collection''s status page, chapter XVIII-10,
+      read on 2026-11-04, not archived; listed in src_20261009_icc-asp_states-parties, line 124). No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Ministry''s and
+      the Primature''s sites return nothing for CPI, Cour pénale, Palestine or Israël.'
+    queries:
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Democratic Republic of the Congo (found: state party)'
+    - diplomatie.gouv.cd/wp-json/wp/v2/posts?search={CPI,Cour pénale}
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person under warrant was found in the sources read. The status page lists no withdrawal notification by the Democratic Republic
+      of the Congo (it lists Burundi 2016, Hungary, Niger, Burkina Faso, Mali, Venezuela, Chad and Nauru).
+    queries:
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Democratic Republic of the Congo were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for the Democratic Republic of the Congo. The registry gives 18 December 1988 (countries.yaml recognises_palestine); no Government document
+      of the date was read, so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, COD
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. President Félix-Antoine Tshisekedi Tshilombo (head of state; a B9 speaker, R3) named Gaza in two General Debate statements, with no call and no violation: (1) 79th,
+      25 September 2024 (src_20240925_un-gadebate_cod-tshisekedi-fr): ''Le Yémen, le Soudan, la Syrie ou encore le terrible drame qui se passe dans la bande de Gaza entrent dans le lot pour lequel
+      le multilatéralisme jouerait pleinement son rôle'': Gaza named, a tragedy, no call, no party, no violation (neither B9 tier; the reading of Samoa''s and Botswana''s statements, flagged;
+      docs/10 B-786). (2) 80th, 23 September 2025 (src_20250923_un-gadebate_cod-tshisekedi-fr): ''la guerre entre Israël et le Hamas ravage la bande de Gaza — avec le risque d''une extension régionale'':
+      no call, no violation attributed. (3) 81st, 23 September 2026 (the Prime Minister, head of government, Judith Suminwa Tuluka, representing the President; file cd_fr.pdf read live, not archived,
+      no Wayback replay): no occurrence of Gaza, Palestine, Israël or Hamas. The Ministry''s site (diplomatie.gouv.cd, WordPress, searched through /wp-json/wp/v2/ for Gaza, Palestine, Israël,
+      Israel, Hamas, Moyen-Orient, cessez, CPI and Cour pénale) and the Primature''s site (primature.gouv.cd; Gaza, Palestine, Israël, Israel, Hamas, Moyen-Orient, UNRWA) have no item on the conflict.
+      Not searched: the Presidency (presidence.cd answers 503 with a maintenance notice), the Congolese press, the OIC and African Union communiques (P-23).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cd_fr.pdf (read live; 79th and 80th archived by --capture; cd_en 404)
+    - diplomatie.gouv.cd/wp-json/wp/v2/{posts,pages}?search={Gaza,Palestine,Israël,Israel,Hamas,Moyen-Orient,cessez,CPI,Cour pénale}
+    - primature.gouv.cd/wp-json/wp/v2/{posts,pages}?search={Gaza,Palestine,Israël,Israel,Hamas,Moyen-Orient,UNRWA}
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read; the Ministry''s and the Primature''s
+      sites have no item on the subject.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found; the Ministry's and the Primature's sites were searched for Israël, Palestine and Gaza and return nothing. The
+      Presidency does not answer, so this rests on those two sites and the General Debate statements only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found on the Ministry's and the Primature's sites (search for Israël, Israel returns nothing). The Presidency does not answer, so this rests on
+      those sites only (P-23).
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Democratic Republic of the Congo is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel was found on the Ministry's and the Primature's sites (search for Israël, Israel returns nothing). The Presidency does not answer and no treaty register
+      or Israeli embassy list for the Democratic Republic of the Congo was read (the Embassy of Israel's site has no page under the slugs tried), so this rests on those two sites only (P-23).
+    queries:
+    - diplomatie.gouv.cd/wp-json/wp/v2/posts?search={Israël,Israel}
+    - primature.gouv.cd/wp-json/wp/v2/posts?search={Israël,Israel}
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Democratic Republic of the Congo to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor COD
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Democratic Republic of the Congo has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Democratic Republic of the Congo in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by the Democratic Republic of the Congo was found on the Ministry's and the Primature's sites (search for Gaza
+      returns nothing).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found on the Ministry's and the Primature's sites (search for Gaza returns nothing).
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

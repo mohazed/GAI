@@ -1092,7 +1092,16 @@
     note: >-
       No recognition found as of 2026-09-28: not in the annex of A/78/846 (recognitions to 2023) nor
       among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28).
-  gov_sources: []
+  gov_sources:
+    - {label: 'Presidency of the Republic of Cameroon', url: 'https://www.prc.cm/fr/', type: head_of_state, lang: [fr, en]}
+    - {label: 'Services of the Prime Minister of Cameroon', url: 'https://www.spm.gov.cm/', type: head_of_government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: www.prc.cm (a Joomla site declaring lang="fr", searched through
+    /fr/component/search/) and www.spm.gov.cm (a one-page entrance with no lang attribute, French and English
+    text) answered HTTP 200 to a request with a browser User-Agent. The Ministry of External Relations
+    (www.minrex.gov.cm, minrex.gov.cm) did not answer (no connection) and has no Wayback capture of status
+    200 dated 2025 or later. The President is Paul Biya (prc.cm); the Minister of External Relations,
+    Mbella Mbella, delivered the statements of the 79th to 81st General Debate sessions (the UN's files).
 
 - iso3: COD
   iso2: CD
@@ -1114,7 +1123,16 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-18}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs of the Democratic Republic of the Congo', url: 'https://diplomatie.gouv.cd/', type: mfa, lang: [fr]}
+    - {label: 'Primature of the Democratic Republic of the Congo', url: 'https://www.primature.gouv.cd/', type: head_of_government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: diplomatie.gouv.cd (WordPress, lang="fr-FR") and www.primature.gouv.cd
+    (WordPress, lang="fr-FR"; primature.cd redirects to it) answered HTTP 200 to a request with a browser
+    User-Agent; both were searched through /wp-json/wp/v2/. The Presidency (www.presidence.cd) answered 503
+    with a maintenance notice. The President is Félix-Antoine Tshisekedi Tshilombo, the Prime Minister Judith
+    Suminwa Tuluka (primature.gouv.cd) and the Minister of State for Foreign Affairs Thérèse Kayikwamba Wagner
+    (diplomatie.gouv.cd).
 
 - iso3: COG
   iso2: CG
@@ -1135,7 +1153,15 @@
     g7: false
     brics: false
   recognises_palestine: {since: 1988-12-05}
-  gov_sources: []
+  gov_sources:
+    - {label: 'Ministry of Foreign Affairs, Francophonie and Congolese Abroad of the Republic of the Congo', url: 'https://diplobrazza.net/', type: mfa, lang: [fr]}
+    - {label: 'Presidency of the Republic of the Congo', url: 'https://presidence.cg/', type: head_of_state, lang: [fr]}
+    - {label: 'Government portal of the Republic of the Congo', url: 'https://gouvernement.cg/', type: government, lang: [fr]}
+  notes: >-
+    gov_sources checked 2026-11-04: diplobrazza.net (reached from diplomatie.gouv.cg; a static Infomaniak site,
+    lang="fr"), presidence.cg (lang="fr-FR"; its REST API is closed to scripts) and gouvernement.cg (WordPress,
+    lang="fr-FR", searched through /wp-json/wp/v2/) answered HTTP 200 to a request with a browser User-Agent.
+    The President is Denis Sassou N'Guesso (gouvernement.cg).
 
 - iso3: COL
   iso2: CO
