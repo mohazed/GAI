@@ -1,0 +1,198 @@
+# Coverage record for Bosnia and Herzegovina (docs/03 §6). P-21 light protocol, session T-P21-27, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate statements of the 78th to 81st sessions (gadebate.un.org, live files and Wayback replays), the Permanent Mission's site (bhmissionun.org, content API searched for Gaza and Palestine), the Ministry of Foreign Affairs (mvp.gov.ba) and the Council of Ministers (vijeceministara.gov.ba) as gov_sources, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Bosnian. The Presidency's site (predsjednistvo.ba) did not answer. Time: see Albania.
+country: BIH
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BIH
+    checked_at: '2026-11-04'
+  A2:
+    status: has-events
+    note: 'Generated from Comtrade (the run of 2026-11-04, docs/10 B-718): two A2 rows (the reporter''s own USD 104,411 of HS 93 in 2022 and the Israeli mirror USD 23,000 of HS 8526 in 2024); the build
+      computes the event (-3.0 today). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BIH
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter BIH
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Bosnia and Herzegovina is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Bosnia and Herzegovina; docs/06
+      §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Bosnia and Herzegovina)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Bosnia and Herzegovina is a state party to the Rome Statute (the Assembly of States Parties' list, archived, line 102). No statement of the Chairwoman of the Council of Ministers, the Chairman
+      of the Presidency or the Foreign Minister on the warrants of 21 November 2024 was found (web search in Bosnian and English returned none for Bosnia and Herzegovina); a position would need an archived
+      Government text.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Bosnia and Herzegovina)'
+    - Bosna i Hercegovina ICC nalog Netanyahu Predsjedništvo izjava (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Bosnia and Herzegovina were found.
+    queries:
+    - Bosnia and Herzegovina sanctions International Criminal Court (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Bosnia and Herzegovina. The registry gives 27 May 1992 (countries.yaml, P-13); no state document of that date was read in this session (R21),
+      so no row is added and no B8 event is generated: with the pre-existing tier the score would be +3 higher.'
+    queries:
+    - recognitions.csv, row BIH (none)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the Chairman of the Presidency''s address at the 80th General Debate (25 September 2025, +5: ''two elements of genocide'' in the Gaza Strip, in Bosnian; head of state, R3, as for a
+      collective presidency: flagged). Not filed as events: (1) the 81st General Debate statement of the Chairman of the Presidency (22 September 2026, ''the genocide against Palestinians in Gaza'', ''Gaza
+      is humanity''s greatest defeat in the twenty-first century'': +5 and a qualifying event): the delegation''s file (ba_en_0.pdf, 134,599 bytes, read live) has no Wayback replay (the replay is a 2,589-byte
+      HTTP 405 page) and Save Page Now answers 405, so it is lead_20261104_BIH_1; (2) the Chairman''s 79th statement (25 September 2024, expired): ''The suffering and hardship of Palestinian children and
+      civilians is terrifying. Gaza is an utter defeat of collective humanity'', the UN''s response ''inadequate'' (the live file read; no call, no named violation: neither tier); (3) the Ambassador''s
+      statement at the two-State conference (30 July 2025: an immediate and unconditional ceasefire; a Permanent Representative is not a B9 speaker, R3; the Mission''s release read); (4) the Foreign Minister''s
+      statements (UN Non-Aligned meeting, September 2024: ''victims of genocide, we have a duty to demand that the powerful stop the crimes in Gaza''; Antalya, April 2025: an immediate ceasefire with the
+      Palestinian Prime Minister) are known from press reports in indirect speech (N1, FENA, search results, not read in full): the Ministry''s own texts were not found, so no event (P-23); (5) the Foreign
+      Minister''s remarks at the Doha Forum (December 2023, expired).'
+    queries:
+    - gadebate.un.org Bosnia and Herzegovina 78th to 81st sessions (live files read for Gaza, Palestine, Israel, ceasefire; the 79th and 80th have Wayback replays)
+    - 'bhmissionun.org content API search: Gaza, Palestine (read)'
+    - Konaković Gaza Izrael izjava (web search in Bosnian)
+    - Bosnia and Herzegovina Presidency Gaza statement (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Chairwoman of the Council of Ministers or by a member of the Presidency was found; the Serb member of the Presidency's
+      remark in 2021 that Hamas triggers the conflicts (press, a web-search result, 2021) is outside the window and not a B10 act.
+    queries:
+    - Bosnia and Herzegovina Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions or travel bans on Israeli ministers or settlers by Bosnia and Herzegovina were found. It is not an EU member; no High Representative's alignment declaration for the settler-violence
+      regime was found (declarations on other regimes only).
+    queries:
+    - Bosnia and Herzegovina sanctions Israel settlers (web search)
+    - EU alignment declaration of candidate countries, settler sanctions (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Council of Ministers' Chairwoman met Israel's non-resident ambassador (the Council's page, search result, undated) and
+      no embassy change was found. The Republika Srpska's agreement with Israel on an office in Banja Luka (Al Jazeera, 6 September 2026, search result, not read) is an entity act and not a state act.
+    queries:
+    - Bosnia and Herzegovina Israel embassy ambassador (web searches)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement of Bosnia and Herzegovina with Israel is known to exist beyond the visa agreement for diplomatic and service passports of 4 May 2009 (search result); none was
+      suspended or reviewed.
+    queries:
+    - Bosnia and Herzegovina Israel agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed by the Council of Ministers with Israel after 7 October 2023 was found in the sources read (a cooperation agreement of the Federation's Chamber of Economy with an Israeli
+      chamber of 2023 is a private-sector act, and the Republika Srpska office agreement is an entity act).
+    queries:
+    - Bosnia and Herzegovina Israel agreement signed 2024 2025 (web search)
+    checked_at: '2026-11-04'
+  C3:
+    status: has-events
+    note: 'Generated from Comtrade (the run of 2026-11-04, docs/10 B-718): eight C3 rows (the reporter''s own total trade with Israel USD 13.5 million in 2022, 22.3 million in 2023, 27.2 million in 2024
+      and 23.7 million in 2025); the build computes the events (-2.0 today, a qualifying event for the passivity rule). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor BIH
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Bosnia and Herzegovina that falls to a suspension: no contribution was found suspended (searched for Bosnia and Herzegovina;
+      no statement of a hold appeared in the sources read).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Bosnia and Herzegovina
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Bosnia and Herzegovina: no contribution to restore or increase (searched for Bosnia and Herzegovina).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Bosnia and Herzegovina
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Bosnia and Herzegovina was found in the search results read.
+    queries:
+    - Gaza medical evacuation Bosnia and Herzegovina (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Bosnia and Herzegovina was found in the search results read.
+    queries:
+    - Gaza refugees visa Bosnia (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

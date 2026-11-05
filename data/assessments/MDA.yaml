@@ -1,0 +1,205 @@
+# Coverage record for the Republic of Moldova (docs/03 §6). P-21 light protocol, session T-P21-04, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.md) and its Embassy in Israel (israel.mfa.gov.md: the page of the bilateral legal
+#   framework lists every signed instrument and is archived), the Government (gov.md, through a Wayback capture for the page of 2024), the Presidency
+#   (presedinte.md), the Ministry of Justice (justice.gov.md), MOLDPRES, Radio Moldova, Radio Chișinău and Europa Liberă Moldova, the General Debate
+#   statements of the United Nations (gadebate.un.org: the Moldovan statements of the 79th session through a Wayback capture and of the 80th by a direct
+#   request, in English, searched for Gaza, Palestine, Israel and the Middle East: no passage; the 78th and 81st could not be read, no capture and not served),
+#   the generated events and the structured tables; web searches in English and in Romanian per indicator group. Time: about 10 minutes.
+# Statements read and not filed as B9 or B10: the Parliament's declaration of 19 October 2023 (condemns the attack of 7 October, recalls Israel's right of
+#   self-defence, demands the release of the hostages, no word on Palestinian civilians; a parliament, not a B10 speaker), the President's and the Prime
+#   Minister's messages of 7 to 9 October 2023 (condemnation and solidarity, press), the Foreign Minister's remarks of May 2024 on recognition (Moldova
+#   'is not in a position to move further', two-state solution, Europa Liberă).
+country: MDA
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Moldova to Israel.
+      Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MDA
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the
+      full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
+      is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): one Moldovan order of Israeli major arms, of data year 2023 (4.68 TIV), which
+      A4 does not count (orders dated 2023 are left out, docs/10 B-151 (3)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MDA
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on 6 and abstention on 6 of the 12 qualifying votes. The Ministry''s releases on
+      the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Moldova filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Moldova
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries: &id002
+    - Republica Moldova Gaza încetarea focului declarație MAE Popșoi OR Sandu OR Recean conflictul Israel Hamas poziție
+    - Moldova Sandu OR Popșoi Gaza ceasefire statement Israel Palestine 2025 General Debate Moldova
+    - Sandu Israel Hamas attack condemns Moldova president Sandu statement October 2023 solidarity Israel right to defend itself
+      hostages
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No official statement of the Government on executing the warrants of 21 November 2024 was found. Moldova is a State Party
+      to the Rome Statute (ratified in 2010) and is listed among the States Parties that joined a statement in support of the Court
+      (search results); no statement naming the warrants was found.
+    queries: &id001
+    - Moldova MAE comunicat mandate arestare CPI Netanyahu Republica Moldova stat parte Statutul Roma poziție noiembrie 2024
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under the Gaza-situation warrants was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Moldova has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recognition. The Foreign Minister said in May 2024 that Moldova 'is not in a position to move further' with recognising
+      the State of Palestine and favours a two-state solution; Moldova signed an agreement of 1994 recognising the Palestinian
+      Authority that was never completed (Europa Liberă Moldova). No row in recognitions.csv, so none is generated; B8 derives
+      no status from a missing row (docs/03 §7).
+    queries: *id002
+  B9:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the President, the Prime Minister or the Foreign Minister that calls for a ceasefire or an end of the
+      blockade, or names specific violations in such a call, was found. The General Debate statements of the 79th and 80th sessions
+      (English, searched) have no passage on Gaza, Palestine or the Middle East; Moldova aligns with the EU's statements as a candidate
+      country, which is not a statement by a B9 speaker.
+    queries: *id002
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found: the Parliament''s declaration
+      of 19 October 2023 and the messages of the President and the Prime Minister of 7 to 9 October 2023 condemn the attack and
+      recall Israel''s right of self-defence (the Parliament is not a B10 speaker, R3; the other statements are of solidarity with
+      no ''unconditional'' wording): lead_20261005_MDA_2.'
+    queries: *id002
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Moldova has listed no Israeli minister or settler entity for sanctions (none found). It is not an EU member, so the Council's
+      listings (R8) do not count for it; no national alignment with them was found.
+    queries: &id003
+    - Moldova EU Israel Association Agreement OR sanctions Israeli settlers Moldova aligns Council decision settlers Moldova alignment
+      declaration HR
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; relations deepened (Israel opened an embassy in Chișinău in February 2025,
+      the Foreign Ministers visited each other, Radio Moldova of 15 December 2025).
+    queries: &id004
+    - Moldova Israel wheat memorandum of understanding signed Dichter Chisinau date minister
+    - MAIA Moldova declarație de intenție Israel Dichter Butucel 3 septembrie 2025 maia.gov.md grâu
+    - Moldova Israel Popșoi Saar Jerusalem 2025 signed agreement economic cooperation justice memorandum Popșoi visit Israel documents
+      signed
+    - mfa.gov.md Israel driving licences exchange Moldovan citizens agreement 27 October 2024 Ministry of Foreign Affairs communiqué
+    - Moldova Israel declarație comună de intenție turism Haim Katz Alexandr Roitman semnat septembrie 2026 MAE Republica Moldova
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Moldova is not an EU member and has no association agreement with Israel to suspend or review (none found); C1 counts
+      EU-level acts for member states.
+    queries: *id003
+  C2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Four events, each a signed instrument with Israel since October 2023, listed on the Embassy''s page of the bilateral
+      legal framework (archived): the intergovernmental agreement on the conversion of driving licences (20 March 2024), the agreement
+      on legal cooperation in civil and commercial matters (28 May 2025, not yet in force), the declaration of intent of the ministries
+      of agriculture (3 September 2025) and the joint declaration of intent on tourism (9 September 2026). Any two reach the category
+      cap of -20. Flagged: technical instruments and declarations of intent read as C2 under R18 (docs/10 B-526). Not filed: the
+      interinstitutional memoranda of the same page (Rambam hospital, 2 April 2024; National Archives Agency with three Israeli
+      archives, July 2024; Emergency Medicine Institute and Meir Medical Center, 26 February 2026): lead_20261005_MDA_1.'
+    queries: *id004
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans (fts_funding.csv has no row above zero). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No announcement of a suspension of UNRWA funding was found: Moldova is not on the lists of states that paused funding
+      in January 2024 and has no row in UNRWA''s donor tables for 2022, 2023 or 2024 (archived).'
+    queries: &id005
+    - Moldova UNRWA contribution OR suspends funding UNRWA Moldova 2024 Republic of Moldova UNRWA
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Moldova
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No row of Moldova in UNRWA''s donor tables for 2022, 2023 or 2024 (archived): no restored or increased contribution.'
+    queries: *id005
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries: &id006
+    - Moldova humanitarian aid Gaza OR Palestine donation OR "medical evacuation" Moldova government decision Gaza children treatment
+      Moldova
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries: *id006
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

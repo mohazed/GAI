@@ -1,0 +1,208 @@
+# Coverage record for Nauru (docs/03 §6). P-21 light protocol, session T-P21-17, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government Information Office's media releases (nauru.gov.nr, which answers a script redirect to a mail login page to direct requests, so read through Wayback captures and the CDX listing of the site's captures, 4,680 URLs filtered by URL for Israel, Palestine, Gaza, Hamas, ceasefire, solidarity, terrorism, embassy and Ukraine), the President's General Debate statements of the 79th and 80th sessions (gadebate.un.org, archived), the UN Meetings Coverage reports of the votes (archived), the ICJ's case 192 and case 186 pages (archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and tables; web searches in English (the official languages are Nauruan and English) per indicator group, the press reports on the embassy as leads only. Time: about 15 minutes of research on Nauru, inside the 90-minute budget of the session.
+# No hand-authored event: the statements read have no passage on Gaza; the embassy in Jerusalem is a note (docs/10 B-599). Leads: 1 (lead_20261013_NRU_1).
+country: NRU
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NRU
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10 B-503);
+      the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of this country from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer NRU
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Nauru
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 11 of the 12 qualifying votes and an abstention on 1 (A/RES/80/78 of 5 December 2025); the 12 votes are all recorded, so there is no absence and no Article
+      19 note. The UN Meetings Coverage reports of the votes (archived) list Nauru among the states voting no and name no explanation of vote by its representative; a Permanent Representative is not a B9
+      or B10 speaker (R3) in any case.'
+    queries:
+    - unga_votes.csv, voter NRU
+    - press.un.org GA12599, GA12667, GA12670, GA12707, GA12708, GA12739 (archived, read for the lists of votes)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'Nauru is not on the ICJ case 192 intervention list (the Court''s page archived 27 September 2026, read). Its written statement of 25 July 2023 in the advisory proceedings on Israel''s policies
+      and practices (case 186; the Court''s list, archived: src_20261007_icj-cij_case-186-written-proceedings) pre-dates the window, is not read here and would not be a B3 or B4 event in any case (docs/02
+      §2: case 192 only); JNS (22 July 2026, press) calls it a statement ''in support of Israel''.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written statements (archived list, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders of 2024 was found, and Nauru is not on the case 192 intervention list (so no intervention against the applicant's construction).
+      The case 186 written statement of July 2023 is a separate proceeding (see B3).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    - Nauru government OR President statement ICJ provisional measures Gaza
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the President or of the Minister for Foreign Affairs on executing the warrants of 21 November 2024 was found. Nauru is a state party to the Rome Statute (the Assembly''s list,
+      archived: src_20261009_icc-asp_states-parties, line 181 of the text).'
+    queries:
+    - Nauru ICC arrest warrant Netanyahu Adeang OR Aingimea government position
+    - asp.icc-cpi.int list of States Parties (archived 13 October 2026, read; src_20261009_icc-asp_states-parties)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - Nauru ICC arrest warrant Netanyahu government position
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Nauru has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for Nauru and none was added. The registry''s note records that it is not in the annex of A/78/846
+      (recognitions to 2023) nor among the later recognitions (docs/06 §8). The Government''s own policy goes the other way: it recognised Jerusalem as Israel''s capital in 2019 (press, JNS 22 July 2026
+      and Jerusalem Post 14 September 2026; no Government document read).'
+    queries:
+    - Nauru recognition State of Palestine government statement
+    - recognitions.csv, row NRU (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: none-found
+    note: 'No B9 event: the President''s General Debate statements of the 79th (24 September 2024) and the 80th (23 September 2025) sessions have no passage on Gaza, Palestine, Israel or the Middle East
+      (both archived and read in full; the 80th says only that Nauru ''stands firmly against war and conflict''). The 81st session''s page (gadebate.un.org/en/81/nauru) answered 404 on 13 October 2026 (no
+      statement published). The Government Information Office''s media releases (nauru.gov.nr; the URLs of its captures were filtered for Israel, Gaza, Palestine, Hamas, ceasefire, solidarity, terrorism
+      and Ukraine) show no URL naming Gaza; the only one naming Israel is the release of 22 July 2026 on an embassy (see B12).'
+    queries:
+    - Nauru President Adeang Gaza ceasefire statement
+    - Nauru Israel Gaza government statement President Adeang
+    - gadebate.un.org Nauru 79th and 80th sessions (nr_en.pdf, read)
+    - nauru.gov.nr media releases, Wayback CDX listing filtered for israel|palest|gaza|hamas|ceasefire (read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event. (1) The Vice President and Minister for Foreign Affairs, Lionel Aingimea, said at the opening of Nauru''s embassy in Jerusalem on 7 September 2026: ''Our support for Israel has
+      been unwavering.'' (PINA 10 September, JNS 7 September and Asia Pacific Report, three press reports; no Government text or Israeli official video was found). The sentence does not cite Gaza (R7) and
+      is known from the press alone: a lead (lead_20261013_NRU_1), as Paraguay''s statements of support (docs/10 B-600). (2) A web search listed a Government release of October 2023 (''The Republic of Nauru
+      stands in solidarity with Israel'', Loop Nauru): the page could not be reached and the listing of the Government''s captures has no URL that names such a release (a filter on URLs, not on titles).
+      (3) The Jerusalem Post''s opinion piece of 14 September 2026 reports, from an unnamed source, a conversation of the President: not used.'
+    queries:
+    - Aingimea Nauru embassy Jerusalem opening where we stand Vice President remarks
+    - Nauru Israel President Adeang OR Aingimea Israel statement Gaza Hamas hostages 2024 2025
+    - nauru.gov.nr media releases (see B9)
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Nauru was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found; the movement is the other way. Cabinet endorsed a scoping mission for an embassy in Israel (the Government''s release of
+      22 July 2026, archived: src_20260722_nauru-gov_embassy-israel) and the embassy opened in Jerusalem on 7 September 2026 (press; the OIC and Jordan condemned it, PINA 10 September 2026). The opening
+      or move of an embassy is not an act any indicator of methodology v1.0.0 measures (docs/10 B-599): it is recorded here as a note, not an event. Israel''s honorary consul in Nauru and Nauru''s in Israel
+      are named by the Jerusalem Post (press).'
+    queries:
+    - Nauru Israel embassy ambassador recalled OR relations downgrade OR sever
+    - nauru.gov.nr media release of 22 July 2026 (archived, read)
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Nauru Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The agreements the searches returned (a memorandum on sustainable development of 2011, RNZ Pacific, read; others of 2010 and 2012
+      named in search results, not read) pre-date the window. The embassy of 2026 follows an understanding between the two foreign ministers in Fiji (June 2026, press) and a Cabinet decision, not a signed
+      agreement; Israel's Foreign Minister said Israel would send medical equipment and water-purification systems (Asia Pacific Report, 7 September 2026; no signed instrument found).
+    queries:
+    - Nauru Israel memorandum of understanding signed Aingimea Sa'ar OR Cohen cooperation agreement
+    - Nauru Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor NRU
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Nauru has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Nauru
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'Nauru has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived: src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024):
+      no contribution to compare, so D3 has no baseline (docs/10 B-445). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Nauru
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Nauru ministry
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Nauru regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

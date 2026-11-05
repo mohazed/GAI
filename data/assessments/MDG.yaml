@@ -1,0 +1,195 @@
+# Coverage record for Madagascar (docs/03 §6). P-21 light protocol, session T-P21-38, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' site (diplomatie.gov.mg, Joomla; the full-text site search /index.php/component/search/?searchword= for Gaza, Palestine, Palestinien, Palestina, Israël, Israélo, cessez-le-feu, Hamas,
+# Proche-Orient, Moyen-Orient, CPI, génocide, UNRWA, deux États, otages, Jérusalem, Terre Sainte, humanitaire, Gazaoui, Ambassadeur d'Israël, Rajoelina-Israël; the items that matched opened), the UN's General Debate pages and files (79th, 80th,
+# 81st, in French), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the Assembly of States Parties' list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and
+# the Article 19 documents. The Presidency's site (presidence.gov.mg) did not answer from the session's network (connection timeout; the Wayback capture of 17 October 2026 is a 404) and the Prime Minister's site (primature.gov.mg) answers 502:
+# no Presidency or Primature item was read. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and nothing is filed from one; the 'one search per
+# indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: none. See docs/10 B-810.
+country: MDG
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MDG
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MDG (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on six of the twelve qualifying votes; no vote recorded on six (A/RES/ES-10/24, A/RES/79/232, A/RES/ES-10/27, A/DEC/80/506, A/RES/80/78 and A/RES/80/116).
+      The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      A/81/360); the reason for the six non-votes was not found (docs/10 B-810).'
+    queries:
+    - unga_votes.csv, country MDG
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Madagascar is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Madagascar supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Madagascar is a state party to the Rome Statute (signed 18 July 1998, ratified 14 March 2008: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 169). No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Ministry''s site search for CPI, génocide and Gaza returns nothing on the warrants. The Presidency''s
+      and the Prime Minister''s sites could not be read (B9).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Madagascar (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'diplomatie.gov.mg site search: CPI, génocide, Gaza'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Madagascar was found in the sources read (the Treaty Collection's
+      page lists no notification of withdrawal by Madagascar).
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Madagascar were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Madagascar. The registry gives a recognition since 16 November 1988, before the window, with no Government document read (R21, left for P-23);
+      no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, MDG (no row)
+    - 'diplomatie.gov.mg site search: Palestine, Palestinien, Palestina'
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The statements at the General Debate were made by the Prime Minister (Christian Ntsay, 27 September 2024, 79th), the President (Andry Rajoelina, 24 September 2025, 80th)
+      and the President of the Refoundation of the Republic (Michaël Randrianirina, 24 September 2026, 81st); the Minister of Foreign Affairs of the Refoundation Government is Alice N''Diaye (the
+      Ministry''s page). The three French texts (gastatements/{79,80,81}/mg_fr.pdf, read live on 2026-11-04) do not contain Gaza, Palestine, Palestinien, Israël, Moyen-Orient or Proche-Orient;
+      the 80th and 81st speak of conflicts in general. The 79th and 80th files have Wayback captures and the 81st has none; none was recorded since nothing in them is evidence. The Ministry''s
+      site search (Joomla, full text) for Gaza, Palestine, Palestinien, Palestina, Israël, Hamas, cessez-le-feu, Proche-Orient, Moyen-Orient, CPI, génocide, UNRWA, deux États, otages, Jérusalem,
+      humanitaire returns no statement on the war. The Presidency''s site (presidence.gov.mg) timed out from the session''s network and its Wayback capture of 17 October 2026 is a 404; the Prime
+      Minister''s site (primature.gov.mg) answers 502: their items for the window were not read.'
+    queries:
+    - 'diplomatie.gov.mg site search (/index.php/component/search/?searchword=): Gaza, Palestine, Palestinien, Palestina, Israël, Israélo, cessez-le-feu, Hamas, Proche-Orient, Moyen-Orient, CPI,
+      génocide, UNRWA, deux États, otages, Jérusalem, Terre Sainte, humanitaire, Gazaoui'
+    - gadebate.un.org/en/{79,80,81}/madagascar and gastatements/{79,80,81}/mg_fr.pdf (pdftotext, searched)
+    - presidence.gov.mg (no answer), primature.gov.mg (502)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the Ministry''s site. The items that name Israel are
+      a donation of medical equipment by Israel''s honorary consul general (3 June 2020, before the window) and a title listing Israel among the delegations that arrived for the President''s inauguration
+      of 18 December 2023; neither is a statement.'
+    queries:
+    - 'diplomatie.gov.mg site search: Israël, Ambassadeur d''Israël, Rajoelina-Israël'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Ministry's items read. This rests on that site only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: the Ministry''s site search for Israël and Ambassadeur d''Israël returns no item on the status of diplomatic relations since 2023 (an inauguration
+      delegation is not an act under B12, B-599).'
+    queries:
+    - 'diplomatie.gov.mg site search: Israël, Ambassadeur d''Israël'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Madagascar is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in the Ministry's items read (the site search for Israël returns none). The Presidency's and the Prime Minister's sites could
+      not be read; no treaty register was read (P-23).
+    queries:
+    - 'diplomatie.gov.mg site search: Israël'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Madagascar in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_funding.csv, donor MDG
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Madagascar has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Madagascar in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans and no field hospital deployed by Madagascar was found in the Ministry''s items read (search: humanitaire, Gaza).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

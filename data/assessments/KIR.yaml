@@ -1,0 +1,194 @@
+# Coverage record for Kiribati (docs/03 §6). P-21 light protocol, session T-P21-16, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Immigration's site (mfa.gov.ki: the WordPress search for Israel, Gaza, Palestine, Hamas and ceasefire, and the whole list of its 40 posts through the REST interface), the Office of the Beretitenti's site (president.gov.ki: Joomla; its news pages and searches returned nothing on Israel or Gaza), the General Debate pages and statements of the 79th to 81st sessions (gadebate.un.org: the 79th through Wayback captures, the 80th and 81st files read live), UN Meetings Coverage's report of 18 September 2024 already archived, the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official languages are English and Gilbertese) per indicator group. Time: about 10 minutes of research on Kiribati, inside the 90-minute budget of the session.
+# No hand-authored event and no lead: the statements read have no passage on Gaza, Palestine or Israel.
+country: KIR
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KIR
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Kiribati from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it.
+      Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer KIR
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Vanuatu
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: an abstention on 3 of the 12 qualifying votes (A/RES/ES-10/21 of 27 October 2023, A/RES/ES-10/24 of 18 September 2024 and A/RES/ES-10/27 of 12 June 2025)
+      and no vote recorded on the other 9 (scored as absent, B1). For 18 September 2024 the UN Meetings Coverage report (GA/12626, archived) lists Kiribati among the delegations that abstained
+      and expressed concerns about the language of the text; its Permanent Representative''s explanation is not quoted there. The reason for the nine absences is not stated in the dataset or in
+      the press releases archived; the arrears rule of Article 19 of the Charter has not been checked for Kiribati (docs/10 B-626, scheduled for P-23). Kiribati attended no vote after 12 June
+      2025.'
+    queries:
+    - unga_votes.csv, voter KIR
+    - press.un.org GA/12626 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'Kiribati is not on the ICJ case 192 intervention list (docs/06 §8; the Court''s page archived 25 September 2026, read; the Court''s press release of 13 March 2026, archived). Its participation
+      in the advisory proceedings on Israel''s policies and practices (case 186) would not be a B3 or B4 event (docs/02 §2: case 192 only); the Court''s list of written statements (archived: src_20261007_icj-cij_case-186-written-proceedings)
+      and its press release on the oral hearings (archived: src_20240226_un-unispal_icj-186-hearings-conclusion) do not name it.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written and oral statements (archived pages, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Kiribati is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the Beretitenti or of the Minister for Foreign Affairs and Immigration on executing the warrants of 21 November 2024 was found (mfa.gov.ki, president.gov.ki and the
+      press: no result). Kiribati is a state party to the Rome Statute (the Assembly''s list, archived: src_20261009_icc-asp_states-parties, read).'
+    queries:
+    - Kiribati ICC arrest warrant Netanyahu Maamau government position
+    - 'mfa.gov.ki and president.gov.ki searches (ICC, warrant: no result)'
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Kiribati ICC arrest warrant Netanyahu Maamau government position
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Kiribati has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for Kiribati, and none was added. The registry''s note records that it is not in the
+      annex of A/78/846 (recognitions to 2023) nor among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28); the Ministry''s site and the Beretitenti''s site, searched for Palestine,
+      have no document of a recognition.'
+    queries:
+    - 'mfa.gov.ki search: Palestine (no result)'
+    - 'president.gov.ki: news pages (no result)'
+    - recognitions.csv, row KIR (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: none-found
+    note: No B9 event. The Beretitenti's General Debate statements of the 80th session (the file is headed 'to be delivered on September 24, 2024', an error for the 80th session; read live, no
+      Wayback capture) and of the 81st session (25 September 2026, read live) have no passage on Gaza, Palestine, Israel or a ceasefire; the 81st says that 'distance does not make us indifferent
+      to the suffering caused by war and conflict elsewhere' and that 'disputes must be resolved peacefully'. The 79th session's statement was the Permanent Representative's (Teburoro Tito, 30
+      September 2024; archived; not a B9 speaker, R3) and has none either. The Ministry's site (40 posts, the latest of 17 June 2026) and the Beretitenti's site have nothing on the subject.
+    queries:
+    - Kiribati Gaza ceasefire statement Beretitenti OR Minister Foreign Affairs
+    - 'mfa.gov.ki search: Israel, Gaza, Palestine, Hamas, ceasefire (no result)'
+    - gadebate.un.org Kiribati 79th to 81st sessions (ki_en.pdf, read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Beretitenti was found.'
+    queries:
+    - Kiribati President Maamau support Israel Gaza Hamas statement
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Kiribati was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. No embassy or resident mission of Kiribati in Israel, or of Israel in Kiribati, appears in the sources read.
+    queries:
+    - Kiribati ambassador Israel recalled OR relations Israel downgrade OR sever
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Kiribati Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found (the Ministry''s and the Beretitenti''s sites and the press: no agreement, memorandum or declaration of intent).'
+    queries:
+    - Kiribati Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor KIR
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Kiribati has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Kiribati
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'Kiribati has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Kiribati
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Kiribati ministry
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Kiribati regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

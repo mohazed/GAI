@@ -1,0 +1,200 @@
+# Coverage record for Saint Kitts and Nevis (docs/03 §6). P-21 light protocol, session T-P21-10, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mofa.gov.kn), the St. Kitts and Nevis Information Service (sknis.gov.kn: site searches for Gaza, Israel and Palestine), the Office of the Prime Minister (pmo.gov.kn: under maintenance), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 20 minutes of research on Saint Kitts and Nevis, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: the Acting Prime Minister's statement of the 81st session (25 September 2026; no call, R3) and the Ministry's statements of 2026 on the Middle East (not Gaza).
+country: KNA
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KNA
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026 (Saint Kitts and Nevis has no row in the register of transfers from Israel). Left to the
+      build.'
+    queries:
+    - sipri_orders.csv, buyer KNA
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, KNA
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Saint Kitts and Nevis is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - St Kitts and Nevis Gaza Prime Minister Drew OR Douglas statement ceasefire Palestine Israel government
+    - Gaza Israel Palestine St. Kitts and Nevis government statement ceasefire humanitarian (sknis.gov.kn, nia.gov.kn, gov.kn, pmo.gov.kn)
+    - Terrance Drew Gaza genocide OR ceasefire St Kitts Nevis Prime Minister press conference OR statement Palestine Israel war
+    - site search (?s=Gaza, ?s=Israel, ?s=Palestine) of sknis.gov.kn and mofa.gov.kn
+    - Saint Kitts and Nevis welcomes OR condemns Gaza peace plan OR ceasefire OR "Board of Peace" OR Iran Israel statement Ministry of Foreign Affairs Saint Kitts Nevis 2025 2026
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the Prime Minister or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (the General Debate statements of 2024 to 2026, the Ministry's
+      and SKNIS's pages searched).
+    queries:
+    - Jamaica OR "St Kitts and Nevis" OR Haiti ICC arrest warrant Netanyahu government statement Rome Statute obligations
+    - St Kitts and Nevis Gaza Prime Minister Drew OR Douglas statement ceasefire Palestine Israel government
+    - Gaza Israel Palestine St. Kitts and Nevis government statement ceasefire humanitarian (sknis.gov.kn, nia.gov.kn, gov.kn, pmo.gov.kn)
+    - Terrance Drew Gaza genocide OR ceasefire St Kitts Nevis Prime Minister press conference OR statement Palestine Israel war
+    - site search (?s=Gaza, ?s=Israel, ?s=Palestine) of sknis.gov.kn and mofa.gov.kn
+    - Saint Kitts and Nevis welcomes OR condemns Gaza peace plan OR ceasefire OR "Board of Peace" OR Iran Israel statement Ministry of Foreign Affairs Saint Kitts Nevis 2025 2026
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: &id001
+    - Jamaica OR "St Kitts and Nevis" OR Haiti ICC arrest warrant Netanyahu government statement Rome Statute obligations
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Saint Kitts and Nevis has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `KNA,2019-07-29` is added in this session from SKNIS''s release of 30 July 2019 (archived; the Foreign Minister, Mark Brantley, signed an agreement
+      establishing diplomatic relations with the State of Palestine on Monday 29 July 2019 and the Government says it has ''been willing to lend'' its voice ''in support of Palestine and the Palestinian
+      people''): the pre-existing tier, +3 (R21).'
+    queries:
+    - St Kitts and Nevis recognises State of Palestine 2019 Ministry of Foreign Affairs Palestine recognition Saint Kitts
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'Two events: the Prime Minister''s General Debate statements of 27 September 2024 (a call for an unconditional ceasefire in Gaza, +2, decayed to zero) and 27 September 2025 (''the horrific
+      genocide that is unfolding in Gaza'', accountability, an immediate and unconditional ceasefire, +5). Not filed: (1) the General Debate statement of the 81st session (25 September 2026),
+      delivered by the Acting Prime Minister, Geoffrey Hanley (the General Debate site lists him as Deputy Prime Minister), which names Gaza in a list of conflicts (''Across Gaza, Ukraine, Sudan,
+      Yemen, Chad and the Democratic Republic of the Congo, civilians continue to bear an unconscionable burden'') with no call for a ceasefire or end of the blockade and no named violation, by
+      a speaker who is neither head of government nor foreign minister (R3); (2) the General Debate statement of 23 September 2023 predates the war; (3) the Ministry''s statements of 2 March,
+      8 May and 11 May 2026 on attacks in the Middle East and on the United Arab Emirates do not concern Gaza; (4) CARICOM''s statements of 10 October and 13 November 2023 (published by SKNIS)
+      and the Heads of Government''s communiqués speak for the Conference, with no named signatory (R3). The Minister of Foreign Affairs (Denzil Douglas) made no statement on Gaza that was found.'
+    queries:
+    - St Kitts and Nevis Gaza Prime Minister Drew OR Douglas statement ceasefire Palestine Israel government
+    - Gaza Israel Palestine St. Kitts and Nevis government statement ceasefire humanitarian (sknis.gov.kn, nia.gov.kn, gov.kn, pmo.gov.kn)
+    - Terrance Drew Gaza genocide OR ceasefire St Kitts Nevis Prime Minister press conference OR statement Palestine Israel war
+    - site search (?s=Gaza, ?s=Israel, ?s=Palestine) of sknis.gov.kn and mofa.gov.kn
+    - Saint Kitts and Nevis welcomes OR condemns Gaza peace plan OR ceasefire OR "Board of Peace" OR Iran Israel statement Ministry of Foreign Affairs Saint Kitts Nevis 2025 2026
+    - gadebate.un.org Saint Kitts and Nevis 78th to 81st sessions (kn_en.pdf), read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found; every statement read calls for a ceasefire or for peace and the two-State solution.
+    queries: &id003
+    - St Kitts and Nevis Gaza Prime Minister Drew OR Douglas statement ceasefire Palestine Israel government
+    - Gaza Israel Palestine St. Kitts and Nevis government statement ceasefire humanitarian (sknis.gov.kn, nia.gov.kn, gov.kn, pmo.gov.kn)
+    - Terrance Drew Gaza genocide OR ceasefire St Kitts Nevis Prime Minister press conference OR statement Palestine Israel war
+    - site search (?s=Gaza, ?s=Israel, ?s=Palestine) of sknis.gov.kn and mofa.gov.kn
+    - Saint Kitts and Nevis welcomes OR condemns Gaza peace plan OR ceasefire OR "Board of Peace" OR Iran Israel statement Ministry of Foreign Affairs Saint Kitts Nevis 2025 2026
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Saint Kitts and Nevis was found (not an EU member).
+    queries: &id002
+    - St Kitts and Nevis Israel agreement OR memorandum OR ambassador 2024 2025 2026 Denzil Douglas Israel cooperation
+    - '"Saint Kitts and Nevis" OR "St. Kitts and Nevis" Israel Israeli ambassador credentials OR cooperation OR agreement OR MASHAV 2024 2025 2026'
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found (the Ministry's and SKNIS's pages searched, and the press); the Government's statements make no measure against Israel.
+    queries: *id002
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Saint Kitts and Nevis has none).
+    queries: *id002
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: 'No governmental instrument with Israel signed since October 2023 was found (the Ministry of Foreign Affairs and SKNIS searched for Israel: the hits are CARICOM statements, a visa waiver
+      with the State of Palestine of 2021 and releases on other countries).'
+    queries: *id002
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Saint Kitts and Nevis in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the
+      build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor KNA
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Saint Kitts and Nevis has no row in UNRWA's donor tables of 2022, 2023 or 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Saint Kitts and Nevis
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'Saint Kitts and Nevis has no row in UNRWA''s donor tables of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Saint Kitts and Nevis
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries: *id003
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries: *id003
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

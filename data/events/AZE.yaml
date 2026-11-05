@@ -1,0 +1,142 @@
+# Hand-authored events for Azerbaijan (P-D research session, wave 9, 2026-09-29/30).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers for B9/B10: President Ilham Aliyev (head of state, who holds executive power; a B9 speaker as the
+# Presidents of Indonesia and Algeria, docs/10 B-407 (4), B-417 (4)) and Minister of Foreign Affairs Jeyhun
+# Bayramov. No B9 or B10 event is filed: the Ministry of Foreign Affairs publishes the Minister's speeches at the OIC
+# and the Arab-Islamic summits only as its own third-person press releases, and the President's official
+# transcripts read have no qualifying Gaza passage (docs/10, P-D AZE rows; data/assessments/AZE.yaml).
+
+- id: evt_2023_12_31_AZE_D3
+  revision: 1
+  country: AZE
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Azerbaijan's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 2,000,000 in 2023 against USD 88,235 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Azerbaijan contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de l'Azerbaïdjan à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Azerbaijan 0 0 0 0 0 0 0 0 0 2,000,000 2,000,000 40"
+    quote_lang: en
+    locator: line 56 (Azerbaijan)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Azerbaijan 88,235 0 88,235 0 0 0 88,235 64"
+    quote_lang: en
+    locator: line 75 (Azerbaijan)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 56 of the 2023 table and line 75 of the 2022 table re-read: USD 2,000,000 in 2023 against USD 88,235 in 2022. D3 increased agrees; it ends on 2024-12-31: the 2024 table has no Azerbaijani row, so the increase is not repeated."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31: the 2024 table has no Azerbaijani row, so the increase is not repeated. Filed in the P-16 consistency sweep (docs/10 B-445)."
+
+- id: evt_2026_02_04_AZE_C2
+  revision: 1
+  country: AZE
+  indicator: C2
+  type: standing
+  date: '2026-02-04'
+  end: null
+  points: -10
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Minister of Digital Development and Transport signed with Israel's National Artificial Intelligence
+      Directorate a memorandum of understanding on cooperation in artificial intelligence.
+    fr: >-
+      Le ministre du Développement numérique et des Transports a signé avec la direction israélienne de
+      l'intelligence artificielle un mémorandum d'entente sur la coopération dans ce domaine.
+  actor:
+    en: "Minister of Digital Development and Transport"
+    fr: "Ministre du Développement numérique et des Transports"
+    name: Rashad Nabiyev
+  evidence:
+  - source: src_20260204_mincom_ai-mou-israel
+    quote: "As part of his official visit to Israel, Rashad Nabiyev, Minister of Digital Development and Transport, signed a Memorandum of Understanding (MoU) on artificial intelligence (AI) cooperation with Israel’s National Artificial Intelligence Directorate of the Prime Minister’s Office."
+    quote_lang: en
+    locator: "line 143"
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: >-
+        The Ministry's item: line 140 the title (a memorandum of understanding on AI cooperation signed during the
+        Minister's visit to Israel), line 141 the date (4 February 2026, 09:21), line 143 the signature with the
+        National Artificial Intelligence Directorate of Israel's Prime Minister's Office, line 144 the discussion of
+        its implementation. A cooperation agreement signed with an organ of the Israeli government after October
+        2023: C2 agrees. The item does not give the day of the signing; the event carries the item's date.
+    notes: >-
+      Israel's Prime Minister's Office and the press (Times of Israel, JNS) date the signature 3 February 2026 in
+      Jerusalem; the Israeli release could not be read or archived (its pages answer with a script shell), so the
+      event carries the date of the first archived official record, as docs/10 B-413 (3). Filed as a separate C2
+      event from the memorandum on scientific cooperation of the same visit (a distinct instrument with other
+      signatories), as Argentina's and India's successive agreements (data/wave-7, data/wave-2). Scope `gaza` as
+      for other C2 agreements (docs/10 B-204 (5) on data/wave-1).
+
+- id: evt_2026_02_04_AZE_C2_2
+  revision: 1
+  country: AZE
+  indicator: C2
+  type: standing
+  date: '2026-02-04'
+  end: null
+  points: -10
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Ministry of Science and Education signed with Israel's Ministry of Innovation, Science and Technology a
+      memorandum of understanding on scientific cooperation.
+    fr: >-
+      Le ministère de la Science et de l'Éducation a signé avec le ministère israélien de l'Innovation, de la Science
+      et de la Technologie un mémorandum d'entente sur la coopération scientifique.
+  actor:
+    en: "Deputy Minister of Science and Education"
+    fr: "Vice-ministre de la Science et de l'Éducation"
+    name: Hasan Hasanli
+  evidence:
+  - source: src_20260204_edu-gov-az_science-mou-israel
+    quote: "As part of the visit of Deputy Minister of Science and Education of the Republic of Azerbaijan Hasan Hasanli to the State of Israel, a Memorandum of Understanding on Scientific Cooperation was signed between the Ministry of Science and Education of the Republic of Azerbaijan and the Ministry of Innovation, Science and Technology of the State of Israel."
+    quote_lang: en
+    locator: "line 46"
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_02_04_AZE_C2
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: >-
+        The Ministry's item: line 45 the title, line 46 the signature of the memorandum during the Deputy Minister's
+        visit to Israel, with Israel's Minister of Innovation, Science and Technology signing for Israel, line 47 its
+        content (joint research projects, joint funding, exchanges of doctoral students and staff), line 48 the date
+        (04.02.2026, 15:59). A cooperation agreement between two ministries signed after October 2023: C2 agrees.
+    notes: >-
+      The press dates the signature 4 February 2026, the item's date. A separate instrument from the memorandum on
+      artificial intelligence of the same visit (evt_2026_02_04_AZE_C2). Scope `gaza` as for other C2 agreements.

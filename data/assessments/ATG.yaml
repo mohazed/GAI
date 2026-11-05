@@ -1,0 +1,182 @@
+# Coverage record for Antigua and Barbuda (docs/03 §6). P-21 light protocol, session T-P21-05, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's portal (ab.gov.ag) and the Embassy to the United States (embassy.ag), the General Debate statements of the 79th and
+#   80th sessions (gadebate.un.org, Wayback captures; the file of the 81st session at 81/ag_en.pdf is the 80th's and the 81st statement, by the Permanent Representative,
+#   has no capture), the UN's summary of the 79th session's debate (press.un.org, Wayback capture), the generated events and the structured tables; web searches in English
+#   (the official language) per indicator group. Time: about 15 minutes.
+# Statements read and not filed as B9: the Permanent Representative's statement of 28 September 2026 (no passage on Gaza; not a B9 speaker); the Prime Minister's words at the
+#   High-level International Conference on Palestine of 22 September 2025 (the Embassy's release, third person: R4); the Embassy and the press give no further statement.
+country: ATG
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Antigua and Barbuda to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ATG
+  A2:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Antigua and Barbuda from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer ATG
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Generated from unga_votes.csv: yes on 10 and absent on 2 of the 12 qualifying votes (A/DEC/80/506 of 12 September 2025 and A/RES/80/116 of 12 December 2025, scored as absent). The Mission''s
+      statements on the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Antigua and Barbuda filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Antigua and Barbuda
+  B4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Antigua and Barbuda
+  B5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of the Prime Minister or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found.
+    queries: &id001
+    - Antigua and Barbuda ICC arrest warrant Netanyahu position Browne OR Greene government statement
+    - Antigua and Barbuda Gaza Prime Minister Browne statement Israel Palestine
+  B6:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: Antigua and Barbuda has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Antigua and Barbuda row. The registry dates the recognition 22 September 2011 (A/78/846 annex); the state''s own document was not found.
+      The agreement on the establishment of diplomatic relations between the State of Palestine and Antigua and Barbuda, signed in New York on 14 June 2024 by the Minister of Foreign Affairs and
+      Palestine''s Permanent Observer (WAFA, a Palestinian source; lead_20261006_ATG_1), is not a recognition (the registry''s date is earlier) and is not read as a B8 event; R21 (docs/calibration/README.md):
+      with the pre-existing tier the score would be +3 higher.'
+  B9:
+    status: has-events
+    checked_at: '2026-10-06'
+    note: 'Two events: the Prime Minister''s General Debate statement of 27 September 2024 (a call on all parties to negotiate and to ''end these conflicts'', call tier, decayed to zero; flagged:
+      the word ceasefire is not used) and of 26 September 2025 (the forced removal of people from Gaza and ''the genocide that has occurred there'', +5, inside the decay window; flagged: no call
+      for a ceasefire). The statement of 28 September 2026 is the Permanent Representative''s and has no passage on Gaza.'
+    queries:
+    - Gaston Browne Gaza ceasefire statement genocide General Assembly
+    - Antigua and Barbuda Prime Minister Browne ceasefire Gaza Israel Hamas CARICOM statement
+    - Antigua and Barbuda reaffirms support at UN High-level Conference on Palestine
+  B10:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No statement of unconditional support for Israel or denial of documented violations was found; the Prime Minister's statements of 2024 and 2025 (archived) call on Hamas to release the
+      hostages and condemn the forced removal of people from Gaza.
+    queries:
+    - Antigua and Barbuda Browne Israel support statement October 2023 Hamas attack
+    - Antigua and Barbuda government statement Israel right to defend itself
+  B11:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No sanction of Israeli settlers or ministers by Antigua and Barbuda was found (not an EU member).
+    queries:
+    - Antigua and Barbuda sanctions Israeli settlers West Bank
+  B12:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No recall, downgrade or severance was found: Israel has an ambassador accredited to Antigua and Barbuda who is not resident (Wikipedia list, not archived), and the Government established
+      diplomatic relations with Palestine on 14 June 2024 as well, ''not to repudiate ties with Israel'' according to the press.'
+    queries:
+    - Antigua and Barbuda Israel relations ambassador 2024 2025
+    - Antigua and Barbuda downgrade OR recall Israel
+  C1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No trade or association agreement with Israel was found to review (not an EU member).
+    queries:
+    - Antigua and Barbuda Israel trade agreement suspended OR review
+  C2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No governmental instrument with Israel signed since October 2023 was found.
+    queries:
+    - Antigua and Barbuda Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+  C3:
+    status: no-data
+    checked_at: '2026-10-06'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'Generated from FTS: no Government flow of Antigua and Barbuda to the oPt plans (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No announcement of a suspension of UNRWA funding was found; Antigua and Barbuda has no row in UNRWA's donor tables.
+    queries:
+    - Antigua and Barbuda UNRWA contribution OR funding suspended
+  D3:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: 'No row of Antigua and Barbuda in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Antigua and Barbuda
+  D4:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Antigua and Barbuda Gaza humanitarian aid medical OR field hospital
+  D5:
+    status: none-found
+    checked_at: '2026-10-06'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Antigua and Barbuda visa OR refugee Palestinians Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

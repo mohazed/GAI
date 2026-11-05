@@ -1,0 +1,192 @@
+# Coverage record for Costa Rica (docs/03 §6). P-21 light protocol, session T-P21-07, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Worship's press releases (rree.go.cr, the releases of 7 October 2023, 24 April, 10 July 2024, 7 April, 11 August and 30 September 2025 read; the
+#   site blocks scripted requests after a burst and Save Page Now; Wayback captures exist), COMEX's release of the free trade agreement (archived), the General Debate statements of the 78th to 81st sessions
+#   (gadebate.un.org; the 79th archived through its Wayback capture; the 80th and 81st read: the 80th has Gaza in a list of examples, the 81st has no passage), the generated events and the structured tables; web searches
+#   in English and Spanish (the official language) per indicator group. Time: about 30 minutes.
+# Statements read and not filed as B9: the Ministry's releases (no named speaker, R3); the General Debate statement of 24 September 2025 (Gaza named only as an example of humanitarian crises, no call);
+#   the Foreign Minister's interview of 12 July 2026 (press, lead_20261006_CRI_2).
+country: CRI
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Costa Rica
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Costa Rica
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 10 and abstain on 2 of the 12 qualifying votes (A/RES/ES-10/24 of 18 September 2024 and A/RES/80/116 of 12 December 2025, the latter on the Court''s
+      advisory opinion that Costa Rica had voted to request in December 2024). The statements on the votes were not read.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    note: Costa Rica is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-09-27).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: 'No rejection of the provisional measures was found: the Ministry''s releases of 24 April and 10 July 2024 call for the good-faith compliance of all States with the Security Council''s
+      resolutions and the Court''s provisional measures (not archived; Wayback captures read). The abstention of 12 December 2025 on the Assembly''s resolution welcoming the advisory opinion is
+      a vote (B1), not a rejection.'
+    queries:
+    - Costa Rica espera que Israel y Hamás acaten órdenes del máximo tribunal de la ONU
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found: the Government''s statement of 22 November 2024
+      (Delfino) says it trusts the Court''s judges and the integrity of the institution and its officials, takes no position on execution and names no speaker (lead_20261006_CRI_3). Costa Rica
+      is a State Party to the Rome Statute.'
+    queries: &id001
+    - Costa Rica Israel acuerdo firmado 2026 Laura Fernández embajada Jerusalén
+    - Costa Rica Corte Penal Internacional orden de arresto Netanyahu comunicado noviembre 2024
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found: Israel sent its President, not its Prime Minister, to the inauguration of 8 May 2026 (Herzog
+      met President Fernández on 8 May); a Netanyahu visit was asked about by press on 27 April 2026 and did not take place.'
+    queries: *id001
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Costa Rica has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: unchecked
+    note: 'No row in recognitions.csv. The registry dates the recognition 2008-02-05; the Ministry''s annual report 2007-2008 (rree.go.cr/files/includes/files.php?id=310, read: it lists the State
+      of Palestine among the recognitions, 5 February 2008) cannot be archived (Save Page Now HTTP 403, no Wayback capture): +3 to add once a state document is archived (R21).'
+  B9:
+    status: has-events
+    note: 'One event: the Foreign Minister''s General Debate statement of 26 September 2024 (a call for an immediate and unconditional ceasefire in each of nine conflicts, Gaza among them; +2,
+      flagged, decayed to zero). Not filed: the Foreign Minister''s of the 80th session (24 September 2025: Gaza named as an example of crises, no call), the 81st (no passage on Gaza), the Ministry''s
+      releases (24 April and 10 July 2024; 7 April, 11 August and 30 September 2025: no named speaker, R3), the President''s remarks of 2 July 2025 (lead_20261006_CRI_1) and the Foreign Minister''s
+      interview of 12 July 2026 (lead_20261006_CRI_2).'
+    queries:
+    - Costa Rica cancillería comunicado Gaza cese al fuego Arnoldo André
+    - gadebate.un.org Costa Rica 2024 2025 2026
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No filed statement of unconditional support or denial: the Ministry''s release of 7 October 2023 condemns the attack, extends solidarity to Israel and demands the release of hostages
+      (no named speaker); the President''s mocking reply of 2 July 2025 to a question on a trade agreement with Israel and the Foreign Minister''s interview of 12 July 2026 (''we appeal that the
+      very existence of the State of Israel be recognised'') are press reports, not exact words in an official transcript (lead_20261006_CRI_1, _2).'
+    queries:
+    - presidente Rodrigo Chaves Israel apoyo Gaza conferencia de prensa declaraciones genocidio
+    - Canciller Manuel Tovar se posiciona sobre Gaza
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Costa Rica was found (not an EU member).
+    queries:
+    - Costa Rica sanciones colonos israelíes
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: the embassy is in Tel Aviv; on 8 May 2026 President Fernández told Israel''s President she was willing to elevate the representation in
+      Jerusalem to an embassy (Israeli President''s office, via JNS and Delfino; a reverse of the 2006 decision), and the Minister of Foreign Trade announced an office of innovation in Jerusalem
+      for 2026: neither is an indicator and neither is an act.'
+    queries:
+    - Costa Rica Israel acuerdo firmado 2026 Laura Fernández embajada Jerusalén
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel was suspended or reviewed; the free trade agreement is a new instrument (C2).
+    queries:
+    - Costa Rica Israel tratado de libre comercio suspender OR revisar
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the free trade agreement signed in Jerusalem on 8 December 2025 (-10, standing; the Ministry''s release carries a misprinted year, flagged). The memorandum of understanding
+      of 29 March 2023 pre-dates the window; the ''reaffirmation of the commitment'' of October 2024 is not an instrument.'
+    queries:
+    - Israel Costa Rica free trade agreement signed Jerusalem Barkat Tovar December 2025
+    - Costa Rica Israel acuerdo firmado 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Costa Rica to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Costa Rica has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived). The Ministry's release of 24 April 2024 calls
+      on the States that suspended their contributions to resume them.
+    queries:
+    - Costa Rica UNRWA contribución OR donación Gaza
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Costa Rica in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Costa Rica
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Costa Rica evacuación médica niños Gaza gobierno
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Costa Rica visa humanitaria Gaza palestinos refugio
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

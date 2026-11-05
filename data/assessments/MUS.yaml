@@ -1,0 +1,187 @@
+# Coverage record for Mauritius (docs/03 §6). P-21 light protocol, session T-P21-40, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; live, the 79th and 80th recorded from Wayback captures), the Prime Minister's Office's Cabinet Decisions page (pmo.govmu.org; the 42 highlights on it
+# downloaded and searched for Gaza, Palestin and Israel), the Government Information Service's site search (gis.govmu.org/gis/?s=; no result, the site holds posts of 2021 to 2023 only), the Ministry of Foreign Affairs' list pages (foreign.govmu.org;
+# SharePoint, items loaded by script: not read), the ICJ's case 192 page (archived copy and live), the UN Treaty Collection's status page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024) and the
+# Article 19 documents. Web searches were not available to this session (the run's search budget was spent): nothing is filed from a press item; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: none. See docs/10 B-818.
+country: MUS
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MUS
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MUS
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country MUS
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Mauritius is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Its written statement in the advisory proceedings of case 186 (listed on the Court's page, archived as src_20261007_icj-cij_case-186-written-proceedings) is not an indicator act.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: unchecked
+    note: 'Mauritius ratified the Rome Statute on 5 March 2002 (the UN Treaty Collection''s status page, read live on 2026-11-04). No statement on the warrants of 21 November 2024 by a B5 speaker
+      was found in the sources read (the 79th to 81st General Debate statements, the Cabinet''s highlights); the Ministry''s list pages (foreign.govmu.org: News, Communique, Speeches) load their
+      items by script and the Government Information Service''s site search covers only 2021 to 2023, so the Ministry''s statements were not searched.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - foreign.govmu.org /Pages/viewallnews.aspx, viewallcommunique.aspx, viewallspeeches.aspx (lists load by script, not read)
+    - 'gis.govmu.org search: Gaza, Palestine, Palestinian, Israel (no result)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Mauritius was found: the Treaty Collection''s page lists no withdrawal
+      notification by Mauritius.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Mauritius were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Mauritius. The registry gives a recognition since 17 November 1988, before the window; the Minister''s 80th General Debate statement (26
+      September 2025, src_20250926_un-gadebate_mu-ramful-ag80) says Mauritius''s ''recognition of the State of Palestine in November 1988'' (a month, not the registry''s date; R21 row not added).
+      No recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, MUS (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President (head of state) is Prithvirajsing Roopun, the Prime Minister (head of government) Navin Ramgoolam, and the Minister of Foreign Affairs, Regional Integration
+      and International Trade Dhananjay Ramful (the General Debate files and the Cabinet''s highlights; R3). (1) 79th statement, 26 September 2024, the President (src_20240926_un-gadebate_mu-roopun-ag79):
+      ''The devastation and sufferings in Gaza are heart wrenching'' and ''Thousands of innocent lives have been lost'', ''We urge the international community to find a solution for a de-escalation
+      in the region''; Gaza is named, but the passage has no call for a ceasefire and no named violation (neither tier); 770 days old, expired in any case. (2) 80th statement, 26 September 2025,
+      the Minister (src_20250926_un-gadebate_mu-ramful-ag80): the principled support of the Palestinian cause, the 1988 recognition, and the endorsement of the New York Declaration; Gaza is not
+      named (R7). (3) 81st statement, 25 September 2026, the Minister (the file gastatements/81/mu_en.pdf read live, no Wayback capture, not recorded): ''The cycle of violence must end'' and unlawful
+      settlements ''may be a major obstacle to peace'' under the heading Palestine; Gaza is not named (R7). (4) The Cabinet''s highlights of 22 August 2025 (src_20250822_pmo-mu_cabinet-highlights-22-august,
+      item 8) record that Cabinet agreed to Mauritius endorsing the New York Declaration and describe what the Declaration says (a ceasefire, withdrawal of Israeli forces, the hostages); the Cabinet
+      is not a B9 speaker and the description is in indirect speech (R3, R4): not filed. Searched in the 42 Cabinet highlights on the Prime Minister''s Office page (Cabinet Decisions: 41 meetings
+      of 2026 and the one of 22 August 2025): only the item above and a line of 9 October 2026 on the Minister''s reaffirmed ''support for Palestinian self-determination'' at the Assembly. The
+      Ministry''s and the Government Information Service''s lists were not readable (see B5).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/mauritius and gastatements/{79,80,81}/mu_en.pdf
+    - pmo.govmu.org Cabinet Decisions page (42 highlights downloaded and searched for Gaza, Palestin, Israel)
+    - gis.govmu.org/gis/?s=Gaza, Palestine, Palestinian, Israel (no result)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in the General
+      Debate statements and the Cabinet''s highlights read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Cabinet's highlights read (41 meetings of 2026 and 22 August 2025).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the Cabinet's highlights read (41 meetings of 2026 and 22 August 2025) or in the General Debate statements.
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Mauritius is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the Cabinet's highlights read.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in the Cabinet's highlights read (41 meetings of 2026 and 22 August 2025). The Ministry's lists and the treaty register were
+      not read (P-23).
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_funding.csv): USD 110,944 recorded for Mauritius in the windows from December 2023 to October 2025, no other flow. Left to the build.'
+    queries:
+    - fts_funding.csv, donor MUS
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Mauritius was found in the sources read.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

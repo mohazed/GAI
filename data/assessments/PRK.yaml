@@ -1,0 +1,190 @@
+# Coverage record for the Democratic People's Republic of Korea (docs/03 §6). P-21 light protocol, session T-P21-03, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs, KCNA and Naenara (reachable over plain HTTP; their news pages
+#   cannot be searched by a script), the General Debate statements of the United Nations (gadebate.un.org, Wayback captures of
+#   the 78th and 79th sessions in English and the 80th in Korean, read in full), KCNA texts as mirrored by globalsecurity.org
+#   (Wayback captures), the generated events and the structured tables; web searches in English and in Korean per indicator
+#   group. Time: about 5 minutes.
+# Statements read and not filed as B9: the General Debate statements of 30 September 2024 (Ambassador Kim Song, on 'the Israeli
+#   genocide') and 29 September 2025 (Vice Foreign Minister Kim Son Gyong, who demands that Israel stop its crimes and withdraw from
+#   Gaza): a Permanent Representative and a Vice Foreign Minister are not B9 speakers (R3). The statements of the Foreign
+#   Ministry's spokesperson (1 October 2024, 12 August 2025), who is unnamed, and the remarks attributed to Kim Jong Un
+#   (20 December 2025, relayed by IRNA, with no passage on Gaza quoted).
+country: PRK
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from the DPRK to
+      Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PRK
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of
+      the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch.
+      Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no DPRK order of Israeli major arms in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PRK
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, DPRK
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the Premier or the Foreign Minister on executing the warrants of 21 November 2024 was found; the
+      DPRK is not a State Party to the Rome Statute.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has imposed no sanctions on ICC officials (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no DPRK row. The registry dates the recognition 24 November 1988 (A/78/846
+      annex, via Wikipedia); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with the
+      pre-existing tier the score would be +3 higher.'
+  B9:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of the Chairman of State Affairs, the Premier or the Foreign Minister (the B9 speakers, R3) that calls
+      for a ceasefire or names a violation was found among the texts read. The DPRK speaks on Gaza through the General Debate
+      delegation (a Permanent Representative in 2024, a Vice Foreign Minister in 2025), the Foreign Ministry''s spokesperson
+      and Vice Foreign Ministers, who are not B9 speakers (R3) or are unnamed: lead_20261005_PRK_1. A KCNA statement of the
+      Foreign Minister herself, if one exists, was not found (KCNA''s archive cannot be searched by a script).'
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+    - Kim Jong Un Palestine Gaza Israel message OR statement OR speech North Korea
+    - '"Choe Son Hui" Gaza OR Palestinian OR Israel statement foreign minister DPRK "genocide" OR "ceasefire"'
+    - 조선민주주의인민공화국 외무성 대변인 팔레스티나 가자지대 이스라엘 담화 조선중앙통신 2025
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found (the DPRK does not
+      recognise Israel).
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+    - Kim Jong Un Palestine Gaza Israel message OR statement OR speech North Korea
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance applies: the DPRK has no diplomatic relations with Israel and does not recognise
+      it (press, Wikipedia).'
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has no trade or association agreement with Israel (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No instrument with Israel was found; the DPRK has no relations with it.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans. Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No row of the DPRK in UNRWA's donor tables for 2022, 2023 or 2024 (it was not a donor to suspend).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Democratic People's Republic of Korea
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No row of the DPRK in UNRWA''s donor tables for 2022, 2023 or 2024 (archived): no restored or increased contribution.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Democratic People's Republic of Korea
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

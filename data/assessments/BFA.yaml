@@ -1,0 +1,190 @@
+# Coverage record for Burkina Faso (docs/03 §6). P-21 light protocol, session T-P21-31, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent) and the Assembly's verbatim record of the 79th; the Ministry's site (diplomatie.gov.bf) and the Government Information Service's site (gouvernement.gov.bf), searched through their WordPress APIs; the UN Treaty Collection's depositary notification of the withdrawal from the Rome Statute (archived); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
+# One event: evt_2026_06_24_BFA_B6 (scope related, unscored). Leads: none.
+country: BFA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BFA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Burkina Faso from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BFA
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Burkina Faso (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on seven of the twelve qualifying votes; recorded as non-voting on A/RES/ES-10/21, ES-10/22, ES-10/25, 79/232 and 80/116, each scored -2 by the build
+      (docs/10 B-690). Burkina Faso is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      document A/81/360); the letters between those dates were not checked.'
+    queries:
+    - unga_votes.csv, country BFA
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Burkina Faso is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched
+      for Burkina Faso).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Burkina Faso (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Burkina Faso supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Burkina Faso is a state party to the Rome Statute until its withdrawal takes effect on 24 June 2027 (src_20261009_icc-asp_states-parties, searched; evt_2026_06_24_BFA_B6). No statement
+      on the warrants of 21 November 2024 by a B5 speaker was found in the sources read.
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Burkina Faso (found: state party)'
+    checked_at: '2026-11-04'
+  B6:
+    status: has-events
+    note: 'One event, unscored: the notification of 24 June 2026 of Burkina Faso''s withdrawal from the Rome Statute (evt_2026_06_24_BFA_B6, -10, scope `related`, docs/10 B-776); the excerpt
+      of the Government''s letter in the depositary notification gives the Court''s becoming ''a selective and politicized tool'' as the reason and does not mention Gaza, Palestine, Israel or
+      the warrants; the Foreign Minister''s General Debate statement for the Confederation of Sahel States (28 September 2026, the live UN file, French) repeats ''manquements graves, une sélectivité
+      persistante et une politisation'' without naming Gaza. The joint announcement of the three Sahel states of September 2025 and the full letter were not read. No stated refusal to execute
+      the warrants and no hosting of a person under warrant was found.'
+    queries:
+    - Burkina Faso withdrawal Rome Statute depositary notification C.N.263.2026 (archived)
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    - gadebate.un.org/sites/default/files/gastatements/81/bf_fr.pdf (read live; ICC passage, no Gaza)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Burkina Faso were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Burkina Faso. The registry gives 21 November 1988 (countries.yaml recognises_palestine); the 79th General Debate statement says
+      that Burkina Faso's acceptance of Palestine as a Member State of the United Nations is part of its two-State position, which is not a recognition document of a date, so no row is added (R21;
+      P-23).
+    queries:
+    - recognitions.csv, BFA
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. General Debate statements (the French files of gadebate.un.org, read live; not archived because no event rests on them): the 79th (30 September 2024, Foreign Minister
+      Karamoko Jean-Marie Traoré; A/79/PV.17, archived: src_20240930_undocs_a-79-pv-17) says Burkina Faso ''reaffirms its solidarity with the Palestinian people, who are enduring an unprecedented
+      tragedy'' and supports the two-State solution, never naming Gaza (R7), and is older than 730 days; the 80th (September 2025, the Prime Minister and head of government, Rimtalba Jean Emmanuel
+      Ouédraogo, the Ministry''s page of 27 September 2025) speaks of ''le conflit israélo-palestinien qui n''a que trop duré'' and ''l''impasse du conflit israélo-palestinien'' and never names
+      Gaza (R7); the 81st (28 September 2026, the Foreign Minister, for the Confederation of Sahel States) says ''nous demeurons particulièrement préoccupés par la situation du peuple palestinien
+      et les souffrances endurées par les populations civiles de Gaza'' and supports two States, with no call for a ceasefire and no named violation, so it is neither B9 tier (it is a statement
+      for the Confederation, which is a further reason to flag it). The Ministry''s site (diplomatie.gov.bf) and the Government Information Service''s site (gouvernement.gov.bf) were searched
+      through their WordPress APIs for Gaza, cessez-le-feu, Palestine, Israël, Hamas, flottille and Moyen-Orient: nothing else on Gaza. Not searched: the Presidency''s site (presidencedufaso.bf:
+      its REST API is closed to unauthenticated requests) and the Burkinabè press (P-23). Web searches were not available to this session (the run''s search budget was spent, as for T-P21-26 and
+      T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23.'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bf_fr.pdf (read live; bf_en 404)
+    - diplomatie.gov.bf/wp-json/wp/v2/posts?search={Gaza,cessez-le-feu,Palestine,Israël,Hamas,flottille,Moyen-Orient}
+    - gouvernement.gov.bf/wp-json/wp/v2/posts?search={Gaza,Palestine,Israël,palestinien}
+    - archive/text/src_20240930_undocs_a-79-pv-17.txt, Burkina Faso (the 79th statement)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions by Burkina Faso on settlers or settler entities were found in the sources read.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was announced in any item of the Ministry's site found by its searches for Israël, Palestine, Gaza and Hamas (the results are the General Debate pages
+      and bilateral items with Iran and other states).
+    queries:
+    - diplomatie.gov.bf/wp-json/wp/v2/posts?search={Israël,Palestine,Gaza,Hamas}
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Burkina Faso is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the Ministry''s items returned by the searches for Israël, Palestine, Gaza and Hamas. Not searched: the Council of Ministers''
+      reports and the Official Journal (P-23).'
+    queries:
+    - diplomatie.gov.bf/wp-json/wp/v2/posts?search=Israël
+    - gouvernement.gov.bf/wp-json/wp/v2/posts?search=Israël
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Burkina Faso to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor BFA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Burkina Faso has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched: Burkina Faso not found)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Burkina Faso in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Burkina Faso was read in a primary (P-23).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

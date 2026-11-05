@@ -1,0 +1,238 @@
+# Coverage record for Iceland (docs/03 §6). P-21 light protocol, session T-P21-19, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government Offices' site (stjornarradid.is, Icelandic, and government.is, English: the news search `?q=` was run for Gaza, Gasa, Palestínu, Ísrael, UNRWA, Alþjóðadómstóll, landtökubyggðir and fríverslunarsamning, and the statements and news items it lists were read), the Althing's report of the Foreign Minister (read through Wayback: althingi.is refuses scripted requests), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the joint statements already archived for the 45 (archive/text searched for Iceland, Islande), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Icelandic per indicator group. Iceland is not an EU member. Time: about 80 minutes of research on Iceland, inside the 90-minute budget of the session.
+# Seventeen B9 events, one B3 event, four D2/D3 events. Leads: 3 (lead_20261013_ISL_1 to _3).
+country: ISL
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ISL
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this country (no row for ISL). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer ISL
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Iceland (no row)
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and an abstention on 1 (A/RES/ES-10/21 of 27 October 2023). All 12 are recorded, so no absence is scored and no Article
+      19 note is needed (Iceland is not among the four Member States in arrears in the Secretary-General''s letter of 3 September 2025, A/80/362, archived).'
+    queries:
+    - unga_votes.csv, voter ISL
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: has-events
+    note: 'One event: Iceland''s declaration of intervention under Article 63 in case 192, filed on 11 March 2026 (evt_2026_03_11_ISL_B3, +15): the declaration (a scan, read by OCR) argues for
+      a construction that supports the applicant''s, as the Netherlands'' of the same day does. The Court''s page of 27 September 2026 (archived) lists Iceland.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    - Iceland declaration of intervention ICJ South Africa v. Israel March 2026 (web search)
+    - UNISPAL ICELAND-192-20260311-int-02-00-en.pdf (archived)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; the Minister's reaction of 26 January 2024 says the Government respects the Court's decision and calls
+      for it to be complied with ('Íslensk stjórnvöld virða ákvörðun dómstólsins og kalla eftir því að farið verði eftir henni', the Ministry's item, read in Icelandic). Iceland's written statement
+      of 28 February 2025 in the advisory proceedings on Israel's obligations in relation to the United Nations (the Ministry's items of 28 February and 9 May 2025, read) is not B3 or B4 (docs/10
+      B-629).
+    queries:
+    - icj-cij.org case 192 (archived)
+    - 'stjornarradid.is: Viðbrögð utanríkisráðherra vegna niðurstöðu Alþjóðadómstólsins (read)'
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the Prime Minister, the Foreign Minister or the Minister of Justice on executing the warrants of 21 November 2024 was found: the Government''s news search (the terms
+      Gaza, Gasa, Palestínu, Ísrael, UNRWA, Alþjóðadómstóll, landtökubyggðir) and web searches in English and Icelandic return no item on the warrants (the Ministry''s release of 19 March 2024,
+      read, lists additional contributions to the International Criminal Court). Iceland is a state party to the Rome Statute (line 152 of the Assembly''s list, archived: src_20261009_icc-asp_states-parties).'
+    queries:
+    - Iceland ICC arrest warrant Netanyahu Iceland foreign minister statement Alþjóðaglæpadómstóllinn handtökuskipun Netanyahu Ísland
+    - stjornarradid.is/efst-a-baugi/frettir/?q=… (Gaza, Palestínu, Ísrael, Alþjóðadómstóll)
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Iceland has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv (a row added in this session, R21): Iceland recognised Palestine in 2011, so it is a standing state at +3 from 2023-10-07. The row''s date, 2011-12-15,
+      is the establishment of diplomatic relations ''which involves recognition'' per the Foreign Minister''s report to the Althing (src_20240327_althingi_skyrsla-utanrikisradherra-palestina:
+      ''Ísland viðurkennir Palestínu … á grundvelli ályktunar Alþingis frá 29. nóvember 2011. Stofnað var til stjórnmálasambands milli ríkjanna þann 15. desember sama ár sem felur í sér viðurkenningu'';
+      the registry says the same date). Flagged: the Althing''s resolution is of 29 November 2011; the Ministry gives the year only in its statements of 29 July 2025 and 27 September 2025 (''Iceland
+      recognized … Palestine in 2011'').'
+    queries:
+    - recognitions.csv, row ISL (added)
+    - Ísland viðurkennir Palestínu 2011 utanríkisráðuneytið Alþingi ályktun 29. nóvember 2011 (web search)
+    - src_20240327_althingi_skyrsla-utanrikisradherra-palestina (archived, read)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Seventeen events, fifteen of them joint statements: the Foreign Minister''s statements with other ministers of 7 May 2025 (+5), 19 May 2025 (+2), 21 July 2025 (+5), 10 August 2025 (+5),
+      12 August 2025 (+5), 21 August 2025 (+5 west-bank, unscored), 29 August 2025 (+5), 24 December 2025 (+5 west-bank), 30 December 2025 (+2), 5 January 2026 (+2, flagged), 28 January 2026 (+2),
+      24 February 2026 (+5 west-bank), 8 June 2026 (+2) and 8 September 2026 (+5 west-bank); the Prime Minister''s statement with six heads of government of 16 May 2025 (+5); and the Foreign Minister''s
+      own statements at the UN conference on the two-state solution, 29 July 2025 (+5), and at the 80th General Assembly, 27 September 2025 (+5). Read and not filed: (1) the Foreign Minister''s
+      address at the 81st General Assembly, 26 September 2026 (the delegation''s file, read live: ''In Gaza, we continue to witness repeated violations of the ceasefire'', ''illegal settlement
+      activity continues to expand''; no Wayback capture and gadebate.un.org refuses Save Page Now, so it is a lead for the author, not an event; the Ministry''s English text was not found); (2)
+      the Foreign Minister''s remarks at the Paris conference of 12 June 2026 (the Ministry''s item, in indirect speech, R4); (3) the Ministry''s statement at the emergency special session of
+      30 October 2023, the Minister''s statements of November 2023 to February 2024, the 79th General Debate statement (27 September 2024) and the Nordic statement of 2 July 2024 (expired, more
+      than 730 days; read or listed in the Ministry''s items); (4) the joint statement of 27 September 2025 on patients from Gaza names Iceland (line 2) but the same speaker''s General Assembly
+      address of that day is the event (one event per speaker and day, docs/10 B-204 (6)); (5) the statements of 7 May, 16 May, 29 August 2025, 24 December 2025 and 5 January 2026 are not archived
+      for the other signatories among the 45 (Ireland, Norway, Spain, Slovenia, Japan, the Netherlands, Belgium and others): docs/10 B-674 (6).'
+    queries:
+    - 'stjornarradid.is/efst-a-baugi/frettir/?q=Gaza, Palestínu, Ísrael, UNRWA (read: about 100 items)'
+    - government.is/search/?q=Palestine, Israel, UNRWA, Joint statement (read)
+    - Iceland Ministry for Foreign Affairs UNRWA funding suspended January 2024 (web search)
+    - gadebate.un.org Iceland 78th to 81st sessions (is_en.pdf, read; the 79th archived by Wayback, the 80th has no capture)
+    - archive/text joint statements (archived) searched for Iceland, Islande
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel by the Prime Minister was found. The Minister''s statements say the Government ''unequivocally'' condemned the attacks
+      of 7 October 2023 and that ''Israel''s right to exist is beyond debate'' (79th General Debate, 2024), together with calls for international law to be observed.'
+    queries:
+    - Iceland Prime Minister Israel right to defend itself
+    - stjornarradid.is news search (read)
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: 'Iceland is not an EU member: the Council''s listings do not apply. No national listing was found. On 8 September 2025 the Foreign Minister presented to Parliament''s Foreign Affairs
+      Committee a package of measures that included an entry ban on the Israeli ministers Itamar Ben-Gvir and Bezalel Smotrich (press: Vísir 8 September 2025, read; RÚV and Morgunblaðið seen in
+      search results): the articles speak in the future tense, give no legal instrument and no date of effect, and no Icelandic release or implementation was found: lead_20261013_ISL_1, not an
+      event. On 8 September 2026 Iceland joined eleven states in intending to introduce or support restrictions on trade in goods with settlements (src_20260908_gov-pl_oswiadczenie-dwupanstwowe:
+      a statement of intent, not a C4 measure).'
+    queries:
+    - Iceland sanctions Israeli settlers OR settlement goods ban Iceland government Gunnarsdóttir 2025 2026
+    - komubann Ben-Gvir Smotrich Ísland dómsmálaráðherra Útlendingastofnun
+    - Þorgerður Katrín kynnti aðgerðir gegn Ísrael utanríkismálanefnd komubann ráðherrar
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. The Foreign Minister telephoned the Israeli Foreign Minister on 27 February 2024 about the evacuation of permit
+      holders from Gaza (the Ministry's item of 5 March 2024, read).
+    queries:
+    - recalls ambassador Israel Iceland
+    - sendiherra Ísrael kallaður heim
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: 'Iceland is not an EU member (the Association Agreement does not apply). The EFTA states'' free trade agreement with Israel: the Minister said on 8 September 2025 that it would not be
+      updated (press: Vísir, read; a statement of May 2025 and the Althing''s debate of 12 May 2025 are seen in search results, not read): a decision not to update, not a suspension or a review
+      of the agreement in force, and the source is press only: lead_20261013_ISL_2.'
+    queries:
+    - Þorgerður Katrín fríverslunarsamningur Ísrael verður ekki uppfærður
+    - Iceland EFTA Israel free trade agreement suspend review Iceland (web search)
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found.
+    queries:
+    - Ísland Ísrael samningur undirritaður 2024 2025
+    - Iceland Israel sign agreement OR memorandum 2024 2025 2026
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: none-found
+    note: 'Searched because of the entry in lead_20261013_ISL_3: the Foreign Minister said on 8 September 2025 that goods from the occupied territories would be labelled specifically and that
+      the implementation would be difficult (press: Vísir, read); no regulation, bill or release was found. Labelling alone is +2 if it is adopted.'
+    queries:
+    - Iceland labelling settlement goods Iceland 2025 2026 merking vara hernumdum svæðum
+    checked_at: '2026-10-13'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Government flows of USD 1,770,960 (plan 1156), 3,671,736 (plan 1273) and 484,274 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the build. The Ministry''s
+      items record additional contributions: 70 million ISK to UNRWA (3 November 2023, read) and others on 17 November 2023, 11 June 2024 and 26 June 2025 (items listed by the news search).'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor ISL
+    checked_at: '2026-10-13'
+  D2:
+    status: has-events
+    note: 'One event: the Minister''s decision, announced on 30 January 2024, to delay the disbursement of Iceland''s annual core contribution to UNRWA (evt_2024_01_30_ISL_D2, -10), ended by the
+      decision of 19 March 2024 to pay by 1 April.'
+    queries:
+    - UNRWA funding suspend Iceland statement
+    - government.is/news/article/2024/01/30 and 2024/03/19 (archived, read)
+    checked_at: '2026-10-13'
+  D3:
+    status: has-events
+    note: 'Three events: increased from 31 December 2023 on the 2023 table (USD 2,237,466 against USD 558,666 in 2022; ended 30 January 2024), restored from 19 March 2024, and increased again
+      from 31 December 2024 on the 2024 table (USD 2,096,572). The Ministry announced an additional core contribution of 150 million ISK on 26 June 2025 (item listed by the news search, not read).
+      The 2025 table was not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Iceland
+    - government.is/news/article/2024/03/19 (archived, read)
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. The Ministry brought residence permit holders (family reunification) from Gaza to Iceland: 72 people on 5 March
+      2024 (the Ministry''s item of that day, read) and 16 people, seven of them children, on 25 June 2025 (item of that day, read, after a Government decision to act). These are the evacuation
+      of persons who already held Icelandic residence permits, not a medical-evacuation programme.'
+    queries:
+    - medical evacuation Gaza Iceland ministry
+    - sjúkraflutningar frá Gaza Ísland
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: 'No new visa or refugee instrument for Gazans was found. Flagged for the author: the evacuations of March 2024 and June 2025 (see D4) carried out permits granted under the existing family-reunification
+      rules; the Ministry of Justice''s note of 17 January 2024 (''Staðreyndir um verndarumsóknir og fjölskyldusameiningar'', read) describes the policy. If the author reads the Government''s
+      decision of June 2025 to organise the operation as an instrument, it would be a D5 event; no instrument text was found.'
+    queries:
+    - Gaza visa humanitarian Iceland regulation
+    - dvalarleyfi fjölskyldusameining Gaza Ísland reglugerð
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

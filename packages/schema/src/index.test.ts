@@ -107,7 +107,7 @@ describe('@gai/schema', () => {
       'lead',
     ])
     expect(Object.keys(schema.METHODOLOGY_FILES)).toHaveLength(9)
-    expect(schema.STRUCTURED_TABLE_NAMES).toHaveLength(10)
+    expect(schema.STRUCTURED_TABLE_NAMES).toHaveLength(12)
     expect(schema.WINDOW_START).toBe('2023-10-07')
     expect(schema.EVENT_TYPES).toEqual(['standing', 'repeatable', 'computed'])
   })
@@ -118,7 +118,16 @@ describe('@gai/schema', () => {
     expect(schema.UNSC_PERMANENT_ISO3).toEqual(['CHN', 'FRA', 'GBR', 'RUS', 'USA'])
     expect(schema.REPLY_DEADLINE_DAYS).toBe(10)
     expect(schema.EDIT_FIELDS).toEqual(['points', 'date', 'confidence', 'evidence'])
-    expect(schema.DIFF_KEYS).toEqual(['date', 'points', 'confidence', 'end', 'evidence'])
+    expect(schema.DIFF_KEYS).toEqual([
+      'date',
+      'points',
+      'confidence',
+      'end',
+      'evidence',
+      'scope',
+      'status',
+    ])
+    expect(schema.LOGGED_FIELDS).toEqual(['end', 'scope', 'status'])
     expect(schema.PUBLIC_STATUSES).toEqual(['published', 'corrected', 'superseded', 'retracted'])
     expect(schema.SUMMARY_MAX_LENGTH).toBe(200)
     expect(schema.VIDEO_LOCATOR.test('video 01:02:03')).toBe(true)

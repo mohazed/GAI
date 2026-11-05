@@ -1,0 +1,194 @@
+# Coverage record for Viet Nam (docs/03 §6). P-21 light protocol, session T-P21-24, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate statements of the 79th to 81st sessions (gadebate.un.org files, read), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Vietnamese. The Ministry's site (mofa.gov.vn, Vietnamese, HTTP 200) and the Government portal (en.baochinhphu.vn) were not searched item by item (P-23).
+# One D3 event. No lead. Viet Nam is not an EU member.
+country: VNM
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier VNM
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): Viet Nam''s orders from Israel are of 2006 to 2018 (RAM vehicles, EXTRA and AccuLAR rockets, AD-STAR and M-2022 radars, SPYDER-MR systems with Python-5
+      and Derby missiles, Heron drones; the register''s lines 833 to 841), all before the window; no order of 2023 or later. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer VNM
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Viet Nam (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded; Viet Nam is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19).'
+    queries:
+    - unga_votes.csv, country VNM
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Viet Nam is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Viet Nam
+      and Vietnam).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Viet Nam (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - 'web search: Vietnam position ICC arrest warrant Netanyahu ICJ genocide case South Africa Vietnam spokesperson'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Viet Nam is not a state party to the Rome Statute (the Assembly of States Parties'' list, src_20261009_icc-asp_states-parties, searched: not found). No statement by the President, the Prime Minister
+      or the Minister of Foreign Affairs on the warrants of 21 November 2024 was found.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Viet Nam (not found)
+    - 'web search: Vietnam position ICC arrest warrant Netanyahu ICJ genocide case South Africa Vietnam spokesperson'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - 'web search: Vietnam position ICC arrest warrant Netanyahu ICJ genocide case South Africa Vietnam spokesperson'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Viet Nam were found.
+    queries:
+    - 'web search: Vietnam position ICC arrest warrant Netanyahu ICJ genocide case South Africa Vietnam spokesperson'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Viet Nam. The registry gives 19 November 1988 (countries.yaml recognises_palestine); no Government document of that date was found in this
+      session, so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, VNM
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 statement naming Gaza by the President, the Prime Minister or the Minister of Foreign Affairs was found. The General Debate statements were read in the delegation''s files (gadebate.un.org
+      …/79/vn_en.pdf, 90,660 bytes, and …/80/vn_en.pdf, 222,731 bytes, both with a Wayback replay equal to the live file; …/81/vn_en.pdf, 174,360 bytes, no replay): the 79th (President To Lam, 24 September
+      2024) welcomes the Assembly''s decision on the rights of the State of Palestine and does not cite Gaza; the 80th (President Luong Cuong) ''calls for ceasefires and an end to all acts of violence,
+      protection of civilians, and facilitation of humanitarian access in conflict zones'' and urges action ''to end the humanitarian crisis faced by the Palestinian people'', with no Gaza (R7: not filed,
+      no press source read for a lead); the 81st (President To Lam, 22 September 2026, on the UN''s page) supports the two-State solution and says ''In every conflict, civilians must be protected'' (no
+      Gaza, no call). The Deputy Prime Minister and Foreign Minister Bui Thanh Son''s remarks at the CEAPAD IV conference in Kuala Lumpur (11 July 2025, VietNamNet, read) are reported in indirect speech
+      and the call for a ceasefire is the delegates'' (R4); the Deputy Foreign Minister''s and the chargé d''affaires'' statements at the United Nations (December 2024, October 2025) are not by a B9 speaker
+      (R3). The Ministry''s statements on Gaza found by search are the spokesperson''s (the UN Security Council resolution of March 2024, the ceasefire agreements of January and October 2025): not a B9
+      speaker (R3).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/vn_en.pdf (read)
+    - 'web search: Thủ tướng Phạm Minh Chính Gaza ngừng bắn phát biểu'
+    - 'web search: Vietnam Foreign Minister Bui Thanh Son Gaza ceasefire statement 2025'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.
+    queries:
+    - gadebate.un.org files (read)
+    - 'web search: Vietnam Israel relations 2025 2026 ambassador visit sanctions settlers support Israel statement'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Viet Nam is not an EU member (R8) and no national sanctions on settlers or Israeli ministers were found.
+    queries:
+    - 'web search: Vietnam Israel relations 2025 2026 ambassador visit sanctions settlers support Israel statement'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the search results report a new Vietnamese ambassador's credentials presented in Jerusalem (18 May 2026) and the Israeli ambassador's
+      farewell call on the Prime Minister (12 August 2026).
+    queries:
+    - 'web search: Vietnam Israel relations 2025 2026 ambassador visit sanctions settlers support Israel statement'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Viet Nam is not a party to the EU-Israel Association Agreement; no statement on it was found.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No new governmental instrument with Israel signed in the window was found in the searches of this session (the instruments the search returned are of 2015 and earlier, and the Viet Nam-Israel
+      free trade agreement predates the window). Not searched item by item in the Ministry's pages (P-23).
+    queries:
+    - 'web search: Vietnam Israel agreement signed 2024 2025 2026 memorandum'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_plan_totals.csv): Viet Nam''s flows to the Gaza response (appeals 1156, USD 500,000, and 1510, USD 299,379) are recorded; the build makes them D1 events. The USD 500,000
+      of appeal 1156 may be the same contribution as the UNRWA table''s 2024 row (D3), flagged (docs/10 B-357 (4)). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor VNM
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'Viet Nam has no row in UNRWA''s donor tables of 2022 and 2023 and gives USD 500,000 in 2024 (archived: src_20241231_unrwa_donor-ranking-2024, line 98): no suspension was found.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Vietnam (read)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, 2024-12-31): USD 500,000 in the 2024 table against no row in 2022 (a zero baseline, B-445), flagged. The 2025 table is not archived (P-23).'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Vietnam (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Viet Nam was found.
+    queries:
+    - 'web search: Vietnam Gaza humanitarian aid evacuation Palestinians 2024 2025'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Viet Nam was found.
+    queries:
+    - 'web search: Vietnam Gaza humanitarian aid evacuation Palestinians 2024 2025'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

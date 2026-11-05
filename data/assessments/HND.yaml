@@ -1,0 +1,201 @@
+# Coverage record for Honduras (docs/03 §6). P-21 light protocol, session T-P21-09, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Foreign Ministry's site (sreci.gob.hn: no news archive of the period reachable by its search), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; files `hn_es.pdf`, `hn_es_0.pdf`), the archived press (La Prensa, El Heraldo, EFE through Infobae, Honduras Trascendental, the Jerusalem Post), the Israeli President's, Defense Ministry's and embassies' pages, the UNRWA donor tables, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 25 minutes of research on Honduras, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: the Secretary of Foreign Affairs' General Debate statement of 29 September 2025 (lead_20261006_HND_1) and the President's statement of the 81st session (23 September 2026, no passage on Gaza).
+country: HND
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Honduras
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders of Honduras from Israel of 1976, 1977, 2011 (a radar) and 2016 (a patrol boat, delivered 2019), none in the data year
+      of the release of 9 March 2026 and none after October 2023 (A4 reads only the rows of a release''s own data year, docs/10 B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Honduras
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Honduras
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 and absent on 1 (A/DEC/80/506 of 12 September 2025) of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Honduras is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06). It was a founding member of the Hague Group (31 January 2025; withdrew 3 March
+      2026, press), whose declaration is not a filing in the case.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President or the Secretary of Foreign Affairs on executing the warrants of 21 November 2024 was found (Honduras is a State Party to the Rome Statute). The Hague
+      Group''s founding declaration of 31 January 2025 (CADTM''s copy, read) declares the intention to support the ICC''s requests in respect of the warrants; its Honduran signatory is not named
+      in the text read, and Honduras left the Group on 3 March 2026: lead_20261006_HND_2.'
+    queries: &id001
+    - Honduras Corte Penal Internacional orden de arresto Netanyahu Cancillería Honduras postura Reina OR Agüero
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found. The President-elect travelled to Israel on 17 January 2026 and met the Prime Minister in Jerusalem before taking
+      office on 27 January 2026: a visit by a President-elect to Israel, not hosting.'
+    queries:
+    - Honduras Corte Penal Internacional orden de arresto Netanyahu Cancillería Honduras postura Reina OR Agüero
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Honduras has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `HND,2011-08-26` is added in this session from the President''s General Debate address of 21 September 2011 (''my Government has recognized Palestine
+      as a State'', A/66/PV.12, UNISPAL) and the UN Division for Palestinian Rights'' chronology of August 2011 (recognition on 26 August), both archived: the pre-existing tier, +3 (R21). Flagged:
+      the date rests on a UN Secretariat review, not on the Government''s own text of 2011 (the Foreign Ministry''s communiqué of 26 August 2011 was not found online). The Foreign Minister''s
+      address of 29 September 2025 ''ratifies'' the recognition.'
+    queries:
+    - Honduras reconoce Estado de Palestina 26 agosto 2011 Mireya Agüero comunicado Cancillería reconocimiento Palestina unispal OR "A/66"
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 25 September 2024 (+5, decayed to zero). Not filed: the Secretary of Foreign Affairs'' General Debate statement of 29 September
+      2025 on behalf of the President (''El genocidio en Gaza, la devastación en Ucrania ...'', ''ratificamos nuestro reconocimiento del Estado de Palestina''; +5 if filed, 372 days old, outside
+      the 365-day window): the delegation''s file `hn_es_0.pdf` was read on 6 October 2026 but its Wayback capture (20250929195245) is not served and Save Page Now fails on the site, so it is
+      lead_20261006_HND_1. The statement of the 81st session (President Asfura, 23 September 2026) has no passage on Gaza. The Government''s communiqué of 3 November 2023 (calling the situation
+      ''genocidio'') was deleted from X and is known only through the press (see B12). The statements of President Castro of October to December 2023 were not searched (decayed to zero). The Hague
+      Group''s founding declaration: lead_20261006_HND_2.'
+    queries: &id002
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found. President Asfura''s words in Jerusalem (17 to 18 January 2026, as press reports give them
+      in search results, not read in full: ''amistad histórica'', an alliance ''basada en la libertad, la cooperación y el respeto'') and the Israeli Defense Ministry''s statement that Honduras
+      ''has been notable over the years for its support of Israel'' (an Israeli statement, not Honduras''s) do not state support for Israel''s conduct in Gaza or deny violations.'
+    queries: &id003
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    - Asfura OR "Mireya Agüero" Israel "derecho a defenderse" OR "apoyo incondicional" Gaza Honduras gobierno posición Gaza 2026
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Honduras was found (not an EU member).
+    queries: *id002
+    checked_at: '2026-10-06'
+  B12:
+    status: has-events
+    note: 'One event: the recall of the ambassador to Israel for consultations on 3 November 2023, ended on 3 August 2026 when Israel''s President received the credentials of the new ambassador
+      (`corroborated`). The embassy in Jerusalem (moved in 2021) stayed open. The Israeli Ambassador''s credentials were received by the new President on 27 January 2026 (press, not archived).
+      Chile''s ambassador returned on the same day (the Israeli release): see docs/10 B-571.'
+    queries:
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Honduras has none).
+    queries: *id003
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'Two events: the addendum to the bilateral Cooperation Plan signed on 2 June 2026 with MASHAV (`corroborated`; flagged under R18) and the defense memorandum of understanding signed on
+      16 August 2026 (`corroborated`; text not public). Other items found and not filed: the President-elect''s visit to Israel in January 2026 (no instrument), the Israeli ambassador''s statement
+      that cooperation will extend to cybersecurity, digital ecosystem, transport, tourism and energy (an announcement), and Israeli donations to a Honduran hospital (12 August 2026; not an instrument).'
+    queries:
+    - Honduras Israel adenda plan de cooperación MASHAV canciller Mireya Agüero Eynat Schlein 3 de junio 2026 Tegucigalpa
+    - Defense Minister Katz Honduras Defense Secretary Rodríguez Burchard memorandum of understanding signed August 2026 Israel Ministry of Defense
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Honduras to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Honduras has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Honduras
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'No row of Honduras in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Honduras
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Honduras palestinos refugiados Gaza visa OR evacuación OR ayuda humanitaria Honduras gobierno 2024 2025 hondureños evacuados Gaza
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Honduras palestinos refugiados Gaza visa OR evacuación OR ayuda humanitaria Honduras gobierno 2024 2025 hondureños evacuados Gaza
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -278,13 +278,15 @@ describe('renderBlock: other tables', () => {
   })
 
   it('votes: one sentence while the list is empty, a table once filled', () => {
-    expect(renderBlock(m, 'votes', 'en')).toBe(
+    const empty = structuredClone(m)
+    if (empty.votes) empty.votes.value.votes = []
+    expect(renderBlock(empty, 'votes', 'en')).toBe(
       'No qualifying votes are listed yet; the list is filled once each vote is verified.',
     )
-    expect(renderBlock(m, 'votes', 'fr')).toBe(
+    expect(renderBlock(empty, 'votes', 'fr')).toBe(
       `Aucun vote retenu ne figure encore dans la liste${NNBSP}; elle est remplie une fois chaque vote vérifié.`,
     )
-    const copy = structuredClone(m)
+    const copy = structuredClone(empty)
     copy.votes?.value.votes.push({
       symbol: 'A/RES/ES-10/99',
       kind: 'resolution',

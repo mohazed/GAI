@@ -1,0 +1,221 @@
+# Coverage record for Kazakhstan (docs/03 §6). P-21 light protocol, session T-P21-01, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the President's site (akorda.kz, English: the General Debate statement of 23 September
+#   2025 read in full), the Ministry of Foreign Affairs portal (gov.kz/memleket/entities/mfa), whose pages load by script
+#   and hold no text in their HTML (a Ministry release cannot be archived as text, docs/10 B-501), so the Ministry's
+#   releases were read through press reports only (Astana Times, Qazinform, Kazinform, Kapital, Nur.kz via search
+#   summaries); the generated events and the structured tables; web searches in English and in Russian (the working
+#   language of the Ministry's releases) per indicator group. Time: about 10 minutes.
+# Statements read and not filed as B9 (press accounts, not the speaker's own words, docs/10 B-407 (4); or no call): the
+#   President at the CSTO parliamentary meeting of 3 June 2024 ("approaching catastrophic", Anadolu); the President at the
+#   Qatar Consultative Assembly (14 February 2024); the President's support for the ceasefire agreement (9 October 2025,
+#   press secretary's account); the Minister of Foreign Affairs at the OIC Council of Foreign Ministers (Istanbul, 21 June
+#   2025: "immediate ceasefire and unimpeded delivery of humanitarian aid", the Ministry's paraphrase, Astana Times).
+country: KAZ
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from
+      Kazakhstan to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KAZ
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data
+      until a fetch. Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists Kazakh orders of Israeli major arms for data
+      years 2006, 2007 and 2017 only, before the window; none since October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer KAZ
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote. The Ministry''s releases on the votes were
+      not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kazakhstan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Kazakhstan
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position
+    - Казахстан Кыргызстан МИД Международный суд ООН дело ЮАР против Израиля
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act on the ICJ's provisional measures in case 192 was found.
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position
+    - Казахстан Кыргызстан МИД Международный суд ООН дело ЮАР против Израиля
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Kazakhstan is not a party to the Rome Statute (the Ministry''s spokesman, TASS, not archived and undated
+      in the search summary: it has neither signed nor ratified it). No statement of the Government on executing
+      the warrants of 21 November 2024 was found.'
+    queries:
+    - Kazakhstan ICC arrest warrant Netanyahu position Rome Statute Kazakhstan not party foreign ministry
+    - Казахстан Кыргызстан МИД Международный суд ООН ордер МУС Нетаньяху позиция
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal and no hosting of a person under warrant found. The Israeli Foreign Minister visited
+      Astana on 27 January 2026 and the Israeli President in April 2026 (press); neither is under warrant.
+    queries:
+    - Kazakhstan ICC arrest warrant Netanyahu position Rome Statute Kazakhstan not party foreign ministry
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kazakhstan has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Kazakh row. The registry dates the recognition 6 April
+      1992 (A/78/846 annex); the Kazakh document (the Ministry''s page on relations with Palestine) was not archived,
+      so no row (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. The
+      Government states support for the State of Palestine within the 1967 borders and "two states for two peoples"
+      (Ministry statements, press).'
+  B9:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the President''s General Debate statement of 23 September 2025 (call for unhindered humanitarian
+      access, +2). The Ministry''s statements and the Minister''s OIC speeches are paraphrased in the Ministry''s
+      own third-person releases (see the header), not filed.'
+    queries:
+    - akorda.kz General Debate statement 80th session
+    - Tokayev speech United Nations General Assembly September 2025 Gaza Palestine "Gaza" akorda.kz full text
+    - Токаев Газа прекращение огня выступление заявление Палестина akorda.kz
+    - Казахстан МИД Газа прекращение огня гуманитарная помощь Палестине заявление Нуртлеу Кошербаев
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found: Kazakhstan
+      has recognised Israel''s right of self-defence with the constraint of the law (legal commentary on its statements
+      to the United Nations), and the President''s remarks condemn violence against civilians (press).'
+    queries:
+    - Tokayev OR Japarov Israel "right to self-defense" support Israel Gaza statement unconditional president
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Kazakhstan has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance: the Israeli Foreign Minister was received in Astana on 27 January
+      2026 and Israel keeps an ambassador accredited to Kazakhstan (press).'
+    queries:
+    - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
+      sanctions settlers OR ambassador recalled
+  C1:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Two events at confidence corroborated, from two press reports (the Ministry''s release cannot be archived
+      as text): the memoranda on public diplomacy and on the training of diplomatic personnel of 27 January 2026.
+      Not filed: the memorandum of intent to negotiate a visa-exemption agreement (not a cooperation instrument);
+      accession to the Abraham Accords (6–7 November 2025: a Ministry statement and a call of the President with
+      the United States President, no instrument signed with Israel found: lead_20261005_KAZ_1); three items of
+      the investment agency (a memorandum with Mekorot, an investment agreement for a bitumen plant, a renewable-energy
+      memorandum; lead_20261005_KAZ_1).'
+    queries:
+    - Kazakhstan Israel agreement memorandum signed 2024 2025 cooperation Israel Kazakhstan intergovernmental
+    - gov.kz МИД Казахстан Израиль Кошербаев Саар политические консультации меморандум 27 января 2026
+    - gov.kz mfa Kosherbayev Sa'ar Astana memorandum diplomatic training public diplomacy visa exemption
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored. Trade turnover with Israel is reported
+      by the press at USD 162 million for January to November 2025 (Astana Times, not archived).
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: USD 1,010,000 in 2023 (UNRWA, matching the Government''s USD 1 million of 3 November
+      2023); no flow in the window 2025-09 to 2026-08. Disagreement reported, not corrected: the Government also
+      reports humanitarian goods (38 tonnes, December 2023) and funds raised through UNICEF by citizens (press);
+      FTS records government flows to the appeals only (docs/06 §7).'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding was found; UNRWA's donor tables show contributions in
+      2023 and 2024.
+    queries:
+    - Kazakhstan humanitarian aid Gaza Palestinian children treatment evacuated Kazakhstan government
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Kazakhstan
+  D3:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Two events from UNRWA''s donor tables: increased tier from 31 December 2023 (USD 1,010,000 against USD
+      10,000 in 2022) and from 31 December 2024 (USD 50,000). The 2025 table is not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Kazakhstan
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No medical-evacuation programme or field hospital deployed for Gaza was found. Kazakhstan evacuated 28
+      of its own citizens and their families from Gaza (press): not a programme hosting Gazans. The President offered
+      medical units for the International Stabilization Force (lead_20261005_KAZ_1): an offer, not a deployment.'
+    queries:
+    - Kazakhstan humanitarian aid Gaza Palestinian children treatment evacuated Kazakhstan government
+    - Kazakhstan Palestinian students scholarships Gaza evacuation Kazakh citizens Gaza visa OR humanitarian KazAID
+      Gaza aid 2025
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No visa or refugee instrument for Gazans was found. The Ministry of Science and Higher Education will
+      allocate 100 grants a year to Palestinian students from 2026-27 (500 over five years, Qazinform, not archived):
+      a scholarship programme, not an immigration regulation (as for Azerbaijan, docs/10 B-413; lead_20261005_KAZ_1).'
+    queries:
+    - Kazakhstan Palestinian students scholarships Gaza evacuation Kazakh citizens Gaza visa OR humanitarian KazAID
+      Gaza aid 2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,168 @@
+# Coverage record for Nepal (docs/03 §6). P-21 light protocol, session T-P21-26, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate pages and files of the 79th to 81st sessions (gadebate.un.org, read live), the Ministry of Foreign Affairs' home page and press-release listing (mofa.gov.np), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register (one order of 1969, before the window), the ICJ's case 192 page and the Assembly of States Parties' list. Not searched: Nepali sources, the Ministry's releases item by item (served by script), the Office of the Prime Minister (opmcm.gov.np), the Ministry of Labour, web searches (the session's search budget was spent; P-23).
+# No events. Leads: none.
+country: NPL
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NPL
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Nepal from Israel in the window (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Nepal). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer NPL
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Nepal (searched)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and an abstention on A/RES/ES-10/24 (18 September 2024). All 12 are recorded; Nepal is not among the Member States in arrears
+      in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19).'
+    queries:
+    - unga_votes.csv, country NPL
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Nepal is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Nepal).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Nepal (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Nepal is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Nepal (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or the Prosecutor were found.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Nepal. The registry gives 19 December 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is
+      added (R21; P-23).
+    queries:
+    - recognitions.csv, NPL
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 statement was found. The Prime Minister''s 79th General Debate address (K P Sharma Oli, 26 September 2024) supports a two-State solution and never names Gaza or calls for a ceasefire; the
+      80th (29 September 2025) was delivered by the Permanent Representative, Lok Bahadur Thapa (R3: ''Suffering is deepening in Gaza'', no call); the 81st (Prime Minister Balendra Shah, 24 September 2026,
+      np_en_0.pdf) does not mention Gaza, Palestine or Israel. The Ministry''s press releases on the Israel-Hamas war (mofa.gov.np/content/1677/ and others) are Ministry texts with no named speaker (R3);
+      their text is served by script and was not read (P-23).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/nepal and the delegation files np_en.pdf (79th, 80th) and np_en_0.pdf (81st) (read live)
+    - mofa.gov.np home page press-release links (content/1677, content/1681 opened; text not served to a script)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found. The 80th General Debate statement's call for the release of the Nepali student Bipin Joshi
+      held by Hamas (Permanent Representative) is not a B10 act.
+    queries:
+    - gadebate.un.org/en/{79,80,81}/nepal and the delegation files np_en.pdf (79th, 80th) and np_en_0.pdf (81st) (read live)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Nepal is not an EU member (R8) and no national sanctions on settlers or Israeli ministers were found.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: Nepal has diplomatic relations with Israel; no recall, downgrade or severance was found.
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Nepal is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel after 7 October 2023 was found in this session; the labour arrangements for Nepali workers in Israel (agriculture, caregivers) were not read in a primary and their
+      dates are not known here (web searches unavailable in this session; P-23 searches the Ministry of Labour, Employment and Social Security and the Israeli embassy's list of agreements).
+    queries:
+    - mofa.gov.np home page and press-release listing (titles read)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_plan_totals.csv): no flow from Nepal to the Gaza response. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor NPL
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: no row for Nepal in 2022, 2023 or 2024: no funding to suspend.'
+    queries: &id001
+    - archive/text/src_2022…2024 UNRWA donor rankings (src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024), searched
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings: no row for Nepal in 2022 to 2024.'
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Nepal was found.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

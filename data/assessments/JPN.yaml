@@ -1,0 +1,328 @@
+# Coverage record for Japan (docs/03 §6). P-D research session, wave 6, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-331): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for the wave-5 countries, docs/10 B-303 on data/wave-5). The
+# registry's two gov_sources were used. www.mofa.go.jp refuses scripted requests and Save Page Now
+# (HTTP 403 from its CDN) but answers in the built-in browser, where the Ministry's English site was
+# read, read-only, through its own index pages: the monthly press-release indexes of October 2023
+# to September 2026 (every title read and filtered for Gaza, Palestin*, Israel, UNRWA, settler,
+# Criminal Court, ICC, Court of Justice, ICJ, West Bank, Hamas, Rafah, evacuat*, asset, freez*,
+# sanction, Middle East Peace, two-state; about 150 matches read by title, about 40 in full); the
+# topic lists of all 1,962 English press-conference entries of the same period (filtered for
+# Criminal, ICC, warrant, Netanyahu, UNRWA, sanction, settler, recogni*, genocide, ICJ, student,
+# evacuat*, F-35, arms, export, Israel with agree*, cooperat* or defen*; the relevant answers read in
+# full); the pages "Situation in the Gaza Strip" (EN and JA), Japan-Israel and Japan-Palestine
+# relations and their archives, and the statement lists of the Prime Minister, the Chief Cabinet
+# Secretary and the Foreign Minister. japan.kantei.go.jp (English) answers scripted requests: the
+# statement lists of the Ishiba and Takaichi cabinets for September 2025 and September 2026 and the
+# two General Assembly addresses were read. Every MOFA source was recorded from an existing Wayback
+# capture (--capture, B-188); pages without a capture (the Foreign Minister's press conference in
+# Jerusalem of 11 January 2026, his statement of 24 September 2026) could not be archived.
+# Not searched: the press; the National Diet (questions, answers, resolutions); the Ministry of
+# Defense and the Acquisition, Technology and Logistics Agency (F-35 industrial participation,
+# exercises, purchases of Israeli systems); the Ministry of Economy, Trade and Industry (export
+# licences, A2, A6); the Japanese-language MOFA pages beyond the Gaza situation page and the
+# Foreign Minister's Japanese press conferences; GPIF and other public funds (C5); the police and
+# courts (E1–E3).
+country: JPN
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade (Japan had rows from P-14, so no fetch was run). Japan's own reports
+      carry HS 93 exports to Israel of USD 3,483 (2022) and 2,497 (2024); Israel's mirror HS 93 imports
+      from Japan are USD 3,000 (2022), 31,000 (2023), 9,000 (2024) and 14,000 (2025): 0 throughout
+      (all below USD 100,000). HS 8526 (own USD 13,955 to 22,553 a year; mirror 190,000 to 359,000)
+      and HS 8802 (mirror USD 3,492,000 in 2024) are not counted: no licence register, parliamentary
+      answer or investigation confirming a military nature was found, and no row was added to
+      a2_confirmed_military.csv. No Japanese document on arms-export licences to Israel was found in
+      the sources searched; METI's licensing records and the Diet were not searched. Nothing Japanese
+      contradicts the generated value.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Japanese companies as Tier-1 or Tier-2 suppliers of parts or
+      maintenance for the global F-35 programme was found in the sources searched. The UN Special
+      Rapporteur's report A/HRC/59/23 (archived on data/wave-1) names a Japanese company (FANUC) as a
+      supplier of robotic machinery for weapons production lines, not as an F-35 part supplier. The
+      Ministry of Defense, the Acquisition, Technology and Logistics Agency and industry records were
+      not searched (P-16).
+    queries:
+      - mofa.go.jp press-conference topics (F-35, arms, export, defen*)
+      - A/HRC/59/23 text (Japan, F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-902); left to the build.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, documented transit, basing agreement or confirmed intelligence sharing with
+      Israel related to the Gaza campaign was found. The Japan-Israel politico-military dialogues of
+      18 March 2025 (fourth, Tel Aviv) and 28 January 2026 (fifth, Tokyo), between foreign and defence
+      ministry officials, and the strategic consultation of 28 July 2026 are meetings of frameworks set
+      up in 2018 and 2006 (routine pre-existing arrangements, docs/02 §2), not instances. The Ministry
+      of Defense was not searched.
+    queries:
+      - mofa.go.jp press releases 2023-10 to 2026-09 (Israel)
+      - mofa.go.jp Japan-Israel relations page and archives
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No government decision suspending or refusing a class of export licences to Israel, and no court
+      order, was found. METI (export control) and the Diet were not searched.
+    queries:
+      - mofa.go.jp press-conference topics (arms, export, sanction)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree on a two-way arms embargo with Israel was found.
+    queries:
+      - mofa.go.jp press-conference topics (arms, export, sanction)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port, airspace or flag to arms shipments bound for Israel was found; ports and the Ministry of Land, Infrastructure, Transport and Tourism were not searched.
+    queries:
+      - mofa.go.jp press releases 2023-10 to 2026-09 (Israel)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): abstention on
+      A/RES/ES-10/21; yes on ES-10/22, ES-10/23, ES-10/24, ES-10/25, ES-10/26 and 79/232. The UN press
+      releases of these votes do not name Japan, except GA/12626 (ES-10/24), which lists Japan among
+      the representatives who underscored international law and the role of the World Court; no
+      Japanese document read contradicts the rows. Later votes without rows (B-199 (1)): GA/12690
+      records that Japan explained its vote in favour of ES-10/27 (12 June 2025); A/DEC/80/506, 80/1,
+      80/78 and 80/116 are not named in their press releases, and Japan's votes on them were not
+      found in the sources searched.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Japan was an elected member of the Security Council in 2023 and 2024 (applicable). An elected
+      member has no veto; unsc_vetoes.csv has no Japanese row. The Foreign Minister's statements
+      record that Japan co-held the pen on resolution 2728 (25 March 2024) and voted for resolutions
+      2728 and 2735; the Foreign Minister called the non-adoption of the draft vetoed on 20 November
+      2024 regrettable (press conference of 22 November 2024).
+    queries:
+      - mofa.go.jp Foreign Minister's statements on Security Council resolutions 2728, 2735 and 2803
+      - mofa.go.jp press conference of 22 November 2024
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Japan has filed no declaration of intervention in ICJ case 192 (the seed list of docs/06 §8; the
+      Court's page was not re-read by this session). Positive statement recorded, not an event: the Foreign
+      Minister's statement of 27 January 2024 says the Court's order of provisional measures "is
+      legally binding on the parties to the dispute, and to be observed in good faith"
+      (https://www.mofa.go.jp/press/release/pressite_000001_00120.html, read in the browser, not
+      archived).
+    queries:
+      - icj-cij.org case 192 interventions (seed list, docs/06 §8)
+      - mofa.go.jp press-conference topics (ICJ, Court of Justice, genocide)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional-measures orders or their binding character; the
+      Foreign Minister's statement of 27 January 2024 affirms their binding character (see B3).
+    queries:
+      - mofa.go.jp press-conference topics (ICJ, Court of Justice, genocide)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister, the Foreign Minister or the Minister of Justice committing
+      to execute the warrants of 21 November 2024 was found. Asked about the Prosecutor's applications,
+      the Foreign Minister said on 21 and 24 May 2024 that Japan "will continue to closely follow the
+      developments with serious concern as a state party to the ICC" and declined to speculate on the
+      Court's decision; the English press-conference records of November and December 2024 hold no
+      question on the warrants. The Chief Cabinet Secretary's press conferences and the Diet were not
+      searched.
+    queries:
+      - mofa.go.jp press-conference topics 2023-10 to 2026-09 (Criminal, ICC, warrant, Netanyahu)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants and no official visit to Japan by a person under
+      warrant was found. The Foreign Minister met Prime Minister Netanyahu in Israel on 11 January
+      2026 (a visit abroad, not hosting).
+    queries:
+      - mofa.go.jp press-conference topics (Criminal, ICC, warrant, Netanyahu)
+      - mofa.go.jp Japan-Israel relations page and archives
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Japan has imposed no sanction on ICC officials. The Foreign Minister's press conferences of
+      August and September 2026 address the US sanctions on the ICC President, Judge Akane (a Japanese
+      national); not an event.
+    queries:
+      - mofa.go.jp press-conference topics (sanction, ICC)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Japan has not recognised the State of Palestine (registry note). The Prime Minister told the
+      General Assembly on 23 September 2025 that "the question is not whether to recognize a
+      Palestinian state, but when" (src_20250923_kantei_unga80-address, line 35), and the Foreign
+      Minister said the same at the conference of 22 September 2025; no recognition followed to
+      September 2026. No row in recognitions.csv; B8 is generated.
+    queries:
+      - mofa.go.jp press-conference topics (recogni*)
+      - kantei.go.jp General Assembly addresses of 2025 and 2026
+  B9:
+    status: has-events
+    note: >-
+      Ten gaza events, all at the call tier (+2): the Foreign Minister's statements of 2 June 2024,
+      9 August 2024, 7 October 2024, 16 January 2025, 9 August 2025, 17 September 2025, 9 October 2025
+      and 18 November 2025, and the Prime Minister's General Assembly address of 23 September 2025;
+      the cap (+10) holds today. Not filed: the Foreign Minister's statements of 18 October 2023 (the
+      attack on Al Ahli hospital; no call and no attribution), 27 March 2024 and 11 June 2024
+      (resolutions 2728 and 2735; the same calls as 2 June 2024), and 22 September 2025 (conference on
+      the two-state solution; no ceasefire call); his statement of 24 September 2026 (the Global
+      Alliance meeting; calls on Israel to ensure smooth humanitarian access) and his press conference
+      in Jerusalem of 11 January 2026 (urged unimpeded humanitarian assistance) have no Wayback
+      capture and could not be archived (Save Page Now refused); the Ministry's readouts of meetings
+      and telephone talks (indirect speech) and the Press Secretary's statements (for example 12
+      February 2024 on Rafah, 12 August 2024 on the al-Tabeen school) are not filed (B-332). The
+      Prime Minister's press conference of 24 September 2025 ("tragic and appalling humanitarian
+      violations in Gaza") repeats the address of the day before. No statement by Prime Minister
+      Takaichi on Gaza was found; her General Assembly address of 22 September 2026 does not mention
+      Gaza.
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the head of government declaring unconditional support for Israel or denying
+      documented violations was found; the Prime Minister's statements read (Kishida's meeting with
+      President Herzog of 1 December 2023, as reported by the Ministry; Ishiba's address of 23
+      September 2025) refer to international humanitarian law and the humanitarian situation.
+    queries:
+      - mofa.go.jp statement lists of the Prime Minister
+      - kantei.go.jp statements, September 2025 and September 2026
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Settlers: one event scoped west-bank (asset freeze on four Israeli settlers, 23 July 2024), which
+      does not score in v1 (docs/10 B-32). Ministers: no Japanese sanction on Israeli ministers was
+      found; asked on 23 May 2025 about measures against Israel, the Foreign Minister announced none.
+    queries:
+      - mofa.go.jp press releases (asset, freez*, sanction, settler)
+      - mofa.go.jp press-conference topics (sanction, settler)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall of Japan's ambassador or downgrade of relations was found. On 22 May 2025 the
+      Vice-Minister for Foreign Affairs summoned Israel's ambassador over warning shots fired near a
+      diplomatic delegation including Japanese diplomats in Jenin (a summons, not a recall).
+    queries:
+      - mofa.go.jp Japan-Israel relations page and archives
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Japan has no trade or association agreement with Israel under review or suspended in the
+      sources searched; no decision on the Japan-Israel investment agreement was found.
+    queries:
+      - mofa.go.jp press-conference topics (sanction, agreement with Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No trade, investment or cooperation agreement signed with Israel since 7 October 2023 was found:
+      the Japan-Israel relations page and archives list the Working Holiday Agreement of 28 April 2023
+      (before the window) and, since October 2023, meetings, telephone talks, the tenth meeting of the
+      Joint Committee on Cooperation in Science and Technology (January 2025, under an existing
+      agreement) and consultations, but no signature.
+    queries:
+      - mofa.go.jp Japan-Israel relations page and archives
+      - mofa.go.jp press releases 2023-10 to 2026-09 (Israel)
+  C3:
+    status: has-events
+    note: >-
+      Generated. Own reports: total trade with Israel USD 2.758 billion (2022), 2.808 (2023), 2.863
+      (2024) and 2.962 billion (2025), r ≥ 1 throughout: −5 in every window. Israel's mirror totals
+      are lower (USD 2.31 billion in 2022, 2.06 in 2024). No Japanese document contradicts them.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Japanese ban or labelling rule on settlement goods was found.
+    queries:
+      - mofa.go.jp press releases (settler, West Bank)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exclusion decision by GPIF or another public fund was found in the sources searched; the
+      funds' own sites were not searched (P-16).
+    queries:
+      - mofa.go.jp press-conference topics (sanction, Israel)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion of companies over conduct in Gaza or the occupied territories was found.
+    queries:
+      - mofa.go.jp press releases (Israel)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS. Japan's government funding to the four oPt plans totals USD 7.8 million
+      (2023 flash appeal), 63.1 million (2024), 53.6 million (2025) and 81.8 million (2026, to
+      September); the D1 window to August 2026 gives USD 97.1 million ÷ GNI USD 4,730 billion =
+      0.0021 %, +6 today; +1 to +6 in earlier windows. The Foreign Minister's statement of 7 October
+      2024 gives about USD 128 million of humanitarian assistance to the Palestinian people since
+      7 October 2023, higher than FTS's government flows to the appeals over the same period (part
+      bilateral or outside the flash appeals, docs/06 §7); not a disagreement with the rule.
+  D2:
+    status: has-events
+    note: One event (suspension of 28 January 2024, ended on 2 April 2024).
+  D3:
+    status: has-events
+    note: Restored tier from 2 April 2024, increased tier from 31 December 2024 on UNRWA's tables.
+  D4:
+    status: has-events
+    note: >-
+      One programme: treatment of patients from Gaza at the Self Defense Forces Central Hospital from
+      26 March 2025, at the WHO's request.
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee pathway for people from Gaza was found in the sources searched; the medical
+      evacuation release states that the patients are not intended to settle in Japan. The Immigration
+      Services Agency and the Japanese-language MOFA pages on students were not searched.
+    queries:
+      - mofa.go.jp Gaza situation page, Japanese (留学, 受入, 査証, ビザ)
+      - mofa.go.jp press-conference topics (student, evacuat*)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No investigation of Japanese nationals or companies for conduct in Gaza found; prosecutors and courts not searched.
+    queries:
+      - mofa.go.jp press-conference topics (Criminal, genocide)
+  E2:
+    status: unchecked
+    note: Experimental, unscored. Police and municipal decisions on assemblies were not searched (P-16).
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; courts not searched.
+    queries:
+      - mofa.go.jp press-conference topics (Criminal, genocide)

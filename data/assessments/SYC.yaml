@@ -1,0 +1,199 @@
+# Coverage record for Seychelles (docs/03 §6). P-21 light protocol, session T-P21-43, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the State House's site (statehouse.gov.sc: news, speeches and messages; site search for Gaza, Palestine, Palestinian, Hamas, Israel, ceasefire and others; the 122 speeches and messages from id 5950 fetched and searched), the state-owned Seychelles Nation (nation.sc, kind press; site search), the UN's General Debate pages and files (79th and 81st; the 80th has none), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Foreign Ministry site answered (www.mfa.gov.sc: connection failed; www.mofa.gov.sc is the Ministry of Fisheries and Agriculture), the National Assembly's site shows a maintenance page and Seychelles News Agency answers 403.
+# Events: one B9 event (flagged, expired). Leads: two. See docs/10 B-830, B-831, B-834.
+country: SYC
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SYC
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SYC
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on A/RES/ES-10/21 (27 October 2023; scores -2, expired), yes on the other eleven qualifying votes (+3 each). The country is
+      not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (A/81/360; src_20261013_un-ga_article19-page);
+      the Nation reported the non-vote on 31 October 2023 and the Foreign Minister explained it to the National Assembly on 20 November 2023 (lead_20261104_SYC_2): compare the UN''s voting records
+      before the score is read.'
+    queries:
+    - unga_votes.csv, country SYC
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Seychelles is a State Party to the Rome Statute (line 206 of the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties). No statement on the warrants by a
+      B5 speaker was found on the State House site, in the Nation''s search results or in the General Debate statements.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'statehouse.gov.sc/search?search_q=: ICC, International Criminal Court, Netanyahu, warrant (no result on the warrants)'
+    - 'nation.sc/search?search_q=: warrant, Netanyahu, International Criminal Court (no result on the warrants)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute was found in the sources read.
+    queries:
+    - statehouse.gov.sc and nation.sc searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanction on ICC judges or prosecutors by Seychelles was found (no result on the State House site or in the Nation for the ICC terms of B5).
+    queries:
+    - statehouse.gov.sc and nation.sc searches (see B5)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Seychelles. The registry gives a recognition since 18 November 1988 (before the window; no recognition document was found in the sources
+      read, so no row is added: R21); no recognition after 7 October 2023 was found in the sources read. The Nation (31 July 2025, Foreign Affairs department release on the Permanent Representative''s
+      statement) says Seychelles "officially recognised the State of Palestine in 1988" (year only, press).'
+    queries:
+    - recognitions.csv, SYC (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'evt_2023_11_10_SYC_B9 (+2, flagged, expired): the President (Wavel Ramkalawan) at the First Saudi-African Summit, 10 November 2023, in the State House''s report of the address (''We
+      call for an end to those indiscriminate attacks, an immediate cessation of hostilities''); the quoted sentences say ''Palestine as in Israel'' and the Presidency ties the passage to Gaza
+      (R7, flagged). Not filed: the Foreign Minister''s remarks of 20 November 2023 (National Assembly) and 11 January 2024 (meeting with Israel''s ambassador), indirect speech in the Nation (lead_20261104_SYC_2,
+      lead_20261104_SYC_1); the 79th General Debate statement (the President, 25 September 2024) and the 81st (President Herminie, 22 September 2026) name neither Gaza nor Palestine; the 80th
+      has no page or file on the General Debate site (the page redirects, no Wayback capture); the Permanent Representative''s statement of 28 to 30 July 2025 (two-state conference) is not a B9
+      speaker''s (R3). The National Day and Independence messages of 2025 name ''the war between Israel and Hamas'' only as a cause of costs (no call).'
+    queries:
+    - 'statehouse.gov.sc/search?search_q=: Gaza, Palestine, Palestinian, Hamas, Israel, ceasefire, cessation, two-state, genocide, Middle East (titles read; the items of 10 November 2023, 29 June
+      2025, 24 October 2025 read in full)'
+    - statehouse.gov.sc/speeches and /messages lists (pages 1 to 8; 122 items from id 5950, fetched and searched for Gaza, Palestin, Hamas, Israel)
+    - gadebate.un.org/en/{79,80,81}/seychelles and gastatements/{79,81}/sc_en.pdf (read)
+    - 'nation.sc/search?search_q=: Gaza, Palestine, Palestinian, Israel, Hamas, ceasefire, Radegonde (titles read; articles 20739, 20165, 19932, 26957, 26767, 25223 read in full)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found. The Foreign Minister''s remark (Nation, 12 January 2024)
+      that Israel''s right to self-defence is recognised but ''cannot encroach on the rights of civilians in Gaza'' is conditional and not a B10 speaker''s.'
+    queries:
+    - statehouse.gov.sc and nation.sc searches (see B9)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanction on Israeli ministers or settler entities was found (State House and Nation searches for Israel, Gaza and Palestine; Cabinet decisions not read in full).
+    queries:
+    - statehouse.gov.sc and nation.sc searches (see B9)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. Israel's ambassador is non-resident (based in Nairobi) and met the Foreign Minister on 11 January 2024 (Nation,
+      12 January 2024); the State House lists accreditations of Israeli ambassadors in earlier years (ids 2838, 3513, 4206, 4671, 5644), the last before the window.
+    queries:
+    - statehouse.gov.sc/search?search_q=Israel (titles read)
+    - nation.sc/search?search_q=Israel (titles read)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Seychelles is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement with Israel signed since October 2023 was found: the State House and Nation searches return accreditations, the Foreign Minister''s meeting of 11 January 2024 (bilateral
+      cooperation discussed, nothing signed) and Tourism Seychelles'' participation in a trade event in Tel Aviv (Nation, 7 March 2025; Nation, 7 March 2025, mentions a five-year history of direct Air Seychelles flights from Tel Aviv),
+      none an instrument. Cabinet decisions were not read in full.'
+    queries:
+    - statehouse.gov.sc/search?search_q=Israel, Middle East (titles read)
+    - nation.sc/search?search_q=Israel (titles read; articles 20739 and 25223 read in full)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor SYC
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Seychelles in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Seychelles in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical evacuation hosted and no field hospital deployed for Gaza was found in the State House and Nation results.
+    queries:
+    - statehouse.gov.sc/search?search_q=humanitarian, Gaza (titles read)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the State House and Nation results.
+    queries:
+    - statehouse.gov.sc/search?search_q=Palestinian, Gaza; nation.sc/search?search_q=Gazans (titles read)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

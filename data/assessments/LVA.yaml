@@ -1,0 +1,232 @@
+# Coverage record for Latvia (docs/03 §6). P-21 light protocol, session T-P21-20, 2026-10-14.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.lv: HTTP 200 to a browser User-Agent; its own search page is script-driven, so the releases were found through web searches restricted to the site and read page by page), the President's site (president.lv), the Cabinet's site (mk.gov.lv), the Saeima's, LSM (Latvian and English), the Baltic Times (LETA), TVNET, Re:Baltica and ERR; the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th and 80th files are image-based or have broken fonts and were read by OCR; the Presidency's HTML copies are the archived sources); the joint statements already archived for the 45 (archive/text searched for Latvia, Lettonie, Letonia, Lettland), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Latvian per indicator group. Latvia is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Latvia has sat on the Security Council since 1 January 2026. Time: about 85 minutes of research on Latvia, inside the 90-minute budget of the session.
+# Nine B9 events (five joint statements, four own), three B11 events, four UNRWA events (D2 once, D3 three times). Leads: 3 (lead_20261014_LVA_1 to _3).
+country: LVA
+protocol_version: 1
+last_full_check: '2026-10-14'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LVA
+    checked_at: '2026-10-14'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-14'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv): data year 2025, TIV 50.4 (Spike-LR2 missiles for a EUR 81 m deal built on the German production line and UT-30 turrets for 42 ASCOD vehicles
+      made in Spain, release of 9 March 2026), which gives the generated event evt_2026_03_09_LVA_A4_orders-2025 (-5.0). Left to the build. The register''s rows of 2008 and 2018 pre-date the window,
+      and deliveries of 2024 and 2025 under the order of 2018 are deliveries of a pre-war order (A4 reads only orders, docs/10 B-536 (7)).'
+    queries:
+    - sipri_orders.csv, buyer LVA
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Latvia (read)
+    checked_at: '2026-10-14'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 9 of the 12 qualifying votes and an abstention on 3 (A/RES/ES-10/21 of 27 October 2023, ES-10/23 of 10 May 2024 and A/RES/80/78 of 5 December 2025).
+      All 12 are recorded, so no absence is scored and no Article 19 note is needed (Latvia is not among the four Member States in arrears in A/80/362 of 3 September 2025, nor on the General Assembly''s
+      Article 19 page read on 2026-10-13; both archived). No explanation of vote by the President, the Prime Minister or the Foreign Minister was found; a Permanent Representative''s explanation
+      would not be a B9 or B10 speaker (R3).'
+    queries:
+    - unga_votes.csv, voter LVA
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-10-14'
+  B2:
+    status: none-found
+    note: 'Generated: Latvia is a member of the Security Council from 2026-01-01 to 2027-12-31 (countries.yaml memberships.unsc). unsc_vetoes.csv has no veto of a draft resolution after 18 September
+      2025, so no vetoed ceasefire draft fell in Latvia''s term to date. Left to the build.'
+    queries:
+    - unsc_vetoes.csv (last row 2025-09-18)
+    checked_at: '2026-10-14'
+  B3:
+    status: none-found
+    note: 'Latvia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for
+      Latvia; docs/06 §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    checked_at: '2026-10-14'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - Latvia ICJ provisional measures Israel Braže statement
+    - Latvija TTT pagaidu pasākumi Izraēla ārlietu ministrija
+    checked_at: '2026-10-14'
+  B5:
+    status: none-found
+    note: 'No statement by the President, the Prime Minister, the Foreign Minister or the Minister of Justice committing Latvia to execute the warrants of 21 November 2024 was found. The Foreign
+      Ministry told BNS that Latvia is a party to the Rome Statute and ''considers it important to respect the international order based on international law and rules'' (ERR, 23 November 2024,
+      read, in Estonian): a Ministry statement with no named speaker and no commitment to arrest, known from a press report: lead_20261014_LVA_3. Latvia is a state party (line 162 of the Assembly''s
+      list, archived: src_20261009_icc-asp_states-parties).'
+    queries:
+    - Latvia ICC arrest warrant Netanyahu Braže Latvia will arrest
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-14'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-10-14'
+  B7:
+    status: none-found
+    note: Latvia has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-14'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Latvia. Latvia has not recognised the State of Palestine: the President said on 5 August 2025, after meeting President Herzog,
+      that Latvia did not plan to recognise it for now (LSM, seen in a search result, not read), and the Foreign Ministry''s position of September 2025 is a negotiated two-state solution (LSM,
+      23 September 2025, seen in a search result, not read); the Foreign Minister said on 28 August 2025 that Latvia ''continued supporting a negotiated two-state solution'' (the Ministry''s release,
+      read). Latvia voted for the New York Declaration on 12 September 2025 (A/DEC/80/506: yes, in unga_votes.csv).'
+    queries:
+    - recognitions.csv, row LVA (none)
+    - Latvija atzīt Palestīnas valsti Rinkēvičs Braže
+    checked_at: '2026-10-14'
+  B9:
+    status: has-events
+    note: 'Nine events: five joint statements (the declaration of 26 EU foreign ministers, 19 February 2024, +2, expired; the joint donor statement, 19 May 2025, +2; 21 July 2025, +5; 12 August
+      2025, +5; 21 August 2025, +5 west-bank, unscored) and four own statements at the call tier (+2, flagged): the President at the 79th General Debate (24 September 2024, expired), the Foreign
+      Minister''s quoted words in the Ministry''s release on the meeting with Israel''s Foreign Minister (2 July 2025, an aid-access call), the President''s words after meeting President Herzog
+      (5 August 2025, an aid-access call) and the President at the 80th General Debate (24 September 2025, a call for an immediate ceasefire). Read and not filed: (1) the Foreign Minister''s media
+      briefing with the Palestinian Foreign Minister of 28 August 2025 (LETA/Baltic Times prints her words: ''Israel has a duty to respect the principles of international law and international
+      humanitarian law'', ''We also do not support Israel''s plans to expand illegal settlements''; the Ministry''s release is in indirect speech, so the event has no official quotation: lead_20261014_LVA_1);
+      (2) the Ministry''s report of the Foreign Affairs Council of 11 August 2025 (''Latvia disapproves of, and calls on Israel to reconsider its decision to expand military operations in the
+      Gaza Strip''; indirect speech, R4) and the press secretary''s statement to LETA of 10 August 2025 (no named speaker, R3): lead_20261014_LVA_2; (3) the Foreign Minister''s annual address
+      to the Saeima of 29 January 2026 (the Middle East ''more stable'': no call); (4) the President''s 81st statement of 23 September 2026 (the Middle East named, no Gaza text; live file, not
+      filed); (5) the President''s visit to Israel and the West Bank of November 2023 and the statements of October 2023 (expired, not read). The Prime Minister (Siliņa, then Kulbergs since 28
+      May 2026): no statement on Gaza found. The other joint statements archived (9, 10 and 29 August 2025, 24 and 30 December 2025, 28 January, 1 and 24 February, 8 June and 8 September 2026
+      and the Hague Group''s declarations) do not name Latvia (archive/text searched).'
+    queries:
+    - mfa.gov.lv releases (web searches restricted to the site; read page by page)
+    - 'president.lv: Gaza, Israel, Rinkēvičs (read)'
+    - gadebate.un.org Latvia 78th to 81st sessions (lv_en.pdf, OCR for the 79th and 80th)
+    - archive/text joint statements (archived) searched for Latvia, Lettonie, Letonia
+    checked_at: '2026-10-14'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support or denial of violations by the Prime Minister (Siliņa; Kulbergs from 28 May 2026), the President or the Foreign Minister (the three B10
+      speakers, R3) was found. The President''s ''Hamas must be destroyed'' and his support for ''Israel''s right to self-defence … in accordance with international law'' (5 August and 24 September 2025) and the
+      Foreign Minister''s ''firm support for Israel''s right to self-defence … adhering to international law'' (2 July 2025) are not B10 events (each is conditional
+      on international law and international humanitarian law). The President''s call of 9 October 2023 with President Herzog (''unwavering support to Israel''s legitimate right to defend itself against terrorists'',
+      LSM, read) concerns the attacks of 7 October, names no Gaza, and the speaker is the head of state (expired).'
+    queries:
+    - Latvia Prime Minister Siliņa Israel Gaza statement
+    - Kulbergs Israel Gaza
+    - Ministru prezidente Siliņa Izraēla Gaza
+    checked_at: '2026-10-14'
+  B11:
+    status: has-events
+    note: 'Three events, from the Council''s listings under R8 (docs/10 B-446): 19 April 2024 (west-bank, unscored), 15 July 2024 (gaza and west-bank) and 28 May 2026 (gaza and west-bank; adds
+      no points, but is a qualifying event). No national listing of Israeli ministers or settlers by Latvia was found.'
+    queries:
+    - src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20240715_eur-lex_cfsp-2024-1967, src_20260528_eur-lex_reg-impl-2026-1177 (archived)
+    - Latvia sanctions Israeli settlers OR ministers
+    checked_at: '2026-10-14'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the new Ambassador to Israel, Gints Serafinovičs, received his accreditation in August 2025 (search results), and
+      the Israeli Foreign Minister visited Riga on 2 July 2025 (the Ministry''s release, archived). An embassy move is not an event (B-599).'
+    queries:
+    - Latvija Izraēlas vēstnieks atsaukts
+    - Latvia recalls ambassador Israel
+    checked_at: '2026-10-14'
+  C1:
+    status: none-found
+    note: 'No suspension or review of any agreement with Israel supported by Latvia was found. Latvia''s position on the review of Article 2 of the Association Agreement (Council meetings of 23
+      June and 15 July 2025) was not found: the Ministry''s release of the videoconference of 18 June 2025 concerns Iran (read), and the Council''s minutes do not record positions. The Foreign
+      Policy Yearbook of the Latvian Institute of International Affairs recommended that Latvia lead a review (LSM, 27 February 2025, seen in a search result, not read): not a Government act.'
+    queries:
+    - Braže EU-Israel Association Agreement review Latvia position
+    - Latvija ES un Izraēlas asociācijas līgums pārskatīšana
+    checked_at: '2026-10-14'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found. The Government''s agreements with Israel date from before the window (the defence memorandum of 2005, the visa waiver,
+      the intergovernmental programme in education, science, culture and sports for 2023-2026, signed in 2023 before 7 October: the Baltic Times, read); the orders from Israel''s industry in 2025
+      (Spike-LR2 on the German production line, EUR 81 m; UT-30 turrets) are purchases, which A4 measures (generated).'
+    queries:
+    - Latvia Israel agreement signed memorandum cooperation 2024 2025 2026
+    - likumi.lv Izraēla starptautiskie līgumi 2024 2025
+    checked_at: '2026-10-14'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-14'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Government flows over all flow dates (fts_plan_totals.csv); the Government announced EUR 50,000 to Gaza residents (Baltic Times, seen in a search result). Left to
+      the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor LVA
+    checked_at: '2026-10-14'
+  D2:
+    status: has-events
+    note: 'One event: the Ministry''s suspension of the annual payment, announced on X on 29 January 2024 (`corroborated`: LSM and the Baltic Times), ended ''no later than'' 27 May 2024 on Re:Baltica''s
+      report of the announcement of the end of April. The Ministry''s own announcements could not be found (mfa.gov.lv searched in English).'
+    queries:
+    - Latvia suspends UNRWA funding January 2024
+    - Latvija aptur maksājumu UNRWA
+    - Latvia resumes funding UNRWA April 2024
+    - Latvija atsāk finansējumu UNRWA
+    checked_at: '2026-10-14'
+  D3:
+    status: has-events
+    note: 'Three events: increased from 31 December 2023 on the 2023 table (USD 124,964 against USD 17,580 in 2022; ended 29 January 2024), restored ''no later than'' 27 May 2024 (`reported`:
+      Re:Baltica) and increased again from 31 December 2024 on the 2024 table (USD 18,359 against USD 17,580: a narrow margin). The 2025 table was not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Latvia
+    checked_at: '2026-10-14'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found. A Cabinet order of 2009 on the rehabilitation in Latvia of Palestinian children wounded in Gaza is known from a web search only (not read); it predates the window and no use of it since 2023 was found.
+    queries:
+    - Latvija Gaza evakuācija ārstniecība bērni
+    - medical evacuation Gaza Latvia
+    checked_at: '2026-10-14'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Latvia visa humanitarian Gaza Palestinians
+    - Latvija vīza Gazas iedzīvotāji
+    checked_at: '2026-10-14'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

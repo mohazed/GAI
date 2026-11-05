@@ -1,0 +1,145 @@
+# Hand-authored events for Papua New Guinea (P-21 light protocol, T-P21-15, 2026-10-07).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08). B8 has no row in data/structured/recognitions.csv (docs/10 B-631).
+# Speakers for B9/B10: Prime Minister (James Marape), Foreign Minister (Justin Tkatchenko, a B9 speaker; B10 reads the head of government only), R3.
+- id: evt_2024_10_07_PNG_B9
+  revision: 1
+  country: PNG
+  indicator: B9
+  type: repeatable
+  date: '2024-10-07'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the Prime Minister, in a statement on the first anniversary of 7 October 2023 that cites the conflict in Gaza, says ''There must be a ceasefire.''
+    The same paragraph says Israel will be asked to cease its military operations when Hamas and Hezbollah abandon their campaigns and calls on all parties to negotiate; no violation is named (not +5).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister said there must be a ceasefire, in a statement on the first anniversary of 7 October 2023 that also called for the release of all hostages held by Hamas.
+    fr: Le Premier ministre a dit qu'il devait y avoir un cessez-le-feu, dans une déclaration pour le premier anniversaire du 7 octobre 2023 qui demandait aussi la libération des otages du Hamas.
+  actor:
+    en: Prime Minister of Papua New Guinea
+    fr: Premier ministre de la Papouasie-Nouvelle-Guinée
+    name: James Marape
+  evidence:
+  - source: src_20241007_pmnec-pg_marape-october-7-statement
+    quote: There must be a ceasefire.
+    quote_lang: en
+    locator: paragraph 3, last sentence
+  - source: src_20241007_pmnec-pg_marape-october-7-statement
+    quote: Let us not forget that the subsequent conflict in Gaza would never have unfolded if Hamas had not initiated the attack on Israel on that tragic day.
+    quote_lang: en
+    locator: paragraph 2
+  - source: src_20241007_pmnec-pg_marape-october-7-statement
+    quote: Israel will be asked to cease its military operations when these groups abandon their violent campaigns.
+    quote_lang: en
+    locator: paragraph 4
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-07'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-07'
+      verdict: agree
+      notes: 'Paragraphs 1 to 5 of the archived statement re-read in a separate pass, with the page''s byline date: the speaker is the Prime Minister (a B9 speaker, R3), he writes ''I strongly condemn''
+        and ''As I stated in my recent address'', the date agrees with the first anniversary, Gaza is cited in paragraph 2 (R7), and the ceasefire sentence is verbatim. B9 +2 (call tier) agrees; the conditional
+        wording is flagged.'
+    notes: 'Flagged (docs/10 B-629). The Prime Minister''s own statement, in the first person, on the Prime Minister''s Office site (the page''s byline date is 7 October 2024). The call is literal (''There
+      must be a ceasefire.'') but is tied in the next sentence to the abandonment of the campaigns of Hamas and Hezbollah, and the statement puts the cause of the war on Hamas; it is filed at the call tier
+      (+2) on its words, as a B9 speaker''s hope for a ceasefire (docs/10 B-509), and a reader who requires an unconditional call would drop it. 730 days old on 7 October 2026: weight 0.25, +0.5 on the
+      score that day, and it expires after it (the build''s rule is more than 730 days).'
+- id: evt_2025_08_15_PNG_B10
+  revision: 1
+  country: PNG
+  indicator: B10
+  type: repeatable
+  date: '2025-08-15'
+  points: -5
+  points_rationale: 'Unconditional support for Israel (-5): the Prime Minister says Papua New Guinea is among the few nations that have consistently stood in support of Israel and that the responsibility
+    for ending the suffering in Gaza lies with Hamas; the statement asks nothing of Israel and sets no legal qualification on the support.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister said Papua New Guinea had consistently stood in support of Israel and that the responsibility for ending the suffering in Gaza lay with Hamas.
+    fr: Le Premier ministre a dit que la Papouasie-Nouvelle-Guinée soutenait Israël de façon constante et que la responsabilité de mettre fin aux souffrances à Gaza revenait au Hamas.
+  actor:
+    en: Prime Minister of Papua New Guinea
+    fr: Premier ministre de la Papouasie-Nouvelle-Guinée
+    name: James Marape
+  evidence:
+  - source: src_20250815_pmnec-pg_marape-urges-hamas
+    quote: Papua New Guinea is among the few nations that have consistently stood in support of Israel,” Prime Minister Marape said.
+    quote_lang: en
+    locator: paragraph 5
+  - source: src_20250815_pmnec-pg_marape-urges-hamas
+    quote: The responsibility for ending the current suffering in Gaza lies squarely with Hamas.
+    quote_lang: en
+    locator: paragraph 5, last sentence
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-07'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-07'
+      verdict: agree
+      notes: 'The archived release re-read in a separate pass: both quoted sentences are in paragraph 5 and are the Prime Minister''s (the release attributes them with ''Prime Minister Marape said''); Gaza
+        is named in the second; the byline date (August 15, 2025) is the release''s. The support sentence does not carry a legal qualifier (unlike the qualified support of docs/10 B-209) and the second
+        sentence assigns the responsibility for the suffering in Gaza to one party. B10 -5 agrees; the conditions in the same release are flagged.'
+    notes: 'Flagged (docs/10 B-630). B10 reads ''unconditional support or denial of documented violations'' (docs/02 §2). The Prime Minister''s Office release prints his words in quotation marks (the Presidency-report
+      route, docs/10 B-569), cites Gaza (R7) and is the first-person account of a head of government. Against the reading: the same release says Papua New Guinea would support any process that brings ''lasting
+      security and dignity to both the Israeli and Palestinian peoples'', calls the situation ''tragic and unnecessary'' and says ''PNG can engage with Israel to halt military actions'' once Hamas takes
+      the first step, so a reader who requires a statement with no condition at all would turn the event into a note. 418 days old on 7 October 2026: weight 0.89, outside the 365 days, so it does not count
+      as a qualifying event.'
+- id: evt_2025_10_20_PNG_B10
+  revision: 1
+  country: PNG
+  indicator: B10
+  type: repeatable
+  date: '2025-10-20'
+  points: -5
+  points_rationale: 'Unconditional support for Israel (-5): the Prime Minister tells Israel''s Deputy Foreign Minister that Papua New Guinea stands with Israel during these difficult times and that Hamas,
+    if it values peace in Gaza, must take the first step; no condition on Israel and no qualification in international law.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister told Israel's Deputy Foreign Minister that Papua New Guinea stands with Israel, and called on Hamas to take the first step toward peace in Gaza.
+    fr: Le Premier ministre a dit à la vice-ministre israélienne des Affaires étrangères que la Papouasie-Nouvelle-Guinée se tenait aux côtés d'Israël, et a appelé le Hamas à faire le premier pas.
+  actor:
+    en: Prime Minister of Papua New Guinea
+    fr: Premier ministre de la Papouasie-Nouvelle-Guinée
+    name: James Marape
+  evidence:
+  - source: src_20251029_pmnec-pg_marape-haskel-courtesy-call
+    quote: Papua New Guinea stands with Israel during these difficult times it is going through as the people of Israel look to find peace.
+    quote_lang: en
+    locator: paragraph 9
+  - source: src_20251029_pmnec-pg_marape-haskel-courtesy-call
+    quote: We still maintain the call to Hamas – if they really value peace in Gaza, they must take the first step to show they are genuine about peace.
+    quote_lang: en
+    locator: paragraph 10
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-07'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-07'
+      verdict: agree
+      notes: 'The archived release re-read in a separate pass: paragraph 2 dates the call 20 October 2025 and paragraph 9 opens ''He said,'' after the paragraph on the Prime Minister''s response, so the
+        speaker is the Prime Minister; both quotes are verbatim; Gaza is named in paragraph 10 (R7). The visit is corroborated by the press (Asia Pacific Report, 21 October 2025, read, not filed). B10 -5
+        agrees; the ''unconditional'' reading and its effect on the passivity penalty are flagged.'
+    notes: 'Flagged (docs/10 B-630). The Prime Minister''s Office release (byline 29 October 2025) dates the courtesy call ''today (20.10.25)''; the event is dated 20 October. The words are in quotation
+      marks and attributed to the Prime Minister (''He said,''); Gaza is cited (R7). Against the reading: the statement is a courtesy-call remark of solidarity, ''as the people of Israel look to find peace'',
+      and puts a condition on Hamas, not on Israel; it says nothing of the war''s conduct. The release''s own account (not quoted, indirect) adds that Papua New Guinea ''recognizes Israel''s rights to the
+      land of Israel through its Judeo-Christian worldview'' and ''continues to recognize Jerusalem as the "eternal" capital'', and that it voted against the two-state declaration (the release''s wording).
+      352 days old on 7 October 2026: weight 1, inside the 365 days, so this event is a qualifying event and ends the passivity penalty (+15 on the score): see the score paragraph; a reader who does not
+      read it as ''unconditional'' would leave Papua New Guinea at about -45 (with the 15 August event) or -41 (with neither), still Enabling.'

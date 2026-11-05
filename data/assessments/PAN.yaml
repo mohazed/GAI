@@ -1,0 +1,213 @@
+# Coverage record for Panama (docs/03 §6). P-21 light protocol, session T-P21-11, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mire.gob.pa: site searches for Gaza, Israel and Palestina; the releases of 2026 on Israel and on the Security Council), the Presidency (presidencia.gob.pa answers a bot check; its Wayback capture of 29 September 2026 read), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the Security Council verbatim records already archived, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 30 minutes of research on Panama, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: none cites Gaza by a B9 speaker (see B9).
+country: PAN
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PAN
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026 (Panama has no row in the register of transfers from Israel). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PAN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, PAN
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 3 of the 12 qualifying votes (ES-10/23, ES-10/25, A/RES/80/78), abstained on 8, absent on A/DEC/80/506. The statements on the votes were not read.
+      No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Panama sits on the Security Council in 2025 and 2026 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent member): the vetoes of
+      the window are those of the permanent members.'
+    queries:
+    - unsc_vetoes.csv, vetoing state Panama
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Panama is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (Panama is a party to the Rome Statute). The press reports that
+      Netanyahu invited the Presidents of Panama, Paraguay and Bolivia on 24–25 September 2026 to join a United States initiative for countries to withdraw from the Court; no answer was found
+      (lead_20261006_PAN_2).
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found: the President met the Prime Minister of Israel in New York, on the margins of the General Assembly, which is not
+      hosting on an official visit; Israel''s President Herzog, who visited Panama on 6 May 2026, is not under a warrant.'
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Panama has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    checked_at: '2026-10-06'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv; Panama has no row. Panama does not recognise the State of Palestine: the registry (countries.yaml) found none as of 2026-09-28, and BBC Mundo (Yahoo
+      Noticias, 27 September 2025, read) names it the only Latin American state that does not recognise the State of Palestine; the Foreign Ministry said in August 2014 that it would evaluate
+      a Palestinian request (La Estrella, 11 August 2014). No statement of the Government since October 2023 on recognition was found.'
+    queries:
+    - Panama recognizes State of Palestine 2013 Ministry of Foreign Affairs Panama reconoce Estado de Palestina Cancillería
+    - Panamá considera reconocer Estado palestino y establecer relaciones (La Estrella, 2014, read)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: the President''s General Debate statements of 25 September 2024, 24 September 2025 and 23 September 2026 (read in full, `pa_es.pdf`) never cite Gaza or Palestine; the 81st
+      session''s says only that ''en el Medio Oriente, buscamos una paz perdurable''. In the Security Council Panama spoke through its Permanent Representative or other members of its mission
+      (S/PV.9841, 9929, 10000, 10003, archived), not B9 speakers (R3); the Foreign Minister''s addresses of 2026 read (the Council debate of 26 May 2026, the war in Ukraine, the war in the Middle
+      East of March 2026) do not cite Gaza. The Ministry''s report of 2 January 2026 on its first year in the Council says Panama ''presentó proyectos de resolución, exigiendo un alto al fuego
+      inmediato, acceso humanitario pleno y la liberación de rehenes'' in ''Gaza y Medio Oriente'': a release in the Ministry''s name with no named speaker or exact words, so it stays in this
+      note (R4). President Mulino''s weekly press conference of 9 October 2025 (''Felicito el acuerdo ya público entre Israel y Hamás. Quiera Dios que este sea un paso hacia la paz duradera y
+      firme en el Medio Oriente'', Yahoo Noticias, read; 362 days old) congratulates an agreement already public and hopes for lasting peace: it is not a call for a ceasefire, the Presidency''s
+      own transcript was not found, and it is a lead (lead_20261006_PAN_3).'
+    queries:
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    - mire.gob.pa site search ?s=Gaza, ?s=Israel, ?s=Palestina
+    - Martínez-Acha Consejo de Seguridad Gaza Panamá canciller discurso Medio Oriente Palestina alto el fuego liberación de rehenes
+    - Panama Security Council Middle East Gaza statement Foreign Minister Martínez-Acha presided open debate Panama presidency August 2025
+    - gadebate.un.org Panama 78th to 81st sessions (pa_es.pdf), read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found. The President called the relationship with Israel 'una alianza fortalecida' on 6 May 2026
+      (the Herzog visit), a statement on bilateral relations that does not address the conduct of the war.
+    queries:
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    - Herzog visita Panamá mayo 2026 Mulino firman acuerdos Israel Panamá comunicado Presidencia
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Panama was found (not an EU member).
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Panama named an ambassador to Israel in January 2025 (Wikipedia, not read in a primary), Israel''s ambassador signed the memorandum of 27
+      May 2026, and the Ministry''s pages of 2026 show cooperation (a medical mission of 18 August 2026, the Day of the State of Israel of April 2026).'
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    - Panamá Israel embajada Jerusalén OR consulado OR vuelo OR visa acuerdo 2024 2025 Panamá Israel firma convenio
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: 'No association or trade agreement with Israel was suspended or reviewed: the free trade agreement (signed 2018, in force since 1 January 2020) stands, and on 6 May 2026 the Presidents
+      agreed to ''ampliar y reforzar'' it (lead_20261006_PAN_1: no signed amendment).'
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    - Panamá Israel firman acuerdo memorando 2025 Cancillería Panamá Israel cooperación Mulino Israel
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the memorandum of understanding between the Ministry and Israel''s MASHAV agency, signed 27 May 2026 (-10, standing, flagged under R18; the Ministry''s release and La Prensa,
+      archived). Not filed: the commitments of the Herzog visit (6 May 2026) and of the meeting with the Prime Minister (New York, September 2026), which are leads (_1, _2); the Watergen water
+      machine donated to Pedro González Island (a project, not an instrument; La Prensa); the Israeli medical mission of 18 August 2026 (an activity under the memorandum). The free trade agreement
+      and earlier instruments pre-date the window.'
+    queries:
+    - Panamá firma acuerdo con Israel para cooperación en agua y salud
+    - Panama Israel sign agreement 2026 Mulino Netanyahu OR Saar memorandum cooperation Panama Israel relations
+    - Asamblea Nacional Panamá aprueba acuerdo Israel ley convenio Panamá Israel 2024 2025 tratado primer debate Israel
+    - Herzog visita Panamá mayo 2026 Mulino firman acuerdos Israel Panamá comunicado Presidencia
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Panama in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PAN
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Panama has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Panama
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'Panama has no row in UNRWA''s donor tables of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Panama
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    - Panamá visas palestinos Gaza refugiados humanitarias OR "evacuación médica" OR "niños de Gaza" Panamá gobierno acoge
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    - Panamá visas palestinos Gaza refugiados humanitarias OR "evacuación médica" OR "niños de Gaza" Panamá gobierno acoge
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

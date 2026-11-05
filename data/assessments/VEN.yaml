@@ -1,0 +1,213 @@
+# Coverage record for Venezuela (Bolivarian Republic of) (docs/03 §6). P-21 light protocol, session T-P21-14, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' site (mppre.gob.ve: its publications on Israel, Gaza and Palestine, the communiqué of 11 August 2026, the reports of the Foreign Minister's and the President's statements), the Presidency's site (presidencia.gob.ve, a stub), the General Debate pages and statements of the 78th to 80th sessions (gadebate.un.org through Wayback captures; the 81st has no capture; the Spanish file of the 80th was read), the transcript of the acting President's speech of 23 September 2026 (El Diario, read), UNISPAL's records (the General Assembly's tenth emergency special session of 16 January 2009, the Division for Palestinian Rights' review of April 2009, the Chávez letter of 17 September 2011), the UN depositary notification C.N.298.2026, the ICJ's case page (archived 25 September 2026, read), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 50 minutes of research on Venezuela, inside the 90-minute budget of the session; the Ministry's older publications on Gaza (2024 and early 2025) were not read one by one: each is more than 365 days old and the cap of B9 (+10) is already reached by the events filed if they count.
+# Four hand-authored events: evt_2023_10_07_VEN_B12 (flagged: predates the window, no end), evt_2024_09_25_VEN_B9 (decayed to zero), evt_2025_06_17_VEN_B9 (flagged) and evt_2026_07_24_VEN_B6 (scope related, unscored).
+country: VEN
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier VEN
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the 11 rows for Venezuela are orders of 1974 to 2003 (the register lists Israel as supplier of aircraft, launchers and missiles); none dated
+      2024 or later. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer VEN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Venezuela
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded for Venezuela on any of the 12 qualifying votes (scored as absent, −2 each, B1), although its delegation spoke in the debates (the press
+      release of 27 October 2023 records its representative speaking for the Group of Friends, archived). The reason is not stated in the dataset or in the press releases archived. Venezuela may
+      have been without a vote in the General Assembly under Article 19 of the Charter (arrears), which would make the 12 absences the loss of the right to vote and not a choice: not verified,
+      flagged for the author (docs/10 B-626); the build scores them as absences by rule (docs/02 §2 B1).'
+    queries:
+    - unga_votes.csv, voter VEN
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: Venezuela is not on the ICJ case 192 intervention list (docs/06 §8; the Court's page archived 25 September 2026, read).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Venezuela is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or the Attorney-General on executing the warrants of 21 November 2024 was found. The Ministry's communiqués on Israel call for 'juicio'
+      of Netanyahu and his collaborators (23 July 2025, no named speaker, read), which is not a commitment to execute the warrants.
+    queries:
+    - Venezuela CPI orden de arresto Netanyahu Gallant posición gobierno venezolano ejecutar
+    - 'mppre.gob.ve site searches: Corte Penal Internacional, Netanyahu'
+    checked_at: '2026-10-07'
+  B6:
+    status: has-events
+    note: 'One event, unscored: the notification of 24 July 2026 of Venezuela''s withdrawal from the Rome Statute (evt_2026_07_24_VEN_B6, -10, scope `related`, docs/10 B-622 (3)); the notification
+      gives the Court''s alleged bias against the Global South, in connection with the situation in Venezuela, as the reason and does not mention Gaza or the warrants. No stated refusal to execute
+      the warrants and no hosting of a person under warrant was found.'
+    queries:
+    - Venezuela withdrawal Rome Statute depositary notification C.N.298.2026 (archived)
+    - Venezuela retiro Estatuto de Roma Plasencia Delcy Rodríguez
+    - 'Al Jazeera: What drove Venezuela''s decision to leave the ICC (read)'
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Venezuela has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `VEN,2009-04-27` is added in this session. Sources: the Division for Palestinian Rights'' review of April 2009 (UNISPAL, archived: src_20090430_un-unispal_dpr-review-april-2009,
+      entry of 26 April: the Palestinian Foreign Minister ''visited Venezuela as part of a move to open a diplomatic mission in Caracas, the Venezuelan Ministry for Foreign Affairs said'', and
+      he and the Venezuelan Foreign Minister were ''set to sign the following day a joint communiqué establishing diplomatic relations between Venezuela and the PA''), and President Chávez''s
+      letter of 17 September 2011 to the General Assembly (UNISPAL, archived: src_20110917_un-unispal_chavez-letter-palestine: ''Venezuela''s full support for the recognition of the Palestinian
+      State''). The pre-existing tier, +3 (R21). A UN Secretariat review that relays AFP and says ''establishing diplomatic relations'' (not ''recognition''), and a letter that confirms support
+      for recognition in 2011, not the joint communiqué of 27 April 2009 itself, flagged; the registry''s date (2009-04-27, A/78/846) agrees with the review (docs/10 B-624). The Government has
+      not withdrawn the recognition (the Foreign Minister said at a press conference in 2024 that ''Venezuela unequivocally recognizes Palestine as an independent, free country'', Anadolu, read).'
+    queries:
+    - Venezuela recognises State of Palestine 2009 Maduro Maliki joint communiqué
+    - UNISPAL review of April 2009 and Chávez letter of 2011 (archived)
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'Two events: the Foreign Minister''s General Debate statement of 25 September 2024 (evt_2024_09_25_VEN_B9, +5: ''the greatest crime of extermination and genocide''; decayed to zero,
+      742 days old) and his statement in the General Assembly of 17 June 2025 for the Group of Friends in Defense of the Charter (evt_2025_06_17_VEN_B9, +5, flagged: the Ministry''s report, a
+      legal characterisation in a direct quotation). Read and not filed (docs/10 B-622 (2)): the General Debate statement of the 80th session (the Foreign Minister, 26 September 2025, the Spanish
+      file): ''demandamos el fin del genocidio del régimen sionista de Israel'' and solidarity with ''el heroico pueblo de Palestina'', and the file never names Gaza (R7: a lead in this note);
+      the President''s remarks of 7 October 2025 (the Ministry''s report, read: ''el más brutal genocidio conocido por la humanidad'', ''Palestina libre vencerá''), in which Gaza is not cited
+      (R7); the Foreign Minister''s Telegram reply to Israel''s Foreign Minister of 24 or 25 November 2025 (press: Resumen Latinoamericano, social-media post with no official transcript, lead_20261007_VEN_1);
+      the Ministry''s communiqués with no named speaker (9 June 2025 on the Madleen, 23 July 2025 on ''barbarie sistemática'', ''exterminio''), which are not B9 events (R3); the acting President''s
+      statement of 23 September 2026 (the 81st session, the transcript at El Diario, read): no passage on Gaza or Palestine. The acting President''s Government has not repeated these characterisations
+      since January 2026 in any text read.'
+    queries:
+    - Venezuela canciller Yván Gil Gaza genocidio Israel Asamblea General 2025
+    - 'mppre.gob.ve publications on Israel and Gaza (2025: 5083, 5130, 5400, 5975, read)'
+    - gadebate.un.org Venezuela 78th to 80th sessions (ve_en.pdf, ve_es.pdf), read
+    - Venezuela Plasencia Israel Gaza statement foreign minister 2026
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found. The acting President''s Government agreed with Israel on
+      11 August 2026 only on technical cooperation and consular coordination (the Ministry''s communiqué, archived).'
+    queries:
+    - Venezuela Delcy Rodríguez Israel statement Gaza support
+    - mppre.gob.ve communiqué of 11 August 2026 (archived)
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Venezuela was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: has-events
+    note: 'One event: relations severed (+10, standing), announced to the General Assembly on 16 January 2009 and dated from 7 October 2023 (evt_2023_10_07_VEN_B12, flagged, docs/10 B-622 (1)):
+      it predates the window and has no end date. On 11 August 2026 the two Ministries of Foreign Affairs announced a coordination mechanism for consular services and the continuation of bilateral
+      technical cooperation after the earthquakes of 24 June 2026 (the Ministry''s communiqué, archived); the communiqués do not restore diplomatic relations or exchange ambassadors (the press
+      calls it a restoration of consular ties: Al Jazeera, Venezuelanalysis, Middle East Eye, read, the last using the phrase ''diplomatic relations''). No embassy is announced in either communiqué.'
+    queries:
+    - Venezuela rompe relaciones Israel 2009 comunicado Cancillería
+    - Venezuela Israel restablecen relaciones consulares agosto 2026
+    - mppre.gob.ve communiqué of 11 August 2026 (archived)
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel exists to suspend or review.
+    queries:
+    - Venezuela Israel acuerdo comercial
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found. The communiqués of 11 August 2026 say the two countries ''han acordado permitir la continuidad de la cooperación técnica
+      bilateral'' derived from the emergency and recovery efforts after the earthquakes and will set up a consular coordination mechanism: an agreement announced without a signed text (lead_20261007_VEN_2);
+      the Israeli technical mission of 1 July 2026 (the Ministry''s report, read) is humanitarian aid, not an instrument.'
+    queries:
+    - Venezuela Israel acuerdo cooperación técnica firmado 2026
+    - mppre.gob.ve publications 7526 and 7905 (read; 7905 archived)
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor VEN
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Venezuela has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Venezuela
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Venezuela has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Venezuela
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. The Ministry announced a humanitarian brigade for Lebanon and Palestine (publication 3100, title read, page not
+      read): not found as a programme with a document.'
+    queries:
+    - medical evacuation Gaza Venezuela ministry OR brigada humanitaria Gaza Venezuela
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Venezuela regulation
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,11 +1,19 @@
 /**
- * Every generated event of the dataset (D-08, docs/04 §2 step 3): B1, B2, A1, A4, A2, C3 and D1
- * from the tables of data/structured and the methodology files. Pure.
+ * Every generated event of the dataset (D-08, docs/04 §2 step 3): B1, B2, B8, A1, A4, A2, C3 and
+ * D1 from the tables of data/structured and the methodology files. Pure.
  */
-import { type Country, type Dataset, EXCLUDED_ISO3, type Methodology } from '@gai/schema'
+import {
+  type Country,
+  type Dataset,
+  EXCLUDED_ISO3,
+  type Located,
+  type Methodology,
+  type StructuredRow,
+} from '@gai/schema'
 import { actorOf } from './actor.js'
 import { type GenerateContext, type Generated, sortEvents } from './common.js'
 import { generateD1 } from './funding.js'
+import { generateB8 } from './recognitions.js'
 import { generateA1, generateA4 } from './sipri.js'
 import { generateA2, generateC3 } from './trade.js'
 import { generateB1, generateB2 } from './votes.js'
@@ -13,9 +21,26 @@ import { generateB1, generateB2 } from './votes.js'
 export * from './actor.js'
 export * from './common.js'
 export { generateD1, gniFor } from './funding.js'
+export { generateB8 } from './recognitions.js'
 export { generateA1, generateA4 } from './sipri.js'
 export { generateA2, generateC3 } from './trade.js'
 export { generateB1, generateB2, voteSlug } from './votes.js'
+
+/**
+ * The HS 8526/8802 confirmations of a2_confirmed_military.csv (docs/02 §2 A2, B-30), per country:
+ * the value of GenerateOptions.confirmedMilitary.
+ */
+export function confirmedMilitaryOf(
+  rows: readonly Located<StructuredRow<'a2_confirmed_military.csv'>>[],
+): Map<string, Set<string>> {
+  const out = new Map<string, Set<string>>()
+  for (const { value } of rows) {
+    const set = out.get(value.iso3) ?? new Set<string>()
+    set.add(value.hs)
+    out.set(value.iso3, set)
+  }
+  return out
+}
 
 export interface GenerateOptions {
   /** HS 8526/8802 flows confirmed as military, per country (docs/02 §2 A2); none by default. */
@@ -54,6 +79,7 @@ export function generateAll(
   const parts = [
     generateB1(ctx, structured['unga_votes.csv']),
     generateB2(ctx, structured['unsc_vetoes.csv']),
+    generateB8(ctx, structured['recognitions.csv']),
     generateA1(ctx, structured['sipri_deliveries.csv']),
     generateA4(ctx, structured['sipri_orders.csv']),
     generateA2(ctx, structured['comtrade_a2.csv'], options.confirmedMilitary),

@@ -1,0 +1,88 @@
+# Hand-authored events for the Sudan (P-21 light protocol, T-P21-18, 2026-10-13).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# The Sudan has two rival authorities in a war: the speakers for B9/B10 are those of the government that represents the Sudan at the UN (R3): the President of the Transitional Sovereign Council (Abdel-Fattah Al-Burhan, head of state), the Prime Minister (Kamil El-Tayeb Idris, from May 2025) and the Minister of Foreign Affairs and International Cooperation (Mohieldin Salem, from 2025). The Rapid Support Forces' parallel authority is not a B9 speaker.
+
+- id: evt_2024_09_26_SDN_B9
+  revision: 1
+  country: SDN
+  indicator: B9
+  type: repeatable
+  date: '2024-09-26'
+  points: 2
+  points_rationale: 'Formal call for an end to hostilities (+2): the head of state tells the General Assembly ''We call for the immediate end to the hostilities in Gaza and Lebanon''; no violation
+    is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President of the Transitional Sovereign Council told the General Assembly that the Government of the Sudan called for an immediate end to the hostilities in Gaza and Lebanon.
+    fr: Le président du Conseil souverain de transition a dit à l'Assemblée générale que le gouvernement du Soudan demandait la fin immédiate des hostilités à Gaza et au Liban.
+  actor: &id001
+    en: President of the Transitional Sovereign Council of the Sudan
+    fr: Président du Conseil souverain de transition du Soudan
+    name: Abdel-Fattah Al-Burhan
+  evidence:
+  - source: src_20240926_undocs_a-79-pv-11
+    quote: We call for the immediate end to the hostilities in Gaza and Lebanon, and we recommend that Palestine’s be granted full membership of the Organization.
+    quote_lang: en
+    locator: line 1838
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: Lines 1838 and 1839 of the Assembly's verbatim record A/79/PV.11 (26 September 2024) re-read after the sentence on the Palestinian cause and the 1967 borders. Tier +2 (a call, no
+        violation named). The delegation's Arabic file (sd_ar.pdf of the 79th session) has no passage on Gaza; the statement as delivered did (the UN's summary on the General Debate page carries
+        it too).
+    notes: 'From the verbatim record (English interpretation of the Arabic): the closing passage of the address, after the account of the war in the Sudan. The event is 747 days old on 13 October
+      2026, so it is expired and adds nothing to the score. The speaker is the head of the government that represents the Sudan at the UN (Port Sudan; the rival authority of the Rapid Support
+      Forces is not a B9 speaker). Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2025_03_04_SDN_B9
+  revision: 1
+  country: SDN
+  indicator: B9
+  type: repeatable
+  date: '2025-03-04'
+  points: 2
+  points_rationale: 'Formal call to keep the ceasefire (+2): the head of state tells the extraordinary Arab Summit that the ceasefire in Gaza must continue and its terms be implemented, and works
+    ''toward ending the war on Gaza''; no violation is named. Flagged: a call to maintain a ceasefire already in force (it began on 19 January 2025).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President of the Transitional Sovereign Council told the extraordinary Arab Summit in Cairo that the ceasefire in Gaza must continue and its terms be implemented.
+    fr: Le président du Conseil souverain de transition a dit au sommet arabe extraordinaire du Caire que le cessez-le-feu à Gaza devait se poursuivre et que ses clauses devaient être appliquées.
+  actor: *id001
+  evidence:
+  - source: src_20250304_suna_burhan-arab-summit-cairo
+    quote: كما نؤكد على ضرورة إستمرار وقف إطلاق النار وتنفيذ بنوده ، بما يخفف من معاناة الشعب الفلسطيني ويمكنه من العيش الكريم
+    quote_lang: ar
+    quote_en: we also stress the necessity of continuing the ceasefire and implementing its terms, which eases the suffering of the Palestinian people and enables them to live in dignity
+    locator: line 15
+  - source: src_20250304_suna_burhan-arab-summit-cairo
+    quote: وصولاً لإنهاء الحرب على غزة تمهيداً لبدء رحلة التعافي والسلام والبناء
+    quote_lang: ar
+    quote_en: leading to the end of the war on Gaza, as a prelude to the start of the journey of recovery, peace and building
+    locator: line 14
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 14 and 15 of the agency''s text of the speech re-read (the agency prints ''the text of the speech of the President of the Sovereignty Council to the extraordinary Arab Summit''):
+        the call to continue the ceasefire and implement its terms, and the aim of ending the war on Gaza. The English renderings are the session''s own and sit beside the Arabic. Tier +2 (call,
+        no violation named); the speech also rejects ''any plans aimed at displacing'' Palestinians (a plan, not a violation named).'
+    notes: 'Full text of the speech as the Sudan News Agency prints it (state agency, kind official as the Saudi Press Agency and the State Information Service of Egypt are). Flagged: (1) the
+      call concerns a ceasefire already in force; (2) the speech''s other Gaza passages reject plans of displacement and support the Egyptian-Arab reconstruction plan without naming a violation,
+      so +2 and not +5. 588 days old on 13 October 2026: it counts at weight 0.54 and, being more than 365 days old, does not end the passivity penalty. Filed in the light protocol (docs/10 B-662 ff.).'

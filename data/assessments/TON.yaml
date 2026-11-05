@@ -1,0 +1,194 @@
+# Coverage record for Tonga (docs/03 §6). P-21 light protocol, session T-P21-20, 2026-10-14.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's national portal (gov.to: the pages of the Ministry of Foreign Affairs and the Prime Ministers' Office, the site search and the feed; the Ministry's own domain mfa.gov.to has not served pages since 2016 and pmo.gov.to answers HTTP 403), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), Matangi Tonga, Kaniva Tonga and Islands Business, the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English per indicator group (no Tongan-language search was run beyond the portal's own pages). Time: about 25 minutes of research on Tonga, inside the 90-minute budget.
+# No hand-authored event: the two press reports of the Prime Ministers' remarks are leads (lead_20261014_TON_1 and _2).
+country: TON
+protocol_version: 1
+last_full_check: '2026-10-14'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TON
+    checked_at: '2026-10-14'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-14'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TON
+    checked_at: '2026-10-14'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 9 of the 12 qualifying votes (A/RES/ES-10/21, ES-10/24, ES-10/25, ES-10/26, A/RES/79/232, ES-10/27, A/DEC/80/506, A/RES/80/78 and 80/116), an abstention
+      on A/RES/ES-10/22 and no vote recorded on A/RES/ES-10/23 (10 May 2024) and A/RES/80/1 (19 September 2025). Article 19 note (report only, B-626): the table records no vote for Tonga on 2
+      of the 12 qualifying votes (A/RES/ES-10/23 of 10 May 2024 and A/RES/80/1 of 19 September 2025); Tonga is not among the four Member States in arrears in A/80/362 of 3 September 2025 nor on
+      the General Assembly''s Article 19 page read on 2026-10-13 (both archived), so the absences are not shown to be a loss of vote; the Secretary-General''s lists for the dates of the votes
+      of 2024 are not archived (P-23 check). The build scores a non-vote at -2, as an abstention, whatever the reason. The Government''s stated reasons for its vote against A/RES/ES-10/21 (Prime
+      Minister Sovaleni and Foreign Minister ''Utoikamanu, 1 November 2023) and the Prime Minister''s remarks on the vote of 12 September 2025 (3 October 2025) are known from the press only: lead_20261014_TON_1
+      and _2.'
+    queries:
+    - unga_votes.csv, voter TON
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-10-14'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-14'
+  B3:
+    status: none-found
+    note: 'Tonga is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for
+      Tonga; docs/06 §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    checked_at: '2026-10-14'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - Tonga ICJ provisional measures Israel statement
+    checked_at: '2026-10-14'
+  B5:
+    status: none-found
+    note: 'Tonga is not a state party to the Rome Statute (the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties, searched for Tonga); no statement on the warrants
+      of 21 November 2024 was found.'
+    queries:
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    - Tonga ICC arrest warrant Netanyahu
+    checked_at: '2026-10-14'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-10-14'
+  B7:
+    status: none-found
+    note: Tonga has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-14'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Tonga. Tonga has not recognised the State of Palestine and voted against the New York Declaration on 12 September 2025 (A/DEC/80/506:
+      no).'
+    queries:
+    - recognitions.csv, row TON (none)
+    checked_at: '2026-10-14'
+  B9:
+    status: none-found
+    note: 'No B9 event: the Prime Minister''s statements at the General Debate of the 78th (the file is dated 22 September 2022, an error for 2023), 79th (27 September 2024), 80th (26 September
+      2025, Prime Minister Eke) and 81st sessions (26 September 2026, Prime Minister Lord Fakafanua) have no passage on Gaza, Palestine, Israel, Hamas or a ceasefire (gadebate.un.org files to_en.pdf,
+      read live; the word ''conflict'' appears only in general terms). The Government''s portal (gov.to) has no item on Israel, Gaza or Palestine (site search and feed, read). The Foreign Minister
+      of 2023, Fekitamoeloa ''Utoikamanu, said the Government ''does not support the illegal killing of people, especially women and children, in Gaza'' (Islands Business, 2 November 2023, press
+      only and expired: lead_20261014_TON_2).'
+    queries:
+    - gadebate.un.org Tonga 78th to 81st sessions (to_en.pdf, read)
+    - gov.to site search Israel, Gaza, Palestine
+    - Tonga Gaza ceasefire Prime Minister statement
+    checked_at: '2026-10-14'
+  B10:
+    status: none-found
+    note: 'No B10 event: the Prime Minister''s remarks of 3 October 2025 (''Tonga has always support in what we believe is right for us'', on the vote against the New York Declaration; ''the right choice for Tonga'') are in Matangi Tonga (the article is behind a paywall, only its first sentence was read) and Kaniva Tonga (indirect speech); no Government text or video could be archived (pmo.gov.to answers HTTP 403 to a script, as do its Wayback captures): lead_20261014_TON_1. A B10 event requires an official or official-video source (the validator), and under R7 the quoted sentence does not cite Gaza.'
+    queries:
+    - Tonga Prime Minister Eke Israel support Gaza
+    - Tonga PM supports Israel UN vote two-state
+    - matangitonga.to Israel Gaza (read)
+    checked_at: '2026-10-14'
+  B11:
+    status: none-found
+    note: No sanctions on Israeli ministers or settler entities by Tonga were found; Tonga is not an EU member.
+    queries:
+    - Tonga sanctions Israeli settlers OR ministers
+    checked_at: '2026-10-14'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found. Israel''s ambassador to Tonga is non-resident (Wellington) and Israel appointed its first honorary consul in Nuku''alofa
+      in October 2024 (search results, not read): neither is an event, and no Tongan embassy in Israel or Jerusalem was found.'
+    queries:
+    - Tonga Israel embassy OR ambassador OR recall 2025 2026
+    checked_at: '2026-10-14'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Tonga; none was suspended or reviewed (none found).
+    queries:
+    - Tonga Israel trade agreement suspended
+    checked_at: '2026-10-14'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The visa-waiver agreement of 2010 (in force since April 2017) pre-dates the window (search results, not read).
+    queries:
+    - Tonga Israel agreement signed memorandum 2024 2025 2026
+    checked_at: '2026-10-14'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-14'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor TON
+    checked_at: '2026-10-14'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Tonga: no contribution to suspend (searched for Tonga).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tonga
+    checked_at: '2026-10-14'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Tonga: no contribution to restore or increase (searched for Tonga).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tonga
+    checked_at: '2026-10-14'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Tonga
+    checked_at: '2026-10-14'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Tonga
+    checked_at: '2026-10-14'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

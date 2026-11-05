@@ -1,0 +1,188 @@
+# Coverage record for South Sudan (docs/03 §6). P-21 light protocol, session T-P21-42, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): no official site of the Government answered (mofaic.gov.ss, mofa.gov.ss, presidency.gov.ss, www.gov.ss: connection failed), so the Government's own texts were read through the UN's General Debate pages and files (79th to 81st), the ICJ's case 192 page (live and archived copy), the ASP's list of States Parties (archived), UNRWA donor rankings (2022 to 2024), the Article 19 documents and the verbatim records of the Security Council's Palestinian-question meetings S/PV.9440 to S/PV.10255 (scanned by title and speaker; South Sudan was not among the speakers called on as a minister), and through the WordPress REST search of two Juba news sites (Radio Tamazuj, Eye Radio; kind press) for Palestine, Gaza, Israel, Hamas and related terms. The Israeli Ministry's page (gov.il) is rendered by script and could not be read. Web searches were not available to this session.
+# Events: one C2 event on press evidence (corroborated). Leads: one (the Gilat contract). See docs/10 B-828, B-829.
+country: SSD
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier RWA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer RWA
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: abstention on ten of the twelve qualifying votes; no vote recorded (non-vote) on A/RES/ES-10/23 and A/RES/80/1 (each scores -2). The country is not named
+      in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360);
+      compare the UN''s voting records before the score is read.'
+    queries:
+    - unga_votes.csv, country SSD
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: South Sudan is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'South Sudan is not a State Party to the Rome Statute (it is not on the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties). No statement on the warrants
+      by a B5 speaker was found in the General Debate statements or in the press searches below.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'radiotamazuj.org and eyeradio.org /wp-json/wp/v2/posts?search=: Palestine, Hamas, Gaza, ICC Netanyahu, UNRWA, Palestinian (titles read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute (South Sudan is not a party) was found in the sources read.
+    queries:
+    - radiotamazuj.org and eyeradio.org searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: no official site of the Government answered (mofaic.gov.ss, mofa.gov.ss, presidency.gov.ss: connection failed) and no Wayback capture was read (docs/10 B-828; P-23).'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for South Sudan. The registry gives a recognition since 14 July 2011 (flagged: the date is that of the country''s admission to the United Nations
+      and no recognition document was found; it is before the window and has no effect on the score); no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, SSD (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: No B9 event. The 79th General Debate statement (the Minister for Foreign Affairs and International Cooperation, 25 September 2024, ss_en.pdf) and the 81st (an ambassador, 2026) name
+      neither Gaza nor Palestine; the 80th (the Vice-President, 25 September 2025) is not a B9 speaker's, has no file on the General Debate site and its summary on the UN's page does not mention
+      Gaza. The Ministry's statement of 13 August 2025 denying talks on the resettlement of Palestinians from Gaza (reported by Radio Tamazuj and Eye Radio) is a denial, not a call or a named
+      violation.
+    queries:
+    - gadebate.un.org/en/{79,80,81}/south-sudan and gastatements/{79,81}/ss_en.pdf
+    - radiotamazuj.org and eyeradio.org searches (see B5)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: the Foreign Minister''s remarks in Jerusalem on 30 June 2026 (James Pitia Morgan: ''South Sudan will continue to stand steadfast in its commitment to supporting Israel''s
+      engagement with the African continent'', support for Israel''s observer status at the African Union, Israel ''the best friend in the world'', Eye Radio and Radio Tamazuj of 30 June 2026)
+      do not cite Gaza (R7) and are reported by the press, not from a primary. Not filed; if the author reads them as unconditional support (-5) the source is press only (two publishers, corroborated,
+      weight 0.7).'
+    queries:
+    - 'eyeradio.org and radiotamazuj.org searches: Israel, Morgan Israel, Ben-Uziel (titles read; the two items of 30 June 2026 read in full)'
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: no official site of the Government answered (see B7).'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the press items of August 2025 to June 2026 report the opposite (the first Israeli official delegation in August
+      2025, the Foreign Minister''s visit to Jerusalem on 29 and 30 June 2026). Official sources not read (see B7).'
+    queries:
+    - 'eyeradio.org and radiotamazuj.org searches: Israel, Haskel, Kumba Netanyahu (titles read)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: South Sudan is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'evt_2025_08_13_SSD_C2 (-10, corroborated): the memorandum of understanding on bilateral cooperation signed in Juba on 13 August 2025 by the Foreign Minister (Monday Semaya Kumba) and
+      Israel''s Deputy Foreign Minister (Sharren Haskel), reported by Radio Tamazuj and Eye Radio and described by the Ministry''s Director General for bilateral relations on 4 September 2025
+      (Radio Tamazuj); no primary document (the memorandum''s text is not published; gov.il renders by script; no South Sudanese site answered), so confidence corroborated (flagged, R18). Read
+      and not filed: Eye Radio''s item of 24 February 2026 on a nationwide satellite-internet partnership with Israel''s Gilat Satellite Networks (the Minister of Information announced that the
+      Government ''is expected to formalize a contract'' with the company: a commercial contract with a company, not an instrument with the Israeli Government, and not yet signed in the item;
+      lead_20261104_SSD_1). The July 2023 ten-point memorandum (health, culture, sport, agriculture, education) pre-dates the window.'
+    queries:
+    - 'eyeradio.org and radiotamazuj.org searches: Israel, Haskel, Kumba Netanyahu, Gilat, Morgan Israel, Ben-Uziel (titles read; articles of 13 August and 5 September 2025, 24 February and 30
+      June 2026 read in full)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor RWA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for South Sudan in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for South Sudan in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: no official site of the Government answered (see B7).'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was found: the Ministry said on 13 August 2025 that reports of talks with Israel on resettling Palestinians from Gaza ''are baseless'' and again
+      on 4 September 2025 (Radio Tamazuj, Eye Radio); a denial, not an indicator act. No programme was found in the press titles read.'
+    queries:
+    - 'eyeradio.org and radiotamazuj.org searches: Palestinian, Palestine, resettle Palestinians (titles read; articles of 13 August and 5 September 2025 read in full)'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

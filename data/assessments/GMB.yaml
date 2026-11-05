@@ -1,0 +1,201 @@
+# Coverage record for the Gambia (docs/03 §6). P-21 light protocol, session T-P21-36, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Office of the President's site (op.gov.gm, Drupal, site search /search/node?keys= for Gaza, Palestine, Palestinian, Israel, ceasefire, General Assembly, International Criminal Court, arrest warrant, genocide, Hamas, Netanyahu, Middle East, Rafah, two-state, UNRWA,
+# humanitarian, OIC; the speeches and messages that matched opened), the Ministry of Foreign Affairs' site (mofa.gov.gm, WordPress REST API: Gaza, Palestine, Palestinian, Israel, Israeli, genocide, ceasefire, ICC, International Criminal Court, ICJ, Court of Justice, OIC, UNRWA, Hamas, Netanyahu, humanitarian,
+# Statement by, Council of Foreign Ministers, Istanbul, Jeddah, General Assembly, Riyadh, Arab-Islamic, Tangara, Njie; the releases that matched opened), the UN's General Debate pages and files (79th and 80th through Wayback, the 81st not captured), the ICJ's case 192 page (live), the UN Treaty Collection's status
+# page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and nothing is filed
+# from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: three (B9); see docs/10 B-799. Leads: none.
+country: GMB
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier GMB
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by the Gambia from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer GMB (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven of the twelve qualifying votes; non-voting (`X`) on A/RES/80/1 (19 September 2025), scored -2 by the build (docs/10 B-690); the non-vote
+      was not explained. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      A/81/360).'
+    queries:
+    - unga_votes.csv, country GMB
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: The Gambia is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Its own case against Myanmar (the Rohingya) is a different proceeding, not B3 or B4; case 186 (advisory proceedings) is not B3 or B4.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by the Gambia supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'The Gambia is a state party to the Rome Statute (signed 4 December 1998, ratified 28 June 2002: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 139); the page also records that its notification of withdrawal was rescinded on 10 February 2017. No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Ministry''s
+      searches for ICC and International Criminal Court return the Gambia''s candidate for election as ICC judge (June to August 2026) and nothing on the warrants; State House''s searches for
+      International Criminal Court and arrest warrant return earlier speeches (the Final Communique of the Banjul Summit, May 2024, predates the warrants and is a group text).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Gambia (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'mofa.gov.gm REST search: ICC, International Criminal Court, Netanyahu'
+    - op.gov.gm/search/node?keys=International Criminal Court, arrest warrant, Netanyahu
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal by the Gambia was found (the withdrawal notification recorded on the Treaty Collection's page
+      was rescinded on 10 February 2017) in the sources read.
+    queries:
+    - 'op.gov.gm and mofa.gov.gm searches: Netanyahu, arrest warrant (none)'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by the Gambia were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for the Gambia. The registry gives a recognition since 18 November 1988, before the window; the President''s 4 May 2024 address and the Ministry''s
+      releases state support for a State of Palestine "within the 1967 borders" without a date, and no Government document with the date of recognition was read (R21, left for P-23). No recognition
+      after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, GMB (no row)
+    - 'mofa.gov.gm REST search: 1988, "recognised the State of Palestine", "diplomatic relations"'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Three events filed: evt_2024_05_04_GMB_B9 (the President, 15th Islamic Summit, +5, expired at 914 days), evt_2025_06_06_GMB_B9 (the President, Eid al-Adha message, +2) and evt_2025_08_25_GMB_B9
+      (the Foreign Minister, Extraordinary OIC Council of Foreign Ministers, +5); the President is head of state and head of government (R3). Not filed: (1) the President''s Koriteh message of
+      9 April 2024 (src_20240409_op-gm_barrow-koriteh, line 9: "The Israeli war on Palestine provides typical examples of such grave crimes ... war, displacement, and hunger") never names Gaza
+      (R7); 939 days, expired. (2) His 79th General Debate statement (State House''s page of 30 September 2024, src_20240930_op-gm_barrow-ag79, lines 40 to 44; about 770 days, expired) lists the
+      "blockade of Gaza" among causes of tension and asks the UN and the OIC "to join forces and urgently bring about permanent peace in Palestine": no call for a ceasefire or an end of the blockade,
+      neither tier. (3) The 80th statement (September 2025) was delivered by the Vice President, Mohammed B. S. Jallow (not a B9 speaker, R3; the file gastatements/80/gm_en.pdf was read through
+      its Wayback replay and not recorded); the 81st was not read (no capture, live site bot-checked) and the Ministry''s notes of 7 and 9 October 2026 on the Assembly week do not mention Gaza
+      or Palestine. (4) Foreign Minister Mamadou Tangara''s statement at the 51st OIC Council of Foreign Ministers in Istanbul (the Ministry''s release of 30 June 2025, mofa.gov.gm post 5338,
+      read, not archived) is reported in indirect speech and quotes only the word "genocidal" for the situation in Gaza: not filed; the statement''s own text is left for P-23. (5) Foreign Minister
+      Njie''s statement of 12 January 2026 (extraordinary OIC session on Somalia) speaks of Israel''s "ongoing occupation of Palestinian and Arab territories" with no Gaza; the Ministry''s statement
+      of 10 September 2025 on the strike on Doha has no named speaker.'
+    queries:
+    - op.gov.gm/search/node?keys=Gaza (8 pages), Palestine, Palestinian, Israel, ceasefire, General Assembly, genocide, Middle East; the speeches and messages that matched opened
+    - 'mofa.gov.gm REST search: Gaza (4 posts), Palestine, Palestinian, Israel, Israeli, genocide, ceasefire, OIC, Statement by, Council of Foreign Ministers, Istanbul, Jeddah'
+    - gadebate.un.org/en/{79,80}/ and gastatements/80/gm_en.pdf (Wayback replays)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in State House''s or the Ministry''s items read.'
+    queries:
+    - 'op.gov.gm search: Israel'
+    - 'mofa.gov.gm REST search: Israel, Israeli'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the sources read. This rests on State House's and the Ministry's searches only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found in State House's and the Ministry's searches (P-23). The Ministry's statement of 12 January 2026 and the President's communiqué of 4 March
+      2026 (as Chair of the OIC, on the attacks on Iran) are statements, not acts under B12.
+    queries:
+    - 'op.gov.gm search: Israel, Middle East'
+    - 'mofa.gov.gm REST search: Israel, Israeli'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: The Gambia is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in State House's and the Ministry's searches for Israel and Israeli, which return statements on the war and no cooperation
+      item. No treaty register was read (P-23).
+    queries:
+    - 'op.gov.gm search: Israel'
+    - 'mofa.gov.gm REST search: Israel, Israeli'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of GMB to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor GMB
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: The Gambia has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for the Gambia in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by the Gambia was found in the sources read.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,328 @@
+# Coverage record for Austria (docs/03 §6). P-D research session, wave 4, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-297): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Norway, Sweden, Denmark and Switzerland). The protocol's
+# searches (docs/06 §4 step 3) were run as (1) the Federal Ministry for European and International
+# Affairs' press releases: the monthly listings of bmeia.gv.at (the site's own Ajax listing,
+# October 2023 to September 2026, 411 releases), every release downloaded and its text filtered
+# for Gaza, Paläst*, UNRWA, Westjordan*, Siedl*, Strafgerichtshof/IStGH, Netanja*, Waffenstillstand,
+# Waffenruhe, Blockade, Völkerrecht*, Israel, Abkommen, F-35, evakuier*, medizinisch*; (2) the
+# Federal Chancellery's news (bundeskanzleramt.gv.at, all 655 items from October 2023 to September
+# 2026) with the same filter; (3) the Austrian Parliament's open data (the Filter API of
+# parlament.gv.at): every written question of the Nationalrat of the XXVII and XXVIII legislative
+# periods (26,521 questions) filtered by title since 2023-10-07 for 30 German terms (Gaza, Israel,
+# Paläst*, UNRWA, Westjordan*, Siedl*, Hamas, Strafgerichtshof, IStGH, Netanja*, Rafah,
+# Zweistaat*, Nahost, Naher/Nahen Osten, Völkermord, Genozid, F-35, Kriegsmaterial, Waffenexport,
+# Rüstungsexport, Dual-Use, Elbit, Sky Shield, Anerkennung, Waffenstillstand, Waffenruhe,
+# Völkerrecht, Flotill*, Drohne, Sanktion*), and the answers read (the ministers' signed PDFs).
+# BMEIA, the Chancellery and parlament.gv.at accepted Save Page Now. Not searched: the press, the
+# Nationalrat's plenary records and motions, the prosecution services and courts (E1, E3), the
+# Federal Ministry of the Interior's and the Ministry of Economy's releases, the UN General Debate
+# records, the BMEIA's English pages (joint statements Austria signed are cited in its German
+# answers only), RIS (the legal information system). Each `queries` entry names the listing used.
+country: AUT
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build. No
+      Austrian document on deliveries of military equipment to Israel was found in the releases and
+      answers searched.
+  A2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (Austria's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Own reports of HS 93 exports to Israel: USD 2,367,305 (2022), 747,407 (2023), 556,143
+      (2024), 870,208 (2025); A2 is −8 on the 2022 report (from 2023-05-09) and −3 from 2024-07-26 on
+      each later report. Israel's mirror imports of HS 93 from Austria are much higher in two years
+      (USD 11,394,000 in 2023, which would give −15, and 6,690,000 in 2025, −8); the generator uses the
+      country's own report when present (docs/02 §5), so the mirror values do not score; reported for
+      the author. No Austrian document on war-material licences for Israel was found, so the generated
+      value could not be checked against the Government's own figures; no disagreement recorded. HS 8526
+      (own up to USD 745,098 a year) and 8802 (own USD 637,648 to 716,789) not counted: no document
+      confirming military nature was found, so no row was added to a2_confirmed_military.csv. The
+      Minister of Economy's answer of 24 November 2025 (src_20251124_parlament_ab-2867-rotax) says
+      BRP-Rotax engines were originally built into Hermes 900 drones, that such engines are dual-use
+      goods not listed in Annex I of Regulation (EU) 2021/821, need no export licence, and that no
+      licence for Rotax engines to Israel was granted in ten years; engines are not an A2 heading.
+    queries:
+      - parlament.gv.at written questions (Rotax, Drohne, Kriegsmaterial, Rüstungsexport, Dual-Use) — 3332/J–3335/J, 5847/J, 17703/J
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Austrian companies as suppliers of parts or maintenance for the F-35
+      programme was found; no release or parliamentary question since 2023-10-07 mentions the F-35.
+    queries:
+      - bmeia.gv.at and bundeskanzleramt.gv.at releases (F-35, F35)
+      - parlament.gv.at written question titles (F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. Austria's participation in the European Sky Shield Initiative (questions 16915/J,
+      18727/J, 18835/J) was not read for Israeli systems; A4 will capture orders placed in the window
+      when a SIPRI release is imported.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing related to the
+      Gaza campaign found. The Minister of the Interior's list of the 75 war-material transit licences
+      of 2023 names no transit to or from Israel (answer 17167/AB of 29 March 2024). The deployment of
+      up to five officials to the Civil-Military Coordination Center in Kiryat Gat decided on
+      17 December 2025 supports the ceasefire plan and is not cooperation with the Gaza campaign.
+    queries:
+      - parlament.gv.at written questions (Durchfuhr von Kriegsmaterial) — 17703/J
+      - bmeia.gv.at releases (Israel, Kiryat Gat, CMCC)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No decision suspending or refusing a class of licences to Israel found. The Ministers' answers on
+      the Rotax engines describe the case-by-case examination under the War Material Act and the
+      Foreign Trade Act and state that Israel is not an arms-embargo country (2867/AB, 24 November
+      2025; the follow-up answer 5291/AB of 16 June 2026,
+      not archived, reports only that Rotax's supply obligation to the drone maker ended in early
+      2025); no statement of a general refusal policy was found.
+    queries:
+      - parlament.gv.at written questions (Kriegsmaterial, Rüstungsexporte, Dual-Use, Rotax)
+      - bmeia.gv.at releases (Waffen, Export)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree covering exports to and imports from Israel; the Minister of Economy states that Israel is not an arms-embargo country (2867/AB).
+    queries:
+      - parlament.gv.at written questions (Embargo, Sanktion)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of transit or overflight for arms shipments to Israel found; the 2023 transit list names none concerning Israel (17167/AB).
+    queries:
+      - parlament.gv.at written questions (Durchfuhr, Transit)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): no on ES-10/21 and
+      ES-10/22; abstain on ES-10/23, ES-10/24, ES-10/25 and 79/232; yes on ES-10/26. The Ministry's
+      release of 27 October 2023 states that Austria voted against ES-10/21 with 13 other states
+      (src_20231027_bmeia_solidarisch-israel), which agrees; the archived UN press releases name no
+      state's vote, and no Austrian document on the other six votes was found, so they could not be
+      checked further. Later votes have no rows (docs/10 B-199 (1)): the Minister states that Austria
+      supported the resolution of 12 June 2025 (ES-10/27; answer 1933/AB) and voted in December 2025
+      for the resolution renewing UNRWA's mandate (A/RES/80/78; answer 3758/AB); both will score when the
+      rows are imported.
+  B2:
+    status: not-applicable
+    note: >-
+      Austria was not a Security Council member in the window (elected for 2027–2028).
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Austria has not filed a declaration of intervention in case 192 (the ICJ's list, docs/06 §8 seed);
+      no release or answer mentions one.
+    queries:
+      - bmeia.gv.at releases (Internationaler Gerichtshof, IGH, Südafrika)
+      - parlament.gv.at written question titles (Völkermord, Genozid, Gerichtshof)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official statement rejecting the ICJ's provisional measures or their binding character, and no
+      intervention against the applicant, found.
+    queries:
+      - bmeia.gv.at releases (Internationaler Gerichtshof, IGH, vorläufige Maßnahmen)
+  B5:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: the Foreign Minister's answer of 11 July 2025 that all States Parties, Austria
+      included, are obliged under international law to execute ICC arrest warrants
+      (evt_2025_07_11_AUT_B5). Her answer of 22 July 2025 (2040/AB) says the warrant against Netanyahu
+      remains in force pending the Pre-Trial Chamber's re-examination, and states no other position.
+    queries:
+      - parlament.gv.at written questions (Strafgerichtshof, IStGH, Netanjahu) — 2318/J, 2469/J
+      - bmeia.gv.at releases (IStGH, Haftbefehl)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of a refusal to execute the warrants and no hosting of a person under warrant found.
+      The Ministry's unattributed statement of 21 November 2024 called the warrants against Netanyahu and
+      Gallant "unverständlich und nicht nachvollziehbar" and said the decision damaged the Court's
+      credibility (src_20241121_bmeia_stellungnahme-istgh), but stated no position on executing them and
+      names no speaker, so it is not a B6 instance (docs/10 B-298). The Chancellor spoke with Netanyahu
+      by telephone in June 2025 (Chancellery, 26 June 2025); no visit.
+    queries:
+      - bmeia.gv.at and bundeskanzleramt.gv.at releases (IStGH, Strafgerichtshof, Netanjahu, Netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on ICC officials; Austria is a State Party to the Rome Statute.
+    queries:
+      - bmeia.gv.at releases (Strafgerichtshof, Sanktionen)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Austria has not recognised the State of Palestine: the Federal Chancellor said at the General
+      Assembly in September 2025 that recognition now would "nicht das richtige Zeichen" and would come
+      once a political solution is realistic (Chancellery, 24 September 2025). No row in
+      recognitions.csv, none to add.
+    queries:
+      - bundeskanzleramt.gv.at and bmeia.gv.at releases (Anerkennung, Palästina)
+  B9:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Twelve events scoped gaza (Foreign Ministers Schallenberg and Meinl-Reisinger, Chancellor Stocker;
+      ten calls at +2, two at +5 for named violations: displacement plans, 7 May 2025, and the attack on a
+      hospital, 29 August 2025) and two scoped west-bank (13 February and 3 September 2026). Not filed:
+      calls for humanitarian pauses only (5 December 2023, the Security Council statement of
+      23 January 2024, 22 January 2024); the Ministry's reports of the Minister's calls without her
+      words (23, 27, 28 and 29 June, 10 and 15 July 2025, 14 April 2025); the Ministry's unattributed
+      sentences (14 February 2025, displacement; 11 May 2026, violations of international law to be
+      named). No call or naming for Gaza was found after the ceasefire of October 2025.
+    queries:
+      - bmeia.gv.at releases (Gaza, Waffenstillstand, Waffenruhe, Blockade, Völkerrecht, Vertreibung)
+      - bundeskanzleramt.gv.at news (Gaza, Waffenstillstand)
+      - parlament.gv.at written questions (Gaza, Netanjahu, UNRWA) — 2318/J, 4257/J
+  B10:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event: Chancellor Nehammer, 17 October 2023, full solidarity with Israel and Hamas responsible
+      for civilian casualties in Gaza (evt_2023_10_17_AUT_B10), flagged (docs/10 B-298). His speech of
+      26 October 2023 is of the same kind and not filed separately. No statement by Chancellors
+      Schallenberg or Stocker denying documented violations was found.
+    queries:
+      - bundeskanzleramt.gv.at news (Israel, Gaza, Hamas, Solidarität)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No national sanctions listing found. The EU settler listings of 2024 are not filed for member states until P-15 decides how an EU-level listing counts (docs/10 B-229 (3) on data/wave-2, as Sweden, B-283). The Foreign Minister said on 13 July 2026 that further sanctions against the expansion of settlements must be examined (release, not archived); no Austrian listing followed. P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_AUT_B11, evt_2024_07_15_AUT_B11 and evt_2026_05_28_AUT_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "bmeia.gv.at releases (Sanktionen, Siedler, Smotrich, Ben-Gvir)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance of relations with Israel found.
+    queries:
+      - bmeia.gv.at releases (Botschafter, Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Austria opposed suspending the EU-Israel Association Agreement (releases of 30 June, 15 July and
+      29 August 2025; Chancellor Stocker, 26 June 2025). On the review of Article 2 announced on 20 May
+      2025, the Foreign Minister wrote that Austria "stand daher einer Überprüfung von Artikel 2 offen
+      gegenüber" (answer 1933/AB, 11 July 2025); being open to the review is not recorded support in the
+      Council, so no C1 event (docs/10 B-298), flagged.
+    queries:
+      - bmeia.gv.at releases (Assoziierungsabkommen, Assoziationsabkommen)
+      - parlament.gv.at written questions — 2318/J
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No agreement with Israel signed in the window found. The Strategic Partnership dates from 2022; a
+      youth exchange programme was "being finalised" on 30 June 2025 (release), no signature found.
+    queries:
+      - bmeia.gv.at and bundeskanzleramt.gv.at releases (Abkommen, Vereinbarung, Memorandum, unterzeichnet, Israel)
+  C3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated. Own reports: trade with Israel USD 879.6 million (2022 baseline), 948.3 million (2023),
+      940.9 million (2024), 873.1 million (2025); r = 1.078, 1.070, 0.993, so −3 on each release
+      (from 2023-05-09). No disagreement with any Austrian document (none found).
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No national labelling rule or ban on settlement goods found (EU labelling applies to all member states and is not a national act).
+    queries:
+      - bmeia.gv.at releases (Siedlungsprodukte, Kennzeichnung)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Austria has no sovereign wealth fund; no exclusion decision by a public pension fund or the central
+      bank over conduct in Gaza or the occupied territories found (the Oesterreichische Nationalbank's
+      and the Bundespensionskasse's pages were not searched).
+    queries:
+      - bundeskanzleramt.gv.at and bmeia.gv.at releases (Ausschluss, Pensionskasse, Staatsfonds)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect found.
+    queries:
+      - bmeia.gv.at releases (Vergabe, Beschaffung, Israel)
+  D1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated. +3 in the window 2025-09…2026-08 (USD 8,433,364 ÷ GNI USD 555.8 billion = 0.0015 %),
+      after +1 from December 2025 to June 2026 (+1 or +3 in the earlier windows). The Ministry reports far larger totals
+      (more than EUR 63 million for the region since 7 October 2023 by 1 July 2025; EUR 19 million from
+      the disaster fund on 22 October 2025, of which EUR 6 million for the Palestinian territories), much
+      of it to the ICRC, IFRC, WHO and UNICEF outside the flash appeals (docs/06 §7 gap); no
+      disagreement with the FTS rows as such.
+  D2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: One event, the suspension of 29 January 2024, ended by the announced resumption of 18 May 2024 (evt_2024_01_29_AUT_D2).
+    queries:
+      - bmeia.gv.at releases (UNRWA)
+  D3:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      One event, restored tier from 18 May 2024 (evt_2024_05_18_AUT_D3); 2024 (USD 4.85 million) below 2022
+      (USD 8.09 million) in UNRWA's tables; the 2025 contribution continued (3758/AB) but UNRWA's 2025 table
+      was not archived.
+    queries:
+      - bmeia.gv.at releases (UNRWA); parlament.gv.at written question 4257/J
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Austrian medical-evacuation programme or field hospital found. Austria funds the IFRC's
+      coordination of medical evacuations to Egypt and supplies a water system to the ICRC field hospital
+      (release of 22 October 2025): funding, not an Austrian programme, read as Sweden (docs/10 B-283 (3)).
+      The Minister of the Interior referred the question on flying people from Gaza to Austria (2698/J)
+      to the Foreign Ministry (2234/AB); the evacuations of Austrian dual nationals in 2023 were consular.
+    queries:
+      - bmeia.gv.at releases (evakuiert, medizinisch, Patienten, Kinder)
+      - parlament.gv.at written question 2698/J
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or immigration instrument for people from Gaza found.
+    queries:
+      - bmeia.gv.at releases (Visum, Visa); parlament.gv.at written question titles (Gaza)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No prosecutor's investigation of Gaza-related conduct found in the sources searched; the prosecution services were not searched.
+    queries:
+      - parlament.gv.at written question titles (Gaza, Israel)
+  E2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Experimental, unscored. One event: the prohibition of the vigil of 11 October 2023 in Vienna
+      (evt_2023_10_11_AUT_E2). The same answer reports two dissolved assemblies without details.
+    queries:
+      - parlament.gv.at written questions (Versammlungen, Demos) — 16533/J, 16576/J
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the prosecution services and courts were not searched.
+    queries:
+      - parlament.gv.at written question titles (Völkerrecht, Gaza)

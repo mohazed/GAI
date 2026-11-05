@@ -1,0 +1,202 @@
+# Coverage record for Palau (docs/03 §6). P-21 light protocol, session T-P21-17, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's site (palaugov.pw, HTTP 403 to scripted requests, read through Wayback captures and the CDX listing of the site's captures), the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the 79th and 80th archived), the UN Meetings Coverage reports of the votes (archived), the ICJ's case 192 and case 186 pages (archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and tables; web searches in English (the official languages are Palauan and English; no search in Palauan returned a result) per indicator group, including the Island Times (press, leads only). Time: about 15 minutes of research on Palau, inside the 90-minute budget of the session.
+# No hand-authored event: the statements read have no passage on Gaza and the President's words on Israel are known from the press alone. Leads: 2 (lead_20261013_PLW_1, _2).
+country: PLW
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PLW
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10 B-503);
+      the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of this country from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
+      to the build.'
+    queries:
+    - sipri_orders.csv, buyer PLW
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Palau
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 9 of the 12 qualifying votes (A/RES/ES-10/23, ES-10/24, ES-10/25, 79/232, ES-10/27, A/DEC/80/506, A/RES/80/1, 80/78 and 80/116) and an abstention on 3 (A/RES/ES-10/21,
+      ES-10/22, ES-10/26); all 12 votes are recorded, so there is no absence and no Article 19 note. The UN Meetings Coverage reports of the votes (archived) list Palau among the states voting no and name
+      no explanation of vote by its representative. The President defended Palau''s vote against ''a United Nations resolution endorsing Palestinian statehood'' at a press conference (Island Times, 19 September
+      2025, press; the article does not name the resolution, its date points to A/DEC/80/506, on which Palau voted no: ''Our vote reflected our understanding that Israel has the right to defend itself''):
+      a lead (lead_20261013_PLW_2).'
+    queries:
+    - unga_votes.csv, voter PLW
+    - press.un.org GA12599, GA12667, GA12670, GA12707, GA12708, GA12739 (archived, read for the lists of votes)
+    - Palau President Whipps Israel Gaza statement 2024 2025
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: Palau is not on the ICJ case 192 intervention list (the Court's page archived 27 September 2026, read). Its name is not in the Court's list of written statements in the advisory proceedings on
+      Israel's policies and practices (case 186; archived list, read).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written statements (archived list, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found, and Palau is not on the case 192 intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 27 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the President or of the Minister of State on executing the warrants of 21 November 2024 was found. Palau is not a state party to the Rome Statute (it is not in the Assembly''s
+      list, archived: src_20261009_icc-asp_states-parties).'
+    queries:
+    - Palau ICC arrest warrant Netanyahu Whipps government position
+    - asp.icc-cpi.int list of States Parties (archived 13 October 2026, read; src_20261009_icc-asp_states-parties)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Palau ICC arrest warrant Netanyahu Whipps government position
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Palau has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for Palau and none was added. The registry''s note records that it is not in the annex of A/78/846
+      nor among the later recognitions (docs/06 §8). The 80th session''s statement envisions ''two peoples, Israelis and Palestinians, living in two democratic states side by side'' without a recognition.'
+    queries:
+    - Palau recognition State of Palestine government statement
+    - recognitions.csv, row PLW (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: none-found
+    note: 'No B9 event. The statements of the General Debate carry no passage on Gaza: the 79th (26 September 2024) was delivered by the Senior Vice President and Minister of Justice (not a B9 speaker,
+      R3) and has none; the President''s 80th (25 September 2025) says Palau knows ''the heavy cost of war'' and that ''a durable solution - one that envisions two peoples, Israelis and Palestinians, living
+      in two democratic states'' is essential: it never names Gaza (R7); the President''s 81st (23 September 2026; read live, no Wayback capture, not recorded) speaks of Ukraine, Hormuz and Taiwan and asks
+      ''all parties'' to ''preserve peace and stability''. The Government''s site (palaugov.pw answers HTTP 403 to scripted requests; its Wayback captures from October 2023 on, 8,645 URLs, were filtered
+      by URL for Israel, Palestine, Gaza, Hamas, ceasefire, solidarity, terror, Jerusalem and embassy) shows no URL on the subject.'
+    queries:
+    - Palau President Whipps Israel Gaza statement 2024 2025
+    - gadebate.un.org Palau 79th and 80th sessions (pw_en.pdf, read), 81st (read live)
+    - palaugov.pw Wayback CDX listing filtered for israel|palest|gaza|hamas|ceasefire (read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event. The President''s own words are known from the press alone: ''Our Republic and our people stand in solidarity with Israel'' (letter to the Prime Minister of Israel, Island Times
+      10 October 2023: expired, 1,099 days old, and the letter itself was not found) and, at a press conference, ''Our position with Israel has been the same since the beginning, it hasn''t changed'' and
+      ''Our vote reflected our understanding that Israel has the right to defend itself'' (Island Times 19 September 2025). Neither text is on a Government site or in an official transcript or video that
+      could be archived, and the second does not cite Gaza (R7): leads (lead_20261013_PLW_1, _2). The 80th session''s statement (archived) holds no statement of support for Israel.'
+    queries:
+    - palaugov.pw President Whipps letter Prime Minister Netanyahu Hamas attack Palau stands with Israel
+    - Palau President Whipps Israel Gaza statement 2024 2025
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Palau was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. The searches returned only reports of continuing relations (press, not read in full). No embassy move or opening by Palau
+      was found in the searches (a directory page says none; not an indicator act in any case, docs/10 B-599).
+    queries:
+    - Palau embassy Jerusalem opening Whipps Israel Saar Palau embassy move 2025 2026
+    - Palau ambassador Israel recalled OR relations downgrade OR sever
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Palau Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found (the searches returned the cooperation on agriculture, technology and desalination described by Wikipedia and JNS, with no signed
+      instrument of 2024 to 2026).
+    queries:
+    - Palau Israel agreement signed memorandum 2024 2025 2026 Palau foreign minister Aitaro Israel cooperation
+    - Palau Israel President Whipps Herzog OR Netanyahu OR Saar meeting agreement visit
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PLW
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Palau has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Palau
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'Palau has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived: src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024):
+      no contribution to compare, so D3 has no baseline (docs/10 B-445). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Palau
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Palau ministry
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Palau regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

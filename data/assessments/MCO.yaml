@@ -1,0 +1,167 @@
+# Coverage record for Monaco (docs/03 §6). P-21 light protocol, session T-P21-49 (the former group 50, folded into group 49), 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; gouv.mc answers HTTP 403 to a script (its Wayback capture of 18 October 2026 is good: registered). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): no press item was read. These gaps are scheduled for P-23.
+# One event (D3). Leads: none.
+country: MCO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MCO
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm
+      fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Monaco from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MCO
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Monaco (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: abstentions on ES-10/21 and ES-10/23, yes on nine votes, and no vote recorded on A/DEC/80/506 (12 September 2025), which the build scores at -2 whatever the reason
+      (B-690). Monaco is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched): the non-vote is not explained by
+      Article 19 (Article 19 note in docs/review/light-protocol.md).'
+    queries:
+    - unga_votes.csv, country MCO
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Monaco is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Monaco).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Monaco (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Monaco supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Monaco is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants by a B5 speaker was found in the sources read.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Monaco (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: Monaco is not a state party; no statement against the warrants was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Monaco were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: Monaco recognised the State of Palestine on 22 September 2025 (src_20250922_un-press_pal2251: ''Prince Albert II of Monaco … among those announcing recognition'').
+      Left to the build.'
+    queries:
+    - recognitions.csv, MCO
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. The 81st General Debate statement of the Minister of State (25 September 2026, French, read live, 256,254 bytes) says the Principality ''appelle toutes les parties à consolider
+      ce cessez-le-feu fragile'' in Gaza (call tier as a call to keep a ceasefire in force, T-P21-18), but the file has no Wayback capture (the 81st session has none) and no press source was read, so it
+      is neither an event nor a lead (P-23: capture or a Government copy on gouv.mc). The 79th statement (the Sovereign Prince, 24 September 2024) never names Gaza, Palestine or Israel; the 80th session
+      has no file for Monaco (mc_fr.pdf and mc_en.pdf answer 404). Monaco is named in no joint statement already archived. Not reached: gouv.mc (HTTP 403 to a script; Wayback capture of 18 October 2026
+      good).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/mc_{fr,en}.pdf (79th and 81st fr read live; the 80th 404)
+    - web.archive.org CDX for gadebate.un.org/…/{79,80,81}/mc_*
+    - 'archive/text: joint statements and UN records, grep Monaco'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Monaco is not an EU member (R8 does not apply); no national sanctions on settlers were found in the sources read.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall or downgrade of relations with Israel by Monaco was found in the sources read.
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Monaco is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument of cooperation with Israel signed by Monaco after 7 October 2023 was found in the sources read.
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: no-data
+    note: 'Generated from FTS: no Monaco Government flow to the Gaza response in fts_plan_totals.csv (the build marks D1 no-data). Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor MCO
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 54,444 in 2022, USD 450,120 in 2023, USD 7,568 in 2024 (lower than 2022, not an announced suspension). No announced suspension was found.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'One event (D3 increased, from 31 December 2023 to 31 December 2024): UNRWA''s table for 2023 gives USD 450,120, all in the Projects column (flagged, as Bahrain''s), against USD 54,444 in 2022;
+      the 2024 amount (USD 7,568) is below 2022, so the tier ends and no 2024 event is filed.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Monaco was read in a primary (P-23).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

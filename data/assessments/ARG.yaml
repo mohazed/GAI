@@ -1,0 +1,330 @@
+# Coverage record for the Argentine Republic (docs/03 §6). P-D research session, wave 7, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-376): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Colombia, Chile, Mexico and Bolivia). Sources read, read only:
+# - Ministerio de Relaciones Exteriores, Comercio Internacional y Culto (www.cancilleria.gob.ar,
+#   Drupal; answers scripted requests; its site search answers 403): the news listing
+#   (/es/actualidad/noticias, which also carries the official communiqués) was read by title and
+#   teaser from 28 September 2026 back to April 2023 (pages 0 to 61, about 1,230 items), and every
+#   item from October 2023 on (about 880) was fetched and its body searched for Gaza, Palestin,
+#   Israel, Hamas, genocid, Netanyahu, Corte Penal, CIJ, UNRWA, Jerusalén, Isaac, memorándum and
+#   acuerdo; about 60 were read in full. The listing of December 2010 was read for the
+#   recognition of Palestine.
+# - Casa Rosada (www.casarosada.gob.ar, Joomla): the speech listing from 23 September 2026 back to
+#   13 September 2023 (240 transcripts of Presidents Fernández and Milei) was fetched in full and
+#   searched for the same terms; the 45 transcripts with matches were read at every match. The
+#   "últimas noticias" listing holds no communiqués of the Office of the President for the period.
+# - Ministerio de Defensa (www.argentina.gob.ar/defensa, news listing pages 0 to 121, about 1,940
+#   items by title and teaser, 2019 to 2026); the items on Israel were read.
+# - UNRWA's donor tables for 2022 and 2024 and fts_funding.csv (Argentina is in neither);
+#   Comtrade rows fetched in this session (pnpm fetch:comtrade --reporters ARG).
+# Not searched: press and NGO reports (no leads were read); the Office of the President's posts on
+# social media; the Boletín Oficial, the Congress, the treaty register (Biblioteca Digital de
+# Tratados) and the texts of the memorandums; the Ministries of Security and Economy; the Dirección
+# Nacional de Migraciones (D5); the courts and prosecutors (E1–E3); FGS-ANSES (C5);
+# gadebate.un.org (the President's General Debate addresses were read in the Casa Rosada's
+# transcripts). The argentina.gob.ar search is a POST form and was not used.
+country: ARG
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Argentina is
+      not known as a supplier of major arms to Israel.
+  A2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade (rows fetched in this session, docs/10 B-378). Argentina's own data for
+      2022–2025 show no export of HS 93, 8710, 8526 or 8802 to Israel; Israel's mirror data show
+      imports of HS 8526 from Argentina of USD 1,000 (2022), 6,000 (2023) and 8,000 (2025), which
+      do not count without a confirmation of military use (none found; no row added to
+      a2_confirmed_military.csv), so A2 is 0 in every window. No Argentine document on arms exports
+      to Israel was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, armas)
+      - argentina.gob.ar/defensa news titles (Israel)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Argentina is not a partner, supplier or customer of the F-35 programme; no document naming
+      Argentine companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - cancilleria.gob.ar news bodies and argentina.gob.ar/defensa titles (F-35, Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. For the build's later check: the Ministry of Defence bought
+      ammunition from Israel's Ministry of Defence in December 2022 (before the window), and on 2
+      December 2024 the Defence Ministers agreed to expand cooperation, including "futuros contratos
+      entre gobiernos (G2G) en materia de armas ligeras, municiones ligeras, radios y equipos
+      relacionados" (Ministry of Defence release of that day, read, not archived); no contract
+      signed after 7 October 2023 was found in the Ministry's titles.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence sharing with Israel activated for the
+      Gaza campaign was found. The Memorandum of Democracy and Freedom of 12 June 2025 opens "una
+      nueva etapa con mayor unión y cooperación en materia de defensa" (filed as C2,
+      evt_2025_06_12_ARG_C2), and the Defence Ministers agreed on 2 December 2024 to expand
+      cooperation on cyber-defence, drones, border protection and satellite communications; neither
+      is one of the A5 instance types (docs/02 §2).
+    queries:
+      - argentina.gob.ar/defensa news titles (Israel)
+      - cancilleria.gob.ar news bodies (Israel, defensa)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No decision suspending or refusing a class of export licences to Israel was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, exportaciones, armas)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, puerto, buque)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21,
+      abstention on ES-10/22, no on ES-10/23, ES-10/24, ES-10/25, ES-10/26 and 79/232. The archived
+      UN press releases agree where they name Argentina (among the states against ES-10/23, ES-10/25
+      and ES-10/26); the Ministry's releases of 28 October and 1 November 2023 say Argentina voted for
+      the resolution of 27 October 2023 (ES-10/21), which agrees. For the five later votes without
+      rows (B-199 (1)), the press releases archived in votes.yaml name Argentina among the states
+      voting against A/DEC/80/506 (12 September 2025) and 80/78 (5 December 2025, the UNRWA mandate);
+      Argentina is not among the five states against or six abstaining on 80/1 (19 September 2025);
+      the releases of ES-10/27 and 80/116 do not list the states against. Nothing read contradicts
+      the generated rows. The President told the General Assembly on 24 September 2024 that the
+      Assembly "sistemáticamente" voted against the State of Israel (Casa Rosada transcript).
+  B2:
+    status: not-applicable
+    note: Not a member of the Security Council in the window (set by the build's rule).
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Argentina filed no declaration of intervention in ICJ case 192 (docs/06 §8 list; no Ministry
+      release on the case).
+    queries:
+      - cancilleria.gob.ar news bodies (Corte Internacional de Justicia, CIJ, Sudáfrica, genocidio)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found;
+      the Ministry's and the Casa Rosada's pages do not mention the orders.
+    queries:
+      - cancilleria.gob.ar news bodies (Corte Internacional de Justicia, CIJ, medidas provisionales)
+      - casarosada.gob.ar transcripts (Corte, genocidio)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No statement committing Argentina to execute the warrants of 21 November 2024 was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Corte Penal Internacional, Netanyahu)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of the President or the Foreign Minister on executing the warrants of 21 November
+      2024 was found in the Ministry's releases or the Casa Rosada's transcripts (the President's
+      reactions, if any, were not on these sites; social media not searched). Before the warrants,
+      the Government's unsigned communiqué of 22 May 2024 rejected the Prosecutor's request for
+      warrants against Israeli officials as questioning Israel's right to self-defence
+      (src_20240522_cancilleria_fiscal-cpi-israel); it is not a B6 act (no warrant yet, no named
+      speaker). Israel's Prime Minister received the President in Jerusalem (June 2025, April 2026);
+      no visit of a person under warrant to Argentina was found. Argentina itself turned to the ICC over
+      Venezuela (releases of 19 July 2024, 6 September 2024, 2 January 2025).
+    queries:
+      - cancilleria.gob.ar news bodies (Corte Penal Internacional, CPI, Netanyahu, Fiscal)
+      - casarosada.gob.ar transcripts (Corte Penal, Netanyahu)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Argentina has imposed no sanctions on ICC officials.
+    queries:
+      - cancilleria.gob.ar news bodies (Corte Penal Internacional)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Argentina had no row; the row ARG,2010-12-06 was added citing
+      the Ministry's press information 559/10 of 6 December 2010 (the President's note to the
+      President of the Palestinian National Authority recognising Palestine as a free and
+      independent State within the 1967 borders; archived as
+      src_20101206_cancilleria_reconocimiento-estado-palestina): +3 standing from 2023-10-07. No act
+      withdrawing the recognition was found; the votes against ES-10/23 and A/DEC/80/506 do not
+      touch it.
+  B9:
+    status: has-events
+    note: >-
+      Three events, all scoped `gaza`, all at the call tier (+2): President Fernández at the G20
+      virtual summit, 22 November 2023 (humanitarian truce); Foreign Minister Cafiero, 23 November
+      2023 (end of the violence so that aid reaches Gaza); the joint statement of seventeen leaders
+      including President Milei, 6 June 2024 (ceasefire and hostage-release agreement). Not filed
+      (docs/10 B-376): the Ministry's unsigned communiqués (18 October 2023 on the Al Ahli hospital,
+      a call to end the violence and respect humanitarian law; 28 October 2023; 1 November 2023,
+      condemning the attack on the Jabalia camp and calling for an immediate halt to attacks on
+      hospitals and civilian infrastructure, which would be +5; 24 November 2023; 10 August 2024;
+      17 July 2025 on the Holy Family church in Gaza); statements of the Vice-Minister (Human Rights
+      Council, 27 February 2024) and of the delegation (Human Rights Council, 5 April 2024, a call
+      for an immediate ceasefire); the Foreign Minister's words of 2 November 2023 (humanitarian law
+      passage in indirect speech). After 6 June 2024 no statement of the President or a Foreign
+      Minister calling for a ceasefire or naming violations was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Gaza, tregua, alto el fuego, cese, humanitari)
+      - casarosada.gob.ar transcripts (Gaza, Palestin)
+  B10:
+    status: has-events
+    note: >-
+      One event scoped `gaza` (evt_2025_06_10_ARG_B10): the President's words in Jerusalem of 10 June
+      2025, which cite the Gaza Strip. Not filed because their documents do not cite Gaza (the
+      literal scope rule, as Bolivia's B9 statements, docs/10 B-371 (4); flagged, B-377 (2)): the
+      President's words of 12 June 2025 after the exchange of the memorandum ("he declarado mi apoyo
+      incondicional al Estado de Israel en su derecho a la autodefensa", archived); his Knesset
+      address of 11 June 2025 ("Hermanos de Israel: Argentina está con ustedes en este difícil
+      momento"; the international community "invirtiendo las categorías de víctima y victimario";
+      archived); his words of 8 May 2024 at the Holocaust commemoration ("nos encontrarán a nosotros
+      al lado suyo firme, siempre"), 21 November 2024 (a business meeting, "un aliado que estará en
+      la trinchera sin especulaciones"), 26 November 2025 (DAIA anniversary: "mientras la gran mayoría del mundo libre decidió darle la
+      espalda al Estado judío, nosotros le dimos la mano") and 29 June 2026
+      (Israel Allies Foundation, "tenemos que defender Israel porque es una causa justa"). Statements
+      by the Ministry (7 October 2024, the right to self-defence), the Minister of Defence (2 and 3
+      December 2024, "apoyo incondicional del Gobierno argentino al pueblo de Israel") and the
+      Foreign Minister (25 November 2025) are not by the head of government. With the broader reading
+      the addresses of 11 and 12 June 2025 would be two more events and B10 would reach its cap
+      (−10) from 12 June 2025.
+    queries:
+      - casarosada.gob.ar transcripts (Israel, Hamas, Gaza, incondicional, autodefensa)
+      - cancilleria.gob.ar news bodies (Israel, legítima defensa)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on Israeli ministers or settler entities by Argentina were found.
+    queries:
+      - cancilleria.gob.ar news bodies (Cisjordania, colonos, sanciones)
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No recall, downgrade or severance of relations with Israel was found; the government in office
+      from 10 December 2023 announced the move of the embassy to West Jerusalem (Knesset address of
+      11 June 2025; Ministry release of 25 November 2025), which has no indicator.
+    queries:
+      - cancilleria.gob.ar news bodies (embajador, Israel)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or review of the MERCOSUR–Israel free trade agreement or of any Argentine
+      agreement with Israel was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, acuerdo de libre comercio, MERCOSUR)
+  C2:
+    status: has-events
+    note: >-
+      Three events, standing, scoped `gaza`: the Memorandum of Democracy and Freedom (12 June 2025),
+      the memorandum of understanding on tourism (24 February 2026) and the memorandum on artificial
+      intelligence signed with the launch of the Isaac Accords (19 April 2026). Not filed (flagged,
+      docs/10 B-377 (3)): the administrative arrangement implementing the social security convention,
+      signed by the Foreign Ministers on 7 February 2024 during the President's visit (archived,
+      src_20240207_cancilleria_mondino-katz-israel), read as implementing a pre-existing convention
+      rather than a new agreement, as the routine extensions not filed for the United States (docs/10
+      B-204 (5)); it would add −10 from 7 February 2024 (C at −10 until the cap binds in June 2025).
+      Also not filed: the entry into force of the 2017 air services agreement (approved by Congress,
+      release of 3 October 2024; signed before the window), the Defence Ministers' agreement of 2
+      December 2024 to expand cooperation (no signed instrument named) and the opening of Israel's
+      market to Argentine pecans (22 August 2025, a sanitary protocol).
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, memorándum, acuerdo, firmaron)
+      - casarosada.gob.ar transcripts (memorando, firma, Israel)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade (rows fetched in this session). Argentina's own totals with Israel:
+      USD 595.2 million in 2022, 525.2 million in 2023 (r = 0.88: 0), 577.8 million in 2024 (r =
+      0.97: −3) and 756.7 million in 2025 (r = 1.27: −3); the 2022 release gives −3 (r = 1 by
+      construction). Israel's mirror totals 436.6, 629.0, 462.5 and 898.1 million. The Ministry's
+      release of 25 November 2025 says Argentine exports to Israel grew 27.9 % in 2024 and trade
+      exceeded USD 586 million from January to September 2025, which agrees with the rising series.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods was found (would be scoped west-bank, B-32).
+    queries:
+      - cancilleria.gob.ar news bodies (Cisjordania, asentamientos)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by an Argentine public fund was found in the sources searched; the
+      FGS-ANSES and the central bank were not searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No procurement exclusion with legal effect concerning Israel or Gaza was found.
+    queries:
+      - cancilleria.gob.ar news bodies (Israel, contrataciones)
+  D1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from FTS: fts_funding.csv has no Argentine government flow to the oPt appeals of
+      2023–2026 (the build derives the status). Argentina sent two in-kind shipments for Gaza through
+      the White Helmets (Cascos Blancos) to the Egyptian Red Crescent at El Arish and Rafah in
+      November 2023 (Ministry releases of 7, 10 and 23 November 2023, read, not archived); in-kind aid
+      is outside FTS (docs/06 §7) and outside D4. On 19 February 2026 the President offered the White
+      Helmets to the stabilisation force of the Board of Peace (Casa Rosada transcript), which has no
+      indicator.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Argentina is not in UNRWA's donor tables for 2022 or 2024 and no suspension announcement was
+      found; Argentina voted against the UNRWA resolutions ES-10/25 and 80/78 (B1).
+    queries:
+      - cancilleria.gob.ar news bodies (UNRWA)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No Argentine contribution to UNRWA appears in the 2022 or 2024 donor tables.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme or field hospital for Gaza was found (see D1 for the in-kind
+      shipments of November 2023). The evacuation of Argentine nationals from Israel (Operativo
+      Regreso Seguro, October 2023) is a consular repatriation.
+    queries:
+      - cancilleria.gob.ar news bodies (Gaza, evacuación, Cascos Blancos)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee instrument for Gazans was found; the Dirección Nacional de Migraciones was
+      not searched.
+    queries:
+      - cancilleria.gob.ar news bodies (Gaza, visa, refugiados)
+  E1:
+    status: unchecked
+    note: The courts and prosecutors were not searched (P-16).
+  E2:
+    status: unchecked
+    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+  E3:
+    status: unchecked
+    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).

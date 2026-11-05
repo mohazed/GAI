@@ -1,0 +1,200 @@
+# Coverage record for Mongolia (docs/03 §6). P-21 light protocol, session T-P21-03, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.mn redirects to a page of the Government portal that
+#   answers 404: the Ministry's own news could not be read), the President's site (president.mn/en, through its Wayback capture
+#   of 2026-04-19), the Government's portal (mongolia.gov.mn), the General Debate statements of the United Nations
+#   (gadebate.un.org, Wayback captures of the 78th, 79th and 80th sessions in English, read in full: the President's statements
+#   of 2024 and 2025 have no passage on Gaza, Palestine or the Middle East), the generated events and the structured tables;
+#   web searches in English and in Mongolian per indicator group. Time: about 5 minutes.
+# Statements read and not filed as B9: none on Gaza found. The 81st session's statement (September 2026) has no capture and
+#   gadebate.un.org refuses scripted requests: not read.
+country: MNG
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Mongolia to
+      Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MNG
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of
+      the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch.
+      Nothing is hand-authored.'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Mongolian order of Israeli major arms in the register. Left to the
+      build.'
+    queries:
+    - sipri_orders.csv, buyer MNG
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). The Ministry''s releases on the votes were
+      not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Mongolia filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Mongolia
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - Mongolia Ministry of Foreign Affairs statement Gaza ceasefire Palestine
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the Government on executing the warrants of 21 November 2024 was found. Mongolia is a State Party
+      to the Rome Statute; its non-compliance with the warrant for President Putin (visit of 3 September 2024) concerns another
+      situation and is not an event here.
+    queries:
+    - Mongolia ICC arrest warrant Netanyahu Mongolia position Rome Statute state party Netanyahu visit Mongolia
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under the Gaza-situation warrants was found.
+    queries:
+    - Mongolia ICC arrest warrant Netanyahu Mongolia position Rome Statute state party Netanyahu visit Mongolia
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Mongolia has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Mongolia ICC arrest warrant Netanyahu Mongolia position Rome Statute state party Netanyahu visit Mongolia
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no Mongolia row. The registry dates the recognition 22 November 1988
+      (A/78/846 annex); the state''s own document (a statement of the Ministry of Foreign Affairs of the Mongolian People''s
+      Republic, which press summaries mention) was not found, so no row (R21, docs/calibration/README.md): with the pre-existing
+      tier the score would be +3 higher.'
+  B9:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No statement of the President, the Prime Minister or the Foreign Minister on Gaza was found. The President''s General
+      Debate statements of 2024 (79th session) and 2025 (80th) have no passage on Gaza, Palestine or the Middle East (archived:
+      src_20240925_un-gadebate_mng-khurelsukh-en and src_20250923_un-gadebate_mng-khurelsukh-en, recorded from Wayback captures;
+      no event cites them). Mongolia''s expressions on Gaza are its recorded votes (B1).'
+    queries: &id001
+    - Mongolia Ministry of Foreign Affairs statement Gaza ceasefire Palestine
+    - Монгол Улс Газын зурвас Гадаад харилцааны яам мэдэгдэл гал зогсоох Палестин
+    - Mongolia foreign minister Battsetseg Gaza OR Palestine OR Israel statement humanitarian ceasefire montsame
+    - Mongolia President Khurelsukh OR Prime Minister Zandanshatar OR Oyun-Erdene Palestine meeting ambassador Gaza two-state
+      solution
+    - Монгол Улс Гадаад харилцааны сайд Газын зурвас Израил Палестин байр суурь мэдэгдэл 2024 2025 Батцэцэг
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Mongolia has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - Mongolia Israel ambassador recall OR sanctions settlers OR visa Gazans OR medical evacuation Gaza Mongolia government
+      2025
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found.
+    queries:
+    - Mongolia Israel ambassador recall OR sanctions settlers OR visa Gazans OR medical evacuation Gaza Mongolia government
+      2025
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Mongolia has no trade or association agreement with Israel that was suspended or reviewed (none found).
+    queries:
+    - Mongolia Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 Mongolian government Israeli cooperation visa OR
+      agriculture OR defence
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No governmental instrument with Israel signed since October 2023 was found. Not filed: the memorandum of 17 December
+      2024 between the ''Billion Trees'' national movement (a non-governmental body, per the report) and Israel''s Agency
+      for International Development Cooperation (MASHAV), signed on one side by a non-state party (R18); the cooperation programme
+      in education, culture, science and sport for 2022 to 2025 (signed May 2022) pre-dates the window.'
+    queries:
+    - Mongolia Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 Mongolian government Israeli cooperation visa OR
+      agriculture OR defence
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans (fts_funding.csv has no row above zero). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding was found; Mongolia has no row in UNRWA's donor tables for 2022,
+      2023 or 2024 (it was not a donor to suspend).
+    queries:
+    - Монгол Улс UNRWA тусламж Палестин дүрвэгсэд Засгийн газар хандив 2024
+  D3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No row of Mongolia in UNRWA''s donor tables for 2022, 2023 or 2024 (archived): no restored or increased contribution.'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Mongolia
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Mongolia donates humanitarian assistance Palestine Gaza Mongolian government decision USD
+    - Mongolia Israel ambassador recall OR sanctions settlers OR visa Gazans OR medical evacuation Gaza Mongolia government
+      2025
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Mongolia Israel ambassador recall OR sanctions settlers OR visa Gazans OR medical evacuation Gaza Mongolia government
+      2025
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

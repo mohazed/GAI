@@ -1,0 +1,214 @@
+# Coverage record for Portugal (docs/03 §6). P-21 light protocol, session T-P21-29, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of State and Foreign Affairs' portal (portaldiplomatico.mne.gov.pt, HTTP 200; its site search read for Gaza, Israel, Palestina, Cisjordânia, UNRWA, TPI, cessar-fogo, Hamas, flotilha, Médio Oriente and Rafah: about 70 pages listed, those since October 2023 read), the Government's site (portugal.gov.pt), the Presidency's site (presidencia.pt, read through web searches and by address), the General Debate statements of the 79th to 81st sessions (gadebate.un.org), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Portuguese. Not read: the Assembly of the Republic's records, the Portuguese press beyond the pages cited, the Council of Ministers' communiqués, the President's statements after 9 March 2026.
+# Portugal is an EU member: the three Council listings (B11) and the joint statements that name it (B9) are filed as for the other members (R8, B-444, B-446).
+# Fifteen B9 events, three B11 events, two D3 events (twenty in all). Leads: two (C1, B5; press only).
+country: PRT
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PRT
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Portugal from Israel in 2006 to 2008 (Spike-MR/LR, EL/M-2022 radars, Litening pods, CARDOM mortars) and one of
+      2024 (Spike-LR-2 anti-tank missiles, TIV 0, delivery planned from 2026; archive/text/src_20261005_sipri_register-supplier-israel.txt, line 558). A 0-TIV order is not scored, as for India,
+      Poland and Croatia (docs/10 B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PRT
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Portugal (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: the Government''s news item ''Mediação portuguesa no conflito Israel-Palestina
+      está a dar frutos'' (portugal.gov.pt/gc24, undated in the page''s text) reports the Minister for Parliamentary Affairs, Pedro Duarte, telling the Assembly that the Government ''tomou a medida
+      unilateral de não autorizar a exportação de armas para Israel''; a headline of Notícias ao Minuto (page no longer served) says the Foreign Minister announced an unfavourable opinion on the
+      export of arms and munitions to Israel ''more than eight months'' into the war. No licence decision or order was read. Scheduled for P-23 (A6/A5, with the Government''s own text).'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 qualifying votes are recorded; Portugal is not among the Member States in arrears in the Secretary-General''s letter
+      of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
+    queries:
+    - unga_votes.csv, country PRT
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc: a non-permanent term from 2027-01-01 to 2028-12-31).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Portugal is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched
+      for Portugal).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Portugal (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No statement or act rejecting the ICJ''s provisional-measures orders was found. The Ministry''s communiqué of 26 January 2024 ''takes note'' of the order of that day and says Israel
+      must respect the measures (portaldiplomatico.mne.gov.pt, ''Decisão do Tribunal Internacional de Justiça''; read, not archived: it names no speaker, R3).'
+    queries:
+    - portaldiplomatico.mne.gov.pt, site search Gaza, Israel, TIJ
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Portugal is a state party to the Rome Statute (the Assembly of States Parties'' list, src_20261009_icc-asp_states-parties, archived, line 193). On 22 November 2024 the Foreign Minister
+      told journalists after the Council of Ministers that Portugal would meet its ''international obligations'' on the ICC warrants and that ''there is no hesitation on the part of the Portuguese
+      Government'' (DN/Lusa, 22 November 2024; press only: lead lead_20261104_PRT_2). No archived Government text of the statement was found, so no B5 event is filed.'
+    queries:
+    - 'web search: Rangel TPI mandado Netanyahu cumprir obrigações'
+    - DN/Lusa 2024-11-22 (read)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - 'web search: Rangel TPI mandado Netanyahu'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Portugal were found.
+    queries:
+    - 'web search: Rangel TPI mandado Netanyahu'
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: Portugal recognised the State of Palestine on 21 September 2025 (the Government''s report of the Minister''s declaration at the Permanent Mission in
+      New York, src_20250921_portugal-gov_reconhece-palestina; the Ministry''s communiqué of 19 September 2025 confirms the decision). Left to the build.'
+    queries:
+    - recognitions.csv, PRT
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Fifteen events: eleven joint statements in which Portugal is named (19 February 2024 +2; 6 June 2024 +2, decayed; 19 May 2025 +2; 21 July 2025 +5; 30 July 2025 +2; 10 August 2025 +5;
+      12 August 2025 +5; 21 August 2025 +5, West Bank; 27 September 2025 +2; 28 January 2026 +2; 8 June 2026 +2; 8 September 2026 +5, West Bank), the Prime Minister''s General Debate address (26
+      September 2024, +2), the Portuguese-Spanish 2+2 declaration signed by the Foreign Minister (21 October 2024, +2) and the President''s statement of 7 October 2025 (+2, flagged). Not filed:
+      the President''s address of 22 September 2025 to the high-level conference, his statement of 7 October 2024 and the Prime Minister''s General Debate address of 24 September 2026 (the first
+      two cite no Gaza; the third speaks of ''the humanitarian tragedy in the Middle East'' and of Israel and Palestine without naming Gaza, R7); the Foreign Minister''s declaration of 21 September
+      2025 (the Government''s report puts the call for a ceasefire in indirect speech, R4); the Ministry''s communiqués (no named speaker, R3: 7 October 2024 asks for ''an immediate and unconditional
+      ceasefire''). The President in office after 9 March 2026 was not identified, so statements after that date by a new President were not searched. Verification of 2026-11 (T-VERIFY-2,
+      docs/10 B-849): the list above names twelve joint statements, not eleven; the six foreign ministers'' letter of 14 December 2025 to the EU High Representative, signed by Paulo Rangel and archived
+      for Ireland, is filed (+5, evt_2025_12_14_PRT_B9): sixteen events; the cap is unchanged.'
+    queries:
+    - 'portaldiplomatico.mne.gov.pt site search: Gaza, Israel, Palestina, Cisjordânia, UNRWA, TPI, cessar-fogo, Hamas, flotilha, Médio Oriente, Rafah'
+    - 'presidencia.pt: web search Gaza, Israel, Palestina'
+    - gadebate.un.org/en/{79,80,81}/portugal (read)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the President, the Prime Minister or the Foreign Minister was found in the sources read. The Foreign Minister''s
+      declaration of 21 September 2025 reiterates Israel''s right to exist and its security needs together with a call for a ceasefire (indirect speech, conditional: not B10).'
+    queries:
+    - 'portaldiplomatico.mne.gov.pt site search: Israel, Palestina'
+    - 'web search: Rangel Gaza Israel'
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024, 15 July 2024 and 28 May 2026, adopted by unanimity (R8, B-446). No national sanctions by Portugal were found. The
+      Foreign Minister said on 11 May 2026 that Portugal ''has always defended more sanctions on settlers'' and would be ''in the front line'' supporting new sanctions (ECO/Lusa; a statement of
+      intent, not a measure).'
+    queries:
+    - 'portaldiplomatico.mne.gov.pt site search: colonos, medidas restritivas'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the Ministry's pages or the press read. Portugal recognised Palestine on 21 September 2025 (B8).
+    queries:
+    - 'portaldiplomatico.mne.gov.pt site search: Israel, embaixador'
+    - 'web search: Portugal embaixador Israel chamado'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'No archived Government text states Portugal''s position on the review or suspension of the EU-Israel Association Agreement. The Foreign Minister said on 11 May 2026, at a Council of
+      Foreign Ministers in Brussels, that ''Portugal apoia'' the suspension of the agreement but that neither a total nor a partial suspension would be approved at that meeting (ECO/Lusa, 11 May
+      2026; press only: lead lead_20261104_PRT_1).'
+    queries:
+    - 'web search: Portugal acordo de associação UE-Israel suspensão Rangel'
+    - ECO 2026-05-11 (read)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No signed instrument of cooperation with Israel since October 2023 was found in the sources read. A web search found the bilateral agreements of 1992 and 2010 (before the window), a
+      first Portugal-Israel strategic forum on civil resilience held on 31 May 2026 (an event, not an instrument) and an undated report of a science and technology memorandum with the Ministry
+      of the Sea (no primary document read: not filed).'
+    queries:
+    - 'web search: Portugal Israel acordo memorando cooperação assinado 2025 2026'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Portuguese Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Ministry''s release of 9 November 2023 announces a voluntary
+      contribution of EUR 10 million at the Paris humanitarian conference.'
+    queries:
+    - fts_plan_totals.csv, donor PRT
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have a row for Portugal in each year (USD 105,288, 4,445,006 and 12,706,511); no suspension of a Portuguese contribution was
+      found, and the Portuguese-Spanish declaration of 21 October 2024 commits both countries to keep their support to UNRWA.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events (D3 increased, from 31 December 2023): UNRWA''s table for 2023 gives USD 4,445,006 for Portugal against USD 105,288 in 2022, and the 2024 table USD 12,706,511.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No Government programme of medical evacuation of Gazans and no field hospital deployed by Portugal was found. RTP reported in autumn 2025 that Portugal had received no patient from the
+      WHO's evacuations, and later that two children from Gaza were in Portugal for treatment through the association HEAL Palestine, at the expense of private hospital units (not a Government
+      programme). The Assembly recommended on 26 September 2025 that the Government receive children with urgent medical needs.
+    queries:
+    - 'web search: Portugal acolhe crianças de Gaza tratamento evacuação médica'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: Not searched beyond the Ministry's portal search (no visa, refugee or scholarship pathway for Gazans appears in its releases on Gaza); the Ministry's releases of 15 and 17 November 2023
+      describe the evacuation of Portuguese nationals and their relatives from Gaza (consular repatriation, not a pathway).
+    queries:
+    - 'portaldiplomatico.mne.gov.pt site search: Gaza'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

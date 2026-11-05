@@ -1,0 +1,207 @@
+# Coverage record for Suriname (docs/03 §6). P-21 light protocol, session T-P21-13, 2026-10-07.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government portal gov.sr (the Ministry of Foreign Affairs', the President's and the Department of Public Information's pages; site searches for Gaza, Palestina, Algemene Vergadering and VN), the General Debate statements of the 78th to 80th sessions (gadebate.un.org through Wayback captures; the 81st has no capture), the ICJ's case page (read 2026-10-07), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in Dutch (the official language) and English per indicator group. Time: about 35 minutes of research on Suriname, inside the 90-minute budget of the session.
+# One hand-authored event: evt_2025_09_23_SUR_B9 (flagged).
+country: SUR
+protocol_version: 1
+last_full_check: '2026-10-07'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SUR
+    checked_at: '2026-10-07'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-07'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of Suriname from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it.
+      Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SUR
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Suriname
+    checked_at: '2026-10-07'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    queries:
+    - unga_votes.csv, voter SUR
+    checked_at: '2026-10-07'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-07'
+  B3:
+    status: none-found
+    note: Suriname is not on the ICJ case 192 intervention list (docs/06 §8; the Court's page read 2026-10-07).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Suriname is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-07)
+    checked_at: '2026-10-07'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found (Suriname is a State Party to the Rome Statute). The
+      ICC mapping pages read (Just Security, JusticeInfo) have no entry for Suriname.
+    queries: &id001
+    - Suriname ICC Netanyahu arrest warrant Suriname government position OR Suriname Internationaal Strafhof Netanyahu arrestatiebevel regering
+    checked_at: '2026-10-07'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-07'
+  B7:
+    status: none-found
+    note: Suriname has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-07'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `SUR,2011-02-01` is added in this session. Sources: the Division for Palestinian Rights'' report of the United Nations meeting for Latin America
+      and the Caribbean (Montevideo, 29 and 30 March 2011; UNISPAL, archived: src_20110330_un-unispal_montevideo-meeting-report-es, paragraph 46: the Palestinian representative gives ''Suriname,
+      el 1 de febrero de 2011'' among the recognitions); the Division''s review of February 2011 (archived: src_20110228_un-unispal_dpr-chronology-february-2011, line 27, under 1 February: the
+      President''s letter to President Abbas in support of a State on the 1967 borders, Ma''an); and the Government''s own report of the Foreign Minister''s press conference of 23 October 2023
+      (archived: src_20231023_gov-sr_ramdin-hamas-niet-palestina-veroordeeld: ''Suriname heeft Palestina sinds 2011 als staat erkend''). The pre-existing tier, +3 (R21). A UN Secretariat report
+      and a statement of the Foreign Minister, not the 2011 document itself, flagged; the registry''s date (2011-01-26, A/78/846) differs by six days and is left to the author (docs/10 B-614).
+      The Government has not withdrawn the recognition (Minister Bouva said on 23 June 2026 that the appointment of a non-resident ambassador to Israel changes nothing in Suriname''s position
+      on Palestine, ABC Suriname, read).'
+    queries:
+    - Suriname recognises State of Palestine 2011 Bouterse recognition date
+    - UNISPAL report of the Montevideo meeting, March 2011 (archived)
+    - 'gov.sr site search: Palestina'
+    checked_at: '2026-10-07'
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 23 September 2025 (evt_2025_09_23_SUR_B9, +5, flagged: grave violations of human rights and of the rights of children ''for example
+      in Gaza'', no call, B-613). Read and not filed: the General Debate statements of the 78th (September 2023, before the war) and 79th sessions (President Santokhi, 25 September 2024): no passage
+      on Gaza, Palestine or Israel; the Foreign Minister''s press conference of 23 October 2023 (Government report, archived: the Government ''does not take sides'', calls for a peace process
+      towards a two-State solution and for de-escalation, with no call for a ceasefire); the Government''s report of his meeting with Israel''s non-resident ambassador on 26 January 2024 (gov.sr,
+      read), which says in its own indirect speech that international efforts must aim to bring about a ''staakt-het-vuren'' as soon as possible (R4: not his exact words; lead_20261007_SUR_3,
+      more than 730 days old); the President''s statement in the National Assembly on a temporary ceasefire ''now in place'' and the hope for a peaceful solution (Caribbean Times, a search result,
+      page not read; hope, not a call). The President''s statement of 22 September 2026 (81st session) is a lead (lead_20261007_SUR_1: a search excerpt attributes words on Gaza to it, which the
+      Government''s reports read do not carry; the delegation''s file is not captured). The delegation walked out before the Israeli Prime Minister''s address on 24 September 2026 (Times of Suriname):
+      not an indicator. Site search of gov.sr for Gaza and Palestina returned no other statement of the President or the Minister.'
+    queries:
+    - Suriname Gaza ceasefire statement Minister of Foreign Affairs Ramdin OR Bouva OR Santokhi OR Simons General Assembly
+    - Suriname Gaza Palestina regering standpunt staakt-het-vuren president Simons OR Santokhi OR Bouva persbericht Buitenlandse Zaken
+    - President Simons VN toespraak 22 september 2026 Gaza Palestina
+    - gadebate.un.org Suriname 78th to 80th sessions (sr_en.pdf), read
+    - 'gov.sr site searches: Gaza, Palestina, Algemene Vergadering, VN'
+    checked_at: '2026-10-07'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found. The Government''s declaration of October 2023 on the attacks
+      in Israel (gov.sr; the title was seen in a search result and the page was not read) is a Government statement with no named speaker, and the Foreign Minister''s press conference (archived,
+      read) condemns the attacks of Hamas and says Suriname takes no side.'
+    queries:
+    - Suriname Gaza Palestina regering standpunt staakt-het-vuren president Simons OR Santokhi OR Bouva persbericht Buitenlandse Zaken
+    checked_at: '2026-10-07'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Suriname was found (not an EU member, so the Council's listings do not apply).
+    queries: []
+    checked_at: '2026-10-07'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. The Foreign Minister said on 23 June 2026 that the appointment of a non-resident ambassador to Israel changes nothing
+      in Suriname's position on Palestine and the Government has no plan to break relations (ABC Suriname, read); the Israeli non-resident ambassador was received on 26 January 2024 (gov.sr, read).
+      The plan of 2022 to open an embassy in Jerusalem pre-dates the window and was abandoned.
+    queries:
+    - Suriname ambassadeur Israël teruggeroepen OR "diplomatieke betrekkingen" verbreken OR verlagen Palestina Suriname regering 2024 2025
+    checked_at: '2026-10-07'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Suriname ambassadeur Israël teruggeroepen OR "diplomatieke betrekkingen" verbreken OR verlagen Palestina Suriname regering 2024 2025
+    checked_at: '2026-10-07'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found. The Foreign Minister received Israel's non-resident ambassador on 26 January 2024 to discuss technical assistance, agriculture
+      and health (no instrument); the Paris Club's bilateral debt rescheduling lists Israel among the creditors (a debt matter, no instrument found); Israel's non-resident ambassador proposed
+      in 2026 a cooperation agreement on public-private partnerships, a draft to be sent (lead_20261007_SUR_2).
+    queries:
+    - Suriname Israël overeenkomst ondertekend 2024 2025 samenwerking Buitenlandse Zaken Israël Suriname
+    - Suriname Israël 2026 samenwerking MASHAV landbouw akkoord OR memorandum
+    - Suriname Israël bilaterale schuldherschikking akkoord Israël Suriname ondertekend
+    checked_at: '2026-10-07'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-07'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor SUR
+    checked_at: '2026-10-07'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Suriname has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Suriname
+    - Suriname Gaza humanitaire hulp Palestijnen visum OR opvang OR UNRWA bijdrage regering Suriname Gazanen
+    checked_at: '2026-10-07'
+  D3:
+    status: none-found
+    note: 'Suriname has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Suriname
+    checked_at: '2026-10-07'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. A Minister (Somohardjo) ran a public collection for the Palestinian population in April 2024 (gov.sr headlines
+      of 14 April 2024, pages not read: about 1.5 million SRD in four days, with the Suriname Red Cross): a domestic collection, not an indicator.'
+    queries:
+    - Suriname Gaza humanitaire hulp Palestijnen visum OR opvang OR UNRWA bijdrage regering Suriname Gazanen
+    - 'gov.sr site search: Gaza'
+    checked_at: '2026-10-07'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Suriname Gaza humanitaire hulp Palestijnen visum OR opvang OR UNRWA bijdrage regering Suriname Gazanen
+    checked_at: '2026-10-07'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

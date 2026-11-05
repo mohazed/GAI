@@ -1,0 +1,201 @@
+# Coverage record for Thailand (docs/03 §6). P-21 light protocol, session T-P21-23, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.go.th/en, HTTP 200; its news items are searched through the search engine), the Prime Minister's site (thaigov.go.th: HTTP 403 to a script, a Wayback capture of 28 September 2026 reads HTTP 200), the General Debate statements of the 78th to 81st sessions (gadebate.un.org, live files), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and one in Thai. Time: see Singapore.
+country: THA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier THA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached this
+      one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): Thailand''s order of Barak-LRAD surface-to-air missiles from Israel (2025, TIV 114.5) is the release''s data year 2025 and the
+      build scores it as A4. The register also lists an order of Hermes-900 reconnaissance drones of 2022 (TIV 21), which the build does not score (the A4 data-year gap, docs/10 B-536 (7)). Left to the
+      build; not hand-authored.'
+    queries:
+    - sipri_orders.csv, buyer THA
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Thailand of 2022 and later
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter THA
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Thailand is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Thailand; docs/06 §8). The advisory proceedings
+      (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Thailand)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Thailand is not a state party to the Rome Statute (the Assembly of States Parties' list, archived, searched); no statement of the Prime Minister or the Foreign Minister on the warrants of 21 November
+      2024 was found.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Thailand)'
+    - Thailand ICC arrest warrant Netanyahu (web searches)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (not a state party).
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Thailand were found; no statement of the Government on the United States' sanctions on ICC officials (June 2025 onward) appeared in the search results
+      read.
+    queries:
+    - Thailand sanctions International Criminal Court judges prosecutor (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row is added in this session (R21): Thailand''s Ministry of Foreign Affairs states that ''Thailand officially recognized the State of Palestine on 17 January
+      2012'' and that diplomatic relations date from 1 August 2012 (news item of 12 January 2024, archived: src_20240112_mfa-th_palestine-ambassador-call). The registry (countries.yaml) gives 18 January
+      2012 (recognition by letter, AP and AFP via search results); the Ministry''s own date is used for the row and the one-day difference is flagged for the author.'
+    queries:
+    - recognitions.csv, row THA (added 2026-11-04)
+    - src_20240112_mfa-th_palestine-ambassador-call
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The General Debate statements of the 79th (28 September 2024, Foreign Minister Maris Sangiampongsa: ''deeply concerned about … the escalating violence and worsening humanitarian
+      situation in Gaza'') and 80th sessions (27 September 2025, Foreign Minister Sihasak Phuangketkeow, ''the horrendous suffering in Gaza … weighs heavily on our collective conscience'') state concern
+      and name no violation and make no call; the 81st statement (Prime Minister Anutin Charnvirakul) says only that ''The situation in Palestine continues to demand our attention'' (R7). The Ministry''s
+      statements of 18 November 2023 (''calls on all parties to the conflict to immediately cease all acts of hostilities''), of January 2025 (welcoming the ceasefire) and of March 2025 (urging all sides
+      to ''cease the hostilities and resume negotiations'', read through search results) have no named speaker (R3). Leads: the joint statement of the 17 countries with hostages of 7 June 2024 (lead_20261104_THA_1)
+      and the Prime Minister''s call at the ASEAN-GCC summit of 20 October 2023 (lead_20261104_THA_2), both older than 730 days.'
+    queries:
+    - gadebate.un.org Thailand 78th to 81st sessions (live files read for Gaza, Palestine, Israel, Hamas, ceasefire)
+    - mfa.go.th Gaza statement (web searches, English and Thai)
+    - Thailand Prime Minister Gaza ceasefire (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Foreign Minister was found; the Government's line is neutrality and the safety of its nationals
+      (search results, not read in full).
+    queries:
+    - Thailand Prime Minister Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions or travel bans on Israeli ministers or settlers by Thailand were found.
+    queries:
+    - Thailand sanctions settlers Israel ministers (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the Minister held a telephone conversation with Israel''s Foreign Minister on 12 February 2026 (the Ministry''s readout,
+      found by search, not read in full) on medical diplomacy and cybersecurity cooperation.'
+    queries:
+    - Thailand recall ambassador Israel downgrade relations (web search)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to be suspended or reviewed by Thailand; interest in a free-trade agreement was reported in January 2025 (Bangkok Post, search results),
+      the opposite of a suspension.
+    queries:
+    - Thailand Israel free trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found: the search results show a cybersecurity memorandum of 2022, a MASHAV-TICA development cooperation memorandum (undated) and Israel''s
+      quotas for Thai farm workers (13,000 more positions in 2025 at the Labour Minister''s visit of January 2025; the return of the first 100 workers in June 2024), all reported by the press in search
+      results, not read in full, under a placement project (TIC) in force for about a decade. Quotas and placement arrangements under a pre-war framework are not a new signed instrument; the Ministry''s
+      readout of 12 February 2026 records talks, not a signature.'
+    queries:
+    - Thailand Israel agreement signed memorandum 2024 2025 2026 (web searches)
+    - Thailand Israel labour agreement Thai workers (web search)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_plan_totals.csv): the Government''s flows to the Gaza response (appeals 1156, 1186, 1273 and 1510) are recorded; the build makes them D1 events. Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor THA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) show Thailand in each year (USD 40,000, 120,000 and 90,000); no suspension of funding was announced, and the Ministry's page of 12 January
+      2024 says Thailand has consistently contributed.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Thailand
+    - src_20240112_mfa-th_palestine-ambassador-call
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events: the increased tier from 31 December 2023 (USD 120,000 against USD 40,000 in 2022) to 31 December 2024, and from 31 December 2024 (USD 90,000). The 2025 table is not archived (P-23).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Thailand
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Thailand was found in the search results read.
+    queries:
+    - Gaza medical evacuation Thailand (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Thailand was found in the search results read (the only results on Thailand concerned tourist visa rules).
+    queries:
+    - Gaza medical evacuation OR visa OR refugees Gazans Thailand (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

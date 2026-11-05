@@ -1,0 +1,345 @@
+# Coverage record for Czechia (docs/03 §6). P-D research session, wave 5, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-309): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for Slovenia, docs/10 B-303). The protocol's searches (docs/06 §4
+# step 3) were run on the two government portals named in data/countries.yaml:
+# (1) mzv.gov.cz, the Ministry of Foreign Affairs and all Czech embassies, through the site's own
+# search index (the Algolia index `mzvIndex` that the site's search page queries), in Czech for Gaza,
+# Gazy, Gaze, Gazou, pásmo Gazy, Izrael, Izraele, Izraeli, Izraelem, Palestina, Palestiny,
+# palestinský, UNRWA, Netanjahu, Netanjahua, příměří, humanitární pomoc, Mezinárodní trestní soud,
+# Mezinárodní soudní dvůr, osadníci, osadníků, osady, sankce, zbraně, vývoz zbraní, Hamás, rukojmí,
+# Rafáh, evakuace, embargo, Západní břeh, asociační dohoda, genocida, zatykač, Blízký východ,
+# Jeruzalém, Ben Gvir, Smotrič, uznání Palestiny, dvoustátní řešení, and in English for Gaza, Israel,
+# Palestine, Palestinian, UNRWA, ceasefire, Netanyahu, settlers, settlements, International Criminal
+# Court, International Court of Justice, hostages, humanitarian, Hamas, Middle East, two-state, West
+# Bank, Jerusalem (up to 1,000 results per term; 2,916 distinct pages dated from October 2023, of
+# which 518 mention Gaza, Israel, Palestine or UNRWA; every Ministry release, statement and
+# freedom-of-information answer among them read by title and snippet, the relevant ones in full);
+# (2) vlada.gov.cz, the Government Office, through its site search (index current only to October
+# 2024; the news listing does not load outside a browser) and through the Wayback Machine's capture
+# index of vlada.gov.cz URLs containing izrael, netanjah, gaz, palestin, trestni-soud, jeruzalem or
+# blizk (read through the Wayback copies after the site refused further requests). Czechia changed
+# government in December 2025: Petr Fiala's government (Foreign Minister Jan Lipavský) to December
+# 2025, then Andrej Babiš's (Foreign Minister and Deputy Prime Minister Petr Macinka).
+# Not searched: the press; the Chamber of Deputies and the Senate (psp.cz, senat.cz: resolutions,
+# questions); the Ministry of Defence (mocr.army.cz); the Ministry of Industry and Trade's licensing
+# office and its annual arms-export reports (mpo.gov.cz); the Collection of Laws; the prosecution
+# service, courts and police (E1–E3); the Czech National Bank and pension funds (C5). Each `queries`
+# entry names the search terms used.
+country: CZE
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Government Office's release of 25 October 2023 states that Czech companies supplied Israel
+      with basic military equipment such as ballistic plates from STV Group
+      (src_20231025_vlada-cz_fiala-izrael-netanjahu); ballistic plates are not major conventional arms
+      in SIPRI's sense.
+  A2:
+    status: unchecked
+    note: >-
+      Generated from Comtrade; Czechia has no rows. As the prompt requires, this session ran `pnpm
+      fetch:comtrade --reporters CZE` three times: Czechia's own responses for 2022–2025, Israel's
+      mirror responses for 2023–2025 and the data-availability record were archived each time, but
+      Save Page Now kept returning capture 20260929003112 for Israel's mirror query for 2022, which
+      Wayback did not serve within 300 s on any attempt (the same failure as in P-14, docs/10 B-194), so
+      the fetcher wrote no row; the session removed the run's index rows and files before the commit
+      (docs/10 B-309). A2 stays without data until a later run on another UTC day (P-16). Context, not
+      scored: the Ministry of Foreign Affairs states that 78 licences for the export of military
+      material to Israel were granted in 2024 (src_20260513_mzv-cz_licence-izrael), and the Government
+      Office's release of 25 October 2023 states that Czech companies supplied Israel with basic military
+      equipment such as ballistic plates (src_20231025_vlada-cz_fiala-izrael-netanjahu). No document
+      confirming the military nature of HS 8526 or 8802 exports was found; no row was added to
+      a2_confirmed_military.csv.
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No official document naming Czech companies as suppliers of parts or maintenance for the F-35
+      programme was found. Czechia is buying F-35 aircraft (a purchaser, not a supplier).
+    queries:
+      - mzv.gov.cz search (F-35, Lockheed)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. The Government discussed the purchase of Israeli anti-aircraft missiles on 25 October 2023
+      (Government Office release title, vlada.gov.cz page 209409, not archived); A4 will show any new
+      order recorded by SIPRI.
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No named exercise, transit authorisation, basing agreement or official confirmation of
+      intelligence sharing related to the Gaza campaign found. The Czech embassy in Tel Aviv has served
+      as NATO's Contact Point Embassy in Israel since 2025 (seminars on security topics), a pre-existing
+      NATO arrangement not activated for the campaign. The Prime Minister said on 25 October 2023 that
+      he spoke with intelligence representatives in Israel "to obtain more comprehensive information on
+      the situation" (src_20231025_vlada-cz_fiala-izrael-netanjahu), which is not an official
+      confirmation of intelligence sharing.
+    queries:
+      - mzv.gov.cz search (zbraně, vojenský, cvičení, Izrael, NATO kontaktní ambasáda)
+  A6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or refusal of a class of licences. The Ministry of Foreign Affairs answered a
+      freedom-of-information request on 13 May 2026 that 78 licences for the export of military
+      material to Israel were granted in 2024 (citing the Ministry of Industry and Trade's annual export
+      control report, page 44), that each application is assessed case by case under Act No. 38/1994
+      and Common Position 2008/944/CFSP, and that exports of military material to Israel are fully in
+      line with Czechia's EU obligations (src_20260513_mzv-cz_licence-izrael).
+    queries:
+      - mzv.gov.cz search (vývoz zbraní, licence, Izrael, embargo)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No embargo on arms exports to or imports from Israel; see A6.
+    queries:
+      - mzv.gov.cz search (embargo, Izrael, zbraně)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No refusal of port or airspace transit for an arms shipment to Israel found.
+    queries:
+      - mzv.gov.cz search (tranzit, přelet, zbraně, Izrael)
+  B1:
+    status: has-events
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): no on A/RES/ES-10/21,
+      ES-10/22, ES-10/23, ES-10/24, ES-10/26 and 79/232; abstention on ES-10/25 (UNRWA). They agree
+      with the UN press releases (Czech Republic among the states against ES-10/22, ES-10/23 and
+      ES-10/26) and with the Ministry's explanations of vote (10 May 2024 "voted no"; 18 September
+      2024 "voted against it"; 11 December 2024: against ES-10/26, abstention on ES-10/25,
+      src_20241211_mzv-cz_eov-es-10-25-26, and the instruction quoted in src_20250115_mzv-cz_hlasovani-v-osn).
+      Later votes without rows (docs/10 B-199 (1)): A/RES/ES-10/27 (12 June 2025) — abstention, from
+      the Ministry's explanation of vote (src_20250612_mzv-cz_eov-es-10-27) and the UN press release
+      (the Czech Republic's representative explained the abstention); A/DEC/80/506 (12 September
+      2025) — abstention announced by the Ministry (src_20250908_mzv-cz_position-new-york-declaration;
+      Czechia is not in the press release's list of states against); A/RES/80/1 and 80/78 — Czechia is
+      not in the press releases' lists of states against; A/RES/80/116 — the press release lists no
+      states; no Czech document on these three votes was found. No disagreement with the generated
+      rows.
+  B2:
+    status: not-applicable
+    note: Czechia was not a member of the Security Council in the window.
+  B3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Czechia filed no declaration of intervention in case 192 (South Africa v. Israel).
+    queries:
+      - mzv.gov.cz search (Mezinárodní soudní dvůr, International Court of Justice, genocida)
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional-measures orders or their binding character. The
+      explanation of vote of 18 September 2024 (Ambassador to the UN) regretted that the advisory
+      opinion of July 2024 "could not pay enough attention to Israel's legitimate security interests"
+      while stating full respect for the Court; it concerns the advisory opinion, not the provisional
+      measures in case 192, and is not by a formal act.
+    queries:
+      - mzv.gov.cz search (Mezinárodní soudní dvůr, předběžná opatření, ICJ)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement by the Prime Minister or the ministers of foreign affairs or justice on executing the
+      warrants of 21 November 2024 was found on mzv.gov.cz or in the vlada.gov.cz pages available.
+      Czechia joined the States Parties' joint statement in support of the ICC's independence on 15 June
+      2024, before the warrants; not B5. The seed list of docs/06 §8 names Czechia among the positions
+      of immunity or refusal to verify; no primary was found, and no press or NGO source was read, so
+      no lead is filed. The Ministry of Justice and the Chamber of Deputies were not searched.
+    queries:
+      - mzv.gov.cz search (Mezinárodní trestní soud, zatykač, Netanjahu, International Criminal Court)
+      - vlada.gov.cz Wayback capture index (trestni-soud, netanjah)
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No stated refusal to execute the warrants by the Prime Minister or the ministers of foreign
+      affairs or justice was found, and no official visit to Czechia by a person under warrant.
+      Foreign Minister Macinka met Prime Minister Netanyahu in Israel on 14 April 2026
+      (src_20260413_mzv-cz_macinka-izrael-navsteva); a meeting abroad is not hosting an official visit
+      (docs/02 §2 B5/B6). See B5 for the unverified seed-list position.
+    queries:
+      - mzv.gov.cz search (Netanjahu, Netanyahu, Mezinárodní trestní soud)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on ICC officials; Czechia is a State Party.
+    queries:
+      - mzv.gov.cz search (Mezinárodní trestní soud, sankce)
+  B8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Generated from recognitions.csv; Czechia has no row. The Ministry stated on 25 September 2025 that
+      Czechoslovakia never recognised the State of Palestine but only acknowledged the proclamation of
+      Palestine in line with General Assembly resolution 43/177, a step "not intended to have any legal
+      effect" (src_20250925_mzv-cz_position-recognising-palestine). This contradicts the lead in
+      data/countries.yaml (A/78/846 lists the Czech Republic from 18 November 1988); no row is added
+      and no B8 event is generated. Reported for the author (docs/10 B-310).
+    queries:
+      - mzv.gov.cz search (uznání Palestiny, recognising the State of Palestine)
+  B9:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No formal call for a ceasefire or an end of the blockade, and no named violation, by the Prime
+      Minister or the Foreign Minister was found. The Ministry's releases on the Foreign Affairs Council
+      report Minister Lipavský's positions (humanitarian access, hostages, Israel's right of
+      self-defence); on 29 August 2024 he "supported the ongoing international negotiations for a
+      ceasefire and the release of hostages", a report of support for negotiations, not a call. Calls
+      for a ceasefire in the Ministry's texts are by the Permanent Mission (statement at the two-state
+      conference of 29 July 2025, chargé d'affaires) or by the Ministry without a named speaker
+      (src_20250815_mzv-cz_statement-humanitarian-gaza), not by a B9 speaker.
+    queries:
+      - mzv.gov.cz search (příměří, ceasefire, Gaza, humanitární pauza, Lipavský Gaza, Macinka Gaza)
+  B10:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Two events by Prime Minister Fiala (evt_2023_10_25_CZE_B10, evt_2023_11_01_CZE_B10), both decayed
+      to zero. Not filed (not a head of government): Foreign Minister Macinka's statement of 20 May 2026
+      that Czechia will not agree to further trade sanctions or attempts to suspend or restrict the
+      EU–Israel Association Agreement (src_20260520_mzv-cz_macinka-saar-forum; noted under C1); the
+      Ministry's statement of 15 August 2025. No statement by Prime Minister Babiš (from December 2025)
+      was found in the vlada.gov.cz pages available (the site's news listing and search index do not
+      reach 2026; see the header).
+    queries:
+      - vlada.gov.cz search (Izrael, Gaza, Netanjahu, Hamás, Blízký východ)
+      - vlada.gov.cz Wayback capture index (izrael, netanjah, gaz, palestin, blizk)
+  B11:
+    status: "has-events"
+    checked_at: 2026-09-30
+    note: "No national sanctions listing of Israeli ministers or settlers. Minister Lipavský welcomed on 18 March 2024 the agreement to adopt EU sanctions first against Hamas and then against violent Israeli settlers; EU listings of violent settlers are left to P-15 (docs/10 B-229 (3) on data/wave-2) and concern the West Bank (scope west-bank, docs/10 B-32). P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_CZE_B11, evt_2024_07_15_CZE_B11 and evt_2026_05_28_CZE_B11 under the reading R8 of docs/calibration/README.md."
+    queries:
+      - "mzv.gov.cz search (sankce osadníci, settlers, Ben Gvir, Smotrič)"
+  B12:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No recall, downgrade or severance of relations with Israel found.
+    queries:
+      - mzv.gov.cz search (velvyslanec, odvolání, Izrael)
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No Czech support for a review or suspension of the EU–Israel Association Agreement was found.
+      Foreign Minister Macinka stated on 20 May 2026: "Nebudeme souhlasit s žádnými dalšími obchodními
+      sankcemi, jakož ani s dalšími pokusy suspendovat či omezovat Asociační dohodu mezi EU a Izraelem"
+      (src_20260520_mzv-cz_macinka-saar-forum). The Ministry's release on the Council of 20 May 2025
+      does not record a Czech position on the Article 2 review.
+    queries:
+      - mzv.gov.cz search (asociační dohoda, Association Agreement, článek 2)
+  C2:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Two events: the declaration establishing a joint commission of the Czech and Israeli ministries
+      of foreign affairs, signed by the two foreign ministers during Minister Macinka's visit to Israel
+      of 14 April 2026 (evt_2026_04_14_CZE_C2), and the joint statement or agreement on economic
+      cooperation and regular joint business forums signed during his visit of 13–14 July 2026
+      (evt_2026_07_14_CZE_C2); both read as cooperation agreements and flagged (docs/10 B-310). Not
+      filed: the memorandum of understanding between the Confederation of Industry of the Czech
+      Republic and the Manufacturers' Association of Israel (20 May 2026), a private-sector act; the
+      contract between Škoda Auto University and Ben-Gurion University (July 2026), not a government
+      act.
+    queries:
+      - mzv.gov.cz search (dohoda, deklarace, memorandum, společná komise, Izrael, Macinka Saar)
+  C3:
+    status: unchecked
+    note: >-
+      Generated from Comtrade; Czechia has no rows (see A2: the fetch could not archive Israel's mirror
+      response for 2022, so nothing was written). Left unchecked until a later run (P-16).
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No labelling rule or ban on goods from Israeli settlements beyond EU law found.
+    queries:
+      - mzv.gov.cz search (osady, zboží z osad, označování)
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No exclusion decision by a Czech public fund or the Czech National Bank found; the bank and the funds were not searched.
+    queries:
+      - mzv.gov.cz search (divestice, vyloučení, osady)
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No public procurement exclusion of implicated companies found.
+    queries:
+      - mzv.gov.cz search (veřejné zakázky, vyloučení, osady)
+  D1:
+    status: has-events
+    checked_at: 2026-09-29
+    note: >-
+      Generated. +1 in every window from 2023-02 on (the +3 tier needs 0.0005 % of GNI, about USD 1.79
+      million): the highest twelve-month total is USD 1,621,646 (window 2025-04…2026-03, 0.00045 % of GNI
+      USD 358.85 billion), the current window 2025-09…2026-08 USD 248,471. FTS totals by plan: USD 649,292
+      (2024 flash appeal, 2 flows) and 1,621,646 (2025, 7 flows). The Ministry reports more: CZK 25.5
+      million for Gaza by January 2025, including CZK 15 million through WFP, CZK 5 million to Caritas
+      Jerusalem and dried infant milk given through Jordan's Hashemite Charity Organization
+      (src_20250115_mzv-cz_hlasovani-v-osn), and CZK 26 million to Gaza in 2025 by mid-August
+      (src_20250815_mzv-cz_statement-humanitarian-gaza), plus medical supplies for Jordan's field
+      hospitals (D4 note). Part is in kind or outside the flash appeals, the known FTS gap (docs/06 §7);
+      no disagreement with the generated value as defined.
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No UNRWA suspension found. Czechia is not listed as a donor in UNRWA's tables for 2022 and 2024
+      (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024), so there was no
+      contribution to suspend. The Ministry stated on 23 October 2023 that development aid to the
+      Palestinian territories was under review and no payments were planned until the review ended
+      (release of the Foreign Affairs Council, not archived); that is not UNRWA funding. Czechia
+      abstained on the UNRWA resolution of 11 December 2024, citing "operational shortcomings within
+      UNRWA" (src_20241211_mzv-cz_eov-es-10-25-26).
+    queries:
+      - mzv.gov.cz search (UNRWA)
+  D3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No UNRWA contribution by Czechia in UNRWA's tables for 2022 and 2024; no restoration or increase.
+    queries:
+      - mzv.gov.cz search (UNRWA)
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No medical-evacuation programme hosted by Czechia and no Czech field hospital deployed. The
+      Government donated medical supplies for Jordan's field hospitals serving Gaza (delivered in Jordan
+      on 16 October 2025, src_20251016_mzv-cz_field-hospitals-gaza; "a further consignment"); in-kind
+      aid to another state's field hospitals is not a Czech deployment under D4 and is noted here.
+    queries:
+      - mzv.gov.cz search (evakuace, polní nemocnice, zdravotnická pomoc Gaza, medical evacuation)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No visa or refugee pathway for people from Gaza found.
+    queries:
+      - mzv.gov.cz search (víza Gaza, humanitární víza, Palestinci)
+  E1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No domestic investigation of nationals or companies for conduct in Gaza found; the prosecution service was not searched.
+    queries:
+      - mzv.gov.cz search (vyšetřování, trestní oznámení, Gaza)
+  E2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No ban on Palestine solidarity protests or symbols found; the police and the Ministry of the Interior were not searched.
+    queries:
+      - mzv.gov.cz search (demonstrace, zákaz, Palestina)
+  E3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the prosecution service and courts were not searched.
+    queries:
+      - mzv.gov.cz search (univerzální jurisdikce, trestní oznámení, Gaza)

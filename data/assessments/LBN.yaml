@@ -1,0 +1,173 @@
+# Coverage record for Lebanon (docs/03 §6). P-21 light protocol, session T-P21-48, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name) (S/PV.9763: Lebanon's representative, R3); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Presidency's site (presidency.gov.lb, which answers a browser User-Agent; its media search /media?q=غزة listed two items, both in the Presidency's indirect speech). The Council of Ministers (pcm.gov.lb) and the Ministry of Foreign Affairs and Emigrants (mfa.gov.lb) did not answer from this network. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-46 and T-P21-47): no press item in Arabic, English or French was read. These gaps are scheduled for P-23.
+# Three events (B9, D3 x2). Leads: none.
+country: LBN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier LBN'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by the Lebanese state from Israel in the window. The register''s Lebanese rows (archive/text/src_20261005_sipri_register-supplier-israel.txt,
+      lines 448 to 451 and 622) are second-hand transfers of 1976 to 1987 to non-state armed groups (Lebanese Forces, SLA), not orders of the state. Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer LBN'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Lebanon (searched)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on the twelve qualifying votes (the votes of 2023 and the first half of 2024 have decayed). Lebanon has all twelve votes recorded and is not among the Member
+      States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched).'
+    queries:
+    - 'unga_votes.csv, country LBN'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Lebanon is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Lebanon).'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Lebanon (not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No filing by Lebanon supporting the respondent in ICJ case 192 (same page).'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Lebanon is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the
+      sources read (P-23).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Lebanon (not found)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'Lebanon is not a state party, so a hosting is not a state party''s act; no statement against the warrants was found in the sources read.'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Lebanon were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Lebanon. The registry gives 30 November 2008 (countries.yaml recognises_palestine); no Government document of the date was read, so no row
+      is added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, LBN'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event: the President Joseph Aoun''s 80th General Debate statement (23 September 2025, French, +2, flagged: ''mettre une fin immédiate à la tragédie qui se déroule à Gaza'' read at the call
+      tier), archived from its Wayback capture. Not filed: the 79th statement (the Foreign Minister Abdallah Bou Habib, 26 September 2024, Arabic; more than 730 days old, no score effect); the 81st statement
+      (September 2026, Arabic, no speaker named in the file: ''the tragedy of wounded Gaza'' puts the world''s conscience to a test, no call and no named violation, and its call for a ceasefire concerns
+      Lebanon); the Presidency''s pages of 16 January 2025 (the President''s welcome of the Gaza agreement) and 30 September 2025 (his welcome of the US President''s plan), both in the Presidency''s indirect
+      speech (R4); Lebanon''s representative at the Security Council''s open debate of October 2024 (S/PV.9763, R3). The Prime Minister''s and the Foreign Minister''s statements (pcm.gov.lb, mfa.gov.lb)
+      were not reached (P-23).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/lb_{en,fr,ar}.pdf (read live; 79th and 81st Arabic only, 80th French only)'
+    - 'web.archive.org CDX for 80/lb_fr.pdf'
+    - 'presidency.gov.lb/media?q=غزة (two items, read)'
+    - 'archive/text: joint statements and UN records, grep Lebanon, لبنان'
+    - 'monthly run 2026-11 (T-P23-4): the joint statement of 16 October 2026 on Colombia''s embassy in Jerusalem (src_20261016_dirco_joint-statement-colombia-embassy, line 1) names the Republic of Lebanon among its twenty signatories; not filed, because no archived document names the Foreign Minister of the government represented at the UN in the twelve months before that date and a B9 event needs the speaker''s name (as Kuwait, 26 October 2023); Jerusalem and the West Bank only (R7), so it would be tagged west-bank and unscored (docs/10 B-855)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Lebanon on settlers or settler entities were found in the sources read.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'Lebanon has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed. The President''s demand for an end to Israel''s attacks on Lebanon and for its
+      withdrawal (80th General Debate, line 184) concerns Lebanon and is outside the scale (docs/07).'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Lebanon is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the sources read. Arrangements on the Israel-Lebanon front (the cessation of hostilities and the monitoring mechanism) concern direct hostilities,
+      outside the scale (docs/07), and were not read in a primary.'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Lebanese Government flow to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor LBN'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 818,204 in 2022, USD 1,128,280 in 2023, USD 1,140,002 in 2024 (all in-kind). No announced suspension was found.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    note: 'Two events (D3 increased, from 31 December 2023 to 31 December 2024, and from 31 December 2024): UNRWA''s tables give USD 1,128,280 (2023) and USD 1,140,002 (2024) against USD 818,204 (2022),
+      all in-kind contributions of a host country, flagged as Jordan''s (B-398 (3)).'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (read)'
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Lebanon and no field hospital deployed by Lebanon was read in a primary (not searched beyond the sources listed; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'
+  E2:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'
+  E3:
+    status: unchecked
+    note: 'Experimental, unscored; not searched in this session.'

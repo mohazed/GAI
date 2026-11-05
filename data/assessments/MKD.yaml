@@ -1,0 +1,193 @@
+# Coverage record for North Macedonia (docs/03 §6). P-21 light protocol, session T-P21-28, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Foreign Trade (mfa.gov.mk) and the Government (vlada.mk) answer HTTP 200 but are client-rendered applications whose news items a script cannot list, so their releases were found only through web searches in English and Macedonian; the General Debate statements of the 78th to 81st sessions (gadebate.un.org, read live: none cites Gaza, Palestine or Israel), the Jerusalem Post's reports of the Foreign Minister's visit to Israel (25 and 28 August 2026), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Not read: the Macedonian-language and Albanian-language press, MIA's pages (searched, no Gaza statement of the Prime Minister or the Minister found), the Sobranie's records.
+# One C2 event (press only). Leads: none.
+country: MKD
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MKD
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): rows for North Macedonia of 2008 and 2021 and no order of the release''s own data year since the war. Left to the build. In the Jerusalem Post''s
+      report of 25 and 28 August 2026 the Foreign Minister says defence-industry cooperation and investment were discussed with Israel''s Foreign Minister (no order or contract is named).'
+    queries:
+    - sipri_orders.csv, buyer MKD
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 4 of the 12 qualifying votes, an abstention on 7 and one no. All 12 are recorded, so no absence is scored; North Macedonia is not among the four
+      Member States in arrears in the Secretary-General''s letter of 3 September 2025 (A/80/362, src_20250903_undocs_a-80-362-article19, archived). Israel''s Foreign Minister thanked North Macedonia
+      on 24 August 2026 for its ''voting record and its support for Israel'' (Jerusalem Post, 25 August 2026).'
+    queries:
+    - unga_votes.csv, voter MKD
+    - A/80/362 (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'North Macedonia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived 27 September 2026, searched for North Macedonia)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: North Macedonia is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, line 186). No statement by the Prime Minister
+      or the Foreign Minister on the arrest warrants was found.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched)'
+    - North Macedonia ICC arrest warrant Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by North Macedonia were found.
+    queries:
+    - North Macedonia sanctions International Criminal Court (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for North Macedonia; the registry records no recognition (docs/06 §8, A/78/846 annex).
+    queries:
+    - recognitions.csv, row MKD (none)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event: the General Debate statements of the 78th (President Pendarovski, 2023), 79th (President Siljanovska-Davkova, 26 September 2024: ''the bloodshed in the Middle East, the
+      scenes of which resemble Picasso''s Guernica''), 80th (25 September 2025) and 81st (Prime Minister Mickoski, 25 September 2026) sessions were read live (mk_en.pdf files) and none names Gaza,
+      Palestine or Israel, so none meets R7. Statements of the Minister for European Affairs (July 2025) and consular statements on the evacuation of nationals (October 2023, June 2025) are not
+      B9. No Gaza statement of the Prime Minister or the Minister of Foreign Affairs was found in searches in English and Macedonian.'
+    queries:
+    - gadebate.un.org 78th to 81st sessions (North Macedonia)
+    - Мицкоски Муцунски Газа изјава (web search in Macedonian)
+    - mia.mk (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Foreign Minister citing Gaza was found. The Foreign Minister's remarks in the Jerusalem
+      Post (25 and 28 August 2026) concern bilateral relations, Iran and the help Israel gave after the Kočani fire; the words of Israel's Foreign Minister about North Macedonia's votes are his.
+      The Minister wrote in the guest book at the Western Wall that he prays 'for peace and prosperity for all our peoples' (thekotel.org, 25 August 2026).
+    queries:
+    - Mucunski Israel Gaza statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions or travel bans on Israeli ministers or settlers by North Macedonia were found (North Macedonia is an EU candidate: the Council listings do not bind it as a member; alignment
+      with them was not searched).'
+    queries:
+    - North Macedonia sanctions Israel settlers (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Foreign Minister made his first official visit to Israel on 24 August 2026.
+    queries:
+    - North Macedonia Israel ambassador (web search)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement of North Macedonia with Israel suspended or reviewed was found.
+    queries:
+    - North Macedonia Israel trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'One event: the cooperation agreements signed by the two foreign ministers in Jerusalem on 24 August 2026, reported by the Jerusalem Post (two agreements, on education, culture and sports)
+      and in a digest of Macedonian headlines (a memorandum on economic consultations and two bilateral documents on education, science and sports); `reported`, press only, flagged under R18.
+      The Israeli Ministry''s own release (gov.il) and the Macedonian Ministry''s were not found as archivable texts.'
+    queries:
+    - Муцунски Сар Ерусалим меморандум потпишан (web searches in Macedonian and English)
+    - jpost.com article-906494 and article-906830 (read), FrontPages.eu digest of 25 August 2026
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor MKD
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have no row for North Macedonia, so no contribution was suspended.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row North Macedonia
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for North Macedonia: a zero in every year, which equals the 2022 level, so no increase.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row North Macedonia
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by North Macedonia was found. The Ministry evacuated its own nationals from Gaza and Israel (October 2023, June
+      2025), which is consular assistance.
+    queries:
+    - Gaza medical evacuation North Macedonia (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by North Macedonia was found.
+    queries:
+    - Gaza refugees visa North Macedonia (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

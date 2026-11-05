@@ -1,0 +1,184 @@
+# Coverage record for Namibia (docs/03 §6). P-21 light protocol, session T-P21-40, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; live, the 79th, 80th and 81st recorded from Wayback captures), the ICJ's case 192 page (archived copy and live) and Namibia's declaration of intervention
+# (the UNISPAL copy, archived), the UN Treaty Collection's status page of the Rome Statute (live), the Colombian Ministry's release on the Bogota conference (archived for Bolivia) and Infobae's report, the generated tables, UNRWA donor rankings
+# (2022 to 2024) and the Article 19 documents. The Presidency's, the Ministry's and the Government portal's sites did not answer on 2026-11-04. Web searches were not available to this session (the run's search budget was spent): nothing is
+# filed from a press item; the indicators a Government source would decide are `unchecked` with the reason, not `none-found` (docs/10 B-757).
+# Events: three (B9 x2, B3). Leads: one. See docs/10 B-816, B-817.
+country: NAM
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NAM
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer NAM
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (A/81/360). At the vote on A/DEC/80/506 (12 September 2025) its representative said the support was ''not a diplomatic gesture'' (src_20250912_un-press_ga12707;
+      a Permanent Representative, not a B9 speaker).'
+    queries:
+    - unga_votes.csv, country NAM
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: has-events
+    note: 'Namibia filed a declaration of intervention under Article 63 on 12 March 2026 (the Court''s page, archived 27 September 2026, src_20260927_icj-cij_case-192). The declaration is read
+      by direction (docs/10 B-541, B-816): it supports the applicant''s construction (B3, not B4). Event evt_2026_03_12_NAM_B3.'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    - www.icj-cij.org/case/192 (live, 2026-11-04)
+    - src_20260312_un-unispal_namibia-declaration-intervention
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: unchecked
+    note: Namibia ratified the Rome Statute on 25 June 2002 (the UN Treaty Collection's status page, read live on 2026-11-04). No statement on the warrants of 21 November 2024 by a B5 speaker
+      was found in the sources read; the Presidency (op.gov.na, HTTP 468 and timeouts), the Ministry of International Relations (mirco.gov.na) and the Government portal (gov.na) did not answer
+      a scripted request on 2026-11-04, and the Wayback index of op.gov.na timed out.
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - nbc.na/search/node?keys=Gaza (no result)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Namibia was found: the Treaty Collection''s page lists no withdrawal
+      notification by Namibia.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Namibia. The registry gives a recognition since 19 November 1988, before the window, with no Government document read (R21, left for P-23).
+      The President''s 80th statement (24 September 2025) does not announce a recognition; no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, NAM (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Two B9 events and the readings not filed. The President is head of state and head of government (R3): Nangolo Mbumba (79th session), Netumbo Nandi-Ndaitwah (80th and 81st). (1) evt_2024_09_25_NAM_B9
+      (+5, confirmed, expired): 79th General Debate, 25 September 2024, ''Namibia believes that Israel, by intent and by action, is committing genocide'', ''continues to call for a ceasefire''.
+      (2) evt_2025_09_24_NAM_B9 (+5, confirmed, flagged): 80th General Debate, 24 September 2025: the President reports that the Commission of Inquiry has found that ''a genocide is being committed
+      against the Palestinian people'', and that access to aid in Gaza is ''severely limited''. (3) Not filed (docs/10 B-817): the 81st statement, 23 September 2026 (src_20260923_un-gadebate_na-nandi-ndaitwah-ag81,
+      paragraph 19): ''Namibia calls for the Palestinian people''s right to self-determination, freedom, and statehood. We further call for an end to the atrocities being committed in Gaza.''
+      It calls for an end to ''atrocities'' with no ceasefire, no blockade and no violation named, so it has neither tier: the author may read it as a +2 call (default: not filed; an official
+      source cannot support a lead). (4) The Hague Group''s Bogota declaration (15 and 16 July 2025) names Namibia as a signatory with no named Namibian signatory: lead_20261104_NAM_1. The Presidency''s
+      statements of 2023 to 2025 and the Ministry''s could not be read (the Presidency (op.gov.na, HTTP 468 and timeouts), the Ministry of International Relations (mirco.gov.na) and the Government
+      portal (gov.na) did not answer a scripted request on 2026-11-04, and the Wayback index of op.gov.na timed out).'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/namibia and gastatements/{79,80,81}/na_en.pdf
+    - src_20250718_cancilleria_sosa-grupo-la-haya-bogota (searched for Namibia)
+    - nbc.na/search/node?keys=Gaza (no result)
+    checked_at: '2026-11-04'
+  B10:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5); the General Debate statements read contain no statement of unconditional support for Israel.'
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  B12:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5). No recall, downgrade or severance of relations was found in the sources read; the 79th statement of the President
+      (25 September 2024) and the 80th (24 September 2025) announce none.'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Namibia is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5); no treaty register was read (P-23).'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Namibia in fts_plan_totals.csv and no government flow to the oPt appeal in fts_funding.csv. Left to the build.'
+    queries:
+    - fts_funding.csv, donor NAM
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for this country in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Not searched: Namibia''s Government sites did not answer (see B5).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

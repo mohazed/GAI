@@ -1,0 +1,207 @@
+# Coverage record for Tunisia (docs/03 §6). P-21 light protocol, session T-P21-18, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs, Migration and Tunisians Abroad (diplomatie.gov.tn, a client-rendered application whose content API back.diplomatie.gov.tn/index.php/api/post/{id} answers HTTP 429 to a burst: 427 posts were read, for the ids 1 to 273 (2 October 2023 to 6 May 2024), 445 to 479 (September 2024), 650 to 684 (December 2024 to January 2025), 925 to 954 (August and September 2025), 1107 to 1168 (January to April 2026) and 1340 to 1359 (September and October 2026), and screened for Gaza, Palestine, Israel and UNRWA; the other ids (274 to 444, 480 to 649, 685 to 924, 955 to 1106, 1169 to 1339) were not read), the Presidency (carthage.tn) and the Presidency of the Government (pm.gov.tn) (home pages only; no search was run), the General Debate statements of the 79th to 81st sessions (the delegation's Arabic files of the 79th and 80th, the Ministry's English text of the 81st; the UN's pages of the 79th and 80th), the Human Rights Council statement of 23 February 2026, press searches in French, Arabic and English, the ICJ's and the ICC's lists (Tunisia is a state party).
+# Nine events: eight B9 and one D4 (the evacuations of wounded Palestinians). Leads: 4 (lead_20261013_TUN_1 to _4).
+country: TUN
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TUN
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of this country from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for
+      it. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TUN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Tunisia
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 10 of the 12 qualifying votes, an abstention on A/RES/ES-10/21 of 27 October 2023 and no vote recorded on A/DEC/80/506 of 12 September 2025 (the
+      New York Declaration; the vote is recorded as not voting). The Ministry''s post of 30 October 2023 explains the abstention: the resolution lacked ''a clear and strong condemnation of war
+      crimes and crimes of genocide'' (a communiqué with no named speaker, not B9). Tunisia is not among the four Member States in arrears under Article 19 in A/80/362 (3 September 2025, archived):
+      the absence of 12 September 2025 is a recorded non-vote, not a loss of vote.'
+    queries:
+    - unga_votes.csv, voter TUN
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: Tunisia is not on the ICJ case 192 intervention list (the Court's page archived 27 September 2026, read; docs/06 §8). The Ministry announced on 10 January 2024, according to The New
+      Arab (seen in a search result, not read), that Tunisia would not endorse any legal action against Israel before the ICJ because it would amount to implicit recognition, and asked at the
+      same time to be heard in the advisory proceedings; Tunisia filed a written statement in the advisory case on Israel's obligations (case 196, 28 February 2025, seen in a search result). Neither
+      is a B3 or B4 event (case 192 only, docs/02 §2).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    - Tunisia foreign ministry will not join ICJ case against Israel 'implicit recognition' (web search)
+    - وزارة الشؤون الخارجية تونس بلاغ لن تنخرط في أي دعوى أمام محكمة العدل الدولية (web search)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found. The Ministry's announcement of 10 January 2024 (see B3) came before the first order (26 January 2024) and
+      rejects no order.
+    queries:
+    - Tunisia ICJ provisional measures statement (web search)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the head of government, the Foreign Minister or the Justice Minister on the warrants of 21 November 2024 was found (searches in French; the Ministry''s posts screened). The Ministry''s post of 14 January 2025 reports the Minister receiving a delegation of the ICC on 13 January: he hailed Tunisia''s membership, stressed the judges'' impartiality and independence and expressed concern at the stagnation of the investigations into the situation in Palestine, with no word on the warrants (indirect speech; lead_20261013_TUN_3). Tunisia is a state party to the Rome Statute (the Assembly''s list, archived: src_20261009_icc-asp_states-parties, line 220).'
+    queries:
+    - Tunisie CPI mandat d'arrêt Netanyahou position ministère affaires étrangères Nafti (web search)
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - Tunisie CPI mandat d'arrêt Netanyahou (web search)
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Tunisia has imposed no sanctions on ICC officials (none found).
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Tunisia. The registry gives a recognition of 15 November 1988 (before the window); no document of it was read and none was added
+      to recognitions.csv. Tunisia does not recognise Israel.
+    queries:
+    - recognitions.csv, row TUN (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Eight events: the Foreign Minister (Nabil Ammar) at the OIC emergency meeting in Jeddah, 18 October 2023 (evt_2023_10_18_TUN_B9, +5), at a high-level event in Geneva, 12 December 2023 (+5), at the Non-Aligned Movement summit, 20 January 2024 (+5, date flagged) and at the Human Rights Council, 27 February 2024 (+5), all expired; Mohamed Ali Nafti at the 79th General Debate, 27 September
+      2024 (+5; expired, 746 days) and the 80th, 27 September 2025 (+5; 381 days, counts at weight 0.97 and does not by itself end the penalty); at the Human Rights Council''s high-level segment, 23 February
+      2026 (+5; 232 days, qualifying) and at the 81st General Debate, 26 September 2026 (+5; 17 days, qualifying): each is a qualifying event inside 365 days and either alone ends the passivity penalty. The speaker of the last is established
+      by La Presse and Arab News, not by the Ministry''s text (flagged). Read and not filed: (1) the Minister''s interview with EFE (December 2023, the Ministry''s record: ''demand a ceasefire
+      and stop the killings''): a press interview, expired; (2) the Minister at the extraordinary Arab summit in Cairo, 4 March 2025, delivering the President''s speech, known from La Presse''s
+      report in indirect speech (lead_20261013_TUN_2, R4); (3) the Minister at the Arab League''s ministerial sessions of March 2026 (Ministry posts 1135 and 1156: statements on the Palestinian
+      State, no Gaza-specific call or violation); (4) the Ministry''s reports in indirect speech of the Minister''s interventions at the OIC (25 August 2025), the Arab League Council (4 September 2025) and the Doha summit (15 September 2025), and of 26 December 2024 and 13 January 2025 (leads 3 and 4, R4); (4b) the Ministry''s communiqués with no named speaker (29 November 2023, 10 February 2025 on displacement, August 2025 on the reoccupation of
+      Gaza, 30 March 2026 on Land Day: ''violations of the Gaza Strip ceasefire agreement'', ''genocidal plans''), not B9 under R3; (5) the President, Kais Saied, whose statements are known from
+      press reports of his meetings in indirect speech (22 July 2025 with a US adviser, 31 July 2025 with Italy''s Prime Minister, 2 October 2025 on the flotilla''s detainees: ''crimes of genocide'';
+      lead_20261013_TUN_1); the Presidency''s site carthage.tn was not searched and no transcript or video was found.'
+    queries:
+    - Tunisie Kaïs Saïed Gaza discours génocide cessez-le-feu présidence 2025 (web search)
+    - وزير الخارجية النفطي كلمة تونس الجمعية العامة للأمم المتحدة الدورة 81 غزة (web search)
+    - Tunisia Nafti General Assembly general debate 26 September 2026 Palestinian people Gaza (web search)
+    - back.diplomatie.gov.tn post ids 1 to 1400 (all read, screened for Gaza, Palestine, Israel, UNRWA)
+    - gadebate.un.org/en/79/tunisia and /en/80/tunisia (Wayback, read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: No statement of support for Israel was found; Tunisia has no relations with Israel and its Foreign Ministry has said it will not establish any with 'an occupying entity' (search results,
+      undated, not read).
+    queries:
+    - Tunisie relations Israël normalisation (web search)
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No Tunisian sanctions on settlers or Israeli officials were found (searches in French and Arabic).
+    queries:
+    - Tunisie sanctions colons israéliens (web search)
+    - تونس عقوبات على المستوطنين الإسرائيليين (web search)
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Tunisia closed its mission in Tel Aviv in 2000 and has had no relations since (search results, not read). A bill to criminalise normalisation
+      with Israel was introduced in July 2023, approved by the Rights and Freedoms Committee on 23 October 2023, and its plenary debate was suspended on 2 and 3 November 2023 when the President
+      asked for a postponement; L''Economiste Maghrébin (18 December 2023, archived: src_20231218_economiste-maghrebin_normalisation-bill-shelved, read) reports that four chapters remained to
+      be approved, and Webdo (8 October 2025, archived: src_20251008_webdo_arp-calls-normalisation-law, read) that the deputies unanimously called on 7 October 2025 to speed up its approval: it
+      was still not adopted. No enacted measure was found (the Assembly''s site was not searched). A draft bill is not an event.'
+    queries:
+    - Tunisia parliament bill criminalising normalisation with Israel status 2025 2026 adopted (web search)
+    - مشروع قانون تجريم التطبيع تونس البرلمان المصادقة 2025 2026 (web search)
+    - Tunisie sanctions colons israéliens OR rappel ambassadeur OR rupture relations Israël (web search)
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found; Tunisia has none in force.
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found; Tunisia has no relations with Israel.
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1186, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor TUN
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Tunisia has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tunisia (none)
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'Tunisia has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived: src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023, src_20241231_unrwa_donor-ranking-2024):
+      no contribution to compare, so D3 has no baseline (docs/10 B-445). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tunisia (none)
+    checked_at: '2026-10-13'
+  D4:
+    status: has-events
+    note: 'One event for the programme: the first flight of 3 December 2023 (evt_2023_12_03_TUN_D4, +5, `corroborated`: La Presse and Kapitalis); the second flight of 18 December 2023 (53 wounded,
+      Le Courrier de l''Atlas) is the same programme. Later arrivals (a Palestinian family from Cairo, undated, La Presse; seen in a search result, not read) were not dated.'
+    queries:
+    - Tunisie blessés de Gaza accueillis soins hôpitaux tunisiens évacuation médicale (web search)
+    - La Presse, Kapitalis, Le Courrier de l'Atlas, December 2023 (archived, read)
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found (the Ministry's statement of rejection of displacement is not an instrument).
+    queries:
+    - تونس تأشيرة لسكان غزة استقبال لاجئين من غزة (web search)
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

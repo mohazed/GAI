@@ -1,0 +1,191 @@
+# Coverage record for Tuvalu (docs/03 §6). P-21 light protocol, session T-P21-20, 2026-10-14.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Permanent Mission to the United Nations (un.int/tuvalu: HTTP 200, lang="en"; the only Government site that answers: gov.tv, tuvalu.gov.tv and similar hosts do not resolve), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English per indicator group. Time: about 20 minutes of research on Tuvalu, inside the 90-minute budget.
+# No hand-authored event and no lead: the statements read have no passage on Gaza, Palestine or Israel.
+country: TUV
+protocol_version: 1
+last_full_check: '2026-10-14'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TUV
+    checked_at: '2026-10-14'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-14'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TUV
+    checked_at: '2026-10-14'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 2 of the 12 qualifying votes (A/RES/ES-10/22 and A/RES/80/78), no on A/RES/ES-10/24 and ES-10/27, an abstention on A/RES/ES-10/21 and 80/116, and
+      no vote recorded on six (A/RES/ES-10/23, ES-10/25, ES-10/26, A/RES/79/232, A/DEC/80/506 and A/RES/80/1). Article 19 note (report only, B-626): the table records no vote for Tuvalu on 6 of
+      the 12 qualifying votes (A/RES/ES-10/23 of 10 May 2024, ES-10/25 and ES-10/26 of 11 December 2024, A/RES/79/232 of 19 December 2024, A/DEC/80/506 of 12 September 2025 and A/RES/80/1 of 19
+      September 2025); Tuvalu is not among the four Member States in arrears in A/80/362 of 3 September 2025 nor on the General Assembly''s Article 19 page read on 2026-10-13 (both archived),
+      so the absences are not shown to be a loss of vote; the Secretary-General''s lists for the dates of the votes of 2024 are not archived (P-23 check). The build scores a non-vote at -2, as
+      an abstention, whatever the reason. The six absences weigh about -6.0 of the -8.7 of Tuvalu''s B1 today (the build scores a non-vote at -2): the question whether B1 should distinguish a
+      state not entitled to vote from one that did not take part is for the author and P-15/P-24.'
+    queries:
+    - unga_votes.csv, voter TUV
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-10-14'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-14'
+  B3:
+    status: none-found
+    note: 'Tuvalu is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for
+      Tuvalu; docs/06 §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    checked_at: '2026-10-14'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - Tuvalu ICJ provisional measures Israel statement
+    checked_at: '2026-10-14'
+  B5:
+    status: none-found
+    note: 'Tuvalu is not a state party to the Rome Statute (the Assembly of States Parties'' list, archived: src_20261009_icc-asp_states-parties, searched for Tuvalu); no statement on the warrants
+      of 21 November 2024 was found.'
+    queries:
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    - Tuvalu ICC arrest warrant Netanyahu
+    checked_at: '2026-10-14'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-10-14'
+  B7:
+    status: none-found
+    note: Tuvalu has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-14'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Tuvalu. Tuvalu has not recognised the State of Palestine in the sources read (the registry's note); no vote is recorded for A/DEC/80/506
+      (12 September 2025).
+    queries:
+    - recognitions.csv, row TUV (none)
+    checked_at: '2026-10-14'
+  B9:
+    status: none-found
+    note: 'No B9 event: the Prime Minister''s statements at the General Debate of the 78th (Kausea Natano), 79th, 80th and 81st sessions (Feleti Teo) have no passage on Gaza, Palestine, Israel,
+      Hamas or a ceasefire (gadebate.un.org files tv_en.pdf, read live; the 79th is headed ''Draft''). They ask instead that Taiwan take part in the United Nations system (Tuvalu''s diplomatic
+      ties are with Taiwan, not Israel). The Permanent Mission''s news page (un.int/tuvalu) has nothing on Gaza in the items read (a site search returned results, not read item by item). No Ministry
+      or Prime Minister''s Office site could be reached (no gov.tv or tuvalu.gov.tv page answers; tuvalu.tv is a showcase application).'
+    queries:
+    - gadebate.un.org Tuvalu 78th to 81st sessions (tv_en.pdf, read)
+    - un.int/tuvalu statements and news
+    - Tuvalu Prime Minister Teo Gaza Israel Palestine
+    checked_at: '2026-10-14'
+  B10:
+    status: none-found
+    note: No statement of support for Israel or denial of violations by the Prime Minister was found.
+    queries:
+    - Tuvalu Prime Minister Teo Israel support
+    checked_at: '2026-10-14'
+  B11:
+    status: none-found
+    note: No sanctions on Israeli ministers or settler entities by Tuvalu were found; Tuvalu is not an EU member.
+    queries:
+    - Tuvalu sanctions Israeli settlers OR ministers
+    checked_at: '2026-10-14'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. An activist quoted by Asia Pacific Report (26 July 2026, seen in a search result, not read) says Tuvalu plans a
+      post in Jerusalem; no Government source for it was found, and an embassy is not an event (B-599).
+    queries:
+    - Tuvalu Israel embassy OR agreement OR visit 2024 2025 2026
+    checked_at: '2026-10-14'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Tuvalu; none was suspended or reviewed (none found).
+    queries:
+    - Tuvalu Israel trade agreement suspended
+    checked_at: '2026-10-14'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found.
+    queries:
+    - Tuvalu Israel agreement signed memorandum 2024 2025 2026
+    checked_at: '2026-10-14'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-14'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor TUV
+    checked_at: '2026-10-14'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Tuvalu: no contribution to suspend (searched for Tuvalu).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tuvalu
+    checked_at: '2026-10-14'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Tuvalu: no contribution to restore or increase (searched for Tuvalu).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Tuvalu
+    checked_at: '2026-10-14'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Tuvalu
+    checked_at: '2026-10-14'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Tuvalu
+    checked_at: '2026-10-14'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

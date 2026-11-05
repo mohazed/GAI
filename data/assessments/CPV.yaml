@@ -1,0 +1,195 @@
+# Coverage record for Cabo Verde (docs/03 §6). P-21 light protocol, session T-P21-34, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government portal (governo.cv, WordPress, searched through /wp-json/wp/v2/posts?search= for Gaza, Palestina, Palestine, Israel and Hamas; the communiqué of 1 November 2023 and the Prime Minister's 80th General Debate speech archived), the UN's General Debate pages and files (the 79th statement of President Neves and the 80th of the Prime Minister read through Wayback, the 80th also on the Government's portal), the ICJ's case 192 page, the Assembly of States Parties' list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. The Ministry's site (mne.gov.cv and variants) does not answer. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31 to T-P21-33 and T-P21-46 to T-P21-49): no press item was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# No event. Leads: none; see docs/10 B-790.
+country: CPV
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier CPV
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Cabo Verde from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer CPV
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Cabo Verde (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on nine of the twelve qualifying votes (A/RES/ES-10/23 to ES-10/27, A/DEC/80/506, A/RES/80/1, A/RES/80/78 and A/RES/79/232); abstention (`A`) on A/RES/ES-10/21
+      (27 October 2023) and A/RES/ES-10/22 (12 December 2023); non-voting (`X`) on A/RES/80/116 (12 December 2025), scored -2 by the build (docs/10 B-690), as the abstentions are. The Government''s
+      communiqué of 1 November 2023 (src_20231101_governo-cv_comunicado-voto-resolucao-onu) explains the first abstention: the Canadian amendment on the attack of 7 October was rejected. The country
+      is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      A/81/360). The non-vote of 12 December 2025 was not explained (docs/10 B-790).'
+    queries:
+    - unga_votes.csv, country CPV
+    - src_20231101_governo-cv_comunicado-voto-resolucao-onu (searched)
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Cabo Verde is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched).
+      Case 186 (advisory proceedings) is not B3 or B4; Cabo Verde is not in the list of written statements read earlier (src_20261007_icj-cij_case-186-written-proceedings, searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No filing by Cabo Verde supporting the respondent in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Cabo Verde is a state party to the Rome Statute (listed in src_20261009_icc-asp_states-parties, line 108; the status page of the UN Treaty Collection was not read). The Government portal's
+      search for Gaza, Palestina, Israel and Hamas returns no statement on the Court or the warrants of 21 November 2024.
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Cabo Verde (found: state party)'
+    - governo.cv/wp-json/wp/v2/posts?search={Gaza,Palestina,Israel,Hamas}
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person under warrant was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Cabo Verde were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Cabo Verde. The registry gives 24 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read,
+      so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, CPV
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) President José Maria Neves (head of state, R3) at the 79th General Debate, 25 September 2024 (cv_en.pdf and cv_pt.pdf, read through Wayback captures 20241109092026
+      and 20241109094932, not archived): armed conflicts ''particularly in the Middle East'' and a call to all parties to end them through dialogue; Gaza is not named (R7), and the text has no
+      call for a ceasefire. (2) Prime Minister José Ulisses Correia e Silva (head of government) at the 80th, 26 September 2025 (src_20250926_governo-cv_pm-ag80): ''Apoiamos solução de dois Estados,
+      Israel e Palestina, vivendo lado a lado, em paz e segurança'': no Gaza, no call (R7). (3) The Government''s reaction of 14 April 2024 to Iran''s attack on Israel (governo.cv, read, not archived)
+      ''acompanha com preocupação a situação de conflito no Médio Oriente'' and ''apela à contenção'': not Gaza. (4) The Government''s page on Secretary of State Blinken''s visit of 22 January
+      2024 (read, not archived) quotes the Prime Minister: Cabo Verde ''condenou o ato terrorista do Hamas em Israel'' and ''defendemos soluções que viabilizem os estados de Israel e da Palestina'':
+      neither B9 nor B10. The 81st statement (September 2026) could not be reached (the live site answers a bot check; no Wayback capture).'
+    queries:
+    - governo.cv/wp-json/wp/v2/posts?search={Gaza,Palestina,Palestine,Israel,Hamas}
+    - gadebate.un.org/sites/default/files/gastatements/{79,80}/cv_{en,pt}.pdf (79th and 80th read through Wayback; 81st not reachable)
+    - gadebate.un.org/en/{79,80}/cabo-verde (Wayback 20240926091408, 20250926221716)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister (head of government) was found. The Government''s communiqué
+      of 1 November 2023 (src_20231101_governo-cv_comunicado-voto-resolucao-onu), issued by the Government with no named speaker, condemns the attacks of 7 October and terrorism ''sob todas as
+      formas'', ''reconhece o direito do Estado de Israel de viver em paz e segurança, bem como o direito que lhe assiste de se defender, observando o Direito Internacional Humanitário'', recognises
+      the Palestinian people''s right to a State and supports two States; the support is conditional on international humanitarian law, so it is not B10 even if a speaker were named (docs/10 B-790;
+      the author may read it otherwise, default: not filed; it is 1,099 days old, beyond 730).'
+    queries:
+    - governo.cv/wp-json/wp/v2/posts?search={Israel,Hamas}
+    - src_20231101_governo-cv_comunicado-voto-resolucao-onu (searched)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found on the Government portal (searches for Israel, Palestina and Gaza). This rests on that portal only (the Ministry's
+      site does not answer; P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found on the Government portal (search for Israel returns the pages in B9 and B10, the visit of the Prime Minister to Israel in March 2019 and other
+      pre-2023 items). This rests on that portal only (P-23).
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Cabo Verde is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found on the Government portal (the search for Israel returns agreements of 2016 to 2019 and the pages in B9 and B10). No treaty
+      register was read (P-23).
+    queries:
+    - governo.cv/wp-json/wp/v2/posts?search=Israel
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Cabo Verde to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor CPV
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Cabo Verde has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Cabo Verde in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Cabo Verde was found on the Government portal (search for Gaza returns the three items in B9, B10 and a partnership
+      meeting of 2024).
+    queries:
+    - governo.cv/wp-json/wp/v2/posts?search=Gaza
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found on the Government portal (search for Gaza returns the three items in B9, B10 and a partnership meeting of 2024).
+    queries:
+    - governo.cv/wp-json/wp/v2/posts?search=Gaza
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

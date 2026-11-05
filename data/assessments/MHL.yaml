@@ -1,0 +1,192 @@
+# Coverage record for the Marshall Islands (docs/03 §6). P-21 light protocol, session T-P21-16, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): no site of the Ministry of Foreign Affairs and Trade or of the Office of the President could be reached (rmigovernment.org now carries unrelated content; the Embassy in Washington, rmiembassyus.org, and the old page of the Permanent Mission, un.int/marshallislands, hold no statement on Gaza), so the sources are the General Debate pages and statements of the 79th to 81st sessions (gadebate.un.org: the 79th and 80th through Wayback captures, the 81st read live), UN Meetings Coverage's reports of the votes already archived (GA/12690), the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official languages are Marshallese and English) per indicator group, including the Marshall Islands Journal's reporting as relayed by PINA and RNZ (press, leads only). Time: about 15 minutes of research on the Marshall Islands, inside the 90-minute budget of the session.
+# One hand-authored event: evt_2024_09_25_MHL_B9 (expired, flagged).
+country: MHL
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MHL
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the Marshall Islands from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no
+      row for it. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MHL
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Vanuatu
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 6 of the 12 qualifying votes (A/RES/ES-10/24, ES-10/25, ES-10/26, 79/232, A/DEC/80/506 and A/RES/80/116), an abstention on 4 (A/RES/ES-10/22, ES-10/23,
+      ES-10/27 and 80/78), no on 1 (A/RES/ES-10/21 of 27 October 2023) and no vote recorded on 1 (A/RES/80/1 of 19 September 2025; scored as absent, B1). Its representative explained the abstention
+      of 12 June 2025 in the plenary (GA/12690, archived: ''the continued undertaking now dysfunctional where we vote on nearly the same words in repetition''); a Permanent Representative is not
+      a B9 or B10 speaker (R3), so it is a note. The Marshall Islands Journal, as relayed by PINA (3 March 2025, press), says the country has long voted with the United States on Israel-related
+      votes and that from September to December 2024 it voted for a ceasefire in Gaza and for a Palestinian state; the vote table agrees.'
+    queries:
+    - unga_votes.csv, voter MHL
+    - press.un.org GA/12690 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'The Marshall Islands is not on the ICJ case 192 intervention list (docs/06 §8; the Court''s page archived 25 September 2026, read; the Court''s press release of 13 March 2026, archived).
+      Its participation in the advisory proceedings on Israel''s policies and practices (case 186) would not be a B3 or B4 event (docs/02 §2: case 192 only); the Court''s list of written statements
+      (archived: src_20261007_icj-cij_case-186-written-proceedings) and its press release on the oral hearings (archived: src_20240226_un-unispal_icj-186-hearings-conclusion) do not name it.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    - icj-cij.org case 186 written and oral statements (archived pages, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; the Marshall Islands is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page archived 25 September 2026, read; src_20260927_icj-cij_case-192)
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement of the President or of the Minister of Foreign Affairs and Trade on executing the warrants of 21 November 2024 was found (no Government site could be read; the press: no
+      result). The Marshall Islands is a state party to the Rome Statute (the Assembly''s list, archived: src_20261009_icc-asp_states-parties, read).'
+    queries:
+    - Marshall Islands ICC arrest warrant Netanyahu Heine OR Kaneko government position
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Marshall Islands ICC arrest warrant Netanyahu Heine OR Kaneko government position
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: The Marshall Islands has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'No recognition of the State of Palestine documented: `data/structured/recognitions.csv` has no row for the Marshall Islands, and none was added. The registry''s note records that it
+      is not in the annex of A/78/846 (recognitions to 2023) nor among the later recognitions (docs/06 §8, Wikipedia list read 2026-09-28); no Government site could be searched.'
+    queries:
+    - Marshall Islands recognition State of Palestine government statement
+    - recognitions.csv, row MHL (none)
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 25 September 2024 (evt_2024_09_25_MHL_B9, +5, flagged: ''nations around the world have expressed grave concern regarding extreme
+      violence in Gaza and Israel … the disproportionate and devastating response visited upon an innocent civilian population''; no call for a ceasefire; 748 days old on 13 October 2026, expired,
+      adds nothing). Read and not filed: the President''s statements of the 80th session (24 September 2025, read from the Wayback capture of the delegation''s file, not recorded as a source)
+      and of the 81st session (September 2026, read live): no passage on Gaza, Palestine, Israel or a ceasefire (the 80th speaks of Ukraine, nuclear legacy and the ocean). The Minister of Foreign
+      Affairs and Trade, Kalani Kaneko, has no statement on the subject in the sources read.'
+    queries:
+    - Marshall Islands Gaza ceasefire statement President Heine OR Minister Kaneko
+    - gadebate.un.org Marshall Islands 79th to 81st sessions (mh_en.pdf, read)
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found. The country voted against the resolutions on 27 October
+      2023 (A/RES/ES-10/21) and abstained on four, but its President''s and Foreign Minister''s own words say nothing of the kind in the sources read.'
+    queries:
+    - Marshall Islands President Heine support Israel Gaza Hamas statement
+    checked_at: '2026-10-13'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by the Marshall Islands was found (not an EU member).
+    queries: []
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. No embassy of Israel in the Marshall Islands or of the Marshall Islands in Israel appears in the sources read.
+    queries:
+    - Marshall Islands ambassador Israel recalled OR relations Israel downgrade OR sever
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - Marshall Islands Israel agreement suspend OR review
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found (no Government site could be read; the press: no agreement, memorandum or declaration of intent).'
+    queries:
+    - Marshall Islands Israel agreement OR memorandum signed 2024 2025 2026
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor MHL
+    checked_at: '2026-10-13'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; the Marshall Islands has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Marshall Islands
+    checked_at: '2026-10-13'
+  D3:
+    status: none-found
+    note: 'The Marshall Islands has no row in UNRWA''s donor rankings of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Marshall Islands
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - medical evacuation Gaza Marshall Islands ministry
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Marshall Islands regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

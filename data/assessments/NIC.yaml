@@ -1,0 +1,206 @@
+# Coverage record for Nicaragua (docs/03 §6). P-21 light protocol, session T-P21-11, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's official sites are not reachable from the session's network (cancilleria.gob.ni does not resolve; presidencia.gob.ni and the Ministry's name are parked pages in Wayback; El 19 Digital answers HTTP 403), so the research read the official gazette (La Gaceta No. 187, from Wayback), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the messages and statements Nicaragua published through UNISPAL, the ICJ documents (UNISPAL copies, the Court's report A/80/4), the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 45 minutes of research on Nicaragua, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: R7, no document cites Gaza (see B9).
+country: NIC
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NIC
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists two orders of Nicaragua from Israel (1957, second-hand armoured vehicles; 1973, two aircraft), and A4 reads only the rows
+      of a release''s own data year (docs/10 B-536 (7)): nothing after 7 October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer NIC
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, NIC
+    checked_at: '2026-10-06'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: has-events
+    note: 'One event: Nicaragua''s Article 62 application to intervene ''as a party'' in case 192, filed 23 January 2024 and withdrawn on 1 April 2025 (+15, standing, ended; supports the applicant).
+      It is not on the Court''s current list, which keeps only the declarations in force. Nicaragua v. Germany (case 193, instituted 1 March 2024; Nicaragua is the applicant against a third State)
+      is a separate case: not a filing in case 192 and not filed (the methodology tracks joining a separate case under scope related, unscored).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    - ICJ press release 2024/14 (UNISPAL copy, archived), Nicaragua's application (UNISPAL, archived) and the Court's report A/80/4 paragraphs 189, 203 and 205 (archived)
+    - ICJ press release Nicaragua requests permission to intervene Article 62; Nicaragua withdraws application permission to intervene April 2025
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Nicaragua's own filings ask the Court for measures (case 192 application; case 193 request for provisional
+      measures against Germany, A/80/4 paragraph 206 ff.).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: Nicaragua is not a State Party to the Rome Statute (it is not on the Assembly of States Parties' list, asp.icc-cpi.int/states-parties, read on 6 October 2026) and no statement on the
+      warrants of 21 November 2024 was found.
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Nicaragua has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv: no row. The registry dates the recognition 16 November 1988 (the day after the proclamation of 15 November 1988; A/78/846, docs/10 B-178), but no document
+      of the Nicaraguan State is archived (the UN Yearbook of 1988 on UNISPAL lists votes only), so the pre-existing tier (+3, R21) waits for the state''s own document; the Government''s annual
+      message of 15 November on the anniversary of the declaration of independence is the likely source (El 19 Digital answers HTTP 403).'
+    queries:
+    - Nicaragua reconoce Estado de Palestina 1988 declaración de independencia Nicaragua primer país reconocimiento 16 noviembre 1988 Cancillería
+    - '"Nicaragua" recognized "State of Palestine" November 1988 United Nations document letter Permanent Representative'
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: every statement of the President, the Vice-President/co-president or the Foreign Ministers read speaks of the genocide against ''the Palestinian people'' or ''Palestine''
+      and never cites Gaza, so none is a B9 event under R7 (docs/10 B-32): the General Debate statements of the Foreign Ministers on 30 September 2024 and 29 September 2025 (the 81st session''s
+      statement, 26 September 2026, does not mention Palestine), the messages of the President and Rosario Murillo to the UN Committee of 14 November 2024 and 25 November 2025 (UNISPAL), and the
+      statement of 29 July 2025 at the UN conference on the two-State solution, which cites Gaza (''Gaza es hoy una tierra arrasada'') but was delivered by the Permanent Representative, Jaime
+      Hermida Castillo (El 19 Digital''s report, seen in a search result; the file on UNISPAL names no speaker): R3, not a B9 speaker. They are three leads (lead_20261006_NIC_1 to _3). The National
+      Assembly''s declaration A.N. 07-2024 and the Government''s announcement of the break (Vice-President, 11 October 2024) do cite Gaza or genocide but are not statements of a B9 speaker (R3:
+      not a head of state, head of government or foreign minister, in the Vice-President''s case at the time). The Hague Group''s declaration names Nicaragua among its signatories without a named
+      signatory: a lead (_4).'
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    - Rosario Murillo copresidenta Gaza genocidio Palestina alto el fuego declaración Nicaragua 2025
+    - Nicaragua gobierno comunicado Gaza cancillería Moncada Palestina genocidio flotilla OR "alto el fuego" OR "plan de paz" 2025 2026
+    - Nicaragua mensaje Día Internacional de Solidaridad con el Pueblo Palestino 25 noviembre 2025 Ortega Murillo genocidio crímenes de guerra
+    - canciller Nicaragua Jaentschke Asamblea General ONU 30 septiembre 2024 genocidio Israel "Pueblo Palestino" discurso
+    - Nicaragua canciller Moncada Asamblea General ONU 29 septiembre 2025 discurso genocidio Palestina Israel
+    - gadebate.un.org Nicaragua 78th to 81st sessions (ni_en.pdf, ni_es.pdf), read; UNISPAL messages of Nicaragua, read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found; Nicaragua's statements are the opposite.
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Nicaragua was found (not an EU member; the statements say Nicaragua has no commercial relations with Israel).
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    checked_at: '2026-10-06'
+  B12:
+    status: has-events
+    note: 'One event: the break of diplomatic relations with Israel, decided on 11 October 2024 (Presidential Agreement 181-2024, La Gaceta No. 187 of 14 October 2024, archived): +10, standing,
+      no restoration found (search of 6 October 2026).'
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - '"Acuerdo Presidencial No. 181-2024" Nicaragua La Gaceta Oscar Ovidio Cubas Castro Israel rompimiento relaciones diplomáticas'
+    - Nicaragua Israel restablece relaciones diplomáticas 2026 OR 2025 Nicaragua Israel relations restored embassy
+    - La Gaceta No. 187 of 14 October 2024 (Wayback capture, read)
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Nicaragua has none).
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found; relations were severed on 11 October 2024.
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Nicaragua in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor NIC
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Nicaragua has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Nicaragua
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    note: 'Nicaragua has no row in UNRWA''s donor tables of 2022, 2023 or 2024 (archived): no contribution to compare. The 2025 table was not archived. (The request of 2024 in case 193 that Germany
+      resume its funding is not a Nicaraguan contribution.)'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Nicaragua
+    checked_at: '2026-10-06'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

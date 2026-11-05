@@ -1,0 +1,175 @@
+# Coverage record for Myanmar (docs/03 §6). P-21 light protocol, session T-P21-22, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mofa.gov.mm: HTTP 200, front page in Burmese and English), the state newspaper (gnlm.com.mm: HTTP 403 to a script, read through a Wayback capture of 16 October 2026), the General Debate pages of the UN (404 or 403: no Myanmar statement read), the Permanent Mission's site, the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on the President's and the Ministry's statements on Gaza and Palestine and on Myanmar-Israel relations. Not searched in Burmese. Not searched individually: B7, B11, D4, D5. Time: the whole session took about 35 minutes by the machine's clock, inside the 90-minute budget.
+country: MMR
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MMR
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached
+      this one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MMR
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded). The vote is cast by the delegation that holds Myanmar''s seat
+      at the United Nations (search results name Ambassador Kyaw Moe Tun, appointed before the coup of 1 February 2021); the Government in Naypyitaw and the National Unity Government dispute the
+      seat, and the B9/B10 speakers below are those of the Government in office in Myanmar, flagged.'
+    queries:
+    - unga_votes.csv, voter MMR
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Myanmar is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Myanmar; docs/06 §8). The advisory
+      proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Myanmar)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the sources read.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Myanmar is not a state party to the Rome Statute (the Assembly of States Parties' list, archived, searched); no statement on the warrants of 21 November 2024 was found.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Myanmar)'
+    - Myanmar ICC arrest warrant Netanyahu (web searches)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (not a state party).
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on ICC officials by Myanmar appeared in any source read.
+  B8:
+    status: unchecked
+    note: Generated from recognitions.csv, which has no row for Myanmar. The registry records no recognition (not in the annex of A/78/846 nor among the later recognitions, docs/06 §8, Wikipedia
+      list read 2026-09-28); Myanmar voted yes on A/DEC/80/506 (a vote, not a recognition). No row (R21); whether a recognition exists with an official document is a question for P-23.
+    queries:
+    - recognitions.csv, row MMR (none)
+  B9:
+    status: none-found
+    note: 'No B9 event. The Government in office is headed by President Min Aung Hlaing (sworn in on 10 April 2026, Xinhua and The Star, read through search results) and the Union Minister for
+      Foreign Affairs; no statement of either on Gaza was found. The Ministry''s statement of 6 March 2026 (Eleven Myanmar, 7 March 2026, read) expresses concern at ''the recent violence in the
+      Middle East'' and urges de-escalation without naming Gaza or Israel, and has no named speaker (R3, R7). Myanmar''s General Debate statements of the 78th to 81st sessions could not be read:
+      the UN''s country pages answered 404 (78th) or 403 (79th to 81st) to a script and the Wayback Machine holds no capture of the 78th to 80th pages; search results name the Ambassador Kyaw
+      Moe Tun as the delegation''s voice at the UN, and an Ambassador is not a B9 speaker (R3).'
+    queries:
+    - gadebate.un.org Myanmar 78th to 81st sessions (404/403; Wayback not captured)
+    - Myanmar Ministry of Foreign Affairs statement Gaza Palestine (web searches)
+    - Myanmar President Min Aung Hlaing Palestine Gaza (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the head of government or the Foreign Minister was found in the sources read.
+    queries:
+    - Myanmar Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Myanmar appeared in any source read.
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: both states keep embassies (the Israeli embassy''s bilateral-relations page and Wikipedia, search results, not
+      read in full); no 2025 or 2026 visit, agreement or ambassador change was found.'
+    queries:
+    - Myanmar Israel 2025 2026 agreement visit embassy (web searches)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Myanmar; none was suspended or reviewed (none found).
+    queries:
+    - Myanmar Israel trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 was found in the sources read. Reports that Israel sold arms to Myanmar's armed forces until at least early 2022 (Haaretz, September
+      2023, via search results, not read) describe Israeli exports before the window and are A5/A6 questions for Israel, not Myanmar's acts.
+    queries:
+    - Myanmar Israel agreement signed 2024 2025 2026 (web searches)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor MMR
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Myanmar: no contribution to suspend (searched for Myanmar).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Myanmar
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Myanmar: no contribution to restore or increase (searched for Myanmar).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Myanmar
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+  D5:
+    status: unchecked
+    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

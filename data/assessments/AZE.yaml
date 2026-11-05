@@ -1,0 +1,350 @@
+# Coverage record for Azerbaijan (docs/03 §6). P-D research session, wave 9, 2026-09-29/30.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10, P-D AZE rows):
+# - Ministry of Foreign Affairs (mfa.gov.az): its category listings are served as HTML and list
+#   every item of the category on one page; the listings Statements, Press releases, Commentaries,
+#   Responses to the media inquiries, Interviews and speeches and Meetings and phone calls were read
+#   by script on 2026-09-29 (3,009 items, 1,509 dated 1 October 2023 to 28 September 2026), and
+#   every item of the window was downloaded and its text searched for Gaza, Palestine, Israel, the
+#   Middle East, UNRWA, the Courts (ICJ, ICC), Netanyahu, arrest warrant, ceasefire, humanitarian,
+#   medical and evacuation terms, and for agreements, memoranda and the Joint Commission with
+#   Israel. 30 items mention Gaza and 64 Palestine or Israel. The Ministry publishes the Minister's
+#   speeches at the OIC and the Arab-Islamic summits only as its own third-person press releases
+#   ("it was emphasized that ..."), not as texts of the speeches; full texts exist for a few
+#   speeches (the General Assembly of 28 September 2024, the OSCE Ministerial Councils), none with
+#   a Gaza passage. The Ministry's country pages on Palestine and Israel (Bilateral relations) were
+#   read.
+# - President (president.az): the Speeches listing (96 items, June 2023 to September 2026) and the
+#   Interviews listing (36 items) were read; the site's search matches "Gazakh" for "Gaza". 54 of
+#   the 132 listed texts were read: 38 downloaded directly before the site stopped answering
+#   (timeouts from 29 September 2026, 23:45) and 16 from their Wayback captures (among them the
+#   interviews of January 2025 and January 2026, the Al Arabiya interview of August 2025, the SCO
+#   and ECO speeches of 2024-2025, the Zayed Award speech of 2026), plus the Presidency's item
+#   carrying the address to the 80th General Assembly (25 September 2025). The other 78 were not
+#   read; most are domestic occasions, and 9 of the relevant ones have no Wayback capture (the
+#   Global Baku Forum 2024, the BRICS outreach 2024, the 80th General Assembly speech page, the
+#   Munich interview to Azerbaijani channels of 2026, the CGTN Davos interview of 2025, the 2026
+#   Islamic Development Bank meetings, the SCO 2026 meeting, the interviews to Azerbaijan Television
+#   and to the Uzbekistan National News Agency of 2024-2026).
+#   Texts searched for Gaza, Palestine and ceasefire.
+# - Ministry of Digital Development and Transport (mincom.gov.az) and Ministry of Science and
+#   Education (edu.gov.az, news listing pages 1-25 back to January 2026 read) for agreements with
+#   Israel; the Ministry of Economy's site (economy.gov.az) search is script-driven and returned no
+#   readable result.
+# - UN: the press releases archived in votes.yaml; the Official Document System (A/80/PV records not
+#   issued); gadebate.un.org not attempted (AWS WAF CAPTCHA, docs/06 §1 rule 8).
+# - UNRWA's donor tables for 2022 and 2024 (archived), fts_funding.csv, gni.csv, unga_votes.csv,
+#   unsc_vetoes.csv, recognitions.csv.
+# - Web search (English): the President's statements on Gaza, the Riyadh summit of November 2024
+#   (Azerbaijan represented by its ambassador), agreements with Israel, the Joint Commission,
+#   medical evacuations, UNRWA contributions.
+# Statements read and not filed as B9 (the Ministry's third-person releases, not the speaker's own
+# words, docs/10 B-407 (4), B-422 (4)): the Minister at the OIC Executive Committee (Jeddah, 18
+# October 2023: two-state solution, USD 1.6 million to UNRWA), the Arab-Islamic summit (Riyadh, 11
+# November 2023: Azerbaijan joins the calls for an immediate cessation of military operations; no
+# mention of Gaza), the NAM summit (Kampala, 19 January 2024), the OIC Council of Foreign Ministers
+# (Jeddah, 5 March 2024: displacement from Gaza and hunger a concern, joins the calls for the
+# immediate cessation of military operations), the 15th Islamic Summit (Banjul, 4 May 2024), the
+# NAM ministerial meeting (New York, 23 September 2024: the Movement's concern over violations of
+# humanitarian law), the OIC Council (Jeddah, 7 March 2025: humanitarian crisis in Gaza, use of force
+# killing civilians unacceptable, the January ceasefire to be respected), the OIC Council (Istanbul,
+# 21 June 2025), the Arab-Islamic summit (Doha, 15 September 2025: a permanent ceasefire necessary);
+# the Minister's telephone call with Israel's Foreign Minister of 28 June 2024 (a ceasefire in Gaza
+# in the short term) and his meeting of 14 February 2025 (maintaining the ceasefire); the Deputy
+# Minister at the OIC (7 August 2024, 25 August 2025, 27 August 2026; not a B9 speaker). The
+# President's interviews of 7 January 2025 (support for a Palestinian state) and 5 January 2026 (no
+# participation in a Gaza force; "Palestine did not particularly protect us either"), his address to
+# the 80th General Assembly (no passage on Gaza or Palestine) and his speech of 19 May 2024 (the
+# Palestinian people and the people of Gaza supported) name no violation and make no ceasefire call.
+# Not searched: the Ministry of Defence and the Ministry of Defence Industry (A5), the State Customs
+# Committee and the State Statistical Committee (C3, cited below from the Ministry's Israel page),
+# the State Oil Fund (SOFAZ) and the Central Bank (C5), the State Procurement Agency (C6), the
+# Ministry of Health (D4), the State Migration Service (D5), the Prosecutor General and courts (E1,
+# E3), the Ministry of Internal Affairs (E2), the Milli Majlis, the Ministry's YouTube channel (video
+# of the Minister's OIC speeches).
+country: AZE
+protocol_version: 1
+last_full_check: 2026-09-30
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. No record of
+      Azerbaijani deliveries of major arms to Israel was found; the flow runs the other way (A4).
+  A2:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade. Azerbaijan had no Comtrade rows (docs/10 B-194); `pnpm fetch:comtrade
+      --reporters AZE` was run on 2026-09-29 and stopped before any trade query: Save Page Now
+      refused to capture the Comtrade reporter list, already captured five times that day
+      (error:too-many-daily-captures, as docs/10 B-407 (5), B-412 (5), B-417 (5), B-422 (5)). The
+      empty index row the failed run appended was removed. No row, so the build shows no-data; the
+      same command resumes the fetch on another day. No row added to a2_confirmed_military.csv: no
+      licence register, parliamentary answer or investigation on Azerbaijani exports to Israel
+      under HS 8526 or 8802 was found.
+  A3:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      Azerbaijan is not a partner, supplier or customer of the F-35 programme; no document naming
+      Azerbaijani companies as suppliers of F-35 parts or maintenance was found.
+    queries:
+      - Azerbaijan F-35 supplier parts company
+      - mfa.gov.az items 2023-10 to 2026-09, term F-35
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10 B-187,
+      B-199, B-902); left to the build. Azerbaijan buys arms from Israel: the space agency
+      Azercosmos ordered two observation satellites from Israel Aerospace Industries (Azersky-2,
+      announced in early October 2023, before the window, per the press), and the state company
+      Azersilah (Ministry of Defence Industry) signed a memorandum on light arms with the Israeli
+      company AS Holdings / Ari Arms at ADEX, Baku, on 26 September 2024 (APA, press). Whether SIPRI
+      records a new order placed in 2023-2025 decides A4 at the import of its release; nothing is
+      hand-authored.
+  A5:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No official record of a named exercise, a transit authorisation, a basing agreement or an
+      intelligence-sharing confirmation related to the Gaza campaign was found. The Ministry's
+      releases list defence and security among the fields of cooperation with Israel (meetings of
+      8 May 2024, 26 January 2026), which is a pre-existing bilateral relation, not an instance
+      activated for the campaign. Azerbaijani crude oil shipped to Israel through Ceyhan is trade
+      (C3), not military cooperation.
+    queries:
+      - mfa.gov.az items 2023-10 to 2026-09, terms Israel, military, exercise, defence, security
+      - Azerbaijan Israel military cooperation exercise 2024 2025
+  A6:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No decision suspending or refusing licences for arms exports to Israel was found."
+    queries:
+      - Azerbaijan arms export Israel licence suspended
+  A7:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No law or decree establishing an arms embargo on Israel was found."
+    queries:
+      - Azerbaijan arms embargo Israel
+  A8:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No official record of a port or airspace denial to an arms shipment bound for Israel was found."
+    queries:
+      - Azerbaijan denied transit arms shipment Israel port airspace
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv: yes on ES-10/21 to ES-10/26 and 79/232. The Ministry's items do
+      not describe Azerbaijan's votes. For the five later votes without rows (docs/10 B-199 (1)):
+      the archived UN press releases do not name Azerbaijan among the states against A/DEC/80/506
+      (GA/12707) or 80/78 (GA/12739), or against or abstaining on 80/1 (GA/12708) or the vote of 17
+      September 2026 (GA/12784); the releases of ES-10/27 and 80/116 do not list states. No
+      difference.
+  B2:
+    status: not-applicable
+    note: "Not a Security Council member in the window (last term 2012-2013)."
+  B3:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "Azerbaijan filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8)."
+    queries:
+      - icj-cij.org case 192 intervention Azerbaijan
+      - mfa.gov.az items 2023-10 to 2026-09, terms International Court of Justice, ICJ
+  B4:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No statement or act on the ICJ's provisional measures in case 192 was found; the Ministry's
+      items on the Court concern Azerbaijan's own cases against Armenia.
+    queries:
+      - mfa.gov.az items 2023-10 to 2026-09, terms International Court of Justice, ICJ
+  B5:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      Azerbaijan is not a party to the Rome Statute. No statement of the President or the Minister
+      on the warrants of 21 November 2024 was found; the Ministry's items do not mention the ICC in
+      the window.
+    queries:
+      - mfa.gov.az items 2023-10 to 2026-09, terms International Criminal Court, ICC, arrest warrant, Netanyahu
+      - Azerbaijan ICC arrest warrant Netanyahu statement
+  B6:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No stated refusal to execute the warrants and no official visit by a person under warrant was
+      found; the Israeli officials received in Baku in the Ministry's releases of the window are the
+      Foreign Minister (26 January 2026) and diplomats, none under warrant.
+    queries:
+      - Netanyahu visit Baku 2025 2026
+      - mfa.gov.az items, term Netanyahu
+  B7:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "Azerbaijan has imposed no sanctions on ICC officials."
+    queries:
+      - Azerbaijan sanctions ICC
+  B8:
+    status: unchecked
+    note: >-
+      Generated from recognitions.csv, which has no Azerbaijani row (docs/10 B-192); none was added.
+      The registry dates the recognition 15 April 1992. The Ministry's page on relations with
+      Palestine (Bilateral relations, Asia and Oceania) says a protocol on the establishment of
+      diplomatic relations "between the Republic of Azerbaijan and the Palestinian National
+      Authority" was signed on 15 April 1992, and the President speaks of support for "the creation
+      of a Palestinian state" (interview of 5 January 2026): neither states a recognition of the
+      State of Palestine, so no row, as for Malaysia and Nigeria (docs/10 B-414 (2), B-424 (3)). With
+      the pre-existing tier the score would be +3 higher.
+  B9:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No formal statement in the speaker's own words, citing Gaza, with a ceasefire call or a named
+      violation, was found. The Ministry publishes the Foreign Minister's speeches at the OIC and the
+      Arab-Islamic summits only as third-person press releases; several report calls for the
+      immediate cessation of military operations (Riyadh, 11 November 2023; Jeddah, 5 March 2024) or
+      a permanent ceasefire in Gaza (Doha, 15 September 2025), but a release's paraphrase is not the
+      exact quote the evidence rule requires (docs/10 B-407 (4), B-422 (4)); the list is in the
+      header. The President's transcripts read contain no qualifying passage; 78 of his 132 listed
+      speeches and interviews of the window were not read (president.az stopped answering).
+      The Ministry's YouTube channel (the Minister's speeches on video) was not searched.
+    queries:
+      - mfa.gov.az listings (Statements, Press releases, Commentaries, Responses, Interviews and speeches, Meetings and phone calls), all items 2023-10 to 2026-09, full texts
+      - president.az Speeches and Interviews listings 2023-06 to 2026-09 (54 of 132 texts read)
+      - Ilham Aliyev speech Gaza ceasefire president.az
+      - Bayramov OIC extraordinary Council of Foreign Ministers Gaza speech full text
+      - Azerbaijan Riyadh Arab-Islamic summit 11 November 2024 delegation
+  B10:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No statement of unconditional support for Israel's campaign or denial of documented violations
+      by the President was found. His interview of 5 January 2026 (Azerbaijan will not join a Gaza
+      force; "Palestine did not particularly protect us either") is neither.
+    queries:
+      - president.az interviews 2023-2026, terms Israel, Gaza, Palestine
+  B11:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "Azerbaijan has listed no Israeli minister or settler entity for sanctions."
+    queries:
+      - Azerbaijan sanctions settlers Israeli ministers
+  B12:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No recall, downgrade or severance: the Ministry's releases name Azerbaijan's embassy in Israel
+      (19 September 2025) and record a new Israeli ambassador received on 1 August 2025.
+    queries:
+      - mfa.gov.az items, terms ambassador Israel, recalled
+  C1:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No suspension or formal review of a trade or cooperation agreement with Israel was found."
+    queries:
+      - Azerbaijan Israel agreement suspended review
+  C2:
+    status: has-events
+    checked_at: 2026-09-30
+    note: >-
+      Two events: the memorandum on cooperation in artificial intelligence signed by the Minister of
+      Digital Development and Transport with Israel's National Artificial Intelligence Directorate,
+      and the memorandum on scientific cooperation signed by the Ministry of Science and Education
+      with Israel's Ministry of Innovation, Science and Technology, both during visits to Israel in
+      early February 2026. Not filed: the memorandum of the state company Azersilah with the Israeli
+      company AS Holdings / Ari Arms (26 September 2024, press; a company agreement, not one with
+      the State of Israel); the Azersky-2 satellite contract (October 2023, before the window, a
+      company contract); the 4th meeting of the Azerbaijan-Israel Joint Commission (Israel, November
+      2025), for which no signed protocol was found (lead_20260930_AZE_1); the Ministry's releases on
+      the Foreign Ministers' meetings (14 February 2025, 8 April 2025, 26 January 2026) record no
+      signed document.
+    queries:
+      - mfa.gov.az items 2023-10 to 2026-09, terms Israel with signed, agreement, memorandum, Joint Commission
+      - Azerbaijan Israel memorandum signed 2024 2025 2026
+      - edu.gov.az news listing pages 1-25, term Israel
+      - Mikayil Jabbarov Joint Commission Israel protocol
+  C3:
+    status: no-data
+    checked_at: 2026-09-29
+    note: >-
+      Generated from Comtrade; no rows (see A2). The Ministry's page on relations with Israel gives
+      Azerbaijan's own customs figures: trade turnover USD 1,718 million in 2022 (exports 1,683
+      million) and 1,354 million in January-October 2023; the press cites the State Customs Committee
+      for USD 69.6 million in January-October 2025, a fall that likely reflects how crude oil shipped
+      through Ceyhan is recorded (by destination or not). Israel's mirror imports would give the
+      oil's origin. The C3 tier depends on which series Comtrade holds; nothing is hand-authored.
+  C4:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No ban or labelling rule for settlement goods was found."
+    queries:
+      - Azerbaijan settlement goods ban labelling
+  C5:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No exclusion decision by the State Oil Fund (SOFAZ) or the Central Bank concerning companies
+      over conduct in Gaza or the occupied territories was found (their sites were not searched
+      directly).
+    queries:
+      - SOFAZ exclusion Israel companies Gaza
+  C6:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "No procurement exclusion of companies over conduct in Gaza was found."
+    queries:
+      - Azerbaijan procurement exclusion Israel companies
+  D1:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      Generated from FTS: no Azerbaijani government flow to the oPt plans in any window (no row in
+      fts_funding.csv or fts_plan_totals.csv), a real zero under docs/02 §5. The Ministry reports
+      USD 2 million of assistance since 2023 through UNRWA (no such flow appears in FTS) and
+      education grants for Palestinian students.
+  D2:
+    status: none-found
+    checked_at: 2026-09-30
+    note: "Azerbaijan did not suspend its UNRWA funding; no announcement of a suspension was found."
+    queries:
+      - Azerbaijan UNRWA suspend funding
+  D3:
+    status: has-events
+    checked_at: 2026-09-30
+    note: "evt_2023_12_31_AZE_D3 (P-16, docs/10 B-445): UNRWA's 2023 table (archived in P-16) gives Azerbaijan USD 2,000,000 in 2023 against USD 88,235 in 2022 (line 75), so the increased tier holds from 31 December 2023 to 31 December 2024; the 2024 table has no Azerbaijani row (it ranks donors down to USD 894), so no increase in 2024. No suspension, so no restoration."
+    queries:
+      - UNRWA donor tables 2022 and 2024 (archived), row Azerbaijan
+      - unrwa.org overall_donor_ranking_2023.pdf (403; Wayback capture 20250404101358 a 301)
+  D4:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No Azerbaijani medical-evacuation programme or field hospital for Gaza was found; Azerbaijan
+      is not among the hosting states in WHO's medical-evacuation summaries seen in search results.
+    queries:
+      - mfa.gov.az items, terms wounded, treatment, hospital, medical, evacuation
+      - Azerbaijan wounded Palestinians treatment evacuation Gaza
+  D5:
+    status: none-found
+    checked_at: 2026-09-30
+    note: >-
+      No visa or refugee instrument for Gazans was found. The Ministry evacuated 14 Palestinian
+      students from Gaza in September 2025 to take up places under the Heydar Aliyev International
+      Education Grant (release of 19 September 2025): a scholarship programme and a one-off
+      evacuation, not an immigration regulation (one event per legal instrument, docs/02 §2).
+    queries:
+      - mfa.gov.az items, terms visa, refugee, evacuation, students Gaza
+  E1:
+    status: unchecked
+    note: "Experimental, unscored; not searched in this session."
+  E2:
+    status: unchecked
+    note: "Experimental, unscored; not searched in this session."
+  E3:
+    status: unchecked
+    note: "Experimental, unscored; not searched in this session."

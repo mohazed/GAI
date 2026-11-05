@@ -4,8 +4,9 @@
 # rows of data/structured/unga_votes.csv may be stored for tracking and never score (docs/03 §7).
 #
 # Encodes docs/02-methodology-spec.md §2 (B1) and docs/06-sources-playbook.md §2 ("Qualifying
-# UNGA resolutions"). Empty in 1.0.0-rc.1: the list is filled in P-14, after each vote has been
-# verified against the UN Digital Library record and the UN press release, archived and hashed.
+# UNGA resolutions"). Filled in P-14 (2026-09-28): each vote verified against the UN Digital
+# Library voting data (record 4060887, file of 6 February 2026, read in a browser) and the UN press
+# release, archived and hashed; the counts are the recorded totals, which the press release states.
 # Adding a resolution to this list is a minor version, since it changes scores (docs/02 §11).
 # Shape: packages/schema/src/methodology/schemas.ts (VotesFile, QualifyingVote; objects are
 # strict).
@@ -26,6 +27,19 @@
 # - The recurring December Palestine items from the Fourth Committee that pre-date the war
 #   (e.g. "Peaceful settlement of the question of Palestine") are excluded.
 # - Each entry carries a one-line inclusion rationale.
+#
+# Decided in P-14 (docs/10 B-186): A/RES/ES-10/24 and the participation votes are included under
+# status and rights of Palestine; A/RES/79/232 (the request for the ICJ advisory opinion on
+# Israel's obligations towards the UN and UNRWA) and A/RES/80/1 (participation during the 80th
+# session) are added to the seed list of docs/06 §2. Excluded as recurring or procedural items of
+# each December (docs/06 §2): the Fourth Committee texts other than the 2025 UNRWA mandate renewal
+# (Operations of UNRWA, Palestine refugees' properties, Israeli practices, settlements, the
+# occupied Syrian Golan), "Peaceful settlement of the question of Palestine", the Division for
+# Palestinian Rights, the Third Committee's self-determination text, the Second Committee's
+# permanent sovereignty text, the budget section on Palestine refugees, and the Syrian Golan.
+# Not yet listed: the vote of 17 September 2026 on Palestine's participation in the 81st session
+# (draft A/81/L.2, 152–3–4, press release GA/12784): its resolution symbol was not yet issued on
+# 2026-09-28; it is added with its symbol by the next votes update.
 #
 # Fields of one entry (QualifyingVote)
 #
@@ -70,4 +84,208 @@
 
 version: 1.0.0-rc.1
 
-votes: []
+votes:
+  - symbol: A/RES/ES-10/21
+    kind: resolution
+    date: 2023-10-27
+    title:
+      en: "Protection of civilians and upholding legal and humanitarian obligations"
+      fr: "Protection des civils et respect des obligations juridiques et humanitaires"
+    subject: gaza
+    counts: {yes: 120, no: 14, abstain: 45}
+    draft: A/ES-10/L.25
+    meeting: A/ES-10/PV.41
+    undl_record: 4025240
+    source: src_20231027_un-press_ga12548
+    quote: "By a recorded vote of 120 in favour to 14 against, with 45 abstentions, the Assembly adopted the resolution titled “Protection of civilians and upholding legal and humanitarian obligations” (document A/ES-10/L.25)"
+    locator: "paragraph 3"
+    rationale:
+      en: "Calls for an immediate, durable and sustained humanitarian truce in Gaza and for humanitarian access (subject: Gaza)."
+      fr: "Demande une trêve humanitaire immédiate, durable et soutenue à Gaza et l'accès humanitaire (objet : Gaza)."
+  - symbol: A/RES/ES-10/22
+    kind: resolution
+    date: 2023-12-12
+    title:
+      en: "Protection of civilians and upholding legal and humanitarian obligations"
+      fr: "Protection des civils et respect des obligations juridiques et humanitaires"
+    subject: gaza
+    counts: {yes: 153, no: 10, abstain: 23}
+    draft: A/ES-10/L.27
+    meeting: A/ES-10/PV.45
+    undl_record: 4029732
+    source: src_20231212_un-press_ga12572
+    quote: "The Assembly adopted the resolution titled “Protection of civilians and upholding legal and humanitarian obligations” (document A/ES-10/L.27) by a recorded vote of 153 in favour to 10 against"
+    locator: "paragraph 2"
+    rationale:
+      en: "Demands an immediate humanitarian ceasefire in Gaza (subject: Gaza)."
+      fr: "Exige un cessez-le-feu humanitaire immédiat à Gaza (objet : Gaza)."
+  - symbol: A/RES/ES-10/23
+    kind: resolution
+    date: 2024-05-10
+    title:
+      en: "Admission of new Members to the United Nations"
+      fr: "Admission de nouveaux Membres à l’Organisation des Nations Unies"
+    subject: palestine-status
+    counts: {yes: 143, no: 9, abstain: 25}
+    draft: A/ES-10/L.30/Rev.1
+    meeting: A/ES-10/PV.49
+    undl_record: 4046991
+    source: src_20240510_un-press_ga12599
+    quote: "The Assembly then adopted the resolution by a recorded vote of 143 in favour to 9 against (Argentina, Czech Republic, Hungary, Israel, Federated States of Micronesia, Nauru, Palau, Papua New Guinea, United States), with 25 abstentions."
+    locator: "paragraph 21"
+    rationale:
+      en: "Determines that Palestine is qualified for membership of the United Nations and extends its rights in the Assembly (subject: status and rights of Palestine)."
+      fr: "Considère que la Palestine remplit les conditions pour devenir Membre de l'ONU et étend ses droits à l'Assemblée (objet : statut et droits de la Palestine)."
+  - symbol: A/RES/ES-10/24
+    kind: resolution
+    date: 2024-09-18
+    title:
+      en: "Advisory opinion of the International Court of Justice on the legal consequences arising from Israel’s policies and practices in the Occupied Palestinian Territory, including East Jerusalem, and from the illegality of Israel’s continued presence in the Occupied Palestinian Territory"
+      fr: "Avis consultatif de la Cour internationale de Justice sur les conséquences juridiques découlant des politiques et pratiques d’Israël dans le Territoire palestinien occupé, y compris Jérusalem-Est, et de l’illicéité de la présence d’Israël dans le Territoire palestinien occupé"
+    subject: palestine-status
+    counts: {yes: 124, no: 14, abstain: 43}
+    draft: A/ES-10/L.31/Rev.1
+    meeting: A/ES-10/PV.55
+    undl_record: 4061432
+    source: src_20240918_un-press_ga12626
+    quote: "Adopted by a two-thirds majority in a recorded vote of 124 in favour to 14 against, with 43 abstentions, the text titled “Advisory opinion of the International Court of Justice on the legal consequences arising from Israel’s policies and practices in the Occupied Palestinian Territory"
+    locator: "paragraph 3"
+    rationale:
+      en: "Demands the end of Israel's presence in the Occupied Palestinian Territory, Gaza included, following the ICJ advisory opinion (subject: status and rights of Palestine)."
+      fr: "Exige la fin de la présence d'Israël dans le Territoire palestinien occupé, Gaza comprise, à la suite de l'avis consultatif de la CIJ (objet : statut et droits de la Palestine)."
+  - symbol: A/RES/ES-10/25
+    kind: resolution
+    date: 2024-12-11
+    title:
+      en: "Support for the mandate of the United Nations Relief and Works Agency for Palestine Refugees in the Near East"
+      fr: "Appui au mandat de l’Office de secours et de travaux des Nations Unies pour les réfugiés de Palestine dans le Proche-Orient"
+    subject: unrwa
+    counts: {yes: 159, no: 9, abstain: 11}
+    draft: A/ES-10/L.32
+    meeting: A/ES-10/PV.59
+    undl_record: 4069198
+    source: src_20241211_un-press_ga12667
+    quote: "The Assembly also adopted a text titled “Support for the mandate of the United Nations Relief and Works Agency for Palestine Refugees in the Near East” (document A/ES-10/L.32) — with 159 votes in favour to 9 against"
+    locator: "paragraph 4"
+    rationale:
+      en: "Supports the mandate of UNRWA and its operations, Gaza included (subject: UNRWA)."
+      fr: "Appuie le mandat de l'UNRWA et ses opérations, Gaza comprise (objet : UNRWA)."
+  - symbol: A/RES/ES-10/26
+    kind: resolution
+    date: 2024-12-11
+    title:
+      en: "Demand for ceasefire in Gaza"
+      fr: "Demande impérative de cessez-le-feu à Gaza"
+    subject: gaza
+    counts: {yes: 158, no: 9, abstain: 13}
+    draft: A/ES-10/L.33
+    meeting: A/ES-10/PV.59
+    undl_record: 4069197
+    source: src_20241211_un-press_ga12667
+    quote: "By terms of the first text, titled “Demand for ceasefire in Gaza” (document A/ES-10/L.33), adopted with 158 votes in favour to 9 against"
+    locator: "paragraph 3"
+    rationale:
+      en: "Demands an immediate, unconditional and permanent ceasefire in Gaza (subject: Gaza)."
+      fr: "Exige un cessez-le-feu immédiat, inconditionnel et permanent à Gaza (objet : Gaza)."
+  - symbol: A/RES/79/232
+    kind: resolution
+    date: 2024-12-19
+    title:
+      en: "Request for an advisory opinion of the International Court of Justice on the obligations of Israel in relation to the presence and activities of the United Nations, other international organizations and third States"
+      fr: "Demande d’avis consultatif de la Cour internationale de Justice sur les obligations d’Israël en ce qui concerne la présence et les activités de l’Organisation des Nations Unies, d’autres organisations internationales et d’États tiers"
+    subject: unrwa
+    counts: {yes: 137, no: 12, abstain: 22}
+    draft: A/79/L.28/Rev.1
+    meeting: A/79/PV.54
+    undl_record: 4069883
+    source: src_20241219_un-press_ga12670
+    quote: "The Assembly then adopted by a recorded vote of 137 in favour to 12 against, with 22 abstentions, the resolution “L.28/Rev.1”."
+    locator: "paragraph 39"
+    rationale:
+      en: "Asks the ICJ for an opinion on Israel's obligations towards UNRWA, the UN and humanitarian aid in the Occupied Palestinian Territory; a new text arising from the war (subject: UNRWA)."
+      fr: "Demande à la CIJ un avis sur les obligations d'Israël envers l'UNRWA, l'ONU et l'aide humanitaire dans le Territoire palestinien occupé ; un texte nouveau issu de la guerre (objet : UNRWA)."
+  - symbol: A/RES/ES-10/27
+    kind: resolution
+    date: 2025-06-12
+    title:
+      en: "Protection of civilians and upholding legal and humanitarian obligations"
+      fr: "Protection des civils et respect des obligations juridiques et humanitaires"
+    subject: gaza
+    counts: {yes: 149, no: 12, abstain: 19}
+    draft: A/ES-10/L.34/Rev.1
+    meeting: A/ES-10/PV.60
+    undl_record: 4083529
+    source: src_20250612_un-press_ga12690
+    quote: "The text titled “Protection of civilians and upholding legal and humanitarian obligations” (document A/ES-10/L.34/Rev.1) was adopted with 149 votes in favour to 12 against, with 19 abstentions."
+    locator: "paragraph 4"
+    rationale:
+      en: "Demands an immediate, unconditional and permanent ceasefire and the end of the blockade of Gaza (subject: Gaza)."
+      fr: "Exige un cessez-le-feu immédiat, inconditionnel et permanent et la fin du blocus de Gaza (objet : Gaza)."
+  - symbol: A/DEC/80/506
+    kind: decision
+    date: 2025-09-12
+    title:
+      en: "Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution"
+      fr: "Adoption de la Déclaration de New York sur le règlement pacifique de la question de Palestine et la mise en œuvre de la solution des deux États"
+    subject: palestine-status
+    counts: {yes: 142, no: 10, abstain: 12}
+    draft: A/80/L.1/Rev.1
+    meeting: A/80/PV.2
+    undl_record: 4088074
+    source: src_20250912_un-press_ga12707
+    quote: "the draft decision entitled “Endorsement of the New York Declaration on the Peaceful Settlement of the Question of Palestine and the Implementation of the Two-State Solution” (document A/80/L.1/Rev.1) was adopted by a recorded vote of 142 in favour to 10 against"
+    locator: "paragraph 2"
+    rationale:
+      en: "Endorses the New York Declaration on the peaceful settlement of the question of Palestine and the two-State solution; a decision adopted by recorded vote (subject: status and rights of Palestine)."
+      fr: "Approuve la Déclaration de New York sur le règlement pacifique de la question de Palestine et la solution des deux États ; une décision adoptée par vote enregistré (objet : statut et droits de la Palestine)."
+  - symbol: A/RES/80/1
+    kind: resolution
+    date: 2025-09-19
+    title:
+      en: "Participation by the State of Palestine during the eightieth session"
+      fr: "Participation de l’État de Palestine à la quatre-vingtième session"
+    subject: palestine-status
+    counts: {yes: 145, no: 5, abstain: 6}
+    draft: A/80/L.2/Rev.1
+    meeting: A/80/PV.3
+    undl_record: 4088513
+    source: src_20250919_un-press_ga12708
+    quote: "By a recorded vote of 145 in favour to 5 against (Israel, Nauru, Palau, Paraguay and the United States), with 6 abstentions (Albania, Fiji, Hungary, North Macedonia, Panama and Papua New Guinea), the 193-member organ adopted draft resolution A/80/L.2/Rev.1."
+    locator: "paragraph 2"
+    rationale:
+      en: "Allows the State of Palestine to take part in the session by pre-recorded statement after visas were refused (subject: status and rights of Palestine)."
+      fr: "Permet à l'État de Palestine de participer à la session par déclaration préenregistrée après le refus de visas (objet : statut et droits de la Palestine)."
+  - symbol: A/RES/80/78
+    kind: resolution
+    date: 2025-12-05
+    title:
+      en: "Assistance to Palestine refugees"
+      fr: "Aide aux réfugiés de Palestine"
+    subject: unrwa
+    counts: {yes: 151, no: 10, abstain: 14}
+    draft: A/C.4/80/L.17
+    meeting: A/80/PV.55
+    undl_record: 4095073
+    source: src_20251205_un-press_ga12739
+    quote: "decided to extend its mandate until 30 June 2029. That text was adopted by a recorded vote of 151 in favour to 10 against"
+    locator: "paragraph 5"
+    rationale:
+      en: "Renews UNRWA's mandate to 30 June 2029, the first renewal since the war (subject: UNRWA)."
+      fr: "Renouvelle le mandat de l'UNRWA jusqu'au 30 juin 2029, le premier renouvellement depuis la guerre (objet : UNRWA)."
+  - symbol: A/RES/80/116
+    kind: resolution
+    date: 2025-12-12
+    title:
+      en: "Advisory opinion of the International Court of Justice on the Obligations of Israel in relation to the presence and activities of the United Nations, other international organizations and third States in and in relation to the Occupied Palestinian Territory"
+      fr: "Avis consultatif de la Cour internationale de Justice sur les obligations d’Israël en ce qui concerne la présence et les activités de l’Organisation des Nations Unies, d’autres organisations internationales et d’États tiers dans le Territoire palestinien occupé et en lien avec celui‑ci"
+    subject: unrwa
+    counts: {yes: 139, no: 12, abstain: 19}
+    draft: A/80/L.26
+    meeting: A/80/PV.61
+    undl_record: 4095497
+    source: src_20251212_un-press_ga12743
+    quote: "By a recorded vote of 139 in favour to 12 against with 19 abstentions, the General Assembly today adopted a resolution welcoming the advisory opinion of the International Court of Justice"
+    locator: "paragraph 1"
+    rationale:
+      en: "Welcomes the ICJ advisory opinion of 22 October 2025 on Israel's obligations towards UNRWA and humanitarian aid (subject: UNRWA)."
+      fr: "Accueille l'avis consultatif de la CIJ du 22 octobre 2025 sur les obligations d'Israël envers l'UNRWA et l'aide humanitaire (objet : UNRWA)."

@@ -1,0 +1,246 @@
+# Coverage record for Estonia (docs/03 §6). P-21 light protocol, session T-P21-18, 2026-10-13.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (vm.ee, whose search API at search.service.eu-live.vportal.ee was run for Gaza, Israel, Palestiina, UNRWA in English and Estonian), the President's Office (president.ee, same API), the Government Office (valitsus.ee, same API), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th through the Assembly's verbatim record A/79/PV.8, the 80th through the President's Office), the joint statements already archived for the 45 (archive/text searched for Estonia), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Estonian per indicator group. Estonia is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Time: about 60 minutes of research on Estonia, inside the 90-minute budget of the session.
+# Ten B9 events, three B11 events, four D2/D3 events. Leads: 3 (lead_20261013_EST_1 to _3).
+country: EST
+protocol_version: 1
+last_full_check: '2026-10-13'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier EST
+    checked_at: '2026-10-13'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-13'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): Estonia''s rows are orders of 1993, 2019, 2020, 2021 and one of 2023 whose TIV is 0 (a Mini Harpy loitering munition: no number or value); none
+      is an order of 2024 or later. Left to the build. Flagged: the register (archive/text/src_20261005_sipri_register-supplier-israel.txt, lines 234 to 241) lists Spike-SR deliveries in 2023,
+      2024 and 2025 and Blue Spear deliveries in 2024 under orders of 2021, and the Mini Harpy order of 2023 has no month; A4 counts contracts signed on or after 2023-10-07 and reads the release''s
+      own data year (docs/10 B-536 (7)), so none counts, and the 2023 order cannot be dated inside the window.'
+    queries:
+    - sipri_orders.csv, buyer EST
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Estonia (read)
+    checked_at: '2026-10-13'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 10 of the 12 qualifying votes and an abstention on 2 (A/RES/ES-10/21 of 27 October 2023 and A/RES/79/232 of 19 December 2024). All 12 are recorded,
+      so no absence is scored and no Article 19 note is needed (Estonia is not among the four Member States in arrears in the Secretary-General''s letter of 3 September 2025, A/80/362, archived).
+      No explanation of vote by the President, the Prime Minister or the Foreign Minister was found; a Permanent Representative''s explanation would not be a B9 or B10 speaker (R3).'
+    queries:
+    - unga_votes.csv, voter EST
+    - A/80/362 (archived, read)
+    checked_at: '2026-10-13'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-13'
+  B3:
+    status: none-found
+    note: 'Estonia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192; and docs/06
+      §8). The Court''s page of the written proceedings in the advisory case on Israel''s policies and practices (case 186, archived: src_20261007_icj-cij_case-186-written-proceedings) does not
+      list Estonia either, and that case is not B3 or B4 in any event.'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived, read)
+    - icj-cij.org case 186 written proceedings (archived, read)
+    checked_at: '2026-10-13'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found, and Estonia filed no declaration of intervention. The Foreign Minister's remark that the ICC is 'independent'
+      and cannot be interfered with politically (26 November 2024) concerns the ICC, not the ICJ.
+    queries:
+    - Tsahkna ICJ provisional measures Israel Estonia statement
+    - 'vm.ee search (English and Estonian): ICJ, Rahvusvaheline Kohus'
+    checked_at: '2026-10-13'
+  B5:
+    status: none-found
+    note: 'No statement by the President, the Prime Minister or the Foreign Minister committing Estonia to execute the warrants of 21 November 2024. The Foreign Minister''s comment of that day
+      (the Ministry''s release, archived: src_20241121_vm-ee_tsahkna-icc-warrants) says ''We take note of the arrest warrants ... Estonia is a state party to the ICC ... At the same time, we are
+      sceptical about these arrest warrants contributing to a lasting peace in the Middle East''; at a press conference on 26 November 2024 he said, in the Estonian original read on err.ee, that
+      Estonia accepts an independent court and that ''we cannot interfere politically'' (ERR, press: lead_20261013_EST_2). Neither is a commitment to execute or a refusal. Estonia is a state party
+      to the Rome Statute (the Assembly''s list, archived: src_20261009_icc-asp_states-parties, line 132).'
+    queries:
+    - 'vm.ee: comment of 21 November 2024 (archived, read)'
+    - ERR News and err.ee, 26 November 2024 (read)
+    - asp.icc-cpi.int list of States Parties (archived, read)
+    checked_at: '2026-10-13'
+  B6:
+    status: none-found
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found. A group of members of the Riigikogu (the Estonia–Israel friendship group) urged the Government
+      not to recognise the warrants (the Riigikogu''s press release, seen in a search result, not read): a parliamentary act, not a statement by the head of government or a minister.'
+    queries:
+    - Estonia ICC arrest warrant Netanyahu Estonia would arrest Tsahkna OR Karis OR Michal
+    checked_at: '2026-10-13'
+  B7:
+    status: none-found
+    note: Estonia has imposed no sanctions on ICC officials (none found).
+    queries: []
+    checked_at: '2026-10-13'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Estonia. Estonia has not recognised the State of Palestine (the registry''s note of 2026-09-28; the President said in June 2025
+      that it had not, ERR, seen in a search result). The Government approved Estonia''s accession to the New York Declaration on 11 September 2025 and Estonia voted for it on 12 September (A/DEC/80/506:
+      yes, in unga_votes.csv); the Ministry''s release (vm.ee, 11 September 2025, read) is not a recognition.'
+    queries:
+    - recognitions.csv, row EST (none)
+    - 'vm.ee: release of 11 September 2025 (read)'
+    checked_at: '2026-10-13'
+  B9:
+    status: has-events
+    note: 'Ten events, six of them joint statements: the President at the 79th General Debate, 24 September 2024 (evt_2024_09_24_EST_B9, +2, the Assembly''s verbatim record A/79/PV.8; expired,
+      749 days); the declaration of 26 EU foreign ministers, 19 February 2024 (evt_2024_02_19_EST_B9, +2, expired); the joint donor statement, 19 May 2025 (evt_2025_05_19_EST_B9, +2); the Foreign
+      Minister''s words of 10 June 2025 (evt_2025_06_10_EST_B9, +5, Gaza and West Bank); the joint statements of 21 July, 12 August and 21 August 2025 (+5 each; the last west-bank, unscored) and
+      of 8 June 2026 (+2); the President beside the President of Israel, 6 August 2025 (evt_2025_08_06_EST_B9, +5, flagged); the President at the 80th, 24 September 2025 (evt_2025_09_24_EST_B9,
+      +5). Read and not filed: (1) the President in Amman, 4 November 2024 (''Every effort is essential to bring an end to hostilities and achieve a ceasefire'', the Office''s release, archived):
+      it speaks of ''the conflict in the Middle East'' and does not cite Gaza (R7); (2) the President''s 81st statement, 23 September 2026 (president.ee, read live; ''check against delivery''):
+      ''the situation in the West Bank and Gaza remains of great concern'' and Estonia ''has consistently called for ... unhindered access to humanitarian aid'' is a statement of past position
+      with no call and no violation named; (3) the Foreign Minister''s remarks of 7 October 2024 (archived: the humanitarian situation in Gaza ''unacceptable'', solidarity with Israel ''while
+      strictly following the norms of international humanitarian law''), 3 November 2023, 11 November 2025 and 17 March 2026 (archived or read): no call and no violation, or Iran, not Gaza; (4)
+      the Ministry''s reports in indirect speech of 11 September 2025, 23 September 2025 and 16 May 2026 (leads 1 and 3, R4); (5) the Undersecretary for Global Affairs (30 July 2025: ''violence
+      and aggression must stop immediately''): not a B9 speaker (R3). No statement of the Prime Minister (Kaja Kallas to 23 July 2024, Kristen Michal after) on Gaza was found except Kallas''s
+      of 3 November 2023 (conditional support, expired). The joint statements of 9, 10 and 12 August 2025 (the latter filed), 27 September 2025, 28 January 2026, 1 and 24 February 2026 do not
+      name Estonia (archive/text searched).'
+    queries:
+    - 'vm.ee search API (https://search.service.eu-live.vportal.ee/v1/search/vm): Gaza, Israel, Palestiina, UNRWA (English and Estonian)'
+    - 'president.ee and valitsus.ee search APIs: Gaza, Israel'
+    - Tsahkna Gaza Estonia foreign minister statement ceasefire humanitarian
+    - Karis Gaza president Estonia statement Israel Palestine visit 2025
+    - Kristen Michal Gaza prime minister Estonia Israel statement
+    - gadebate.un.org Estonia 78th to 81st sessions (ee_en.pdf, read; A/79/PV.8 archived; the 80th through the President's Office)
+    - archive/text joint statements (archived) searched for Estonia, Estonie, Eesti, Estland
+    checked_at: '2026-10-13'
+  B10:
+    status: none-found
+    note: 'No B10 event: every statement of support for Israel found is conditional on international humanitarian law or concerns Iran. Prime Minister Kaja Kallas, 3 November 2023 (valitsus.ee,
+      read; expired): ''Israel is fully entitled to defend itself. But it must do so in a way that spares innocent lives and adheres to the norms of international law''; Foreign Minister Tsahkna,
+      3 November 2023: ''supporting Israel''s right to defend itself within international humanitarian law''; 7 October 2024: ''while strictly following the norms of international humanitarian
+      law'' (archived); 11 November 2025: ''Israel must ensure full compliance with international law, including the protection of civilians and unhindered access to humanitarian aid'' (archived);
+      17 March 2026 in Jerusalem: ''we support the steps taken by the United States and Israel to eliminate these threats'' (the Iranian regime''s programmes; archived; it does not cite Gaza,
+      R7). Israel''s embassy in Tallinn opened on 11 November 2025 (an embassy is not an event, docs/10 B-599).'
+    queries:
+    - Tsahkna Israel right to defend itself unconditional support statement
+    - 'valitsus.ee search: Gaza, Israel (read)'
+    checked_at: '2026-10-13'
+  B11:
+    status: has-events
+    note: 'Three events, from the Council''s listings under R8 (docs/10 B-446): 19 April 2024 (west-bank, unscored), 15 July 2024 (gaza and west-bank) and 28 May 2026 (gaza and west-bank; adds
+      no points, but is a qualifying event). Estonia''s Foreign Minister said on 10 June 2025 that Estonia supports the EU''s measures on violent settlers and the addition of new names (the Ministry''s
+      release, archived). No national listing and no listing of Israeli ministers by Estonia was found; the Foreign Minister said in April 2026 that Estonia wants pressure on Israel ''regarding
+      violent settlers, human rights violations'' (ERR).'
+    queries:
+    - src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20240715_eur-lex_cfsp-2024-1967, src_20260528_eur-lex_reg-impl-2026-1177 (archived)
+    - Estonia sanctions Israeli ministers Ben-Gvir Smotrich OR settlers Estonia national list
+    checked_at: '2026-10-13'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. The ambassador to Israel, Andres Vosman, presented his credentials on 16 September 2025 (vm.ee, read) after Veikko
+      Kala's term; Israel opened its embassy in Tallinn on 11 November 2025 (the Ministry's release, archived). An embassy opening is not an act any indicator of v1.0.0 measures (docs/10 B-599).
+    queries:
+    - recalls ambassador Israel Estonia
+    - vm.ee/en/israel (read)
+    checked_at: '2026-10-13'
+  C1:
+    status: none-found
+    note: 'No suspension or review of any agreement with Israel supported by Estonia. Estonia opposed suspending the EU–Israel Association Agreement: at the Foreign Affairs Council of 21 April
+      2026 the Foreign Minister said ''we do not recommend cancelling the association agreement. It is rather a way of putting pressure on Israel'' (ERR News, 22 April 2026, read), and on 18 September
+      2025 the Ministry''s spokesperson said Estonia was ''not convinced that suspending sectoral cooperation with Israel will help'' (ERR News, read). A state that opposed gets no C1 event (docs/02
+      §2 C1); the opposition is a note, not an indicator act.'
+    queries:
+    - Estonia position EU-Israel Association Agreement suspend trade Tsahkna
+    - 'ERR News: Estonia opposed to scrapping EU-Israel association pact; Estonia doubts effectiveness of proposed EU trade restrictions on Israel (read)'
+    checked_at: '2026-10-13'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found. The agreement on the protection of classified defence information was signed in Tel Aviv on 26 July 2023 (before the
+      window; registered with the UN Secretariat on 23 October 2024: seen in a search result, not read). A report of the Ministry on Israel''s defence-technology sector (September 2025, vm.ee
+      PDF, seen in a search result, not read) recommends exploring a trade agreement: a recommendation, not a signed instrument. The Estonia–Israel business forum of 11 November 2025 and the visits
+      of the Israeli President (6 August 2025) and Foreign Minister (July and November 2025) produced no signed document found.'
+    queries:
+    - Eesti Iisrael leping allkirjastati memorandum koostöö 2025 välisministeerium
+    - Estonia Israel sign agreement OR memorandum OR "letter of intent" 2024 2025 2026
+    - 'vm.ee/en/israel: bilateral relations (read; agreements are in Riigi Teataja)'
+    checked_at: '2026-10-13'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-13'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Government flows of USD 100,274 (plan 1156), 35,574 (plan 1186), 106,309 (plan 1273) and 14,603 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the
+      build. The Ministry says Estonia had allocated EUR 330,000 to humanitarian assistance for the Gaza Strip through six organisations since 2023 (release of 10 June 2025, archived).'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor EST
+    checked_at: '2026-10-13'
+  D2:
+    status: has-events
+    note: 'One event: the Foreign Minister''s announcement of 28 January 2024 that Estonia would not continue funding UNRWA (evt_2024_01_28_EST_D2, -10, `corroborated`: ERR News and Reuters in
+      The Jerusalem Post, both quoting his post on X), ended by the Ministry''s release of 7 May 2024. The UK release of 19 July 2024 names Estonia among the partners whose position the UK''s
+      restart is in line with.'
+    queries:
+    - UNRWA funding suspend Estonia statement
+    - 'vm.ee search (English and Estonian): UNRWA'
+    - ERR News 28 January 2024; The Jerusalem Post 28 January 2024 (archived, read)
+    checked_at: '2026-10-13'
+  D3:
+    status: has-events
+    note: 'Three events: increased from 31 December 2023 on the 2023 table (USD 121,837 against USD 90,090 in 2022; ended 28 January 2024), restored from 7 May 2024 (the Ministry''s release of
+      EUR 120,000 for four UN bodies including UNRWA ''after the international investigation''; confirmed by the UK release of 19 July 2024 and the President''s Office of 5 November 2024), increased
+      again from 31 December 2024 on the 2024 table (USD 118,803). The 2025 table was not archived.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Estonia
+    - src_20240507_vm-ee_tsahkna-brussels-unrwa-et (archived, read)
+    checked_at: '2026-10-13'
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza was found. The Government decided on 3 November 2023 to contribute EUR 240,000 in medical and humanitarian aid to civilians
+      in Israel and Gaza through UNRWA, WFP, UNICEF and to Israel (valitsus.ee, read, expired): a funding decision, not a D4 act. In 2025 Estonian NGOs delivered food portions to hospitals in
+      Gaza with the Ministry''s support (release of 13 November 2025, read): funding of a civil society food programme.'
+    queries:
+    - medical evacuation Gaza Estonia ministry
+    - 'vm.ee search: Gaza humanitarian aid (read)'
+    checked_at: '2026-10-13'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Gaza visa humanitarian Estonia regulation
+    checked_at: '2026-10-13'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

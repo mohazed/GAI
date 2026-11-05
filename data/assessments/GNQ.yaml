@@ -1,0 +1,205 @@
+# Coverage record for Equatorial Guinea (docs/03 §6). P-21 light protocol, session T-P21-37, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's institutional site and press office (guineaecuatorialpress.com; gob.gq redirects to it; the search at /busqueda is a POST form with a session token, 15 results a page, fuzzy; the terms
+# Gaza, Palestina, Israel, alto el fuego, Franja de Gaza, Hamás, Oriente Medio, Medio Oriente, Corte Penal Internacional, Corte Internacional de Justicia, Netanyahu, genocidio, UNRWA, palestino, israelí, Estado de Palestina, Embajador
+# de Israel, cooperación con Israel, conflicto Israel, Cisjordania, Jerusalén, humanitaria Gaza and orden de arresto were run and the items that bore on Gaza opened), the UN's General Debate pages and files (79th, 80th, 81st, in
+# Spanish, read live and searched for Gaza, Palestina, Israel and Oriente Medio), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to
+# 2024), the SIPRI register and the Article 19 documents. No Ministry of Foreign Affairs or Presidency site answered. Web searches were not available to this session (the run's search budget was spent): no press item outside the
+# Government's own site was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: none. See docs/10 B-805.
+country: GNQ
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier GNQ
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer GNQ (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on four of the twelve qualifying votes (A/RES/ES-10/21, ES-10/23, ES-10/25 and ES-10/26), abstention on A/RES/ES-10/22 (12 December 2023) and non-voting
+      (`X`) on seven (A/RES/ES-10/24, A/RES/79/232, A/RES/ES-10/27, A/DEC/80/506, A/RES/80/1, A/RES/80/78 and A/RES/80/116), scored -2 each by the build (docs/10 B-690); the non-votes were not
+      explained in any source read. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October
+      2026 (src_20261013_un-ga_article19-page; A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.'
+    queries:
+    - unga_votes.csv, country GNQ
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Equatorial Guinea is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Equatorial Guinea supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Equatorial Guinea is neither a party to the Rome Statute nor on the UN Treaty Collection''s table of signatories (the status page read live on 2026-11-04; not on the Assembly of States
+      Parties'' list, src_20261009_icc-asp_states-parties, searched). No statement on the warrants of 21 November 2024 was found: the Government site''s searches for Corte Penal Internacional,
+      Netanyahu and orden de arresto return items on other matters (the Malabo Protocol, a BRICS summit, Interpol notices of 2012 and 2013, credentials ceremonies).'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Equatorial Guinea (not found)
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'guineaecuatorialpress.com /busqueda (POST) searches: Gaza (15 results), Palestina, Israel, alto el fuego, Franja de Gaza, Hamás, Oriente Medio, Medio Oriente, Corte Penal Internacional,
+      Corte Internacional de Justicia, Netanyahu, genocidio, UNRWA, palestino, israelí, Estado de Palestina, Embajador de Israel, cooperación con Israel, conflicto Israel, Cisjordania, Jerusalén,
+      humanitaria Gaza, orden de arresto; the items that bore on Gaza opened'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal (the country is not a party) was found in the sources read.
+    queries:
+    - 'guineaecuatorialpress.com searches: Netanyahu, Corte Penal Internacional, orden de arresto'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Equatorial Guinea were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Equatorial Guinea. The registry gives a recognition since May 1989 (the first day of the month is recorded; A/78/846 gives the month only
+      and P-14 found no official statement), before the window; no recognition after 7 October 2023 was found in the Government site''s searches for Estado de Palestina and Palestina.'
+    queries:
+    - recognitions.csv, GNQ (no row)
+    - 'guineaecuatorialpress.com searches: Estado de Palestina, Palestina'
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The General Debate statements of the 79th (26 September 2024), 80th (25 September 2025) and 81st (24 September 2026) sessions were delivered by the Vice President, Teodoro
+      Nguema Obiang Mangue, not by a B9 speaker (R3: the head of state is President Obiang Nguema Mbasogo); the three files (gq_es.pdf of sessions 79, 80 and 81) were read and none names Gaza,
+      Palestine or Israel. The Government''s press office reports acts of the Vice President on Gaza (the donation of 28 December 2023 and the handing over in Cairo of 14 June 2024, where he ''ha
+      hecho un llamamiento contundente a la protección de civiles'': src_20231228_gq-press_donacion-media-luna-roja and src_20240614_gq-press_vicepresidente-media-luna-roja-egipcia): the Vice
+      President is not a B9 speaker, and the report is in the third person. The site''s searches found no statement of the President, the Prime Minister or the Foreign Minister on Gaza; its report
+      of the Non-Aligned summit in Kampala (19 January 2024) records the President''s attendance and the speeches of others, among them the African Union Commission''s chairperson, who asked for
+      a ceasefire in Gaza, and none of his own.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/equatorial-guinea and gastatements/{79,80,81}/gq_es.pdf (read, not recorded)
+    - 'guineaecuatorialpress.com /busqueda (POST) searches: Gaza (15 results), Palestina, Israel, alto el fuego, Franja de Gaza, Hamás, Oriente Medio, Medio Oriente, Corte Penal Internacional,
+      Corte Internacional de Justicia, Netanyahu, genocidio, UNRWA, palestino, israelí, Estado de Palestina, Embajador de Israel, cooperación con Israel, conflicto Israel, Cisjordania, Jerusalén,
+      humanitaria Gaza, orden de arresto; the items that bore on Gaza opened'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the Government site''s searches for Israel, israelí,
+      Hamás and Netanyahu (the matches are of 2010 to 2021 or concern the donation and meetings of the United Nations).'
+    queries:
+    - 'guineaecuatorialpress.com /busqueda (POST) searches: Gaza (15 results), Palestina, Israel, alto el fuego, Franja de Gaza, Hamás, Oriente Medio, Medio Oriente, Corte Penal Internacional,
+      Corte Internacional de Justicia, Netanyahu, genocidio, UNRWA, palestino, israelí, Estado de Palestina, Embajador de Israel, cooperación con Israel, conflicto Israel, Cisjordania, Jerusalén,
+      humanitaria Gaza, orden de arresto; the items that bore on Gaza opened'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Government site's searches (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: the site''s search for Embajador de Israel returns credentials ceremonies of 2010 to 2021 and none in the window, and its item of 22 May
+      2023 (before the window; the title only was read) reports the country''s participation in Israel''s independence anniversary.'
+    queries:
+    - 'guineaecuatorialpress.com searches: Embajador de Israel, Israel'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Equatorial Guinea is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found: the site''s search for cooperación con Israel returns only ''Firma de acuerdos de cooperación con Israel'' of 14 July 2021
+      (before the window; the title only was read). No treaty register was read (P-23).'
+    queries:
+    - 'guineaecuatorialpress.com searches: cooperación con Israel, Israel'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of GNQ to the Gaza response in fts_funding.csv. The Government''s press office reports a donation of EUR 500,000 (327,983,000 CFA francs) to the
+      Red Crescent of Egypt ''como contribución a la movilización humanitaria mundial en Gaza'' (28 December 2023, src_20231228_gq-press_donacion-media-luna-roja) and its handing over in Cairo
+      on 14 June 2024 (src_20240614_gq-press_vicepresidente-media-luna-roja-egipcia): a payment to a national society, not a flow to the oPt flash appeals or pooled fund that FTS tracks, and more
+      than 12 months old, so it would not enter D1''s trailing window in any case. D1 is computed and not hand-authored (docs/10 B-805). Left to the build.'
+    queries:
+    - fts_funding.csv, donor GNQ
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Equatorial Guinea has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Equatorial Guinea in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Equatorial Guinea was found in the Government site's searches (the Vice President's handing over in Cairo
+      on 14 June 2024 was a cash donation to the Red Crescent of Egypt).
+    queries:
+    - 'guineaecuatorialpress.com searches: Gaza, Franja de Gaza, humanitaria Gaza'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

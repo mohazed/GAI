@@ -1,0 +1,200 @@
+# Coverage record for Ethiopia (docs/03 §6). P-21 light protocol, session T-P21-35, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs' JSON endpoints (mfa.gov.et/api/news, pressrelease, pressbriefing, bilateral, multilateral, ministerofforeign: 32 news items to 29 October 2026, searched for Gaza, Palestine, Israel, Hamas, ceasefire), the Ethiopian News Agency's search (ena.et/web/eng/search?q= for Gaza, Ethiopia Palestine, Ethiopia Israel, Gedion Israel, Abiy Netanyahu, Israeli Foreign Minister Ethiopia, Israeli embassy Addis Ababa, Ethiopia two-state solution; about 30 items opened), the UN's General Debate pages and files of the 79th to 81st sessions (the files are image scans, read by OCR of the live PDFs), the ICJ's case 192 page (live, and the copy archived on 2026-09-27), the Assembly of States Parties' list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. The Prime Minister's site (pmo.gov.et) is a single-page application with no readable text. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31 to T-P21-34 and T-P21-46 to T-P21-49): no press item outside the state agency was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none; see docs/10 B-794. Leads: one (C2).
+country: ETH
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ETH
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists one older order by Ethiopia from Israel (75 Thunder armoured personnel
+      carriers ordered 2012, delivered 2013 to 2017, 10.5 TIV); A4 reads only the rows of a release''s own data year (docs/10 B-536 (7)), so it is noted, not scored. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer ETH (row of 2012)
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Ethiopia (found: one older order)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on five of the twelve qualifying votes (A/RES/ES-10/22, ES-10/23, ES-10/25, ES-10/26 and A/RES/80/1); abstention (`A`) on seven (A/RES/ES-10/21, ES-10/24,
+      A/RES/79/232, ES-10/27, A/DEC/80/506, A/RES/80/78 and A/RES/80/116), each scored -2 by the build (docs/10 B-690). The country is not named in the Secretary-General''s letter of 3 September
+      2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country ETH
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Ethiopia is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched). Case 186 (advisory proceedings) is not B3 or B4.
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Ethiopia supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Ethiopia is not a state party to the Rome Statute (absent from the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, searched; absent from the UN Treaty Collection's
+      status page, read live on 2026-11-04). No statement on the warrants of 21 November 2024 by a B5 speaker was found on the Ministry's endpoints or in the Ethiopian News Agency's search.
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Ethiopia (not found)
+    - 'treaties.un.org status page XVIII-10 (live, 2026-11-04: not found)'
+    - mfa.gov.et/api/news (searched)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: Ethiopia is not a party to the Statute and no refusal to execute the warrants, no hosting of a person under warrant and no withdrawal was found.
+    queries:
+    - mfa.gov.et/api/news (searched)
+    - ena.et/web/eng/search?q=Israel
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Ethiopia were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Ethiopia. The registry gives 4 February 1989 (countries.yaml recognises_palestine); no Government document of the date was read
+      (the Ministry's page on bilateral relations does not date it), so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, ETH
+    - mfa.gov.et/api/bilateral (searched)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) The General Debate statements: the 79th (27 September 2024; Foreign Minister Taye Atske Selassie Amde; 768 days old, expired) names neither Gaza, Palestine nor Israel
+      in its OCR text (file et_fl.pdf, a scan). The 80th (25 September 2025) was delivered by the President, Taye Atske Selassie Amde, who is head of state, not head of government (R3: read at
+      the B9 rank for a head of state, flagged); it says ''We affirm our historic position on the right of the Palestinian people for self-determination. Direct negotiation among the warring parties
+      is an immediate necessity. Humanitarian assistance must reach too all the people in need'' and that ''any proposed peace and reconstruction plan in the Middle East should not create complications
+      to adjacent countries and regions'' (OCR of et_en.pdf, page 4): it names neither Gaza nor a ceasefire and calls for no end to hostilities, so it has no B9 tier (R7). The 81st (23 September
+      2026, the President) names none of Gaza, Palestine or Israel. The files are image scans with no text layer and Save Page Now answers gadebate.un.org with 405, so none is archived (read by
+      OCR on 2026-11-04). (2) The Ministry''s endpoints (news: 32 items, press releases, press briefings) and the Ethiopian News Agency''s searches hold no statement on Gaza by the Foreign Minister,
+      Gedion Timothewos, or the Prime Minister, Abiy Ahmed; the agency''s items on Israel are meetings on trade, energy and agriculture (docs/10 B-794). (3) The Prime Minister''s own social-media
+      posts were not read.'
+    queries:
+    - mfa.gov.et/api/news, pressrelease, pressbriefing (JSON, searched for Gaza, Palestin, Israel, Hamas, ceasefire)
+    - ena.et/web/eng/search?q=Gaza (3 pages), Ethiopia Palestine, Ethiopia Gaza, Ethiopia two-state solution, Ethiopia calls ceasefire Gaza
+    - gadebate.un.org/en/{79,80,81}/ethiopia and gastatements/79/et_fl.pdf, 80/et_en.pdf, 81/et_en.pdf (OCR, tesseract, read live)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event. The Ethiopian News Agency''s report of the Prime Minister''s telephone call with Prime Minister Netanyahu (12 October 2026, src_20261012_ena_abiy-netanyahu-call, archived)
+      gives the Prime Minister''s post as ''fruitful and constructive'', on ''bilateral relations and key regional developments''; its report of his talks with Foreign Minister Sa''ar on 5 May
+      2025 (src_20250505_ena_abiy-saar-talks, archived) quotes ''productive discussions'' on a relationship that ''spans economic, political, diplomatic, and social spheres''. Neither names Gaza
+      or expresses unconditional support or denies a violation, and both are the agency''s paraphrase of a post (R4). Flagged: the Ethiopian Government''s contacts with Israel''s Government are
+      frequent in the window (docs/10 B-794).'
+    queries:
+    - archive/text/src_20261012_ena_abiy-netanyahu-call.txt (read)
+    - archive/text/src_20250505_ena_abiy-saar-talks.txt (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found on the Ministry's endpoints or in the agency's searches. This rests on those sources only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found; the Ministry's page on bilateral relations (updated 24 November 2025) records visits in both directions in 2025 (the Foreign Minister to
+      Israel in March, Israel's Energy Minister in February and Foreign Minister in May). This rests on the Ministry's endpoints and the agency's searches only (P-23).
+    queries:
+    - mfa.gov.et/api/bilateral (read)
+    - ena.et/web/eng/search?q=Ethiopia Israel
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Ethiopia is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel since October 2023 was found. The agency reports meetings of the Foreign Minister with Israel''s Minister of Economy and Industry (agency item of 13
+      March 2025), Minister of Energy and Infrastructure (14 March 2025) and Foreign Minister (5 May 2025) on trade, energy, mining, agriculture and technology, and the Israeli Ambassador''s interview
+      of 16 September 2026 describes cooperation in agriculture, health, technology, water and energy: none reports a signing. See the lead lead_20261104_ETH_1 (docs/10 B-794). No treaty register
+      was read (P-23).'
+    queries:
+    - ena.et/web/eng/search?q=Ethiopia Israel sign, Israel MoU Ethiopia (items opened)
+    - mfa.gov.et/api/bilateral (read)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Ethiopia to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor ETH
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Ethiopia has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Ethiopia in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Ethiopia was found on the Ministry's endpoints or in the agency's searches.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found on the Ministry's endpoints or in the agency's searches.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

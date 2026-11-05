@@ -1,0 +1,184 @@
+# Coverage record for Cambodia (docs/03 §6). P-21 light protocol, session T-P21-21, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): AKP (akp.gov.kh), the Council of Ministers' press unit (pressocm.gov.kh/en), the Ministry of Foreign Affairs and International Cooperation (mfaic.gov.kh: HTTP 503 to a script, read through a Wayback capture), the General Debate statements of the 79th and 81st sessions (the 78th and 80th files have no capture), the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on Cambodia and Gaza, Israel and the bilateral instruments. Khmer-language sources were not searched. Not searched individually: B7, B11, D4, D5. Time: about 30 minutes of research on Cambodia, inside the 90-minute budget of the session.
+country: KHM
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KHM
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached
+      this one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer KHM
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and no vote recorded on A/RES/ES-10/21 (27 October 2023). Article 19 note (report only, B-626): Cambodia is not among
+      the four Member States in arrears under Article 19 on the General Assembly''s page read on 2026-10-13 (Afghanistan, Bolivia, Sao Tome and Principe, Venezuela; archived as src_20261013_un-ga_article19-page)
+      nor in A/80/362 of 3 September 2025 (archived), so the absences are not shown to be a loss of vote; the lists for the dates of the 2024 votes are not archived (P-23). The build scores the
+      non-vote at -2, whatever the reason.'
+    queries:
+    - unga_votes.csv, voter KHM
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Cambodia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Cambodia; docs/06 §8). The advisory
+      proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Cambodia)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the sources read.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Cambodia is a state party to the Rome Statute (the Assembly of States Parties' list, archived, line 109); no statement on the warrants of 21 November 2024 was found.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties)'
+    - Cambodia ICC arrest warrant Netanyahu
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on ICC officials by Cambodia appeared in any source read.
+  B8:
+    status: unchecked
+    note: 'Generated from recognitions.csv, which has no row for Cambodia. The registry gives 21 November 1988 (A/78/846 annex) and records no official statement for it (P-14); Cambodia voted
+      yes on A/DEC/80/506 and the Deputy Prime Minister said at the 79th General Debate that Cambodia ''supports the establishment of the State of Palestine and Palestine''s bid to become a full
+      member of the United Nations''. No row (R21): with the pre-existing tier the score would be +3 higher.'
+    queries:
+    - recognitions.csv, row KHM (none)
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One B9 event: Sok Chenda Sophea, Deputy Prime Minister and Minister of Foreign Affairs, at the 79th General Debate (28 September 2024; evt_2024_09_28_KHM_B9, +2, call tier, flagged).
+      Not filed: the Ministry''s statements of 8 October 2023 (''utmost restraint ... de-escalation and a ceasefire'') and 17 October 2025 (welcoming the Gaza peace agreement), known from search
+      results and not read, are Ministry statements, not a named speaker''s (R3); Prak Sokhonn''s address of 27 September 2025 (80th session): the UN''s summary has no passage on Gaza and the
+      file kh_fl.pdf has no Wayback capture; his address of 26 September 2026 (81st session, kh_en.pdf, read live: 285 lines) has no mention of Gaza, Palestine, Israel or a ceasefire; the 78th
+      session''s file has no capture. Prime Minister Hun Manet: no statement on Gaza found.'
+    queries:
+    - gadebate.un.org Cambodia 79th to 81st sessions (kh_en.pdf, kh_fl.pdf)
+    - Cambodia Hun Manet Gaza ceasefire statement (web search)
+    - opendevelopmentcambodia.net and AKP reports (read)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister was found; the Ministry's statements call for restraint, dialogue and a ceasefire and Cambodia's
+      Permanent Mission in Geneva declined a collective statement in October 2023 (Open Development Cambodia's copy of the Phnom Penh Post item of 31 October 2023, read).
+    queries:
+    - Cambodia Hun Manet Israel support (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Cambodia appeared in any source read.
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: Cambodia and Israel agreed on 23 June 2026 to deepen cooperation (AKP, read: the Prime Minister received Israel''s
+      ambassador, who is accredited from Bangkok).'
+    queries:
+    - AKP Cambodia Israel (read)
+    - Cambodia Israel relations 2024 2025 2026 (web searches)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to exist for Cambodia; none was suspended or reviewed (none found).
+    queries:
+    - Cambodia Israel trade agreement (web searches)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument signed with Israel after 7 October 2023 is documented by a primary in the sources read. Press reports (not filed) give a memorandum on education, youth and culture signed
+      on 20 February 2025 (lead_20261104_KHM_1, two press reports of one origin) and, from a search result whose page could not be read, a labour framework agreement and an implementing agreement
+      signed in Jerusalem on 1 December 2025; the labour agreement is the item with the largest effect (a C2 event of -10, flagged under R18, if a ministry release or the text is archived) and
+      goes to P-23. The direct-flights memorandum (B2B Cambodia, Khmer Times, 2017) predates the window.
+    queries:
+    - Cambodia Israel agreement signed 2024 2025 2026 (web search)
+    - Heng Sour Jerusalem Israel Cambodia labour agreement (web search)
+    - akp.gov.kh/post/detail/354230 and /373863 (read)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor KHM
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Cambodia: no contribution to suspend (searched for Cambodia).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Cambodia
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Cambodia: no contribution to restore or increase (searched for Cambodia).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Cambodia
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+  D5:
+    status: unchecked
+    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

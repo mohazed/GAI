@@ -1,0 +1,215 @@
+# Coverage record for Kenya (docs/03 §6). P-21 light protocol, session T-P21-37, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Office of the President's site (president.go.ke, WordPress REST API, full-text search /wp-json/wp/v2/posts?search= for Gaza, Palestine, Palestinian, Israel, Israeli, ceasefire, Hamas, Middle East, ICC,
+# International Criminal Court, genocide, Netanyahu, hostages, humanitarian, UNRWA, two-state, Rafah, terror, terrorist, solidarity, condemn, Holy Land, Jerusalem, Cyber Directorate, National Cyber, cabinet, United Nations, foreign
+# policy; the items that matched opened), the Ministry of Foreign and Diaspora Affairs' site (mfa.go.ke, Drupal; the site search returns no results page to a scripted request, so the lists /speeches-statements, /press-release,
+# /allnews and /news-update were read page by page, ?page=0 to 12, by title, and the files they link opened: the Ministry's statement of 6 March 2026, the third quarterly briefing of 12 November 2025, the joint statement with China,
+# the Nairobi Declaration of 12 May 2026, the TICAD 9 declaration and the Kenya-Norway press release), the Kenya News Agency (kenyanews.go.ke, WordPress REST; its search is fuzzy, the titles were screened for Gaza, Palestine, Israel,
+# ceasefire, Hamas, Netanyahu, cyber and the like), the UN's General Debate pages and files (79th, 80th, 81st), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the generated tables,
+# UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and
+# nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: one (B9); see docs/10 B-802. Leads: three (B9 twice, C2); see docs/10 B-803.
+country: KEN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier KEN
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists two orders from Israel, one of data year 1981 (12 TIV) and one of data year 2024 (45 TIV). The build
+      reads only rows of the release''s own data year (2025), so A4 is derived none-found (the A4 data-year gap, docs/10 B-536 (7), reported for P-23); the 2024 order is below the 100 TIV threshold
+      of docs/02 §2 A4 in any case. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer KEN (rows of 1981 and 2024)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven of the twelve qualifying votes; abstention on A/RES/ES-10/24 (18 September 2024, expired). The country is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country KEN
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Kenya is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Kenya supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Kenya is a state party to the Rome Statute (signed 11 August 1999, ratified 15 March 2005: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 159). No statement on the warrants of 21 November 2024 by a B5 speaker was found: the Presidency''s searches for ICC, Netanyahu and genocide return items unrelated to the warrants,
+      and the Ministry''s lists by title show a Kenyan candidacy for the Court (Justice Njoki Ndung''u) and nothing on the warrants.'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Kenya (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'president.go.ke REST search: ICC, Netanyahu, genocide'
+    - mfa.go.ke /speeches-statements, /press-release, /allnews pages 0 to 12 (titles)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Kenya was found in the sources read (the Treaty Collection's page
+      lists no Kenyan notification).
+    queries:
+    - 'president.go.ke REST search: Netanyahu, ICC'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Kenya were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Kenya. The registry gives a recognition since 12 May 1989, before the window, with no Government document read (R21, left for P-23); no recognition
+      after 7 October 2023 was found. The President''s 80th General Debate statement supports a two-state solution ''where Israel and Palestine live side by side'' without announcing a recognition.'
+    queries:
+    - recognitions.csv, KEN (no row)
+    - 'president.go.ke REST search: Palestine, Palestinian, two-state'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One event filed: evt_2025_09_24_KEN_B9 (the President, 80th General Debate, call for a permanent ceasefire, +2, flagged for the ''disproportionate military operations'' wording; docs/10
+      B-802). The President is head of state and head of government (R3). Not filed: (1) his 79th statement (26 September 2024, src_20240926_un-gadebate_ke-ruto-ag79, line 66; 769 days, expired)
+      lists ''From Gaza to Darfur, Ukraine, Yemen, Eastern Democratic Republic of Congo'' among conflicts inflicting destruction: no call, no violation, neither tier. (2) His 81st statement (23
+      September 2026; the file ke_en.pdf read live, not recorded: no Wayback capture and gadebate.un.org fails Save Page Now) speaks of civilians paying the price ''from Europe to the Middle East''
+      and never names Gaza or Palestine (R7). (3) The Presidency''s report of 29 January 2025 (src_20250129_presidency-ke_kenya-egypt-partnership, line 21): ''remains committed to UN Security
+      Council Resolution 2728 of 2024, which calls for an immediate ceasefire'' does not name Gaza (R7) and Gaza sits in the report''s indirect speech: lead_20261104_KEN_1. (4) The joint statement
+      with China of April 2025 (src_20250426_mfa-ke_kenya-china-joint-statement, lines 255 to 257) is a statement of ''the two sides'' that opposes ''the forced transfer of people in Gaza'': lead_20261104_KEN_2.
+      (5) The Prime Cabinet Secretary and Cabinet Secretary for Foreign and Diaspora Affairs, Musalia Mudavadi, is a B9 speaker; the Ministry''s lists show no statement of his on Gaza: his statement
+      of 6 March 2026 on the Middle East (the war of that month) names neither Gaza nor Palestine, and the quarterly briefing of 12 November 2025 calls for a ceasefire in Sudan only. The Nairobi
+      Declaration (12 May 2026) names the conflict in the Middle East in a paragraph on its economic consequences, with no call.'
+    queries:
+    - 'president.go.ke REST search: Gaza (9 posts), Palestine, Palestinian, Israel, Israeli, ceasefire, Hamas, Middle East, genocide, Netanyahu, hostages, two-state, humanitarian, UNRWA, Rafah,
+      terror, solidarity, condemn, Holy Land, Jerusalem; the matches that bore on Gaza opened'
+    - mfa.go.ke /speeches-statements, /press-release, /allnews, /news-update pages 0 to 12 (titles) and the files named in the header
+    - 'kenyanews.go.ke REST search: Gaza, Palestine, Palestinian, Israel, Israeli, ceasefire, Hamas, Netanyahu, two-state, genocide, Mudavadi (titles screened)'
+    - gadebate.un.org/en/{79,80,81}/kenya and gastatements/{79/ke_en_0,80/ke_en,81/ke_en}.pdf
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found in the Presidency''s items (its searches for Israel, Israeli,
+      terror, terrorist, solidarity and condemn return no statement on the war) or in the Ministry''s lists. The Ministry''s item of 7 February 2026 on the Israeli Ambassador''s courtesy call
+      records that the two ''reaffirm[ed] Kenya''s commitment to peace and stability in the Middle East'' and is a meeting report (src_20260207_mfa-ke_advancing-kenya-israel-relations), not a
+      B10 statement.'
+    queries:
+    - 'president.go.ke REST search: Israel, Israeli, terror, terrorist, solidarity, condemn'
+    - mfa.go.ke lists (titles); /advancing-kenya-israel-relations
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Presidency's and the Ministry's items read. This rests on those sites only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Israel''s Ambassador, Gideon Behar, is among the envoys who presented credentials on 3 September 2025 (the Presidency''s report, president.go.ke
+      post 22342, read) and was received by the Prime Cabinet Secretary on 6 February 2026 (the Ministry''s item). An accreditation is not an act under B12 (B-599).'
+    queries:
+    - 'president.go.ke REST search: Israel, Israeli (post 22342 opened)'
+    - mfa.go.ke /advancing-kenya-israel-relations
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Kenya is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found in the Presidency''s and the Ministry''s items read. One lead: the Cabinet of 7 March 2024 approved ''MOU Between the ICT
+      ministry and the Israeli National Cyber Directorate'' (src_20240307_presidency-ke_cabinet-regional-authorities, line 19); an approval is not a signing and no signed text or date was found
+      (lead_20261104_KEN_3). The Ministry''s item of 7 February 2026 records an exploratory call and no signing. The Kenya News Agency''s titles mention partnerships of county governments with
+      Israel (Nakuru, Kiambu, Makueni; 2024 to 2026): county governments are devolved governments, not the national Government, and those articles were not opened. No treaty register was read
+      (P-23).'
+    queries:
+    - 'president.go.ke REST search: Israel, Israeli, Cyber Directorate, National Cyber, cabinet'
+    - mfa.go.ke /advancing-kenya-israel-relations
+    - 'kenyanews.go.ke REST search: Israel, Israeli, Cyber Directorate (titles)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_funding.csv): Government flows of USD 1,012,020 appear in the 12-month windows ending 31 July 2024 to 30 June 2025 (plans 1186, 1156, 1273 and 1510) and none
+      in the trailing 12 months; the computed events end on 1 August 2025 (see `pnpm score --country KEN --list`). Left to the build.'
+    queries:
+    - fts_funding.csv, donor KEN
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Kenya has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Kenya in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Kenya was found in the Presidency's items and the Ministry's lists read. The Kenya News Agency's item of
+      17 November 2025 on women in Mombasa raising funds for Gaza medical aid is a private collection by its title (the article was not opened).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

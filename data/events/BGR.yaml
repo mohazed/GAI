@@ -1,0 +1,376 @@
+# Hand-authored events for Bulgaria (P-21 light protocol, T-P21-03, 2026-10-05).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers for B9/B10: President (Rumen Radev; Iliana Iotova from 2026), Prime Minister, Minister of Foreign Affairs (R3).
+
+- id: evt_2023_12_31_BGR_D3
+  revision: 1
+  country: BGR
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: 'Increased tier (+8): Bulgaria''s 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (USD 107,875 in 2023; USD 26,652 in 2022)
+    (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Bulgaria contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables.
+    fr: La contribution de la Bulgarie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: Bulgaria 0 0 0 0 0 0 0 0 0 107,875 107,875 95
+    quote_lang: en
+    locator: line 114
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: Bulgaria 26,652 0 26,652 0 0 0 26,652 82
+    quote_lang: en
+    locator: line 93
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read line 114 of the 2023 table (USD 107,875, rank 95) and line 93 of the 2022 table (USD 26,652, rank 82), and searched the 2024 table for a row of Bulgaria: none. D3 increased
+        for 2023 agrees; it ends on 2024-12-31, from which the 2024 table decides (no row: no successor).'
+    notes: 'UNRWA''s donor tables give USD 107,875 for 2023 against USD 26,652 for 2022: the increased tier holds from 31 December 2023 and ends on 2024-12-31, from which the 2024 table decides;
+      the 2024 table has no row of Bulgaria, so no 2024 event. The amounts are small and the tier does not depend on their size (docs/02 §2 D3: nominal comparison). No suspension of Bulgaria''s
+      funding found (D2 none-found).'
+
+- id: evt_2024_02_19_BGR_B9
+  revision: 1
+  country: BGR
+  indicator: B9
+  type: repeatable
+  date: '2024-02-19'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the 26 foreign ministers call for an immediate humanitarian pause leading to a sustainable ceasefire and ask Israel not to launch a military
+    operation in Rafah; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed a declaration of 26 EU foreign ministers calling for an immediate humanitarian pause leading to a sustainable ceasefire in Gaza.
+    fr: La ministre des Affaires étrangères a signé une déclaration de 26 ministres de l'UE appelant à une pause humanitaire immédiate menant à un cessez-le-feu durable à Gaza.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs
+    fr: Vice-Première ministre et ministre des Affaires étrangères
+    name: Mariya Gabriel
+  evidence:
+  - source: src_20240219_lahbib-belgium_declaration-26-ministres
+    quote: Cela nécessite une pause humanitaire immédiate qui conduirait à un cessez-le-feu durable, à la libération inconditionnelle de tous les otages et à la mise en place d'une assistance
+      humanitaire.
+    quote_lang: fr
+    quote_en: This requires an immediate humanitarian pause that would lead to a sustainable ceasefire, the unconditional release of all hostages and the provision of humanitarian assistance.
+    locator: line 5
+  - source: src_20240219_lahbib-belgium_declaration-26-ministres
+    quote: 'Israël/Palestine : Déclaration des ministres des Affaires étrangères de l''Autriche, de la Belgique, de la Bulgarie, de la Croatie, de Chypre, de la République tchèque'
+    quote_lang: fr
+    quote_en: 'Israel/Palestine: Statement by the Foreign Ministers of Austria, Belgium, Bulgaria, Croatia, Cyprus, the Czech Republic'
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_02_19_BEL_B9
+  - evt_2024_02_19_CZE_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Line 1 of the archived text re-read: de la Bulgarie is among the signatories; line 5: the passage quoted. B9 call tier (+2) matches the events filed for the other signatories (evt_2024_02_19_BEL_B9,
+        evt_2024_02_19_CZE_B9).'
+    notes: 'Declaration of the foreign ministers of 26 EU member states (all but Hungary) of 19 February 2024, as published on the Belgian Minister of Foreign Affairs'' website (the text archived
+      for Belgium). The signatory is read as the Foreign Minister in office on that date, Mariya Gabriel (Deputy Prime Minister and Minister of Foreign Affairs from 6 June 2023 to 9 April 2024).
+      It has decayed to zero (more than 730 days old). Filed in the light protocol (docs/10 B-515 ff.): the same joint statement is filed for every signatory (B-444); Bulgaria is named on line
+      1.'
+
+- id: evt_2024_04_19_BGR_B11
+  revision: 1
+  country: BGR
+  indicator: B11
+  type: standing
+  date: '2024-04-19'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 19 April 2024 (Decision (CFSP) 2024/1175) of four settlers and two settler entities (Lehava, Hilltop Youth), adopted
+    by unanimity. West Bank only: tagged, unscored in v1 (docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on four Israeli settlers and two settler entities for human rights abuses against Palestinians in the West Bank.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre quatre colons israéliens et deux entités de colons pour des atteintes aux droits de Palestiniens en Cisjordanie.
+  evidence:
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: The Council decided today to list four persons and two entities under the EU Global Human Rights Sanctions Regime. The listed individuals and entities are responsible for serious human
+      rights abuses against Palestinians, including torture and other cruel, inhuman or degrading treatment or punishment and for the violation of right to property and to private and family life
+      of Palestinians in the West Bank.
+    quote_lang: en
+    locator: line 1
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: The listed entities are Lehava, a radical right-wing Jewish supremacist group, and Hilltop Youth, a radical youth group consisting of members known for violent acts against Palestinians
+      and their villages in the West Bank. Two leading figures of Hilltop Youth, Meir Ettinger and Elisha Yered, are also listed. Both were involved in deadly attacks against Palestinians in 2015
+      and 2023.
+    quote_lang: en
+    locator: line 2
+  - source: src_20240419_consilium_settlers-sanctions
+    quote: Council Decision (CFSP) 2024/1175 of 19 April 2024 amending Decision (CFSP) 2020/1999 concerning restrictive measures against serious human rights violations and abuses
+    quote_lang: en
+    locator: line 11
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Lines 1, 2 and 11 of the Council''s release re-read: the listing of four persons and two entities for abuses against Palestinians in the West Bank, and the Decision (CFSP) 2024/1175
+        of that day. B11 settlers agrees; scope west-bank (the release does not cite Gaza).'
+    notes: 'Filed in the light protocol (docs/10 B-515 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Bulgaria as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446).'
+
+- id: evt_2024_06_06_BGR_B9
+  revision: 1
+  country: BGR
+  indicator: B9
+  type: repeatable
+  date: '2024-06-06'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the joint statement of the leaders of seventeen states fully supports the move towards a ceasefire and a hostage-release agreement and says
+    it is time for the war to end; it names no specific violation.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister joined sixteen other leaders in supporting a ceasefire and hostage-release agreement for Gaza and in stating that it was time for the war to end.
+    fr: Le Premier ministre s'est joint à seize autres dirigeants pour soutenir un cessez-le-feu et un accord de libération des otages à Gaza et déclarer qu'il était temps que la guerre prenne
+      fin.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Dimitar Glavchev
+  evidence:
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: we fully support the movement towards a ceasefire and hostage release deal now on the table and as outlined by President Biden on May 31, 2024.
+    quote_lang: en
+    locator: line 3
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: It is time for the war to end and this deal is the necessary starting point.
+    quote_lang: en
+    locator: line 4
+  - source: src_20240606_govinfo_dcpd-202400492
+    quote: 'Categories: Joint Statements : Argentina, Austria, Brazil, Bulgaria, Canada, Colombia, Denmark, France, Germany'
+    quote_lang: en
+    locator: line 6
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_06_06_ARG_B9
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Lines 3 and 4 of the archived text re-read: the support for the ceasefire and hostage-release deal and "It is time for the war to end"; Bulgaria is listed on line 6 among the states
+        joining the United States. Call tier (+2) matches evt_2024_06_06_ARG_B9.'
+    notes: 'Joint statement of the leaders of seventeen states of 6 June 2024, in the Daily Compilation of Presidential Documents (DCPD-202400492). The archived text names the states, not the
+      signatories; the signatory is read as the head of government, who signs leaders'' statements for the state (docs/10 B-444): Dimitar Glavchev, caretaker Prime Minister from 9 April 2024 to
+      16 January 2025. It has decayed to zero (more than 730 days old). Filed in the light protocol (docs/10 B-515 ff.).'
+
+- id: evt_2024_07_15_BGR_B11
+  revision: 1
+  country: BGR
+  indicator: B11
+  type: standing
+  date: '2024-07-15'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 15 July 2024 (Decision (CFSP) 2024/1967) of five persons and three entities, among them Tzav 9 for blocking humanitarian
+    aid trucks to Gaza, adopted by unanimity. Scoped gaza as the listing cites Gaza (docs/10 B-32; B-281 (2), as Norway''s alignment, evt_2024_07_24_NOR_B11).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on five Israeli settlers and activists and three entities, including a group blocking aid trucks bound for Gaza.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre cinq colons et militants israéliens et trois entités, dont un groupe bloquant les camions d'aide destinés à Gaza.
+  evidence:
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Today the Council approved additional restrictive measures against five persons and three entities under the European Union's Global Human Rights Sanctions Regime. The listed individuals
+      and entities are responsible for serious and systematic human rights abuses against Palestinians in the West Bank, including abuse of the right of everyone to enjoy the highest attainable
+      standard of physical and mental integrity, the right to property, the right to private and family life, to freedom of religion or belief and the right to education.
+    quote_lang: en
+    locator: line 1
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Today’s designations also include Tzav 9, an Israeli group of violent activists founded in January 2024, regularly blocking humanitarian aid trucks delivering food, water and fuel to
+      Gaza. Tzav 9’s actions include violent protests, attacks against food trucks and the destruction of food.
+    quote_lang: en
+    locator: line 4
+  - source: src_20240715_consilium_settlers-tzav9-sanctions
+    quote: Council Decision (CFSP) 2024/1967 of 15 July 2024 amending Decision (CFSP) 2020/1999 concerning restrictive measures against serious human rights violations and abuses (including the
+      list of sanctioned individuals and entities)
+    quote_lang: en
+    locator: line 12
+  - source: src_20240715_eur-lex_cfsp-2024-1967
+    quote: 'the following entries are added to the list of natural and legal persons, entities and bodies under heading ‘A. Natural persons’:'
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Lines 1, 4 and 12 of the Council''s release and line 2 of the Decision re-read: five persons and three entities listed, Tzav 9 for blocking aid trucks to Gaza, Decision (CFSP) 2024/1967.
+        B11 settlers (+5) agrees; scope gaza and west-bank.'
+    notes: 'Filed in the light protocol (docs/10 B-515 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Bulgaria as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446).'
+
+- id: evt_2024_09_25_BGR_B9
+  revision: 1
+  country: BGR
+  indicator: B9
+  type: repeatable
+  date: '2024-09-25'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the President says that Bulgaria calls for an immediate ceasefire in Gaza, free access of the humanitarian convoys and the release of all
+    hostages held by Hamas; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President told the General Assembly that Bulgaria called for an immediate ceasefire in Gaza, free access for humanitarian convoys and the release of all hostages held by Hamas.
+    fr: Le président a déclaré à l'Assemblée générale que la Bulgarie appelait à un cessez-le-feu immédiat à Gaza, à l'accès libre des convois humanitaires et à la libération de tous les otages
+      du Hamas.
+  actor:
+    en: President
+    fr: Président
+    name: Rumen Radev
+  evidence:
+  - source: src_20240925_un-gadebate_bgr-radev-en
+    quote: We call for immediate ceasefire, free access of the humanitarian convoys as well as release of all hostages held by Hamas.
+    quote_lang: en
+    locator: lines 54-55
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read the General Debate text (lines 51-57): the call for an immediate ceasefire, free access of the humanitarian convoys and the release of all hostages. Call tier (+2) agrees;
+        the text speaks of tens of thousands dead and the destruction of infrastructure without naming a violation. Decayed to zero (more than 730 days).'
+    notes: Statement of the President, the head of state (B9 speaker under R3), in the General Debate of the 79th session on 25 September 2024; the English text is the General Debate site's, marked
+      'Check against delivery'. Decayed to zero.
+
+- id: evt_2025_09_26_BGR_B9
+  revision: 1
+  country: BGR
+  indicator: B9
+  type: repeatable
+  date: '2025-09-26'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire (+2): the Prime Minister says that a sustainable ceasefire and a credible political process are urgently needed, after describing the killing of
+    tens of thousands of civilians in Gaza; no violation is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister told the General Assembly that a sustainable ceasefire and a credible political process were urgently needed in Gaza.
+    fr: Le Premier ministre a déclaré à l'Assemblée générale qu'un cessez-le-feu durable et un processus politique crédible étaient urgemment nécessaires à Gaza.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Rossen Jeliazkov
+  evidence:
+  - source: src_20250926_un-gadebate_bgr-jeliazkov-en
+    quote: A sustainable ceasefire and credible political process are urgently needed.
+    quote_lang: en
+    locator: lines 78-79
+  - source: src_20250926_un-gadebate_bgr-jeliazkov-en
+    quote: In Gaza, tens of thousands of civilians have been killed, neighborhoods destroyed, and countless people displaced.
+    quote_lang: en
+    locator: lines 74-76
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Re-read the General Debate text (lines 70-80): the sentence follows the passage on Gaza and speaks of a sustainable ceasefire; the Gaza passage describes deaths, destruction and
+        displacement without a rule or a party named. Call tier (+2) agrees; read as a call although it is worded as a need, as the Foreign Minister''s of Tajikistan (docs/10 B-509).'
+    notes: 'Statement of the Prime Minister (the name is spelled Jeliazkov in the text and Zhelyazkov in the Bulgarian press) in the General Debate of the 80th session on 26 September 2025, the
+      head of government being a B9 speaker. The ceasefire sentence is worded as a need, not as a demand: read as the call tier (flagged, docs/10 B-517).'
+
+- id: evt_2026_05_28_BGR_B11
+  revision: 1
+  country: BGR
+  indicator: B11
+  type: standing
+  date: '2026-05-28'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the EU listing of 28 May 2026 (Implementing Regulation (EU) 2026/1177) of four settler organisations and three individuals, adopted by
+    unanimity; it lists Nachala for abuses in the West Bank and the Gaza Strip. The settler tier already holds from 15 July 2024 (one per tier), so it adds no points.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The government agreed in the EU Council to sanctions on three Israeli settler leaders and four settler organisations, one of them for efforts to resettle the Gaza Strip.
+    fr: Le gouvernement a approuvé au Conseil de l'UE des sanctions contre trois dirigeants de colons israéliens et quatre organisations de colons, dont l'une pour son projet de colonisation de
+      Gaza.
+  evidence:
+  - source: src_20260528_eur-lex_reg-impl-2026-1177
+    quote: 'the following entries are added to the list of natural or legal persons, entities or bodies under the heading ‘B. Legal persons, entities and bodies’:'
+    quote_lang: en
+    locator: line 2
+  - source: src_20260528_eur-lex_reg-impl-2026-1177
+    quote: After 7 October 2023, Nachala has furthermore been at the forefront of efforts to resettle the Gaza Strip. Therefore, Nachala is responsible for facilitating and encouraging human rights
+      abuses in the West Bank and the Gaza Strip, including abuses of the right of Palestinians to self-determination, their right to property, their right to private and family life, as well
+      as the right to life and to physical health, which are of serious concern as regards the objectives of the common foreign and security policy set out in Article 21 of the Treaty on European
+      Union.
+    quote_lang: en
+    locator: line 27
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-05'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-05'
+      verdict: agree
+      notes: 'Lines 2 and 27 of the Implementing Regulation re-read: entities added to the list, Nachala for abuses in the West Bank and the Gaza Strip, listed 28.5.2026. B11 settlers agrees;
+        it adds nothing while the 2024 listing holds.'
+    notes: 'Filed in the light protocol (docs/10 B-515 ff.) under the reading R8 of docs/calibration/README.md (docs/10 B-441, B-443 (5)): an EU listing adopted by the Council by unanimity is
+      each member state''s assent and counts as its B11 event on the date of the Council decision; no national vote is recorded and no constructive abstention is known. Filed for Bulgaria as for
+      the 15 EU members among the 45 countries of Phase 1 (docs/10 B-446).'

@@ -1,0 +1,169 @@
+# Coverage record for Yemen (docs/03 §6). P-21 light protocol, session T-P21-49, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; Saba (sabanew.net, the agency of the Government that holds the UN seat) answered; mofa.gov.ye is the ministry of the de facto authorities in Sana'a (its Wayback capture of 8 August 2025 names the 'Government of Change and Construction') and is not the state's source. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): no press item was read. These gaps are scheduled for P-23.
+# No event. Leads: none.
+country: YEM
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build. The Ansar Allah (Houthi) attacks on Israel and
+      on shipping are acts of the de facto authorities in Sana''a, not of the Government that holds the UN seat, and direct hostilities are outside the scale (countries.yaml note, docs/07).'
+    queries:
+    - sipri_deliveries.csv, supplier YEM
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm
+      fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Yemen from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer YEM
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Yemen (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on the twelve qualifying votes (the votes of 2023 and the first half of 2024 have decayed). Yemen has all twelve votes recorded and is not among the Member
+      States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched).'
+    queries:
+    - unga_votes.csv, country YEM
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Yemen is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Yemen).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Yemen (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Yemen supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Yemen is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants by a B5 speaker was found in the sources read.'
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Yemen (not found)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: Yemen is not a state party; no statement against the warrants was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Yemen were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Yemen. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is
+      added (R21; P-23).
+    queries:
+    - recognitions.csv, YEM
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. B9/B10 speakers are those of the Government that holds the UN seat (the Presidential Leadership Council: its Chairman Rashad al-Alimi as head of state, the Prime Minister and
+      the Foreign Minister; as Libya, B-651, and Syria, B-768); statements of the de facto authorities in Sana''a are not the state''s (flagged). The Chairman''s 79th General Debate statement (Arabic, archived
+      on Wayback 20250717093336) says that the Israeli war on the Palestinian people must stop at once, but never names Gaza (R7) and is more than 730 days old; the 80th (September 2025) names ''Yemen and
+      Gaza'' as the moral test of the United Nations and supports the Palestinian Authority and the two-State solution, with no call and no named violation (and no usable capture: CDX lists a 301 only);
+      the 81st (Arabic, garbled text layer; no capture of the 81st session) was not read in full. No joint statement already archived names Yemen as a signatory. Not searched: Saba (sabanew.net, the Government''s
+      agency: its search is script-served) for the Chairman''s summit speeches (Riyadh 2023 and 2024, Manama 2024, Baghdad 2025, Doha 2025), the Foreign Minister''s statements (P-23).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/ye_{ar,en}.pdf (ar read live; en 404)
+    - web.archive.org CDX for gadebate.un.org/…/{79,80,81}/ye_*
+    - 'archive/text: joint statements and UN records, grep Yemen'
+    - sabanew.net/search?key=العليمي غزة (no result parsed)
+    - 'monthly run 2026-11 (T-P23-4): the joint statement of 16 October 2026 on Colombia''s embassy in Jerusalem (src_20261016_dirco_joint-statement-colombia-embassy, line 1) names the Republic of Yemen among its twenty signatories; not filed, because no archived document names the Foreign Minister of the government represented at the UN in the twelve months before that date and a B9 event needs the speaker''s name (as Kuwait, 26 October 2023); Jerusalem and the West Bank only (R7), so it would be tagged west-bank and unscored (docs/10 B-855)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions by Yemen on settlers or settler entities were found in the sources read.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: Yemen has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed.
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Yemen is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument of cooperation with Israel was found in the sources read.
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Yemeni Government flow to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor YEM
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Yemen has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched: Yemen not found)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Yemen in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Yemen was read in a primary (P-23).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

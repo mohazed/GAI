@@ -1,0 +1,189 @@
+# Coverage record for Côte d'Ivoire (docs/03 §6). P-21 light protocol, session T-P21-32, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent; the 80th Foreign Minister's file is ci_fr_0.pdf), the Presidency's WordPress site (presidence.ci), the Embassy of Israel in Abidjan's page of bilateral relations (embassies.gov.il), the Assembly's verbatim records and UN coverage already archived, the joint statements already archived (grep of archive/text for the country's name), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the UN Treaty Collection's status page for the Rome Statute and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49, T-P21-31): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
+# No event. Leads: none.
+country: CIV
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier CIV
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists two older orders by Côte d''Ivoire from Israel (Aerostar reconnaissance
+      drones ordered 2003; two OPV-45 patrol boats ordered 2019 and delivered in 2023); A4 reads only the rows of a release''s own data year (docs/10 B-536 (7)), so they are noted, not scored.
+      Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer CIV (rows of 2003 and 2019)
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Cote d''Ivoire (found: two older orders)'
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes (B1 +16.5 in the listing; the four earliest votes have expired). Côte d''Ivoire is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country CIV
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Côte d''Ivoire is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched).
+      Case 186 (advisory proceedings) is not B3 or B4; Côte d''Ivoire is not in the list of written statements read earlier (src_20261007_icj-cij_case-186-written-proceedings, searched).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Côte d'Ivoire (not found)
+    - archive/text/src_20261007_icj-cij_case-186-written-proceedings.txt, Côte d'Ivoire (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Côte d'Ivoire supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Côte d'Ivoire is a state party to the Rome Statute (since 15 February 2013; src_20261009_icc-asp_states-parties, searched). No statement on the warrants of 21 November 2024 by a B5 speaker
+      was found in the sources read.
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Côte d''Ivoire (found: state party)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person under warrant was found in the sources read. The UN Treaty Collection status page for the Rome Statute (chapter XVIII-10,
+      read on 2026-11-04, not archived) lists no withdrawal notification by Côte d'Ivoire (it lists Burundi 2016, Hungary (withdrawn), Niger 18 June 2026, Burkina Faso and Mali 24 June 2026, Venezuela
+      24 July 2026, Chad 27 July 2026 and Nauru 23 September 2026).
+    queries:
+    - treaties.un.org status page, chapter XVIII-10 (read, not archived)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Côte d'Ivoire were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Côte d'Ivoire. The registry gives 1 December 2008 (countries.yaml recognises_palestine); no Government document of the date was
+      read, so no row is added (R21; P-23).
+    queries:
+    - recognitions.csv, CIV
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No event filed. (1) 79th General Debate statement, 26 September 2024 (UN page; live file ci_fr.pdf, 323,098 bytes, equal to the Wayback capture 20241211060834; not recorded as a source
+      because it holds no passage on Gaza), delivered by Vice President Tiémoko Meyliet Koné: a Vice President is not a B9 speaker (R3), and the text speaks of ''plusieurs conflits armés'' without
+      naming Gaza, Palestine or Israël. (2) 80th, 26 September 2025 (src_20250926_un-gadebate_civ-adom-fr), Foreign Minister Kacou Houadja Léon Adom (a B9 speaker, R3): no occurrence of Gaza,
+      Palestine, Israël, Moyen-Orient, cessez-le-feu or Hamas in the 15,656 characters of the text; the file ci_fr.pdf of the same session is the Minister of Education''s statement at the youth-programme
+      meeting of 25 September 2025 (not the General Debate). (3) 81st, 24 September 2026 (UN page; live file ci_fr.pdf, 284,983 bytes, no Wayback replay), Vice President Koné again: ''La Côte
+      d''Ivoire demeure très préoccupée par la reprise des hostilités au Proche et au Moyen-Orient'' (the Vice President is not a B9 speaker; no Gaza, no call). The Presidency''s WordPress site
+      (presidence.ci, /wp-json/wp/v2/posts) has not published since 23 October 2023 and returns nothing for Gaza, Palestine, Israël, Israel, palestinien, Moyen-Orient, Hamas, CPI or cessez-le-feu;
+      the Government portal (gouv.ci) has a POST search form with a session token that returned the generic news listing, so it was not used; the Ministry (diplomatie.gouv.ci) is an introduction
+      page with no news. Côte d''Ivoire is a member of the OIC (countries.yaml): the OIC''s communiques and the Ivorian Government''s statements there were not read. Not searched: the Ivorian
+      press and the Government Information Centre (cicg.ci, did not answer), the Prime Minister''s statements, the President''s speeches (P-23).'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/ci_fr.pdf and 80/ci_fr_0.pdf (read live; 80th Foreign Minister archived by --capture 20260119231212; ci_en 404)
+    - presidence.ci/wp-json/wp/v2/posts?search={Gaza,Palestine,Israël,Israel,palestinien,Moyen-Orient,Hamas,CPI,cessez}
+    - 'archive/text: joint statements and UN records, grep Ivoire/Ivory'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read. The Embassy of Israel''s page records
+      the long relations between the two states (the President''s visit to Israel in 2012, the Israeli Foreign Minister''s visit of July 2023) and no statement of the window.'
+    checked_at: '2026-11-04'
+  B11:
+    status: unchecked
+    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.ci) is an introduction page with no news, the Presidency''s site has not published since October 2023 and the Government portal
+      could not be searched by script; nothing in the General Debate statements bears on it (P-23).'
+    checked_at: '2026-11-04'
+  B12:
+    status: unchecked
+    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.ci) is an introduction page with no news, the Presidency''s site has not published since October 2023 and the Government portal
+      could not be searched by script.'
+    queries:
+    - archive/text/src_20260220_embassies-il_civ-bilateral-relations.txt
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Côte d'Ivoire is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: unchecked
+    note: 'Left unchecked: the Embassy of Israel in Abidjan''s page of bilateral relations (src_20260220_embassies-il_civ-bilateral-relations) lists no agreement signed since October 2023 (its
+      latest item is the Israeli Foreign Minister''s visit of July 2023 ''focusing on strengthening economic relations''), but it is a timeline and not a list of agreements; the Ivorian Government''s
+      sites could not be searched (P-23).'
+    queries:
+    - archive/text/src_20260220_embassies-il_civ-bilateral-relations.txt
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Côte d''Ivoire to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor CIV
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Côte d'Ivoire has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched: Côte d''Ivoire not found)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Côte d'Ivoire in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: unchecked
+    note: 'Left unchecked: the Ivorian Government''s sites could not be searched; nothing in the General Debate statements bears on it (P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: unchecked
+    note: 'Left unchecked: the Ivorian Government''s sites could not be searched; nothing in the General Debate statements bears on it (P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

@@ -1,0 +1,323 @@
+# Coverage record for Norway (docs/03 §6). P-D research session, wave 4, 2026-09-28.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-277): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for the wave-3 countries). The protocol's searches (docs/06 §4
+# step 3) were run as (1) keyword filters of the Wayback CDX listings (URLs captured since
+# 2023-10-07) of the Government's news pages regjeringen.no/no/aktuelt and /en/aktuelt (27,386
+# addresses: press releases, statements, speeches, and the ministers' published answers to the
+# Storting), in Norwegian (bokmål and nynorsk) and English, with the keywords gaza, palest, israel,
+# unrwa, midtøsten / middle-east, straffedomstol, folkerett, vestbredd / west-bank, netanyahu,
+# ben-gvir, smotrich, bosett / settler, våpen / arms, hamas, rafah, tostat / two-state, etikk /
+# ethic, pensjonsfond, sanksjon / sanction, arrest, eksport / export, forsvarsmateriell, f-35,
+# pasient / patient, evakuer, icj, domstol, okkup / occup, genocid / folkemord, visum / visa,
+# then reads of about 300 matching pages through Wayback (regjeringen.no answers scripted requests
+# and Save Page Now with a Cloudflare challenge, HTTP 403); (2) the Storting's open data
+# (data.stortinget.no, all written questions of the sessions 2023–24, 2024–25 and 2025–26) filtered
+# by title for Israel, Gaza, Palestin*, Netanyahu, UNRWA, straffedomstol, Vestbredden, F-35 and
+# folkemord (194 questions), and reads of every answer; (3) Norges Bank Investment Management's
+# press releases (2023–2026) and exclusion list, and the Council on Ethics' pages; (4) the full
+# listing of regjeringen.no/no/aktuelt in Wayback (98,081 addresses, any date) for F-35 industry
+# pages. Sámi was not searched; the Storting's plenary records, Lovdata (laws and regulations),
+# the police and prosecution authorities (Kripos, Riksadvokaten), KLP's exclusion decisions and
+# the press were not searched. Each `queries` entry names the listing or query used.
+country: NOR
+protocol_version: 1
+last_full_check: 2026-09-28
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
+      The Government states that it does not permit exports of weapons, ammunition, other defence
+      materiel or dual-use goods for military end use to Israel (written answers of the Minister of
+      Foreign Affairs of 26 February 2024, 23 April 2024 and 20 October 2025, read, not archived).
+  A2:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (Norway's rows existed from P-14, so `pnpm fetch:comtrade` was not
+      run). Norway's own reports show no HS 93 or 8710 exports to Israel in 2022–2025; Israel's
+      mirror imports under HS 93 are USD 9,000 (2022) and USD 1,000 (2024); A2 is 0 in every year.
+      HS 8526 (own USD 8,888–559,306 a year, USD 559,306 in 2025; mirror USD 7,000–49,000) and 8802
+      (own USD 120,787 and mirror USD 130,000 in 2022) are not counted without a confirming
+      document (docs/02 §2); none was found, so no row was added to a2_confirmed_military.csv. No
+      disagreement with the country's record: the Government states that no weapons, ammunition,
+      defence materiel or dual-use goods for military end use are exported to Israel. The Minister
+      of Foreign Affairs told the Storting (21 June 2024) that the Armed Forces' own-materiel
+      shipments to Israel in 2023 listed in the annual export report (table 10.12) were equipment for
+      Norwegian UN personnel in the area, not exports or sales. Parts and components shipped to
+      allies under cooperation agreements (for example to the United States) are not recorded as
+      exports to Israel; Storting questions (30 November 2023, 2 October 2025) cite press reports
+      of Nammo's United States subsidiary delivering to Israel and of Chemring Nobel supplying
+      propellant for Hellfire missiles, which are outside Norway's export records (the Minister's
+      answer of 20 October 2025 says end-user declarations are not required for component
+      deliveries to allies).
+    queries:
+      - data.stortinget.no written questions 2023–2026 (våpen, forsvarsmateriell, F-35, eksport)
+      - regjeringen.no aktuelt CDX listing (eksport av forsvarsmateriell 2023, 2024, 2025)
+  A3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2023_10_07_NOR_A3: Norway is an F-35 partner; the Ministry of Defence's release of 15 May
+      2019 names Kitron as producer of an F-35 component and states Norwegian contracts for parts
+      production of over NOK 4.5 billion with deliveries planned to 2034. A/HRC/59/23 (archived on
+      data/wave-1) names no Norwegian company. No halt of F-35 part exports was found. Storting
+      questions of 16 February and 2 April 2024 cite press reports (Fri Fagbevegelse) that nine
+      Norwegian companies supply F-35 components and that Lockheed Martin confirmed hull parts from
+      Kongsberg on Israel's F-35s; the press articles were not read (no web search), so no lead
+      was filed.
+    queries:
+      - regjeringen.no/no/aktuelt full CDX listing (f-35, kampfly with industri, kongsberg, kontrakt, leverandør)
+      - data.stortinget.no written questions (F-35)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no release archived yet (docs/10 B-187). Left to the
+      build. Storting questions of 26 June 2025 and 1 September 2025 concern a possible Norwegian
+      purchase of long-range precision fires developed by the Israeli defence industry and an Israeli
+      subcontractor for electronic warfare in the new frigates (question texts, answers not read in
+      full); no order placed with Israel was confirmed in the documents read.
+  A5:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No named exercise, transit authorisation, basing agreement or intelligence sharing with Israel
+      related to the Gaza campaign found. The Armed Forces' 2023 shipments to Israel were equipment
+      for Norwegian UN personnel (Minister's answer of 21 June 2024). The Minister of Defence told
+      the Storting (2024) that F-35 spare parts held in Norway are United States-owned pool parts and
+      that the Ministry knows of no use other than return to the United States. Press reports were
+      not searched (no web search).
+    queries:
+      - data.stortinget.no written questions (F-35-komponenter, Forsvaret, Israel)
+      - regjeringen.no aktuelt CDX listing (forsvar, israel)
+  A6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No government decision in the window suspending or refusing a class of licences to Israel was
+      found: Norway's refusal to export weapons, ammunition and dual-use goods for military end use
+      to Israel is a pre-existing policy based on the Storting's decision of 1959 ("Norge har aldri
+      åpnet for eksport av forsvarsmateriell til Israel", Minister's answer of 7 November 2023; the
+      Ministry of Foreign Affairs' review of 4 June 2024 on the Genocide Convention restates it). A
+      policy that predates the window is not an event, as for Belgium's 2009 position (docs/10 B-272 (1) on
+      data/wave-3); flagged (docs/10 B-278 (2)).
+    queries:
+      - data.stortinget.no written questions (våpen, eksport, Israel) and answers of 7 Nov 2023, 26 Feb 2024, 23 Apr 2024, 21 Jun 2024, 20 Oct 2025
+      - regjeringen.no aktuelt CDX listing (gjennomgang av Norges forpliktelser, 4 June 2024)
+  A7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No law or decree covering both arms exports to and imports from Israel found.
+  A8:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No documented instance of a transit, port call or overflight to Israel denied. Press and
+      dockworker claims were not searched (no web search).
+  B1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated. Rows for the seven votes to December 2024 (docs/10 B-186): yes on ES-10/21,
+      ES-10/22, ES-10/23, ES-10/24, ES-10/25, ES-10/26 and 79/232. The archived UN press releases
+      never list Norway against or abstaining; GA/12670 reports Norway's delegate introducing the
+      draft of 79/232 (the request for the advisory opinion on Israel's obligations regarding UN and
+      humanitarian organisations, a Norwegian initiative), and GA/12743 reports Norway's
+      representative introducing the text welcoming the advisory opinion (A/RES/80/116). The
+      Minister's written answer of 7 November 2023 states that Norway voted for the resolution of 27
+      October 2023, and the Ministry's release of 10 May 2024 states Norway's vote for Palestine's
+      membership (ES-10/23). No disagreement. The later qualifying votes have no rows (B-199 (1)).
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Norway has not intervened in case 192. The Minister of Foreign Affairs told the Storting on 6
+      November 2024 and 19 March 2026 that Norway intervenes only exceptionally in contentious cases
+      and will not at present intervene in South Africa's case (written answers, read, not archived).
+      Norway's statements in the advisory proceedings it initiated (A/RES/79/232, opinion of 22
+      October 2025) and in the 2024 advisory opinion are not B3 (case 192 only).
+    queries:
+      - data.stortinget.no written questions (ICJ, intervenere, folkemord)
+      - regjeringen.no aktuelt CDX listing (icj, domstol)
+  B4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement or act rejecting the ICJ's provisional measures; the Minister calls on the parties to respect the Court's decisions.
+  B5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_11_28_NOR_B5: the Minister of Foreign Affairs' written answer of 28 November 2024
+      (Norway obliged to surrender and to comply with any arrest request; Norway will follow up its
+      obligations towards the ICC). The Minister's statement of 21 November 2024 does not address
+      execution.
+    queries:
+      - data.stortinget.no written questions (ICC, arrestordre, Netanyahu)
+      - regjeringen.no aktuelt CDX listing (icc, arrest)
+  B6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No refusal to execute the warrants and no official visit by a person under ICC warrant found.
+  B7:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No sanctions on ICC officials; the Minister criticised the United States' sanctions on the Special Rapporteur (regjeringen.no, 10 July 2025, read, not archived).
+  B8:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from recognitions.csv: +8 from 2024-05-28 (row from P-14,
+      src_20240528_regjeringen_recognises-palestine). The Government's releases of 22 and 28 May
+      2024 (read) agree. No disagreement.
+  B9:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Events for the formal statements of the Minister of Foreign Affairs and the Prime Minister
+      published by the Government or given as written answers to the Storting that call for a
+      ceasefire or name specific violations in Gaza (list in docs/10 B-278 (7)); the cap holds. Not
+      filed: statements of other ministers (the Minister of International Development, the Minister
+      of Justice), statements that welcome agreements without a call (29 September and 9 October
+      2025), statements on Lebanon and Iran, the Prime Minister's speech of 28 November 2025 (a
+      solidarity service), and further statements of the Minister repeating positions already
+      filed (for example 18 March 2025). The General Assembly general debate statements were not
+      read.
+    queries:
+      - regjeringen.no aktuelt CDX listing (about 300 pages read)
+      - data.stortinget.no written questions answered by the Minister of Foreign Affairs
+  B10:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No statement of unconditional support or denial of documented violations; the statements of October 2023 and after recognise Israel's right to self-defence within the law of war.
+  B11:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2025_06_10_NOR_B11 (ministers: entry bans on Smotrich and Ben-Gvir, 10 June 2025) and
+      evt_2024_07_24_NOR_B11 (settlers: alignment with the EU listings of April and July 2024 and
+      May 2026, and entry bans on more than 20 settlers of 9 June 2026). Norway did not align
+      with a listing of Israeli ministers beyond the entry bans; the Minister told the Storting on
+      28 and 31 August 2026 that unilateral sanctions have no basis in the Sanctions Act.
+  B12:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No recall of the ambassador, downgrade or severance by Norway. The closure of Norway's
+      representative office to the Palestinian Authority (August 2024) followed Israel's withdrawal
+      of the Norwegian diplomats' accreditation (Ministry release of 16 August 2024, read, not
+      archived); it is not Norway's act.
+  C1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Norway is not an EU member; its trade with Israel is under the EFTA–Israel free trade agreement
+      (1992) and a bilateral agriculture agreement (updated 2019). The Minister of Trade told the
+      Storting on 20 October 2025 that the agreement has no clause allowing suspension and that
+      assessments would be made jointly with the EFTA states; no suspension or formal review found.
+    queries:
+      - data.stortinget.no written questions (frihandelsavtale, EFTA, Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No new agreement with Israel signed in the window found in the Government's news pages.
+  C3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from Comtrade (own reporting): 2022 baseline USD 432.3 million; r = 0.899 (2023),
+      0.865 (2024) and 0.806 (2025), all below 0.9, so C3 is 0 from 2024-01-17 (it was −3 on the
+      2022 report until then). Israel's mirror data give lower ratios. No disagreement.
+  C4:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No settlement-goods ban or labelling rule adopted in the window. The Government decided in
+      2022 (before the window) that foodstuffs from settlements must be labelled as such; it advised
+      businesses against trade with settlements on 7 March 2024 and against contributing to Israel's
+      presence in Palestine in October 2024 (guidance, no legal effect); following Storting decisions
+      of 20 June 2025 and 5 December 2025, the Ministry of Foreign Affairs sent a bill banning trade
+      with the settlements to consultation on 19 June 2026 (deadline 19 September 2026), not yet
+      adopted. Any such act concerns the West Bank (scope `west-bank`).
+    queries:
+      - regjeringen.no aktuelt CDX listing (handelsforbud, bosetninger, fraråding, merking)
+      - data.stortinget.no written questions (merking, bosetningsvarer)
+  C5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Four decisions by Norges Bank (manager of the Government Pension Fund Global): exclusion of
+      Bezeq (3 December 2024, west-bank), Paz Retail and Energy (11 May 2025, west-bank), the sale
+      of all Israeli holdings outside the benchmark index (announced 11 August 2025, gaza and
+      west-bank) and the exclusion of Caterpillar and five Israeli banks (25 August 2025, gaza and
+      west-bank). KLP (the municipal pension company, a mutual owned by municipalities and public
+      employers) excluded several companies over Israel, according to Storting questions; it is not
+      a state fund and its decisions were not searched or filed (docs/10 B-278 (4)). Delek Group's
+      exclusion of 18 December 2023 concerns Western Sahara.
+    queries:
+      - nbim.no press releases 2023–2026 and exclusion list
+      - etikkradet.no recommendations (Bezeq, Paz, Caterpillar, Leumi)
+  C6:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No procurement exclusion with legal effect found; the Government's advice to businesses (2024) has no legal effect.
+  D1:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      Generated from FTS: +12 for the window 2025-09…2026-08 (USD 63,808,135 ÷ GNI USD 546.0 billion
+      = 0.01169 %). The Government reports far larger totals for Palestine (about NOK 1 billion a
+      year in humanitarian aid, budget support and development funding; releases of 9 December 2024
+      and 24 September 2026), much of it outside the flash appeals and the pooled fund (docs/06 §7
+      gap). No disagreement with the tier.
+  D2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      Norway did not suspend its UNRWA funding: the Minister of Foreign Affairs announced on 29
+      January 2024 that Norway would continue its support (src_20240129_regjeringen_stotte-unrwa)
+      and Norway increased it by NOK 100 million on 17 June 2024 and signed a new two-year agreement
+      on 13 January 2026 (regjeringen.no, read, not archived).
+  D3:
+    status: has-events
+    checked_at: 2026-09-28
+    note: evt_2024_12_31_NOR_D3 (increased tier, UNRWA's donor tables for 2022 and 2024).
+  D4:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_12_09_NOR_D4: the medical-evacuation programme under the EU Civil Protection
+      Mechanism (first patients 9 December 2024; 28 patients and 72 relatives received by October
+      2025 according to the Minister's written answer of 30 October 2025). The Government's funding
+      of the ICRC field hospital in Rafah (May 2024) is funding, not a national deployment, and is
+      not filed.
+  D5:
+    status: has-events
+    checked_at: 2026-09-28
+    note: >-
+      evt_2024_08_02_NOR_D5 (instruction to the Directorate of Immigration to grant student visas to
+      ten medical students from Gaza). The Government also set aside a sub-quota of 100 resettlement
+      places for patients and relatives from Gaza within the 2025 refugee quota (Minister's answer
+      of 30 October 2025); that decision was not archived and is part of the medical-evacuation
+      programme (D4). The Minister of Justice told the Storting on 16 October 2025 that there are no
+      plans to change the rules on study permits.
+  E1:
+    status: none-found
+    checked_at: 2026-09-28
+    note: >-
+      No opened investigation or prosecution found. The Minister of Justice said on 23 October 2023
+      that Norway would assist investigations of possible war crimes on request (regjeringen.no,
+      read, not archived). Kripos and the prosecution authority were not searched.
+  E2:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No ban on Palestine solidarity protests found in the Government's pages or the Storting's questions; municipal and police decisions were not searched.
+  E3:
+    status: none-found
+    checked_at: 2026-09-28
+    note: No universal-jurisdiction complaint over Gaza accepted for investigation found; Kripos and court records were not searched.

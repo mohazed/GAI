@@ -70,6 +70,16 @@ if (ordersFile && ordersSource) {
     ['release_date', 'data_year', 'buyer_iso3'],
   )
   out.push(`sipri_orders.csv: ${o.rows.length} rows, release ${release}`)
+  if (o.nonState.length > 0)
+    out.push(`  non-state recipients skipped (SIPRI's "*" mark): ${o.nonState.join('; ')}`)
+  if (o.outsideUniverse.length > 0)
+    out.push(`  recipients outside the universe skipped: ${o.outsideUniverse.join('; ')}`)
+  if (o.unknownRecipientOrders.length > 0)
+    out.push(
+      `  orders of "unknown recipient(s)" skipped (${o.unknownRecipientOrders.length}): ${o.unknownRecipientOrders.join('; ')}`,
+    )
+  for (const e of o.emptyTivOrders)
+    out.push(`  no SIPRI TIV for the total order, counted as a 0-TIV order: ${e}`)
   for (const u of o.uncertainYears) out.push(`  order year marked uncertain by SIPRI: ${u}`)
 }
 process.stdout.write(`${out.join('\n')}\n`)

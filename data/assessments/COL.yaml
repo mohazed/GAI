@@ -1,0 +1,322 @@
+# Coverage record for the Republic of Colombia (docs/03 §6). P-D research session, wave 7, 2026-09-29.
+# `has-events` is set by the build from published events; hand-set values below are the research
+# status for review. Generated indicators (D-08) are noted but never hand-authored.
+# Search method (docs/10 B-356): no web search was available to this session (the run's allowance
+# of 200 calls was used up, as for waves 5 and 6). Sources read, read only:
+# - www.cancilleria.gov.co (Ministry of Foreign Affairs) answers scripted requests. Its site search
+#   was run for Gaza, Israel, Palestina, genocidio, Corte Internacional de Justicia, Corte Penal
+#   Internacional, UNRWA, Grupo de La Haya, Netanyahu, flotilla and Sudáfrica (398 results); its
+#   news listings for 2023 to 2026 were read in full by title (3,804 items); and every page node
+#   from 28100 to 33400 (about 4,800 pages, October 2023 to 24 September 2026, news, communiqués
+#   and videos) was read by title and date, filtered for gaza, israel, palestin, genocid, haya,
+#   flotilla, netanyahu, oriente, unrwa, rehenes, golán, hamás, cisjordania, penal internacional,
+#   corte internacional, carbón, embargo, sumud, rafah, visa, libre comercio (about 110 relevant,
+#   about 40 read in full).
+# - www.presidencia.gov.co and petro.presidencia.gov.co (Presidency) answer scripted requests
+#   with a bot-defence CAPTCHA (not bypassed); the Petro-era pages are no longer on the live site
+#   (read in the built-in browser: not found). The Wayback CDX index of both hosts (13,000 URL
+#   keys) was filtered for the same terms; most captures of 2023 and 2025–2026 hold the CAPTCHA
+#   page, and the readable ones report the President's posts on X (not scored, docs/06 §7).
+# - www.mincit.gov.co (Ministry of Commerce, Industry and Tourism): decree lists 2024–2026.
+# - Colombia's declaration of intervention in ICJ case 192, as published by the Ministry.
+# - UNRWA's donor tables for 2022 and 2024 (records copied from data/wave-6, B-356).
+# - Brazil's press note No. 151 of 30 April 2026 (the flotilla joint statement; record copied
+#   from data/wave-6).
+# Not searched: the press and NGO reports (no leads were read); the Congress (Senate and House);
+# the Ministry of National Defence and the armed forces (A3, A4, A5); the Diario Oficial and the
+# customs authority (DIAN); the Ministry of Health (D4); Migración Colombia (D5); the Fiscalía,
+# the courts and the police (E1–E3); gadebate.un.org and the UN verbatim records of the
+# Security Council, where Colombia sits in 2026–2027.
+country: COL
+protocol_version: 1
+last_full_check: 2026-09-29
+indicators:
+  A1:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_deliveries.csv). No SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902), so A1 stays unchecked for every country; left to the build. Colombia is
+      a buyer of Israeli arms, not known as a supplier.
+  A2:
+    status: has-events
+    note: >-
+      Generated from Comtrade, Colombia's own reports: HS 93 exports to Israel of USD 700 in 2022
+      (0 points); no HS 93 or 8710 row for 2023 to 2025. HS 8526 (own USD 19,170 in 2022) is not
+      counted: no licence register, parliamentary answer or investigation confirming a military
+      flow was found, and no row was added to a2_confirmed_military.csv. No Colombian document on
+      arms exports to Israel was found in the sources searched.
+    queries:
+      - cancilleria.gov.co node titles (armas, Israel)
+  A3:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Colombia is not a partner, supplier or customer of the F-35 programme; no document naming
+      Colombian companies as suppliers of F-35 parts or maintenance was found in the sources
+      searched.
+    queries:
+      - cancilleria.gov.co site search (Israel)
+  A4:
+    status: unchecked
+    note: >-
+      Generated from SIPRI (sipri_orders.csv); no SIPRI release can be archived yet (docs/10
+      B-187, B-199, B-902); left to the build. Orders of Israeli systems by the armed forces were
+      not searched (Ministry of National Defence, P-16). The President's announcement of February
+      2024 suspending purchases of arms from Israel is known only from Presidency captures that
+      hold the CAPTCHA page (not read; not filed).
+  A5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
+      activated for the Gaza campaign was found. On 16 September 2026 the Minister of Foreign
+      Affairs, Omar Bula Escobar, told Congress that the government would strengthen relations
+      with Israel to expand cooperation in security and intelligence against transnational crime
+      (Ministry item, not archived): not related to the Gaza campaign, so not an A5 instance
+      (docs/02 §2); flagged for the author (docs/10 B-357 (5)).
+    queries:
+      - cancilleria.gov.co node titles (Israel, seguridad, inteligencia)
+  A6:
+    status: has-events
+    note: >-
+      One event (evt_2024_08_14_COL_A6): Decree 1047 of 14 August 2024 prohibiting exports of
+      thermal coal to Israel until the ICJ's provisional measures in the Gaza case are complied
+      with; Decree 0949 of 28 August 2025 removed its exceptions. Filed as A6 by analogy with
+      Türkiye's export restriction (data/wave-2); coal is not a military good (docs/10 B-357 (1)).
+      No decision on military export licences was found.
+    queries:
+      - mincit.gov.co decree lists 2024, 2025, 2026 (carbón, Israel)
+  A7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No law or decree establishing a two-way arms embargo on Israel was found. The President's
+      suspension of arms purchases from Israel (February 2024) was not read in any archived
+      document (A4 note).
+    queries:
+      - mincit.gov.co decree lists 2024–2026
+      - cancilleria.gov.co node titles (armas, embargo)
+  A8:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No denial of port or airspace transit to an arms shipment bound for Israel was found. The
+      Hague Group's Bogotá conference of 15–16 July 2025, co-chaired by Colombia, announced
+      measures including port denial; no Colombian act implementing them was found in the sources
+      searched (the conference's joint statement was read in title only).
+    queries:
+      - cancilleria.gov.co node titles (Grupo de La Haya, puertos)
+  B1:
+    status: has-events
+    note: >-
+      Generated from unga_votes.csv (seven votes to December 2024, docs/10 B-186): yes on ES-10/21
+      to ES-10/26 and 79/232. No Colombian document read contradicts the rows: the President told
+      the General Assembly on 24 September 2024 that "we vote to stop the genocide in Gaza"
+      (evt_2024_09_24_COL_B9), and the Ministry welcomed Palestine's delegation after ES-10/23 on
+      10 May 2024 (title read). The five later votes have no rows (B-199 (1)); the Ministry's item of
+      17 June 2025 reports Colombia's statement at the tenth emergency special session, before the
+      vote on ES-10/27, without naming the vote.
+  B2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Applicable: Colombia is an elected member of the Security Council for 2026–2027. An elected
+      member cannot cast a veto; no row in unsc_vetoes.csv, and no Gaza draft was vetoed in 2026.
+  B3:
+    status: has-events
+    note: >-
+      One event (evt_2024_04_05_COL_B3): declaration of intervention under Article 63 filed on 5
+      April 2024, supporting the applicant (paragraph 186 read), withdrawn on 18 September 2026 under
+      the government in office from 7 August 2026 (Ministry item of 22 September 2026).
+  B4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement rejecting the ICJ's provisional measures or their binding character was found.
+      The withdrawal of the declaration of intervention (18 September 2026) is not a position
+      against the orders: the Ministry states it does not change Colombia's obligations under the
+      Convention. It ends B3.
+    queries:
+      - cancilleria.gov.co site search (Corte Internacional de Justicia)
+  B5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Colombia is a party to the Rome Statute. No statement by the President or the Minister on
+      executing the arrest warrants of 21 November 2024 was found in the Ministry's pages (no item
+      between 20 and 26 November 2024 concerns them). The Ministry rejected the US sanctions on ICC
+      judges on 18 December 2025 (unsigned communiqué; not an indicator for Colombia). Presidency
+      pages of 19 November 2025 and 25 April 2026 announce that the President would file
+      complaints with the ICC (CAPTCHA captures; titles only).
+    queries:
+      - cancilleria.gov.co site search (Corte Penal Internacional, Netanyahu)
+      - cancilleria.gov.co node titles 2024-11-20 to 2024-11-26
+  B6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement refusing to execute the warrants and no official visit of a person under
+      warrant was found.
+    queries:
+      - cancilleria.gov.co site search (Netanyahu, Corte Penal Internacional)
+  B7:
+    status: none-found
+    checked_at: 2026-09-29
+    note: Colombia has imposed no sanctions on ICC officials.
+    queries:
+      - cancilleria.gov.co site search (Corte Penal Internacional)
+  B8:
+    status: has-events
+    note: >-
+      Generated from recognitions.csv. Colombia had no row; the row COL,2018-08-03 was added citing
+      the acting Minister's address of 15 July 2025 ("en 2018 reconocimos al Estado de Palestina",
+      the source's excerpt). The day is the registry's (data/countries.yaml, from A/78/846); no
+      Colombian document of August 2018 was read. +3 standing from 2023-10-07 for any date before it.
+  B9:
+    status: has-events
+    note: >-
+      Four scored events: the Minister (11 June 2024, genocide), the President at the General
+      Assembly (24 September 2024, genocide), the acting Minister (15 July 2025, genocide) and the
+      flotilla joint statement of twelve Ministers (30 April 2026, violations of international
+      humanitarian law). Not filed: the Ministry's unsigned communiqués (29 February, 7 and 27 May,
+      13 July and 11 August 2024; 18 March 2025; 17 June 2025 at the emergency special session; 24
+      September 2025), which call for a ceasefire and some of which name violations; the Minister's
+      remarks on the bombing of a UN school (early June 2024, page undated); the leaders' joint
+      statement of 31 May 2024 (a call to conclude the hostage and ceasefire deal); the acting
+      Minister's address of 29 July 2025 (starvation described, reported partly in the Ministry's
+      words); addresses published only as videos (the Security Council debate of 18 April 2024,
+      the conference in Jordan, the Bogotá conference of 16–17 July 2025); the President's General
+      Debate address of 23 September 2025 and his statements of October 2025 to August 2026
+      (Presidency pages behind the CAPTCHA, not archivable); posts on X. docs/10 B-356 (3).
+    queries:
+      - cancilleria.gov.co site search and node titles (Gaza, genocidio, Palestina)
+      - Wayback CDX presidencia.gov.co/prensa and petro.presidencia.gov.co/prensa (gaza, palestin, genocid)
+  B10:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No statement of unconditional support for Israel's conduct in Gaza or denial of documented
+      violations by the head of government was found. The government in office from 7 August 2026
+      recognised Israel's sovereignty over the Golan Heights (Ministry communiqué of 10 August 2026,
+      unsigned, citing the attacks of 7 October; not about Gaza; not archived) and restored
+      relations; neither is a B10 statement (docs/10 B-357 (5)).
+    queries:
+      - cancilleria.gov.co node titles 2026 (Israel, Golán)
+  B11:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No sanctions on Israeli ministers or settler entities by Colombia were found.
+    queries:
+      - cancilleria.gov.co site search (Israel)
+  B12:
+    status: has-events
+    note: >-
+      Two events: the recall of the ambassador for consultations (31 October 2023, scoped `region`
+      because the Ministry's text does not cite Gaza, unscored) and the severance of diplomatic
+      relations from 2 May 2024, citing the war in Gaza, ended by the restoration decided on 11
+      August 2026. The expulsion of Israel's diplomatic delegation ordered on 1 October 2025
+      (Presidency page title only, CAPTCHA) adds nothing to severed relations.
+  C1:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No suspension or formal review of the Colombia–Israel free trade agreement in force was read.
+      A Presidency page of 1 October 2025 is titled "Presidente Gustavo Petro ordena salida de la
+      delegación diplomática de Israel y terminación del TLC" (Wayback holds only its image; the
+      live site no longer has it); no decree, note of denunciation or trade-ministry act was found
+      in the Ministry of Commerce's decree lists of 2025 and 2026 → P-16 (docs/10 B-357 (3)). The
+      coal ban invokes the agreement's security exceptions (Articles 14.1 and 14.2), not a
+      suspension.
+    queries:
+      - mincit.gov.co decree lists 2025, 2026 (Israel, TLC)
+      - Wayback CDX presidencia.gov.co (TLC, Israel)
+  C2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No new trade, investment or cooperation agreement signed with Israel was found. The mutual
+      tourist visa exemption was restored by Resolution 12189 of 2026 after an exchange of
+      communications of 16 and 19 August 2026, "bajo las condiciones existentes antes del 12 de mayo
+      de 2025" (src_20260911_cancilleria_israel-exencion-visa, line 7): a restored arrangement, not
+      a new signed agreement; flagged for the author (docs/10 B-357 (5)).
+    queries:
+      - cancilleria.gov.co node titles 2026 (Israel, acuerdo, visa)
+  C3:
+    status: has-events
+    note: >-
+      Generated from Comtrade, Colombia's own reports: total trade with Israel USD 1.25 billion in
+      2022, 595 million in 2023, 375 million in 2024 and 320 million in 2025 (r ≈ 0.48, 0.30, 0.26):
+      0 points throughout. The fall follows the coal ban (A6), which the decree says concerned
+      about 90 % of Colombia's exports to Israel.
+  C4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: No ban or labelling rule on settlement goods was found.
+    queries:
+      - mincit.gov.co decree lists 2024–2026
+  C5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No divestment decision by a Colombian public fund was found in the sources searched; the
+      public pension administrator (Colpensiones) and the central bank were not searched.
+  C6:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No procurement exclusion with legal effect was found. The Hague Group's Bogotá measures of
+      July 2025 include a review of public contracts; no Colombian act implementing it was read.
+    queries:
+      - cancilleria.gov.co node titles (Grupo de La Haya, contratos)
+  D1:
+    status: has-events
+    note: >-
+      Generated from FTS: Colombia's government flows to the oPt appeals of USD 85,000 (2023),
+      160,000 and 75,000 (2024 windows) and 382,023 (windows from June 2024 to April 2026): +1 in
+      each window, far below the +3 tier. The Presidency reported USD 200,000 of aid for Palestinian
+      children on 16 September 2025 (title only); bilateral and in-kind aid (the aircraft of 25
+      October 2023) is outside FTS (docs/06 §7).
+  D2:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      Colombia did not suspend funding to UNRWA; it had no UNRWA contribution in 2022 and pledged
+      USD 382,023 for 2024 (UNRWA tables).
+    queries:
+      - cancilleria.gov.co site search (UNRWA; no result)
+  D3:
+    status: has-events
+    note: >-
+      One event (evt_2024_12_31_COL_D3): increased tier, USD 382,023 for 2024 against no
+      contribution in 2022 (UNRWA tables), as data/wave-6 for countries that never suspended.
+  D4:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      On 14 June 2024 the Ministry announced, on the President's instruction, a programme to treat
+      wounded Palestinian children from Gaza in Colombia, and the Presidency reaffirmed it on 7
+      November 2024 (title only); no record that patients were received was found, so no programme
+      hosted is filed. The Presidency's page of 14 October 2025 on the Colombian battalion in the
+      Sinai "going to Gaza" was not readable.
+    queries:
+      - cancilleria.gov.co node titles (niñas y niños palestinos, atención humanitaria)
+  D5:
+    status: none-found
+    checked_at: 2026-09-29
+    note: >-
+      No visa or refugee pathway for Gazans was found. Individual naturalisation (23 November 2023)
+      and consular evacuations of Colombians and their relatives are not D5 instruments.
+    queries:
+      - cancilleria.gov.co node titles (visa, Palestina)
+  E1:
+    status: unchecked
+    note: The Fiscalía and the courts were not searched (P-16).
+  E2:
+    status: unchecked
+    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+  E3:
+    status: unchecked
+    note: >-
+      The President announced complaints to the ICC (Presidency titles of 19 November 2025 and 25
+      April 2026, not readable); no domestic universal-jurisdiction complaint accepted for
+      investigation was searched (P-16).

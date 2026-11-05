@@ -1,0 +1,187 @@
+# Coverage record for Angola (docs/03 §6). P-21 light protocol, session T-P21-30, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's press centre (plataformacipra.gov.ao, PDFs of the President's addresses), the Embassy pages that print the President's addresses (africadosul.mirex.gov.ao, marrocos.mirex.gov.ao; mirex.gov.ao itself did not answer), UNISPAL (the President's address of 22 September 2025 and the Deputy Permanent Representative's statement), the General Debate statements of the 79th to 81st sessions (gadebate.un.org, read live; none has a Wayback replay), the UAE Ministry's joint statement, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Portuguese. Not read: ANGOP (HTTP 503), the Ministry's own site, the Council of Ministers' communiqués.
+# Three B9 events and one recognition row. Leads: one (B9, the Cairo summit address of 4 March 2025). Angola is not an EU member.
+country: AGO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier AGO
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches about
+      12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists two orders by Angola from Israel (Bell-212 helicopters, 2004; Super Dvora Mk-3 patrol boats, 2015; archive/text/src_20261005_sipri_register-supplier-israel.txt,
+      lines 14 and 15), none in the release''s own data year: not scored. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer AGO
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Angola (read)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded; Angola is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19),
+      so no absence is scored.'
+    queries:
+    - unga_votes.csv, country AGO
+    - src_20250903_undocs_a-80-362-article19 (read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Angola is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Angola).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Angola (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - 'web search: Angola ICJ Gaza South Africa Israel'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Angola is not a state party to the Rome Statute (it is not on the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, searched for Angola). No statement on the warrants
+      of 21 November 2024 by the President or the Minister of External Relations was found.
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Angola (not found)
+    - 'web search: Angola TPI mandado de captura Netanyahu'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - 'web search: Angola TPI mandado de captura Netanyahu'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Angola were found.
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: Angola recognised the State of Palestine on 6 December 1988, a date the President states in his address of 22 September 2025 (''formally recognized the State
+      of Palestine on December 6, 1988''; src_20250922_unispal_ago-lourenco-two-state-conference); the row is flagged as a retrospective statement (R21, as for Cuba and Turkey), the date equal to the registry''s.
+      Left to the build.'
+    queries:
+    - recognitions.csv, AGO
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Four events: the joint statement with the President of the United Arab Emirates (4 September 2025, +2), the President''s address to the two-state conference (22 September 2025, +5), his General
+      Debate address of 23 September 2025 (+5) and his General Debate address of 24 September 2024 (+5, ''should do everything it can to prevent the genocide that the world is witnessing live in the Gaza
+      Strip''; 771 days old on 2026-11-04, no weight in the score). The 24 September 2024 address was filed on 2026-11-04 from the delegation file (ao_en.pdf, 266,045 bytes) through its Wayback capture
+      of 27 September 2024, which the Wayback CDX lists (docs/10 B-852); the 80th address''s English file is archived from its capture too. Not filed: the address of 81st session (22 September
+      2026), which ''condemn[s] the genocide against defenceless populations'' and the settlements in the West Bank but does not name Gaza (R7: lead); the President''s address to the Arab League summit
+      in Cairo (4 March 2025, as Chairperson of the African Union; ''contours of genocide'' is known from Ver Angola only: lead_20261104_AGO_1); the Deputy Permanent Representative''s statement of 28 to
+      30 July 2025 at the two-state conference (R3: not a B9 speaker; unispal angola_nyc_en.pdf). The President''s welcome of the ceasefire of October 2025 is not a call.'
+    queries:
+    - mirex embassy pages, CIPRA platform, UNISPAL (read)
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/ao_en.pdf (read live)
+    - 'web search: Lourenço Gaza genocídio discurso Assembleia Geral'
+    - 'web search: Lourenço Cairo cimeira Liga Árabe Gaza'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the President or the Minister was found; the statements read condemn Hamas's attack of 7 October 2023 and recognise
+      Israel's 'right to exist as a State', which are conditional and not B10.
+    queries:
+    - gadebate.un.org/en/{79,80,81}/angola (read)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: Angola is not an EU member and no national sanctions on settlers or Israeli ministers were found.
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: Israel has an ambassador in Luanda (a new one in November 2025, press) and the Minister of External Relations received Israel''s
+      ambassador after the latter''s statements on Angola''s position (October 2023, Ver Angola; not read).'
+    queries:
+    - 'web search: Angola Israel embaixador'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Angola is not a party to the EU-Israel Association Agreement.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No signed instrument of cooperation with Israel since October 2023 was found in the sources read: the press reports an Israeli ambassador''s wish to strengthen cooperation (August 2024, November
+      2025) and trade of USD 80 to 90 million in 2024, with no signed agreement.'
+    queries:
+    - 'web search: Angola Israel agreement signed cooperation memorandum 2024 2025'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor AGO
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Angola has no row in UNRWA's donor rankings of 2022, 2023 and 2024 (archived, searched for Angola); no suspension was found.
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Angola (not found)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: 'No D3 event: Angola has no row in the 2022, 2023 or 2024 UNRWA tables.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings, Angola (not found)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Angola was found.
+    queries:
+    - 'web search: Angola Gaza ajuda humanitária'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Angola was found.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

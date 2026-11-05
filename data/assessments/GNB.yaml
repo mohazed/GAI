@@ -1,0 +1,208 @@
+# Coverage record for Guinea-Bissau (docs/03 §6). P-21 light protocol, session T-P21-37, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (presidencia.gw, a Wix site with no search; its news sitemap, 84 items with the last change on 7 May 2025, was read for Gaza, Palestine, Israel in the addresses), the Ministry of Foreign
+# Affairs' site (mne.gw, WordPress REST API: Gaza, Palestina, Israel, palestiniano, Médio-Oriente, Médio Oriente, cessar-fogo, Hamas and ONU; the latest post is dated 7 December 2023), the state news agency (ang.gw, WordPress REST API: Gaza, Israel,
+# Palestina, Palestiniano, Hamas, Médio Oriente, cessar-fogo, Embaló Israel, Embaló Palestina, Embaló Gaza, Embaló Netanyahu, Guiné-Bissau Gaza, Guiné-Bissau sanções Israel, Guiné-Bissau TPI Netanyahu, evacuação médica Gaza, UNRWA, acordo Israel, memorando Israel, embaixada Israel, embaixador de Israel, Herzog, Netanyahu, visita a Israel, Ramallah, Abbas, Autoridade Palestiniana, Tribunal Penal Internacional,
+# solidariedade Palestina, Guiné-Bissau Palestina, Guiné-Bissau Israel, reconhecimento Estado da Palestina; the titles that concern Guinea-Bissau were screened and the three that bear on the war opened), the UN's General Debate pages (79th, 80th, 81st) and
+# files (79th and 80th through Wayback captures; the 81st page lists no file), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the Assembly of States Parties' list, the generated tables,
+# UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and
+# nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: none. See docs/10 B-804.
+country: GNB
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier GNB
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer GNB (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on seven of the twelve qualifying votes (A/RES/ES-10/21 to ES-10/24, A/RES/79/232, A/RES/ES-10/27 and A/RES/80/116) and non-voting (`X`) on five (A/RES/ES-10/25
+      and ES-10/26 of 11 December 2024, A/DEC/80/506, A/RES/80/1 and A/RES/80/78), scored -2 each by the build (docs/10 B-690); the non-votes were not explained in any source read. The country
+      is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page;
+      A/81/360); the letters between those dates and the arrears lists of 2023 and 2024 were not checked.'
+    queries:
+    - unga_votes.csv, country GNB
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Guinea-Bissau is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Guinea-Bissau supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Guinea-Bissau signed the Rome Statute on 12 September 2000 and is not a state party (the UN Treaty Collection's status page read live on 2026-11-04 shows a signature only; the country
+      is not on the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, searched). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the General
+      Debate statements read or in the state news agency's items (its searches for Embaló Netanyahu, Guiné-Bissau TPI Netanyahu and Tribunal Penal Internacional return no Bissau-Guinean statement);
+      the Government's own sites do not cover the window.
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Guinea-Bissau (not found)
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'ang.gw REST search: Embaló Netanyahu, Guiné-Bissau TPI Netanyahu, Tribunal Penal Internacional (titles)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal by Guinea-Bissau (a signatory, not a party) was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Guinea-Bissau were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Guinea-Bissau. The registry gives a recognition since 21 November 1988, before the window, with no Government document read (R21, left for
+      P-23); no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, GNB (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President in the 79th and 80th sessions of the General Debate was Úmaro Sissoco Embaló (head of state, R3). His 79th statement (25 September 2024, src_20240925_un-gadebate_gw-embalo-ag79,
+      line 131; 770 days, expired) says that in recent months he made ''visits of friendship and work to Russia, Ukraine, Israel, and Palestine'': Gaza is not named (R7), no call, no violation,
+      no agreement. His 80th statement (25 September 2025, src_20250925_un-gadebate_gw-embalo-ag80, line 71) names Gaza only in a list (''Conflicts in Ukraine, Gaza, Sudan, and other regions persist''):
+      no call, no violation, neither tier. The 81st statement (25 September 2026) was delivered by the Prime Minister, Ilídio Vieira Té (head of government, R3); the UN''s page lists no file and
+      its summary does not mention Gaza or Palestine, so the statement itself was not read. The state news agency (ang.gw, kind press; it cites the Presidency''s Facebook page) reports three activities
+      of the President in indirect speech: on 10 October 2023 he ''apela ao cessar-fogo'' at a Defence Council meeting (src_20231010_ang_embalo-apela-paz-medio-oriente; 1,121 days, expired); on
+      3 March 2024 in Israel, with President Herzog, he says that war should be the last resort and is not a solution (src_20240304_ang_embalo-israel-visit; the first visit to Israel of a Bissau-Guinean
+      head of state); and on 4 March 2024 in Ramallah, with President Abbas, he receives the Grand Collar of the State of Palestine (src_20240305_ang_embalo-ramallah-grande-colar). None quotes
+      his words (R4) or names Gaza in them (R7): no event, no lead. Left to P-23: the Government''s own sites do not cover the window (mne.gw''s latest post is 7 December 2023; presidencia.gw''s
+      news sitemap ends on 7 May 2025); only the state news agency (ang.gw, kind press) was searched.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/guinea-bissau and gastatements/{79/gw_en,80/gw_en}.pdf (Wayback replays)
+    - 'ang.gw REST search: Gaza, Israel, Palestina, Palestiniano, Hamas, Médio Oriente, cessar-fogo, Embaló Israel, Embaló Palestina, Herzog, Ramallah, Abbas (titles screened, three opened)'
+    - 'mne.gw REST search: Gaza, Palestina, Israel, palestiniano, Médio-Oriente, Médio Oriente, cessar-fogo, Hamas'
+    - presidencia.gw news sitemap (84 items, addresses read)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: nothing in the General Debate statements read is a statement of unconditional support for Israel or a denial of documented violations; the President''s mention of his
+      visit to Israel (79th statement, line 131) is a statement of fact. Left to P-23: the Government''s own sites do not cover the window (mne.gw''s latest post is 7 December 2023; presidencia.gw''s
+      news sitemap ends on 7 May 2025); only the state news agency (ang.gw, kind press) was searched.'
+    queries:
+    - gadebate.un.org statements of the 79th and 80th sessions
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the state news agency's items (its searches for Guiné-Bissau sanções Israel return no Bissau-Guinean measure).
+      The Government's own sites do not cover the window (P-23).
+    queries:
+    - 'ang.gw REST search: Guiné-Bissau sanções Israel (titles)'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found in the state news agency's items (its searches for embaixada Israel, embaixador de Israel, Guiné-Bissau Israel and Guiné-Bissau Palestina
+      return, for Guinea-Bissau, the President's visits of March 2024 and no diplomatic measure); the President visited Israel on 3 March 2024 and Ramallah on 4 March 2024. The Government's own
+      sites do not cover the window (P-23).
+    queries:
+    - 'ang.gw REST search: embaixada Israel, embaixador de Israel, Guiné-Bissau Israel, Guiné-Bissau Palestina (titles)'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Guinea-Bissau is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found in the state news agency''s items (its searches for acordo Israel, memorando Israel and visita a Israel return, for Guinea-Bissau,
+      the President''s visit of 3 March 2024, whose reports mention no signing: src_20240304_ang_embalo-israel-visit). The Government''s own sites do not cover the window and no treaty register
+      was read (P-23).'
+    queries:
+    - 'ang.gw REST search: acordo Israel, memorando Israel, visita a Israel, Embaló Israel (titles; the visit report opened)'
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of GNB to the Gaza response in fts_funding.csv. Left to the build.'
+    queries:
+    - fts_funding.csv, donor GNB
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Guinea-Bissau has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Guinea-Bissau in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Guinea-Bissau was found in the state news agency's items (its searches for evacuação médica Gaza and Guiné-Bissau
+      ajuda humanitária Gaza return no Bissau-Guinean measure). The Government's own sites do not cover the window (P-23).
+    queries:
+    - 'ang.gw REST search: evacuação médica Gaza, Guiné-Bissau ajuda humanitária Gaza (titles)'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the state news agency's items or the General Debate statements read. The Government's own sites do not cover the window (P-23).
+    queries:
+    - 'ang.gw REST search: Guiné-Bissau Gaza (titles)'
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

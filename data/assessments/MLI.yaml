@@ -1,0 +1,192 @@
+# Coverage record for Mali (docs/03 §6). P-21 light protocol, session T-P21-39, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (koulouba.ml, WordPress, French; the REST search /wp-json/wp/v2/posts?search= for Gaza, Palestine, Palestinien, Israël, Hamas, Netanyahou, cessez-le-feu, CPI, Statut de Rome, Cour pénale
+# internationale, OCI; the Council of Ministers' communiques of 2023 to 2026 that matched were opened), the state news agency AMAP (amap.ml, WordPress; the same terms, the items bearing on Gaza opened), the UN's General Debate pages and files
+# (79th, 80th, 81st; live, the files recorded from Wayback captures), the ICJ's case 192 page (archived copy and live), the UN Treaty Collection's status page of the Rome Statute (live) and notification C.N.264.2026, the Assembly of States Parties'
+# list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. The Prime Minister's site (primature.gov.ml) and the Ministry's (diplomatie.gouv.ml) did not answer on 2026-11-04.
+# Web searches were not available to this session (the run's search budget was spent): nothing is filed from a press item outside the Government's own sites and its state agency; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: one (B6, scope related, unscored). Leads: none. See docs/10 B-812, B-813.
+country: MLI
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MLI
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by Mali from Israel in the register (the archived export of the supplier Israel names Mali only in leases
+      of Heron drones to German forces and UN peacekeeping, which are not orders by Mali). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MLI
+    checked_at: '2026-11-04'
+  A5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A7:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  A8:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
+      or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country MLI
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Mali is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Mali supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Mali is (until 24 June 2027) a state party to the Rome Statute (signed 17 July 1998, ratified 16 August 2000: the UN Treaty Collection''s status page, read live on 2026-11-04; listed
+      in src_20261009_icc-asp_states-parties, line 172). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the Presidency''s and AMAP''s items (searched CPI, Cour pénale
+      internationale, Statut de Rome, Netanyahou).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Mali (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'koulouba.ml and amap.ml REST search: CPI, Statut de Rome, Cour pénale internationale, Netanyahou'
+    checked_at: '2026-11-04'
+  B6:
+    status: has-events
+    note: 'One B6 event (docs/10 B-812): evt_2026_06_24_MLI_B6, Mali''s withdrawal from the Rome Statute, notified on 24 June 2026 (C.N.264.2026, 30 June 2026; effective 24 June 2027). Filed with
+      scope `related`, so tracked and unscored, as Burkina Faso''s (B-776, same notification day): the part of the letter that the notification quotes gives ''the exploitation of the Court for
+      political purposes'' and does not mention Gaza or the warrants. The author decides the scope (the effect on Mali''s preview is in docs/review/light-protocol.md). No hosting of a person under
+      warrant by Mali was found.'
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - src_20260630_un-treaties_cn-264-2026-mali-withdrawal
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Mali were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Mali. The registry gives a recognition since 21 November 1988, before the window, with no Government document read (R21, left for P-23);
+      no recognition after 7 October 2023 was found. On 17 November 2025 AMAP reported, from a communiqué of the Ministry, that the Minister of Foreign Affairs, at the Palestinian Embassy''s reception
+      for the anniversary of the Declaration of Independence, reaffirmed Mali''s support for the Palestinian cause and ''the initiative establishing a viable Palestinian State beside the State
+      of Israel''.'
+    queries:
+    - recognitions.csv, MLI (no row)
+    - 'amap.ml REST search: Palestine (item 33552)'
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The head of state is Colonel Assimi Goïta; the Prime Minister (head of government) is Abdoulaye Maïga; the Minister of Foreign Affairs is Abdoulaye Diop (R3). (1) The 79th
+      General Debate statement (28 September 2024, src_20240928_un-gadebate_ml-maiga-ag79, page 8) was delivered by a Deputy Prime Minister, who is not a B9 speaker; it condemns ''sans réserve,
+      l''usage indiscriminé de la force par l''armée israélienne contre les Palestiniens'', in ''les territoires palestiniens occupés'', without naming Gaza (R7); 767 days old, expired. (2) The
+      80th statement (26 September 2025, the Prime Minister, src_20250926_un-gadebate_ml-maiga-ag80) does not mention Gaza, Palestine, Israel or the Middle East. (3) The 81st statement (28 September
+      2026, the Foreign Minister, src_20260928_un-gadebate_ml-diop-ag81): ''le Mali réaffirme son soutien total au peuple palestinien frère dans sa lutte légitime d''exister en tant qu''Etat de
+      plein droit'', no call, no violation, Gaza not named. (4) AMAP''s report of 17 November 2025 (the Minister at the anniversary of the Declaration of Independence of the State of Palestine)
+      speaks of the suffering of the Palestinian people ''particulièrement à Gaza'' and of ''soutien indéfectible'', in the Ministry''s indirect speech and with no call. (5) The Council of Ministers''
+      communique of 8 May 2024 reports the OIC summit''s support for the Palestinian cause ''dans un contexte marqué par l''agression en cours de l''Etat hébreu contre les populations palestiniennes
+      à Gaza'' in the Government''s own words, with no named speaker. The Ministry''s and the Prime Minister''s sites did not answer.'
+    queries:
+    - 'koulouba.ml and amap.ml REST search: Gaza, Palestine, Palestinien, Israël, Hamas, cessez-le-feu, OCI (the matches that bore on Gaza opened)'
+    - gadebate.un.org/en/{79,80,81}/mali and gastatements/{79,80,81}/ml_fr.pdf
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the head of state, the Prime Minister or the Foreign Minister was found in the Presidency''s
+      and AMAP''s items (searched Israël, Hamas, Netanyahou, Gaza).'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Presidency's and AMAP's items read. This rests on those sites only (P-23).
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found in the Presidency's and AMAP's items read (the Council of Ministers' communiques of 2023 to 2026 that matched Israël
+      or Palestine were screened). The Ministry's site did not answer (P-23).
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Mali is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found in the Presidency's and AMAP's items read. The Council of Ministers' communique of 22 May 2024 adopted a decree ceding a
+      plot of land free of charge to the State of Palestine for a clinic (not an indicator act). No treaty register was read (P-23).
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C5:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  C6:
+    status: unchecked
+    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Mali in fts_plan_totals.csv and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_funding.csv, donor MLI
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Mali has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    note: No row for Mali in UNRWA's donor rankings for 2022, 2023 or 2024.
+    queries: *id001
+    checked_at: '2026-11-04'
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Mali was found in the sources read.
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read.
+    checked_at: '2026-11-04'
+  E1:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E2:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.
+  E3:
+    status: unchecked
+    note: Experimental, unscored; not searched in this session.

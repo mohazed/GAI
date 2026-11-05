@@ -1,0 +1,108 @@
+# Hand-authored events for Iraq (P-21 light protocol, T-P21-47, 2026-11-04).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers for B9/B10 (R3): the President of the Republic, Abdul Latif Jamal Rashid (head of state; the 80th General Debate file names him); the Prime Minister (head of government; Ali Falih
+# al-Zaidi in office on 2026-11-04 per pmo.iq; the earlier holder of the post not checked in an archived document); the Minister of Foreign Affairs (not named in any archived document).
+
+- id: evt_2024_12_31_IRQ_D3
+  revision: 1
+  country: IRQ
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: null
+  points: 8
+  points_rationale: 'Increased tier (+8): Iraq''s 2024 contribution to UNRWA (USD 25,000,000) exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (no row for Iraq in the 2022 table:
+    a contribution of zero) (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Iraq contributed more to UNRWA in 2024 than in 2022, according to UNRWA's donor tables.
+    fr: La contribution de l'Iraq à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  actor:
+    en: Government of Iraq
+    fr: Gouvernement de l'Iraq
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: Iraq - - - - - - - - - - - - - - - - 25,000,000 25,000,000 25,000,000 25,000,000 25,000,000 16 25,000,000 15
+    quote_lang: en
+    locator: line 24
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2024_12_31_KWT_D3
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: 'Line 24 of the 2024 table re-read: Iraq, USD 25,000,000 pledged and received, rank 16 and 15; the 2022 table (src_20221231_unrwa_donor-ranking-2022) and the 2023 table (src_20231231_unrwa_donor-ranking-2023)
+        searched for Iraq: no row. Increased tier agrees on the zero baseline (B-445), as for Guyana, Singapore, Viet Nam and Sri Lanka.'
+    notes: 'UNRWA''s donor table for 2024 gives USD 25,000,000 against no row in the 2022 and 2023 tables, a zero (docs/10 B-357 (4), B-445): the increased tier holds from 31 December 2024, the end
+      of the first calendar year whose contribution exceeds 2022, as for Viet Nam (B-743) and Sri Lanka (B-747). Flags: (1) the zero baseline (no row in 2022); (2) the whole amount sits in the ninth
+      pair of columns, the same pair as Sri Lanka''s and Kuwait''s USD 25,000,000, which by the order of the extracted headings is probably the oPt flash appeal (the Gaza appeal), not read with certainty
+      (the mechanical D3 test uses the annual total, B-713); (3) Iraq''s FTS flows of 2025 and 2026 (generated D1 events) may overlap this amount (D1/D3 overlap, as for Sri Lanka). The 2025 table is
+      not archived (P-23). No suspension of funding was found (D2 none-found). The event is 673 days old at the build date and is not a qualifying event inside 365 days. Filed in the light protocol
+      (docs/10 B-760 ff.).'
+- id: evt_2025_09_23_IRQ_B9
+  revision: 1
+  country: IRQ
+  indicator: B9
+  type: repeatable
+  date: '2025-09-23'
+  points: 5
+  points_rationale: 'Names specific violations (+5): the President names the killing, starvation and displacement of Palestinian civilians and the destruction of their infrastructure, says they must be
+    stopped immediately and cites Gaza (flagged: the violations are named without a reference to international law in the same sentence).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President told the General Assembly that the killing, starvation and displacement of Palestinian civilians must be stopped immediately, citing Gaza.
+    fr: Le président a déclaré à l'Assemblée générale qu'il fallait faire cesser immédiatement les morts, la famine et le déplacement infligés aux civils palestiniens, en citant Gaza.
+  actor:
+    en: President of Iraq
+    fr: Président de l'Iraq
+    name: Abdul Latif Jamal Rashid
+  evidence:
+  - source: src_20250923_un-gadebate_irq-rashid-ar
+    quote: 'إن ما يتعرض له المدنيون الفلسطينيون من قتل وتجويع وتهجير'
+    quote_lang: ar
+    quote_en: What Palestinian civilians are subjected to, killing, starvation, displacement
+    locator: line 153
+  - source: src_20250923_un-gadebate_irq-rashid-ar
+    quote: 'وحالة مخزية لإلنسانية جمعاء، ولذلك يجب العمل على إيقافه'
+    quote_lang: ar
+    quote_en: and a shameful situation for all of humanity, and therefore we must work to stop it
+    locator: line 155
+  - source: src_20250923_un-gadebate_irq-rashid-ar
+    quote: 'فورا، وال يسمح بمواصلته. إن ما يجري اليوم في غزة ال يطاق'
+    quote_lang: ar
+    quote_en: immediately, and its continuation must not be allowed. What is happening today in Gaza is morally unbearable
+    locator: line 156
+  - source: src_20250923_un-gadebate_irq-rashid-ar
+    quote: 'الدكتور عبد اللطيف جمال رشيد'
+    quote_lang: ar
+    quote_en: Dr. Abdul Latif Jamal Rashid
+    locator: line 6
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: the heading (lines 1 to 8) says the statement of the Republic of Iraq is delivered by the President of the Republic, Dr. Abdul Latif Jamal Rashid,
+        on 23 September 2025; lines 153 to 158 name the killing, starvation, displacement and the destruction of infrastructure and institutions of Palestinian civilians, say they must be stopped immediately
+        and that what is happening in Gaza is morally unbearable. The President is the head of state (R3); the words are the statement''s own (R4); Gaza is cited (R7). +5 agrees with the readings that
+        name starvation and displacement (the B9 examples of docs/02 §2), flagged because no legal qualifier sits in the sentence.'
+    notes: 'General Debate statement of the 80th session, Arabic file (the only one on the UN''s site), archived from the Wayback capture of 11 November 2025 that equals the live file. Own translations
+      in `quote_en`; the text layer reverses the lam-alef ligature (''ال يطاق'' for ''لا يطاق''), and the quotations keep the archived characters (T-P21-17). The same passage calls for firm measures
+      against settlement plans (West Bank; noted, not used for the tier) and condemns attacks on Syria, Lebanon, Qatar and Iran (not Gaza). Flags: (1) the tier: the passage names starvation and displacement
+      as what civilians suffer, without the words ''violation'' or ''international law'' in that sentence (the call to stop them alone would be +2); (2) the President of the Republic is read as the head of state, a B9 speaker
+      under R3. The 79th statement (September 2024; its file''s heading names no speaker and its text layer is garbled) is more than 730 days old and
+      was not filed; the 81st statement names the Palestinian question and humanitarian access but not Gaza (R7). Filed in the light protocol (docs/10 B-760 ff.).'
