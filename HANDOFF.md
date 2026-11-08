@@ -10,7 +10,8 @@ Written 2026-10-14 for a coding agent that takes over from Claude Code; updated 
 2. Read `CLAUDE.md` at the repository root. Its non-negotiables bind you. Two points are out of date: it names "Claude Opus 5.5" in the commit trailer (use your own model name instead, see Part 1.6), and its list of commands is correct.
 3. Do the work in Part 3 in the order given. Each task says where to commit, how to verify and what to report.
 4. Everything the author must decide or do is in Part 4. Never do those things yourself.
-5. Appendices A to C hold the working briefs used so far (copied verbatim from `.claude/run-briefs/`): the standing rules for sessions, the research lessons and reading standards, and the task definitions.
+5. **Since 2026-11-08 the remaining agent work is in `FINISH-PLAN.md` (B-871); it replaces Part 3 as the task list. Parts 1 and 4 and the appendices still apply.**
+6. Appendices A to C hold the working briefs used so far (copied verbatim from `.claude/run-briefs/`): the standing rules for sessions, the research lessons and reading standards, and the task definitions.
 
 If you are a different tool than Claude Code (Antigravity, Cursor, Codex…), nothing in this repository needs a specific model: the research is done with a shell, a browser or fetch tool, the repository's own `pnpm` commands and careful reading.
 
