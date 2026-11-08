@@ -269,3 +269,32 @@ Events: 13 new (`evt_2026_09_22_{PAK,EGY,IDN,JOR,QAT,SAU,ARE}_B9`, `evt_2026_09_
 - The documents.un.org copies of the Secretary-General's Article 19 documents (section 6); the EU-Canada summit statement of 30 October 2026 (`consilium.europa.eu` refuses scripts).
 - The dependency updates of section 8; `pnpm calibrate` after the new events (the new events change B9 inside categories already at or near their caps; the numbers were not recomputed).
 - The tasks after this one (T-P20, T-P22, T-CHECKUP, T-FINAL).
+
+## 11. Finish plan of 2026-11-08
+
+### T-F-HOUSE: quarterly Wayback check (docs/10 B-872, B-873)
+
+The workflow `wayback.yml` was run on GitHub's runners twice. The run on `main` (42522212202) checked 25 rows, because `main` holds a 26-row index; the run on `data/phase1` (42522470502, 2 h 16 min) checked the whole archive. Its report was commented on issue #14 by the workflow.
+
+| Item | Rows |
+|---|---|
+| Rows of `archive/index.csv` | 2,143 |
+| Without `wayback_url` (not checked) | 36 |
+| Requested | 2,107 |
+| HTTP 200 and the recorded SHA-256 | 1,562 |
+| Not HTTP 200 | 545 |
+| of which redirect (302) | 77 |
+| of which not found (404) | 468 |
+| HTTP 200, different SHA-256 | 1 |
+
+The 545 failing rows, second request with redirects followed:
+
+| Result | Rows |
+|---|---|
+| 302, other snapshot serves the recorded bytes | 20 |
+| 302, other snapshot serves different bytes | 52 |
+| 302, no answer or 403 | 5 |
+| 404 again | 294 |
+| 404, no answer (connection closed) | 174 |
+
+The 468 rows with 404 have snapshot timestamps from 2026-11-03 20:46 to 2026-11-04 21:25 UTC (449 Comtrade rows and 19 others). None was re-archived in this session (about eight hours of Save Page Now captures; the cause may be a lag). The list is in `docs/review/wayback-check-2026-11-08.tsv`. The hash difference is `src_20260928_undl_ga-voting-2025-03-31-corr1`. Next step: run the workflow again on `data/phase1` after seven days and re-archive only the rows still failing.
