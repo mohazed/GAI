@@ -7,6 +7,7 @@
 #   Wayback capture; the 79th and 81st read, no capture for the 81st), the generated events and the structured tables; web searches in English (the official language) per indicator group.
 #   Time: about 40 minutes.
 # Statements read and not filed as B9: the Foreign Minister's of 27 September 2024 and the Prime Minister's of 2026 (Gaza not cited, R7); the Government's own statements (no named speaker, R3).
+# Completion of 2026-11 (finish run, T-F-L03, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched. The Press Office (2,553 releases) and the Ministry (60 items) were read in full text through their WordPress interfaces. No web search was available.
 country: BLZ
 protocol_version: 1
 last_full_check: '2026-10-06'
@@ -23,8 +24,15 @@ indicators:
     note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
       B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No document names a company of Belize as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Belize (searched 2026-11-09). The programme's own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme (the United
+      States and 19 allied nations), Belize not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched. No web search was available (the run's shared
+      allowance was used up before the session began). The entry is open to a later press search.
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Belize (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
   A4:
     status: none-found
     checked_at: '2026-10-06'
@@ -32,17 +40,67 @@ indicators:
     queries:
     - sipri_orders.csv, buyer Belize
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence sharing related to the Gaza campaign was found. The Press Office''s site
+      (pressoffice.gov.bz: its 2,553 releases of 6 September 2018 to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz:
+      60 items of 23 February 2023 to 7 November 2026), both read through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA,
+      West Bank, Netanyahu and F-35, hold these releases that concern Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November
+      2023, the UNRWA releases of 2 February and 5 November 2024, the EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024,
+      the ILO vote of 17 June 2025, the presentation of credentials including the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns
+      arms, military cooperation, transit, goods, funds or procurement. The releases name no exercise, overflight, port call or intelligence arrangement with Israel. The Belize Defence Force,
+      Customs (customs.gov.bz: home page only), the police, the Attorney General''s and the National Assembly''s pages were not read (no news interface, or no site that answered). No web search
+      was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No Government decision suspending or refusing a class of arms or dual-use licences to Israel was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September
+      2018 to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both
+      read through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that
+      concern Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024,
+      the EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials
+      including the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement.
+      The releases name no licence decision. The Belize Defence Force, Customs (customs.gov.bz: home page only), the police, the Attorney General''s and the National Assembly''s pages were not
+      read (no news interface, or no site that answered). No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree covering both exports to and imports from Israel was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018 to 7 November 2026,
+      867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read through the sites''
+      public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern Israel or Gaza:
+      the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the EU dialogue of
+      27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including the Palestinian
+      ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement. The releases name
+      no embargo or trade measure against Israel; the measures of 14 November 2023 are diplomatic (agrément, honorary consulates; B12). The Belize Defence Force, Customs (customs.gov.bz: home
+      page only), the police, the Attorney General''s and the National Assembly''s pages were not read (no news interface, or no site that answered). No web search was available (the run''s shared
+      allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018
+      to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read
+      through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern
+      Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the
+      EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including
+      the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement.
+      The releases name no port, airspace or vessel decision concerning Israel. The Belize Defence Force, Customs (customs.gov.bz: home page only), the police, the Attorney General''s and the
+      National Assembly''s pages were not read (no news interface, or no site that answered). No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   B1:
     status: has-events
     checked_at: '2026-10-06'
@@ -97,7 +155,9 @@ indicators:
       and the Prime Minister''s General Debate statement of 26 September 2025 (''the genocide in Palestine must stop now'', +5; flagged: no call for a ceasefire). Not filed: the Foreign Minister''s
       General Debate statement of the 79th session (27 September 2024: ''the war, the oppression and the inhumanity must end'', no mention of Gaza, R7; decayed in any case) and the Prime Minister''s
       of the 81st session (''The genocide must end. The apartheid must stop.'', no mention of Gaza, R7; no Wayback capture): lead_20261006_BLZ_2. The Government''s statements of 2 February and
-      1 October 2024 (archived) and of 5 November 2024 and 19 August 2026 name no speaker (R3): not filed; the last is lead_20261006_BLZ_1.'
+      1 October 2024 (archived) and of 5 November 2024 and 19 August 2026 name no speaker (R3): not filed; the last is lead_20261006_BLZ_1. Finish run (T-F-L03): the Press Office''s site (2,553
+      releases) and the Ministry''s (60 items) hold no release after 18 August 2026 that names Gaza or Palestine; the releases of 2 February, 5 November and 8 October 2024 are Government statements
+      without a named speaker (lead_20261006_BLZ_1).'
     queries:
     - Belize welcomes ICC arrest warrants Netanyahu Gallant Belize government statement November 2024
     - Belize Israel 2026 government statement Palestine Briceño Fonseca
@@ -140,14 +200,51 @@ indicators:
     checked_at: '2026-10-06'
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No ban on, or labelling rule for, goods from Israeli settlements was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018 to 7 November 2026,
+      867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read through the sites''
+      public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern Israel or Gaza:
+      the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the EU dialogue of
+      27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including the Palestinian
+      ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement. The releases name
+      no settlement-goods measure; the statement of 18 August 2026 names none. The Belize Defence Force, Customs (customs.gov.bz: home page only), the police, the Attorney General''s and the National
+      Assembly''s pages were not read (no news interface, or no site that answered). No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or the occupied territories was found. The Press Office''s site (pressoffice.gov.bz:
+      its 2,553 releases of 6 September 2018 to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February
+      2023 to 7 November 2026), both read through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu
+      and F-35, hold these releases that concern Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases
+      of 2 February and 5 November 2024, the EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025,
+      the presentation of credentials including the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation,
+      transit, goods, funds or procurement. The releases name no investment or exclusion decision by a public fund, a pension fund or the central bank. The Belize Defence Force, Customs (customs.gov.bz:
+      home page only), the police, the Attorney General''s and the National Assembly''s pages were not read (no news interface, or no site that answered). No web search was available (the run''s
+      shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No procurement exclusion of companies over conduct in Gaza or the occupied territories was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018
+      to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read
+      through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern
+      Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the
+      EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including
+      the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement.
+      The releases name no procurement exclusion. The Belize Defence Force, Customs (customs.gov.bz: home page only), the police, the Attorney General''s and the National Assembly''s pages were
+      not read (no news interface, or no site that answered). No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   D1:
     status: none-found
     checked_at: '2026-10-06'
@@ -162,10 +259,8 @@ indicators:
   D3:
     status: none-found
     checked_at: '2026-11-09'
-    note: >-
-      No row of Belize in UNRWA's donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA's table
-      for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no row
-      for Belize, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    note: 'No row of Belize in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read
+      2026-11-09) has no row for Belize, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
     queries:
     - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belize
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
@@ -182,11 +277,46 @@ indicators:
     queries:
     - Belize visa OR refugee Palestinians Gaza
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No domestic investigation of Belize nationals or companies for conduct in Gaza was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of
+      6 September 2018 to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November
+      2026), both read through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these
+      releases that concern Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and
+      5 November 2024, the EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation
+      of credentials including the Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods,
+      funds or procurement. The releases name no investigation, complaint or assembly restriction.  The prosecutor''s and the courts'' pages were not read. No web search was available (the run''s
+      shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No ban or restriction of assemblies about Gaza was found. The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018 to 7 November
+      2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read through the
+      sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern Israel
+      or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the EU dialogue
+      of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including the
+      Palestinian ambassador''s (17 September 2025) and the statement on settler violence of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement. The
+      releases name no investigation, complaint or assembly restriction.  No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No universal-jurisdiction complaint accepted for investigation was found; no record names the Hind Rajab Foundation or a complaint against Israeli officials.
+      The Press Office''s site (pressoffice.gov.bz: its 2,553 releases of 6 September 2018 to 7 November 2026, 867 of them since 7 October 2023) and the Ministry of Foreign Affairs and Foreign
+      Trade''s site (mfa.gov.bz: 60 items of 23 February 2023 to 7 November 2026), both read through the sites'' public WordPress interface and searched in full text on 2026-11-09 for Israel,
+      Gaza, Palestin, Hamas, UNRWA, West Bank, Netanyahu and F-35, hold these releases that concern Israel or Gaza: the measures against Israel of 14 November 2023 and the Government''s reply
+      to the churches of 16 November 2023, the UNRWA releases of 2 February and 5 November 2024, the EU dialogue of 27 May 2024, the ICJ advisory opinion of 22 July 2024, the statement on the
+      Middle East of 8 October 2024, the ILO vote of 17 June 2025, the presentation of credentials including the Palestinian ambassador''s (17 September 2025) and the statement on settler violence
+      of 18 August 2026. None concerns arms, military cooperation, transit, goods, funds or procurement. The releases name no investigation, complaint or assembly restriction.  The prosecutor''s
+      and the courts'' pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'pressoffice.gov.bz WordPress interface: 2,553 releases (6 September 2018 to 7 November 2026; 867 since 7 October 2023), full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West
+      Bank, Netanyahu, F-35, 2026-11-09'
+    - 'mfa.gov.bz WordPress interface: 60 items (23 February 2023 to 7 November 2026), same terms, 2026-11-09'
