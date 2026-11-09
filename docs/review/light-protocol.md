@@ -2976,6 +2976,35 @@ Leads: `lead_20261006_CUB_1` promoted to the first event; `lead_20261006_CUB_2` 
 
 Score effect: CUB +29.0 Acting before the two events (the event of 15 October 2025 is 390 days old, so the passivity penalty applied) and +44.3 Confronting with them. Provisional previews (rc.1, 2026-11-09): CRI −1 Passive, CUB +44 Confronting, DMA −16 Passive, DOM +7 Acting, ECU −14 Passive, GRD −15 Passive.
 
+### T-F-L04-R: redo pass with web search, CRI, CUB, DMA, DOM, ECU, GRD (2026-11-09, groups 7 and 8)
+
+The first T-F-L04 session had no web search. This pass ran 61 standard-mode searches (Spanish for CRI, CUB, DOM and ECU, English for DMA and GRD) over every none-found entry of that session (A3, A5 to A8, C4 to C6, E1 to E3; 66 entries) and over new events since 6 October 2026 (B9, C2, B8, D group). The earlier text of each note is kept; the queries, date and what the searches found are added beside it. No status changes. Search summaries were used to find pages; nothing was filed from one.
+
+redo pass (T-F-L04-R)
+
+| Country | Entries re-run (none-found, `checked_at` 2026-11-09) | Searches | What the searches added | Changed |
+|---|---|---|---|---|
+| CRI | A3, A5 to A8, C4 to C6, E1 to E3 | 18 | No Costa Rican F-35 supplier, arms, port or procurement item; PROCOMER's answer on settlement-goods verification (September 2026); the Sala IV ruling of 8 September 2026 on the Palestinian flag at the transfer of power (E2) | `lead_20261109_CRI_4`; leads CRI 1 to 3 annotated |
+| CUB | A3, A5 to A8, C4 to C6, E1 to E3 | 9 and three UN pages | No Cuban measure; the Ministry's own pages: the Foreign Minister's intervention of 1 October 2025 and the President's speech of 26 July 2026 | `evt_2025_10_01_CUB_B9`, `evt_2026_07_26_CUB_B9`; leads CUB 2 to 4 annotated |
+| DMA | A3, A5 to A8, C4 to C6, E1 to E3 | 6 | The Government's statement on the Middle East of 4 March 2026 (the Gulf, not Gaza); no state document of the recognition | DMA leads 1 and 2 annotated |
+| DOM | A3, A5 to A8, C4 to C6, E1 to E3 | 10 | No Israeli military, arms, port or procurement item; the 2020 proposal to move the embassy to Jerusalem (no decision found) | none |
+| ECU | A3, A5 to A8, C4 to C6, E1 to E3 | 11 | The Israeli ambassador's announcement of a defence attaché's visit (17 October 2025, press); nothing new for October to November 2026 | ECU leads 1 to 3 annotated |
+| GRD | A3, A5 to A8, C4 to C6, E1 to E3 | 7 | No Grenadian measure; the one march (20 November 2023) peaceful; no state document of the recognition | none |
+
+| Event | Indicator | Date | Points | Confidence | Source kind | Second reading |
+|---|---|---|---|---|---|---|
+| evt_2025_10_01_CUB_B9 | B9 | 2025-10-01 | +5 (404 days old: no points today) | confirmed | official | agree (lines 3, 8, 10, 11, 15 of the archived text) |
+| evt_2026_07_26_CUB_B9 | B9 | 2026-07-26 | +5 (a digression in a speech on the United States' pressure on Cuba, flagged) | confirmed | official | agree (line 52, with lines 45 to 55) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20251001_cubaminrex_rodriguez-plenaria-veto-es | The Foreign Minister's intervention at the General Assembly's plenary on the use of the veto, New York, 1 October 2025 (Ministry's Spanish text; Save Page Now, replay equal in bytes and SHA-256) | evt_2025_10_01_CUB_B9 |
+| src_20260726_cubaminrex_diaz-canel-dia-rebeldia-es | The President's speech at the central act of 26 July 2026 (Ministry's page; Save Page Now, replay equal) | evt_2026_07_26_CUB_B9 |
+
+Deferred items of B-941 settled: the Foreign Minister's intervention of 1 October 2025 is filed; the 'reply of 9 July 2026' is his speech at the General Assembly's embargo debate (the Ministry's page date of 9 July 2026 conflicts with the debate of 27 and 28 October 2026 in United Nations news pages; not filed until a United Nations record states the date); the President's speech of 26 July 2026 is filed and that of 14 August 2026 is not (Gaza named once, as an example). Readings flagged for the author (B-967): the 26 July speech as a digression (default: keep), the date of the embargo-debate speech, the Sala IV ruling (a lead until its text is archived), the thin evidence base of the none-found entries.
+
+Score effect: none. Provisional previews (rc.1, 2026-11-09), unchanged: CRI −1 Passive, CUB +44 Confronting (B9 at its cap), DMA −16 Passive, DOM +7 Acting, ECU −14 Passive, GRD −15 Passive.
+
 ### T-F-L05: GTM, GUY, HND, HTI, JAM, KNA (2026-11-09, groups 9 and 10)
 
 The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: the WordPress interfaces of Guatemala's Presidency, Interior Ministry and Public Prosecutor, of Guyana's Department of Public Information, Haiti's Prime Minister's office, Jamaica's Office of the Prime Minister, Saint Kitts and Nevis's Information Service and Ministry, and Honduras's Foreign Ministry (which holds only 29 items for the period); the Drupal search of Guyana's Ministry of Foreign Affairs and Honduras's Defence Secretariat; and the searches of the Jamaica Information Service, Police and Finance sites and of several Haitian and Honduran ministries (routes and refusals in docs/10 B-943). No event was filed, no event changed and no lead changed status: nothing new that names Gaza was found for the six countries from 6 October to 9 November 2026 on the pages that could be read.
