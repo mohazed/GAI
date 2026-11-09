@@ -88,7 +88,22 @@ indicators:
       - bidenwhitehouse.archives.gov statement President Biden arrest warrants International Criminal Court November 21 2024
       - '"Statement from President Joe Biden" ICC arrest warrants November 21 2024 outrageous'
   B6: {status: has-events, checked_at: 2026-09-28}
-  B7: {status: has-events, checked_at: 2026-09-28}
+  B7:
+    status: has-events
+    checked_at: 2026-11-09
+    note: >-
+      evt_2025_02_13_USA_B7 (the designation of the Prosecutor under Executive Order 14203). B7 is a
+      standing state, one event while sanctions are in force (indicators.yaml); later designations of
+      judges, deputy prosecutors and staff are not separate events. Finish run of 9 November 2026: the
+      Department of State's fact sheet of 9 October 2026 (archived:
+      src_20261009_state_imposing-sanctions-icc-institution) says the Court itself is designated under
+      the same order, with general licences (one of 180 days for the maintenance of its operations),
+      and that 17 persons have been sanctioned to date; read as the same standing state, no new event
+      (the indicator names judges and prosecutors, and the institution is not one of them: the
+      author may read it as a new instance, docs/10 B-885).
+    queries:
+      - state.gov Imposing Sanctions on the International Criminal Court October 2026 (read, archived)
+      - ofac.treasury.gov recent actions 9 October 2026 International Criminal Court designation and general licenses (search result, not opened)
   B8:
     status: none-found
     checked_at: 2026-09-28
@@ -99,19 +114,28 @@ indicators:
       - United States recognise State of Palestine 2025 2026 statement Trump administration recognition
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Filed: the President's calls of 7 March 2024, 31 May 2024 and 29 September 2025. Not filed:
       remarks at a campaign reception (12 December 2023, "indiscriminate bombing"; not a formal
       statement) and the Secretary of State's press remarks of 2025–2026 on the humanitarian situation
       (no formal call for a ceasefire or an end to the blockade found in them). No other formal call
       by the President or the Secretary of State found in the last 12 months.
+      Finish run of 9 November 2026 (27 September to 8 November): no formal call or named violation
+      found. Read: the White House's briefings-and-statements, remarks, fact-sheet and presidential-actions
+      listings (by title, no item on Gaza or Israel), the Department of State's latest ten releases
+      (2 to 8 November, by title), the Secretary's joint press availability with the Greek Foreign
+      Minister (October 2026; Hamas named only as funded by Iran, no call or violation) and his radio
+      interview of September 2026 (no Gaza passage). The Department's older releases of the window
+      (27 September to 1 November) are not reachable by script (its REST list ignores date filters).
     queries:
       - Biden State of the Union March 7 2024 transcript "immediate ceasefire that would last for at least six weeks"
       - bidenwhitehouse.archives.gov "Remarks by President Biden on the Middle East" May 31 2024
       - whitehouse.gov "Comprehensive Plan to End the Gaza Conflict" September 29 2025
       - govinfo DCPD Biden December 12 2023 campaign reception "indiscriminate bombing"
       - state.gov Secretary Rubio statement Gaza 2026 ceasefire humanitarian
+      - "finish run 2026-11-09: whitehouse.gov briefings-statements pages 1-10, remarks, fact-sheets, presidential-actions; state.gov press-release feed and the Rubio-Gerapetritis press availability and WABC interview (read)"
+
   B10:
     status: has-events
     checked_at: 2026-09-28

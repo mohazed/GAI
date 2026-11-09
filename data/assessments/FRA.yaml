@@ -12,7 +12,7 @@ indicators:
       B-187, B-199), so A1 stays unchecked for every country, not none-found; left to the build.
   A2:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Generated from Comtrade (own report). France 2025 HS 93 exports to Israel USD 64,176 (release
       of 2026-07-16; no HS 8710 row) → 0; 2023 USD 5,879 and 2024 USD 73,615, also 0. Not counted
@@ -22,15 +22,21 @@ indicators:
       wave-1 country. The government's own record is not comparable: it states that France delivers
       no weapons to Israel and licenses only components for defensive systems or re-export (Minister
       of the Armed Forces, answer of 27 November 2025 to Senate written question 04403, read, not
-      archived), and the annual report to Parliament on arms exports gives deliveries by military
-      list category (the 2026 report of 12 August 2026 could not be archived: Save Page Now refused a
-      second capture within 24 hours and the earlier capture was not yet indexed). Press reports put
-      deliveries to Israel at EUR 30.1 million in 2023 and EUR 16.1 million in 2024 (lead
-      lead_20260928_FRA_4); a disagreement with the HS 93 value, reported, not corrected.
+      archived), and the annual report to Parliament on arms exports gives deliveries by country. The
+      2026 report of 12 August 2026 is archived (src_20260812_defense-gouv_rapport-parlement-2026-exportations;
+      figures read in the PDF, the archived text being cut at 200 KB): deliveries to Israel EUR 30.1
+      million in 2023, EUR 16.1 million in 2024 and EUR 19.8 million in 2025 (0.2 per cent of French
+      deliveries in 2025; two thirds components for equipment re-exported to third countries, one
+      third components for defensive systems), against Comtrade HS 93 exports of USD 5,879, 73,615
+      and 64,176 for the same years: a disagreement between the government's record and the customs
+      value, stated from the primary, not corrected (A2 stays on Comtrade, docs/02 §5). Licences
+      granted for Israel in 2025: EUR 119 million, down 69 per cent from 2024 and 50 per cent fewer
+      licences than in 2023 (same report).
     queries:
       - rapport au Parlement exportations d'armement 2025 Israël livraisons montant France
       - Sénat question écrite transfert et exportation d'armes vers Israël réponse ministère des Armées
       - Eurolinks maillons munitions Israël réexportation ministère des Armées
+      - defense.gouv.fr rapport au Parlement 2026 exportations d'armement Israël livraisons 2025 (finish run, 2026-11-09)
   A3:
     status: none-found
     checked_at: 2026-09-28
@@ -63,7 +69,7 @@ indicators:
       - France interception drones iraniens avril 2024 Israël
   A6:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No government decision or court order suspending or refusing a class of export licences to
       Israel found. The President said in a France Inter interview broadcast on 5 October 2024 that
@@ -73,10 +79,21 @@ indicators:
       exclusion of Israeli companies from the Eurosatory fair (Ministry of the Armed Forces, 31 May
       2024, suspended by the Paris commercial court) and the ban on displaying Israeli offensive
       weapons at Eurosatory 2026 (June 2026) concern a trade fair, not licences (lead
-      lead_20260928_FRA_5).
+      lead_20260928_FRA_5). Finish run of 9 November 2026: the Foreign Minister told the National
+      Assembly on 14 October 2026 that France sells no arms to Israel, that after revelations in the
+      press (L'Humanité, 1 October 2026) on components sold to Israeli manufacturers the government
+      had launched investigations and "taken precautionary measures" pending their results, without
+      naming a class of licences or a decision (src_20261014_diplomatie-gouv_qag-barrot-gaza-armes);
+      the ministry's spokesperson restated on 8 October 2026 that licences for Israel are limited to
+      defensive equipment and to components for re-export (read, not archived). No decision
+      suspending or refusing a class of licences was found, so A6 stays none-found; file it if the
+      measures are identified in an official document.
     queries:
       - France suspension licences exportation armes Israël décision 2024 2025
       - Eurosatory 2024 exclusion entreprises israéliennes ministère des Armées
+      - Barrot Assemblée nationale 14 octobre 2026 ventes d'armes Israël mesures conservatoires (diplomatie.gouv.fr, read)
+      - conférence de presse du porte-parole 8 octobre 2026 licences d'exportation Israël (diplomatie.gouv.fr, read)
+      - Microoled Gehring Precision Israël ministère des Armées investigations (web search, no official document found)
   A7:
     status: none-found
     checked_at: 2026-09-28
@@ -155,7 +172,27 @@ indicators:
       Generated from recognitions.csv: +8 from 2025-09-22
       (src_20250922_diplomatie-gouv_reconnaissance-palestine). The row exists; the President's speech
       declaring the recognition is archived for B9 (src_20250922_elysee_agnu-80-reconnaissance).
-  B9: {status: has-events, checked_at: 2026-09-28}
+  B9:
+    status: has-events
+    checked_at: 2026-11-09
+    note: >-
+      Filed in the finish run of 9 November 2026 (T-F-W1; the ministry's news list read page by page
+      from 27 September to 5 November): the President's address to the General Assembly of 22
+      September 2026 (evt_2026_09_22_FRA_B9), the Foreign Minister's interviews of 27 September and 28
+      October 2026 (West Bank, tagged and unscored in v1). Read, not filed: his opening speech of 6
+      October 2026 at the national humanitarian conference ("grave violations against children have
+      never been so numerous in Gaza, the Democratic Republic of the Congo, Ukraine, Lebanon or
+      Haiti": one list for five conflicts, no instance or actor named); his statements in Israel on 7
+      October 2026 (commemoration of the attacks, no call or named violation); his answer to the
+      National Assembly of 14 October 2026 (arms exports, A6 note); the joint statements of 13 and 24
+      October 2026 (neither mentions Gaza). Also filed: the joint declaration of the State visit to
+      Doha of 21 October 2026 (evt_2026_10_21_FRA_B9, call tier, with the West Bank passage on
+      annexation and settler violence); the Emir of Qatar's counterpart event is for the wave that
+      holds Qatar (P-23 block of PROMPTS.md).
+    queries:
+      - "finish run 2026-11-09: diplomatie.gouv.fr actualités, pages 0 to 9 of the news list (27 September to 5 November 2026), every item with Gaza, Palestine, Cisjordanie or Israël read in full"
+      - "elysee.fr search and listing (not reachable by script for the window)"
+
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -202,17 +239,22 @@ indicators:
       r = 0.858 → 0; 2023 r = 0.940 → −5.
   C4:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No ban or new labelling rule for settlement goods in force. The origin-labelling rule predates
       the window. The President, with the British and Canadian Prime Ministers, announced on 8
       September 2026 that France will take measures to ban imports from the settlements (Élysée joint
       statement, read, not archived); France and Sweden sent the Commission a non-paper in April 2026
       asking for an EU ban. File the C4 event when an instrument is adopted (scope west-bank unless
-      it cites Gaza).
+      it cites Gaza). Finish run of 9 November 2026: in the France 2 interview of 28 October 2026
+      the Foreign Minister said the decision had been taken with eleven other countries, that
+      discussions with partners were under way, that a bill had been tabled in the National Assembly
+      and that several routes were examined if the EU did not decide (src_20261028_diplomatie-gouv_france2-barrot):
+      no instrument in force.
     queries:
       - interdiction importation produits colonies France 2026 décret
       - non-papier franco-suédois produits des colonies Commission
+      - Barrot France 2 28 octobre 2026 commerce colonies proposition de loi (diplomatie.gouv.fr, read)
   C5:
     status: none-found
     checked_at: 2026-09-28

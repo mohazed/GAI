@@ -461,3 +461,20 @@ Score effect (preview, for reading only): each of the 39 gains D3 +8 from 2025-1
 | Flags | Ecuador 10 May 2024 and Somalia 18 Sep 2024 (payment date not stated); session-opening dates; "non-vote" does not say absent or did not participate (docs/10 B-879) |
 | Changed | no data row, `unga_votes.csv` semantics and methodology unchanged; 18 source records and texts added |
 | Verification | `pnpm validate` 0 errors |
+
+
+### T-F-W1: full-protocol wave USA DEU GBR FRA ESP (docs/10 B-880 to B-884)
+
+Window of 27 September to 9 November 2026, read on the governments' own sites (no search engine date filter works; routes in B-880). Every capture's replay was re-fetched and compared (bytes and SHA-256) with its index row. Preview scores are rc.1 with `--preview`, for reading only.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| USA | White House listings (briefings, remarks, fact sheets, presidential actions), State Department feed (10 items), two Secretary's transcripts, the fact sheet of 9 October 2026 on the ICC | none | no item on Gaza; the designation of the ICC itself under Executive Order 14203 (B7 is one standing state: no new event, B-885) | −100.0 Sustaining, unchanged | B7, B9 notes |
+| DEU | Foreign Office search endpoint (11 terms, 28 items), speeches of 29 September and 5 November, joint statement of 9 October on the ICC, Drucksache 21/7784 | none | Foreign Minister's speech of 5 November 2026 (no call, no violation named); ICC statement (no warrants) | −3.8 Passive, unchanged | A7 note (licences to Israel Q2 2026 EUR 735.8 million, archived), B9 note |
+| GBR | GOV.UK search API (20 queries) to 9 November, Bills API | none beyond `evt_2026_10_19_GBR_B9` (T-P23-3) | none | +52.8 Confronting, unchanged | B9 note |
+| FRA | the ministry's news list, pages 0 to 9 (every item with Gaza or Palestine read), arms-export report 2026 | `evt_2026_09_22_FRA_B9` (+5), `evt_2026_09_27_FRA_B9` (+5, west-bank), `evt_2026_10_21_FRA_B9` (+2), `evt_2026_10_28_FRA_B9` (+5, west-bank) | 6 October speech (five conflicts in one list); 14 October answer on arms (precautionary measures, no class named) | +46.3 Confronting, unchanged (B9 at cap) | A2 (primary report), A6, B9, C4 notes; `lead_20260928_FRA_4` dropped (resolved) |
+| ESP | Ministry press notes (21) and statements, Moncloa activities, Councils' references of 29 September to 3 November | `evt_2025_05_16_ESP_B9` (+5), `evt_2025_12_14_ESP_B9` (+5), `evt_2026_01_05_ESP_B9` (+2): the T-VERIFY-2 items (B-849) | nothing in the window | +79.0 Confronting, unchanged (B9 at cap) | B9, E3 notes; `lead_20260928_ESP_7` note |
+
+Sources added (10): `src_20261009_state_imposing-sanctions-icc-institution`, `src_20260922_un-news_macron-general-debate`, `src_20260923_diplomatie-cd_macron-agnu-81`, `src_20260927_diplomatie-gouv_france2-inter-barrot`, `src_20261014_diplomatie-gouv_qag-barrot-gaza-armes`, `src_20261021_diplomatie-gouv_declaration-conjointe-france-qatar`, `src_20261028_diplomatie-gouv_france2-barrot`, `src_20260812_defense-gouv_rapport-parlement-2026-exportations`, `src_20260710_poderjudicial_an-admite-querellas-flotilla`, `src_20260828_bundestag_drucksache-21-7784-israel`.
+
+Not done: the news search by indicator group in the official language for USA, DEU and GBR beyond the routes above (the Federal Government's site and the Élysée's list cannot be paged by script); the leads that need an official copy (USA 1, GBR 1, FRA 1 to 3 and 5 to 6, ESP 1 to 6, 8, 9, DEU 1 to 3: B-883); the Franco-Qatari declaration for Qatar's Emir (another wave). Open questions for the author: B-884.
