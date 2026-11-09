@@ -9,7 +9,7 @@
 #   web searches in English and in Mongolian per indicator group. Time: about 5 minutes.
 # Statements read and not filed as B9: none on Gaza found. The 81st session's statement (September 2026) has no capture and
 #   gadebate.un.org refuses scripted requests: not read.
-# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 to A8 and C4 from the Cabinet's news-site search (Mongolian and English terms, no result); the Foreign Ministry's site answered HTTP 503 and the President's site a Cloudflare check; C5, C6 and E1 to E3 still unchecked (they need fund, procurement, prosecutor and police sources).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 to A8, C4, C5 and C6 from the Cabinet's news-site search (Mongolian and English terms, no result; control queries answered); the Foreign Ministry's site answered HTTP 503 and the President's site a Cloudflare check; E1 to E3 still unchecked (they need prosecutor and police sources).
 country: MNG
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -225,11 +225,31 @@ indicators:
     - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
       Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or
+      the occupied territories was found. The Government's own news site (cabinet.gov.mn, WordPress site search, run 2026-11-09,
+      its search answered results for the control terms Орос and Хөрөнгийн сан and none for any of Палестин, Израиль, Израйл, Хамас,
+      Газын зурвас, Ойрхи Дорнод, Israel, Palestine, Gaza Strip or Middle East) returned no result. The pages of the Fiscal Stability
+      Fund, the Human Development Fund, the Future Heritage Fund and the Bank of Mongolia were not searched, and none of them was
+      found to publish an exclusion list. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered HTTP 503 and the President's
+      site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed); no web search was available (the run's shared allowance
+      was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine,
+      Gaza Strip, Middle East): no result, 2026-11-09 (control query Орос: results)'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No exclusion of Israeli or settlement companies from public procurement was found. The Government's own news site (cabinet.gov.mn,
+      WordPress site search, run 2026-11-09, its search answered results for the control terms Орос and Хөрөнгийн сан and none for
+      any of Палестин, Израиль, Израйл, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine, Gaza Strip or Middle East) returned
+      no result. The procurement authority's pages (the State Procurement portal) were not read. The Ministry of Foreign Affairs'
+      site (mfa.gov.mn) answered HTTP 503 and the President's site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed);
+      no web search was available (the run's shared allowance was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine,
+      Gaza Strip, Middle East): no result, 2026-11-09 (control query Орос: results)'
   D1:
     status: none-found
     checked_at: '2026-10-05'
