@@ -2836,3 +2836,20 @@ B8 is a generated indicator and was not touched; none of the six has a row in `r
 Leads: new `lead_20261109_BGR_1`; all twelve earlier leads of the six (ROU 1 to 4, BGR 1 to 4, BLR 1, MDA 1 and 2, PRK 1) annotated with the session's searches and kept open. Readings flagged for the author (B-932): the Radev readout, the Bulgarian health plan under R18, the Romanian flight of 31 August 2026 under R11, the DPRK's no-data and none-found, the thin evidence base of the Mongolian and Bulgarian none-found entries, the Romanian defence contacts under A5.
 
 Score effect: none (no event was added or changed). Provisional previews (rc.1, 2026-11-09): MNG +1 Acting, PRK +1 Acting, BGR +7 Acting, BLR +14 Acting, MDA −11 Passive, ROU −11 Passive; they differ from the T-P21 tables of 5 October because of later Comtrade rows and decay.
+
+### T-F-L02, second session: MNG, PRK, BGR, BLR, MDA, ROU (2026-11-09)
+
+The second session had no web search either (the first query answered that the run's allowance of 200 calls per turn is used up). It found three official routes that the first session had not used: the Moldovan Government's full release listing (1,361 releases fetched and searched in full text), the Official Gazette's legislative portal of Romania (public search service) and the Bulgarian Prosecutor's Office site search (routes and refusals in docs/10 B-934). No event was filed and no existing event changed; no source was archived (the readings are of listings and search results, recorded in the notes with their queries).
+
+| Country | Filled (`checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| MNG | C5, C6 (none-found; the Cabinet's site search, control queries answered) | none | E1 to E3 |
+| PRK | E1, E2, E3 (no-data, as C5 and C6: no source for the State) | none | none |
+| BGR | C5, C6 (none-found; Council of Ministers' record); E1, E3 (none-found; Prosecutor's Office site search) | none | E2 |
+| BLR | none (president.gov.by, mfa.gov.md and the Council of Ministers' site did not answer or answered 403; the Foreign Ministry's news list is paged by a script call that answers a server error; the legal portals need a search form or a captcha) | none | A5 to A8, C4 to C6, E1 to E3 |
+| MDA | A5, A6, A7, A8, C4, C5, C6 (none-found; the Government's 1,361 releases of 17 September 2024 to 5 November 2026: no mention of Gaza, Palestine, Hamas or UNRWA; ten releases name Israel, none on arms, transit, settlements, funds or procurement) | none | E1 to E3 |
+| ROU | A6, A7, A8, C4, C5, C6 (none-found; the Official Gazette's portal: acts naming Gaza, Palestine, Hamas, the West Bank or Israel since 7 October 2023) | D5 (Government Decision no. 1155 of 2023 read, not filed, B-935) | E1 to E3 |
+
+What the Romanian portal shows for acts of 7 October 2023 or later (read by title and text): Parliament's Declaration no. 2 of 11 October 2023 (solidarity with Israel), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from Gaza), no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves), Parliament Decision no. 8 of 22 April 2024 (Prosperity Guardian), Law no. 86 of 9 April 2024 (a day of solidarity and friendship with Israel), the National Strategy of 23 May 2024 against antisemitism. None concerns an embargo, licences, transit, settlement goods, procurement or a fund. What the Moldovan releases show for Israel: the recognition of driving licences (six releases), the Prime Minister's meeting with Israel's Foreign Minister on 4 February 2025 and his call with Mr Netanyahu on 25 August 2025 (B-935).
+
+B8 (generated) and the pre-2023 recognition rows were not touched (a state document is needed). Leads: none opened, none closed. Score effect: none; provisional previews of the first session are unchanged (no event was added or changed; `--preview` not re-run).
