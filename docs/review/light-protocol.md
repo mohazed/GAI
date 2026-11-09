@@ -3026,6 +3026,36 @@ Leads: all seven re-checked and kept open (`lead_20261006_GTM_1`, `_2`, `GUY_1`,
 
 Score effect: none (no event added). Provisional previews (rc.1, 2026-11-09): GTM −1 Passive, GUY +13 Acting, HND +1 Acting, HTI −12 Passive, JAM +5 Acting, KNA +9 Acting.
 
+### T-F-L05-R: redo pass with web search, GTM, GUY, HND, HTI, JAM, KNA (2026-11-09, groups 9 and 10)
+
+The first T-F-L05 session had no web search. This pass ran 64 standard-mode searches (Spanish for GTM and HND, French and English for HTI, English for GUY, JAM and KNA) over every none-found entry of that session (A3, A5 to A8, C4 to C6, E1 to E3; 66 entries) and over new events since 6 October 2026 (B9, C2, B8, the D group). The earlier text of each note is kept; the queries, date and what the searches found are added beside it. No status changes. Search summaries were used to find pages; nothing was filed from one.
+
+redo pass (T-F-L05-R)
+
+| Country | Entries re-run (none-found, `checked_at` 2026-11-09) | Searches | What the searches added | Changed |
+|---|---|---|---|---|
+| GTM | A3, A5 to A8, C4 to C6, E1 to E3 | 14 (12 on the entries, 2 on the recognition) | No Guatemalan F-35 supplier, arms, port, fund or procurement item; the Ministry's statements on Gaza of 4 June 2024, 21 March 2025 and 27 August 2025 (no named speaker); the Free Trade Agreement with Israel (signed 8 September 2022, ratified 29 November 2023, in force 1 March 2024) | `lead_20261109_GTM_3` and `_4`; GTM_1 and _2 annotated |
+| GUY | A3, A5 to A8, C4 to C6, E1 to E3 | 12 | The Defence Force's agreements are with the United States, France and the United Kingdom, none with Israel; Minister Persaud's statement of 14 April 2026 and the Foreign Minister's of September 2025 (already read or filed); peaceful marches and pickets | GUY_1 annotated |
+| HND | A3, A5 to A8, C4 to C6, E1 to E3 | 13 | The memorandum of 16 August 2026 has no published content (no exercise, basing, transit or intelligence clause); the Hague Group withdrawal of 3 March 2026 (press); no 2026 Congress decree on Gaza; the Israeli Ministry of Defense's own page for the memorandum found and archived | `evt_2026_08_16_HND_C2` raised to confirmed; HND_1 and _2 annotated |
+| HTI | A3, A5 to A8, C4 to C6, E1 to E3 | 8 | The Galil rifle contract of the National Police (Israeli company, a purchase), the Gang Suppression Force's equipment from other states; no Haitian statement on Gaza in 2025 or 2026 | none |
+| JAM | A3, A5 to A8, C4 to C6, E1 to E3 | 9 | The ELTA Systems contract (about 2020, before the window), the Status of Forces Agreement with the United States (20 August 2026), the march of 4 November 2023; no new statement | JAM_1 and _2 annotated |
+| KNA | A3, A5 to A8, C4 to C6, E1 to E3 | 8 | The Ministry's statement of 2 March 2026 on attacks in the Middle East (no Gaza, read); the Prime Minister's 'genocide' remark is the address of 27 September 2025 (filed); security instruments with Canada and Guyana, none with Israel | none |
+
+| Event | Indicator | Date | Points | Confidence | Source kind | Second reading |
+|---|---|---|---|---|---|---|
+| evt_2026_08_16_HND_C2 (raised) | C2 | 2026-08-16 | −10 at weight 1.0 (was −7.0 at 0.7) | confirmed (was corroborated) | official (Israel's Ministry of Defense) | agree (lines 1 and 2 of the archived page) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20260816_imod_honduras-mou | The Israeli Ministry of Defense's own page for the release on the memorandum with Honduras (Wayback capture of 17 September 2026, replay equal in bytes and SHA-256) | evt_2026_08_16_HND_C2 |
+
+
+The pre-2023 recognition of Guatemala is not filed: the delegation's statement to the United Nations conference of 30 July 2025 (UNISPAL, `guatemala_nyc_es.pdf`) gives 8 April 2013 and was captured, but the Wayback replay could not be verified against the capture (the Internet Archive's bot filter answered 620 bytes of text for fifteen minutes); the source row was removed and the statement is recorded in lead_20261006_GTM_2 as a candidate.
+
+Deferred items settled: the Honduran General Debate file of the 80th session stays without an archived copy (gadebate.un.org answers 405 to a script and Save Page Now answers 'method-not-allowed'); the Honduran C2 events' confidence (B-945 (3)) is settled for the memorandum of 16 August 2026 and still open for the addendum of 2 June 2026. Readings flagged for the author (B-970): HND's confidence raise and its score effect (+1 Acting to −2 Passive), the Free Trade Agreement of Guatemala (C2 reading), the Ministry statements without a named speaker (GTM).
+
+Score effect: HND only. Provisional previews (rc.1, 2026-11-09): GTM −1 Passive, GUY +13 Acting, HND −2 Passive (was +1 Acting), HTI −12 Passive, JAM +5 Acting, KNA +9 Acting.
+
 ### T-F-L06: LCA, NIC, PAN, PER, PRY, SLV (2026-11-09, groups 11 and 12)
 
 The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites through their public interfaces: the WordPress interfaces of Panama's Foreign Ministry, Public Security, Public Prosecutor, Economy and Finance, Maritime Authority and Canal Authority, of Paraguay's Ministry of Industry and Commerce, of El Salvador's Presidency, Economy, Migration and CEPA and of Nicaragua's state radio; the JSON search of Peru's Government portal (15 ministries and authorities); the press-room feed of Saint Lucia's Government portal; and the Wayback Machine's address index (CDX with a regular expression) for the sites that refuse scripts (routes and refusals in docs/10 B-946). No event was filed. One event changed: the defence memorandum of Paraguay (`evt_2025_11_24_PRY_C2`) is `confirmed` from the Ministry of National Defense's own page, found in the Wayback Machine.
