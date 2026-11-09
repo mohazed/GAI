@@ -3076,3 +3076,32 @@ No pre-2023 recognition row was added: Nicaragua's state document for November 1
 Leads: all thirteen re-checked and kept open (`lead_20261006_NIC_1` to `_4`, `PAN_1` to `_3`, `PER_1`, `PRY_1` to `_5`; annotated in the claim: NIC_3 and _4, PAN_1 to _3, PER_1, PRY_3 and _5; the others had no new source to read): Panama's Foreign Ministry's release of 25 September 2026 names no instrument and no ICC initiative (PAN_2, PRY_3); the Peruvian Foreign Ministry's notes of 3 and 10 August 2026 name no instrument (PER_1). Readings flagged for the author (B-947): the confirmation of the Paraguayan defence memorandum and the discrepancy on its signatories; Peru's adoption of the IHRA definition (27 October 2026), FAME's release of 21 October 2026 and the Transport Ministry's meeting of 10 September 2026, read and not filed; two articles of the Nicaraguan Government of October and November 2024, unread because the replays answered 429.
 
 Score effect: none from this session. Provisional previews (rc.1, 2026-11-09): LCA +4 Acting, NIC +11 Acting, PAN −22 Enabling, PER −3 Passive, PRY −59 Sustaining, SLV +4 Acting; the differences from the previews of 6 October 2026 come from event ages and the Comtrade-derived events (PAN moves from Passive to Enabling because its generated A2 event now counts −8.0).
+
+### T-F-L06-R: redo pass with web search, LCA, NIC, PAN, PER, PRY, SLV (2026-11-09, groups 11 and 12)
+
+The first T-F-L06 session had no web search and read the Governments' own sites only. This pass ran 62 standard-mode searches (English for LCA; Spanish for NIC, PAN, PER, PRY and SLV, with English follow-ups) over every none-found entry of that session (A3, A5 to A8, C4 to C6, E1 to E3; 66 entries), over new events since 6 October 2026, over the open leads and over the deferred items of B-948, and read the Wayback index of the Paraguayan, Salvadoran and Saint Lucian Government sites. The earlier text of each note is kept; the queries, the date and what the pages said are added beside it. No status changed among the 66 entries. Search summaries were used to find pages; every page that carries a claim was opened.
+
+redo pass (T-F-L06-R)
+
+| Country | Entries re-run (none-found, `checked_at` 2026-11-09) | Searches | What the searches added | Changed |
+|---|---|---|---|---|
+| LCA | A3, A5 to A8, C4 to C6, E1 to E3 | 9 | No Saint Lucian item on Gaza or an Israeli instrument in 2026 (the Prime Minister's and Foreign Minister's statements found are the filed ones); security links with Israel date from 2011; External Affairs' site is hijacked in the Wayback index | none |
+| NIC | A3, A5 to A8, C4 to C6, E1 to E3 | 9 | The break of relations (filed), Nicaragua v. Germany hearings of 7 September 2026 (case 193, not B3 or B4), no measure on settlement goods or arms; Ortega's speech of 14 October 2024 (words quoted do not cite Gaza); the two el19digital articles still unread (403, no capture); no primary for the recognition of 1988 | `lead_20261109_NIC_5`; NIC_1 to NIC_4 annotated |
+| PAN | A3, A5 to A8, C4 to C6, E1 to E3 | 11 | The Israeli Foreign Minister's visit of 24 and 25 February 2026 announced with no instrument; the memorandum of 27 May 2026 (filed) is the only 2026 instrument; no Panamanian answer on the Court; Panama does not recognise Palestine; the Canal Authority's neutrality statement | PAN_1 to PAN_3 annotated |
+| PER | A3, A5 to A8, C4 to C6, E1 to E3 | 8 | The Foreign Ministers' call of 3 August 2026 and the cybersecurity reports of 24 August 2026 name no instrument; the PULS (Elbit) and ARAD purchases are A4; no embargo, no fund decision, no prosecution | PER_1 annotated |
+| PRY | A3, A5 to A8, C4 to C6, E1 to E3 | 13 | The agreement on health and medicine signed in Jerusalem on 7 October 2026 (the Ministry's own page); the President's interview with AFP of December 2024 saying that the Israeli Prime Minister would not be detained; the Defence Ministry's workshop on arms export control (10 June 2026) names no Israeli measure; no cybersecurity agreement signed | two new events; B6 set to has-events and the B5 and B6 notes corrected; PRY_1 to PRY_5 annotated |
+| SLV | A3, A5 to A8, C4 to C6, E1 to E3 | 12 | The Vice-President's meeting with Israel's President in Costa Rica (8 May 2026, no document); the Board of Peace attendance of 19 February 2026; reported purchases of Israeli arms and spyware (A4, not A3 or C6 exclusions); no measure, fund decision or prosecution | none |
+
+| Event | Indicator | Date | Points | Confidence | Source kind | Second reading |
+|---|---|---|---|---|---|---|
+| evt_2026_10_07_PRY_C2 (new) | C2 | 2026-10-07 | −10 at weight 1.0 | confirmed | official (Ministry of Foreign Affairs of Paraguay) | agree (lines 1 to 4 of the archived page) |
+| evt_2024_12_09_PRY_B6 (new) | B6 | 2024-12-09 | −10 at weight 0.4 (−4) | reported | press (Última Hora, reporting an AFP interview) | agree (line 3 of the archived text) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20261007_mre-py_acuerdo-salud-medicina-israel | The Paraguayan Ministry of Foreign Affairs' own page for the health and medicine agreement (Wayback capture of 7 October 2026, replay equal in bytes and SHA-256) | evt_2026_10_07_PRY_C2 |
+| src_20241210_ultimahora_pena-netanyahu-no-sera-detenido | Última Hora's article of 10 December 2024 (Wayback capture of 12 December 2024, replay equal in bytes and SHA-256) | evt_2024_12_09_PRY_B6 |
+
+Deferred items settled: the Ministry of National Defense's page of 10 June 2026 was read (a workshop on dual-use and arms export control with German and European partners; no Israeli measure); the Paraguayan Foreign Ministry's page for the Presidency's and the Ministry's pages of December 2024 were read again (the Ministry's page names only the memorandum between research bodies). Still open: the two el19digital articles (403 and no Wayback capture), the AFP original of the Paraguayan interview, a state document for Nicaragua's recognition of 1988. Readings flagged for the author (B-973): the Paraguayan B6 from a press interview at `reported` (it corrects the first session's B5 and B6 notes), the Paraguayan health agreement as a new C2 instrument next to the convenio of 2005, and the Foreign Ministry's communique of 21 November 2024 (not filed).
+
+Score effect: PRY only. Provisional previews (rc.1, 2026-11-09): LCA +4 Acting, NIC +11 Acting, PAN −22 Enabling, PER −3 Passive, PRY −60 Sustaining (was −59), SLV +4 Acting.
