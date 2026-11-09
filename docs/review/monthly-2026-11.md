@@ -196,7 +196,7 @@ Djibouti, Kuwait, Lebanon, Sudan, Syria and Yemen are named among the twenty sig
 
 **Question.** `unga_votes.csv` has no vote (`X`) for some states on some of the twelve qualifying votes (Venezuela on all twelve, Kiribati on nine, Solomon Islands, Vanuatu, …). Article 19 of the Charter takes the vote away from a state whose arrears equal or exceed its contributions for the two preceding full years, unless the General Assembly permits it to vote. Are the absences a loss of vote or a choice, and how does B1 treat them?
 
-**Evidence.** The General Assembly's Article 19 page (`un.org/en/ga/about/art19.shtml`) is undated and shows only the current state; the Wayback Machine holds its earlier states. Ten captures nearest before each vote date were recorded as sources (`src_{date}_un-ga_article19-page`, the bytes re-fetched and equal to the index), together with the two sources recorded earlier (`src_20250903_undocs_a-80-362-article19`, `src_20261013_un-ga_article19-page`). The Secretary-General's documents the page cites (A/78/336, A/78/707, A/79/338, A/79/720) are on `documents.un.org`, which refuses scripts: they are cited from the page, not archived.
+**Evidence.** The General Assembly's Article 19 page (`un.org/en/ga/about/art19.shtml`) is undated and shows only the current state; the Wayback Machine holds its earlier states. Ten captures nearest before each vote date were recorded as sources (`src_{date}_un-ga_article19-page`, the bytes re-fetched and equal to the index), together with the two sources recorded earlier (`src_20250903_undocs_a-80-362-article19`, `src_20261013_un-ga_article19-page`). The Secretary-General's documents the page cites (A/78/336, A/78/707, A/79/338, A/79/720) were cited from the page in this first reading; they and their addenda are archived since T-F-UNDOCS-3 (section 6.1), and sections 6.2 and 6.3 give the document behind each of the 218 absences.
 
 | Vote | Date | Page used (capture) | States subject to Article 19 | Permitted to vote by resolution |
 |---|---|---|---|---|
@@ -229,6 +229,120 @@ Of the 218 absences, **30 are by states the lists show as not entitled to vote o
 **How B1 treats a state without a vote.** docs/02 §2 B1: "Absent is scored −2; a formal 'did not participate' is treated as absent." `unga_votes.csv` records both as `X` and has no field for entitlement. A state that lost its vote under Article 19 and a state that did not take part therefore score the same −2 per vote. For the 30 explained absences the undecayed sum is −24 (Venezuela), −20 (Afghanistan), −6 (Bolivia), −6 (Sao Tome and Principe), −2 (Ecuador), −2 (Somalia); B1 is capped by its category and decayed with the age of each vote, so the effect on a score is smaller (docs/10 B-626 gives Venezuela's).
 
 **For the author and P-24 (no methodology change here).** Options: keep −2 for every absence (the rule as written); score an absence of a state not entitled to vote as 0, from a dated list kept with `votes.yaml` (a methodology change that moves Venezuela and Afghanistan and four smaller cases); keep −2 and show on the country page which absences the lists explain. Default for the draft: keep −2, and show the reason (display only). Recorded in the P-24 block of `PROMPTS.md`.
+
+### 6.1 The Secretary-General's letters and the three resolutions, archived (T-F-UNDOCS-3, docs/10 B-878, B-879)
+
+`documents.un.org` answers `curl` through its symbol route (`documents.un.org/api/symbol/access?s=A/78/336&l=en&t=pdf`, which redirects to the file under `/doc/undoc/gen/`); every file below was saved with Save Page Now (or recorded from an existing capture of the same address), its SHA-256 and byte count equal to the bytes fetched and to the Wayback replay fetched again. Each letter is one page and its text is in `archive/text/`.
+
+| Document | Date of the letter | Source id | Content |
+|---|---|---|---|
+| A/78/336 | 31 Aug 2023 | `src_20230831_undocs_a-78-336-article19` | four states in arrears (2021 and 2022 contributions): Comoros, Sao Tome and Principe, Somalia, Venezuela |
+| A/78/707 | 8 Jan 2024 | `src_20240108_undocs_a-78-707-article19` | ten states (2022 and 2023): Afghanistan, Antigua and Barbuda, Comoros, Dominica, Ecuador, Iran, Liberia, Sao Tome and Principe, Somalia, Venezuela |
+| A/78/707/Add.1 to Add.5 | 11 Jan, 13 Mar, 21 Mar, 22 May, 4 Sep 2024 | `src_20240111_`, `20240313_`, `20240321_`, `20240522_`, `20240904_undocs_a-78-707-add{1..5}-article19` | payments: Antigua and Barbuda and Iran; Liberia; Dominica; Ecuador; the Comoros |
+| A/79/338 | 4 Sep 2024 | `src_20240904_undocs_a-79-338-article19` | four states (2022 and 2023): Afghanistan, Sao Tome and Principe, Somalia, Venezuela |
+| A/79/338/Add.1 | 18 Dec 2024 | `src_20241218_undocs_a-79-338-add1-article19` | payment: Somalia |
+| A/79/720 | 13 Jan 2025 | `src_20250113_undocs_a-79-720-article19` | ten states (2023 and 2024): Afghanistan, Antigua and Barbuda, Bolivia, Cabo Verde, Congo, Ecuador, Grenada, Guinea-Bissau, Sao Tome and Principe, Venezuela |
+| A/79/720/Add.1 to Add.5 | 20 Jan, 24 Feb, 28 Feb, 28 Mar, 2 Jun 2025 | `src_20250120_`, `20250224_`, `20250228_`, `20250328_`, `20250602_undocs_a-79-720-add{1..5}-article19` | payments: Antigua and Barbuda; Cabo Verde and Grenada; Ecuador; Congo; Guinea-Bissau |
+| A/80/362 | 3 Sep 2025 | `src_20250903_undocs_a-80-362-article19` (archived earlier) | four states (2023 and 2024): Afghanistan, Bolivia, Sao Tome and Principe, Venezuela |
+| A/RES/78/2, 79/3, 80/2 | 5 Oct 2023, 9 Oct 2024, 14 Oct 2025 | `src_20231005_`, `20241009_`, `20251014_undocs_a-res-{78-2,79-3,80-2}-article19` | permission to vote: Comoros, Sao Tome and Principe, Somalia until the end of the 78th session; Sao Tome and Principe and Somalia until the end of the 79th; Bolivia and Sao Tome and Principe until the end of the 80th |
+
+Looked for and not found (the symbol route answers an error page): A/78/336/Add.1, A/79/338/Add.2, A/80/362/Add.1 and Add.2, A/78/707/Add.6, A/79/720/Add.6. Two points on dates. (1) A/79/720/Add.5 is dated 2 June 2025 but the PDF carries the distribution line `25-08618 (E) 220726` and sits under the 2026 path of the site; the Article 19 page captured on 20 June 2025 already cites it, so Guinea-Bissau's payment was on record before the vote of 12 June 2025. (2) A/78/707/Add.4 (22 May 2024) reports Ecuador's payment twelve days after the vote of 10 May 2024 and does not give the date of the payment; the letters in force on the vote date show Ecuador in arrears, and that absence is classed "not entitled" on that basis. Somalia on 18 September 2024 is in the same position (named in A/79/338 of 4 September 2024, no permission in force; its payment is reported by A/79/338/Add.1 of 18 December 2024, without a date). Both are flags for the author (docs/10 B-879). The letter A/81/360 (3 Sep 2026) and its Add.1, and resolution 81/2 (12 Oct 2026), exist on the same site and are not archived: no qualifying vote of the table falls in the 81st session (the vote of 17 September 2026 is not in `votes.yaml` yet).
+
+### 6.2 Each absence by vote: not entitled or non-vote
+
+Definitions. **Not entitled**: the state is named in the letter in force on the vote date (the last letter, with the addenda, dated on or before the vote) and no resolution under Article 19 permitted it to vote that day; under Article 19 it had no vote, and `unga_votes.csv` records `X`. **Non-vote**: the state was entitled to vote (not named in the letters in force, or named and permitted by resolution) and no vote is recorded; the record does not say whether the delegation was absent or formally did not participate. The 79th session opened on 10 September 2024 and the 80th on 9 September 2025 (calendar dates; the permissions "until the end of its seventy-eighth / seventy-ninth session" ended on the day before).
+
+| Vote | Date | Letters of the Secretary-General in force | Subject to Article 19 | Permitted to vote by resolution | Absences: not entitled | Absences: non-vote (entitled; no vote recorded) |
+|---|---|---|---|---|---|---|
+| A/RES/ES-10/21 | 2023-10-27 | A/78/336 (31 Aug 2023) | Comoros, Sao Tome and Principe, Somalia, Venezuela | Comoros, Sao Tome and Principe, Somalia (78/2) | 1: Venezuela (Bolivarian Republic of) | 13: Burundi, Benin, Burkina Faso, Jamaica, Cambodia, Liberia, Rwanda, Sao Tome and Principe, Eswatini, Seychelles, Togo, Turkmenistan, Samoa |
+| A/RES/ES-10/22 | 2023-12-12 | A/78/336 (31 Aug 2023) | Comoros, Sao Tome and Principe, Somalia, Venezuela | Comoros, Sao Tome and Principe, Somalia (78/2) | 1: Venezuela (Bolivarian Republic of) | 6: Burkina Faso, Haiti, Kiribati, Sao Tome and Principe, Eswatini, Turkmenistan |
+| A/RES/ES-10/23 | 2024-05-10 | A/78/707 (8 Jan 2024) with Add.1 (11 Jan), Add.2 (13 Mar), Add.3 (21 Mar); Add.4 (22 May) is later than the vote | Afghanistan, Comoros, Ecuador, Sao Tome and Principe, Somalia, Venezuela | Comoros, Sao Tome and Principe, Somalia (78/2) | 3: Afghanistan, Ecuador, Venezuela (Bolivarian Republic of) | 13: Cameroon, Democratic Republic of the Congo, Congo, Kiribati, Liberia, Solomon Islands, South Sudan, Sao Tome and Principe, Eswatini, Togo, Tonga, Tuvalu, Samoa |
+| A/RES/ES-10/24 | 2024-09-18 | A/79/338 (4 Sep 2024) and A/78/707/Add.5 (4 Sep 2024) | Afghanistan, Sao Tome and Principe, Somalia, Venezuela | none in force (78/2 ended with the 78th session; 79/3 was adopted on 9 Oct 2024) | 4: Afghanistan, Somalia, Sao Tome and Principe, Venezuela (Bolivarian Republic of) | 8: Benin, Central African Republic, Congo, Equatorial Guinea, Madagascar, Eswatini, Togo, Zambia |
+| A/RES/ES-10/25 | 2024-12-11 | A/79/338 (4 Sep 2024); Add.1 (18 Dec) is later than the vote | Afghanistan, Sao Tome and Principe, Somalia, Venezuela | Sao Tome and Principe, Somalia (79/3) | 2: Afghanistan, Venezuela (Bolivarian Republic of) | 12: Benin, Burkina Faso, Central African Republic, Democratic Republic of the Congo, Dominica, Guinea-Bissau, Haiti, Kiribati, Sao Tome and Principe, Eswatini, Tuvalu, Zambia |
+| A/RES/ES-10/26 | 2024-12-11 | A/79/338 (4 Sep 2024); Add.1 (18 Dec) is later than the vote | Afghanistan, Sao Tome and Principe, Somalia, Venezuela | Sao Tome and Principe, Somalia (79/3) | 2: Afghanistan, Venezuela (Bolivarian Republic of) | 11: Benin, Central African Republic, Democratic Republic of the Congo, Dominica, Guinea-Bissau, Haiti, Kiribati, Sao Tome and Principe, Eswatini, Tuvalu, Zambia |
+| A/RES/79/232 | 2024-12-19 | A/79/338 with Add.1 (18 Dec 2024: Somalia paid) | Afghanistan, Sao Tome and Principe, Venezuela | Sao Tome and Principe (79/3) | 2: Afghanistan, Venezuela (Bolivarian Republic of) | 20: Benin, Burkina Faso, Central African Republic, Democratic Republic of the Congo, Congo, Comoros, Dominica, Gabon, Equatorial Guinea, Grenada, Kiribati, Madagascar, Mozambique, Malawi, Sao Tome and Principe, Eswatini, Tuvalu, Saint Vincent and the Grenadines, Vanuatu, Zambia |
+| A/RES/ES-10/27 | 2025-06-12 | A/79/720 (13 Jan 2025) with Add.1 (20 Jan), Add.2 (24 Feb), Add.3 (28 Feb), Add.4 (28 Mar), Add.5 (2 Jun) | Afghanistan, Bolivia, Sao Tome and Principe, Venezuela | Sao Tome and Principe (79/3) | 3: Afghanistan, Bolivia (Plurinational State of), Venezuela (Bolivarian Republic of) | 10: Benin, Central African Republic, Comoros, Equatorial Guinea, Haiti, Madagascar, Sao Tome and Principe, Eswatini, Samoa, Zambia |
+| A/DEC/80/506 | 2025-09-12 | A/80/362 (3 Sep 2025) | Afghanistan, Bolivia, Sao Tome and Principe, Venezuela | none in force (79/3 ended with the 79th session; 80/2 was adopted on 14 Oct 2025) | 4: Afghanistan, Bolivia (Plurinational State of), Sao Tome and Principe, Venezuela (Bolivarian Republic of) | 25: Antigua and Barbuda, Benin, Bhutan, Central African Republic, Dominica, Eritrea, Georgia, Guinea-Bissau, Equatorial Guinea, Grenada, Honduras, Haiti, Iran (Islamic Republic of), Iraq, Kiribati, Liberia, Monaco, Madagascar, Malawi, Panama, Eswatini, Tunisia, Tuvalu, Vanuatu, Zambia |
+| A/RES/80/1 | 2025-09-19 | A/80/362 (3 Sep 2025) | Afghanistan, Bolivia, Sao Tome and Principe, Venezuela | none in force (as above) | 4: Afghanistan, Bolivia (Plurinational State of), Sao Tome and Principe, Venezuela (Bolivarian Republic of) | 33: Andorra, Argentina, Burundi, Benin, Belize, Botswana, Central African Republic, Cameroon, Democratic Republic of the Congo, Congo, Micronesia (Federated States of), Gabon, Georgia, Gambia, Guinea-Bissau, Equatorial Guinea, Jamaica, Kiribati, Liberia, Marshall Islands, Malawi, Peru, Somalia, South Sudan, Slovakia, Eswatini, Turkmenistan, Tonga, Tuvalu, United Republic of Tanzania, Vanuatu, Samoa, Zambia |
+| A/RES/80/78 | 2025-12-05 | A/80/362 (3 Sep 2025) | Afghanistan, Bolivia, Sao Tome and Principe, Venezuela | Bolivia, Sao Tome and Principe (80/2) | 2: Afghanistan, Venezuela (Bolivarian Republic of) | 16: Benin, Bolivia (Plurinational State of), Botswana, Central African Republic, Congo, Guinea-Bissau, Equatorial Guinea, Grenada, Kiribati, Madagascar, Malawi, Nigeria, Sao Tome and Principe, Eswatini, Saint Vincent and the Grenadines, Zambia |
+| A/RES/80/116 | 2025-12-12 | A/80/362 (3 Sep 2025) | Afghanistan, Bolivia, Sao Tome and Principe, Venezuela | Bolivia, Sao Tome and Principe (80/2) | 2: Afghanistan, Venezuela (Bolivarian Republic of) | 21: Antigua and Barbuda, Benin, Burkina Faso, Cameroon, Democratic Republic of the Congo, Cabo Verde, Equatorial Guinea, Grenada, Haiti, Kiribati, Liberia, Saint Lucia, Lesotho, Madagascar, Malawi, Rwanda, Sao Tome and Principe, Eswatini, United Republic of Tanzania, Saint Vincent and the Grenadines, Zambia |
+
+Totals: **30 not entitled, 188 non-vote**, 218 in all; the 30 are the same absences as in the table of the Result above, now each tied to a letter. Sao Tome and Principe was entitled (permitted by 78/2, 79/3 or 80/2) and has no recorded vote on nine of its twelve absences; Bolivia was permitted on 5 and 12 December 2025 and has no vote on 5 December (and voted N on 12 December); Somalia has a non-vote on 19 September 2025, when A/80/362 does not name it.
+
+### 6.3 Each state with an absence
+
+| State | ISO3 | Absences | Not entitled | Non-vote | Documents |
+|---|---|---|---|---|---|
+| Eswatini | SWZ | 12 | 0 | 12 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Sao Tome and Principe | STP | 12 | 3 | 9 | Named in every letter; permitted by 78/2, 79/3 and 80/2 for the periods in the table of 6.2; not entitled on 18 Sep 2024, 12 Sep 2025 and 19 Sep 2025 (no resolution in force); entitled and absent on the nine others. |
+| Venezuela (Bolivarian Republic of) | VEN | 12 | 12 | 0 | Named in every letter (A/78/336, A/78/707, A/79/338, A/79/720, A/80/362); never permitted. |
+| Afghanistan | AFG | 10 | 10 | 0 | Named in A/78/707 (8 Jan 2024), A/79/338, A/79/720, A/80/362; never permitted. Not named in A/78/336, and voted on the two votes of 2023. |
+| Benin | BEN | 10 | 0 | 10 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Kiribati | KIR | 9 | 0 | 9 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Zambia | ZMB | 9 | 0 | 9 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Central African Republic | CAF | 8 | 0 | 8 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Equatorial Guinea | GNQ | 7 | 0 | 7 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Democratic Republic of the Congo | COD | 6 | 0 | 6 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Haiti | HTI | 6 | 0 | 6 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Madagascar | MDG | 6 | 0 | 6 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Tuvalu | TUV | 6 | 0 | 6 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Burkina Faso | BFA | 5 | 0 | 5 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Congo | COG | 5 | 0 | 5 | Named in A/79/720 (13 Jan 2025) until Add.4 (28 Mar 2025). Its five absences (10 May, 18 Sep, 19 Dec 2024; 19 Sep, 5 Dec 2025) fall outside that period. |
+| Guinea-Bissau | GNB | 5 | 0 | 5 | Named in A/79/720 until Add.5 (2 Jun 2025). Its five absences (two on 11 Dec 2024; 12 Sep, 19 Sep, 5 Dec 2025) fall outside that period. |
+| Liberia | LBR | 5 | 0 | 5 | Named in A/78/707 only; paid by Add.2 (13 Mar 2024). Absences of 27 Oct 2023 (before the letter), 10 May 2024 (after the payment) and the three of Sep and Dec 2025: non-votes. |
+| Malawi | MWI | 5 | 0 | 5 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Bolivia (Plurinational State of) | BOL | 4 | 3 | 1 | Named in A/79/720 (13 Jan 2025) and A/80/362; permitted by 80/2 (14 Oct 2025): not entitled on 12 Jun, 12 Sep and 19 Sep 2025; entitled and absent on 5 Dec 2025 (voted N on 12 Dec 2025). |
+| Dominica | DMA | 4 | 0 | 4 | Named in A/78/707 until Add.3 (21 Mar 2024). Its four absences (11 Dec 2024 twice, 19 Dec 2024, 12 Sep 2025) fall outside that period. |
+| Grenada | GRD | 4 | 0 | 4 | Named in A/79/720 until Add.2 (24 Feb 2025). Its four absences (19 Dec 2024; 12 Sep, 5 Dec, 12 Dec 2025) fall outside that period. |
+| Samoa | WSM | 4 | 0 | 4 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Cameroon | CMR | 3 | 0 | 3 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Saint Vincent and the Grenadines | VCT | 3 | 0 | 3 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Togo | TGO | 3 | 0 | 3 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Turkmenistan | TKM | 3 | 0 | 3 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Vanuatu | VUT | 3 | 0 | 3 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Antigua and Barbuda | ATG | 2 | 0 | 2 | Named in A/78/707 until Add.1 (11 Jan 2024) and in A/79/720 until Add.1 (20 Jan 2025). Its two absences (12 Sep, 12 Dec 2025) fall outside those periods. |
+| Botswana | BWA | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Burundi | BDI | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Comoros | COM | 2 | 0 | 2 | Named in A/78/336 and A/78/707 (permitted by 78/2); paid by A/78/707/Add.5 (4 Sep 2024). Not named in A/79/338 or A/79/720: its absences of 19 Dec 2024 and 12 Jun 2025 are non-votes. |
+| Gabon | GAB | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Georgia | GEO | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Jamaica | JAM | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Rwanda | RWA | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Somalia | SOM | 2 | 1 | 1 | Named in A/78/336, A/78/707, A/79/338; permitted by 78/2 and 79/3; no resolution in force on 18 Sep 2024: not entitled that day. Payment reported by A/79/338/Add.1 (18 Dec 2024), without its date. Absent on 19 Sep 2025 when not named in A/80/362: non-vote. |
+| South Sudan | SSD | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Tonga | TON | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| United Republic of Tanzania | TZA | 2 | 0 | 2 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Andorra | AND | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Argentina | ARG | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Belize | BLZ | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Bhutan | BTN | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Cabo Verde | CPV | 1 | 0 | 1 | Named in A/79/720 until Add.2 (24 Feb 2025). Its absence of 12 Dec 2025 falls outside. |
+| Cambodia | KHM | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Ecuador | ECU | 1 | 1 | 0 | Named in A/78/707 (8 Jan 2024); A/78/707/Add.4 (22 May 2024, after the vote) reports its payment without a date of payment: not entitled on the letters in force on 10 May 2024. Named again in A/79/720 until Add.3 (28 Feb 2025), outside its absence. |
+| Eritrea | ERI | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Gambia | GMB | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Honduras | HND | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Iran (Islamic Republic of) | IRN | 1 | 0 | 1 | Named in A/78/707 until Add.1 (11 Jan 2024). Its absence of 12 Sep 2025 falls outside. |
+| Iraq | IRQ | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Lesotho | LSO | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Marshall Islands | MHL | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Micronesia (Federated States of) | FSM | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Monaco | MCO | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Mozambique | MOZ | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Nigeria | NGA | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Panama | PAN | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Peru | PER | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Saint Lucia | LCA | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Seychelles | SYC | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Slovakia | SVK | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Solomon Islands | SLB | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+| Tunisia | TUN | 1 | 0 | 1 | Not named in any of the letters (A/78/336, A/78/707 and its addenda, A/79/338 and Add.1, A/79/720 and its addenda, A/80/362). |
+
+Of the 64 states, 61 have at least one non-vote; Venezuela, Afghanistan and Ecuador have only not-entitled absences. 49 of the 64 states are named in none of the letters. The 15 named in a letter are the six with not-entitled absences (Venezuela, Afghanistan, Bolivia, Sao Tome and Principe, Ecuador, Somalia) and nine (the Comoros, Liberia, Congo, Guinea-Bissau, Dominica, Grenada, Antigua and Barbuda, Cabo Verde, Iran) whose listing periods do not overlap their absence dates, as the table states.
+
+### 6.4 For T-F-METHOD (no methodology change here)
+
+The table 6.2 is a dated, document-backed list of the votes on which a state had no vote under Article 19 (the "not entitled" column: 30 absences by six states, undecayed −60 under B1 as written). `unga_votes.csv` and docs/02 §2 B1 are unchanged; both kinds of absence still score −2. If the author chooses option (b) of the P-24 block (score a not-entitled absence as 0), the list above is the input for a `votes.yaml` field; if option (c) (display only), it is the text for the country page. Default for the draft stays: keep −2 and show the reason.
 
 ## 7. A4 data-year gap (docs/10 B-857; B-536 (7))
 
@@ -334,3 +448,16 @@ Score effect (preview, for reading only): Algeria +37 (Acting) to +45 (Confronti
 | Verification | every quote re-found at its locator by a script after writing; `pnpm validate` 0 errors |
 
 Score effect (preview, for reading only): each of the 39 gains D3 +8 from 2025-12-31 (also counted as a qualifying event for passivity); e.g. Norway +47.9 and Syria +26.1 (Acting). Flags for the author are in docs/10 B-877.
+
+### T-F-UNDOCS-3: Article 19 documents (docs/10 B-878, B-879)
+
+| Item | Result |
+|---|---|
+| Letters archived | A/78/336, A/78/707 and Add.1 to Add.5, A/79/338 and Add.1, A/79/720 and Add.1 to Add.5: 15 one-page PDFs from `documents.un.org` (symbol route read with `curl`), each saved with Save Page Now or recorded from an existing capture; SHA-256 and bytes equal to the bytes fetched and to the replay fetched again |
+| Resolutions archived | A/RES/78/2, 79/3, 80/2 (permission to vote under Article 19), same checks |
+| Already archived | A/80/362 (`src_20250903_undocs_a-80-362-article19`) |
+| Not found | A/78/336/Add.1, A/79/338/Add.2, A/80/362/Add.1 and Add.2, A/78/707/Add.6, A/79/720/Add.6 |
+| Absences classified (section 6.2, 6.3) | 218 = 30 not entitled (VEN 12, AFG 10, BOL 3, STP 3, ECU 1, SOM 1) + 188 non-vote (61 states) |
+| Flags | Ecuador 10 May 2024 and Somalia 18 Sep 2024 (payment date not stated); session-opening dates; "non-vote" does not say absent or did not participate (docs/10 B-879) |
+| Changed | no data row, `unga_votes.csv` semantics and methodology unchanged; 18 source records and texts added |
+| Verification | `pnpm validate` 0 errors |

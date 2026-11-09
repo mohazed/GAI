@@ -745,3 +745,5 @@ Read CLAUDE.md, docs/08-governance.md §4–§5, docs/03-data-model.md §8–§9
 
 As decided in P-18 (docs/10 B-473): a correction's `reason` is one text, written in English, shown marked `lang="en"` on the French Corrections page; no French reason field (a schema change left for v1.1 with Arabic).
 ```
+
+Also (T-F-UNDOCS-3, docs/10 B-878, B-879): the Secretary-General's Article 19 letters of the twelve vote dates (A/78/336, A/78/707 and its five addenda, A/79/338 and Add.1, A/79/720 and its five addenda; A/80/362 was already archived) and resolutions 78/2, 79/3 and 80/2 are archived, and section 6 of `docs/review/monthly-2026-11.md` classes each of the 218 absences: 30 not entitled to vote, 188 non-vote (entitled; no vote recorded). Input for T-F-METHOD: the table 6.2 is the dated list for option (b) or the text for option (c) of the Article 19 proposal; `unga_votes.csv`, `votes.yaml` and docs/02 §2 B1 are unchanged. Left open: Ecuador (10 May 2024) and Somalia (18 Sep 2024), whose payment dates the addenda do not state; A/81/360 with Add.1 and resolution 81/2 are not archived (add them with the vote of 17 September 2026 when it gets its symbol).
