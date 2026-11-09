@@ -526,3 +526,19 @@ Window of 27 September to 9 November 2026, read on the Governments' and Parliame
 Sources added (5): `src_20260924_un-gadebate_aut-meinl-reisinger-81-en`, `src_20250926_un-gadebate_aut-meinl-reisinger-80-en`, `src_20250926_un-gadebate_nor-eide-80-en`, `src_20240928_un-gadebate_nor-eide-79-en`, `src_20260924_regjeringen_norway-increases-support-palestine`.
 
 Not done: B-899. Flags for the author: B-897 (the tiers of the two Austrian events and the Norwegian press release of 24 September 2026).
+
+### T-F-W5: full-protocol wave SVN CZE HUN POL GRC (docs/10 B-905 to B-908)
+
+Window of 27 September to 9 November 2026, read on the Governments' and Ministries' own listings (routes in B-905); the General Debate statements of sessions 79 to 81 from the P-16 lists added, and the experimental E1 to E3 entries re-searched. Every capture's replay was re-fetched and compared (bytes and SHA-256) with its index row. Preview scores are rc.1 with `--preview`, for reading only.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| SVN | GOV.SI news listing from 27 September to 8 November 2026 (728 items opened and filtered, 32 hits read), General Debate files of sessions 79 to 81 | `evt_2026_09_29_SVN_B10` (−5, the Prime Minister: under international law there is no genocide in Gaza; flagged, B-906 (3)) | General Debate statement of 24 September 2026 (no call), Embassy statement of 7 October 2026 (no speaker), Minister at the Foreign Affairs Council of 12 October, speech of 25 October | +38.3 Acting to +33.3 Acting | B9, B10, C5, E1, E2, E3 notes; `lead_20261109_SVN_1` |
+| CZE | the Ministry's press releases of 9 October to 6 November 2026 and its statements listing, General Debate files of sessions 79 to 81, web search of mzv.gov.cz, vlada.gov.cz, hrad.cz | none | President Pavel's statements (no Gaza), Foreign Minister's 2026 statements known from search summaries only | −38.3 Enabling, unchanged | B9, C5, E1, E2, E3 notes; `lead_20261109_CZE_1`, `_2` |
+| HUN | Wayback listing of kormany.hu/hirek from 27 September 2026 (343 addresses), General Debate file of session 81, police.hu releases of 2023 (E2) | `evt_2023_10_13_HUN_E2`, `evt_2023_10_18_HUN_E2`, `evt_2023_11_08_HUN_E2` (−5 each, unscored; flagged, B-906 (1)) | General Debate statement of 24 September 2026 (President Baka: the Middle East, Gaza not named) | −53.0 Sustaining, unchanged | B9, C5, E1, E2 (unchecked to has-events), E3 notes |
+| POL | GOV.PL search API (35 terms, 100 items from 27 September 2026), General Debate files of sessions 79 to 81 (the 2025 scan by OCR), Warsaw court decision IV Ns 173/23 | none | Ministry statement on Taybeh of 18 October 2026 (no speaker), Mission at the Security Council of 15 October, President's statements (Middle East, Gaza not named) | +35.3 Acting, unchanged | B9, C5, E1, E2 (unchecked to none-found), E3 notes; `lead_20261109_POL_1`, `_2` |
+| GRC | mfa.gr WordPress API through the browser pane (99 posts from 28 September to 5 November 2026), General Debate file and speaker page of session 81 | `evt_2026_09_24_GRC_B9` (+2), `evt_2026_10_07_GRC_B9` (+2) | Ministry announcement of 7 October 2026 (no speaker), interviews, Security Council statement of 29 October | +12.0 Acting, unchanged (B9 above its cap) | B9, C5, E1, E2 (unchecked to none-found), E3 notes; `lead_20261109_GRC_1`, `_2` |
+
+Sources added (6): `src_20260924_un-gadebate_grc-mitsotakis-81-en`, `src_20261007_mfa-gr_gerapetritis-rubio-diloseis`, `src_20231013_police-hu_brfk-ujabb-betiltott-gyules`, `src_20231018_police-hu_brfk-terrorszervezet-mellett`, `src_20231108_police-hu_brfk-a-kozrend-vedelmeben`, `src_20260929_gov-si_pm-odgovori-poslanska-vprasanja`.
+
+Not done: B-908. Flags for the author: B-906 (the three Hungarian E2 events, the Slovenian B10, the two Greek B9 events at +2).

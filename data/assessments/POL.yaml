@@ -173,27 +173,44 @@ indicators:
       (docs/10 B-321): a row dated 1988 would give +3 from 2023-10-07.
   B9:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      Three gaza events on joint statements the Minister signed (21 July 2025 +5, 13 August 2025 +5,
-      22 September 2025 +2) and one West Bank event (8 September 2026, unscored). Not filed, under
-      docs/10 B-314 (the speaker's own words only): the Ministry's reports of the Minister's words in
-      indirect speech (10 January 2024, "restraint" in the military response; 2 April 2024, an
-      impartial investigation of the strike on the World Central Kitchen convoy that killed a Polish
-      citizen; 15 July 2025, condemning violations of international and humanitarian law in the
-      occupied Palestinian territories), and the Ministry's unattributed statements (18 September
-      2025, src_20250918_gov-pl_komunikat-strefa-gazy: the IDF ground operation has "no sufficient
-      military justification", with a call to protect civilians and increase aid and a reference to
-      the Commission of Inquiry's genocide finding; 20 August 2026, src_20260820_gov-pl_oswiadczenie-wck:
-      Israel's ambassador summoned after the closure of the military investigation into the convoy
-      strike; 22 May 2025, condemning violations of international humanitarian law in Gaza; 30 April
-      2026, the flotilla interception called a serious violation of international law; 28 August 2026,
-      the entry into UNRWA's Qalandia centre). The joint statement of 22 August 2025 on the E1
-      settlement plan (West Bank) is named by the Ministry but its text with Poland as signatory was
-      not archived. No statement by Prime Ministers Morawiecki or Tusk calling for a ceasefire or
-      naming violations was found on GOV.PL.
+      Three gaza events on joint statements the Minister signed (21 July 2025 +5, 13 August 2025 +5, 22
+      September 2025 +2) and one West Bank event (8 September 2026, unscored). Not filed, under docs/10
+      B-314 (the speaker's own words only): the Ministry's reports of the Minister's words in indirect speech
+      (10 January 2024, "restraint" in the military response; 2 April 2024, an impartial investigation of
+      the strike on the World Central Kitchen convoy that killed a Polish citizen; 15 July 2025, condemning
+      violations of international and humanitarian law in the occupied Palestinian territories), and the
+      Ministry's unattributed statements (18 September 2025, src_20250918_gov-pl_komunikat-strefa-gazy:
+      the IDF ground operation has "no sufficient military justification", with a call to protect civilians
+      and increase aid and a reference to the Commission of Inquiry's genocide finding; 20 August 2026,
+      src_20260820_gov-pl_oswiadczenie-wck: Israel's ambassador summoned after the closure of the military
+      investigation into the convoy strike; 22 May 2025, condemning violations of international humanitarian
+      law in Gaza; 30 April 2026, the flotilla interception called a serious violation of international
+      law; 28 August 2026, the entry into UNRWA's Qalandia centre). The joint statement of 22 August 2025
+      on the E1 settlement plan (West Bank) is named by the Ministry but its text with Poland as signatory
+      was not archived. No statement by Prime Ministers Morawiecki or Tusk calling for a ceasefire or naming
+      violations was found on GOV.PL. Finish run of 2026-11-09 (T-F-W5, docs/10 B-905): the GOV.PL search
+      API was queried for 35 Polish and English terms (Gaza, Strefa Gazy, Izrael, Palestyna, Hamas, UNRWA,
+      Zachodni Brzeg, Bliski Wschód, rozejm, osadnicy, Trybunał Karny, eksport uzbrojenia, Liban, and others;
+      up to 300 results each) and filtered for items dated from 27 September 2026. Read: the Ministry's
+      statement on the Taybeh incident of 18 October 2026 (settler violence, 'a firm response from the Israeli
+      authorities'; a Ministry text without a named speaker, not filed, as B-320 (4)), the Mission's statement
+      at the Security Council debate of 15 October 2026 (Permanent Representative, R3), the Deputy Prime
+      Minister's items of 8 to 14 October and 1 and 2 November 2026 (no Gaza passage). The President's General
+      Debate statements of 24 September 2024, 23 September 2025 and 23 September 2026 name 'the Middle East'
+      and a two-state solution, not Gaza (R7), so no event (the 2025 file is a scan, read by OCR). No B9
+      event.
     queries:
-      - gov.pl search (Gaza terms, Sikorski Gaza, Tusk Gaza, wspólne oświadczenie Gaza, joint statement Gaza, zawieszenie broni)
+    - >-
+      gov.pl search (Gaza terms, Sikorski Gaza, Tusk Gaza, wspólne oświadczenie Gaza, joint statement Gaza,
+      zawieszenie broni)
+    - >-
+      gov.pl/api/data/search, 35 terms, items from 2026-09-27 (Gaza, Strefa Gazy, Izrael, Palestyna, Hamas,
+      UNRWA, Zachodni Brzeg, Bliski Wschód, Netanjahu, rozejm, osadnicy, Trybunał Karny, eksport uzbrojenia,
+      Liban, Sikorski Izrael, MSZ oświadczenie and others)
+    - >-
+      gadebate.un.org files pl_en.pdf of sessions 79, 80 (OCR) and 81 and speaker page gadebate.un.org/en/81/poland
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -259,12 +276,18 @@ indicators:
       - gov.pl search (osiedli, osadników, Zachodni Brzeg)
   C5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No divestment decision by a Polish public fund or the central bank found on GOV.PL; the funds'
-      own sites (ZUS, PFR) and the National Bank of Poland were not searched.
+      No divestment decision by a Polish public fund or the central bank found on GOV.PL; the funds' own
+      sites (ZUS, PFR) and the National Bank of Poland were not searched. Finish run of 2026-11-09 (T-F-W5):
+      two web searches (queries below) returned reports of other countries' funds only and nothing on a
+      decision by this country's public funds or central bank; the funds' and banks' own pages were not
+      opened. None-found kept.
     queries:
-      - gov.pl search (Izrael, Israel, Zachodni Brzeg with fund and investment terms)
+    - gov.pl search (Izrael, Israel, Zachodni Brzeg with fund and investment terms)
+    - >-
+      web search (Polish pension fund ZUS OR PFR divest Israeli companies OR Hungary national bank OR Greece
+      fund exclusion Israel), 2026-11-09
   C6:
     status: none-found
     checked_at: 2026-09-29
@@ -320,23 +343,45 @@ indicators:
       - gov.pl search (wizy Gaza, ewakuacja Strefa Gazy)
   E1:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      Experimental, unscored. No investigation of Polish nationals or companies for conduct in Gaza
-      found. The Regional Prosecutor's Office in Przemyśl has investigated since 2 April 2024 the
-      killing of a Polish citizen, a World Central Kitchen volunteer, in an Israeli strike in Gaza
-      (murder with explosives, Criminal Code art. 148 § 2 pt 4; extended to 2 October 2026); it
-      concerns a Polish victim, not Polish suspects, so it is not filed as E1 (docs/10 B-322).
+      Experimental, unscored. No investigation of Polish nationals or companies for conduct in Gaza found.
+      The Regional Prosecutor's Office in Przemyśl has investigated since 2 April 2024 the killing of a
+      Polish citizen, a World Central Kitchen volunteer, in an Israeli strike in Gaza (murder with explosives,
+      Criminal Code art. 148 § 2 pt 4; extended to 2 October 2026); it concerns a Polish victim, not Polish
+      suspects, so it is not filed as E1 (docs/10 B-322). Finish run of 2026-11-09 (T-F-W5): no new investigation
+      of Polish nationals or companies for conduct in Gaza found in the GOV.PL window or in a web search
+      (the prosecutions in Przemyśl on the killing of a Polish citizen are recorded above). The prosecution
+      service was not opened. None-found kept.
     queries:
-      - gov.pl search (Soból, World Central Kitchen, Gaza terms; prosecution offices publish on GOV.PL)
+    - >-
+      gov.pl search (Soból, World Central Kitchen, Gaza terms; prosecution offices publish on GOV.PL)
   E2:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      Experimental, unscored. The police and municipal decisions on assemblies were not searched; the
-      GOV.PL search found no ban on Palestine solidarity protests or symbols (P-16).
+      Experimental, unscored. No ban on Palestine solidarity protests or symbols documented by a primary
+      source found. A press report (Notes from Poland, 15 November 2023) says the Mayor of Warsaw banned
+      a pro-Palestinian march of 18 November 2023 ending near the Israeli embassy; a decision of the Regional
+      Court in Warsaw of 16 November 2023 (IV Ns 173/23, anonymised, bip.warszawa.so.gov.pl) reviewed a
+      ban of an assembly planned for 18 November whose route ended near an embassy but does not name the
+      topic: lead_20261109_POL_1. The police's and municipalities' decisions were not searched further;
+      the GOV.PL search found no ban (P-16).
+    queries:
+    - >-
+      web search (zakaz zgromadzenia Palestyna Gaza demonstracja zakazana prezydent miasta; um.warszawa.pl,
+      bip.warszawa.pl, gov.pl), 2026-11-09
+    - bip.warszawa.so.gov.pl postanowienie IV Ns 173/23 of 2023-11-16 read (pdftotext)
   E3:
     status: none-found
-    checked_at: 2026-09-29
-    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the courts were not searched.
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the
+      courts were not searched. Finish run of 2026-11-09 (T-F-W5): OKO.press and the Anadolu Agency report
+      that on 25 May 2026 Polish citizens of Palestinian origin, with the Hind Rajab Foundation, filed a
+      notification at the Regional Prosecutor's Office in Wrocław against Israeli officials (genocide, war
+      crimes, crimes against humanity; article 110 of the criminal code); no decision to open or refuse
+      an investigation is known: lead_20261109_POL_2. None-found kept.
     queries:
-      - gov.pl search (Gaza terms, ludobójstwo, zbrodnie)
+    - gov.pl search (Gaza terms, ludobójstwo, zbrodnie)
+    - web search (prokuratura śledztwo zawiadomienie Fundacja Hind Rajab Polska), 2026-11-09
