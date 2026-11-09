@@ -12,6 +12,7 @@
 #   East', no ceasefire, Gaza not named); the President's remarks of 27 October 2023 (the creation of a Palestinian state as the only way out) and his
 #   interview to Al Arabiya of 15 June 2026 (criticism of Israel's conduct in Gaza, 'What Holocaust?'), with no call for a ceasefire or an end of the
 #   blockade; the Foreign Ministry press secretary's statement of 13 October 2025 welcoming the ceasefire (a spokesperson: not a B9 speaker, R3).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; the President's site read for 5 October to 9 November 2026 and the Foreign Minister's General Debate statement of the 81st session read (no event); the Foreign Ministry's news list loads by script; A5 to A8, C4 to C6 and E1 to E3 still unchecked.
 country: BLR
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -30,8 +31,17 @@ indicators:
       full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
       is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Belarus as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain the word Belarus (searched 2026-11-09).
+      The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme,
+      Belarus not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched: the
+      shared web-search allowance of the run was used up before this session began (FINISH-PLAN Part 3 rule 2); the entry
+      is open to a later press search.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Belarus (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
   A4:
     status: none-found
     checked_at: '2026-10-05'
@@ -97,13 +107,28 @@ indicators:
       creation of the State of Palestine'' (Anadolu).'
   B9:
     status: none-found
-    checked_at: '2026-10-05'
+    checked_at: '2026-11-09'
     note: 'No B9 event filed: no statement of the President, the Prime Minister or the Foreign Minister that calls for a ceasefire
-      or an end of the blockade, or names specific violations in such a call, was found in a document that can be archived. The
-      Foreign Minister''s General Debate statements (Russian, searched and read around each hit) mention Palestine in lists of
-      conflicts and, in 2024, a humanitarian catastrophe, with no call; the President''s interview of 15 June 2026 criticises Israel''s
-      conduct without a call for a ceasefire; the other statements read are a spokesperson''s (R3): lead_20261005_BLR_1.'
-    queries: *id001
+      or an end of the blockade, or names specific violations in such a call, was found in a document that can be archived.
+      The Foreign Minister''s General Debate statements (Russian, searched and read around each hit) mention Palestine in
+      lists of conflicts and, in 2024, a humanitarian catastrophe, with no call; the President''s interview of 15 June 2026
+      criticises Israel''s conduct without a call for a ceasefire; the other statements read are a spokesperson''s (R3): lead_20261005_BLR_1.
+      Finish run, T-F-L02 (2026-11-09): the Foreign Minister''s General Debate statement of the 81st session (Maxim Ryzhenkov,
+      26 September 2026; Russian text, gadebate.un.org/sites/default/files/gastatements/81/by_ru.pdf, read, Wayback holds
+      no capture so it is not archived) names the Middle East in a list of regions (''От Европы до Ближнего Востока, от Азии
+      до Африки и Латинской Америки'') and Palestine in a list of countries ''в фокусе западного интереса''; no call, Gaza
+      not named: no event. The President''s site (president.gov.by/en, 48 items of 5 October to 9 November 2026 in eight categories,
+      full text searched for Gaza, Palestin, Israel, Hamas, Middle East, ceasefire, UNRWA) has one passage naming the Middle
+      East (22 October, no call). The Foreign Ministry''s news list (mfa.gov.by) is loaded by script and was not read.'
+    queries:
+    - Лукашенко сектор Газа прекращение огня заявление палестино-израильский конфликт
+    - МИД Беларуси заявление Газа Израиль прекращение огня Рыженков гуманитарная катастрофа
+    - Belarus Ryzhenkov OR Lukashenko Gaza Palestine statement ceasefire 2025 General Assembly 80th session
+    - Лукашенко призвал прекратить кровопролитие Израиль Палестина ХАМАС заявил президент Беларуси Газа гуманитарная помощь
+      Беларусь
+    - president.gov.by/en/events/category/{meetings,visits,addresses,commentaries,sessions,trips,other,greetings}?page=N (48
+      items of 5 October to 9 November 2026), full text searched, 2026-11-09
+    - gadebate.un.org/sites/default/files/gastatements/81/by_ru.pdf read (Russian, searched for газ, палест, ближн, израил)
   B10:
     status: none-found
     checked_at: '2026-10-05'
