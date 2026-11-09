@@ -76,14 +76,19 @@ indicators:
       - "CDX: canada.ca/en/global-affairs/news/ filtered israel, gaza, arms"
   A6:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       evt_2024_01_08_CAN_A6: no new permits for military goods to Israel that could be used in
       Gaza since 8 January 2024, with a limited number of existing permits suspended in 2024; no
       end.
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): a web search for the
+      2026 reports and decisions on export permits found only the 2025 report to Parliament already used
+      (CAD 14.7 million of military goods, 50 permits utilised, no new permits since 8 January 2024); no
+      change.
     queries:
       - "CDX: international.canada.ca/en/global-affairs/corporate/reports/export-import-controls/ (military-goods-2023, strategic-goods-2024, strategic-goods-2025, administration-2024)"
       - "CDX: canada.ca/en/global-affairs/news/ filtered arms, export"
+      - 'web search: Canada export permits Israel military goods 2026 Global Affairs Canada report to Parliament permits suspended review'
   A7:
     status: none-found
     checked_at: 2026-09-28
@@ -170,7 +175,7 @@ indicators:
       Minister's statement of 30 July 2025 announced the intention; no disagreement.
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Twelve events: the Prime Minister's statements of 12 December 2023, 14 February 2024, 26 July
       2024 (with Australia and New Zealand, +2 each), 19 May 2025 (with the United Kingdom and
@@ -185,9 +190,24 @@ indicators:
       2025 and 13 October 2025 (weaker or repeated calls; the cap is reached), and the leaders'
       statements on the West Bank of 22 May, 20 August and 8 September 2026 (West Bank conduct,
       not searched for, docs/10 B-262 (6)).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): Global Affairs Canada's
+      news feed (api.io.canada.ca, 75 items from 27 September to 8 November 2026, titles and summaries;
+      the Anand readouts with the Foreign Ministers of Türkiye and Qatar and the Canada-Lebanon joint
+      statement of 6 November read through a page reader: no Gaza passage or no call), the Prime
+      Minister's news feed (10 latest items) and searches of pm.gc.ca found no B9 event in the window.
+      Read and not filed: the Prime Minister's remarks of 22 September 2026 at the two-state event ('In
+      Gaza, immense suffering continues', announcement of CAD 100 million, no call and no violation
+      named), the statements of 7 October (Prime Minister and Minister; no Gaza passage on the
+      Minister's, Hamas and antisemitism only), the Canada-Türkiye statement of 22 October (Gaza named
+      as a subject of cooperation). The joint statement of Australia, Canada, France and the United
+      Kingdom of 13 October on the postponed Palestinian elections names no Gaza. B9 is at its cap; no
+      score effect.
     queries:
       - "CDX: pm.gc.ca/en/news/statements|speeches filtered israel, gaza, palestin, ceasefire, joint-statement"
       - "CDX: canada.ca/en/global-affairs/news/ filtered gaza, israel, palestin, statement"
+      - api.io.canada.ca news feed, department Global Affairs Canada, publishedDate>=2026-09-27 (75 items)
+      - 'web search: Prime Minister Carney statement Gaza October 2026 (pm.gc.ca, canada.ca)'
+      - 'web search: Minister Anand statement Gaza ceasefire humanitarian access (canada.ca)'
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -239,15 +259,22 @@ indicators:
       checked.
   C4:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No new labelling rule or ban on settlement goods in force. The leaders of Canada, France and
       the United Kingdom announced on 8 September 2026 that they "will therefore take steps to ban
       the importation of goods from settlements" (pm.gc.ca joint statement, not archived): an
       intention, no instrument yet; C4 when made (docs/10 B-265 (3)). West Bank conduct.
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): web searches found only
+      the announcements: the pledge of 8 September 2026, the Prime Minister's words of 22 September
+      ('with reluctance, we have announced our intention to bring forward trade restrictions') and a
+      Canadian Press explainer of 28 October saying that how and when the ban will be implemented is not
+      clear; no regulation or order in the Canada Gazette found; kept none-found.
     queries:
       - "CDX: pm.gc.ca/en/news/statements filtered settlement, two-state"
       - "CDX: canada.ca/en/global-affairs/news/ filtered settlement"
+      - 'web search: Canada settlement goods import ban Israel West Bank order regulations 2026 Canada Gazette'
+      - 'web search: Canada Gazette order Special Economic Measures Israeli settlements import prohibition November 2026'
   C5:
     status: none-found
     checked_at: 2026-09-28

@@ -84,7 +84,7 @@ indicators:
       - "CDX: www.minister.defence.gov.au/ filtered israel, gaza, middle-east"
   A6:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No government decision suspending or refusing a class of export permits to Israel, and no
       court order with that effect, found. The Government's position in the documents read is that
@@ -94,10 +94,15 @@ indicators:
       control regime applies case by case; a statement that no weapons are exported is not a
       decision suspending licences (docs/02 §2 A6). Senate Estimates and questions on notice on
       Defence export permits to Israel were not searched.
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): a web search for Senate
+      Estimates and questions on notice of 2026 on Defence export permits found only 2023 to 2025
+      material (66 active permits under review since June 2024, per the press and Declassified
+      Australia); no 2026 primary found; kept as before.
     queries:
       - "CDX: www.defence.gov.au/business-industry/ (export controls, permits) filtered israel"
       - "CDX: www.minister.defence.gov.au/ and www.foreignminister.gov.au/ filtered arms, export, permit"
       - "archive/text/src_20240918_un-press_ga12626.txt (Australia's explanation of vote)"
+      - 'web search: Australia Defence export permits Israel F-35 parts Senate Estimates October 2026 questions on notice'
   A7:
     status: none-found
     checked_at: 2026-09-28
@@ -184,7 +189,7 @@ indicators:
       August 2025 (src_20250811_fm-gov-au_to-recognise-palestine).
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Fifteen events: the Prime Minister's joint statements with Canada and New Zealand of 12
       December 2023, 14 February 2024 and 26 July 2024 (+2 each), his statement of 25 July 2025
@@ -198,6 +203,20 @@ indicators:
       revocation of Australian diplomats' visas (listing only; the page could not be read), the Prime Minister's statement of 9 October 2025
       welcoming the peace plan (read in the listing only), and the transcripts and interviews
       (press remarks, not formal statements).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the Minister's media
+      releases, transcripts and speeches lists (Wayback captures of 13 and 26 October 2026) and the
+      Prime Minister's media page were read for 27 September to 9 November. Filed: evt_2026_10_14_AUS_B9
+      (+2, the joint leaders' statement of the Prime Minister and the King of Jordan, 14 October 2026).
+      Read and not filed: the Prime Minister's statement of 7 October (Hamas must disarm; no call), the
+      Minister's interviews of 21 September (SBS, Palestinian Authority, sanctions: no call) and 9
+      October (Middle East: no Gaza passage), the joint statement of 13 October on the postponed
+      Palestinian elections (no Gaza), the joint statement of 9 October on the International Criminal
+      Court (no warrants). The Minister's speeches of 23 and 24 September were already filed. B9 is at
+      its cap; no score effect.
+    queries:
+      - foreignminister.gov.au media releases, transcripts and speeches lists (Wayback captures of 13 and 26 October 2026)
+      - 'web search: Albanese Gaza ceasefire humanitarian statement Prime Minister of Australia October 2026 (pm.gov.au)'
+      - 'web search: Penny Wong Gaza statement October 2026 (foreignminister.gov.au, pm.gov.au, dfat.gov.au)'
   B10:
     status: none-found
     checked_at: 2026-09-28

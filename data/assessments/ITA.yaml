@@ -145,7 +145,7 @@ indicators:
       conditions are met; no row to add.
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Six events: the President of the Council's statements of 29 February 2024 (+2), 24 September
       2024 at the General Assembly (+2), 17 July 2025 (+5) and 3 October 2025 (+2) and her
@@ -157,9 +157,22 @@ indicators:
       Gaza called unacceptable in a speech opposing the suspension of the EU–Israel Association
       Agreement), Palazzo Chigi notes without a named speaker (29 September 2025), and the
       Minister's communications to the Senate of 2 October 2025 (published only as video).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the Wayback CDX listing
+      of the Foreign Ministry's comunicati, approfondimenti and interviste of October 2026 (47 pages;
+      the Minister's message of 7 October, the question time of October, the meeting notes read),
+      searches of esteri.it and governo.it. Filed: evt_2026_09_22_ITA_B9 (+2, the Minister's national
+      statement at the 81st General Assembly, delivered 22 September, a day before the window: aid must
+      enter Gaza without obstacles) and evt_2026_10_07_ITA_B9 (+2, the President of the Council's
+      statement of 7 October: the spiral of violence must be interrupted; tier flagged). Read and not
+      filed: the Minister's message of 7 October (Hamas, two States, no call), the joint statement of 9
+      October of eight foreign ministers on the International Criminal Court (no warrants), the
+      Minister's meetings of 1 and 15 October (no Gaza passage). B9 is above its cap; no score effect.
     queries:
       - "governo.it CDX (articles and media since October 2023): gaza, palestin, israel, cessate il fuoco, assemblea generale, comunicazioni"
       - "esteri.it CDX: dichiarazione congiunta, gaza, cessate, comunicazioni, informativa"
+      - 'Wayback CDX listing: esteri.it/it/sala_stampa/archivionotizie/{comunicati,interviste,approfondimenti}/2026/10 and 2026/11 (47 pages)'
+      - 'web search: Meloni Gaza dichiarazione ottobre novembre 2026 Presidente del Consiglio (governo.it)'
+      - 'web search: Tajani Gaza 81esima Assemblea generale ONU settembre 2026 intervento (esteri.it)'
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -231,11 +244,21 @@ indicators:
       October 2025; the Senate communications of 22 October 2025), the known FTS gap (docs/06 §7).
   D2:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_01_27_ITA_D2, confirmed in P-16 by the Ministry's release of 25 May 2024 (src_20240525_esteri_tajani-mustafa-unrwa, line 119: the Minister ordered the resumption of funding to UNRWA), which ends it; the date of the suspension is from the Minister's post on X of 27 January 2024 as quoted by ANSA. Lead lead_20260928_ITA_1 promoted."
+    checked_at: 2026-11-09
+    note: >-
+      evt_2024_01_27_ITA_D2, confirmed in P-16 by the Ministry's release of 25 May 2024
+      (src_20240525_esteri_tajani-mustafa-unrwa, line 119: the Minister ordered the resumption of
+      funding to UNRWA), which ends it; the date of the suspension is from the Minister's post on X of
+      27 January 2024 as quoted by ANSA. Lead lead_20260928_ITA_1 promoted. Finish run of 2026-11-09
+      (T-F-W3, window 27 September to 9 November 2026): a web search for a resumption of the funding of
+      UNRWA found only the announcement of 25 May 2024 (EUR 5 million to UNRWA within a EUR 35 million
+      package) and the statement of February 2025 that Italy would no longer work with UNRWA on aid
+      inside Gaza while funding it for projects outside the occupied territory (read in search
+      summaries, not opened); the event stays at `reported`, end open.
     queries:
       - "esteri.it and governo.it CDX listings: unrwa (no page in the window)"
       - "ANSA listings of 27–28 January 2024: unrwa"
+      - 'web search: Italia UNRWA contributo ripreso finanziamento Tajani 2026 Farnesina'
   D3:
     status: has-events
     checked_at: '2026-11-09'

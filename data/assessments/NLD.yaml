@@ -104,15 +104,20 @@ indicators:
       - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (titles: embargo, wapenembargo)"
   A8:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No port, airspace or flag-state refusal of an arms shipment to Israel found. The Ministers'
       answer of 3 March 2025 (see A5) says the Netherlands applies no policy to arms transport by
       Dutch-flagged ships outside sanctions. The court-ordered halt of F-35 part transit is filed
       under A6, not A8 (a licensing measure, not the denial of a named shipment).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): web search 'Rotterdam
+      Schiphol transit militaire goederen Israël regering verbod 2026' found only parliamentary
+      questions, the standing rule that transit with transshipment needs a licence and the F-35 general
+      licences (already filed under A3); no new refusal of transit by the state; kept none-found.
     queries:
       - "SRU: dt.title=\"Nederlandse vlag\" AND dt.date>=2024-01-01"
       - "rijksoverheid.nl news CDX listing: haven, doorvoer, schip, wapen"
+      - 'web search: Rotterdam Schiphol transit militaire goederen Israël regering verbod 2026'
   B1:
     status: has-events
     checked_at: 2026-09-28
@@ -186,12 +191,36 @@ indicators:
       recognition must serve the political process between the parties; no row to add.
   B9:
     status: "has-events"
-    checked_at: 2026-09-30
-    note: "Five events: the Prime Minister at the General Assembly on 26 September 2024 (+2, call for an immediate ceasefire), the Minister of Foreign Affairs' letter of 7 May 2025 requesting the Article 2 review (+5, the blockade contravenes international humanitarian law), his letter of 18 June 2025 (+2, call to lift the blockade), the joint statement of 21 July 2025 (+5) and his letter of 28 July 2025 (+5, Israel does not sufficiently meet its obligations as occupying power to supply food, water and medicine). The cap holds (+19 before decay, +10 cap). Not filed: letters without a call or a named violation read in this session (10 October 2025 on the ceasefire, 21 November 2025 on the ICJ advisory opinion, 31 March 2026 on attacks on aid workers, which calls for de-escalation in Lebanon); statements of the Prime Minister's General Assembly speeches of 2025 and 2026 were not found on rijksoverheid.nl and gadebate.un.org answered HTTP 405 to a scripted read (not read). No formal call or named violation in the twelve months to 2026-09-28 was found in the documents read. P-16: the Prime Minister's General Debate address of 25 September 2025 filed (evt_2025_09_25_NLD_B9, +2); the 2026 address was not found in an archivable form."
+    checked_at: 2026-11-09
+    note: >-
+      Five events: the Prime Minister at the General Assembly on 26 September 2024 (+2, call for an
+      immediate ceasefire), the Minister of Foreign Affairs' letter of 7 May 2025 requesting the Article
+      2 review (+5, the blockade contravenes international humanitarian law), his letter of 18 June 2025
+      (+2, call to lift the blockade), the joint statement of 21 July 2025 (+5) and his letter of 28
+      July 2025 (+5, Israel does not sufficiently meet its obligations as occupying power to supply
+      food, water and medicine). The cap holds (+19 before decay, +10 cap). Not filed: letters without a
+      call or a named violation read in this session (10 October 2025 on the ceasefire, 21 November 2025
+      on the ICJ advisory opinion, 31 March 2026 on attacks on aid workers, which calls for de-
+      escalation in Lebanon); statements of the Prime Minister's General Assembly speeches of 2025 and
+      2026 were not found on rijksoverheid.nl and gadebate.un.org answered HTTP 405 to a scripted read
+      (not read). No formal call or named violation in the twelve months to 2026-09-28 was found in the
+      documents read. P-16: the Prime Minister's General Debate address of 25 September 2025 filed
+      (evt_2025_09_25_NLD_B9, +2); the 2026 address was not found in an archivable form. Finish run of
+      2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the official publications repository
+      (SRU, 'Gaza' with dates from 2026-09-27: 82 documents of the Government, the House and the Senate)
+      was the list. Filed: evt_2026_10_27_NLD_B9 (+2, the Minister of Foreign Affairs' written answer of
+      27 October 2026 urging Israel to allow safe, unhindered and unconditional access for humanitarian
+      organisations). Read and not filed: the Minister's answer of 16 October on Ben-Gvir's statements
+      (condemns the words and states the law of armed conflict in general terms, names no violation by a
+      state), the Prime Minister's General Assembly statement of 24 September (Gaza named among places
+      of suffering, no call), the letters reporting the Councils of 22 September and 15 and 16 October
+      (third-person reports). B9 is at its cap; no score effect.
     queries:
       - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (letters 504–749 by title; 561, 563, 569, 572, 614, 617, 716 read)"
       - "rijksoverheid.nl documents CDX listing: toespraken (speeches 2023-10-11, 2023-10-24, 2024-09-26)"
       - "gadebate.un.org/en/79, 80 and 81/netherlands-kingdom (HTTP 405)"
+      - 'SRU repository.overheid.nl: dt.date>=2026-09-27 AND cql.textAndIndexes=Gaza (82 records read by title; 27 October and 16 October answers, 30 October answer, Councils'' reports read)'
+      - 'government.nl: speech by Prime Minister Jetten at the General Assembly, 2026 (read in full)'
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -253,18 +282,23 @@ indicators:
       the country's own report first (docs/02 §5).
   C4:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No ban or labelling rule concerning goods from Gaza. The national temporary sanctions decree
       barring goods from Israeli settlements from the Dutch market, in force from 22 September 2026,
       is filed as evt_2026_09_22_NLD_C4 with scope west-bank, tracked and unscored in v1; the build
       derives has-events only from a published event scoped gaza, so the hand status is none-found
       (docs/10 B-257 (5)).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the decree's own
+      publication (Staatsblad 2026, 222, published 21 July 2026) is archived
+      (src_20260721_officielebekendmakingen_stb-2026-222) and added to evt_2026_09_22_NLD_C4; no later
+      instrument found.
     queries:
       - "SRU: w.dossiernummer==23432 (letters 749, 1266322, 1268606)"
+      - 'web search: Staatsblad 2026 Tijdelijk sanctiebesluit onrechtmatige nederzettingen Palestijnse Gebieden'
   C5:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No exclusion decision by a Dutch sovereign fund or public pension fund over conduct in Gaza
       was archived. The Netherlands has no sovereign fund. ABP (civil-service pension fund) and PFZW
@@ -272,9 +306,14 @@ indicators:
       predates the window; no ABP decision page of 2024–2026 was captured. Reported sales by ABP of
       holdings over the occupied territories (2025) were not verified without web search; left to
       P-16 (docs/10 B-260).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): web search 'ABP
+      pensioenfonds beleggingen Israël bezette gebieden uitsluiting 2026' found no decision of ABP to
+      exclude companies over the occupied territories (only press from 2014 to 2018 and fund-ratio news
+      of 2026); kept none-found.
     queries:
       - "Wayback CDX: abp.nl/over-abp/actueel/nieuws/ and abp.nl since 2024 (israel, caterpillar, gaza, bezet, uitsluit)"
       - "Wayback CDX: pfzw.nl/over-ons/ (israel, uitsluit)"
+      - 'web search: ABP pensioenfonds beleggingen Israël bezette gebieden uitsluiting 2026'
   C6:
     status: none-found
     checked_at: 2026-09-28
@@ -313,7 +352,7 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Two programmes: the medical evacuation of five children from Gaza for treatment in the
       Netherlands (29 October 2025) and the funding of the medical evacuation of about 250 children
@@ -321,9 +360,15 @@ indicators:
       Not filed: medical equipment sent to Egypt for Gaza patients (December 2023, a supply, not an
       evacuation or field hospital); the €25 million for regional medical capacity (October 2025,
       funding of partners); airdrops of food (2024, 2025).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the Minister for
+      Foreign Trade and Development's written answer of 30 October 2026 (Aanhangsel 505, read) confirms
+      that the EUR 12 million package is paid in 2026 (EUR 6 million to the WHO for the evacuation of
+      250 children to Jordan) and that it holds no money for new evacuations to the Netherlands; no new
+      event.
     queries:
       - "SRU: w.dossiernummer==23432 (letters 504, 611, 616, 629, 633, 718)"
       - "rijksoverheid.nl news CDX listing: medische, evacuatie, ziekenhuis"
+      - 'SRU repository.overheid.nl: answer on the cabinet decision on medical evacuations from Gaza (ah-1277803, 30 October 2026)'
   D5:
     status: none-found
     checked_at: 2026-09-28
