@@ -13,7 +13,7 @@
 #   implementation of the Peace Plan for Gaza ... and to address the humanitarian situation on the ground without delay': no call for a ceasefire or an end of
 #   the blockade); the Prime Minister's visit to Israel of 2024 (support for the efforts towards a ceasefire agreement, a post relayed by
 #   news.ro, decayed to zero; news.ro dates it 5 September 2024, HotNews 5 November 2024); the Prime Minister's words after it (conditional support for Israel's right to self-defence).
-# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 from the Ministry of National Defence's press releases of mid-2023 to November 2026 (mapn.ro, read, not archivable); lead_20261005_ROU_4 now has an official copy that cannot be archived; the Foreign Ministry and the Presidency answer a verification check; A6 to A8, C4 to C6 and E1 to E3 still unchecked.
+# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 from the Ministry of National Defence's press releases of mid-2023 to November 2026 (mapn.ro, read, not archivable); A6 to A8 and C4 to C6 from the Official Gazette's legislative portal (acts naming Gaza, Palestine, Hamas, the West Bank or Israel since 7 October 2023); D5 note extended (Government Decision no. 1155 of 2023); lead_20261005_ROU_4 now has an official copy that cannot be archived; the Foreign Ministry, the Presidency, ANCEX and the Public Prosecutor's Office answer a verification check; E1 to E3 still unchecked.
 country: ROU
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -72,14 +72,84 @@ indicators:
     - mapn.ro/cpresa ids 17900 to 19470 (full text searched for Israel, Gaza, Palestin, Hamas, Orientul Mijlociu, israelian),
       2026-11-09
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No Government decision suspending or refusing a class of arms export licences to Israel was found. The Official Gazette''s
+      legislative portal (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina,
+      Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so
+      the Israel search is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine,
+      Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and
+      condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza
+      Strip), Government Decisions no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves
+      for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led
+      maritime operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between
+      Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None suspends or refuses licences.
+      The service''s coverage of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and
+      the customs authority are not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry
+      (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search
+      was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree prohibiting both exports to and imports from Israel was found. The Official Gazette''s legislative portal
+      (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina, Cisiordania, Hamas,
+      ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search is
+      the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these
+      that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation of Hamas),
+      Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions
+      no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population
+      of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation
+      Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel
+      on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns an embargo or a trade restriction
+      against Israel; the legislation on Israel in the window is of the other direction (Law no. 86 of 2024). The service''s coverage
+      of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority are
+      not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s
+      meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search was available (the run''s shared
+      allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Official Gazette''s
+      legislative portal (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina,
+      Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so
+      the Israel search is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine,
+      Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and
+      condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza
+      Strip), Government Decisions no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves
+      for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led
+      maritime operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between
+      Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns transit of arms.
+      Decision no. 795 of 2024 routes humanitarian goods by air or land to Greece or Türkiye and by sea to the European Union''s
+      hub in Cyprus; Parliament Decision no. 8 of 2024 concerns Romanian staff officers in the Red Sea operation, not Israel. The
+      Ministry of National Defence''s releases (1,570 of mid-2023 to 6 November 2026, read for A5) name no refusal or authorisation
+      of transit. The service''s coverage of the Israel text is partial, the decisions of the national export-control authority
+      (ANCEX) and the customs authority are not published as acts, and their sites answer a verification check (not bypassed); the
+      Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not
+      read; no web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   B1:
     status: has-events
     checked_at: '2026-10-05'
@@ -221,14 +291,86 @@ indicators:
     checked_at: '2026-10-05'
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No national ban or labelling rule for settlement goods beyond European Union law was found. The Official Gazette''s legislative
+      portal (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina, Cisiordania,
+      Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search
+      is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these
+      that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation of Hamas),
+      Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions
+      no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population
+      of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation
+      Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel
+      on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns settlements, the occupied territories
+      or the labelling of goods: the text Cisiordania occurs in no act dated 7 October 2023 or later, and ''teritoriile palestiniene
+      ocupate'' in none. The service''s coverage of the Israel text is partial, the decisions of the national export-control authority
+      (ANCEX) and the customs authority are not published as acts, and their sites answer a verification check (not bypassed); the
+      Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not
+      read; no web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or
+      the occupied territories was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09
+      through its public search service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate''
+      and Israel (the service returns at most 400 results of a text, so the Israel search is the first 400 of it)) lists, among
+      the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s
+      Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation of Hamas), Government Decision no. 1155 of 23
+      November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January 2024 and
+      no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision
+      no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation Prosperity Guardian in the Red
+      Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National
+      Strategy of 23 May 2024 against antisemitism. None concerns an investment or exclusion decision (the orders of the Ministry
+      of Finance that name Hamas, no. 346 of 2024, 173, 549, 1086 and 1473 of 2025 and 35 and 289 of 2026, amend the base prospectus
+      of the FIDELIS retail government-bond programme, whose risk factors mention the war). The Sovereign Development and Investment
+      Fund''s, the Pension Funds Supervisory Authority''s and the National Bank''s own pages were not read. The service''s coverage
+      of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority are
+      not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s
+      meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search was available (the run''s shared
+      allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No exclusion of Israeli or settlement companies from public procurement was found. The Official Gazette''s legislative
+      portal (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina, Cisiordania,
+      Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search
+      is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these
+      that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation of Hamas),
+      Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions
+      no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population
+      of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation
+      Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel
+      on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns the exclusion of Israeli or settlement
+      companies from public procurement. The National Agency for Public Procurement (anap.gov.ro did not answer on 2026-11-09) and
+      the electronic procurement system were not read. The service''s coverage of the Israel text is partial, the decisions of the
+      national export-control authority (ANCEX) and the customs authority are not published as acts, and their sites answer a verification
+      check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses
+      connections) were not read; no web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later,
+      2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none
+      dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile palestiniene ocupate'': 2 results, none
+      dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title
+      and text), 2026-11-09
   D1:
     status: has-events
     checked_at: '2026-10-05'
@@ -289,7 +431,13 @@ indicators:
   D5:
     status: none-found
     checked_at: '2026-10-05'
-    note: No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
+    note: 'No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
+      Finish run, T-F-L02 (2026-11-09): the Official Gazette''s legislative portal (legislatie.just.ro, public search service, text
+      Gaza and Fâșia Gaza) lists Government Decision no. 1155 of 23 November 2023 (Monitorul Oficial no. 1065 of 24 November 2023),
+      which grants emergency financial aid (lodging and food, for at most four months, from December 2023 to 31 March 2024) to families
+      and persons, with or without Romanian citizenship, evacuated from the Gaza Strip and present in Romania. It opens no visa
+      or refugee pathway and creates no residence or protection status, so it is read as a support measure for evacuees (the D4
+      programme) and not filed as D5; not archived. Default for the author in docs/10 B-935: not D5.'
     queries:
     - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat primul
       grup
@@ -297,6 +445,7 @@ indicators:
     - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
       civilă 2024 comunicat MApN
     - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
+    - legislatie.just.ro public search service, texts Gaza and Fâșia Gaza (acts dated 7 October 2023 or later read), 2026-11-09
   E1:
     status: unchecked
     note: Experimental, unscored; not searched in this session.
