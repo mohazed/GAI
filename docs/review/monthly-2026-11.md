@@ -632,3 +632,15 @@ Window of 27 September to 9 November 2026, read on the Governments' own sites (r
 Sources added (5): `src_20261011_kemlu_joint-statement-egypt-official-visit`, `src_20261013_kemlu_serah-terima-jabatan-menlu` (dates the change of Foreign Minister), `src_20260926_kln_fm-unga81-general-debate`, `src_20261010_kln_joint-statement-egypt-visit`, `src_20261008_mfa-dz_fm-diplomacy-day-un-81`. Failed and removed by exact id: `src_20261012_setkab_president-press-statement-egypt` (bot-check page).
 
 Not done: B-925 (E1 to E3 of the five; B8 for MYS, NGA, AZE; the Malaysian King as head of state under R3; Algeria's Presidency site, which did not answer). Flags for the author: B-926 (1) to (5).
+
+Second resumed session, with web search (docs/10 B-951, B-952). E1 to E3 of the five (E2 of DZA, NGA and AZE) filled after press and NGO searches in English and the official language (Indonesian, Malay, Arabic and French, Azerbaijani), TRIAL International's UJAR 2026 (no mention of the five) and the prosecutors' sites (none answered with a search). Web searches for the window returned nothing beyond the events already filed.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| IDN | Web search (English, Indonesian); kejaksaan.go.id (no answer); Wayback index of setkab.go.id (October to November 2026) | none | Complaints of 5 Feb and 29 Jul 2026 to the Attorney General's Office, under study, no inquiry opened (`lead_20261109_IDN_3`, E3); the Ministry's verification of a report naming Indonesia in an Israeli army document (not an investigation) | +34 Acting, unchanged | E1, E3 none-found |
+| MYS | Web search (English, Malay); agc.gov.my (no press search) | none | Government's call of 28 May 2026 for an investigation of the treatment of Malaysian flotilla members (not a domestic complaint accepted) | +31 Acting, unchanged | E1, E3 none-found |
+| DZA | Web search (English, French, Arabic); mjustice.dz and el-mouradia.dz (no answer) | none | Ministry of the Interior's answer of August 2025 to a request for a Gaza march in Algiers, indoor gatherings only (`lead_20261109_DZA_2`, E2); lawyers' complaint to the ICC (international) | +37 Acting, unchanged | E1, E2, E3 none-found |
+| NGA | Web search (English); justice.gov.ng (no search) | none | Arrests and deaths at the Islamic Movement's Palestine processions in Abuja (2024 to 2026), the group proscribed since 2019 (not an E2 ban) | −4 Passive, unchanged | E1, E2, E3 none-found |
+| AZE | Web search (English, Azerbaijani); genprosecutor.gov.az (redirects) | none | Police dispersals at the Israeli embassy in 2009, 2014 and 2018 (before the window) | −4 Passive, unchanged | E1, E2, E3 none-found |
+
+Sources added: none (leads only). Still not done: B8 for MYS, NGA and AZE (B-860); the P-16 items of B-925 (4). Flags for the author: B-952 (1) to (3).
