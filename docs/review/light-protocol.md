@@ -2811,6 +2811,23 @@ B8 is a generated indicator and was not touched. The six countries' leads (8 in 
 
 Score effect: none (none-found entries carry no points; no event was added). Provisional previews are unchanged.
 
+### T-F-L01, resumed with web search: NZL, KAZ, KGZ, TJK, TKM, UZB (2026-11-09, groups 1 and 2)
+
+The second session of the task had web search (the allowance was raised). About 40 English and Russian searches, the UN document A/79/572-S/2024/802, the 81st-session General Debate texts, TRIAL International's Universal Jurisdiction Annual Review 2026 (text searched for the six names) and the Beehive's lists (browser pane). No event was filed and no existing event changed. Records: B-953 to B-957.
+
+| Country | Set to none-found (`checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| NZL | C2, E1, E2, E3 | B9 (Beehive Foreign Affairs list; 81st statement delivered by the Permanent Representative) | none (B8 generated; no recognition) |
+| KAZ | A5, A6, A7, A8, C1, C4, C5, C6, E1, E2, E3 | B9 (81st statement of the Foreign Minister, 25 September 2026) | B8 (generated; no row) |
+| KGZ | A5, A6, A7, A8, C1, C4, C5, C6, E1, E2, E3 | B9 (President's address, 22 September 2026) | B8 (generated; no row) |
+| TJK | A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 | B9 (Foreign Minister's call of 26 September 2026 read, not archivable: lead_20261005_TJK_1) | B8 (generated; no row) |
+| TKM | A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 | B9 (81st statement: no passage on Gaza) | B8 (generated; no row) |
+| UZB | A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 | B9 (81st address: no passage on Gaza) | B8 (generated; no row) |
+
+New leads: lead_20261109_KAZ_2 and lead_20261109_KGZ_2 (A7: co-sponsorship of the joint letter of 1 November 2024; the document is a UN paper listing the two states, not archived: B-953), lead_20261109_UZB_3 (E2: Tashkent rally of 29 October 2023, press only: B-954). The bases of C5 and C6 for the five Central Asian states are thin (the search found no fund list or procurement register naming Israel); the entries say so.
+
+Score effect: none. Previews unchanged (NZL +39, KAZ +6, TJK −7).
+
 ### T-F-L02: MNG, PRK, BGR, BLR, MDA, ROU (2026-11-09, groups 3 and 4)
 
 The session had no web search (the first query answered that the run's shared allowance was used up, as for T-F-L01). It worked on the Governments' own pages, the UN's General Debate files and the Council's press list (routes and refusals in docs/10 B-930). No event was filed and no existing event changed: for 5 October to 9 November 2026 nothing that names Gaza was found for the six countries on the pages that could be read, and the 81st-session statements (22 to 28 September 2026) of all six were read (ROU and BGR again, as T-P23-1 had read them) without a ceasefire call, a call to end restrictions on aid or a named violation. 4 sources archived and recorded, 3 failed index rows removed by exact id (B-931).
