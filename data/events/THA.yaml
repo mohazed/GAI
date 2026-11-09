@@ -51,7 +51,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: 'Increased tier (+8): UNRWA''s tables give USD 90,000 pledged and received from Thailand for 2024 (USD 40,000 to the programme budget, 50,000 outside it), against USD 40,000 for 2022.'
   confidence: confirmed
@@ -86,3 +86,43 @@
     notes: 'UNRWA''s donor table for 2024 (as of 31 December 2024) has Thailand on line 126: USD 40,000 pledged and received to the programme budget and USD 50,000 outside it, 90,000 in total (ranks 89
       and 87), against USD 40,000 in 2022 (rank 77). The increased tier continues from 31 December 2024 after the 2023 event ends that day (evt_2023_12_31_THA_D3). The 2025 table is not archived (P-23).
       Filed in the light protocol (docs/10 B-711 ff.).'
+
+- id: evt_2025_12_31_THA_D3
+  revision: 1
+  country: THA
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 90,000 pledged and USD 90,000 received for Thailand, against USD 40,000 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Thailand's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de la Thaïlande à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Thailand"
+    fr: "Gouvernement de la Thaïlande"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Thailand 40,000 40,000 - - 40,000 40,000 - - 50,000 50,000 - - - - 50,000 50,000 90,000 80 90,000 78"
+    quote_lang: en
+    locator: line 96 (Thailand)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Thailand 40,000 0 40,000 0 0 0 40,000 77"
+    quote_lang: en
+    locator: line 88 (Thailand)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Thailand row at line 96 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 88: USD 90,000 pledged in 2025 against USD 40,000 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_12_31_THA_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Filed in T-F-UNDOCS-2 (docs/10 B-876)."

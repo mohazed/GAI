@@ -286,11 +286,15 @@ indicators:
       - kln.gov.my listings, term UNRWA
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event: UNRWA's tables give USD 3,440,681 for 2024 against USD 200,000 for 2022, the
-      increased tier (+8, standing from 31 December 2024), as for the countries that never suspended
-      on data/wave-6 to data/wave-9.
+      One event: UNRWA's tables give USD 3,440,681 for 2024 against USD 200,000 for 2022, the increased
+      tier (+8, standing from 31 December 2024), as for the countries that never suspended on data/wave-6
+      to data/wave-9. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) gives USD 700,000 pledged against USD 200,000 in 2022: evt_2025_12_31_MYS_D3 holds
+      the increased tier from 31 December 2025, and evt_2024_12_31_MYS_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-29

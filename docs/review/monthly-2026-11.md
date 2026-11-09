@@ -317,3 +317,20 @@ Run on 2026-11-09 with WebSearch, curl, the Wayback CDX index and the built-in b
 | B5 Indonesia | Ministry post on X of 23 November 2024, known from the press; no copy on kemlu.go.id | lead kept (`lead_20260929_IDN_1`) |
 
 Score effect (preview, for reading only): Algeria +37 (Acting) to +45 (Confronting) with the B5 event; the other records add text to existing events or are west-bank and do not move a score. Flags for the author are in docs/10 B-875.
+
+### T-F-UNDOCS-2: UNRWA 2025 donor table (docs/10 B-876, B-877)
+
+| Item | Result |
+|---|---|
+| Table | `src_20251231_unrwa_donor-ranking-2025`: UNRWA table 3 of the 2025 set, "as of 31 December 2025", from the Wayback capture of 21 May 2026 (unrwa.org itself shows a Cloudflare check, not clicked); 489,397 bytes, sha256 checked against the replay |
+| States with a row in the universe | 56 (EU, UN agencies, NGOs and committees are not states) |
+| Above their 2022 contribution (D3 increased, +8, from 2025-12-31) | 39: AND ARE AUS BEL CAN CHL CHN CYP DNK ESP EST FRA GBR GRC IDN IND IRL ISL JOR KAZ KOR LBN LIE LTU LUX MDV MEX MYS NOR OMN PAK POL PRT RUS SMR SVN SYR THA ZAF |
+| First D3 event for the state | IND, RUS, SYR |
+| Row, not above 2022 (no event) | AUT BGD BRN CHE DEU FIN ITA JPN KWT MCO MLT NLD PHL QAT SAU TUR VAT |
+| No row in the 2025 table (no event) | every other state, including USA and SWE (D2 stays open) |
+| 2024 events ended on 2025-12-31 | 55 events (20 states without a 2025 event: ARM BRA COL DZA GUY IRQ JPN KWT LKA LVA MLT MNE NLD NZL PHL QAT SAU TUR VNM ZWE; the 2024 or restored event of the 39 above, so that no year is counted twice) |
+| Open restored tiers left as filed | AUT CHE DEU FIN ITA ROU |
+| Assessments | D3 of all 193 states: note, query and `checked_at` updated; IND, RUS, SYR none-found to has-events |
+| Verification | every quote re-found at its locator by a script after writing; `pnpm validate` 0 errors |
+
+Score effect (preview, for reading only): each of the 39 gains D3 +8 from 2025-12-31 (also counted as a qualifying event for passivity); e.g. Norway +47.9 and Syria +26.1 (Acting). Flags for the author are in docs/10 B-877.

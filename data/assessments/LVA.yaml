@@ -202,11 +202,17 @@ indicators:
     checked_at: '2026-10-14'
   D3:
     status: has-events
-    note: 'Three events: increased from 31 December 2023 on the 2023 table (USD 124,964 against USD 17,580 in 2022; ended 29 January 2024), restored ''no later than'' 27 May 2024 (`reported`:
-      Re:Baltica) and increased again from 31 December 2024 on the 2024 table (USD 18,359 against USD 17,580: a narrow margin). The 2025 table was not archived (P-23).'
+    checked_at: '2026-11-09'
+    note: >-
+      Three events: increased from 31 December 2023 on the 2023 table (USD 124,964 against USD 17,580 in
+      2022; ended 29 January 2024), restored 'no later than' 27 May 2024 (`reported`: Re:Baltica) and increased
+      again from 31 December 2024 on the 2024 table (USD 18,359 against USD 17,580: a narrow margin). UNRWA's
+      table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has
+      no row for Latvia, so 2025 does not exceed 2022: no 2025 event; evt_2024_12_31_LVA_D3 ends on 2025-12-31,
+      from which the 2025 table decides the tier (docs/10 B-876).
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Latvia
-    checked_at: '2026-10-14'
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: No medical-evacuation programme or field hospital for Gaza was found. A Cabinet order of 2009 on the rehabilitation in Latvia of Palestinian children wounded in Gaza is known from a web search only (not read); it predates the window and no use of it since 2023 was found.

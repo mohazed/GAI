@@ -161,10 +161,16 @@ indicators:
     checked_at: '2026-10-06'
   D3:
     status: has-events
-    note: 'D3 increased from 31 December 2024: UNRWA''s table for 2024 gives USD 676,531 received (line 94) against no row in 2022 (a zero) and none in 2023; the 2025 table was not archived.'
+    checked_at: '2026-11-09'
+    note: >-
+      D3 increased from 31 December 2024: UNRWA's table for 2024 gives USD 676,531 received (line 94) against
+      no row in 2022 (a zero) and none in 2023; UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Guyana, so 2025 does not exceed 2022: no 2025
+      event; evt_2024_12_31_GUY_D3 ends on 2025-12-31, from which the 2025 table decides the tier (docs/10
+      B-876).
     queries:
     - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guyana
-    checked_at: '2026-10-06'
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: No medical-evacuation programme or field hospital for Gaza was found.

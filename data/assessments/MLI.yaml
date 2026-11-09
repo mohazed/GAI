@@ -170,9 +170,16 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: none-found
-    note: No row for Mali in UNRWA's donor rankings for 2022, 2023 or 2024.
-    queries: *id001
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-09'
+    note: >-
+      No row for Mali in UNRWA's donor rankings for 2022, 2023 or 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Mali, so 2025 does not exceed 2022: no 2025
+      event (docs/10 B-876).
+    queries:
+    - >-
+      archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt,
+      src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: No medical-evacuation programme for Gazans and no field hospital deployed by Mali was found in the sources read.

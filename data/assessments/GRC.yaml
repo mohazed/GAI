@@ -298,12 +298,16 @@ indicators:
       - mfa.gr search (UNRWA); primeminister.gr search (UNRWA)
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_GRC_D3), increased tier: USD 85,784 for 2024 against USD 30,864 for
-      2022 in UNRWA's archived tables.
+      One event (evt_2024_12_31_GRC_D3), increased tier: USD 85,784 for 2024 against USD 30,864 for 2022
+      in UNRWA's archived tables. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31
+      December 2025, read 2026-11-09) gives USD 290,161 pledged against USD 30,864 in 2022: evt_2025_12_31_GRC_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_GRC_D3 ends on 2025-12-31 (docs/10
+      B-876).
     queries:
-      - UNRWA donor tables 2022 and 2024 (archived by wave 1)
+    - UNRWA donor tables 2022 and 2024 (archived by wave 1)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-29

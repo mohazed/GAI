@@ -8,7 +8,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: 'Increased tier (+8): Pakistan''s 2024 contribution to UNRWA (USD 11,740) exceeds its 2022 contribution (USD 8,756) in nominal USD per UNRWA''s donor tables (docs/02 §2 D3; docs/calibration/README.md
     R10).'
@@ -46,6 +46,7 @@
       2,984) and the tier is the mechanical D3 test on nominal USD (B-713); (2) no row in 2023 is read as no contribution that year, not as a suspension (no announcement found; D2 none-found); the restored
       tier is superseded by the increased tier. Dated 31 December 2024, as for the Philippines (B-708). The 2025 table is not archived (P-23). 673 days old at the build date: not a qualifying event inside
       365 days. Filed in the light protocol (docs/10 B-750 ff.).'
+
 - id: evt_2025_09_23_PAK_B9
   revision: 1
   country: PAK
@@ -91,6 +92,7 @@
       Flags: (1) call tier: the statement''s third measure, ''a categorical end to any forced displacement of Palestinians'', is a call against a prospective act, not a named violation, so the +5 tier is
       not used; (2) the West Bank sentence (E1, ''a grave violation of international law'') would be a +5 West Bank event, unscored in rc.1, and is not filed separately (same speaker, same day: one event).
       407 days old on 2026-11-04: counted after decay. Filed in the light protocol (docs/10 B-750 ff.).'
+
 - id: evt_2025_09_26_PAK_B9
   revision: 1
   country: PAK
@@ -139,6 +141,47 @@
     notes: 'General Debate of the 80th session, 26 September 2025 (the file''s heading). The Prime Minister is head of government (R3). Flags: (1) ''genocidal onslaught'' read as a legal characterisation
       (+5), as ''what they called acts of genocide'' for other speakers; (2) the ceasefire passage is a hope (''we must find a path''), not used for the tier. 404 days old on 2026-11-04: counted after decay,
       not a qualifying event inside 365 days. Filed in the light protocol (docs/10 B-750 ff.).'
+
+- id: evt_2025_12_31_PAK_D3
+  revision: 1
+  country: PAK
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 14,164 pledged and USD 14,164 received for Pakistan, against USD 8,756 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Pakistan's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution du Pakistan à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Pakistan"
+    fr: "Gouvernement du Pakistan"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Pakistan 14,164 14,164 - - 14,164 14,164 - - - - - - - - - - 14,164 110 14,164 108"
+    quote_lang: en
+    locator: line 127 (Pakistan)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Pakistan 8,756 0 8,756 0 0 0 8,756 93"
+    quote_lang: en
+    locator: line 104 (Pakistan)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Pakistan row at line 127 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 104: USD 14,164 pledged in 2025 against USD 8,756 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_12_31_PAK_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Filed in T-F-UNDOCS-2 (docs/10 B-876)."
+
 - actor:
     en: Deputy Prime Minister and Minister of Foreign Affairs
     fr: Vice-Premier ministre et ministre des Affaires étrangères
@@ -190,6 +233,7 @@
     fr: Le ministre des Affaires étrangères et sept homologues ont condamné les violations répétées par Israël du cessez-le-feu à Gaza et appelé toutes les parties à le préserver.
   supersedes: null
   type: repeatable
+
 - actor:
     en: Deputy Prime Minister and Minister of Foreign Affairs
     fr: Vice-Premier ministre et ministre des Affaires étrangères
@@ -244,6 +288,7 @@
     fr: Le ministre des Affaires étrangères du Pakistan et onze homologues ont qualifié les attaques d'Israël contre la flottille pour Gaza de violations du droit international.
   supersedes: null
   type: repeatable
+
 - actor:
     en: Deputy Prime Minister and Minister of Foreign Affairs
     fr: Vice-Premier ministre et ministre des Affaires étrangères
@@ -291,6 +336,7 @@
     fr: Le ministre des Affaires étrangères et sept homologues ont condamné les attaques de colons contre des Palestiniens et contre deux mosquées en Cisjordanie occupée.
   supersedes: null
   type: repeatable
+
 - actor:
     en: Deputy Prime Minister and Minister of Foreign Affairs
     fr: Vice-Premier ministre et ministre des Affaires étrangères
@@ -338,6 +384,7 @@
     fr: Le ministre des Affaires étrangères et sept homologues ont condamné le ciblage des établissements de santé et des infrastructures civiles dans la bande de Gaza.
   supersedes: null
   type: repeatable
+
 - actor:
     en: Deputy Prime Minister and Minister of Foreign Affairs
     fr: Vice-Premier ministre et ministre des Affaires étrangères
@@ -385,6 +432,7 @@
     fr: Le ministre des Affaires étrangères et sept homologues ont condamné les propositions de ministres israéliens de déplacer de force les Palestiniens de la bande de Gaza.
   supersedes: null
   type: repeatable
+
 - id: evt_2026_09_22_PAK_B9
   revision: 1
   country: PAK

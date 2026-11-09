@@ -203,7 +203,7 @@
   indicator: D3
   type: standing
   date: '2024-03-15'
-  end: null
+  end: '2025-12-31'
   points: 5
   points_rationale: "Restored tier (+5): funding to UNRWA resumed after the pause. Not the increased tier: UNRWA's tables show USD 13,797,995 from Australia in 2022 and USD 3,980,546 in 2024."
   confidence: confirmed
@@ -774,6 +774,46 @@
       notes: "Re-read: the signatories, including the Foreign Minister of Australia, offer support for treating patients from Gaza in the West Bank and urge Israel to lift restrictions on medical deliveries; read as a call to end restrictions. Call tier agrees. The offer is not a D4 programme."
     notes: "Joint statement of 26 foreign ministers, two development ministers and EU office-holders. The offer to fund or staff treatment is conditional (\"stand ready\"), so no D4 event."
 
+- id: evt_2025_12_31_AUS_D3
+  revision: 1
+  country: AUS
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 26,082,750 pledged and USD 26,082,750 received for Australia, against USD 13,797,995 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Australia's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de l'Australie à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Australia"
+    fr: "Gouvernement de l'Australie"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Australia 26,082,750 26,082,750 - - 26,082,750 26,082,750 - - - - - - - - - - 26,082,750 9 26,082,750 9"
+    quote_lang: en
+    locator: line 17 (Australia)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Australia 13,797,995 0 13,797,995 0 0 0 13,797,995 16"
+    quote_lang: en
+    locator: line 25 (Australia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Australia row at line 17 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 25: USD 26,082,750 pledged in 2025 against USD 13,797,995 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_03_15_AUS_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Australia's restored tier (+5, from 15 March 2024) ends the same day: the increased tier supersedes it. Filed in T-F-UNDOCS-2 (docs/10 B-876)."
+
 - id: evt_2026_06_08_AUS_B9
   revision: 1
   country: AUS
@@ -925,3 +965,4 @@
       verdict: agree
       notes: "Re-read: remarks at the roundtable on health and humanitarian access in Gaza, 24 September 2026; a call for unhindered assistance citing the ICJ's binding orders. Call tier agrees."
     notes: "Remarks in New York, the day after evt_2026_09_23_AUS_B9 (different day, so a separate event)."
+

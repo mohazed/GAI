@@ -266,8 +266,14 @@ indicators:
       line 28).
   D3:
     status: has-events
-    checked_at: 2026-09-28
-    note: evt_2024_12_31_BEL_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024).
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_12_31_BEL_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024). UNRWA's table
+      for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD
+      12,760,368 pledged against USD 12,558,653 in 2022: evt_2025_12_31_BEL_D3 holds the increased tier
+      from 31 December 2025, and evt_2024_12_31_BEL_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-28

@@ -337,11 +337,16 @@ indicators:
       - mofa.go.kr 보도자료 full text (UNRWA)
   D3:
     status: has-events
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_KOR_D3), increased tier: UNRWA's tables give USD 2,182,037 for 2022
-      and USD 20,221,558 pledged (14,108,348 received) for 2024.
+      One event (evt_2024_12_31_KOR_D3), increased tier: UNRWA's tables give USD 2,182,037 for 2022 and
+      USD 20,221,558 pledged (14,108,348 received) for 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 4,759,572 pledged against USD 2,182,037 in 2022:
+      evt_2025_12_31_KOR_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_KOR_D3 ends
+      on 2025-12-31 (docs/10 B-876).
     queries:
-      - archive/text UNRWA donor tables 2022 and 2024 (Republic of Korea)
+    - archive/text UNRWA donor tables 2022 and 2024 (Republic of Korea)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29

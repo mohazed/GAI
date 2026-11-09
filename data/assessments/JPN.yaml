@@ -295,7 +295,14 @@ indicators:
     note: One event (suspension of 28 January 2024, ended on 2 April 2024).
   D3:
     status: has-events
-    note: Restored tier from 2 April 2024, increased tier from 31 December 2024 on UNRWA's tables.
+    checked_at: '2026-11-09'
+    note: >-
+      Restored tier from 2 April 2024, increased tier from 31 December 2024 on UNRWA's tables. UNRWA's table
+      for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD
+      28,256,437 pledged, not above USD 30,152,202 in 2022: no 2025 event; evt_2024_12_31_JPN_D3 ends on
+      2025-12-31, from which the 2025 table decides the tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     note: >-

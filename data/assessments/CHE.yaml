@@ -287,10 +287,17 @@ indicators:
       - newsd.admin.ch releases (UNRWA)
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_05_08_CHE_D3 (restored, +5, from the decision of 8 May 2024) and evt_2023_12_31_CHE_D3 (increased, +8, from 31 December 2023 to the hold of 4 March 2024: USD 26,797,659 in 2023 against 25,534,028 in 2022, UNRWA's 2023 table archived in P-16). 2024: USD 13,426,817, below 2022."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_05_08_CHE_D3 (restored, +5, from the decision of 8 May 2024) and evt_2023_12_31_CHE_D3 (increased,
+      +8, from 31 December 2023 to the hold of 4 March 2024: USD 26,797,659 in 2023 against 25,534,028 in
+      2022, UNRWA's 2023 table archived in P-16). 2024: USD 13,426,817, below 2022. UNRWA's table for 2025
+      (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD 17,327,689
+      pledged, not above USD 25,534,028 in 2022: no 2025 event; the restored tier stands as filed (a lower
+      or missing contribution is not a stated suspension, R10) (docs/10 B-876).
     queries:
-      - ws.parlament.ch titles (UNRWA)
+    - ws.parlament.ch titles (UNRWA)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-29

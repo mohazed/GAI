@@ -160,9 +160,18 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: has-events
-    note: 'One event: USD 1,298,827 pledged in UNRWA''s 2024 table (line 87) against USD 5,000 in 2022 (line 106), increased tier from 31 December 2024. The 2025 table is not archived (P-23).'
-    queries: *id001
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-09'
+    note: >-
+      One event: USD 1,298,827 pledged in UNRWA's 2024 table (line 87) against USD 5,000 in 2022 (line 106),
+      increased tier from 31 December 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 50,000 pledged against USD 5,000 in 2022: evt_2025_12_31_MDV_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_MDV_D3 ends on 2025-12-31 (docs/10
+      B-876).
+    queries:
+    - >-
+      archive/text/src_2022…2024 UNRWA donor rankings (src_20221231_unrwa_donor-ranking-2022, src_20231231_unrwa_donor-ranking-2023,
+      src_20241231_unrwa_donor-ranking-2024), searched
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: No medical-evacuation programme for Gazans and no field hospital deployed by the Maldives was found (the President's Office's search for Gaza lists none).

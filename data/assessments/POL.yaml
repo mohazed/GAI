@@ -290,12 +290,16 @@ indicators:
       - gov.pl search (UNRWA, UNRWA wpłata)
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_POL_D3), increased tier: UNRWA's tables give USD 205,956 for 2022 and
-      USD 2,025,766 for 2024; Poland never suspended.
+      One event (evt_2024_12_31_POL_D3), increased tier: UNRWA's tables give USD 205,956 for 2022 and USD
+      2,025,766 for 2024; Poland never suspended. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 1,058,649 pledged against USD 205,956 in 2022:
+      evt_2025_12_31_POL_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_POL_D3 ends
+      on 2025-12-31 (docs/10 B-876).
     queries:
-      - gov.pl search (UNRWA)
+    - gov.pl search (UNRWA)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29

@@ -145,11 +145,19 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: has-events
-    note: 'UNRWA''s donor ranking for 2024 gives Zimbabwe USD 500,000 pledged and received (line 99); the tables for 2022 and 2023 have no Zimbabwe row. D3 increased (+8) from 31 December 2024
-      on the no-2022-row precedent (docs/10 B-445, B-679 (1)): evt_2024_12_31_ZWE_D3. The 2025 table is not archived, so the state is left open (P-23).'
+    checked_at: '2026-11-09'
+    note: >-
+      UNRWA's donor ranking for 2024 gives Zimbabwe USD 500,000 pledged and received (line 99); the tables
+      for 2022 and 2023 have no Zimbabwe row. D3 increased (+8) from 31 December 2024 on the no-2022-row
+      precedent (docs/10 B-445, B-679 (1)): evt_2024_12_31_ZWE_D3. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Zimbabwe, so 2025 does not exceed 2022: no
+      2025 event; evt_2024_12_31_ZWE_D3 ends on 2025-12-31, from which the 2025 table decides the tier (docs/10
+      B-876).
     queries:
-    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
-    checked_at: '2026-11-04'
+    - >-
+      archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt,
+      src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: unchecked
     note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'

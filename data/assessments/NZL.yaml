@@ -211,11 +211,16 @@ indicators:
     - mfat.govt.nz Israel-Hamas Conflict, frequently asked questions on UNRWA
   D3:
     status: has-events
-    checked_at: '2026-10-05'
-    note: 'Two events from UNRWA''s donor tables: increased tier from 31 December 2023 (USD 602,400 against USD
-      560,800 in 2022) and from 31 December 2024 (USD 612,400). The 2025 table is not archived.'
+    checked_at: '2026-11-09'
+    note: >-
+      Two events from UNRWA's donor tables: increased tier from 31 December 2023 (USD 602,400 against USD
+      560,800 in 2022) and from 31 December 2024 (USD 612,400). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for New Zealand, so 2025 does not exceed 2022:
+      no 2025 event; evt_2024_12_31_NZL_D3 ends on 2025-12-31, from which the 2025 table decides the tier
+      (docs/10 B-876).
     queries:
     - UNRWA donor tables 2022, 2023 and 2024 (archived), row New Zealand
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: '2026-10-05'

@@ -278,8 +278,16 @@ indicators:
       - "CDX: www.foreignminister.gov.au/ and www.pm.gov.au/media/ pages first captured 2024-01-25…2024-02-15"
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_03_15_AUS_D3 (restored, +5, no end) and evt_2023_12_31_AUS_D3 (increased, +8, from 31 December 2023 to the pause of 27 January 2024: USD 14,542,856 in 2023 against 13,797,995 in 2022, UNRWA's 2023 table archived in P-16). 2024: USD 3,980,546, below 2022."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_03_15_AUS_D3 (restored, +5, no end) and evt_2023_12_31_AUS_D3 (increased, +8, from 31 December
+      2023 to the pause of 27 January 2024: USD 14,542,856 in 2023 against 13,797,995 in 2022, UNRWA's 2023
+      table archived in P-16). 2024: USD 3,980,546, below 2022. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 26,082,750 pledged against USD 13,797,995 in 2022:
+      evt_2025_12_31_AUS_D3 holds the increased tier from 31 December 2025, and evt_2024_03_15_AUS_D3 ends
+      on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-28

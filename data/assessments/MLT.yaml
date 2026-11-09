@@ -182,11 +182,17 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: has-events
-    note: 'Two events (D3 increased, from 31 December 2023, then from 31 December 2024): UNRWA''s table for 2023 gives USD 159,818 for Malta (rank 83) and the 2024 table USD 204,484, against USD
-      80,061 in 2022. A mechanical reading of small amounts, flagged as for Thailand (docs/10 B-711). The 2025 table is not archived (P-23).'
+    checked_at: '2026-11-09'
+    note: >-
+      Two events (D3 increased, from 31 December 2023, then from 31 December 2024): UNRWA's table for 2023
+      gives USD 159,818 for Malta (rank 83) and the 2024 table USD 204,484, against USD 80,061 in 2022.
+      A mechanical reading of small amounts, flagged as for Thailand (docs/10 B-711). UNRWA's table for
+      2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD 57,803
+      pledged, not above USD 80,061 in 2022: no 2025 event; evt_2024_12_31_MLT_D3 ends on 2025-12-31, from
+      which the 2025 table decides the tier (docs/10 B-876).
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Malta
-    checked_at: '2026-11-04'
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     note: 'One event (D4, one per programme): the Government''s programme of medical care in Malta for injured children from Gaza, dated ''no later than'' 22 September 2025 from the Prime Minister''s

@@ -161,10 +161,16 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: has-events
-    note: 'One D3 event (increased): the 2024 contribution of USD 100,000 exceeds the 2022 contribution of USD 50,000 (evt_2024_12_31_PHL_D3, +8). The 2025 table is not archived (P-23).'
+    checked_at: '2026-11-09'
+    note: >-
+      One D3 event (increased): the 2024 contribution of USD 100,000 exceeds the 2022 contribution of USD
+      50,000 (evt_2024_12_31_PHL_D3, +8). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 50,000 pledged, not above USD 50,000 in 2022: no
+      2025 event; evt_2024_12_31_PHL_D3 ends on 2025-12-31, from which the 2025 table decides the tier (docs/10
+      B-876).
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Philippines
-    checked_at: '2026-11-04'
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: No medical-evacuation programme for Gazans was found; the Office of Civil Defense's donation of supplies to Jordan's Humanitarian Air Bridge for Gaza (February 2025, GMA News and Manila

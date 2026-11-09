@@ -295,12 +295,16 @@ indicators:
       - mfa.gov.dz listings, term UNRWA, الأونروا
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event: UNRWA's tables give USD 15,000,000 for 2024 and no row for Algeria in 2022 (the
-      2022 table ranks donors down to USD 11), the increased tier (+8, standing from 31 December
-      2024), as for the countries that never suspended on data/wave-6 to data/wave-9 (docs/10
-      B-418).
+      One event: UNRWA's tables give USD 15,000,000 for 2024 and no row for Algeria in 2022 (the 2022 table
+      ranks donors down to USD 11), the increased tier (+8, standing from 31 December 2024), as for the
+      countries that never suspended on data/wave-6 to data/wave-9 (docs/10 B-418). UNRWA's table for 2025
+      (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no row for Algeria,
+      so 2025 does not exceed 2022: no 2025 event; evt_2024_12_31_DZA_D3 ends on 2025-12-31, from which
+      the 2025 table decides the tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29

@@ -291,9 +291,15 @@ indicators:
       - spa.gov.sa titles (UNRWA)
   D3:
     status: has-events
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_SAU_D3): UNRWA's tables give USD 42,279,765 pledged and received
-      from Saudi Arabia (including KSrelief) for 2024 against USD 27,000,000 for 2022.
+      One event (evt_2024_12_31_SAU_D3): UNRWA's tables give USD 42,279,765 pledged and received from Saudi
+      Arabia (including KSrelief) for 2024 against USD 27,000,000 for 2022. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 2,396,398 pledged, not above USD 27,000,000 in
+      2022: no 2025 event; evt_2024_12_31_SAU_D3 ends on 2025-12-31, from which the 2025 table decides the
+      tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29

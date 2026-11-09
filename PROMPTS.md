@@ -728,6 +728,8 @@ Also (T-P23-4, docs/10 B-856, B-857): two findings for the author and this run. 
 Also (T-F-HOUSE, docs/10 B-872): the quarterly check of 2026-11-08 found 545 of 2,107 copies not answering 200 (468 of them captures of 3 to 4 November 2026) and one hash difference; none re-archived. Run `gh workflow run wayback.yml --ref data/phase1` again after seven days, then re-archive the rows still failing from `docs/review/wayback-check-2026-11-08.tsv` with `pnpm archive <url> --id src_…`.
 
 Also (T-F-UNDOCS-1, docs/10 B-874, B-875): left open: Brazil's declaration of intervention in case 192 (`192-20250917-int-01-00-en.pdf`; the ICJ shows a human check, UNISPAL has no copy; read it when a copy Wayback can capture appears, then confirm B3 or change to B4); a French OCR of Belgium's declaration if a cleaner text is wanted; the Ministry of Foreign Affairs' copy of Indonesia's statement on the ICC warrants (X post of 23 November 2024; archive an official copy, then B5 under R2); the signatories' own copies of the joint statements of 22 September and 16 October 2026 (no score effect); Kuwait's foreign minister for the joint statement of 26 October 2023 (past 730 days, no score effect).
+
+Also (T-F-UNDOCS-2, docs/10 B-876, B-877): UNRWA's 2025 donor table is archived and D3 is filed for 2025 (39 states). Left open: the table's embedded title says "final-DRAFT" (re-capture and re-read if UNRWA publishes a revised table; Wayback shows only the capture of 21 May 2026); the quarterly Wayback check should include `src_20251231_unrwa_donor-ranking-2025`; the author decides the passivity effect of D3, SYR's in-kind reading and a restored tier after an ended increased tier for JPN and NLD (B-877).
 ```
 
 ---

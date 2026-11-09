@@ -140,10 +140,17 @@ indicators:
     checked_at: '2026-11-04'
   D3:
     status: has-events
-    note: 'One event (D3 increased, from 31 December 2024): UNRWA''s table for 2024 gives USD 27,000,000 for Kuwait against USD 12,000,000 in 2022 (flagged with the column and the D1 overlap); the 2023 amount (USD 2,000,000) is below 2022, so no 2023 event.'
+    checked_at: '2026-11-09'
+    note: >-
+      One event (D3 increased, from 31 December 2024): UNRWA's table for 2024 gives USD 27,000,000 for Kuwait
+      against USD 12,000,000 in 2022 (flagged with the column and the D1 overlap); the 2023 amount (USD
+      2,000,000) is below 2022, so no 2023 event. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 2,000,000 pledged, not above USD 12,000,000 in
+      2022: no 2025 event; evt_2024_12_31_KWT_D3 ends on 2025-12-31, from which the 2025 table decides the
+      tier (docs/10 B-876).
     queries:
-    - 'archive/text/src_2022…2024 UNRWA donor rankings (read)'
-    checked_at: '2026-11-04'
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     note: 'No medical-evacuation programme for Gazans hosted in Kuwait and no field hospital deployed by Kuwait was read in a primary (not searched beyond the General Debate texts; P-23).'

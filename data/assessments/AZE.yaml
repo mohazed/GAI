@@ -315,11 +315,18 @@ indicators:
       - Azerbaijan UNRWA suspend funding
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2023_12_31_AZE_D3 (P-16, docs/10 B-445): UNRWA's 2023 table (archived in P-16) gives Azerbaijan USD 2,000,000 in 2023 against USD 88,235 in 2022 (line 75), so the increased tier holds from 31 December 2023 to 31 December 2024; the 2024 table has no Azerbaijani row (it ranks donors down to USD 894), so no increase in 2024. No suspension, so no restoration."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2023_12_31_AZE_D3 (P-16, docs/10 B-445): UNRWA's 2023 table (archived in P-16) gives Azerbaijan
+      USD 2,000,000 in 2023 against USD 88,235 in 2022 (line 75), so the increased tier holds from 31 December
+      2023 to 31 December 2024; the 2024 table has no Azerbaijani row (it ranks donors down to USD 894),
+      so no increase in 2024. No suspension, so no restoration. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Azerbaijan, so 2025 does not exceed 2022:
+      no 2025 event (docs/10 B-876).
     queries:
-      - UNRWA donor tables 2022 and 2024 (archived), row Azerbaijan
-      - unrwa.org overall_donor_ranking_2023.pdf (403; Wayback capture 20250404101358 a 301)
+    - UNRWA donor tables 2022 and 2024 (archived), row Azerbaijan
+    - unrwa.org overall_donor_ranking_2023.pdf (403; Wayback capture 20250404101358 a 301)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-30

@@ -277,13 +277,18 @@ indicators:
       - "CDX: canada.ca/en/global-affairs/news/ filtered unrwa"
   D3:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: '2026-11-09'
     note: >-
-      evt_2024_03_08_CAN_D3 (restored, 8 March 2024) superseded by evt_2024_12_31_CAN_D3
-      (increased: USD 37.6 million in 2024 against 23.7 million in 2022, UNRWA donor tables).
+      evt_2024_03_08_CAN_D3 (restored, 8 March 2024) superseded by evt_2024_12_31_CAN_D3 (increased: USD
+      37.6 million in 2024 against 23.7 million in 2022, UNRWA donor tables). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 25,067,112 pledged against USD 23,713,560 in 2022:
+      evt_2025_12_31_CAN_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_CAN_D3 ends
+      on 2025-12-31 (docs/10 B-876).
     queries:
-      - "CDX: canada.ca/en/global-affairs/news/ filtered unrwa"
-      - "UNRWA donor tables 2022 and 2024 (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024)"
+    - 'CDX: canada.ca/en/global-affairs/news/ filtered unrwa'
+    - >-
+      UNRWA donor tables 2022 and 2024 (src_20221231_unrwa_donor-ranking-2022, src_20241231_unrwa_donor-ranking-2024)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-28

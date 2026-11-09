@@ -242,8 +242,16 @@ indicators:
   D2: {status: has-events, checked_at: 2026-09-28}
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_03_28_FRA_D3 (restored, to 31 December 2024), evt_2023_12_31_FRA_D3 and evt_2024_12_31_FRA_D3 (increased; UNRWA's tables: USD 28,909,838 in 2022, 62,421,104 in 2023, 42,682,118 in 2024; checked in P-16, docs/10 B-445)."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_03_28_FRA_D3 (restored, to 31 December 2024), evt_2023_12_31_FRA_D3 and evt_2024_12_31_FRA_D3
+      (increased; UNRWA's tables: USD 28,909,838 in 2022, 62,421,104 in 2023, 42,682,118 in 2024; checked
+      in P-16, docs/10 B-445). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December
+      2025, read 2026-11-09) gives USD 31,258,806 pledged against USD 28,909,838 in 2022: evt_2025_12_31_FRA_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_FRA_D3 ends on 2025-12-31 (docs/10
+      B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4: {status: has-events, checked_at: 2026-09-28}
   D5:
     status: none-found

@@ -299,11 +299,16 @@ indicators:
       - mofa.gov.ae news search (UNRWA)
   D3:
     status: has-events
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_ARE_D3): UNRWA's table of 2024 gives USD 20,000,000 pledged and
-      received from the UAE (and USD 10,675 from the UAE Red Crescent Society); the United Arab
-      Emirates is not listed among the donors of UNRWA's table of 2022 (the whole table, 114 lines,
-      read), so its 2022 contribution is zero.
+      One event (evt_2024_12_31_ARE_D3): UNRWA's table of 2024 gives USD 20,000,000 pledged and received
+      from the UAE (and USD 10,675 from the UAE Red Crescent Society); the United Arab Emirates is not listed
+      among the donors of UNRWA's table of 2022 (the whole table, 114 lines, read), so its 2022 contribution
+      is zero. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read
+      2026-11-09) gives USD 328,970 pledged against no row in 2022: evt_2025_12_31_ARE_D3 holds the increased
+      tier from 31 December 2025, and evt_2024_12_31_ARE_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     note: >-

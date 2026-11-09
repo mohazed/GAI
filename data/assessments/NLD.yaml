@@ -300,8 +300,17 @@ indicators:
       - "SRU: dt.title=\"UNRWA\" AND dt.date>=2023-10-07 (50 documents; 26150-211, 220, 243, 244 read)"
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_09_25_NLD_D3 (restored, to 31 December 2024), evt_2023_12_31_NLD_D3 and evt_2024_12_31_NLD_D3 (increased; UNRWA's tables: USD 21,189,038 in 2022, 40,754,272 in 2023, 21,234,283 in 2024; checked in P-16, docs/10 B-445). The 2026 budget had lowered the contribution to €11 million and the Government restored €19 million on 30–31 March 2026 (Kamerstuk 26150-243 and 244)."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_09_25_NLD_D3 (restored, to 31 December 2024), evt_2023_12_31_NLD_D3 and evt_2024_12_31_NLD_D3
+      (increased; UNRWA's tables: USD 21,189,038 in 2022, 40,754,272 in 2023, 21,234,283 in 2024; checked
+      in P-16, docs/10 B-445). The 2026 budget had lowered the contribution to €11 million and the Government
+      restored €19 million on 30–31 March 2026 (Kamerstuk 26150-243 and 244). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 16,339,869 pledged, not above USD 21,189,038 in
+      2022: no 2025 event; evt_2024_12_31_NLD_D3 ends on 2025-12-31, from which the 2025 table decides the
+      tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-28

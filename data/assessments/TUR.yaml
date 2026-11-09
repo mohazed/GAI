@@ -243,10 +243,14 @@ indicators:
     note: Türkiye did not suspend UNRWA funding; its 2024 pledges exceed its 2022 pledges (D3).
   D3:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: '2026-11-09'
     note: >-
-      Increased tier on pledges (evt_2024_12_31_TUR_D3), flagged: received amounts for 2024 are below
-      the 2022 pledges.
+      Increased tier on pledges (evt_2024_12_31_TUR_D3), flagged: received amounts for 2024 are below the
+      2022 pledges. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) gives USD 10,000,000 pledged, not above USD 25,199,080 in 2022: no 2025 event; evt_2024_12_31_TUR_D3
+      ends on 2025-12-31, from which the 2025 table decides the tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-28

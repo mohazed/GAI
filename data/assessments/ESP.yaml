@@ -246,8 +246,14 @@ indicators:
       - España suspende financiación UNRWA enero 2024 (press reports of 29 January 2024 say Spain would not suspend)
   D3:
     status: has-events
-    checked_at: 2026-09-28
-    note: evt_2024_12_31_ESP_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024).
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_12_31_ESP_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024). UNRWA's table
+      for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD
+      38,347,678 pledged against USD 13,592,803 in 2022: evt_2025_12_31_ESP_D3 holds the increased tier
+      from 31 December 2025, and evt_2024_12_31_ESP_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-28

@@ -287,15 +287,19 @@ indicators:
       - gov.si search (UNRWA)
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
       One event (evt_2024_12_31_SVN_D3), increased tier: UNRWA's tables give USD 50,710 for 2022 and USD
-      1,665,614 pledged and received for 2024; Slovenia never suspended, so D3 is dated from the end of the
-      first year whose contribution in UNRWA's archived tables exceeds 2022, as Spain and Norway (the
-      2023 table is not archived; the Government states EUR 1.2 million for 2023). The four-year
-      agreement of 2 September 2025 (EUR 4 million for 2025–2028) continues it.
+      1,665,614 pledged and received for 2024; Slovenia never suspended, so D3 is dated from the end of
+      the first year whose contribution in UNRWA's archived tables exceeds 2022, as Spain and Norway (the
+      2023 table is not archived; the Government states EUR 1.2 million for 2023). The four-year agreement
+      of 2 September 2025 (EUR 4 million for 2025–2028) continues it. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 1,172,333 pledged against USD 50,710 in 2022: evt_2025_12_31_SVN_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_SVN_D3 ends on 2025-12-31 (docs/10
+      B-876).
     queries:
-      - gov.si search (UNRWA)
+    - gov.si search (UNRWA)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-29
