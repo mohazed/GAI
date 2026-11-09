@@ -187,6 +187,7 @@ indicators:
       - kantei.go.jp General Assembly addresses of 2025 and 2026
   B9:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
       Ten gaza events, all at the call tier (+2): the Foreign Minister's statements of 2 June 2024,
       9 August 2024, 7 October 2024, 16 January 2025, 9 August 2025, 17 September 2025, 9 October 2025
@@ -204,6 +205,22 @@ indicators:
       violations in Gaza") repeats the address of the day before. No statement by Prime Minister
       Takaichi on Gaza was found; her General Assembly address of 22 September 2026 does not mention
       Gaza.
+      T-F-W6 (2026-11-09, window 27 September to 9 November 2026): the Foreign Minister's statement list (en,
+      read in the built-in browser), the Ministry's press-release index and its 'Situation in the Gaza Strip'
+      page, and the Prime Minister's speeches, statements and actions of September to November 2026
+      (japan.kantei.go.jp, read in the browser) were read. No B9 act in the window: the Foreign Minister's
+      statements of the window concern other subjects (his message of 9 October 2026 on the sanctions on the
+      International Criminal Court names no warrant and no Gaza act); the Gaza items are meetings of the
+      Ambassador in charge of Gaza rebuilding, a Parliamentary Vice-Minister and a State Minister (not B9
+      speakers) and the Japan-NCAG working group of 28 October 2026; the Prime Minister's policy speech of 5
+      October 2026 names 'the situation in the Middle East' only. The statement of 24 September 2026 and the
+      press conference of 11 January 2026 still have no Wayback capture (not archivable). The National Diet's minutes API (kokkai.ndl.go.jp/api/speech) returns no speech naming Gaza (ガザ) from 27 September to 9 November 2026; for 2026 it returns eight speeches of the Foreign Minister naming Gaza (20 February, 4 and 6 March, 24 March, 3 April, 18 May, 16 July 2026): Japan will back 'ガザにおける停戦の維持' and humanitarian aid (policy statements, not calls), and on 6 March he reported having asked Israel not to obstruct the humanitarian work of international organisations and NGOs in Gaza (his own account of a request); not filed, flagged for the author (docs/10 B-911 (3)); B9 is at its cap, so no score effect either way.
+    queries:
+      - "T-F-W6 2026-11-09: mofa.go.jp/press/statement/fm.html (statements and messages of the Foreign Minister, November 2025 to 9 November 2026)"
+      - "T-F-W6 2026-11-09: mofa.go.jp/press/release/index.html and /me_a/me1/palestine/page22e_000472.html (Gaza, Palestin*, Israel, Middle East, UNRWA)"
+      - "T-F-W6 2026-11-09: japan.kantei.go.jp/105/ speech, statement and actions lists of September to November 2026; policy speech of 5 October 2026 read in full"
+      - "T-F-W6 2026-11-09: web search 'mofa.go.jp Foreign Minister statement Gaza October 2026', 'Prime Minister Takaichi Gaza remarks October 2026'"
+      - "T-F-W6 2026-11-09: kokkai.ndl.go.jp/api/speech any=ガザ from 2026-09-27 to 2026-11-09 (0 hits); any=ガザ speaker=茂木敏充 from 2026-01-01 (8 hits, read)"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -268,12 +285,16 @@ indicators:
       - mofa.go.jp press releases (settler, West Bank)
   C5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       No exclusion decision by GPIF or another public fund was found in the sources searched; the
-      funds' own sites were not searched (P-16).
+      funds' own sites were not searched (P-16). T-F-W6 (2026-11-09): a press report (Japan Press Weekly)
+      says the Minister of Health, Labour and Welfare told the Diet in March 2025, answering a request that
+      GPIF stop investing in Israeli military-related companies, that GPIF's managers decide investments
+      and that directing them would be inappropriate: no exclusion. GPIF publishes no exclusion list.
     queries:
       - mofa.go.jp press-conference topics (sanction, Israel)
+      - "T-F-W6 2026-11-09: web search 'GPIF OR National Pension Service exclusion divest Israel companies occupied territories Gaza 2024 2025'"
   C6:
     status: none-found
     checked_at: 2026-09-29
@@ -325,8 +346,16 @@ indicators:
     queries:
       - mofa.go.jp press-conference topics (Criminal, genocide)
   E2:
-    status: unchecked
-    note: Experimental, unscored. Police and municipal decisions on assemblies were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No police or municipal prohibition of a Palestine solidarity assembly and
+      no court ruling on one was found: the reports read describe rallies in Tokyo from October 2023 to 2025
+      held with police escort (one arrest near the Israeli embassy on 20 October 2023 is an arrest at a
+      protest, not a ban). The National Police Agency and the Tokyo Metropolitan Police publish no list of
+      refused assemblies; searched in English for 2023 to 2026 (T-F-W6).
+    queries:
+      - "T-F-W6 2026-11-09: web search 'Japan police banned pro-Palestine demonstration Tokyo prohibited rally Gaza' (arabnews.jp, CIVICUS Monitor, anews items read by summary)"
   E3:
     status: none-found
     checked_at: 2026-09-29

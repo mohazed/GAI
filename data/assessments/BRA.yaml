@@ -75,20 +75,35 @@ indicators:
     queries:
       - Itamaraty notes CDX filters (israel, embaixador)
   A6:
-    status: none-found
-    checked_at: 2026-09-29
+    status: has-events
+    checked_at: 2026-11-09
     note: >-
-      No government decision suspending or refusing licences for military exports to Israel was
-      found in the Ministry's notes or the President's speeches; the export-control authority and
-      the Diário Oficial were not searched (P-16).
+      evt_2025_07_28_BRA_A6 (+10, standing, from 28 July 2025): the Minister of Foreign Affairs announced at
+      the high-level meeting on the two-State solution 'Continuidade da suspensão das exportações de material
+      de defesa para Israel, em conformidade com o Tratado sobre o Comércio de Armas'
+      (src_20250728_mre_vieira-two-state-conference, line 348), and the President said on 22 September 2025
+      that Brazil keeps exports of defence material, including dual-use items, that could be used in crimes
+      against humanity and genocide suspended (src_20250922_planalto_lula-two-state-conference, line 301).
+      Found in T-F-W6 (2026-11-09) by re-reading speeches archived for B9; the decision itself, its date and
+      any implementing act (export-control authority, Diário Oficial) were not found, so the event is dated
+      from the first archived statement and flagged for the author (docs/10 B-910). The suspension of the
+      purchase of Israeli artillery systems and armoured vehicles is known from the press only and is an
+      import measure (A7 would need both directions).
     queries:
       - Itamaraty notes CDX filters (israel, armas)
+      - "T-F-W6 2026-11-09: archive/text of src_20250728_mre_vieira-two-state-conference and src_20250922_planalto_lula-two-state-conference re-read (exporta, defesa, dual)"
+      - "T-F-W6 2026-11-09: web search 'Brasil suspende exportações de material de defesa para Israel governo Lula decisão 2025', 'exportações de material de defesa Israel suspensas Brasil Itamaraty Ministério da Defesa'"
   A7:
     status: none-found
-    checked_at: 2026-09-29
-    note: No law or decree establishing a two-way arms embargo on Israel was found.
+    checked_at: 2026-11-09
+    note: >-
+      No law or decree establishing a two-way arms embargo on Israel was found. The suspension of defence
+      exports to Israel is A6 (evt_2025_07_28_BRA_A6); the suspension of the Army's purchases of Israeli
+      artillery systems and armoured vehicles is known from the press only (CartaCapital, Revista Oeste; not
+      archived as primary), so A7 is not met (T-F-W6, 2026-11-09).
     queries:
       - Itamaraty notes CDX filters (israel, armas)
+      - "T-F-W6 2026-11-09: web search 'Brasil suspende exportações de material de defesa para Israel governo Lula decisão 2025'"
   A8:
     status: none-found
     checked_at: 2026-09-29
@@ -167,18 +182,31 @@ indicators:
       year (docs/10 B-353 (4), B-355 (4)).
   B9:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Thirteen events, all at the names-violations or legal-characterisation tier (+5): the
-      President (21 November 2023; 15 February, 24 September 2024; 17 June, 6 July, 8, 22 and 23
+      Fifteen events: fourteen at the names-violations or legal-characterisation tier (+5) and one at the call tier (+2, the IBSA statement of 24
+      September 2026); the thirteen of the P-D session are: the President (21 November 2023; 15 February, 24 September 2024; 17 June, 6 July, 8, 22 and 23
       September 2025) and the Minister (30 October 2023; 29 October, 2 December 2024; 28 July 2025;
       the joint statement of twelve Ministers of 30 April 2026). Not filed: the Ministry's press
       notes in the name of the Government (for instance the note of 22 August 2025 condemning "o uso
       da fome como método de guerra", and dozens of notes on attacks in Gaza from October 2023 to
       2026), the President's press statements and remarks without a call or a named violation, and
-      the President's General Debate statement of 22 September 2026, which speaks of "genocídio
-      praticado pelo governo Netanyahu contra mulheres e crianças em Gaza": read in the built-in
-      browser on gadebate.un.org, whose PDF refuses Save Page Now (HTTP 405 twice) and has no
-      Wayback capture, so it cannot support an event (docs/10 B-355 (1)).
+      (P-D, 2026-09-29) the President's General Debate statement of 22 September 2026, then without a
+      Wayback capture (docs/10 B-355 (1)); filed in T-F-W6, below.
+      T-F-W6 (2026-11-09, window 27 September to 9 November 2026): the President's General Debate statement of
+      22 September 2026 is now filed (evt_2026_09_22_BRA_B9, +5) from the Wayback capture of 11 October 2026
+      of the delegation's file br_pt.pdf, which reproduces the Brazilian press note of the speech; the IBSA
+      foreign ministers' media statement of 24 September 2026 is filed for the Minister
+      (evt_2026_09_24_BRA_B9, +2, as for India and South Africa). In the window: the Minister's speeches list
+      (last item 11 September 2026) and the press notes Nos. 282 to 338 (read in the built-in browser; the
+      Government's unsigned notes, e.g. No. 318 of 19 October 2026 on settler attacks in the West Bank, are
+      not B9); the joint declarations of 3 and 14 July, 28 July (with the President of Korea) and 7 August
+      2026 do not name Gaza. The Presidency's speech list could not be read (gov.br answered HTTP 429 to the
+      browser and a rate-limit page to scripts on 2026-11-09). No B9 act dated in the window was found.
+    queries:
+      - "T-F-W6 2026-11-09: gov.br/mre discursos-mre list and notas-a-imprensa pages 0 to 90 (built-in browser)"
+      - "T-F-W6 2026-11-09: Wayback CDX gadebate.un.org/sites/default/files/gastatements/81/br_* (capture 20261011004827)"
+      - "T-F-W6 2026-11-09: web search 'Lula Gaza discurso outubro 2026', 'Mauro Vieira Gaza Palestina novembro 2026 OR outubro 2026', 'Lula Gaza statement October 2026'"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -196,17 +224,20 @@ indicators:
       - Itamaraty notes CDX filters (assentament, cisjord, colonos)
   B12:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No primary document on a recall of Brazil's ambassador in Tel Aviv or a downgrade of relations
-      was found in the Ministry's notes or the President's speeches. The recall of the ambassador for
-      consultations in February 2024 and his later transfer are known to this session only from
-      general knowledge and were not read in any press or official source (no web search), so no
-      lead is filed; the
-      Diário Oficial (decrees of removal) and the Ministry's own statements are to be searched (P-16,
-      docs/10 B-355 (5)).
+      No archived primary document on a recall of Brazil's ambassador in Tel Aviv or a downgrade of relations.
+      The recall for consultations of 19 February 2024 and the removal of the ambassador on 28-29 May 2024,
+      with no successor sent, are known from the press (InfoMoney relaying Reuters, Poder360, MercoPress) and
+      recorded as lead_20261109_BRA_1; the Ministry's press note of 29 May 2024 on the ambassador's new post
+      (Wayback capture 20240604010437) says only that he held the post in Israel; no Ministry note on the
+      recall was found among the press notes captured from 19 February to 5 March 2024, and the Diário Oficial
+      decree was not found by search (T-F-W6). With an archived Ministry announcement or decree, B12 would be
+      a recall (+5, standing).
     queries:
       - Itamaraty notes CDX filters (embaixador, consulta, convoc, tel-aviv, persona)
+      - "T-F-W6 2026-11-09: Wayback CDX of gov.br/mre notas-a-imprensa, 19 February to 5 March 2024; CDX of the note of 29 May 2024"
+      - "T-F-W6 2026-11-09: web search 'Itamaraty embaixador Frederico Meyer chamado para consultas Israel fevereiro 2024', 'Frederico Salomão Duque Estrada Meyer Israel decreto Diário Oficial' (in.gov.br, gov.br), 'Brasil novo embaixador em Israel 2026 agrément'"
   C1:
     status: none-found
     checked_at: 2026-09-29
@@ -293,21 +324,45 @@ indicators:
       - Itamaraty notes CDX filters (repatriacao, humanitari, gaza)
   D5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       No visa or refugee pathway for people from Gaza was found in the Ministry's notes; the
       Palestinian relatives evacuated with Brazilian nationals entered as family members. The Ministry
       of Justice and the Diário Oficial (humanitarian-visa ordinances) were not searched (P-16).
+      T-F-W6 (2026-11-09): no interministerial MJSP/MRE ordinance of humanitarian reception for
+      Palestinians or people from Gaza was found; the ordinances found cover Afghan, Ukrainian,
+      Syrian and Haitian nationals (Nos. 9/2019, 30/2022, 36/2023, 42/2023, 60/2025, 66/2026), and a
+      press report describes a civil-society request for a family-reunion ordinance for Palestinians
+      in Gaza, not an ordinance.
     queries:
       - Itamaraty notes CDX filters (repatriacao, visto)
+      - "T-F-W6 2026-11-09: web search 'portaria interministerial visto temporário acolhida humanitária palestinos Gaza MJSP MRE'"
   E1:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      Experimental, unscored (D-12). Not searched: the Federal Police, the Federal Public
-      Prosecutor's Office and the federal courts (P-16).
+      Experimental, unscored (D-12). No investigation or prosecution of Brazilian nationals or companies for
+      conduct in Gaza was found (the federal case of December 2024 concerns an Israeli national: E3,
+      lead_20261109_BRA_2).
+    queries:
+      - "T-F-W6 2026-11-09: web searches on Brazilian investigations over Gaza (Federal Police, Federal Public Prosecutor's Office)"
   E2:
-    status: unchecked
-    note: Experimental, unscored (D-12). Not searched.
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No prohibition of a Palestine solidarity assembly by a police authority
+      or a court was found: the reports read describe rallies in São Paulo, Brasília and other cities from
+      October 2023 to June 2025 held without a ban (the São Paulo Military Police reported the June 2025 march
+      as peaceful).
+    queries:
+      - "T-F-W6 2026-11-09: web search 'proibição manifestação pró-Palestina Brasil justiça proíbe ato Palestina polícia 2024 OR 2025'"
   E3:
-    status: unchecked
-    note: Experimental, unscored (D-12). Not searched.
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). The order of a federal judge of the Federal District of 30 December 2024
+      that the Federal Police investigate an Israeli soldier on a complaint of the Hind Rajab Foundation is
+      known from the press only (the case is under seal; no court document or official statement read):
+      lead_20261109_BRA_2. No archived court record, so no event.
+    queries:
+      - "T-F-W6 2026-11-09: web search 'Justiça Federal DF decisão Polícia Federal investigar soldado israelense Yuval Vagdani janeiro 2025 Hind Rajab'"
