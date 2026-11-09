@@ -2782,3 +2782,31 @@ Each changed event's `review.notes` ends with a "Verification of 2026-11 (T-VERI
 - Leads were checked for sourcing and live URLs, not re-researched.
 - The French summaries were read for gender, capitals and the glossary's terms; a native reader's pass stays with the author (Part 4, item 4).
 - The joint-statement signatory gaps of countries outside groups 27 to 49 were not filed (P-23).
+
+## Completion of 2026-11
+
+The finish run of November 2026 (FINISH-PLAN.md Part 4, Phase C) returns to the light-protocol countries to fill the unchecked hand-researched indicators, search for new events and re-check leads. Each session appends a table here. Notes and statuses are in `data/assessments/{ISO3}.yaml` (header comment "Completion of 2026-11"); decisions are in docs/10.
+
+### T-F-L01: NZL, KAZ, KGZ, TJK, TKM, UZB (2026-11-09, groups 1 and 2)
+
+The session had no web search: the shared search allowance of the run was used up before it started (the first query answered "budget used up"). It worked on the Governments' own pages, the Wayback CDX and the Fund's published lists (FINISH-PLAN Part 3 rule 2), as T-F-W7 to W9 did. No event was filed: nothing new was found for the six countries from 5 October to 9 November 2026 on the pages that could be read. 4 sources archived and recorded (B-927).
+
+| Country | Filled (none-found, `checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| NZL | A3, A5, A7, A8, C6 (new); C4, C5 rewritten on primary documents | D2 (closes the seed-list question, B-927) | C2, E1, E2, E3 |
+| KAZ | A3 | B9 (akorda.kz read for 5 October to 9 November) | A5 to A8, B8, C1, C4 to C6, E1 to E3 |
+| KGZ | A3 | none (the Ministry answers HTTP 502; president.kg loads its items by script) | A5 to A8, B8, C1, C4 to C6, E1 to E3 |
+| TJK | A3 | B9 (mfa.tj/en, the President's items of 1 September to 7 November) | A5 to A8, B8, C4 to C6, E1 to E3 |
+| TKM | A3 | none (mfa.gov.tm/en/news, first two pages, no passage on Gaza) | A5 to A8, B8, C4 to C6, E1 to E3 |
+| UZB | A3 | B9 (president.uz items 9715 to 9831: one passage not filed, B-928) | A5 to A8, B8, C4 to C6, E1 to E3 |
+
+B8 is a generated indicator and was not touched. The six countries' leads (8 in all) stay open: none has a primary copy that could be archived with the tools available (B-929).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20240722_mfat_letter-minto-psn | The Minister of Foreign Affairs' letter of 22 July 2024 with Annex 1 | NZL A3, A5, A7, A8, C4, C6, D2 |
+| src_20250304_mfat_oia-29917-trade-israel | Ministry's OIA response of 4 March 2025 (labelling: information does not exist) | NZL C4 |
+| src_20231231_nzsuperfund_exclusions-list-december-2023 | NZ Super Fund exclusions at 31 December 2023 | NZL C5 |
+| src_20260630_nzsuperfund_exclusions-list-june-2026 | NZ Super Fund exclusions at 30 June 2026 | NZL C5 |
+
+Score effect: none (none-found entries carry no points; no event was added). Provisional previews are unchanged.

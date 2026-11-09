@@ -12,6 +12,9 @@
 #   Morning Report: "running out of patience", press only, lead_20261005_NZL_1); the General Debate statement of 26
 #   September 2024 (the Minister calls the violence in Gaza "unacceptable" and describes Israel's response as "overwhelming",
 #   with no call and no named violation; read in the General Debate site's copy, not filed).
+# Completion of 2026-11 (T-F-L01, 2026-11-09, no web search available): A3, A5, A7, A8, C6 filled from the Minister of Foreign Affairs' letter of 22 July 2024
+#   (src_20240722_mfat_letter-minto-psn) and the f35.com programme page; C4 and C5 rewritten with the Ministry's OIA 29917 response and the NZ Super Fund's own exclusion lists.
+#   C2 and E1 to E3 stay unchecked (they need press, court and treaty-register searches).
 country: NZL
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -30,8 +33,19 @@ indicators:
       of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data
       until a fetch. Nothing is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No document names a New Zealand company as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain the words New Zealand. The programme's
+      own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations as
+      operators, New Zealand not among them, and carries no supplier list by country. The Minister's statement on export controls
+      (src_20240722_mfat_letter-minto-psn, Annex 1 item 1) concerns strategic goods for the Israeli military and does not
+      mention F-35 components. Press and NGO supplier lists were not searched (no web search in this session, FINISH-PLAN
+      Part 3 rule 4); the entry is open to a later press search.
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for New Zealand (no match)
+    - f35.com/f35/global-enterprise.html read (operator nations)
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 1)
   A4:
     status: none-found
     checked_at: '2026-10-05'
@@ -40,8 +54,18 @@ indicators:
     queries:
     - sipri_orders.csv, buyer NZL
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence
+      sharing related to the Gaza campaign was found on the Ministry's page (src_20261005_mfat_israel-hamas-conflict-faq)
+      or in the Minister's letter of 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1). The letter says the Defence
+      Force took part in RIMPAC 2024, a United States-hosted multilateral exercise whose participants the United States determines,
+      and that its personnel are not training Israeli forces; it says a six-member team joined the coalition against Houthi
+      attacks in the Red Sea. Read under the A5 rule, RIMPAC is a routine multilateral exercise, not one activated for the
+      campaign (flagged for the author, docs/10 B-927). Press and NGO reports were not searched (no web search in this session).
+    queries:
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 items 2 and 3)
   A6:
     status: none-found
     checked_at: '2026-10-05'
@@ -54,11 +78,29 @@ indicators:
     - New Zealand military exports Israel export controls strategic goods Gaza government decision MFAT export permits
       Israel
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No law or decree prohibiting both exports to and imports from Israel exists. The Minister of Foreign Affairs wrote
+      on 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1 items 8 and 9) that New Zealand is not under a legal obligation
+      to impose sanctions on Israel and can impose sanctions only through regulations implementing UN Security Council resolutions
+      or under the Russia Sanctions Act; the letter lists the thirteen countries under UN regulations, which do not include
+      Israel. The Ministry's page of 5 October 2026 (src_20261005_mfat_israel-hamas-conflict-faq) shows no embargo; its OIA
+      list includes OIA 30086, advice on a proposed Unlawful Occupation of Palestine Sanctions Bill (not read). A6 records
+      the standing refusal practice of the export controls regime.
+    queries:
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 items 8 and 9)
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Minister's
+      letter of 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1 item 8) says New Zealand continues to allow the
+      shipping company ZIM to use its ports, on the ground that New Zealand supports free and open shipping and has no legal
+      obligation to sanction Israel. The Ministry's page lists no transit decision. Press and NGO reports on shipments were
+      not searched (no web search in this session).
+    queries:
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 8)
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
   B1:
     status: has-events
     checked_at: '2026-10-05'
@@ -176,24 +218,47 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
   C4:
     status: none-found
-    checked_at: '2026-10-05'
-    note: No national ban or labelling rule for settlement goods was found; the Government declined to join the
-      settlement-goods bans of the United Kingdom, France and Canada in September 2026 (RNZ, Asia Pacific Report,
-      not archived). Seven local bodies have decided their own bans (press; not national).
+    checked_at: '2026-11-09'
+    note: No national ban or labelling rule for settlement goods was found. The Ministry answered an Official Information
+      Act request on 4 March 2025 that the information on whether the Government had considered labelling requirements under
+      the Customs and Excise Act 2018 does not exist (src_20250304_mfat_oia-29917-trade-israel, section 18(e)), and the Minister's
+      letter of 22 July 2024 (Annex 1 item 9) says New Zealand has no sanctions basis for banning imports from settlement
+      companies. The Government declined to join the settlement-goods bans of the United Kingdom, France and Canada in September
+      2026 (RNZ, Asia Pacific Report, not archived). Seven local bodies have decided their own bans (press; not national).
     queries:
-    - New Zealand Israel trade review settlement goods labelling ban Parliament bill Unlawful Occupation of Palestine
-      Sanctions Bill government response
+    - New Zealand Israel trade review settlement goods labelling ban Parliament bill Unlawful Occupation of Palestine Sanctions
+      Bill government response
+    - src_20250304_mfat_oia-29917-trade-israel read
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 9)
   C5:
     status: none-found
-    checked_at: '2026-10-05'
-    note: 'No exclusion decision by the NZ Super Fund over conduct in Gaza or the occupied territories in the window.
-      The Fund excluded five Israeli banks in 2021 (before the window) and the High Court ruled in April 2026 that
-      its 2022 exclusions policy was unlawful (press): a court decision on policy, not an exclusion.'
+    checked_at: '2026-11-09'
+    note: 'No exclusion decision by the NZ Super Fund over conduct in Gaza or the occupied territories in the window. The
+      Fund''s own lists were compared: the Israeli names (Elbit Systems, AFI Properties, Shikun & Binui, Bank Hapoalim, Bank
+      Leumi, FIBI Holdings, First International Bank of Israel Holdings, Israel Discount Bank, Mizrahi Tefahot Bank, under
+      Poor ESG Practice) are on the list of 31 December 2023 (src_20231231_nzsuperfund_exclusions-list-december-2023) and
+      on that of 30 June 2026 (src_20260630_nzsuperfund_exclusions-list-june-2026). The lists of 30 June 2024, 31 December
+      2024, August 2025 and 31 December 2025 (Wayback copies, read, not archived) add no Israeli company; they record name
+      changes (Africa-Israel Properties to AFI Properties, First International Bank of Israel Holdings to FIBI Holdings),
+      and the list of June 2026 marks Africa-Israel Investments for removal. The Fund''s exclusion of Israeli banks pre-dates
+      the window (an Investment Committee paper titled Exclusion of Israeli Banks is dated January 2021; title seen on the
+      Fund''s site, not read). The High Court ruled in April 2026 that the Fund''s 2022 exclusions policy was unlawful (press):
+      a court decision on policy, not an exclusion.'
     queries:
     - New Zealand Super Fund exclusion Israeli companies Gaza West Bank settlements divest decision
+    - nzsuperfund.nz exclusions lists of 31 December 2023, 30 June 2024, 31 December 2024, August 2025, 31 December 2025 and
+      30 June 2026 compared for Israeli names
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No exclusion of Israeli or settlement companies from public procurement was found. The Minister's letter of 22 July
+      2024 (src_20240722_mfat_letter-minto-psn, Annex 1 item 9) says New Zealand has no sanctions basis for restrictions on
+      companies in the settlements; the Government Procurement Rules page (procurement.govt.nz, read 2026-11-09) names no
+      Israel-specific measure. Press reports and local-body procurement policies were not searched (no web search in this
+      session).
+    queries:
+    - procurement.govt.nz Government Procurement Rules page read
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 9)
   D1:
     status: has-events
     checked_at: '2026-10-05'
@@ -202,13 +267,17 @@ indicators:
       October 2026). Disagreement reported, not corrected: FTS counts what is booked to the appeals (docs/06 §7).'
   D2:
     status: none-found
-    checked_at: '2026-10-05'
-    note: 'No suspension: the Ministry''s frequently asked questions say New Zealand did not pause or suspend funding,
-      and that its NZ$1 million annual payment was disbursed as planned in 2024 (src_20261005_mfat_israel-hamas-conflict-faq).
-      The seed list of docs/06 §8 names New Zealand among the January 2024 suspensions: no primary of a pause was
-      found, so it is not filed (docs/10 B-504 (9)).'
+    checked_at: '2026-11-09'
+    note: 'No suspension: the Ministry''s frequently asked questions say New Zealand did not pause or suspend funding, and
+      that its NZ$1 million annual payment was disbursed as planned in 2024 (src_20261005_mfat_israel-hamas-conflict-faq).
+      The seed list of docs/06 §8 names New Zealand among the January 2024 suspensions: no primary of a pause was found, so
+      it is not filed (docs/10 B-504 (9)). Completion of 2026-11: the Minister of Foreign Affairs'' letter of 22 July 2024
+      (src_20240722_mfat_letter-minto-psn, Annex 1 item 4) states that New Zealand did not pause funding to UNRWA after the
+      January 2024 allegations and that the decision to disburse its 2024 funding in June 2024 followed consideration of the
+      UN''s response; this closes the seed-list question with a primary document (docs/10 B-927).'
     queries:
     - mfat.govt.nz Israel-Hamas Conflict, frequently asked questions on UNRWA
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 4)
   D3:
     status: has-events
     checked_at: '2026-11-09'
