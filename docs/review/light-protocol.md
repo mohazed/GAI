@@ -2853,3 +2853,31 @@ The second session had no web search either (the first query answered that the r
 What the Romanian portal shows for acts of 7 October 2023 or later (read by title and text): Parliament's Declaration no. 2 of 11 October 2023 (solidarity with Israel), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from Gaza), no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves), Parliament Decision no. 8 of 22 April 2024 (Prosperity Guardian), Law no. 86 of 9 April 2024 (a day of solidarity and friendship with Israel), the National Strategy of 23 May 2024 against antisemitism. None concerns an embargo, licences, transit, settlement goods, procurement or a fund. What the Moldovan releases show for Israel: the recognition of driving licences (six releases), the Prime Minister's meeting with Israel's Foreign Minister on 4 February 2025 and his call with Mr Netanyahu on 25 August 2025 (B-935).
 
 B8 (generated) and the pre-2023 recognition rows were not touched (a state document is needed). Leads: none opened, none closed. Score effect: none; provisional previews of the first session are unchanged (no event was added or changed; `--preview` not re-run).
+
+### T-F-L03: SVK, UKR, ATG, BHS, BLZ, BRB (2026-11-09, groups 5 and 6)
+
+The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: the WordPress interface of the Ministries and Press Office of Barbados, the Bahamas and Belize (and the Bahamas' Customs and Antigua's Police Force), the Antigua Government's release and Cabinet Note pages, and the search services of the Slovak Government Office, Ministries of Defence and Economy and Prosecutor General's Office (routes and refusals in docs/10 B-937). Every Ukrainian official site refuses a script or the built-in browser (a CAPTCHA in the pane, not touched). No event was filed; for 6 October to 9 November 2026 nothing that qualifies was found on the pages read.
+
+| Country | Filled (none-found, `checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| SVK | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Government Office search: 44 pages; Ministry of Defence, Economy and Prosecutor General's searches) | B9, B10, C1 (the Prime Minister's own releases, five archived) | B8 |
+| UKR | A3 | B9 lead (sites still refuse) | A5 to A8, C4 to C6, E1 to E3, B8 |
+| ATG | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Government releases 2025 and 2026, 19 Cabinet Notes of 2026, Police Force site) | B9; B8 now has-events (2011 General Debate statement) | none |
+| BHS | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Ministry: 1,818 posts; Customs: 277 posts and 99 pages) | B9 | none |
+| BLZ | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Press Office: 2,553 releases; Ministry: 60 items) | B9 | none |
+| BRB | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Ministry: 431 items and 92 pages) | B9 | none |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20250625_vlada-sk_fico-netanyahu-call | Prime Minister Fico's release on his call with Mr Netanyahu, 25 June 2025 | SVK C1, A6, A7, lead_20261006_SVK_3 |
+| src_20260304_vlada-sk_vlada-energeticka-bezpecnost | Government meeting of 4 March 2026 (denial of combat-aircraft overflights, Iran conflict) | SVK A5, A8 (flagged, not an instance) |
+| src_20241018_vlada-sk_fico-samit-eu-blizky-vychod | Prime Minister's statement of 18 October 2024 (indirect speech) | lead_20261109_SVK_6 |
+| src_20240201_vlada-sk_fico-rada-gaza | Prime Minister's statement of 1 February 2024 | lead_20261109_SVK_6 |
+| src_20240322_vlada-sk_fico-rada-bosna-gaza | Prime Minister's statement of 22 March 2024 (indirect speech) | SVK B10 note |
+| src_20260923_un-gadebate_svk-pellegrini-81-en | President Pellegrini's General Debate statement, 81st session (Wayback capture of 22 October 2026) | SVK B9 note (no event) |
+| src_20250910_foreign-gov-bb_statement-gulf-region | Barbados Ministry's statement of 10 September 2025 (no speaker named) | lead_20261109_BRB_2 |
+| src_20110924_un-gadebate_atg-spencer-66-en | Antigua and Barbuda's General Debate statement, 66th session (24 September 2011; Wayback capture of 18 July 2021) | ATG B8 (`recognitions.csv` row) |
+
+Leads: new `lead_20261109_SVK_6` (B9, the Prime Minister's statements of 2024) and `lead_20261109_BRB_2` (B9, a Government statement without a speaker); `lead_20261006_SVK_3` extended with the Prime Minister's own archived release; SVK 1, UKR 1, BRB 1, BHS 1, BLZ 2 and ATG 2 annotated with the session's searches; the rest stay open. Readings flagged for the author (B-938): the Barbados statement of 10 September 2025 under R3, the Slovak Prime Minister's statements, the overflight denial of 4 March 2026, the thin evidence base of the none-found entries.
+
+Score effect: ATG +3 (B8, the pre-existing tier, from the row added with a state document); none-found entries carry no points and no event was added. Provisional previews (rc.1, 2026-11-09): SVK −1 Passive, UKR +5 Acting, ATG −1 Passive, BHS +9 Acting, BLZ +24 Acting, BRB +14 Acting.
