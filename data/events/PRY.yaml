@@ -1,6 +1,51 @@
 # Hand-authored events for Paraguay (P-21 light protocol, T-P21-12, 2026-10-06).
 # Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08). B8 comes from the row PRY,2011-01-28 of data/structured/recognitions.csv.
 # Speakers for B9/B10: President (Santiago Peña Palacios, head of state and of government), Minister of Foreign Affairs (Rubén Ramírez Lezcano), R3.
+- id: evt_2024_12_09_PRY_B6
+  revision: 1
+  country: PRY
+  indicator: B6
+  type: standing
+  date: '2024-12-09'
+  end: null
+  points: -10
+  points_rationale: 'B6 (-10): the President, head of state and of government, said in an interview with AFP that his Government rejects the arrest warrant of the International Criminal Court for Israel''s
+    Prime Minister and that, if the Prime Minister visited Paraguay, ''no existe ninguna posibilidad'' that he would be detained (a stated refusal to execute the warrants of 21 November 2024; B5 and B6
+    replace each other in time and no later position was found). One press source, so `reported`.'
+  confidence: reported
+  scope:
+  - gaza
+  summary:
+    en: The President said in an interview with AFP that Israel's Prime Minister, subject of an International Criminal Court arrest warrant, would not be detained on a visit to Paraguay.
+    fr: Le président a déclaré dans un entretien à l'AFP que le Premier ministre israélien, visé par un mandat d'arrêt de la Cour pénale internationale, ne serait pas arrêté lors d'une visite au Paraguay.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20241210_ultimahora_pena-netanyahu-no-sera-detenido
+    quote: si el primer ministro israelí visitara Paraguay “no existe ninguna posibilidad” de que sea detenido.
+    quote_lang: es
+    quote_en: if Israel's Prime Minister visited Paraguay 'there is no possibility' of him being detained.
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'The archived text (line 3) re-read against the event: the sentence reports, in indirect speech with a short direct quotation, that the President said in an AFP interview that his Government
+        condemns and rejects the warrant and that there is no possibility of the Prime Minister being detained on a visit. The reading as a stated refusal to execute the warrants (B6) follows the
+        wording of indicators.yaml. The date is the day before the article (''ayer''): 9 December 2024. Confidence `reported`: one press source; the AFP original was not found.'
+    notes: 'Found by the redo pass (T-F-L06-R, 2026-11-09): the earlier session found no statement of the President on the warrants (B5 and B6 notes said so) and the search of that pass returned the
+      article, which was then read in full and archived from the Wayback capture of 12 December 2024. Three readings are flagged for the author (B-973): (1) an interview given to a news agency
+      stands for the ''official statement'' of the indicator (the head of government is the speaker, as for B9); (2) the date (9 December 2024; the Última Hora article is of 10 December and says
+      ''ayer''); (3) the Foreign Ministry''s communique of 21 November 2024 (Government in the name of the Ministry: it ''lamenta'' the decision and ''rechaza enérgicamente la instrumentalización política
+      del derecho internacional'', read through La Nación, not archived) says nothing about executing the warrants and is not filed as B5 or B6. Standing, no decay; the effect on the score is at
+      weight 0.4.'
 - id: evt_2024_12_12_PRY_C2
   revision: 1
   country: PRY
@@ -216,3 +261,52 @@
       self-defence, and paragraph 12 states that it ''does not address the facts of the present case, nor does it seek to support the claims of either party''; the argument is the narrower construction
       against the applicant''s reading, so it is filed as B4 and not as a neutral declaration (docs/10 B-597). Filing date 3 March 2026 from the Court''s press release (the declaration is dated
       the same day). The agent is Miguel Angel Aranda, of Paraguay''s embassy in Brussels. The Court''s case page lists the declaration and no withdrawal (read 2026-10-06).'
+- id: evt_2026_10_07_PRY_C2
+  revision: 1
+  country: PRY
+  indicator: C2
+  type: standing
+  date: '2026-10-07'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): an agreement of international cooperation in health and medicine signed in Jerusalem by Paraguay''s Minister of Foreign Affairs and Israel''s Foreign Minister, with the
+    Vice-President of Paraguay present (docs/calibration/README.md R18, a signed governmental instrument of cooperation, one event per instrument).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Foreign Minister an agreement of international cooperation in health and medicine, in Jerusalem.
+    fr: Le ministre des Affaires étrangères a signé à Jérusalem avec son homologue israélien un accord de coopération internationale en matière de santé et de médecine.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20261007_mre-py_acuerdo-salud-medicina-israel
+    quote: El ministro de Relaciones Exteriores, Rubén Ramírez Lezcano, y su homólogo israelí, Gideon Sa’ar, firmaron en Jerusalén un acuerdo de cooperación internacional que abarca los ámbitos de la salud y la medicina.
+    quote_lang: es
+    quote_en: The Minister of Foreign Affairs, Rubén Ramírez Lezcano, and his Israeli counterpart, Gideon Sa'ar, signed in Jerusalem an agreement of international cooperation covering health and medicine.
+    locator: line 1
+  - source: src_20261007_mre-py_acuerdo-salud-medicina-israel
+    quote: Jerusalén, 07 de octubre de 2026
+    quote_lang: es
+    quote_en: Jerusalem, 7 October 2026
+    locator: line 4
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'The archived text (lines 1 to 4) re-read against the event: the Ministry names the signatories (the two Foreign Ministers), the place (Jerusalem), the subject (health and medicine) and the
+        dateline of 7 October 2026; the Vice-President''s presence is stated in line 1. The summary follows the template; no adjective. C2 -10 agrees under R18; confidence confirmed on the Ministry''s
+        own release.'
+    notes: 'Found by the redo pass (T-F-L06-R, 2026-11-09) through a Spanish search (La República of Colombia, 9 October 2026, which has no source named); the Ministry''s own page was then located by the
+      Wayback index of www.mre.gov.py and archived from the capture of 7 October 2026 (replay equal in bytes and SHA-256). The ceremony was held during a visit that the Ministry page does not describe;
+      the Vice-President attended. Paraguay and Israel already had a convenio on cooperation in the fields of health and medicine of 21 November 2005 (Ley 3457 of 2008, bacn.gov.py, seen in a search
+      result, not archived); the page of 2026 describes a new instrument signed in 2026 and does not say whether it replaces the earlier one, so the reading as a new instrument rests on the Ministry''s
+      words (author flag, B-972). Flagged under R18 (docs/10 B-598): a health cooperation agreement is a technical instrument; a reader who counts only trade, investment or security instruments would
+      remove it. Standing, no decay. Category C is already at its floor for Paraguay, so the score does not change.'
