@@ -2910,3 +2910,24 @@ No pre-2023 recognition row was added: the General Debate statements read for Co
 Leads: `lead_20261006_CUB_1` promoted to the first event; `lead_20261006_CUB_2` (the Ministry's own text names the Palestinian people and never Gaza: R7), `_3` and `_4`, ECU 1 to 3, CRI 1 to 3 and DMA 1 and 2 re-checked on the official sites and kept open. Readings flagged for the author (B-941): the Cuban President's speech of 30 July 2026 as a B9 event; the Cuban Foreign Minister's statements of 1 October 2025 and 9 July 2026 and the President's of 26 July and 14 August 2026, read and not filed; Ecuador's Defence releases on Israeli vehicles and the pledge of 6 May 2025 (not A5); the JETCO meeting of 15 July 2026 (not C2); the thin evidence base of the none-found entries.
 
 Score effect: CUB +29.0 Acting before the two events (the event of 15 October 2025 is 390 days old, so the passivity penalty applied) and +44.3 Confronting with them. Provisional previews (rc.1, 2026-11-09): CRI −1 Passive, CUB +44 Confronting, DMA −16 Passive, DOM +7 Acting, ECU −14 Passive, GRD −15 Passive.
+
+### T-F-L05: GTM, GUY, HND, HTI, JAM, KNA (2026-11-09, groups 9 and 10)
+
+The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: the WordPress interfaces of Guatemala's Presidency, Interior Ministry and Public Prosecutor, of Guyana's Department of Public Information, Haiti's Prime Minister's office, Jamaica's Office of the Prime Minister, Saint Kitts and Nevis's Information Service and Ministry, and Honduras's Foreign Ministry (which holds only 29 items for the period); the Drupal search of Guyana's Ministry of Foreign Affairs and Honduras's Defence Secretariat; and the searches of the Jamaica Information Service, Police and Finance sites and of several Haitian and Honduran ministries (routes and refusals in docs/10 B-943). No event was filed, no event changed and no lead changed status: nothing new that names Gaza was found for the six countries from 6 October to 9 November 2026 on the pages that could be read.
+
+| Country | Filled (none-found, `checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| GTM | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Presidency, Interior and Public Prosecutor by WordPress interface; Economy by search; Ministry of Foreign Affairs 403) | B9 (Presidency's posts re-read) | B8 (generated) |
+| GUY | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (DPI posts and the Ministry's site search; Defence Force, Revenue Authority, Finance, Home Affairs by search) | B9 (address of 24 September 2026 read: no Gaza, R7) | none |
+| HND | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Foreign Ministry's 29 items; Defence Secretariat, Public Prosecutor, Finance, pension, Central Bank by search) | C2 (no page on the two instruments) | none |
+| HTI | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Prime Minister's office, 280 posts to February 2025; Central Bank, customs, Justice, Finance by search; the Ministry of Foreign Affairs' site cannot be read) | none | none |
+| JAM | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Office of the Prime Minister, 788 posts; Information Service, Police, Prosecutions, Justice, Defence Force, Finance by search) | B9 (full text of the address of 26 September 2025: no Gaza, R7) | none |
+| KNA | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Information Service and Ministry by WordPress interface) | B9 (Ministry's statement of 2 March 2026: no Gaza) | none |
+
+B8 is a generated indicator and was not touched. The thin base of the none-found entries (Haiti, Honduras, Guatemala, Saint Kitts and Nevis) is flagged in docs/10 B-945.
+
+No pre-2023 recognition row was added: Guatemala's state document of April 2013 was not found (the Ministry answers 403; the Wayback window of 9 April to 31 May 2013 lists no page that names Palestine). Rows of Guyana, Honduras and Haiti still rest on UN documents.
+
+Leads: all seven re-checked and kept open (`lead_20261006_GTM_1`, `_2`, `GUY_1`, `HND_1`, `_2`, `JAM_1`, `_2`): the Jamaican Prime Minister's address of 26 September 2025 is published in full on the Office's site and says 'the Palestinian Territories', never Gaza (R7); the Honduran General Debate file has no served Wayback replay and the verbatim record needs a script-loaded viewer. Readings flagged for the author (B-944): none filed; Guyana's address of 24 September 2026 and Guatemala's Interior Minister's meeting of 5 November 2025 read and not filed; the R7 decision for 'the Palestinian territories' (Jamaica, Nicaragua, Uruguay).
+
+Score effect: none (no event added). Provisional previews (rc.1, 2026-11-09): GTM −1 Passive, GUY +13 Acting, HND +1 Acting, HTI −12 Passive, JAM +5 Acting, KNA +9 Acting.
