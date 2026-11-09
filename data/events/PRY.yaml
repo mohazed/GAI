@@ -63,18 +63,26 @@
   date: '2025-11-24'
   end: null
   points: -10
-  points_rationale: 'C2 (-10): a memorandum of understanding on defense and security cooperation signed on 24 November 2025 by Paraguay''s Defense Minister and Israel''s ambassador (docs/calibration/README.md
-    R18, a signed governmental instrument of cooperation, one event per instrument).'
-  confidence: corroborated
+  points_rationale: 'C2 (-10): a memorandum of understanding on defense cooperation between the defense ministries of Paraguay and Israel, signed by Paraguay''s Defense Minister and, on the Ministry''s
+    own page, Israel''s Defense Minister, with Israel''s ambassador as witness of honor; the press dates the signing to 24 November 2025 (docs/calibration/README.md R18, a signed governmental
+    instrument of cooperation, one event per instrument).'
+  confidence: confirmed
   scope:
   - gaza
   summary:
-    en: The Minister of National Defense signed with Israel's ambassador a memorandum of understanding on defense and security cooperation, in the presence of the two Foreign Ministers.
-    fr: Le ministre de la Défense nationale a signé avec l'ambassadeur d'Israël un mémorandum d'entente de coopération en défense et sécurité, en présence des deux ministres des Affaires étrangères.
+    en: The Minister of National Defense and Israel's Minister of Defense signed a memorandum of understanding on defense cooperation, with Israel's ambassador as witness of honor.
+    fr: Le ministre de la Défense nationale et le ministre israélien de la Défense ont signé un mémorandum d'entente de coopération en défense, l'ambassadeur d'Israël étant témoin d'honneur.
   actor:
     en: Government of Paraguay
     fr: Gouvernement du Paraguay
   evidence:
+  - source: src_20251129_mdn_memorando-defensa-paraguay-israel
+    quote: El Ministro de Defensa Nacional, Gral Ej (R) Óscar González, y el Ministro de Defensa del Estado de Israel, Israel Katz, suscribieron un Memorando de Entendimiento sobre Cooperación
+      en Materia de Defensa
+    quote_lang: es
+    quote_en: The Minister of National Defense, General (ret.) Óscar González, and the Minister of Defense of the State of Israel, Israel Katz, signed a Memorandum of Understanding on Defense
+      Cooperation
+    locator: line 70
   - source: src_20251124_efe-swissinfo_israel-paraguay-defensa-seguridad
     quote: El Memorándum de Entendimiento, suscrito por el ministro de Defensa, Óscar González, y el embajador de Israel, Amit Mekel, en presencia de Saar y del canciller anfitrión, Rubén Ramírez
     quote_lang: es
@@ -98,17 +106,19 @@
     drafted_at: '2026-10-06'
     second_read:
       by: claude-sonnet-5-5
-      at: '2026-10-06'
+      at: '2026-11-09'
       verdict: agree
-      notes: 'Line 181 of EFE''s text and the third paragraph of Agencia IP''s report re-read: the two name the same memorandum, signed at the Foreign Ministry on the day of the visit; the signatories
-        in EFE (Defense Minister, Israel''s ambassador). JNS''s first paragraph re-read for the date (Monday, 24 November 2025 by its caption). C2 -10 agrees; confidence corroborated.'
-    notes: 'Signed on Monday 24 November 2025 at the Foreign Ministry in Asunción during the visit of Israel''s Foreign Minister: by Paraguay''s Defense Minister and Israel''s ambassador, with
-      the two Foreign Ministers present (EFE quoting the Paraguayan Foreign Ministry''s own release, line 181). `corroborated` on two publishers (Agencia IP, the state news agency, and EFE through
-      swissinfo), JNS reporting it as a third (JNS writes that Israel''s Foreign Minister ''signed'' it; EFE, quoting the Ministry, and IP name the Defense Minister and Israel''s ambassador as
-      signatories with the Foreign Ministers present, which is the reading kept); the Ministry''s release itself was not found online (the Ministry''s site has no capture of it), so the event
-      is not `confirmed`. The text is not public; EFE quotes the Ministry on its object (''facilitar el conocimiento recíproco de sus necesidades y programas de defensa e industria militar'',
-      acquisition and sale of defense equipment and services, joint training of military units). Flagged under R18 (docs/10 B-598): a memorandum of defense cooperation, as Honduras''s (docs/10
-      B-572). Standing; 316 days old, so a qualifying event: it ends the passivity penalty (see the score paragraph of docs/review/light-protocol.md).'
+      notes: Re-read on 2026-11-09 after the Ministry's own page was found in the Wayback Machine (src_20251129_mdn_memorando-defensa-paraguay-israel, line 70 against the archived text; replay
+        re-fetched, SHA-256 equal to the index). The page names the Defense Minister Óscar González and Israel's Defense Minister Israel Katz as the signatories and the ambassador Amit Mekel as
+        witness of honor; EFE (line 181) and Agencia IP (line 3) report the signing at the Foreign Ministry in the presence of the two Foreign Ministers, EFE naming the ambassador as the Israeli
+        signatory. The Ministry's page is the primary and is kept for the signatories; the date of 24 November 2025 rests on the press (the page is undated). C2 -10 agrees; confidence confirmed
+        (an official source).
+    notes: 'Signed on Monday 24 November 2025 in Asunción during the visit of Israel''s Foreign Minister (EFE, Agencia IP and JNS give the day; the Ministry''s page is undated, its first Wayback
+      capture is of 29 November 2025). Confirmed since 2026-11-09 by the Ministry of National Defense''s own page (before that `corroborated` on two publishers, weight 0.7). Discrepancy kept visible:
+      the Ministry''s page names the two Defense Ministers as signatories with the ambassador as witness of honor, EFE (quoting the Foreign Ministry) names the Defense Minister and the ambassador,
+      JNS writes that Israel''s Foreign Minister signed; the Ministry''s page is the reading kept. The text of the memorandum is not public; EFE quotes the Foreign Ministry on its object (mutual
+      knowledge of defense needs and programmes, industry, acquisition and sale of equipment and services, joint training). Flagged under R18 (docs/10 B-598): a memorandum of defense cooperation,
+      as Honduras''s (docs/10 B-572). Standing; a qualifying event: it ends the passivity penalty.'
 - id: evt_2025_11_24_PRY_C2_2
   revision: 1
   country: PRY
