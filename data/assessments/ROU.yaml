@@ -13,6 +13,7 @@
 #   implementation of the Peace Plan for Gaza ... and to address the humanitarian situation on the ground without delay': no call for a ceasefire or an end of
 #   the blockade); the Prime Minister's visit to Israel of 2024 (support for the efforts towards a ceasefire agreement, a post relayed by
 #   news.ro, decayed to zero; news.ro dates it 5 September 2024, HotNews 5 November 2024); the Prime Minister's words after it (conditional support for Israel's right to self-defence).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 from the Ministry of National Defence's press releases of mid-2023 to November 2026 (mapn.ro, read, not archivable); lead_20261005_ROU_4 now has an official copy that cannot be archived; the Foreign Ministry and the Presidency answer a verification check; A6 to A8, C4 to C6 and E1 to E3 still unchecked.
 country: ROU
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -31,8 +32,18 @@ indicators:
       full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
       is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Romania as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain the word Romania (searched 2026-11-09).
+      The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme,
+      Romania among them as a nation of the programme, with no supplier role stated (a nation''s presence on the page is not
+      evidence of a company in the supply chain), and carries no supplier list by country. Press and NGO supplier lists were
+      not searched: the shared web-search allowance of the run was used up before this session began (FINISH-PLAN Part 3 rule
+      2); the entry is open to a later press search.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Romania (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
   A4:
     status: has-events
     checked_at: '2026-10-05'
@@ -43,8 +54,23 @@ indicators:
     queries:
     - sipri_orders.csv, buyer ROU
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence
+      sharing related to the Gaza campaign was found in the releases of the Ministry of National Defence (mapn.ro, press releases
+      no. 17900 to 19470, mid-2023 to 6 November 2026, full text searched for Israel, Gaza, Palestin, Hamas and Orientul Mijlociu,
+      2026-11-09; the pages were read, not archived: Save Page Now answers HTTP 410 for mapn.ro). Bilateral defence contacts
+      are recorded and are not instances under the A5 rule (routine bilateral arrangements): the Minister''s meetings with
+      Israel''s ambassador on 27 June, 7 August and 23 September 2024 and 17 July 2025 (release no. 192, ''cooperarea româno-israeliană
+      în domeniul apărării are o bază solidă''), his visit to Tel Aviv and meeting with Minister Gallant on 5 September 2024
+      (no. 271), the Minister''s meeting with the chairman of Elbit Systems on 17 April 2026, and the procurement of the SHORAD-VSHORAD
+      air-defence systems from Rafael (framework agreement of 18 July 2025, subsequent contract no. 1 of 24 June 2026: arms
+      purchases from Israel, A4, generated from SIPRI, not A5). The Ministry of Foreign Affairs (mae.ro) and the Presidency
+      answer a verification check and could not be read; no web search was available (the run''s shared allowance was used
+      up before the session began).'
+    queries:
+    - mapn.ro/cpresa ids 17900 to 19470 (full text searched for Israel, Gaza, Palestin, Hamas, Orientul Mijlociu, israelian),
+      2026-11-09
   A6:
     status: unchecked
     note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
@@ -111,15 +137,40 @@ indicators:
       the score would be +3 higher.'
   B9:
     status: has-events
-    checked_at: '2026-10-05'
-    note: 'Three events, each a call at +2, all decayed to zero: the Foreign Minister''s signature of the declaration of 26 EU
-      foreign ministers (19 February 2024), the President''s signature of the leaders'' statement of 6 June 2024, and the President''s
-      General Debate statement of 25 September 2024. Flagged: the last words the end of hostilities as an ''imperative'' (docs/10
-      B-525 (5)). Not filed: the Foreign Minister''s General Debate statement of 27 September 2025 (''An immediate ceasefire in
-      Gaza, the unconditional release of all hostages, as well as adequate humanitarian assistance are merely the first steps towards
-      a permanent end to hostilities'': the UN''s file cannot be archived, lead_20261005_ROU_1); the President''s statement of
-      81st session (no call). The 78th session''s statement (2023) has no passage on Gaza. On 2026-11-04 (T-P23-1) the President''s 81st General Debate statement (Nicușor Dan; the delegation''s file ro_en.pdf, 191,245 bytes, read from its Wayback capture of 22 October 2026) was read: its passage on Gaza supports the Security Council''s Peace Plan, asks that the humanitarian situation be addressed ''without delay'', says the disarmament of Hamas is a prerequisite and mentions Romania''s medical evacuations; no ceasefire call, no violation named: no event. Not archived as a source (no event rests on it).'
-    queries: *id002
+    checked_at: '2026-11-09'
+    note: 'Three events, each a call at +2, all decayed to zero: the Foreign Minister''s signature of the declaration of 26
+      EU foreign ministers (19 February 2024), the President''s signature of the leaders'' statement of 6 June 2024, and the
+      President''s General Debate statement of 25 September 2024. Flagged: the last words the end of hostilities as an ''imperative''
+      (docs/10 B-525 (5)). Not filed: the Foreign Minister''s General Debate statement of 27 September 2025 (''An immediate
+      ceasefire in Gaza, the unconditional release of all hostages, as well as adequate humanitarian assistance are merely
+      the first steps towards a permanent end to hostilities'': the UN''s file cannot be archived, lead_20261005_ROU_1); the
+      President''s statement of 81st session (no call). The 78th session''s statement (2023) has no passage on Gaza. On 2026-11-04
+      (T-P23-1) the President''s 81st General Debate statement (Nicușor Dan; the delegation''s file ro_en.pdf, 191,245 bytes,
+      read from its Wayback capture of 22 October 2026) was read: its passage on Gaza supports the Security Council''s Peace
+      Plan, asks that the humanitarian situation be addressed ''without delay'', says the disarmament of Hamas is a prerequisite
+      and mentions Romania''s medical evacuations; no ceasefire call, no violation named: no event. Not archived as a source
+      (no event rests on it). Finish run, T-F-L02 (2026-11-09): the President''s 81st-session statement (23 September 2026)
+      is now archived (src_20260923_un-gadebate_rou-dan-81-en, Wayback capture 20261022074109, replay checked) and read again:
+      the reading above stands, no event. The Foreign Minister''s statement of 27 September 2025 stays a lead (Save Page Now
+      answered 405 again, no Wayback capture, lead_20261005_ROU_1). The Government''s news (gov.ro/ro/stiri, 125 items from
+      9 November back to early August 2026), the Ministry of National Defence''s releases (mapn.ro, to 6 November 2026) and
+      the Council''s press list (keywords Israel and Gaza, newest items 6 August and 30 September 2026) hold nothing new for
+      5 October to 9 November 2026 that names Gaza; the Presidency and the Ministry of Foreign Affairs (presidency.ro, mae.ro)
+      answer a verification check and were not read. The Government changed in November 2026 (new Prime Minister, Foreign
+      Minister and Defence Minister named on gov.ro); no statement of theirs on Gaza was found.'
+    queries:
+    - Romania foreign minister Odobescu Gaza ceasefire statement humanitarian 2024 mae.ro
+    - Romania Țoiu Gaza statement 2026 foreign minister Israel ceasefire
+    - Romania Gaza statement Bolojan OR "Nicușor Dan" Israel ceasefire humanitarian 2025 2026 recognize Palestine position
+      Romania
+    - Oana Țoiu discurs Adunarea Generală ONU 27 septembrie 2025 încetarea imediată a focului Gaza eliberarea necondiționată
+      a ostaticilor text integral
+    - Iohannis semnat declarație comună liderilor 17 țări sprijin acord încetarea focului eliberare ostatici Gaza 6 iunie
+      2024
+    - gov.ro/ro/stiri listing pages 1 to 25 (125 items, 9 November back to early August 2026, full text searched for Gaza,
+      Palestin, Israel, Hamas, Orientul Mijlociu, UNRWA), 2026-11-09
+    - mapn.ro/cpresa ids 17900 to 19470 (full text searched for Israel, Gaza, Palestin, Hamas, Orientul Mijlociu), 2026-11-09
+    - consilium.europa.eu press releases, keywords Israel and Gaza, read in the browser pane 2026-11-09
   B10:
     status: none-found
     checked_at: '2026-10-05'
@@ -216,23 +267,36 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
+    checked_at: '2026-11-09'
+    note: 'One event for the medical-evacuation programme: the Ministry of Health''s release of 1 October 2024 on the arrival
+      on 30 September 2024 of Palestinian children from Gaza, and the IGSU release of 10 April 2025 on a further evacuation;
+      the Ministry of Foreign Affairs counted twelve humanitarian flights by 31 August 2026 (its release could not be archived):
+      the same programme, lead_20261005_ROU_4 (docs/10 B-525 (3)). Finish run, T-F-L02 (2026-11-09): the Ministry of National
+      Defence''s releases show the Air Force''s evacuation flights from Eilat/Ramon (Israel) and later from the Gaza Strip,
+      among them no. 278 of 31 August 2026 (a C-130 Hercules, five paediatric patients with relatives, ''al 12-lea zbor umanitar
+      organizat de țara noastră'', under the EU Civil Protection Mechanism with the WHO); read at mapn.ro with a browser User-Agent,
+      not archivable (Save Page Now answers HTTP 410, no Wayback capture), recorded in lead_20261005_ROU_4. Still one event
+      for the programme.'
+    queries:
+    - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat
+      primul grup
+    - Romania takes eight pediatric patients from Gaza treatment Romania hospitals medical evacuation first group arrived
+    - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
+      civilă 2024 comunicat MApN
+    - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
+    - 'mapn.ro/cpresa ids 17900 to 19470 searched for Israel, Gaza, Palestin, Hamas (flights: ids 18667, 18702, 18732, 18804,
+      18823, 18936, 18975, 19039, 19386)'
+  D5:
+    status: none-found
     checked_at: '2026-10-05'
-    note: 'One event for the medical-evacuation programme: the Ministry of Health''s release of 1 October 2024 on the arrival on
-      30 September 2024 of Palestinian children from Gaza, and the IGSU release of 10 April 2025 on a further evacuation; the Ministry
-      of Foreign Affairs counted twelve humanitarian flights by 31 August 2026 (its release could not be archived): the same programme,
-      lead_20261005_ROU_4 (docs/10 B-525 (3)).'
-    queries: &id005
+    note: No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
+    queries:
     - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat primul
       grup
     - Romania takes eight pediatric patients from Gaza treatment Romania hospitals medical evacuation first group arrived
     - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
       civilă 2024 comunicat MApN
     - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
-  D5:
-    status: none-found
-    checked_at: '2026-10-05'
-    note: No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
-    queries: *id005
   E1:
     status: unchecked
     note: Experimental, unscored; not searched in this session.
