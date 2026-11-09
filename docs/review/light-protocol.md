@@ -2871,6 +2871,26 @@ What the Romanian portal shows for acts of 7 October 2023 or later (read by titl
 
 B8 (generated) and the pre-2023 recognition rows were not touched (a state document is needed). Leads: none opened, none closed. Score effect: none; provisional previews of the first session are unchanged (no event was added or changed; `--preview` not re-run).
 
+### T-F-L02, third session, with web search: MNG, PRK, BGR, BLR, MDA, ROU (2026-11-09)
+
+The third session had web search (the allowance was raised): about 60 queries in English, Russian, Romanian, Bulgarian and Mongolian, the UN Digital Library's A/43 documents, the Administrative Court of Sofia City's published judgments and the Bulgarian Center for Not-for-Profit Law's page on protest bans. One event filed (BGR E2), one recognition row added (MNG B8), four leads opened, seven re-annotated. Records: B-958 to B-962.
+
+| Country | Set to none-found (`checked_at` 2026-11-09) | Re-run with web search (nothing changes) | Event, row or lead |
+|---|---|---|---|
+| MNG | E1, E2, E3 | A3, A5 to A8, C4 to C6 | B8 row `MNG,1988-11-22` (A/43/863); preview +1 to +4 |
+| PRK | none (E1 to E3, C5, C6 stay no-data) | A3, A5 to A8, C4 | PRK_1 annotated |
+| BGR | none | A3, A5 to A8, C4 to C6, E1, E3 | `evt_2023_10_20_BGR_E2` (E2 has-events, unscored); BGR_4 annotated |
+| BLR | A5 to A8, C4 to C6, E1 to E3 | A3 | BLR_1 annotated (interview text read) |
+| MDA | E1 to E3 | A3, A5 to A8, C4 to C6 | lead_20261109_MDA_3 (A8, smuggling case of November 2025); MDA_1 annotated |
+| ROU | E1 to E3 | A3, A5 to A8, C4 to C6 | leads ROU_5 (A6, ANCEX figures), ROU_6 (E3, HRF complaints), ROU_7 (B9, Agerpres, 28 September 2026); ROU_1 and ROU_3 annotated |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20231101_asgs_solution-6518-case-10302-2023 | Judgment no. 6518 of 1 November 2023, Administrative Court of Sofia City (case 10302/2023) | evt_2023_10_20_BGR_E2 |
+| src_19881125_un-digitallibrary_mng-recognition-a-43-863 | A/43/863: statement of 22 November 1988 of Mongolia's Ministry of Foreign Affairs (existing Wayback capture; OCR text) | MNG B8 row |
+
+Score effect: MNG +3 (B8, the pre-existing tier); BGR E2 is unscored; none-found entries carry no points. Provisional previews (rc.1, 2026-11-09): MNG +4 Acting, PRK +1 Acting, BGR +7 Acting, BLR +14 Acting, MDA -11 Passive, ROU -11 Passive. Readings flagged for the author: B-959 (BGR E2 actor and scope), B-960 (ROU leads), B-961 (MDA lead, MNG row, other six leads).
+
 ### T-F-L03: SVK, UKR, ATG, BHS, BLZ, BRB (2026-11-09, groups 5 and 6)
 
 The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: the WordPress interface of the Ministries and Press Office of Barbados, the Bahamas and Belize (and the Bahamas' Customs and Antigua's Police Force), the Antigua Government's release and Cabinet Note pages, and the search services of the Slovak Government Office, Ministries of Defence and Economy and Prosecutor General's Office (routes and refusals in docs/10 B-937). Every Ukrainian official site refuses a script or the built-in browser (a CAPTCHA in the pane, not touched). No event was filed; for 6 October to 9 November 2026 nothing that qualifies was found on the pages read.
