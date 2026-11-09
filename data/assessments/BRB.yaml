@@ -7,7 +7,7 @@
 #   capture, the 81st has none), the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 20 minutes.
 # Statements read and not filed as B9: the Prime Minister's address of 22 September 2023 (78th session: before the war); the 81st session's statement of 24 September 2026
 #   (no call); the Government's statement of 26 October 2023 (no named speaker, R3); the press conference of 18 November 2023 (press only).
-# Completion of 2026-11 (finish run, T-F-L03, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched. The Ministry's site was read in full text through its WordPress interface (431 items, 92 pages); the Government Information Service refuses scripts. No web search was available.
+# Completion of 2026-11 (finish run, T-F-L03, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched. The Ministry's site was read in full text through its WordPress interface (431 items, 92 pages); the Government Information Service refuses scripts. Re-run with web search the same day (seven searches); the claim of July 2025 against the Director of Public Prosecutions was struck out (E1, E3).
 country: BRB
 protocol_version: 1
 last_full_check: '2026-10-06'
@@ -26,13 +26,15 @@ indicators:
   A3:
     status: none-found
     checked_at: '2026-11-09'
-    note: No document names a company of Barbados as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
-      does not contain the word Barbados (searched 2026-11-09). The programme's own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme (the United
-      States and 19 allied nations), Barbados not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched. No web search was available (the run's shared
-      allowance was used up before the session began). The entry is open to a later press search.
+    note: 'No document names a company of Barbados as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived
+      text) does not contain the word Barbados (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme
+      (the United States and 19 allied nations), Barbados not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched. Web search of 2026-11-09 (standard
+      mode; the summaries were used to find pages, nothing was filed from them): one search for Caribbean companies in the F-35 supply chain found none (the Canadian, British, Dutch and Manx
+      suppliers named are not Caribbean).'
     queries:
     - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Barbados (no match)
     - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: F-35 supply chain suppliers Caribbean Bahamas OR Barbados OR Belize OR "Antigua and Barbuda" company components Israel Gaza complaint'
   A4:
     status: none-found
     checked_at: '2026-10-06'
@@ -44,50 +46,64 @@ indicators:
     checked_at: '2026-11-09'
     note: 'No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence sharing related to the Gaza campaign was found. The Ministry of Foreign
       Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched
-      in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October
-      2023 that concern Israel or Gaza are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine,
-      and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s
-      items name no exercise, overflight, port call or intelligence arrangement with Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the
-      Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). No web search was available (the run''s
-      shared allowance was used up before the session began).'
+      in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7
+      October 2023 that concern Israel or Gaza are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference
+      on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026.
+      The Ministry''s items name no exercise, overflight, port call or intelligence arrangement with Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted request
+      with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). Web search of
+      2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): two searches found no exercise, transit, basing agreement or intelligence sharing with
+      Israel for the Gaza campaign.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Israel Gaza government Prime Minister Mottley statement arms OR trade OR airspace OR port OR Palestine recognition'
+    - 'WebSearch 2026-11-09: Caribbean CARICOM Gaza Israel Bahamas Belize Barbados Antigua arms embargo OR ban OR suspend 2025 2026 government decision Israel trade'
   A6:
     status: none-found
     checked_at: '2026-11-09'
     note: 'No Government decision suspending or refusing a class of arms or dual-use licences to Israel was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb:
       its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin,
       Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s
-      statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli
-      strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no licence decision. The Government Information
-      Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read
-      (no site answered, or it answered 403). No web search was available (the run''s shared allowance was used up before the session began).'
+      statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the
+      Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no licence decision. The Government
+      Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages
+      were not read (no site answered, or it answered 403). Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): three searches found
+      no suspension or refusal of licences to Israel and no decision on arms carriage by the flag registry (the only Caribbean measure found is the Antigua and Barbuda notice of 29 May 2025,
+      lead_20261109_ATG_3; the search on the Bahamas and Belize registries found no equivalent).'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Israel Gaza government Prime Minister Mottley statement arms OR trade OR airspace OR port OR Palestine recognition'
+    - 'WebSearch 2026-11-09: Bahamas ship registry OR Belize ship registry IMMARBE arms ammunition Israel vessel prohibition OR investigation flagged vessel Gaza'
+    - 'WebSearch 2026-11-09: Caribbean CARICOM Gaza Israel Bahamas Belize Barbados Antigua arms embargo OR ban OR suspend 2025 2026 government decision Israel trade'
   A7:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'No law or decree covering both exports to and imports from Israel was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17
-      May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank)
-      holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement of 26 October
-      2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region);
-      the site has no news item after 24 June 2026. The Ministry''s items name no embargo or trade measure against Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted
-      request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). No web
-      search was available (the run''s shared allowance was used up before the session began).'
+    note: 'No law or decree covering both exports to and imports from Israel was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of
+      17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and
+      West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement
+      of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes
+      on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no embargo or trade measure against Israel. The
+      Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s
+      pages were not read (no site answered, or it answered 403). Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): the same searches
+      found no law or decree on trade with Israel; the results on CARICOM name civil-society demands (July 2025) and no decision of the Government.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Israel Gaza government Prime Minister Mottley statement arms OR trade OR airspace OR port OR Palestine recognition'
+    - 'WebSearch 2026-11-09: Caribbean CARICOM Gaza Israel Bahamas Belize Barbados Antigua arms embargo OR ban OR suspend 2025 2026 government decision Israel trade'
   A8:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431
-      news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas,
-      UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement
-      of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes
-      on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no port, airspace or vessel decision concerning Israel.
-      The Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s
-      pages were not read (no site answered, or it answered 403). No web search was available (the run''s shared allowance was used up before the session began).'
+    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its
+      431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin,
+      Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s
+      statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the
+      Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no port, airspace or vessel decision
+      concerning Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s
+      and the Parliament''s pages were not read (no site answered, or it answered 403). Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from
+      them): the same searches found no denial of transit, overflight or port access to Israel.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Israel Gaza government Prime Minister Mottley statement arms OR trade OR airspace OR port OR Palestine recognition'
+    - 'WebSearch 2026-11-09: Bahamas ship registry OR Belize ship registry IMMARBE arms ammunition Israel vessel prohibition OR investigation flagged vessel Gaza'
   B1:
     status: has-events
     checked_at: '2026-10-06'
@@ -185,40 +201,50 @@ indicators:
   C4:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'No ban on, or labelling rule for, goods from Israeli settlements was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17 May
-      2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank)
-      holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement of 26 October
-      2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region);
-      the site has no news item after 24 June 2026. The Ministry''s items name no settlement-goods measure; the Ministry''s trade pages (Foreign Trade, Free Trade Agreements, 92 pages read) name
-      no agreement with Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney
-      General''s and the Parliament''s pages were not read (no site answered, or it answered 403). No web search was available (the run''s shared allowance was used up before the session began).'
+    note: 'No ban on, or labelling rule for, goods from Israeli settlements was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17
+      May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West
+      Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement of
+      26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes
+      on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no settlement-goods measure; the Ministry''s trade
+      pages (Foreign Trade, Free Trade Agreements, 92 pages read) name no agreement with Israel. The Government Information Service (gisbarbados.gov.bb answers a scripted request with HTTP
+      403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). Web search of 2026-11-09
+      (standard mode; the summaries were used to find pages, nothing was filed from them): one search for the four countries found no settlement-goods ban or labelling rule in the Caribbean.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados OR Bahamas OR Belize OR Antigua National Insurance Board OR sovereign fund OR pension divest Israel companies; settlement products import ban; government
+      procurement Israeli firms'
+    - 'WebSearch 2026-11-09: Caribbean CARICOM Gaza Israel Bahamas Belize Barbados Antigua arms embargo OR ban OR suspend 2025 2026 government decision Israel trade'
   C5:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or the occupied territories was found. The Ministry of Foreign Affairs
-      and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full
-      text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023
-      that concern Israel or Gaza are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine,
-      and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s
-      items name no investment or exclusion decision by a public fund, a pension fund or the central bank. The Government Information Service (gisbarbados.gov.bb answers a scripted request with
-      HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). No web search was available
-      (the run''s shared allowance was used up before the session began).'
+    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or the occupied territories was found. The Ministry of Foreign
+      Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched
+      in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7
+      October 2023 that concern Israel or Gaza are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference
+      on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026.
+      The Ministry''s items name no investment or exclusion decision by a public fund, a pension fund or the central bank. The Government Information Service (gisbarbados.gov.bb answers a scripted
+      request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read (no site answered, or it answered 403). Web
+      search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): the same searches found no exclusion decision by a fund, pension fund or central
+      bank of the country.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados OR Bahamas OR Belize OR Antigua National Insurance Board OR sovereign fund OR pension divest Israel companies; settlement products import ban; government
+      procurement Israeli firms'
   C6:
     status: none-found
     checked_at: '2026-11-09'
     note: 'No procurement exclusion of companies over conduct in Gaza or the occupied territories was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its
-      431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas,
-      UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement
-      of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes
-      on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no procurement exclusion. The Government Information
-      Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages were not read
-      (no site answered, or it answered 403). No web search was available (the run''s shared allowance was used up before the session began).'
+      431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin,
+      Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s
+      statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the
+      Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no procurement exclusion. The Government
+      Information Service (gisbarbados.gov.bb answers a scripted request with HTTP 403), the Barbados Defence Force, Customs, the police, the Attorney General''s and the Parliament''s pages
+      were not read (no site answered, or it answered 403). Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): the same searches found
+      no exclusion of Israeli companies from public procurement.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados OR Bahamas OR Belize OR Antigua National Insurance Board OR sovereign fund OR pension divest Israel companies; settlement products import ban; government
+      procurement Israeli firms'
   D1:
     status: none-found
     checked_at: '2026-10-06'
@@ -252,25 +278,33 @@ indicators:
   E1:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'Experimental, unscored. No domestic investigation of Barbados nationals or companies for conduct in Gaza was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb:
-      its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin,
-      Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s
-      statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli
-      strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no investigation, complaint or assembly restriction.  The
-      prosecutor''s and the courts'' pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    note: 'Experimental, unscored. No domestic investigation of Barbados nationals or companies for conduct in Gaza was found. The Ministry of Foreign Affairs and Foreign Trade''s own site
+      (foreign.gov.bb: its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel,
+      Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza
+      are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10
+      September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no investigation,
+      complaint or assembly restriction. The prosecutor''s and the courts'' pages were not read. Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was
+      filed from them): one search found no investigation or prosecution of a national or company for conduct in Gaza. A civil claim of the Caribbean Movement for Peace and Integration against
+      the Minister of Foreign Affairs, the Director of Public Prosecutions, the Immigration Department and the Attorney General (filed July 2025) asked the High Court to declare that failure
+      to investigate persons in Barbados involved in the genocide in Gaza is unlawful; Barbados Today reports that Justice Wells struck it out on 6 August 2025 as disclosing no reasonable cause
+      of action (read as a search result, not archived): not an investigation or prosecution.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Gaza protest OR rally OR police OR court OR complaint Israeli Palestine solidarity Bridgetown 2025 2026'
+    - 'WebSearch 2026-11-09: Barbados High Court Lalu Hanuman Caribbean Movement for Peace and Integration genocide Israel Director of Public Prosecutions ruling OR hearing OR dismissed'
   E2:
     status: none-found
     checked_at: '2026-11-09'
-    note: 'Experimental, unscored. No ban or restriction of assemblies about Gaza was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of
-      17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West
-      Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement of 26
-      October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes on
-      Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no investigation, complaint or assembly restriction.  No
-      web search was available (the run''s shared allowance was used up before the session began).'
+    note: 'Experimental, unscored. No ban or restriction of assemblies about Gaza was found. The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items
+      of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and
+      West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement. The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement
+      of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes
+      on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after 24 June 2026. The Ministry''s items name no investigation, complaint or assembly restriction.
+      Web search of 2026-11-09 (standard mode; the summaries were used to find pages, nothing was filed from them): one search found no report of a ban or police action against a Palestine
+      solidarity protest or symbol. The rallies reported (March and 31 May 2025 outside the United States Embassy) were held without reported police action.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Gaza protest OR rally OR police OR court OR complaint Israeli Palestine solidarity Bridgetown 2025 2026'
   E3:
     status: none-found
     checked_at: '2026-11-09'
@@ -278,8 +312,11 @@ indicators:
       The Ministry of Foreign Affairs and Foreign Trade''s own site (foreign.gov.bb: its 431 news items of 17 May 2020 to 24 June 2026 and its 92 pages, read through the site''s public WordPress
       interface and searched in full text on 2026-11-09 for Israel, Gaza, Palestin, Hamas, UNRWA and West Bank) holds no item on arms, military cooperation, transit, goods, funds or procurement.
       The items since 7 October 2023 that concern Israel or Gaza are the Government''s statement of 26 October 2023, the report of 31 July 2025 on the statement made for CARICOM at the United
-      Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item after
-      24 June 2026. The Ministry''s items name no investigation, complaint or assembly restriction.  The prosecutor''s and the courts'' pages were not read. No web search was available (the run''s
-      shared allowance was used up before the session began).'
+      Nations conference on Palestine, and the statement of 10 September 2025 on the Israeli strikes on Qatar (src_20250910_foreign-gov-bb_statement-gulf-region); the site has no news item
+      after 24 June 2026. The Ministry''s items name no investigation, complaint or assembly restriction. The prosecutor''s and the courts'' pages were not read. Web search of 2026-11-09 (standard
+      mode; the summaries were used to find pages, nothing was filed from them): one search found no universal-jurisdiction complaint accepted for investigation. The claim of July 2025 (see
+      E1) was struck out; no complaint accepted for investigation.'
     queries:
     - 'foreign.gov.bb WordPress interface: 431 news items (17 May 2020 to 24 June 2026) and 92 pages, full text searched for Israel, Gaza, Palestin, Hamas, UNRWA, West Bank, 2026-11-09'
+    - 'WebSearch 2026-11-09: Barbados Gaza protest OR rally OR police OR court OR complaint Israeli Palestine solidarity Bridgetown 2025 2026'
+    - 'WebSearch 2026-11-09: Barbados High Court Lalu Hanuman Caribbean Movement for Peace and Integration genocide Israel Director of Public Prosecutions ruling OR hearing OR dismissed'

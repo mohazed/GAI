@@ -2919,6 +2919,34 @@ Leads: new `lead_20261109_SVK_6` (B9, the Prime Minister's statements of 2024) a
 
 Score effect: ATG +3 (B8, the pre-existing tier, from the row added with a state document); none-found entries carry no points and no event was added. Provisional previews (rc.1, 2026-11-09): SVK −1 Passive, UKR +5 Acting, ATG −1 Passive, BHS +9 Acting, BLZ +24 Acting, BRB +14 Acting.
 
+### T-F-L03, resumed with web search: SVK, UKR, ATG, BHS, BLZ, BRB (2026-11-09, groups 5 and 6)
+
+WebSearch worked in this session (about 40 standard-mode searches in English, Slovak and Ukrainian). Every none-found entry that the first session had filled without a search (SVK, ATG, BHS, BLZ, BRB: A3, A5 to A8, C4 to C6, E1 to E3) was re-run and keeps its status; the searches and what they found are in each entry. Ukraine's official sites still refuse scripts: A5 to A8, C4 to C6 and E1 to E3 are none-found on searches and on three Ministry pages read from Wayback captures. No event was filed; for 6 October to 9 November 2026 the searches found nothing new.
+
+| Country | Re-run with web search (none-found, `checked_at` 2026-11-09) | Set in this session | Still unchecked |
+|---|---|---|---|
+| SVK | A3, A5 to A8, C4 to C6, E1 to E3 (six searches) | B8 note | B8 |
+| UKR | A3, D4, D5 notes | A5 to A8, C4 to C6, E1 to E3 (ten searches; three Ministry pages from Wayback) | B8 |
+| ATG | A3, A5 to A8, C4 to C6, E1 to E3 (five searches) | A6 and A8 notes carry the flag-state notice | none |
+| BHS | A3, A5 to A8, C4 to C6, E1 to E3 (six searches) | none | none |
+| BLZ | A3, A5 to A8, C4 to C6, E1 to E3 (six searches) | none | none |
+| BRB | A3, A5 to A8, C4 to C6, E1 to E3 (seven searches) | E1 and E3 notes carry the claim struck out in August 2025 | none |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20250318_mfa-ua_comment-ceasefire-violation-gaza | Ministry of Foreign Affairs of Ukraine, comment of 18 March 2025 (Wayback capture) | lead_20261109_UKR_5 |
+| src_20251001_mfa-ua_comment-trump-plan-gaza | Ministry's comment of 1 October 2025 (Wayback capture) | lead_20261109_UKR_5 |
+| src_20241212_mfa-ua_berlin-declaration | Berlin Declaration of 12 December 2024, as the Ministry publishes it (Wayback capture) | lead_20261109_UKR_5 |
+| src_20250803_ukrainska-pravda_sybiha-hamas-gaza, src_20250803_ukrinform_sybiha-gaza-hamas-crimes | Press reports of the Foreign Minister's post of 3 August 2025 | lead_20261109_UKR_4 |
+| src_20260521_kyivindependent_ukraine-condemns-israel-activists | Press report of the Foreign Minister's statement of 21 May 2026 | lead_20261109_UKR_6 |
+| src_20250930_kyivindependent_ukraine-evacuates-57-gaza | Press report of the evacuation of 29 and 30 September 2025 | UKR D4, D5 notes |
+| src_20250529_abregistry-ag_information-notice-2025-001 | Antigua and Barbuda Maritime Administration, Information Notice 2025-001 (Save Page Now) | lead_20261109_ATG_3 |
+| src_20250529_antigua-news_arms-prohibition-conflict-zones | Antigua News report on the Department's statement on the HC Opal | lead_20261109_ATG_3 |
+
+Leads: new `lead_20261109_ATG_3` (A6, flag-state notice), `lead_20261109_UKR_4`, `_5`, `_6` (B9); `lead_20261006_UKR_1` annotated. Readings flagged for the author (B-964): the Antigua and Barbuda notice (default: lead), the unsigned Ukrainian Ministry comments under R3, the Foreign Minister's post (press only), the Berlin Declaration (not filed for any of its seven participants).
+
+Score effect: none. Provisional previews (rc.1, 2026-11-09), unchanged: SVK −1 Passive, UKR +5 Acting, ATG −1 Passive, BHS +9 Acting, BLZ +24 Acting, BRB +14 Acting. Coverage of UKR rose from 9 unchecked entries to 1 (B8).
+
 ### T-F-L04: CRI, CUB, DMA, DOM, ECU, GRD (2026-11-09, groups 7 and 8)
 
 The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: eight Ecuadorian sites and the Dominican Ministry of Foreign Affairs through WordPress (4,068 and 825 posts), the Dominican, Costa Rican, Dominican-Police and Ecuadorian financial sites through their search, the Joomla search service of Dominica's portal, the pages of Grenada's portal, and the Cuban Ministry of Foreign Affairs' site, which answered from outside Cuba on that day (routes and refusals in docs/10 B-940). Two events were filed, both Cuban, from the Ministry's own pages; no other event was added or changed.
