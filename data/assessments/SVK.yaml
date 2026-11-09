@@ -13,6 +13,7 @@
 #   agreement), 10 July 2025 (support for the negotiations on a ceasefire, a call to Israel to allow humanitarian aid, as the press reports it in indirect speech),
 #   17 February 2026 (archived: Israel 'has the right to retaliate, but everything must be in compliance with international humanitarian law') and 24 September
 #   2026 (support for the ICC's independence), none with the exact words of a call in an archived text (R4).
+# Completion of 2026-11 (finish run, T-F-L03, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched. The Government Office's, the Ministry of Defence's, the Ministry of Economy's and the Prosecutor General's own search services were run (control queries answered); the Ministry of Foreign and European Affairs refuses scripts. No web search was available.
 country: SVK
 protocol_version: 1
 last_full_check: '2026-10-06'
@@ -29,8 +30,16 @@ indicators:
     note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
       B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No document names a company of Slovakia as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Slovak (searched 2026-11-09). The programme's own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme (the United
+      States and 19 allied nations), Slovakia not among them, and carries no supplier list by country. The Government Office's search for F-35 returns no result (2026-11-09). Press and NGO supplier
+      lists were not searched. No web search was available (the run's shared allowance was used up before the session began). The entry is open to a later press search.
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Slovak (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - vlada.gov.sk/vyhladavanie/?search=F-35 (0 results)
   A4:
     status: none-found
     checked_at: '2026-10-06'
@@ -43,17 +52,93 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Slovakia (lines 631 to 635)
     - Slovensko Izrael Barak MX zmluva podpísaná december 2024
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence sharing related to the Gaza campaign was found. The Government Office''s
+      own search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09 for Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu,
+      Netanyahuom, Blízky východ, Blízkom východe, Irán and the terms named below; control queries answered; the search matches whole words, so inflected forms were run separately) returned 44
+      pages, each fetched and its full text searched for the same terms. The items of 7 October 2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks
+      on migration and the situation in the Gaza Strip (30 October 2023); the Prime Minister''s statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza),
+      22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod); his address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire
+      in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic agreement (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence
+      industry (cooperation with an Israeli company on an air-defence system: the purchase of lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call);
+      an item on the situation in the Middle East (4 March 2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue
+      of Czech-Slovak friendship (27 October 2026, Israel in a list of nations). Searched for A5: cvičenie (2 results, a civil-protection exercise and a staff-law analysis), protivzdušn (6; the
+      first results concern Ukraine and the defence industry), prelet (2). The Ministry of Defence''s own search (mod.gov.sk/46068-sk/vysledky-vyhladavania, run on 2026-11-09: Izrael 44 records,
+      the first page read; Gazy 6; Hamas 1; Gaza and Palestín none) returns items up to 12 October 2023 (the Minister''s report from the NATO ministerial of that day, at which the Slovak embassy
+      in Tel Aviv acts as NATO''s contact embassy in Israel; earlier ministers'' contacts, humanitarian aid of earlier years). It does not return the contract of 23 December 2024 for the Barak
+      MX systems that lead_20261006_SVK_4 records, so its coverage of 2024 to 2026 is incomplete. The Prime Minister''s statement of 4 March 2026 (src_20260304_vlada-sk_vlada-energeticka-bezpecnost)
+      rejects media reports that Slovakia allowed overflights of combat aircraft towards the Middle East and says that only transport and refuelling aircraft overfly; the context is the conflict
+      of the United States and Israel with Iran, not the Gaza campaign, so it is not an A5 instance (flagged in docs/10 B-938). The Ministry of Foreign and European Affairs (mzv.sk) answers every
+      scripted request with HTTP 403 and the Parliament''s and the Public Procurement Office''s pages were not read. No web search was available (the run''s shared allowance was used up before
+      the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
+    - 'mod.gov.sk search: Izrael, Gaza, Gazy, Hamas, Palestín, 2026-11-09'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No Government decision suspending or refusing a class of arms or dual-use licences to Israel was found. The Government Office''s own search service (vlada.gov.sk/vyhladavanie, run on
+      2026-11-09 for Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom, Blízky východ, Blízkom východe, Irán and
+      the terms named below; control queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each fetched and its full text searched for the
+      same terms. The items of 7 October 2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration and the situation in the Gaza Strip
+      (30 October 2023); the Prime Minister''s statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod);
+      his address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic
+      agreement (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry (cooperation with an Israeli company on an air-defence system: the purchase
+      of lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call); an item on the situation in the Middle East (4
+      March 2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue of Czech-Slovak friendship (27 October 2026,
+      Israel in a list of nations). Searched for A6: embargo, licencie, vojenský materiál, vývoz zbraní (0 results each). The Ministry of Economy''s own search (economy.gov.sk/search, run on 2026-11-09:
+      Izrael 53 results, Palestín 0, vývoz zbraní 0; the query Gaza returned items whose titles are encoded strings, not read) lists for Israel the programme ''Innovations for Slovakia and Israel''
+      and its list of approved joint research projects (a call under the research cooperation agreement of the two governments; the date of the agreement and of the calls was not read), and nothing
+      on licences. The Prime Minister''s release of 25 June 2025 (src_20250625_vlada-sk_fico-netanyahu-call) says that Slovakia disagrees with proposals to interrupt the dialogue of the EU and
+      Israel under the Association Agreement. The Ministry of Foreign and European Affairs (mzv.sk) answers every scripted request with HTTP 403 and the Parliament''s and the Public Procurement
+      Office''s pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
+    - economy.gov.sk/search?search= Izrael, Palestín, vývoz zbraní, 2026-11-09
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree covering both exports to and imports from Israel was found. The Government Office''s own search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09 for Izrael, Izraela,
+      Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom, Blízky východ, Blízkom východe, Irán and the terms named below; control
+      queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each fetched and its full text searched for the same terms. The items of 7 October
+      2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration and the situation in the Gaza Strip (30 October 2023); the Prime Minister''s
+      statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod); his
+      address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic agreement
+      (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry (cooperation with an Israeli company on an air-defence system: the purchase of
+      lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call); an item on the situation in the Middle East (4 March
+      2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue of Czech-Slovak friendship (27 October 2026, Israel
+      in a list of nations). Searched for A7: embargo, licencie, vojenský materiál, vývoz zbraní, dovoz (29 results; the first results concern energy imports). The Ministry of Economy''s own search
+      (economy.gov.sk/search, run on 2026-11-09: Izrael 53 results, Palestín 0, vývoz zbraní 0; the query Gaza returned items whose titles are encoded strings, not read) lists for Israel the programme
+      ''Innovations for Slovakia and Israel'' and its list of approved joint research projects (a call under the research cooperation agreement of the two governments; the date of the agreement
+      and of the calls was not read), and nothing on licences. The Prime Minister''s release of 25 June 2025 (src_20250625_vlada-sk_fico-netanyahu-call) opposes interrupting the dialogue with
+      Israel. The Official Gazette of laws (slov-lex.sk) answers with a script page that was not searched. The Ministry of Foreign and European Affairs (mzv.sk) answers every scripted request
+      with HTTP 403 and the Parliament''s and the Public Procurement Office''s pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
+    - economy.gov.sk/search?search= Izrael, Palestín, vývoz zbraní, 2026-11-09
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Government Office''s own search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09
+      for Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom, Blízky východ, Blízkom východe, Irán and the terms
+      named below; control queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each fetched and its full text searched for the same terms.
+      The items of 7 October 2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration and the situation in the Gaza Strip (30 October
+      2023); the Prime Minister''s statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod);
+      his address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic
+      agreement (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry (cooperation with an Israeli company on an air-defence system: the purchase
+      of lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call); an item on the situation in the Middle East (4
+      March 2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue of Czech-Slovak friendship (27 October 2026,
+      Israel in a list of nations). Searched for A8: tranzit (33 results; the first results concern gas transit), prelet (2: the Government meeting of 4 March 2026 and a speech of 18 January 2026
+      on a flight to Moscow), letecký priestor (0). The Prime Minister''s statement of 4 March 2026 (src_20260304_vlada-sk_vlada-energeticka-bezpecnost) denies overflights of combat aircraft towards
+      the Middle East in the Iran conflict (not Gaza; not a denial of transit). The Ministry of Foreign and European Affairs (mzv.sk) answers every scripted request with HTTP 403 and the Parliament''s
+      and the Public Procurement Office''s pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
   B1:
     status: has-events
     checked_at: '2026-10-06'
@@ -108,7 +193,11 @@ indicators:
     note: 'Five events: the Minister of Foreign and European Affairs'' signature of the declaration of 26 EU foreign ministers (19 February 2024, call tier, decayed to zero) and of four joint
       statements of foreign ministers (21 July 2025 and 12 August 2025 at +5, 27 September 2025 and, through the states'' list of the INGO statement, 8 June 2026 at +2). The President''s General
       Debate statements (24 September 2024: a draft in which Gaza is named among conflicts; 24 September 2025; 23 September 2026) have no call for a ceasefire or an end of the blockade; the call
-      to ''allow access to humanitarian aid'' of 2025 is not one of the two tiers (docs/02 §2 B9). The Minister''s own statements are known through the press only (R4): lead_20261006_SVK_1.'
+      to ''allow access to humanitarian aid'' of 2025 is not one of the two tiers (docs/02 §2 B9). The Minister''s own statements are known through the press only (R4): lead_20261006_SVK_1. Finish
+      run (T-F-L03): the President''s statement of 23 September 2026 is now archived (src_20260923_un-gadebate_svk-pellegrini-81-en): ''Humanitarian aid must reach those who need it, including
+      in Gaza'', a negotiated two-state solution, no call for a ceasefire or an end of the blockade, so not filed. The Prime Minister''s statements of 1 February and 18 October 2024 on the Government
+      Office''s site (one direct quote, one indirect speech; more than 730 days old) are in lead_20261109_SVK_6; his address of 1 February 2025 welcomes the agreed ceasefire (''cautiously optimistic
+      about the agreed ceasefire in Gaza''), which is not a call.'
     queries:
     - Slovakia Blanár Gaza ceasefire statement foreign minister humanitarian
     - Blanár Gaza prímerie Slovensko vyzýva minister zahraničných vecí humanitárna pomoc vyhlásenie
@@ -117,10 +206,13 @@ indicators:
   B10:
     status: none-found
     checked_at: '2026-10-06'
-    note: No B10 event filed. The President's General Debate statement of 24 September 2025 says that Israel has the right to defend itself, that hostages must return home, that children and families
-      in Gaza do not feel safe and that 'the thin line between legitimate defense and unacceptable suffering is being painfully tested'; the Minister said on 17 February 2026 that 'the other side
-      has the right to retaliate, but everything must be in compliance with international humanitarian law'. Both pair the right of self-defence with the law of war, so neither is unconditional
-      support (the US reading, docs/10 B-209). No statement of the Prime Minister's on Gaza was found in an archived text.
+    note: 'No B10 event filed. The President''s General Debate statement of 24 September 2025 says that Israel has the right to defend itself, that hostages must return home, that children and
+      families in Gaza do not feel safe and that ''the thin line between legitimate defense and unacceptable suffering is being painfully tested''; the Minister said on 17 February 2026 that ''the
+      other side has the right to retaliate, but everything must be in compliance with international humanitarian law''. Both pair the right of self-defence with the law of war, so neither is
+      unconditional support (the US reading, docs/10 B-209). No statement of the Prime Minister''s on Gaza was found in an archived text. Finish run (T-F-L03): the Prime Minister''s statements
+      found on the Government Office''s site (1 February, 22 March and 18 October 2024; 1 February, 14 February and 25 June 2025) are not unconditional support either: the release of 22 March
+      2024 (src_20240322_vlada-sk_fico-rada-bosna-gaza, archived) pairs Israel''s right to defend itself with a human-rights framework for civilians in Gaza, and the one of 25 June 2025 (src_20250625_vlada-sk_fico-netanyahu-call)
+      says that Slovakia stands for peaceful solutions and international law.'
     queries:
     - Fico Izrael právo na sebaobranu Gaza vyhlásenie premiér
     - Slovakia Fico Israel unconditional support Gaza statement Prime Minister
@@ -145,7 +237,8 @@ indicators:
     checked_at: '2026-10-06'
     note: 'No Slovak support for a review or suspension of the EU-Israel Association Agreement was found. The Foreign Minister told the Israeli Foreign Minister in Bratislava on 9 July 2025 that
       Slovakia would oppose any EU proposal to suspend dialogue with Israel (Israel National News, from the Israeli Ministry''s account; lead_20261006_SVK_3): a state that opposed gets no C1 event
-      (docs/02 §2 C1).'
+      (docs/02 §2 C1). Finish run (T-F-L03): the Prime Minister''s own release of 25 June 2025 on the Government Office''s site (src_20250625_vlada-sk_fico-netanyahu-call, archived) says that
+      Slovakia disagrees with proposals to interrupt the dialogue between the EU and Israel on the basis of the Association Agreement: a position against a review, no event (lead_20261006_SVK_3).'
     queries:
     - Slovakia EU-Israel Association Agreement review suspend position Slovakia Council opposed OR supported
     - Slovensko Asociačná dohoda EÚ Izrael pozastavenie Blanár
@@ -165,14 +258,63 @@ indicators:
     checked_at: '2026-10-06'
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No ban on, or labelling rule for, goods from Israeli settlements was found. The Government Office''s own search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09 for Izrael, Izraela,
+      Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom, Blízky východ, Blízkom východe, Irán and the terms named below; control
+      queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each fetched and its full text searched for the same terms. The items of 7 October
+      2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration and the situation in the Gaza Strip (30 October 2023); the Prime Minister''s
+      statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod); his
+      address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic agreement
+      (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry (cooperation with an Israeli company on an air-defence system: the purchase of
+      lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call); an item on the situation in the Middle East (4 March
+      2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue of Czech-Slovak friendship (27 October 2026, Israel
+      in a list of nations). Searched for C4: osady, osadníci, okupované, okupovaných, Západný breh, Západného brehu (0 results each), označovanie (1 result, an answer to the Venice Commission
+      on a law on non-profit organisations), dovoz (29; the first results concern energy imports). The Ministry of Economy''s own search (economy.gov.sk/search, run on 2026-11-09: Izrael 53 results,
+      Palestín 0, vývoz zbraní 0; the query Gaza returned items whose titles are encoded strings, not read) lists for Israel the programme ''Innovations for Slovakia and Israel'' and its list
+      of approved joint research projects (a call under the research cooperation agreement of the two governments; the date of the agreement and of the calls was not read), and nothing on licences.
+      The Council''s settler listings (B11, R8) are the EU''s, not a Slovak measure. Customs (financnasprava.sk) and the State Veterinary and Food Administration were not read. The Ministry of
+      Foreign and European Affairs (mzv.sk) answers every scripted request with HTTP 403 and the Parliament''s and the Public Procurement Office''s pages were not read. No web search was available
+      (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
+    - economy.gov.sk/search?search= Izrael, 2026-11-09
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or the occupied territories was found. The Government Office''s own
+      search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09 for Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom,
+      Blízky východ, Blízkom východe, Irán and the terms named below; control queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each
+      fetched and its full text searched for the same terms. The items of 7 October 2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration
+      and the situation in the Gaza Strip (30 October 2023); the Prime Minister''s statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024
+      and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod); his address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza'');
+      the audience with the Pope (14 February 2025); the vote on the pandemic agreement (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry
+      (cooperation with an Israeli company on an air-defence system: the purchase of lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call);
+      an item on the situation in the Middle East (4 March 2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue
+      of Czech-Slovak friendship (27 October 2026, Israel in a list of nations). Searched for C5: fond (101 results; the first results concern EU funds), štátny fond (1), dôchodkový (0), vylúčenie
+      (1), bojkot (0), sankcie (7; the first result is an answer to the Venice Commission). The Social Insurance Agency''s, the National Bank of Slovakia''s and the pension management companies''
+      pages were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No procurement exclusion of companies over conduct in Gaza or the occupied territories was found. The Government Office''s own search service (vlada.gov.sk/vyhladavanie, run on 2026-11-09
+      for Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Netanyahuom, Blízky východ, Blízkom východe, Irán and the terms
+      named below; control queries answered; the search matches whole words, so inflected forms were run separately) returned 44 pages, each fetched and its full text searched for the same terms.
+      The items of 7 October 2023 or later that name Israel or Gaza are: the Prime Minister''s and the Interior Minister''s remarks on migration and the situation in the Gaza Strip (30 October
+      2023); the Prime Minister''s statements after the European Councils of 1 February 2024 (src_20240201_vlada-sk_fico-rada-gaza), 22 March 2024 and 18 October 2024 (src_20241018_vlada-sk_fico-samit-eu-blizky-vychod);
+      his address to the ambassadors of 1 February 2025 (''cautiously optimistic about the agreed ceasefire in Gaza''); the audience with the Pope (14 February 2025); the vote on the pandemic
+      agreement (20 May 2025, Israel named among the abstaining states); the remarks of 29 May 2025 on the defence industry (cooperation with an Israeli company on an air-defence system: the purchase
+      of lead_20261006_SVK_4); the Prime Minister''s telephone call with Mr Netanyahu (25 June 2025, src_20250625_vlada-sk_fico-netanyahu-call); an item on the situation in the Middle East (4
+      March 2026) and two on the conflict of the United States and Israel with Iran (11 and 17 March 2026); and a speech at the unveiling of a statue of Czech-Slovak friendship (27 October 2026,
+      Israel in a list of nations). Searched for C6: obstarávanie (18 results; the first results are the Office''s own tenders), vylúčenie (1), bojkot (0). The Public Procurement Office''s register
+      (uvo.gov.sk) and the Ministry of Defence''s contracts register (zmluvy.mosr.sk) were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
   D1:
     status: has-events
     checked_at: '2026-10-06'
@@ -189,12 +331,9 @@ indicators:
   D3:
     status: none-found
     checked_at: '2026-11-09'
-    note: >-
-      No event: UNRWA's donor tables give USD 32,859 for 2023 against USD 52,687 for 2022 (the 2023 contribution
-      is below the 2022 one, so no increased tier) and no row for 2024; with no prior D2 there is no restored
-      tier either (R10). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December
-      2025, read 2026-11-09) has no row for Slovakia, so 2025 does not exceed 2022: no 2025 event (docs/10
-      B-876).
+    note: 'No event: UNRWA''s donor tables give USD 32,859 for 2023 against USD 52,687 for 2022 (the 2023 contribution is below the 2022 one, so no increased tier) and no row for 2024; with no
+      prior D2 there is no restored tier either (R10). UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no row for Slovakia, so 2025
+      does not exceed 2022: no 2025 event (docs/10 B-876).'
     queries:
     - UNRWA donor tables 2022, 2023 and 2024 (archived), row Slovakia
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
@@ -218,11 +357,32 @@ indicators:
     - Slovensko vízum OR azyl Palestínčania Gaza štipendisti príchod Slovensko
     - Slovakia visa OR refugee pathway Gaza students scholarship arrival
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No domestic investigation of Slovak nationals or companies for conduct in Gaza was found. The Prosecutor General''s Office''s own search (genpro.gov.sk/vyhladavanie,
+      run on 2026-11-09 for Izrael, Gaza, Gazy, Hamas, Palestína, Palestínčan and antisemitizmus; a control query for the Prosecutor General''s name returned results) returned no result for any
+      of them. The Government Office''s search for trestné oznámenie (4 results: domestic cases) and Medzinárodný trestný súd (0) names nothing on Gaza. The courts'' and the police''s pages were
+      not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - genpro.gov.sk/vyhladavanie?tx_kesearch_pi1[sword]= Izrael, Gaza, Gazy, Hamas, Palestína, Palestínčan, antisemitizmus, 2026-11-09 (no result)
+    - vlada.gov.sk/vyhladavanie/?search= trestné oznámenie, Medzinárodný trestný súd
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No ban or restriction of assemblies about Gaza was found. The Government Office''s own search (2026-11-09: demonštrácie 0, propalestínske 0, protesty 3, zhromaždenie
+      2) returns only domestic items: the Prime Minister''s statement of 23 January 2025 that the Government will take no step on the right of assembly, and an answer to the Venice Commission
+      on a law on non-profit organisations. The Ministry of the Interior''s site search (minv.sk) returns its home page to a scripted request (results are loaded by script) and the police''s pages
+      were not read. No web search was available (the run''s shared allowance was used up before the session began).'
+    queries:
+    - vlada.gov.sk/vyhladavanie/?search= Izrael, Izraela, Izraelu, Izraelom, izraelsk, Gaza, Gazy, Gaze, Hamas, Hamasu, Palestín, Palestínsk, UNRWA, Netanyahu, Blízky východ, Blízkom východe,
+      Irán, 2026-11-09 (44 pages, full text searched)
+    - vlada.gov.sk/vyhladavanie/?search= demonštrácie, propalestínske, protesty, zhromaždenie
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation was found; no record names the Hind Rajab Foundation or a complaint against Israeli officials.
+      The Prosecutor General's Office's own search (genpro.gov.sk/vyhladavanie, run on 2026-11-09 for Izrael, Gaza, Gazy, Hamas, Palestína, Palestínčan and antisemitizmus; a control query returned
+      results) returned no result for any of them; the Government Office's search (Hind Rajab, Medzinárodný trestný súd) returns nothing. The courts' pages were not read. No web search was available
+      (the run's shared allowance was used up before the session began).
+    queries:
+    - genpro.gov.sk/vyhladavanie?tx_kesearch_pi1[sword]= Izrael, Gaza, Gazy, Hamas, Palestína, Palestínčan, antisemitizmus, 2026-11-09 (no result)
