@@ -8,6 +8,8 @@
 # speech. B9 events are filed only on the speaker's own words (words the Ministry quotes directly) and on joint
 # statements of foreign ministers, not on words reported in indirect speech, statements of the Ministry, of
 # ambassadors or of officials, and only when the document cites Gaza (docs/10 B-381 (4), B-32, B-402).
+# Finish run (T-F-W8, 2026-11-09): R3 (docs/calibration/README.md §6) made the head of state a B9 speaker; the King's
+# speeches and messages on maroc.ma that cite Gaza are filed from then on (docs/10 B-921). The lines above predate R3.
 
 - id: evt_2023_10_26_MAR_B9
   revision: 1
@@ -56,6 +58,59 @@
       verdict: agree
       notes: "Lines 1, 3, 4 and 8 of the archived text re-read: the Kingdom of Morocco is among the nine foreign ministers (line 1); the condemnation of the targeting of civilians, of forced displacement and collective punishment, and the call for a ceasefire. B9 +5 (violations named)."
     notes: "Joint statement of the foreign ministers of Jordan, the United Arab Emirates, Bahrain, Saudi Arabia, Oman, Qatar, Kuwait, Egypt and Morocco of 26 October 2023, in the English version published by the Omani Ministry of Foreign Affairs (the only signatory ministry copy found that could be archived; the Arabic is the official text). Filed for the six signatories among the 45 countries in the P-16 consistency sweep (docs/10 B-444; B-396 (5), B-401 (6))."
+
+- id: evt_2023_11_29_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2023-11-29'
+  points: 5
+  points_rationale: "Specific violations named (+5): the King's message names a total blockade imposed on Gaza \"in flagrant violation\" of international law, the forced displacement of more than one and a half million Palestinians, and condemns the policy of collective punishment and forced displacement; it also calls for a lasting ceasefire."
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: "The King condemned collective punishment and forced displacement in Gaza in a message to the UN Committee on Palestinian rights."
+    fr: "Le roi a condamné la punition collective et le déplacement forcé à Gaza dans un message au Comité des Nations unies sur les droits des Palestiniens."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20231129_maroc-ma_message-roi-comite-palestine
+    quote: "Outre la destruction massive de logements, d’hôpitaux, d’écoles, de lieux de culte et d’infrastructures, un blocus total est imposé à Gaza, en flagrante violation des lois internationales et au mépris total des valeurs humaines."
+    quote_lang: fr
+    quote_en: "Besides the massive destruction of homes, hospitals, schools, places of worship and infrastructure, a total blockade is imposed on Gaza, in flagrant violation of international law and in total disregard of human values."
+    locator: line 7
+  - source: src_20231129_maroc-ma_message-roi-comite-palestine
+    quote: "Il en résulte un déplacement forcé de plus d’un million et demi de Palestiniens, une augmentation des victimes et une intensification des destructions."
+    quote_lang: fr
+    quote_en: "The result is the forced displacement of more than one and a half million Palestinians, a rise in casualties and an intensification of destruction."
+    locator: line 8
+  - source: src_20231129_maroc-ma_message-roi-comite-palestine
+    quote: "Par conséquent, Nous réaffirmons à cette occasion, Notre rejet et Notre condamnation de toutes les exactions commises, de la politique de punition collective, de déplacement forcé et de toute tentative visant à imposer un nouveau fait accompli."
+    quote_lang: fr
+    quote_en: "Consequently, We reaffirm on this occasion Our rejection and Our condemnation of all the abuses committed, of the policy of collective punishment, of forced displacement and of any attempt to impose a new fait accompli."
+    locator: line 21
+  - source: src_20231129_maroc-ma_message-roi-comite-palestine
+    quote: "- Premièrement : induire une désescalade urgente et concrète, mettre fin aux agressions militaires, pour aboutir à un cessez-le-feu durable et vérifiable ;"
+    quote_lang: fr
+    quote_en: "- First: to bring about an urgent and concrete de-escalation, end the military aggressions, so as to reach a lasting and verifiable ceasefire;"
+    locator: line 13
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order of the evidence list: line 13 (call for a lasting ceasefire), line 21 (condemnation of collective punishment and forced displacement, Gaza named in the next sentence), line 8 (forced displacement of more than 1.5 million Palestinians from the Gaza bombardment) and line 7 (total blockade of Gaza in flagrant violation of international law) are verbatim in the archived text; line 1 dates the message to the International Day of 29 November and the agency line reads 29.11.2023. Forced displacement and collective punishment are named violations of the +5 tier; scope gaza."
+    notes: "The King's written message to the Chair of the UN Committee on the Exercise of the Inalienable Rights of the Palestinian People, as the Government's portal publishes it. The King is a B9 speaker as head of state (R3, docs/calibration/README.md §6); the header of this file predates that reading and B-403 (3) had left his messages unfiled. Translations by the session, beside the French original. Filed in the finish run (T-F-W8, docs/10 B-921)."
 
 - id: evt_2024_03_05_MAR_B9
   revision: 1
@@ -114,6 +169,90 @@
       The Ministry reports the speech; no full text of it was found. The tier rests on the directly quoted words; the
       indirect-speech line is context.
 
+- id: evt_2024_05_04_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2024-05-04'
+  points: 2
+  points_rationale: "Formal call for a ceasefire and humanitarian access (+2): the King repeats his demand for an immediate, lasting and comprehensive halt to the offensive and for humanitarian aid to be allowed throughout the Gaza Strip. The speech names no specific violation in Gaza (the systematic settler attacks it names concern the West Bank)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The King called for an immediate halt to the offensive and for aid throughout the Gaza Strip in an address to the OIC summit in Banjul."
+    fr: "Le roi a appelé à l'arrêt immédiat de l'offensive et à l'acheminement de l'aide dans toute la bande de Gaza dans un discours au sommet de l'OCI à Banjul."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20240505_maroc-ma_discours-roi-sommet-oci-banjul
+    quote: "Partant de Nos responsabilités de Souverain du Royaume du Maroc - dont le peuple aspire ardemment, à la justice, à la solidarité et à la coexistence avec les autres peuples - et en Notre qualité de Président du Comité Al-Qods, Nous réitérons avec insistance, Notre demande d’un arrêt immédiat, durable et global de cette offensive inédite, ainsi que l’autorisation de l’acheminement des aides humanitaires dans l’ensemble de la bande de Gaza."
+    quote_lang: fr
+    quote_en: "Proceeding from Our responsibilities as Sovereign of the Kingdom of Morocco - whose people ardently aspire to justice, solidarity and coexistence with other peoples - and in Our capacity as Chairman of the Al-Quds Committee, We insistently reiterate Our demand for an immediate, lasting and comprehensive halt to this unprecedented offensive, as well as the authorisation of the delivery of humanitarian aid throughout the Gaza Strip."
+    locator: line 39
+  - source: src_20240505_maroc-ma_discours-roi-sommet-oci-banjul
+    quote: "Face à l’agression brutale contre Gaza, nos cœurs meurtris saignent."
+    quote_lang: fr
+    quote_en: "In the face of the brutal aggression against Gaza, our wounded hearts bleed."
+    locator: line 38
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order: line 38 (the aggression against Gaza) and line 39 (the demand for an immediate, lasting and comprehensive halt and for aid throughout the Gaza Strip) are verbatim; line 1 gives the summit's opening on Saturday 4 May (2024, agency line 5 May 2024) and line 2 the reader, the Minister of Habous and Islamic Affairs. Ceasefire tier (+2) agrees; no specific violation in Gaza is named."
+    notes: "The King's address to the 15th Islamic Summit of the OIC (Banjul), read on his behalf by the Minister of Habous and Islamic Affairs; the words are the King's (R3, head of state). Dated 4 May 2024, the summit's opening day as line 1 gives it; the portal's agency line is 5 May 2024. Translations by the session. Filed in the finish run (T-F-W8, docs/10 B-921)."
+
+- id: evt_2024_05_16_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2024-05-16'
+  points: 5
+  points_rationale: "Specific violations named (+5): the King's address to the Arab League summit says that the reprisals in the Gaza Strip revealed grave violations of international humanitarian law, condemns the killing of innocents and calls the attempts at forced displacement of Palestinians unacceptable, as the Foreign Minister's rejection of deportation was read in evt_2025_09_11_MAR_B9; it also asks for rapid and lasting aid throughout the Gaza Strip."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The King condemned the killing of civilians and attempts at forced displacement in the Gaza Strip in an address to the Arab League summit."
+    fr: "Le roi a condamné la mort de civils et les tentatives de déplacement forcé dans la bande de Gaza dans un discours au sommet de la Ligue arabe."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20240516_maroc-ma_discours-roi-sommet-arabe-manama
+    quote: "Les actes de représailles perpétrés dans la bande de Gaza ont révélé de graves violations qui vont à l’encontre des dispositions du droit international et du droit international humanitaire."
+    quote_lang: fr
+    quote_en: "The acts of reprisal committed in the Gaza Strip have revealed grave violations contrary to the provisions of international law and international humanitarian law."
+    locator: line 13
+  - source: src_20240516_maroc-ma_discours-roi-sommet-arabe-manama
+    quote: "Aussi, Nous réitérons Notre vive condamnation du meurtre d’innocents. Nous réaffirmons également que le fait d’imposer une réalité nouvelle dans la bande de Gaza et les tentatives de déplacement forcé des Palestiniens sont inacceptables, car ils ne font qu’aggraver la situation et générer plus de violence et d’instabilité."
+    quote_lang: fr
+    quote_en: "We therefore reiterate Our strong condemnation of the killing of innocents. We also reaffirm that imposing a new reality in the Gaza Strip and the attempts at forced displacement of the Palestinians are unacceptable, as they only aggravate the situation and generate more violence and instability."
+    locator: line 14
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order: line 14 (condemnation of the killing of innocents; attempts at forced displacement of Palestinians unacceptable, in the sentence on the Gaza Strip) and line 13 (grave violations of international humanitarian law in the Gaza Strip) are verbatim; line 1 dates the summit's opening on Thursday 16 May (agency line 16 May 2024) and line 2 names the reader, the Head of Government. +5 on forced displacement agrees, consistent with evt_2025_09_11_MAR_B9."
+    notes: "The King's address to the 33rd Arab League Summit (Manama), read on his behalf by the Head of Government, Aziz Akhannouch; the words are the King's (R3, head of state). A different day from the Foreign Minister's events of 5 and 30 May 2024. Translations by the session. Filed in the finish run (T-F-W8, docs/10 B-921)."
+
 - id: evt_2024_05_30_MAR_B9
   revision: 1
   country: MAR
@@ -168,6 +307,102 @@
     notes: >-
       Ten weeks after the filed OIC speech of 5 March 2024, at another forum; B9 is at its +10 cap from this date to
       March 2025.
+
+- id: evt_2024_11_26_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2024-11-26'
+  points: 5
+  points_rationale: "Specific violations named (+5): the King's message says the continuing Israeli invasion of the Gaza Strip has deprived millions of Palestinians of food, care and clean water and forced them into exodus, and calls on the world to compel Israel to lift the siege of the Gaza Strip and allow the return of the displaced; it also calls for an immediate and lasting ceasefire."
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: "The King called for a ceasefire in the Gaza Strip and for Israel to lift its siege in a message to the UN Committee on Palestinian rights."
+    fr: "Le roi a appelé à un cessez-le-feu dans la bande de Gaza et à la levée du siège par Israël dans un message au Comité des Nations unies sur les droits des Palestiniens."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20241126_maroc-ma_message-roi-comite-palestine
+    quote: "Au vu des développements graves et sans précédent, survenus dans la bande de Gaza depuis le 7 octobre 2023, le Royaume du Maroc exprime sa vive préoccupation quant à la situation dramatique engendrée par la poursuite de l’invasion israélienne de la Bande, laquelle a fait à ce jour des dizaines de milliers de morts et de blessés parmi les civils innocents et sans défense, a privé des millions de palestiniens de leurs droits fondamentaux au logement, à la nourriture, aux soins, à l’eau salubre, à l’enseignement et à la sécurité et les a contraints à l’exode et à la migration en raison de l’ampleur des destructions massives ayant affecté globalement les infrastructures de la région."
+    quote_lang: fr
+    quote_en: "In view of the grave and unprecedented developments in the Gaza Strip since 7 October 2023, the Kingdom of Morocco expresses its deep concern at the dramatic situation caused by the continuing Israeli invasion of the Strip, which has so far left tens of thousands of innocent and defenceless civilians dead and wounded, deprived millions of Palestinians of their fundamental rights to housing, food, care, clean water, education and security, and forced them into exodus and migration because of the scale of the massive destruction that has affected the infrastructure of the region as a whole."
+    locator: line 11
+  - source: src_20241126_maroc-ma_message-roi-comite-palestine
+    quote: "Mais, alors que les regrettables affrontements qui secouent la région depuis plus d’un an continuent à faire rage et que se poursuit l’invasion militaire israélienne de la bande de Gaza, le monde entier est appelé, en cette journée commémorative, à se mobiliser d’urgence pour stopper la guerre et contraindre Israël à lever le siège de la bande de Gaza et à permettre le retour des personnes déplacées, dans la perspective du lancement de la reconstruction de ce qui a été détruit par la guerre."
+    quote_lang: fr
+    quote_en: "But, as the regrettable confrontations that have shaken the region for more than a year continue to rage and the Israeli military invasion of the Gaza Strip goes on, the whole world is called, on this commemorative day, to mobilise urgently to stop the war and compel Israel to lift the siege of the Gaza Strip and allow the return of displaced persons, with a view to launching the reconstruction of what the war has destroyed."
+    locator: line 21
+  - source: src_20241126_maroc-ma_message-roi-comite-palestine
+    quote: "Premièrement : la nécessité de parvenir à un cessez-le feu immédiat et durable dans la bande de Gaza et la cessation des agressions répétées visant les populations paisibles en Cisjordanie et à Al-Qods;"
+    quote_lang: fr
+    quote_en: "First: the need to reach an immediate and lasting ceasefire in the Gaza Strip and the cessation of the repeated aggressions against peaceful populations in the West Bank and Al-Quds;"
+    locator: line 13
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order: line 13 (immediate and lasting ceasefire in the Gaza Strip), line 21 (compel Israel to lift the siege of the Gaza Strip, return of the displaced) and line 11 (deprivation of food, care and water; forced exodus) are verbatim; line 1 gives the International Day marked that year on 26 November and the agency line 26 November 2024. The deprivation of food and the forced exodus are named violations; +5 agrees (the siege call alone would be +2)."
+    notes: "The King's written message to the Chair of the UN Committee on the Exercise of the Inalienable Rights of the Palestinian People (R3, head of state). Translations by the session. The tier rests on the deprivation of food and the forced exodus named in line 11. Filed in the finish run (T-F-W8, docs/10 B-921)."
+
+- id: evt_2025_05_17_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2025-05-17'
+  points: 2
+  points_rationale: "Formal call for a ceasefire and humanitarian access (+2): the King calls for the immediate halt of military operations and a definitive ceasefire after the collapse of the Gaza ceasefire agreement, and for humanitarian aid to keep reaching the Gaza Strip. The grave violations of international humanitarian law are named without a specific violation, and the forced displacement the speech names concerns the West Bank, so the Gaza reading stays at +2."
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: "The King called for an immediate halt to military operations and a definitive ceasefire in Gaza in an address to the Arab League summit."
+    fr: "Le roi a appelé à l'arrêt immédiat des opérations militaires et à un cessez-le-feu définitif à Gaza dans un discours au sommet de la Ligue arabe."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20250517_maroc-ma_discours-roi-sommet-arabe-bagdad
+    quote: "Au regard de la situation inquiétante qui sévit dans la région après l’effondrement de l’Accord de cessez-le feu à Gaza, et en nous appuyant sur les fondamentaux que Nous avons énoncés précédemment pour sortir de cette impasse, de cette tribune, Nous appelons à l’application des mesures suivantes :"
+    quote_lang: fr
+    quote_en: "In view of the worrying situation prevailing in the region after the collapse of the ceasefire agreement in Gaza, and building on the fundamentals We have previously set out to break this deadlock, from this rostrum We call for the application of the following measures:"
+    locator: line 14
+  - source: src_20250517_maroc-ma_discours-roi-sommet-arabe-bagdad
+    quote: "Premièrement : l’arrêt immédiat des opérations militaires et le retour à la table des négociations pour relancer l’Accord de trêve et parvenir in fine à la proclamation d’un cessez-le feu définitif."
+    quote_lang: fr
+    quote_en: "First: the immediate halt of military operations and the return to the negotiating table to revive the truce agreement and ultimately achieve the proclamation of a definitive ceasefire."
+    locator: line 15
+  - source: src_20250517_maroc-ma_discours-roi-sommet-arabe-bagdad
+    quote: "Troisièmement : la mobilisation pour s’assurer que les aides humanitaires, notamment le matériel médical et les denrées alimentaires, continueront à être acheminées vers la Bande de Gaza et la Cisjordanie, sans qu’aucun motif ne vienne en entraver le processus."
+    quote_lang: fr
+    quote_en: "Third: mobilisation to ensure that humanitarian aid, in particular medical equipment and foodstuffs, continues to be delivered to the Gaza Strip and the West Bank, without any reason being allowed to obstruct the process."
+    locator: line 17
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order: line 17 (aid to the Gaza Strip and the West Bank), line 15 (immediate halt of military operations; definitive ceasefire) and line 14 (after the collapse of the ceasefire in Gaza) are verbatim; line 1 gives the summit's opening on Saturday in Baghdad, the agency line 17 May 2025, and line 2 the reader, the Foreign Minister. Ceasefire tier (+2) agrees."
+    notes: "The King's address to the 34th Arab League Summit (Baghdad), read on his behalf by the Minister of Foreign Affairs, Nasser Bourita; the words are the King's (R3, head of state). Translations by the session. Filed in the finish run (T-F-W8, docs/10 B-921)."
 
 - id: evt_2025_09_11_MAR_B9
   revision: 1
@@ -225,6 +460,49 @@
     notes: >-
       A statement to the press rather than a speech; the Minister's words are quoted directly by the Ministry. The
       tier rests on the rejection of the deportation of Gaza's Palestinians (forced displacement).
+
+- id: evt_2025_11_25_MAR_B9
+  revision: 1
+  country: MAR
+  indicator: B9
+  type: repeatable
+  date: '2025-11-25'
+  points: 5
+  points_rationale: "Specific violations named (+5): the King's message says the Palestinian people endured massacres, forced displacement and deprivation of food in the Gaza Strip over two years, and hopes for the full implementation of the ceasefire agreement with sufficient humanitarian aid."
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: "The King said Palestinians had endured forced displacement and deprivation of food in Gaza, in a message to the UN Committee on Palestinian rights."
+    fr: "Le roi a déclaré que les Palestiniens avaient subi déplacements forcés et privation de nourriture à Gaza, dans un message au Comité des Nations unies sur les droits des Palestiniens."
+  actor:
+    en: King of Morocco
+    fr: Roi du Maroc
+    name: Mohammed VI
+  evidence:
+  - source: src_20251125_maroc-ma_message-roi-comite-palestine
+    quote: "Tout au long des deux dernières années, le peuple palestinien a enduré les pires souffrances, bien au-delà de ce que n’importe quelle communauté humaine peut supporter : massacres, déplacements forcés et privation de nourriture dans la bande de Gaza, agressions et intimidations quotidiennes en Cisjordanie et à Al-Qods Oriental."
+    quote_lang: fr
+    quote_en: "Throughout the last two years, the Palestinian people have endured the worst suffering, far beyond what any human community can bear: massacres, forced displacement and deprivation of food in the Gaza Strip, daily aggressions and intimidation in the West Bank and East Al-Quds."
+    locator: line 9
+  - source: src_20251125_maroc-ma_message-roi-comite-palestine
+    quote: "Après la guerre dévastatrice de deux ans qui a ravagé Gaza, des efforts diplomatiques soutenus et intenses ont abouti à un accord de cessez-le-feu que Nous espérons voir pleinement mis en œuvre dans toutes ses phases. Ainsi, il sera possible de stopper la machine à tuer et d’alléger la souffrance du peuple palestinien frère, en facilitant la fourniture fluide et en quantités suffisantes de l’aide humanitaire qui lui est destinée."
+    quote_lang: fr
+    quote_en: "After the devastating two-year war that ravaged Gaza, sustained and intense diplomatic efforts led to a ceasefire agreement that We hope to see fully implemented in all its phases. It will thus be possible to stop the killing machine and ease the suffering of the brotherly Palestinian people, by facilitating the smooth delivery, in sufficient quantities, of the humanitarian aid intended for them."
+    locator: line 12
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Re-read in reverse order: line 12 (full implementation of the ceasefire agreement, aid in sufficient quantities) and line 9 (massacres, forced displacement and deprivation of food in the Gaza Strip) are verbatim; line 1 gives the International Day marked that year on 25 November and the agency line 25 November 2025. Forced displacement and starvation are named violations of the +5 tier; scope gaza (the West Bank is named too)."
+    notes: "The King's written message to the Chair of the UN Committee on the Exercise of the Inalienable Rights of the Palestinian People (R3, head of state). Translations by the session. The message also names settlement expansion and annexation in the West Bank (line 27); scope gaza and west-bank. Filed in the finish run (T-F-W8, docs/10 B-921)."
 
 - id: evt_2026_03_26_MAR_B9
   revision: 1

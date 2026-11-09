@@ -590,3 +590,15 @@ Window of 27 September to 9 November 2026, read on the Governments' own sites (r
 Sources added (5): `src_20261021_mofa-qa_joint-statement-qatar-france-state-visit`, `src_20261013_diwan-gov-qa_amir-speech-shura-council-55`, `src_20260922_diwan-gov-qa_amir-speech-unga-81`, `src_20260922_kingabdullah-jo_unga-81-general-debate-address`, `src_20261014_kingabdullah-jo_jordan-australia-joint-statement`.
 
 Not done: B-919 (E1 and E3 of the five; B8 for the five; Petra, WAM, the Qatari latest-news listing). Flags for the author: B-920 (1) to (5).
+
+Resumed session (docs/10 B-921, B-922). R3 made the head of state a B9 speaker, so the King of Morocco's speeches and messages on maroc.ma (listings pages 0 to 6, from October 2023) were read; Morocco was the one country of the wave below the B9 cap. WebSearch was still unavailable (shared allowance used up), so E1 and E3 of the five stay unchecked.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| MAR | maroc.ma royal speeches and messages (French), every page from October 2023 | `evt_2023_11_29_MAR_B9` (+5), `evt_2024_05_04_MAR_B9` (+2), `evt_2024_05_16_MAR_B9` (+5), `evt_2024_11_26_MAR_B9` (+5), `evt_2025_05_17_MAR_B9` (+2), `evt_2025_11_25_MAR_B9` (+5): the King's messages to the UN Committee on Palestinian rights and addresses to the OIC and Arab League summits | Throne Day speech of 29 Jul 2024 (cessation of hostilities called a priority, not a call; flagged B-922 (4) (c)); Throne Day 2025 and 2026, openings of Parliament 2023 to 2026, Green March 2023 and 2024, address of 31 Oct 2025 (no Gaza) | +3 to +8 Acting (B9 +4.4 to +10, capped) | B9 note; header comment; E1, E3 notes (still unchecked) |
+| JOR | Ministry of Foreign Affairs (www.mfa.gov.jo): Arabic news listing, item pages, site search | none | No Ministry copy of the ICC statement of 21 Nov 2024; `lead_20260929_JOR_1` kept open | +42 Confronting, unchanged | E1, E3 notes; `lead_20260929_JOR_1` annotated |
+| SAU, ARE, QAT | none (no search allowance) | none | none | unchanged | E1, E3 notes |
+
+Sources added (6): `src_20231129_maroc-ma_message-roi-comite-palestine`, `src_20240505_maroc-ma_discours-roi-sommet-oci-banjul`, `src_20240516_maroc-ma_discours-roi-sommet-arabe-manama`, `src_20241126_maroc-ma_message-roi-comite-palestine`, `src_20250517_maroc-ma_discours-roi-sommet-arabe-bagdad`, `src_20251125_maroc-ma_message-roi-comite-palestine`.
+
+Still not done: E1 and E3 of the five (B-922 (1)); B8 for the five (B-919 (2)); the leads of B-922 (3); the other heads of state's statements before the window (B-921 (6)). Flags for the author: B-922 (4) (a) to (d).
