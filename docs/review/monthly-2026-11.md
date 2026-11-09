@@ -574,3 +574,19 @@ Window of 27 September to 9 November 2026, read on the Governments' own lists (r
 Sources added (3): `src_20261009_mincit_decreto-1514-carbon-israel`, `src_20261013_mincit_decretos-2026`, `src_20261008_defensa-ar_memorandum-defensa-israel`.
 
 Not done: B-916. Flags for the author: B-913 (1) (end date of the Colombian A6 from the Ministry's publication, the Diario Oficial's date not read), B-913 (2) (the Argentine defence memorandum as a fourth C2 event, no score effect), B-915 (1) (the Argentine B10 reading of the speeches of 2 November and 15 October 2026).
+
+### T-F-W8: full-protocol wave SAU ARE QAT JOR MAR (docs/10 B-917 to B-920)
+
+Window of 27 September to 9 November 2026, read on the Governments' own sites (routes in B-917; the Amiri Diwan through the built-in browser, which was closed afterwards), plus the joint statements that T-F-W1 and T-F-W2 left for this wave. Every capture's replay was re-fetched with `curl --compressed` and compared (bytes and SHA-256). The session's web searches stopped after six calls (the run's shared allowance was used up), so E1 and E3 stay unchecked (B-919).
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| SAU | Saudi Press Agency search API (24 title terms) and item pages | West Bank statements of the eight ministers of 2 Jun, 23 Jul, 21 Aug, 9 Sep 2026 (+5 each, unscored); `evt_2026_10_23_SAU_B9` (+2, R4 Istanbul) | Crown Prince's Shura address of 30 Sep 2026 (lead, spa.gov.sa refuses Save Page Now); Human Rights Council statement by a director general; unsigned Ministry and Cabinet statements | +26 Acting, unchanged (B9 at cap) | header; E1, E3 notes (still unchecked); `lead_20261109_SAU_3` |
+| ARE | Ministry news search (16 terms) | West Bank statements of the eight ministers (4 events, +5 each, unscored) | Unsigned statements of 29 Sep and 19 Oct; Foreign Minister's call with Israel's Foreign Minister of 30 Sep (no indicator act) | +22 Acting, unchanged | header; E1, E3 notes (still unchecked) |
+| QAT | Ministry Statements listing (90 items), Prime Minister's speeches and press conferences, Amiri Diwan Speeches & Remarks (built-in browser) | `evt_2026_10_13_QAT_B9` (+5, the Amir: genocide in Gaza), `evt_2026_09_22_QAT_B9_2` (+5, the Amir at the General Assembly), `evt_2026_10_21_QAT_B9` (+2, France-Qatar joint statement), `evt_2026_08_03_QAT_B9` (+5), `evt_2026_08_20_QAT_B9` (+2), West Bank statements (4 events, unscored) | Unsigned Ministry statements; fourth Qatar-France strategic dialogue (no Gaza call) | +26 Acting, unchanged (B9 at cap) | header; E1, E3 notes (still unchecked); `lead_20260929_QAT_1` closed as promoted |
+| JOR | King's official website (Press Room pages 0 to 5, Speeches) | `evt_2026_09_22_JOR_B9_2` (+5, the King at the General Assembly: field hospitals targeted), `evt_2026_10_14_JOR_B9` (+2, Australia-Jordan joint statement), West Bank statements (4 events, unscored) | Speech from the Throne of 2 Nov 2026 (no call, no named violation; flagged B-920 (3)) | +42 Confronting, unchanged (B9 at cap) | header; E1, E3 notes (still unchecked) |
+| MAR | maroc.ma royal speeches and news; Wayback index of diplomatie.ma | none | Speech at the opening of Parliament of 9 Oct 2026 (no Gaza or Palestine) | +3 Acting, unchanged | header; E1, E3 notes (still unchecked); `lead_20260929_MAR_3` annotated |
+
+Sources added (5): `src_20261021_mofa-qa_joint-statement-qatar-france-state-visit`, `src_20261013_diwan-gov-qa_amir-speech-shura-council-55`, `src_20260922_diwan-gov-qa_amir-speech-unga-81`, `src_20260922_kingabdullah-jo_unga-81-general-debate-address`, `src_20261014_kingabdullah-jo_jordan-australia-joint-statement`.
+
+Not done: B-919 (E1 and E3 of the five; B8 for the five; Petra, WAM, the Qatari latest-news listing). Flags for the author: B-920 (1) to (5).
