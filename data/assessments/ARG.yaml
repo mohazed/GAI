@@ -27,7 +27,7 @@
 # transcripts). The argentina.gob.ar search is a POST form and was not used.
 country: ARG
 protocol_version: 1
-last_full_check: 2026-09-29
+last_full_check: 2026-11-09
 indicators:
   A1:
     status: unchecked
@@ -68,17 +68,22 @@ indicators:
       signed after 7 October 2023 was found in the Ministry's titles.
   A5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No exercise, transit, basing agreement or intelligence sharing with Israel activated for the
-      Gaza campaign was found. The Memorandum of Democracy and Freedom of 12 June 2025 opens "una
-      nueva etapa con mayor unión y cooperación en materia de defensa" (filed as C2,
-      evt_2025_06_12_ARG_C2), and the Defence Ministers agreed on 2 December 2024 to expand
-      cooperation on cyber-defence, drones, border protection and satellite communications; neither
-      is one of the A5 instance types (docs/02 §2).
+      No exercise, transit, basing agreement or intelligence sharing with Israel activated for the Gaza campaign
+      was found. The Memorandum of Democracy and Freedom of 12 June 2025 opens "una nueva etapa con mayor unión
+      y cooperación en materia de defensa" (filed as C2, evt_2025_06_12_ARG_C2), and the Defence Ministers
+      agreed on 2 December 2024 to expand cooperation on cyber-defence, drones, border protection and satellite
+      communications; neither is one of the A5 instance types (docs/02 §2). T-F-W7 (2026-11-09, window 27
+      September to 9 November 2026): the Memorandum of Understanding on defence cooperation signed on 6 October
+      2026 by the Minister of Defence and Israel's ambassador (evt_2026_10_06_ARG_C2) says nothing of exercises,
+      transit or intelligence; press reports say the Ministry of Defence agreed in July 2026 to buy ARAD rifles
+      from Israel (an A4 matter, generated from SIPRI). No named exercise with Israel in 2026 was found. No A5
+      instance.
     queries:
-      - argentina.gob.ar/defensa news titles (Israel)
-      - cancilleria.gob.ar news bodies (Israel, defensa)
+      - "argentina.gob.ar/defensa news titles (Israel)"
+      - "cancilleria.gob.ar news bodies (Israel, defensa)"
+      - "T-F-W7 2026-11-09: web search 'Argentina Israel cooperación militar ejercicio conjunto fuerzas armadas acuerdo defensa 2026'; argentina.gob.ar item of 8 October 2026"
   A6:
     status: none-found
     checked_at: 2026-09-29
@@ -139,20 +144,25 @@ indicators:
       - cancilleria.gob.ar news bodies (Corte Penal Internacional, Netanyahu)
   B6:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No statement of the President or the Foreign Minister on executing the warrants of 21 November
-      2024 was found in the Ministry's releases or the Casa Rosada's transcripts (the President's
-      reactions, if any, were not on these sites; social media not searched). Before the warrants,
-      the Government's unsigned communiqué of 22 May 2024 rejected the Prosecutor's request for
-      warrants against Israeli officials as questioning Israel's right to self-defence
-      (src_20240522_cancilleria_fiscal-cpi-israel); it is not a B6 act (no warrant yet, no named
-      speaker). Israel's Prime Minister received the President in Jerusalem (June 2025, April 2026);
-      no visit of a person under warrant to Argentina was found. Argentina itself turned to the ICC over
-      Venezuela (releases of 19 July 2024, 6 September 2024, 2 January 2025).
+      No statement of the President or the Foreign Minister on executing the warrants of 21 November 2024 was
+      found in the Ministry's releases or the Casa Rosada's transcripts (the President's reactions, if any, were
+      not on these sites; social media not searched). Before the warrants, the Government's unsigned communiqué
+      of 22 May 2024 rejected the Prosecutor's request for warrants against Israeli officials as questioning
+      Israel's right to self-defence (src_20240522_cancilleria_fiscal-cpi-israel); it is not a B6 act (no
+      warrant yet, no named speaker). Israel's Prime Minister received the President in Jerusalem (June 2025,
+      April 2026); no visit of a person under warrant to Argentina was found. Argentina itself turned to the ICC
+      over Venezuela (releases of 19 July 2024, 6 September 2024, 2 January 2025). T-F-W7 (2026-11-09): the
+      Office of the President's communiqué of 21 November 2024 rejecting the ICC's decision ('La Oficina del
+      Presidente rechaza tajantemente la reciente decisión de la Corte Penal Internacional', as the press prints
+      it; Canal26, updated 21 November 2024 18:21) was read in the press only; it says nothing on executing the
+      warrants and is an unsigned communiqué of the Office, not a statement of the President, so it is not a B6
+      instance and was not archived (docs/10 B-380 (5), the part on the ICC reaction).
     queries:
-      - cancilleria.gob.ar news bodies (Corte Penal Internacional, CPI, Netanyahu, Fiscal)
-      - casarosada.gob.ar transcripts (Corte Penal, Netanyahu)
+      - "cancilleria.gob.ar news bodies (Corte Penal Internacional, CPI, Netanyahu, Fiscal)"
+      - "casarosada.gob.ar transcripts (Corte Penal, Netanyahu)"
+      - "T-F-W7 2026-11-09: web search 'Milei Corte Penal Internacional orden de arresto Netanyahu Argentina no ejecutaría detener visita'"
   B7:
     status: none-found
     checked_at: 2026-09-29
@@ -171,46 +181,59 @@ indicators:
       touch it.
   B9:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Three events, all scoped `gaza`, all at the call tier (+2): President Fernández at the G20
-      virtual summit, 22 November 2023 (humanitarian truce); Foreign Minister Cafiero, 23 November
-      2023 (end of the violence so that aid reaches Gaza); the joint statement of seventeen leaders
-      including President Milei, 6 June 2024 (ceasefire and hostage-release agreement). Not filed
-      (docs/10 B-376): the Ministry's unsigned communiqués (18 October 2023 on the Al Ahli hospital,
-      a call to end the violence and respect humanitarian law; 28 October 2023; 1 November 2023,
-      condemning the attack on the Jabalia camp and calling for an immediate halt to attacks on
-      hospitals and civilian infrastructure, which would be +5; 24 November 2023; 10 August 2024;
-      17 July 2025 on the Holy Family church in Gaza); statements of the Vice-Minister (Human Rights
-      Council, 27 February 2024) and of the delegation (Human Rights Council, 5 April 2024, a call
-      for an immediate ceasefire); the Foreign Minister's words of 2 November 2023 (humanitarian law
-      passage in indirect speech). After 6 June 2024 no statement of the President or a Foreign
-      Minister calling for a ceasefire or naming violations was found.
+      Three events, all scoped `gaza`, all at the call tier (+2): President Fernández at the G20 virtual summit,
+      22 November 2023 (humanitarian truce); Foreign Minister Cafiero, 23 November 2023 (end of the violence so
+      that aid reaches Gaza); the joint statement of seventeen leaders including President Milei, 6 June 2024
+      (ceasefire and hostage-release agreement). Not filed (docs/10 B-376): the Ministry's unsigned communiqués
+      (18 October 2023 on the Al Ahli hospital, a call to end the violence and respect humanitarian law; 28
+      October 2023; 1 November 2023, condemning the attack on the Jabalia camp and calling for an immediate halt
+      to attacks on hospitals and civilian infrastructure, which would be +5; 24 November 2023; 10 August 2024;
+      17 July 2025 on the Holy Family church in Gaza); statements of the Vice-Minister (Human Rights Council, 27
+      February 2024) and of the delegation (Human Rights Council, 5 April 2024, a call for an immediate
+      ceasefire); the Foreign Minister's words of 2 November 2023 (humanitarian law passage in indirect speech).
+      After 6 June 2024 no statement of the President or a Foreign Minister calling for a ceasefire or naming
+      violations was found. T-F-W7 (2026-11-09, window 27 September to 9 November 2026): no B9 act dated in the
+      window was found. The Foreign Ministry's news listing (pages 0 to 6, 5 November 2026 back to 11 November
+      2025) has, by title, no communiqué naming Gaza (the items on the Middle East are of 28 February, 3 June
+      and 17 September 2026); the Casa Rosada's speeches of 27 September to 6 November 2026 (seventeen, read in
+      full by script) cite Hamas and the hostages of 7 October 2023 (15 October, 2 November) but never Gaza.
     queries:
-      - cancilleria.gob.ar news bodies (Gaza, tregua, alto el fuego, cese, humanitari)
-      - casarosada.gob.ar transcripts (Gaza, Palestin)
+      - "cancilleria.gob.ar news bodies (Gaza, tregua, alto el fuego, cese, humanitari)"
+      - "casarosada.gob.ar transcripts (Gaza, Palestin)"
+      - "T-F-W7 2026-11-09: cancilleria.gob.ar/es/actualidad/noticias pages 0 to 6; casarosada.gob.ar/informacion/discursos?start=0 (speeches of 27 September to 6 November 2026 searched for Gaza, Palestin, genocid, Hamas, rehenes, Cisjordania)"
   B10:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      One event scoped `gaza` (evt_2025_06_10_ARG_B10): the President's words in Jerusalem of 10 June
-      2025, which cite the Gaza Strip. Not filed because their documents do not cite Gaza (the
-      literal scope rule, as Bolivia's B9 statements, docs/10 B-371 (4); flagged, B-377 (2)): the
-      President's words of 12 June 2025 after the exchange of the memorandum ("he declarado mi apoyo
-      incondicional al Estado de Israel en su derecho a la autodefensa", archived); his Knesset
-      address of 11 June 2025 ("Hermanos de Israel: Argentina está con ustedes en este difícil
-      momento"; the international community "invirtiendo las categorías de víctima y victimario";
-      archived); his words of 8 May 2024 at the Holocaust commemoration ("nos encontrarán a nosotros
-      al lado suyo firme, siempre"), 21 November 2024 (a business meeting, "un aliado que estará en
-      la trinchera sin especulaciones"), 26 November 2025 (DAIA anniversary: "mientras la gran mayoría del mundo libre decidió darle la
-      espalda al Estado judío, nosotros le dimos la mano") and 29 June 2026
-      (Israel Allies Foundation, "tenemos que defender Israel porque es una causa justa"). Statements
-      by the Ministry (7 October 2024, the right to self-defence), the Minister of Defence (2 and 3
-      December 2024, "apoyo incondicional del Gobierno argentino al pueblo de Israel") and the
-      Foreign Minister (25 November 2025) are not by the head of government. With the broader reading
-      the addresses of 11 and 12 June 2025 would be two more events and B10 would reach its cap
-      (−10) from 12 June 2025.
+      One event scoped `gaza` (evt_2025_06_10_ARG_B10): the President's words in Jerusalem of 10 June 2025,
+      which cite the Gaza Strip. Not filed because their documents do not cite Gaza (the literal scope rule, as
+      Bolivia's B9 statements, docs/10 B-371 (4); flagged, B-377 (2)): the President's words of 12 June 2025
+      after the exchange of the memorandum ("he declarado mi apoyo incondicional al Estado de Israel en su
+      derecho a la autodefensa", archived); his Knesset address of 11 June 2025 ("Hermanos de Israel: Argentina
+      está con ustedes en este difícil momento"; the international community "invirtiendo las categorías de
+      víctima y victimario"; archived); his words of 8 May 2024 at the Holocaust commemoration ("nos encontrarán
+      a nosotros al lado suyo firme, siempre"), 21 November 2024 (a business meeting, "un aliado que estará en
+      la trinchera sin especulaciones"), 26 November 2025 (DAIA anniversary: "mientras la gran mayoría del mundo
+      libre decidió darle la espalda al Estado judío, nosotros le dimos la mano") and 29 June 2026 (Israel
+      Allies Foundation, "tenemos que defender Israel porque es una causa justa"). Statements by the Ministry (7
+      October 2024, the right to self-defence), the Minister of Defence (2 and 3 December 2024, "apoyo
+      incondicional del Gobierno argentino al pueblo de Israel") and the Foreign Minister (25 November 2025) are
+      not by the head of government. With the broader reading the addresses of 11 and 12 June 2025 would be two
+      more events and B10 would reach its cap (−10) from 12 June 2025. T-F-W7 (2026-11-09, window 27 September
+      to 9 November 2026): two speeches of the President in the window touch the matter without citing Gaza, so,
+      under the literal scope rule (docs/10 B-377 (2)), no event: 2 November 2026 ('Cuando Israel lucha por su
+      supervivencia piden sanciones, embargos y limitaciones', 'Cuando Hamas extorsiona con rehenes', the
+      critics 'solo critican a la democracia porque no puede evitar absolutamente todas las víctimas
+      colaterales') and 15 October 2026 (the Hamas attack of 7 October 2023 and the world's reaction;
+      Argentina's declaration of Hamas as a terrorist organisation). With the broader reading they would be B10
+      candidates, but B10 is already at its cap (-10) under that reading (docs/10 B-380 (2)). Flagged for the
+      author (docs/10 B-915).
     queries:
-      - casarosada.gob.ar transcripts (Israel, Hamas, Gaza, incondicional, autodefensa)
-      - cancilleria.gob.ar news bodies (Israel, legítima defensa)
+      - "casarosada.gob.ar transcripts (Israel, Hamas, Gaza, incondicional, autodefensa)"
+      - "cancilleria.gob.ar news bodies (Israel, legítima defensa)"
+      - "T-F-W7 2026-11-09: casarosada.gob.ar speeches of 2 November and 15 October 2026 (archive not made: no event filed)"
   B11:
     status: none-found
     checked_at: 2026-09-29
@@ -236,22 +259,27 @@ indicators:
       - cancilleria.gob.ar news bodies (Israel, acuerdo de libre comercio, MERCOSUR)
   C2:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Three events, standing, scoped `gaza`: the Memorandum of Democracy and Freedom (12 June 2025),
-      the memorandum of understanding on tourism (24 February 2026) and the memorandum on artificial
-      intelligence signed with the launch of the Isaac Accords (19 April 2026). Not filed (flagged,
-      docs/10 B-377 (3)): the administrative arrangement implementing the social security convention,
-      signed by the Foreign Ministers on 7 February 2024 during the President's visit (archived,
-      src_20240207_cancilleria_mondino-katz-israel), read as implementing a pre-existing convention
-      rather than a new agreement, as the routine extensions not filed for the United States (docs/10
-      B-204 (5)); it would add −10 from 7 February 2024 (C at −10 until the cap binds in June 2025).
-      Also not filed: the entry into force of the 2017 air services agreement (approved by Congress,
-      release of 3 October 2024; signed before the window), the Defence Ministers' agreement of 2
-      December 2024 to expand cooperation (no signed instrument named) and the opening of Israel's
-      market to Argentine pecans (22 August 2025, a sanitary protocol).
+      Three events, standing, scoped `gaza`: the Memorandum of Democracy and Freedom (12 June 2025), the
+      memorandum of understanding on tourism (24 February 2026) and the memorandum on artificial intelligence
+      signed with the launch of the Isaac Accords (19 April 2026). Not filed (flagged, docs/10 B-377 (3)): the
+      administrative arrangement implementing the social security convention, signed by the Foreign Ministers on
+      7 February 2024 during the President's visit (archived, src_20240207_cancilleria_mondino-katz-israel),
+      read as implementing a pre-existing convention rather than a new agreement, as the routine extensions not
+      filed for the United States (docs/10 B-204 (5)); it would add −10 from 7 February 2024 (C at −10 until the
+      cap binds in June 2025). Also not filed: the entry into force of the 2017 air services agreement (approved
+      by Congress, release of 3 October 2024; signed before the window), the Defence Ministers' agreement of 2
+      December 2024 to expand cooperation (no signed instrument named) and the opening of Israel's market to
+      Argentine pecans (22 August 2025, a sanitary protocol). T-F-W7 (2026-11-09, window 27 September to 9
+      November 2026): a fourth event: evt_2026_10_06_ARG_C2, the Memorandum of Understanding on defence
+      cooperation signed on 6 October 2026 by the Minister of Defence and Israel's ambassador (Ministry of
+      Defence item of 8 October 2026, archived); the C cap (-20) is reached with two events, so the score does
+      not move (docs/10 B-913 (2)).
     queries:
-      - cancilleria.gob.ar news bodies (Israel, memorándum, acuerdo, firmaron)
-      - casarosada.gob.ar transcripts (memorando, firma, Israel)
+      - "cancilleria.gob.ar news bodies (Israel, memorándum, acuerdo, firmaron)"
+      - "casarosada.gob.ar transcripts (memorando, firma, Israel)"
+      - "T-F-W7 2026-11-09: web search 'Presti embajadora Ahuva Spieler Reshef memorándum cooperación defensa'; argentina.gob.ar news item (archived)"
   C3:
     status: has-events
     note: >-
@@ -325,11 +353,31 @@ indicators:
     queries:
       - cancilleria.gob.ar news bodies (Gaza, visa, refugiados)
   E1:
-    status: unchecked
-    note: The courts and prosecutors were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No investigation or prosecution of Argentine nationals or companies for
+      conduct in Gaza was found. The Foreign Ministry's alert of 29 September 2026 on the risks of enlisting in
+      foreign armed forces names no army or conflict.
+    queries:
+      - "T-F-W7 2026-11-09: web search on Argentine prosecutions over Gaza (none); cancilleria.gob.ar item of 29 September 2026"
   E2:
-    status: unchecked
-    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No police, ministerial or court decision prohibiting a Palestine solidarity
+      assembly or symbol was found; the anti-picket protocol of the Ministry of Security applies to road
+      blockades in general (press reports say a court annulled it in December 2025 and that the annulment was
+      later suspended on appeal), and no use of it against Palestine solidarity assemblies was found.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'Argentina protocolo antipiquetes manifestación Palestina bandera prohibida detenidos Gaza'"
   E3:
-    status: unchecked
-    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No court record accepting a universal-jurisdiction complaint for
+      investigation was found. A complaint of December 2024 against an Israeli soldier, on evidence of the Hind
+      Rajab Foundation, is known from the press, which does not say that a judge or prosecutor accepted it:
+      lead_20261109_ARG_1.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'Argentina juez federal denuncia soldado israelí Hind Rajab Hirshoren causa jurisdicción universal'"

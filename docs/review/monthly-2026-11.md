@@ -558,3 +558,19 @@ Window of 27 September to 9 November 2026, read on the Governments' own lists an
 Sources added (2): `src_20260922_un-gadebate_bra-lula-81-pt` (recorded from the Wayback capture of 11 October 2026), `src_20260520_mfa-cn_china-russia-joint-statement-2026`.
 
 Not done: B-912. Flags for the author: B-910 (1) (the Brazilian A6: two official speeches state the suspension; no published decision; dated from 28 July 2025).
+
+### T-F-W7: full-protocol wave COL CHL MEX BOL ARG (docs/10 B-913 to B-916)
+
+Window of 27 September to 9 November 2026, read on the Governments' own lists (routes in B-914; the Chilean and Mexican sites through the built-in browser, which was closed afterwards); the P-16 items of the wave's P-D rows (B-360, B-365, B-370, B-375, B-380) and the experimental E entries of the five searched. Every capture's replay was re-fetched with `curl --compressed` and compared (bytes and SHA-256) with its index row. Preview scores are rc.1 with `--preview`, for reading only.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| COL | Ministry's news listing (pages 0 to 30), Ministry of Commerce's decree list of 2026 | `evt_2024_08_14_COL_A6` ended 13 October 2026 (Decree 1514 of 9 October 2026 repeals the coal export ban; B-913 (1)) | Withdrawal from the Hague Group (15 October), embassy in Jerusalem (14 October), visit of the Foreign Minister to Israel (16 October), restored visa exemption, cooperation in security and intelligence (no Gaza link); General Assembly address by the Vice President | +38.1 to +28.1, Acting (A: +10 to 0) | A5, A6, A8, B9, B10, B12, C1, C2; E1, E2, E3 (unchecked to none-found); `lead_20261109_COL_1` |
+| CHL | Press-room listing (14 pages, built-in browser), President's General Debate file (Wayback copy) | none | Protest note of 28 September to Israel's ambassador (his remarks on Chilean politics); General Debate statement (no Gaza); press on defence dialogue with Israel | +52.3 Confronting, unchanged | A5, B9, B10, B12; E1, E2, E3 (unchecked to none-found); `lead_20261109_CHL_1`, `_2` |
+| MEX | SRE listing (108 items) and 28 transcripts of the morning conference (built-in browser) | none | General Debate address of 25 September as the Ministry reports it (two-State solution, no Gaza); passing mention of Palestine on 28 September | +47.3 Confronting, unchanged | B9; E1, E2, E3 (unchecked to none-found) |
+| BOL | Ministry's feeds (latest items and monthly feeds to 20 August 2026), site-search feeds | none | Exit from the Hague Group (March 2026, press); address of 24 September 2026 only as audio | +4.0 Acting, unchanged (passivity -15 stands) | A6, B9; E1, E2, E3 (unchecked to none-found) |
+| ARG | Ministry's news listing (pages 0 to 6), Casa Rosada speeches (17 of 29 September to 6 November 2026), Ministry of Defence item | `evt_2026_10_06_ARG_C2` (-10, defence cooperation memorandum signed 6 October 2026; B-913 (2)) | President's speeches of 2 November and 15 October 2026 (Hamas and hostages, Gaza not named: B10 under the literal scope rule, flagged B-915 (1)); ICC communiqué of 21 November 2024 (unsigned, not B6) | -44.9 Enabling, unchanged (C at its cap) | A5, B6, B9, B10, C2; E1, E2, E3 (unchecked to none-found); `lead_20261109_ARG_1` |
+
+Sources added (3): `src_20261009_mincit_decreto-1514-carbon-israel`, `src_20261013_mincit_decretos-2026`, `src_20261008_defensa-ar_memorandum-defensa-israel`.
+
+Not done: B-916. Flags for the author: B-913 (1) (end date of the Colombian A6 from the Ministry's publication, the Diario Oficial's date not read), B-913 (2) (the Argentine defence memorandum as a fourth C2 event, no score effect), B-915 (1) (the Argentine B10 reading of the speeches of 2 November and 15 October 2026).

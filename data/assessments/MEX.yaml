@@ -31,7 +31,7 @@
 # courts (E1–E3); public pension funds (C5).
 country: MEX
 protocol_version: 1
-last_full_check: 2026-09-29
+last_full_check: 2026-11-09
 indicators:
   A1:
     status: unchecked
@@ -163,23 +163,34 @@ indicators:
       is +8 from its date and 0 before (docs/10 B-367 (1)).
   B9:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Three events, the President's own words in the Presidency's transcripts (22 September 2025,
-      6 October 2025, 8 May 2026, each a legal characterisation, +5). Not filed (docs/10 B-366 (3)):
-      the Ministry's unsigned communiqués (8 October 2023; 23 January, 26 January, 7 May 2024 on
-      Rafah with a call for a ceasefire and a finding of a serious violation of international
-      humanitarian law; 15 May 2024; 30 July 2024), the addresses of ambassadors at the United
-      Nations (26 October 2023, the Chargée d'affaires calling for a cessation of hostilities), the
-      Foreign Secretary's General Debate address of 28 September 2024 (quoted: "La humanidad se
-      quiebra en Gaza ante la inacción de la comunidad internacional", neither a ceasefire call nor
-      a named violation), the President's words of 2 October 2025 (humanitarian aid must reach Gaza;
-      same week as a filed event), 5 August 2026 ("esta ofensiva inhumana que ha hecho el Estado de
-      Israel", no call or legal characterisation) and 11 October 2024 (condemnation of "las
-      agresiones", no call). President López Obrador's statements (to 30 September 2024) could not be
-      read.
+      Three events, the President's own words in the Presidency's transcripts (22 September 2025, 6 October
+      2025, 8 May 2026, each a legal characterisation, +5). Not filed (docs/10 B-366 (3)): the Ministry's
+      unsigned communiqués (8 October 2023; 23 January, 26 January, 7 May 2024 on Rafah with a call for a
+      ceasefire and a finding of a serious violation of international humanitarian law; 15 May 2024; 30 July
+      2024), the addresses of ambassadors at the United Nations (26 October 2023, the Chargée d'affaires calling
+      for a cessation of hostilities), the Foreign Secretary's General Debate address of 28 September 2024
+      (quoted: "La humanidad se quiebra en Gaza ante la inacción de la comunidad internacional", neither a
+      ceasefire call nor a named violation), the President's words of 2 October 2025 (humanitarian aid must
+      reach Gaza; same week as a filed event), 5 August 2026 ("esta ofensiva inhumana que ha hecho el Estado de
+      Israel", no call or legal characterisation) and 11 October 2024 (condemnation of "las agresiones", no
+      call). President López Obrador's statements (to 30 September 2024) could not be read. T-F-W7 (2026-11-09,
+      window 27 September to 9 November 2026): no B9 act dated in the window was found. The SRE press listing on
+      gob.mx (108 items, 28 May to 5 November 2026) and the President's transcripts of the morning conferences
+      (28 of the 31 weekdays from 28 September to 9 November 2026; 2 and 4 November answered 404 and 9 November
+      was not yet published) were read in the built-in browser and searched for Gaza, Palestina, Israel,
+      Cisjordania, genocidio, flotilla and Medio Oriente: the only mentions are the President's remark of 28
+      September 2026 that the United Nations has not been seen on 'Ucrania, Palestina, Irán', and the
+      extradition of a fugitive held in Israel (29 September). The Foreign Secretary's General Debate address of
+      25 September 2026, as the Ministry's release reports it, restates the two-State solution and the
+      recognition of Palestine and does not name Gaza (R7).
     queries:
-      - gob.mx/sre press listing (Gaza, Palestina, genocidio, alto al fuego, cese al fuego, Rafah)
-      - Presidency transcripts full text (Gaza, Palestin, genocid)
+      - "gob.mx/sre press listing (Gaza, Palestina, genocidio, alto al fuego, cese al fuego, Rafah)"
+      - "Presidency transcripts full text (Gaza, Palestin, genocid)"
+      - "T-F-W7 2026-11-09: gob.mx/sre/es/archivo/prensa pages 1 to 12 and each item (built-in browser)"
+      - "T-F-W7 2026-11-09: gob.mx/presidencia/articulos/version-estenografica-conferencia-de-prensa-de-la-presidenta-claudia-sheinbaum-pardo-del-DD-de-MES-de-2026 for 28 September to 6 November 2026"
+      - "T-F-W7 2026-11-09: web searches 'Sheinbaum Gaza Israel mañanera octubre 2026 declaración', 'SRE México comunicado Palestina Gaza noviembre 2026'"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -292,11 +303,27 @@ indicators:
     queries:
       - gob.mx/sre press listing (Gaza, refugiados)
   E1:
-    status: unchecked
-    note: The Fiscalía and the courts were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No investigation or prosecution of Mexican nationals or companies for
+      conduct in Gaza was found.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'México Fiscalía FGR denuncia soldado israelí Hind Rajab jurisdicción universal' (no Mexican result)"
   E2:
-    status: unchecked
-    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No police or court decision prohibiting a Palestine solidarity assembly or
+      symbol was found; the SRE listing and the transcripts of the window hold none.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'prohíben manifestación pro Palestina ... policía prohibición protesta Gaza tribunal' (no Mexican result)"
   E3:
-    status: unchecked
-    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No universal-jurisdiction complaint accepted for investigation was found in
+      Mexico; no complaint against an Israeli soldier in Mexico was found in the press or the Hind Rajab
+      Foundation's posts read.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'México Fiscalía FGR denuncia soldado israelí Hind Rajab jurisdicción universal'"

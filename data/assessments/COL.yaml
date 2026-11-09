@@ -29,7 +29,7 @@
 # Security Council, where Colombia sits in 2026–2027.
 country: COL
 protocol_version: 1
-last_full_check: 2026-09-29
+last_full_check: 2026-11-09
 indicators:
   A1:
     status: unchecked
@@ -66,26 +66,40 @@ indicators:
       hold the CAPTCHA page (not read; not filed).
   A5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel
-      activated for the Gaza campaign was found. On 16 September 2026 the Minister of Foreign
-      Affairs, Omar Bula Escobar, told Congress that the government would strengthen relations
-      with Israel to expand cooperation in security and intelligence against transnational crime
-      (Ministry item, not archived): not related to the Gaza campaign, so not an A5 instance
-      (docs/02 §2); flagged for the author (docs/10 B-357 (5)).
+      No exercise, transit, basing agreement or intelligence-sharing arrangement with Israel activated for the
+      Gaza campaign was found. On 16 September 2026 the Minister of Foreign Affairs, Omar Bula Escobar, told
+      Congress that the government would strengthen relations with Israel to expand cooperation in security and
+      intelligence against transnational crime (Ministry item, not archived): not related to the Gaza campaign,
+      so not an A5 instance (docs/02 §2); flagged for the author (docs/10 B-357 (5)). T-F-W7 (2026-11-09, window
+      27 September to 9 November 2026): the Foreign Minister told Congress on 16 September 2026 (Ministry item)
+      that cooperation with Israel in strategic intelligence, cybersecurity and the financing of illicit
+      networks would be widened, and the Minister's visit of 12 to 16 October 2026 listed security and defence
+      among the fields to explore (Ministry items of 14 and 16 October); no exercise, transit, basing agreement
+      or confirmed intelligence sharing related to the Gaza campaign was found, so no A5 instance.
     queries:
-      - cancilleria.gov.co node titles (Israel, seguridad, inteligencia)
+      - "cancilleria.gov.co node titles (Israel, seguridad, inteligencia)"
+      - "T-F-W7 2026-11-09: cancilleria.gov.co sala-de-prensa/noticias pages 0 to 30 (to 9 November 2026), filtered for Israel, Gaza, Palestina, seguridad, inteligencia; web search 'Colombia Israel cooperación defensa seguridad acuerdo 2026'"
   A6:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      One event (evt_2024_08_14_COL_A6): Decree 1047 of 14 August 2024 prohibiting exports of
-      thermal coal to Israel until the ICJ's provisional measures in the Gaza case are complied
-      with; Decree 0949 of 28 August 2025 removed its exceptions. Filed as A6 by analogy with
-      Türkiye's export restriction (data/wave-2); coal is not a military good (docs/10 B-357 (1)).
-      No decision on military export licences was found.
+      One event (evt_2024_08_14_COL_A6): Decree 1047 of 14 August 2024 prohibiting exports of thermal coal to
+      Israel until the ICJ's provisional measures in the Gaza case are complied with; Decree 0949 of 28 August
+      2025 removed its exceptions. Filed as A6 by analogy with Türkiye's export restriction (data/wave-2); coal
+      is not a military good (docs/10 B-357 (1)). No decision on military export licences was found. T-F-W7
+      (2026-11-09, window 27 September to 9 November 2026): Decree 1514 of 9 October 2026 (signed by the
+      President and the Ministers of Foreign Affairs, Finance, Mines and Energy and Commerce; published on the
+      Ministry of Commerce's site on 13 October 2026) repeals Decrees 1047 of 2024 and 0949 of 2025 and restores
+      the general export regime for thermal coal; its Article 4 enters into force the day after publication in
+      the Diario Oficial (date not read). The event evt_2024_08_14_COL_A6 is therefore ended on 13 October 2026
+      (docs/10 B-913 (1)); the status stays has-events because the event exists. No decision on military export
+      licences was found.
     queries:
-      - mincit.gov.co decree lists 2024, 2025, 2026 (carbón, Israel)
+      - "mincit.gov.co decree lists 2024, 2025, 2026 (carbón, Israel)"
+      - "T-F-W7 2026-11-09: mincit.gov.co/normatividad/decretos/2026 (Decreto 1514 of 9 October 2026, archived with the listing)"
+      - "T-F-W7 2026-11-09: web searches 'decreto prohibición exportación carbón Israel derogado De la Espriella', 'Decreto 1514 2026 carbón Israel Diario Oficial'"
   A7:
     status: none-found
     checked_at: 2026-09-29
@@ -98,14 +112,21 @@ indicators:
       - cancilleria.gov.co node titles (armas, embargo)
   A8:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No denial of port or airspace transit to an arms shipment bound for Israel was found. The
-      Hague Group's Bogotá conference of 15–16 July 2025, co-chaired by Colombia, announced
-      measures including port denial; no Colombian act implementing them was found in the sources
-      searched (the conference's joint statement was read in title only).
+      No denial of port or airspace transit to an arms shipment bound for Israel was found. The Hague Group's
+      Bogotá conference of 15–16 July 2025, co-chaired by Colombia, announced measures including port denial; no
+      Colombian act implementing them was found in the sources searched (the conference's joint statement was
+      read in title only). T-F-W7 (2026-11-09, window 27 September to 9 November 2026): on 15 October 2026 the
+      Government announced Colombia's withdrawal as a member and co-chair of the Hague Group (Ministry item; the
+      Foreign Minister: 'un grupo creado para aislar y atacar a Israel. Rechazamos ese enfoque'), whose item
+      names Bolivia and Honduras as having left earlier; the Group's measures on ports and transit were not
+      implemented by a Colombian act found, and withdrawal from the Group is not an indicator act. Press titles
+      of July 2025 report the President ordering the Navy to stop coal shipments to Israel; these enforce the
+      export ban and were not read as an A8 instance (no document of the order was found).
     queries:
-      - cancilleria.gov.co node titles (Grupo de La Haya, puertos)
+      - "cancilleria.gov.co node titles (Grupo de La Haya, puertos)"
+      - "T-F-W7 2026-11-09: cancilleria.gov.co 'Colombia anuncia su retiro del Grupo de La Haya' (15 October 2026); web search 'Colombia prohíbe puertos buques armas combustible Israel Grupo de La Haya'"
   B1:
     status: has-events
     note: >-
@@ -174,34 +195,46 @@ indicators:
       Colombian document of August 2018 was read. +3 standing from 2023-10-07 for any date before it.
   B9:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Four scored events: the Minister (11 June 2024, genocide), the President at the General
-      Assembly (24 September 2024, genocide), the acting Minister (15 July 2025, genocide) and the
-      flotilla joint statement of twelve Ministers (30 April 2026, violations of international
-      humanitarian law). Not filed: the Ministry's unsigned communiqués (29 February, 7 and 27 May,
-      13 July and 11 August 2024; 18 March 2025; 17 June 2025 at the emergency special session; 24
-      September 2025), which call for a ceasefire and some of which name violations; the Minister's
-      remarks on the bombing of a UN school (early June 2024, page undated); the leaders' joint
-      statement of 31 May 2024 (a call to conclude the hostage and ceasefire deal); the acting
-      Minister's address of 29 July 2025 (starvation described, reported partly in the Ministry's
-      words); addresses published only as videos (the Security Council debate of 18 April 2024,
-      the conference in Jordan, the Bogotá conference of 16–17 July 2025); the President's General
-      Debate address of 23 September 2025 and his statements of October 2025 to August 2026
-      (Presidency pages behind the CAPTCHA, not archivable); posts on X. docs/10 B-356 (3).
+      Four scored events: the Minister (11 June 2024, genocide), the President at the General Assembly (24
+      September 2024, genocide), the acting Minister (15 July 2025, genocide) and the flotilla joint statement
+      of twelve Ministers (30 April 2026, violations of international humanitarian law). Not filed: the
+      Ministry's unsigned communiqués (29 February, 7 and 27 May, 13 July and 11 August 2024; 18 March 2025; 17
+      June 2025 at the emergency special session; 24 September 2025), which call for a ceasefire and some of
+      which name violations; the Minister's remarks on the bombing of a UN school (early June 2024, page
+      undated); the leaders' joint statement of 31 May 2024 (a call to conclude the hostage and ceasefire deal);
+      the acting Minister's address of 29 July 2025 (starvation described, reported partly in the Ministry's
+      words); addresses published only as videos (the Security Council debate of 18 April 2024, the conference
+      in Jordan, the Bogotá conference of 16–17 July 2025); the President's General Debate address of 23
+      September 2025 and his statements of October 2025 to August 2026 (Presidency pages behind the CAPTCHA, not
+      archivable); posts on X. docs/10 B-356 (3). T-F-W7 (2026-11-09, window 27 September to 9 November 2026):
+      no B9 act dated in the window was found. The Ministry's news listing (pages 0 to 30, to 9 November 2026)
+      holds, on Israel, items on the restoration of relations (11 August, 16 September), the visa exemption, the
+      recognition of Israeli sovereignty over the Golan Heights (10 August), the embassy in Jerusalem (14
+      October), the visit of the Foreign Minister (16 October) and the withdrawal from the Hague Group (15
+      October); none calls for a ceasefire or names a violation in Gaza. The 2026 General Assembly address was
+      delivered by the Vice President (a press report; not a B9 speaker, R3). The Presidency's pages stay behind
+      the CAPTCHA (not bypassed).
     queries:
-      - cancilleria.gov.co site search and node titles (Gaza, genocidio, Palestina)
-      - Wayback CDX presidencia.gov.co/prensa and petro.presidencia.gov.co/prensa (gaza, palestin, genocid)
+      - "cancilleria.gov.co site search and node titles (Gaza, genocidio, Palestina)"
+      - "Wayback CDX presidencia.gov.co/prensa and petro.presidencia.gov.co/prensa (gaza, palestin, genocid)"
+      - "T-F-W7 2026-11-09: web searches 'Cancillería Colombia Gaza comunicado octubre 2026', 'De la Espriella Asamblea General ONU discurso septiembre 2026 Gaza Palestina', 'presidente De la Espriella dijo Gaza genocidio Israel'"
   B10:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No statement of unconditional support for Israel's conduct in Gaza or denial of documented
-      violations by the head of government was found. The government in office from 7 August 2026
-      recognised Israel's sovereignty over the Golan Heights (Ministry communiqué of 10 August 2026,
-      unsigned, citing the attacks of 7 October; not about Gaza; not archived) and restored
-      relations; neither is a B10 statement (docs/10 B-357 (5)).
+      No statement of unconditional support for Israel's conduct in Gaza or denial of documented violations by
+      the head of government was found. The government in office from 7 August 2026 recognised Israel's
+      sovereignty over the Golan Heights (Ministry communiqué of 10 August 2026, unsigned, citing the attacks of
+      7 October; not about Gaza; not archived) and restored relations; neither is a B10 statement (docs/10 B-357
+      (5)). T-F-W7 (2026-11-09, window 27 September to 9 November 2026): no statement of the President was
+      found; the Foreign Minister's words at the opening of the embassy in Jerusalem (14 October 2026, the
+      Ministry's text: restoring dialogue and mutual trust, cooperation 'en seguridad, agricultura, comercio,
+      ciencia, tecnología e innovación') and on the Hague Group (15 October 2026) are not by the head of
+      government and cite no conduct in Gaza (docs/10 B-913).
     queries:
-      - cancilleria.gov.co node titles 2026 (Israel, Golán)
+      - "cancilleria.gov.co node titles 2026 (Israel, Golán)"
   B11:
     status: none-found
     checked_at: 2026-09-29
@@ -210,37 +243,55 @@ indicators:
       - cancilleria.gov.co site search (Israel)
   B12:
     status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Two events: the recall of the ambassador for consultations (31 October 2023, scoped `region`
-      because the Ministry's text does not cite Gaza, unscored) and the severance of diplomatic
-      relations from 2 May 2024, citing the war in Gaza, ended by the restoration decided on 11
-      August 2026. The expulsion of Israel's diplomatic delegation ordered on 1 October 2025
-      (Presidency page title only, CAPTCHA) adds nothing to severed relations.
+      Two events: the recall of the ambassador for consultations (31 October 2023, scoped `region` because the
+      Ministry's text does not cite Gaza, unscored) and the severance of diplomatic relations from 2 May 2024,
+      citing the war in Gaza, ended by the restoration decided on 11 August 2026. The expulsion of Israel's
+      diplomatic delegation ordered on 1 October 2025 (Presidency page title only, CAPTCHA) adds nothing to
+      severed relations. T-F-W7 (2026-11-09, window 27 September to 9 November 2026): the Ministry's items
+      record the swearing-in of the ambassador of Colombia in Israel (undated in the listing read), the
+      inauguration of the embassy in Jerusalem on 14 October 2026 by the Foreign Minister with Israel's Foreign
+      Minister, and the Foreign Minister's meeting with Israel's President on 16 October 2026; an embassy in
+      Jerusalem has no indicator (docs/10 B-599), so nothing is filed.
+    queries:
+      - "T-F-W7 2026-11-09: cancilleria.gov.co items 'Colombia inaugura su Embajada en Jerusalén', 'Canciller Omar Bula culmina visita oficial a Israel'"
   C1:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No suspension or formal review of the Colombia–Israel free trade agreement in force was read.
-      A Presidency page of 1 October 2025 is titled "Presidente Gustavo Petro ordena salida de la
-      delegación diplomática de Israel y terminación del TLC" (Wayback holds only its image; the
-      live site no longer has it); no decree, note of denunciation or trade-ministry act was found
-      in the Ministry of Commerce's decree lists of 2025 and 2026 → P-16 (docs/10 B-357 (3)). The
-      coal ban invokes the agreement's security exceptions (Articles 14.1 and 14.2), not a
-      suspension.
+      No suspension or formal review of the Colombia–Israel free trade agreement in force was read. A Presidency
+      page of 1 October 2025 is titled "Presidente Gustavo Petro ordena salida de la delegación diplomática de
+      Israel y terminación del TLC" (Wayback holds only its image; the live site no longer has it); no decree,
+      note of denunciation or trade-ministry act was found in the Ministry of Commerce's decree lists of 2025
+      and 2026 → P-16 (docs/10 B-357 (3)). The coal ban invokes the agreement's security exceptions (Articles
+      14.1 and 14.2), not a suspension. T-F-W7 (2026-11-09, window 27 September to 9 November 2026): the
+      recitals of Decree 1514 of 9 October 2026 (archived; the text layer is damaged) say that the free trade
+      agreement approved by Law 1841 of 2017 is in force and enjoys the presumption of legality, and the decree
+      invokes its Articles 14.1 and 14.2 only to explain the repeal of the coal ban; the Ministry of Commerce's
+      decree list of 2026 (to 30 October) holds no act terminating or reviewing the agreement. The Presidency's
+      page title of 1 October 2025 on its termination remains unread, and no denunciation note was found
+      (docs/10 B-360 (3)).
     queries:
-      - mincit.gov.co decree lists 2025, 2026 (Israel, TLC)
-      - Wayback CDX presidencia.gov.co (TLC, Israel)
+      - "mincit.gov.co decree lists 2025, 2026 (Israel, TLC)"
+      - "Wayback CDX presidencia.gov.co (TLC, Israel)"
+      - "T-F-W7 2026-11-09: mincit.gov.co decree list 2026 (Decreto 1514 recitals); web search 'Colombia Israel tratado de libre comercio De la Espriella visas acuerdo octubre 2026'"
   C2:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No new trade, investment or cooperation agreement signed with Israel was found. The mutual
-      tourist visa exemption was restored by Resolution 12189 of 2026 after an exchange of
-      communications of 16 and 19 August 2026, "bajo las condiciones existentes antes del 12 de mayo
-      de 2025" (src_20260911_cancilleria_israel-exencion-visa, line 7): a restored arrangement, not
-      a new signed agreement; flagged for the author (docs/10 B-357 (5)).
+      No new trade, investment or cooperation agreement signed with Israel was found. The mutual tourist visa
+      exemption was restored by Resolution 12189 of 2026 after an exchange of communications of 16 and 19 August
+      2026, "bajo las condiciones existentes antes del 12 de mayo de 2025"
+      (src_20260911_cancilleria_israel-exencion-visa, line 7): a restored arrangement, not a new signed
+      agreement; flagged for the author (docs/10 B-357 (5)). T-F-W7 (2026-11-09, window 27 September to 9
+      November 2026): no new agreement signed with Israel was found in the window: the Ministry's items of 14
+      and 16 October 2026 speak of identifying opportunities and reactivating cooperation mechanisms in
+      security, defence, trade, innovation and water, without a signed text; the mutual tourist visa exemption
+      (Resolution 12189 of 2026) restores an earlier arrangement (above).
     queries:
-      - cancilleria.gov.co node titles 2026 (Israel, acuerdo, visa)
+      - "cancilleria.gov.co node titles 2026 (Israel, acuerdo, visa)"
+      - "T-F-W7 2026-11-09: cancilleria.gov.co items of 14 and 16 October 2026 on the visit of the Foreign Minister to Israel"
   C3:
     status: has-events
     note: >-
@@ -315,14 +366,32 @@ indicators:
     queries:
       - cancilleria.gov.co node titles (visa, Palestina)
   E1:
-    status: unchecked
-    note: The Fiscalía and the courts were not searched (P-16).
-  E2:
-    status: unchecked
-    note: No search of police or administrative bans on Palestine solidarity protests (P-16).
-  E3:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      The President announced complaints to the ICC (Presidency titles of 19 November 2025 and 25
-      April 2026, not readable); no domestic universal-jurisdiction complaint accepted for
-      investigation was searched (P-16).
+      Experimental, unscored (D-12). No investigation or prosecution of Colombian nationals or companies for
+      conduct in Gaza was found; the one prosecution context found, the recruitment of Colombian mercenaries for
+      the war in Sudan (a United Nations working group met the Fiscalía in March 2026), concerns another
+      conflict.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'Fiscalía Colombia investigación colombianos mercenarios Gaza ejército israelí' (no result on Gaza)"
+  E2:
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No police or administrative decision prohibiting a Palestine solidarity
+      assembly or symbol was found; the reports found (Bogotá, October 2024 and October 2025) concern marches
+      that took place, with police dispersal of disorders, according to press reports.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'prohíben manifestación pro Palestina Bogotá policía prohibición protesta Gaza tribunal'"
+  E3:
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      Experimental, unscored (D-12). No universal-jurisdiction complaint accepted for investigation was found. A
+      complaint of the Hind Rajab Foundation of April 2025 to the Fiscalía against an Israeli soldier is known
+      only from the Foundation's own post: lead_20261109_COL_1 (no decision found). The President's
+      announcements of complaints to the ICC (Presidency titles of 19 November 2025 and 25 April 2026, not
+      readable) are not domestic complaints.
+    queries:
+      - "T-F-W7 2026-11-09: web search 'Hind Rajab Foundation denuncia soldado israelí Colombia Fiscalía investigación'; hindrajabfoundation.org post of 23 April 2025"
