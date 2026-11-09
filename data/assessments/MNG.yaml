@@ -9,6 +9,7 @@
 #   web searches in English and in Mongolian per indicator group. Time: about 5 minutes.
 # Statements read and not filed as B9: none on Gaza found. The 81st session's statement (September 2026) has no capture and
 #   gadebate.un.org refuses scripted requests: not read.
+# Completion of 2026-11 (T-F-L02, 2026-11-09, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 to A8 and C4 from the Cabinet's news-site search (Mongolian and English terms, no result); the Foreign Ministry's site answered HTTP 503 and the President's site a Cloudflare check; C5, C6 and E1 to E3 still unchecked (they need fund, procurement, prosecutor and police sources).
 country: MNG
 protocol_version: 1
 last_full_check: '2026-10-05'
@@ -27,8 +28,17 @@ indicators:
       the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch.
       Nothing is hand-authored.'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Mongolia as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain the word Mongolia (searched 2026-11-09).
+      The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme,
+      Mongolia not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched: the
+      shared web-search allowance of the run was used up before this session began (FINISH-PLAN Part 3 rule 2); the entry
+      is open to a later press search.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Mongolia (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
   A4:
     status: none-found
     checked_at: '2026-10-05'
@@ -37,17 +47,56 @@ indicators:
     queries:
     - sipri_orders.csv, buyer MNG
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No named exercise, transit authorisation, basing agreement or official confirmation of intelligence sharing with
+      Israel related to the Gaza campaign was found. The Government's own news site (cabinet.gov.mn, WordPress site search,
+      run 2026-11-09, its search answered 10 results for Орос and none for any of the terms below) returned no result for
+      Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine, Gaza Strip or
+      Middle East. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered HTTP 503 and the President's site (president.mn)
+      a Cloudflare check on 2026-11-09 (not bypassed), so neither could be read; no web search was available (the run's shared
+      allowance was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No Government decision suspending or refusing a class of arms export licences to Israel was found. The Government's
+      own news site (cabinet.gov.mn, WordPress site search, run 2026-11-09, its search answered 10 results for Орос and none
+      for any of the terms below) returned no result for Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас,
+      Ойрхи Дорнод, Israel, Palestine, Gaza Strip or Middle East. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered
+      HTTP 503 and the President's site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed), so neither could be
+      read; no web search was available (the run's shared allowance was used up before the session began). The export-control
+      authority's own pages were not read.
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No law or decree prohibiting both exports to and imports from Israel was found. The Government's own news site (cabinet.gov.mn,
+      WordPress site search, run 2026-11-09, its search answered 10 results for Орос and none for any of the terms below)
+      returned no result for Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine,
+      Gaza Strip or Middle East. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered HTTP 503 and the President's
+      site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed), so neither could be read; no web search was available
+      (the run's shared allowance was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found (Mongolia has no
+      seaport; airspace decisions of the civil aviation authority were not read). The Government's own news site (cabinet.gov.mn,
+      WordPress site search, run 2026-11-09, its search answered 10 results for Орос and none for any of the terms below)
+      returned no result for Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine,
+      Gaza Strip or Middle East. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered HTTP 503 and the President's
+      site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed), so neither could be read; no web search was available
+      (the run's shared allowance was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   B1:
     status: has-events
     checked_at: '2026-10-05'
@@ -96,23 +145,38 @@ indicators:
       tier the score would be +3 higher.'
   B9:
     status: none-found
-    checked_at: '2026-10-05'
+    checked_at: '2026-11-09'
     note: 'No statement of the President, the Prime Minister or the Foreign Minister on Gaza was found. The President''s General
       Debate statements of 2024 (79th session) and 2025 (80th) have no passage on Gaza, Palestine or the Middle East (archived:
       src_20240925_un-gadebate_mng-khurelsukh-en and src_20250923_un-gadebate_mng-khurelsukh-en, recorded from Wayback captures;
-      no event cites them). Mongolia''s expressions on Gaza are its recorded votes (B1).'
-    queries: &id001
+      no event cites them). Mongolia''s expressions on Gaza are its recorded votes (B1). Finish run, T-F-L02 (2026-11-09):
+      the President''s General Debate statement of the 81st session (22 September 2026; gadebate.un.org/sites/default/files/gastatements/81/mn_en.pdf,
+      read, Save Page Now answers 405 and Wayback holds no 200 capture, so not archived) has no passage on Gaza, Palestine,
+      Israel or the Middle East: no event. The Cabinet''s news site search (cabinet.gov.mn, 2026-11-09) returns no result
+      for Палестин, Израиль, Хамас, Газын зурвас or Ойрхи Дорнод; the President''s site (president.mn) answers a Cloudflare
+      check and the Foreign Ministry''s (mfa.gov.mn) HTTP 503, so neither was read.'
+    queries:
     - Mongolia Ministry of Foreign Affairs statement Gaza ceasefire Palestine
     - Монгол Улс Газын зурвас Гадаад харилцааны яам мэдэгдэл гал зогсоох Палестин
     - Mongolia foreign minister Battsetseg Gaza OR Palestine OR Israel statement humanitarian ceasefire montsame
     - Mongolia President Khurelsukh OR Prime Minister Zandanshatar OR Oyun-Erdene Palestine meeting ambassador Gaza two-state
       solution
     - Монгол Улс Гадаад харилцааны сайд Газын зурвас Израил Палестин байр суурь мэдэгдэл 2024 2025 Батцэцэг
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
+    - gadebate.un.org/sites/default/files/gastatements/81/mn_en.pdf read (searched for Gaza, Palestin, Israel, Middle East,
+      Hamas, humanit, ceasefire)
   B10:
     status: none-found
     checked_at: '2026-10-05'
     note: No statement of unconditional support for Israel or denial of documented violations was found.
-    queries: *id001
+    queries:
+    - Mongolia Ministry of Foreign Affairs statement Gaza ceasefire Palestine
+    - Монгол Улс Газын зурвас Гадаад харилцааны яам мэдэгдэл гал зогсоох Палестин
+    - Mongolia foreign minister Battsetseg Gaza OR Palestine OR Israel statement humanitarian ceasefire montsame
+    - Mongolia President Khurelsukh OR Prime Minister Zandanshatar OR Oyun-Erdene Palestine meeting ambassador Gaza two-state
+      solution
+    - Монгол Улс Гадаад харилцааны сайд Газын зурвас Израил Палестин байр суурь мэдэгдэл 2024 2025 Батцэцэг
   B11:
     status: none-found
     checked_at: '2026-10-05'
@@ -149,8 +213,17 @@ indicators:
     checked_at: '2026-10-05'
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No national ban or labelling rule for settlement goods was found. The Government's own news site (cabinet.gov.mn,
+      WordPress site search, run 2026-11-09, its search answered 10 results for Орос and none for any of the terms below)
+      returned no result for Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel, Palestine,
+      Gaza Strip or Middle East. The Ministry of Foreign Affairs' site (mfa.gov.mn) answered HTTP 503 and the President's
+      site (president.mn) a Cloudflare check on 2026-11-09 (not bypassed), so neither could be read; no web search was available
+      (the run's shared allowance was used up before the session began).
+    queries:
+    - 'cabinet.gov.mn site search (Палестин, Палестины, Израиль, Израйл, Израилийн, Хамас, Газын зурвас, Ойрхи Дорнод, Israel,
+      Palestine, Gaza Strip, Middle East): no result, 2026-11-09'
   C5:
     status: unchecked
     note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
