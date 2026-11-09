@@ -164,16 +164,22 @@ indicators:
     queries:
       - mofa.gov.qa site search ("Criminal Court")
   B8:
-    status: unchecked
+    status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Generated from recognitions.csv; Qatar has no row. The registry dates its recognition to 16
-      November 1988 (data/countries.yaml, from A/78/846, a lead). No Qatari document stating the
-      recognition and its date was found: the site search for "recognition" and "State of Palestine"
-      returns Qatar's calls on other states to recognise Palestine and its welcome of their
-      recognitions, not its own. No row added (as for Saudi Arabia and the United Arab Emirates,
-      docs/10 B-382 (4), B-387 (5)); P-16 looks for a document of 1988.
+      Generated from recognitions.csv. The row QAT,1988-11-16 was added in the resumed T-F-W8
+      session of 2026-11-09 (docs/10 B-949), citing the letter of 14 December 1988 from Qatar's
+      Chargé d'affaires a.i. to the Secretary-General (A/43/971-S/20332, UNISPAL, archived,
+      src_19881214_un-unispal_qat-recognition-a-43-971), which transmits the statement issued on 16
+      November 1988 by the Council of Ministers of the State of Qatar 'in declaring its recognition
+      of the Palestinian State'. The date agrees with the registry (A/78/846). The pre-existing tier
+      (+3 from 2023-10-07, R21) does not depend on the day. Before this session: the Ministry's site search for
+      "recognition" and "State of Palestine" returned Qatar's calls on other states to recognise
+      Palestine, not its own recognition (docs/10 B-391).
     queries:
       - mofa.gov.qa site search (recognition, "State of Palestine")
+      - '"recognized the State of Palestine" 1988 Jordan OR Morocco OR Qatar OR "Saudi Arabia" OR "United Arab Emirates" statement ministry'
+      - UNISPAL document API, search "PNC Declaration of Independence Letter from" (1988 letters of member states)
   B9:
     status: has-events
     checked_at: 2026-11-04
@@ -333,13 +339,20 @@ indicators:
     queries:
       - mofa.gov.qa site search (evacuation, wounded)
   E1:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      The Public Prosecution and the courts were not searched (P-16). Finish run, T-F-W8,
-      2026-11-09: still unchecked. Read: the Ministry of Foreign Affairs' site search ('universal jurisdiction', 'prosecution Israel', 'war crimes Gaza'; no item on a case) and its Statements listing to 14 August 2026; no investigation of nationals or companies for
-      conduct in Gaza found there. The prosecutor's site (www.pp.gov.qa) did not answer a scripted
-      request, and the session's web-search allowance was used up before the press and NGO searches
-      (English and Arabic) that a none-found needs (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No investigation or prosecution of nationals or companies of Qatar for conduct in Gaza found.
+      Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and NGO searches in English
+      and Arabic (queries below). The searches returned Qatari statements condemning strikes in Gaza
+      and calling for accountability, none on an investigation of a Qatari national or company.
+      Earlier the same day: the Ministry of Foreign Affairs' site search ('universal jurisdiction',
+      'prosecution Israel', 'war crimes Gaza') and its Statements listing to 14 August 2026; nothing
+      found. The prosecutor's site (www.pp.gov.qa) did not answer (WebFetch: connection refused or
+      empty page, 2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - Qatar Public Prosecution complaint Israeli officials war crimes Gaza lawsuit Doha court
+      - النيابة العامة القطرية دعوى جنائية ضد مسؤولين إسرائيليين غزة محكمة الدوحة
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -350,10 +363,23 @@ indicators:
     queries:
       - mofa.gov.qa site search (Gaza)
   E3:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
-      Finish run, T-F-W8, 2026-11-09: still unchecked. Read: the Ministry of Foreign Affairs' site search ('universal jurisdiction', 'prosecution Israel', 'war crimes Gaza'; no item on a case) and its Statements listing to 14 August 2026; no complaint found there.
-      The prosecutor's site (www.pp.gov.qa) did not answer a scripted request, and the session's
-      web-search allowance was used up before the press and NGO searches that a none-found needs
-      (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No universal-jurisdiction complaint accepted for investigation in Qatar found. Finish run,
+      T-F-W8 (resumed), 2026-11-09, with web search (queries below). The searches returned Qatar's
+      steps at the International Criminal Court after the Israeli strike on Doha of 9 September 2025
+      (an international proceeding, not a complaint before a Qatari court, and not on conduct in
+      Gaza); no complaint filed with or accepted by a Qatari prosecutor or court was found. TRIAL
+      International's Universal Jurisdiction Annual Review 2026 (developments of 2025,
+      trialinternational.org PDF, text searched for Morocco, Jordan, Saudi Arabia, the United Arab
+      Emirates and Qatar) lists no case with Qatar as the forum state. Earlier the same day: the
+      Ministry of Foreign Affairs' site search ('universal jurisdiction', 'prosecution Israel', 'war
+      crimes Gaza') and its Statements listing to 14 August 2026; nothing found. The prosecutor's
+      site (www.pp.gov.qa) did not answer (WebFetch: connection refused or empty page, 2026-11-09).
+      Experimental, unscored (D-12).
+    queries:
+      - Qatar Public Prosecution complaint Israeli officials war crimes Gaza lawsuit Doha court
+      - النيابة العامة القطرية دعوى جنائية ضد مسؤولين إسرائيليين غزة محكمة الدوحة
+      - '"universal jurisdiction" Gaza complaint filed United Arab Emirates OR Qatar OR Jordan court accepted investigation'
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan

@@ -603,6 +603,20 @@ Sources added (6): `src_20231129_maroc-ma_message-roi-comite-palestine`, `src_20
 
 Still not done: E1 and E3 of the five (B-922 (1)); B8 for the five (B-919 (2)); the leads of B-922 (3); the other heads of state's statements before the window (B-921 (6)). Flags for the author: B-922 (4) (a) to (d).
 
+Second resumed session, with web search (docs/10 B-949, B-950). E1 and E3 of the five filled after press and NGO searches in English and Arabic (French for Morocco), TRIAL International's UJAR 2026 and the prosecutors' sites (none answered); the none-found entries that the first Saudi session set without web search were re-run; an official copy found for one lead and archived for another; Qatar's 1988 recognition recorded. Every capture's replay was compared (bytes and SHA-256).
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments touched |
+|---|---|---|---|---|---|
+| SAU | Web search (English, Arabic); SPA API title search; UNISPAL document API; pp.gov.sa (refused) | none | Pilgrims' six-month residency of February 2024 (press only: `lead_20261109_SAU_4`, D5); A/78/846 signed by Saudi Arabia's Permanent Representative (B8 reading for the author, B-950 (1)) | +26 Acting, unchanged | E1, E3 none-found; A3, A6, A7, A8, B6, B7, B11, C4, C5, C6, D2, D5 re-run (statuses kept); B8 note |
+| ARE | Web search (English, Arabic); UNISPAL document API; pp.gov.ae (339-byte page) | none | Hind Rajab Foundation's ICC complaint on a soldier in Dubai (an ICC filing) | +22 Acting, unchanged | E1, E3 none-found; B8 note |
+| QAT | Web search (English, Arabic); UNISPAL document API; pp.gov.qa (refused) | none (recognition row `QAT,1988-11-16`, generated B8) | Qatar's ICC steps after the strike on Doha (an ICC proceeding) | +26 → +29 Acting | E1, E3 none-found; B8 has-events (no unchecked indicator left) |
+| JOR | Web search (English, Arabic, restricted to mfa.gov.jo and petra.gov.jo); UNISPAL document API; jc.jo (refused) | `evt_2024_11_21_JOR_B5` (+8, standing: the ICC's decisions 'must be respected, and must be implemented') | Ministry item of 16 Nov 2023 on the energy-for-water agreement (archived, `lead_20260929_JOR_2` kept for the author's C1 reading); Jordan Bar Association's ICC complaint | +42 → +50 Confronting | B5 has-events; E1, E3 none-found; B8 note; `lead_20260929_JOR_1` promoted |
+| MAR | Web search (English, Arabic, French); UNISPAL document API; pmp.ma (refused) | none | Complaints of 29 Jul 2024 (Israeli soldier) and 17 Feb 2025 (Israeli minister) before the Court of Appeal of Rabat, no record of acceptance (`lead_20261109_MAR_5`, E3); AMDH complaint on the ports (Sep 2025, title only) | +8 Acting, unchanged | E1, E3 none-found; B8 note |
+
+Sources added (3): `src_19881214_un-unispal_qat-recognition-a-43-971`, `src_20241121_mfa-jo_safadi-borrell-icc-warrants`, `src_20231116_mfa-jo_water-for-energy-not-signed`.
+
+Still not done: B8 of SAU, ARE, JOR and MAR (B-950 (1)); the leads of B-950 (5); heads of state before the window (B-950 (6)). Flags for the author: B-950 (1) to (4).
+
 ### T-F-W9: full-protocol wave IDN MYS DZA NGA AZE (docs/10 B-923 to B-926)
 
 Window of 27 September to 9 November 2026, read on the Governments' own sites (routes in B-923; mfa.gov.az and president.az through the built-in browser, one tab, closed afterwards), plus the eight ministers' West Bank statements that T-F-W2 left for Indonesia. Every capture's replay was re-fetched and compared with its index row (bytes and SHA-256; the Algerian page with gzip decoding). WebSearch answered at the first call that the run's shared allowance was used up, so the press and NGO searches that E1 to E3 need could not be made (B-925).

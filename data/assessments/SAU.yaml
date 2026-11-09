@@ -35,6 +35,9 @@
 # 2 June, 23 July, 21 August and 9 September 2026 and the R4 statement of 23 October 2026 (Turkish
 # Ministry's texts). The Crown Prince's Shura address of 30 September 2026 is a lead (Save Page Now
 # refused spa.gov.sa, HTTP 403). E1 and E3 stay unchecked (web-search allowance used up). B8 unchanged.
+# Resumed session of the same day (docs/10 B-949): E1 and E3 set none-found after press and NGO web
+# searches in English and Arabic; the none-found entries the first session of 2026-09-29 set without web
+# search (A3, A6, A7, A8, B6, B7, B11, C4, C5, C6, D2, D5) re-run with web search, statuses kept, one lead (D5).
 country: SAU
 protocol_version: 1
 last_full_check: 2026-09-29
@@ -57,12 +60,18 @@ indicators:
       a2_confirmed_military.csv; no Saudi document on arms exports to Israel was found.
   A3:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       Saudi Arabia is not a partner, supplier or customer of the F-35 programme; no document naming
-      Saudi companies as suppliers of F-35 parts or maintenance was found.
+      Saudi companies as suppliers of F-35 parts or maintenance was found. Finish run, T-F-W8
+      (resumed), 2026-11-09: re-run with web search, as the first session of 2026-09-29 had none
+      (docs/10 B-381); the results name Lockheed Martin's supplier outreach and localisation in the
+      Kingdom and the proposed sale of F-35 aircraft to Saudi Arabia, no Saudi company as a supplier
+      of F-35 parts or maintenance; status kept.
     queries:
       - spa.gov.sa titles (Israel) and item bodies (F-35)
+      - F-35 programme suppliers Saudi Arabia company parts Lockheed Saudi industrial participation F-35
+      - Saudi company supplier F-35 parts or Saudi Public Investment Fund divest Israel companies settlements
   A4:
     status: unchecked
     note: >-
@@ -84,25 +93,41 @@ indicators:
       - Saudi Arabia intercepted Iranian drones Israel April 2024 report
   A6:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       No decision suspending or refusing a class of export licences to Israel in the window was
-      found; Saudi Arabia has no diplomatic or declared trade relations with Israel, and no
-      measure adopted since 7 October 2023 was found.
+      found; Saudi Arabia has no diplomatic or declared trade relations with Israel, and no measure
+      adopted since 7 October 2023 was found. Finish run, T-F-W8 (resumed), 2026-11-09: re-run with
+      web search, as the first session of 2026-09-29 had none (docs/10 B-381); no Saudi decision on
+      export licences to Israel found; no result names Saudi Arabia among the twelve states that made the Hague Group's commitments of July 2025; status kept.
     queries:
       - spa.gov.sa titles (Israel)
+      - Saudi Arabia arms embargo Israel export licences ban 2024 2025 Hague Group Saudi
   A7:
     status: none-found
-    checked_at: 2026-09-29
-    note: No law or decree establishing a two-way arms embargo on Israel in the window was found.
+    checked_at: 2026-11-09
+    note: >-
+      No law or decree establishing a two-way arms embargo on Israel in the window was found. Finish
+      run, T-F-W8 (resumed), 2026-11-09: re-run with web search, as the first session of 2026-09-29
+      had none (docs/10 B-381); no Saudi law or decree on a two-way arms embargo found; no result names the Kingdom among the twelve states of the Hague Group's Bogotá commitments (July 2025); status
+      kept.
     queries:
       - spa.gov.sa titles (Israel)
+      - Saudi Arabia arms embargo Israel export licences ban 2024 2025 Hague Group Saudi
   A8:
     status: none-found
-    checked_at: 2026-09-29
-    note: No denial of port or airspace transit to an arms shipment bound for Israel was found.
+    checked_at: 2026-11-09
+    note: >-
+      No denial of port or airspace transit to an arms shipment bound for Israel was found. Finish
+      run, T-F-W8 (resumed), 2026-11-09: re-run with web search, as the first session of 2026-09-29
+      had none (docs/10 B-381); the results report that the National Shipping Company of Saudi
+      Arabia (Bahri) denied in August 2025 that its vessel carried weapons to Israel, and the
+      Ministry of Defence's statement of July 2024 that the Kingdom will not allow its airspace to
+      be used for offensive action (on the strikes on Hodeidah), neither a denial of transit to an
+      arms shipment bound for Israel; status kept.
     queries:
       - spa.gov.sa titles (Israel, Gaza)
+      - Saudi airspace or port arms shipment Israel denied refused transit Red Sea Jeddah 2024
   B1:
     status: has-events
     note: >-
@@ -154,31 +179,50 @@ indicators:
       - justsecurity.org, Mapping State Reactions to the ICC Arrest Warrants (Saudi Arabia not listed)
   B6:
     status: none-found
-    checked_at: 2026-09-29
-    note: No statement refusing to execute the warrants and no visit of a person under warrant was found.
+    checked_at: 2026-11-09
+    note: >-
+      No statement refusing to execute the warrants and no visit of a person under warrant was
+      found. Finish run, T-F-W8 (resumed), 2026-11-09: re-run with web search, as the first session
+      of 2026-09-29 had none (docs/10 B-381); no Saudi statement refusing to execute the warrants
+      and no visit of a person under warrant to the Kingdom found; a fact-check (DFRAC, 24 November
+      2024) found no basis for a viral claim that Saudi Arabia said it would arrest the Israeli
+      Prime Minister; status kept.
     queries:
       - spa.gov.sa titles (Criminal Court) and item bodies (arrest warrant)
+      - Saudi Arabia ICC arrest warrant Netanyahu position refuse execute visit Saudi or sanctions ICC officials Saudi
   B7:
     status: none-found
-    checked_at: 2026-09-29
-    note: Saudi Arabia has imposed no sanctions on ICC officials.
+    checked_at: 2026-11-09
+    note: >-
+      Saudi Arabia has imposed no sanctions on ICC officials. Finish run, T-F-W8 (resumed),
+      2026-11-09: re-run with web search, as the first session of 2026-09-29 had none (docs/10
+      B-381); no Saudi sanction on ICC officials found; status kept.
     queries:
       - spa.gov.sa titles (Criminal Court)
+      - Saudi Arabia ICC arrest warrant Netanyahu position refuse execute visit Saudi or sanctions ICC officials Saudi
   B8:
     status: unchecked
     note: >-
       Generated from recognitions.csv; Saudi Arabia has no row. The registry dates its recognition
       to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Saudi statement stating
-      the Kingdom's own recognition was found in the items searched ("recogni", 1988): the
-      Kingdom's statements call on states "that have not yet recognized" the State of Palestine to
-      do so (Ministry statement of 7 February 2024, archived; the Crown Prince at the Arab Summit of
-      16 May 2024) and it accredits a non-resident ambassador to the State of Palestine (items of
-      22 November 2023 onward), which imply but do not state a recognition. No row added (docs/10
-      B-382 (4)); the build derives nothing from a missing row. P-16 looks for a Saudi document of
-      1988 or a statement of the recognition.
+      the Kingdom's own recognition was found in the items searched ("recogni", 1988): the Kingdom's
+      statements call on states "that have not yet recognized" the State of Palestine to do so
+      (Ministry statement of 7 February 2024, archived; the Crown Prince at the Arab Summit of 16
+      May 2024) and it accredits a non-resident ambassador to the State of Palestine (items of 22
+      November 2023 onward), which imply but do not state a recognition. No row added (docs/10 B-382
+      (4)); the build derives nothing from a missing row. P-16 looks for a Saudi document of 1988 or
+      a statement of the recognition. Resumed T-F-W8 session, 2026-11-09 (docs/10 B-949): web
+      searches in English and Arabic and the UNISPAL document API (1988 letters of member states on
+      the declaration of independence: Qatar, Oman, Kuwait, Bahrain, Tunisia and others; none from
+      Saudi Arabia) found no Saudi document of 1988. A/78/846-S/2024/283, whose annex dates the
+      recognition, is an identical letter of 2 April 2024 signed by the Permanent Representative of
+      Saudi Arabia as Chair of the Arab Group with those of Mauritania and Uganda; whether that
+      makes it a document of the state itself for Saudi Arabia is for the author (B-860, B-949); no
+      row added.
     queries:
       - spa.gov.sa titles (recogni) and item bodies (recognized the State of Palestine, 1988, State of Palestine)
       - Saudi Arabia recognized State of Palestine 1988 official statement date recognition
+      - UNISPAL document API, search "PNC Declaration of Independence Letter from" and "Letter from <state>" (1988 letters of member states)
   B9:
     status: has-events
     checked_at: 2026-11-04
@@ -217,13 +261,17 @@ indicators:
       - spa.gov.sa titles (Israel, Crown Prince)
   B11:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       No sanctions on Israeli ministers or settler entities by Saudi Arabia were found; the Kingdom
       joined joint statements condemning settler violence and settlement decisions (for instance 18
-      June 2026, by title), which are not listings.
+      June 2026, by title), which are not listings. Finish run, T-F-W8 (resumed), 2026-11-09: re-run
+      with web search, as the first session of 2026-09-29 had none (docs/10 B-381); the results show
+      Saudi statements condemning settlements and welcoming other states' sanctions, no Saudi
+      sanction or entry ban on Israeli ministers or settler entities; status kept.
     queries:
       - spa.gov.sa titles (Israel, Palestin) and item bodies (sanction)
+      - Saudi Arabia sanctions Israeli settlers ministers Ben-Gvir Smotrich entry ban Saudi
   B12:
     status: none-found
     checked_at: 2026-09-29
@@ -259,23 +307,40 @@ indicators:
       Israel; whether Israel's mirror data carry Saudi flows will be known when the fetch runs.
   C4:
     status: none-found
-    checked_at: 2026-09-29
-    note: No ban or labelling rule on settlement goods adopted in the window was found (would be scoped west-bank, B-32).
+    checked_at: 2026-11-09
+    note: >-
+      No ban or labelling rule on settlement goods adopted in the window was found (would be scoped
+      west-bank, B-32). Finish run, T-F-W8 (resumed), 2026-11-09: re-run with web search, as the
+      first session of 2026-09-29 had none (docs/10 B-381); the results describe the Kingdom's
+      long-standing primary boycott of Israeli goods (before the window) and its welcome of the
+      United Kingdom's ban on settlement goods, no Saudi measure on settlement goods adopted in the
+      window; status kept.
     queries:
       - spa.gov.sa titles (Israel, Palestin) and item bodies (boycott)
+      - Saudi Arabia boycott Israeli products settlement goods ban procurement exclusion companies Israel 2024 2025 decision
   C5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       No divestment decision by a Saudi public fund over conduct in Gaza or the occupied territories
       was found in the agency's items; the Public Investment Fund and the central bank were not
-      searched.
+      searched. Finish run, T-F-W8 (resumed), 2026-11-09: re-run with web search, as the first
+      session of 2026-09-29 had none (docs/10 B-381); no divestment by the Public Investment Fund or
+      another Saudi public fund over conduct in Gaza or the occupied territories found; the results
+      report the Fund's commitment to Affinity Partners, which has invested in Israel; status kept.
+    queries:
+      - Saudi company supplier F-35 parts or Saudi Public Investment Fund divest Israel companies settlements
   C6:
     status: none-found
-    checked_at: 2026-09-29
-    note: No procurement exclusion with legal effect adopted in the window was found.
+    checked_at: 2026-11-09
+    note: >-
+      No procurement exclusion with legal effect adopted in the window was found. Finish run, T-F-W8
+      (resumed), 2026-11-09: re-run with web search, as the first session of 2026-09-29 had none
+      (docs/10 B-381); no Saudi procurement exclusion with legal effect adopted in the window found;
+      status kept.
     queries:
       - spa.gov.sa titles (Israel)
+      - Saudi Arabia boycott Israeli products settlement goods ban procurement exclusion companies Israel 2024 2025 decision
   D1:
     status: has-events
     note: >-
@@ -288,13 +353,18 @@ indicators:
       (not all reported to FTS, docs/06 §7).
   D2:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
       Saudi Arabia did not suspend its funding of UNRWA; the Foreign Minister said at the General
       Assembly (28 September 2024) that the Kingdom remains committed to supporting UNRWA, and the
-      Kingdom joined the statement of 12 December 2025 affirming UNRWA's role.
+      Kingdom joined the statement of 12 December 2025 affirming UNRWA's role. Finish run, T-F-W8
+      (resumed), 2026-11-09: re-run with web search, as the first session of 2026-09-29 had none
+      (docs/10 B-381); the results confirm continued funding (KSrelief's US$40 million agreement
+      with UNRWA of March 2024 and the cooperation agreement of September 2024), no suspension;
+      status kept.
     queries:
       - spa.gov.sa titles (UNRWA)
+      - Saudi Arabia UNRWA funding 2024 suspend or continue contribution KSrelief UNRWA agreement
   D3:
     status: has-events
     checked_at: '2026-11-09'
@@ -321,18 +391,32 @@ indicators:
       - WHO medical evacuations Gaza receiving countries (Saudi Arabia not among the receiving countries in the figures to 10 September 2025)
   D5:
     status: none-found
-    checked_at: 2026-09-29
-    note: No visa or refugee instrument for Gazans was found.
+    checked_at: 2026-11-09
+    note: >-
+      No visa or refugee instrument for Gazans was found. Finish run, T-F-W8 (resumed), 2026-11-09:
+      re-run with web search, as the first session of 2026-09-29 had none (docs/10 B-381); Gulf News
+      (26 February 2024) reports a six-month residency for Palestinian Umrah pilgrims from Gaza
+      stranded in the Kingdom, citing a statement of the Palestinian Ministry of Foreign Affairs; no
+      Saudi instrument or Saudi Press Agency item found: a lead (lead_20261109_SAU_4); status kept.
     queries:
       - spa.gov.sa titles (Gaza) and item bodies (visa)
+      - Saudi Arabia visas Gaza residents Palestinians from Gaza residency permits relatives 2024 2025
+      - السعودية منح إقامة ستة أشهر للمعتمرين الفلسطينيين العالقين من غزة الجوازات واس
   E1:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      The Public Prosecution and the courts were not searched (P-16). Finish run, T-F-W8,
-      2026-11-09: still unchecked. Read: the Saudi Press Agency's search API (title search, latest items only; 'Public Prosecution', 'Court', 'Israel'); no investigation of nationals or companies for
-      conduct in Gaza found there. The prosecutor's site (www.pp.gov.sa) did not answer a scripted
-      request, and the session's web-search allowance was used up before the press and NGO searches
-      (English and Arabic) that a none-found needs (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No investigation or prosecution of nationals or companies of Saudi Arabia for conduct in Gaza
+      found. Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and NGO searches in
+      English and Arabic (queries below). The searches returned press reports of arrests in the
+      Kingdom over online posts about the Gaza war (2024, see E2) and Saudi statements at the
+      International Court of Justice, none on a case concerning conduct in Gaza. Earlier the same
+      day: the Saudi Press Agency's search API (title search; 'Public Prosecution', 'Court',
+      'Israel'); nothing found. The prosecutor's site (www.pp.gov.sa) did not answer (WebFetch:
+      connection refused or empty page, 2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - Saudi Arabia prosecution Gaza protest arrested 2024
+      - النيابة العامة السعودية دعوى جرائم حرب إسرائيل غزة الولاية القضائية العالمية
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -344,10 +428,20 @@ indicators:
     queries:
       - Saudi Arabia arrested Gaza Palestine solidarity social media posts 2024 2025 Human Rights Watch Amnesty
   E3:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
-      Finish run, T-F-W8, 2026-11-09: still unchecked. Read: the Saudi Press Agency's search API (title search, latest items only; 'Public Prosecution', 'Court', 'Israel'); no complaint found there.
-      The prosecutor's site (www.pp.gov.sa) did not answer a scripted request, and the session's
-      web-search allowance was used up before the press and NGO searches that a none-found needs
-      (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No universal-jurisdiction complaint accepted for investigation in Saudi Arabia found. Finish
+      run, T-F-W8 (resumed), 2026-11-09, with web search (queries below). The searches returned no
+      complaint filed with or accepted by a Saudi prosecutor or court; the Kingdom's statements call
+      for accountability before international bodies. TRIAL International's Universal Jurisdiction
+      Annual Review 2026 (developments of 2025, trialinternational.org PDF, text searched for
+      Morocco, Jordan, Saudi Arabia, the United Arab Emirates and Qatar) lists no case with Saudi
+      Arabia as the forum state. Earlier the same day: the Saudi Press Agency's search API (title
+      search; 'Public Prosecution', 'Court', 'Israel'); nothing found. The prosecutor's site
+      (www.pp.gov.sa) did not answer (WebFetch: connection refused or empty page, 2026-11-09).
+      Experimental, unscored (D-12).
+    queries:
+      - Saudi Arabia court case war crimes complaint Israeli officials Gaza universal jurisdiction Saudi lawyers
+      - النيابة العامة السعودية دعوى جرائم حرب إسرائيل غزة الولاية القضائية العالمية
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan

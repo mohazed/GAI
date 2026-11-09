@@ -193,10 +193,14 @@ indicators:
       calls on states to recognise the State of Palestine (item of 31 July 2025), which imply but do
       not state a recognition; the Ministry's search for "recogni" returns no item on the UAE's own
       recognition. No row added (as for Saudi Arabia, docs/10 B-382 (4)); P-16 looks for a document
-      of 1988.
+      of 1988. Resumed T-F-W8 session, 2026-11-09 (docs/10 B-949): web searches in English and
+      Arabic and the UNISPAL document API (1988 letters of member states on the declaration of
+      independence; none from the United Arab Emirates) found no Emirati document stating the
+      recognition; no row added (B-860).
     queries:
       - mofa.gov.ae news search (recogni, Palestin)
       - UAE recognised State of Palestine 1988 mofa.gov.ae UAE Palestine relations
+      - UNISPAL document API, search "PNC Declaration of Independence Letter from" and "Letter from <state>" (1988 letters of member states)
   B9:
     status: "has-events"
     queries:
@@ -337,13 +341,20 @@ indicators:
       - mofa.gov.ae news search (Gaza, evacuat)
       - UAE residency visas Gaza families evacuated patients decision 2024 Palestinians from Gaza UAE residence permit
   E1:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      The Public Prosecution and the courts were not searched (P-16). Finish run, T-F-W8,
-      2026-11-09: still unchecked. Read: the Ministry of Foreign Affairs' news search for 7 October 2023 to 9 November 2026 ('prosecution', 'Public Prosecution', 'universal jurisdiction', 'war crimes'; titles read, none on a case concerning Gaza); no investigation of nationals or companies for
-      conduct in Gaza found there. The prosecutor's site (www.pp.gov.ae (a 339-byte page)) did not answer a scripted
-      request, and the session's web-search allowance was used up before the press and NGO searches
-      (English and Arabic) that a none-found needs (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No investigation or prosecution of nationals or companies of the United Arab Emirates for
+      conduct in Gaza found. Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and
+      NGO searches in English and Arabic (queries below). The searches returned Ministry statements
+      on the International Court of Justice and on Gaza, none on an investigation of an Emirati
+      national or company. Earlier the same day: the Ministry of Foreign Affairs' news search for 7
+      October 2023 to 9 November 2026 ('prosecution', 'Public Prosecution', 'universal
+      jurisdiction', 'war crimes'; titles read); nothing found. The prosecutor's site (www.pp.gov.ae;
+      a 339-byte page on 2026-11-09) did not answer (WebFetch: connection refused or empty page,
+      2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - UAE prosecution national Gaza conduct investigation Emirati company Gaza court case 2024 2025
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -355,10 +366,23 @@ indicators:
     queries:
       - UAE arrests Gaza protest OR "Palestine" solidarity keffiyeh detained UAE 2024 Human Rights Watch
   E3:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-09
     note: >-
-      No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
-      Finish run, T-F-W8, 2026-11-09: still unchecked. Read: the Ministry of Foreign Affairs' news search for 7 October 2023 to 9 November 2026 ('prosecution', 'Public Prosecution', 'universal jurisdiction', 'war crimes'; titles read, none on a case concerning Gaza); no complaint found there.
-      The prosecutor's site (www.pp.gov.ae (a 339-byte page)) did not answer a scripted request, and the session's
-      web-search allowance was used up before the press and NGO searches that a none-found needs
-      (docs/10 B-919; tried again in a resumed session the same day, B-922). Experimental, unscored (D-12).
+      No universal-jurisdiction complaint accepted for investigation in the United Arab Emirates
+      found. Finish run, T-F-W8 (resumed), 2026-11-09, with web search (queries below). The Hind
+      Rajab Foundation's complaint of 27 November 2024 against an Israeli soldier it said was in
+      Dubai was filed with the International Criminal Court, not with an Emirati authority, and no
+      Emirati action on it was reported in the results read. TRIAL International's Universal
+      Jurisdiction Annual Review 2026 (developments of 2025, trialinternational.org PDF, text
+      searched for Morocco, Jordan, Saudi Arabia, the United Arab Emirates and Qatar) lists no case
+      with the United Arab Emirates as the forum state. Earlier the same day: the Ministry of
+      Foreign Affairs' news search for 7 October 2023 to 9 November 2026 ('prosecution', 'Public
+      Prosecution', 'universal jurisdiction', 'war crimes'; titles read); nothing found. The
+      prosecutor's site (www.pp.gov.ae; a 339-byte page on 2026-11-09) did not answer (WebFetch:
+      connection refused or empty page, 2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - Hind Rajab Foundation complaint Israeli soldier UAE Dubai Abu Dhabi prosecutor
+      - النيابة العامة الإماراتية بلاغ جندي إسرائيلي دبي جرائم حرب غزة
+      - '"universal jurisdiction" Gaza complaint filed United Arab Emirates OR Qatar OR Jordan court accepted investigation'
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan
