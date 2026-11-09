@@ -2810,3 +2810,29 @@ B8 is a generated indicator and was not touched. The six countries' leads (8 in 
 | src_20260630_nzsuperfund_exclusions-list-june-2026 | NZ Super Fund exclusions at 30 June 2026 | NZL C5 |
 
 Score effect: none (none-found entries carry no points; no event was added). Provisional previews are unchanged.
+
+### T-F-L02: MNG, PRK, BGR, BLR, MDA, ROU (2026-11-09, groups 3 and 4)
+
+The session had no web search (the first query answered that the run's shared allowance was used up, as for T-F-L01). It worked on the Governments' own pages, the UN's General Debate files and the Council's press list (routes and refusals in docs/10 B-930). No event was filed and no existing event changed: for 5 October to 9 November 2026 nothing that names Gaza was found for the six countries on the pages that could be read, and the 81st-session statements (22 to 28 September 2026) of all six were read (ROU and BGR again, as T-P23-1 had read them) without a ceasefire call, a call to end restrictions on aid or a named violation. 4 sources archived and recorded, 3 failed index rows removed by exact id (B-931).
+
+| Country | Filled (`checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| MNG | A3, A5, A6, A7, A8, C4 (none-found; the Cabinet's site search returns nothing for Israel, Palestine, Gaza, Hamas, Middle East in Mongolian and English) | B9 (81st statement; Cabinet search) | C5, C6, E1 to E3 |
+| PRK | A3, A5, A6, A7, A8, C4 (none-found); C5, C6 (no-data) | B9 (81st statement: no passage on Gaza) | E1 to E3 |
+| BGR | A3, A5, A6, A7, A8, C4 (none-found; the Council of Ministers' record of 162 meetings since 7 October 2023 and the export-control portal) | B9 (81st statement; the 16 July 2026 readout, new lead BGR_1) | C5, C6, E1 to E3 |
+| BLR | A3 (none-found) | B9 (81st statement; the President's site, 48 items of the window) | A5 to A8, C4 to C6, E1 to E3 |
+| MDA | A3 (none-found) | B9 (81st statement; the Ministry's 189 releases of 26 May to 9 November 2026 and the Government's 1,015 of 20 November 2024 to 9 November 2026) | A5 to A8, C4 to C6, E1 to E3 |
+| ROU | A3, A5 (none-found; the Ministry of National Defence's 1,570 releases) | B9, D4 (Ministry of National Defence's release no. 278 of 31 August 2026) | A6 to A8, C4 to C6, E1 to E3 |
+
+B8 is a generated indicator and was not touched; none of the six has a row in `recognitions.csv` (a state document is needed, B-933 (2)).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20260923_un-gadebate_rou-dan-81-en | President Dan's General Debate statement, 81st session (Wayback capture of 22 October 2026) | ROU B9 note (no event) |
+| src_20260923_un-gadebate_bgr-iotova-81-fr | President Iotova's General Debate statement, 81st session, French (Wayback capture of 22 October 2026) | BGR B9 note (no event) |
+| src_20260716_gov-bg_radev-majdalani-gaza | Council of Ministers' news item of 16 July 2026 on the Prime Minister's meeting with the Palestinian President's special envoy | lead_20261109_BGR_1 (B9, R4) |
+| src_20240830_gov-bg_ms-zasedanie-30-08-2024 | Council of Ministers' record of its meeting of 30 August 2024 (draft plan of cooperation with Israel's Ministry of Health) | lead_20261005_BGR_3 (C2, R18) |
+
+Leads: new `lead_20261109_BGR_1`; all twelve earlier leads of the six (ROU 1 to 4, BGR 1 to 4, BLR 1, MDA 1 and 2, PRK 1) annotated with the session's searches and kept open. Readings flagged for the author (B-932): the Radev readout, the Bulgarian health plan under R18, the Romanian flight of 31 August 2026 under R11, the DPRK's no-data and none-found, the thin evidence base of the Mongolian and Bulgarian none-found entries, the Romanian defence contacts under A5.
+
+Score effect: none (no event was added or changed). Provisional previews (rc.1, 2026-11-09): MNG +1 Acting, PRK +1 Acting, BGR +7 Acting, BLR +14 Acting, MDA −11 Passive, ROU −11 Passive; they differ from the T-P21 tables of 5 October because of later Comtrade rows and decay.
