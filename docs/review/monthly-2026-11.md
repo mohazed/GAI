@@ -298,3 +298,22 @@ The 545 failing rows, second request with redirects followed:
 | 404, no answer (connection closed) | 174 |
 
 The 468 rows with 404 have snapshot timestamps from 2026-11-03 20:46 to 2026-11-04 21:25 UTC (449 Comtrade rows and 19 others). None was re-archived in this session (about eight hours of Save Page Now captures; the cause may be a lag). The list is in `docs/review/wayback-check-2026-11-08.tsv`. The hash difference is `src_20260928_undl_ga-voting-2025-03-31-corr1`. Next step: run the workflow again on `data/phase1` after seven days and re-archive only the rows still failing.
+
+### T-F-UNDOCS-1: documents on hosts that refuse scripts (docs/10 B-874, B-875)
+
+Run on 2026-11-09 with WebSearch, curl, the Wayback CDX index and the built-in browser pane (one tab, `icj-cij.org` and `consilium.europa.eu`). Every capture's replay was re-fetched with `curl --compressed` and compared (bytes and SHA-256) with its index row. Two failed Save Page Now rows (the ICJ's Brazil PDF, Yemen's Ministry page) were removed from `archive/index.csv` by exact id; no other row was touched.
+
+| Item | Result | Records |
+|---|---|---|
+| ICJ case 192, the Court's list | Read in the pane: no filing after 13 March 2026; every intervener in the universe already filed | none |
+| Declaration of Mexico (24 May 2024) | Archived from UNISPAL's Wayback copy; supports the applicant; B3 confirmed on the text | `src_20240524_icj_192-declaration-mexico`; `evt_2024_05_24_MEX_B3` (3 passages added) |
+| Declaration of Bolivia (8 October 2024) | Archived from UNISPAL's Wayback copy; supports the applicant; no withdrawal listed | `src_20241008_icj_192-declaration-bolivia`; `evt_2024_10_08_BOL_B3` (2 passages added) |
+| Declaration of Belgium (18 December 2025) | Scan OCR'd from the archived bytes; paragraph 19 quoted after comparison with the page image | `src_20251218_icj_192-declaration-belgium` (text file); `evt_2025_12_23_BEL_B3` (3 fragments added) |
+| Declaration of Brazil (17 September 2025) | Not readable: ICJ human check (not clicked), Save Page Now 403, no UNISPAL or government copy | `evt_2025_09_17_BRA_B3` notes only |
+| EU–Canada summit statement (30 October 2026) | Read (Council document ST 15148/26): Middle East paragraph without Gaza (R7); signed by the EU's Presidents and Canada's Prime Minister | none |
+| 16 October 2026 statement, six signatories | Foreign ministers named in archived official documents; filed | `evt_2026_10_16_{DJI,KWT,LBN,SDN,SYR,YEM}_B9` (+5, west-bank, unscored); 6 sources |
+| 22 September and 16 October 2026, signatories' own copies | Not sought (every signatory is filed on the archived copies) | none |
+| B5 Algeria | Ministry statement of 21 November 2024 archived from the Arabic Wayback capture; filed under R2, flagged | `src_20241121_mfa-dz_statement-icc-warrants`; `evt_2024_11_21_DZA_B5` (+8) |
+| B5 Indonesia | Ministry post on X of 23 November 2024, known from the press; no copy on kemlu.go.id | lead kept (`lead_20260929_IDN_1`) |
+
+Score effect (preview, for reading only): Algeria +37 (Acting) to +45 (Confronting) with the B5 event; the other records add text to existing events or are west-bank and do not move a score. Flags for the author are in docs/10 B-875.
