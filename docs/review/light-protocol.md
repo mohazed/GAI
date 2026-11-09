@@ -3105,3 +3105,31 @@ redo pass (T-F-L06-R)
 Deferred items settled: the Ministry of National Defense's page of 10 June 2026 was read (a workshop on dual-use and arms export control with German and European partners; no Israeli measure); the Paraguayan Foreign Ministry's page for the Presidency's and the Ministry's pages of December 2024 were read again (the Ministry's page names only the memorandum between research bodies). Still open: the two el19digital articles (403 and no Wayback capture), the AFP original of the Paraguayan interview, a state document for Nicaragua's recognition of 1988. Readings flagged for the author (B-973): the Paraguayan B6 from a press interview at `reported` (it corrects the first session's B5 and B6 notes), the Paraguayan health agreement as a new C2 instrument next to the convenio of 2005, and the Foreign Ministry's communique of 21 November 2024 (not filed).
 
 Score effect: PRY only. Provisional previews (rc.1, 2026-11-09): LCA +4 Acting, NIC +11 Acting, PAN −22 Enabling, PER −3 Passive, PRY −60 Sustaining (was −59), SLV +4 Acting.
+
+### T-F-L07: SUR, TTO, URY, VCT, VEN, FJI (2026-11-10, groups 13 and 14)
+
+The session had web search and ran it in the official language and English (standard mode: SUR 10 searches, TTO 7, URY 10, VCT 6, VEN 8, FJI 7), with the Governments' own pages that answer: the WordPress interfaces of gov.sr and of the Fiji Ministry's site, the Ministry of Foreign Affairs' news pages of Trinidad and Tobago and Saint Vincent and the Grenadines, the Uruguayan Ministry's list of communiqués (three pages), and the Venezuelan Ministry's rebuilt site (which cannot be searched by date). Every none-found entry carries its queries, the date and the pages read; the summaries were used to find pages and nothing was filed from them. Records: docs/10 B-975 to B-977.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Notes extended | Events | Still unchecked |
+|---|---|---|---|---|
+| SUR | A3, A5 to A8, C4 to C6, E1 to E3 (gov.sr's search of the items of 6 October to 9 November 2026: no match for Gaza, Palestina, Israel, Hamas) | B9 (81st statement: the CMC report lists the topics without Gaza) | none | none (B8 generated) |
+| TTO | A3, A5 to A8, C4 to C6, E1 to E3 (Ministry news page to 2 November 2026; the Trinidad Guardian reports of 28 July and 5 August 2026 opened) | C2 (the July 2026 MASHAV talks: no instrument) | none | none (B8 generated) |
+| URY | A3, A5 to A8, C4 to C6, E1 to E3 (communiqués of 14 August to 7 November 2026: none on Gaza after 7 October) | B5 (the President declined to pronounce on the warrant, indirect speech) | none | none (B8 generated) |
+| VCT | A3, A5 to A8, C4 to C6, E1 to E3 (the Ministry's items 991 to 1021; the Prime Minister's Office site stops in April 2026) | B9 (81st statement not found) | none | none (B8 generated) |
+| VEN | A3, A5 to A8, C4 to C6, E1 to E3 (the Ministry's site rebuilt; 8 searches in Spanish) | B12 (no diplomatic relations or ambassadors announced after 11 August 2026) | none | none (B8 generated) |
+| FJI | A3, A5 to A8, C4 to C6, E1, E3 (the Ministry's 39 items of 6 October to 5 November 2026; the release of 16 October 2026 on MASHAV read) | B9 (the UNGA 81 releases name no Gaza passage), C2 (the 16 October talks: no instrument) | E2 set to has-events: evt_2023_10_31_FJI_E2, evt_2024_10_07_FJI_E2, evt_2026_06_02_FJI_E2 | none (B8 generated: Fiji has no row) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20110315_un-unispal_uruguay-comunicado-28-11 | The Government of Uruguay's press release no. 28/11 on the recognition of Palestine (UNISPAL copy, replay equal in bytes and SHA-256) | recognitions.csv row URY,2011-03-15 |
+| src_20110908_un-unispal_a-65-939-svg-recognition | The Ministry of Foreign Affairs of Saint Vincent and the Grenadines' statement of 29 August 2011 in A/65/939-S/2011/543 (UNISPAL copy, replay equal) | recognitions.csv row VCT, now 2011-08-29 |
+| src_20231031_maitv_fiji-denies-palestine-march-permit | Mai TV, 31 October 2023: the Police denied the application for a solidarity march with Palestine | evt_2023_10_31_FJI_E2 |
+| src_20231101_fijisun_free-palestine-march-permit-denied | Fiji Sun, 1 November 2023: the Police denied the 'Free Palestine' march of 4 November | evt_2023_10_31_FJI_E2 |
+| src_20241008_fijitimes_police-stop-palestine-march | The Fiji Times, 8 October 2024: the Police stopped the NGO Coalition's march 'yesterday' | evt_2024_10_07_FJI_E2 |
+| src_20241112_civicus_fiji-police-block-palestine-march | CIVICUS Monitor, 12 November 2024: on 7 October 2024 the police denied permission for a march | evt_2024_10_07_FJI_E2 |
+| src_20260603_fijitimes_ali-disappointment-police-action | The Fiji Times, 3 June 2026: police told protesters to stop chanting, citing the Public Order Act | evt_2026_06_02_FJI_E2 |
+| src_20260603_fijivillage_police-at-fwcc-office | fijivillage, written on 2 June 2026: police told those present that they could not protest in a public place | evt_2026_06_02_FJI_E2 |
+
+New lead: `lead_20261110_URY_5` (E3: the complaint of 29 May 2026 before the Fiscalía General de la Nación against the Israeli army's Spanish-language spokesperson, press only). Leads SUR_1, SUR_2, TTO_2, URY_3, VCT_1, VEN_2, VEN_3 and FJI_3 were re-checked and annotated; the rest unchanged. Recognition rows: URY and VCT given the Governments' own documents (VCT's date set to 2011-08-29); SUR keeps its state source and the 2011 letter was not found; TTO, VEN, FJI unchanged.
+
+Score effect: none. Provisional previews (rc.1, 2026-11-10): SUR +9 Acting, TTO +9 Acting, URY +15 Acting, VCT −3 Passive, VEN −9 Passive, FJI −55 Sustaining (the three E2 events are unscored in v1.0).
