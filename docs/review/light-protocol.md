@@ -2881,3 +2881,32 @@ The session had no web search (the first query answered that the run's shared al
 Leads: new `lead_20261109_SVK_6` (B9, the Prime Minister's statements of 2024) and `lead_20261109_BRB_2` (B9, a Government statement without a speaker); `lead_20261006_SVK_3` extended with the Prime Minister's own archived release; SVK 1, UKR 1, BRB 1, BHS 1, BLZ 2 and ATG 2 annotated with the session's searches; the rest stay open. Readings flagged for the author (B-938): the Barbados statement of 10 September 2025 under R3, the Slovak Prime Minister's statements, the overflight denial of 4 March 2026, the thin evidence base of the none-found entries.
 
 Score effect: ATG +3 (B8, the pre-existing tier, from the row added with a state document); none-found entries carry no points and no event was added. Provisional previews (rc.1, 2026-11-09): SVK −1 Passive, UKR +5 Acting, ATG −1 Passive, BHS +9 Acting, BLZ +24 Acting, BRB +14 Acting.
+
+### T-F-L04: CRI, CUB, DMA, DOM, ECU, GRD (2026-11-09, groups 7 and 8)
+
+The session had no web search (the first query answered that the run's shared allowance is used up). It read the Governments' own sites in full text through their public interfaces: eight Ecuadorian sites and the Dominican Ministry of Foreign Affairs through WordPress (4,068 and 825 posts), the Dominican, Costa Rican, Dominican-Police and Ecuadorian financial sites through their search, the Joomla search service of Dominica's portal, the pages of Grenada's portal, and the Cuban Ministry of Foreign Affairs' site, which answered from outside Cuba on that day (routes and refusals in docs/10 B-940). Two events were filed, both Cuban, from the Ministry's own pages; no other event was added or changed.
+
+| Country | Filled (none-found, `checked_at` 2026-11-09) | Notes extended | Still unchecked |
+|---|---|---|---|
+| CRI | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Presidency, Procuraduría, Public Security and Foreign Trade as far as they answer; the Ministry of Foreign Affairs answered 403) | B8 (63rd-session statement read, no recognition) | B8 (generated) |
+| CUB | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Ministry of Foreign Affairs: 237 items listed, 169 read in full, site search) | B9 (new events); B8 as generated | none |
+| DMA | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (search service of the Government's portal) | B8 (66th-session statement read, no passage on Palestine) | B8 (generated) |
+| DOM | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Ministry of Foreign Affairs: 825 posts; Police and Interior by search) | none | none |
+| ECU | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (eight Government sites, 4,068 posts) | C2 (JETCO of 15 July 2026 read, no instrument) | none |
+| GRD | A3, A5, A6, A7, A8, C4, C5, C6, E1, E2, E3 (Government portal, Finance news, Customs home page) | B8 (66th-session statement read, no recognition) | B8 (generated) |
+
+| Event | Indicator | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2026_09_25_CUB_B9 | B9 | 2026-09-25 | +5 | confirmed | official |
+| evt_2026_07_30_CUB_B9 | B9 | 2026-07-30 | +5 (a digression in a speech on the United States' blockade, flagged) | confirmed | official |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20260925_cubaminrex_rodriguez-grupo-haya-es | The Foreign Minister's intervention at the Hague Group's high-level meeting, New York, 25 September 2026 (Ministry's Spanish text; Save Page Now, replay equal) | evt_2026_09_25_CUB_B9 |
+| src_20260730_cubaminrex_diaz-canel-clausura-anpp-es | The President's closing speech of the National Assembly's session, 30 July 2026 (stenographic version on the Ministry's site; Save Page Now, replay equal) | evt_2026_07_30_CUB_B9 |
+
+No pre-2023 recognition row was added: the General Debate statements read for Costa Rica (63rd session, the President), Dominica (66th) and Grenada (66th) state no recognition (R21); B8 is generated and was not hand-authored.
+
+Leads: `lead_20261006_CUB_1` promoted to the first event; `lead_20261006_CUB_2` (the Ministry's own text names the Palestinian people and never Gaza: R7), `_3` and `_4`, ECU 1 to 3, CRI 1 to 3 and DMA 1 and 2 re-checked on the official sites and kept open. Readings flagged for the author (B-941): the Cuban President's speech of 30 July 2026 as a B9 event; the Cuban Foreign Minister's statements of 1 October 2025 and 9 July 2026 and the President's of 26 July and 14 August 2026, read and not filed; Ecuador's Defence releases on Israeli vehicles and the pledge of 6 May 2025 (not A5); the JETCO meeting of 15 July 2026 (not C2); the thin evidence base of the none-found entries.
+
+Score effect: CUB +29.0 Acting before the two events (the event of 15 October 2025 is 390 days old, so the passivity penalty applied) and +44.3 Confronting with them. Provisional previews (rc.1, 2026-11-09): CRI −1 Passive, CUB +44 Confronting, DMA −16 Passive, DOM +7 Acting, ECU −14 Passive, GRD −15 Passive.
