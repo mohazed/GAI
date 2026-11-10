@@ -3,6 +3,8 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Government portal (samoagovt.ws, with its search and the Prime Minister's speeches category), the Ministry of Foreign Affairs and Trade (mfat.gov.ws, searched for Gaza, Israel, Palestine), the General Debate statements of the 78th to 80th sessions (gadebate.un.org; the 81st session has no Samoa file), the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on Samoa and Gaza, Israel, Palestine, the embassy plan and the Prime Minister's statements. Not searched individually: B7, B11, D4, D5. Time: about 30 minutes of research on Samoa, inside the 90-minute budget of the session.
 # No scored event for Samoa: the B9 passages are read as no event (R3, tier) and the Prime Minister's declaration of support for Israel is a lead (press only, no Gaza).
+# Completion of 2026-11 (finish run, T-F-L11, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4, D5 and E1 to E3 searched, all none-found, with the Government portal's and the Ministry's site searches and 8 web searches in English; B8 set to none-found (no recognition).
+#   No new event. Leads WSM_1 and WSM_2 re-read and kept (press only); the Samoa Observer's report of the Israeli ambassador's credentials of 19 February 2026 and the Samoan Head of State's mention of the Jerusalem mission is not an act of the Government on Gaza (docs/10 B-2001).
 country: WSM
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +21,17 @@ indicators:
       this one; the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Samoan company as a supplier of parts or maintenance for the F-35 programme. Samoa has no defence industry and is not a partner or a customer of the programme (archive/text/src_20250616_un-unispal_a-hrc-59-23.txt,
+      the Special Rapporteur''s report on companies, searched for Samoa on 2026-11-10: no match). Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns
+      ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items,
+      neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no
+      item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Samoa (no match)
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
@@ -28,17 +39,53 @@ indicators:
     - sipri_orders.csv, buyer WSM
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or arms transit with Israel was found. Samoa has no armed forces (a police force with a maritime wing). Cooperation reported
+      in the sources is civil: Israeli-funded biogas systems handed to the Government on 20 February 2026 (Samoa Observer, 21 February 2026, read) and agricultural and health training (releases
+      of the Government''s site). The new Israeli ambassador, resident in Wellington, presented credentials on 19 February 2026 (Samoa Observer, read). None is a military cooperation instance.
+      Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with
+      Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry
+      of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org
+      answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel embassy Jerusalem OR "visa waiver" OR agreement Samoa Observer 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; Samoa has no arms export industry and its Government declares support for Israel (lead_20261104_WSM_1).
+      Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with
+      Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry
+      of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org
+      answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel Gaza Prime Minister La''auli statement 2026'
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree restricting exports to and imports from Israel was found; the Prime Minister has said he stands in support of Israel (lead_20261104_WSM_1), and Samoa plans an office
+      in Jerusalem (lead_20261104_WSM_2). Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on
+      the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item
+      10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa
+      could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel Gaza Prime Minister La''auli statement 2026'
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found; the searches returned nothing on the subject for Samoa. Pages read on 2026-11-10: the Government
+      portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza
+      returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search
+      (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not
+      bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 3 of the 12 qualifying votes (A/RES/ES-10/22, ES-10/25, ES-10/26), an abstention on five (A/RES/ES-10/24, A/RES/79/232, A/DEC/80/506, A/RES/80/78,
@@ -83,15 +130,24 @@ indicators:
     - as for B5
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on ICC officials by Samoa appeared in any source read.
+    status: none-found
+    note: 'No sanction on ICC officials and no act to obstruct the ICC was found; Samoa is a state party to the Rome Statute and no statement on the Court''s work on Palestine by the Prime Minister,
+      who holds the foreign affairs portfolio, was found. Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23
+      October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release
+      list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate
+      file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   B8:
-    status: unchecked
-    note: 'Generated from recognitions.csv, which has no row for Samoa. The registry records no recognition (countries.yaml, read 2026-09-28: not in the annex of A/78/846 nor among the later recognitions);
-      Samoa abstained on A/DEC/80/506 (12 September 2025) and on A/RES/80/78 and 80/116. No row (R21).'
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Samoa. Samoa has not recognised the State of Palestine in the sources read (not in the annex of A/78/846 nor among the later recognitions,
+      countries.yaml); it abstained on A/DEC/80/506 (12 September 2025) and on A/RES/80/78 and 80/116. No row (R21). The Prime Minister's declared support for Israel is lead_20261104_WSM_1.
     queries:
     - recognitions.csv, row WSM (none)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Samoa Israel Gaza Prime Minister La''auli statement 2026'
+    checked_at: '2026-11-10'
   B9:
     status: none-found
     note: 'No B9 event. (1) The Prime Minister Fiame Naomi Mata''afa''s General Debate statement of 27 September 2024 (79th session, archived: src_20240927_un-gadebate_wsm-fiame-en, line 128)
@@ -119,8 +175,16 @@ indicators:
     - samoagovt.ws 2025/10 release (archived)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Samoa appeared in any source read.
+    status: none-found
+    note: 'No sanction, entry ban or asset freeze on Israeli ministers or settlers by Samoa was found; the sources show the opposite direction (the Prime Minister''s meeting with Israel''s Deputy
+      Foreign Minister, release of 23 October 2025). Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October
+      2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest
+      item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for
+      Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: 'No recall, downgrade or severance of relations with Israel was found. Samoa has no embassy in Israel; the Prime Minister announced on 6 January 2026 that he had instructed the Ministry
@@ -149,14 +213,38 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Samoan ban on settlement goods and no labelling rule was found; Samoa''s trade with Israel is not reported in the sources read (no Comtrade rows yet, B-695) and the Government has
+      not commented on settlements. Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime
+      Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February
+      2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not
+      be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of the Samoa National Provident Fund or of another public fund to exclude companies over conduct in Gaza or the occupied territories was found; the search returned no fund
+      policy or list for Samoa (only lists of the NZ Super Fund, Norway''s fund and Danish managers, which are other states'' funds). Pages read on 2026-11-10: the Government portal''s site search
+      (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release;
+      ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza,
+      ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa National Provident Fund OR "ethical investment" Israel exclusion OR divest'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No procurement rule or decision of Samoa excluding Israeli or settlement-linked suppliers was found; the Government''s site and the search results have no item on public procurement
+      and Israel. Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting
+      with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the
+      Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org
+      answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
@@ -172,26 +260,65 @@ indicators:
   D3:
     status: none-found
     checked_at: '2026-11-09'
-    note: >-
-      UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have no row for Samoa: no contribution to
-      restore or increase (searched for Samoa). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
-      as of 31 December 2025, read 2026-11-09) has no row for Samoa, so 2025 does not exceed 2022: no 2025
-      event (docs/10 B-876).
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Samoa: no contribution to restore or increase (searched for Samoa). UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Samoa, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Samoa
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+    status: none-found
+    note: 'No medical-evacuation programme, field hospital or admission of wounded or sick people from Gaza by Samoa was found; the only Gaza-related evacuation found is the 2023 repatriation
+      of Samoans from Israel (release ''Safe evacuation of Samoans from Israel'', 17 October 2023, on the Government''s site; it concerns citizens, not Gazans). Pages read on 2026-11-10: the Government
+      portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza
+      returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search
+      (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not
+      bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa evacuation Gaza OR "Gazans" OR refugees visa Samoa government'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+    status: none-found
+    note: 'No visa or resettlement instrument for people from Gaza was found; the only visa instrument with Israel is the visa waiver between the two countries (signed in Jerusalem in March 2019
+      according to the Israeli embassy''s page; reported as ratified in 2023; a visa instrument, not an admission scheme for Gazans). Pages read on 2026-11-10: the Government portal''s site search
+      (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release;
+      ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza,
+      ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa evacuation Gaza OR "Gazans" OR refugees visa Samoa government'
+    - 'WebSearch 2026-11-10: Samoa Israel embassy Jerusalem OR "visa waiver" OR agreement Samoa Observer 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Samoan investigation or prosecution of a national or a company for conduct in Gaza was found. E1 is recorded, not scored (D-12). Pages read on 2026-11-10: the Government portal''s
+      site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns
+      that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza,
+      ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - samoagovt.ws/?s=Israel, ?s=Gaza, ?s=Palestine; mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian (2026-11-10)
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No restriction of Gaza protests by the Police or the Ministry was found. The march for a ceasefire of 6 December 2023 (organised by Samoans for Ceasefire, with a petition of more than
+      1,000 signatures) and the pro-Israel march of January 2024 (organised by Prayer for Israel Samoa, led by the Police band) both took place; the Civicus Monitor, an NGO source read on 2026-11-10,
+      rates the country''s civic space Open. No restriction means no event. E2 is recorded, not scored. Pages read on 2026-11-10: the Government portal''s site search (samoagovt.ws/?s=Israel returns
+      ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister; ?s=Gaza returns that one release; ?s=Palestine returns two items,
+      neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no
+      item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Gaza protest OR rally OR march police Apia Palestine'
+    - monitor.civicus.org Samoa developments page of 22 March 2024 (read)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Samoan judicial or prosecutorial step concerning Gaza (a complaint, a universal-jurisdiction case or an arrest) was found. E3 is recorded, not scored. Pages read on 2026-11-10: the
+      Government portal''s site search (samoagovt.ws/?s=Israel returns ten items, the newest the release of 23 October 2025 on the Prime Minister''s meeting with Israel''s Deputy Foreign Minister;
+      ?s=Gaza returns that one release; ?s=Palestine returns two items, neither on Gaza), its press-release list (newest item 10 February 2026) and the Ministry of Foreign Affairs and Trade''s
+      site search (mfat.gov.ws/?s=Gaza, ?s=Palestine, ?s=Palestinian: no item). The 81st-session General Debate file for Samoa could not be read (gadebate.un.org answers an AWS human-verification
+      page, not bypassed).'
+    queries:
+    - 'WebSearch 2026-11-10: Samoa Israel settlements OR sanctions OR "arms" OR "ICC" Samoa government position 2026'
+    - 'WebSearch 2026-11-10: Samoa Observer Israel Palestine Gaza government October 2026'
+    checked_at: '2026-11-10'
