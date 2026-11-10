@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live; the 79th and 80th archived by --capture), the Government portal (gouvernement.cg, WordPress, searched through /wp-json/wp/v2/ for the terms listed in B9; the President's replies to the diplomatic corps of 5 January 2024 and 6 January 2025 archived), the UN Treaty Collection's status page for the Rome Statute, the joint statements and UN records already archived (grep of archive/text for the country's name: none is a joint statement signed by the Congo), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31, T-P21-32 and T-P21-46 to T-P21-49): no press item was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # No event. Leads: none.
+# Completion of 2026-11 (finish run, T-F-L17, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with six web searches in English and French (one restricted to the Presidency's, the Government's and two Congolese news sites) and the Government portal's API since June 2025 (docs/10 B-2046), all none-found with the limits said in each note; B9, B11, B12, C2, D4 and D5 notes extended with the web searches; no event, no lead, no recognition row.
 country: COG
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,14 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Congolese company as a supplier of parts or maintenance for the F-35 programme: the Congo is neither a programme partner nor a foreign-military-sales customer in the search
+      results, A/HRC/59/23 (archived text) has no match for Congo, and the searches returned no supplier. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Congo (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner countries and suppliers list Lockheed Martin global supply chain (the partners and foreign-military-sales customers named in the results)'
+    - 'WebSearch 2026-11-10: Republic of Congo Brazzaville Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by the Congo from Israel in the register. Left to the build.'
@@ -29,17 +36,35 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Congo (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to 2026; the
+      searches return the Congo''s military agreements with Ethiopia (December 2025), Morocco and Russia, none with Israel. Most results of the English and French searches concern the Democratic Republic
+      of the Congo and were set aside. Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Republic of Congo Brazzaville Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026'
+    - 'WebSearch 2026-11-10 (French): Congo-Brazzaville Israël accord de coopération signé OR coopération défense OR ambassadeur 2024 2025 2026'
+    - 'WebSearch 2026-11-10 (French, restricted to presidence.cg, gouvernement.cg, adiac-congo.com, acicongo.com): Israël Congo coopération OR Gaza OR Palestine'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by the Congo to Israel either (A1: no delivery in the SIPRI register). Not searched: the Journal
+      officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Republic of Congo Brazzaville Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026'
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of port access (Pointe-Noire), airspace or transit to an arms shipment bound for Israel was found; the search returned none. Not searched: the port and civil aviation authorities'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on seven of the twelve qualifying votes (A/RES/ES-10/21, ES-10/22, ES-10/25, ES-10/26, A/RES/ES-10/27, A/DEC/80/506 and A/RES/80/116); non-voting
@@ -96,64 +121,84 @@ indicators:
     - recognitions.csv, COG
     checked_at: '2026-11-04'
   B9:
-    status: none-found
-    note: 'No event filed. President Denis Sassou N''Guesso (head of state; a B9 speaker, R3) and the Foreign Minister (a B9 speaker) never made a formal call for a ceasefire or an end of the
-      blockade in the sources read. (1) 79th General Debate, 30 September 2024, Foreign Minister Jean-Claude Gakosso (src_20240930_un-gadebate_cog-gakosso-fr): ''en Ukraine, en Palestine, au Liban,
-      au Soudan, dans le Sahel'' in a list of wars: Gaza not named, no call (R7). (2) 80th, 24 September 2025, the President (src_20250924_un-gadebate_cog-sassou-nguesso-fr): ''au Moyen-Orient,
-      mon pays soutient sans réserve la solution à deux Etats, israélien et palestinien, vivant côte-à-côte, en paix'': Gaza not named, no call (R7). (3) 81st, 28 September 2026, the President''s
-      address delivered by Foreign Minister Constant-Serge Boundas (file cg_fr.pdf read live, no Wayback replay, not archived): the Congo calls ''à une solution politique juste et durable au Moyen-Orient''
-      in a list: Gaza not named, no call. (4) The President''s reply to the diplomatic corps of 5 January 2024 (src_20240105_gouvernement-cg_sassou-voeux-corps-diplomatique): ''Au Moyen Orient,
-      nous sommes préoccupés par la guerre entre l''Etat d''Israël et le Hamas ... Nous apportons notre soutien aux efforts de médiation déployés par l''Egypte, le Qatar et les Nations Unies,
-      en vue de permettre l''acheminement de l''aide aux populations civiles de Gaza'': concern and support for mediation and aid delivery, no ceasefire call, no end-of-blockade call, no party
-      blamed: neither B9 tier (flagged, docs/10 B-787; if the author reads the support for mediation as a call, the event, dated 5 January 2024, is 1,034 days old on 2026-11-04, beyond 730, and
-      moves nothing). His reply of 6 January 2025 (src_20250106_gouvernement-cg_sassou-voeux-corps-diplomatique) speaks of ''la guerre entre Israël, le Hamas et le Hezbollah'' with no Gaza and
-      no call. The Council of Ministers'' records of 7 October 2025 and 30 June 2026 mention the war between Israel and Hamas and the Iran-United States-Israel war only as economic context. The
-      Government portal (gouvernement.cg, WordPress, searched through /wp-json/wp/v2/ for Palestine, Palestinien, Israël, Israel, Gaza, Hamas, Moyen-Orient, UNRWA and cessez-le-feu) has no other
-      item. Not searched: the Ministry (diplobrazza.net is a static site that was not searched), the Presidency''s own site (its REST API is closed to scripts), the Congolese press, the African
-      Union''s communiques (P-23).'
+    checked_at: '2026-11-10'
+    note: 'No event filed. President Denis Sassou N''Guesso (head of state; a B9 speaker, R3) and the Foreign Minister (a B9 speaker) never made a formal call for a ceasefire or an end of the blockade in
+      the sources read. (1) 79th General Debate, 30 September 2024, Foreign Minister Jean-Claude Gakosso (src_20240930_un-gadebate_cog-gakosso-fr): ''en Ukraine, en Palestine, au Liban, au Soudan, dans le
+      Sahel'' in a list of wars: Gaza not named, no call (R7). (2) 80th, 24 September 2025, the President (src_20250924_un-gadebate_cog-sassou-nguesso-fr): ''au Moyen-Orient, mon pays soutient sans réserve
+      la solution à deux Etats, israélien et palestinien, vivant côte-à-côte, en paix'': Gaza not named, no call (R7). (3) 81st, 28 September 2026, the President''s address delivered by Foreign Minister Constant-Serge
+      Boundas (file cg_fr.pdf read live, no Wayback replay, not archived): the Congo calls ''à une solution politique juste et durable au Moyen-Orient'' in a list: Gaza not named, no call. (4) The President''s
+      reply to the diplomatic corps of 5 January 2024 (src_20240105_gouvernement-cg_sassou-voeux-corps-diplomatique): ''Au Moyen Orient, nous sommes préoccupés par la guerre entre l''Etat d''Israël et le
+      Hamas ... Nous apportons notre soutien aux efforts de médiation déployés par l''Egypte, le Qatar et les Nations Unies, en vue de permettre l''acheminement de l''aide aux populations civiles de Gaza'':
+      concern and support for mediation and aid delivery, no ceasefire call, no end-of-blockade call, no party blamed: neither B9 tier (flagged, docs/10 B-787; if the author reads the support for mediation
+      as a call, the event, dated 5 January 2024, is 1,034 days old on 2026-11-04, beyond 730, and moves nothing). His reply of 6 January 2025 (src_20250106_gouvernement-cg_sassou-voeux-corps-diplomatique)
+      speaks of ''la guerre entre Israël, le Hamas et le Hezbollah'' with no Gaza and no call. The Council of Ministers'' records of 7 October 2025 and 30 June 2026 mention the war between Israel and Hamas
+      and the Iran-United States-Israel war only as economic context. The Government portal (gouvernement.cg, WordPress, searched through /wp-json/wp/v2/ for Palestine, Palestinien, Israël, Israel, Gaza,
+      Hamas, Moyen-Orient, UNRWA and cessez-le-feu) has no other item. Not searched: the Ministry (diplobrazza.net is a static site that was not searched), the Presidency''s own site (its REST API is closed
+      to scripts), the Congolese press, the African Union''s communiques (P-23). Completion of 2026-11 (T-F-L17, 2026-11-10): web searches for a statement on Gaza by the President or the Foreign Minister
+      in 2025 and 2026 and since 4 November 2026 returned none; the Government portal''s items since June 2025 name Israel only as a factor of the budget (Council of Ministers, 7 October 2025: ''les effets
+      de la guerre entre Israël et le Hamas''; 30 June 2026) and the page of 6 January 2026 on the President''s reply to the diplomatic corps names neither Gaza nor Israel.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cg_fr.pdf (read live; 79th and 80th archived by --capture; 81st has no Wayback replay; cg_en 404)
     - gouvernement.cg/wp-json/wp/v2/{posts,pages}?search={Palestine,Palestinien,Israël,Israel,Gaza,Hamas,Moyen-Orient,UNRWA,cessez-le-feu}
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Sassou Nguesso OR Gakosso Gaza Palestine cessez-le-feu déclaration 2025 2026; gouvernement.cg/wp-json/wp/v2/posts?search={Gaza,Israël,Palestine,corps diplomatique}&after=2025-06-01'
+    status: none-found
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read; the Government portal has no item on
       the subject beyond the passages in B9.'
     checked_at: '2026-11-04'
   B11:
+    checked_at: '2026-11-10'
+    note: 'No national sanctions on Israeli ministers or settler entities were found; the Government portal was searched for Israël, Palestine and Gaza (see B9). This rests on that portal and the General
+      Debate statements only (the Ministry''s site was not searched; P-23). Completion of 2026-11 (T-F-L17, 2026-11-10): the web search in French for sanctions on settlers returned none for the Congo.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
     status: none-found
-    note: No national sanctions on Israeli ministers or settler entities were found; the Government portal was searched for Israël, Palestine and Gaza (see B9). This rests on that portal and the
-      General Debate statements only (the Ministry's site was not searched; P-23).
-    checked_at: '2026-11-04'
   B12:
+    checked_at: '2026-11-10'
+    note: 'No recall, downgrade or severance was found on the Government portal (search for Israël, Israel: the diplomatic corps replies, two Councils of Ministers). This rests on that portal only (P-23).
+      Completion of 2026-11 (T-F-L17, 2026-11-10): the web searches found no recall, downgrade or severance and no new ambassador''s credentials.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo-Brazzaville Israël accord de coopération signé OR coopération défense OR ambassadeur 2024 2025 2026'
     status: none-found
-    note: 'No recall, downgrade or severance was found on the Government portal (search for Israël, Israel: the diplomatic corps replies, two Councils of Ministers). This rests on that portal
-      only (P-23).'
-    checked_at: '2026-11-04'
   C1:
     status: none-found
     note: Congo is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: none-found
-    note: No agreement signed with Israel was found on the Government portal (search for Israël, Israel returns the five items in B9 only). The Embassy of Israel's site has no page for the Congo
-      under the slugs tried, and no treaty register was read, so this rests on the portal only (P-23).
+    checked_at: '2026-11-10'
+    note: 'No agreement signed with Israel was found on the Government portal (search for Israël, Israel returns the five items in B9 only). The Embassy of Israel''s site has no page for the Congo under the
+      slugs tried, and no treaty register was read, so this rests on the portal only (P-23). Completion of 2026-11 (T-F-L17, 2026-11-10): the web searches in English and French (one restricted to presidence.cg,
+      gouvernement.cg, adiac-congo.com and acicongo.com) found no agreement signed with Israel since October 2023; the results on agreements concern Ethiopia, Morocco, Russia and Côte d''Ivoire, and those
+      on Israel concern the Democratic Republic of the Congo.'
     queries:
     - gouvernement.cg/wp-json/wp/v2/posts?search={Israël,Israel}
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Congo-Brazzaville Israël accord de coopération signé OR coopération défense OR ambassadeur 2024 2025 2026'
+    status: none-found
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; the Congo is not an EU member and the searches returned none. Not searched: the customs directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    - 'WebSearch 2026-11-10: "Congo" OR "Comoros" OR "Cabo Verde" OR "Djibouti" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund (the CNSS, the Fonds de stabilisation des recettes budgétaires) or the central bank (BEAC) over conduct in Gaza or the occupied territories
+      was found; the search returned the Norwegian and New Zealand funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: "Congo" OR "Comoros" OR "Cabo Verde" OR "Djibouti" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement regulator''s (ARMP) site.'
+    queries:
+    - 'WebSearch 2026-11-10: "Congo" OR "Comoros" OR "Cabo Verde" OR "Djibouti" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Congo to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -179,19 +224,34 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
+    checked_at: '2026-11-10'
+    note: 'No medical-evacuation programme for Gazans and no field hospital deployed by the Congo was found on the Government portal (search for Gaza returns the item in B9 only). Completion of 2026-11 (T-F-L17,
+      2026-11-10): the web search in French returned no Congolese evacuation programme or field hospital for Gaza.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
     status: none-found
-    note: No medical-evacuation programme for Gazans and no field hospital deployed by the Congo was found on the Government portal (search for Gaza returns the item in B9 only).
-    checked_at: '2026-11-04'
   D5:
+    checked_at: '2026-11-10'
+    note: 'No visa or refugee pathway for Gazans was found on the Government portal (search for Gaza returns the item in B9 only). Completion of 2026-11 (T-F-L17, 2026-11-10): the web search in French returned
+      no visa or refugee measure for Gazans. Not searched: the immigration directorate.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
     status: none-found
-    note: No visa or refugee pathway for Gazans was found on the Government portal (search for Gaza returns the item in B9 only).
-    checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Congolese nationals or companies for conduct in Gaza was found. Not searched: the prosecutors'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found in the Congo; the search returned none. Not searched: the prefectures'' and the police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in the Congo was found. Not searched: the courts'' sites.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Congo Brazzaville Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes Pointe-Noire'
+    status: none-found
