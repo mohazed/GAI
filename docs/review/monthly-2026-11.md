@@ -808,3 +808,19 @@ Joint statements of 22 September and 16 October 2026, and visa-exemption and lab
 | THA, VNM, MDA, TON C2 | No new instrument (THA quota memorandum disputed by the Israeli Embassy's page; VNM agreement unsigned; MDA extension; TON 2010) | B-2118 (4)–(7) |
 | Israel's treaty database (gov.il) | Cloudflare block and human-verification page; not passed | B-2118 |
 | `pnpm validate` | 0 errors | |
+
+### T-G-BLOCKED (2026-11-10)
+
+Documents on blocked or unarchivable hosts (CHECKUP §2e and §7). Decisions: docs/10 B-2119 to B-2127. No human check or CAPTCHA was passed or clicked.
+
+| Document | Routes tried | Result | B-id |
+|---|---|---|---|
+| BEL Royal Decree of 18 January 2026 (A8) | ELI `/justel` and `/moniteur` (Save Page Now captures the F5 protection page); `mobilit.belgium.be` (human check); MFA news pages of January 2026; web searches FR, NL, EN; Wayback CDX of `mopdf/2026/01/22_1.pdf` | **Archived** from the PDF capture of 24 January 2026 (bytes equal to today's PDF; the capture of 2026-10-03 is a CAPTCHA page); decree inside the 200 KB text kept. **Filed** `evt_2026_01_22_BEL_A8` (+5, confirmed); BEL +67 → +72 (Confronting, no band change); `lead_20261109_BEL_1` promoted; new `lead_20261110_BEL_3` (Liège seizure, press) | B-2119 |
+| BRA ICJ declaration, case 192 (B3 direction) | ICJ file (two Wayback captures, both 403); UNISPAL media API and guessed addresses (404); web searches PT | Declaration still unread; Itamaraty press note no. 336 of 23 July 2025 **archived** and added to `evt_2025_09_17_BRA_B3` as Brazil's stated purpose | B-2120 |
+| A/79/572-S/2024/802 | UN Digital Library PDF (Save Page Now 202, then 401) | **Archived** from UNISPAL's HTML copy; nothing filed (B-953 default); KAZ_2 and KGZ_2 leads updated | B-2121 |
+| C.N.378.2026 (NRU withdrawal from the Rome Statute) | treaties.un.org English and French PDFs (served to a script; Save Page Now 403); availability API (none); CDX offline; web search | Not archived; NRU B6 note updated | B-2122 |
+| SAU Shura address of 30 September 2026 (spa.gov.sa) | Arabic web search | **Archived** from Umm Al-Qura, the official gazette (uqn.gov.sa); **filed** `evt_2026_09_30_SAU_B9` (+2; B9 at cap, no score effect); `lead_20261109_SAU_3` promoted | B-2123 |
+| DNK answer to S 367 (ft.dk) | oda.ft.dk (Sag 105888, Dokument 1230891, file URL found); the PDF (Cloudflare 403); Save Page Now (403); availability API (none) | Not read, not archived; DNK B9 note updated | B-2125 |
+| primeminister.gr | Availability API for the two pages cited as not archived | **Archived** two interviews (17 September 2025, 28 May 2024) from Wayback captures; GRC A6, B4, B10, C1 notes cite them; no event (interviews, B-325 (4)) | B-2124 |
+| gadebate.un.org, 81st session (leads PHL_1, SMR_2, IRN_2, LBY_2, CUB_2; also BLR, BLZ, PNG, SLB, PRK, SUR, NRU, TJK named in leads) | CDX listing of `gastatements/81/` (45 files with 200 captures, none of these states); availability API; Save Page Now (405); A/81/PV not yet on documents.un.org; PHL: dfa.gov.ph (Cloudflare), un.int mission page (nothing after May 2025), two web searches; SMR: one web search | None archived; the five leads record the date and routes | B-2126 |
+| `pnpm validate` | | 0 errors | |
