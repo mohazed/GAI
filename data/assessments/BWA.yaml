@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, English, read live with a browser User-Agent; the 80th and 81st files have no usable Wayback replay), the Government of Botswana's press-release database (gov.bw/press-release, title search) and the Daily News (dailynews.gov.bw/sitesearch), the Assembly's verbatim records and UN coverage already archived, the joint statements already archived (grep of archive/text for the country's name), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the UN Treaty Collection's status page for the Rome Statute and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49, T-P21-31): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
 # No event. Leads: none. One recognition row added (R21): 19 December 1988, from the Ministry's notice of 19 March 2017 (docs/10 B-783).
+# Completion of 2026-11 (finish run, T-F-L16, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 6 web searches in English and the Government's press-release database again (docs/10 B-2040), all none-found; B9 and C2 notes extended; no new event or lead.
 country: BWA
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Botswana company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Botswana, and the searches returned none.
+      Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Botswana (no match)
+    - 'WebSearch 2026-11-10: Botswana Israel military cooperation OR arms OR defence OR security agreement OR drones Botswana Defence Force 2025 2026'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists two older orders by Botswana from Israel (RAM V-2 reconnaissance vehicles
@@ -31,17 +37,32 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Botswana (found: two older orders)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The search returned trade reports of Israeli drone and counter-drone equipment bought by Botswana in earlier years (undated or before 2023, headlines and summaries only; an A4 matter,
+      and the register''s two orders are generated), and nothing newer. Not searched: the Ministry of Defence, Justice and Security''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Israel military cooperation OR arms OR defence OR security agreement OR drones Botswana Defence Force 2025 2026'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Botswana to Israel was found either. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Israel military cooperation OR arms OR defence OR security agreement OR drones Botswana Defence Force 2025 2026'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Israel military cooperation OR arms OR defence OR security agreement OR drones Botswana Defence Force 2025 2026'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (Botswana is landlocked); the searches returned no such item. Not searched: the Civil Aviation Authority
+      of Botswana''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Israel military cooperation OR arms OR defence OR security agreement OR drones Botswana Defence Force 2025 2026'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on ten of the twelve qualifying votes and recorded as non-voting (`X`) on A/RES/80/1 (19 September 2025) and A/RES/80/78 (5 December 2025), each scored
@@ -97,27 +118,32 @@ indicators:
     - recognitions.csv, BWA
     checked_at: '2026-11-04'
   B9:
-    status: none-found
+    checked_at: '2026-11-10'
     note: 'No event filed. (1) 79th General Debate statement, 25 September 2024 (UN page; delegation file archived: src_20240925_un-gadebate_bwa-masisi-en), President Mokgweetsi Masisi, head of
       state and of government (a B9 speaker, R3): paragraph 4 ''The attacks on innocent civilians on both sides are unacceptable and thus stand condemned'', paragraph 5 ''deep concern at the situation
       in the Gaza Strip where the war has resulted in catastrophic humanitarian crisis and unprecedented fatalities for civilian, children and humanitarian workers'', paragraph 8 ''Botswana also
       abhors attacks on UNRWA installations'', paragraph 12 an urging of the parties to a political process towards the two-State solution. No call for a ceasefire or an end to the blockade, no
       party named and no violation attributed to a party, so neither B9 tier (the reading of Samoa''s statement of 27 September 2024, a concern with no party and no call: noted, flagged, docs/10
       B-780); the statement is 405 days old on 2026-11-04. (2) 80th statement, 25 September 2025, President Duma Boko (live file read; its Wayback replay is a 404 and Save Page Now answers gadebate.un.org
-      with 405 (T-P21-04), so it is not archived): paragraph 9 welcomes the recognitions of the State of Palestine by Britain, Australia, Canada and France and states ''we stand in solidarity
-      with the Palestinian people in their pursuit of a home and of dignity''; no Gaza, no ceasefire call, no violation. (3) 81st statement, 23 September 2026 (UN page; live file, 175,280 bytes,
-      no Wayback capture): no occurrence of Gaza, Palestine, Israel, Hamas, ceasefire or Middle East. (4) The Government''s press-release database (gov.bw/press-release, title search for Palestin,
-      Gaza, Israel, Middle East, Hamas, UNRWA, Palestinian, International Court, ICC and genocide) returns one item on the region, the travel advisory of 28 February 2026 on the Middle East region
-      after the conflict between the USA, Israel and Iran, and no statement on Gaza; the Daily News search (dailynews.gov.bw/sitesearch) lists Government items on Palestine and Gaza of 2015 to
-      2022 only (the latest, 22 May 2022). The President says (paragraph 10) that Botswana is among the countries that joined the ''Statement of Shared Commitments on UNRWA''; that joint statement
-      was not read. Not searched: the Ministry of International Relations'' site (did not answer), the President''s and Minister Phenyo Butale''s speeches outside the General Debate, the Botswana
-      press, SADC and African Union communiques (P-23).'
+      with 405 (T-P21-04), so it is not archived): paragraph 9 welcomes the recognitions of the State of Palestine by Britain, Australia, Canada and France and states ''we stand in solidarity with
+      the Palestinian people in their pursuit of a home and of dignity''; no Gaza, no ceasefire call, no violation. (3) 81st statement, 23 September 2026 (UN page; live file, 175,280 bytes, no Wayback
+      capture): no occurrence of Gaza, Palestine, Israel, Hamas, ceasefire or Middle East. (4) The Government''s press-release database (gov.bw/press-release, title search for Palestin, Gaza, Israel,
+      Middle East, Hamas, UNRWA, Palestinian, International Court, ICC and genocide) returns one item on the region, the travel advisory of 28 February 2026 on the Middle East region after the conflict
+      between the USA, Israel and Iran, and no statement on Gaza; the Daily News search (dailynews.gov.bw/sitesearch) lists Government items on Palestine and Gaza of 2015 to 2022 only (the latest,
+      22 May 2022). The President says (paragraph 10) that Botswana is among the countries that joined the ''Statement of Shared Commitments on UNRWA''; that joint statement was not read. Not searched:
+      the Ministry of International Relations'' site (did not answer), the President''s and Minister Phenyo Butale''s speeches outside the General Debate, the Botswana press, SADC and African Union
+      communiques (P-23). Finish run, T-F-L16 (2026-11-10): the searches for a 2026 statement of the President or the Foreign Minister on Gaza or Palestine returned none (the Daily News'' notice
+      of 18 January 2024, read again, is the Acting Permanent Secretary''s statement at the Non-Aligned Movement meeting, not a B9 speaker); the Government''s press-release database''s title search
+      was re-run for Israel, Gaza and Palestin (first page: no title with the words). No B9 event.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bw_en.pdf (read live; 79th archived by --capture 20250615001741; bw_fr 404)
     - gov.bw/press-release?title={Palestin,Gaza,Israel,Middle East,Hamas,UNRWA,Palestinian,International Court,ICC,genocide}
     - dailynews.gov.bw/sitesearch?srch-term={Gaza,Palestine,Israel,Hamas,UNRWA,ceasefire}
     - 'archive/text: joint statements and UN records, grep Botswana'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Botswana Gaza Palestine statement government OR Boko OR Minister Phenyo Butale OR Lemogang Kwape 2026'
+    - 'WebSearch 2026-11-10: Botswana Boko Gaza OR Palestine OR Israel 2026 recognition OR "Board of Peace" OR "stabilisation force" OR ceasefire statement Botswana government'
+    - 'gov.bw/press-release?title={Israel,Gaza,Palestin} re-run 2026-11-10 (page 1: no title with the words)'
+    status: none-found
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read.'
@@ -140,25 +166,43 @@ indicators:
     note: Botswana is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: none-found
-    note: 'No new trade, investment or cooperation agreement with Israel was found in the Government''s press-release database (title search for Israel returned only the travel advisory of 28
-      February 2026). Limit: titles only; the Ministry''s site did not answer (P-23).'
+    checked_at: '2026-11-10'
+    note: 'No new trade, investment or cooperation agreement with Israel was found in the Government''s press-release database (title search for Israel returned only the travel advisory of 28 February
+      2026). Limit: titles only; the Ministry''s site did not answer (P-23). Finish run, T-F-L16 (2026-11-10): the search for agreements with Israel returned only 2012 and 2018 items (a university
+      agreement and a memorandum between an Israeli regional council and a Botswana university) and an opinion column of about 2019 that mentions an Agriculture Ministry memorandum without a date
+      (read; allegations of the author, not a document); nothing dated after 7 October 2023.'
     queries:
     - gov.bw/press-release?title=Israel
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Israel Botswana OR Burundi OR Benin OR "Burkina Faso" signed agreement OR MoU OR memorandum 2024 OR 2025 OR 2026 Israel Africa cooperation agreement'
+    status: none-found
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; Botswana is not an EU member and the search returned reports on other states only. Not searched: the Botswana Unified Revenue Service''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund or the central bank over conduct in Gaza or the occupied territories was found; the search returned none for the Public Officers
+      Pension Fund, the Bank of Botswana or the Pula Fund. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the search returned no rule of the Public Procurement and Asset Disposal
+      Board and one article on micro-procurement unrelated to Israel. Not searched: the Board''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Botswana to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -195,11 +239,24 @@ indicators:
     - gov.bw/press-release?title={Gaza,Palestin}
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Botswana nationals or companies for conduct in Gaza was found. Not searched: the Directorate of Public Prosecutions''
+      communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found in Botswana. Not searched: the Botswana Police Service''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Botswana was found. Not searched: the Directorate of Public Prosecutions'' site.'
+    queries:
+    - 'WebSearch 2026-11-10: Botswana Public Officers Pension Fund OR Bank of Botswana OR PPRA procurement Israeli companies exclusion OR settlement goods ban Botswana OR Botswana Palestine solidarity
+      march police'
+    status: none-found
