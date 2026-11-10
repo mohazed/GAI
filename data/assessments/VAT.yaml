@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Pope's texts on vatican.va (Angelus, audiences, Urbi et Orbi, 2023 to 2026, English; read), the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the 79th archived, the 80th and 81st read live), the Holy See Press Office's bulletin of 26 June 2015, the generated tables, UNRWA donor rankings (2022 to 2024), the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not read: L'Osservatore Romano, Vatican News beyond the pages found by search, the Holy See's statements in the Security Council (the observer state does not sit on it).
 # Four B9 events and one recognition row (flagged). One lead (D4, the Bambino Gesù hospital). The Holy See is a non-member observer state and not an EU member: B1 and B11 do not apply; its heads are the Pope (head of state), the Secretary of State (read as head-of-government equivalent) and the Secretary for Relations with States (read as foreign-minister equivalent), flagged in docs/10 B-736.
+# Completion of 2026-11 (finish run, T-F-L15, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 6 web searches and the 110 Angelus and General Audience texts of Pope Leo XIV from 3 August 2025 to 8 November 2026 (docs/10 B-2034), all none-found; two new B9 events (the General Audience of 17 September 2025 and the Angelus of 5 October 2025); lead VAT_1 re-checked.
 country: VAT
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a company of the Holy See or the Vatican City State as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for the Holy
+      See and the F-35 supplier search returned none; the Holy See has no defence industry. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Holy See (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Montenegro OR "San Marino" OR Serbia OR Angola OR "Holy See" parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by the Holy See from Israel in the register. Left to the build.'
@@ -28,17 +34,34 @@ indicators:
     - sipri_orders.csv, buyer VAT
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No military cooperation with Israel was found; the Holy See keeps no armed forces beyond the Pontifical Swiss Guard and the Gendarmerie, and the search on the Holy See and Israel returned
+      the Fundamental Agreement of 1993 and its bilateral commission on property and tax (diplomatic, not military). Not searched: the Press Office''s bulletins item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Holy See Israel military OR arms OR defence cooperation OR agreement OR customs OR trade Vatican Israel 2025 2026 Fundamental Agreement bilateral commission'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No arms export licence of the Holy See exists to be suspended: the State has no arms industry and no export of arms to Israel was found. Not a decision of suspension. Not searched: the
+      Vatican City State''s legal gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Holy See Israel military OR arms OR defence cooperation OR agreement OR customs OR trade Vatican Israel 2025 2026 Fundamental Agreement bilateral commission'
+    - 'WebSearch 2026-11-10: Vatican Holy See investments exclude weapons companies OR Israeli companies divest APSA OR IOR ethical investment guidelines Gaza'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree on exports to and imports from Israel was found; the Holy See has no arms industry and no arms trade with Israel was found. Not searched: the Vatican City State''s legal
+      gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Holy See Israel military OR arms OR defence cooperation OR agreement OR customs OR trade Vatican Israel 2025 2026 Fundamental Agreement bilateral commission'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit to an arms shipment was found; the Vatican City State has no port, and its heliport and borders are not a transit route for arms in the sources read. Not searched:
+      the Governorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Holy See Israel military OR arms OR defence cooperation OR agreement OR customs OR trade Vatican Israel 2025 2026 Fundamental Agreement bilateral commission'
+    checked_at: '2026-11-10'
   B1:
     status: none-found
     note: 'The Holy See is a non-member observer state (countries.yaml observer: true): it has no vote on General Assembly resolutions, so unga_votes.csv has no row for it. Not a case of Article 19 arrears
@@ -93,18 +116,26 @@ indicators:
     checked_at: '2026-11-04'
   B9:
     status: has-events
-    note: 'Four events: the Secretary of State''s General Debate address of 28 September 2024 (+2, expired by age on 2026-11-04), the Pope''s Christmas message of 25 December 2024 (+2), the Angelus of 20
-      July 2025 (+5) and that of 27 July 2025 (+2). Not filed: the 80th General Debate statement (Archbishop Gallagher, Secretary for Relations with States, 29 September 2025), which quotes the Pope''s
-      words of 27 August 2025 (''a permanent ceasefire'', ''prohibitions of collective punishment, indiscriminate use of force, and the forced displacement'') under the heading Middle East without citing
-      Gaza (R7; the file va_en.pdf, 373,754 bytes, has no Wayback replay), nor the General Audience of 27 August 2025 itself (''the conflict in the Holy Land'': no Gaza, R7); the Angelus of 26 July 2026
-      (Gaza and the West Bank named; ''a return to negotiations'': no ceasefire call and no named violation); the 81st statement (Cardinal Parolin, 26 September 2026: ''concerned about the dire humanitarian
-      crisis, the widespread destruction, mass displacement'' in Gaza, a call for an end to violence in the West Bank, no ceasefire call for Gaza; the file va_en.pdf, 226,403 bytes, has no replay). No event
-      is inside 365 days, so the passivity penalty still applies.'
+    note: 'Six events: the Secretary of State''s General Debate address of 28 September 2024 (+2, expired by age), the Pope''s Christmas message of 25 December 2024 (+2), the Angelus of 20 July
+      2025 (+5), that of 27 July 2025 (+2) and, from the completion of the light protocol (T-F-L15, docs/10 B-2034), the General Audience of 17 September 2025 (+5: ''forcibly displaced – once again'',
+      with a ceasefire appeal; flagged) and the Angelus of 5 October 2025 (+2: an appeal to bring about a ceasefire). Not filed: the 80th General Debate statement (Archbishop Gallagher, Secretary
+      for Relations with States, 29 September 2025), which quotes the Pope''s words of 27 August 2025 (''a permanent ceasefire'', ''prohibitions of collective punishment, indiscriminate use of force,
+      and the forced displacement'') under the heading Middle East without citing Gaza (R7; the file va_en.pdf, 373,754 bytes, has no Wayback replay), nor the General Audience of 27 August 2025
+      itself (''the conflict in the Holy Land'': no Gaza, R7); the Angelus of 3 August 2025 (a greeting to the young people of Gaza), of 21 September 2025 (''there is no future based on violence,
+      forced exile, or revenge'') and of 26 July 2026 (Gaza and the West Bank named; ''a return to negotiations'': no ceasefire call and no named violation), the 110 Angelus and General Audience
+      texts from 3 August 2025 to 8 November 2026 having been searched for Gaza; the 81st statement (Cardinal Parolin, 26 September 2026: ''concerned about the dire humanitarian crisis, the widespread
+      destruction, mass displacement'' in Gaza, a call for an end to violence in the West Bank, no ceasefire call for Gaza; the file va_en.pdf, 226,403 bytes, has no replay). No event is inside
+      365 days, so the passivity penalty still applies.'
     queries:
     - vatican.va Angelus and audience texts of 2023 to 2026 (read)
     - gadebate.un.org/en/{79,80,81}/holy-see (read)
     - 'web search: Pope Leo XIV Gaza ceasefire Angelus'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (vatican.va, vaticannews.va): Pope Leo XIV Gaza Angelus OR audience OR message ceasefire "Gaza" 2026 vatican.va'
+    - 'WebSearch 2026-11-10: Pope Leo XIV general audience 17 September 2025 Gaza appeal ceasefire "international humanitarian law" "forced displacement" vatican.va'
+    - 'WebSearch 2026-11-10 (vatican.va, vaticannews.va, press.vatican.va): Pope Leo XIV Gaza October OR November OR December 2025 Urbi et Orbi Christmas Gaza ceasefire peace plan appeal Angelus
+      "Gaza"'
+    - vatican.va, Angelus (Sundays) and General Audience (Wednesdays) of Pope Leo XIV from 3 August 2025 to 8 November 2026, English texts fetched one by one (110 pages) and searched for Gaza
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: No statement of unconditional support for Israel or denial of violations by the Pope, the Secretary of State or the Secretary for Relations with States was found.
@@ -136,14 +167,28 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; the Holy See is not an EU member and has no customs regime of its own on settlement goods in the sources read. Not searched: the
+      Governorate''s customs rules.'
+    queries:
+    - 'WebSearch 2026-11-10: Holy See Israel military OR arms OR defence cooperation OR agreement OR customs OR trade Vatican Israel 2025 2026 Fundamental Agreement bilateral commission'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision to exclude named companies over conduct in Gaza or the occupied territories was found. The Holy See''s investment policy in force since September 2022 bars the Holy See''s
+      entities from investing in the weapons and defence industry and some other sectors (APSA is responsible for the investment strategy; the Institute for the Works of Religion excludes manufacturers
+      of controversial weapons); it is a rule by sector and not a decision over named companies for conduct in Gaza (search results from the press, not read in the text of the policy). Not searched:
+      APSA''s and the Institute''s own publications.'
+    queries:
+    - 'WebSearch 2026-11-10: Vatican Holy See investments exclude weapons companies OR Israeli companies divest APSA OR IOR ethical investment guidelines Gaza'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from the Holy See''s procurement over conduct in Gaza or the occupied territories was found; no search result concerns one. Not searched: the Governorate''s
+      procurement rules.'
+    queries:
+    - 'WebSearch 2026-11-10: Vatican Holy See investments exclude weapons companies OR Israeli companies divest APSA OR IOR ethical investment guidelines Gaza'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build.'
@@ -169,23 +214,37 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
-    note: 'No D4 event filed. Vatican News of 14 August 2025 (read) reports that the Bambino Gesù Paediatric Hospital in Rome, a Holy See institution, had taken charge of 20 minors from Gaza since October
-      2023, three of them arriving on 13 August 2025 on flights that Italy''s authorities organise (the programme is Italy''s); whether the hospital''s admissions are a Holy See programme under D4 is the
-      author''s reading, and no official Holy See text of a programme was found: lead lead_20261104_VAT_1.'
+    note: 'No D4 event filed. Vatican News of 14 August 2025 (read) reports that the Bambino Gesù Paediatric Hospital in Rome, a Holy See institution, had taken charge of 20 minors from Gaza since
+      October 2023, three of them arriving on 13 August 2025 on flights that Italy''s authorities organise (the programme is Italy''s); whether the hospital''s admissions are a Holy See programme
+      under D4 is the author''s reading, and no official Holy See text of a programme was found: lead lead_20261104_VAT_1. Re-checked on 2026-11-10: the hospital''s own press release and Vatican
+      News of August 2025 still give 20 children taken in since October 2023, and no 2026 report or Holy See text of a programme was found; the flights are organised by the Italian authorities (lead_20261104_VAT_1
+      stays open).'
     queries:
     - vaticannews.va 2025-08 Bambino Gesù Gaza (read)
     - 'web search: Bambino Gesù hospital children from Gaza evacuated Rome'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (Italian): Bambino Gesù bambini da Gaza accolti ospedale Santa Sede programma OR accordo Israele OR Ministero evacuazione medica 2026'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
     note: No visa, refugee or scholarship pathway for Gazans opened by the Holy See as a state was found.
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of persons or companies of the Holy See for conduct in Gaza was found. Not searched: the Vatican tribunals'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Vatican Gendarmerie OR Vatican City tribunal Gaza protest St Peter''s Square banned OR Palestinian flag OR complaint Holy See war crimes Israel universal jurisdiction'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols by the Vatican City State was found; a march of priests and nuns to the Vatican for Gaza (September 2026)
+      stopped at the border escorted by Italian police, with no Vatican ban reported (a search result, not read). Not searched: the Gendarmerie''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Vatican Gendarmerie OR Vatican City tribunal Gaza protest St Peter''s Square banned OR Palestinian flag OR complaint Holy See war crimes Israel universal jurisdiction'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation by the Vatican City State was found (the search returned none). Not searched: the Vatican
+      tribunals'' site.'
+    queries:
+    - 'WebSearch 2026-11-10: Vatican Gendarmerie OR Vatican City tribunal Gaza protest St Peter''s Square banned OR Palestinian flag OR complaint Holy See war crimes Israel universal jurisdiction'
+    checked_at: '2026-11-10'
