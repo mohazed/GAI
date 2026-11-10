@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st; the 81st is a scan, read by OCR), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Zimbabwean Government site answered: the Ministry (zimfa.gov.zw) answers HTTP 503 (its Wayback captures of 21 October 2026 are 503 too), mfa.gov.zw and president.gov.zw do not resolve, and the state-owned press (herald.co.zw, chronicle.co.zw, sundaymail.co.zw, zbcnews.co.zw) and Parliament answer 403 to a scripted request. No web search was available.
 # Events: one (D3). Leads: none. See docs/10 B-841, B-842, B-847.
+# Completion of 2026-11 (finish run, T-F-L23, 2026-11-10): A3, A5 to A8, B7, B11, B12, C2, C4 to C6, D4, D5 and E1 to E3 searched (web searches, NewsDay's REST search, MSF's and WHO's evacuation tables, and the shared searches; the Ministry still answers 503 and the state-owned press 403), all none-found with the limits said in each note; new lead_20261110_ZWE_1 (E2, the police's stop of a teachers' march of October 2023). No new event. See docs/10 B-2085.
 country: ZWE
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Zimbabwean company as a supplier of parts or maintenance for the F-35 programme: Zimbabwe is neither a programme partner nor a foreign-military-sales customer in the results.
+      Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 Lockheed Martin suppliers countries (the Joint Program Office''s eight partner nations, the foreign-military-sales
+      customers and the 2025 production contracts; none of the six of this batch: UGA, ZMB, ZWE, ARM, BHR, CYP)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists one order by Zimbabwe from Israel (data year 1978), none from October 2023 on. Left to the build.'
@@ -28,17 +34,40 @@ indicators:
     - sipri_orders.csv, buyer ZWE
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found in the window: no named exercise, documented transit, public basing agreement or official confirmation of intelligence sharing.
+      Not searched: the Ministry of Defence''s releases (no reachable Government site; the Ministry of Foreign Affairs answered 503).'
+    queries:
+    - 'WebSearch 2026-11-10: Zimbabwe Israel defence OR security OR military OR agriculture memorandum signed 2024 OR 2025 OR 2026 Harare (the private ''Zim-Israel Connect'' platform launched with the honorary
+      consul, the youth partnership of the Agricultural Society, no governmental instrument)'
+    - 'WebSearch 2026-11-10: Zimbabwe Israel agreement OR embassy OR ambassador 2024 2025 2026 Mnangagwa Israel relations (Israel''s Ambassador non-resident, appointed in May 2025 to Zambia and as non-resident
+      Ambassador to Botswana and Zimbabwe; no embassy in either capital, Zimbabwe represented in Israel by an honorary consul; no agreement in the window)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Zimbabwe has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register; the results concern
+      the EU''s embargo on Zimbabwe). Not searched: the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Uganda OR Zambia OR Zimbabwe arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the EU''s arms embargo on Zimbabwe and its renewals of 2024 to
+      2026; no measure of the three states concerning Israel or settlement goods)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the embargo in the results is the EU''s on Zimbabwe (renewed in 2024 to 2026), not one by Zimbabwe. Not searched: the
+      Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Uganda OR Zambia OR Zimbabwe arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the EU''s arms embargo on Zimbabwe and its renewals of 2024 to
+      2026; no measure of the three states concerning Israel or settlement goods)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (Zimbabwe is landlocked; no port authority). Not searched: the Civil Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Uganda OR Zambia OR Zimbabwe arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the EU''s arms embargo on Zimbabwe and its renewals of 2024 to
+      2026; no measure of the three states concerning Israel or settlement goods)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes, all ''Y'' (each +3; B1 +16.5 after decay). Zimbabwe is not named in the Secretary-General''s letter of
@@ -79,8 +108,15 @@ indicators:
     - gadebate.un.org files (see B9)
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'
+    status: none-found
+    note: 'No sanction on ICC judges or prosecutors by Zimbabwe was found: the states named in the results are the United States and Russia (Zimbabwe signed the Rome Statute and has not ratified it). Not searched:
+      the Ministry of Foreign Affairs'' releases (zimfa.gov.zw answered 503 on 2026-11-04 and 2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10: countries that imposed sanctions on ICC judges or prosecutor 2025 besides United States Hungary list (the United States'' designations of February, June and August 2025 and Russia''s
+      measures; no other state)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for Zimbabwe. The registry gives a recognition since 29 November 1988 (before the window); no recognition after 7 October 2023 was found.'
@@ -106,31 +142,71 @@ indicators:
     - gadebate.un.org files (see B9)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'
+    status: none-found
+    note: 'No sanction on Israeli ministers or settler entities by Zimbabwe was found: the states named in the results are European, North American and Pacific states. Not searched: the Ministry of Foreign
+      Affairs'' releases (503) and the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: countries sanctions Ben-Gvir Smotrich OR violent settlers list 2025 2026 which states imposed entry ban (the United Kingdom, Canada, Australia, New Zealand and Norway in June 2025,
+      Slovenia, Spain, the Netherlands, France, Ireland and Poland later; no African state)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   B12:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23). No recall, downgrade or severance appears in the General Debate statements.'
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found. Neither state has a resident embassy in the other''s capital (Israel''s Ambassador to Zambia is accredited to Zimbabwe as non-resident
+      Ambassador since May 2025; Zimbabwe is represented in Israel by an honorary consul), and no report of a change in the window appears in the results; the General Debate statements (79th to 81st) name none.
+      Not searched: the Ministry of Foreign Affairs'' releases (503) and the state-owned press (403).'
+    queries:
+    - 'WebSearch 2026-11-10: Zimbabwe Israel agreement OR embassy OR ambassador 2024 2025 2026 Mnangagwa Israel relations (Israel''s Ambassador non-resident, appointed in May 2025 to Zambia and as non-resident
+      Ambassador to Botswana and Zimbabwe; no embassy in either capital, Zimbabwe represented in Israel by an honorary consul; no agreement in the window)'
+    - 'WebSearch 2026-11-10: Ofra Farhi credentials Mnangagwa Zimbabwe Israel ambassador 2025 OR 2026 (her appointment of May 2025; no recall, downgrade or severance reported)'
+    - 'WebSearch 2026-11-10: Zimbabwe government Gaza statement Palestine 2024 2025 Ministry of Foreign Affairs Murwira OR Shava Israel (the Ministry''s statement of October 2023 calling for restraint, the
+      USD 500,000 donation of April 2024, the President''s call for a ceasefire, a Government statement of February 2024 on a ceasefire and a Palestinian State; no measure against Israel)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Zimbabwe is not an EU member and has no association or trade agreement with Israel to suspend or review.
     checked_at: '2026-11-04'
   C2:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'
+    status: none-found
+    note: 'No trade, investment or cooperation agreement with Israel signed since October 2023 was found: the results name a private platform (''Zim-Israel Connect'') and older contacts, and no governmental
+      instrument in the window. Not searched: the Ministry of Foreign Affairs'' releases (503) and the state-owned press (403). Not found is not the same as absent.'
+    queries:
+    - 'WebSearch 2026-11-10: Zimbabwe Israel defence OR security OR military OR agriculture memorandum signed 2024 OR 2025 OR 2026 Harare (the private ''Zim-Israel Connect'' platform launched with the honorary
+      consul, the youth partnership of the Agricultural Society, no governmental instrument)'
+    - 'WebSearch 2026-11-10: Zimbabwe Israel agreement OR embassy OR ambassador 2024 2025 2026 Mnangagwa Israel relations (Israel''s Ambassador non-resident, appointed in May 2025 to Zambia and as non-resident
+      Ambassador to Botswana and Zimbabwe; no embassy in either capital, Zimbabwe represented in Israel by an honorary consul; no agreement in the window)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the Zimbabwe Revenue Authority''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Uganda OR Zambia OR Zimbabwe arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the EU''s arms embargo on Zimbabwe and its renewals of 2024 to
+      2026; no measure of the three states concerning Israel or settlement goods)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Zimbabwean public fund was found: the funds in the results are Norway''s, Denmark''s and British local funds, and the National Social Security Authority is
+      not named. Not searched: the Authority''s investment policy.'
+    queries:
+    - 'WebSearch 2026-11-10: pension fund OR sovereign wealth fund divest Israeli companies Africa 2024 2025 Uganda NSSF OR Zambia NAPSA OR Zimbabwe NSSA Israel (Norway''s fund, Denmark''s AkademikerPension,
+      UK local authority funds; none of the three national funds named, no procurement measure)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the Procurement Regulatory Authority of Zimbabwe''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: pension fund OR sovereign wealth fund divest Israeli companies Africa 2024 2025 Uganda NSSF OR Zambia NAPSA OR Zimbabwe NSSA Israel (Norway''s fund, Denmark''s AkademikerPension,
+      UK local authority funds; none of the three national funds named, no procurement measure)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -159,17 +235,45 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'
+    status: none-found
+    note: 'No medical evacuation of Gazans hosted and no field hospital deployed for Gaza was found: Zimbabwe is not among the destination countries in MSF''s table (21 October 2025) or WHO''s medevac summary
+      (17 September 2025); its humanitarian act in the results is the donation of April 2024 (D3). Not searched: the Ministry of Health and Child Care''s releases (mohcc.gov.zw did not answer).'
+    queries:
+    - 'WebSearch 2026-11-10: WHO Gaza medical evacuations by receiving country list 2025 Egypt UAE Türkiye Jordan Cyprus Armenia (UNRIC, WHO EMRO''s medevac summaries, MSF''s country comparison); MSF Canada''s
+      ''Medical Evacuations Country Comparison Data'' of 21 October 2025 (fetched, 37 countries named) and WHO EMRO''s ''Medevac - 17 Sep 2025'' (fetched) searched by script for the six names: none'
+    - 'WebSearch 2026-11-10: Zimbabwe Gaza Palestinians visa OR refugees OR medical evacuation OR field hospital 2024 2025 (the donation of April 2024 and the Palestinian Ambassador''s statements; no evacuation,
+      field hospital or visa pathway)'
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: 'Not searched: no Government source of Zimbabwe answered a request on 2026-11-04 (docs/10 B-842; P-23).'
+    status: none-found
+    note: 'No visa or refugee pathway opened for Gazans was found. Not searched: the Department of Immigration''s notices and the Ministry of Foreign Affairs'' releases (503).'
+    queries:
+    - 'WebSearch 2026-11-10: Zimbabwe Gaza Palestinians visa OR refugees OR medical evacuation OR field hospital 2024 2025 (the donation of April 2024 and the Palestinian Ambassador''s statements; no evacuation,
+      field hospital or visa pathway)'
+    - 'zimfa.gov.zw (home page, /?s=Israel, Joomla search): HTTP 503 on 2026-11-10, as on 2026-11-04; herald.co.zw and heraldonline.co.zw (pages and WordPress REST): HTTP 403; newsday.co.zw WordPress REST search
+      ''Israel'' (the 50 latest items, April to October 2026): none on a Government measure'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No investigation or prosecution of Zimbabwean nationals or companies for conduct in Gaza was found. Not searched: the National Prosecuting Authority''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldier Gaza "Hind Rajab Foundation" Cyprus OR Zimbabwe OR Zambia OR Uganda OR Armenia (complaints in Belgium, Brazil, Germany, the United
+      Kingdom and Cyprus; none in Uganda, Zambia, Zimbabwe or Armenia)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. NewsDay (press, 24 October 2023) reports that the police stopped the Amalgamated Rural Teachers Union of Zimbabwe''s march to deliver a petition in solidarity with Palestinians
+      to the UN office in Harare, quoting the officer commanding Harare district''s letter that the notification ''falls short of the requirements'' of the Maintenance of Peace and Order Act. The police letter
+      is not published, so nothing is filed: lead_20261110_ZWE_1. Not searched: the Zimbabwe Republic Police''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Zimbabwe OR Zambia police ban OR arrest pro-Palestine march Gaza Harare Lusaka (NewsDay, 24 October 2023: the police stopped the Amalgamated Rural Teachers Union''s march to the
+      UN office in Harare; nothing for Zambia)'
+    - newsday.co.zw/local-news/article/200018489/police-stop-teachers-palestine-solidarity-march (read 2026-11-10; the rest of the article is for subscribers)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No universal-jurisdiction complaint accepted for investigation in Zimbabwe was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldier Gaza "Hind Rajab Foundation" Cyprus OR Zimbabwe OR Zambia OR Uganda OR Armenia (complaints in Belgium, Brazil, Germany, the United
+      Kingdom and Cyprus; none in Uganda, Zambia, Zimbabwe or Armenia)'
+    checked_at: '2026-11-10'
