@@ -712,3 +712,20 @@ FINISH-PLAN.md Phase E, Task B2's checklist, by a fresh Opus 5.5 session on 2026
 | DZA | 3 | 6: 6 / 6 | 4: 4 | 1 / 1 (2/3 answer 200; other: 403: 1) | none added or changed | 4 (none) | evt_2026_10_08_DZA_B9: the speech is in the first person (page marks of the transcript); the +5 rests on 'آلة الإبادة', which the summary does not name (flag of T-F-W9, B-2107 (6)). evt_2024_11_21_DZA_B5 (Ministry statement; Algeria not a party): kept as flagged. Lead DZA_2 read. evt_2024_12_31_DZA_D3 ends on 2025-12-31: the state has no row in the 2025 table, so no 2025 event (B-876 rule; flagged, B-2107 (3)). |
 | NGA | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (2/6 answer 200; other: 403: 3, 000: 1) | none added or changed | 3 (none) | No event. E1 to E3 none-found with English queries; two leads annotated (three press URLs answer 403, one timed out). |
 | AZE | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 3 (none) | No event. E1 to E3 none-found with English and Azerbaijani queries; lead AZE_1 annotated. |
+
+### T-F-CHECKUP: the author's list after the finish plan (docs/10 B-2108)
+
+`CHECKUP.md` updated on `main` (`32fe6f1`) and merged into `data/phase1`; HANDOFF.md Part 2.0 and FINISH-PLAN.md Part 1 updated. Counts read from the files on `data/phase1` on 2026-11-10, not copied from the reports:
+
+| Measure | 2026-11-08 (FINISH-PLAN Part 1) | 2026-11-10 |
+|---|---|---|
+| Hand events (files) | 1,236 (139) | 1,421 (146) |
+| `reviewed` / `draft` / `published` | 1,235 / 1 / 0 | 1,420 / 1 / 0 |
+| Leads (files) | 236 (106) | 323 (134) |
+| Assessment entries `unchecked`, all indicators | 1,908 | 123 (A1 45, A4 45, B8 30, A2 1, C3 1, B12 1) |
+| Hand-researched entries `unchecked` | 1,285 scored + E1–E3 | 1 (BHR B12) |
+| `none-found` / `has-events` / `no-data` / `not-applicable`, all indicators | 3,386 / 792 / 313 / 163 | 5,126 / 832 / 318 / 163 |
+| Source records / `archive/index.csv` rows / `recognitions.csv` rows | not counted / not counted / not counted | 2,295 / 2,354 / 64 |
+| `pnpm validate` | 0 errors, 1,198 warnings | 0 errors, 1,164 warnings |
+
+What CHECKUP.md now holds: the three proposals of T-F-METHOD with their defaults (§2a); B8 for 30 states and eleven new cross-country readings (§2b); §2e with every reading flagged by T-F-UNDOCS-1/2/3, T-F-W1 to T-F-W9, T-F-L01 to T-F-L25 and T-F-V1 to T-F-V3, each with its B-id and default; PR #16 and the Wayback check of 2026-11-08 (§5); the flip gate under the rule 8 decision (§6); the gaps left (§7). Data change: the headers (comments) of `data/events/QAT.yaml` and `data/events/JOR.yaml` brought into line with R3 (B-2107 (4)); no event changed.

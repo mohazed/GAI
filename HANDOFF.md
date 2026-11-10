@@ -79,6 +79,15 @@ CLAUDE.md says `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Use th
 - The first monthly run is now `monthly-2026-11` and must cover the gap since each country's session (Task C).
 - This file was not in git until the commit of 2026-11-03 on `data/phase1`.
 
+**Changes since 2026-11-03 (checked 2026-11-10 by T-F-CHECKUP, B-2108; counts from the files, not from reports):**
+
+- Two unattended runs since: the finish run of 2026-11-03 to 2026-11-05 (Part 3 Tasks A to G, B-695 to B-870) and the finish plan of 2026-11-08 to 2026-11-10 (`FINISH-PLAN.md`, B-871 to B-999 and B-2001 to B-2108). `FINISH-PLAN.md` replaced Part 3 as the task list (Part 0, item 5); its Part 1 has the state below.
+- Branches: `main` `32fe6f1` (CHECKUP.md of T-F-CHECKUP; live site in scorecard mode, Nightly green every day to 2026-11-10); `data/phase1` has `main` merged (merge commits only). `data/phase1-ag` (`5522250`) and the worktree `/Users/mohorozovic/M2/GAI-ag` are still stale (the author decides, CHECKUP.md §5).
+- Dataset on `data/phase1` (PR #11): 1,421 hand-researched events in 146 country files (1,420 `reviewed`, 1 `draft`, 0 `published`, 0 with `review.reviewed_by`); 193 assessment files of 34 entries (45 full protocol, 148 light protocol); hand-researched entries (generated A1, A2, A4, B1, B2, B8, C3, D1 excluded): 4,576 `none-found`, 436 `has-events`, 5 `no-data`, 1 `unchecked` (BHR B12); generated entries still `unchecked`: B8 for 30 states, A1 and A4 for the 45; 323 leads in 134 files; 2,295 source records; `archive/index.csv` 2,354 rows; `recognitions.csv` 64 rows. `pnpm validate`: 0 errors, 1,164 warnings.
+- Open PRs: #11 (dataset), #15 (rc.2 proposal, undecided), #16 (dependency update into `main`, red only on the Lighthouse script budget; B-2097), #1–#10 (superseded). Open issues: #12, #13, #14 (the Wayback check of 2026-11-08 found 545 of 2,107 copies not replaying; B-872).
+- Methodology drafts for the author: `docs/proposals/rule-8-scope.md`, `b1-article-19.md`, `a4-data-years.md` (B-2098 to B-2100; no version, no PR, no Discussion).
+- Everything the author must check or decide is in `CHECKUP.md` (updated on both branches on 2026-11-10; its §2e lists every reading the finish plan flagged, with B-id and default).
+
 ### 2.1 Built and live
 
 P-01 to P-19 are done (repo bootstrap, schema, scoring engine, pipeline, build-data, web foundation, all pages in EN/FR, widget `/embed/v1/gai.js`, Cloudflare Pages deploy + nightly + quarterly Wayback workflows, country registry of 195 entries, structured data, French review, security and code review). The live site runs in **scorecard mode** (no score shown). Nothing from the dataset is published yet: the site shows only generated indicators.
