@@ -741,3 +741,11 @@ Final hygiene on `data/phase1` (`7846db8`): lint, typecheck, tests, `pnpm valida
 | Unchecked entries (countries) | 123 (68) |
 | Preview bands | Sustaining 4, Enabling 23, Passive 42, Acting 102, Confronting 22 |
 | Secrets in history (by key name, values not printed) | none |
+
+## 12. P-23 pre-launch pass, T-G-HOUSE (2026-11-10)
+
+| Item | Result | B-id |
+|---|---|---|
+| BFA B6, MLI B6, NER B6, NRU B6, VEN B6, SGP B11 | `has-events` set to `none-found`; event ids and reason in each note; events unchanged | B-2111 (1) |
+| Soldiers' names in CZE leads 1 and 2, GRC lead 1, CZE, GRC and MAR assessment notes | Replaced by "an Israeli soldier"; URLs unchanged; three NGO page titles shortened | B-2111 (2) |
+| `pnpm validate` | 0 errors, 1,158 warnings | |
