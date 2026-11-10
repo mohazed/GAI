@@ -1153,7 +1153,7 @@
   end: null
   points: 10
   points_rationale: 'Ministers tier (+10): an entry ban by ministerial instruction on two serving ministers of Israel.'
-  confidence: corroborated
+  confidence: confirmed
   scope:
   - gaza
   - west-bank
@@ -1165,6 +1165,14 @@
     fr: Ministre de la Justice, de l'Intérieur et des Migrations
     name: Jim O'Callaghan
   evidence:
+  - source: src_20260616_oireachtas_pq-682-travel-ban
+    quote: I instructed Immigration officers to refuse entry to Itamar Ben-Gvir, Minister for National Security of Israel, and Bezalel Smotrich, Minister of Finance of Israel, should they seek to enter the State.
+    quote_lang: en
+    locator: line 79
+  - source: src_20260616_oireachtas_pq-682-travel-ban
+    quote: This measure is a statement of policy rather than a response to an imminent visit and ensures that if either minister seeks entry in the future, they will be refused.
+    quote_lang: en
+    locator: line 80
   - source: src_20260605_rte_israeli-ministers-travel-ban
     quote: '"In line with the Taoiseach''s statement that Ireland will act to prevent those members of the government of Israel who have been instrumental in fomenting the unfolding disaster in Gaza from
       entering our country, the Minister for Justice, Home Affairs and Migration has instructed immigration officers to refuse entry to Itamar Ben-Gvir the minister for national security of Israel, and
@@ -1190,9 +1198,9 @@
       by: claude-opus-5-5
       at: '2026-09-28'
       verdict: agree
-      notes: RTÉ line 13, The Irish Times line 3 and the Taoiseach's General Assembly statement (line 133) re-read. B11 ministers matches at corroborated confidence.
-    notes: 'Confidence `corroborated` (weight 0.7): the instruction is documented by the statement of the Minister''s spokesperson quoted by RTÉ and by the Taoiseach''s remarks reported by The Irish Times,
-      two independent press reports; no Department of Justice release or parliamentary record of it was archived (lead lead_20260928_IRL_2 for the primary). The Taoiseach announced the intent at the General
+      notes: "RTÉ line 13, The Irish Times line 3 and the Taoiseach's General Assembly statement (line 133) re-read. B11 ministers matches at corroborated confidence. Second reading of 2026-11-10 (T-G-LEADS-3), after the written answer was added: lines 79 and 80 of the Official Report's record are found verbatim; line 78 names the Minister for Justice, Home Affairs and Migration as the answering minister and line 73 the date (16 June 2026); the answer states the instruction in the Minister's own words, so `confirmed` matches; date, tier and scope unchanged."
+    notes: 'Confidence was `corroborated` (weight 0.7) until 2026-11-10: the instruction was documented by the statement of the Minister''s spokesperson quoted by RTÉ and by the Taoiseach''s remarks reported by The Irish Times,
+      two independent press reports. P-23 pass of 2026-11-10 (T-G-LEADS-3): the Minister''s written answer of 16 June 2026 to Question 682 [45528/26] (the Official Report''s record on data.oireachtas.ie, found through api.oireachtas.ie) states the instruction in his own words and is archived (src_20260616_oireachtas_pq-682-travel-ban); confidence raised from `corroborated` to `confirmed`; lead lead_20260928_IRL_2 promoted. The same words are in his answer of 2 July 2026 to Question 354. The Taoiseach announced the intent at the General
       Assembly on 26 September 2025 (official). Scope `gaza` and `west-bank`: the statement cites the members of the Government of Israel instrumental in the disaster in Gaza (docs/10 B-32 as read for GBR,
       FRA and ESP). An entry ban on named ministers is read as a sanction (ministers tier), as for Spain.'
 
@@ -1317,6 +1325,50 @@
       notes: 'Revenue guidance lines 2 and 4 re-read: the Act commences on 15 September 2026 and prohibits imports from designated settlement postal codes. C4 ban matches.'
     notes: Scope `west-bank` only (settlement-goods measure, docs/10 B-32), tracked and unscored in v1. The Act (No. 35 of 2026) was signed by the President on 23 July 2026 (the President's release could
       not be archived) and commenced on 15 September 2026, the date of the standing state. The Act covers goods, not services.
+
+- id: evt_2026_09_24_IRL_B9
+  revision: 1
+  country: IRL
+  indicator: B9
+  type: repeatable
+  date: '2026-09-24'
+  points: 5
+  points_rationale: 'Names a specific violation (+5): the Taoiseach says the most basic humanitarian aid to Gaza is deliberately impeded and that humanitarian aid remains blocked, as the obstruction of aid named in evt_2025_05_21_IRL_B9.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Taoiseach stated at the UN General Assembly that humanitarian aid to Gaza remains blocked and is deliberately impeded.
+    fr: "Le Taoiseach a déclaré à l'Assemblée générale des Nations unies que l'aide humanitaire destinée à Gaza restait bloquée et était délibérément entravée."
+  actor:
+    en: Taoiseach
+    fr: Taoiseach (Premier ministre)
+    name: Micheál Martin
+  evidence:
+  - source: src_20260924_un-gadebate_irl-martin-81st
+    quote: Israeli strikes continue. Humanitarian aid remains blocked.
+    quote_lang: en
+    locator: line 154
+  - source: src_20260924_un-gadebate_irl-martin-81st
+    quote: Where the most basic humanitarian aid – food and shelter – is deliberately impeded?
+    quote_lang: en
+    locator: line 177
+  - source: src_20260924_un-gadebate_irl-martin-81st
+    quote: true horrors are finally and fully revealed, it will shame the world.
+    quote_lang: en
+    locator: line 180
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: lines 180, 177 and 154 are found verbatim in the archived text; line 5 names the speaker (National Statement by Taoiseach Micheál Martin to the 81st Session) and line 173 places the passage on Gaza (''the situation in Gaza remains an affront to all that is decent''). The +5 tier rests on the deliberate impediment of aid named as conduct, the reading of evt_2025_05_21_IRL_B9 (obstruction of aid); read as a description without a violation named, it would be the call tier (+2). Ireland''s B9 is at its +10 cap, so neither reading moves the score.'
+    notes: National statement at the General Debate of the 81st session, delivered on 24 September 2026 (New York), as the delegation's file on gadebate.un.org prints the Government Press Office's text (check against delivery). Promoted from lead_20260928_IRL_6 in the P-23 pass of 2026-11-10 (T-G-LEADS-3), when the Wayback CDX listing named by docs/10 B-2126 showed a capture of the file. The passage on the peace plan (lines 152 and 153) and on the West Bank (E1, settlers) is not counted; the West Bank passage would be tagged west-bank and is not quoted.
 
 - id: evt_2026_10_12_IRL_B9
   revision: 1
