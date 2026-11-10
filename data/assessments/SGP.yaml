@@ -2,6 +2,7 @@
 # `has-events` is set by the build from published events; hand-set values below are the research status for review.
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.sg, HTTP 200: press statements, transcripts and the Committee of Supply speeches, searched through the search engine restricted to the Ministry's domain), the Prime Minister's Office (pmo.gov.sg), the Ministry of Defence (mindef.gov.sg), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th also on the Ministry's page), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not searched in Malay, Mandarin or Tamil. Time: see the build-log row of the session.
+# Completion of 2026-11 (finish run, T-F-L12, 2026-11-10): A3, A5 to A8, C4 to C6, E1 and E3 searched, all none-found (8 web searches in English, the Ministry's newsroom, the Police's advisories); E2 now has-events (evt_2023_10_18_SGP_E2, evt_2026_04_11_SGP_E2, unscored); lead_20261110_SGP_1 (A3, unverified claim on ST Engineering). Nothing new on Gaza from 4 to 10 November 2026 (docs/10 B-2009).
 country: SGP
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +19,18 @@ indicators:
       one; the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No official programme document, Lockheed Martin supplier disclosure, Ministry of Defence statement or UN Special Rapporteur''s report naming a Singaporean company as a Tier-1 or Tier-2 supplier
+      of parts or maintenance for the F-35 programme was found. Singapore is an F-35 customer (12 F-35B and 8 F-35A ordered), which A3 does not cover. One defence-news site says ST Engineering makes F-35
+      components and does maintenance (unverified, not an A3 source): recorded as lead_20261110_SGP_1. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest
+      items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched, no passage
+      on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not searched
+      in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore company F-35 supplier parts maintenance ST Engineering F-35 programme supply chain'
+    - 'WebSearch 2026-11-10: Singapore Israel arms exports ban OR suspend OR transit Gaza Ministry of Defence 2025 2026'
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Singapore (no match)
+    checked_at: '2026-11-10'
   A4:
     status: has-events
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): Singapore''s order of five Hermes-900 reconnaissance drones from Israel (2025, TIV 15) is the release''s data year 2025 and the
@@ -30,17 +41,49 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Singapore of 2023 and later
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No named joint exercise, documented arms transit, public basing agreement or official confirmation of intelligence sharing with Israel related to the Gaza campaign was found. The searches return
+      Israel''s participation in the Singapore Airshow of February 2026 and Singapore''s arms purchases from Israel (A4, generated), neither an A5 instance; the Minister told Parliament on 22 September 2025
+      that the security relationship with Israel ''remains invaluable'' (see C2), a statement, not an instance. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the
+      ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched,
+      no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not
+      searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore Israel arms exports ban OR suspend OR transit Gaza Ministry of Defence 2025 2026'
+    - 'WebSearch 2026-11-10: Singapore Balakrishnan OR "Lawrence Wong" Gaza Israel November 2026'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms export licences to Israel was found; the Strategic Goods (Control) Act 2002 requires permits for listed goods to every destination and no Israel-specific
+      measure appears in the results (a 2023 parliamentary item describes the general framework). Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items
+      of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched, no passage on the
+      subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not searched in Malay,
+      Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore Israel arms exports ban OR suspend OR transit Gaza Ministry of Defence 2025 2026'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree restricting arms exports to and imports from Israel was found; Singapore buys arms from Israel (SIPRI register, A4 generated: the Hermes-900 order of 2025). Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026
+      and the Islamabad press conference of 30 October 2026 searched, no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore Israel arms exports ban OR suspend OR transit Gaza Ministry of Defence 2025 2026'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, transshipment or airspace to an arms shipment bound for Israel was found; the searches return no Singapore port or airspace case. Pages read on 2026-11-10: the Ministry
+      of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad
+      press conference of 30 October 2026 searched, no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore Israel arms exports ban OR suspend OR transit Gaza Ministry of Defence 2025 2026'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
@@ -157,14 +200,35 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; the search returned measures of other states only (South Africa, the European Union, the United States). The targeted sanctions of 21 November
+      2025 on four settlers (B11) are not a goods measure. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026,
+      none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched, no passage on the subject), the Singapore Police Force''s
+      advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore settlement goods labelling OR ban West Bank products OR procurement exclusion Israeli companies Singapore government'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by GIC, Temasek or the Monetary Authority of Singapore over conduct in Gaza or the occupied territories was found; the search returned exclusions by Norway''s and Ireland''s
+      funds only, and a report of Temasek''s interest in an Israeli company (Netafim, older). The funds'' own sites were not searched. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom
+      listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30
+      October 2026 searched, no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no
+      match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore GIC Temasek divest Israeli companies OR exclusion occupied territories Gaza'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over Gaza or the occupied territories was found (GeBIZ and the Ministry of Finance''s notices were not searched). Pages read on 2026-11-10: the
+      Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026
+      and the Islamabad press conference of 30 October 2026 searched, no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore settlement goods labelling OR ban West Bank products OR procurement exclusion Israeli companies Singapore government'
+    - mfa.gov.sg newsroom listing and two items of 30 October and 3 November 2026 (read 2026-11-10)
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS (fts_plan_totals.csv): the Government''s flows to the Gaza response are recorded; the build makes them D1 events. Left to the build. The Ministry reports ten tranches of humanitarian
@@ -210,11 +274,34 @@ indicators:
     - Gaza medical evacuation OR visa OR refugees Gazans Singapore (web search)
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Singaporean nationals or companies for conduct in Gaza was found. The Ministry of Home Affairs said in February and March 2026
+      that it had asked Israel for information after reports that two Singaporeans may have served in the Israel Defense Forces and that it had no verified information (The Online Citizen and Malay Mail,
+      search results, not read in full): an inquiry to another state, not a domestic investigation; not filed. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the
+      ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched,
+      no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and 11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not
+      searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore war crimes complaint OR investigation Singaporean soldier IDF Gaza OR universal jurisdiction Singapore Israel'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: has-events
+    note: 'Experimental, unscored (D-12). Two events: the Police and the National Parks Board''s advisory of 18 October 2023 that applications for events related to the Israel-Hamas conflict will be turned
+      down (evt_2023_10_18_SGP_E2) and the Police''s advisory of 11 April 2026 that there should be no coordinated display of Israeli- or Palestinian-related symbols at an approved Speakers'' Corner assembly
+      (evt_2026_04_11_SGP_E2). Both bans cover either side of the conflict (flagged, docs/10 B-2009). Not filed: the advisories of 13 and 15 February and 30 April 2024 (not archived), the prosecution of three
+      women for the procession to the Istana of 2 February 2024 (press only: acquitted on 21 October 2025, fined after the High Court allowed the prosecution''s appeal on 30 April 2026), the investigation
+      of an activist for a placard at the Speakers'' Corner (October 2023, press only).'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore police Palestine procession Istana charged Public Order Act women 2024 verdict'
+    - 'WebSearch 2026-11-10: Singapore Police Force not grant permits events Israel-Hamas conflict Hong Lim Park statement; police.gov.sg advisories (two searches)'
+    - police.gov.sg advisories of 18 October 2023 (Wayback 20231018165232) and 11 April 2026 (archived, read)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No universal-jurisdiction complaint accepted for investigation in Singapore was found; the complaints against Israeli soldiers reported in the results were filed
+      in other states. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' newsroom listing (mfa.gov.sg, the ten latest items of 30 October to 4 November 2026, none on Gaza, Israel or Palestine; the
+      written reply to PQ 3275 of 3 November 2026 and the Islamabad press conference of 30 October 2026 searched, no passage on the subject), the Singapore Police Force''s advisories of 18 October 2023 and
+      11 April 2026 (archived), archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Singapore). Not searched in Malay, Mandarin or Tamil.'
+    queries:
+    - 'WebSearch 2026-11-10: Singapore war crimes complaint OR investigation Singaporean soldier IDF Gaza OR universal jurisdiction Singapore Israel'
+    checked_at: '2026-11-10'
