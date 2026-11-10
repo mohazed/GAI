@@ -3847,3 +3847,276 @@ Columns: events in scope (all for groups 1 to 4; new or changed since `29dabb1` 
 | LVA | 2 | 5: 5 / 5 | 4: 4 | 0 / 0 (no URL) | none added or changed | 11 (none) | No finding. evt_2024_01_05_LVA_E2 rests on two press publishers (`corroborated`). |
 | TON | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 11 (none) | No event. No finding. |
 | TUV | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+### T-F-V2: the new records of T-F-L11 to T-F-L25 (2026-11-10)
+
+**Scope, found commit by commit.** The 98 commits of T-F-L11 to T-F-L25 (light groups 21 to 50, 88 countries) were replayed one by one (`git diff-tree` of each commit, records compared before and after it), so that records changed only by other tasks (T-F-W1 to W9, T-F-UNDOCS-1 to 3: T-F-V3) are out of scope. In scope: 38 events (36 new, among them `evt_2025_08_29_MLT_D4`, which replaces `evt_2025_09_22_MLT_D4` renamed by T-F-L14; 2 changed by T-F-L25), with 112 evidence items and 59 distinct sources; 78 leads (38 new, 40 annotated); 5 recognition rows added (BIH, MDG, BHR, KWT, OMN); 1,085 assessment entries whose status changed (1,063 `unchecked` to `none-found`, 14 `none-found` to `has-events`, 8 `unchecked` to `has-events`). Build-log rows: docs/10 B-2104 and B-2105. No event changed status; `review.reviewed_by` is not set; nothing is published.
+
+**What was checked, and how.** As T-F-V1 (above), with the same scripts.
+
+1. **Quote at the locator.** Each quote normalised as the validator does and found in `archive/text/<source>.txt`, mapped back to line numbers and compared with the locator.
+2. **Captures.** Every source cited by these events, by the new leads (14, cited by id) and by the recognition rows (5): 74 sources, each fetched again from its `wayback_url` with `curl --compressed`, one at a time, and compared in byte count and SHA-256 with the source record and `archive/index.csv` (all 74 records equal their index rows).
+3. **Speaker and wording (R3, R4, R7).** Every event read with its quotes, rationale and notes; B9 speakers against the archived text's attribution (the Pope as head of state, the Chairman of Yemen's Presidential Leadership Council, Liechtenstein's Foreign Minister from her archived CV).
+4. **Date and tier.** Event dates against the sources' dates; tiers against the rationale and docs/02.
+5. **Scope tags.** `gaza` scopes against a mention of Gaza in the quotes or the archived text (the C2, A6 and E2 events follow the convention of the 60 C2 and 13 A6 events already filed); the two West Bank-only B11 listings are `west-bank`.
+6. **French summaries.** Gender, elision and capitals against `docs/glossary.fr.md`; meaning against the English summary; the 200-character limit.
+7. **Leads.** Every new lead read for its claim and sourcing; every lead URL of the 78 leads fetched live once (105 distinct URLs); URLs that did not answer looked up in the Wayback CDX index.
+8. **Recognition rows.** Each row's date looked up in its archived source text.
+9. **Assessment statuses.** By script: every `has-events` entry has a hand event of the indicator (B8 excepted: generated, mirroring the new recognition rows); every hand-researched `none-found` has a date (`checked_at`) and named queries; no generated indicator was set by hand except B8 `none-found` for WSM and MMR (the convention of 102 countries without a row); source ids named in notes exist; no hand-researched indicator is left `unchecked` in the 88 countries. Then a tenth step: whether the web searches named in each entry address the indicator at all (keywords per indicator in English, French, Portuguese, Spanish, Italian, German and Arabic). Most entries of these sessions rest on one or two combined searches per country; 8 entries named no web search at all (STP B7, B11, E2; SWZ B7, B11; TGO B7, B11, D5: site searches of a ministry or newspaper only) and about 200 named web searches that do not mention the indicator's subject (for example IRQ A8, whose two searches concern the normalisation law and the Prime Minister's statements). For these, 26 verification searches were run (25 recorded in the entries; the 26th, on Syria's customs law, gave the SYR lead below) (one or two per country, several grouped by indicator across countries) and recorded in the entries' `queries` (138 lines, marked `T-F-V2 verification`); none found an instance, and the statuses stay `none-found`. The notes themselves were read for a sample (MNE A5, A6; KWT A6; LBN E1; SMR A6; LIE E1; AGO C5; SRB C6; ZWE A5, C6): they name what was read and what was not searched.
+
+**Result.** Every quote is verbatim in its archived text and at its locator after one fix. All 74 replays equal their records. Two older sources cited only by leads (archived on 2026-11-04 by the P-21 sessions) did not replay: see KEN and GHA below. No invented quote, source, date or speaker was found. Fixes in place:
+
+1. `evt_2025_09_17_VAT_B9`: the second quote is on line 14, not line 12.
+2. `evt_2024_04_23_LIE_B11`, `evt_2024_07_17_LIE_B11`, `evt_2026_06_02_LIE_B11`, `evt_2024_04_19_MCO_B11`, `evt_2024_07_15_MCO_B11`, `evt_2026_05_29_MCO_B11`: apostrophes missing in the points rationale and review notes ('the Governments ordinance', 'Monacos', 'Luxembourgs', 'the annexs title') restored.
+3. `evt_2025_07_28_IRQ_B9`: French summary cut by the 200-character limit ('et appelé au cessez-le-feu', without Gaza); now 'et a appelé au cessez-le-feu à Gaza', with the attributed term in quotation marks.
+4. `evt_2025_07_29_KWT_B9`: French summary given 'l'offensive israélienne', as the English.
+5. `evt_2025_09_15_YEM_B9`: French summary names the Arab-Islamic summit, as the English.
+6. `evt_2025_07_21_LIE_B9`: French summary 'droit humanitaire' corrected to 'droit international humanitaire'.
+7. New `lead_20261110_SYR_1` (C4): press reports of a 2026 customs law keeping the boycott of Israeli goods, found by a verification search; the SYR C4 note points to it. Nothing is filed from it.
+8. Eight entries (STP, SWZ, TGO) given the web searches they lacked; about 130 other entries given a verification search that names their subject.
+
+**Readings flagged for the author (B-2105).** (a) About 200 `none-found` entries of T-F-L11 to T-F-L25 rest on combined searches that did not name the indicator; the verification searches added found nothing, but they are grouped searches, not the per-indicator primary-source reading of docs/06: default keep `none-found` with the queries as recorded, and re-search per indicator in P-23 for the states where events are plausible (Middle East group A5 to A8; Serbia and Montenegro A6; the Gulf C5 and C6). (b) `evt_2024_11_22_NAM_B5` rests on two press reports of a statement delivered by the Ministry's Executive Director, with no Ministry text archived: default keep (`corroborated`), as filed. (c) `lead_20261110_SYR_1`: whether a 2026 renewal of a general boycott inherited from before the window is a C4 ban: default not an event until the decree's text is archived, then the author's reading. (d) `evt_2025_08_29_MLT_D4` was renamed in place (unpublished): default keep, no correction entry needed as it was never published. (e) Two lead sources archived on 2026-11-04 do not replay today (KEN, GHA): default leave to the Wayback check of P-23 (issue #14); neither supports an event. Readings already flagged and re-read without change: BIH, KWT and OMN recognition rows (B-2025, B-2089), KHM, COD, ETH and MWI C2 on press only, SYC C2 (visa agreements), DJI, SYR, LBN and YEM B9, LUX B5, PRT A6.
+
+**Leads.** Every new lead rests on press, NGO or archived records and files nothing; the 40 annotations add searches and keep the status. Of the 105 distinct lead URLs, 96 answer HTTP 200 live, 5 answer 403 and 1 answers 406 (news sites behind bot checks); three timed out (`gov.ls` for LSO_1, with no Wayback capture; two `diplomatie.gov.mr` pages for MRT_3, both with Wayback captures).
+
+### Table per country (groups 21 to 50)
+
+Columns as for groups 1 to 20, plus the number of verification searches recorded in the country's assessment entries.
+
+#### Group 21: WSM, BRN, KHM (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| WSM | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (2/3 answer 200; other: 406: 1) | none added or changed | 16 (none) | 2 | No event. B8 none-found mirrors the absence of a recognition row (convention of 102 countries). lead_20261104_WSM_1: talamua.com answers 406 to scripts. |
+| BRN | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 15 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| KHM | 1 | 3: 3 / 3 | 3: 3 | 0 / 1 (2/2 answer 200) | none added or changed | 16 (none) | 3 | evt_2025_12_01_KHM_C2 (−10, `corroborated`, three press sources): signatories and date agree across the three; stays flagged (no official copy). |
+
+#### Group 22: LAO, MMR, PHL (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| LAO | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 15 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| MMR | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 16 (none) | 4 | No event. B8 none-found mirrors the absence of a recognition row. Eleven entries' searches named no indicator subject; searched again (A7, A8, C5, E3), nothing found. |
+| PHL | 0 | 0: 0 / 0 | 0: 0 | 0 / 3 (6/7 answer 200; other: 403: 1) | none added or changed | 13 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 23: SGP, THA, TLS (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| SGP | 2 | 4: 4 / 4 | 2: 2 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | 0 | Two E2 events (Police advisories of 18 October 2023 and 11 April 2026, official, experimental and unscored): quotes, dates and scope read; no change. lead_20261110_SGP_1 (A3) rests on one undated defence-news page: kept as a lead. |
+| THA | 1 | 3: 3 / 3 | 1: 1 | 0 / 2 (2/2 answer 200) | none added or changed | 12 (none) | 1 | evt_2024_06_06_THA_B9 (+2): the leaders' joint statement printed in the US Compilation of Presidential Documents (DCPD-202400492) lists Thailand; Gaza is named in the text; call tier as for the other signatories. No change. |
+| TLS | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 24: VNM, AFG, BGD (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| VNM | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (no URL) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| AFG | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (0/1 answer 200; other: 403: 1) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| BGD | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 25: BTN, IRN, LKA (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| BTN | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| IRN | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | 5 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| LKA | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (4/4 answer 200) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 26: MDV, NPL, PAK (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| MDV | 1 | 2: 2 / 2 | 1: 1 | 2 / 2 (5/5 answer 200) | none added or changed | 11 (none) | 6 | evt_2025_09_27_MDV_B9 (+5): the Foreign Minister's text on the Ministry's site; speaker, date and wording agree. Leads MDV_3 (B5, the President's post on the warrants) and MDV_4 (E2) read: press only, kept. |
+| NPL | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (2/2 answer 200) | none added or changed | 11 (none) | 4 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| PAK | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (3/4 answer 200; other: 403: 1) | none added or changed | 11 (none) | 4 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 27: ALB, AND, BIH (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| ALB | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (2/2 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+| AND | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 0 | No finding. |
+| BIH | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | 1992-05-27 (flagged, B-2025) | 11 (none) | 1 | Recognition row 1992-05-27: the archived text says 'established in May 1992' (diplomatic ties); the day is the registry's: stays flagged (B-2025, B-2029). |
+
+#### Group 28: HRV, MKD, MLT (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| HRV | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| MKD | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| MLT | 1 | 3: 3 / 3 | 3: 3 | 0 / 1 (3/3 answer 200) | none added or changed | 10 (none) | 0 | evt_2025_08_29_MLT_D4 replaces `evt_2025_09_22_MLT_D4` (renamed in place by T-F-L14 as a reviewed, unpublished event, B-2028): quotes at their locators, date of the earliest official text. No change. |
+
+#### Group 29: MNE, PRT, SMR (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| MNE | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 4 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| PRT | 1 | 1: 1 / 1 | 1: 1 | 1 / 2 (4/4 answer 200) | none added or changed | 12 (none) | 0 | evt_2024_06_21_PRT_A6 (+10): the Government's page reports the Minister for Parliamentary Affairs, Pedro Duarte, in quotation marks ('tomou a medida unilateral de não autorizar a exportação de armas para Israel'); no licence act or end date: stays flagged. lead_20261110_PRT_3 (Lajes stopover) read. |
+| SMR | 1 | 2: 2 / 2 | 2: 2 | 0 / 2 (2/2 answer 200) | none added or changed | 11 (none) | 0 | evt_2025_07_29_SMR_B9 (+5): UNISPAL's copy of the statement and the UN press release naming Luca Beccari; no change. |
+
+#### Group 30: SRB, VAT, AGO (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| SRB | 0 | 0: 0 / 0 | 0: 0 | 2 / 1 (4/4 answer 200) | none added or changed | 11 (none) | 3 | No event. Leads SRB_2 (general export suspension of 23 June 2025) and SRB_3 (cargo flights) read: kept. |
+| VAT | 2 | 4: 4 / 4 | 2: 2 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 0 | evt_2025_09_17_VAT_B9: the second quote is on line 14, not line 12 (locator corrected). The two B9 events are the Pope's own words on vatican.va; the Pope is head of state (R3). |
+| AGO | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+
+#### Group 31: BDI, BEN, BFA (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| BDI | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (2/2 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+| BEN | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 16 (none) | 0 | No finding. |
+| BFA | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 32: BWA, CAF, CIV (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| BWA | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 3 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| CAF | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 16 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| CIV | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 16 (none) | 0 | No finding. |
+
+#### Group 33: CMR, COD, COG (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| CMR | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 15 (none) | 0 | No finding. |
+| COD | 2 | 6: 6 / 6 | 3: 3 | 0 / 0 (no URL) | none added or changed | 12 (none) | 0 | Two C2 events (−10 each, `corroborated`): two memoranda signed on 27 July 2026, press only (ACP, Ecofin); no change, flagged as filed. |
+| COG | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 34: COM, CPV, DJI (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| COM | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| CPV | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| DJI | 1 | 2: 2 / 2 | 1: 1 | 0 / 0 (no URL) | none added or changed | 12 (none) | 0 | evt_2025_09_22_DJI_B9 (+5, flagged): the Permanent Mission's copy of the President's statement; 'Israeli is committing genocide' is verbatim (the source's spelling). |
+
+#### Group 35: ERI, ETH, GAB (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| ERI | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| ETH | 1 | 2: 2 / 2 | 2: 2 | 0 / 1 (4/4 answer 200) | none added or changed | 12 (none) | 1 | evt_2025_02_04_ETH_C2 (−10, `corroborated`, two press sources): stays flagged (no official copy). |
+| GAB | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 0 | No finding. |
+
+#### Group 36: GHA, GIN, GMB (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| GHA | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 11 (none) | 0 | No event. Lead GHA_1's source `src_20260901_presidency-gh_mahama-nam-belgrade` (archived 2026-11-04) now replays HTTP 404 and the CDX lists no capture: left to the Wayback check of P-23 (issue #14); it supports no event. |
+| GIN | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 0 | No finding. |
+| GMB | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 37: GNB, GNQ, KEN (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| GNB | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| GNQ | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 0 | No finding. |
+| KEN | 1 | 3: 3 / 3 | 2: 2 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | 0 | evt_2024_01_25_KEN_E2 (experimental, unscored, two press publishers): no change. The KEN lead's source `src_20240307_presidency-ke_cabinet-regional-authorities` (archived 2026-11-04, not by T-F-L19) did not replay equal: three fetches gave 105,351 and 23,451 bytes against 100,218 recorded, and the CDX lists no capture of 20261104 (only 20260412): left to the Wayback check of P-23 (issue #14). |
+
+#### Group 38: LBR, LSO, MDG (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| LBR | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 0 | No finding. |
+| LSO | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (1/2 answer 200; other: 000: 1) | none added or changed | 11 (none) | 1 | No event. lead_20261104_LSO_1: gov.ls did not answer and has no Wayback capture. lead_20261110_LSO_2 read. |
+| MDG | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | 1988-11-15 | 12 (none) | 0 | Recognition row 1988-11-15 read in the President's message of that date: as stated. |
+
+#### Group 39: MLI, MOZ, MRT (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| MLI | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| MOZ | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+| MRT | 0 | 0: 0 / 0 | 0: 0 | 0 / 3 (2/4 answer 200; other: 000: 2) | none added or changed | 11 (none) | 1 | No event. lead_20261104_MRT_3: diplomatie.gov.mr did not answer; both pages have Wayback captures. |
+
+#### Group 40: MUS, MWI, NAM (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| MUS | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (0/1 answer 200; other: 403: 1) | none added or changed | 12 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| MWI | 2 | 5: 5 / 5 | 5: 5 | 1 / 0 (2/2 answer 200) | none added or changed | 19 (none) | 2 | Two C2 events (−10 each, `corroborated`, press only): no change. Missing apostrophe in no summary. lead_20261110_MWI_1 (B10, the Foreign Minister's words) read: not a B10 speaker, kept. |
+| NAM | 2 | 8: 8 / 8 | 5: 5 | 0 / 1 (1/1 answer 200) | none added or changed | 19 (none) | 2 | evt_2024_08_24_NAM_A8 (+5) and evt_2024_11_22_NAM_B5 (+8), both `corroborated` on press only: the B5 statement is the Ministry's, delivered by its Executive Director (a civil servant), with no Ministry text archived: flagged (B-2105). |
+
+#### Group 41: NER, RWA, SEN (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| NER | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 18 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| RWA | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+| SEN | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (2/2 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+
+#### Group 42: SLE, SOM, SSD (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| SLE | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 17 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| SOM | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| SSD | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (2/2 answer 200) | none added or changed | 14 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 43: STP, SWZ, SYC (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| STP | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 14 (none) | 3 | No event. Three entries (B7, B11, E2) rested on STP-Press's site search only: web searches in Portuguese added, nothing found. |
+| SWZ | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 14 (none) | 2 | No event. Two entries (B7, B11) rested on the Times of Eswatini's site search only: web searches added, nothing found. |
+| SYC | 2 | 5: 5 / 5 | 2: 2 | 0 / 1 (1/1 answer 200) | none added or changed | 12 (none) | 0 | evt_2024_01_11_SYC_C2 (visa-exemption agreements signed by a Principal Secretary) and evt_2024_02_23_SYC_B9: official Ministry pages, quotes verbatim; both stay flagged. |
+
+#### Group 44: TCD, TGO, TZA (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| TCD | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+| TGO | 1 | 3: 3 / 3 | 2: 2 | 2 / 0 (2/2 answer 200) | none added or changed | 16 (none) | 3 | evt_2026_07_06_TGO_C2 (−10): the Ministry's release and the Government's magazine; no change. Three entries (B7, B11, D5) rested on the Ministry's site search only: web searches added, nothing found. |
+| TZA | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (2/2 answer 200) | none added or changed | 14 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 45: UGA, ZMB, ZWE (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| UGA | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 14 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| ZMB | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (3/3 answer 200) | none added or changed | 14 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| ZWE | 0 | 0: 0 / 0 | 0: 0 | 1 / 0 (0/1 answer 200; other: 403: 1) | none added or changed | 17 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+
+#### Group 46: ARM, BHR, CYP (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| ARM | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | 1 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| BHR | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (4/4 answer 200) | 1988-11-15 | 12 (B12) | 2 | Recognition row 1988-11-15 read in A/43/816 (the Ministry's statement of 15 November 1988): date as stated. |
+| CYP | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (3/3 answer 200) | none added or changed | 11 (none) | 0 | No finding. |
+
+#### Group 47: GEO, IRQ, KWT (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| GEO | 0 | 0: 0 / 0 | 0: 0 | 2 / 0 (2/2 answer 200) | none added or changed | 11 (none) | 2 | No finding. Entries whose web searches named none of the indicator subject were searched again (column 8): nothing found. |
+| IRQ | 1 | 5: 5 / 5 | 1: 1 | 0 / 0 (no URL) | none added or changed | 11 (none) | 6 | evt_2025_07_28_IRQ_B9: French summary given 'à Gaza' and 'a appelé' (cut by the 200-character limit); the Arabic text layer is garbled (flagged by T-F-L24), the quoted words are present. |
+| KWT | 1 | 4: 4 / 4 | 2: 2 | 1 / 0 (1/1 answer 200) | 1988-11-16 (flagged, B-2089) | 13 (none) | 6 | evt_2025_07_29_KWT_B9: French summary given 'israélienne'. Recognition row 1988-11-16 (the letter's date; the statement is undated) stays flagged (B-2089). |
+
+#### Group 48: LBN, OMN, SYR (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| LBN | 1 | 2: 2 / 2 | 1: 1 | 0 / 0 (no URL) | none added or changed | 11 (none) | 4 | evt_2025_09_15_LBN_B9 (+5, flagged: a passage in a speech on the strike on Qatar). No change. |
+| OMN | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | 1988-12-12 (flagged, B-2089) | 12 (none) | 2 | Recognition row 1988-12-12 from the Government's statement transmitted on 13 December 1988 (one day before the registry's): stays flagged (B-2089). |
+| SYR | 1 | 3: 3 / 3 | 1: 1 | 0 / 0 (no URL) | none added or changed | 11 (none) | 5 | evt_2025_08_25_SYR_B9 (+5, flagged: 'criminal Israeli war' read at the legal-characterisation tier). New lead_20261110_SYR_1 (C4): press reports of the 2026 customs law keeping the boycott of Israeli goods, not read in full; the C4 note points to it. |
+
+#### Group 49: YEM, LIE, LUX (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| YEM | 3 | 4: 4 / 4 | 3: 3 | 0 / 0 (no URL) | none added or changed | 12 (none) | 3 | Three B9 events (the Chairman's own site): quotes verbatim; evt_2025_09_15_YEM_B9 French summary names the Arab-Islamic summit. The three stay flagged (head-of-state speaker of a Presidential Council, B-2093). |
+| LIE | 5 | 24: 24 / 24 | 7: 7 | 0 / 0 (no URL) | none added or changed | 12 (none) | 1 | Three B11 events (ordinances in the Law Gazette): apostrophes restored in the points rationale (Government's, Luxembourg's, Norway's, Nachala's). evt_2025_07_21_LIE_B9: French summary 'droit international humanitaire'. The two B9 events changed by T-F-L25 (speaker's title from the archived CV) read. |
+| LUX | 1 | 3: 3 / 3 | 1: 1 | 1 / 0 (1/1 answer 200) | none added or changed | 12 (none) | 0 | evt_2024_12_23_LUX_B5 (+8, flagged): the joint written answer of the two Ministers; quotes verbatim. lead_20261110_LUX_1 (C4 bill not in force) read. |
+
+#### Group 50: MCO (records new or changed by T-F-L11 to T-F-L25)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Verification searches added | Findings and fixes |
+|---|---|---|---|---|---|---|---|---|
+| MCO | 3 | 11: 11 / 11 | 6: 6 | 0 / 0 (no URL) | none added or changed | 12 (none) | 1 | Three B11 events (the Minister of State's decisions and annexes): apostrophes restored in the points rationale and review notes (Minister of State's, Monaco's, Luxembourg's, Norway's, annex's). |
