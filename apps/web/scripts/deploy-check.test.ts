@@ -16,6 +16,7 @@ const facts = (over: Partial<DeployFacts> = {}): DeployFacts => ({
     git: { sha: SHA, dirty: false },
   },
   historyNotes: 0,
+  unchecked: { count: 0, countries: [] },
   api: { countries: ['DEU', 'FRA'], corrections: [], replies: [], events: ['evt_a'] },
   data: {
     countries: ['DEU', 'FRA', 'ISR'],
@@ -114,6 +115,30 @@ describe('deployProblems (scripts/deploy-check.ts)', () => {
     expect(deployProblems(facts({ widgetMode: null }), expected)).toEqual([
       'embed/v1/gai.js carries mode null, the site is in scorecard mode',
     ])
+  })
+})
+
+describe('deployProblems, rule 8 (docs/02 §12)', () => {
+  const unchecked = { count: 2, countries: ['BHR', 'SAU'] }
+
+  it('refuses a score-mode build with an unchecked note', () => {
+    const problems = deployProblems(facts({ widgetMode: 'score', unchecked }), {
+      ...expected,
+      mode: 'score',
+    })
+    expect(problems).toHaveLength(1)
+    expect(problems[0]).toContain('rule 8')
+    expect(problems[0]).toContain('BHR, SAU')
+  })
+
+  it('lets a score-mode build with no unchecked note go out', () => {
+    expect(deployProblems(facts({ widgetMode: 'score' }), { ...expected, mode: 'score' })).toEqual(
+      [],
+    )
+  })
+
+  it('does not apply in scorecard mode', () => {
+    expect(deployProblems(facts({ unchecked }), expected)).toEqual([])
   })
 })
 
