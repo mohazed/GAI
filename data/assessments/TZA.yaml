@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the Presidency's speeches (ikulu.go.tz, 262 speeches and messages as PDFs, 40 dated from 7 October 2023; 38 downloaded and searched by script), the Ministry's blog (mfatanzania.blogspot.com, Blogger full-text feed; the Ministry's site foreign.go.tz lists only five posts), the Daily News (dailynews.co.tz, state-owned, WordPress REST, kind press), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Prime Minister's site (pmo.go.tz) has no search that answered. No web search was available.
 # Events: none. Leads: see data/leads/TZA.yaml. See docs/10 B-839, B-840.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4 and E1 to E3 searched (web searches in English and Swahili, the Ministry's blog feed, the Daily News and The Citizen, and the shared searches), all none-found with the limits said in each note; B9, B12, C2 and D5 notes extended; new lead_20261110_TZA_2 (A5, the Foreign Minister's words of 28 March 2026 on 'defence and security'). No new event. See docs/10 B-2082.
 country: TZA
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Tanzanian company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales customer in
+      the results. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
@@ -28,17 +34,41 @@ indicators:
     - sipri_orders.csv, buyer TZA
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found in the window: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing
+      in 2023 to 2026. The Ministry of Defence''s memorandum with Israel''s Government of June 2018 (Ministry''s blog, 5 June 2018) is before the window. The Foreign Minister''s words of 28 March
+      2026 that Israel contributes to ''agriculture, health, defence and security'' (Daily News; Horn Diplomat) name no activity or instrument: lead_20261110_TZA_2. Not searched: the Ministry of
+      Defence''s and the Tanzania People''s Defence Force''s releases (mod.go.tz did not answer).'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania Israel memorandum OR agreement signed 2024 OR 2025 OR 2026 Dodoma OR "Dar es Salaam" Israeli embassy Nairobi Tanzania cooperation agriculture water security
+      (the Tanzanian embassy''s undated pages on security cooperation, the 2018 defence agreement, the March 2026 credentials; no instrument in the window)'
+    - 'WebSearch 2026-11-10: Tanzania Israel Gaza government statement OR agreement OR cooperation 2025 2026 Samia OR Kombo OR "Ministry of Foreign Affairs" Tanzania Israeli ambassador (the Palestinian
+      Ambassador''s credentials of 24 April 2026, the March 2026 credentials of Israel''s Ambassador-designate; no instrument)'
+    - mfatanzania.blogspot.com/feeds/posts/default?q=Israel (30 titles, the latest of 26 October 2023; the post of 5 June 2018 on the defence memorandum)
+    - dailynews.co.tz/tanzania-commends-israel-supported-agricultural-and-health-projects/ and horndiplomat.com/?p=54517 (read in full)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Tanzania has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register). Not
+      searched: the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results concern other states. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access or airspace to an arms shipment bound for Israel was found. Not searched: the Tanzania Ports Authority''s and the Civil Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes: 10 ''Y'' and 2 ''X'' (non-votes: A/RES/80/1 of 19 September 2025 and A/RES/80/116 of 12 December 2025);
@@ -80,10 +110,13 @@ indicators:
     - mfatanzania.blogspot.com searches (see B5)
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
-      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
-    checked_at: '2026-11-04'
+    status: none-found
+    note: 'No sanction on ICC judges or prosecutors by Tanzania was found: the Ministry''s blog, the Daily News and The Citizen''s results for Israel and Palestine contain none (Tanzania is a State
+      Party). Not searched: the Parliament''s record (parliament.go.tz did not answer).'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania Gaza Palestina serikali taarifa OR maandamano OR Israel ushirikiano 2025 2026 Wizara ya Mambo ya Nje (the Vice President''s statement of 22 September 2026,
+      the Palestinian envoy''s items, the Foreign Minister''s budget speech of May 2026 by title; no sanction)'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for Tanzania. The registry gives a recognition since 24 November 1988 (before the window; no recognition document was found in the sources read,
@@ -101,15 +134,19 @@ indicators:
       source cannot support a lead. (4) The Daily News of 18 April 2024 quotes the President''s words with Turkiye''s President (''We reiterate our call for an immediate cessation of hostilities
       in Palestine''): press, no Gaza (R7), a lead (lead_20261104_TZA_1). (5) The Presidency''s statement at the African-Saudi Summit (10 November 2023) and at COP28 (2 December 2023) do not mention
       Gaza or Palestine. (6) A senior Ministry official (the Ambassador Mbarouk, Ministry''s blog, 9 January 2024) says Tanzania has supported all the UN resolutions seeking an end to the fighting:
-      not a B9 speaker.'
+      not a B9 speaker. Completion of 2026-11 (2026-11-10): the Daily News of 24 September 2026 (read in full) reports the 81st statement, delivered by the Vice President ''on behalf of President
+      Samia Suluhu Hassan'': ''We continue to call for the protection of civilians, unhindered humanitarian assistance and renewed diplomacy towards lasting peace'', and support for a two-state
+      solution; it calls for no ceasefire and the Vice President is not a B9 speaker (R3), as the existing reading says. The President received the new Palestinian Ambassador''s credentials on 24
+      April 2026 (The Citizen, read): the Ambassador''s words, not hers.'
     queries:
     - gadebate.un.org/en/{79,80,81}/united-republic-tanzania and gastatements/{79,80,81}/tz_en.pdf (read)
     - ikulu.go.tz /speeches pages 1 to 16 (262 speeches and messages; of the 40 PDFs dated from 7 October 2023, 38 were downloaded and searched for Gaza, Palestin, Israel, Hamas (an honorary-degree
       address of 10 October 2023 and a university graduation address of 24 November 2024 were not); the match of 7 February 2024 read)
     - 'mfatanzania.blogspot.com /feeds/posts/default?q=: Gaza, Palestina, Palestine, Israel, Israeli, Hamas, Mashariki ya Kati (contents read)'
-    - 'dailynews.co.tz /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinian, Israel, Hamas, Middle East, ceasefire (titles read; the posts of 9 October 2023, 14 October 2023, 19 February
-      2024 and 18 April 2024 read)'
-    checked_at: '2026-11-04'
+    - 'dailynews.co.tz /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinian, Israel, Hamas, Middle East, ceasefire (titles read; the posts of 9 October 2023, 14 October 2023, 19 February 2024
+      and 18 April 2024 read)'
+    - dailynews.co.tz/renews-call-for-peace-in-gaza/ and thecitizen.co.tz (posts of 9 and 27 April 2026) read in full
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Prime Minister was found in the sources read (the Ministry''s
@@ -119,42 +156,63 @@ indicators:
     - dailynews.co.tz searches (see B9)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
-      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
-    checked_at: '2026-11-04'
+    status: none-found
+    note: 'No sanction on Israeli ministers or settler entities was found in the Ministry''s blog, the Daily News or The Citizen''s results. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania Gaza Palestina serikali taarifa OR maandamano OR Israel ushirikiano 2025 2026 Wizara ya Mambo ya Nje (no sanction)'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: 'No recall, downgrade or severance of relations with Israel was found: Tanzania''s embassy in Tel Aviv is listed on the Ministry''s site (il.tzembassy.go.tz) and the Ministry''s press
-      statement of 14 October 2023 (as quoted by the Daily News) gives the embassy''s contact details to Tanzanians in Israel.'
+      statement of 14 October 2023 (as quoted by the Daily News) gives the embassy''s contact details to Tanzanians in Israel. Completion of 2026-11 (2026-11-10): the Foreign Minister, Mahmoud Thabit
+      Kombo, received on 28 March 2026 the copy of the credentials of Israel''s Ambassador-designate, Gideon Behar (based in Nairobi), and called Israel ''an important partner'' (Daily News; Horn
+      Diplomat, read in full): no downgrade; the Ambassador is non-resident (lead_20261110_TZA_2).'
     queries:
     - foreign.go.tz (home page read)
     - mfatanzania.blogspot.com searches (see B9)
-    checked_at: '2026-11-04'
+    - dailynews.co.tz/tanzania-commends-israel-supported-agricultural-and-health-projects/ (read in full)
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Tanzania is not an EU member and has no association or trade agreement with Israel to suspend or review.
     checked_at: '2026-11-04'
   C2:
     status: none-found
-    note: 'No agreement with Israel signed since October 2023 was found in the Ministry''s blog (search: Israel, Israeli) or the Daily News (titles read).'
+    note: 'No agreement with Israel signed since October 2023 was found in the Ministry''s blog (search: Israel, Israeli) or the Daily News (titles read). Completion of 2026-11 (2026-11-10): the
+      Foreign Minister''s meeting with Israel''s Ambassador-designate of 28 March 2026 discussed agriculture training (MASHAV), Sokoine University of Agriculture and paediatric cardiac surgery camps
+      and signed nothing (Daily News; Horn Diplomat); no instrument since October 2023 in the results.'
     queries:
     - 'mfatanzania.blogspot.com /feeds/posts/default?q=: Israel, Israeli'
     - 'dailynews.co.tz /wp-json/wp/v2/posts?search=: Israel agreement, Israel MoU, Israel cooperation, Israeli ambassador (titles read)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Tanzania Israel memorandum OR agreement signed 2024 OR 2025 OR 2026 (no instrument in the window)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the Tanzania Revenue Authority''s notices (tra.go.tz answers; its
+      news was not read).'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Tanzanian public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the social-security funds'' investment
+      policies (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the Public Procurement Regulatory Authority''s decisions (ppra.go.tz answers; its notices were not read).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -180,23 +238,41 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Not searched: no Government source of Tanzania carries a searchable record of statements on this subject (the Presidency''s and Prime Minister''s sites answer, the Ministry''s blog
-      was searched; see B9) and no Wayback capture was read (docs/10 B-839; P-23).'
-    checked_at: '2026-11-04'
+    status: none-found
+    note: 'No medical evacuation of Gazans hosted and no field hospital deployed for Gaza was found: Tanzania is not among the destination countries in MSF''s table (21 October 2025) or WHO''s summary
+      (29 September 2025); the Tanzanian items on Gaza concern a Tanzanian student killed as a hostage and his remains returned (press titles), not an evacuation.'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
-    note: No visa or refugee pathway for Gazans was found in the Ministry's blog or the Daily News titles read.
+    note: 'No visa or refugee pathway for Gazans was found in the Ministry''s blog or the Daily News titles read. Completion of 2026-11 (2026-11-10): no visa or refugee pathway for Gazans in the
+      results of the Tanzanian searches (the Palestinian Ambassador''s calls for humanitarian advocacy, April 2026).'
     queries:
     - mfatanzania.blogspot.com searches (see B9)
     - dailynews.co.tz searches (see B9)
-    checked_at: '2026-11-04'
+    - thecitizen.co.tz posts of 9 and 27 April 2026 (read)
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by a Tanzanian prosecutor was found: the results of complaints under universal jurisdiction are in
+      other states (Tanzania is a State Party to the Rome Statute). Not searched: the Director of Public Prosecutions'' releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine was found: the search returned the police bans of the opposition''s protests (September 2024; 9 December 2025) and the election-day
+      curfew of October 2025, none concerning Gaza. Not searched: the Tanzania Police Force''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania police ban OR dispersed OR arrested Palestine solidarity march OR demonstration Gaza Dar es Salaam Zanzibar (the domestic bans; no rally for Palestine)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No case against a Tanzanian national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
