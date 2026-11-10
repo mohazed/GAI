@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, Arabic: the English files answer 404; Wayback captures checked), the UN Security Council records and Meetings Coverage already archived (grep for Iraq), the joint statements already archived (grep for Iraq, العراق), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Prime Minister's Office (pmo.iq, which answers a script but serves its listings and search by script, so only the latest items, all of the Prime Minister Ali Falih al-Zaidi, were read). The Ministry of Foreign Affairs (mofa.gov.iq) answered HTTP 530 and the Presidency (presidency.iq) 403. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): no press item in Arabic or English was read. These gaps are scheduled for P-23.
 # Two events (B9, D3). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L24, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Arabic), all none-found with the limits said in each note (the law of 2022 criminalising normalisation is before the window). No new event since 2026-11-04. See docs/10 B-2088.
 country: IRQ
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +19,13 @@ indicators:
     note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names an Iraqi company as a supplier of parts or maintenance for the F-35 programme: Iraq is neither a partner nor a foreign-military-sales customer. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list 2026 (the Joint Program Office''s eight partners and its foreign-military-sales customers; none of the six of
+      this batch: GEO, IRQ, KWT, LBN, OMN, SYR)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): Iraq''s only order from Israel in the register is of 2022 (archive/text/src_20261005_sipri_register-supplier-israel.txt, line 411: 108 SandCat armoured personnel carriers, ''T-KAT version; from Czech production line'', delivered 2023, 15.12 TIV). An order of an earlier data year is not scored (the A4 data-year gap, B-536 (7)); reported for P-23 and the author. Left to the build.'
@@ -28,17 +34,46 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Iraq (searched)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: Iraq has no relations with Israel and its law of 26 May 2022 makes any relation a crime. Not searched: the Ministry
+      of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    - 'WebSearch 2026-11-10: Iraq Prime Minister OR Foreign Minister Gaza statement November 2026 (Asharq Al-Awsat on the Prime Minister Ali al-Zaidi, the coalition''s withdrawal; the former Prime Minister
+      al-Sudani''s statements of 2023 to 2025; the Ministry''s release of December 2024; no statement or measure dated after 2026-11-04)'
+    - 'mofa.gov.iq: HTTP 530 on 2026-11-04 (not retried for a listing in this pass); pmo.iq serves its listings by script'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; Iraq exports no arms to Israel (A1: no delivery in the SIPRI register) and the law of 2022 bars any dealing with Israel.
+      Not searched: the Ministry of Defence''s and the Ministry of Trade''s licensing notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No two-way arms embargo on Israel adopted in the window was found. The law of 26 May 2022 criminalising normalisation already bars all dealings with Israel, business ties included (before the window,
+      not an act of the window); Iraq''s 2022 order of SandCat armoured vehicles of Israeli design from a Czech production line (SIPRI register line 411, A4 data-year gap) predates it. Not searched: the Official
+      Gazette (al-Waqai al-Iraqiya) item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel was found. Not searched: the General Company for Ports of Iraq''s and the Civil Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    - 'WebSearch 2026-11-10: Iraq Prime Minister OR Foreign Minister Gaza statement November 2026 (Asharq Al-Awsat on the Prime Minister Ali al-Zaidi, the coalition''s withdrawal; the former Prime Minister
+      al-Sudani''s statements of 2023 to 2025; the Ministry''s release of December 2024; no statement or measure dated after 2026-11-04)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on ten qualifying votes, an abstention on A/RES/ES-10/21 (27 October 2023, −2, decayed) and no vote recorded on A/DEC/80/506 (12 September 2025), scored at −2 like an abstention whatever the reason (B-690). Iraq is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched), so the absence is not explained by Article 19 (Article 19 note in docs/review/light-protocol.md, for P-23).'
@@ -116,14 +151,40 @@ indicators:
     note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements taken in the window was found. The law of 2022 bars trade with Israel as a whole (before the window). A campaign official told Al Jazeera
+      Net (21 January 2024) that ''a judicial decision'' bars imports of products supporting Israel, without naming a court, a number or a date; no court or Government text was found and the claim concerns
+      companies'' products, not settlement goods. Not searched: the General Commission of Customs'' notices and the Higher Judicial Council''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    - 'WebSearch 2026-11-10: العراق مجلس الوزراء قرار مقاطعة الشركات الداعمة للكيان الصهيوني غزة 2024 العقود الحكومية (Arabic: Al Jazeera Net of 21 January 2024 on civil boycott campaigns, quoting a campaign
+      official, Abbas al-Attar, that ''a judicial decision'' bars imports of products supporting Israel, without court or date; the Council of Ministers'' exemption of retirees from the ''Gaza'' payroll deduction
+      (Shafaq); no Cabinet decision on boycotts or procurement)'
+    - 'aljazeera.net/ebusiness/2024/1/21/ (read 2026-11-10, not archived: one sentence on the ''judicial decision'', attributed to the campaign official, no court, number or date)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by an Iraqi public fund or the Central Bank was found; the results concern other states'' funds. Not searched: the Central Bank of Iraq''s circulars, the Iraq
+      Development Fund''s policy.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    - 'WebSearch 2026-11-10: العراق مجلس الوزراء قرار مقاطعة الشركات الداعمة للكيان الصهيوني غزة 2024 العقود الحكومية (Arabic: Al Jazeera Net of 21 January 2024 on civil boycott campaigns, quoting a campaign
+      official, Abbas al-Attar, that ''a judicial decision'' bars imports of products supporting Israel, without court or date; the Council of Ministers'' exemption of retirees from the ''Gaza'' payroll deduction
+      (Shafaq); no Cabinet decision on boycotts or procurement)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the Council of Ministers'' decisions in the results concern contracting rules in general
+      and a ''Gaza'' payroll deduction. Not searched: the Ministry of Planning''s procurement notices.'
+    queries:
+    - 'WebSearch 2026-11-10: العراق مجلس الوزراء قرار مقاطعة الشركات الداعمة للكيان الصهيوني غزة 2024 العقود الحكومية (Arabic: Al Jazeera Net of 21 January 2024 on civil boycott campaigns, quoting a campaign
+      official, Abbas al-Attar, that ''a judicial decision'' bars imports of products supporting Israel, without court or date; the Council of Ministers'' exemption of retirees from the ''Gaza'' payroll deduction
+      (Shafaq); no Cabinet decision on boycotts or procurement)'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Iraqi Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events of 2025 and 2026, all ended at the build date). Left to the build.'
@@ -157,11 +218,28 @@ indicators:
     note: 'No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).'
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No domestic investigation or prosecution of Iraqi nationals or companies for conduct in Gaza was found; the prosecutions under the law of 2022 concern normalisation (the
+      first life sentence, July 2025, for promoting normalisation on social media), not conduct in Gaza. Not searched: the Higher Judicial Council''s releases item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No ban on Palestine solidarity protests or symbols was found; the security forces'' use of tear gas near the US embassy on 2 March 2026 concerned a protest against the strikes
+      on Iran. Not searched: the Ministry of Interior''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq security forces disperse protesters Gaza Palestine OR storm US embassy protest Baghdad arrests 2023 2024 (the 2019 and 2020 protests; the security forces'' use of tear gas
+      against protesters near the US embassy on 2 March 2026, a protest against the strikes on Iran, not on Gaza; nothing on Palestine solidarity protests banned)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No universal-jurisdiction complaint concerning conduct in Gaza accepted for investigation in Iraq was found (Iraq is not a party to the Rome Statute). Not searched: the
+      Higher Judicial Council''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Iraq law criminalizing normalization with Israel 2022 implementation 2024 2025 companies boycott Gaza government decision (the law of 26 May 2022 forbidding any relations with
+      Israel, business ties included, death or life imprisonment; the first life sentence under it, July 2025, for promoting normalisation on social media; no Government measure of the window on arms, trade,
+      funds or procurement)'
+    checked_at: '2026-11-10'
