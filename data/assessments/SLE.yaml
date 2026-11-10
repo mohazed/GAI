@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the verbatim records of the Security Council's meetings on the Palestinian question from S/PV.9440 to S/PV.10255 (downloaded from the UN Official Document System, read by title and by the speakers called on as a minister; the Foreign Minister's statements of 18 April 2024, 20 January, 29 April and 23 September 2025 read in full), the State House's site (statehouse.gov.sl, WordPress REST search per term), the ICJ's case 192 page (live and archived copy), the ASP's list of States Parties (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Ministry of Foreign Affairs and International Cooperation's site (mofaic.gov.sl) did not answer. Web searches were not available to this session: nothing is filed from a press item.
 # Events: six B9 events (two expired, one flagged for the tier, one flagged for the speaker). Leads: none. See docs/10 B-825, B-826.
+# Completion of 2026-11 (finish run, T-F-L21, 2026-11-10): A3, A5 to A8, B7, B11, B12, C2, C4 to C6, D4, D5 and E1 to E3 searched with web searches and the shared searches, all none-found with the limits said in each note; the Ministry's site still did not answer. No new event, no lead. See docs/10 B-2075.
 country: SLE
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,15 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Sierra Leonean company as a supplier of parts or maintenance for the F-35 programme: Sierra Leone is neither a programme partner nor a foreign-military-sales customer
+      in the search results, A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for Sierra Leone, and the searches returned no supplier. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for the country's name (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations named on the Joint Program Office page and the foreign-military-sales
+      customers in the results; none of the six of this batch: NER, RWA, SEN, SLE, SOM, SSD)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
@@ -28,17 +36,43 @@ indicators:
     - sipri_orders.csv, buyer RWA
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, basing agreement, official confirmation of intelligence sharing or documented transit (a port call
+      at Freetown, an overflight authorisation) in 2023 to 2026. The Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not answer on 2026-11-10 (no connection).
+      Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 Bio government Israeli cooperation (the President''s pledge of August 2023 to open an embassy
+      in Jerusalem, before the window; the credentials of Israel''s Ambassador resident in Accra, Roey Gilad, presented in June 2025, with talk of possible scholarships; no signed instrument in
+      the window)'
+    - 'WebSearch 2026-11-10: Sierra Leone flagged vessel arms Israel OR Sierra Leone maritime administration deregister ship Israel weapons 2024 2025 (deregistrations of Iranian and North Korea-linked
+      vessels and of a fishing-support vessel; no Sierra Leone-flagged vessel carrying arms to Israel and no refusal)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Sierra Leone to Israel either (A1: no delivery in the SIPRI register). Not searched:
+      the Sierra Leone Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Sierra Leone Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access at Freetown, airspace or transit to an arms shipment bound for Israel was found, and no refusal or deregistration of a Sierra Leone-flagged vessel carrying arms
+      to Israel (the registry''s deregistrations in the results concern Iranian and North Korea-linked vessels). Not searched: the Sierra Leone Maritime Administration''s and the Ports Authority''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone flagged vessel arms Israel OR Sierra Leone maritime administration deregister ship Israel weapons 2024 2025 (deregistrations of Iranian and North Korea-linked
+      vessels and of a fishing-support vessel; no Sierra Leone-flagged vessel carrying arms to Israel and no refusal)'
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
@@ -89,9 +123,13 @@ indicators:
     - statehouse.gov.sl search (see B5)
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: 'Not searched beyond State House''s site (no result on sanctions or ICC officials): the Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not answer
-      (the connection fails; the Wayback captures of July 2025 are redirects), so its releases were not read (docs/10 B-826; P-23).'
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Sierra Leone, a State Party to the Rome Statute, were found. The Ministry of Foreign Affairs and International Cooperation's site (mofaic.gov.sl)
+      did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone Ministry of Foreign Affairs statement Gaza OR ICC warrants OR Israel settlers sanctions 2024 2025 Kabba (the Foreign Minister at the OIC''s extraordinary
+      session and at the Security Council, already read for B9; no statement on the warrants, no sanctions on settlers or on the Court)'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for Sierra Leone. The registry gives a recognition since 3 December 1988, before the window; no recognition after 7 October 2023 was found in
@@ -127,32 +165,66 @@ indicators:
     - documents.un.org S/PV.9608, 9841, 9907, 10003 (read)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Not searched beyond State House''s site (no result on sanctions on Israeli ministers or settler entities): the Ministry''s site did not answer (see B7).'
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities by Sierra Leone were found; Sierra Leone is not an EU member. The Ministry of Foreign Affairs and International Cooperation's
+      site (mofaic.gov.sl) did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone Ministry of Foreign Affairs statement Gaza OR ICC warrants OR Israel settlers sanctions 2024 2025 Kabba (the Foreign Minister at the OIC''s extraordinary
+      session and at the Security Council, already read for B9; no statement on the warrants, no sanctions on settlers or on the Court)'
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   B12:
-    status: unchecked
-    note: 'Not searched beyond State House''s site: no result on a recall, downgrade or severance. The Ministry''s site did not answer (see B7).'
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: Israel''s Ambassador resident in Accra presented credentials to the President in June 2025 (the search results),
+      and the President''s pledge of August 2023 to open an embassy in Jerusalem predates the window. The Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not
+      answer on 2026-11-10 (no connection).'
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 Bio government Israeli cooperation (the President''s pledge of August 2023 to open an embassy
+      in Jerusalem, before the window; the credentials of Israel''s Ambassador resident in Accra, Roey Gilad, presented in June 2025, with talk of possible scholarships; no signed instrument in
+      the window)'
+    - 'WebSearch 2026-11-10: Sierra Leone Ministry of Foreign Affairs statement Gaza OR ICC warrants OR Israel settlers sanctions 2024 2025 Kabba (the Foreign Minister at the OIC''s extraordinary
+      session and at the Security Council, already read for B9; no statement on the warrants, no sanctions on settlers or on the Court)'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Sierra Leone is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the sources read.
     checked_at: '2026-11-04'
   C2:
-    status: unchecked
-    note: 'Not searched beyond State House''s site (no agreement with Israel among its Gaza, Palestine and Israel results): the Ministry''s site and the treaty records did not answer or were not
-      read (see B7).'
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found: the President''s audience with Israel''s Ambassador in June 2025 mentions possible scholarships, not a signed instrument.
+      The Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not answer on 2026-11-10 (no connection). Not searched: a treaty register (none online).'
+    queries:
+    - 'WebSearch 2026-11-10: Sierra Leone Israel agreement OR memorandum signed 2024 OR 2025 OR 2026 Bio government Israeli cooperation (the President''s pledge of August 2023 to open an embassy
+      in Jerusalem, before the window; the credentials of Israel''s Ambassador resident in Accra, Roey Gilad, presented in June 2025, with talk of possible scholarships; no signed instrument in
+      the window)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Sierra Leone is not an EU member and the searches returned none. Not searched: the National Revenue Authority''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund (the National Social Security and Insurance Trust) over conduct in Gaza or the occupied territories was found; the results
+      name the Norwegian, Danish and Dutch funds only. Not searched: the fund''s own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the National Public Procurement Authority''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -182,17 +254,41 @@ indicators:
     - archive/text/src_20241231_unrwa_donor-ranking-2024.txt (line 168)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Not searched beyond State House''s site (no result on a medical-evacuation programme or a field hospital): the Ministry''s site did not answer (see B7).'
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Sierra Leone was found; the searches return none. The Ministry of Foreign Affairs and International Cooperation's
+      site (mofaic.gov.sl) did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10: Gaza wounded patients medical evacuation OR scholarships OR visas Senegal OR Niger OR Rwanda OR "Sierra Leone" OR Somalia OR "South Sudan" government receives Palestinians
+      2024 2025 (WHO and MSF reports on the evacuation registry; Egypt, the United Arab Emirates, Italy and others named; none of the six)'
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: 'Not searched beyond State House''s site (no result on a visa or refugee pathway for Gazans): the Ministry''s site did not answer (see B7).'
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was found; the searches return none. The Ministry of Foreign Affairs and International Cooperation''s site (mofaic.gov.sl) did not answer on 2026-11-10
+      (no connection). Not searched: the Immigration Department''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza wounded patients medical evacuation OR scholarships OR visas Senegal OR Niger OR Rwanda OR "Sierra Leone" OR Somalia OR "South Sudan" government receives Palestinians
+      2024 2025 (WHO and MSF reports on the evacuation registry; Egypt, the United Arab Emirates, Italy and others named; none of the six)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Sierra Leonean nationals or companies for conduct in Gaza was found. Not searched: the Law Officers'' Department''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest was found; the search returned a campaigners'' statement of 14 March
+      2024 and no march in Freetown. Not searched: the Sierra Leone Police''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Freetown Gaza Palestine solidarity march OR protest police 2023 OR 2024 OR 2025 Sierra Leone (a campaigners'' solidarity statement of 14 March 2024, Politico SL; no
+      march, ban or arrest in Freetown)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a Sierra Leonean authority was found; the results concern Belgium, Portugal,
+      Brazil and the Netherlands.
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
