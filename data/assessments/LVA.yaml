@@ -3,6 +3,8 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.lv: HTTP 200 to a browser User-Agent; its own search page is script-driven, so the releases were found through web searches restricted to the site and read page by page), the President's site (president.lv), the Cabinet's site (mk.gov.lv), the Saeima's, LSM (Latvian and English), the Baltic Times (LETA), TVNET, Re:Baltica and ERR; the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th and 80th files are image-based or have broken fonts and were read by OCR; the Presidency's HTML copies are the archived sources); the joint statements already archived for the 45 (archive/text searched for Latvia, Lettonie, Letonia, Lettland), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Latvian per indicator group. Latvia is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Latvia has sat on the Security Council since 1 January 2026. Time: about 85 minutes of research on Latvia, inside the 90-minute budget of the session.
 # Nine B9 events (five joint statements, four own), three B11 events, four UNRWA events (D2 once, D3 three times). Leads: 3 (lead_20261014_LVA_1 to _3).
+# Completion of 2026-11 (finish run, T-F-L10, 2026-11-10): A3, A5 to A8, C4 to C6, E1 and E3 searched, all none-found; E2 filed as an event (evt_2024_01_05_LVA_E2, -5, corroborated: the ban of a picket by Riga's municipal administration, LSM and Via Baltica, both archived); 10 web searches in English and Latvian.
+#   Leads LVA_1 to LVA_3 re-checked and kept (the Ministry's pages hold no transcript or video; docs/10 B-996).
 country: LVA
 protocol_version: 1
 last_full_check: '2026-10-14'
@@ -19,8 +21,16 @@ indicators:
       B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-10-14'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Latvian company as a supplier of parts or maintenance for the F-35 programme. Latvia is neither a partner nor a customer of the programme and A/HRC/59/23 does not
+      contain the word Latvia (searched 2026-11-10). The search returned no Latvian F-35 supplier. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP
+      200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council
+      of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals,
+      read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Latvia (no match)
+    - 'WebSearch 2026-11-10: Latvia Israel arms export licences OR defence cooperation OR F-35 supplier Latvian company Israel Gaza 2025 2026 Ministry of Defence Latvia Spike Rafael'
+    checked_at: '2026-11-10'
   A4:
     status: has-events
     note: 'Generated from SIPRI (sipri_orders.csv): data year 2025, TIV 50.4 (Spike-LR2 missiles for a EUR 81 m deal built on the German production line and UT-30 turrets for 42 ASCOD vehicles
@@ -31,17 +41,52 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Latvia (read)
     checked_at: '2026-10-14'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No named joint exercise, intelligence sharing related to the Gaza campaign, basing agreement or documented transit of arms with Israel was found. Found and not counted: the Defence Minister,
+      Raivis Melnis, visited Israel from 21 to 24 September 2026, met the Israeli Defence Minister and visited Israeli defence companies, including on strengthening Latvia''s air defence (the Ministry''s
+      release, read: cooperation ''mainly takes place within bilateral meetings and consultations and in military procurement''). A visit and procurement are not instances as A5 defines it; procurement
+      from Israel is measured by A4 (generated). Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme
+      of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine
+      or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived).
+      The web searches (standard mode, in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - lvportals.lv/dienaskartiba/394782-aizsardzibas-ministrs-vizite-izraela-stiprina-sadarbibu-aizsardzibas-un-militaras-industrijas-joma-2026 (read)
+    - 'WebSearch 2026-11-10: Latvia Israel arms export licences OR defence cooperation OR F-35 supplier Latvian company Israel Gaza 2025 2026 Ministry of Defence Latvia Spike Rafael'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms export licences to Israel was found. The searches in English and Latvian returned such decisions for the United Kingdom, Germany, the
+      Netherlands, Spain and others and none for Latvia; Latvian exporters'' difficulties in 2023 were logistics (LSM, seen in a search result). Strategic goods are licensed by the Ministry of Foreign
+      Affairs (a Latvian Dual-Use Export Forum of September 2026 discussed integrating Israeli defence technologies, per a search result, not read). Pages read on 2026-11-10: the Ministry of Foreign
+      Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement of
+      the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to
+      Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages; nothing
+      was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija Izraēla ieroču eksports licences apturēt Gaza Ārlietu ministrija Braže 2026 apmetņu preces aizliegums marķēšana'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; Latvia buys Israeli systems (Spike missiles and the UT-30 turret in the SIPRI register) and the Defence Minister
+      visited Israel in September 2026 to discuss further procurement (the Ministry''s release, read), the opposite of an embargo. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news
+      page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic States
+      of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24
+      September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages; nothing was filed from
+      a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija Izraēla ieroču eksports licences apturēt Gaza Ārlietu ministrija Braže 2026 apmetņu preces aizliegums marķēšana'
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Latvia (read)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found for Latvia in the searches of 2026-11-10; the searches returned such measures for other states
+      and none for Latvia. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s
+      presidency in November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry
+      of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches
+      (standard mode, in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija Izraēla ieroču eksports licences apturēt Gaza Ārlietu ministrija Braže 2026 apmetņu preces aizliegums marķēšana'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 9 of the 12 qualifying votes and an abstention on 3 (A/RES/ES-10/21 of 27 October 2023, ES-10/23 of 10 May 2024 and A/RES/80/78 of 5 December 2025).
@@ -175,14 +220,40 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-10-14'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Latvian ban on settlement goods and no national labelling rule beyond the EU''s was found. The Foreign Minister said in August 2025 that Latvia does not support Israel''s plans to
+      expand settlements (lead_20261014_LVA_1) and the searches in English and Latvian returned no Latvian measure on settlement trade; Latvia was not among the signatories of the statement of 8
+      September 2026 on restricting settlement trade (the twelve signatories archived for other states do not name it). Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news,
+      HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and
+      the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published
+      by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija Izraēla ieroču eksports licences apturēt Gaza Ārlietu ministrija Braže 2026 apmetņu preces aizliegums marķēšana'
+    - archive/text/src_20260908_gov-pl_oswiadczenie-dwupanstwowe.txt (signatories, read)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of a Latvian public pension or investment fund (the state funded pension scheme managed through the State Treasury, the central bank) to exclude companies over conduct in
+      Gaza or the occupied territories was found; the search returned no fund list or policy. The funds'' own exclusion lists were not found by search. Pages read on 2026-11-10: the Ministry of
+      Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement
+      of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit
+      to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages;
+      nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija kriminālprocess Gaza kara noziegumi sūdzība Valsts policija Izraēlas karavīrs OR Latvijas pensiju fonds Izraēlas uzņēmumi izslēgti OR iepirkumi Izraēla'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national or municipal decision to exclude companies implicated in the occupation or in Gaza from public procurement was found; Latvia''s defence procurement from Israeli firms continues
+      (the Ministry of Defence''s release of September 2026, read). The Procurement Monitoring Bureau''s pages were not found by search. Pages read on 2026-11-10: the Ministry of Foreign Affairs''
+      news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic
+      States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of
+      21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English and Latvian) found pages; nothing was filed
+      from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija kriminālprocess Gaza kara noziegumi sūdzība Valsts policija Izraēlas karavīrs OR Latvijas pensiju fonds Izraēlas uzņēmumi izslēgti OR iepirkumi Izraēla'
+    - lvportals.lv/dienaskartiba/394782 (read)
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Government flows over all flow dates (fts_plan_totals.csv); the Government announced EUR 50,000 to Gaza residents (Baltic Times, seen in a search result). Left to
@@ -228,11 +299,38 @@ indicators:
     - Latvija vīza Gazas iedzīvotāji
     checked_at: '2026-10-14'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Latvian investigation or prosecution of a national or a company for conduct in Gaza was found. The search returned a Lithuanian case (an NGO''s complaint against an Israeli student
+      in Lithuania, LSM headline of 13 April 2026) and nothing for Latvia; the State Police''s and the Prosecutor''s pages were not found by search. E1 is recorded, not scored (D-12). Pages read
+      on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in November 2026,
+      the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s release of
+      the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode, in English
+      and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija kriminālprocess Gaza kara noziegumi sūdzība Valsts policija Izraēlas karavīrs OR Latvijas pensiju fonds Izraēlas uzņēmumi izslēgti OR iepirkumi Izraēla'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: has-events
+    note: 'Filed: evt_2024_01_05_LVA_E2 (-5, corroborated, reviewed, unscored in v1.0): Riga''s municipal administration banned the picket in solidarity with Palestinians planned at the Cabinet
+      of Ministers for 6 January 2024, on a security services assessment (LSM, 5 January 2024, and Via Baltica, 14 January 2024, both archived and both reporting the news agency LETA). Not filed:
+      the LSM report of a Riga rally of about 30 people against the Israeli President''s visit and the commemoration of October 2024 (the rallies were held; the search results show no ban); the
+      Council''s own decision was not found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme
+      of work for Latvia''s presidency in November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine
+      or Israel), the Ministry of Defence''s release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived).
+      The web searches (standard mode, in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Rīga Palestīnas atbalsta piketi aizliegts policija demonstrācija Gaza Rīgas dome atteikums atļauja 2023 2024 2025'
+    - 'WebSearch 2026-11-10: Latvia pro-Palestinian rally Riga banned OR denied permit OR fined Palestine flag police Latvia Gaza protest'
+    - lsm.lv/raksts/zinas/latvija/05.01.2024-rigas-pasvaldiba-aizliedz-sestdien-planoto-piketu-palestiniesu-atbalstam.a537861/ (archived 2026-11-10)
+    - viabaltica.fi/latvia-riga-prohibits-planned-protest-in-support-of-palestine/ (archived 2026-11-10)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No universal-jurisdiction complaint accepted for investigation by Latvian authorities over conduct in Gaza was found in the searches of 2026-11-10. E3 is recorded, not scored (D-12).
+      Pages read on 2026-11-10: the Ministry of Foreign Affairs'' news page (mfa.gov.lv/en/news, HTTP 200: its newest items are the Security Council programme of work for Latvia''s presidency in
+      November 2026, the Fourth Committee statement of the Baltic States of 3 November 2026 and the Council of Europe and Ukraine items; none on Gaza, Palestine or Israel), the Ministry of Defence''s
+      release of the Defence Minister''s visit to Israel of 21 to 24 September 2026 (published by LV portals, read), Via Baltica and LSM (the E2 sources, archived). The web searches (standard mode,
+      in English and Latvian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Latvija kriminālprocess Gaza kara noziegumi sūdzība Valsts policija Izraēlas karavīrs OR Latvijas pensiju fonds Izraēlas uzņēmumi izslēgti OR iepirkumi Izraēla'
+    checked_at: '2026-11-10'
