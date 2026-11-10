@@ -3297,3 +3297,29 @@ B8 is generated and was not touched. None of the six has a row in `data/structur
 Found and not filed: a search summary's 'first formal memorandum of understanding on Defence Cooperation' between Sri Lanka and Israel, which the cited article (The Jerusalem Post, 3 September 2026) says of the India-Sri Lanka memorandum of April 2025; Iran's laws of 2008 and 2020 restricting dealings with Israel (before the window); the Maldives' boycott of Israeli products announced in 2014, the People's Majlis's non-binding resolution of April 2024 and the entry ban of April 2025 (no indicator); the Maldivian Minister of Homeland Security's pledge to enforce the ICC warrants (not a B5 speaker); the Pakistan Medical and Dental Council's decision on Gaza students (not a visa instrument; D5 kept none-found); Pakistan's Special Assistant's statement that injured Palestinians could be treated in Pakistan (no programme found, D4).
 
 Score effect: none of the six moves (the Maldivian B9 event counts +4.55 after decay but B9 stays at its cap of +10; leads and none-found entries carry no points). Provisional previews (rc.1, 2026-11-10): BTN −3 Passive, IRN +21 Acting, LKA +13 Acting, MDV +49 Confronting, NPL +1 Acting, PAK +34 Acting. Sri Lanka's figure differs from the T-P21-25 table of 4 November (+21) because its 2024 D3 event was ended on 2025-12-31 by T-F-UNDOCS-2 (B-876, B-877), not because of this session.
+
+### T-F-L14: ALB, AND, BIH, HRV, MKD, MLT (2026-11-10, groups 27 and 28)
+
+The session had web search (standard mode: 9 queries for Albania with one in Albanian, 5 for Andorra with two in Catalan, 9 for Bosnia and Herzegovina with two in Bosnian, 7 for Croatia with four in Croatian, 5 for North Macedonia with one in Macedonian, 7 for Malta, counting the shared F-35, universal-jurisdiction and fund queries). Pages read: the Albanian Media and Information Agency's page of the Prime Minister's joint press statement with Israel's Prime Minister (January 2026), Albanian Daily News (the flag incident of 22 June 2026, the charges of 17 May 2021, the Embassy closure of 16 October 2026), Devdiscourse (the Sarajevo spectator ban), MaltaToday (the NGOs' letter of 5 October 2026), Lovin Malta, the Permanent Mission of Bosnia and Herzegovina's page, the Office of the Prime Minister of Malta's release PR251482 (Wayback), Serbian N1 (a Serbian agreement, not filed). Refused or unreadable, not bypassed: predsjednistvo.ba (no answer), primeminister.gov.mt (403, Wayback used), Israel Hayom (403), islamicity.org (403).
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events, leads and rows | Still unchecked |
+|---|---|---|---|---|
+| ALB | A3, A5 to A8, C4 to C6, E1 to E3 | none | ALB_1 and ALB_2 re-checked and kept | none |
+| AND | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| BIH | A3, A5 to A8, C4 to C6, E1 to E3 | B8 note (row added) | recognition row BIH 1992-05-27 (month-level source, flagged); BIH_1 re-checked and kept | none |
+| HRV | A3, A5 to A8, C4 to C6, E1 to E3 | A5 and A6 notes extended | none | none |
+| MKD | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| MLT | A3, A5 to A7, C4 to C6, E1 to E3 | none (A8 is has-events) | `evt_2025_09_22_MLT_D4` moved to `evt_2025_08_29_MLT_D4`; MLT_1 re-checked and kept | none |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20250829_pm-gov-mt_pm-visits-gaza-patient | Office of the Prime Minister of Malta, release PR251482 of 29 August 2025 (existing Wayback capture 20250907013000, 415,921 bytes; the site answers 403) | `evt_2025_08_29_MLT_D4` |
+| src_20250730_bhmissionun_lagumdzija-two-state-conference | The Permanent Mission of Bosnia and Herzegovina to the UN, account of the Permanent Representative's statement of 30 July 2025 (Save Page Now 20261110031921, 92,182 bytes) | `recognitions.csv` row BIH |
+
+Both replays were re-fetched with `curl --compressed` and equal their index rows in bytes and SHA-256; the records were written by hand with the document's own date (`pnpm archive` prints the record and does not write it).
+
+Second reading: the moved Maltese event's new quotation was checked against line 28 of the archived text (verdict agree, recorded in the event). No new events were drafted, so no French summary was added; the Maltese summary is unchanged.
+
+Found and not filed: the Albanian defence-industry reports (a memorandum, Elbit drones, an artillery agreement; purchases and a framework, not A5), the Albanian Foreign Ministry's condemnation of the removal of the Israeli flag (22 June 2026, no ban), the Sarajevo ban on spectators at a EuroLeague match (not E2), Croatian misdemeanour charges against activists who blocked the Foreign Ministry's entrance (not E2), the President of Croatia's order ending the Armed Forces' cooperation with the Israeli army (not an A5 instance; the Government's position is that operational cooperation does not exist), the Foreign Minister of Bosnia and Herzegovina's General Assembly remarks of 24 September 2024 (older than 365 days), a Serbian defence agreement with Israel (another state), the 22 NGOs' letter to Maltese MPs (no Government reply). Albania's recognition of 17 November 1988 has no Government document; Croatia and North Macedonia have no recognition to document; Malta's row dates from 2025 (the registry's 1988 date is a lead, B-199).
+
+Score effect: only Bosnia and Herzegovina's moves, by +3 from the recognition row (B8 pre-existing tier); Malta's moves by −0.3 from the D4 date. Provisional previews (rc.1, 2026-11-10): ALB −41 Enabling, AND +29 Acting, BIH +19 Acting, HRV +15 Acting, MKD −15 Passive, MLT +46 Confronting. The Andorran, Macedonian and Maltese figures differ from the T-P21-27 and T-P21-28 tables of 4 November because of later changes (Andorra's 2025 D3 event from T-F-UNDOCS-2; Malta's and North Macedonia's for the same kind of reason), not because of this session.

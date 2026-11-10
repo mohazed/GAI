@@ -2,6 +2,7 @@
 # `has-events` is set by the build from published events; hand-set values below are the research status for review.
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate statements of the 78th to 81st sessions (gadebate.un.org, live files and Wayback replays), the Permanent Mission's site (bhmissionun.org, content API searched for Gaza and Palestine), the Ministry of Foreign Affairs (mvp.gov.ba) and the Council of Ministers (vijeceministara.gov.ba) as gov_sources, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Bosnian. The Presidency's site (predsjednistvo.ba) did not answer. Time: see Albania.
+# Completion of 2026-11 (finish run, T-F-L14, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found (9 web searches, two in Bosnian; docs/10 B-2025). Lead lead_20261104_BIH_1 re-checked and kept (no archivable official copy: the delegation's file has only a 405 capture, predsjednistvo.ba does not answer). Recognition row added to recognitions.csv from the Permanent Mission's page (B-2025).
 country: BIH
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +19,13 @@ indicators:
       computes the event (-3.0 today). Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a company of Bosnia and Herzegovina as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match (its two mentions of Bosnia are citations
+      of the ICJ''s judgment in the genocide case) and the F-35 supplier search returned none. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Bosnia (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Croatia OR Malta OR Albania OR "North Macedonia" OR "Bosnia and Herzegovina" OR Andorra parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
@@ -27,17 +33,36 @@ indicators:
     - sipri_orders.csv, buyer BIH
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found; the searches in English and Bosnian returned measures of Slovenia, Germany, Croatia and Serbia, none of Bosnia and Herzegovina.
+      Not searched: the Ministry of Defence''s and the Armed Forces'' releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (Bosnian): BiH Izrael izvoz oružja OR vojna saradnja OR zabrana OR tranzit Gaza Ministarstvo vanjske trgovine OR Ministarstvo odbrane 2025'
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina Israel arms OR military cooperation OR embargo OR export licences Gaza 2025 2026 Ministry of Foreign Trade'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found. The law on the control of foreign trade in arms assigns export permits to the Ministry of Foreign Trade and Economic
+      Relations and transit documents to the Ministry of Security (a search result, the law''s text not read in full); no application of it to Israel was found. Not searched: the Official Gazette (Službeni
+      glasnik BiH).'
+    queries:
+    - 'WebSearch 2026-11-10 (Bosnian): BiH Izrael izvoz oružja OR vojna saradnja OR zabrana OR tranzit Gaza Ministarstvo vanjske trgovine OR Ministarstvo odbrane 2025'
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina Israel arms OR military cooperation OR embargo OR export licences Gaza 2025 2026 Ministry of Foreign Trade'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering arms exports to and imports from Israel was found. Not searched: the Official Gazette (Službeni glasnik BiH).'
+    queries:
+    - 'WebSearch 2026-11-10 (Bosnian): BiH Izrael izvoz oružja OR vojna saradnja OR zabrana OR tranzit Gaza Ministarstvo vanjske trgovine OR Ministarstvo odbrane 2025'
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina Israel arms OR military cooperation OR embargo OR export licences Gaza 2025 2026 Ministry of Foreign Trade'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit to an arms shipment bound for Israel was found; transit documents for weapons are issued by the Ministry of Security (see A6) and none concerning Israel was found in the results.
+      Not searched: the Ministry of Security''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Bosnian): BiH Izrael izvoz oružja OR vojna saradnja OR zabrana OR tranzit Gaza Ministarstvo vanjske trgovine OR Ministarstvo odbrane 2025'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
@@ -84,11 +109,14 @@ indicators:
     checked_at: '2026-11-04'
   B8:
     status: none-found
-    note: 'Generated from recognitions.csv, which has no row for Bosnia and Herzegovina. The registry gives 27 May 1992 (countries.yaml, P-13); no state document of that date was read in this session (R21),
-      so no row is added and no B8 event is generated: with the pre-existing tier the score would be +3 higher.'
+    note: 'Generated from recognitions.csv. Finish run, T-F-L14 (2026-11-10): a row was added (1992-05-27) from the Permanent Mission to the United Nations'' account of the Permanent Representative''s statement at
+      the two-State conference of 30 July 2025, which says the ties with the State of Palestine ''were established in May 1992'' (src_20250730_bhmissionun_lagumdzija-two-state-conference, archived); the
+      day is the registry''s (countries.yaml, P-13), as for India and Russia (docs/10 B-448); the page gives the month and speaks of diplomatic ties, so the author may prefer to leave the row out (docs/10
+      B-2025). The build generates the pre-existing tier (+3 from 2023-10-07) from the row; the generated status follows the build, not this note.'
     queries:
-    - recognitions.csv, row BIH (none)
-    checked_at: '2026-11-04'
+    - recognitions.csv, row BIH (added 2026-11-10)
+    - bhmissionun.org/?p=4124 (archived)
+    checked_at: '2026-11-10'
   B9:
     status: has-events
     note: 'One event: the Chairman of the Presidency''s address at the 80th General Debate (25 September 2025, +5: ''two elements of genocide'' in the Gaza Strip, in Bosnian; head of state, R3, as for a
@@ -148,14 +176,26 @@ indicators:
       and 23.7 million in 2025); the build computes the events (-2.0 today, a qualifying event for the passivity rule). Nothing is hand-authored.'
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Bosnia and Herzegovina is not an EU member and no search result names a measure of its own. Not searched: the Indirect Taxation Authority''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina Israel arms OR military cooperation OR embargo OR export licences Gaza 2025 2026 Ministry of Foreign Trade'
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a public pension fund or other public fund of Bosnia and Herzegovina over conduct in Gaza or the occupied territories was found; no web result concerns one. Not searched:
+      the funds'' own pages.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Public Procurement Agency''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
@@ -193,11 +233,25 @@ indicators:
     - Gaza refugees visa Bosnia (web search)
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of nationals of Bosnia and Herzegovina or its companies for conduct in Gaza was found; the universal-jurisdiction search returned
+      filings in other states. Not searched: the Prosecutor''s Office''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results describe large Gaza protests in Sarajevo held peacefully (search results from Radio Slobodna
+      Evropa, Yahoo News and others; titles read, dates not shown). One spectator measure, read and not filed: the Sarajevo Police Administration barred spectators from the EuroLeague match between Dubai
+      and Hapoel Tel Aviv for security reasons after protesters demanded its cancellation over Gaza (Devdiscourse, 5 November 2025, read; no police text read): a ban on attendance at a sports event, not on
+      protests or symbols.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia Herzegovina Gaza protest Sarajevo police banned OR arrested Israel OR Israeli, Maccabi OR flag 2024 2025 2026'
+    - devdiscourse.com/article/law-order/3686280 (read 2026-11-10)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Bosnia and Herzegovina was found (the search returned none).
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
