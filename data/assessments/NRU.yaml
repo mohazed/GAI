@@ -4,7 +4,7 @@
 # Search method (docs/06 §5): the Government Information Office's media releases (nauru.gov.nr, which answers a script redirect to a mail login page to direct requests, so read through Wayback captures and the CDX listing of the site's captures, 4,680 URLs filtered by URL for Israel, Palestine, Gaza, Hamas, ceasefire, solidarity, terrorism, embassy and Ukraine), the President's General Debate statements of the 79th and 80th sessions (gadebate.un.org, archived), the UN Meetings Coverage reports of the votes (archived), the ICJ's case 192 and case 186 pages (archived), the Assembly of States Parties' list (archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and tables; web searches in English (the official languages are Nauruan and English) per indicator group, the press reports on the embassy as leads only. Time: about 15 minutes of research on Nauru, inside the 90-minute budget of the session.
 # No hand-authored event: the statements read have no passage on Gaza; the embassy in Jerusalem is a note (docs/10 B-599). Leads: 1 (lead_20261013_NRU_1).
 # Completion of 2026-11 (finish run, T-F-L09, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, with the Government Information Office's release list (Wayback capture of 7 November 2026), the CDX listing of nauru.gov.nr,
-#   the Department of Finance's trust-fund page and 5 standard-mode web searches. No event filed; lead NRU_1 re-checked and kept (docs/10 B-985).
+#   the Department of Finance's trust-fund page and 8 standard-mode web searches. One event filed: evt_2026_09_23_NRU_B6 (withdrawal from the Rome Statute, scope related, not scored); lead NRU_1 re-checked and kept (docs/10 B-985).
 country: NRU
 protocol_version: 1
 last_full_check: '2026-10-13'
@@ -137,17 +137,24 @@ indicators:
   B5:
     status: none-found
     note: 'No statement of the President or of the Minister for Foreign Affairs on executing the warrants of 21 November 2024 was found. Nauru is a state party to the Rome Statute (the Assembly''s list,
-      archived: src_20261009_icc-asp_states-parties, line 181 of the text).'
+      archived: src_20261009_icc-asp_states-parties, line 181 of the text) until its withdrawal takes effect on 23 September 2027 (see B6; T-F-L09, 2026-11-10).'
     queries:
     - Nauru ICC arrest warrant Netanyahu Adeang OR Aingimea government position
     - asp.icc-cpi.int list of States Parties (archived 13 October 2026, read; src_20261009_icc-asp_states-parties)
     checked_at: '2026-10-13'
   B6:
-    status: none-found
-    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    status: has-events
+    note: 'One event: evt_2026_09_23_NRU_B6 (reviewed, scope related, not scored): the withdrawal from the Rome Statute effected on 23 September 2026 (depositary notification C.N.378.2026 of 25 September 2026,
+      read live, not archivable; the statement of the Presidency of the Assembly of States Parties of 30 September 2026 archived: src_20260930_icc-asp_statement-naoero-withdrawal), to take effect on 23
+      September 2027; the B6 definition counts a withdrawal in the window as an instance (docs/10 B-985). The President announced it at the 81st General Debate (press). No stated refusal to execute the
+      warrants and no hosting of a person under warrant was found (searched 2026-10-13). Completion of 2026-11 (T-F-L09, 2026-11-10): the withdrawal was found through the Island Times'' WordPress search and
+      the UN Treaty Collection''s status page of the Rome Statute (read 2026-11-10: ''Naoero 23 September 2026 23 September 2027 C.N.378.2026'').'
     queries:
     - Nauru ICC arrest warrant Netanyahu government position
-    checked_at: '2026-10-13'
+    - 'treaties.un.org ViewDetails XVIII-10 (Rome Statute status page) read 2026-11-10; CN.378.2026-Eng.pdf read live'
+    - 'WebSearch 2026-11-10: Nauru OR Naoero withdrawal Rome Statute depositary notification C.N. 2026 Secretary-General'
+    - 'islandtimes.org /wp-json search Israel after 2026-09-01 (item of 2 October 2026, ICC board regrets Naoero withdrawal)'
+    checked_at: '2026-11-10'
   B7:
     status: none-found
     note: Nauru has imposed no sanctions on ICC officials (none found).
@@ -303,13 +310,13 @@ indicators:
     checked_at: '2026-10-13'
   E1:
     status: none-found
-    note: 'Experimental, unscored. No universal-jurisdiction investigation or prosecution concerning conduct in Gaza was found in Nauru; Nauru is a state party to the Rome Statute (Assembly of States Parties''
-      list, archived), and no referral or proceeding concerning Palestine by Nauru was found. Government pages read on 2026-11-10: the Government Information Office''s media-release list (nauru.gov.nr
-      answers a script with a redirect to a mail login page, so it was read through its Wayback capture of 7 November 2026: the latest release is of 20 August 2026; the release of 22 July 2026 on the
-      embassy in Israel is archived as src_20260722_nauru-gov_embassy-israel, the others of 20 July to 20 August 2026 concern air services, the recognition of South Ossetia and Abkhazia and the economy) and
-      the Wayback CDX listing of nauru.gov.nr for 1 October to 9 November 2026 (no URL names Israel, Palestine or Gaza). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and
-      nothing was filed from them) return the embassy in Jerusalem (opened 7 September 2026; a note under B12, docs/10 B-599) and the Israeli Foreign Minister''s statement that doctors of MASHAV, Israel''s
-      development agency, would work with Nauruan doctors in 2026 (development cooperation, not a military act); they are listed in the queries.'
+    note: 'Experimental, unscored. No domestic investigation or prosecution of Nauruan nationals or companies for conduct in Gaza was found; no search result or Government item read reports a Nauruan national
+      or company in connection with the war. Government pages read on 2026-11-10: the Government Information Office''s media-release list (nauru.gov.nr answers a script with a redirect to a mail login page,
+      so it was read through its Wayback capture of 7 November 2026: the latest release is of 20 August 2026; the release of 22 July 2026 on the embassy in Israel is archived as
+      src_20260722_nauru-gov_embassy-israel, the others of 20 July to 20 August 2026 concern air services, the recognition of South Ossetia and Abkhazia and the economy) and the Wayback CDX listing of
+      nauru.gov.nr for 1 October to 9 November 2026 (no URL names Israel, Palestine or Gaza). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from
+      them) return the embassy in Jerusalem (opened 7 September 2026; a note under B12, docs/10 B-599) and the Israeli Foreign Minister''s statement that doctors of MASHAV, Israel''s development agency,
+      would work with Nauruan doctors in 2026 (development cooperation, not a military act); they are listed in the queries.'
     queries:
     - 'nauru.gov.nr media-release list, Wayback capture 20261107203922 (latest release 20 August 2026)'
     - 'Wayback CDX nauru.gov.nr/* from 20261001 (no URL names Israel, Palestine or Gaza)'
@@ -331,13 +338,13 @@ indicators:
     checked_at: '2026-11-10'
   E3:
     status: none-found
-    note: 'Experimental, unscored. No court ruling in Nauru concerning arms transfers, trade or other conduct regarding Gaza was found; the Government''s release list and the searches show no proceeding of that
-      kind. Government pages read on 2026-11-10: the Government Information Office''s media-release list (nauru.gov.nr answers a script with a redirect to a mail login page, so it was read through its
-      Wayback capture of 7 November 2026: the latest release is of 20 August 2026; the release of 22 July 2026 on the embassy in Israel is archived as src_20260722_nauru-gov_embassy-israel, the others of 20
-      July to 20 August 2026 concern air services, the recognition of South Ossetia and Abkhazia and the economy) and the Wayback CDX listing of nauru.gov.nr for 1 October to 9 November 2026 (no URL names
-      Israel, Palestine or Gaza). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from them) return the embassy in Jerusalem (opened 7 September 2026;
-      a note under B12, docs/10 B-599) and the Israeli Foreign Minister''s statement that doctors of MASHAV, Israel''s development agency, would work with Nauruan doctors in 2026 (development cooperation,
-      not a military act); they are listed in the queries.'
+    note: 'Experimental, unscored. No universal-jurisdiction complaint concerning conduct in Gaza accepted for investigation in Nauru was found; no search result or Government item read reports a complaint of
+      that kind, and Nauru''s withdrawal from the Rome Statute (see B6) does not concern a complaint. Government pages read on 2026-11-10: the Government Information Office''s media-release list
+      (nauru.gov.nr answers a script with a redirect to a mail login page, so it was read through its Wayback capture of 7 November 2026: the latest release is of 20 August 2026; the release of 22 July 2026
+      on the embassy in Israel is archived as src_20260722_nauru-gov_embassy-israel, the others of 20 July to 20 August 2026 concern air services, the recognition of South Ossetia and Abkhazia and the
+      economy) and the Wayback CDX listing of nauru.gov.nr for 1 October to 9 November 2026 (no URL names Israel, Palestine or Gaza). Web searches of 2026-11-10 (standard mode; the summaries were used to
+      find pages and nothing was filed from them) return the embassy in Jerusalem (opened 7 September 2026; a note under B12, docs/10 B-599) and the Israeli Foreign Minister''s statement that doctors of
+      MASHAV, Israel''s development agency, would work with Nauruan doctors in 2026 (development cooperation, not a military act); they are listed in the queries.'
     queries:
     - 'nauru.gov.nr media-release list, Wayback capture 20261107203922 (latest release 20 August 2026)'
     - 'Wayback CDX nauru.gov.nr/* from 20261001 (no URL names Israel, Palestine or Gaza)'
