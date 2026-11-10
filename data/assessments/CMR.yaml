@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live; the 79th archived by --capture), the Presidency's site (prc.cm, a Joomla site, searched through /fr/component/search/ for nine terms), the Embassy of Israel in Yaounde's page, the UN Treaty Collection's status page for the Rome Statute, the joint statements and UN records already archived (grep of archive/text for the country's name: none is a joint statement signed by Cameroon), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the Article 19 documents (A/80/362, the Assembly's page of October 2026). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31, T-P21-32 and T-P21-46 to T-P21-49): no press item was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # No event. Leads: none.
+# Completion of 2026-11 (finish run, T-F-L17, 2026-11-10): A3, A5 to A8, B11, C2, C4 to C6, D4, D5 and E1 to E3 searched with eight web searches in English and French (plus two on the Ekobell contract and one on the F-35 partners), the Ministry of Agriculture's site and two press pages read (docs/10 B-2044), all none-found with the limits said in each note; new lead lead_20261110_CMR_1 (C2, the Ekobell rice contract under an Israeli export credit guarantee); B9 note extended; no new event; no recognition row (the press results describe Cameroon as not having recognised the State of Palestine; no state document of a date exists to record).
 country: CMR
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,14 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Cameroonian company as a supplier of parts or maintenance for the F-35 programme: Cameroon is neither a programme partner nor a foreign-military-sales customer in the search
+      results, A/HRC/59/23 (archived text) has no match for Cameroon, and the searches returned no supplier. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Cameroon and Cameroun (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner countries and suppliers list Lockheed Martin global supply chain (the partners and foreign-military-sales customers named in the results)'
+    - 'WebSearch 2026-11-10: Cameroon Israel military cooperation BIR training drones arms 2024 2025'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Cameroon from Israel of data years 1985, 1996, 2000, 2006, 2008, 2013, 2014 and 2015, all before the window; no
@@ -30,17 +37,39 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Cameroon (found: orders of 1985 to 2015)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel in the sense of A5 was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing
+      related to the Gaza campaign in 2023 to 2026. Pre-existing bilateral training is reported: Cameroon Tribune''s report of 4 May 2026 on the Senate President''s audience of 30 April 2026 with Israel''s
+      ambassador, Amnon Kalmar (read; the rest of the article is behind a paywall), says Israel is one of Cameroon''s major partners in security and defence, notably in training and the fight against terrorism,
+      and the search summaries name the Rapid Intervention Battalion (BIR), trained and equipped with Israeli help since the 2000s (African Arguments, 2020; not opened). A routine pre-existing bilateral arrangement
+      is not an instance unless activated for the campaign (indicators.yaml), and an ambassador''s words reported by a newspaper are not a Cameroonian official confirmation, so nothing is filed and no lead
+      is opened. Not searched: the Ministry of Defence''s releases. The Ministry of External Relations (minrex.gov.cm) still does not answer (2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10: Cameroon Israel military cooperation BIR training drones arms 2024 2025'
+    - 'WebSearch 2026-11-10 (French): Cameroun Israël coopération militaire OR défense OR sécurité accord 2024 2025 2026'
+    - 'minrex.gov.cm fetched 2026-11-10: no answer (connection timed out)'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Cameroon to Israel either (A1: no delivery in the SIPRI register; the register''s orders run the
+      other way, A4). Not searched: the Journal officiel and the Ministry of Defence.'
+    queries:
+    - 'WebSearch 2026-11-10: Cameroon Israel military cooperation BIR training drones arms 2024 2025'
+    - 'WebSearch 2026-11-10 (French): Cameroun sanctions colons israéliens OR rappel ambassadeur Israël OR embargo armes Israël OR transit armes Douala Kribi'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun sanctions colons israéliens OR rappel ambassadeur Israël OR embargo armes Israël OR transit armes Douala Kribi'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of port access (Douala, Kribi), airspace or transit to an arms shipment bound for Israel was found; the searches returned none. Not searched: the port authorities'' and the civil aviation
+      authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun sanctions colons israéliens OR rappel ambassadeur Israël OR embargo armes Israël OR transit armes Douala Kribi'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: an abstention on nine of the twelve qualifying votes (A/RES/ES-10/21, ES-10/22, ES-10/24, ES-10/25, ES-10/26, A/RES/79/232, A/RES/ES-10/27, A/DEC/80/506
@@ -95,20 +124,23 @@ indicators:
     - prc.cm/fr/component/search/?searchword=Palestine
     checked_at: '2026-11-04'
   B9:
-    status: none-found
-    note: 'No event filed. (1) The 79th General Debate statement (27 September 2024, src_20240927_un-gadebate_cmr-mbella-mbella-fr; Mbella Mbella, Minister of External Relations and the President''s
-      personal representative, a B9 speaker under R3) lists ''SOUDAN, GAZA, LIBAN ET UKRAINE'' as examples of conflicts and tension spots: no ceasefire call, no violation, no party (R7 satisfied,
-      no tier). The 80th (25 September 2025; President Biya''s statement read by the same Minister) and the 81st (26 September 2026; President Biya''s statement read by the same Minister), read
-      live and not archived (no Wayback replay), speak of wars and conflicts in general and never name Gaza, Palestine, Israël or the Middle East. (2) The President, Paul Biya (head of state),
-      in his reply to the diplomatic corps of 10 January 2025 (src_20250110_prc-cm_biya-voeux-corps-diplomatique) lists ''L''Ukraine, le Soudan, le Liban, Gaza, Haïti'' among theatres of a human
-      tragedy: no call, no violation. His message of end of year 2023 speaks of ''la résurgence, en octobre dernier, du conflit israélo-palestinien'' (the Presidency''s page 6957, read live, not
-      archived; Gaza not named, no call). (3) Philémon Yang of Cameroon, as President of the General Assembly''s 79th session, said on 12 June 2025 ''After 20 months of war, the horrors in Gaza
-      must end'' (src_20250612_un-press_ga12690): an officer of the Assembly, not a B9 speaker of the State (R3); a note only. The Prime Minister''s services site (spm.gov.cm) is a one-page entrance
-      with nothing to search. Not searched: the Ministry of External Relations (does not answer), the Cameroonian press, the OIC''s communiques (Cameroon is an OIC member; P-23).'
+    checked_at: '2026-11-10'
+    note: 'No event filed. (1) The 79th General Debate statement (27 September 2024, src_20240927_un-gadebate_cmr-mbella-mbella-fr; Mbella Mbella, Minister of External Relations and the President''s personal
+      representative, a B9 speaker under R3) lists ''SOUDAN, GAZA, LIBAN ET UKRAINE'' as examples of conflicts and tension spots: no ceasefire call, no violation, no party (R7 satisfied, no tier). The 80th
+      (25 September 2025; President Biya''s statement read by the same Minister) and the 81st (26 September 2026; President Biya''s statement read by the same Minister), read live and not archived (no Wayback
+      replay), speak of wars and conflicts in general and never name Gaza, Palestine, Israël or the Middle East. (2) The President, Paul Biya (head of state), in his reply to the diplomatic corps of 10 January
+      2025 (src_20250110_prc-cm_biya-voeux-corps-diplomatique) lists ''L''Ukraine, le Soudan, le Liban, Gaza, Haïti'' among theatres of a human tragedy: no call, no violation. His message of end of year 2023
+      speaks of ''la résurgence, en octobre dernier, du conflit israélo-palestinien'' (the Presidency''s page 6957, read live, not archived; Gaza not named, no call). (3) Philémon Yang of Cameroon, as President
+      of the General Assembly''s 79th session, said on 12 June 2025 ''After 20 months of war, the horrors in Gaza must end'' (src_20250612_un-press_ga12690): an officer of the Assembly, not a B9 speaker of
+      the State (R3); a note only. The Prime Minister''s services site (spm.gov.cm) is a one-page entrance with nothing to search. Not searched: the Ministry of External Relations (does not answer), the Cameroonian
+      press, the OIC''s communiques (Cameroon is an OIC member; P-23). Completion of 2026-11 (T-F-L17, 2026-11-10): the web searches for a statement on Gaza by the President or the Minister of External Relations
+      since 4 November 2026 and in 2023 to 2026 returned none; the search results describe Cameroon''s abstention on the ceasefire vote and its non-recognition of the State of Palestine (afrik.com, press
+      commentary), which is not B9.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/cm_fr.pdf (read live; 79th archived by --capture; cm_en 404)
     - prc.cm/fr/component/search/?searchword={Gaza,Palestine,Palestinien,Israël,Hamas,cessez-le-feu,Moyen-Orient,UNRWA,Netanyahu}
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Cameroun Palestine Gaza déclaration gouvernement novembre 2026'
+    status: none-found
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations was found in the sources read. The President''s message of condolence to Israel''s
@@ -120,10 +152,14 @@ indicators:
     - prc.cm/fr/component/search/?searchword={Hamas,Israël,Netanyahu}
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Left unchecked: the Ministry of External Relations (minrex.gov.cm) does not answer from this network and has no recent Wayback capture; the Presidency''s site search returns no sanction
-      or listing (see B10) (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No sanctions on Israeli ministers or settler entities by Cameroon were found: the searches in French and English returned none (the results concern the United Kingdom and France). The Presidency''s
+      site search (2026-11-04, see B10) returned no sanction or listing. The Ministry of External Relations (minrex.gov.cm) still does not answer (2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun sanctions colons israéliens OR rappel ambassadeur Israël OR embargo armes Israël OR transit armes Douala Kribi'
+    - prc.cm/fr/component/search/?searchword={Israël,Hamas} (2026-11-04)
+    - 'minrex.gov.cm fetched 2026-11-10: no answer (connection timed out)'
+    status: none-found
   B12:
     status: none-found
     note: No recall, downgrade or severance was found. The Presidency's report of 29 November 2024 (src_20241129_prc-cm_lettres-de-creance) records that Israel's designated ambassador, Amnon Kalmar,
@@ -137,24 +173,45 @@ indicators:
     note: Cameroon is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: unchecked
-    note: 'Left unchecked: the Ministry of External Relations (minrex.gov.cm), which signs the agreements, does not answer from this network. The Presidency''s search for Israël returns messages
-      and a credentials ceremony only, and the Embassy of Israel''s page (src_20240711_embassies-il_cmr-bilateral-relations) is a timeline of cooperation projects ending in 2023, not a list of
-      agreements, and shows none signed since October 2023 (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No cooperation agreement signed by Cameroon with the State of Israel since October 2023 was found. The searches return audiences of Israel''s ambassador with ministers (Economy, Livestock; July
+      2024), the National Assembly''s President (December 2024) and the Senate''s President (30 April 2026), with no instrument signed, and one contract: the commercial agreement of 6 March 2026 between the
+      Ministry of Agriculture and Rural Development and the Israeli company Ekobell for rice agro-poles in the North and Adamaoua regions, reported by Business in Cameroon (10 March 2026, read) as backed
+      by a guarantee of the Israeli Government''s export credit agency. It is a contract with a company, known from press only (the Ministry''s site holds no item on it), so it is a lead (lead_20261110_CMR_1),
+      not an event; the author decides whether a contract with an Israeli company under an Israeli state guarantee is an agreement with Israel. The Embassy of Israel''s page (src_20240711_embassies-il_cmr-bilateral-relations)
+      lists no agreement signed since October 2023. The Ministry of External Relations (minrex.gov.cm) still does not answer (2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun Israël accord de coopération signé 2024 OR 2025 OR 2026 ministre'
+    - 'WebSearch 2026-11-10 (French): Cameroun Israël coopération militaire OR défense OR sécurité accord 2024 2025 2026'
+    - 'WebSearch 2026-11-10 (French and English): Ekobell Cameroun riz 10000 hectares accord signé 2026 gouvernement; Cameroon Ekobell rice agreement Israeli export credit agency Minader signing March 2026'
+    - 'minader.cm/wp-json/wp/v2/posts?search={israel,Israël,agropole,riziculture} and minader.cm/?s=Ekobell fetched 2026-11-10: no item on the Ekobell agreement'
+    - 'minrex.gov.cm fetched 2026-11-10: no answer (connection timed out)'
+    status: none-found
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; Cameroon is not an EU member and the searches returned reports on other states only. Not searched: the customs directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun manifestation Palestine interdite OR marche Gaza interdite Yaoundé OR plainte crimes de guerre Gaza OR produits des colonies'
+    - 'WebSearch 2026-11-10: Cameroon sovereign fund OR pension fund CNPS divest Israel OR public procurement exclusion Israeli companies OR settlement products Cameroon'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund (the CNPS) or the central bank (BEAC) over conduct in Gaza or the occupied territories was found; the search returned items on the CNPS''s
+      investment policy that do not mention Israel. Not searched: the CNPS''s and the BEAC''s own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: Cameroon sovereign fund OR pension fund CNPS divest Israel OR public procurement exclusion Israeli companies OR settlement products Cameroon'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement regulator''s (ARMP) and the Ministry of Public
+      Contracts'' sites.'
+    queries:
+    - 'WebSearch 2026-11-10: Cameroon sovereign fund OR pension fund CNPS divest Israel OR public procurement exclusion Israeli companies OR settlement products Cameroon'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Cameroon to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -180,19 +237,37 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Left unchecked: the Ministry of External Relations and the Ministry of Public Health sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No medical-evacuation programme for Gazans or field hospital for Gaza hosted or deployed by Cameroon was found; the search returned the WHO''s and other states'' evacuations, none naming Cameroon.
+      Not searched: the Ministry of Public Health''s site. The Ministry of External Relations (minrex.gov.cm) still does not answer (2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun Gaza évacuation sanitaire OR visa Gazaouis OR réfugiés palestiniens OR aide humanitaire gouvernement camerounais'
+    - 'minrex.gov.cm fetched 2026-11-10: no answer (connection timed out)'
+    status: none-found
   D5:
-    status: unchecked
-    note: 'Left unchecked: the Ministry of External Relations and the Ministry of Territorial Administration sites do not answer or were not searched; nothing in the sources read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No visa or refugee pathway opened for Gazans by Cameroon was found. Not searched: the Ministry of Territorial Administration''s and the national security directorate''s (immigration) sites. The
+      Ministry of External Relations (minrex.gov.cm) still does not answer (2026-11-10).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun Gaza évacuation sanitaire OR visa Gazaouis OR réfugiés palestiniens OR aide humanitaire gouvernement camerounais'
+    - 'minrex.gov.cm fetched 2026-11-10: no answer (connection timed out)'
+    status: none-found
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Cameroonian nationals or companies for conduct in Gaza was found. Not searched: the prosecutors'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun manifestation Palestine interdite OR marche Gaza interdite Yaoundé OR plainte crimes de guerre Gaza OR produits des colonies'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found in Cameroon; the search returned bans of other marches in Yaoundé (among them the unemployed doctors''
+      march, February 2025), none about Palestine or Gaza. Not searched: the prefectures'' orders.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun manifestation Palestine interdite OR marche Gaza interdite Yaoundé OR plainte crimes de guerre Gaza OR produits des colonies'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Cameroon was found. Not searched: the courts'' sites.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Cameroun manifestation Palestine interdite OR marche Gaza interdite Yaoundé OR plainte crimes de guerre Gaza OR produits des colonies'
+    status: none-found
