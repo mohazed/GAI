@@ -6,6 +6,7 @@
 # through Wayback; the 81st page is bot-checked live and has no capture) and files, the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents.
 # Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # Events: none; see docs/10 B-800.
+# Completion of 2026-11 (finish run, T-F-L18, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with web searches (English, French) and the shared searches, all none-found with the limits said in each note; B9 (two statements at the United Nations that name no B9 speaker), B11, B12, C2, D4 and D5 notes extended (docs/10 B-2055). No recognition row (no Government document of the date of 21 November 1988; R21).
 country: GIN
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -22,8 +23,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Guinean company as a supplier of parts or maintenance for the F-35 programme: Guinea is neither a programme partner nor a foreign-military-sales customer in the search
+      results, A/HRC/59/23 (archived text) has no match for Guinea, and the searches returned no supplier. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Guinea (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner countries and suppliers list Lockheed Martin global supply chain (the partners and foreign-military-sales customers named in the results)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists one older order by Guinea from Israel (data year 2000, 0.57 TIV); A4
@@ -33,17 +39,42 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Guinea (found: one older order)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The searches return the renewal of relations in 2016, older reports of Israeli training of Guinean soldiers (undated, before the window), profiles noting that the President trained abroad,
+      and an Arabic article that says a private Israeli company trains special units (a single source, not confirmed, and another source places that company''s training elsewhere). Not searched:
+      the Ministry of Defence''s releases (no site answers).'
+    queries:
+    - 'WebSearch 2026-11-10: Guinée Conakry Israël Gaza Palestine Doumbouya OR gouvernement coopération OR accord OR déclaration 2026 (the presidential election of 28 December 2025 and the inauguration
+      of 17 January 2026, a profile noting training in Israel; nothing on Gaza)'
+    - 'WebSearch 2026-11-10: Guinea Israel military OR security cooperation OR arms OR embassy Conakry Israeli ambassador Doumbouya 2025 2026 (the renewal of relations in 2016, older reports of
+      Israeli training of Guinean soldiers, an Arabic article on a private Israeli company; nothing for 2024 to 2026)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Guinea to Israel either (A1: no delivery in the SIPRI register). Not searched: the Journal
+      officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Guinea Israel military OR security cooperation OR arms OR embassy Conakry Israeli ambassador Doumbouya 2025 2026 (the renewal of relations in 2016, older reports of
+      Israeli training of Guinean soldiers, an Arabic article on a private Israeli company; nothing for 2024 to 2026)'
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access (Conakry, Kamsar), airspace or transit to an arms shipment bound for Israel was found; the search returned none. Not searched: the port and civil aviation authorities''
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19)
@@ -105,17 +136,24 @@ indicators:
     status: none-found
     note: 'No event filed. The President, Mamadi Doumbouya, is head of state; the Prime Minister, Amadou Oury Bah, is head of government (the Government''s titles: "Premier Ministre, Chef du Gouvernement"):
       both are B9 speakers under R3. (1) The 81st General Debate statement was the President''s (24 September 2026; the Government''s text, src_20260924_gouv-gn_doumbouya-ag81, archived): it names
-      none of Gaza, Palestine or Israel. (2) The 79th was the Prime Minister''s (28 September 2024, src_20240928_gouv-gn_bah-ag79, archived, line 40; 767 days, expired): wars "au Moyen-Orient,
-      entre Israël et la Palestine" listed with Ukraine and Sudan, no Gaza, no call, no violation (R7; neither tier). (3) The 80th (27 September 2025) was delivered by Amara Camara, Minister of
-      State and Secretary-General of the Presidency (the UN''s page): not a B9 speaker (R3); the file (gastatements/80/gn_fr.pdf) has no Wayback replay and the live site answers a bot check, so
-      its text was not read. (4) The four Government sites'' searches for Gaza, Palestine, Palestinien, Israël, Hamas, cessez-le-feu, Netanyahou and UNRWA return no statement by the President,
-      the Prime Minister or the Foreign Minister on the war.'
+      none of Gaza, Palestine or Israel. (2) The 79th was the Prime Minister''s (28 September 2024, src_20240928_gouv-gn_bah-ag79, archived, line 40; 767 days, expired): wars "au Moyen-Orient, entre
+      Israël et la Palestine" listed with Ukraine and Sudan, no Gaza, no call, no violation (R7; neither tier). (3) The 80th (27 September 2025) was delivered by Amara Camara, Minister of State
+      and Secretary-General of the Presidency (the UN''s page): not a B9 speaker (R3); the file (gastatements/80/gn_fr.pdf) has no Wayback replay and the live site answers a bot check, so its text
+      was not read. (4) The four Government sites'' searches for Gaza, Palestine, Palestinien, Israël, Hamas, cessez-le-feu, Netanyahou and UNRWA return no statement by the President, the Prime
+      Minister or the Foreign Minister on the war. Completion of 2026-11 (2026-11-10): two statements of the Republic of Guinea at the United Nations are in UNISPAL (read through Wayback replays;
+      the live site answers 403) and name no B9 speaker. (a) The Government''s declaration for the International Day of Solidarity with the Palestinian People (''Conakry, le 20 novembre 2024'',
+      New York, 26 November 2024; unsigned, ''Le Gouvernement guinéen'') expresses concern about ''Gaza'', condemns ''les exactions, les violations du droit international'' and urges the parties
+      to ''privilégier les négociations sur un cessez-le-feu''. (b) The statement to the conference on the two-State solution (New York, 28 to 30 July 2025) was delivered by the Permanent Representative,
+      Mohamed Dabo, who speaks ''au nom de'' the President only in his opening thanks and says ''La République de Guinée appelle à un cessez-le-feu immédiat, total et durable'' (not a B9 speaker,
+      R3). No event; whether an unsigned Government declaration read at the United Nations counts as a statement of a B9 speaker is for the author (docs/10 B-2055).'
     queries:
     - 'presidence.gov.gn, gouvernement.gov.gn, mae.gov.gn, primature.gov.gn REST search: Gaza (none), Palestine (2), Palestinien, Israël (1: a pilgrimage item of 2023), Hamas, cessez-le-feu, Proche-Orient,
       Moyen-Orient, Netanyahou, UNRWA'
     - gadebate.un.org/en/{79,80}/guinea (Wayback replays; the 81st page is bot-checked)
     - gouvernement.gov.gn post 13657 (81st statement), post 11768 (79th)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Guinée Palestine Gaza ministre des Affaires étrangères déclaration OR communiqué 2025 2026 gouvernement guinéen Israël (the two statements of the Republic of Guinea
+      at the United Nations of 20 and 26 November 2024 and 28 to 30 July 2025, UNISPAL)'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the Government sites'' items read.'
@@ -124,38 +162,69 @@ indicators:
     checked_at: '2026-11-04'
   B11:
     status: none-found
-    note: No national sanctions on Israeli ministers or settler entities were found in the sources read. This rests on the four Government sites' searches only (P-23).
-    checked_at: '2026-11-04'
+    note: 'No national sanctions on Israeli ministers or settler entities were found in the sources read. This rests on the four Government sites'' searches only (P-23). Completion of 2026-11 (2026-11-10):
+      the searches returned no national sanctions on Israeli ministers or settlers.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
-    note: No recall, downgrade or severance was found in the four Government sites' searches (P-23).
+    note: 'No recall, downgrade or severance was found in the four Government sites'' searches (P-23). Completion of 2026-11 (2026-11-10): the searches returned no recall, downgrade or severance
+      act.'
     queries:
     - 'REST search of the four sites: Israël, ambassadeur'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Guinée Conakry Israël Gaza Palestine Doumbouya OR gouvernement coopération OR accord OR déclaration 2026 (the presidential election of 28 December 2025 and the inauguration
+      of 17 January 2026, a profile noting training in Israel; nothing on Gaza)'
+    - 'WebSearch 2026-11-10: Guinea Israel military OR security cooperation OR arms OR embassy Conakry Israeli ambassador Doumbouya 2025 2026 (the renewal of relations in 2016, older reports of
+      Israeli training of Guinean soldiers, an Arabic article on a private Israeli company; nothing for 2024 to 2026)'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Guinea is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
     status: none-found
-    note: No agreement signed with Israel since October 2023 was found. The only item on Israel in the four sites is the Government's note of 4 September 2023 on Christian pilgrims travelling
-      to Israel (before the window, no agreement). No treaty register or Official Gazette was read (P-23).
+    note: 'No agreement signed with Israel since October 2023 was found. The only item on Israel in the four sites is the Government''s note of 4 September 2023 on Christian pilgrims travelling
+      to Israel (before the window, no agreement). No treaty register or Official Gazette was read (P-23). Completion of 2026-11 (2026-11-10): the searches returned no agreement signed with Israel
+      since October 2023.'
     queries:
     - 'gouvernement.gov.gn REST search: Israël, Israel, Tel-Aviv (1 item, 2023)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Guinée Conakry Israël Gaza Palestine Doumbouya OR gouvernement coopération OR accord OR déclaration 2026 (the presidential election of 28 December 2025 and the inauguration
+      of 17 January 2026, a profile noting training in Israel; nothing on Gaza)'
+    - 'WebSearch 2026-11-10: Guinea Israel military OR security cooperation OR arms OR embassy Conakry Israeli ambassador Doumbouya 2025 2026 (the renewal of relations in 2016, older reports of
+      Israeli training of Guinean soldiers, an Arabic article on a private Israeli company; nothing for 2024 to 2026)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Guinea is not an EU member and the searches returned none. Not searched: the customs directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund (the Caisse nationale de sécurité sociale) or the central bank (BCRG) over conduct in Gaza or the occupied territories was
+      found; the results name the Norwegian, Danish, Dutch and US funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: "Eritrea" OR "Ethiopia" OR "Gabon" OR "Ghana" OR "Guinea" OR "Gambia" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion
+      Israel settlements (the Norwegian, Danish, Dutch and US funds only; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement regulator''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: "Eritrea" OR "Ethiopia" OR "Gabon" OR "Ghana" OR "Guinea" OR "Gambia" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion
+      Israel settlements (the Norwegian, Danish, Dutch and US funds only; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of GIN to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -182,18 +251,44 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
-    note: No medical-evacuation programme for Gazans and no field hospital deployed by Guinea was found in the sources read.
-    checked_at: '2026-11-04'
+    note: 'No medical-evacuation programme for Gazans and no field hospital deployed by Guinea was found in the sources read. Completion of 2026-11 (2026-11-10): the French search and the shared
+      search on medical evacuation returned no Guinean programme.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    - 'WebSearch 2026-11-10: Eritrea OR Ethiopia OR Gabon OR Ghana OR Guinea OR Gambia Gaza medical evacuation OR field hospital OR wounded children received OR refugees Gazans visa 2024 2025 2026
+      government (South Africa, Spain and other receiving states; none of the six)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
-    note: No visa or refugee pathway for Gazans was found in the sources read.
-    checked_at: '2026-11-04'
+    note: 'No visa or refugee pathway for Gazans was found in the sources read. Completion of 2026-11 (2026-11-10): the French search and the shared search returned no Guinean visa or refugee pathway
+      for Gazans.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    - 'WebSearch 2026-11-10: Eritrea OR Ethiopia OR Gabon OR Ghana OR Guinea OR Gambia Gaza medical evacuation OR field hospital OR wounded children received OR refugees Gazans visa 2024 2025 2026
+      government (South Africa, Spain and other receiving states; none of the six)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Guinean nationals or companies for conduct in Gaza was found. Not searched: the prosecutors'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghanaian OR Ethiopian OR Gabonese OR Guinean OR Gambian citizens investigated OR prosecuted OR charged for serving in Israeli army Gaza OR complaint universal jurisdiction
+      court Gaza (South African cases only; none of the five)'
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found in Guinea; the French search returned none. Not searched: the Ministry of Security''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Guinée Conakry Gaza aide humanitaire OR évacuation sanitaire OR visa OR manifestation Palestine interdite OR sanctions colons OR transit armes port Conakry
+      (nothing on the indicators)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Guinea was found. Not searched: the courts'' sites.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghanaian OR Ethiopian OR Gabonese OR Guinean OR Gambian citizens investigated OR prosecuted OR charged for serving in Israeli army Gaza OR complaint universal jurisdiction
+      court Gaza (South African cases only; none of the five)'
+    checked_at: '2026-11-10'
