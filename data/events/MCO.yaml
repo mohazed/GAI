@@ -1,6 +1,7 @@
 # Hand-authored events for Monaco (P-21 light protocol, T-P21-49, 2026-11-04).
 # Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
-# Not an EU member. Speakers for B9/B10 (R3): the Sovereign Prince Albert II (head of state), the Minister of State (head of government), the Government Counsellor-Minister for External Relations and Cooperation.
+# Not an EU member: the Council's listings are not filed; the Minister of State's decisions adding the EU settler listings to the national freeze list are B11 events (T-F-L25, docs/10 B-2095).
+# Speakers for B9/B10 (R3): the Sovereign Prince Albert II (head of state), the Minister of State (head of government), the Government Counsellor-Minister for External Relations and Cooperation.
 
 - id: evt_2023_12_31_MCO_D3
   revision: 1
@@ -44,3 +45,156 @@
     notes: 'UNRWA''s donor tables: 2023 line 85 (USD 450,120, all in the Projects column) against 2022 line 81 (USD 1,139 to the programme budget and 53,305 to the emergency appeal: 54,444). The increase
       is in the Projects column (flagged, as Bahrain''s, B-757). The 2024 table (src_20241231_unrwa_donor-ranking-2024, line 170: USD 7,568, outside the programme budget) is below the 2022 contribution,
       so the tier ends on 2024-12-31 and no 2024 event is filed; a lower contribution is not read as a suspension (D2 needs an announcement). Filed in the light protocol (docs/10 B-770 ff.).'
+
+- id: evt_2024_04_19_MCO_B11
+  revision: 1
+  country: MCO
+  indicator: B11
+  type: standing
+  date: '2024-04-19'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the Minister of States decision No 2024-37 of 19 April 2024 adds to Monacos national freeze list the persons and entities of the EU listing of the same day (Implementing Regulation (EU) 2024/1172): four settlers and two entities, Lehava and the Hilltop Youth, for violence against Palestinians in the West Bank. West Bank only: tagged, unscored in v1 (docs/10 B-32), as Luxembourgs event on the EU listing (evt_2024_04_19_LUX_B11).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of State added four Israeli settlers and two settler entities to the national freeze list for violence against Palestinians in the West Bank.
+    fr: "Le ministre d'État a inscrit quatre colons israéliens et deux entités de colons sur la liste nationale de gel des fonds pour des violences contre des Palestiniens en Cisjordanie."
+  actor:
+    en: Minister of State (Government of the Principality of Monaco)
+    fr: Ministre d'État (Gouvernement princier de Monaco)
+  evidence:
+  - source: src_20240419_geldefonds-mc_dm-2024-37-annexe
+    quote: "ANNEXE À LA DÉCISION DU MINISTRE D'ÉTAT N° 2024-37 DU 19 AVRIL 2024"
+    quote_lang: fr
+    quote_en: "Annex to the decision of the Minister of State No 2024-37 of 19 April 2024"
+    locator: line 1
+  - source: src_20240419_geldefonds-mc_dm-2024-37-annexe
+    quote: "HILLTOP YOUTH"
+    quote_lang: fr
+    quote_en: "HILLTOP YOUTH"
+    locator: line 5
+  - source: src_20240419_geldefonds-mc_dm-2024-37-annexe
+    quote: "Hilltop Youth est un groupe radical de jeunes dont les membres sont connus pour perpétrer des actes de violence contre des Palestiniens et leurs villages en Cisjordanie"
+    quote_lang: fr
+    quote_en: "Hilltop Youth is a radical youth group whose members are known for committing acts of violence against Palestinians and their villages in the West Bank"
+    locator: line 5
+  - source: src_20240419_geldefonds-mc_dm-2024-37
+    quote: "Fait à Monaco, en l'Hôtel du Gouvernement, le dix-neuf avril deux mille vingt-quatre."
+    quote_lang: fr
+    quote_en: "Done at Monaco, at the Government House, on the nineteenth of April two thousand and twenty-four."
+    locator: line 28
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_07_15_MCO_B11, evt_2024_04_19_LUX_B11]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list against the archived texts: the decision (lines 1 to 4: decision No 2024-37 amending decision No 2021-1 under Sovereign Ordinance No 8.664; lines 25 to 27: the annex of decision No 2021-1 is amended as set out in the annex; line 28: done at Monaco on 19 April 2024; line 29: Pierre Dartout, Minister of State); the annex (line 2: the entries are added to the annex of decision No 2021-1; lines 4 to 9: Lehava, the Hilltop Youth and four persons, each under the EU human rights regime with the legal basis (EU) 2024/1172 of 19 April 2024). Settlers tier; no mention of Gaza, so scope west-bank.'
+    notes: 'Found in the completion pass (T-F-L25) through Monaco''s national freeze list (geldefonds.gouv.mc, its JSON download lists each entry''s EU legal basis) and the list of ministerial decisions (read in the browser pane; the site answers 403 to scripts, the downloads do not). Monaco is not an EU member, so the Council''s decision is not its act (R8 does not apply); the Minister of State''s decision adding the persons and entities to the national freeze list is (as Norway''s and Liechtenstein''s alignments). Decision No 2024-37 of 19 April 2024 (src_20240419_geldefonds-mc_dm-2024-37 and its annex); the annex is a spreadsheet whose cell contents are the text file. Filed in the finish run (T-F-L25, docs/10 B-2095).'
+
+- id: evt_2024_07_15_MCO_B11
+  revision: 1
+  country: MCO
+  indicator: B11
+  type: standing
+  date: '2024-07-15'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the Minister of States decision No 2024-63 of 15 July 2024 adds to Monacos national freeze list the persons and entities of the EU listing of the same day (Implementing Regulation (EU) 2024/1960): five persons and three entities, among them Tzav 9, listed for blocking trucks carrying food, water and fuel to Gaza. Scoped gaza as the listing cites Gaza (docs/10 B-32; as Norways alignment, evt_2024_07_24_NOR_B11, and Luxembourgs event, evt_2024_07_15_LUX_B11).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Minister of State added five Israeli settlers and activists and three entities to the national freeze list, including a group blocking aid trucks bound for Gaza.
+    fr: "Le ministre d'État a inscrit cinq colons et militants israéliens et trois entités sur la liste nationale de gel des fonds, dont un groupe bloquant les camions d'aide destinés à Gaza."
+  actor:
+    en: Minister of State (Government of the Principality of Monaco)
+    fr: Ministre d'État (Gouvernement princier de Monaco)
+  evidence:
+  - source: src_20240715_geldefonds-mc_dm-2024-63-annexe
+    quote: "ANNEXE À LA DÉCISION DU MINISTRE D'ÉTAT N° 2024-63 DU 15 JUILLET 2024"
+    quote_lang: fr
+    quote_en: "Annex to the decision of the Minister of State No 2024-63 of 15 July 2024"
+    locator: line 1
+  - source: src_20240715_geldefonds-mc_dm-2024-63-annexe
+    quote: "les deux missions principales de Tzav 9 consistent à bloquer les camions qui acheminent l’aide humanitaire, y compris les denrées alimentaires, l’eau et le carburant, à Gaza"
+    quote_lang: fr
+    quote_en: "the two main missions of Tzav 9 are to block the trucks carrying humanitarian aid, including food, water and fuel, to Gaza"
+    locator: line 11
+  - source: src_20240715_geldefonds-mc_dm-2024-63
+    quote: "Fait à Monaco, en l'Hôtel du Gouvernement, le quinze juillet deux mille vingt-quatre."
+    quote_lang: fr
+    quote_en: "Done at Monaco, at the Government House, on the fifteenth of July two thousand and twenty-four."
+    locator: line 28
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_04_19_MCO_B11, evt_2026_05_29_MCO_B11, evt_2024_07_15_LUX_B11, evt_2024_07_24_NOR_B11]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list against the archived texts: the decision (line 28: done at Monaco on 15 July 2024; line 29: Pierre Dartout, Minister of State; lines 25 to 27: the annex of decision No 2021-1 is amended as set out in the annex); the annex (line 11: Tzav 9, whose two main missions are to block trucks carrying humanitarian aid to Gaza, legal basis (EU) 2024/1960 of 15 July 2024; lines 4 to 10: five persons and two farms; line 1: the annexs title). Settlers tier; the listing cites Gaza, so scope gaza and west-bank.'
+    notes: 'Found in the completion pass (T-F-L25) through Monaco''s national freeze list (geldefonds.gouv.mc, its JSON download lists each entry''s EU legal basis) and the list of ministerial decisions (read in the browser pane; the site answers 403 to scripts, the downloads do not). Monaco is not an EU member, so the Council''s decision is not its act (R8 does not apply); the Minister of State''s decision adding the persons and entities to the national freeze list is (as Norway''s and Liechtenstein''s alignments). Decision No 2024-63 of 15 July 2024 (src_20240715_geldefonds-mc_dm-2024-63 and its annex); the annex is a spreadsheet whose cell contents are the text file. Filed in the finish run (T-F-L25, docs/10 B-2095).'
+
+- id: evt_2026_05_29_MCO_B11
+  revision: 1
+  country: MCO
+  indicator: B11
+  type: standing
+  date: '2026-05-29'
+  end: null
+  points: 5
+  points_rationale: 'Sanctions on settler entities (+5): the Minister of States decision No 2026-56 of 29 May 2026 adds to Monacos national freeze list the persons and entities of the EU listing of 28 May 2026 (Implementing Regulation (EU) 2026/1177): three persons and four entities, among them the Nachala Movement, cited for efforts after 7 October 2023 to resettle the Gaza Strip. The settler tier already holds from 15 July 2024 (one per tier), so it adds no points, as Luxembourgs event on the same listing (evt_2026_05_28_LUX_B11).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Minister of State added three Israeli settlers and four settler organisations to the national freeze list, among them a movement promoting resettlement of the Gaza Strip.
+    fr: "Le ministre d'État a inscrit trois colons israéliens et quatre organisations de colons sur la liste nationale de gel des fonds, dont un mouvement prônant la recolonisation de la bande de Gaza."
+  actor:
+    en: Minister of State (Government of the Principality of Monaco)
+    fr: Ministre d'État (Gouvernement princier de Monaco)
+  evidence:
+  - source: src_20260529_geldefonds-mc_dm-2026-56-annexe
+    quote: "ANNEXE À LA DÉCISION DU MINISTRE D'ÉTAT N° 2026-56 DU 29 MAI 2026"
+    quote_lang: fr
+    quote_en: "Annex to the decision of the Minister of State No 2026-56 of 29 May 2026"
+    locator: line 1
+  - source: src_20260529_geldefonds-mc_dm-2026-56-annexe
+    quote: "Nachala Movement"
+    quote_lang: fr
+    quote_en: "Nachala Movement"
+    locator: line 8
+  - source: src_20260529_geldefonds-mc_dm-2026-56-annexe
+    quote: "Après le 7 octobre 2023, Nachala a en outre été en première ligne des efforts déployés pour recoloniser la bande de Gaza"
+    quote_lang: fr
+    quote_en: "After 7 October 2023, Nachala was also at the forefront of efforts to resettle the Gaza Strip"
+    locator: line 8
+  - source: src_20260529_geldefonds-mc_dm-2026-56
+    quote: "Fait à Monaco, en l'Hôtel du Gouvernement, le vingt-neuf mai deux mille vingt-six."
+    quote_lang: fr
+    quote_en: "Done at Monaco, at the Government House, on the twenty-ninth of May two thousand and twenty-six."
+    locator: line 28
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_07_15_MCO_B11, evt_2026_05_28_LUX_B11]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list against the archived texts: the decision (line 28: done at Monaco on 29 May 2026; line 29: Christophe Mirmand, Minister of State); the annex (line 8: the Nachala Movement, at the forefront after 7 October 2023 of efforts to resettle the Gaza Strip, legal basis (EU) 2026/1177 of 28 May 2026; lines 4 to 10: three persons and four entities; line 1: the annexs title). Settlers tier, already held: no points added.'
+    notes: 'Found in the completion pass (T-F-L25) through Monaco''s national freeze list (geldefonds.gouv.mc, its JSON download lists each entry''s EU legal basis) and the list of ministerial decisions (read in the browser pane; the site answers 403 to scripts, the downloads do not). Monaco is not an EU member, so the Council''s decision is not its act (R8 does not apply); the Minister of State''s decision adding the persons and entities to the national freeze list is (as Norway''s and Liechtenstein''s alignments). Decision No 2026-56 of 29 May 2026 (src_20260529_geldefonds-mc_dm-2026-56 and its annex); the annex is a spreadsheet whose cell contents are the text file. Filed in the finish run (T-F-L25, docs/10 B-2095).'

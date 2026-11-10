@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; gouv.mc answers HTTP 403 to a script (its Wayback capture of 18 October 2026 is good: registered). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): no press item was read. These gaps are scheduled for P-23.
 # One event (D3). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L25, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in French and English), all none-found with the limits said in each note; B11 has-events from the Minister of State's three asset-freeze decisions adding the EU settler listings (geldefonds.gouv.mc, archived); the 81st General Debate text still has no capture or Government copy. See docs/10 B-2095.
 country: MCO
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Monegasque company as a supplier of parts or maintenance for the F-35 programme: Monaco is neither a partner nor a customer, and no result names a Monegasque supplier. Not searched:
+      the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations and the foreign-military-sales customers named in the results; none of the
+      four of this batch: YEM, LIE, LUX, MCO)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Monaco from Israel in the register. Left to the build.'
@@ -29,17 +35,40 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Monaco (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No instance of military cooperation with Israel was found; no result concerns an exercise, transit, basing or intelligence-sharing
+      arrangement. Not searched: the Department of the Interior''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; no arms export from Monaco to Israel was found either (A1: none in the SIPRI register). Not searched: the Department
+      of Finance and Economy''s licensing notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    - 'WebSearch 2026-11-10 (French): Monaco arrêté ministériel gel des fonds colons israéliens Cisjordanie OR Israël armes OR sanctions Journal de Monaco 2024 2025 (the asset-freeze framework: Sovereign
+      Ordinance No 8.664 of 26 May 2021 and decision No 2021-1; no arms measure concerning Israel)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decision establishing a two-way arms embargo on Israel was found. The Minister of State''s asset-freeze decisions apply listings of persons (B11), not an embargo. Not searched: the Journal
+      de Monaco item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    - 'WebSearch 2026-11-10 (French): Monaco arrêté ministériel gel des fonds colons israéliens Cisjordanie OR Israël armes OR sanctions Journal de Monaco 2024 2025 (the asset-freeze framework: Sovereign
+      Ordinance No 8.664 of 26 May 2021 and decision No 2021-1; no arms measure concerning Israel)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel was found. Not searched: the Maritime Affairs Directorate''s and the Civil Aviation Directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: abstentions on ES-10/21 and ES-10/23, yes on nine votes, and no vote recorded on A/DEC/80/506 (12 September 2025), which the build scores at -2 whatever the reason
@@ -87,23 +116,35 @@ indicators:
   B9:
     status: none-found
     note: 'No event filed. The 81st General Debate statement of the Minister of State (25 September 2026, French, read live, 256,254 bytes) says the Principality ''appelle toutes les parties à consolider
-      ce cessez-le-feu fragile'' in Gaza (call tier as a call to keep a ceasefire in force, T-P21-18), but the file has no Wayback capture (the 81st session has none) and no press source was read, so it
-      is neither an event nor a lead (P-23: capture or a Government copy on gouv.mc). The 79th statement (the Sovereign Prince, 24 September 2024) never names Gaza, Palestine or Israel; the 80th session
-      has no file for Monaco (mc_fr.pdf and mc_en.pdf answer 404). Monaco is named in no joint statement already archived. Not reached: gouv.mc (HTTP 403 to a script; Wayback capture of 18 October 2026
-      good).'
+      ce cessez-le-feu fragile'' in Gaza (call tier as a call to keep a ceasefire in force, T-P21-18), but the file has no Wayback capture (the 81st session has none) and no press source was read, so it is
+      neither an event nor a lead (P-23: capture or a Government copy on gouv.mc). The 79th statement (the Sovereign Prince, 24 September 2024) never names Gaza, Palestine or Israel; the 80th session has
+      no file for Monaco (mc_fr.pdf and mc_en.pdf answer 404). Monaco is named in no joint statement already archived. Not reached: gouv.mc (HTTP 403 to a script; Wayback capture of 18 October 2026 good).
+      Completion of 2026-11 (T-F-L25): the Mission''s report of 28 September 2026 (mission-onu-ny.gouv.mc, read in the browser pane) summarises the Minister of State''s 81st statement with no text and no
+      mention of Gaza; the Wayback CDX still has no capture of the 81st file and no Government copy of the speech was found, so the call-tier passage stays unfiled (P-23 after 1 December 2026).'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/mc_{fr,en}.pdf (79th and 81st fr read live; the 80th 404)
     - web.archive.org CDX for gadebate.un.org/…/{79,80,81}/mc_*
     - 'archive/text: joint statements and UN records, grep Monaco'
-    checked_at: '2026-11-04'
+    - 'mission-onu-ny.gouv.mc/en/news/monaco-a-la-81e-session-de-l-assemblee-generale-des-nations-unies (browser pane, 2026-11-10): the Mission''s report of 28 September 2026 on the Minister of State''s General
+      Debate statement of 25 September 2026, with no text of the speech and no mention of Gaza'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.
     checked_at: '2026-11-04'
   B11:
-    status: none-found
-    note: Monaco is not an EU member (R8 does not apply); no national sanctions on settlers were found in the sources read.
-    checked_at: '2026-11-04'
+    status: has-events
+    note: 'Three events: the Minister of State''s decisions adding the EU settler listings to Monaco''s national freeze list under Sovereign Ordinance No 8.664: No 2024-37 of 19 April 2024 (four settlers,
+      Lehava and the Hilltop Youth; west-bank, unscored), No 2024-63 of 15 July 2024 (five persons and three entities, among them Tzav 9, listed for blocking aid to Gaza; +5) and No 2026-56 of 29 May 2026
+      (three persons and four entities, among them Nachala; tier already held, no points). Each is an act of the state itself, not a Council decision (R8 does not apply). No national listing beyond the EU''s
+      was found. Completion of 2026-11 (T-F-L25).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco arrêté ministériel gel des fonds colons israéliens Cisjordanie OR Israël armes OR sanctions Journal de Monaco 2024 2025 (the asset-freeze framework: Sovereign
+      Ordinance No 8.664 of 26 May 2021 and decision No 2021-1; no arms measure concerning Israel)'
+    - 'geldefonds.gouv.mc (browser pane, 2026-11-10): the national freeze list (directdownload/sanctions.json: Lehava, Hilltop Youth, Tzav 9, Nachala Movement, Daniella Weiss and others, each with its EU
+      legal basis) and the list of ministerial decisions (pages 4, 5, 13, 14, 16, 17; annexes of decisions 2024-37 to 2024-40, 2024-63 to 2024-66 and 2026-55 to 2026-61 scanned for the settler entries): decisions
+      2024-37, 2024-63 and 2026-56 add them; read and archived'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: No recall or downgrade of relations with Israel by Monaco was found in the sources read.
@@ -121,14 +162,27 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods by Monaco was found; no result concerns a Monegasque measure. Not searched: the Department of Finance and Economy''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies by the Constitutional Reserve Fund or a public pension fund (the Caisses Sociales) over conduct in Gaza or the occupied territories was found; no result concerns one.
+      Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Government''s procurement notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco Israël armes OR coopération militaire OR Fonds de réserve constitutionnel exclusion OR produits des colonies Gouvernement Princier Gaza 2024 2025 (no result concerns
+      Monaco; the results concern France and Morocco)'
+    checked_at: '2026-11-10'
   D1:
     status: no-data
     note: 'Generated from FTS: no Monaco Government flow to the Gaza response in fts_plan_totals.csv (the build marks D1 no-data). Left to the build.'
@@ -162,11 +216,25 @@ indicators:
     note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Monegasque nationals or companies for conduct in Gaza was found. Not searched: the Prosecutor General''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco rassemblement Palestine interdit OR autorisé Gaza Sûreté publique OR plainte crimes de guerre Gaza parquet général Monaco (no result concerns Monaco; the results
+      concern French prefectures'' bans of October and November 2023)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols in Monaco was found; the results concern French prefectures only. Not searched: the Public Security Department''s
+      notices and Monaco-Matin item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco rassemblement Palestine interdit OR autorisé Gaza Sûreté publique OR plainte crimes de guerre Gaza parquet général Monaco (no result concerns Monaco; the results
+      concern French prefectures'' bans of October and November 2023)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction concerning conduct in Gaza accepted for investigation in Monaco was found (Monaco is not a party to the Rome Statute). Not
+      searched: the Prosecutor General''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Monaco rassemblement Palestine interdit OR autorisé Gaza Sûreté publique OR plainte crimes de guerre Gaza parquet général Monaco (no result concerns Monaco; the results
+      concern French prefectures'' bans of October and November 2023)'
+    checked_at: '2026-11-10'
