@@ -2,6 +2,8 @@
 # `has-events` is set by the build from published events; hand-set values below are the research status for review.
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.gov.bn: HTTP 200 to a browser User-Agent; Press Room items read by id and title), the General Debate statements of the 78th, 80th and 81st sessions (gadebate.un.org; the 79th has no Brunei file), the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on the Sultan's, the Ministry's and the Ministers' statements. Not searched individually: B7, B11, D4, D5. Time: about 35 minutes of research on Brunei, inside the 90-minute budget of the session.
+# Completion of 2026-11 (finish run, T-F-L11, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4, D5 and E1 to E3 searched, all none-found, with the Ministry's Press Room (items 1200 to 1243, read) and 7 web searches in English; B8 stays unchecked (a state document of the 1988 recognition is still needed).
+#   No new event. The Ministry's unsigned 'Brunei Darussalam's statement' items (for example item 1214 of 17 March 2026, 'strongly condemns the continued acts of genocide in Gaza') are not filed: no speaker named (R3), and B9 is already at its cap (docs/10 B-2002). Lead BRN_1 re-checked and kept.
 country: BRN
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +20,18 @@ indicators:
       this one; the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Bruneian company as a supplier of parts or maintenance for the F-35 programme. Brunei has no defence industry that supplies Israel, is not a partner or a customer
+      of the programme and the Special Rapporteur''s report on companies (archive/text/src_20250616_un-unispal_a-hrc-59-23.txt) has no match for Brunei (searched 2026-11-10). Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched
+      for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention
+      Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that
+      name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Brunei (no match)
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
@@ -27,17 +39,53 @@ indicators:
     - sipri_orders.csv, buyer BRN
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or arms transit with Israel was found. Brunei and Israel have no diplomatic relations in the sources read (the Ministry''s
+      statements call Israel ''the Occupying Power''); a 2021 press report of Israeli outreach to Brunei is not an instance. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room,
+      items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons,
+      transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others
+      the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund,
+      procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; no Bruneian arms export to Israel appears in the SIPRI table (A1 is none-found) and the searches returned
+      nothing on licences. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221,
+      1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236
+      to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example
+      items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the
+      Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law, decree or customs notice restricting exports to and imports from Israel was found. A search for a Bruneian import ban or boycott of Israeli goods returned pages on Bahrain,
+      Oman and the GCC only; the Royal Customs and Excise Department''s notices were not found online. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243
+      (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements,
+      sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in
+      statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction,
+      visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel import ban OR boycott OR "prohibited" goods Brunei Customs Israeli products'
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found; the searches returned nothing on the subject for Brunei. Pages read on 2026-11-10: the
+      Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched
+      for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention
+      Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that
+      name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
@@ -76,8 +124,17 @@ indicators:
     - as for B5
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on ICC officials by Brunei appeared in any source read.
+    status: none-found
+    note: 'No sanction on ICC officials was found; Brunei is not a state party to the Rome Statute (the Assembly of States Parties'' list, archived, searched for Brunei: no entry) and no statement
+      on the Court''s work on Palestine was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201,
+      1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and
+      procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon
+      and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements
+      call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   B8:
     status: unchecked
     note: 'Generated from recognitions.csv, which has no row for Brunei. The registry gives 17 November 1988 (A/78/846 annex) and records no official statement for it (P-14); the Minister of Foreign
@@ -106,8 +163,16 @@ indicators:
     - Brunei Sultan Israel (web searches)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Brunei appeared in any source read.
+    status: none-found
+    note: 'No sanction, entry ban or asset freeze on Israeli ministers or settlers by Brunei was found; the Ministry''s statements do not announce any measure. Pages read on 2026-11-10: the Ministry
+      of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza,
+      Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine
+      or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms,
+      transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: No recall, downgrade or severance of relations with Israel was found; no diplomatic relations between Brunei and Israel were found either (a search result states that Brunei has none;
@@ -132,14 +197,40 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Bruneian ban on settlement goods and no labelling rule was found; Brunei''s trade with Israel is not reported in the sources read and the Ministry''s statements name no trade measure.
+      Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer
+      an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to
+      2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206,
+      1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel import ban OR boycott OR "prohibited" goods Brunei Customs Israeli products'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of the Brunei Investment Agency or of another public fund to exclude companies over conduct in Gaza or the occupied territories was found; the search returned only lists
+      of other states'' funds (Norway, Denmark, New Zealand) and no Brunei fund policy. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September
+      2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions,
+      visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in statements
+      and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation
+      measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Investment Agency OR "Brunei sovereign wealth" Israel divest OR exclusion OR "ethical" Gaza'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No procurement rule or decision of Brunei excluding Israeli or settlement-linked suppliers was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200
+      to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit,
+      settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words
+      occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement,
+      sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel import ban OR boycott OR "prohibited" goods Brunei Customs Israeli products'
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Brunei''s Government flow of USD 100,000 (1 flow) to plan 1273 in fts_plan_totals.csv; the build scores it as monthly D1 rows. Left to the build.'
@@ -156,26 +247,68 @@ indicators:
   D3:
     status: none-found
     checked_at: '2026-11-09'
-    note: >-
-      No restoration or increase: Brunei's contributions of 2023 (USD 214,712) and 2024 (USD 114,712) are
-      below its 2022 contribution (USD 411,329) in UNRWA's donor rankings (archived). UNRWA's table for
-      2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD 100,000
-      pledged, not above USD 411,329 in 2022: no 2025 event (docs/10 B-876).
+    note: 'No restoration or increase: Brunei''s contributions of 2023 (USD 214,712) and 2024 (USD 114,712) are below its 2022 contribution (USD 411,329) in UNRWA''s donor rankings (archived).
+      UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD 100,000 pledged, not above USD 411,329 in 2022: no 2025 event (docs/10
+      B-876).'
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Brunei Darussalam
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza by Brunei was found. The Government''s Gaza fund (launched in October 2023; BND 6.76 million collected by October 2025, The
+      Star, 18 October 2025, search result) paid for food packs, airdrops of ready-to-eat meals with Jordanian aircraft (March 2024) and ambulances for Gaza (all from search results, not read);
+      none is a medical evacuation or a field hospital (D4 counts one event per programme of those two kinds). Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200
+      to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit,
+      settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words
+      occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement,
+      sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Gaza humanitarian aid OR donation OR "medical" Palestinians Brunei government 2025 2026'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+    status: none-found
+    note: 'No visa or refugee pathway for people from Gaza was found; the searches and the Ministry''s items name none. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room,
+      items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons,
+      transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others
+      the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund,
+      procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Gaza humanitarian aid OR donation OR "medical" Palestinians Brunei government 2025 2026'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Bruneian investigation or prosecution of a national or a company for conduct in Gaza was found. E1 is recorded, not scored (D-12). Pages read on 2026-11-10: the Ministry of Foreign
+      Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine,
+      Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or
+      Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit,
+      settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No ban of Gaza solidarity protests or symbols was found. Walks in solidarity with Palestinians took place in Brunei in November 2023 (80 people, Borneo Bulletin via The Star, 13 November
+      2023) and in November 2024 (the Second Palestine Solidarity Walkathon, about 5,000 people at Dermaga Diraja, The Star, 24 November 2024); neither report mentions a prohibition (search results,
+      press only). E2 is recorded, not scored. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202,
+      1205, 1210, 1221, 1222 and 1224 answer an error page), each searched for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement.
+      Items 1236 to 1243 (6 October to 2 November 2026) do not mention Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran
+      (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call
+      Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Palestine solidarity rally OR protest OR "public assembly" Gaza Bandar Seri Begawan police permit'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Bruneian judicial or prosecutorial step concerning Gaza (a complaint, a universal-jurisdiction case or an arrest) was found. E3 is recorded, not scored. Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' Press Room, items 1200 to 1243 (10 September 2025 to 2 November 2026; items 1201, 1202, 1205, 1210, 1221, 1222 and 1224 answer an error page), each searched
+      for Gaza, Palestine, Israel, arms, weapons, transit, settlements, sanctions, visas, evacuation, investment and procurement. Items 1236 to 1243 (6 October to 2 November 2026) do not mention
+      Gaza, Palestine or Israel. In the others the words occur only in statements and joint statements on Gaza, Lebanon and Iran (for example items 1204, 1206, 1214, 1216, 1220, 1230, 1235) that
+      name no arms, transit, settlement, fund, procurement, sanction, visa or evacuation measure; the Ministry''s statements call Israel ''the Occupying Power''.'
+    queries:
+    - 'WebSearch 2026-11-10: Brunei Israel arms OR military OR airspace OR "transit" OR sanctions OR ICC Brunei position Gaza war'
+    - mfa.gov.bn Press Room items 1200 to 1243 (read, searched for the terms above, 2026-11-10)
+    checked_at: '2026-11-10'
