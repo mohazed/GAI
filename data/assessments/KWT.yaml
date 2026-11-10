@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, Arabic: the English files and the 80th Arabic file answer 404), the UN Security Council records already archived (S/PV.9534, S/PV.10003) and the UN's Meetings Coverage of those days read through Wayback (SC/15569, SC/16178), the joint statements already archived (grep for Kuwait, الكويت), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. The Ministry of Foreign Affairs (mofa.gov.kw) and the Kuwait News Agency (kuna.net.kw) answered a Cloudflare challenge (403, 'Just a moment...'), which is not bypassed; the Amiri Diwan (da.gov.kw) and the Council of Ministers (cmgs.gov.kw) answered but were not searched item by item. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): no press item in Arabic or English was read. These gaps are scheduled for P-23.
 # One event (D3). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L24, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Arabic; the boycott law of 1964, the 2014 company list and the 2021 shipping decree are before the window), all none-found with the limits said in each note; new lead_20261110_KWT_1 (E2, the Ministry of Interior's ban of unlicensed Gaza gatherings, press). Recognition row KWT,1988-11-16 added from the letter of 16 November 1988 (UNISPAL, archived; B8 generated). New event evt_2025_07_29_KWT_B9 (+5, the Foreign Minister's text at the two-State conference, UNISPAL); the office of 'Mr. Al-Sabah' at S/PV.10003 read (the Crown Prince, R3). See docs/10 B-2089.
 country: KWT
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +19,13 @@ indicators:
     note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Kuwaiti company as a supplier of parts or maintenance for the F-35 programme: Kuwait is neither a partner nor a foreign-military-sales customer. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list 2026 (the Joint Program Office''s eight partners and its foreign-military-sales customers; none of the six of
+      this batch: GEO, IRQ, KWT, LBN, OMN, SYR)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Kuwait from Israel (archive/text/src_20261005_sipri_register-supplier-israel.txt, searched for Kuwait: not found). Left to the build.'
@@ -28,17 +34,51 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Kuwait (searched)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: Kuwait has no relations with Israel and its boycott law of 1964 bars dealings with it. Not searched: the Ministry of Defence''s
+      and the Kuwait Army''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    - 'WebSearch 2026-11-10: Kuwait Foreign Minister Al-Yahya Gaza statement November 2026 (statements of 2024 and 2025 only; nothing dated after 2026-11-04)'
+    - 'mofa.gov.kw and kuna.net.kw: Cloudflare challenge on 2026-11-04 (not retried)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; Kuwait exports no arms to Israel (A1: no delivery in the SIPRI register) and Law No. 21 of 1964 bars any dealing with
+      Israel. Not searched: the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No two-way arms embargo on Israel adopted in the window was found. Law No. 21 of 1964 (the unified law on the boycott of Israel) already bars dealings with Israel in both directions (before the
+      window, not an act of the window); a proposed amendment to tighten it (Kuwait Times, undated in the results) was not found enacted. Not searched: the Official Gazette (Kuwait Al-Youm) item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    - 'WebSearch 2026-11-10: الكويت قرار حكومي مقاطعة شركات داعمة لإسرائيل غزة 2024 مكتب مقاطعة إسرائيل وزارة التجارة (Arabic: the Minister of Commerce and Industry on enforcing Law No. 21 of 1964 by inspections;
+      the closure of eight shops in Shuwaikh for selling Israeli products (Asharq Al-Awsat, undated in the results); the inquiry of 2022 into Credit Bank''s contract with a company said to be Israeli; popular
+      campaigns; no new Government decision in the window)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel in the window was found. The decree reported in December 2021 bars ships carrying goods to or from Israel from
+      Kuwaiti waters, even in transit (before the window, not an act of the window, and not specific to arms). Not searched: the Kuwait Ports Authority''s and the Directorate General of Civil Aviation''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded; Kuwait is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19), so no absence is scored.'
@@ -76,14 +116,20 @@ indicators:
     note: 'No sanctions on ICC judges or prosecutors by Kuwait were found in the sources read.'
     checked_at: '2026-11-04'
   B8:
-    status: none-found
-    note: 'Generated from recognitions.csv, which has no row for Kuwait. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is added (R21; P-23).'
+    status: has-events
+    note: 'Generated from recognitions.csv. The row KWT,1988-11-16 was added in the finish run (T-F-L24, 2026-11-10; docs/10 B-2089), citing the letter dated 16 November 1988 from Kuwait''s Permanent Representative
+      to the Secretary-General (UNISPAL, archived, src_19881116_un-unispal_kwt-recognition), which transmits the statement by which the State of Kuwait ''announces its recognition of that Palestinian State''.
+      The statement carries no date; the row takes the letter''s date, one day after the registry''s 15 November 1988 (countries.yaml recognises_palestine), flagged for the author. The pre-existing tier (+3
+      from 2023-10-07, R21) does not depend on the day. Before this session: no row.'
     queries:
-    - 'recognitions.csv, KWT'
-    checked_at: '2026-11-04'
+    - recognitions.csv, KWT
+    - 'UNISPAL document API (/unispal/wp-json/wp/v2/document?search=Declaration of Independence, 14 November 1988 to 31 March 1989; 2026-11-10): the letters of Bahrain, Kuwait, Pakistan, Madagascar, Indonesia,
+      Tunisia, Mongolia, Malta, Oman and Qatar; none from Iraq, Lebanon, Syria or Georgia'
+    - UNISPAL page auto-insert-179181 read and archived (2026-11-10)
+    checked_at: '2026-11-10'
   B9:
-    status: none-found
-    note: 'No event filed. (1) The joint statement of nine Arab foreign ministers of 26 October 2023 (src_20231026_fm-gov-om_arab-fms-joint-statement, line 1, names ''the State of Kuwait''), filed for the other signatories (+5, decayed, evt_2023_10_26_BHR_B9), is not filed for Kuwait because no archived document names Kuwait''s Foreign Minister on that date and a B9 event needs the speaker''s name (the minister of July 2025, Abdullah Ali al-Yahya, is not proof of the post in 2023): Task V or P-23 files it once a primary names the minister (no score effect: decayed). (2) The General Debate statements of the 79th (26 September 2024) and 81st (24 September 2026) sessions were delivered by the Crown Prince, Sabah Khalid Al-Hamad Al-Sabah, the 81st as the Amir''s representative (files'' headings): not a B9 speaker (R3); the 80th has no file on the UN''s site. (3) At the Council''s open debate of 23 January 2024 (S/PV.9534, line 3358, ''Sheikh Al-Sabah (Kuwait)'') the speaker was the Deputy Minister for Foreign Affairs, Sheikh Jarrah Jaber Al-Ahmad Al-Sabah (UN Meetings Coverage SC/15569, read through Wayback): not a B9 speaker (R3). (4) At the high-level open debate of 23 September 2025 (S/PV.10003, from line 1405, ''Mr. Al-Sabah (Kuwait)'', for the Gulf Cooperation Council: ''What is happening in the Gaza Strip is no less than a living example of genocide'', a call ''to end the aggression immediately'') the record does not give the speaker''s office, and the Wayback copy of the day''s Meetings Coverage (SC/16178, 17,558 bytes, an early version) does not name him: not filed until his office is read in a primary (P-23; it would be a +5 event if he is the head of government or the foreign minister). (5) The Foreign Minister Abdullah Ali al-Yahya''s address at the two-State conference (29 July 2025) is reported in indirect speech in the UN''s press release (src_20250729_unispal_two-state-conference-day-two-release, line 36; R4) and does not cite Gaza there; its text was not found (P-23).'
+    status: has-events
+    note: 'One scored event since 2026-11-10 (evt_2025_07_29_KWT_B9, item 5 below) and one unscored (item 6). As written on 2026-11-04: no event filed. (1) The joint statement of nine Arab foreign ministers of 26 October 2023 (src_20231026_fm-gov-om_arab-fms-joint-statement, line 1, names ''the State of Kuwait''), filed for the other signatories (+5, decayed, evt_2023_10_26_BHR_B9), is not filed for Kuwait because no archived document names Kuwait''s Foreign Minister on that date and a B9 event needs the speaker''s name (the minister of July 2025, Abdullah Ali al-Yahya, is not proof of the post in 2023): Task V or P-23 files it once a primary names the minister (no score effect: decayed). (2) The General Debate statements of the 79th (26 September 2024) and 81st (24 September 2026) sessions were delivered by the Crown Prince, Sabah Khalid Al-Hamad Al-Sabah, the 81st as the Amir''s representative (files'' headings): not a B9 speaker (R3); the 80th has no file on the UN''s site. (3) At the Council''s open debate of 23 January 2024 (S/PV.9534, line 3358, ''Sheikh Al-Sabah (Kuwait)'') the speaker was the Deputy Minister for Foreign Affairs, Sheikh Jarrah Jaber Al-Ahmad Al-Sabah (UN Meetings Coverage SC/15569, read through Wayback): not a B9 speaker (R3). (4) At the high-level open debate of 23 September 2025 (S/PV.10003, from line 1405, ''Mr. Al-Sabah (Kuwait)'', for the Gulf Cooperation Council: ''What is happening in the Gaza Strip is no less than a living example of genocide'', a call ''to end the aggression immediately'') the record does not give the speaker''s office, and the Wayback copy of the day''s Meetings Coverage (SC/16178, 17,558 bytes, an early version) does not name him: not filed until his office is read in a primary (P-23; it would be a +5 event if he is the head of government or the foreign minister). Resolved on 2026-11-10 (T-F-L24): the speaker was the Crown Prince, Sheikh Sabah Khaled Al-Hamad Al-Sabah, as the Amir''s representative, for the Gulf Cooperation Council (Arab Times, 24 September 2025, read, not archived; TRT World): not a B9 speaker (R3), as at the 79th and 81st General Debates; not filed. (5) The Foreign Minister Abdullah Ali al-Yahya''s address at the two-State conference (29 July 2025) is reported in indirect speech in the UN''s press release (src_20250729_unispal_two-state-conference-day-two-release, line 36; R4) and does not cite Gaza there; its text was not found (P-23); found on 2026-11-10 (T-F-L24): UNISPAL publishes the Kuwaiti delegation''s Arabic text, which names the siege of Gaza and the cutting off of food, medicine, electricity and water and calls for an immediate halt to the aggression on the Gaza Strip: filed as evt_2025_07_29_KWT_B9 (+5; src_20250729_un-unispal_kwt-alyahya-two-state-conference-ar). (6) Since this entry: the joint statement of 16 October 2026 was filed for Kuwait by T-F-UNDOCS-1 (evt_2026_10_16_KWT_B9, +5, scoped west-bank, unscored in v1; docs/10 B-874), the Foreign Minister being named in an archived document of the twelve months before. The joint statement of 26 October 2023 stays unfiled for Kuwait (past 730 days; no score effect).'
     queries:
     - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/kw_ar.pdf (read live; 80/kw_ar.pdf and kw_en.pdf 404)'
     - 'archive/text/src_20240123_undocs_s-pv-9534.txt, src_20250923_undocs_s-pv-10003.txt (Kuwait)'
@@ -118,14 +164,41 @@ indicators:
     note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements taken in the window was found. Law No. 21 of 1964 bans all Israeli goods (before the window), the Ministry of Commerce and Industry enforces
+      it by inspections, and the announcement of October 2014 on 50 companies operating in settlements predates the window. Not searched: the General Administration of Customs'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    - 'WebSearch 2026-11-10: الكويت قرار حكومي مقاطعة شركات داعمة لإسرائيل غزة 2024 مكتب مقاطعة إسرائيل وزارة التجارة (Arabic: the Minister of Commerce and Industry on enforcing Law No. 21 of 1964 by inspections;
+      the closure of eight shops in Shuwaikh for selling Israeli products (Asharq Al-Awsat, undated in the results); the inquiry of 2022 into Credit Bank''s contract with a company said to be Israeli; popular
+      campaigns; no new Government decision in the window)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies by the Kuwait Investment Authority, the Public Institution for Social Security or the Central Bank over conduct in Gaza or the occupied territories was found; the only
+      result naming the Authority is the US listing of April 2025 for boycott-related requests, not a Kuwaiti decision. Not searched: the Authority''s and the Institution''s investment reports.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories taken in the window was found; the announcement of October 2014 that the Government would not
+      deal with 50 companies over their role in settlements predates the window (BDS movement''s report; no Government text read). Not searched: the Central Agency for Public Tenders'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    - 'WebSearch 2026-11-10: الكويت قرار حكومي مقاطعة شركات داعمة لإسرائيل غزة 2024 مكتب مقاطعة إسرائيل وزارة التجارة (Arabic: the Minister of Commerce and Industry on enforcing Law No. 21 of 1964 by inspections;
+      the closure of eight shops in Shuwaikh for selling Israeli products (Asharq Al-Awsat, undated in the results); the inquiry of 2022 into Credit Bank''s contract with a company said to be Israeli; popular
+      campaigns; no new Government decision in the window)'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Kuwaiti Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events of 2025 and 2026, all ended at the build date). Left to the build.'
@@ -160,11 +233,33 @@ indicators:
     note: 'No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).'
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No domestic investigation or prosecution of Kuwaiti nationals or companies for conduct in Gaza was found; the referrals found concern shops selling Israeli goods under the
+      boycott law. Not searched: the Public Prosecution''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: الكويت قرار حكومي مقاطعة شركات داعمة لإسرائيل غزة 2024 مكتب مقاطعة إسرائيل وزارة التجارة (Arabic: the Minister of Commerce and Industry on enforcing Law No. 21 of 1964 by inspections;
+      the closure of eight shops in Shuwaikh for selling Israeli products (Asharq Al-Awsat, undated in the results); the inquiry of 2022 into Credit Bank''s contract with a company said to be Israeli; popular
+      campaigns; no new Government decision in the window)'
+    - 'WebSearch 2026-11-10: Kuwait Foreign Minister Al-Yahya Gaza statement November 2026 (statements of 2024 and 2025 only; nothing dated after 2026-11-04)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. Not filed: press reports say the Ministry of Interior banned all ''unauthorized assembly'' after calls for sit-ins in support of Gaza on the Acting Minister Fahd al-Yousef''s
+      directive and closed the roads to Irada Square before a planned Gaza rally (Asharq Al-Awsat of 3 March 2024, read on 2026-11-10, not archived: ''all forms of unauthorized gatherings and marches'' and unauthorised calls for gatherings on social media were banned after calls for sit-ins on Saturday in support of Gaza; Arab Times), while licensed rallies were held (14 January 2024). A ban on unlicensed gatherings in general, applied to Gaza rallies, is recorded as a lead for the author (lead_20261110_KWT_1); no Ministry
+      text was read (kuna.net.kw and moi.gov.kw not reached). Not searched: the Ministry of Interior''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait interior ministry Gaza solidarity rally Irada Square ban OR arrests protest Palestine 2024 2025 (the rally of 14 January 2024 at Irada Square held; Asharq Al-Awsat''s report
+      that the Ministry of Interior, on the Acting Minister Fahd al-Yousef''s directive, banned all ''unauthorized assembly'' after calls for sit-ins in support of Gaza (date not shown on the page); Arab
+      Times on the Ministry''s closure of the roads to Irada Square before a planned Gaza rally (a 2 March item, year not shown); the bans of unlicensed rallies of May 2021 and 2020)'
+    - 'mofa.gov.kw and kuna.net.kw: Cloudflare challenge on 2026-11-04 (not retried)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No universal-jurisdiction complaint concerning conduct in Gaza accepted for investigation in Kuwait was found (Kuwait is not a party to the Rome Statute). Not searched:
+      the Public Prosecution''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Kuwait Israel boycott law 1964 companies Gaza 2024 government decision blacklist products Kuwait Investment Authority divest (Law No. 21 of 1964, the unified law on the boycott
+      of Israel, enforced by the Office for Boycotting Israeli Goods in the Customs Department; the announcement of October 2014 that the Government would not deal with 50 companies over their role in settlements
+      (BDS movement, 26 October 2014); the decree banning ships carrying goods to or from Israel from Kuwaiti waters, even in transit (The New Arab, 5 December 2021); the US Bureau of Industry and Security''s
+      listing of the Kuwait Investment Authority for boycott-related requests, April 2025; nothing taken in the window)'
+    checked_at: '2026-11-10'

@@ -78,12 +78,17 @@ indicators:
     note: 'No sanctions on ICC judges or prosecutors by Oman were found in the sources read.'
     checked_at: '2026-11-04'
   B8:
-    status: none-found
-    note: 'Generated from recognitions.csv, which has no row for Oman. The registry gives 13 December 1988 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is
-      added (R21; P-23).'
+    status: has-events
+    note: 'Generated from recognitions.csv. The row OMN,1988-12-12 was added in the finish run (T-F-L24, 2026-11-10; docs/10 B-2089), citing the letter dated 13 December 1988 from Oman''s Chargé d''affaires
+      a.i. to the Secretary-General (UNISPAL, archived, src_19881213_un-unispal_omn-recognition), which transmits the statement issued by the Government of the Sultanate of Oman on 12 December 1988 that ''the
+      Sultanate of Oman has decided to recognize officially and legally the independent Palestinian State''. The row takes the statement''s date, one day before the registry''s 13 December 1988 (the letter''s
+      date; countries.yaml recognises_palestine). The pre-existing tier (+3 from 2023-10-07, R21) does not depend on the day. Before this session: no row.'
     queries:
-    - 'recognitions.csv, OMN'
-    checked_at: '2026-11-04'
+    - recognitions.csv, OMN
+    - 'UNISPAL document API (/unispal/wp-json/wp/v2/document?search=Declaration of Independence, 14 November 1988 to 31 March 1989; 2026-11-10): the letters of Bahrain, Kuwait, Pakistan, Madagascar, Indonesia,
+      Tunisia, Mongolia, Malta, Oman and Qatar; none from Iraq, Lebanon, Syria or Georgia'
+    - UNISPAL page auto-insert-183848 read and archived (2026-11-10)
+    checked_at: '2026-11-10'
   B9:
     status: has-events
     note: 'Three events: the nine Arab foreign ministers'' joint statement of 26 October 2023, published by the Omani Ministry (+5, the Minister named by the continuity of the post, flagged; decayed); the
