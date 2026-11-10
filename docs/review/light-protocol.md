@@ -4285,3 +4285,37 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2143, B-2144. The full-protoc
 | LSO | LSO_2 | B9 | Ramaphosa's closing remarks of 23 Apr 2025 do not mention Gaza; minutes not found | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-5: leads of LTU to NZL, light-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2145 to B-2147. The full-protocol rows are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| LTU | LTU_1 | D2 | Ministry's post on X of 28 Jan 2024 in search summaries only; no urm.lt release; no CDX capture | Kept open | None |
+| LTU | LTU_2 | B5 | LRT's Lithuanian report of the unnamed Ministry commentary only | Kept open | None |
+| LTU | LTU_3 | B9 | Press only; closed meeting, no transcript | Kept open | None |
+| LUX | LUX_1 | C4 | Government Council summary of 16 Oct 2026; ban not in force (late Oct 2026) | Kept open | None |
+| LVA | LVA_1 to LVA_3 | B9, B9, B5 | No video or transcript of 28 Aug 2025; Minister's own words not found; no Ministry ICC text | Kept open | None |
+| MDA | MDA_1 | C2 | No new governmental instrument; agency memoranda (author's R18 reading) | Kept open | None (C at cap) |
+| MDA | MDA_2 | B10 | Not searched again (expired; T-F-L02 the day before) | Kept open | None |
+| MDA | MDA_3 | A8 | Press reports quoting the Prosecutor General; no own release; no outcome | Kept open | None |
+| MDV | MDV_2 | B9 | President's Office report in indirect speech; post on X not read | Kept open | None (B9 near cap) |
+| MDV | MDV_3 | B5 | Press and PSM News only | Kept open | None |
+| MDV | MDV_4 | E2 | Press: release on condition not to protest near embassies (individual order); names not recorded | Kept open | None (unscored) |
+| MLT | MLT_1 | D4 | No Government release of 10 or 15 Apr 2025 found (April 2025 listing captured on page 1 only) | Kept open | None |
+| MNE | MNE_1 | B9 | Government pages call Ibrahimović Foreign Minister (2025, 2026); no archived document of Sep 2024 | Kept open | None (expired) |
+| MOZ | MOZ_1 | A5 | No Government or INAMAR statement; Portuguese parliamentary question only | Kept open | None |
+| MRT | MRT_1 | B9 | No Presidency text of the Riyadh speech (730 days old on 11 Nov 2026) | Kept open | None |
+| MRT | MRT_2, MRT_3 | B9 | Not searched again (author's reading, B-812; indirect speech) | Kept open | None |
+| MUS | MUS_1 | B9 | **Hansard of 28 Oct 2025** (PQ B/944) archived: 'forcefully condemned Israel for its violations of humanitarian law', atrocities in Gaza | **Filed** `evt_2025_10_28_MUS_B9` (+5, flagged); lead promoted (B-2145) | MUS +1 → +6 (Acting) |
+| MWI | MWI_1 | B10 | Press of 2023 to 2024 only; no presidential statement in an official record | Kept open | None |
+| NAM | NAM_1 | B9 | **Bogotá joint statement** archived (DIRCO copy): representatives of Namibia, no signatory named | Kept open (B-444, B-2146 (3)) | None |
+| NIC | NIC_1 to NIC_3 | B9 | Not searched again (R7; author's readings) | Kept open | None |
+| NIC | NIC_4 | B9 | Same Bogotá statement: no Nicaraguan signatory named | Kept open | None |
+| NIC | NIC_5 | B9 | Press only; no official transcript or video (expired) | Kept open | None |
+| NPL | NPL_1 | C2 | Protocols not signed (Kathmandu Post, Kantipur, Sep 2026: fees not agreed) | Kept open | None |
+| NRU | NRU_1 | B10 | Press only; no official transcript or video | Kept open | None |
+| NZL | NZL_1 | B9 | Joint donor statement's signatory line (already archived) names New Zealand's Foreign Minister; no transcript of the radio interview | **Filed** `evt_2025_05_19_NZL_B9` (+2); kept open for the interview (B-2146 (1)) | NZL +39 → +40 (Acting) |
+
+`pnpm validate`: 0 errors.

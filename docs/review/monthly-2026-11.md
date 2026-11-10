@@ -922,3 +922,20 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2143, B-2144. Every open lead
 | JOR | JOR_5 | A5 | Not searched again (author's reading) | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-5: leads of LTU to NZL, full-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2145 to B-2147. Every open lead of MAR, MYS and NGA carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| MAR | MAR_1 | A5 | **AFRICOM release of 12 May 2025** (Israel among the participating nations of African Lion 25) archived from its Wayback capture; a US document naming no Israeli unit | Kept open; A5 note extended; not filed (author's reading, B-403 (4), B-2146 (2)) | None |
+| MAR | MAR_2 | A5 | Press only (Le Desk, Hespress on the port's statement); no authorisation or parliamentary answer | Kept open | None |
+| MAR | MAR_3 | D4 | Press only: an FAR detachment at the Force's headquarters in Kiryat Gat; no record of a field hospital operating in Gaza | Kept open | None |
+| MAR | MAR_4 | E2 | No decree, order or judgment found | Kept open | None (unscored) |
+| MAR | MAR_5 | E3 | Filing reported; no prosecutor's decision found (soldier's name not recorded) | Kept open | None (unscored) |
+| MYS | MYS_1 | B5 | Press and RTM reports of the Prime Minister's remarks of 22 Nov 2024; no transcript or official video | Kept open | None |
+| NGA | NGA_1 | B9 | Press only; no State House text (730 days old on 11 Nov 2026) | Kept open | None |
+| NGA | NGA_2 | B9 | Press only; no Ministry text (expired) | Kept open | None |
+
+`pnpm validate`: 0 errors.
