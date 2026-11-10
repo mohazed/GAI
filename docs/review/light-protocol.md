@@ -3266,3 +3266,34 @@ Every replay was re-fetched with `curl --compressed` and equals its index row in
 Found and not filed: the Public Order Act prosecution of three women for the Istana procession of 2 February 2024 (acquitted on 21 October 2025, fined after the High Court allowed the appeal on 30 April 2026; press), the Singapore Ministry of Home Affairs' query to Israel about Singaporeans in the IDF (E1 note), Thailand's Barak MX purchase and the sustainment agreement with Thai Aviation Industries (A4 generated; not A5), Viet Nam's purchases and licensed production of Israeli loitering munitions (not A5) and the Viet Nam-Israel Free Trade Agreement in force from November 2024 (C2 left as set; B-2012), two Hind Rajab Foundation complaints filed in Viet Nam (no acceptance reported, not E3), Bangladesh's 'except Israel' passport clause of 7 April 2025 (no indicator), the Taliban-organised rallies for Gaza (no E2 ban), the Timorese President's interview reported by RTP (press).
 
 Score effect: none of the six moves (E2 is outside the sum; the Thai B9 event has decayed to zero; none-found entries carry no points). Provisional previews (rc.1, 2026-11-10): SGP +24 Acting, THA +12 Acting, TLS +2 Acting, VNM +10 Acting, AFG -26 Enabling, BGD +20 Acting. The Singapore figure moved from +24.4 to +24.1 by decay; Thailand's, Viet Nam's and Bangladesh's differ from the T-P21 tables of 4 November because of later D3 and Comtrade rows, not because of this session.
+
+### T-F-L13: BTN, IRN, LKA, MDV, NPL, PAK (2026-11-10, groups 25 and 26)
+
+The session had web search (standard mode: 3 queries for Bhutan, 5 for Iran with one in Persian, 6 for Sri Lanka with one in Sinhala, 7 for the Maldives with one in Dhivehi, 6 for Nepal with one in Nepali, 5 for Pakistan with one in Urdu). For the Maldives, Nepal and Pakistan these are the first web searches, T-P21-26 having run without them. Government pages read: the Bhutanese Ministry's site search (`mfa.gov.bt`, answering again), the Sri Lanka Bureau of Foreign Employment's site, the Human Rights Commission of Sri Lanka's case page, the Maldivian President's Office's site search, the Pakistan Medical and Dental Council's press release, and an Iranian law of 2008 from a legal portal. Refused, not bypassed: `pmo.gov.bt` (no answer), `foreign.gov.mv` (403; read through Wayback), `gadebate.un.org` (405 for Iran's 81st file and page), `press.un.org` (a script challenge; read through Wayback), Dawn and The Express Tribune (a script challenge). No Dzongkha or Tamil search was run. Records: B-2016 to B-2022.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events and leads | Still unchecked |
+|---|---|---|---|---|
+| BTN | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| IRN | A3, A5 to A8, C4 to C6, E1 to E3 | none | new `lead_20261110_IRN_2` (B9, the President's 81st General Debate address, press only) | none |
+| LKA | A3, A5 to A8, C4 to C6, E1 to E3 | none | new `lead_20261110_LKA_2` (E2, the arrest over anti-Israel stickers, March 2025); LKA_1 re-checked and kept | none |
+| MDV | A3, A5 to A8, C4 to C6, E1 to E3 | B9 note updated | `evt_2025_09_27_MDV_B9` (+5, `confirmed`; promotes `lead_20261104_MDV_1`); new `lead_20261110_MDV_3` (B5, the President's post on the ICC warrants) and `lead_20261110_MDV_4` (E2, two arrests of protesters, August 2024); MDV_2 kept | none |
+| NPL | A3, A5 to A8, C4 to C6, E1 to E3 | C2 note updated (none-found kept) | new `lead_20261110_NPL_1` (C2, two labour protocols approved on 5 January 2026, unsigned) | none |
+| PAK | A3, A5 to A8, C4 to C6, E1 to E3 | D4 and D5 notes updated (none-found kept) | new `lead_20261110_PAK_1` (E2, the TLP proscription, recommended reading: not E2) and `lead_20261110_PAK_2` (C6, the announced ban on companies supporting Israel, July 2024) | none |
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2025_09_27_MDV_B9 | B9 | 2025-09-27 | +5 | confirmed | official (Ministry page, Wayback capture) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20250927_foreign-gov-mv_khaleel-80th-general-debate | The Maldivian Foreign Ministry's page of the Foreign Minister's 80th General Debate statement (existing Wayback capture 20251002070246, 64,635 bytes; the site answers 403) | `evt_2025_09_27_MDV_B9` |
+
+The replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256; the record was written by hand with the delivery date (27 September 2025, from the UN's Meetings Coverage GA/12714).
+
+Second reading: the Maldivian event was re-read against lines 27 to 38 of the archived text (verdict agree, recorded in the event); its French summary follows `docs/glossary.fr.md` ('ce qu'il a appelé un génocide', as Pakistan's 80th address).
+
+B8 is generated and was not touched. None of the six has a row in `data/structured/recognitions.csv`; no state document giving the 1988 or 1989 date was searched in this session (R21; P-23).
+
+Found and not filed: a search summary's 'first formal memorandum of understanding on Defence Cooperation' between Sri Lanka and Israel, which the cited article (The Jerusalem Post, 3 September 2026) says of the India-Sri Lanka memorandum of April 2025; Iran's laws of 2008 and 2020 restricting dealings with Israel (before the window); the Maldives' boycott of Israeli products announced in 2014, the People's Majlis's non-binding resolution of April 2024 and the entry ban of April 2025 (no indicator); the Maldivian Minister of Homeland Security's pledge to enforce the ICC warrants (not a B5 speaker); the Pakistan Medical and Dental Council's decision on Gaza students (not a visa instrument; D5 kept none-found); Pakistan's Special Assistant's statement that injured Palestinians could be treated in Pakistan (no programme found, D4).
+
+Score effect: none of the six moves (the Maldivian B9 event counts +4.55 after decay but B9 stays at its cap of +10; leads and none-found entries carry no points). Provisional previews (rc.1, 2026-11-10): BTN −3 Passive, IRN +21 Acting, LKA +13 Acting, MDV +49 Confronting, NPL +1 Acting, PAK +34 Acting. Sri Lanka's figure differs from the T-P21-25 table of 4 November (+21) because its 2024 D3 event was ended on 2025-12-31 by T-F-UNDOCS-2 (B-876, B-877), not because of this session.
