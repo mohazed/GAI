@@ -4158,3 +4158,21 @@ Session T-F-V3 (docs/10 B-2106, B-2107) checks the records written or changed by
 | VNM | 1 | 1: 1 / 1 | 1: 1 | 0 / 0 (no URL) | none added or changed | 0 (none) | evt_2024_12_31_VNM_D3 ends on 2025-12-31: the state has no row in the 2025 table, so no 2025 event (B-876 rule; flagged, B-2107 (3)). |
 | YEM | 1 | 5: 5 / 5 | 3: 2 | 0 / 0 (no URL) | none added or changed | 0 (none) | evt_2026_10_16_YEM_B9 (+5, west-bank, unscored): the state is named in the Pakistani press release and the DIRCO copy; the Minister's name is in the cited archived page. The Pakistani capture replays 102,268 bytes against 102,519 recorded, with every quoted name present (B-2107 (1)); the DIRCO copy replays equal. |
 | ZWE | 1 | 1: 1 / 1 | 1: 1 | 0 / 0 (no URL) | none added or changed | 0 (none) | evt_2024_12_31_ZWE_D3 ends on 2025-12-31: the state has no row in the 2025 table, so no 2025 event (B-876 rule; flagged, B-2107 (3)). |
+
+## P-23 pass of 2026-11-10
+
+### T-G-JOINT: joint statements and visa or labour instruments (2026-11-10)
+
+Decisions: docs/10 B-2117, B-2118. Light-protocol countries only (the full-protocol rows are in `docs/review/monthly-2026-11.md` §12).
+
+| Country | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|
+| KAZ | C2 | Memorandum of intent of 27 January 2026 to conclude a visa exemption agreement (national passports), from the Ministry's archived release | `evt_2026_01_27_KAZ_C2_3` (−10, confirmed, flagged; default adopted, CHECKUP §2b) | None (C at −20 cap; +9 Acting) |
+| WSM | C2 | Visa waiver signed 2019, in force 6 July 2023 (Government's page of May 2023) | Note; none-found kept; B-703 (3) closed | None |
+| LKA | C2 | Arrangement of 6 November 2023 for agricultural workers = implementation plan of the 2020 agreement (Cabinet decision of 21 November 2023) | Note; not filed (R18); `evt_2025_12_22_LKA_C2` flagged for the author | None |
+| THA | C2 | Quota memorandum of March 2025 reported signed by Thaiger only; Israeli Embassy page: "explored" | Note; not filed, no lead | None |
+| VNM | C2 | Labour agreement still under negotiation on 12 October 2026 | Note | None |
+| MDA | C2 | Extension to 2029 of the pre-war construction-workers agreement | Note; not a new instrument (C2 at cap) | None |
+| TON | C2 | Visa waiver 2010, in force April 2017 | Note | None |
+| SYC | C2 | Unchanged (`evt_2024_01_11_SYC_C2`, B-2080); no other visa-exemption instrument with Israel signed in the window was found | None | None |
+| DJI, KWT, LBN, SDN, SYR, YEM, LBY, OMN, SOM | B9 | 16 October 2026 statement already filed (west-bank, unscored); the states' own copies not found (Oman's Ministry API has no item) | None | None |

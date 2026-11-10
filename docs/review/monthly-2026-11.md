@@ -793,3 +793,18 @@ Recognition rows for the states without one, and BHR B12 retried. Decisions: doc
 | BHR B12 | unchanged | | bna.bh bot check, 405 and 403; Wayback captures 403 | Unchecked, author (B-2098) |
 
 Counts: `recognitions.csv` 64 → 89 rows; B8 without a row and unchecked 30 → 7. `pnpm validate`: 0 errors.
+
+### T-G-JOINT (2026-11-10)
+
+Joint statements of 22 September and 16 October 2026, and visa-exemption and labour-mobility instruments with Israel (C2, R18). Decisions: docs/10 B-2117, B-2118.
+
+| Item | Result | B-id |
+|---|---|---|
+| Statement of 22 September 2026 (eight foreign ministers) | All eight signatories already filed (B-855); own copies of TUR, ARE and QAT archived and added as evidence; EGY, IDN, JOR, SAU own copies not found (noted in the events) | B-2117 (1), (2), (3) |
+| Statement of 16 October 2026 (Colombia's embassy in Jerusalem) | All nineteen scored signatories already filed (DJI, KWT, LBN, SDN, SYR, YEM by T-F-UNDOCS-1, B-875 (3)); own copies of TUR and QAT archived and added; Qatar's copy lists eighteen states | B-2117 (1), (2) |
+| KAZ C2: memorandum of intent on visa exemption, 27 January 2026 | Filed `evt_2026_01_27_KAZ_C2_3` (−10, confirmed, flagged); no score effect (C at −20 cap) | B-2118 (1), default |
+| WSM C2: visa waiver | Signed 2019, in force 6 July 2023 (Government's page): before the window, no event; B-703 (3) closed | B-2118 (2) |
+| LKA C2: agricultural workers arrangement, 6 November 2023 | Implementing plan of the 2020 agreement (Cabinet decision): not filed (R18); the December 2025 event and IND's labour protocols flagged | B-2118 (3), author |
+| THA, VNM, MDA, TON C2 | No new instrument (THA quota memorandum disputed by the Israeli Embassy's page; VNM agreement unsigned; MDA extension; TON 2010) | B-2118 (4)–(7) |
+| Israel's treaty database (gov.il) | Cloudflare block and human-verification page; not passed | B-2118 |
+| `pnpm validate` | 0 errors | |
