@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent) and the UN's coverage of the 79th; the joint statements and UN records already archived (grep of archive/text for the country's name, with and without the accent); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the UN Treaty Collection's status page. The Ministry's site is a landing page and the Presidency's and the Government's portals serve their news by script, so B11, B12, C2, D4 and D5 are left unchecked. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
 # No event. Leads: none.
+# Completion of 2026-11 (finish run, T-F-L16, 2026-11-10): A3, A5 to A8, B11, B12, C2, C4 to C6, D4, D5 and E1 to E3 searched with about 10 web searches in English and French (docs/10 B-2038), all none-found with the limit on the Government's sites said in each note; B9 note extended; no new event or lead.
 country: BEN
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Beninese company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Benin, and the search for Benin with the
+      programme returned none. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Benin and Bénin (no match)
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Benin from Israel in the register. Left to the build.'
@@ -29,17 +35,36 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Benin (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel was found. The searches returned Benin''s agreements with the United States (January 2025, logistics, training and mutual acquisition
+      with AFRICOM), with Côte d''Ivoire and with Niger, and no agreement, exercise, transit or intelligence-sharing item with Israel. Not searched: the Ministry of Defence''s releases (no site
+      answers).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin Israël coopération militaire OR défense OR armes OR drones OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Benin to Israel was found either. Not searched: the Journal officiel (sgg.gouv.bj).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin Israël coopération militaire OR défense OR armes OR drones OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Journal officiel (sgg.gouv.bj).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin Israël coopération militaire OR défense OR armes OR drones OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of port access (Cotonou), airspace or transit to an arms shipment bound for Israel was found; the searches returned no such item for Benin. Not searched: the port and civil
+      aviation authorities'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin Israël coopération militaire OR défense OR armes OR drones OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on A/RES/ES-10/22 (12 December 2023) and ES-10/23 (10 May 2024); recorded as non-voting on the other ten of the twelve qualifying votes, each scored
@@ -90,57 +115,87 @@ indicators:
     - recognitions.csv, BEN
     checked_at: '2026-11-04'
   B9:
-    status: none-found
+    checked_at: '2026-11-10'
     note: 'No event filed. The General Debate statement of the 79th session (28 September 2024) was delivered by the Foreign Minister, Olushegun Adjadi Bakari (UN Meetings Coverage GA/12639, archived:
-      src_20240928_un-press_ga12639): in the Government''s French text Benin condemned ''les attaques terroristes du 7 octobre 2023 au Moyen-Orient'' and called for dialogue ''au Moyen-Orient,
-      où la solution à deux États demeure la seule voie viable'', with no call for a ceasefire and no named violation, and it is older than 730 days. The 80th (29 September 2025) and 81st (28
-      September 2026) statements were delivered by the Permanent Representative (the files'' headings; R3: not B9); the 80th speaks of ''le chaos humanitaire à Gaza'' and supports the two-State
-      solution and the New York Declaration, with no call for a ceasefire and no named violation. Not searched: the Presidency''s and the Government''s news (presidence.bj and gouv.bj serve their
-      news by script and answer a search with the whole archive), the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items (P-23). Web searches were not available to this
-      session (the run''s search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled
-      for P-23.'
+      src_20240928_un-press_ga12639): in the Government''s French text Benin condemned ''les attaques terroristes du 7 octobre 2023 au Moyen-Orient'' and called for dialogue ''au Moyen-Orient, où
+      la solution à deux États demeure la seule voie viable'', with no call for a ceasefire and no named violation, and it is older than 730 days. The 80th (29 September 2025) and 81st (28 September
+      2026) statements were delivered by the Permanent Representative (the files'' headings; R3: not B9); the 80th speaks of ''le chaos humanitaire à Gaza'' and supports the two-State solution and
+      the New York Declaration, with no call for a ceasefire and no named violation. Not searched: the Presidency''s and the Government''s news (presidence.bj and gouv.bj serve their news by script
+      and answer a search with the whole archive), the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items (P-23). Web searches were not available to this session (the run''s
+      search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23. Finish run,
+      T-F-L16 (2026-11-10): the searches for the Foreign Minister''s and the Government''s statements in 2026 (French and English) returned none on Gaza or Palestine; the two items read (the communiqué
+      of 15 April 2024 and the budget hearing of 24 December 2024) are no B9 tier (no call, no named violation; Gaza not named). No B9 event.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bj_fr.pdf (read live; bj_en 404)
     - archive/text/src_20240928_un-press_ga12639.txt, Benin (the Foreign Minister of the 79th session)
     - 'archive/text: joint statements and UN records, grep Benin/Bénin'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Bénin ministre des affaires étrangères Gaza OR Palestine OR Israël déclaration Olushegun Adjadi Bakari OR Wadagni 2026'
+    - 'WebSearch 2026-11-10 (French): Bénin Gaza OR Palestine OR Israël 2026 "Board of Peace" OR "force internationale de stabilisation" OR reconnaissance OR cessez-le-feu Bénin gouvernement position'
+    status: none-found
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read. The 79th statement''s condemnation
       of the attacks of 7 October 2023 is a condemnation of an attack, not a statement of support for Israel''s conduct in Gaza.'
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items, and the Presidency''s and the Government''s portals (presidence.bj, gouv.bj) serve their
-      news by script and answer a search with the whole archive, so nothing could be searched; nothing in the General Debate statements or the UN records read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No sanctions on Israeli ministers or settler entities by Benin were found: the searches in French and English returned none, and the General Debate statements and UN records already read
+      bear on nothing of the kind. The Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items and the Presidency''s and the Government''s portals serve their news by script,
+      so their own items could not be listed; the searches above, with the site-restricted one, are the coverage.'
+    queries:
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    - 'WebSearch 2026-11-10: Benin OR "Central African Republic" OR "Côte d''Ivoire" recalls ambassador from Israel OR sanctions Israeli settlers OR downgrades relations Israel Gaza'
+    - 'WebSearch 2026-11-10 restricted to gouv.bj, presidence.bj, diplomatie.gouv.bj: Israël Palestine Gaza (one result: a decree of 2018 on the OIC charter)'
+    status: none-found
   B12:
-    status: unchecked
-    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items, and the Presidency''s and the Government''s portals (presidence.bj, gouv.bj) serve their
-      news by script and answer a search with the whole archive, so nothing could be searched; nothing in the General Debate statements or the UN records read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: 'No recall, downgrade or severance of relations with Israel was found; the searches returned reports of such steps by other states only. Two items on the Foreign Ministry''s reaction to
+      the region were read in a press copy (beninwebtv.bj): the Government''s communiqué of 15 April 2024 on the Iran and Israel exchanges calls on both to show restraint and names neither Gaza
+      nor Palestine, and the Foreign Minister''s budget hearing in the National Assembly (24 December 2024) mentions the conflict as the cause of Lebanon''s situation and gives no measure against
+      Israel. The Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items and the Presidency''s and the Government''s portals serve their news by script, so their own items could
+      not be listed; the searches above, with the site-restricted one, are the coverage.'
+    queries:
+    - 'WebSearch 2026-11-10: Benin OR "Central African Republic" OR "Côte d''Ivoire" recalls ambassador from Israel OR sanctions Israeli settlers OR downgrades relations Israel Gaza'
+    - 'WebSearch 2026-11-10 (French): Bénin Israël accord OR coopération signé OR ambassadeur OR visite Gaza Palestine gouvernement béninois 2025 2026'
+    - 'WebSearch 2026-11-10 (French): Bénin ministre des affaires étrangères Gaza OR Palestine OR Israël déclaration Olushegun Adjadi Bakari OR Wadagni 2026'
+    status: none-found
   C1:
     status: none-found
     note: Benin is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: unchecked
-    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items, and the Presidency''s and the Government''s portals (presidence.bj, gouv.bj) serve their
-      news by script and answer a search with the whole archive, so nothing could be searched; nothing in the General Debate statements or the UN records read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: No new trade, investment or cooperation agreement with Israel signed after 7 October 2023 was found; the recent agreements the searches returned are with the United Arab Emirates (October
+      2026), Morocco (July 2026) and Nigeria. The Ministry's site (diplomatie.gouv.bj) is a landing page with no news items and the Presidency's and the Government's portals serve their news by
+      script, so their own items could not be listed; the searches above, with the site-restricted one, are the coverage.
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin Israël accord OR coopération signé OR ambassadeur OR visite Gaza Palestine gouvernement béninois 2025 2026'
+    status: none-found
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; Benin is not an EU member and the searches returned no measure of its own. Not searched: the customs administration''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin produits des colonies israéliennes OR boycott OR marchés publics exclusion OR fonds de pension désinvestissement Israël Bénin gouvernement'
+    - 'WebSearch 2026-11-10: Benin Israel F-35 OR arms export OR transit OR airspace OR "settlement goods" Benin government Gaza'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund or the central bank over conduct in Gaza or the occupied territories was found; the search returned none for Benin. Not searched:
+      the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin produits des colonies israéliennes OR boycott OR marchés publics exclusion OR fonds de pension désinvestissement Israël Bénin gouvernement'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the search returned no Beninese measure. Not searched: the public procurement
+      regulator''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin produits des colonies israéliennes OR boycott OR marchés publics exclusion OR fonds de pension désinvestissement Israël Bénin gouvernement'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Benin to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -164,21 +219,37 @@ indicators:
     - archive/text/src_2022…2024 UNRWA donor rankings (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items, and the Presidency''s and the Government''s portals (presidence.bj, gouv.bj) serve their
-      news by script and answer a search with the whole archive, so nothing could be searched; nothing in the General Debate statements or the UN records read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: No medical-evacuation programme for Gazans or field hospital for Gaza hosted or deployed by Benin was found. The Ministry's site (diplomatie.gouv.bj) is a landing page with no news items
+      and the Presidency's and the Government's portals serve their news by script, so their own items could not be listed; the searches above, with the site-restricted one, are the coverage.
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR visa Gazaouis OR évacuation sanitaire Gaza'
+    - 'WebSearch 2026-11-10 (French): Bénin Gaza OR Palestine OR Israël 2026 "Board of Peace" OR "force internationale de stabilisation" OR reconnaissance OR cessez-le-feu Bénin gouvernement position'
+    status: none-found
   D5:
-    status: unchecked
-    note: 'Left unchecked: the Ministry''s site (diplomatie.gouv.bj) is a landing page with no news items, and the Presidency''s and the Government''s portals (presidence.bj, gouv.bj) serve their
-      news by script and answer a search with the whole archive, so nothing could be searched; nothing in the General Debate statements or the UN records read bears on it (P-23).'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
+    note: No visa or refugee pathway opened for Gazans by Benin was found. The Ministry's site (diplomatie.gouv.bj) is a landing page with no news items and the Presidency's and the Government's
+      portals serve their news by script, so their own items could not be listed; the searches above, with the site-restricted one, are the coverage.
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR visa Gazaouis OR évacuation sanitaire Gaza'
+    - 'WebSearch 2026-11-10 (French): Bénin Gaza OR Palestine OR Israël 2026 "Board of Peace" OR "force internationale de stabilisation" OR reconnaissance OR cessez-le-feu Bénin gouvernement position'
+    status: none-found
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Beninese nationals or companies for conduct in Gaza was found. Not searched: the prosecutor''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR visa Gazaouis OR évacuation sanitaire Gaza'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results concern repression of domestic protests (opposition, unions, students) only. Not
+      searched: the Republican Police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR visa Gazaouis OR évacuation sanitaire Gaza'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Benin was found. Not searched: the prosecutor''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Bénin manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR visa Gazaouis OR évacuation sanitaire Gaza'
+    status: none-found
