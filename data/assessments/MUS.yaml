@@ -7,6 +7,7 @@
 # Article 19 documents. Web searches were not available to this session (the run's search budget was spent): nothing is filed from a press item; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # Events: none. Leads: none. See docs/10 B-818.
 # Completion of 2026-11 (finish run, T-F-L20, 2026-11-10): A3, A5 to A8, B5, C4 to C6 and E1 to E3 searched with web searches and the shared searches, all none-found with the limits said in each note; B9, B11, B12, C2, D4 and D5 notes extended (docs/10 B-2068). No recognition row (R21: the 80th statement gives a month only). No new event; lead_20261110_MUS_1 added (B9, the Minister's parliamentary answer of October 2025).
+# P-23 lead pass (T-G-LEADS-5, 2026-11-11): lead_20261110_MUS_1 promoted to evt_2025_10_28_MUS_B9 from the National Assembly's Hansard of 28 October 2025 (docs/10 B-2145).
 country: MUS
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -138,8 +139,13 @@ indicators:
     - recognitions.csv, MUS (no row)
     checked_at: '2026-11-04'
   B9:
-    status: none-found
-    note: 'No B9 event. The President (head of state) is Prithvirajsing Roopun, the Prime Minister (head of government) Navin Ramgoolam, and the Minister of Foreign Affairs, Regional Integration
+    status: has-events
+    note: 'One event, filed in the P-23 lead pass (T-G-LEADS-5, 2026-11-11): the Minister of Foreign Affairs'' oral answer to parliamentary question B/944 on Gaza in the National Assembly, 28 October 2025
+      (src_20251028_mauritiusassembly_debate-35-ramful-gaza, the Hansard, lines 2223 to 2232: ''we are profoundly disheartened by the atrocities which have been taking place in Gaza'' and Mauritius ''has forcefully
+      condemned Israel for its violations of humanitarian law''), evt_2025_10_28_MUS_B9 (+5, flagged: the condemnation is stated as a standing position; docs/10 B-2145). Read and not filed: the Minister''s
+      answer to question B/886 of 2 June 2026 (Hansard No. 13 of 2026, read in the PDF on 2026-11-11, not archived): Mauritius ''will continue to support all efforts under the aegis of the United Nations
+      aimed at securing an immediate cessation of hostilities, ensuring the protection of civilians, facilitating unhindered humanitarian assistance'' in the context of the Palestinian question; Gaza is
+      named only for 2009 (R7), so no event (author''s reading, B-2145). Earlier record: no B9 event. The President (head of state) is Prithvirajsing Roopun, the Prime Minister (head of government) Navin Ramgoolam, and the Minister of Foreign Affairs, Regional Integration
       and International Trade Dhananjay Ramful (the General Debate files and the Cabinet''s highlights; R3). (1) 79th statement, 26 September 2024, the President (src_20240926_un-gadebate_mu-roopun-ag79):
       ''The devastation and sufferings in Gaza are heart wrenching'' and ''Thousands of innocent lives have been lost'', ''We urge the international community to find a solution for a de-escalation
       in the region''; Gaza is named, but the passage has no call for a ceasefire and no named violation (neither tier); 770 days old, expired in any case. (2) 80th statement, 26 September 2025,
@@ -151,15 +157,17 @@ indicators:
       of 2026 and the one of 22 August 2025): only the item above and a line of 9 October 2026 on the Minister''s reaffirmed ''support for Palestinian self-determination'' at the Assembly. The
       Ministry''s and the Government Information Service''s lists were not readable (see B5). Completion pass of 2026-11-10: L''Express (30 October 2025, through allAfrica) reports that the Minister
       of Foreign Affairs, answering a parliamentary question, set out the country''s position on the humanitarian crisis in Gaza and firmly condemned Israel''s violations of humanitarian law;
-      the report is a paraphrase and the Hansard was not read: lead_20261110_MUS_1.'
+      the report is a paraphrase and the Hansard was not read: lead_20261110_MUS_1 (promoted on 2026-11-11).'
     queries:
+    - 'mauritiusassembly.govmu.org/mauritiusassembly/index.php/hansard/ (2026-11-11): Hansard No. 35 of 2025 (28 October 2025) and No. 13 of 2026 (2 June 2026) downloaded and searched for Gaza, Palestin, Israel'
+    - 'WebSearch 2026-11-11: mauritiusassembly.govmu.org Hansard 2025 PQ Lobine Gaza Minister of Foreign Affairs humanitarian Palestine (LALIT''s report of PQ B/886 of 2 June 2026)'
     - gadebate.un.org/en/{79,80,81}/mauritius and gastatements/{79,80,81}/mu_en.pdf
     - pmo.govmu.org Cabinet Decisions page (42 highlights downloaded and searched for Gaza, Palestin, Israel)
     - gis.govmu.org/gis/?s=Gaza, Palestine, Palestinian, Israel (no result)
     - 'WebSearch 2026-11-10: Mauritius government Gaza Israel 2024 2025 Prime Minister Ramgoolam OR Jugnauth ICC warrants Netanyahu OR Palestine statement Port Louis protest (the Government''s
       written submission to the ICJ, financial support to Gaza of June 2024, the Minister''s parliamentary answer of October 2025 reported by L''Express, opposition and LALIT calls to suspend
       relations and endorse the Bogota declaration; the suspension of ties of 2009; no ICC statement, no protest ban, no agreement)'
-    checked_at: '2026-11-10'
+    checked_at: '2026-11-11'
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in the General
