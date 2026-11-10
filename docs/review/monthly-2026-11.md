@@ -729,3 +729,15 @@ FINISH-PLAN.md Phase E, Task B2's checklist, by a fresh Opus 5.5 session on 2026
 | `pnpm validate` | 0 errors, 1,198 warnings | 0 errors, 1,164 warnings |
 
 What CHECKUP.md now holds: the three proposals of T-F-METHOD with their defaults (§2a); B8 for 30 states and eleven new cross-country readings (§2b); §2e with every reading flagged by T-F-UNDOCS-1/2/3, T-F-W1 to T-F-W9, T-F-L01 to T-F-L25 and T-F-V1 to T-F-V3, each with its B-id and default; PR #16 and the Wayback check of 2026-11-08 (§5); the flip gate under the rule 8 decision (§6); the gaps left (§7). Data change: the headers (comments) of `data/events/QAT.yaml` and `data/events/JOR.yaml` brought into line with R3 (B-2107 (4)); no event changed.
+
+### T-F-FINAL (2026-11-10)
+
+Final hygiene on `data/phase1` (`7846db8`): lint, typecheck, tests, `pnpm validate` (0 errors, 1,164 warnings), `pnpm build:data:check` (1,928 files, 153,851,631 bytes, identical) and `pnpm build` pass. PR #11's description now holds the preview table of 2026-11-10 for all 193 countries. Decisions: docs/10 B-2109.
+
+| Item | Value |
+|---|---|
+| Events `reviewed` / `draft` / country files | 1,420 / 1 / 146 |
+| Leads / source records / `archive/index.csv` rows | 323 / 2,295 / 2,354 |
+| Unchecked entries (countries) | 123 (68) |
+| Preview bands | Sustaining 4, Enabling 23, Passive 42, Acting 102, Confronting 22 |
+| Secrets in history (by key name, values not printed) | none |
