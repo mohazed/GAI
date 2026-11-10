@@ -44,6 +44,7 @@ import {
   type EventEvaluation,
   eventCounts,
   formatSigned,
+  indicatorLabels,
   isIsoDate,
   type LastChange,
   lastChange,
@@ -237,6 +238,7 @@ function report(
     coverage: cov.ratio,
     lastChange: lc,
     passivityPoints: m.passivity.points,
+    labels: indicatorLabels(m),
   })
   return {
     country,

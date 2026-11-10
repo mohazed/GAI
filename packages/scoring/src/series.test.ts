@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createScorer } from './score.js'
 import { dailySeries, lastChange, movers, moversFrom, valueOn } from './series.js'
-import { ev, methodology } from './test-helpers.js'
+import { ev, methodology, methodologyRc1 } from './test-helpers.js'
 import { addDays, dayNumber, isoDate } from './time.js'
 import type { ScoringEvent } from './types.js'
 
@@ -154,7 +154,9 @@ describe('last change', () => {
 
   it('compares the window start with the score of a country without events', () => {
     const b8 = ev('B8', '2023-10-07', 3)
-    expect(lastChange(scorer([b8]), '2024-01-01')).toMatchObject({
+    // 1.0.0-rc.1: the pre-existing B8 tier lifted the penalty until 2024-10-06.
+    const rc1 = (events: ScoringEvent[]) => createScorer('TST', events, methodologyRc1())
+    expect(lastChange(rc1([b8]), '2024-01-01')).toMatchObject({
       date: '2023-10-07',
       event: b8.id,
       change: 'start',
@@ -162,11 +164,22 @@ describe('last change', () => {
       delta: 18,
       passivity: { before: true, after: false },
     })
-    expect(lastChange(scorer([b8]), '2025-01-01')).toMatchObject({
+    expect(lastChange(rc1([b8]), '2025-01-01')).toMatchObject({
       date: '2024-10-06',
       kind: 'passivity',
       delta: -15,
     })
+    // 1.0.0-rc.2 (B-47): the pre-existing tier never qualifies, so the penalty stays and the
+    // change of the window start is the +3 alone.
+    expect(lastChange(scorer([b8]), '2024-01-01')).toMatchObject({
+      date: '2023-10-07',
+      event: b8.id,
+      change: 'start',
+      points: 3,
+      delta: 3,
+      passivity: { before: true, after: true },
+    })
+    expect(lastChange(scorer([b8]), '2025-01-01')).toMatchObject({ date: '2023-10-07', delta: 3 })
   })
 
   it('is null before the window start', () => {

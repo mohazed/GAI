@@ -97,6 +97,7 @@ describe('methodologyFile (methodology/{version}.json)', () => {
       symmetry: null,
       bannedWords: null,
       docs: { en: null, fr: null },
+      diff: null,
     }
     const f = methodologyFile(bare, 'superseded')
     expect(f).toMatchObject({

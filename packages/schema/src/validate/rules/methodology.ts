@@ -132,6 +132,11 @@ function indicatorSet({ methodology: m }: ValidationContext): Issue[] {
     if (ind.id.charAt(0) !== ind.category) {
       push(`indicator ${ind.id} has category ${ind.category}; expected ${ind.id.charAt(0)}.`)
     }
+    if (ind.short === undefined) {
+      push(
+        `indicator ${ind.id} has no short label; every indicator has one (B-54), for the generated text.`,
+      )
+    }
     if (!m.categories) continue
     const category = categories.get(ind.category)
     if (!category) {
@@ -623,7 +628,8 @@ function decay({ methodology: m }: ValidationContext): Issue[] {
 
 /**
  * docs/02 §6, D-11: qualifying indicators exist and are scored; excluded ones exist and do not
- * qualify; the default penalty is one of the published sensitivity values.
+ * qualify (an entry with `tiers` names tiers of a qualifying indicator instead); the default
+ * penalty is one of the published sensitivity values.
  */
 function passivity({ methodology: m }: ValidationContext): Issue[] {
   const p = m.passivity
@@ -632,7 +638,25 @@ function passivity({ methodology: m }: ValidationContext): Issue[] {
   const push = (id: string, message: string) =>
     out.push(issue('methodology.passivity', { file: p.file, id }, message))
   const known = m.indicatorsFile !== null
-  const excluded = new Set(p.value.excluded.flatMap((e) => e.indicators))
+  const excluded = new Set(
+    p.value.excluded.filter((e) => e.tiers === undefined).flatMap((e) => e.indicators),
+  )
+  // An entry with tiers excludes some tiers of a qualifying indicator (B-47): the indicator
+  // qualifies and has every tier named.
+  for (const e of p.value.excluded) {
+    if (e.tiers === undefined) continue
+    for (const id of e.indicators) {
+      const ind = m.indicatorById.get(id)
+      if (!p.value.qualifying_indicators.includes(id)) {
+        push(id, `${id} has excluded tiers but is not a qualifying indicator.`)
+      }
+      if (!ind) continue
+      const keys = 'tiers' in ind.points ? (ind.points.tiers ?? []).map((t) => t.key) : []
+      for (const t of e.tiers) {
+        if (!keys.includes(t)) push(id, `${id} has no tier ${t}; excluded tiers must exist.`)
+      }
+    }
+  }
   for (const id of p.value.qualifying_indicators) {
     const ind = m.indicatorById.get(id)
     if (known && !ind) push(id, `qualifying indicator ${id} is not an indicator.`)
