@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): no official site of the Government answered (mofaic.gov.ss, mofa.gov.ss, presidency.gov.ss, www.gov.ss: connection failed), so the Government's own texts were read through the UN's General Debate pages and files (79th to 81st), the ICJ's case 192 page (live and archived copy), the ASP's list of States Parties (archived), UNRWA donor rankings (2022 to 2024), the Article 19 documents and the verbatim records of the Security Council's Palestinian-question meetings S/PV.9440 to S/PV.10255 (scanned by title and speaker; South Sudan was not among the speakers called on as a minister), and through the WordPress REST search of two Juba news sites (Radio Tamazuj, Eye Radio; kind press) for Palestine, Gaza, Israel, Hamas and related terms. The Israeli Ministry's page (gov.il) is rendered by script and could not be read. Web searches were not available to this session.
 # Events: one C2 event on press evidence (corroborated). Leads: one (the Gilat contract). See docs/10 B-828, B-829.
+# Completion of 2026-11 (finish run, T-F-L21, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4 and E1 to E3 searched with web searches, the Ministry's Wayback captures and the shared searches, all none-found with the limits said in each note; C2, D5 and B12 notes extended; a primary for the memorandum of 13 August 2025 searched again and not found; new lead_20261110_SSD_3 (C2, the framework agreement approved by the Knesset, May 2026); lead_20261104_SSD_1 searched again, kept. No new event. See docs/10 B-2077.
 country: SSD
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,15 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a South Sudanese company as a supplier of parts or maintenance for the F-35 programme: South Sudan is neither a programme partner nor a foreign-military-sales customer
+      in the search results, A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for South Sudan, and the searches returned no supplier. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for the country's name (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations named on the Joint Program Office page and the foreign-military-sales
+      customers in the results; none of the six of this batch: NER, RWA, SEN, SLE, SOM, SSD)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
@@ -28,17 +36,52 @@ indicators:
     - sipri_orders.csv, buyer RWA
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, public basing agreement or official confirmation of intelligence sharing in
+      2023 to 2026. Israel''s side said the memorandum of 13 August 2025 (C2) opens channels in fields including security (the press); a framework, not an A5 instance. South Sudan is under the Security
+      Council''s arms embargo. The Government''s sites (mofaic.gov.ss, presidency.gov.ss) did not answer on 2026-11-10 (no connection); their Wayback captures were read where listed. Not searched:
+      the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: South Sudan Israel memorandum of understanding August 2025 Juba Sharren Haskel signed Ministry of Foreign Affairs statement (Radio Tamazuj, Radio Yei, Eye Radio, Sudans
+      Post, Al-Monitor; the Ministry''s statement on the signing quoted by the press; no text of the memorandum and no Ministry page in the results; the Ministry''s page ''South Sudan, Israel set
+      to strengthen relations in various sectors'' predates the window''s memorandum, first Wayback capture 20240422004502)'
+    - 'WebSearch 2026-11-10: South Sudan Gilat satellite contract signed 2026 OR Juba Israel agreement 2026 Pitia Morgan Jerusalem visit outcome (no Gilat contract reported signed; JNS, 4 May 2026,
+      opened: Israel''s Foreign Minister says the Knesset approved a ''Framework Agreement for Cooperation'' with South Sudan, to go to the Government for final approval; lead_20261110_SSD_3)'
+    - 'Wayback CDX 2026-11-10: mofaic.gov.ss/* filtered for memorandum, haskel, consultation, deputy-foreign, resettle, israel (the press statement of 25 August 2025 on the alleged resettlement
+      of Palestinians, capture 20250917150756, read; meetings with Israeli envoys of 2024 and 2025; no page on the memorandum of 13 August 2025); the agreements page (capture 20260517020634) lists
+      human-rights treaties only'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by South Sudan to Israel either (A1: no delivery in the SIPRI register). The Government''s
+      sites (mofaic.gov.ss, presidency.gov.ss) did not answer on 2026-11-10 (no connection); their Wayback captures were read where listed.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'WebSearch 2026-11-10: South Sudan Israel memorandum of understanding August 2025 Juba Sharren Haskel signed Ministry of Foreign Affairs statement (Radio Tamazuj, Radio Yei, Eye Radio, Sudans
+      Post, Al-Monitor; the Ministry''s statement on the signing quoted by the press; no text of the memorandum and no Ministry page in the results; the Ministry''s page ''South Sudan, Israel set
+      to strengthen relations in various sectors'' predates the window''s memorandum, first Wayback capture 20240422004502)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the searches return closer relations (C2). Not searched: the Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'WebSearch 2026-11-10: South Sudan Gilat satellite contract signed 2026 OR Juba Israel agreement 2026 Pitia Morgan Jerusalem visit outcome (no Gilat contract reported signed; JNS, 4 May 2026,
+      opened: Israel''s Foreign Minister says the Knesset approved a ''Framework Agreement for Cooperation'' with South Sudan, to go to the Government for final approval; lead_20261110_SSD_3)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (South Sudan is landlocked; ports do not arise). Not searched: the South Sudan Civil Aviation Authority''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'WebSearch 2026-11-10: South Sudan Israel memorandum of understanding August 2025 Juba Sharren Haskel signed Ministry of Foreign Affairs statement (Radio Tamazuj, Radio Yei, Eye Radio, Sudans
+      Post, Al-Monitor; the Ministry''s statement on the signing quoted by the press; no text of the memorandum and no Ministry page in the results; the Ministry''s page ''South Sudan, Israel set
+      to strengthen relations in various sectors'' predates the window''s memorandum, first Wayback capture 20240422004502)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: abstention on ten of the twelve qualifying votes; no vote recorded (non-vote) on A/RES/ES-10/23 and A/RES/80/1 (each scores -2). The country is not named
@@ -82,8 +125,13 @@ indicators:
     - radiotamazuj.org and eyeradio.org searches (see B5)
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: 'Not searched: no official site of the Government answered (mofaic.gov.ss, mofa.gov.ss, presidency.gov.ss: connection failed) and no Wayback capture was read (docs/10 B-828; P-23).'
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by South Sudan (not a State Party to the Rome Statute) were found. The Government's sites (mofaic.gov.ss, presidency.gov.ss) did not answer on
+      2026-11-10 (no connection); their Wayback captures were read where listed.
+    queries:
+    - 'WebSearch 2026-11-10: Juba Palestine solidarity protest Gaza police OR South Sudan ICC sanctions OR Israel settlers sanctions South Sudan government 2024 2025 (no Juba rally for Gaza, no
+      sanctions on the Court or on settlers; a demonstration of January 2025 against Sudanese-owned shops, unrelated)'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for South Sudan. The registry gives a recognition since 14 July 2011 (flagged: the date is that of the country''s admission to the United Nations
@@ -111,15 +159,25 @@ indicators:
     - 'eyeradio.org and radiotamazuj.org searches: Israel, Morgan Israel, Ben-Uziel (titles read; the two items of 30 June 2026 read in full)'
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: 'Not searched: no official site of the Government answered (see B7).'
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities by South Sudan were found; South Sudan is not an EU member. The Government's sites (mofaic.gov.ss, presidency.gov.ss) did
+      not answer on 2026-11-10 (no connection); their Wayback captures were read where listed.
+    queries:
+    - 'WebSearch 2026-11-10: Juba Palestine solidarity protest Gaza police OR South Sudan ICC sanctions OR Israel settlers sanctions South Sudan government 2024 2025 (no Juba rally for Gaza, no
+      sanctions on the Court or on settlers; a demonstration of January 2025 against Sudanese-owned shops, unrelated)'
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: 'No recall, downgrade or severance of relations with Israel was found: the press items of August 2025 to June 2026 report the opposite (the first Israeli official delegation in August
-      2025, the Foreign Minister''s visit to Jerusalem on 29 and 30 June 2026). Official sources not read (see B7).'
+      2025, the Foreign Minister''s visit to Jerusalem on 29 and 30 June 2026). Official sources not read (see B7). Completion of 2026-11 (2026-11-10): the searches return the Knesset''s approval
+      of a framework agreement (May 2026) and no recall, downgrade or severance.'
     queries:
     - 'eyeradio.org and radiotamazuj.org searches: Israel, Haskel, Kumba Netanyahu (titles read)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: South Sudan Gilat satellite contract signed 2026 OR Juba Israel agreement 2026 Pitia Morgan Jerusalem visit outcome (no Gilat contract reported signed; JNS, 4 May 2026,
+      opened: Israel''s Foreign Minister says the Knesset approved a ''Framework Agreement for Cooperation'' with South Sudan, to go to the Government for final approval; lead_20261110_SSD_3)'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: South Sudan is not an EU member and has no association or trade agreement with Israel to suspend or review.
@@ -127,28 +185,55 @@ indicators:
   C2:
     status: has-events
     note: 'evt_2025_08_13_SSD_C2 (-10, corroborated): the memorandum of understanding on bilateral cooperation signed in Juba on 13 August 2025 by the Foreign Minister (Monday Semaya Kumba) and
-      Israel''s Deputy Foreign Minister (Sharren Haskel), reported by Radio Tamazuj and Eye Radio and described by the Ministry''s Director General for bilateral relations on 4 September 2025
-      (Radio Tamazuj); no primary document (the memorandum''s text is not published; gov.il renders by script; no South Sudanese site answered), so confidence corroborated (flagged, R18). Read
-      and not filed: Eye Radio''s item of 24 February 2026 on a nationwide satellite-internet partnership with Israel''s Gilat Satellite Networks (the Minister of Information announced that the
-      Government ''is expected to formalize a contract'' with the company: a commercial contract with a company, not an instrument with the Israeli Government, and not yet signed in the item;
-      lead_20261104_SSD_1). The July 2023 ten-point memorandum (health, culture, sport, agriculture, education) pre-dates the window.'
+      Israel''s Deputy Foreign Minister (Sharren Haskel), reported by Radio Tamazuj and Eye Radio and described by the Ministry''s Director General for bilateral relations on 4 September 2025 (Radio
+      Tamazuj); no primary document (the memorandum''s text is not published; gov.il renders by script; no South Sudanese site answered), so confidence corroborated (flagged, R18). Read and not
+      filed: Eye Radio''s item of 24 February 2026 on a nationwide satellite-internet partnership with Israel''s Gilat Satellite Networks (the Minister of Information announced that the Government
+      ''is expected to formalize a contract'' with the company: a commercial contract with a company, not an instrument with the Israeli Government, and not yet signed in the item; lead_20261104_SSD_1).
+      The July 2023 ten-point memorandum (health, culture, sport, agriculture, education) pre-dates the window. Completion of 2026-11 (2026-11-10): a primary for the memorandum was searched again
+      (web search; the Ministry''s pages in Wayback, filtered by slug) and not found, so the event stays corroborated. JNS (4 May 2026) reports Israel''s Foreign Minister saying the Knesset approved
+      a ''Framework Agreement for Cooperation'' with South Sudan, to be submitted to Israel''s Government for final approval; its date of signature and whether it is the memorandum of 13 August
+      2025 are not stated: lead_20261110_SSD_3. The Gilat contract (lead_20261104_SSD_1) is not reported signed.'
     queries:
-    - 'eyeradio.org and radiotamazuj.org searches: Israel, Haskel, Kumba Netanyahu, Gilat, Morgan Israel, Ben-Uziel (titles read; articles of 13 August and 5 September 2025, 24 February and 30
-      June 2026 read in full)'
-    checked_at: '2026-11-04'
+    - 'eyeradio.org and radiotamazuj.org searches: Israel, Haskel, Kumba Netanyahu, Gilat, Morgan Israel, Ben-Uziel (titles read; articles of 13 August and 5 September 2025, 24 February and 30 June
+      2026 read in full)'
+    - 'WebSearch 2026-11-10: South Sudan Israel memorandum of understanding August 2025 Juba Sharren Haskel signed Ministry of Foreign Affairs statement (Radio Tamazuj, Radio Yei, Eye Radio, Sudans
+      Post, Al-Monitor; the Ministry''s statement on the signing quoted by the press; no text of the memorandum and no Ministry page in the results; the Ministry''s page ''South Sudan, Israel set
+      to strengthen relations in various sectors'' predates the window''s memorandum, first Wayback capture 20240422004502)'
+    - 'WebSearch 2026-11-10: South Sudan Gilat satellite contract signed 2026 OR Juba Israel agreement 2026 Pitia Morgan Jerusalem visit outcome (no Gilat contract reported signed; JNS, 4 May 2026,
+      opened: Israel''s Foreign Minister says the Knesset approved a ''Framework Agreement for Cooperation'' with South Sudan, to go to the Government for final approval; lead_20261110_SSD_3)'
+    - 'Wayback CDX 2026-11-10: mofaic.gov.ss/* filtered for memorandum, haskel, consultation, deputy-foreign, resettle, israel (the press statement of 25 August 2025 on the alleged resettlement
+      of Palestinians, capture 20250917150756, read; meetings with Israeli envoys of 2024 and 2025; no page on the memorandum of 13 August 2025); the agreements page (capture 20260517020634) lists
+      human-rights treaties only'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; South Sudan is not an EU member and the searches returned none. Not searched: the National Revenue Authority''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund over conduct in Gaza or the occupied territories was found; the results name the Norwegian, Danish and Dutch funds only. Not
+      searched: the National Social Insurance Fund''s and the Bank of South Sudan''s reports.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the Government is reported as expecting to contract with Gilat Satellite
+      Networks, an Israeli company (lead_20261104_SSD_1). Not searched: the Ministry of Finance''s procurement notices.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    - 'WebSearch 2026-11-10: South Sudan Gilat satellite contract signed 2026 OR Juba Israel agreement 2026 Pitia Morgan Jerusalem visit outcome (no Gilat contract reported signed; JNS, 4 May 2026,
+      opened: Israel''s Foreign Minister says the Knesset approved a ''Framework Agreement for Cooperation'' with South Sudan, to go to the Government for final approval; lead_20261110_SSD_3)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -174,21 +259,47 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: 'Not searched: no official site of the Government answered (see B7).'
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by South Sudan was found; the results report Israeli aid to South Sudan (the reverse direction) and the Ministry's
+      denials of a resettlement of Gazans. The Government's sites (mofaic.gov.ss, presidency.gov.ss) did not answer on 2026-11-10 (no connection); their Wayback captures were read where listed.
+    queries:
+    - 'WebSearch 2026-11-10: Gaza wounded patients medical evacuation OR scholarships OR visas Senegal OR Niger OR Rwanda OR "Sierra Leone" OR Somalia OR "South Sudan" government receives Palestinians
+      2024 2025 (WHO and MSF reports on the evacuation registry; Egypt, the United Arab Emirates, Italy and others named; none of the six)'
+    - 'WebSearch 2026-11-10: South Sudan Israel resettle Gazans talks August 2025 Ministry of Foreign Affairs denies statement (AP and Reuters reports and the Ministry''s denials of 13 August 2025)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
     note: 'No visa or refugee pathway for Gazans was found: the Ministry said on 13 August 2025 that reports of talks with Israel on resettling Palestinians from Gaza ''are baseless'' and again
-      on 4 September 2025 (Radio Tamazuj, Eye Radio); a denial, not an indicator act. No programme was found in the press titles read.'
+      on 4 September 2025 (Radio Tamazuj, Eye Radio); a denial, not an indicator act. No programme was found in the press titles read. Completion of 2026-11 (2026-11-10): the Ministry''s press statement
+      of 25 August 2025, ''Official Clarification on Media Reports Concerning the Alleged Resettlement of Palestinians in South Sudan'' (Wayback capture 20250917150756, read), repeats the denial;
+      no visa or refugee pathway for Gazans.'
     queries:
     - 'eyeradio.org and radiotamazuj.org searches: Palestinian, Palestine, resettle Palestinians (titles read; articles of 13 August and 5 September 2025 read in full)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: South Sudan Israel resettle Gazans talks August 2025 Ministry of Foreign Affairs denies statement (AP and Reuters reports and the Ministry''s denials of 13 August 2025)'
+    - 'Wayback CDX 2026-11-10: mofaic.gov.ss/* filtered for memorandum, haskel, consultation, deputy-foreign, resettle, israel (the press statement of 25 August 2025 on the alleged resettlement
+      of Palestinians, capture 20250917150756, read; meetings with Israeli envoys of 2024 and 2025; no page on the memorandum of 13 August 2025); the agreements page (capture 20260517020634) lists
+      human-rights treaties only'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of South Sudanese nationals or companies for conduct in Gaza was found. Not searched: the Ministry of Justice''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest was found; the search returned no Gaza rally in Juba. Not searched: the
+      South Sudan National Police Service''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Juba Palestine solidarity protest Gaza police OR South Sudan ICC sanctions OR Israel settlers sanctions South Sudan government 2024 2025 (no Juba rally for Gaza, no
+      sanctions on the Court or on settlers; a demonstration of January 2025 against Sudanese-owned shops, unrelated)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a South Sudanese authority was found; the results concern Belgium, Portugal,
+      Brazil and the Netherlands.
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
