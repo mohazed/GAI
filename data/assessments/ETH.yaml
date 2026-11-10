@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs' JSON endpoints (mfa.gov.et/api/news, pressrelease, pressbriefing, bilateral, multilateral, ministerofforeign: 32 news items to 29 October 2026, searched for Gaza, Palestine, Israel, Hamas, ceasefire), the Ethiopian News Agency's search (ena.et/web/eng/search?q= for Gaza, Ethiopia Palestine, Ethiopia Israel, Gedion Israel, Abiy Netanyahu, Israeli Foreign Minister Ethiopia, Israeli embassy Addis Ababa, Ethiopia two-state solution; about 30 items opened), the UN's General Debate pages and files of the 79th to 81st sessions (the files are image scans, read by OCR of the live PDFs), the ICJ's case 192 page (live, and the copy archived on 2026-09-27), the Assembly of States Parties' list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. The Prime Minister's site (pmo.gov.et) is a single-page application with no readable text. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-31 to T-P21-34 and T-P21-46 to T-P21-49): no press item outside the state agency was read and nothing is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # Events: none; see docs/10 B-794. Leads: one (C2).
+# Completion of 2026-11 (finish run, T-F-L18, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with web searches (English, Amharic) and the shared searches, all none-found with the limits said in each note; C2 now has-events (evt_2025_02_04_ETH_C2, the energy and water agreement of 4 February 2025, two press sources archived); B9, B10, B11, B12, D4 and D5 notes extended (docs/10 B-2052). No recognition row (the Government's document of 4 February 1989 not found; R21).
 country: ETH
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names an Ethiopian company as a supplier of parts or maintenance for the F-35 programme: Ethiopia is neither a programme partner nor a foreign-military-sales customer in the
+      search results, A/HRC/59/23 (archived text) has no match for Ethiopia, and the searches returned no supplier. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Ethiopia (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner countries and suppliers list Lockheed Martin global supply chain (the partners and foreign-military-sales customers named in the results)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order of the release''s data year in the window. The register lists one older order by Ethiopia from Israel (75 Thunder armoured personnel
@@ -30,17 +36,42 @@ indicators:
     - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Ethiopia (found: one older order)'
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The searches return Israeli drones and a security agreement of 2019 and 2020 and Ethiopia''s later turn to Iranian and Turkish drones; the Foreign Minister''s remark of 14 March 2025
+      that economic ties complement ''existing political and security cooperation'' (Fana, read) is a pre-existing arrangement, not an instance activated for the campaign. Not searched: the Ministry
+      of National Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Ethiopia Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026 (results of 2019 to 2022 on drones and a 2020 security agreement; nothing
+      for 2024 to 2026)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Ethiopia to Israel either (A1: no delivery in the SIPRI register). Not searched: the
+      export-control authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Ethiopia Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026 (results of 2019 to 2022 on drones and a 2020 security agreement; nothing
+      for 2024 to 2026)'
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the relations continue (see C2). Not searched: the Negarit Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port, airspace or transit to an arms shipment bound for Israel was found; Ethiopia is landlocked and the searches returned none. Not searched: the civil aviation authority''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Ethiopia Israel military cooperation OR arms OR security agreement OR drones 2024 2025 2026 (results of 2019 to 2022 on drones and a 2020 security agreement; nothing
+      for 2024 to 2026)'
+    - 'WebSearch 2026-11-10: Ethiopia Gaza protest banned OR ceasefire statement OR humanitarian aid Ethiopia Ministry of Foreign Affairs Israel 2026 (the African Union summit of February 2026 in
+      Addis Ababa; an undated report of the Ministry welcoming the United States, Egypt and Qatar statement on the ceasefire)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on five of the twelve qualifying votes (A/RES/ES-10/22, ES-10/23, ES-10/25, ES-10/26 and A/RES/80/1); abstention (`A`) on seven (A/RES/ES-10/21, ES-10/24,
@@ -100,69 +131,109 @@ indicators:
   B9:
     status: none-found
     note: 'No event filed. (1) The General Debate statements: the 79th (27 September 2024; Foreign Minister Taye Atske Selassie Amde; 768 days old, expired) names neither Gaza, Palestine nor Israel
-      in its OCR text (file et_fl.pdf, a scan). The 80th (25 September 2025) was delivered by the President, Taye Atske Selassie Amde, who is head of state, not head of government (R3: read at
-      the B9 rank for a head of state, flagged); it says ''We affirm our historic position on the right of the Palestinian people for self-determination. Direct negotiation among the warring parties
+      in its OCR text (file et_fl.pdf, a scan). The 80th (25 September 2025) was delivered by the President, Taye Atske Selassie Amde, who is head of state, not head of government (R3: read at the
+      B9 rank for a head of state, flagged); it says ''We affirm our historic position on the right of the Palestinian people for self-determination. Direct negotiation among the warring parties
       is an immediate necessity. Humanitarian assistance must reach too all the people in need'' and that ''any proposed peace and reconstruction plan in the Middle East should not create complications
       to adjacent countries and regions'' (OCR of et_en.pdf, page 4): it names neither Gaza nor a ceasefire and calls for no end to hostilities, so it has no B9 tier (R7). The 81st (23 September
       2026, the President) names none of Gaza, Palestine or Israel. The files are image scans with no text layer and Save Page Now answers gadebate.un.org with 405, so none is archived (read by
       OCR on 2026-11-04). (2) The Ministry''s endpoints (news: 32 items, press releases, press briefings) and the Ethiopian News Agency''s searches hold no statement on Gaza by the Foreign Minister,
       Gedion Timothewos, or the Prime Minister, Abiy Ahmed; the agency''s items on Israel are meetings on trade, energy and agriculture (docs/10 B-794). (3) The Prime Minister''s own social-media
-      posts were not read.'
+      posts were not read. Completion of 2026-11 (2026-11-10): three web searches (English, Amharic) returned no statement on Gaza by the Prime Minister, the President or the Foreign Minister beyond
+      the files already read; an undated search result (Capital Ethiopia) reports the Ministry welcoming the statement of the United States, Egypt and Qatar on completing the ceasefire (not opened;
+      a Ministry''s welcome is not a call by a B9 speaker, R3); no event.'
     queries:
     - mfa.gov.et/api/news, pressrelease, pressbriefing (JSON, searched for Gaza, Palestin, Israel, Hamas, ceasefire)
     - ena.et/web/eng/search?q=Gaza (3 pages), Ethiopia Palestine, Ethiopia Gaza, Ethiopia two-state solution, Ethiopia calls ceasefire Gaza
     - gadebate.un.org/en/{79,80,81}/ethiopia and gastatements/79/et_fl.pdf, 80/et_en.pdf, 81/et_en.pdf (OCR, tesseract, read live)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Ethiopia Gaza protest banned OR ceasefire statement OR humanitarian aid Ethiopia Ministry of Foreign Affairs Israel 2026 (the African Union summit of February 2026 in
+      Addis Ababa; an undated report of the Ministry welcoming the United States, Egypt and Qatar statement on the ceasefire)'
+    - 'WebSearch 2026-11-10 (Amharic): ኢትዮጵያ እስራኤል ጋዛ የውጭ ጉዳይ ሚኒስቴር መግለጫ 2026 (the State Minister receiving Israel''s Ambassador, March 2026; the fourth round of political consultations, January
+      2026; no statement on Gaza)'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: 'No B10 event. The Ethiopian News Agency''s report of the Prime Minister''s telephone call with Prime Minister Netanyahu (12 October 2026, src_20261012_ena_abiy-netanyahu-call, archived)
-      gives the Prime Minister''s post as ''fruitful and constructive'', on ''bilateral relations and key regional developments''; its report of his talks with Foreign Minister Sa''ar on 5 May
-      2025 (src_20250505_ena_abiy-saar-talks, archived) quotes ''productive discussions'' on a relationship that ''spans economic, political, diplomatic, and social spheres''. Neither names Gaza
-      or expresses unconditional support or denies a violation, and both are the agency''s paraphrase of a post (R4). Flagged: the Ethiopian Government''s contacts with Israel''s Government are
-      frequent in the window (docs/10 B-794).'
+      gives the Prime Minister''s post as ''fruitful and constructive'', on ''bilateral relations and key regional developments''; its report of his talks with Foreign Minister Sa''ar on 5 May 2025
+      (src_20250505_ena_abiy-saar-talks, archived) quotes ''productive discussions'' on a relationship that ''spans economic, political, diplomatic, and social spheres''. Neither names Gaza or expresses
+      unconditional support or denies a violation, and both are the agency''s paraphrase of a post (R4). Flagged: the Ethiopian Government''s contacts with Israel''s Government are frequent in the
+      window (docs/10 B-794). Completion of 2026-11 (2026-11-10): the Israeli President''s state visit of 24 and 25 February 2026 (the Ethiopian News Agency''s item of 25 February 2026, read) reports
+      the Israeli side''s statements; no statement of unconditional support by an Ethiopian B9/B10 speaker is in it.'
     queries:
     - archive/text/src_20261012_ena_abiy-netanyahu-call.txt (read)
     - archive/text/src_20250505_ena_abiy-saar-talks.txt (read)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Ethiopia Israel sign memorandum of understanding OR agreement 2025 2026 Gedion Timothewos Sa''ar OR Cohen visit (the energy and water agreement of 4 February 2025; the
+      state visit of Israel''s President, 24 and 25 February 2026)'
+    checked_at: '2026-11-10'
   B11:
     status: none-found
-    note: No national sanctions on Israeli ministers or settler entities were found on the Ministry's endpoints or in the agency's searches. This rests on those sources only (P-23).
-    checked_at: '2026-11-04'
+    note: 'No national sanctions on Israeli ministers or settler entities were found on the Ministry''s endpoints or in the agency''s searches. This rests on those sources only (P-23). Completion
+      of 2026-11 (2026-11-10): the searches returned no national sanctions on Israeli ministers or settlers.'
+    queries:
+    - 'WebSearch 2026-11-10: Ethiopia Gaza protest banned OR ceasefire statement OR humanitarian aid Ethiopia Ministry of Foreign Affairs Israel 2026 (the African Union summit of February 2026 in
+      Addis Ababa; an undated report of the Ministry welcoming the United States, Egypt and Qatar statement on the ceasefire)'
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
-    note: No recall, downgrade or severance was found; the Ministry's page on bilateral relations (updated 24 November 2025) records visits in both directions in 2025 (the Foreign Minister to
-      Israel in March, Israel's Energy Minister in February and Foreign Minister in May). This rests on the Ministry's endpoints and the agency's searches only (P-23).
+    note: 'No recall, downgrade or severance was found; the Ministry''s page on bilateral relations (updated 24 November 2025) records visits in both directions in 2025 (the Foreign Minister to
+      Israel in March, Israel''s Energy Minister in February and Foreign Minister in May). This rests on the Ministry''s endpoints and the agency''s searches only (P-23). Completion of 2026-11 (2026-11-10):
+      search results (not opened) report the State Minister receiving Israel''s Ambassador in March 2026 and a fourth round of political consultations in January 2026, and the Ethiopian News Agency''s
+      item of 25 February 2026 reports the state visit of Israel''s President; no recall, downgrade or severance act was found.'
     queries:
     - mfa.gov.et/api/bilateral (read)
     - ena.et/web/eng/search?q=Ethiopia Israel
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (Amharic): ኢትዮጵያ እስራኤል ጋዛ የውጭ ጉዳይ ሚኒስቴር መግለጫ 2026 (the State Minister receiving Israel''s Ambassador, March 2026; the fourth round of political consultations, January
+      2026; no statement on Gaza)'
+    - 'WebSearch 2026-11-10: Ethiopia Israel sign memorandum of understanding OR agreement 2025 2026 Gedion Timothewos Sa''ar OR Cohen visit (the energy and water agreement of 4 February 2025; the
+      state visit of Israel''s President, 24 and 25 February 2026)'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Ethiopia is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: none-found
-    note: 'No instrument signed with Israel since October 2023 was found. The agency reports meetings of the Foreign Minister with Israel''s Minister of Economy and Industry (agency item of 13
-      March 2025), Minister of Energy and Infrastructure (14 March 2025) and Foreign Minister (5 May 2025) on trade, energy, mining, agriculture and technology, and the Israeli Ambassador''s interview
-      of 16 September 2026 describes cooperation in agriculture, health, technology, water and energy: none reports a signing. See the lead lead_20261104_ETH_1 (docs/10 B-794). No treaty register
-      was read (P-23).'
+    status: has-events
+    note: 'One agreement signed with Israel since October 2023 is filed: the agreement on cooperation in energy, water and innovation signed on 4 February 2025 by the Minister of Water and Energy
+      and Israel''s Minister of Energy and Infrastructure (evt_2025_02_04_ETH_C2, -10, corroborated: Fana Media Corporation citing the Ministry, and Israel National News; both archived; flagged:
+      press only). The other items read report no signing: the agency''s items on the Foreign Minister''s meetings with Israel''s Minister of Economy and Industry (13 March 2025), Minister of Energy
+      and Infrastructure (14 March 2025) and Foreign Minister (5 May 2025), the Ethiopian News Agency''s item of 25 February 2026 on the state visit of Israel''s President, and the Israeli Ambassador''s
+      interview of 16 September 2026 (cooperation in agriculture, health, technology, water and energy). See the lead lead_20261104_ETH_1 (docs/10 B-794, B-2052). Not read: a treaty register, the
+      Ministry of Water and Energy''s page and the Israeli Ministry''s release (gov.il is script-rendered).'
     queries:
     - ena.et/web/eng/search?q=Ethiopia Israel sign, Israel MoU Ethiopia (items opened)
     - mfa.gov.et/api/bilateral (read)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Ethiopia Israel sign memorandum of understanding OR agreement 2025 2026 Gedion Timothewos Sa''ar OR Cohen visit (the energy and water agreement of 4 February 2025; the
+      state visit of Israel''s President, 24 and 25 February 2026)'
+    - 'WebSearch 2026-11-10: Ethiopia Israel Eli Cohen Habtamu Itefa agreement energy water innovation February 2025 ENA OR "Ministry of Water and Energy" signed (Fana Media Corporation, 4 February
+      2025, citing the Ministry; Israel National News)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Ethiopia is not an EU member and the search returned none. Not searched: the customs commission''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghana OR Ethiopia OR Gabon OR Guinea OR Gambia OR Eritrea ban imports from Israeli settlements OR arms embargo Israel OR suspend arms export licences Israel 2025 2026
+      (the Bogota declaration of July 2025 and the Hague Group recommendations of 2026; none of the six named)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund (the Public Servants'' Social Security Agency, the Private Organizations'' Employees'' Social Security Agency) or the National
+      Bank over conduct in Gaza or the occupied territories was found; the results name the Norwegian, Danish, Dutch and US funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: "Eritrea" OR "Ethiopia" OR "Gabon" OR "Ghana" OR "Guinea" OR "Gambia" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion
+      Israel settlements (the Norwegian, Danish, Dutch and US funds only; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Public Procurement and Property Authority''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: "Eritrea" OR "Ethiopia" OR "Gabon" OR "Ghana" OR "Guinea" OR "Gambia" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion
+      Israel settlements (the Norwegian, Danish, Dutch and US funds only; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Ethiopia to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -189,18 +260,41 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
-    note: No medical-evacuation programme for Gazans and no field hospital deployed by Ethiopia was found on the Ministry's endpoints or in the agency's searches.
-    checked_at: '2026-11-04'
+    note: 'No medical-evacuation programme for Gazans and no field hospital deployed by Ethiopia was found on the Ministry''s endpoints or in the agency''s searches. Completion of 2026-11 (2026-11-10):
+      the shared search on medical evacuation and field hospitals returned no Ethiopian programme.'
+    queries:
+    - 'WebSearch 2026-11-10: Eritrea OR Ethiopia OR Gabon OR Ghana OR Guinea OR Gambia Gaza medical evacuation OR field hospital OR wounded children received OR refugees Gazans visa 2024 2025 2026
+      government (South Africa, Spain and other receiving states; none of the six)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
-    note: No visa or refugee pathway for Gazans was found on the Ministry's endpoints or in the agency's searches.
-    checked_at: '2026-11-04'
+    note: 'No visa or refugee pathway for Gazans was found on the Ministry''s endpoints or in the agency''s searches. Completion of 2026-11 (2026-11-10): the shared search on visas and refugee pathways
+      for Gazans returned none for Ethiopia.'
+    queries:
+    - 'WebSearch 2026-11-10: Eritrea OR Ethiopia OR Gabon OR Ghana OR Guinea OR Gambia Gaza medical evacuation OR field hospital OR wounded children received OR refugees Gazans visa 2024 2025 2026
+      government (South Africa, Spain and other receiving states; none of the six)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Ethiopian nationals or companies for conduct in Gaza was found. Not searched: the Attorney General''s communiques.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghanaian OR Ethiopian OR Gabonese OR Guinean OR Gambian citizens investigated OR prosecuted OR charged for serving in Israeli army Gaza OR complaint universal jurisdiction
+      court Gaza (South African cases only; none of the five)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest in Addis Ababa was found; the searches returned none. Not searched: the
+      police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Accra pro-Palestine protest OR Banjul Gaza protest OR Addis Ababa Gaza demonstration police ban OR arrested 2024 2025 2026 (no Gaza protest ban or arrest in the three
+      capitals)'
+    - 'WebSearch 2026-11-10: Ethiopia Gaza protest banned OR ceasefire statement OR humanitarian aid Ethiopia Ministry of Foreign Affairs Israel 2026 (the African Union summit of February 2026 in
+      Addis Ababa; an undated report of the Ministry welcoming the United States, Egypt and Qatar statement on the ceasefire)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Ethiopia was found. Not searched: the courts'' sites.'
+    queries:
+    - 'WebSearch 2026-11-10: Ghanaian OR Ethiopian OR Gabonese OR Guinean OR Gambian citizens investigated OR prosecuted OR charged for serving in Israeli army Gaza OR complaint universal jurisdiction
+      court Gaza (South African cases only; none of the five)'
+    checked_at: '2026-11-10'
