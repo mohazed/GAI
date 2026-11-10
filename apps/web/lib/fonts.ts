@@ -8,4 +8,4 @@
  * rest of the page on a slow connection. `scripts/assets.test.ts` keeps the path equal to the
  * stylesheet's.
  */
-export const PRELOADED_FONTS = ['/fonts/source-sans-3-latin-wght-5.3.0.woff2'] as const
+export const PRELOADED_FONTS = ['/fonts/source-sans-3-latin-wght-5.3.1.woff2'] as const

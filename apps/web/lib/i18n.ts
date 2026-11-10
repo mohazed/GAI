@@ -3,7 +3,9 @@
  * `getT(lang)`, so one page (the kit) can render both languages; client components use
  * next-intl's `useTranslations` under the nearest NextIntlClientProvider.
  */
+import compile from 'icu-minify/compile'
 import { createTranslator } from 'next-intl'
+import formatMessage from 'use-intl/format-message'
 import en from '../messages/en.json'
 import fr from '../messages/fr.json'
 import { frenchMessages } from './format'
@@ -13,8 +15,31 @@ export const LOCALES = ['en', 'fr'] as const
 export type Lang = (typeof LOCALES)[number]
 
 export type Messages = typeof en
+
+/**
+ * In the site build, next.config.ts points `use-intl/format-message` at next-intl's format-only
+ * formatter, which reads messages compiled ahead of time and leaves the ICU parser
+ * (intl-messageformat) out of every page's JavaScript (docs/04 §3). The messages are then
+ * compiled here, on the server, once per build. Outside the bundler (Vitest, the build scripts run
+ * with tsx) the formatter is next-intl's default one and the messages stay ICU strings.
+ */
+export const PRECOMPILED = formatMessage.raw === false
+
+// icu-minify builds plural and select branches as null-prototype objects, which React does not pass
+// to client components; the JSON round trip makes them plain (next-intl's loader does the same).
+function precompile<M>(tree: M): M {
+  if (typeof tree === 'string') return JSON.parse(JSON.stringify(compile(tree))) as M
+  if (tree !== null && typeof tree === 'object') {
+    return Object.fromEntries(Object.entries(tree).map(([k, v]) => [k, precompile(v)])) as M
+  }
+  return tree
+}
+
 /** French messages get French spacing (no-break spaces before `: ; ? ! %`, inside « »). */
-export const MESSAGES: Record<Lang, Messages> = { en, fr: frenchMessages(fr) }
+const SOURCE: Record<Lang, Messages> = { en, fr: frenchMessages(fr) }
+export const MESSAGES: Record<Lang, Messages> = PRECOMPILED
+  ? { en: precompile(SOURCE.en), fr: precompile(SOURCE.fr) }
+  : SOURCE
 
 export function isLang(value: unknown): value is Lang {
   return value === 'en' || value === 'fr'

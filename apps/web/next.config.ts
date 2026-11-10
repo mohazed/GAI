@@ -1,7 +1,21 @@
+import { createRequire } from 'node:module'
+import path from 'node:path'
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
+
+/**
+ * next-intl's format-only formatter (docs/04 §3): messages are compiled to icu-minify's form on the
+ * server (lib/i18n.ts) and the ICU parser (intl-messageformat) leaves every page's JavaScript: the
+ * shared next-intl chunk went from 12.1 to 4.7 kB gzipped, each page about 5.2 kB lighter with
+ * next 16.4.5 (docs/10 B-2113).
+ * The same alias is what next-intl's experimental `messages.precompile` sets; the plugin option is
+ * not used because it compiles the JSON files at import, before lib/i18n.ts applies French spacing.
+ */
+const FORMAT_ONLY = createRequire(path.join(process.cwd(), 'package.json')).resolve(
+  'use-intl/format-message/format-only',
+)
 
 /**
  * The component kit (/_kit) is a dev-only route (docs/05 §5). Its files end in `.kit.tsx` and are
@@ -40,6 +54,11 @@ const config: NextConfig = {
   // A production client build whose splitChunks no longer has a `chunks` function (a Next.js
   // upgrade) fails here instead of silently losing the setting (P-19).
   webpack(webpackConfig, { isServer, dev }) {
+    webpackConfig.resolve ??= {}
+    webpackConfig.resolve.alias = {
+      ...(webpackConfig.resolve.alias as Record<string, string>),
+      'use-intl/format-message$': FORMAT_ONLY,
+    }
     const split = webpackConfig.optimization?.splitChunks
     if (!isServer && split && typeof split.chunks === 'function') {
       const pick = split.chunks as (chunk: { canBeInitial(): boolean }) => boolean
