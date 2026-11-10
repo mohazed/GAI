@@ -3160,3 +3160,28 @@ New leads: `lead_20261110_PNG_4` (B10: the Prime Minister's 'PNG always stands w
 Every replay was re-fetched in the browser pane and equals its index row in bytes and SHA-256.
 
 Score effect: PNG moves from -35 to -45 (Enabling) only because the 20 October 2025 B10 event is older than 365 days (the passivity penalty applies again) and B8 adds +3. Provisional previews (rc.1, 2026-11-10): PNG -45 Enabling, SLB +3 Acting, VUT -9 Passive, FSM -35 Enabling, KIR -26 Enabling, MHL -12 Passive.
+
+### T-F-L09: NRU, PLW, LBY, SDN, TUN, EST (2026-11-10, groups 17 and 18)
+
+The session had web search (standard mode: NRU 8 searches, PLW 4, LBY 6, SDN 5, TUN 6, EST 7) and the Governments' own pages that answer: the Government Information Office's release list of Nauru through its Wayback capture of 7 November 2026 and the CDX listing of `nauru.gov.nr`, the Government of Palau's WordPress interface (no post after September 2024) and the Island Times' search, the Libyan Ministry's WordPress interface (to 17 October 2026), the Sudan News Agency's home page (the Sudanese Ministry serves no site), the Tunisian Ministry's content interface (ids 1330 to 1396, to 9 November 2026) and the Estonian Ministry's releases found through a web search limited to its site. The 81st-session written statements of Nauru and Palau were read live (no passage on Gaza or the Court). Records: B-985 to B-991.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Notes extended | Events | Still unchecked |
+|---|---|---|---|---|
+| NRU | A3, A5 to A8, C4 to C6, E1 to E3 | B5, B6 (withdrawal from the Rome Statute) | `evt_2026_09_23_NRU_B6` (−10, scope related, not scored) | none |
+| PLW | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| LBY | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | B8 (generated; no row) |
+| SDN | A3, A5 to A8, C4 to C6, E1 to E3 | none (recognition document of 1988 not found) | none | B8 (generated; no row) |
+| TUN | A3, A5 to A8, C4 to C6, E1 to E3 | B8 (new row), B9 (posts 1368 and 1385 not filed) | none | none |
+| EST | A3, A5 to A8, C4 to C6, E1 to E3 | B9 | `evt_2026_10_16_EST_B9` (+2, flagged) | none |
+
+New leads: `lead_20261110_LBY_5` (B9: the Prime Minister on 23 July 2025, known from Africanews), `lead_20261110_LBY_6` (E2: the Soumoud convoy blocked by the eastern authorities, June 2025), `lead_20261110_TUN_5` (E2: the prosecution of the flotilla's coordination, March 2026, which concerns funds) and `lead_20261110_EST_4` (E2: the Tartu ban and the slogan fines of November 2023). Leads NRU_1, PLW_1, PLW_2, LBY_1 to LBY_4, TUN_1 to TUN_4 and EST_1 to EST_3 re-checked and kept. Recognition row `TUN,1988-11-15` (B-989).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20260930_icc-asp_statement-naoero-withdrawal | Statement of the Presidency of the Assembly of States Parties, 30 September 2026, on Naoero's withdrawal | `evt_2026_09_23_NRU_B6` |
+| src_19881118_unispal_a-43-828-tunisia-recognition | A/43/828-S/20279: Tunisia's letter of 18 November 1988 with the Foreign Minister's statement of 15 November 1988 | recognitions.csv row TUN, B8 |
+| src_20261016_vm-ee_tsahkna-bigot-two-state | Estonian Ministry's release of 16 October 2026 (the Foreign Minister and the EU Special Representative) | `evt_2026_10_16_EST_B9` |
+
+Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. C.N.378.2026 could not be archived (HTTP 403); its byte count and SHA-256 as read live are in the source record's notes.
+
+Score effect: TUN rises by the generated B8 (+3) from the new row; the NRU event is not scored (scope related) and the EST event adds nothing (B9 capped). Provisional previews (rc.1, 2026-11-10): NRU −39 Enabling, PLW −41 Enabling, LBY +41 Confronting, SDN +2 Acting, TUN +25 Acting, EST +35 Acting.
