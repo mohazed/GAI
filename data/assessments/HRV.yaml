@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign and European Affairs (mvep.gov.hr, HTTP 200; releases read through web searches and by address), the Government (vlada.gov.hr), the President's site (predsjednik.hr/en, searched through its content API for Gaza, Palestine and Israel: about 70 items listed, about a dozen read), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th archived, the 80th through the President's page), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Croatian. Not read: the Croatian-language press beyond search results, the Sabor's records, hina.hr (a bot check). Croatia is an EU member: the three Council listings (B11) and two joint statements (B9) are filed as for the other members (R8, B-444, B-446).
 # Seven B9 events, three B11 events, one C2 event, one D3 event. Leads: none (the Government's and the President's texts are official sources, which a lead does not accept).
+# Completion of 2026-11 (finish run, T-F-L14, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found (7 web searches, four in Croatian; docs/10 B-2026). The President's order ending the Armed Forces' cooperation with the Israeli army is not an A5 instance; no Government decision found. No lead.
 country: HRV
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Croatian company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Croatia and the F-35 supplier search returned none.
+      Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Croatia (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Croatia OR Malta OR Albania OR "North Macedonia" OR "Bosnia and Herzegovina" OR Andorra parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): rows for Croatia of 2006 (Hermes-450 drones) and 2017 (UT-25/UT-30 turrets, TIV 4.8) and no order of the release''s own data year since the
@@ -32,21 +38,41 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Croatia (read)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: on 23 February 2026 the President stated that in May 2025 he ordered the termination
-      of any cooperation between the Croatian Armed Forces and the Israeli Army and called on the Government to end every form of arms trade with Israel (src_20260223_predsjednik_armed-forces-israel).
-      A5 counts confirmed instances of cooperation with Israel, not their termination; no Government decision to match the order was found.'
+    status: none-found
+    note: 'No confirmed instance of the kinds A5 counts was found. On 23 February 2026 the President stated that in May 2025 he ordered the termination of any cooperation between the Croatian Armed Forces
+      and the Israeli Army (src_20260223_predsjednik_armed-forces-israel); the Prime Minister said operational cooperation between the two armies does not exist at present (Index.hr, a search result, summary
+      read). A5 counts confirmed instances of cooperation, not their termination, and no Government decision matching the order was found. The Ministry of Defence''s thanks to Israel''s Defence Minister for
+      the export licence of the Trophy protection system for the Leopard 2A8 tanks (morh.hr, a search result, undated) is an Israeli licence for a purchase, not an A5 instance. Not searched: the Ministry
+      of Defence''s releases item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Milanović prekid vojne suradnje Izrael Oružane snage odluka Vlada izvoz oružja Izrael dozvole Hrvatska 2025 2026'
+    - 'WebSearch 2026-11-10: Croatia Israel arms export licences OR F-35 OR Elbit OR Rafael OR air defence purchase Croatian Ministry of Defence 2025 2026'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: the President called on the Government (23 February 2026) to suspend all planned
-      arms contracts with Israel; no Government decision suspending or refusing licences was found, and the Defence Minister said on 25 March 2026 that the David''s Sling system ''is not an option''
-      because of the President''s order (press, search results, not read).'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found. The President called on the Government on 3 August 2025 and on 23 February 2026 (src_20260223_predsjednik_armed-forces-israel)
+      to stop trading arms with Israel and to suspend planned contracts, saying the Government is the competent authority: calls, not decisions. The Defence Minister said on 25 March 2026 that the David''s
+      Sling system ''is not an option'' because of the President''s order (press, search results, not read). An NGO''s letter (Hraction, April 2026, a search result, not read) says two arms export permits
+      for Israel were issued in March and April 2024. Not searched: Narodne novine and the Ministry of Economy''s licence notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Milanović prekid vojne suradnje Izrael Oružane snage odluka Vlada izvoz oružja Izrael dozvole Hrvatska 2025 2026'
+    - 'WebSearch 2026-11-10: Croatia Israel arms export licences OR F-35 OR Elbit OR Rafael OR air defence purchase Croatian Ministry of Defence 2025 2026'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering arms exports to and imports from Israel was found; the Government answered the President that it does not buy weapons from Israel (HRT, a search result: title read). Not
+      searched: Narodne novine.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Milanović prekid vojne suradnje Izrael Oružane snage odluka Vlada izvoz oružja Izrael dozvole Hrvatska 2025 2026'
+    - 'WebSearch 2026-11-10 (Croatian): Croatia pension fund OR sovereign fund OR public procurement exclusion Israeli companies OR Elbit Hrvatska mirovinski fond isključenje izraelskih tvrtki javna nabava
+      2025 2026'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found. Not searched: the port authorities of Rijeka and Ploče and the civil aviation agency.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Milanović prekid vojne suradnje Izrael Oružane snage odluka Vlada izvoz oružja Izrael dozvole Hrvatska 2025 2026'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 7 of the 12 qualifying votes, an abstention on 4 and one no. All 12 are recorded, so no absence is scored; Croatia is not among the four Member
@@ -165,14 +191,27 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national ban on or labelling rule for settlement goods beyond EU law was found; the search in Croatian returned no Croatian measure (Slovenia''s ban and the EU''s labelling rules appear). Not
+      searched: Narodne novine and the customs administration''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Hrvatska proizvodi iz izraelskih naselja zabrana uvoza OR označavanje OR carina Vlada RH naselja Zapadna obala trgovina'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a Croatian public pension fund, the Croatian National Bank or another public fund over conduct in Gaza or the occupied territories was found; the results are other countries''
+      funds. Not searched: the funds'' own pages and HANFA.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Croatia pension fund OR sovereign fund OR public procurement exclusion Israeli companies OR Elbit Hrvatska mirovinski fond isključenje izraelskih tvrtki javna nabava
+      2025 2026'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement portal (EOJN).'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Croatia pension fund OR sovereign fund OR public procurement exclusion Israeli companies OR Elbit Hrvatska mirovinski fond isključenje izraelskih tvrtki javna nabava
+      2025 2026'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Croatian Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Government states EUR 4 million of aid by 9 September 2025,
@@ -213,11 +252,23 @@ indicators:
     - Gaza refugees visa Croatia (web search)
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Croatian nationals or companies for conduct in Gaza was found; the universal-jurisdiction search returned filings in other states.
+      Not searched: the State Attorney''s Office''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found. Read in search results and not filed: police detained activists who blocked the Foreign Ministry''s
+      entrance and charged them with a misdemeanour (Novi list, undated, not read); police said they would video-record a solidarity rally in 2023 under the Law on Police Duties and Powers (HRT); a march
+      in Zagreb in October 2025 raised an Israeli flag with no police response reported (tportal.hr). None is a ban.'
+    queries:
+    - 'WebSearch 2026-11-10 (Croatian): Hrvatska zabrana prosvjeda OR zabrana palestinske zastave OR kaznena prijava Gaza prosvjed policija Zagreb Izrael'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Croatia was found (the search returned none).
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
