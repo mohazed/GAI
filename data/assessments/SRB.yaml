@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs' statements (mfa.gov.rs/en, HTTP 200; about a dozen releases on Israel, Gaza and Egypt read), the General Debate statements of the 79th to 81st sessions (gadebate.un.org, read live; none has a Wayback replay for the 80th and 81st), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Serbian. Not read: predsednik.rs (script-rendered), the Open Parliament page of the committee session of 29 April 2026 (bot challenge), the Serbian press beyond the pages cited.
 # One C2 event (reported). Leads: one (C2, the Elbit contracts and the drone venture). Serbia is an EU candidate, not a member.
+# Completion of 2026-11 (finish run, T-F-L15, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 16 web searches in English and Serbian (docs/10 B-2033), all none-found; new leads SRB_2 (A6, the general suspension of arms exports of 23 June 2025) and SRB_3 (A5, Israeli cargo flights from Belgrade); lead SRB_1 re-checked with the opening of the drone factory of 17 September 2026.
 country: SRB
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Serbian company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) names Serbia only in the title of an ICJ judgment, and the
+      F-35 supplier search returned no result for Serbia. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Serbia (two matches, both the case title Bosnia and Herzegovina v. Serbia and Montenegro)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Montenegro OR "San Marino" OR Serbia OR Angola OR "Holy See" parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Serbia from Israel of 2022 to 2024 (RPS-42 radars for the PASARS air-defence systems, SkyStriker loitering munitions, EXTRA
@@ -31,17 +37,48 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Serbia (read)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel in the sense of the indicator (a named exercise, a documented transit, a basing agreement or official confirmation of intelligence
+      sharing) was found. The defence cooperation is commercial and industrial: purchases from Elbit Systems, a joint venture for drone assembly that the President opened on 17 September 2026 (Tanjug,
+      Calcalist; press, see lead_20261104_SRB_1), and the classified-information agreement filed as evt_2026_04_29_SRB_C2 (a framework for exchange, not a confirmed exchange). One Israeli cargo
+      aircraft of an airline specialised in dangerous cargo flew from Belgrade to the Nevatim air base eight times in eight months to June 2025 (RFE/RL of 24 June 2025, read; the cargo is not documented
+      and the ministries and the airport did not say what it was): kept as lead_20261110_SRB_3. The Ministry of Defence''s page on Eurosatory 2026 (found by search) says Serbia has significant contracts
+      with Elbit (not read in full). Not searched: the Ministry of Defence''s releases item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Serbia Israel military cooperation OR exercise OR drones OR Elbit agreement Vučić Gaza 2026 arms exports Israel Serbia ammunition'
+    - 'WebSearch 2026-11-10 (Serbian): Izraelski teretni avioni Beograd aerodrom Nikola Tesla vojni tereti Izrael Srbija vazdušni prostor tranzit oružje'
+    - 'WebSearch 2026-11-10 (Serbian; tanjug.rs, rts.rs): Vučić zajednička proizvodnja dronova Izrael Elbit Jugoimport SDPR fabrika dronova Srbija april 2026 predsednik izjava'
+    - 'WebSearch 2026-11-10: Serbia Israel drone factory Elbit opened near Belgrade September 2026 Yugoimport SDPR Ministry of Defence OR Vucic'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel specifically was found. On 23 June 2025 the Ministry of Defence announced, in line with the President''s instructions,
+      that the export of weapons and military equipment produced in Serbia is suspended and that exports from defence-industry factories will need the National Security Council''s consent (the Government''s
+      site and the Ministry''s, found by search; the announcement does not mention Israel and states no end date); the President said that day ''sad ne izvozimo ništa'' in answer to a question on
+      Israel (RFE/RL, read). A Radio Free Europe item seen in a search result (its date is not clear) says two state factories confirmed that exports restarted in February after eight months, which
+      the State did not confirm; BIRN''s customs data, as relayed by RFE/RL, show exports to Israel of EUR 55.5 million in the first half of 2025. A general suspension is not an A6 act aimed at
+      Israel: kept as lead_20261110_SRB_2. Not searched: the Ministry of Trade''s licence notices (the Ministry publishes no licence data).'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija izvoz oružja i municije Izrael dozvole Ministarstvo trgovine OR Vučić "municija" Izrael izjava 2025 2026'
+    - 'WebSearch 2026-11-10 (Serbian): Ministarstvo odbrane saopštenje obustavlja se izvoz naoružanja i vojne opreme proizvedene u Srbiji po nalogu predsednika Savet za nacionalnu bezbednost saglasnost'
+    - 'WebSearch 2026-11-10 (Serbian, mod.gov.rs, srbija.gov.rs, predsednik.rs): Ministarstvo odbrane obustavlja se izvoz naoružanja i vojne opreme proizvedenih u Srbiji instrukcije predsednika
+      Aleksandra Vučića'
+    - 'WebSearch 2026-11-10 (Serbian): Srbija ponovo izvoz naoružanja nastavljen 2026 posle obustave Savet za nacionalnu bezbednost odluka izvoz oružja Izrael ukinuta zabrana'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; Serbia both exports to and buys from Israel (see A5, A6). Not searched: the Official Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija izvoz oružja i municije Izrael dozvole Ministarstvo trgovine OR Vučić "municija" Izrael izjava 2025 2026'
+    - 'WebSearch 2026-11-10: Serbia Israel military cooperation OR exercise OR drones OR Elbit agreement Vučić Gaza 2026 arms exports Israel Serbia ammunition'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit to an arms shipment bound for Israel was found; the reports run the other way (Israeli cargo aircraft landing at Belgrade, see A5). Not searched: the civil aviation
+      directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Izraelski teretni avioni Beograd aerodrom Nikola Tesla vojni tereti Izrael Srbija vazdušni prostor tranzit oružje'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 8 and abstentions on 4 of the 12 qualifying votes (A/RES/ES-10/21, ES-10/24, 79/232 and 80/116). All 12 are recorded; Serbia is not among the Member States
@@ -148,14 +185,27 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Serbia is an EU candidate, not a member, and the search returned measures of Slovenia and South Africa only. Not searched: the Customs
+      Administration''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija proizvodi iz izraelskih naselja zabrana OR označavanje OR carina OR penzioni fond OR javne nabavke isključenje izraelske kompanije Vlada Srbije'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a public pension fund or the National Bank of Serbia over conduct in Gaza or the occupied territories was found; no search result concerns one. Not searched:
+      the institutions'' own pages.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija proizvodi iz izraelskih naselja zabrana OR označavanje OR carina OR penzioni fond OR javne nabavke isključenje izraelske kompanije Vlada Srbije'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the State''s contracts with Israeli firms run the other way (see A5). Not
+      searched: the Public Procurement Office''s portal.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija proizvodi iz izraelskih naselja zabrana OR označavanje OR carina OR penzioni fond OR javne nabavke isključenje izraelske kompanije Vlada Srbije'
+    - 'WebSearch 2026-11-10: Serbia Israel military cooperation OR exercise OR drones OR Elbit agreement Vučić Gaza 2026 arms exports Israel Serbia ammunition'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build. Serbia''s Government adopted a conclusion of 10 May
@@ -193,11 +243,23 @@ indicators:
     - 'web search: Srbija Gaza vize izbeglice'
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Serbian nationals or companies for conduct in Gaza was found; the search returned the War Crimes Prosecutor''s cases
+      on the Yugoslav wars only. Not searched: the Prosecutor''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija tužilaštvo krivična prijava ratni zločini Gaza OR univerzalna jurisdikcija izraelski vojnik Srbija OR srpski državljani izraelska vojska istraga'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found: rallies in Belgrade took place in October 2023 and June 2025 (the second asking that arms
+      exports to Israel stop; RFE/RL, 021.rs and N1 items seen in search results, not read) and the results show no police ban. Not searched: the Ministry of Interior''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija policija zabranila skup podrške Palestini OR zabrana palestinske zastave OR protest Gaza Beograd uhapšeni aktivisti Palestina 2024 2025 2026'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Serbia was found (the search returned none). Not searched: the War Crimes Prosecutor''s
+      site.'
+    queries:
+    - 'WebSearch 2026-11-10 (Serbian): Srbija tužilaštvo krivična prijava ratni zločini Gaza OR univerzalna jurisdikcija izraelski vojnik Srbija OR srpski državljani izraelska vojska istraga'
+    checked_at: '2026-11-10'
