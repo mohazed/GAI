@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Foreign Secretariat's pages (esteri.sm) and the Government's portal (gov.sm), both HTTP 200; the General Debate statements of the 79th to 81st sessions (gadebate.un.org; the 79th archived, the 80th and 81st read live), San Marino RTV's and libertas.sm's reports of the Secretariat's releases, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Italian. Not read: the Great and General Council's records beyond search results, the Captains Regent's own pages (reggenza.sm did not answer), the Italian-language press beyond the pages cited.
 # Two B9 events, one D3 event. Leads: two (B9, the 80th and 81st General Debate statements, which have no archived text). San Marino is not an EU member.
+# Completion of 2026-11 (finish run, T-F-L15, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 6 web searches in English and Italian and the Council's report of 20 February 2026 (docs/10 B-2032), all none-found; one new B9 event, evt_2025_07_29_SMR_B9 (the Foreign Secretary's statement at the two-state conference, from UNISPAL's list of the second plenary meeting); leads SMR_1 and SMR_2 re-checked.
 country: SMR
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a company of San Marino as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for San Marino and the F-35 supplier search
+      returned none. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for San Marino (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Montenegro OR "San Marino" OR Serbia OR Angola OR "Holy See" parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by San Marino from Israel in the register. Left to the build.'
@@ -28,17 +34,36 @@ indicators:
     - sipri_orders.csv, buyer SMR
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No instance of military cooperation with Israel was found: the Italian-language searches returned no exercise, transit, basing or intelligence-sharing item for it. Not searched: the Great
+      and General Council''s records beyond the report of 20 February 2026 and the Foreign Secretariat''s releases item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino Israele esportazione armi OR cooperazione militare OR accordo OR sanzioni OR embargo Consiglio Grande e Generale Gaza Beccari 2025 2026'
+    - 'WebSearch 2026-11-10 (Italian): San Marino transito armi Israele OR volo OR spazio aereo OR esercitazione militare Israele OR intelligence Segreteria Esteri Gaza'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; no arms export to Israel by San Marino was found either. The Government stated in the Council on 20 February
+      2026 (report read) that San Marino has never adopted restrictive measures beyond those from UN resolutions and, for Russia and Ukraine, EU sanctions. Not searched: the Official Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino Israele esportazione armi OR cooperazione militare OR accordo OR sanzioni OR embargo Consiglio Grande e Generale Gaza Beccari 2025 2026'
+    - giornalesm.com, Consiglio Grande e Generale, report of 20 February 2026 (Istanza d'Arengo n. 2), read
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; see A6 for the Government''s statement of 20 February 2026 that San Marino has not adopted unilateral restrictions.
+      Not searched: the Official Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino Israele esportazione armi OR cooperazione militare OR accordo OR sanzioni OR embargo Consiglio Grande e Generale Gaza Beccari 2025 2026'
+    - giornalesm.com, Consiglio Grande e Generale, report of 20 February 2026 (Istanza d'Arengo n. 2), read
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit to an arms shipment was found; San Marino has no port and the search returned no airspace measure concerning Israel. Not searched: the civil aviation authority''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino transito armi Israele OR volo OR spazio aereo OR esercitazione militare Israele OR intelligence Segreteria Esteri Gaza'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and an abstention on A/RES/ES-10/21 (27 October 2023). All 12 are recorded; San Marino is not among the Member States
@@ -92,17 +117,20 @@ indicators:
     checked_at: '2026-11-04'
   B9:
     status: has-events
-    note: 'Two events: the Secretary of State''s General Debate statement of 28 September 2024 (+2) and the ''New York Call'' of 30 July 2025 (+2). Not filed, for lack of an archived text: the
-      80th General Debate statement (27 September 2025), which in the live file (gadebate.un.org/sites/default/files/gastatements/80/sm_en.pdf, 167,415 bytes; Save Page Now answers 405 and Wayback
-      has no replay) calls for ''an immediate and permanent ceasefire'' and says ''nothing can justify the collective punishment of the Palestinian people through indiscriminate bombing, starvation
-      and displacement'' (a +5 reading, as for Brunei and Egypt), and the 81st (26 September 2026; live file sm_en.pdf, 347,517 bytes), which calls for a permanent ceasefire and says ''nothing
-      can justify the collective punishment of civilians'' (+2, flagged): leads lead_20261104_SMR_1 and lead_20261104_SMR_2. The Foreign Secretariat''s releases of 29 July 2025 and 28 September
-      2025 report the speeches in indirect speech (R4, kind press).'
+    note: 'Three events: the Secretary of State''s General Debate statement of 28 September 2024 (+2), his statement at the second plenary meeting of the two-state conference of 29 July 2025 (+5,
+      a legal characterisation of the lack of access to food, flagged; found through UNISPAL''s list of the statements, session T-F-L15) and the ''New York Call'' of 30 July 2025 (+2). Not filed,
+      for lack of an archived text: the 80th General Debate statement (27 September 2025), which in the live file (gadebate.un.org/sites/default/files/gastatements/80/sm_en.pdf, 167,415 bytes; Save
+      Page Now answers 405 and Wayback has no replay) calls for ''an immediate and permanent ceasefire'' and says ''nothing can justify the collective punishment of the Palestinian people through
+      indiscriminate bombing, starvation and displacement'' (a +5 reading, as for Brunei and Egypt), and the 81st (26 September 2026; live file sm_en.pdf, 347,517 bytes), which calls for a permanent
+      ceasefire and says ''nothing can justify the collective punishment of civilians'' (+2, flagged): leads lead_20261104_SMR_1 and lead_20261104_SMR_2. The Foreign Secretariat''s releases of 29
+      July 2025 and 28 September 2025 report the speeches in indirect speech (R4, kind press).'
     queries:
     - gadebate.un.org/en/{79,80,81}/san-marino (read)
     - esteri.sm and libertas.sm releases (read)
     - 'web search: Beccari Assemblea Generale ONU discorso San Marino cessate il fuoco Gaza'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: San Marino Beccari High-Level Conference two-State solution New York 29 July OR 30 July 2025 statement Foreign Minister speakers list'
+    - UNISPAL, statements delivered at the second plenary meeting of 29 July 2025 (archived), read
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: No statement of unconditional support for Israel or denial of violations by the Captains Regent or the Secretary of State was found in the sources read; the General Debate statements
@@ -138,14 +166,28 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; San Marino is not an EU member and the search returned Italian and EU measures only. Not searched: the Customs Office''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino prodotti insediamenti israeliani divieto OR etichettatura OR Fondo pensione OR appalti pubblici esclusione Israele Congresso di Stato'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a public pension fund or the Central Bank of San Marino over conduct in Gaza or the occupied territories was found; no search result concerns one. Not searched:
+      the institutions'' own pages.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino prodotti insediamenti israeliani divieto OR etichettatura OR Fondo pensione OR appalti pubblici esclusione Israele Congresso di Stato'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. The Great and General Council took up Istanza d''Arengo n. 2 of 5 October
+      2025, asking the administration, the Social Security Institute and the state enterprises to cancel contracts for goods and services of Israeli companies; the Congress of State advised against,
+      the Foreign Secretariat''s reply stating that checks at the Institute found no direct dealings with firms based in Israel and that San Marino has never interrupted trade unilaterally (Council
+      report of 20 February 2026, read). Not searched: the Council''s vote on the Istanza.'
+    queries:
+    - giornalesm.com, Consiglio Grande e Generale, report of 20 February 2026 (Istanza d'Arengo n. 2), read
+    - 'WebSearch 2026-11-10 (Italian): San Marino prodotti insediamenti israeliani divieto OR etichettatura OR Fondo pensione OR appalti pubblici esclusione Israele Congresso di Stato'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Sammarinese Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Minister''s 79th statement says San Marino made financial
@@ -184,11 +226,21 @@ indicators:
     - 'web search: San Marino Gaza accoglienza'
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of nationals or companies of San Marino for conduct in Gaza was found. Not searched: the Court of San Marino''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino manifestazione Palestina vietata OR divieto bandiera OR denuncia crimini di guerra Gaza Tribunale esposto procura'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the search returned Italian cases only. Not searched: the Gendarmerie''s notices and the Sammarinese
+      press item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino manifestazione Palestina vietata OR divieto bandiera OR denuncia crimini di guerra Gaza Tribunale esposto procura'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in San Marino was found (the search returned none). Not searched: the Court''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (Italian): San Marino manifestazione Palestina vietata OR divieto bandiera OR denuncia crimini di guerra Gaza Tribunale esposto procura'
+    checked_at: '2026-11-10'
