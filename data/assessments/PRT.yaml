@@ -4,6 +4,7 @@
 # Search method (docs/06 §5): the Ministry of State and Foreign Affairs' portal (portaldiplomatico.mne.gov.pt, HTTP 200; its site search read for Gaza, Israel, Palestina, Cisjordânia, UNRWA, TPI, cessar-fogo, Hamas, flotilha, Médio Oriente and Rafah: about 70 pages listed, those since October 2023 read), the Government's site (portugal.gov.pt), the Presidency's site (presidencia.pt, read through web searches and by address), the General Debate statements of the 79th to 81st sessions (gadebate.un.org), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Portuguese. Not read: the Assembly of the Republic's records, the Portuguese press beyond the pages cited, the Council of Ministers' communiqués, the President's statements after 9 March 2026.
 # Portugal is an EU member: the three Council listings (B11) and the joint statements that name it (B9) are filed as for the other members (R8, B-444, B-446).
 # Fifteen B9 events, three B11 events, two D3 events (twenty in all). Leads: two (C1, B5; press only).
+# Completion of 2026-11 (finish run, T-F-L15, 2026-11-10): A3, A5 to A8, C4 to C6, D5 and E1 to E3 searched with about 20 web searches in English and Portuguese (docs/10 B-2030). One A6 event (the Government's statement of 21 June 2024) and one lead (A5, the Lajes stopover of three American aircraft bound for Israel); no instance of A8 found.
 country: PRT
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -20,8 +21,14 @@ indicators:
       about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Portuguese company as a supplier of parts or maintenance for the F-35 programme. Lockheed Martin''s outreach in Portugal is prospective: a memorandum with the AED
+      Cluster Portugal and statements of May 2026 that it could produce components if the Government chose the aircraft (ECO, Observador, DN; press); no contract and no company name was published,
+      and Portugal has not bought the F-35. Not searched: Lockheed Martin''s own supplier list.'
+    queries:
+    - 'WebSearch 2026-11-10: Portugal F-35 supply chain Portuguese company supplier parts Lockheed Martin OGMA OR Embraer OR "Critical Materials"'
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Portugal (no match)
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Portugal from Israel in 2006 to 2008 (Spike-MR/LR, EL/M-2022 radars, Litening pods, CARDOM mortars) and one of
@@ -32,20 +39,48 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Portugal (read)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found in a primary document. The Ministry''s statement of 2 October 2025 (Lusa, through ECO and RTP; not archived) says three
+      American aircraft stopped at and overflew the Lajes base for delivery to Israel under a tacit authorisation (a ''falha de procedimento''; RTP gives the date as 22 April 2025, ECO reports an
+      El País article of 29 September): kept as lead_20261110_PRT_3, as the Ministry''s own text was not found and the aircraft''s load is not stated. The Hermes 900 maritime surveillance training
+      of 2019 predates the window; no 2025 to 2026 joint exercise or defence agreement with Israel was found. Not searched: the Ministry of Defence''s releases item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Lajes aviões Israel autorização tácita MNE comunicado Autoridade Aeronáutica Nacional 22 abril Expresso'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal Israel navio armas porto Sines OR Lajes OR espaço aéreo trânsito material militar Gaza'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal exercício militar conjunto Israel OR cooperação defesa acordo Israel Portugal Força Aérea drones israelitas compra 2025 2026'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only. Read incidentally: the Government''s news item ''Mediação portuguesa no conflito Israel-Palestina
-      está a dar frutos'' (portugal.gov.pt/gc24, undated in the page''s text) reports the Minister for Parliamentary Affairs, Pedro Duarte, telling the Assembly that the Government ''tomou a medida
-      unilateral de não autorizar a exportação de armas para Israel''; a headline of Notícias ao Minuto (page no longer served) says the Foreign Minister announced an unfavourable opinion on the
-      export of arms and munitions to Israel ''more than eight months'' into the war. No licence decision or order was read. Scheduled for P-23 (A6/A5, with the Government''s own text).'
+    status: has-events
+    note: 'One event: the Minister for Parliamentary Affairs told the Assembly on 21 June 2024 that the Government ''tomou a medida unilateral de não autorizar a exportação de armas para Israel''
+      (the Government''s news item, archived; evt_2024_06_21_PRT_A6, flagged: a ministerial statement without a licence act or its date). Search-result summaries of RR and Notícias ao Minuto pages
+      (not read, not relied on) add that the Foreign Minister said the State gives a negative opinion on exports of military material to Israel. Not searched: the Diário da República and the Ministry
+      of Defence''s export-licence notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): "Mediação portuguesa no conflito Israel-Palestina está a dar frutos" portugal.gov.pt'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal exportação de material de defesa para Israel licenças suspensas Governo Gaza 2025'
+    - 'WebSearch 2026-11-10 (Portuguese): Governo português exportação armas Israel licenças material de defesa ministro Defesa Nuno Melo Israel cooperação militar'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Lusa''s report of the Ministry''s statement of 2 October 2025 (press) describes an embargo on the sale of
+      arms and on the passage of military material through national territory, a one-way policy as described; no legal instrument was read. Not searched: the Diário da República.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal exportação de material de defesa para Israel licenças suspensas Governo Gaza 2025'
+    - 'WebSearch 2026-11-10 (Portuguese): Governo português exportação armas Israel licenças material de defesa ministro Defesa Nuno Melo Israel cooperação militar'
+    - 'WebSearch 2026-11-10 (Portuguese): Lajes aviões Israel autorização tácita MNE comunicado Autoridade Aeronáutica Nacional 22 abril Expresso'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No instance of denied transit was found. The headlines of RR, RTP and DN (30 September and 15 October 2024; pages not read, search results only) say the owner of the Madeira-registered
+      cargo ship Kathrin asked to cancel its Portuguese registration and that the flag was withdrawn: a registration ended at the owner''s request, not a denial of transit. Search results report
+      that the Foreign Minister said, after the Nysted Maersk''s call at Lisbon in November 2024, that the transit was for the United States and no weapons were found (not read). The NGOs'' requests
+      to inspect the MSC Danit at Sines (March 2026) and the Holger G (December 2025) show no Government refusal. A search summary''s claim that the Government refused an overflight in September
+      2024 could not be confirmed and is not relied on. Not searched: the port authorities'' notices and the Autoridade Aeronáutica Nacional.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal Israel navio armas porto Sines OR Lajes OR espaço aéreo trânsito material militar Gaza'
+    - 'WebSearch 2026-11-10 (Portuguese): navio Kathrin bandeira portuguesa Madeira retirada da bandeira armas Israel Governo Rangel'
+    - 'WebSearch 2026-11-10 (Portuguese): Lajes aviões Israel autorização tácita MNE comunicado Autoridade Aeronáutica Nacional 22 abril Expresso'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 qualifying votes are recorded; Portugal is not among the Member States in arrears in the Secretary-General''s letter
@@ -161,14 +196,29 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national ban on or labelling rule for settlement goods was found. The Foreign Minister said in Brussels on 13 July 2026 (DNoticias, Lusa; press) that an import ban is the only possible
+      measure and should be adopted at EU level; the joint statement of twelve foreign ministers of 8 September 2026 states an intention to impose national restrictions on trade with the settlements
+      (evt_2026_09_08_PRT_B9; RTP), an intention and not a measure in force. EU labelling follows the Court of Justice''s judgment of 2019 at Union level. Not searched: the Diário da República and
+      the customs authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal produtos dos colonatos israelitas rotulagem OR proibição importação Governo português Rangel'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal restrições nacionais comércio colonatos ilegais Governo medida decreto outubro OR novembro 2026'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by the social security stabilisation fund (FEFSS, managed by the IGFCSS) or by the Banco de Portugal over conduct in Gaza or the occupied territories was found;
+      the search returned funds of other states. A steel-components firm of Portugal is on the UN database of companies in settlements (press, listing only). Not searched: the IGFCSS''s own pages.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal Fundo de Estabilização Financeira da Segurança Social OR IGFCSS exclusão empresas Israel colonatos desinvestimento'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the results on Portugal are advocacy statements on the Air Force''s purchase
+      of Elbit equipment for the KC-390 (2019). Not searched: the public contracts portal (BASE) and municipal decisions item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal contratação pública empresas israelitas exclusão OR boicote Câmara Municipal OR Governo Elbit OR Rafael contrato Estado português'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Portuguese Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Ministry''s release of 9 November 2023 announces a voluntary
@@ -204,17 +254,37 @@ indicators:
     - 'web search: Portugal acolhe crianças de Gaza tratamento evacuação médica'
     checked_at: '2026-11-04'
   D5:
-    status: unchecked
-    note: Not searched beyond the Ministry's portal search (no visa, refugee or scholarship pathway for Gazans appears in its releases on Gaza); the Ministry's releases of 15 and 17 November 2023
-      describe the evacuation of Portuguese nationals and their relatives from Gaza (consular repatriation, not a pathway).
+    status: none-found
+    note: 'No visa, refugee or scholarship pathway for Gazans opened by the Government was found. A Palestinian student admitted to a Lisbon master''s programme could not obtain a visa because it
+      depended on Israel''s authorisation and the Ramallah representation was not working normally (Observador, RTP, July 2025; press); the Assembly recommended on 26 September 2025 that the Government
+      receive children needing urgent medical care (a recommendation, see D4). The Ministry''s releases of November 2023 describe consular evacuations of nationals and relatives, not a pathway.
+      Not searched: the immigration agency''s (AIMA) notices.'
     queries:
     - 'portaldiplomatico.mne.gov.pt site search: Gaza'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal vistos OR refugiados OR bolsas estudantes de Gaza Governo acolhe palestinianos 2025 2026'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal acolhe crianças de Gaza tratamento médico OR estudantes palestinianos visto Governo programa 2026 AIMA'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Portuguese nationals or companies for conduct in Gaza was found. Not searched: the Public Prosecution''s communiqués
+      and the Portuguese press item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Ministério Público inquérito portugueses combatentes exército israelita OR empresa portuguesa cumplicidade Gaza investigação Portugal'
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal Ministério Público queixa OR inquérito crimes de guerra Gaza soldado israelita OR militar português Israel jurisdição universal'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found: marches in Lisbon took place from October 2023 to 2025. Police detained a man who raised a
+      Palestinian flag on the 25 de Abril Bridge (October 2025) and protesters who occupied a medical school (press); these are public-order acts against individuals, not a ban. Not searched: the
+      Ministry of Internal Administration''s site and the PSP''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal proíbe manifestação OR bandeira Palestina PSP polícia proibição protesto Gaza Lisboa'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). The Hind Rajab Foundation filed complaints in Lisbon against Israeli soldiers (14 July 2025 against Dani Adega, through a Portuguese lawyer; a second reported
+      for 15 July 2026); the foundation''s post does not say a prosecutor opened an investigation, and a Portuguese outlet reports without naming a decision-maker that the first was shelved (16
+      July 2025). No court record or prosecutor''s decision accepting a complaint was found. Not searched: the Lisbon DIAP''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Portugal Ministério Público queixa OR inquérito crimes de guerra Gaza soldado israelita OR militar português Israel jurisdição universal'
+    checked_at: '2026-11-10'
