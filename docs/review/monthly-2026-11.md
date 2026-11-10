@@ -875,3 +875,33 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2135 to B-2139. Every open le
 | ESP | ESP_9 | A3 | No document naming a Spanish supplier | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-3: leads of ETH to IRL, full-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2140 to B-2142. Every open lead of FRA, GBR, GRC, IDN, IND and IRL carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed (oireachtas.ie's human check was not used; the Official Report's records on data.oireachtas.ie were read instead).
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| FRA | FRA_1 | E1 | No PNAT communiqué (AFP-based press only) | Kept open | None (unscored) |
+| FRA | FRA_2 | B6 | Overflights; standing position of 27 Nov 2024 filed; not searched again | Kept open | None |
+| FRA | FRA_3 | A5 | Outside A5 and A8; A2 generated; not searched again | Kept open | None |
+| FRA | FRA_5 | C6 | Trade-fair measure, outside every indicator; not searched again | Kept open (author's consideration) | None |
+| FRA | FRA_6 | E3 | No PNAT communiqué; second inquiry of 1 July 2026 (press) | Kept open (author's reading of category E) | None (unscored) |
+| GBR | GBR_1 | B5 | Hansard API: urgent question of 25 Nov 2024 answered by an Under-Secretary (not a B5 speaker); no PM, Foreign or Justice Secretary statement | Kept open | None |
+| GBR | GBR_2 | A5 | Hansard: Armed Forces Minister's debate of 18 Mar 2025; no other intelligence sharing confirmed | Kept open | None |
+| GBR | GBR_3 | E1 | No Met Police or CPS statement on the referral (PILC and press on the July 2026 reversal) | Kept open | None (unscored) |
+| GRC | GRC_1, GRC_2 | E3 | No Greek prosecutor's or court's document | Kept open | None (unscored) |
+| IDN | IDN_1 | B5 | Ministry statement of 23 Nov 2024 was a post on X; no copy on kemlu.go.id | Kept open (author's reading, B-411 (2)) | None |
+| IDN | IDN_2 | D4 | No record of patients from Gaza received | Kept open | None |
+| IDN | IDN_3 | E3 | No inquiry or investigation opened; kejaksaan.go.id did not answer | Kept open | None (unscored) |
+| IND | IND_1, IND_2, IND_4 | A1, A2 | Generated indicators; not searched again | Kept open | None |
+| IND | IND_3 | A2 | Amnesty report rests on HS 93 data (already in A2); no dual-code row | Kept open | None |
+| IND | IND_5 | E2 | Court and police orders not readable without the case-status form; later permission of 20 Aug 2025 (press) | Kept open | None (unscored) |
+| IRL | IRL_1 | B5 | **Justice Minister's written answer of 13 Feb 2025** (procedure under the ICC Act 2006) archived | Kept open; event stays corroborated; author's reading (B-2140 (3)) | None (B clipped at +45) |
+| IRL | IRL_2 | B11 | **Justice Minister's written answer of 16 Jun 2026**: "I instructed Immigration officers to refuse entry" to Ben-Gvir and Smotrich, archived | `evt_2026_06_05_IRL_B11` raised to **confirmed**; lead promoted (B-2140 (2)) | None (B clipped at +45) |
+| IRL | IRL_3 | A5 | Transport Minister's answers (one refusal in 2025; examination ongoing); no authorised flight named | Kept open | None |
+| IRL | IRL_4 | A6 | Enterprise Minister's answers: 15 licences issued, 2 refused in 2025, case by case | Kept open | None |
+| IRL | IRL_5 | D5 | About forty written questions on study visas; no legal instrument | Kept open | None |
+| IRL | IRL_6 | B9 | **Taoiseach's 81st-session statement** from the Wayback capture of the gadebate file, archived | **Filed** `evt_2026_09_24_IRL_B9` (+5, confirmed); lead promoted; author's reading of the tier (B-2140 (1)) | None (B9 at cap; IRL +59) |
+
+`pnpm validate`: 0 errors.

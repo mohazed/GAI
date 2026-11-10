@@ -4228,3 +4228,28 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2135 to B-2139. The full-prot
 | EST | EST_4 | E2 | **Supreme Court judgment 4-23-4296** (5 March 2025) archived: police fine of 5 December 2023 for a "Jõest mereni" placard, proceedings terminated | **Filed** `evt_2023_12_05_EST_E2` (−5, unscored); lead promoted (B-2137) | None (E unscored; +35, Acting) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-3: leads of ETH to IRL, light-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2140 to B-2142. The full-protocol rows are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| ETH | ETH_1 | C2 | No ministry release of the Feb 2025 signing; no instrument signed at the 2025 and 2026 visits | Kept open | None |
+| FIN | FIN_1 | D2 | No Ministry release or parliamentary answer on the non-renewal (press only) | Kept open | None |
+| FIN | FIN_2 | C4 | No Government decision, bill or customs instrument on settlement imports | Kept open | None (west-bank) |
+| FJI | FJI_1 | B10 | Author's reading; decayed; not searched again | Kept open | None |
+| FJI | FJI_2 | B10 | No Government transcript of the press conference of 2 Jun 2026 | Kept open | None |
+| FJI | FJI_3 | B6 | No visit of Israel's Prime Minister announced or reported | Kept open | None |
+| FSM | FSM_1, FSM_2 | B9, B10 | Re-checked by T-F-L08 the same day; not searched again | Kept open | None |
+| GEO | GEO_1 | none | Outside every indicator (stabilisation force); not searched again | Kept open | None |
+| GEO | GEO_2 | C2 | Public broadcaster and press relay the Ministry; police.ge refused connections; no official copy | Kept open | None |
+| GHA | GHA_1 | B9 | ISD item of 1 Sep 2026 in indirect speech only; no Presidency text or video | Kept open | None |
+| GTM | GTM_1, GTM_3 | B10, B9 | minex.gob.gt and agn.gt answer 403; the 27 Aug 2025 communiqué was an X post | Kept open | None |
+| GTM | GTM_2 | B8 | Resolved by T-G-B8 (row `GTM,2013-04-08`, B-2115) | Dropped with that reason | None |
+| GTM | GTM_4 | C2 | **Ministry of Economy's FTA profile** archived: signed Sep 2022, Decree 17-2023, in force 1 Mar 2024 | Kept open; not filed (C2 reading, B-970 (2), B-2141) | None |
+| GUY | GUY_1 | B9 | No statement of the President or Foreign Minister after Sep 2025 | Kept open | None |
+| HND | HND_1 | B9 | A/80/PV.7 to PV.16 not yet issued; gadebate capture still 404 | Kept open | None |
+| HND | HND_2 | B9 | Withdrawal of 3 Mar 2026 in press only; no signatory named | Kept open | None |
+
+`pnpm validate`: 0 errors.
