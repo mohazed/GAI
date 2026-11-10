@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs and Foreign Trade (mfa.gov.mk) and the Government (vlada.mk) answer HTTP 200 but are client-rendered applications whose news items a script cannot list, so their releases were found only through web searches in English and Macedonian; the General Debate statements of the 78th to 81st sessions (gadebate.un.org, read live: none cites Gaza, Palestine or Israel), the Jerusalem Post's reports of the Foreign Minister's visit to Israel (25 and 28 August 2026), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Not read: the Macedonian-language and Albanian-language press, MIA's pages (searched, no Gaza statement of the Prime Minister or the Minister found), the Sobranie's records.
 # One C2 event (press only). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L14, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found (5 web searches, one in Macedonian; docs/10 B-2027). No lead.
 country: MKD
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Macedonian company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for North Macedonia and the F-35 supplier search returned
+      none. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Macedonia (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Croatia OR Malta OR Albania OR "North Macedonia" OR "Bosnia and Herzegovina" OR Andorra parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): rows for North Macedonia of 2008 and 2021 and no order of the release''s own data year since the war. Left to the build. In the Jerusalem Post''s
@@ -29,17 +35,35 @@ indicators:
     - sipri_orders.csv, buyer MKD
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found. The Foreign Minister''s visit to Israel in August 2026 reportedly covered cooperation in defence industries and cybersecurity
+      (a search-result summary; the documents signed are the two filed under C2); talks are not an instance, and the defence agreements the searches return are with the United Kingdom and the United States.
+      Not searched: the Ministry of Defence''s releases and MIA item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: North Macedonia Israel military cooperation OR defence agreement OR arms export OR arms import Mickoski Israel 2025 2026'
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; the searches in English and Macedonian returned none for North Macedonia. Not searched: the Official Gazette (Služben
+      vesnik) and the Ministry of Economy.'
+    queries:
+    - 'WebSearch 2026-11-10: North Macedonia Israel military cooperation OR defence agreement OR arms export OR arms import Mickoski Israel 2025 2026'
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering arms exports to and imports from Israel was found. Not searched: the Official Gazette (Služben vesnik).'
+    queries:
+    - 'WebSearch 2026-11-10: North Macedonia Israel military cooperation OR defence agreement OR arms export OR arms import Mickoski Israel 2025 2026'
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found; North Macedonia has no seaport. Not searched: the civil aviation agency''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 4 of the 12 qualifying votes, an abstention on 7 and one no. All 12 are recorded, so no absence is scored; North Macedonia is not among the four
@@ -143,14 +167,25 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; North Macedonia is not an EU member and the searches returned no measure of its own. Not searched: the Customs Administration''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a public pension fund or the National Bank of North Macedonia over conduct in Gaza or the occupied territories was found; no web result concerns one. Not searched: the
+      institutions'' own pages.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Public Procurement Bureau''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: Bosnia and Herzegovina OR "North Macedonia" OR Andorra pension fund OR sovereign fund OR public procurement exclude OR divest Israeli companies Gaza boycott government decision'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
@@ -188,11 +223,22 @@ indicators:
     - Gaza refugees visa North Macedonia (web search)
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Macedonian nationals or companies for conduct in Gaza was found; the universal-jurisdiction search returned filings in other states.
+      Not searched: the Public Prosecution''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the search in Macedonian returned no item on North Macedonia. Not searched: the Ministry of Interior''s
+      site and the Macedonian-language press item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Macedonian): Македонија Израел Газа влада договор OR воена соработка OR протест полиција OR забрана 2025 2026'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in North Macedonia was found (the search returned none).
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    checked_at: '2026-11-10'
