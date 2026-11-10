@@ -2,6 +2,8 @@
 # `has-events` is set by the build from published events; hand-set values below are the research status for review.
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs (mofa.gov.mm: HTTP 200, front page in Burmese and English), the state newspaper (gnlm.com.mm: HTTP 403 to a script, read through a Wayback capture of 16 October 2026), the General Debate pages of the UN (404 or 403: no Myanmar statement read), the Permanent Mission's site, the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English on the President's and the Ministry's statements on Gaza and Palestine and on Myanmar-Israel relations. Not searched in Burmese. Not searched individually: B7, B11, D4, D5. Time: the whole session took about 35 minutes by the machine's clock, inside the 90-minute budget.
+# Completion of 2026-11 (finish run, T-F-L11, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4, D5 and E1 to E3 searched, all none-found, with the Ministry's site search (Gaza, Palestine, Palestinian, Hamas, Israel) and 5 web searches in English; B8 set to none-found (no recognition in the registry).
+#   No new event and no lead. The Ministry's embassy items on the Chargé d'Affaires' visits to the Gaza border (17 March and 14 August 2025) are not indicator acts (docs/10 B-2006).
 country: MMR
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -18,8 +20,21 @@ indicators:
       this one; the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Myanmar company as a supplier of parts or maintenance for the F-35 programme. Myanmar has no defence industry that supplies Israel, is not a partner or a customer
+      of the programme, and the Special Rapporteur''s report on companies (archive/text/src_20250616_un-unispal_a-hrc-59-23.txt) names Myanmar once, in a passage on a US oil company''s complicity
+      in violations in Myanmar, which is not about the F-35 programme (searched 2026-11-10). Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site,
+      searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires
+      in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'',
+      no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael
+      with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat,
+      not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification
+      page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Myanmar (one match, line 1807, an oil company in Myanmar)
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
@@ -27,17 +42,60 @@ indicators:
     - sipri_orders.csv, buyer MMR
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or arms transit with Israel was found in the window. The reports of Israeli arms sales to Myanmar''s armed forces (Haaretz,
+      Irrawaddy, Asharq Al-Awsat, search results, dates unclear, not read) concern Israeli exports to Myanmar, which are questions for Israel''s indicators, not an act of Myanmar''s Government;
+      no Myanmar-Israel defence agreement of 2024 to 2026 appeared. The embassy items on the Gaza-border tours are visits, not military cooperation. Pages read on 2026-11-10: the Ministry of Foreign
+      Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which
+      the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March
+      2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined
+      a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of
+      Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; no Myanmar arms export to Israel appears in the SIPRI table (A1 is none-found). Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel:
+      27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven
+      Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree restricting exports to and imports from Israel was found; the trade reported is small (Israeli exports to Myanmar of about USD 0.5 million in 2024, a Trading Economics
+      figure in a search result) and no Myanmar restriction appeared. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its
+      public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv,
+      the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention
+      of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with
+      Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a
+      decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification
+      page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel trade OR imports OR "settlement" OR sanctions OR "sovereign" Myanmar Israel economic cooperation embassy Yangon Naypyitaw'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found; the searches returned nothing on the subject for Myanmar. Pages read on 2026-11-10: the
+      Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel:
+      27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven
+      Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded). The vote is cast by the delegation that holds Myanmar''s seat
@@ -78,26 +136,43 @@ indicators:
     - as for B5
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on ICC officials by Myanmar appeared in any source read.
+    status: none-found
+    note: 'No sanction on ICC officials was found; Myanmar is not a state party to the Rome Statute (the Assembly of States Parties'' list, archived, as for B5) and no statement on the Court''s
+      work on Palestine was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items,
+      Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and
+      the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The
+      two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs;
+      14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator.
+      The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was
+      in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   B8:
-    status: unchecked
-    note: Generated from recognitions.csv, which has no row for Myanmar. The registry records no recognition (not in the annex of A/78/846 nor among the later recognitions, docs/06 §8, Wikipedia
-      list read 2026-09-28); Myanmar voted yes on A/DEC/80/506 (a vote, not a recognition). No row (R21); whether a recognition exists with an official document is a question for P-23.
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Myanmar. The registry records no recognition (not in the annex of A/78/846 nor among the later recognitions, docs/06 §8; the Wikipedia
+      list read on 2026-09-28); Myanmar voted yes on A/DEC/80/506 (a vote, not a recognition). No row (R21), as for Samoa and Tonga.
     queries:
     - recognitions.csv, row MMR (none)
+    - A/78/846 annex (read in the session of 2026-11-04)
+    checked_at: '2026-11-10'
   B9:
     status: none-found
     note: 'No B9 event. The Government in office is headed by President Min Aung Hlaing (sworn in on 10 April 2026, Xinhua and The Star, read through search results) and the Union Minister for
       Foreign Affairs; no statement of either on Gaza was found. The Ministry''s statement of 6 March 2026 (Eleven Myanmar, 7 March 2026, read) expresses concern at ''the recent violence in the
       Middle East'' and urges de-escalation without naming Gaza or Israel, and has no named speaker (R3, R7). Myanmar''s General Debate statements of the 78th to 81st sessions could not be read:
       the UN''s country pages answered 404 (78th) or 403 (79th to 81st) to a script and the Wayback Machine holds no capture of the 78th to 80th pages; search results name the Ambassador Kyaw
-      Moe Tun as the delegation''s voice at the UN, and an Ambassador is not a B9 speaker (R3).'
+      Moe Tun as the delegation''s voice at the UN, and an Ambassador is not a B9 speaker (R3). Re-checked 2026-11-10 (T-F-L11): the Ministry''s own site has no item naming Palestine and two embassy
+      items naming Gaza (visits of the Chargé d''Affaires to Israeli-organised tours, 17 March and 14 August 2025); a search for the 81st session''s statement found nothing and gadebate.un.org
+      still answers a human-verification page. No statement of the President or the Foreign Minister on Gaza was found.'
     queries:
     - gadebate.un.org Myanmar 78th to 81st sessions (404/403; Wayback not captured)
     - Myanmar Ministry of Foreign Affairs statement Gaza Palestine (web searches)
     - Myanmar President Min Aung Hlaing Palestine Gaza (web search)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Myanmar statement General Assembly general debate September 2026 81st session Myanmar foreign minister Palestine Gaza'
+    - mofa.gov.mm wp-json search Gaza, Palestine (2026-11-10)
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: No statement of unconditional support for Israel or denial of violations by the head of government or the Foreign Minister was found in the sources read.
@@ -105,8 +180,18 @@ indicators:
     - Myanmar Israel support statement (web searches)
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: Not searched individually in this session; no sanctions on Israeli ministers or settlers by Myanmar appeared in any source read.
+    status: none-found
+    note: 'No sanction, entry ban or asset freeze on Israeli ministers or settlers by Myanmar was found; the Ministry''s site has no item on the subject. Pages read on 2026-11-10: the Ministry
+      of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items,
+      of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar
+      (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel trade OR imports OR "settlement" OR sanctions OR "sovereign" Myanmar Israel economic cooperation embassy Yangon Naypyitaw'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   B12:
     status: none-found
     note: 'No recall, downgrade or severance of relations with Israel was found: both states keep embassies (the Israeli embassy''s bilateral-relations page and Wikipedia, search results, not
@@ -132,14 +217,44 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Myanmar ban on settlement goods and no labelling rule was found; the searches on Myanmar-Israel trade returned only trade figures and the Israeli embassy''s page. Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel:
+      27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven
+      Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel trade OR imports OR "settlement" OR sanctions OR "sovereign" Myanmar Israel economic cooperation embassy Yangon Naypyitaw'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of a Myanmar public fund to exclude companies over conduct in Gaza or the occupied territories was found; the searches returned no fund policy or list for Myanmar. Pages
+      read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none,
+      Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March
+      2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17
+      March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the
+      Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements
+      of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel trade OR imports OR "settlement" OR sanctions OR "sovereign" Myanmar Israel economic cooperation embassy Yangon Naypyitaw'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No procurement rule or decision of Myanmar excluding Israeli or settlement-linked suppliers was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm,
+      a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the
+      Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence
+      in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised
+      by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report
+      visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org
+      answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel trade OR imports OR "settlement" OR sanctions OR "sovereign" Myanmar Israel economic cooperation embassy Yangon Naypyitaw'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
@@ -155,26 +270,75 @@ indicators:
   D3:
     status: none-found
     checked_at: '2026-11-09'
-    note: >-
-      UNRWA's donor rankings of 2022, 2023 and 2024 (archived) have no row for Myanmar: no contribution
-      to restore or increase (searched for Myanmar). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
-      as of 31 December 2025, read 2026-11-09) has no row for Myanmar, so 2025 does not exceed 2022: no
-      2025 event (docs/10 B-876).
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 (archived) have no row for Myanmar: no contribution to restore or increase (searched for Myanmar). UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Myanmar, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
     queries:
     - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Myanmar
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: Not searched individually in this session; no medical-evacuation programme appeared in any source read.
+    status: none-found
+    note: 'No medical-evacuation programme or field hospital for Gaza by Myanmar was found; the search for Myanmar aid to Gaza returned only other states'' aid items. Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel:
+      27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven
+      Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Gaza humanitarian aid OR donation OR Palestinians Myanmar government OR junta OR "National Unity Government" statement Gaza'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: Not searched individually in this session; no visa or refugee instrument for Gazans appeared in any source read.
+    status: none-found
+    note: 'No visa or refugee pathway for people from Gaza was found in the sources read. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched
+      through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires
+      in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'',
+      no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael
+      with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat,
+      not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification
+      page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Gaza humanitarian aid OR donation OR Palestinians Myanmar government OR junta OR "National Unity Government" statement Gaza'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Myanmar investigation or prosecution of a national or a company for conduct in Gaza was found. E1 is recorded, not scored (D-12). Pages read on 2026-11-10: the Ministry of Foreign
+      Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which
+      the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March
+      2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined
+      a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of
+      Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No ban of Gaza solidarity protests or symbols was found; no Myanmar source on protests concerning Gaza appeared in the searches (a general ban on public assembly under the military
+      Government is context, not an event of this indicator). E2 is recorded, not scored. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched
+      through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel: 27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires
+      in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'',
+      no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael
+      with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation of Israel''s Ministry of Foreign Affairs) report visits of a diplomat,
+      not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the state newspaper could not be read (gadebate.un.org answers an AWS human-verification
+      page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Ministry of Foreign Affairs statement Gaza OR Palestine OR Israel Global New Light of Myanmar 2026'
+    - 'WebSearch 2026-11-10: Myanmar Gaza humanitarian aid OR donation OR Palestinians Myanmar government OR junta OR "National Unity Government" statement Gaza'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Myanmar judicial or prosecutorial step concerning Gaza (a complaint, a universal-jurisdiction case or an arrest) was found. E3 is recorded, not scored. Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' own site (mofa.gov.mm, a WordPress site, searched through its public interface for Gaza: 2 items, Palestine: none, Palestinian: none, Hamas: 1 item, Israel:
+      27 items, of which the newest are embassy news of the Myanmar Chargé d''Affaires in Tel Aviv, the latest on 4 November 2026) and the Ministry''s statement of 6 March 2026 as printed by Eleven
+      Myanmar (7 March 2026: concern at ''the recent violence in the Middle East'', no mention of Gaza, Palestine or Israel). The two embassy items that name Gaza (17 March 2025: the Chargé d''Affaires
+      joined a tour of the Gaza border areas organised by Keren Kayemeth LeIsrael with Israel''s Ministry of Foreign Affairs; 14 August 2025: a visit to the Kerem Shalom crossing at the invitation
+      of Israel''s Ministry of Foreign Affairs) report visits of a diplomat, not a decision of the Government on any indicator. The General Debate statements of the 78th to 81st sessions and the
+      state newspaper could not be read (gadebate.un.org answers an AWS human-verification page, not bypassed); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Myanmar Israel arms OR military OR relations 2025 2026 junta Israeli weapons Myanmar Israel cooperation'
+    - mofa.gov.mm/wp-json/wp/v2/posts?search=Gaza, Palestine, Palestinian, Hamas, Israel (2026-11-10); elevenmyanmar.com/node/310348 (read)
+    checked_at: '2026-11-10'
