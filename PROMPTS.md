@@ -709,6 +709,8 @@ Also (T-P23-4, docs/10 B-855 to B-858): T-P23-4 had no web search; it read the 3
 Also (T-G-HOUSE, docs/10 B-2110, B-2111): the six scope entries are `none-found` and the soldiers' names are removed from the CZE, GRC and MAR text; open for the author: whether the three shortened NGO source titles should be restored to the published titles, and whether the built `apps/web/public/api` copies need a rebuild before the next deploy (they regenerate with `pnpm build`).
 
 Also (T-G-WAYBACK, docs/10 B-2112): the second Wayback check (run 42839581858) found 122 rows not answering 200 and no hash difference (545 and 1 on 2026-11-08); by hand 58 of the 121 sources replay, 63 do not (48 answer 404 or 403, 15 serve other bytes at another snapshot; list in `docs/review/wayback-check-2026-11-10.tsv`). Left for the next Wayback check (in seven days): re-capture the 63 one at a time with `pnpm archive <url> --id src_… --root <scratch dir>` (never without `--root`: the script overwrites `archive/text/{id}.txt` and appends a second index row), compare the text with `archive/text/{id}.txt`, record a new snapshot with the recorded SHA-256 as `archive_url_alt`; close issue #14 when every row replays.
+
+Also (T-G-RULE8, docs/10 B-2114): the rule 8 gate is PR #17 (`chore/rule8-gate`, for the author to merge): a score-mode build fails while `build-notes.json` `counts.unchecked` is above 0 (`apps/web/scripts/rule8.ts`, first step of the web build, and `deploy-check`). The P-22 flip PR will fail until the unchecked entries are resolved; after merging PR #17 into `main`, merge `main` into `data/phase1`. Nothing deferred.
 ```
 
 ---
