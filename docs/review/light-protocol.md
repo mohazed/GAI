@@ -3185,3 +3185,29 @@ New leads: `lead_20261110_LBY_5` (B9: the Prime Minister on 23 July 2025, known 
 Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. C.N.378.2026 could not be archived (HTTP 403); its byte count and SHA-256 as read live are in the source record's notes.
 
 Score effect: TUN rises by the generated B8 (+3) from the new row; the NRU event is not scored (scope related) and the EST event adds nothing (B9 capped). Provisional previews (rc.1, 2026-11-10): NRU −39 Enabling, PLW −41 Enabling, LBY +41 Confronting, SDN +2 Acting, TUN +25 Acting, EST +35 Acting.
+
+### T-F-L10: FIN, ISL, LTU, LVA, TON, TUV (2026-11-10, groups 19 and 20)
+
+The session had web search (standard mode: FIN about 19 searches, ISL 8, LTU 7, LVA 6, TON 3, TUV 2) and the Governments' own pages that answer: valtioneuvosto.fi (HTTP 200 to a browser User-Agent on this date), the Icelandic Government Offices' news search (seven queries), the Latvian Ministry of Foreign Affairs' news page, the Tonga National Portal's search and the Tuvalu Mission's list of statements. The Lithuanian Ministry, Government and President's site still answer a Cloudflare challenge; the Wayback CDX was used for the Ministry's English news pages. Records: B-992 to B-999.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events | Still unchecked |
+|---|---|---|---|---|
+| FIN | A5 to A8, C4 to C6, E1 to E3 | A3 has-events | `evt_2023_10_07_FIN_A3` (-15, standing, confirmed, flagged) | none |
+| ISL | A3, A5 to A8, C5, C6, E1 to E3 | none | none | none |
+| LTU | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| LVA | A3, A5 to A8, C4 to C6, E1, E3 | E2 has-events | `evt_2024_01_05_LVA_E2` (-5, corroborated, unscored in v1.0) | none |
+| TON | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+| TUV | A3, A5 to A8, C4 to C6, E1 to E3 | none | none | none |
+
+New lead: `lead_20261110_FIN_2` (C4: Yle of 9 September 2026, 'Finland said it would begin restricting imports from Israeli settlements'; no instrument). Leads FIN_1, ISL_1 to ISL_3, LTU_1 to LTU_3, LVA_1 to LVA_3, TON_1 and TON_2 re-checked and kept; TON_1 now quotes Matangi Tonga's print page, which the earlier session could not read. Found and not filed: the Finnish Defence Minister's visit to Israel of mid-September 2026 and the confidence votes of 2 October (Yle, read), the Latvian Defence Minister's visit of 21 to 24 September 2026 (the Ministry's release, read), the Lithuanian Defence Ministry's proposal of a defence attaché in Israel (LRT English, read): visits and procurement are not A5 instances. The Lithuanian Ministry's items on the June 2026 visit to Israel and the West Bank could not be read or archived.
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20251219_valtioneuvosto_f35-industrial-participation | Finnish Ministry of Defence release, 19 December 2025 (Finnish partners in the F-35 industrial participation) | `evt_2023_10_07_FIN_A3` |
+| src_20230619_patria_lockheed-first-f35-dip-agreement | Patria release, 19 June 2023 (first Memorandum of Agreement, forward fuselage) | `evt_2023_10_07_FIN_A3` |
+| src_20240105_lsm_riga-bans-palestine-picket | LSM, 5 January 2024 (Riga bans a picket for Palestinians) | `evt_2024_01_05_LVA_E2` |
+| src_20240114_viabaltica_riga-prohibits-palestine-protest | Via Baltica, 14 January 2024 (the same report, in English) | `evt_2024_01_05_LVA_E2` |
+
+Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. The Finnish record is the Wayback capture of 6 June 2026 (Save Page Now answers HTTP 403 for `valtioneuvosto.fi`).
+
+Score effect: Finland falls from +33 to +18 (Acting) because A3 counts -15.0 as a standing state (the B-992 reading, flagged); the Latvian E2 event is unscored in v1.0. Provisional previews (rc.1, 2026-11-10): FIN +18 Acting, ISL +50 Confronting, LTU +31 Acting, LVA +19 Acting, TON -39 Enabling, TUV -23 Enabling.
