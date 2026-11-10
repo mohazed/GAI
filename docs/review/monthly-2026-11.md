@@ -905,3 +905,20 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2140 to B-2142. Every open le
 | IRL | IRL_6 | B9 | **Taoiseach's 81st-session statement** from the Wayback capture of the gadebate file, archived | **Filed** `evt_2026_09_24_IRL_B9` (+5, confirmed); lead promoted; author's reading of the tier (B-2140 (1)) | None (B9 at cap; IRL +59) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-4: leads of IRN to LSO, full-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2143, B-2144. Every open lead of ITA and JOR carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed (esteri.it's Radware check was not used).
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| ITA | ITA_2 (2026-09-28) | B6 | **Foreign Minister at question time, 27 Nov 2024** (Chamber sitting 388, page 67) archived: Italy 'rispetta gli obblighi' and examines 'la prevalenza del diritto internazionale generale sulle immunità'; Senate question time of 30 Jul 2026 not found | Kept open; B5 note extended; not filed (author's reading, B-2143 (2)) | None now; +8 if read as B5 |
+| ITA | ITA_1 (2026-09-30) | A8 | Not searched again (local shareholders, not the state) | Kept open | None |
+| ITA | ITA_2 (2026-09-30) | B6 | **Government's written answer of 11 Dec 2025** to 4-06146 (Allegato B, sitting 582), signed by an Under-Secretary, archived: overflight authorised by the military authority; execution only on a formal request; hindering the visit 'non è nell'interesse dell'Italia' | Kept open; B6 note extended; not filed (author's reading, B-2143 (1)) | None now; −10 (ITA +12.6 → +2.6) if read as B6 |
+| ITA | ITA_3 (2026-09-30) | E2 | TAR Lazio monocratic decree refusing interim suspension (press); neither the Questura's order nor the decree found | Kept open | None (unscored) |
+| JOR | JOR_2 | C1 | Not searched again (Ministry text archived; author's reading) | Kept open | None |
+| JOR | JOR_3 | C2 | Press only: extension request (2024), Israel's refusal to renew (July 2026) | Kept open (extension of a 2021 arrangement) | None |
+| JOR | JOR_4 | E2 | No Interior Ministry or Public Security decision found | Kept open | None (unscored) |
+| JOR | JOR_5 | A5 | Not searched again (author's reading) | Kept open | None |
+
+`pnpm validate`: 0 errors.

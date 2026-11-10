@@ -4253,3 +4253,35 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2140 to B-2142. The full-prot
 | HND | HND_2 | B9 | Withdrawal of 3 Mar 2026 in press only; no signatory named | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-4: leads of IRN to LSO, light-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2143, B-2144. The full-protocol rows are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| IRN | IRN_2 | B9 | Retried by T-G-BLOCKED the same day; no `ir_*` capture of the 81st session; no UN transcript of the General Debate meetings | Kept open | None |
+| ISL | ISL_1 | B11 | No Government news item on the measures of 8 Sep 2025 (CDX listing of 2025 and 2026); no regulation or parliamentary answer | Kept open | None |
+| ISL | ISL_2, ISL_3 | C1, C4 | Same searches; labelling only in the Ministry's position of 2013 and unadopted resolutions | Kept open | None |
+| JAM | JAM_1, JAM_2 | B9 | Not searched again (R7; decayed) | Kept open | None |
+| KAZ | KAZ_1 | C2 | Press accounts of the Ministry's statement on the Abraham Accords; no instrument signed with Israel | Kept open | None (C at −20 cap) |
+| KAZ | KAZ_2 | A7 | Not searched again (author's decision on joint letters, B-953) | Kept open | None |
+| KEN | KEN_1, KEN_2 | B9 | Not searched again (author's readings, B-803) | Kept open | None |
+| KEN | KEN_3 | C2 | Cabinet approval and cooperation reports only; no signed memorandum | Kept open | None |
+| KGZ | KGZ_1 | B9 | **President's 81st-session statement** (Arabic file) archived from its Wayback capture: Palestine in a list of crises, Gaza not named | Item (1) settled, no event (R7); kept open for item (2) (B-2143 (3)) | None |
+| KGZ | KGZ_2 | A7 | Not searched again (author's decision on joint letters, B-953) | Kept open | None |
+| KHM | KHM_1 | C2 | No ministry release of the signing of 20 Feb 2025 | Kept open | None |
+| KWT | KWT_1 | E2 | No Ministry of Interior text | Kept open | None (unscored) |
+| LAO | LAO_1 | B9 | Not searched again (author's reading, B-2004) | Kept open | None |
+| LBR | LBR_1 | B9 | Not searched again (expired) | Kept open | None |
+| LBY | LBY_1 | B9 | No recording of the OIC meeting of 24 Sep 2026 | Kept open | None |
+| LBY | LBY_2 | B9 | Retried by T-G-BLOCKED the same day; no `ly_*` capture | Kept open | None |
+| LBY | LBY_3, LBY_6 | B9, E2 | Not searched again (expired; author's reading) | Kept open | None |
+| LBY | LBY_4 | A8 | No port authority decision (lawsociety.ly regulations only) | Kept open | None |
+| LBY | LBY_5 | B9 | Government's statement on Facebook only (Anadolu, Africanews) | Kept open | None |
+| LKA | LKA_1 | C2 | Bureau lists the 2023 agricultural and 2020 caregiver instruments; no construction memorandum date | Kept open | None |
+| LKA | LKA_2 | E2 | Not searched again (author's reading, B-2018) | Kept open | None (unscored) |
+| LSO | LSO_1 | B9 | Only an HTTP 405 capture of `ls_en.pdf`; no UN transcript of the General Debate meetings | Kept open | None |
+| LSO | LSO_2 | B9 | Ramaphosa's closing remarks of 23 Apr 2025 do not mention Gaza; minutes not found | Kept open | None |
+
+`pnpm validate`: 0 errors.
