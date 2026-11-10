@@ -847,3 +847,31 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2128 to B-2134. Every open le
 | CHL | CHL_2 | E3 | Court of Appeals annulled the refusal; hearing 12 June 2026 (press) | Kept open | None (unscored) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-2: leads of CIV to EST, full-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2135 to B-2139. Every open lead of COL, CZE, DEU, DZA, EGY and ESP carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| COL | COL_1 | E3 | No Fiscalía communication | Kept open | None (unscored) |
+| CZE | CZE_1, CZE_2 | E3 | No Czech prosecution or court communication | Kept open | None (unscored) |
+| DEU | DEU_1 | B6 | **Chancellor's answer of 14 May 2025** in the Government's transcript (question on the warrant; "Grundsätzlich muss ein israelischer Premierminister nach Deutschland reisen können") archived | **Filed** `evt_2025_05_14_DEU_B6` (−10, confirmed); lead promoted; author's reading (B-2136) | −10 |
+| DEU | DEU_2 | A3 | **Federal Ministry of Defence**: "Rheinmetall fertigt die Rumpfmittelteile" (18 September 2026) and the Weeze industrial agreement of August 2023 (19th armaments report), both archived | **Filed** `evt_2023_10_07_DEU_A3` (−15, confirmed, dated as Finland's); lead promoted; author's reading (B-2138) | −15; with DEU_1: **−4 → −29, Passive → Enabling** |
+| DEU | DEU_3 | B5 | Press only; would be superseded by the B6 position of 14 May 2025 | Kept open | None |
+| DZA | DZA_1 | D4 | Decayed; not searched again | Kept open | None |
+| DZA | DZA_2 | E2 | Press only (the letter not found) | Kept open | None (unscored) |
+| EGY | EGY_1 | A5 | Ministry of Transport statement in press copies only; no transit record | Kept open | None |
+| EGY | EGY_2 | B12 | Press: ambassador Hazem Khairat appointed in June 2026 (no decree found) | Kept open; B12 note extended | None |
+| EGY | EGY_3 | E2 | Rights groups and wires only | Kept open | None (unscored) |
+| ESP | ESP_1 | A8 | Press only; Marianne Danica still reported | Kept open | None (decayed) |
+| ESP | ESP_2 | B11 | No listing decision | Kept open | None (west-bank) |
+| ESP | ESP_3 | B12 | Real Decreto 195/2026 (dismissal only); the Ministry's ambassadors page lists Tel Aviv with no name | Kept open | None (B at its +45 cap) |
+| ESP | ESP_4 | C6 | Press on the IMI termination (29 September 2025) and conflicting reports on Spike and SILAM | Kept open (author's reading) | None |
+| ESP | ESP_5 | D5 | No instrument; fourth evacuation (press) | Kept open | None |
+| ESP | ESP_6 | A2 | Generated indicator; not searched | Kept open | None |
+| ESP | ESP_7 | E3 | Extension to torture in press only | Kept open (author's reading) | None (unscored) |
+| ESP | ESP_8 | A5 | Author's reading; not searched again | Kept open | None |
+| ESP | ESP_9 | A3 | No document naming a Spanish supplier | Kept open | None |
+
+`pnpm validate`: 0 errors.

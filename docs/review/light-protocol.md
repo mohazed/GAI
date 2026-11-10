@@ -4204,3 +4204,27 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2128 to B-2134. The full-prot
 | BRN | BRN_1 | B9 | B9 at cap | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-2: leads of CIV to EST, light-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2135 to B-2139. The full-protocol rows are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| CIV | CIV_1 | C2 | i24NEWS item only; no commune or ministry copy | Kept open (municipal agreement, author's reading) | None |
+| CMR | CMR_1 | C2 | **Ministry of Agriculture's magazine** MINADER Infos no 0010 archived (`src_20260812_minader_infos-010`): the agreement with Ekobell signed on 6 March 2026 | Not filed (an agreement with a company); author's reading (B-2135) | None now; −10 if read as C2 |
+| CRI | CRI_1, CRI_2, CRI_3 | B10, B10, B5 | Press only; no Presidency or Ministry copy | Kept open | None |
+| CRI | CRI_4 | E2 | Sala Constitucional resolution not reachable (press-release pages 404) | Kept open | None (unscored) |
+| CUB | CUB_2 | B9 | Retried by T-G-BLOCKED the same day (B-2126) | Kept open | None |
+| CUB | CUB_3 | B9 | The Bogotá statement on DIRCO's site (read): "We, the representatives of ... Cuba"; no named Cuban signatory (R3) | Kept open | None |
+| CUB | CUB_4 | B9 | Posts on X; not searched again | Kept open | None |
+| CYP | CYP_1 | A5 | No named exercise with Israel held in 2026 | Kept open | None |
+| CYP | CYP_2 | A5 | No Government or Ports Authority record | Kept open | None |
+| DMA | DMA_1 | B9 | Decayed; not searched again | Kept open | None |
+| DMA | DMA_2 | D5 | No instrument for Gazans | Kept open | None |
+| ECU | ECU_1, ECU_3 | B9, B10 | Decayed; not fileable even with a transcript | Kept open | None |
+| ECU | ECU_2 | C2 | No negotiation round or text | Kept open | None (C at cap) |
+| EST | EST_1, EST_2, EST_3 | B9, B5, B9 | No transcript (UN automatic transcripts a route after B-2134); EST_2 searched the same day by T-F-L09; EST_3 below the tiers | Kept open | None |
+| EST | EST_4 | E2 | **Supreme Court judgment 4-23-4296** (5 March 2025) archived: police fine of 5 December 2023 for a "Jõest mereni" placard, proceedings terminated | **Filed** `evt_2023_12_05_EST_E2` (−5, unscored); lead promoted (B-2137) | None (E unscored; +35, Acting) |
+
+`pnpm validate`: 0 errors.
