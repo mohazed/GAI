@@ -1,7 +1,7 @@
 # Hand-authored events for Iraq (P-21 light protocol, T-P21-47, 2026-11-04).
 # Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
 # Speakers for B9/B10 (R3): the President of the Republic, Abdul Latif Jamal Rashid (head of state; the 80th General Debate file names him); the Prime Minister (head of government; Ali Falih
-# al-Zaidi in office on 2026-11-04 per pmo.iq; the earlier holder of the post not checked in an archived document); the Minister of Foreign Affairs (not named in any archived document).
+# al-Zaidi in office on 2026-11-04 per pmo.iq; the earlier holder of the post not checked in an archived document); the Minister of Foreign Affairs (Fuad Hussein, Deputy Prime Minister, on 28 July 2025: src_20250728_un-unispal_irq-hussein-two-state-conference-ar).
 
 - id: evt_2024_12_31_IRQ_D3
   revision: 1
@@ -46,6 +46,63 @@
       (the mechanical D3 test uses the annual total, B-713); (3) Iraq''s FTS flows of 2025 and 2026 (generated D1 events) may overlap this amount (D1/D3 overlap, as for Sri Lanka). The 2025 table is
       not archived (P-23). No suspension of funding was found (D2 none-found). The event is 673 days old at the build date and is not a qualifying event inside 365 days. Filed in the light protocol
       (docs/10 B-760 ff.).'
+- id: evt_2025_07_28_IRQ_B9
+  revision: 1
+  country: IRQ
+  indicator: B9
+  type: repeatable
+  date: '2025-07-28'
+  points: 5
+  points_rationale: 'Names specific violations and uses a legal characterisation (+5): the Deputy Prime Minister and Minister of Foreign Affairs rejects the policy of genocide, forced displacement and starvation by the Israeli occupation forces, after calling for an immediate and unconditional ceasefire in the Gaza Strip and the lifting of the siege.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs told the two-State conference that Iraq rejected what he called a policy of genocide, and forced displacement and starvation, and called for a ceasefire in Gaza.
+    fr: Le ministre des Affaires étrangères a dit à la conférence des deux États que l'Iraq rejetait ce qu'il a appelé une politique de génocide, le déplacement forcé et la famine, et appelé au cessez-le-feu.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs of Iraq
+    fr: Vice-Premier ministre et ministre des Affaires étrangères de l'Iraq
+    name: Fuad Hussein
+  evidence:
+  - source: src_20250728_un-unispal_irq-hussein-two-state-conference-ar
+    quote: 'وسياسة اإلبادة الجماعية'
+    quote_lang: ar
+    quote_en: and the policy of genocide
+    locator: line 30
+  - source: src_20250728_un-unispal_irq-hussein-two-state-conference-ar
+    quote: 'والتجويع مرفوضة'
+    quote_lang: ar
+    quote_en: and starvation are rejected
+    locator: line 31
+  - source: src_20250728_un-unispal_irq-hussein-two-state-conference-ar
+    quote: 'وايصال المساعدات االنسانية'
+    quote_lang: ar
+    quote_en: and the delivery of humanitarian aid
+    locator: line 21
+  - source: src_20250728_un-unispal_irq-hussein-two-state-conference-ar
+    quote: 'ورفع الحصار'
+    quote_lang: ar
+    quote_en: and the lifting of the siege
+    locator: line 22
+  - source: src_20250728_un-unispal_irq-hussein-two-state-conference-ar
+    quote: 'فؤاد حسين'
+    quote_lang: ar
+    quote_en: Fuad Hussein
+    locator: line 5
+  status: reviewed
+  supersedes: null
+  related: [evt_2025_07_29_KWT_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list, against the archived text and the PDF read with pdftotext -layout (which keeps the word order): line 5 and the heading (lines 2 to 6) name the speaker, the Deputy Prime Minister and Minister of Foreign Affairs Fuad Hussein, and the date 28/7/2025; lines 20 to 23 call for an immediate and unconditional ceasefire in the Gaza Strip, safe delivery of aid to the besieged, the lifting of the siege and full protection of civilians; lines 24 to 32 (on the repeated humanitarian disasters in the Gaza Strip and the West Bank) say that the systematic killing by the Israeli occupation forces is rejected and that the policy of genocide and apartheid, forced displacement and starvation are rejected. Each quote is a run of words in the archived text in the order of the layout reading. A B9 speaker (the foreign minister, R3); a legal characterisation and named violations, +5. Translations are the session''s own.'
+    notes: 'Found while checking UNISPAL''s pages of the two-State conference''s statements for the six countries of T-F-L24 (Iraq, Lebanon and Oman are listed; Lebanon''s speaker was the Deputy Prime Minister, not a B9 speaker, R3; Oman''s text names no speaker and does not call for anything on Gaza). Flags: (1) the text layer reorders words in many lines; the quotes are the runs that are in order; (2) the press release of the 1st plenary does not report Iraq''s statement, so its delivery rests on UNISPAL''s listing and the text''s heading; (3) the passage names the Gaza Strip and the West Bank together. The statement is 470 days old on 2026-11-10. Filed in the finish run (T-F-L24, docs/10 B-2090).'
+
 - id: evt_2025_09_23_IRQ_B9
   revision: 1
   country: IRQ
