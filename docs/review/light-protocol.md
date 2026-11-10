@@ -3239,3 +3239,30 @@ New lead: none. Leads WSM_1, WSM_2, BRN_1, KHM_1, LAO_1 and PHL_1 to PHL_3 were 
 Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. `pnpm archive` prints the source record and does not write it: the four records were written by hand from the printed fields, with the page's own date.
 
 Score effect: Cambodia falls from +14 to +7 (Acting) because the C2 event counts -7.0 (weight 0.7, standing; passivity was already not applied since the computed C3 event qualifies); none-found entries carry no points and no other event was added. Provisional previews (rc.1, 2026-11-10): WSM -23 Enabling, BRN +26 Acting, KHM +7 Acting, LAO +1 Acting, MMR +1 Acting, PHL -2 Passive (the 2024 D3 event ended on 2025-12-31; the earlier preview of +6 Acting is out of date for that reason, not because of this session).
+
+### T-F-L12: SGP, THA, TLS, VNM, AFG, BGD (2026-11-10, groups 23 and 24)
+
+The session had web search (standard mode: 10 queries for Singapore, 9 for Thailand with one in Thai, 5 for Timor-Leste with one in Portuguese, 7 for Viet Nam with one in Vietnamese, 3 for Afghanistan, 4 for Bangladesh, and 2 shared for the P-23 follow-ups) and the Governments' pages that answer: the Singapore Ministry of Foreign Affairs' newsroom listing, the Singapore Police Force's advisories, the Thai Ministry of Foreign Affairs' page of 22 October 2023 (WebFetch), VOV's copy of the Viet Nam-Belgium joint statement. Refused or unreadable, not bypassed: presidencia.tl (no answer), gadebate.un.org (HTTP 405), documents.un.org (an HTML page instead of the verbatim records), thaigov.go.th and the Thai Ministry's news listing (rendered by script). No Malay, Mandarin, Tamil, Tetum, Pashto, Dari or Bengali search was run. Records: B-2009 to B-2015.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events and leads | Still unchecked |
+|---|---|---|---|---|
+| SGP | A3, A5 to A8, C4 to C6, E1, E3 | E2 has-events | `evt_2023_10_18_SGP_E2`, `evt_2026_04_11_SGP_E2` (unscored, flagged); new `lead_20261110_SGP_1` (A3) | none |
+| THA | A3, A5 to A8, C4 to C6, E1 to E3 | B9 has-events | `evt_2024_06_06_THA_B9` (+2, expired; promotes `lead_20261104_THA_1`); THA_2 re-read and kept | none |
+| TLS | A3, A5 to A8, C4 to C6, E1 to E3 | none | TLS_1 kept | none |
+| VNM | A3, A5 to A8, C4 to C6, E1 to E3 | none | new `lead_20261110_VNM_1` (B9, the joint statement with Belgium of 24 October 2026) | none |
+| AFG | A3, A5 to A8, C4 to C6, E1 to E3 | none | AFG_1 kept (B-742) | none |
+| BGD | A3, A5 to A8, C4 to C6, E1 to E3 | none | BGD_1 kept (no official text of the 80th address) | none |
+
+B8 is generated and was not touched: Singapore has no recognition (none-found); Thailand has its row; for Viet Nam, Afghanistan and Bangladesh the registry gives 16 and 19 November 1988 (A/78/846) and a search for a note or letter of 1988 under A/43 found none for the three, so no row is added (R21).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20231018_police-sg_advisory-events-assemblies-israel-hamas | Singapore Police Force and National Parks Board, advisory of 18 October 2023 (existing Wayback capture 20231018165232, 90,195 bytes; the live page answers 404) | `evt_2023_10_18_SGP_E2` |
+| src_20260411_police-sg_advisory-public-assembly-11-april-2026 | Singapore Police Force, advisory of 11 April 2026 (Save Page Now 20261110022436, 254,518 bytes) | `evt_2026_04_11_SGP_E2` |
+| src_20261024_vov_joint-statement-vietnam-belgium | VOV's text of the Viet Nam-Belgium joint statement of 24 October 2026 (Save Page Now 20261110023454, 223,513 bytes; press) | `lead_20261110_VNM_1` |
+
+Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. `pnpm archive` prints the source record and does not write it: the three records were written by hand with the document's own date; the index row of the 2026 Singapore capture was renamed from the archive-date id to the document-date id (the session's own row; the other two used `--id`).
+
+Found and not filed: the Public Order Act prosecution of three women for the Istana procession of 2 February 2024 (acquitted on 21 October 2025, fined after the High Court allowed the appeal on 30 April 2026; press), the Singapore Ministry of Home Affairs' query to Israel about Singaporeans in the IDF (E1 note), Thailand's Barak MX purchase and the sustainment agreement with Thai Aviation Industries (A4 generated; not A5), Viet Nam's purchases and licensed production of Israeli loitering munitions (not A5) and the Viet Nam-Israel Free Trade Agreement in force from November 2024 (C2 left as set; B-2012), two Hind Rajab Foundation complaints filed in Viet Nam (no acceptance reported, not E3), Bangladesh's 'except Israel' passport clause of 7 April 2025 (no indicator), the Taliban-organised rallies for Gaza (no E2 ban), the Timorese President's interview reported by RTP (press).
+
+Score effect: none of the six moves (E2 is outside the sum; the Thai B9 event has decayed to zero; none-found entries carry no points). Provisional previews (rc.1, 2026-11-10): SGP +24 Acting, THA +12 Acting, TLS +2 Acting, VNM +10 Acting, AFG -26 Enabling, BGD +20 Acting. The Singapore figure moved from +24.4 to +24.1 by decay; Thailand's, Viet Nam's and Bangladesh's differ from the T-P21 tables of 4 November because of later D3 and Comtrade rows, not because of this session.
