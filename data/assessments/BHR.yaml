@@ -3,7 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, English and Arabic; Wayback captures checked), the UN's Meetings Coverage already archived (GA/12712), the joint statements already archived (grep for Bahrain, Bahreïn, البحرين), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. The Ministry of Foreign Affairs (mofa.gov.bh) and the Bahrain News Agency (bna.bh) answered HTTP 405 to every request from this network and their recent Wayback captures are 405 pages; web searches were not available to this session (the run's search budget was spent, as for T-P21-26): no Bahraini Government release and no press item in Arabic or English was read. These gaps are scheduled for P-23.
 # Two events (B9, D3). Leads: one (B9).
-# Completion of 2026-11 (finish run, T-F-L23, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Arabic and the shared searches; the Ministry and BNA still answer 405), all none-found with the limits said in each note; B12 searched and left unchecked (no Government text reachable); new lead_20261110_BHR_2 (B12, the Ambassador's return of November 2023) and lead_20261110_BHR_3 (E2, arrests at pro-Palestine protests, HRW). No new event. See docs/10 B-2086.
+# Completion of 2026-11 (finish run, T-F-L23, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Arabic and the shared searches; the Ministry and BNA still answer 405), all none-found with the limits said in each note; B12 searched and left unchecked (no Government text reachable); new lead_20261110_BHR_2 (B12, the Ambassador's return of November 2023) and lead_20261110_BHR_3 (E2, arrests at pro-Palestine protests, HRW). Recognition row BHR,1988-11-15 added from A/43/816 (UNISPAL, archived; B8 generated). No new event. See docs/10 B-2086.
 country: BHR
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -126,12 +126,16 @@ indicators:
     note: No sanctions on ICC judges or prosecutors by Bahrain were found in the sources read.
     checked_at: '2026-11-04'
   B8:
-    status: none-found
-    note: Generated from recognitions.csv, which has no row for Bahrain. The registry gives 15 November 1988 (countries.yaml recognises_palestine); no Government document of the date was read (the Ministry's
-      site cannot be reached), so no row is added (R21; P-23).
+    status: has-events
+    note: 'Generated from recognitions.csv. The row BHR,1988-11-15 was added in the finish run (T-F-L23, 2026-11-10; docs/10 B-2086), citing the letter of 16 November 1988 from Bahrain''s Permanent Representative
+      to the Secretary-General (A/43/816-S/20272, UNISPAL, archived, src_19881116_un-unispal_bhr-recognition-a-43-816), which transmits the official statement issued on 15 November 1988 by the Ministry of Foreign
+      Affairs of the State of Bahrain that ''announces its full recognition of the independent Palestinian State''. The date agrees with the registry (countries.yaml recognises_palestine). The pre-existing
+      tier (+3 from 2023-10-07, R21) does not depend on the day. Before this session: no row (the Ministry''s site cannot be reached; P-23).'
     queries:
     - recognitions.csv, BHR
-    checked_at: '2026-11-04'
+    - 'UNISPAL document API (/unispal/wp-json/wp/v2/document?search=Declaration of Independence, 14 November 1988 to 31 March 1989): the letters of Bahrain, Kuwait, Pakistan, Madagascar, Indonesia, Tunisia,
+      Mongolia, Malta, Oman and Qatar; UNISPAL page auto-insert-189176 read and archived (2026-11-10)'
+    checked_at: '2026-11-10'
   B9:
     status: has-events
     note: 'One event: the joint statement of nine Arab foreign ministers of 26 October 2023 (+5, decayed), already archived and filed for the six signatories among the 45. Not filed: the Foreign Minister''s
