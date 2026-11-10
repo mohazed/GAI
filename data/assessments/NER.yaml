@@ -7,6 +7,7 @@
 # tables, UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Ministry of Foreign Affairs, the Government portal and the Prime Minister's site did not answer, so the indicators a Government source would decide
 # are `unchecked` with the reason (docs/10 B-757). Web searches were not available to this session: nothing is filed from a press item; the 'one search per indicator group' of docs/06 §5 is left for P-23.
 # Events: evt_2025_09_27_NER_B9, evt_2026_06_18_NER_B6 (scope related). Leads: none. See docs/10 B-820, B-821 and B-824.
+# Completion of 2026-11 (finish run, T-F-L21, 2026-11-10): A3, A5 to A8, B5, B7, B11, B12, C2, C4 to C6, D4, D5 and E1 to E3 searched with web searches (French and English), Le Sahel's REST search and the shared searches, all none-found with the limits said in each note; the Government's sites still did not answer. No new event, no lead. See docs/10 B-2072.
 country: NER
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -23,8 +24,15 @@ indicators:
       fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Nigerien company as a supplier of parts or maintenance for the F-35 programme: the Niger is neither a programme partner nor a foreign-military-sales customer in the
+      search results, A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for the Niger, and the searches returned no supplier. Not searched: the programme''s full supplier
+      database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for the country's name (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations named on the Joint Program Office page and the foreign-military-sales
+      customers in the results; none of the six of this batch: NER, RWA, SEN, SLE, SOM, SSD)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
@@ -32,17 +40,45 @@ indicators:
     - sipri_orders.csv, buyer NER
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, basing agreement, official confirmation of intelligence sharing or documented transit in 2023 to
+      2026. The Niger has had no diplomatic relations with Israel since 2002; the search returned reports of 2021 and 2023 on normalisation contacts (denied by the Niger''s embassy in Washington)
+      and nothing in the window. The Ministry''s (diplomatie.gouv.ne), the Government portal''s (gouv.ne) and the Prime Minister''s (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection).
+      Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by the Niger to Israel either (A1: no delivery in the SIPRI register). The Ministry''s
+      (diplomatie.gouv.ne), the Government portal''s (gouv.ne) and the Prime Minister''s (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection). Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; Le Sahel''s results for boycott and Israël carry none. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (the Niger is landlocked; ports do not arise). Not searched: the civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all twelve qualifying votes. The country is not named in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or
@@ -71,14 +107,18 @@ indicators:
     - archive/text/src_20260927_icj-cij_case-192.txt
     checked_at: '2026-11-04'
   B5:
-    status: unchecked
-    note: The Niger ratified the Rome Statute on 11 April 2002 and withdrew with effect on 18 June 2027 (below, B6). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the sources
-      read (the General Debate statements, the Presidency's speeches list, Le Sahel's results for Cour pénale internationale and CPI); the Ministry of Foreign Affairs, which would carry such a statement,
-      did not answer, so the indicator is unchecked.
+    status: none-found
+    note: 'The Niger ratified the Rome Statute on 11 April 2002 and withdrew with effect on 18 June 2027 (B6). No statement by the head of government, the Foreign or the Justice Minister committing
+      to execute the warrants of 21 November 2024 was found: the General Debate statements, the Presidency''s speeches list and Le Sahel''s results for Cour pénale internationale, CPI and Netanyahou
+      carry none, and the press copies of the AES communiqué of 22 September 2025 do not mention the warrants. The Ministry''s (diplomatie.gouv.ne), the Government portal''s (gouv.ne) and the Prime
+      Minister''s (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection).'
     queries:
-    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
-    - 'lesahel.org REST search: Cour pénale internationale, CPI (kind press; the joint communique of the Confederation of Sahel States of 22 September 2025 on the withdrawal read: it names no warrant)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Niger Tiani Israël Palestine Gaza 2024 2025 position gouvernement CPI mandat Netanyahou (reactions of Israel and Hungary to the warrants; no Nigerien statement)'
+    - 'WebSearch 2026-11-10 (French): AES communiqué retrait Statut de Rome 22 septembre 2025 Mali Burkina Niger texte CPI (press copies of the Confederation''s communiqué: the Court called an instrument
+      of neo-colonial repression; no mention of the warrants of 21 November 2024 in the results; notification of 18 June 2026)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   B6:
     status: has-events
     note: 'evt_2026_06_18_NER_B6 (scope related, unscored, flagged): the Niger notified its withdrawal from the Rome Statute on 18 June 2026 (depositary notification C.N.251.2026 of 22 June 2026, src_20260622_un-treaties_cn-251-2026-niger-withdrawal);
@@ -89,9 +129,14 @@ indicators:
     - 'archive/text/src_20260622_un-treaties_cn-251-2026-niger-withdrawal.txt (Gaza, Palestine, Israel, Netanyahu: no hit)'
     checked_at: '2026-11-04'
   B7:
-    status: unchecked
-    note: No sanctions on ICC judges or prosecutors by the Niger were found in the sources read; the Ministry of Foreign Affairs, which would announce them, did not answer, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by the Niger were found; the withdrawal from the Rome Statute (B6) is not a sanction on a person. The Ministry's (diplomatie.gouv.ne), the Government
+      portal's (gouv.ne) and the Prime Minister's (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10 (French): Niger Tiani Israël Palestine Gaza 2024 2025 position gouvernement CPI mandat Netanyahou (reactions of Israel and Hungary to the warrants; no Nigerien statement)'
+    - 'WebSearch 2026-11-10 (French): AES communiqué retrait Statut de Rome 22 septembre 2025 Mali Burkina Niger texte CPI (press copies of the Confederation''s communiqué: the Court called an instrument
+      of neo-colonial repression; no mention of the warrants of 21 November 2024 in the results; notification of 18 June 2026)'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for the Niger. The registry gives a recognition since 24 November 1988, before the window; no recognition after 7 October 2023 was found in the sources
@@ -119,35 +164,70 @@ indicators:
       list and the results of Le Sahel''s searches read. The Ministry of Foreign Affairs of 11 September 2025 (Le Sahel, press) condemns Israel''s attack on Doha; it concerns Qatar and is not Gaza.'
     checked_at: '2026-11-04'
   B11:
-    status: unchecked
-    note: No national sanctions on Israeli ministers or settler entities by the Niger were found in the sources read; the Government's own sites did not answer, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities by the Niger were found; the Niger is not an EU member. The Ministry's (diplomatie.gouv.ne), the Government portal's (gouv.ne)
+      and the Prime Minister's (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    checked_at: '2026-11-10'
   B12:
-    status: unchecked
-    note: No recall, downgrade or severance of relations with Israel was found in the sources read (the General Debate statements, Le Sahel's results for Israël); the Ministry of Foreign Affairs did not
-      answer, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel in the window was found: the Niger severed relations in 2002, before the window, and has had none since (the search results;
+      Le Sahel''s titles for Israël). The Ministry''s (diplomatie.gouv.ne), the Government portal''s (gouv.ne) and the Prime Minister''s (primature.gouv.ne) sites did not answer on 2026-11-10 (no
+      connection).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Niger gouvernement Israël Gaza communiqué 2024 OR 2025 ministère des affaires étrangères Niamey (a PANA item of July 2014 on a Ministry communiqué, opened:
+      before the window; Nigerian items; the severance of relations of 2002; no communiqué of 2023 to 2026)'
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: The Niger is not an EU member; the EU-Israel Association Agreement is not its instrument. No suspension of a trade agreement with Israel was found in the sources read.
     checked_at: '2026-11-04'
   C2:
-    status: unchecked
-    note: No agreement signed with Israel since October 2023 was found in the sources read; the Ministry of Foreign Affairs and the treaty register were not readable, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found; the Niger has had no relations with Israel since 2002 and the searches returned no instrument. The Ministry''s (diplomatie.gouv.ne),
+      the Government portal''s (gouv.ne) and the Prime Minister''s (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection). Not searched: a treaty register (none online).'
+    queries:
+    - 'WebSearch 2026-11-10: Niger Israel relations 2025 OR 2026 agreement OR cooperation OR drones OR airspace junta Niamey Israeli (no relations since 2002; reports of 2021 and 2023 on normalisation
+      contacts, denied; no agreement, exercise or transit in the window)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; the Niger is not an EU member and the searches returned none. Not searched: the customs directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Niger OR Rwanda OR Senegal OR "Sierra Leone" OR Somalia OR "South Sudan" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (opinion
+      pieces on African arms trade, a Senegalese vote at the UN, South Africa; no licence suspension, embargo or settlement-goods measure by any of the six)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund (the Fonds souverain d''investissements stratégiques, the Caisse nationale de sécurité sociale) or the central bank (BCEAO)
+      over conduct in Gaza or the occupied territories was found; the results name the Norwegian, Danish and Dutch funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement regulator''s (ARCOP) site.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign fund OR pension fund divest Israeli companies OR public procurement exclusion Israel Senegal OR Rwanda OR Niger OR "Sierra Leone" OR Somalia OR "South Sudan"
+      (the Norwegian, Danish and Dutch funds only; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -173,19 +253,49 @@ indicators:
       src_20241231_unrwa_donor-ranking-2024.txt (searched)
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
-    status: unchecked
-    note: No medical-evacuation programme for Gazans and no field hospital deployed by the Niger was found in the sources read; the Government's own sites did not answer, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by the Niger was found; the searches return none. The Ministry's (diplomatie.gouv.ne), the Government portal's
+      (gouv.ne) and the Prime Minister's (primature.gouv.ne) sites did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10 (French): Niger évacuation blessés Gaza OR aide humanitaire Gaza gouvernement nigérien OR étudiants palestiniens bourses Niger 2024 (humanitarian needs in the Sahel;
+      nothing on Gaza)'
+    - 'WebSearch 2026-11-10: Gaza wounded patients medical evacuation OR scholarships OR visas Senegal OR Niger OR Rwanda OR "Sierra Leone" OR Somalia OR "South Sudan" government receives Palestinians
+      2024 2025 (WHO and MSF reports on the evacuation registry; Egypt, the United Arab Emirates, Italy and others named; none of the six)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   D5:
-    status: unchecked
-    note: No visa or refugee pathway for Gazans was found in the sources read; the Government's own sites did not answer, so the indicator is unchecked.
-    checked_at: '2026-11-04'
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found; the searches return none. The Ministry's (diplomatie.gouv.ne), the Government portal's (gouv.ne) and the Prime Minister's (primature.gouv.ne)
+      sites did not answer on 2026-11-10 (no connection).
+    queries:
+    - 'WebSearch 2026-11-10 (French): Niger évacuation blessés Gaza OR aide humanitaire Gaza gouvernement nigérien OR étudiants palestiniens bourses Niger 2024 (humanitarian needs in the Sahel;
+      nothing on Gaza)'
+    - 'WebSearch 2026-11-10: Gaza wounded patients medical evacuation OR scholarships OR visas Senegal OR Niger OR Rwanda OR "Sierra Leone" OR Somalia OR "South Sudan" government receives Palestinians
+      2024 2025 (WHO and MSF reports on the evacuation registry; Egypt, the United Arab Emirates, Italy and others named; none of the six)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Nigerien nationals or companies for conduct in Gaza was found. Not searched: the prosecutors'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest was found; Le Sahel (the state daily, press) reports a march of support
+      for the Palestinian people in Niamey on 21 November 2024, from the Mahatma Gandhi conference centre to the place Thomas Sankara, without mention of a ban. Not searched: the Ministry of the
+      Interior''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Niamey manifestation Palestine Gaza interdite OR autorisée 2023 2024 soutien au peuple palestinien Niger (French cases only; nothing on Niamey)'
+    - 'lesahel.org REST search 2026-11-10 (posts since 1 October 2023) for Gaza, Israël, palestinien, Netanyahou, boycott: titles read; opened the Ministry''s communiqué of 11 September 2025 (Doha,
+      not Gaza) and the report of the march of 21 November 2024 in Niamey'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a Nigerien authority was found; the results concern Belgium, Portugal, Brazil
+      and the Netherlands.
+    queries:
+    - 'WebSearch 2026-11-10: Senegalese OR Rwandan OR Somali OR "Sierra Leonean" OR Nigerien OR "South Sudanese" national Israeli army Gaza investigated OR prosecuted OR "universal jurisdiction"
+      complaint (complaints by the Hind Rajab Foundation in Belgium, Portugal and Brazil, a civil case in The Hague; none tied to the six)'
+    checked_at: '2026-11-10'
