@@ -3649,3 +3649,201 @@ Score effect (provisional previews, rc.1, 2026-11-10, reviewed events as if publ
 ### Completion of 2026-11: not done (YEM to MCO)
 
 The Yemeni Foreign Ministers' own statements of 2023 to 2026 (mofa-ye.org carries unsigned ministry statements) and the Arabic versions of the Chairman's speeches; the Chamber of Deputies' minutes of 15 October 2026 and the Government Council's release of 16 October 2026 on Luxembourg's settlement-goods bill (`lead_20261110_LUX_1`, an event once the ban is in force); Luxembourg's C1 position in the Council and D4; the Liechtenstein Government's press releases item by item; Monaco's 81st General Debate text (no capture; re-run the CDX after 1 December 2026) and the Government's releases on gouv.mc (403 to scripts); the ministries, funds and agencies behind A5 to A8, C4 to C6 and E1 to E3 (each note names what was not searched).
+
+## Verification of 2026-11 (second pass)
+
+FINISH-PLAN.md Phase E: Task B2's checklist applied by fresh Opus 5.5 sessions to what Task V (above) did not cover. Session T-F-V1 (2026-11-10) covers light groups 1 to 4 (NZL KAZ KGZ, TJK TKM UZB, MNG PRK BGR, BLR MDA ROU: all their records, never put through Task V) and the records written or changed by T-F-L01 to T-F-L10 (with the redo passes T-F-L04-R, L05-R and L06-R) in groups 5 to 20. Records of these countries written by T-F-UNDOCS-1 and T-F-UNDOCS-2 (the D3 events of 2025, the end dates of the D3 events of 2024, `evt_2026_10_16_SDN_B9`) belong to T-F-V3; their quotes and replays were checked in passing and are reported, not changed. Build-log rows: docs/10 B-2102 and B-2103. No event changed status; `review.reviewed_by` is not set; nothing is published.
+
+### T-F-V1: groups 1 to 4 and the new records of T-F-L01 to T-F-L10 (2026-11-10)
+
+**Scope, found with `git diff 29dabb1 -- data/` and the commit subjects.** 71 events (51 of groups 1 to 4, all of them; in groups 5 to 20, the 13 events filed by T-F-L04 to T-F-L10 and 7 whose content changed: `evt_2026_08_16_HND_C2` and `evt_2025_11_24_PRY_C2` raised to `confirmed`, and five end dates of 2024 D3 events written by T-F-UNDOCS-2), with 162 evidence items; 113 leads (26 new, 87 annotated or, for `lead_20261006_CUB_1`, promoted); 6 recognition rows added or changed (ATG, MNG, URY, VCT, PNG, TUN); 664 assessment entries whose status changed (650 `unchecked` to `none-found`, 6 `unchecked` to `has-events`, 5 `unchecked` to `no-data`, 3 `none-found` to `has-events`).
+
+**What was checked, and how.** As T-VERIFY-1 (above), with a ninth step for the assessments.
+
+1. **Quote at the locator.** A script normalised each quote and `archive/text/<source>.txt` as the validator does and mapped the match back to line numbers; `line …` locators compared, the eight `line N (Country)` locators of the UNRWA tables checked by row.
+2. **Captures.** Every source cited by these events, by the new leads (archived records cited by id or named in the claim, 15) and by the recognition rows (8): 109 sources, each fetched again from its `wayback_url` with `curl --compressed`, one at a time, and compared in byte count and SHA-256 with the source record and `archive/index.csv` (all 109 records equal their index rows).
+3. **Speaker and wording (R3, R4, R7).** Every event read with its quotes, rationale and notes; B9 speakers against the archived text's attribution (for example the 8 April 2024 General Assembly statement, delivered by Winston Peters); summaries against the quoted words.
+4. **Date and tier.** Event dates against the sources' dates; the D3 tiers of groups 1 to 4 against the 2022, 2023 and 2024 tables.
+5. **Scope tags.** `gaza` scopes against a mention of Gaza in the quoted passage or the archived document; `west-bank` and `related` scopes read.
+6. **French summaries.** Gender, elision and capitals against `docs/glossary.fr.md`; meaning against the English summary.
+7. **Leads.** Every new lead read for its claim and sourcing; every lead URL of the 113 leads fetched live once (181 distinct URLs); URLs that did not answer were looked up in the Wayback CDX index.
+8. **Recognition rows.** Each row's date found in its archived source text.
+9. **Assessment statuses.** By script: every `has-events` entry has a hand event of the indicator (B8 excepted: generated from `recognitions.csv`, its note mirrors the row as earlier sessions did); every hand-researched `none-found` names its date, the pages read and the web searches (every entry does, except NZL A7, which rests on the Minister's letter of 22 July 2024 and the Ministry's page); no generated indicator was set by hand; source ids named in the notes exist. Notes read in full for a sample (FIN C5, ISL C4, EST A6, LTU A5, MNG A6, BGR E3, ROU C5, NZL A7). No hand-researched indicator is left `unchecked` in the 60 countries; B8 stays `unchecked` (generated, no state document) for KAZ, KGZ, TJK, TKM, UZB, PRK, BGR, BLR and ROU.
+
+**Result.** Every quote is verbatim in its archived text and at its locator after one fix. 108 of the 109 replays equal their records; the exception, `src_20261016_mofa-pk_fms-joint-statement-colombia-embassy` (T-F-UNDOCS-1, cited by `evt_2026_10_16_SDN_B9` and the other signatories), replays 102,268 bytes twice against 102,519 recorded: left to T-F-V3. No invented quote, source, date or speaker was found. Fixes in place:
+
+1. `evt_2023_10_07_FIN_A3`: the Patria quote is on line 2, not line 1 (corrected); the summary said the companies 'assemble F135 engines', and the archived Ministry text says 'engine assembly facility in Nokia' without the engine type (summary: 'assemble F-35 engines', EN and FR).
+2. `evt_2026_09_23_NRU_B6`: the summary stated the notification to the Secretary-General and its date of effect (23 September 2027), which rest on the depositary notification C.N.378.2026 read live and not archived; restated on the archived statement of the Presidency of the Assembly of States Parties ('took steps to withdraw'). The note keeps the notification's facts.
+3. `evt_2025_09_23_KGZ_B9`: 'demanded an end to the genocide against the Palestinians' in the site's own words; attributed ('what he called', EN and FR), as in the other summaries that report the word.
+4. `evt_2025_09_18_TJK_C2`: the summary named the instrument as the press does (memorandum of understanding); the official source (Israel's embassy page) calls it a 'Joint Declaration of Intent on Tourism' (summary changed, EN and FR).
+5. `evt_2025_10_01_CUB_B9`: the summary's arms embargo had no quote; the passage is added as evidence (line 15); French summary given 'immédiat' as in the English.
+6. `evt_2026_07_26_CUB_B9`: French summary 'Le Président' to 'Le président' and 'dont 21 000 enfants' to 'dont environ 21 000 enfants'.
+7. `evt_2025_09_26_NZL_B9`: French summary 'et que Israël' to 'et qu'Israël'.
+
+**Readings flagged for the author (B-2103).** (a) `evt_2023_10_07_FIN_A3` is dated from 7 October 2023 while the Finnish production line opened in June 2025 (B-992); (b) the date of `evt_2026_09_23_NRU_B6` rests on the unarchived depositary notification; (c) the ATG recognition row's date (22 September 2011) comes from the registry, not from the state document; (d) the PNG recognition row rests on the establishment of diplomatic relations; (e) seven new leads cite Government pages under `kind: press` because lead sources must be press or NGO (BGR_1, SVK_6, UKR_5, ATG_3, BRB_2, PNG_4, PNG_5). Readings already flagged and re-read without change: BGR E2 (date, scope), ROU C2 (`reported`), HND C2 (Israel's document, B-970), PRY B6 (`reported`, B-973), KAZ C2 (signatories named by the press).
+
+**Leads.** Every new lead rests on press, NGO or archived records and files nothing; the annotations of the 87 others add searches and keep the status (one promotion, CUB_1, to an event checked here). Of the 181 distinct lead URLs, 156 answer HTTP 200 live, 16 answer 403, 2 answer 429 and 1 answers 406 (news and government sites behind bot checks); `moldpres.md/en/news/2023/10/19/23008209` (MDA_2) and `radiorebelde.cu/…26092026/` (CUB_2) answer 404 and the four that timed out (`aa.com.tr` for KAZ_1, three `ip.gov.py` pages for PRY) all have Wayback captures. No lead rests on an address that does not exist.
+
+### Table per country (groups 1 to 20)
+
+Columns: events in scope (all for groups 1 to 4; new or changed since `29dabb1` for groups 5 to 20, T-F-UNDOCS records excluded); evidence items with the quote verbatim and at its locator (after the fixes); distinct sources cited by those events and whether the replay equals the record; leads new and annotated, with their live URLs; the recognition row added or changed; assessment entries whose status changed since `29dabb1`, with the hand-researched entries left `unchecked`; findings.
+
+#### Group 1: NZL, KAZ, KGZ (all records)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| NZL | 13 | 28: 28 / 28 | 16: 16 | 0 / 1 (1/1 answer 200) | none added or changed | 9 (none) | evt_2025_09_26_NZL_B9: French summary 'et que Israël' corrected to 'et qu'Israël'. A7 none-found rests on the Minister's letter of 22 July 2024 and the Ministry's page (no web search named; primary documents read): kept. |
+| KAZ | 5 | 12: 12 / 12 | 7: 7 | 1 / 1 (3/5 answer 200; other: 403: 1, 000: 1) | none added or changed | 12 (none) | No finding. evt_2025_12_31_KAZ_D3 (T-F-UNDOCS-2) quote and replay checked, left to T-F-V3. The two C2 memoranda rest on the Ministry's release, which does not name the signatories (the Qazinform report names the two Foreign Ministers): kept. |
+| KGZ | 1 | 3: 3 / 3 | 2: 2 | 1 / 1 (2/3 answer 200; other: 403: 1) | none added or changed | 12 (none) | evt_2025_09_23_KGZ_B9: summary attributed ('what he called the genocide', EN and FR), as the site's own words carry no legal characterisation. |
+
+#### Group 2: TJK, TKM, UZB (all records)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| TJK | 3 | 6: 6 / 6 | 4: 4 | 0 / 2 (2/2 answer 200) | none added or changed | 11 (none) | evt_2025_09_18_TJK_C2: summary names the instrument as Israel's official page does ('joint declaration of intent'), not as the press does (memorandum of understanding). TJK_1 rewritten with the speaker's own file (not archivable): checked. |
+| TKM | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| UZB | 5 | 7: 7 / 7 | 6: 6 | 1 / 2 (4/5 answer 200; other: 403: 1) | none added or changed | 11 (none) | No finding. |
+
+#### Group 3: MNG, PRK, BGR (all records)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| MNG | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | 1988-11-22 | 12 (none) | No event. Recognition row read in A/43/863 (the Ministry's statement of 22 November 1988, OCR text): date as stated. A6, A7, A8, C6 notes carry the searches in the note text, not in `queries`. |
+| PRK | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/3 answer 200; other: 429: 1) | none added or changed | 11 (none) | No event. C5, C6, E1, E2, E3 no-data (no published fund, procurement, prosecution or police records): kept. |
+| BGR | 9 | 23: 23 / 23 | 11: 11 | 1 / 4 (9/9 answer 200) | none added or changed | 11 (none) | No finding. evt_2023_10_20_BGR_E2 dating and scope stay flagged (the Order's date, the court's recital of Gaza). |
+
+#### Group 4: BLR, MDA, ROU (all records)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| BLR | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (4/4 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| MDA | 4 | 10: 10 / 10 | 7: 7 | 1 / 2 (5/6 answer 200; other: 404: 1) | none added or changed | 11 (none) | No finding. lead_20261005_MDA_2: moldpres URL answers 404 live; Wayback captures of 2023 and 2024 exist. |
+| ROU | 11 | 27: 27 / 27 | 18: 18 | 3 / 4 (15/16 answer 200; other: 429: 1) | none added or changed | 11 (none) | No finding. evt_2024_05_12_ROU_C2 stays `reported` and flagged (Romanian signatory and instrument name not established). |
+
+#### Group 5: SVK, UKR, ATG (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| SVK | 0 | 0: 0 / 0 | 0: 0 | 1 / 2 (6/6 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| UKR | 0 | 0: 0 / 0 | 0: 0 | 3 / 1 (0/3 answer 200; other: 403: 3) | none added or changed | 11 (none) | No event. Three new leads rest on archived press and Ministry pages (replays equal); no event is filed from them. |
+| ATG | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (2/3 answer 200; other: 403: 1) | 2011-09-22 | 12 (none) | Recognition row dated 22 September 2011 from the registry (A/78/846 annex); the state document (the Prime Minister's General Debate statement of 24 September 2011) confirms the recognition but gives no date: flagged (R21). lead_20261109_ATG_3 (flag-registry notice) stays a lead. |
+
+#### Group 6: BHS, BLZ, BRB (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| BHS | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| BLZ | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| BRB | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (0/2 answer 200; other: 403: 2) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 7: CRI, CUB, DMA (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| CRI | 0 | 0: 0 / 0 | 0: 0 | 1 / 3 (7/7 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| CUB | 4 | 10: 10 / 10 | 4: 4 | 0 / 4 (6/7 answer 200; other: 404: 1) | none added or changed | 11 (none) | (1) evt_2025_10_01_CUB_B9: the summary's arms embargo had no quote; line 15 added ('Puede instar a los Estados Miembros a imponer un embargo de armas contra Israel'); French summary given 'immédiat'. (2) evt_2026_07_26_CUB_B9: French summary 'Le Président' to 'Le président', 'dont 21 000' to 'dont environ 21 000'. lead_20261006_CUB_1 promoted to evt_2026_09_25_CUB_B9 (checked). |
+| DMA | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (1/2 answer 200; other: 403: 1) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 8: DOM, ECU, GRD (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| DOM | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+| ECU | 0 | 0: 0 / 0 | 0: 0 | 0 / 3 (4/4 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| GRD | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 9: GTM, GUY, HND (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| GTM | 0 | 0: 0 / 0 | 0: 0 | 2 / 2 (3/5 answer 200; other: 403: 2) | none added or changed | 11 (none) | No event. No finding. |
+| GUY | 1 | 1: 1 / 1 | 1: 1 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | Only the end date of the 2024 D3 event changed (T-F-UNDOCS-2). No finding. |
+| HND | 1 | 4: 4 / 4 | 4: 4 | 0 / 2 (2/2 answer 200) | none added or changed | 11 (none) | evt_2026_08_16_HND_C2 raised to confirmed on Israel's Ministry of Defense page (archived, replay equal); the state document is Israel's: stays flagged (B-970). |
+
+#### Group 10: HTI, JAM, KNA (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| HTI | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+| JAM | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (3/3 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| KNA | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 11: LCA, NIC, PAN (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| LCA | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+| NIC | 0 | 0: 0 / 0 | 0: 0 | 1 / 4 (6/6 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| PAN | 0 | 0: 0 / 0 | 0: 0 | 0 / 3 (5/5 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 12: PER, PRY, SLV (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| PER | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| PRY | 3 | 7: 7 / 7 | 6: 6 | 0 / 5 (7/11 answer 200; other: 000: 4) | none added or changed | 12 (none) | No finding. evt_2024_12_09_PRY_B6 (`reported`, one press source, flagged B-973) and evt_2025_11_24_PRY_C2 (the Ministry's page names Israel's Defence Minister as signatory, EFE the ambassador) read; ip.gov.py lead URLs time out live and have Wayback captures. |
+| SLV | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 13: SUR, TTO, URY (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| SUR | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (2/3 answer 200; other: 403: 1) | none added or changed | 11 (none) | No event. No finding. |
+| TTO | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| URY | 0 | 0: 0 / 0 | 0: 0 | 1 / 1 (3/3 answer 200) | 2011-03-15 (source added) | 11 (none) | Recognition row now rests on the Government's statement of 15 March 2011 (UNISPAL copy): the R21 flag of T-VERIFY-1 is resolved. |
+
+#### Group 14: VCT, VEN, FJI (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| VCT | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (1/1 answer 200) | 2011-08-29 (date changed from 2011-08-30) | 11 (none) | Recognition row redated 29 August 2011 from A/65/939 (the Ministry's statement of that date): the R21 flag of T-VERIFY-1 is resolved. |
+| VEN | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (4/4 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| FJI | 3 | 9: 9 / 9 | 6: 6 | 0 / 1 (1/1 answer 200) | none added or changed | 11 (none) | No finding. The three E2 events rest on two press or NGO publishers each (`corroborated`; experimental, unscored). |
+
+#### Group 15: PNG, SLB, VUT (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| PNG | 0 | 0: 0 / 0 | 0: 0 | 2 / 2 (4/4 answer 200) | 1995-01-13 | 12 (none) | Recognition row rests on the joint communiqué establishing diplomatic relations (13 January 1995): recognition implied by the relations, flagged (as DOM, KNA, LCA). |
+| SLB | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| VUT | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 16: FSM, KIR, MHL (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| FSM | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (1/2 answer 200; other: 403: 1) | none added or changed | 11 (none) | No event. No finding. |
+| KIR | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+| MHL | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 17: NRU, PLW, LBY (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| NRU | 1 | 1: 1 / 1 | 1: 1 | 0 / 1 (3/3 answer 200) | none added or changed | 12 (none) | evt_2026_09_23_NRU_B6: summary restated on the archived statement (the notification's date of effect is in the depositary notification read live and not archived); date stays flagged; scope `related` (not scored). |
+| PLW | 0 | 0: 0 / 0 | 0: 0 | 0 / 2 (2/2 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| LBY | 0 | 0: 0 / 0 | 0: 0 | 2 / 4 (10/12 answer 200; other: 406: 1, 403: 1) | none added or changed | 11 (none) | No event. No finding. |
+
+#### Group 18: SDN, TUN, EST (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| SDN | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | evt_2026_10_16_SDN_B9 is T-F-UNDOCS-1's (T-F-V3): its Pakistani source replays 102,268 bytes against 102,519 recorded (twice); left to T-F-V3. |
+| TUN | 0 | 0: 0 / 0 | 0: 0 | 1 / 4 (9/10 answer 200; other: 403: 1) | 1988-11-15 | 11 (none) | Recognition row read in A/43/828 (the Foreign Minister's statement of 15 November 1988): date as stated. |
+| EST | 2 | 3: 3 / 3 | 3: 3 | 1 / 3 (8/8 answer 200) | none added or changed | 11 (none) | No finding. evt_2025_12_31_EST_D3 left to T-F-V3. |
+
+#### Group 19: FIN, ISL, LTU (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| FIN | 1 | 3: 3 / 3 | 2: 2 | 1 / 0 (1/1 answer 200) | none added or changed | 11 (none) | evt_2023_10_07_FIN_A3: the Patria quote is on line 2 (locator corrected); 'F135' is not in the archived text (summary now 'F-35 engines'). Dating from 7 October 2023 stays flagged (production in Finland from 2025). |
+| ISL | 1 | 2: 2 / 2 | 2: 2 | 0 / 0 (no URL) | none added or changed | 10 (none) | Only the end date of the 2024 D3 event changed; evt_2025_12_31_ISL_D3 left to T-F-V3. |
+| LTU | 1 | 1: 1 / 1 | 1: 1 | 0 / 0 (no URL) | none added or changed | 11 (none) | Only the end date of the 2024 D3 event changed; evt_2025_12_31_LTU_D3 left to T-F-V3. |
+
+#### Group 20: LVA, TON, TUV (records new or changed since 29dabb1)
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed (unchecked left) | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| LVA | 2 | 5: 5 / 5 | 4: 4 | 0 / 0 (no URL) | none added or changed | 11 (none) | No finding. evt_2024_01_05_LVA_E2 rests on two press publishers (`corroborated`). |
+| TON | 0 | 0: 0 / 0 | 0: 0 | 0 / 1 (2/2 answer 200) | none added or changed | 11 (none) | No event. No finding. |
+| TUV | 0 | 0: 0 / 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 11 (none) | No event. No finding. |
