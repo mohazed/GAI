@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent) and the Assembly's verbatim record of the 79th; the Ministry's site (diplomatie.gov.bf) and the Government Information Service's site (gouvernement.gov.bf), searched through their WordPress APIs; the UN Treaty Collection's depositary notification of the withdrawal from the Rome Statute (archived); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
 # One event: evt_2026_06_24_BFA_B6 (scope related, unscored). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L16, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 8 web searches in English and French and the Ministry's WordPress API again (docs/10 B-2039), all none-found; B6, B9, B12 and C2 notes extended; no new event or lead.
 country: BFA
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Burkinabè company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Burkina, and the searches returned none.
+      Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Burkina (no match)
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Israël coopération militaire OR armes OR drones OR sécurité OR accord 2025 2026 Gaza'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Burkina Faso from Israel in the register. Left to the build.'
@@ -29,17 +35,34 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Burkina Faso (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel was found. Israel''s ambassador, resident in Abidjan, presented his credentials to Captain Ibrahim Traoré on 26 June 2026 (Sidwaya,
+      the State daily, read; the page reports no speech, no military or security agreement and refers only to a general economic, scientific, technical and cultural cooperation agreement whose institutional
+      framework is not yet operational); press commentary on a rapprochement (an i24NEWS item and an Arabic-language article, headlines and summaries only) was not read in full and reports no agreement. No exercise, transit, basing or intelligence-sharing
+      item was found. Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Israël coopération militaire OR armes OR drones OR sécurité OR accord 2025 2026 Gaza'
+    - 'WebSearch 2026-11-10 (French): Traoré reçoit l''ambassadeur d''Israël Simon Seroussi Burkina Faso audience'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Burkina Faso to Israel was found either. Not searched: the Journal officiel du Faso.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Israël coopération militaire OR armes OR drones OR sécurité OR accord 2025 2026 Gaza'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Journal officiel du Faso.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Israël coopération militaire OR armes OR drones OR sécurité OR accord 2025 2026 Gaza'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found; the searches returned no such item for Burkina Faso (a landlocked state). Not searched: the
+      civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Israël coopération militaire OR armes OR drones OR sécurité OR accord 2025 2026 Gaza'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on seven of the twelve qualifying votes; recorded as non-voting on A/RES/ES-10/21, ES-10/22, ES-10/25, 79/232 and 80/116, each scored -2 by the build
@@ -72,17 +95,19 @@ indicators:
     - 'archive/text/src_20261009_icc-asp_states-parties.txt, Burkina Faso (found: state party)'
     checked_at: '2026-11-04'
   B6:
-    status: has-events
-    note: 'One event, unscored: the notification of 24 June 2026 of Burkina Faso''s withdrawal from the Rome Statute (evt_2026_06_24_BFA_B6, -10, scope `related`, docs/10 B-776); the excerpt
-      of the Government''s letter in the depositary notification gives the Court''s becoming ''a selective and politicized tool'' as the reason and does not mention Gaza, Palestine, Israel or
-      the warrants; the Foreign Minister''s General Debate statement for the Confederation of Sahel States (28 September 2026, the live UN file, French) repeats ''manquements graves, une sélectivité
-      persistante et une politisation'' without naming Gaza. The joint announcement of the three Sahel states of September 2025 and the full letter were not read. No stated refusal to execute
-      the warrants and no hosting of a person under warrant was found.'
+    checked_at: '2026-11-10'
+    note: 'One event, unscored: the notification of 24 June 2026 of Burkina Faso''s withdrawal from the Rome Statute (evt_2026_06_24_BFA_B6, -10, scope `related`, docs/10 B-776); the excerpt of
+      the Government''s letter in the depositary notification gives the Court''s becoming ''a selective and politicized tool'' as the reason and does not mention Gaza, Palestine, Israel or the warrants;
+      the Foreign Minister''s General Debate statement for the Confederation of Sahel States (28 September 2026, the live UN file, French) repeats ''manquements graves, une sélectivité persistante
+      et une politisation'' without naming Gaza. The joint announcement of the three Sahel states of September 2025 and the full letter were not read. No stated refusal to execute the warrants and
+      no hosting of a person under warrant was found. Finish run, T-F-L16 (2026-11-10): the joint statement of the three Sahel states of 22 September 2025 was searched; its text was not found (the
+      press copies read, Human Rights Watch''s of 24 September 2025 among them, give no reason and do not mention Gaza); the follow-up stays open (P-23).'
     queries:
     - Burkina Faso withdrawal Rome Statute depositary notification C.N.263.2026 (archived)
     - treaties.un.org status page, chapter XVIII-10 (read, not archived)
     - gadebate.un.org/sites/default/files/gastatements/81/bf_fr.pdf (read live; ICC passage, no Gaza)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Mali Niger communiqué conjoint retrait Cour pénale internationale 22 septembre 2025 "juridiction" Gaza OR Palestine'
+    status: has-events
   B7:
     status: none-found
     note: No sanctions on ICC judges or prosecutors by Burkina Faso were found in the sources read.
@@ -96,23 +121,28 @@ indicators:
     - recognitions.csv, BFA
     checked_at: '2026-11-04'
   B9:
-    status: none-found
+    checked_at: '2026-11-10'
     note: 'No event filed. General Debate statements (the French files of gadebate.un.org, read live; not archived because no event rests on them): the 79th (30 September 2024, Foreign Minister
       Karamoko Jean-Marie Traoré; A/79/PV.17, archived: src_20240930_undocs_a-79-pv-17) says Burkina Faso ''reaffirms its solidarity with the Palestinian people, who are enduring an unprecedented
       tragedy'' and supports the two-State solution, never naming Gaza (R7), and is older than 730 days; the 80th (September 2025, the Prime Minister and head of government, Rimtalba Jean Emmanuel
       Ouédraogo, the Ministry''s page of 27 September 2025) speaks of ''le conflit israélo-palestinien qui n''a que trop duré'' and ''l''impasse du conflit israélo-palestinien'' and never names
       Gaza (R7); the 81st (28 September 2026, the Foreign Minister, for the Confederation of Sahel States) says ''nous demeurons particulièrement préoccupés par la situation du peuple palestinien
       et les souffrances endurées par les populations civiles de Gaza'' and supports two States, with no call for a ceasefire and no named violation, so it is neither B9 tier (it is a statement
-      for the Confederation, which is a further reason to flag it). The Ministry''s site (diplomatie.gov.bf) and the Government Information Service''s site (gouvernement.gov.bf) were searched
-      through their WordPress APIs for Gaza, cessez-le-feu, Palestine, Israël, Hamas, flottille and Moyen-Orient: nothing else on Gaza. Not searched: the Presidency''s site (presidencedufaso.bf:
-      its REST API is closed to unauthenticated requests) and the Burkinabè press (P-23). Web searches were not available to this session (the run''s search budget was spent, as for T-P21-26 and
-      T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23.'
+      for the Confederation, which is a further reason to flag it). The Ministry''s site (diplomatie.gov.bf) and the Government Information Service''s site (gouvernement.gov.bf) were searched through
+      their WordPress APIs for Gaza, cessez-le-feu, Palestine, Israël, Hamas, flottille and Moyen-Orient: nothing else on Gaza. Not searched: the Presidency''s site (presidencedufaso.bf: its REST
+      API is closed to unauthenticated requests) and the Burkinabè press (P-23). Web searches were not available to this session (the run''s search budget was spent, as for T-P21-26 and T-P21-46
+      to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23. Finish run, T-F-L16 (2026-11-10): the Ministry''s site was searched
+      again (items of 15 April, 2 September and 28 September 2026 read): the Ministry''s summary of the 81st statement says it ''soutient la solution à deux États pour la Palestine'' (already in
+      this note); the items on the Foreign Minister''s stay in Egypt (31 August 2026, a meeting with the Burkinabè community) and on the Iranian ambassador''s call (15 April 2026) name no Gaza statement.
+      The searches for a 2026 statement of the head of state, the Prime Minister or the Foreign Minister returned none. No B9 event.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bf_fr.pdf (read live; bf_en 404)
     - diplomatie.gov.bf/wp-json/wp/v2/posts?search={Gaza,cessez-le-feu,Palestine,Israël,Hamas,flottille,Moyen-Orient}
     - gouvernement.gov.bf/wp-json/wp/v2/posts?search={Gaza,Palestine,Israël,palestinien}
     - archive/text/src_20240930_undocs_a-79-pv-17.txt, Burkina Faso (the 79th statement)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Burkina Faso Gaza Palestine déclaration gouvernement OR Traoré OR ministre Karamoko Jean-Marie Traoré OR Premier ministre Ouédraogo 2026'
+    - 'diplomatie.gov.bf/wp-json/wp/v2/posts?search={Israël,Palestin,Gaza} re-run 2026-11-10 (items of 2026: 15 April, 2 September, 28 September, all read)'
+    status: none-found
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by a B10 speaker was found in the sources read.'
@@ -122,37 +152,52 @@ indicators:
     note: No sanctions by Burkina Faso on settlers or settler entities were found in the sources read.
     checked_at: '2026-11-04'
   B12:
-    status: none-found
-    note: No recall, downgrade or severance was announced in any item of the Ministry's site found by its searches for Israël, Palestine, Gaza and Hamas (the results are the General Debate pages
-      and bilateral items with Iran and other states).
+    checked_at: '2026-11-10'
+    note: 'No recall, downgrade or severance was announced in any item of the Ministry''s site found by its searches for Israël, Palestine, Gaza and Hamas (the results are the General Debate pages
+      and bilateral items with Iran and other states). Finish run, T-F-L16 (2026-11-10): the acceptance of an Israeli ambassador''s credentials (26 June 2026, Sidwaya) is the opposite of a recall
+      or downgrade and is not an indicator act.'
     queries:
     - diplomatie.gov.bf/wp-json/wp/v2/posts?search={Israël,Palestine,Gaza,Hamas}
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Traoré reçoit l''ambassadeur d''Israël Simon Seroussi Burkina Faso audience'
+    status: none-found
   C1:
     status: none-found
     note: Burkina Faso is not an EU member; the EU-Israel Association Agreement is not its instrument.
     checked_at: '2026-11-04'
   C2:
-    status: none-found
-    note: 'No instrument of cooperation with Israel was found in the Ministry''s items returned by the searches for Israël, Palestine, Gaza and Hamas. Not searched: the Council of Ministers''
-      reports and the Official Journal (P-23).'
+    checked_at: '2026-11-10'
+    note: 'No instrument of cooperation with Israel was found in the Ministry''s items returned by the searches for Israël, Palestine, Gaza and Hamas. Not searched: the Council of Ministers'' reports
+      and the Official Journal (P-23). Finish run, T-F-L16 (2026-11-10): Israel''s ambassador''s credentials (26 June 2026) are an accreditation and not an agreement; the general cooperation agreement
+      the State daily mentions is not dated after 7 October 2023.'
     queries:
     - diplomatie.gov.bf/wp-json/wp/v2/posts?search=Israël
     - gouvernement.gov.bf/wp-json/wp/v2/posts?search=Israël
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Traoré reçoit l''ambassadeur d''Israël Simon Seroussi Burkina Faso audience'
+    status: none-found
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; Burkina Faso is not an EU member and the search returned no measure of its own. Not searched: the customs directorate''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund or the central bank over conduct in Gaza or the occupied territories was found; the search returned none for Burkina Faso.
+      Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the search returned no Burkinabè measure. Not searched: the public procurement
+      regulator''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Burkina Faso to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -184,11 +229,20 @@ indicators:
     note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Burkinabè nationals or companies for conduct in Gaza was found. Not searched: the Prosecutor of Faso''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results concern France and Belgium. Not searched: the police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Burkina Faso was found. Not searched: the Prosecutor of Faso''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burkina Faso manifestation Palestine interdite OR drapeau palestinien OR plainte Gaza OR produits des colonies OR marchés publics Israël'
+    status: none-found
