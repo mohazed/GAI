@@ -136,12 +136,21 @@ indicators:
     queries:
     - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
   B8:
-    status: unchecked
-    checked_at: '2026-11-09'
-    note: 'Generated from recognitions.csv, which has no DPRK row. The registry dates the recognition 24 November 1988 (A/78/846 annex, via Wikipedia); the state''s own document was not found, so no row (R21,
-      docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. Third session (T-F-L02, 2026-11-09): the UN Digital Library''s General Assembly documents A/43/780 to A/43/1009
-      (letters of the 43rd session, November to December 1988) were searched by title for letters from the Democratic People''s Republic of Korea and none was found (the Mongolian letter A/43/863 was, MNG
-      B8); the state''s own document is still not found, so still no row.'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row PRK,1988-11-24 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 24 November 1988: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). Before this session: Generated from recognitions.csv,
+      which has no DPRK row. The registry dates the recognition 24 November 1988 (A/78/846 annex, via Wikipedia); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with
+      the pre-existing tier the score would be +3 higher. Third session (T-F-L02, 2026-11-09): the UN Digital Library''s General Assembly documents A/43/780 to A/43/1009 (letters of the 43rd session, November
+      to December 1988) were searched by title for letters from the Democratic People''s Republic of Korea and none was found (the Mongolian letter A/43/863 was, MNG B8); the state''s own document is still
+      not found, so still no row.'
+    queries:
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: none-found
     checked_at: '2026-11-09'

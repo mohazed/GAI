@@ -162,17 +162,23 @@ indicators:
     checked_at: '2026-11-04'
   B12:
     status: unchecked
+    checked_at: '2026-11-10'
     note: 'Not decided: the Government''s own texts cannot be reached. Searched on 2026-11-10 (web searches in English and Arabic): on 2 November 2023 the Council of Representatives (an elected chamber without
-      powers over foreign policy) announced that Israel''s Ambassador had left Bahrain and that Bahrain''s Ambassador to Israel had returned, and that economic relations were suspended; the press reports that
-      a Government statement the same day (the National Communication Centre) confirmed the Ambassador''s return ''some time ago'', Israel''s Ambassador''s departure and the suspension of direct flights, without
-      mention of economic relations (Al Jazeera; Arabic Post; The National reports that BNA and the Ministry had issued no statement when it wrote); Israel''s Ministry of Foreign Affairs said that no decision
-      to recall ambassadors had been received and that relations were stable. On 8 April 2025 Royal Decree No. 21 of 2025 made the Ambassador Undersecretary for Political Affairs and left the post vacant (The
-      Media Line, The Jerusalem Post); Israel''s new Ambassador was later received in Manama (press). A recall (+5) would need the Government''s statement of 2 November 2023, and none could be read or archived:
-      mofa.gov.bh and bna.bh answer 405, the Wayback Machine''s captures of BNA for those days are 403 pages, ncc.gov.bh answers 403. Recorded as lead_20261110_BHR_2; left `unchecked` with the reason (the T-P21-46
-      rule: an indicator that a Government source would decide and that no reachable source can check is not set to none-found). Scheduled for P-23 (another network, or a Wayback capture of the BNA item).'
+      powers over foreign policy) announced that Israel''s Ambassador had left Bahrain and that Bahrain''s Ambassador to Israel had returned, and that economic relations were suspended; the press reports
+      that a Government statement the same day (the National Communication Centre) confirmed the Ambassador''s return ''some time ago'', Israel''s Ambassador''s departure and the suspension of direct flights,
+      without mention of economic relations (Al Jazeera; Arabic Post; The National reports that BNA and the Ministry had issued no statement when it wrote); Israel''s Ministry of Foreign Affairs said that
+      no decision to recall ambassadors had been received and that relations were stable. On 8 April 2025 Royal Decree No. 21 of 2025 made the Ambassador Undersecretary for Political Affairs and left the
+      post vacant (The Media Line, The Jerusalem Post); Israel''s new Ambassador was later received in Manama (press). A recall (+5) would need the Government''s statement of 2 November 2023, and none could
+      be read or archived: mofa.gov.bh and bna.bh answer 405, the Wayback Machine''s captures of BNA for those days are 403 pages, ncc.gov.bh answers 403. Recorded as lead_20261110_BHR_2; left `unchecked`
+      with the reason (the T-P21-46 rule: an indicator that a Government source would decide and that no reachable source can check is not set to none-found). Scheduled for P-23 (another network, or a Wayback
+      capture of the BNA item). Retried in T-G-B8, 2026-11-10 (docs/10 B-2116): still no Government text. bna.bh and mofa.gov.bh answer HTTP 405 to scripts and bna.bh shows a ''Let''s confirm you are human''
+      check in the built-in browser (not passed: bot checks are never bypassed); ncc.gov.bh and nuwab.bh (the Council of Representatives) answer 403; legalaffairs.gov.bh does not answer; every Wayback capture
+      of www.bna.bh/en/ of 2 to 4 November 2023 listed by the CDX API is a 403 page (about 30 news items), and the CDX queries for later captures of BNA items on the Ambassador timed out or met ''Temporarily
+      Offline''. English and Arabic searches found only press reprints of the National Communication Centre''s statement (Asharq Al-Awsat, Khaleej Times, Gulf Times, L''Orient-Le Jour, Arabic Post, Al-Ain),
+      no Government page and no UN document. Left `unchecked` with lead_20261110_BHR_2; whether to record `no-data` at the flip is the author''s call (B-2098).'
     queries:
-    - 'WebSearch 2026-11-10: Bahrain recalls ambassador from Israel November 2023 Council of Representatives statement government confirmation (Al Jazeera, The National, Ahram Online, Arab News and others of
-      2 November 2023; JNS on Israel''s denial)'
+    - 'WebSearch 2026-11-10: Bahrain recalls ambassador from Israel November 2023 Council of Representatives statement government confirmation (Al Jazeera, The National, Ahram Online, Arab News and others
+      of 2 November 2023; JNS on Israel''s denial)'
     - 'WebSearch 2026-11-10: بيان حكومة البحرين عودة سفير مملكة البحرين لدى إسرائيل مغادرة السفير الإسرائيلي نوفمبر 2023 بنا (Arabic: Al-Ain, Arabic Post, Al Khaleej: the Council of Representatives'' statement
       and the Bahraini official confirmation that the Ambassador had returned ''some time ago'' and that direct flights had stopped; no Government text in the results)'
     - 'WebSearch 2026-11-10: Bahrain ambassador Khaled Al Jalahma returned to Israel OR Crown Prince receives Israeli ambassador Shmuel Revel date (The Media Line and The Jerusalem Post of 9 April 2025: Royal
@@ -180,6 +186,10 @@ indicators:
       by the King)'
     - 'mofa.gov.bh and bna.bh: HTTP 405 on 2026-11-10 (as on 2026-11-04); the Wayback Machine''s captures of bna.bh for 2-4 November 2023 are 403 pages (CDX, 2026-11-10); ncc.gov.bh: 403; the Wayback Machine
       was later offline the same day'
+    - 'WebSearch 2026-11-10: National Communication Centre Bahrain statement 2 November 2023 ambassador Israel returned "some time ago" bna.bh (press reprints only)'
+    - 'WebSearch 2026-11-10: المركز الوطني للاتصال البحرين بيان عودة سفير مملكة البحرين من إسرائيل منذ فترة 2 نوفمبر 2023 (Al-Ain, Arabic Post, Al Khaleej, Khaleej Times; no Government page)'
+    - 'Wayback CDX 2026-11-10: www.bna.bh/en/* from 20231102 to 20231104 (all captures HTTP 403); www.bna.bh/en/* with Ambassador or Communication in the address (service offline)'
+    - 'Built-in browser 2026-11-10: www.bna.bh/en/ shows a human-verification page (not passed); curl: bna.bh and mofa.gov.bh 405, ncc.gov.bh and nuwab.bh 403, legalaffairs.gov.bh no answer'
   C1:
     status: none-found
     note: Bahrain is not a party to the EU-Israel Association Agreement.

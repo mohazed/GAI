@@ -139,12 +139,21 @@ indicators:
     - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
       sanctions Gaza
   B8:
-    status: unchecked
-    note: 'Generated from recognitions.csv, which has no Uzbekistan row. The registry dates the recognition 25 September
-      1994 (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md):
-      with the pre-existing tier the score would be +3 higher. The President said at the Arab-Islamic summit of 11 November
-      2024 that Palestinians have every right to an independent state within the 1967 borders, with East Jerusalem as
-      its capital (archived); that is not a recognition document.'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row UZB,1994-09-25 added from the Ministry of Foreign Affairs'' list of states with which Uzbekistan has diplomatic relations
+      (src_20261110_mfa-uz_diplomatic-relations-list, archived): entry 81, ''State of Palestine'', ''25.09.94'', ''Exchange of notes'', the registry''s date (A/78/846 annex). Flagged (R21): diplomatic relations
+      with the State of Palestine read as recognition, as for Papua New Guinea, the Dominican Republic, Saint Kitts and Nevis and Saint Lucia (docs/10 B-2103 (d)). Before this session: Generated from recognitions.csv,
+      which has no Uzbekistan row. The registry dates the recognition 25 September 1994 (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md): with the
+      pre-existing tier the score would be +3 higher. The President said at the Arab-Islamic summit of 11 November 2024 that Palestinians have every right to an independent state within the 1967 borders,
+      with East Jerusalem as its capital (archived); that is not a recognition document.'
+    queries:
+    - 'WebSearch 2026-11-10: Uzbekistan Palestine diplomatic relations established 25 September 1994 Ministry of Foreign Affairs'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: '2026-11-09'

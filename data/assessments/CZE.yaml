@@ -177,16 +177,19 @@ indicators:
       - mzv.gov.cz search (Mezinárodní trestní soud, sankce)
   B8:
     status: none-found
-    checked_at: 2026-09-29
-    note: >-
-      Generated from recognitions.csv; Czechia has no row. The Ministry stated on 25 September 2025 that
-      Czechoslovakia never recognised the State of Palestine but only acknowledged the proclamation of
-      Palestine in line with General Assembly resolution 43/177, a step "not intended to have any legal
-      effect" (src_20250925_mzv-cz_position-recognising-palestine). This contradicts the lead in
-      data/countries.yaml (A/78/846 lists the Czech Republic from 18 November 1988); no row is added
-      and no B8 event is generated. Reported for the author (docs/10 B-310).
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv; Czechia has no row. The Ministry stated on 25 September 2025 that Czechoslovakia never recognised the State of Palestine but only acknowledged the proclamation
+      of Palestine in line with General Assembly resolution 43/177, a step "not intended to have any legal effect" (src_20250925_mzv-cz_position-recognising-palestine). This contradicts the lead in data/countries.yaml
+      (A/78/846 lists the Czech Republic from 18 November 1988); no row is added and no B8 event is generated. Reported for the author (docs/10 B-310). T-G-B8, 2026-11-10 (docs/10 B-2115): No row added. A/78/846
+      lists the Czech Republic on 18 November 1988, but the Ministry''s own statement of 25 September 2025 (src_20250925_mzv-cz_position-recognising-palestine) says Czechoslovakia never recognised the State
+      of Palestine; the state''s own document prevails over the UN list (B-2115).'
     queries:
-      - mzv.gov.cz search (uznání Palestiny, recognising the State of Palestine)
+    - mzv.gov.cz search (uznání Palestiny, recognising the State of Palestine)
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: none-found
     checked_at: 2026-11-09

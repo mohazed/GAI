@@ -175,14 +175,22 @@ indicators:
       - Safadi International Criminal Court arrest warrants Netanyahu Gallant (petra.gov.jo, jordantimes.com, mfa.gov.jo)
   B8:
     status: unchecked
-    note: >-
-      Generated from recognitions.csv; Jordan has no row. The registry dates its recognition to 16
-      November 1988 (data/countries.yaml, from A/78/846, a lead). No Jordanian document stating the
-      recognition and its date was archived in this session; no row added (as for Saudi Arabia, the
-      United Arab Emirates and Qatar, docs/10 B-385 (2), B-390 (5)); P-16 looks for a document of
-      1988. Resumed T-F-W8 session, 2026-11-09 (docs/10 B-949): web searches in English and Arabic
-      and the UNISPAL document API found Jordan's letter of 18 November 1988 (A/43/827-S/20278), sent as Chairman of the Arab Group, which transmits the PLO's communiqué and the Declaration of Independence, not a Jordanian
-      recognition; no Jordanian document stating the recognition was found; no row added (B-860).
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv; Jordan has no row. The registry dates its recognition to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Jordanian document stating the recognition
+      and its date was archived in this session; no row added (as for Saudi Arabia, the United Arab Emirates and Qatar, docs/10 B-385 (2), B-390 (5)); P-16 looks for a document of 1988. Resumed T-F-W8 session,
+      2026-11-09 (docs/10 B-949): web searches in English and Arabic and the UNISPAL document API found Jordan''s letter of 18 November 1988 (A/43/827-S/20278), sent as Chairman of the Arab Group, which transmits
+      the PLO''s communiqué and the Declaration of Independence, not a Jordanian recognition; no Jordanian document stating the recognition was found; no row added (B-860). T-G-B8, 2026-11-10 (docs/10 B-2115):
+      Still no document of the state itself dating the recognition (searches below). Not added from A/78/846 alone (annex: 16 November 1988): rule 4 of the run keeps B8 for the full-protocol countries to
+      a document of the state itself, so the CHECKUP §2b default (a flagged A/78/846 row) is left to the author; one line in recognitions.csv applies it (B-2115). A WebSearch in Arabic for a Ministry statement
+      of Jordan''s 1988 recognition found only the Ministry''s welcomes of other states'' recognitions (2024, 2025).'
+    queries:
+    - 'WebSearch 2026-11-10: وزارة الخارجية الأردنية "اعترف الأردن بدولة فلسطين" 1988'
+    - 'UNISPAL 2026-11-10: Jordan_nyc_ar.pdf'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: 2026-11-04

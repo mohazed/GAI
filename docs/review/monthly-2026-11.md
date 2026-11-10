@@ -767,3 +767,29 @@ Second check of the archived copies on `data/phase1` (workflow run 42839581858, 
 | `archive/text/`, `archive/index.csv`, recorded hashes | | unchanged |
 
 Issue #14 stays open (63 rows do not replay).
+
+### T-G-B8 (2026-11-10)
+
+Recognition rows for the states without one, and BHR B12 retried. Decisions: docs/10 B-2115, B-2116. A/78/846-S/2024/283 is now archived (`src_20240409_un-unispal_a-78-846-recognition-annex`). Every row precedes 2023-10-07 and gives the pre-existing B8 tier (+3); no score depends on the day.
+
+| State | Row | Source | Basis | Flag |
+|---|---|---|---|---|
+| SAU | 1988-11-16 | A/78/846 | Signed by Saudi Arabia's Permanent Representative (Arab Group chair) | B-950 (1) default |
+| POL | 1988-12-14 | Ministry text 2025 + A/78/846 | Year 1988 from the Ministry, day from A/78/846 | R21, day from registry |
+| ROU | 1988-11-24 | Conference statement July 2025 + A/78/846 | Year 1988 | R21, day from registry |
+| BGR | 1988-11-25 | Conference statement 30 July 2025 + A/78/846 | Year 1988 | R21, day from registry |
+| KGZ | 1995-11-01 | Conference statement 30 July 2025 + A/78/846 | Among recognising states; relations 1995 | R21, month from registry |
+| GTM | 2013-04-08 | Conference statement 30 July 2025 | "reconoció oficialmente a Palestina el 8 de abril de 2013" | Registry 9 April |
+| KAZ | 1992-04-06 | Ministry item 28 April 2022 + A/78/846 | Relations, April 1992 | R21, relations, day from registry |
+| UZB | 1994-09-25 | Ministry list of diplomatic relations | State of Palestine, exchange of notes | R21, relations |
+| TKM | 1992-04-17 | Ministry of Health item 20 August 2025 | Relations with the State of Palestine | R21, relations |
+| TJK | 1992-03-06 | Khovar (state agency) citing the Ministry, 2020 | Relations | R21, relations; registry 2 April 1994 |
+| LAO | 1989-05-15 | KPL (state agency), 22 April 2026 | Relations | R21, relations; registry 2 December 1988 |
+| GRD | 2013-09-27 | NV/2013/83, Joint Communiqué | Relations with the State of Palestine | R21, relations; registry 25 September 2011 |
+| BLR, BRN, CRI, DMA, KHM, LBY, NIC, PHL, PRK, SVK, UKR, VUT, SDN | A/78/846 dates | A/78/846 only | No state document with a date found | CHECKUP §2b default, R21 |
+| ARE, AZE, EGY, JOR, MAR, MYS, NGA | none | | Full protocol: B8 only from the state's own document (rule 4) | Unchecked, author |
+| HUN | none | | The Prime Minister doubts the recognition (B-316) | none-found, author |
+| CZE | none | | The Ministry denies a recognition (B-310) | none-found |
+| BHR B12 | unchanged | | bna.bh bot check, 405 and 403; Wayback captures 403 | Unchecked, author (B-2098) |
+
+Counts: `recognitions.csv` 64 → 89 rows; B8 without a row and unchecked 30 → 7. `pnpm validate`: 0 errors.

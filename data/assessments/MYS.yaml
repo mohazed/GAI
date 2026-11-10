@@ -176,17 +176,23 @@ indicators:
       - Malaysia sanctions ICC
   B8:
     status: unchecked
-    note: >-
-      Generated from recognitions.csv, which has no Malaysian row (docs/10 B-192). Malaysia
-      recognised the State of Palestine after the declaration of 15 November 1988 (the registry's
-      `recognises_palestine.since`), but no official Malaysian document stating the recognition was
-      found in this session: the Ministry's items since 2023 speak of Malaysia's support for the
-      recognition of Palestine by others, not of its own act. No row was added, so the build
-      shows no B8 event for Malaysia until one is (docs/10 B-414 (2)).
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv, which has no Malaysian row (docs/10 B-192). Malaysia recognised the State of Palestine after the declaration of 15 November 1988 (the registry''s `recognises_palestine.since`),
+      but no official Malaysian document stating the recognition was found in this session: the Ministry''s items since 2023 speak of Malaysia''s support for the recognition of Palestine by others, not of
+      its own act. No row was added, so the build shows no B8 event for Malaysia until one is (docs/10 B-414 (2)). T-G-B8, 2026-11-10 (docs/10 B-2115): Still no document of the state itself dating the recognition
+      (searches below). Not added from A/78/846 alone (annex: 15 November 1988): rule 4 of the run keeps B8 for the full-protocol countries to a document of the state itself, so the CHECKUP §2b default (a
+      flagged A/78/846 row) is left to the author; one line in recognitions.csv applies it (B-2115). A WebSearch for a Wisma Putra statement dating the 1988 recognition found none; Malaysia''s Conference
+      statement of July 2025 (malaysia_nyc_en.pdf, read) does not date it.'
     queries:
-      - kln.gov.my listings, terms recognise, iktiraf, 1988
-      - Malaysia recognised State of Palestine 1988 Wisma Putra
-      - Malaysia mengiktiraf negara Palestin sejak 1988 Kementerian Luar Negeri
+    - kln.gov.my listings, terms recognise, iktiraf, 1988
+    - Malaysia recognised State of Palestine 1988 Wisma Putra
+    - Malaysia mengiktiraf negara Palestin sejak 1988 Kementerian Luar Negeri
+    - 'WebSearch 2026-11-10: Wisma Putra kln.gov.my "Malaysia recognised" Palestine "1988" press statement'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: 2026-11-04

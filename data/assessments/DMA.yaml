@@ -150,12 +150,21 @@ indicators:
     queries: *id001
     checked_at: '2026-10-06'
   B8:
-    status: unchecked
-    note: 'No row in recognitions.csv. The registry dates the recognition 2011-09-19; no state document was found (search results confirm the date only through secondary sources, R21): +3 to add
-      once archived. Completion of 2026-11 (finish run, T-F-L04, 2026-11-09): the General Debate statement of the 66th session (gadebate.un.org file 66/DM_en.pdf, read in its Wayback capture of
-      21 July 2021, not archived) has no passage on Palestine or Israel and does not state a recognition: it is not a document for the row (R21). No row added. Redo pass (T-F-L04-R, 2026-11-09):
-      one search for a state document of the recognition (Dominica, Skerrit, Abbas, 2011) found none; the results concern the Dominican Republic or other Caribbean states (R21). Status left to the
-      build.'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row DMA,2011-09-19 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 19 September 2011: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of
+      2026-11-10, flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). Before this session: No row
+      in recognitions.csv. The registry dates the recognition 2011-09-19; no state document was found (search results confirm the date only through secondary sources, R21): +3 to add once archived. Completion
+      of 2026-11 (finish run, T-F-L04, 2026-11-09): the General Debate statement of the 66th session (gadebate.un.org file 66/DM_en.pdf, read in its Wayback capture of 21 July 2021, not archived) has no passage
+      on Palestine or Israel and does not state a recognition: it is not a document for the row (R21). No row added. Redo pass (T-F-L04-R, 2026-11-09): one search for a state document of the recognition (Dominica,
+      Skerrit, Abbas, 2011) found none; the results concern the Dominican Republic or other Caribbean states (R21). Status left to the build.'
+    queries:
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: none-found
     note: 'No filed event. The Foreign Minister''s interview on DBS Radio of 10 October 2023 (Dominica News Online, archived) calls for ''de-escalation of the tension'', a two-state solution and

@@ -201,28 +201,29 @@ indicators:
       - spa.gov.sa titles (Criminal Court)
       - Saudi Arabia ICC arrest warrant Netanyahu position refuse execute visit Saudi or sanctions ICC officials Saudi
   B8:
-    status: unchecked
-    note: >-
-      Generated from recognitions.csv; Saudi Arabia has no row. The registry dates its recognition
-      to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Saudi statement stating
-      the Kingdom's own recognition was found in the items searched ("recogni", 1988): the Kingdom's
-      statements call on states "that have not yet recognized" the State of Palestine to do so
-      (Ministry statement of 7 February 2024, archived; the Crown Prince at the Arab Summit of 16
-      May 2024) and it accredits a non-resident ambassador to the State of Palestine (items of 22
-      November 2023 onward), which imply but do not state a recognition. No row added (docs/10 B-382
-      (4)); the build derives nothing from a missing row. P-16 looks for a Saudi document of 1988 or
-      a statement of the recognition. Resumed T-F-W8 session, 2026-11-09 (docs/10 B-949): web
-      searches in English and Arabic and the UNISPAL document API (1988 letters of member states on
-      the declaration of independence: Qatar, Oman, Kuwait, Bahrain, Tunisia and others; none from
-      Saudi Arabia) found no Saudi document of 1988. A/78/846-S/2024/283, whose annex dates the
-      recognition, is an identical letter of 2 April 2024 signed by the Permanent Representative of
-      Saudi Arabia as Chair of the Arab Group with those of Mauritania and Uganda; whether that
-      makes it a document of the state itself for Saudi Arabia is for the author (B-860, B-949); no
-      row added.
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row SAU,1988-11-16 added citing A/78/846-S/2024/283 (src_20240409_un-unispal_a-78-846-recognition-annex, archived from the
+      Wayback capture of the UNISPAL file, replay checked), whose identical letters are signed by the Permanent Representative of the Kingdom of Saudi Arabia as Chair of the Arab Group and whose annex lists
+      "Saudi Arabia 16 November 1988". Read as a document of Saudi Arabia itself, the default of B-950 (1) adopted in the unattended run of 2026-11-10 (CHECKUP §2b): flagged for the author, who may remove
+      the row (the entry then returns to unchecked). The pre-existing tier (+3 from 2023-10-07, R21) does not depend on the day. Before this session: Generated from recognitions.csv; Saudi Arabia has no row.
+      The registry dates its recognition to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Saudi statement stating the Kingdom''s own recognition was found in the items searched ("recogni",
+      1988): the Kingdom''s statements call on states "that have not yet recognized" the State of Palestine to do so (Ministry statement of 7 February 2024, archived; the Crown Prince at the Arab Summit of
+      16 May 2024) and it accredits a non-resident ambassador to the State of Palestine (items of 22 November 2023 onward), which imply but do not state a recognition. No row added (docs/10 B-382 (4)); the
+      build derives nothing from a missing row. P-16 looks for a Saudi document of 1988 or a statement of the recognition. Resumed T-F-W8 session, 2026-11-09 (docs/10 B-949): web searches in English and Arabic
+      and the UNISPAL document API (1988 letters of member states on the declaration of independence: Qatar, Oman, Kuwait, Bahrain, Tunisia and others; none from Saudi Arabia) found no Saudi document of 1988.
+      A/78/846-S/2024/283, whose annex dates the recognition, is an identical letter of 2 April 2024 signed by the Permanent Representative of Saudi Arabia as Chair of the Arab Group with those of Mauritania
+      and Uganda; whether that makes it a document of the state itself for Saudi Arabia is for the author (B-860, B-949); no row added.'
     queries:
-      - spa.gov.sa titles (recogni) and item bodies (recognized the State of Palestine, 1988, State of Palestine)
-      - Saudi Arabia recognized State of Palestine 1988 official statement date recognition
-      - UNISPAL document API, search "PNC Declaration of Independence Letter from" and "Letter from <state>" (1988 letters of member states)
+    - spa.gov.sa titles (recogni) and item bodies (recognized the State of Palestine, 1988, State of Palestine)
+    - Saudi Arabia recognized State of Palestine 1988 official statement date recognition
+    - UNISPAL document API, search "PNC Declaration of Independence Letter from" and "Letter from <state>" (1988 letters of member states)
+    - 'UNISPAL 2026-11-10: Saudi-Arabia_nyc_ar.pdf (no dated recognition); A/78/846 archived from Wayback capture 20260801205400'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: 2026-11-04

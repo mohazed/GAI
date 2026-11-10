@@ -197,18 +197,29 @@ indicators:
     note: Slovakia has imposed no sanctions on ICC officials (none found).
     queries: *id001
   B8:
-    status: unchecked
-    checked_at: '2026-11-09'
-    note: 'Generated from recognitions.csv, which has no Slovakia row. The registry dates the recognition 18 November 1988 (A/78/846 annex: Czechoslovakia''s, which Slovakia counts as its own);
-      the state''s own document with a date was not found: the President''s General Debate statement of 24 September 2025 (archived) says that Slovakia has recognised ''the right of Palestinian
-      people to decide upon their fate'' for more than three decades and has the Embassy of Palestine in Bratislava, which is not a dated act of recognition (R21, docs/calibration/README.md):
-      with the pre-existing tier the score would be +3 higher. Web searches of 2026-11-09 (two, English and Slovak): a search summary quotes a statement of the Slovak Ministry of Foreign Affairs
-      (''the Slovak Republic, as the successor state of former Czechoslovakia, recognised Palestine already in 1988 and confirmed this act in 1993''); the Ministry''s page was not found or
-      read (mzv.sk answers HTTP 403 to a script and the Wayback index answered HTTP 429 when its capture of the Ministry''s release of February 2026 on the Minister''s meeting with the Palestinian
-      Foreign Minister was requested), and the quotation is not filed from a summary. The entry stays unchecked until a Ministry or General Assembly document with the date is archived (P-23).'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row SVK,1988-11-18 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 18 November 1988: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). The Ministry''s statement that Slovakia,
+      as successor of Czechoslovakia, recognised Palestine in 1988 and confirmed it in 1993 is known from the press (SITA) only; mzv.sk answers HTTP 403 and the Wayback index returned no Ministry page on
+      Palestine. Before this session: Generated from recognitions.csv, which has no Slovakia row. The registry dates the recognition 18 November 1988 (A/78/846 annex: Czechoslovakia''s, which Slovakia counts
+      as its own); the state''s own document with a date was not found: the President''s General Debate statement of 24 September 2025 (archived) says that Slovakia has recognised ''the right of Palestinian
+      people to decide upon their fate'' for more than three decades and has the Embassy of Palestine in Bratislava, which is not a dated act of recognition (R21, docs/calibration/README.md): with the pre-existing
+      tier the score would be +3 higher. Web searches of 2026-11-09 (two, English and Slovak): a search summary quotes a statement of the Slovak Ministry of Foreign Affairs (''the Slovak Republic, as the
+      successor state of former Czechoslovakia, recognised Palestine already in 1988 and confirmed this act in 1993''); the Ministry''s page was not found or read (mzv.sk answers HTTP 403 to a script and
+      the Wayback index answered HTTP 429 when its capture of the Ministry''s release of February 2026 on the Minister''s meeting with the Palestinian Foreign Minister was requested), and the quotation is
+      not filed from a summary. The entry stays unchecked until a Ministry or General Assembly document with the date is archived (P-23).'
     queries:
     - 'WebSearch 2026-11-09: Slovakia recognition of State of Palestine 1988 Czechoslovakia recognised Palestine Slovak Republic succession mzv.sk Palestína uznanie'
     - 'WebSearch 2026-11-09: "nástupnícky štát po bývalom Československu uznala Palestínu už v roku 1988" ministerstvo zahraničných vecí'
+    - 'WebSearch 2026-11-10: "Slovenská republika" "uznala" Palestínu 1988 1993 nástupnícky štát ministerstvo zahraničných vecí vyhlásenie'
+    - 'Wayback CDX 2026-11-10: mzv.sk pages with "palest" in the address (none returned)'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: '2026-10-06'

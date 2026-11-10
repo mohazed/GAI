@@ -139,12 +139,23 @@ indicators:
     - Uzbekistan OR Tajikistan OR Turkmenistan sanctions Israeli settlers OR ministers entry ban OR asset freeze OR ICC
       sanctions Gaza
   B8:
-    status: unchecked
-    note: 'Generated from recognitions.csv, which has no Tajikistan row. The registry dates the recognition 2 April 1994
-      (A/78/846 annex); the state''s own document was not archived, so no row (R21, docs/calibration/README.md): with
-      the pre-existing tier the score would be +3 higher. The President''s speech of 24 September 2024 (archived) and
-      the Foreign Minister''s of 26 September 2026 (the UN''s transcript) support an independent State of Palestine within
-      the 1967 borders; the Ministry''s page on relations with Palestine (mfa.tj/en/main/view/1086) was not archived.'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row TJK,1992-03-06 added from the state news agency Khovar''s report of the Ministry of Foreign Affairs of 27 February 2020
+      (src_20200227_khovar_palestinian-ambassador-completes-mission, archived): ''Diplomatic relations between Tajikistan and Palestine were established on March 6, 1992.'' The registry (A/78/846 annex) gives
+      2 April 1994; the row follows the state document (as Brazil''s, docs/10 B-355 (4)). Flagged (R21): relations read as recognition, the date differs from the registry, and Khovar is read as a state document.
+      No score difference (both dates precede the window). Before this session: Generated from recognitions.csv, which has no Tajikistan row. The registry dates the recognition 2 April 1994 (A/78/846 annex);
+      the state''s own document was not archived, so no row (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. The President''s speech of 24 September 2024 (archived)
+      and the Foreign Minister''s of 26 September 2026 (the UN''s transcript) support an independent State of Palestine within the 1967 borders; the Ministry''s page on relations with Palestine (mfa.tj/en/main/view/1086)
+      was not archived.'
+    queries:
+    - 'WebSearch 2026-11-10: Tajikistan Ministry of Foreign Affairs list of countries diplomatic relations Palestine; mfa.tj Palestine relations; "Diplomatic relations between Tajikistan and Palestine were
+      established on March 6, 1992"'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: '2026-11-09'

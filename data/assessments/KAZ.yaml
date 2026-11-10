@@ -153,12 +153,22 @@ indicators:
     - Kazakhstan OR Kyrgyzstan ICJ South Africa v Israel intervention OR ICC arrest warrant Netanyahu position OR
       sanctions settlers OR ambassador recalled
   B8:
-    status: unchecked
-    note: 'Generated from recognitions.csv, which has no Kazakh row. The registry dates the recognition 6 April
-      1992 (A/78/846 annex); the Kazakh document (the Ministry''s page on relations with Palestine) was not archived,
-      so no row (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. The
-      Government states support for the State of Palestine within the 1967 borders and "two states for two peoples"
-      (Ministry statements, press).'
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row KAZ,1992-04-06 added: the Ministry of Foreign Affairs'' item of 28 April 2022 (src_20220428_mfa-kz_30th-anniversary-relations-palestine,
+      archived) marks the 30th anniversary of diplomatic relations between Kazakhstan and Palestine in April 2022; the day is the registry''s (A/78/846 annex), as for Bosnia and Herzegovina (docs/10 B-2025).
+      Flagged (R21): the page dates relations, not a recognition, and gives the month only. The Ministry''s statements also say that Kazakhstan recognises Palestine as an independent state (search results,
+      not archived). Before this session: Generated from recognitions.csv, which has no Kazakh row. The registry dates the recognition 6 April 1992 (A/78/846 annex); the Kazakh document (the Ministry''s page
+      on relations with Palestine) was not archived, so no row (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. The Government states support for the State of Palestine
+      within the 1967 borders and "two states for two peoples" (Ministry statements, press).'
+    queries:
+    - 'WebSearch 2026-11-10: Kazakhstan Ministry of Foreign Affairs Palestine bilateral relations recognized State of Palestine 6 April 1992; mfa.gov.kz Palestine relations Kazakhstan recognized State of
+      Palestine'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
     checked_at: '2026-11-09'
