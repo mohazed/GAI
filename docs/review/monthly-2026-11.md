@@ -824,3 +824,26 @@ Documents on blocked or unarchivable hosts (CHECKUP §2e and §7). Decisions: do
 | primeminister.gr | Availability API for the two pages cited as not archived | **Archived** two interviews (17 September 2025, 28 May 2024) from Wayback captures; GRC A6, B4, B10, C1 notes cite them; no event (interviews, B-325 (4)) | B-2124 |
 | gadebate.un.org, 81st session (leads PHL_1, SMR_2, IRN_2, LBY_2, CUB_2; also BLR, BLZ, PNG, SLB, PRK, SUR, NRU, TJK named in leads) | CDX listing of `gastatements/81/` (45 files with 200 captures, none of these states); availability API; Save Page Now (405); A/81/PV not yet on documents.un.org; PHL: dfa.gov.ph (Cloudflare), un.int mission page (nothing after May 2025), two web searches; SMR: one web search | None archived; the five leads record the date and routes | B-2126 |
 | `pnpm validate` | | 0 errors | |
+
+### T-G-LEADS-1: leads of AFG to CHL, full-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2128 to B-2134. Every open lead carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed; the SVVK-ASIR terms-of-use page was not accepted.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| ARE | ARE_2 | A5 | Ministry's statement of 8 September 2026 archived (`src_20260908_mofa-ae_statement-media-reporting`): intelligence "has been and continues to be communicated"; not related to the Gaza campaign | Not filed; A5 note extended; author's reading (B-2128) | None |
+| ARE | ARE_3 | E2 | Press and NGO only | Kept open | None (unscored) |
+| ARG | ARG_1 | E3 | Press and NGO only | Kept open | None (unscored) |
+| AUT | AUT_1 | E3 | Press only | Kept open | None (unscored) |
+| AZE | AZE_1 | C2 | **Protocol of the 4th Joint Commission meeting** signed in Israel, State Tax Service item of 20 November 2025, from its Wayback capture | **Filed** `evt_2025_11_20_AZE_C2` (−10, confirmed, flagged R18); lead promoted (B-2130) | None (C at −20 cap; −4, Passive) |
+| BEL | BEL_2 | E3 | Not searched again (om-mp.be protection page) | Kept open | None (unscored) |
+| BEL | BEL_3 | A8 | Liège seizure, March 2026: press and NGO only | Kept open | None |
+| BEL | BEL_4 (new) | A8 | **Walloon ministerial decree of 27 May 2024** banning arms transit to Israel through the Walloon airports, archived from Justel; **annulled** by the Council of State, judgment no 263.167 of 29 April 2025 (archived) | **Filed** `evt_2024_05_27_BEL_A8` (+5, confirmed); lead recorded and promoted (B-2131, B-2133) | None (decayed; +72, Confronting) |
+| BRA | BRA_1 | B12 | Decree of 28 May 2024 in the Diário Oficial (press); DOU viewer asks for a captcha field | Kept open | At most +0.7 (B at +44.3 of +45) |
+| BRA | BRA_2 | E3 | Press only (case under seal) | Kept open | None (unscored) |
+| CHE | CHE_1 | C5 | SVVK-ASIR list (conduct-based exclusion of Bank Hapoalim and Bank Leumi, no reason or date) and PUBLICA's ESG page archived | Not a fund decision citing Gaza; C5 none-found (B-2129) | None |
+| CHE | CHE_2 | E3 | No Office of the Attorney General communication | Kept open | None (unscored) |
+| CHL | CHL_1 | E3 | No Fiscalía communication | Kept open | None (unscored) |
+| CHL | CHL_2 | E3 | Court of Appeals annulled the refusal; hearing 12 June 2026 (press) | Kept open | None (unscored) |
+
+`pnpm validate`: 0 errors.

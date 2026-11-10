@@ -4176,3 +4176,31 @@ Decisions: docs/10 B-2117, B-2118. Light-protocol countries only (the full-proto
 | TON | C2 | Visa waiver 2010, in force April 2017 | Note | None |
 | SYC | C2 | Unchanged (`evt_2024_01_11_SYC_C2`, B-2080); no other visa-exemption instrument with Israel signed in the window was found | None | None |
 | DJI, KWT, LBN, SDN, SYR, YEM, LBY, OMN, SOM | B9 | 16 October 2026 statement already filed (west-bank, unscored); the states' own copies not found (Oman's Ministry API has no item) | None | None |
+
+### T-G-LEADS-1: leads of AFG to CHL, light-protocol countries (2026-11-10)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2128 to B-2134. The full-protocol rows are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| AFG | AFG_1 | B9 | No 2026 statement of the de facto authorities found | Kept open (B-742) | None |
+| AGO | AGO_1 | B9 | No text of the Cairo address (Angop, au.int, mirex.gov.ao searched) | Kept open | None (B9 above cap) |
+| ALB | ALB_1 | D4 | Health Minister's post (press quote) only | Kept open | None |
+| ALB | ALB_2 | B10 | No Government text of the Knesset address | Kept open | None |
+| ATG | ATG_1 | B8 | UN note verbale NV/2024/38 on diplomatic relations (scan, not archived) | Kept open; recognition row of 2011 unchanged | None |
+| ATG | ATG_2, ATG_3 | B9, A6 | Not searched again (author's readings) | Kept open | None |
+| BDI | BDI_1, BDI_2 | B10, A5 | Decayed; outside every indicator | Kept open | None |
+| BGD | BGD_1 | B9 | A/80/PV not issued; UN automatic transcript holds the interpreted passage | Kept open; author's reading (B-2134) | Possible +5 at about 0.8 weight if accepted |
+| BGR | BGR_3 | C2 | Draft plan archived (`src_20240902_strategy-bg_plan-health-israel`): based on the 1991 health agreement | Outside C2 (R18 implementing arrangement); kept as a lead with that reason (B-2132) | None |
+| BGR | BGR_1, BGR_2, BGR_4, BGR_1 (2026-11-09) | B6, B10, B9 | Not searched again (mfa.bg Radware; indirect speech) | Kept open | None |
+| BHR | BHR_1 | B9 | Wayback entries still 404; UN automatic transcript holds the interpreted call | Kept open; author's reading (B-2134) | Possible +2 if accepted |
+| BHR | BHR_2 | B12 | Retried by T-G-B8 the same day (B-2116) | Kept open | None |
+| BHR | BHR_3 | E2 | No Ministry of Interior text | Kept open | None (unscored) |
+| BHS | BHS_1 | B9 | Decayed | Kept open | None |
+| BIH | BIH_1 | B9 | No Wayback snapshot; predsjednistvo.ba silent; 81st transcripts not yet online | Kept open | +5 and passivity if archived |
+| BLR | BLR_1 | B9 | No call by a B9 speaker | Kept open | None |
+| BLZ | BLZ_1, BLZ_2, BLZ_3 | B9 | Unnamed speakers; file not captured (B-2126); Hague Group statement names no Belizean minister | Kept open | None |
+| BRB | BRB_1, BRB_2 | B9 | Decayed; author's reading (R3) | Kept open | None |
+| BRN | BRN_1 | B9 | B9 at cap | Kept open | None |
+
+`pnpm validate`: 0 errors.
