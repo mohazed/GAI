@@ -749,3 +749,21 @@ Final hygiene on `data/phase1` (`7846db8`): lint, typecheck, tests, `pnpm valida
 | BFA B6, MLI B6, NER B6, NRU B6, VEN B6, SGP B11 | `has-events` set to `none-found`; event ids and reason in each note; events unchanged | B-2111 (1) |
 | Soldiers' names in CZE leads 1 and 2, GRC lead 1, CZE, GRC and MAR assessment notes | Replaced by "an Israeli soldier"; URLs unchanged; three NGO page titles shortened | B-2111 (2) |
 | `pnpm validate` | 0 errors, 1,158 warnings | |
+
+### T-G-WAYBACK (2026-11-10)
+
+Second check of the archived copies on `data/phase1` (workflow run 42839581858, issue #14), and the failing rows requested again by hand. Decisions: docs/10 B-2112. List: `docs/review/wayback-check-2026-11-10.tsv`.
+
+| Item | 2026-11-08 (B-872) | 2026-11-10 |
+|---|---|---|
+| Recorded `id_` URLs requested | 2,107 | 2,318 |
+| Answered 200 with the recorded SHA-256 | 1,562 | 2,196 |
+| Did not answer 200 | 545 | 122 (121 sources) |
+| Answered 200 with other bytes | 1 | 0 |
+| Of the 121 sources, replay by hand (`curl -L --compressed`, two passes) | | 58 match; 48 answer 404 or 403; 15 serve other bytes at another snapshot |
+| 24 sources of T-F-V3 | 24 flagged | 1 replays, 16 answer 404 or 403, 7 serve other bytes |
+| KEN and GHA lead sources | do not replay | both replay |
+| Re-captured with Save Page Now | | none; wait for the workflow used 2 h 20 min of 180 |
+| `archive/text/`, `archive/index.csv`, recorded hashes | | unchanged |
+
+Issue #14 stays open (63 rows do not replay).
