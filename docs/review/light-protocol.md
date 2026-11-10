@@ -3323,3 +3323,41 @@ Second reading: the moved Maltese event's new quotation was checked against line
 Found and not filed: the Albanian defence-industry reports (a memorandum, Elbit drones, an artillery agreement; purchases and a framework, not A5), the Albanian Foreign Ministry's condemnation of the removal of the Israeli flag (22 June 2026, no ban), the Sarajevo ban on spectators at a EuroLeague match (not E2), Croatian misdemeanour charges against activists who blocked the Foreign Ministry's entrance (not E2), the President of Croatia's order ending the Armed Forces' cooperation with the Israeli army (not an A5 instance; the Government's position is that operational cooperation does not exist), the Foreign Minister of Bosnia and Herzegovina's General Assembly remarks of 24 September 2024 (older than 365 days), a Serbian defence agreement with Israel (another state), the 22 NGOs' letter to Maltese MPs (no Government reply). Albania's recognition of 17 November 1988 has no Government document; Croatia and North Macedonia have no recognition to document; Malta's row dates from 2025 (the registry's 1988 date is a lead, B-199).
 
 Score effect: only Bosnia and Herzegovina's moves, by +3 from the recognition row (B8 pre-existing tier); Malta's moves by −0.3 from the D4 date. Provisional previews (rc.1, 2026-11-10): ALB −41 Enabling, AND +29 Acting, BIH +19 Acting, HRV +15 Acting, MKD −15 Passive, MLT +46 Confronting. The Andorran, Macedonian and Maltese figures differ from the T-P21-27 and T-P21-28 tables of 4 November because of later changes (Andorra's 2025 D3 event from T-F-UNDOCS-2; Malta's and North Macedonia's for the same kind of reason), not because of this session.
+
+### T-F-L15: MNE, PRT, SMR, SRB, VAT, AGO (2026-11-10, groups 29 and 30)
+
+The session had web search (standard mode: about 20 queries for Portugal in English and Portuguese, 13 for Montenegro with Montenegrin, 6 for San Marino with Italian, 16 for Serbia with Serbian, 6 for the Holy See plus the 110 Angelus and General Audience texts of 3 August 2025 to 8 November 2026, 8 for Angola with Portuguese; the F-35 supplier query was shared by five of them). Pages read: the Portuguese Government's news item of 21 June 2024, RTP and ECO on the statement of 2 October 2025, DNoticias on the Foreign Minister's remarks of 13 July 2026, RTCG and Radio Free Europe on the Kathrin and the Montenegrin defence cooperation, the Government of Montenegro's pages through Wayback, the Great and General Council's report of 20 February 2026, UNISPAL's pages of the second and fifth plenary meetings of the two-state conference and the statements of San Marino, Portugal and Angola, the Serbian Government's page of the Ministry of Defence's announcement of 23 June 2025, Radio Free Europe on the flights to Nevatim, Tanjug and Calcalist on the drone factory, and the Pope's texts on vatican.va. Refused or silent, not bypassed: `gov.me` (connection refused; read through Wayback), `governo.gov.ao` (no answer), `press.un.org` (a script challenge), `allafrica.com` (403 after the first paragraph), `angop.ao` (503), `gadebate.un.org` files (no replay). Records: B-2030 to B-2036.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events and leads | Still unchecked |
+|---|---|---|---|---|
+| MNE | A3, A5 to A8, C4 to C6, E1 to E3 | none | MNE_1 re-checked and kept | none |
+| PRT | A3, A5, A7, A8, C4 to C6, D5, E1 to E3 | A6 has-events | `evt_2024_06_21_PRT_A6`; new `lead_20261110_PRT_3` (A5, Lajes); PRT_1 and PRT_2 re-checked and kept | none |
+| SMR | A3, A5 to A8, C4 to C6, E1 to E3 | B9 note | `evt_2025_07_29_SMR_B9`; SMR_1 and SMR_2 re-checked and kept | none |
+| SRB | A3, A5 to A8, C4 to C6, E1 to E3 | none | new `lead_20261110_SRB_2` (A6) and `lead_20261110_SRB_3` (A5); SRB_1 re-checked and kept | none |
+| VAT | A3, A5 to A8, C4 to C6, E1 to E3 | B9 and D4 notes | `evt_2025_09_17_VAT_B9`, `evt_2025_10_05_VAT_B9`; VAT_1 re-checked and kept | none |
+| AGO | A3, A5 to A8, C4 to C6, E1 to E3 | none | AGO_1 re-checked and kept | none |
+
+| Event id | Ind. | Date | Points | Confidence | Source kind |
+|---|---|---|---|---|---|
+| evt_2024_06_21_PRT_A6 | A6 | 2024-06-21 | +10 | confirmed | official (the Government's news item) |
+| evt_2025_07_29_SMR_B9 | B9 | 2025-07-29 | +5 | confirmed | official (UNISPAL's copy of the statement) |
+| evt_2025_09_17_VAT_B9 | B9 | 2025-09-17 | +5 | confirmed | official (vatican.va) |
+| evt_2025_10_05_VAT_B9 | B9 | 2025-10-05 | +2 | confirmed | official (vatican.va) |
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20240621_portugal-gov_mediacao-israel-palestina | The Government's news item on the Minister for Parliamentary Affairs' statement in the Assembly (Save Page Now 20261110033037, 201,732 bytes) | `evt_2024_06_21_PRT_A6` |
+| src_20250729_un-unispal_smr-beccari-two-state-conference | The Foreign Minister of San Marino's statement at the conference (UNISPAL PDF, Save Page Now 20261110034329, 134,688 bytes) | `evt_2025_07_29_SMR_B9` |
+| src_20250729_un-unispal_statements-second-plenary-two-state | UNISPAL's page of the statements of the second plenary meeting, dated 29 July 2025 (Save Page Now 20261110034412, 1,640,303 bytes) | the day of the statement |
+| src_20250729_un-unispal_ga-hears-calls-high-level-conference | The UN press release of 29 July 2025 naming Luca Beccari (Save Page Now 20261110034605, 1,625,024 bytes) | the speaker |
+| src_20250917_vatican_udienza-generale-17-settembre-2025 | The Pope's General Audience of 17 September 2025 (Save Page Now 20261110035736, 41,264 bytes) | `evt_2025_09_17_VAT_B9` |
+| src_20251005_vatican_angelus-5-ottobre-2025 | The Pope's Angelus of 5 October 2025 (Save Page Now 20261110035817, 36,507 bytes) | `evt_2025_10_05_VAT_B9` |
+
+All six replays were re-fetched with `curl --compressed` and equal their index rows in bytes and SHA-256; the records were written by hand with the document's own date (`pnpm archive` prints the record with the capture date).
+
+Second reading: each new event was re-read against the archived text (verdict agree, recorded in the event; the Portuguese quote against line 12 of the page, the San Marino statement across a page break, the two papal texts at their lines). French summaries follow `docs/glossary.fr.md`.
+
+Found and not filed: the Portuguese Ministry's statement on the Lajes stopover (lead, A5), the Government's reference to an embargo on arms sales and passage (Lusa's wording), the joint statement of twelve foreign ministers of 8 September 2026 with its intention of national restrictions on settlement trade (already `evt_2026_09_08_PRT_B9`; not a C4 measure), the Kathrin's flag withdrawn at the owner's request (not A8) and the Kathrin's request to Montenegro withdrawn (not A8), Portugal's unsigned statement at the conference of 29 July 2025 (no speaker named), Angola's statement of 30 July 2025 (Deputy Permanent Representative, R3 not met), Montenegro's Deputy Prime Minister's statements of 16 September 2024 and 15 January 2025 (rank unresolved, MNE_1), the Hind Rajab Foundation's complaints in Lisbon (no prosecutor's decision), San Marino's Istanza d'Arengo n. 2 (not accepted by the Congress of State), Serbia's general suspension of arms exports (lead), the Israeli cargo flights from Belgrade (lead), the Elbit drone factory (lead SRB_1), the Pope's Angelus of 3 August 2025, 21 September 2025 and 26 July 2026 (neither tier).
+
+Score effect (provisional previews, rc.1, 2026-11-10, reviewed events as if published): PRT +54 Confronting (the A6 event adds about 7; the T-P21-29 table said +47), MNE +16 Acting, SMR +38 Acting (the B9 event adds 4.0; the T-P21-29 table said +19; the rest is the 2025 D3 event of T-F-UNDOCS-2, which ends the passivity penalty), SRB −5 Passive (the T-P21-30 table said +6; the Comtrade rows A2 −8 and C3 −3 added since then explain it, not this session), VAT −2 Passive (the two B9 events decay; passivity still applies; the T-P21-30 table said −6), AGO +14 Acting (unchanged). No band change comes from this session's entries; none-found entries and leads carry no points.
+

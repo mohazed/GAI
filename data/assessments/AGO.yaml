@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Presidency's press centre (plataformacipra.gov.ao, PDFs of the President's addresses), the Embassy pages that print the President's addresses (africadosul.mirex.gov.ao, marrocos.mirex.gov.ao; mirex.gov.ao itself did not answer), UNISPAL (the President's address of 22 September 2025 and the Deputy Permanent Representative's statement), the General Debate statements of the 79th to 81st sessions (gadebate.un.org, read live; none has a Wayback replay), the UAE Ministry's joint statement, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and Portuguese. Not read: ANGOP (HTTP 503), the Ministry's own site, the Council of Ministers' communiqués.
 # Three B9 events and one recognition row. Leads: one (B9, the Cairo summit address of 4 March 2025). Angola is not an EU member.
+# Completion of 2026-11 (finish run, T-F-L15, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 8 web searches in English and Portuguese (docs/10 B-2035), all none-found; lead AGO_1 re-checked (the Presidency's text of the Cairo address not found); no new event.
 country: AGO
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names an Angolan company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Angola and the F-35 supplier search returned
+      none. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Angola (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Montenegro OR "San Marino" OR Serbia OR Angola OR "Holy See" parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): the register lists two orders by Angola from Israel (Bell-212 helicopters, 2004; Super Dvora Mk-3 patrol boats, 2015; archive/text/src_20261005_sipri_register-supplier-israel.txt,
@@ -30,17 +36,37 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Angola (read)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found. The Israeli ambassador''s statements (November 2025, Ver Angola; press) speak of cooperation in agriculture, health,
+      education, aviation, construction, fisheries, diamonds, security, cartography and telecommunications without an agreement or an exercise; a defence source mentions four patrol boats ordered
+      from Israel Aerospace Industries in 2015 (a search fragment, an A4 matter before the window). No exercise, transit, basing or intelligence-sharing item was found. Not searched: the Ministry
+      of Defence''s releases and Angop item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel segurança cooperação militar OR compra de armas OR drones OR exportação armas Angola Israel FAA Ministério da Defesa'
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel cooperação OR acordo OR armas OR defesa OR embaixador israelita 2025 2026 Ministério das Relações Exteriores Téte António Gaza declaração'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; no arms export by Angola to Israel was found either. Not searched: the Diário da República.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel segurança cooperação militar OR compra de armas OR drones OR exportação armas Angola Israel FAA Ministério da Defesa'
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel cooperação OR acordo OR armas OR defesa OR embaixador israelita 2025 2026 Ministério das Relações Exteriores Téte António Gaza declaração'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Diário da República.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel segurança cooperação militar OR compra de armas OR drones OR exportação armas Angola Israel FAA Ministério da Defesa'
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel cooperação OR acordo OR armas OR defesa OR embaixador israelita 2025 2026 Ministério das Relações Exteriores Téte António Gaza declaração'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found; the searches in Portuguese returned no such item for Angola. Not searched: the port and civil
+      aviation authorities'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel segurança cooperação militar OR compra de armas OR drones OR exportação armas Angola Israel FAA Ministério da Defesa'
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Israel cooperação OR acordo OR armas OR defesa OR embaixador israelita 2025 2026 Ministério das Relações Exteriores Téte António Gaza declaração'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded; Angola is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19),
@@ -93,19 +119,19 @@ indicators:
     checked_at: '2026-11-04'
   B9:
     status: has-events
-    note: 'Four events: the joint statement with the President of the United Arab Emirates (4 September 2025, +2), the President''s address to the two-state conference (22 September 2025, +5), his General
-      Debate address of 23 September 2025 (+5) and his General Debate address of 24 September 2024 (+5, ''should do everything it can to prevent the genocide that the world is witnessing live in the Gaza
-      Strip''; 771 days old on 2026-11-04, no weight in the score). The 24 September 2024 address was filed on 2026-11-04 from the delegation file (ao_en.pdf, 266,045 bytes) through its Wayback capture
-      of 27 September 2024, which the Wayback CDX lists (docs/10 B-852); the 80th address''s English file is archived from its capture too. Not filed: the address of 81st session (22 September
-      2026), which ''condemn[s] the genocide against defenceless populations'' and the settlements in the West Bank but does not name Gaza (R7: lead); the President''s address to the Arab League summit
-      in Cairo (4 March 2025, as Chairperson of the African Union; ''contours of genocide'' is known from Ver Angola only: lead_20261104_AGO_1); the Deputy Permanent Representative''s statement of 28 to
-      30 July 2025 at the two-state conference (R3: not a B9 speaker; unispal angola_nyc_en.pdf). The President''s welcome of the ceasefire of October 2025 is not a call.'
+    note: 'Four events: the joint statement with the President of the United Arab Emirates (4 September 2025, +2), the President''s address to the two-state conference (22 September 2025, +5), his
+      General Debate address of 23 September 2025 (+5) and his General Debate address of 24 September 2024 (+5, ''should do everything it can to prevent the genocide that the world is witnessing
+      live in the Gaza Strip''; 771 days old on 2026-11-04, no weight in the score). The 24 September 2024 address was filed on 2026-11-04 from the delegation file (ao_en.pdf, 266,045 bytes) through
+      its Wayback capture of 27 September 2024, which the Wayback CDX lists (docs/10 B-852); the 80th address''s English file is archived from its capture too. Not filed: the address of 81st session
+      (22 September 2026), which ''condemn[s] the genocide against defenceless populations'' and the settlements in the West Bank but does not name Gaza (R7: lead); the President''s address to the
+      Arab League summit in Cairo (4 March 2025, as Chairperson of the African Union; ''contours of genocide'' is known from Ver Angola only: lead_20261104_AGO_1); the Deputy Permanent Representative''s
+      statement of 28 to 30 July 2025 at the two-state conference (R3: not a B9 speaker; unispal angola_nyc_en.pdf). The President''s welcome of the ceasefire of October 2025 is not a call.'
     queries:
     - mirex embassy pages, CIPRA platform, UNISPAL (read)
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/ao_en.pdf (read live)
     - 'web search: Lourenço Gaza genocídio discurso Assembleia Geral'
     - 'web search: Lourenço Cairo cimeira Liga Árabe Gaza'
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: No statement of unconditional support for Israel or denial of violations by the President or the Minister was found; the statements read condemn Hamas's attack of 7 October 2023 and recognise
@@ -140,14 +166,25 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Angola is not an EU member and the search returned no measure of its own. Not searched: the customs service''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Fundo Soberano FSDEA OR contratação pública exclusão empresas israelitas OR produtos dos colonatos proibição Angola boicote Israel Governo angolano'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by the sovereign wealth fund (FSDEA), a public pension fund or the central bank over conduct in Gaza or the occupied territories was found; no search result concerns
+      one. Not searched: the fund''s own reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Fundo Soberano FSDEA OR contratação pública exclusão empresas israelitas OR produtos dos colonatos proibição Angola boicote Israel Governo angolano'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the search returned no measure of Angola. Not searched: the public procurement
+      authority''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola Fundo Soberano FSDEA OR contratação pública exclusão empresas israelitas OR produtos dos colonatos proibição Angola boicote Israel Governo angolano'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no flow of this donor to the Gaza response appears in fts_plan_totals.csv at the date of this session. Left to the build.'
@@ -181,11 +218,25 @@ indicators:
     note: No visa, refugee or scholarship pathway for Gazans opened by Angola was found.
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Angolan nationals or companies for conduct in Gaza was found. Not searched: the Attorney General''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola manifestação Palestina proibida OR polícia OR bandeira palestiniana Luanda OR queixa tribunal crimes de guerra Gaza Procuradoria-Geral da República
+      Angola'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results concern bans of protests on domestic questions only. Not searched: the National
+      Police''s notices and Angop item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola manifestação Palestina proibida OR polícia OR bandeira palestiniana Luanda OR queixa tribunal crimes de guerra Gaza Procuradoria-Geral da República
+      Angola'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Angola was found (the search returned none). Not searched: the Attorney General''s
+      site.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese): Angola manifestação Palestina proibida OR polícia OR bandeira palestiniana Luanda OR queixa tribunal crimes de guerra Gaza Procuradoria-Geral da República
+      Angola'
+    checked_at: '2026-11-10'
