@@ -3133,3 +3133,30 @@ The session had web search and ran it in the official language and English (stan
 New lead: `lead_20261110_URY_5` (E3: the complaint of 29 May 2026 before the Fiscalía General de la Nación against the Israeli army's Spanish-language spokesperson, press only). Leads SUR_1, SUR_2, TTO_2, URY_3, VCT_1, VEN_2, VEN_3 and FJI_3 were re-checked and annotated; the rest unchanged. Recognition rows: URY and VCT given the Governments' own documents (VCT's date set to 2011-08-29); SUR keeps its state source and the 2011 letter was not found; TTO, VEN, FJI unchanged.
 
 Score effect: none. Provisional previews (rc.1, 2026-11-10): SUR +9 Acting, TTO +9 Acting, URY +15 Acting, VCT −3 Passive, VEN −9 Passive, FJI −55 Sustaining (the three E2 events are unscored in v1.0).
+
+### T-F-L08: PNG, SLB, VUT, FSM, KIR, MHL (2026-11-10, groups 15 and 16)
+
+The session had web search (standard mode: PNG 9 searches, SLB 7, VUT 7, FSM 4, KIR 3, MHL 4) and the Governments' own pages that answer: the WordPress interfaces of the Prime Minister's Office and the Department of Foreign Affairs of Papua New Guinea, the Prime Minister's Office's releases of Vanuatu and the Ministry's news page, `gov.fm` and the Federated States of Micronesia's Mission (read in the browser pane), the Ministry's WordPress interface and the Office of Te Beretitenti's news page of Kiribati, the Marshall Islands' Embassy in Washington. `solomons.gov.sb` answers a bot check that was not bypassed. Records: B-978 to B-984.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Notes extended | Events | Still unchecked |
+|---|---|---|---|---|
+| PNG | A3, A5 to A8, C4 to C6, E1 to E3 (pmnec.gov.pg and dfa.gov.pg searches to 14 October 2026) | B8 (new row), C2 (14 October 2026 memorandum, unsigned) | none | none |
+| SLB | A3, A5 to A8, C4 to C6, E1 to E3 (no Government page readable; Pacific press searches) | C2 (Forum partnership) | none | none |
+| VUT | A3, A5 to A8, C4 to C6, E1 to E3 (pmo.gov.vu items 1125 to 1169; the Ministry's news to 12 April 2026) | B8 (no document found) | none | B8 (generated; no row) |
+| FSM | A3, A5 to A8, C4 to C6, E1 to E3 (gov.fm to 9 November 2026; the Mission's posts) | B10 (two Third Committee statements now archived), C2 | none | none |
+| KIR | A3, A5 to A8, C4 to C6, E1 to E3 (mfa.gov.ki to 17 June 2026; president.gov.ki to 13 April 2026) | none | none | none |
+| MHL | A3, A5 to A8, C4 to C6, E1 to E3 (the Embassy's news to 15 September 2026) | none | none | none |
+
+New leads: `lead_20261110_PNG_4` (B10: the Prime Minister's 'PNG always stands with Israel in thoughts and prayers' of 14 October 2026, no Gaza, R7) and `lead_20261110_PNG_5` (C2: a memorandum delivered, not signed). Leads PNG_1, PNG_2, SLB_1, FSM_1 and FSM_2 re-checked and kept (the 81st-session files of the General Debate answer 405 and have no capture). Recognition row `PNG,1995-01-13` (B-978, flagged).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20261014_pmnec-pg_marape-mashav-courtesy-call | The Prime Minister's Office's release of 14 October 2026 on the call of the head of Israel's development agency | PNG_4, PNG_5, notes |
+| src_19950113_un-digitallibrary_png-palestine-joint-communique | UN note verbale NV/95/10: the joint communique of 13 January 1995 (PNG and Palestine), signed for the Government | recognitions.csv row PNG, B8 |
+| src_20260903_pif_55th-leaders-communique | Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026) | notes of the six (partnership streams; attendance) |
+| src_20231024_unmission-fm_third-committee-coi-statement | FSM delegation, Third Committee, 24 October 2023 | FSM_2, B10 note |
+| src_20241030_unmission-fm_third-committee-coi-lippwe | FSM Permanent Representative, Third Committee, 30 October 2024 | FSM_2, B10 note |
+
+Every replay was re-fetched in the browser pane and equals its index row in bytes and SHA-256.
+
+Score effect: PNG moves from -35 to -45 (Enabling) only because the 20 October 2025 B10 event is older than 365 days (the passivity penalty applies again) and B8 adds +3. Provisional previews (rc.1, 2026-11-10): PNG -45 Enabling, SLB +3 Acting, VUT -9 Passive, FSM -35 Enabling, KIR -26 Enabling, MHL -12 Passive.
