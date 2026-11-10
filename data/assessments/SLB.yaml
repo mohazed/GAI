@@ -3,6 +3,8 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs and External Trade's site (mfaet.gov.sb: answers HTTP 406 to a scripted request, so its foreign-affairs news listing was read through Wayback replays, 22 September 2023 to 9 May 2025), the Government portal (solomons.gov.sb: a script-based bot check, not bypassed; its Wayback captures of 2026 are the check page), the General Debate pages and statements of the 78th to 81st sessions (gadebate.un.org through Wayback captures; the 81st session's file has none), UN Meetings Coverage (GA/12599, GA/12712, archived), the ICJ's case pages (case 192 archived 25 September 2026; case 186 archived), the SIPRI register, UNRWA's donor rankings of 2022 to 2024, the generated events and the structured tables; web searches in English (the official language) per indicator group. Time: about 12 minutes of research on Solomon Islands, inside the 90-minute budget of the session.
 # Two hand-authored events: evt_2024_09_27_SLB_B9 (decayed to zero) and evt_2025_09_26_SLB_B9 (flagged: date).
+# Completion of 2026-11 (finish run, T-F-L08, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, with the Pacific press's WordPress searches (Islands Business, PINA), the archived Forum Communique of the 55th Pacific Islands Forum,
+#   the Wayback index of mfaet.gov.sb (solomons.gov.sb answers a script-based bot check that was not bypassed) and 7 standard-mode web searches. No event filed; lead_20261007_SLB_1 re-checked (docs/10 B-979).
 country: SLB
 protocol_version: 1
 last_full_check: '2026-10-07'
@@ -19,8 +21,25 @@ indicators:
       the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-10-07'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a company of Solomon Islands as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does
+      not contain the words Solomon Islands (searched 2026-11-10), and the programme''s own page (f35.com, Global Enterprise, read 2026-11-10, not archived) lists the United States and 19 other countries, Solomon
+      Islands not among them, with no supplier list by country. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read
+      2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy;
+      not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon
+      Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands
+      among the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister
+      said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat
+      found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and
+      nothing was filed from them) are listed in the queries. '
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Solomon Islands (no match)
+    - f35.com/f35/global-enterprise.html read 2026-11-10 (nations listed)
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order of Solomon Islands from Israel in the data; the register (archive/text/src_20261005_sipri_register-supplier-israel.txt) has no row for it. Left
@@ -30,17 +49,81 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Solomon Islands
     checked_at: '2026-10-07'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. The search returned a report of RNZ Pacific, undated in the result and tied to the Bougainville
+      period, that a Solomon Islands government wanted an Israeli police adviser (not opened; outside the window), and the Prime Minister''s statement of October 2025 that Solomon Islands has diplomatic relations
+      with Israel and ''send[s] people to train there'' (Prime Minister Manele at a press conference, In-Depth Solomons, 8 October 2025, opened in the browser, press, not archived; no defence content). Solomon
+      Islands'' security cooperation in the results is with Australia (a police package, delayed per RNZ of 26 November 2025, result title) and China (the 2022 pact, which Prime Minister Wale said in June 2026
+      he would review, per results). No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb
+      answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s
+      WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands
+      minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose
+      head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026
+      that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective
+      decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from
+      them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    - 'WebSearch 2026-11-10: Solomon Islands police Israeli advisor RNZ Pacific Israel strengthen police Honiara'
+    - 'WebSearch 2026-11-10: Sharren Haskel Solomon Islands visit Honiara Manele Israel deputy foreign minister'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. Solomon Islands delivers no major arms to Israel (SIPRI, A1) and no Government page or search result
+      shows an export-licence measure of any kind concerning Israel. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed
+      (read 2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy;
+      not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon
+      Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands
+      among the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister
+      said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat
+      found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and
+      nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel agreement signed memorandum OR "visa waiver" OR trade OR cooperation Honiara Israeli ambassador'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No two-way arms embargo on Israel was found: no decision to stop imports of arms or military equipment from Israel and no co-signature of a measure of that kind by Solomon Islands. The Prime Minister''s
+      statement of October 2025 (see A5) keeps relations with Israel and calls only for peaceful coexistence; the instruments between the two states that the searches list (a visa exemption of 2012 in force
+      for ordinary passports from 29 January 2017 and a development-cooperation memorandum of August 2012, from Solomon Star and SIBC result summaries, not opened) predate 7 October 2023. No Government page
+      of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback
+      index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s WordPress searches (Islands Business and PINA:
+      Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific
+      Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose head of government attended and records that leaders
+      ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific
+      leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective decision of the Forum, not an instrument signed by Solomon
+      Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel agreement signed memorandum OR "visa waiver" OR trade OR cooperation Honiara Israeli ambassador'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to arms shipments or military aircraft bound for Israel was found. No Government page could be read and no search result reports a shipment or flight
+      of that kind through Solomon Islands. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb
+      answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s
+      WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands
+      minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose
+      head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026
+      that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective
+      decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from
+      them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 11 of the 12 qualifying votes and no vote recorded on A/RES/ES-10/23 of 10 May 2024 (the admission of Palestine; scored as absent, B1, and decayed to zero).
@@ -138,24 +221,72 @@ indicators:
     checked_at: '2026-10-07'
   C2:
     status: none-found
-    note: 'No instrument signed with Israel after 7 October 2023 was found (the Ministry''s news listing and the press: no agreement, memorandum or declaration of intent; the agreements of 2026 that the
-      press names are with the United States).'
+    note: 'No instrument signed with Israel after 7 October 2023 was found (the Ministry''s news listing and the press: no agreement, memorandum or declaration of intent; the agreements of 2026 that the press
+      names are with the United States). Re-checked 2026-11-10: The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique)
+      lists Solomon Islands among the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s
+      Foreign Minister said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the
+      Forum Secretariat found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no C2 event). The instruments of 2012 and 2017 with Israel predate the window.'
     queries:
     - Solomon Islands Israel agreement OR memorandum signed 2024 2025 2026
-    checked_at: '2026-10-07'
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: 55th Pacific Islands Forum Leaders Meeting Palau communique partner status Israel Sa''ar Waqa Forum Secretariat statement'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel agreement signed memorandum OR "visa waiver" OR trade OR cooperation Honiara Israeli ambassador'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-10-07'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on, labelling rule for, or customs measure against settlement goods was found. The searches returned no Solomon Islands measure on goods of the settlements; the Customs and Excise Division''s
+      notices were not searched. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb
+      answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s
+      WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands
+      minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose
+      head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026
+      that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective
+      decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from
+      them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel agreement signed memorandum OR "visa waiver" OR trade OR cooperation Honiara Israeli ambassador'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Solomon Islands over conduct in Gaza or the occupied territories was found. The National Provident Fund''s and the Central
+      Bank''s own investment reports and lists were not opened; no search result links either to Israel. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based
+      bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about
+      us, foreign policy, trade policy; not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum
+      partnership and none that names Solomon Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique)
+      lists Solomon Islands among the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s
+      Foreign Minister said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the
+      Forum Secretariat found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used
+      to find pages and nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel military OR defence OR arms OR security cooperation OR agreement OR embassy 2026'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1 and D2–D5 only.'
+    status: none-found
+    note: 'No procurement exclusion of Israeli firms, or of firms operating in the settlements, was found. The Ministry of Finance and Treasury''s tender notices and the Central Tenders Board''s decisions were
+      not searched by company; no result reports an exclusion. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read
+      2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy;
+      not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon
+      Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands
+      among the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister
+      said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat
+      found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and
+      nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Israel agreement signed memorandum OR "visa waiver" OR trade OR cooperation Honiara Israeli ambassador'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS: no row for this country in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
@@ -192,11 +323,51 @@ indicators:
     - Gaza visa humanitarian Solomon Islands regulation
     checked_at: '2026-10-07'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Solomon Islands for conduct in Gaza was found. No Government page of Solomon Islands could
+      be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for
+      2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin,
+      15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror,
+      31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose head of government attended and records that leaders ''agreed on the placement
+      of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel
+      as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10
+      B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Honiara Palestine protest OR rally OR police OR petition Gaza'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No record of police action against Gaza protests or of a ban on a Gaza protest in Solomon Islands was found: the search on Honiara, Palestine and Gaza returned demonstrations
+      elsewhere and none in Solomon Islands. No Government page of Solomon Islands could be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and
+      mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for 2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The
+      Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin, 15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or
+      a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror, 31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among
+      the states whose head of government attended and records that leaders ''agreed on the placement of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on
+      20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found):
+      a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10 B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing
+      was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Honiara Palestine protest OR rally OR police OR petition Gaza'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No complaint based on universal jurisdiction was found accepted for investigation by a court or prosecutor of Solomon Islands. No Government page of Solomon Islands could
+      be read for the period: solomons.gov.sb answers a script-based bot check that was not bypassed (read 2026-11-10) and mfaet.gov.sb answers HTTP 406 to scripted requests; the Wayback index (CDX) lists for
+      2026 only captures of the Ministry''s static pages (home, about us, foreign policy, trade policy; not opened). The Pacific press''s WordPress searches (Islands Business and PINA: Israel, Gaza, Palestin,
+      15 September to 9 November 2026) return reports on the Forum partnership and none that names Solomon Islands or a Solomon Islands minister. The Forum Communique of the 55th Pacific Islands Forum (Koror,
+      31 August to 3 September 2026; archived: src_20260903_pif_55th-leaders-communique) lists Solomon Islands among the states whose head of government attended and records that leaders ''agreed on the placement
+      of partners in the two partnership streams'' without naming a partner; Israel''s Foreign Minister said on 20 October 2026 that the Forum''s Secretary-General had told him Pacific leaders accepted Israel
+      as a Forum partner (press, search results of 2026-11-10; no confirmation by the Forum Secretariat found): a collective decision of the Forum, not an instrument signed by Solomon Islands (no event; docs/10
+      B-979). Web searches of 2026-11-10 (standard mode; the summaries were used to find pages and nothing was filed from them) are listed in the queries. '
+    queries:
+    - 'islandsbusiness.com and pina.com.fj /wp-json search: Israel, Gaza, Palestin (read 2026-11-10, items to 9 November 2026)'
+    - solomons.gov.sb (script-based bot check, not bypassed); mfaet.gov.sb (HTTP 406); Wayback CDX for mfaet.gov.sb read 2026-11-10
+    - 'forumsec.org Forum Communique of the 55th Pacific Islands Forum (archived, searched for Israel, Palestine, Gaza: no match)'
+    - 'WebSearch 2026-11-10: Solomon Islands Honiara Palestine protest OR rally OR police OR petition Gaza'
+    checked_at: '2026-11-10'
