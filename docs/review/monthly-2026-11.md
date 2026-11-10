@@ -644,3 +644,15 @@ Second resumed session, with web search (docs/10 B-951, B-952). E1 to E3 of the 
 | AZE | Web search (English, Azerbaijani); genprosecutor.gov.az (redirects) | none | Police dispersals at the Israeli embassy in 2009, 2014 and 2018 (before the window) | −4 Passive, unchanged | E1, E2, E3 none-found |
 
 Sources added: none (leads only). Still not done: B8 for MYS, NGA and AZE (B-860); the P-16 items of B-925 (4). Flags for the author: B-952 (1) to (3).
+
+### T-F-METHOD: three methodology proposals (docs/10 B-2098 to B-2101)
+
+Drafts for the author in `docs/proposals/`, in the format of the 1.0.0-rc.2 drafts; no methodology folder, pull request or Discussion. Measured on 2026-11-10 (rc.1) with `pnpm build:data` and `pnpm score`; the temporary edits used for the measurements were reverted before the commit.
+
+| Proposal | File | Question | Options | Recommended default | Effect on 2026-11-10 |
+|---|---|---|---|---|---|
+| Scope of docs/02 §12 rule 8 | `docs/proposals/rule-8-scope.md` | Which countries must have no unchecked indicator before scores are shown | (a) all 193; (b) per country; (c) rule changed | (a), no version; P-22 gate widened from the 45; build check on `main` | 1 hand entry unchecked (BHR B12); 456 build entries in 154 countries, 37 after publication of the reviewed events, 31 after the six scope fixes (30 B8, BHR B12) |
+| Article 19 in B1 | `docs/proposals/b1-article-19.md` | Does an absence of a state not entitled to vote score −2 | (a) keep −2; (b) 0 from a dated table; (c) keep −2, show the reason | (b) with (c) (differs from the T-P23-4 draft default (a) with (c)) | VEN −23 → −12, AFG −26 → −15, BOL −21 → −16, STP −26 → −22; ECU, SOM unchanged |
+| A4 data-year gap | `docs/proposals/a4-data-years.md` | Are the orders of 2024 scored | (a) keep §5; (b) cumulative; (c) first release that reports the year; (d) two years per release | (c), each year's tier summed, one event per release (minor version) | SVK −18 → −28, AUT +7 → −3, AZE +1 → −9, KEN +1 → −4, LBR −13 → −15, PHL −4 → −6, USA unchanged |
+
+Found on the way: the six hand `has-events` entries scoped `related` or `west-bank` (BFA, MLI, NER, NRU, VEN B6; SGP B11) are shown `unchecked` by the build (the B-860 (1) convention gap); scheduled in the P-23 block of `PROMPTS.md`. The A4 edit described in B-857 alone fails on the Philippines (two computed A4 events of one release overlap).
