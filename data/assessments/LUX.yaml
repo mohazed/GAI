@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Government's and the Ministry's sites (gouvernement.lu, mae.gouvernement.lu) answered and were registered, not searched item by item. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): no press item was read. These gaps are scheduled for P-23.
 # Twenty-one events (B9 x16, B11 x3, D3 x2). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L25, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in French and English; the parliamentary answers on arms licences and the warrants; the FDC's exclusion-list updates), all none-found with the limits said in each note; B5 has-events (the joint answer of 23 December 2024, archived); the settlement-goods bill of 16 October 2026 is a lead (not in force). See docs/10 B-2094.
 country: LUX
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Luxembourg company as a supplier of parts or maintenance for the F-35 programme: Luxembourg is neither a partner nor a customer, and no result names a Luxembourg supplier. Not
+      searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations and the foreign-military-sales customers named in the results; none of the
+      four of this batch: YEM, LIE, LUX, MCO)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Luxembourg from Israel in the register. Left to the build.'
@@ -29,17 +35,48 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Luxembourg (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No instance of military cooperation with Israel (exercise, transit, basing, intelligence sharing) by the Luxembourg Army was found; the results contain none. Not searched: the Directorate of Defence''s
+      releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg marchés publics exclusion entreprises colonies israéliennes OR coopération militaire Israël armée luxembourgeoise OR étiquetage produits colonies (no procurement
+      rule and no military cooperation in the results; a parliamentary question on the enforcement of EU labelling rules, with no answer read)'
+    - 'WebSearch 2026-11-10 (French): Luxembourg Gaza manifestation interdite OR plainte compétence universelle parquet OR Cargolux armes Israël transit OR évacuation médicale enfants Gaza Luxembourg (no
+      ban on protests, universal-jurisdiction complaint, Cargolux transit decision or medical evacuation in the results; weekly Saturday rallies reported by a party''s document; the summoning of Israel''s
+      envoy and the Chamber''s debate of 15 October 2026 on Luxembourg''s obligations)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms export licences to Israel was found. The Minister of Foreign Affairs answered Parliament on 4 July 2025 that applications are assessed case by
+      case under Common Position 2008/944/CFSP, that no transit application was filed in three years, and that one export application was refused in 2023 (of six) on the Common Position''s criteria, none
+      in 2022, 2024 or 2025; the operations did not concern lethal arms (an individual refusal, not a class). Not searched: the Office for Export, Import and Transit Control''s annual reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg exportations armes Israël licences OCEIT Bettel Gaza 2024 2025 (the Minister of Foreign Affairs'' answer of 4 July 2025 to parliamentary question No 2488,
+      wdocs-pub.chd.lu QP_59402, read; Paperjam of 16 October 2026 on the settlement-goods bill and the rejected arms-embargo motion, read; an OSCE information exchange of 2023)'
+    - 'wdocs-pub.chd.lu/docs/exped/2025/07/QP_59402_1751612610208.pdf (answer of 4 July 2025 to question No 2488, read 2026-11-10): applications are assessed case by case under Common Position 2008/944/CFSP;
+      no transit application in three years; export applications 6 (2022), 6 (2023, one refused under the Common Position''s criteria), 2 (2024), 3 (2025); the operations did not concern lethal arms'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decision establishing a two-way arms embargo on Israel was found. On 15 October 2026 the majority in the Chamber of Deputies rejected a motion asking for a full arms embargo on Israel
+      and the refusal of dual-use export licences, holding the existing controls sufficient (Paperjam, 16 October 2026, read). Not searched: the Chamber''s minutes of 15 October 2026.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg exportations armes Israël licences OCEIT Bettel Gaza 2024 2025 (the Minister of Foreign Affairs'' answer of 4 July 2025 to parliamentary question No 2488,
+      wdocs-pub.chd.lu QP_59402, read; Paperjam of 16 October 2026 on the settlement-goods bill and the rejected arms-embargo motion, read; an OSCE information exchange of 2023)'
+    - 'paperjam.lu/article/colonies-israeliennes-le-luxembourg-prepare-linterdiction (16 October 2026, read 2026-11-10): the Government Council approved on 16 October 2026 a bill amending the law of 27 June
+      2018 to allow national import measures; the ban is not in force; the majority rejected on 15 October 2026 a motion for a full arms embargo on Israel and the refusal of dual-use licences'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel was found; no transit application for military-list goods was filed in the three years to July 2025 (answer of
+      4 July 2025). No decision on Cargolux flights was found. Not searched: the Directorate of Civil Aviation''s notices.'
+    queries:
+    - 'wdocs-pub.chd.lu/docs/exped/2025/07/QP_59402_1751612610208.pdf (answer of 4 July 2025 to question No 2488, read 2026-11-10): applications are assessed case by case under Common Position 2008/944/CFSP;
+      no transit application in three years; export applications 6 (2022), 6 (2023, one refused under the Common Position''s criteria), 2 (2024), 3 (2025); the operations did not concern lethal arms'
+    - 'WebSearch 2026-11-10 (French): Luxembourg Gaza manifestation interdite OR plainte compétence universelle parquet OR Cargolux armes Israël transit OR évacuation médicale enfants Gaza Luxembourg (no
+      ban on protests, universal-jurisdiction complaint, Cargolux transit decision or medical evacuation in the results; weekly Saturday rallies reported by a party''s document; the summoning of Israel''s
+      envoy and the Chamber''s debate of 15 October 2026 on Luxembourg''s obligations)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on the twelve qualifying votes (the votes of 2023 and the first half of 2024 have decayed). Luxembourg has all twelve votes recorded and is not among the Member
@@ -63,12 +100,14 @@ indicators:
     note: No filing by Luxembourg supporting the respondent in ICJ case 192 (same page).
     checked_at: '2026-11-04'
   B5:
-    status: none-found
-    note: Luxembourg is a state party to the Rome Statute (src_20261009_icc-asp_states-parties, line 167). No statement on the warrants of 21 November 2024 by the Prime Minister or the Foreign Minister
-      was read in an archived primary in this session (the Government's site was not searched item by item; P-23).
+    status: has-events
+    note: 'One event: evt_2024_12_23_LUX_B5 (+8, flagged): the joint written answer of the Minister of Justice, Elisabeth Margue, and the Minister of Foreign Affairs, Xavier Bettel, of 23 December 2024 to
+      parliamentary question No 1577: Luxembourg took note of the warrants and will apply all its obligations under the Rome Statute (read as Spain''s statement). Luxembourg is a state party to the Rome Statute
+      (src_20261009_icc-asp_states-parties, line 167). No later statement against the warrants (B6) was found. Completion of 2026-11 (T-F-L25).'
     queries:
-    - archive/text/src_20261009_icc-asp_states-parties.txt, Luxembourg (line 167)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Luxembourg Bettel Cour pénale internationale mandat Netanyahu Luxembourg respectera obligations novembre 2024 (the answer to question No 1577, wdocs-pub.chd.lu QP_57147,
+      read and archived)'
+    checked_at: '2026-11-10'
   B6:
     status: none-found
     note: No statement against the warrants and no hosting of a person subject to a warrant by Luxembourg was found in the sources read.
@@ -127,14 +166,35 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban on settlement goods in force was found. The Minister of Foreign Affairs announced in the Chamber on 15 October 2026 a text banning imports from the settlements, and the Government Council
+      approved on 16 October 2026 a bill amending the law of 27 June 2018 so that national import measures can be taken; the release names neither Israel nor the settlements and the ban is not in force: lead_20261110_LUX_1
+      (a C4 event follows the measure''s entry into force, as Ireland''s). No national labelling rule beyond EU law was found (a parliamentary question on its enforcement, no answer read). Not searched: the
+      Government''s release and the Customs and Excise Agency''s notices.'
+    queries:
+    - 'paperjam.lu/article/colonies-israeliennes-le-luxembourg-prepare-linterdiction (16 October 2026, read 2026-11-10): the Government Council approved on 16 October 2026 a bill amending the law of 27 June
+      2018 to allow national import measures; the ban is not in force; the majority rejected on 15 October 2026 a motion for a full arms embargo on Israel and the refusal of dual-use licences'
+    - 'WebSearch 2026-11-10 (French): Luxembourg marchés publics exclusion entreprises colonies israéliennes OR coopération militaire Israël armée luxembourgeoise OR étiquetage produits colonies (no procurement
+      rule and no military cooperation in the results; a parliamentary question on the enforcement of EU labelling rules, with no answer read)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion decision by the Fonds de compensation (FDC, the public pension reserve fund) over conduct in Gaza or the occupied territories in the window was found: its exclusion of Israeli banks
+      and companies over the settlements dates from 2013 to 2014 (before the window), and its announced updates of February 2024, 2025 and 2026 state no addition concerning Gaza or the occupied territories
+      (the announcements give no ground per company; the list''s grounds were not read). Not searched: the FDC''s full exclusion list with grounds and the Central Bank''s holdings.'
+    queries:
+    - 'WebSearch 2026-11-10: Fonds de compensation FDC Luxembourg exclusion list Israeli companies settlements 2024 2025 (the FDC''s exclusion of Israeli banks and companies dates from 2013 to 2014, before
+      the window)'
+    - 'fdc.public.lu/en/actualites/2024, 2025 and 2026/liste-exclusion-fdc.html (the FDC''s announcements of its exclusion-list updates of February 2024, 2025 and 2026, read 2026-11-10): no addition is stated
+      to concern Gaza or the occupied territories; the announcements give no ground per company'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the public procurement portal (marches.public.lu).'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg marchés publics exclusion entreprises colonies israéliennes OR coopération militaire Israël armée luxembourgeoise OR étiquetage produits colonies (no procurement
+      rule and no military cooperation in the results; a parliamentary question on the enforcement of EU labelling rules, with no answer read)'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Luxembourg Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events, all ended at the build date). Left to the build.'
@@ -170,11 +230,28 @@ indicators:
     note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Luxembourg nationals or companies for conduct in Gaza was found. Not searched: the State Prosecutor''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg Gaza manifestation interdite OR plainte compétence universelle parquet OR Cargolux armes Israël transit OR évacuation médicale enfants Gaza Luxembourg (no
+      ban on protests, universal-jurisdiction complaint, Cargolux transit decision or medical evacuation in the results; weekly Saturday rallies reported by a party''s document; the summoning of Israel''s
+      envoy and the Chamber''s debate of 15 October 2026 on Luxembourg''s obligations)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; weekly rallies in Luxembourg City are reported (a party''s document) with no ban. Not searched: the
+      Grand Ducal Police''s notices and the communes'' decisions.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg Gaza manifestation interdite OR plainte compétence universelle parquet OR Cargolux armes Israël transit OR évacuation médicale enfants Gaza Luxembourg (no
+      ban on protests, universal-jurisdiction complaint, Cargolux transit decision or medical evacuation in the results; weekly Saturday rallies reported by a party''s document; the summoning of Israel''s
+      envoy and the Chamber''s debate of 15 October 2026 on Luxembourg''s obligations)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction concerning conduct in Gaza accepted for investigation in Luxembourg was found (Luxembourg is a state party to the Rome Statute).
+      Not searched: the State Prosecutor''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Luxembourg Gaza manifestation interdite OR plainte compétence universelle parquet OR Cargolux armes Israël transit OR évacuation médicale enfants Gaza Luxembourg (no
+      ban on protests, universal-jurisdiction complaint, Cargolux transit decision or medical evacuation in the results; weekly Saturday rallies reported by a party''s document; the summoning of Israel''s
+      envoy and the Chamber''s debate of 15 October 2026 on Luxembourg''s obligations)'
+    checked_at: '2026-11-10'
