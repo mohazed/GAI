@@ -3,6 +3,8 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Government's and the Ministry for Foreign Affairs' sites (valtioneuvosto.fi, um.fi: a Cloudflare challenge answers every scripted request, so their pages were read through the Wayback replays of the URLs that web searches in English and Finnish returned, and recorded with --capture), presidentti.fi (read live), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th archived), the joint statements already archived for the 45 (archive/text searched for Finland, Finlande, Suomi), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Finnish per indicator group. Finland is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Time: about 70 minutes of research on Finland, inside the 90-minute budget of the session.
 # Fourteen B9 events, three B11 events, one C1 event, one C2 event, three D2/D3 events. Leads: 1 (lead_20261013_FIN_1).
+# Completion of 2026-11 (finish run, T-F-L10, 2026-11-10): A3 filed as a standing event (evt_2023_10_07_FIN_A3, -15: the Ministry of Defence's release of 19 December 2025 and Patria's release of 19 June 2023); A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, with about 20 web searches in English and Finnish.
+#   Lead lead_20261110_FIN_2 (C4, the statement of 8 to 9 September 2026 on restricting settlement imports); lead FIN_1 (the UNRWA non-renewal) re-checked on 2026-11-10 (a search found press reports only and no Ministry release: um.fi answers a Cloudflare challenge) and kept (docs/10 B-992, B-993).
 country: FIN
 protocol_version: 1
 last_full_check: '2026-10-13'
@@ -19,8 +21,19 @@ indicators:
       B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-10-13'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: has-events
+    note: 'Filed: evt_2023_10_07_FIN_A3 (-15, standing, confirmed). The Ministry of Defence''s release of 19 December 2025 names the Finnish partners in the direct industrial participation in the
+      F-35 programme (Patria, Insta, Millog, Finnair, Combitech) and Patria''s forward fuselage production line in Jämsä and engine assembly facility in Nokia; Patria''s release of 19 June 2023
+      records the first Memorandum of Agreement with Lockheed Martin for forward fuselage assemblies. A/HRC/59/23 does not contain the word Finland (searched 2026-11-10). No halt of F-35 parts to
+      Israel by a Finnish authority was found. Flagged in the event (docs/10 B-992): the standing state starts at the beginning of the window on the date of the contract, the Jämsä facility opened
+      on 16 June 2025.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland F-35 Finnish companies supplier parts industrial participation Patria Israel Gaza'
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Finland (no match)
+    - valtioneuvosto.fi/en/-/236553176/minister-of-defence-antti-hakkanen-the-f-35-project-is-expected-to-create-new-opportunities-for-finnish-companies (archived 2026-11-10)
+    - patriagroup.com/newsroom/news/2023/patria-and-lockheed-martin-have-signed-the-first-agreement-within-finlands-f-35-direct-industrial-participation-programme (archived 2026-11-10)
+    - patriagroup.com/newsroom/news/2025/patria-celebrates-opening-of-f-35-production-facility-in-jamsa-finland (read 2026-11-10, dated 16.6.2025)
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): Finland''s rows are orders of 1999 to 2022 (TIV 1.2 to 41) and one of 2023 whose TIV is 0; none is an order of 2024 or later. Left to the build.
@@ -34,17 +47,64 @@ indicators:
     - Finland David's Sling purchase Israel agreement signed (web search; the contract date is from press, not read)
     checked_at: '2026-10-13'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No named joint exercise, intelligence sharing related to the Gaza campaign, basing agreement or documented transit of arms with Israel was found. Found and not counted: the Ministry of
+      Defence renewed the memorandum on defence materiel cooperation with Israel (evt_2024_02_29_FIN_C2, reported by Yle, which the Ministry did not announce), and the Defence Minister, Antti Häkkänen,
+      met his Israeli counterpart in mid-September 2026 on a visit that the Greens and the Left Alliance criticised (Yle, 1 October 2026, read: he cancelled his attendance at the JEF ministers''
+      meeting for the confidence vote of 2 October); a ministerial visit and a procurement memorandum are not an instance as A5 defines it, and procurement from Israel is measured by A4 (generated).
+      The search results also report a visit to Israel by the Chief of Defence in August 2026 (the Israeli military''s release, which answers a bot check and was not read; the Finnish embassy''s
+      page answers a Cloudflare challenge): not filed. Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation),
+      the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437),
+      Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches
+      (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland Israel joint military exercise Finnish Defence Forces Israel cooperation 2025 2026 Gaza criticism'
+    - yle.fi/a/74-20249281 (1 October 2026, read)
+    - caliber.az/en/post/finland-israel-extend-military-cooperation-memorandum (29 August 2026, read)
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Government decision suspending or refusing a class of defence-materiel export licences to Israel was found. The Government''s answers to parliamentary questions say Finland has no
+      national arms embargoes, follows only those of the UN and the EU, and that Israel is not subject to them (KKV 445/2025 and earlier answers, found by search, not read in full); Yle reported
+      that the Defence Minister said the situation in Gaza would not affect Finland''s arms trade with Israel, and that licences for exports from Finland to Israel were small (EUR 0.4 million in
+      2023, EUR 16.8 million in 2024, per Yle''s table, seen in a search result and not read). The Foreign Affairs Committee''s chair asked for a review of arms trade with Israel (Helsinki Times,
+      seen in a search result); Parliament rejected a citizens'' initiative to restrict state arms purchases from Israel (Ynetnews and the Jerusalem Post, with differing counts; not read; a rejection
+      by Parliament is not a Government suspension). A Government bill to amend the Act on the Export of Defence Materiel (HE 149/2026, seen in a search result, not read) was not examined for Israel-specific
+      content. Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company
+      release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437),
+      Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches
+      (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland arms export licences Israel suspended defence materiel export Ministry of Defence Gaza'
+    - 'WebSearch 2026-11-10: Suomi Israel asevienti vientiluvat puolustustarvikkeet Gaza 2025 2026'
+    - 'WebSearch 2026-11-10: Finland parliament rejects citizens initiative arms trade Israel vote 140-20 Defence Committee'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; Finland bought and continues to buy Israeli defence systems (the David''s Sling order of 2023, the Defence
+      Minister''s visit of September 2026 related to it, Yle 1 October 2026, read), the opposite of an embargo, and the Government''s answers say Finland applies only UN and EU embargoes. Pages
+      read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company release of
+      19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437), Caliber.az
+      of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches (standard
+      mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland arms export licences Israel suspended defence materiel export Ministry of Defence Gaza'
+    - 'WebSearch 2026-11-10: Suomi Israel asevienti vientiluvat puolustustarvikkeet Gaza 2025 2026'
+    - yle.fi/a/74-20249281 (1 October 2026, read)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found; transit of defence materiel is licensed under the Act on the Export of Defence Materiel (Ministry
+      of Defence) and no refusal concerning Israel was reported in the Finnish or English press found by search. The Government''s answers to parliamentary questions give no national restriction
+      on Israel. Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company
+      release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437),
+      Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches
+      (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland arms export licences Israel suspended defence materiel export Ministry of Defence Gaza'
+    - 'WebSearch 2026-11-10: Suomi Israel asevienti vientiluvat puolustustarvikkeet Gaza 2025 2026'
+    - 'WebSearch 2026-11-10: Finland arms export licences Israel suspended defence materiel export Ministry of Defence Gaza (no transit item)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 10 of the 12 qualifying votes and an abstention on 2 (A/RES/ES-10/21 of 27 October 2023 and A/RES/ES-10/23 of 10 May 2024). All 12 are recorded,
@@ -181,14 +241,48 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-10-13'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Finnish ban on settlement goods and no national labelling rule beyond the EU''s (the 2015 notice that settlement goods may not be labelled as Israeli) was found. On 8 September 2026
+      Finland joined a statement of twelve foreign ministers on restricting trade with settlements (filed as evt_2026_09_08_FIN_B9; the statement of intent is not a C4 measure); on 9 September 2026
+      Yle (read) reported that Finland ''said it would begin restricting imports from Israeli settlements'' and quoted the Foreign Minister, who said such imports are small, while the Finns Party
+      said the Government did not share the position. Helsinki Times (seen in a search result) says Finland had announced no equivalent national ban. No bill, decree or customs decision was found:
+      a lead is kept (lead_20261110_FIN_2). A bill proposed by a Left Alliance MP in 2021 (Veronika Honkasalo) is a private member''s initiative, not enacted. Pages read on 2026-11-10: the Ministry
+      of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement),
+      Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437), Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent
+      with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland settlement goods ban labelling Israeli settlements products Finnish government 2025 2026 Valtioneuvosto'
+    - 'WebSearch 2026-11-10: Finland restrict imports Israeli settlements Valtonen government decision bill customs'
+    - 'WebSearch 2026-11-10: Valtonen siirtokuntatuotteiden tuonti rajoittaminen Israel Suomi hallitus päätös lakiesitys'
+    - yle.fi/a/74-20245437 (9 September 2026, read)
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of a Finnish public pension fund or the State Pension Fund to exclude companies over conduct in Gaza or the occupied territories, within the window, was found. Yle''s investigation
+      (reported by Helsinki Times and Kaleva, seen in search results; the Yle article not read in full) found that the private pension insurers Varma, Ilmarinen and Elo held about EUR 90 million
+      in Airbnb and Booking Holdings, which list accommodation in settlements; Varma had excluded Booking Holdings in 2022 (before the window) and reintroduced it; Ilmarinen said it was analysing
+      its portfolio. These are private-sector pension insurers, not public funds, and no divestment followed in the sources found. Keva (the public-sector pension fund) and the State Pension Fund
+      returned no result on Israel. The funds'' own exclusion lists were not found by search. Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi,
+      archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1
+      October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437), Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200
+      on this date but Save Page Now fails with 403 (Wayback replay used). The web searches (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Ilmarinen Varma Keva Israel companies exclusion divest pension fund occupied territories Gaza'
+    - 'WebSearch 2026-11-10: Keva Valtion eläkerahasto Israel siirtokunnat sijoitukset poissulku yritys Gaza vastuullisuus'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national or municipal decision to exclude companies implicated in the occupation or in Gaza from public procurement was found. The Government''s answer to a parliamentary question
+      says there is no reason to restrict defence procurement from Israel (found by search, not read in full); a citizens'' initiative to restrict state arms purchases from Israel was rejected by
+      Parliament (press, not read). The search result on a Helsinki city procurement measure is an opinion piece in an advocacy outlet and was not followed. The procurement authority Hansel''s pages
+      were not found by search. Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation),
+      the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437),
+      Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches
+      (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland public procurement exclude Israeli companies Hansel city boycott Israel procurement Finland'
+    - 'WebSearch 2026-11-10: Finland parliament rejects citizens initiative arms trade Israel vote 140-20 Defence Committee'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Government flows of USD 6,919,366 (plan 1156), 6,370,321 (plan 1273) and 5,767,013 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the build. The
@@ -239,11 +333,37 @@ indicators:
     - Gaza visa humanitarian Finland regulation
     checked_at: '2026-10-13'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Finnish investigation or prosecution of a national or a company for conduct in Gaza was found. The results show no report of a police inquiry or a prosecutor''s decision on Finnish
+      citizens serving in the Israeli army or on companies, and only parliamentary questions on the subject. Finnish police and prosecutors'' pages were not found by search. E1 is recorded, not
+      scored (D-12). Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived as src_20251219_valtioneuvosto_f35-industrial-participation), the
+      company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437),
+      Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this date but Save Page Now fails with 403 (Wayback replay used). The web searches
+      (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Suomi rikosilmoitus Gaza poliisi tutkinta sotarikos Israel suomalainen universaalijurisdiktio'
+    - 'WebSearch 2026-11-10: Finnish nationals Israeli army soldiers Gaza police investigation Finland complaint war crimes Finnish citizen IDF'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Finnish ban on Palestine solidarity demonstrations or symbols was found. The search results report police removing about 30 protesters from a University of Helsinki building in May
+      2025 at the university''s request, and arrests at a blockade of a shipping company''s office in May 2025 (Yle and a Wikipedia list, seen in search results, not read): the dispersal of an occupation
+      or blockade is not a ban on a protest or a symbol. E2 is recorded, not scored (D-12). Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi, archived
+      as src_20251219_valtioneuvosto_f35-industrial-participation), the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1 October
+      2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437), Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200 on this
+      date but Save Page Now fails with 403 (Wayback replay used). The web searches (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Finland Palestine demonstration banned police Helsinki pro-Palestinian protest symbols ban 2025 2026'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No universal-jurisdiction complaint accepted for investigation by Finnish authorities over conduct in Gaza was found. The results show complaints filed by other bodies in Sweden, Chile,
+      Argentina and Thailand and none in Finland; the Finnish authorities'' decision pages were not found by search. TRIAL International''s Universal Jurisdiction Annual Review 2026 was searched
+      for Finland by an earlier session (T-F-L01) and not for this country. E3 is recorded, not scored (D-12). Pages read on 2026-11-10: the Ministry of Defence''s release of 19 December 2025 (valtioneuvosto.fi,
+      archived as src_20251219_valtioneuvosto_f35-industrial-participation), the company release of 19 June 2023 (archived as src_20230619_patria_lockheed-first-f35-dip-agreement), Yle News of 1
+      October 2026 (yle.fi/a/74-20249281) and of 9 September 2026 (yle.fi/a/74-20245437), Caliber.az of 29 August 2026 (relaying Yle). valtioneuvosto.fi answers a browser User-Agent with HTTP 200
+      on this date but Save Page Now fails with 403 (Wayback replay used). The web searches (standard mode) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Suomi rikosilmoitus Gaza poliisi tutkinta sotarikos Israel suomalainen universaalijurisdiktio'
+    - 'WebSearch 2026-11-10: Finnish nationals Israeli army soldiers Gaza police investigation Finland complaint war crimes Finnish citizen IDF'
+    checked_at: '2026-11-10'
