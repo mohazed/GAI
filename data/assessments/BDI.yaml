@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, French, read live with a browser User-Agent); the Presidency's site (presidence.gov.bi) and the Ministry's site (mae.gov.bi), both searched through their WordPress APIs; the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list and the UN Treaty Collection's status page for the Rome Statute. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site's own item is cited. These gaps are scheduled for P-23.
 # No event. One lead: lead_20261104_BDI_1 (B10, the Presidency's report of 22 December 2023).
+# Completion of 2026-11 (finish run, T-F-L16, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with about 10 web searches in English and French (docs/10 B-2037), all none-found; new lead lead_20261110_BDI_2 (A5, press reports of a military delegation's visit to Israel on the Gaza stabilisation force); lead BDI_1 re-checked; B9 and B10 notes extended; no new event.
 country: BDI
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No document names a Burundian company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Burundi, and the search for Burundi with
+      the programme returned only a 2016 trade report on Israeli arms exports to Burundi. Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Burundi (no match)
+    - 'WebSearch 2026-11-10: Burundi Israel F-35 supplier OR arms export OR port transit OR airspace Gaza'
+    status: none-found
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): no order by Burundi from Israel in the register. Left to the build.'
@@ -29,17 +35,37 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Burundi (not found)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing. Press reports
+      of 24 August 2026 (AP, read in Asharq Al-Awsat''s copy) say a Burundian military delegation led by three senior officers visited Israel with a Ugandan delegation to discuss a possible troop
+      contribution to the International Stabilization Force for Gaza; an unnamed Board of Peace official said nothing was finalised with Burundi, and Burundi''s military spokespersons did not comment.
+      No indicator of docs/02 defines participation in that force (docs/10 B-844 for Uganda), so the report is lead_20261110_BDI_2 and scores nothing. Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi Israël coopération militaire OR armes OR défense OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Burundi Israel embassy OR ambassador Gaza stabilization force Burundi government statement Ndayishimiye Israel 2026'
+    status: none-found
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Burundi to Israel was found either. Not searched: the Bulletin officiel du Burundi.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi Israël coopération militaire OR armes OR défense OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Burundi Israel F-35 supplier OR arms export OR port transit OR airspace Gaza'
+    status: none-found
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Bulletin officiel du Burundi.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi Israël coopération militaire OR armes OR défense OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Burundi Israel F-35 supplier OR arms export OR port transit OR airspace Gaza'
+    status: none-found
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found; the searches returned no such item for Burundi (a landlocked state). Not searched: the civil
+      aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi Israël coopération militaire OR armes OR défense OR sécurité accord 2025 2026'
+    - 'WebSearch 2026-11-10: Burundi Israel F-35 supplier OR arms export OR port transit OR airspace Gaza'
+    status: none-found
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on ten of the twelve qualifying votes; recorded as non-voting on A/RES/ES-10/21 (27 October 2023) and A/RES/80/1 (19 September 2025), each scored
@@ -91,30 +117,40 @@ indicators:
     - recognitions.csv, BDI
     checked_at: '2026-11-04'
   B9:
-    status: none-found
+    checked_at: '2026-11-10'
     note: 'No event filed. General Debate statements (the French files of gadebate.un.org, read live; no English file exists; not archived because no event rests on them): the 79th (Foreign Minister
-      Albert Shingiro) names neither Gaza nor Palestine; the 80th (Foreign Minister Édouard Bizimana) says ''les horreurs que nous observons à Gaza, en RDC, au Soudan, au Sahel'' with no call
-      and no named violation, so it is neither B9 tier; the 81st (the President, Évariste Ndayishimiye, speaking as the current Chairperson of the African Union, 23 September 2026) names neither
-      Gaza nor Palestine. The Presidency''s and the Ministry''s sites were searched through their WordPress APIs for Gaza, Palestine, Palestinien, Israël, Hamas, cessez-le-feu, génocide and Moyen-Orient:
+      Albert Shingiro) names neither Gaza nor Palestine; the 80th (Foreign Minister Édouard Bizimana) says ''les horreurs que nous observons à Gaza, en RDC, au Soudan, au Sahel'' with no call and
+      no named violation, so it is neither B9 tier; the 81st (the President, Évariste Ndayishimiye, speaking as the current Chairperson of the African Union, 23 September 2026) names neither Gaza
+      nor Palestine. The Presidency''s and the Ministry''s sites were searched through their WordPress APIs for Gaza, Palestine, Palestinien, Israël, Hamas, cessez-le-feu, génocide and Moyen-Orient:
       the report of the Non-Aligned Movement summit (22 January 2024) says the heads of state agreed to condemn violence ''entre Israël et Palestine en particulier'', in the spokesperson''s indirect
       speech with no call (R4; older than 730 days); the report of the President''s meeting with Türkiye''s President (19 April 2026) gives Türkiye''s commitment to a lasting ceasefire, not Burundi''s
-      (R4). Not searched: the African Union''s texts of the President''s speeches as Chairperson (P-23). Web searches were not available to this session (the run''s search budget was spent, as
-      for T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23.'
+      (R4). Not searched: the African Union''s texts of the President''s speeches as Chairperson (P-23). Web searches were not available to this session (the run''s search budget was spent, as for
+      T-P21-26 and T-P21-46 to T-P21-49): no press item was read except where a Government site''s own item is cited. These gaps are scheduled for P-23. Finish run, T-F-L16 (2026-11-10): the President''s
+      acceptance of the African Union chairmanship (39th Ordinary Session, February 2026) was searched; the sources read (AllAfrica''s account of the summit, 16 February 2026) name neither Gaza
+      nor Palestine and give no direct quotation of the President on them, and the AU Commission chairperson''s statement of 14 February 2026 on Gaza is not the President''s; the Presidency''s site,
+      searched again through its WordPress API for Israël, Gaza and Palestin, has no new item (newest on Gaza: 19 April 2026, already read). No B9 event.'
     queries:
     - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/bi_fr.pdf (read live; bi_en 404)
     - presidence.gov.bi/wp-json/wp/v2/posts?search={Gaza,Palestin,Israël,Israel,Hamas,cessez-le-feu,génocide,Moyen-Orient}
     - mae.gov.bi/wp-json/wp/v2/posts?search={Gaza,Palestin,Israël,cessez-le-feu,génocide,Moyen-Orient}
     - 'archive/text: joint statements and UN records, grep Burundi'
-    checked_at: '2026-11-04'
-  B10:
+    - 'WebSearch 2026-11-10: Ndayishimiye African Union chairperson 2026 speech Gaza OR Palestine OR Palestinian Burundi President AU summit Addis Ababa'
+    - 'WebSearch 2026-11-10 (French): Burundi Gaza Palestine déclaration gouvernement OR ministre Shingiro OR Bizimana OR Ndayishimiye 2026'
+    - 'presidence.gov.bi/wp-json/wp/v2/posts?search={Israël,Gaza,Palestin} re-run 2026-11-10 (newest item on Israël: 1 January 2026; on Gaza: 19 April 2026, already read)'
     status: none-found
-    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in a direct
-      quotation. The Presidency''s own report of 22 December 2023 (src_20231222_presidence-bi_envoye-special-israel, lead_20261104_BDI_1) says, in the report''s indirect speech (R4), that the
-      President expressed the Burundian people''s solidarity with the people of Israel and condolences to the families bereaved by ''les tueries qui sévissent dans la région'', and that he supports
-      a peaceful resolution of the conflict; it does not cite Gaza as a place of Israeli action, and at 1,048 days old it would carry no weight (decay, 730 days).'
+  B10:
+    checked_at: '2026-11-10'
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found in a direct quotation.
+      The Presidency''s own report of 22 December 2023 (src_20231222_presidence-bi_envoye-special-israel, lead_20261104_BDI_1) says, in the report''s indirect speech (R4), that the President expressed
+      the Burundian people''s solidarity with the people of Israel and condolences to the families bereaved by ''les tueries qui sévissent dans la région'', and that he supports a peaceful resolution
+      of the conflict; it does not cite Gaza as a place of Israeli action, and at 1,048 days old it would carry no weight (decay, 730 days). Finish run, T-F-L16 (2026-11-10): lead_20261104_BDI_1
+      re-checked; no official copy beyond the Presidency''s report, and the searches in French and English for Burundi''s government statements on Israel returned no direct quotation (B10 stays
+      none-found).'
     queries:
     - 'presidence.gov.bi/wp-json/wp/v2/posts?search=Israël (read: the audience of 22 December 2023)'
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10 (French): Burundi Gaza Palestine déclaration gouvernement OR ministre Shingiro OR Bizimana OR Ndayishimiye 2026'
+    - 'WebSearch 2026-11-10: Burundi Israel embassy OR ambassador Gaza stabilization force Burundi government statement Ndayishimiye Israel 2026'
+    status: none-found
   B11:
     status: none-found
     note: No sanctions by Burundi on settlers or settler entities were found in the sources read.
@@ -144,14 +180,25 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No ban on or labelling of settlement goods was found; the search returned reports on the EU and France and no Burundian measure. Not searched: the Office burundais des recettes'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi produits des colonies israéliennes interdiction OR fonds souverain OR marchés publics exclusion entreprises israéliennes'
+    status: none-found
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion decision by a sovereign or public pension fund or the central bank over conduct in Gaza or the occupied territories was found; the search returned none for Burundi. Not searched:
+      the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi produits des colonies israéliennes interdiction OR fonds souverain OR marchés publics exclusion entreprises israéliennes'
+    status: none-found
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    checked_at: '2026-11-10'
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found; the search returned no Burundian measure. Not searched: the public procurement
+      regulator''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi produits des colonies israéliennes interdiction OR fonds souverain OR marchés publics exclusion entreprises israéliennes'
+    status: none-found
   D1:
     status: none-found
     note: 'Generated from FTS: no Government flow of Burundi to the Gaza response in fts_plan_totals.csv. Left to the build.'
@@ -183,11 +230,21 @@ indicators:
     note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Burundian nationals or companies for conduct in Gaza was found. Not searched: the Prosecutor General''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi manifestation Palestine interdite OR police OR drapeau palestinien Bujumbura OR plainte Gaza parquet général'
+    status: none-found
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results concern the bans of 2015 on protests about the presidential term only. Not searched:
+      the National Police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi manifestation Palestine interdite OR police OR drapeau palestinien Bujumbura OR plainte Gaza parquet général'
+    status: none-found
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    checked_at: '2026-11-10'
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Burundi was found. Not searched: the Prosecutor General''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (French): Burundi manifestation Palestine interdite OR police OR drapeau palestinien Bujumbura OR plainte Gaza parquet général'
+    status: none-found
