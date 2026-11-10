@@ -38,6 +38,8 @@ runs:
     # CSP and budget checks after it (docs/04 §3). Its own build:data run takes the same date from
     # GAI_BUILD_DATE, so it writes the same bytes (D-25). The mode (NEXT_PUBLIC_SHOW_SCORES, D-16)
     # comes from apps/web/.env.production and is not set here: flipping that one line is enough.
+    # In score mode the build also fails, before next build, while build-notes.json has an
+    # unchecked note (apps/web/scripts/rule8.ts, docs/02 §12 rule 8); deploy-check repeats the test.
     - name: Build the site
       shell: bash
       env:
