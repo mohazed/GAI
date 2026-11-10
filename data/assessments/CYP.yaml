@@ -4,6 +4,7 @@
 # Search method (docs/06 §5): the Government portal gov.cy (its WordPress search API /en/wp-json/wp/v2/search, read for Gaza, ceasefire, Palestin*, Criminal Court, Association Agreement, Netanyahu, UNRWA and 'evacuation Gaza': about 300 items listed, the items on Gaza, Israel and the trilateral summits read through /wp-json/wp/v2/posts/{id}), the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live), the joint statements already archived (grep for Cyprus, Chypre, Cipro), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26): nothing was searched in the press, in Greek or in English, beyond the Government's own portal.
 # Cyprus is an EU member: the three Council listings (B11) and the joint statements that name it (B9) are filed as for the other members (R8, B-444, B-446).
 # Nine B9 events, three B11 events, one B10, one C2, two D3 (sixteen in all). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L23, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Greek, the gov.cy WordPress search API and the Ministry of Defence's items read through it, and the shared searches), all none-found with the limits said in each note; A5 records Israel's part in three multinational exercises hosted by Cyprus, read as routine (flagged); new lead_20261110_CYP_1 (A5, the exercises planned for 2026) and lead_20261110_CYP_2 (A5, reported port calls of military cargo for Israel). No new event since 2026-11-04. See docs/10 B-2086.
 country: CYP
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -20,8 +21,13 @@ indicators:
       reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Cypriot company as a supplier of parts or maintenance for the F-35 programme: Cyprus is neither a programme partner nor a foreign-military-sales customer in the results. Not searched:
+      the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 Lockheed Martin suppliers countries (the Joint Program Office''s eight partner nations, the foreign-military-sales
+      customers and the 2025 production contracts; none of the six of this batch: UGA, ZMB, ZWE, ARM, BHR, CYP)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders by Cyprus from Israel of 2002 (Searcher drones) and 2021 (one Barak-MX surface-to-air missile system and 75 Barak-LRAD missiles,
@@ -32,17 +38,67 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Cyprus (read)
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed A5 instance was found in the window, on the reading below (flagged, docs/10 B-2086). (1) The Ministry of Defence documents Israeli personnel and assets in three multinational exercises
+      hosted by Cyprus in the window: ARGONAUT 2024 (civil-military, non-combatant evacuation and search and rescue, distinguished visitors'' day 11 April 2024), NEMESIS 2025 (search and rescue in the exclusive
+      economic zone, 5 November 2025) and ARGONAUT 2026 (13-14 May 2026), with Egypt, France, Greece, Italy, the United Kingdom and the United States among the participants. They are an annual series in which
+      Israel also took part before the window (ARGONAUT 2023), and are read as routine pre-existing multinational arrangements not activated for the Gaza campaign (docs/02 §2, A5), not as named joint exercises
+      with Israel; the same reading applies to every other participant. (2) The bilateral air exercise IASON-1/2023 BLUE SUN (7-11 May 2023, Israeli aircraft at Paphos) is before the window; no bilateral exercise
+      with Israel in the window was found on gov.cy. (3) The military cooperation plans for 2026 signed in Nicosia on 22-23 December 2025 and the Defence Minister''s statement of 29 December 2025 that exercises
+      with Greece and Israel will take place in 2026 (no dates set) announce exercises; none was found held: lead_20261110_CYP_1. (4) Press reports of port calls at Larnaca and Limassol by ships said to carry
+      military cargo to Israel (HC Opal, May-June 2025; Ocean Grand, July 2025) are not documented transits: no Government or port authority text confirms the cargo or a call: lead_20261110_CYP_2. Not searched:
+      the National Guard''s own site and the Cyprus Ports Authority''s notices.'
+    queries:
+    - 'gov.cy WordPress search API (/wp-json/wp/v2/search and /en/wp-json/wp/v2/search; 2026-11-10): ''Israel exercise'', ''Israeli Defence Forces'', ''Israel Defence Cooperation'', ''Israeli Air Force'', ''Ισραήλ
+      άσκηση'', ''ΙΑΣΩΝ'', ''Διμερούς Αμυντικής Συνεργασίας Ισραήλ'', ''Αμυντικής Συνεργασίας Ισραήλ'', ''Ισραηλινής Πολεμικής''; read through /wp-json/wp/v2/posts/{id}: the Ministry of Defence''s items 15508
+      (IASON-1/2023 BLUE SUN, 7-11 May 2023, bilateral, before the window), 15650 (ARGONAUT 2023), 22079 (ARGONAUT 2024), 85585 (NEMESIS 2025), 114409 (ARGONAUT 2026), 15359 (the Defence Ministers'' meeting
+      of 5 May 2023) and 128652 (Israel''s National Emergency Management Authority, 4 September 2026)'
+    - 'WebSearch 2026-11-10: Cyprus Israel joint military exercise National Guard IDF 2024 OR 2025 OR 2026 (the trilateral and bilateral military cooperation plans for 2026 signed in Nicosia on 22-23 December
+      2025; the Defence Minister''s confirmation of 29 December 2025 that exercises with Greece and Israel are in the National Guard''s 2026 programme, no dates set; exercises of 2017 and 2018 on Cypriot soil;
+      no exercise in the window reported as held)'
+    - 'WebSearch 2026-11-10: "Noble Dina" 2026 Cyprus Israel Greece naval exercise held (reports of December 2025 that Greece would join Israel''s Noble Dina exercise in 2026 with Cyprus participating; no report
+      of a 2026 edition held)'
+    - 'WebSearch 2026-11-10: Cyprus port Limassol arms shipment Israel ship denied OR refused OR transit 2024 2025 government (the lawyers'' call of August 2024 on the Overseas Santorini, Cyprus Mail of 17
+      July 2025 on the Ocean Grand; the seizures of 2009 and 2012; no Government refusal or authorisation)'
+    - 'WebSearch 2026-11-10: Cyprus Mail July 2025 ship explosives artillery Israel Limassol Ashdod government response ministry (Cyprus Mail of 30 May 2025 on the HC Opal, which says the Government did not
+      answer its questions, and of 17 July 2025 on the Ocean Grand; no Government statement)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Cyprus has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register). Not searched: the
+      Ministry of Energy, Commerce and Industry''s export-licensing records.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus arms exports Israel licences suspended OR halted government 2024 military equipment Cyprus export controls Israel (the United Kingdom''s suspension of September 2024 and
+      the United States'' suspension of its embargo on Cyprus; nothing on a Cypriot measure)'
+    - 'WebSearch 2026-11-10: Κύπρος πλοίο όπλα Ισραήλ λιμάνι Λεμεσού κυβέρνηση απαγόρευση εξαγωγές όπλων Ισραήλ 2024 2025 (Greek: seafarers'' unions on a Cypriot-flagged passenger ship at Limassol, the evacuation
+      of Israelis through Cyprus; no export ban, refusal or documented arms transit)'
+    - 'gov.cy WordPress search API (2026-11-10): ''arms export'' (30 items, none on Israel), ''settlements products'' (none on Israel), ''Hind Rajab'' (2 items, unrelated), ''Gaza protest'' (statements of the
+      Foreign Minister and the trilateral declarations; no ban)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Official Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus arms exports Israel licences suspended OR halted government 2024 military equipment Cyprus export controls Israel (the United Kingdom''s suspension of September 2024 and
+      the United States'' suspension of its embargo on Cyprus; nothing on a Cypriot measure)'
+    - 'WebSearch 2026-11-10: Κύπρος πλοίο όπλα Ισραήλ λιμάνι Λεμεσού κυβέρνηση απαγόρευση εξαγωγές όπλων Ισραήλ 2024 2025 (Greek: seafarers'' unions on a Cypriot-flagged passenger ship at Limassol, the evacuation
+      of Israelis through Cyprus; no export ban, refusal or documented arms transit)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access, airspace or flag to an arms shipment bound for Israel was found: the press reports calls by lawyers, unions and the BDS movement for refusals (Overseas Santorini, August
+      2024; HC Opal, May 2025; Ocean Grand, July 2025) and no Government decision; Cyprus Mail says the Government did not answer its questions on the HC Opal. Not searched: the Cyprus Ports Authority''s and
+      the Shipping Deputy Ministry''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus port Limassol arms shipment Israel ship denied OR refused OR transit 2024 2025 government (the lawyers'' call of August 2024 on the Overseas Santorini, Cyprus Mail of 17
+      July 2025 on the Ocean Grand; the seizures of 2009 and 2012; no Government refusal or authorisation)'
+    - 'WebSearch 2026-11-10: Cyprus Mail July 2025 ship explosives artillery Israel Limassol Ashdod government response ministry (Cyprus Mail of 30 May 2025 on the HC Opal, which says the Government did not
+      answer its questions, and of 17 July 2025 on the Ocean Grand; no Government statement)'
+    - 'WebSearch 2026-11-10: Cyprus Israel "Overseas Santorini" OR "HC Opal" OR "Ocean Grand" Cyprus government statement port authority military cargo (no Government or port authority decision; the Shipping
+      Deputy Ministry''s circular of October 2023 on Cypriot-flagged ships and Israeli ports)'
+    - 'WebSearch 2026-11-10: Κύπρος πλοίο όπλα Ισραήλ λιμάνι Λεμεσού κυβέρνηση απαγόρευση εξαγωγές όπλων Ισραήλ 2024 2025 (Greek: seafarers'' unions on a Cypriot-flagged passenger ship at Limassol, the evacuation
+      of Israelis through Cyprus; no export ban, refusal or documented arms transit)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on eleven qualifying votes and an abstention on A/RES/ES-10/21 (27 October 2023, −2, decayed). All 12 qualifying votes are recorded; Cyprus is not among the
@@ -155,14 +211,29 @@ indicators:
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national ban or labelling rule on goods from Israeli settlements was found (it would be scoped west-bank); the results concern other states. Not searched: the Department of Customs and Excise''s
+      notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus OR Bahrain OR Armenia ban settlement products OR exclude Israeli companies public procurement OR pension fund divest Israel 2024 2025 (Bahrain''s statements of 2020, Slovenia''s
+      ban of August 2025, the UN database of companies; nothing on Cyprus)'
+    - 'gov.cy WordPress search API (2026-11-10): ''arms export'' (30 items, none on Israel), ''settlements products'' (none on Israel), ''Hind Rajab'' (2 items, unrelated), ''Gaza protest'' (statements of the
+      Foreign Minister and the trilateral declarations; no ban)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Cypriot public fund was found; the results concern other states'' funds. Not searched: the Social Insurance Fund''s and the Central Bank''s investment policies.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus OR Bahrain OR Armenia ban settlement products OR exclude Israeli companies public procurement OR pension fund divest Israel 2024 2025 (Bahrain''s statements of 2020, Slovenia''s
+      ban of August 2025, the UN database of companies; nothing on Cyprus)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the Treasury''s Public Procurement Directorate (eprocurement.gov.cy).'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus OR Bahrain OR Armenia ban settlement products OR exclude Israeli companies public procurement OR pension fund divest Israel 2024 2025 (Bahrain''s statements of 2020, Slovenia''s
+      ban of August 2025, the UN database of companies; nothing on Cyprus)'
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Cypriot Government flows to the Gaza response appear in fts_plan_totals.csv (four plan rows). Left to the build. The President said at the 81st General Debate that Cyprus
@@ -204,11 +275,34 @@ indicators:
     - 'gov.cy search API: Gaza'
     checked_at: '2026-11-04'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No investigation or prosecution of Cypriot nationals or companies for conduct in Gaza was found. Not searched: the Law Office of the Republic''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Hind Rajab Foundation Cyprus complaint Israeli soldier attorney general investigation July 2025 (the Foundation''s complaints of 14 November 2024, 25 July 2025 and May 2026; no
+      report of a Cypriot decision); hindrajabfoundation.org post of 14 November 2024, cyprus-mail.com of 5 May 2026 and the Wikipedia article on the Foundation read (2026-11-10)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. No ban on Palestine solidarity protests or symbols was found: the results report weekly protests in Nicosia and Limassol from October 2023 and protests at RAF Akrotiri, a
+      dispute over the police''s force at the protest outside the Ministry of Foreign Affairs after the flotilla''s interception, and the arrest of two women for disrupting a pro-Palestinian demonstration;
+      none is a ban. Not searched: the Cyprus Police''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Cyprus police arrest OR ban pro-Palestine protest Gaza Limassol OR Nicosia OR Akrotiri 2024 2025 (weekly protests in Nicosia and Limassol from October 2023, protests at RAF Akrotiri,
+      Politis on the police''s handling of the protest at the Ministry of Foreign Affairs after the flotilla''s interception, with the police association rejecting claims of excessive force, two women arrested
+      for disrupting a pro-Palestinian demonstration in Limassol; no ban)'
+    - 'gov.cy WordPress search API (2026-11-10): ''arms export'' (30 items, none on Israel), ''settlements products'' (none on Israel), ''Hind Rajab'' (2 items, unrelated), ''Gaza protest'' (statements of the
+      Foreign Minister and the trilateral declarations; no ban)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'Experimental, unscored. The Hind Rajab Foundation filed complaints with the Cypriot authorities against Israeli soldiers visiting Cyprus (14 November 2024, 25 July 2025 and May 2026, by its own pages
+      and the press); no document of a Cypriot prosecutor or court accepting any of them for investigation was found, and the Foundation''s pages read do not say that one was opened. Not searched: the Law Office
+      of the Republic''s and the Police''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Hind Rajab Foundation Cyprus complaint Israeli soldier attorney general investigation July 2025 (the Foundation''s complaints of 14 November 2024, 25 July 2025 and May 2026; no
+      report of a Cypriot decision); hindrajabfoundation.org post of 14 November 2024, cyprus-mail.com of 5 May 2026 and the Wikipedia article on the Foundation read (2026-11-10)'
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldier Gaza "Hind Rajab Foundation" Cyprus OR Zimbabwe OR Zambia OR Uganda OR Armenia (complaints in Belgium, Brazil, Germany, the United
+      Kingdom and Cyprus; none in Uganda, Zambia, Zimbabwe or Armenia)'
+    - 'gov.cy WordPress search API (2026-11-10): ''arms export'' (30 items, none on Israel), ''settlements products'' (none on Israel), ''Hind Rajab'' (2 items, unrelated), ''Gaza protest'' (statements of the
+      Foreign Minister and the trilateral declarations; no ban)'
+    checked_at: '2026-11-10'
