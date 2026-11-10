@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Presidency's site (presidence.td, WordPress, open REST search with full texts; daily summaries, the Head of State's speeches and messages), Tchadinfos (tchadinfos.com, WordPress REST, kind press), the UN's General Debate pages and files (79th to 81st; scans, read by OCR), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. The Ministry of Foreign Affairs' site (diplomatie.gouv.td) shows an empty directory listing and the Prime Minister's site (primature.td) did not answer. No web search was available.
 # Events: evt_2023_11_04_TCD_B12, evt_2025_09_25_TCD_B9. Leads: see data/leads/TCD.yaml. See docs/10 B-835 to B-837, B-840.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in French and English, the Presidency's REST search and the shared searches), all none-found with the limits said in each note; B9, C2, D4 and D5 notes extended; new lead_20261110_TCD_2 (B9, the President's speech of 11 November 2024, the Presidency's page not archivable: Save Page Now 403, no Wayback capture). No new event. See docs/10 B-2079, B-2081.
 country: TCD
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Chadian company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales customer in the
+      results. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists orders by Chad from Israel for the data years 2006, 2007 and 2015 only, before the window; none
@@ -29,17 +35,41 @@ indicators:
     - sipri_orders.csv, buyer TCD
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found in the window: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing
+      in 2023 to 2026. The results on Chad and Israel are about the re-establishment of relations in 2018 and 2019 (a memorandum on security cooperation reported at Netanyahu''s visit of January
+      2019, terms unpublished; reports that Israeli equipment was acquired, unconfirmed): before the window. In the window the Presidency''s posts of 31 January to 2 February 2023 (titles read)
+      record the President''s visit to Israel and the opening of Chad''s embassy in Tel Aviv (before 7 October 2023), the recall of the Chargé d''Affaires (B12) and the credentials of a non-resident
+      Israeli Ambassador on 19 October 2026 (post 25743). Not searched: the Ministry of Defence''s releases (no site found).'
+    queries:
+    - 'WebSearch 2026-11-10: Chad Israel security cooperation 2025 OR 2026 Mossad OR drones OR arms OR "military" N''Djamena Israeli ambassador credentials (the results are of 2018 and 2019; nothing
+      from 2025 or 2026)'
+    - 'WebSearch 2026-11-10: Chad Tchad Israël coopération militaire OR accord OR ambassade OR visite 2024 2025 2026 Déby Netanyahu (the same 2018 to 2019 items; no instrument in the window)'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Israël (30 titles read; the posts of 8 January 2024, 6 November 2023 and 19 October 2026 read)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Chad has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register). Not searched:
+      the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results concern other states. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): sanctions (17 titles read; domestic)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (Chad is landlocked; ports do not arise). Not searched: the civil aviation authority''s (ANAC) notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes, each a ''Y'' (each scores +3; B1 +16.5 after decay). Chad is not named in the Secretary-General''s letter
@@ -98,20 +128,25 @@ indicators:
       indiscriminés'', ''destruction systématique d''infrastructures vitales'' at Gaza; scanned file, read by OCR and compared with the page images; flagged under R3, docs/10 B-836). Not filed:
       (1) the President''s speech at the extraordinary Arab-Islamic summit, Riyadh, 11 November 2024 (Presidency page 23166, first person: ''La trêve immédiate souhaitée, tant à Gaza qu''au Liban,
       devra permettre l''acheminement de l''aide et la protection des civils par la mise en place de corridors humanitaires'', a call at the +2 tier, 723 days old on 4 November 2026): presidence.td
-      answers Save Page Now with HTTP 403 and Wayback holds no capture, so there is no archived copy (docs/10 B-837); an `official` source cannot support a lead. (2) The New Year message of 31
-      December 2023 (President, first person: ''notre condamnation a été absolue contre la réaction de l''Etat d''Israël qui fait usage de force brute dans sa punition collective contre les civils
-      palestiniens''): the passage never names Gaza (R7) and is 1,039 days old (expired). (3) The Presidency''s report of the Arab-Islamic summit of 11 November 2023 (third person: the President
-      ''a dénoncé le recours à la punition collective contre les palestiniens par Israël''): indirect speech (R4). (4) The 79th statement (the Prime Minister, 25 September 2024) condemns ''les
-      violences et exactions commises contre des civils innocents'' and speaks of ''des images insoutenables qui nous proviennent de la bande de Gaza'': no call and no named violation (neither
-      tier). (5) The 81st statement (25 September 2026) is delivered by the Minister of Public Health, not a B9 speaker (R3), and voices concern at ''la détresse humanitaire à Gaza'' with no call.
-      (6) The Foreign Minister''s words of 10 November 2023 (''Notre pays appelle à un cessez-le-feu'', Tchadinfos, a lead, expired). (7) The Presidency''s reports of the Eid prayers and the President''s
-      replies of 10 April and 16 June 2024 pray for peace for Gaza and Sudan without a call.'
+      answers Save Page Now with HTTP 403 and Wayback holds no capture, so there is no archived copy (docs/10 B-837); an `official` source cannot support a lead. (2) The New Year message of 31 December
+      2023 (President, first person: ''notre condamnation a été absolue contre la réaction de l''Etat d''Israël qui fait usage de force brute dans sa punition collective contre les civils palestiniens''):
+      the passage never names Gaza (R7) and is 1,039 days old (expired). (3) The Presidency''s report of the Arab-Islamic summit of 11 November 2023 (third person: the President ''a dénoncé le recours
+      à la punition collective contre les palestiniens par Israël''): indirect speech (R4). (4) The 79th statement (the Prime Minister, 25 September 2024) condemns ''les violences et exactions commises
+      contre des civils innocents'' and speaks of ''des images insoutenables qui nous proviennent de la bande de Gaza'': no call and no named violation (neither tier). (5) The 81st statement (25
+      September 2026) is delivered by the Minister of Public Health, not a B9 speaker (R3), and voices concern at ''la détresse humanitaire à Gaza'' with no call. (6) The Foreign Minister''s words
+      of 10 November 2023 (''Notre pays appelle à un cessez-le-feu'', Tchadinfos, a lead, expired). (7) The Presidency''s reports of the Eid prayers and the President''s replies of 10 April and
+      16 June 2024 pray for peace for Gaza and Sudan without a call. Completion of 2026-11 (2026-11-10): the Presidency''s page of the President''s speech of 11 November 2024 (post 23166, read in
+      full) was fetched again: ''La trêve immédiate souhaitée, tant à Gaza qu’au Liban, devra permettre l’acheminement de l’aide et la protection des civils'' (+2, 729 days old on 10 November 2026,
+      expiring on 11 November). Save Page Now answered HTTP 403 again and the Wayback Machine has no capture, so it is lead_20261110_TCD_2 (Alwihda Info''s report of 12 November 2024 as the press
+      source) and not an event; the failed index row was removed by its exact id.'
     queries:
     - gadebate.un.org/en/{79,80,81}/chad and gastatements/79/td_fr_0.pdf, 80/td_fr.pdf, 81/td_fr.pdf (scanned; read by OCR, tesseract English model, 130 dpi)
     - 'presidence.td /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinien, Israël, Hamas, Liban, cessez, génocide, OCI, Doha, deux États (titles read; the posts of 11-12 November 2023, 31
       December 2023, 10 April 2024, 16 June 2024, 11-12 November 2024, 31 December 2024 and 15 February 2025 read in full)'
     - 'tchadinfos.com /wp-json/wp/v2/posts?search=: Tchad Israël, chargé d''affaires Israël, Annadif, Palestine (titles read)'
-    checked_at: '2026-11-04'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Gaza (19 titles), Palestine (11), Israël (30) (posts 23166 and 25743 read in full)'
+    - 'Wayback CDX 2026-11-10: presidence.td/sommet-extraordinaire-arabo-islamique-discours-du-chef-de-letat/23166/ (no capture)'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found in the sources read.'
@@ -141,24 +176,39 @@ indicators:
     checked_at: '2026-11-04'
   C2:
     status: none-found
-    note: No agreement with Israel signed since October 2023 was found in the Presidency's news (titles read). The Government denied talks with Israel on hosting Palestinians from Gaza (communique
-      of the Minister of Communication, Presidency's summary of 8 January 2024).
+    note: 'No agreement with Israel signed since October 2023 was found in the Presidency''s news (titles read). The Government denied talks with Israel on hosting Palestinians from Gaza (communique
+      of the Minister of Communication, Presidency''s summary of 8 January 2024). Completion of 2026-11 (2026-11-10): the Presidency''s posts for Israël (30 titles) and the credentials post of 19
+      October 2026 were read again; no instrument signed since October 2023.'
     queries:
     - presidence.td searches (see B9)
-    checked_at: '2026-11-04'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Israël (30 titles)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the customs authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Chadian public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the national social-security fund''s investment
+      policy (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the public procurement regulator''s decisions.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -185,22 +235,44 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
-    note: No field hospital deployment or medical-evacuation programme for Gaza by Chad was found in the Presidency's news (titles read).
+    note: 'No field hospital deployment or medical-evacuation programme for Gaza by Chad was found in the Presidency''s news (titles read). Completion of 2026-11 (2026-11-10): Chad is not among
+      the destination countries in MSF''s table (21 October 2025) or WHO''s summary (29 September 2025).'
     queries:
     - presidence.td searches (see B9)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
-    note: No visa or refugee pathway for Gazans was found; the Government denied talks on hosting Palestinians from Gaza (Presidency's summary of 8 January 2024).
+    note: 'No visa or refugee pathway for Gazans was found; the Government denied talks on hosting Palestinians from Gaza (Presidency''s summary of 8 January 2024). Completion of 2026-11 (2026-11-10):
+      the Presidency''s summary of 8 January 2024 (post 20535) was read again: the Government spokesperson''s communique denies talks with Israel on receiving thousands of Palestinians from Gaza.'
     queries:
     - presidence.td searches (see B9)
-    checked_at: '2026-11-04'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Palestiniens (3 titles; post 20535 read)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by a Chadian prosecutor was found: the results of complaints under universal jurisdiction are in other
+      states (Chad is a State Party to the Rome Statute). Not searched: the Public Prosecutor''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Cour pénale (8 titles read; domestic)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine was found: the search returned the protests of Wakit Tama and the opposition (2021 to 2022, banned and dispersed) and nothing for
+      Gaza or Palestine; the Presidency''s search for ''Palestiniens'' returns the New Year message of 31 December 2023, the summary of 8 January 2024 and the post of 11 November 2023 on the summit.
+      Not searched: the Ministry of Public Security''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Tchad OR Togo manifestation soutien Palestine Gaza interdite OR autorisée OR dispersée police marche solidarité N''Djamena OR Lomé (Wakit Tama and other domestic protests;
+      no rally for Palestine)'
+    - 'presidence.td /wp-json/wp/v2/posts?search= (the Presidency, official): Palestiniens (3 titles read)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No case against a Chadian national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
