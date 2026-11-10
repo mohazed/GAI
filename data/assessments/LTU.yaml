@@ -3,6 +3,8 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the Ministry of Foreign Affairs (urm.lt, also mfa.lt), the Government (lrv.lt) and the President's site (lrp.lt) answer a Cloudflare challenge to every scripted request and Save Page Now fails with HTTP 403: their pages were read through the Wayback captures that exist (the Ministry's release of 29 August 2025 is one) and the rest only through the press (LRT English, BNS, LSM: read live) and the General Debate statements (gadebate.un.org, the 78th to 81st sessions; the 80th archived). The joint statements already archived for the 45 (archive/text searched for Lithuania, Lituanie), the EU Council's settler listings (archived), the UNRWA donor rankings of 2022 to 2024, the SIPRI register, the ICJ's case 192 page, the Assembly of States Parties' list, the generated events and tables; web searches in English and Lithuanian per indicator group. Lithuania is an EU member: B11 from the Council's listings (R8) and B9 from the joint statements (B-444). Time: about 60 minutes of research on Lithuania, inside the 90-minute budget of the session.
 # Eight B9 events, three B11 events, two D3 events. Leads: 3 (lead_20261013_LTU_1 to _3).
+# Completion of 2026-11 (finish run, T-F-L10, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, with LRT English (the Defence Ministry's proposal of 17 February 2026), the Wayback CDX of the Ministry's English news pages and 6 web searches in English and Lithuanian.
+#   No new event: the Ministry, the Government and the President's site still answer a Cloudflare challenge; leads LTU_1 to LTU_3 re-checked and kept (docs/10 B-995).
 country: LTU
 protocol_version: 1
 last_full_check: '2026-10-13'
@@ -19,8 +21,20 @@ indicators:
       B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-10-13'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Lithuanian company as a supplier of parts or maintenance for the F-35 programme. Lithuania is neither a partner nor a customer of the programme and A/HRC/59/23 does
+      not contain the word Lithuania (searched 2026-11-10). The search found Lockheed Martin''s supplier outreach in Lithuania (an ''Industry Days'' event of June 2025, a Lithuanian branch registered
+      in March 2026, defence industry cooperation statements of 2025 and 2026, all for other programmes such as HIMARS) and no Lithuanian F-35 supplier (defence-industry.eu and LRT, seen in search
+      results, not read). Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign
+      Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback
+      CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated 2024 to 28 February 2026 and none later (the listing of captures
+      made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193,
+      were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from
+      a summary.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Lithuania (no match)
+    - 'WebSearch 2026-11-10: Lithuanian company F-35 supplier parts Lockheed Martin Lithuania industry OR Lithuania ban Israeli settlement goods labelling Lithuanian customs'
+    checked_at: '2026-11-10'
   A4:
     status: has-events
     note: 'Generated from SIPRI (sipri_orders.csv): a 2025 order (Spike-NLOS missiles for Watercat missile boats built in Finland; TIV 3.75) in the release of 9 March 2026, which gives the generated
@@ -31,17 +45,61 @@ indicators:
     - archive/text/src_20261005_sipri_register-supplier-israel.txt, Lithuania (read)
     checked_at: '2026-10-13'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No named joint exercise, intelligence sharing related to the Gaza campaign, basing agreement or documented transit of arms with Israel was found. Found and not counted: the Defence Ministry
+      proposed a defence attaché at the embassy in Israel (LRT English and BNS, 17 February 2026, read: it would ''support military procurement'', the Ministry wants to draw on Israel''s experience
+      in total defence and mobilisation), the first Israeli defence attaché was accredited in Vilnius in February 2026, the Defence Minister visited Israel in April 2025 and the Armed Forces sought
+      closer cooperation with the Israeli forces (the Ministry''s and the Armed Forces'' pages and the Baltic Times, seen in search results, not read). Visits, attachés and procurement are not instances
+      as A5 defines it; procurement from Israel is measured by A4 (generated). Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at
+      the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge
+      to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated
+      2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026
+      visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode,
+      in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - lrt.lt/en/news-in-english/19/2842100/lithuania-wants-to-send-defence-attache-to-israel (17 February 2026, read)
+    - 'WebSearch 2026-11-10: Lithuania Israel arms export licences OR defence cooperation Lithuanian Ministry of Defence Israel Gaza 2025 2026 Spike Rafael Lietuva'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms export licences to Israel was found. Strategic goods are licensed by the Ministry of Economy and Innovation; no restriction concerning
+      Israel was reported in the English and Lithuanian press found by search, and the Defence Ministry''s statement of 17 February 2026 (read) describes an interest in ''joint defence industry
+      projects in Lithuania'' and ''strengthening the export potential of the national defence industry'' with Israel. Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s
+      proposal of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt)
+      answer a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank
+      returned captures dated 2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items
+      on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The
+      web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelis ginklų eksportas licencijos Gaza Užsienio reikalų ministerija sustabdyti leidimai 2025 2026'
+    - lrt.lt/en/news-in-english/19/2842100/lithuania-wants-to-send-defence-attache-to-israel (read)
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; Lithuania buys Israeli weapons (Spike missiles and Samson turrets in the SIPRI register, the Defence Ministry''s
+      statement of 17 February 2026), the opposite of an embargo. Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at the embassy
+      in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge to every script
+      (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated 2024 to 28 February
+      2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026 visit to Israel and
+      the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode, in English and Lithuanian)
+      found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelis ginklų eksportas licencijos Gaza Užsienio reikalų ministerija sustabdyti leidimai 2025 2026'
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Lithuania (read)
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found for Lithuania in the searches of 2026-11-10 or in the Wayback listing of the Ministry''s items;
+      the searches returned such measures for other states and none for Lithuania. Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché
+      at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge
+      to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated
+      2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026
+      visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode,
+      in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelis ginklų eksportas licencijos Gaza Užsienio reikalų ministerija sustabdyti leidimai 2025 2026'
+    - Wayback CDX urm.lt/en/news/928/* 2026-06-01 to 2026-11-10 (titles read)
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: yes on 6 of the 12 qualifying votes and an abstention on 6 (A/RES/ES-10/21, ES-10/22, ES-10/23, ES-10/24 and ES-10/26 and A/RES/79/232). All 12 are recorded,
@@ -167,14 +225,45 @@ indicators:
     note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
     checked_at: '2026-10-13'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No Lithuanian ban on settlement goods and no national labelling rule beyond the EU''s was found. A Lithuanian customs notice on imports of Israeli origin (muitine.lrv.lt, 15 April 2025,
+      seen in a search result, the page answers HTTP 403 and has no Wayback copy) describes the EU rule that settlement goods do not receive the preferential tariff of the Association Agreement,
+      which is neither a ban nor a labelling measure; the Lithuanian Foreign Ministry''s statement on settlement expansion (ministry page, seen in a search result, not read) is a call. Lithuania''s
+      imports from Israel were about EUR 49 million in 2025 (Lithuanian export agency, seen in a search result). Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s
+      proposal of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt)
+      answer a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank
+      returned captures dated 2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items
+      on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The
+      web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelio gyvenviečių prekių ženklinimas draudimas importas Palestina pensijų fondas Izraelio įmonės pašalinti viešieji pirkimai'
+    - 'WebSearch 2026-11-10: Lithuanian company F-35 supplier ... OR Lithuania ban Israeli settlement goods labelling Lithuanian customs'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision of a Lithuanian public pension fund, the central bank or the State Social Insurance Fund to exclude companies over conduct in Gaza or the occupied territories was found; the
+      search returned no fund list or policy. The funds'' own exclusion lists were not found by search. Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal
+      of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer
+      a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank
+      returned captures dated 2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items
+      on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The
+      web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelio gyvenviečių prekių ženklinimas draudimas importas Palestina pensijų fondas Izraelio įmonės pašalinti viešieji pirkimai'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No national or municipal decision to exclude companies implicated in the occupation or in Gaza from public procurement was found; Lithuania''s defence procurement from Israeli firms continues
+      (Defence Ministry, 17 February 2026, read). The Public Procurement Office''s pages were not found by search. Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s
+      proposal of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt)
+      answer a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank
+      returned captures dated 2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items
+      on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The
+      web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Izraelio gyvenviečių prekių ženklinimas draudimas importas Palestina pensijų fondas Izraelio įmonės pašalinti viešieji pirkimai'
+    - lrt.lt/en/news-in-english/19/2842100/lithuania-wants-to-send-defence-attache-to-israel (read)
+    checked_at: '2026-11-10'
   D1:
     status: has-events
     note: 'Generated from FTS: Government flows of USD 106,914 (plan 1156), 304,681 (plan 1186), 58,685 (plan 1273) and 58,548 (plan 1510) over all flow dates (fts_plan_totals.csv). Left to the
@@ -219,11 +308,38 @@ indicators:
     - Gaza visa humanitarian Lithuania regulation
     checked_at: '2026-10-13'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Lithuanian investigation or prosecution of a national or a company for conduct in Gaza was found in the searches of 2026-11-10 (English and Lithuanian); the Prosecutor General''s and
+      police pages were not found by search. E1 is recorded, not scored (D-12). Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at
+      the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge
+      to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated
+      2024 to 28 February 2026 and none later (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026
+      visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode,
+      in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Palestinos palaikymo protestas uždrausta policija Gaza demonstracija Vilnius baudos vėliava OR Lithuania pro-Palestinian protest banned police Vilnius'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No Lithuanian ban on Palestine solidarity demonstrations or symbols was found: the protests in Vilnius (1 July 2025 against the Israeli Foreign Minister''s visit, 13 October 2025) and
+      Kaunas (a permit for up to 100 participants) were held (LRT English, seen in search results, not read), and no fine or ban was reported; the only ban found in the results is in Latvia (Riga,
+      2023). E2 is recorded, not scored (D-12). Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at the embassy in Israel, BNS, read).
+      The Ministry of Foreign Affairs (urm.lt, mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge to every script (HTTP 403) and Save
+      Page Now fails; a Wayback CDX query on urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated 2024 to 28 February 2026 and none later
+      (the listing of captures made from 1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids
+      46178, 46191 and 46193, were returned by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode, in English and Lithuanian) found pages;
+      nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Palestinos palaikymo protestas uždrausta policija Gaza demonstracija Vilnius baudos vėliava OR Lithuania pro-Palestinian protest banned police Vilnius'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No universal-jurisdiction complaint accepted for investigation by Lithuanian authorities over conduct in Gaza was found in the searches of 2026-11-10. E3 is recorded, not scored (D-12).
+      Pages read on 2026-11-10: LRT English of 17 February 2026 (the Defence Ministry''s proposal of a defence attaché at the embassy in Israel, BNS, read). The Ministry of Foreign Affairs (urm.lt,
+      mfa.lt), the Government (lrv.lt, muitine.lrv.lt) and the President''s site (lrp.lt) answer a Cloudflare challenge to every script (HTTP 403) and Save Page Now fails; a Wayback CDX query on
+      urm.lt/en/news/928/* for URLs containing israel, gaza, palestin, middle-east or west-bank returned captures dated 2024 to 28 February 2026 and none later (the listing of captures made from
+      1 June 2026 shows Belarus, Ukraine, Nordic and transatlantic items) (the Ministry''s items on Mr Budrys'' June 2026 visit to Israel and the West Bank, ids 46178, 46191 and 46193, were returned
+      by a web search and have no Wayback capture: they could not be read or archived). The web searches (standard mode, in English and Lithuanian) found pages; nothing was filed from a summary.'
+    queries:
+    - 'WebSearch 2026-11-10: Lietuva Palestinos palaikymo protestas uždrausta policija Gaza demonstracija Vilnius baudos vėliava OR Lithuania pro-Palestinian protest banned police Vilnius'
+    checked_at: '2026-11-10'
