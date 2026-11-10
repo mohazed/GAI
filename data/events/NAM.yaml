@@ -2,6 +2,67 @@
 # Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
 # Not an EU member. Speakers for B9/B10 (R3): the President (Nangolo Mbumba in the 79th session; Netumbo Nandi-Ndaitwah in the 80th and 81st), head of state and head of government; the Minister responsible for international relations.
 # Not filed as events (docs/10 B-817): the 81st General Debate statement (23 September 2026) 'an end to the atrocities being committed in Gaza' (no ceasefire, no blockade, no named violation); the Hague Group's Bogota declaration (15 and 16 July 2025, a lead).
+# Completion of 2026-11 (T-F-L20, 2026-11-10): two events added, evt_2024_08_24_NAM_A8 (the vessel Kathrin, corroborated) and evt_2024_11_22_NAM_B5 (the Ministry's statement on the ICC warrants, corroborated, flagged for the speaker): see docs/10 B-2070.
+- id: evt_2024_08_24_NAM_A8
+  revision: 1
+  country: NAM
+  indicator: A8
+  type: repeatable
+  date: '2024-08-24'
+  end: null
+  points: 5
+  points_rationale: 'Transit denied (+5): the Government revoked the permission to dock at Walvis Bay granted to the Portuguese-flagged cargo vessel Kathrin and prohibited it from entering Namibian
+    waters, after the Minister of Justice wrote to the Cabinet and the ministries concerned and a police investigation found that it carried explosive material destined for Israel.'
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: The Government revoked the permission of the vessel Kathrin, carrying explosives bound for Israel, to dock at Walvis Bay and prohibited it from entering Namibian waters.
+    fr: Le gouvernement a retiré au navire Kathrin, qui transportait des explosifs à destination d'Israël, l'autorisation d'accoster à Walvis Bay et lui a interdit l'entrée dans les eaux namibiennes.
+  actor:
+    en: Government of Namibia (Minister of Justice; Namibian Police Force)
+    fr: Gouvernement de la Namibie (ministre de la Justice ; police namibienne)
+  evidence:
+  - source: src_20240829_maritime-executive_namibia-kathrin-turned-away
+    quote: The African nation of Namibia revoked the docking privileges granted to a Portuguese-flagged general cargo ship.
+    quote_lang: en
+    locator: line 1
+  - source: src_20240829_maritime-executive_namibia-kathrin-turned-away
+    quote: “Upon receiving reports that a vessel might be carrying weapons intended for Israel, I addressed a letter to the cabinet, international relations ministry, work ministry, as well as
+      the safety and security ministry,” said Justice Minister Yvonne Dausab.
+    quote_lang: en
+    locator: line 6
+  - source: src_20240828_the-star-bbc_namibia-blocks-kathrin
+    quote: Citing a police investigation, Ms Dausab said the vessel was "indeed carrying explosive material destined for Israel, and was therefore prohibited from entering Namibian waters".
+    quote_lang: en
+    locator: line 11
+  - source: src_20240828_nbc_palestinians-thank-namibia-kathrin
+    quote: Palestinians have thanked Namibia for refusing a vessel suspected to be carrying military cargo for Israel from docking at the Walvis Bay port over the weekend.
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    notes: 'Filed in the finish run (T-F-L20, 2026-11-10) at corroborated: no Government release, Cabinet decision or police note was archived (the Ministry of Justice''s and the Presidency''s
+      sites did not answer; the Minister''s letter and the Inspector-General''s note revoking permission no. 21/2024 are described by the Bonn GPIL commentary of 29 August 2024, read, not archived;
+      New Era''s original interview is behind a bot check), so the evidence is three outlets of distinct ownership: The Maritime Executive (29 August 2024: docking privileges revoked; the Minister''s
+      letter; the police, citing a Cabinet decision, revoked the permission granted on 13 August), BBC News as republished by The Star (28 August 2024: the Minister, citing a police investigation,
+      said the vessel was prohibited from entering Namibian waters) and the public broadcaster NBC (28 August 2024: the refusal ''over the weekend''). Date: 24 August 2024 (Saturday), the weekend
+      before the scheduled call on Monday 26 August per NBC and the BBC; the Bonn commentary gives 24 August; a Legalbrief item gives 26 August. Flags for the author (docs/10 B-2070): (1) the
+      day rests on ''over the weekend'' and an unarchived commentary; (2) the cargo is described as explosives (60 containers of TNT and eight of other explosives, ''unconfirmed reports'', Maritime
+      Executive) consigned to Israel; the declared destination was Koper, Slovenia; the same vessel was refused by Malta in October 2024 (evt_2024_10_07_MLT_A8); (3) A8 is repeatable: this event
+      decays. The earlier vessel Nordic (July 2024) anchored in Namibian waters without docking (NBC, line 7): not an instance. Not filed: the Hague Group''s Bogota measures of July 2025 (a commitment,
+      lead_20261104_NAM_1); no later port decision was found.'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read after the draft against archive/text: The Maritime Executive lines 1, 6 and 11 (docking privileges revoked; the Minister''s letter; the police, citing a Cabinet decision,
+        revoked the permission granted on 13 August), The Star/BBC lines 1, 2, 10 and 11 (blocked from docking; set to dock on Monday; prohibited from entering Namibian waters) and NBC line 3
+        (''over the weekend''). The actor, the vessel, the port and the ground agree across three publishers. A8 +5 agrees with the indicator; date flagged.'
 - id: evt_2024_09_25_NAM_B9
   revision: 1
   country: NAM
@@ -55,6 +116,66 @@
       notes: 'Lines 4 to 7 and 107 to 112 of the archived text re-read: each quote is a substring of the archived text (the line breaks of the PDF removed). The speaker is a B9 speaker
         (R3), Gaza is named in the same paragraph (R7), the passage is direct speech (R4). Tier +5 (legal characterisation, own words) with a call; one event for the speaker and the
         day.'
+- id: evt_2024_11_22_NAM_B5
+  revision: 1
+  country: NAM
+  indicator: B5
+  type: standing
+  date: '2024-11-22'
+  end: null
+  points: 8
+  points_rationale: 'Official statement on the warrants of 21 November 2024 (+8, standing): the Ministry of International Relations and Cooperation, in a statement, welcomed the arrest warrants
+    for Israel''s Prime Minister and former Defence Minister and called on all UN member states to cooperate with the ICC in bringing the perpetrators to justice; read as the Algerian Ministry''s
+    statement was (evt_2024_11_21_DZA_B5).'
+  confidence: corroborated
+  scope:
+  - gaza
+  summary:
+    en: The Ministry of International Relations and Cooperation welcomed the ICC arrest warrants for Benjamin Netanyahu and Yoav Gallant and called on all UN member states to cooperate with the
+      Court.
+    fr: Le ministère des Relations internationales a salué les mandats d'arrêt de la CPI contre Benjamin Netanyahou et Yoav Gallant et appelé les États membres de l'ONU à coopérer avec la Cour.
+  actor:
+    en: Ministry of International Relations and Cooperation (Executive Director Penda Naanda)
+    fr: Ministère des Relations internationales et de la Coopération (directeur exécutif Penda Naanda)
+  evidence:
+  - source: src_20241122_nbc_namibia-welcomes-icc-warrant
+    quote: Namibia has welcomed the decision of the International Criminal Court (ICC) to formally issue arrest warrants for Israeli Prime Minister Benjamin Netanyahu and former Defence Minister
+      Yoav Gallant.
+    quote_lang: en
+    locator: line 3
+  - source: src_20241122_nbc_namibia-welcomes-icc-warrant
+    quote: Namibia has called on all UN member states to cooperate with the International Criminal Court and to assist the same international justice system created by the international community
+      in bringing the perpetrators to justice and to answer for their crimes.
+    quote_lang: en
+    locator: line 9
+  - source: src_20241125_neweralive_namibia-backs-netanyahu-arrest
+    quote: International relations executive director Penda Naanda said although this decision was long overdue, it is a step in the right direction.
+    quote_lang: en
+    locator: line 2
+  - source: src_20241125_neweralive_namibia-backs-netanyahu-arrest
+    quote: “Namibia calls on all UN member states to cooperate with the International Criminal Court and to assist the same international justice system created by the international community
+      in bringing the perpetrators to justice and to answer for their crimes,” added the ambassador.
+    quote_lang: en
+    locator: line 5
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    notes: 'Filed in the finish run (T-F-L20, 2026-11-10) at corroborated: the Ministry''s own text was not found (mirco.gov.na did not answer on 2026-11-10), so the evidence is two outlets of
+      distinct ownership that report the same statement, the public broadcaster NBC (22 November 2024: ''MIRCO says in a statement'') and the state-owned New Era (25 November 2024: the Executive
+      Director, ''in a statement''). Flags for the author (docs/10 B-2070): (1) speaker: B5 names the head of government, the foreign minister or the justice minister; the statement is the Ministry''s,
+      delivered by its Executive Director (the senior civil servant), not by the Minister. The Algerian precedent (a Ministry communiqué in its own name) was filed; drop this event if the author
+      requires the Minister in person. (2) Content: a welcome of the warrants and a call on all UN member states to cooperate with the Court, not an explicit undertaking to arrest; the Algerian
+      precedent is of the same kind. Namibia is a State party (ratified 25 June 2002). No B6 act was found.'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: 'Re-read after the draft against archive/text: NBC lines 3 to 9 (the welcome; ''MIRCO says in a statement''; the call on all UN member states to cooperate with the ICC) and New Era
+        lines 2 to 5 (the Executive Director''s statement, the same call in direct quotation). The two agree on the statement and its content. B5 +8 agrees with the Algerian reading; both flags
+        kept.'
 - id: evt_2025_09_24_NAM_B9
   revision: 1
   country: NAM
