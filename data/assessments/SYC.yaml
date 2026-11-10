@@ -3,6 +3,7 @@
 # Generated indicators (D-08) are noted, never hand-authored.
 # Search method (docs/06 §5): the State House's site (statehouse.gov.sc: news, speeches and messages; site search for Gaza, Palestine, Palestinian, Hamas, Israel, ceasefire and others; the 122 speeches and messages from id 5950 fetched and searched), the state-owned Seychelles Nation (nation.sc, kind press; site search), the UN's General Debate pages and files (79th and 81st; the 80th has none), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Foreign Ministry site answered (www.mfa.gov.sc: connection failed; www.mofa.gov.sc is the Ministry of Fisheries and Agriculture), the National Assembly's site shows a maintenance page and Seychelles News Agency answers 403.
 # Events: one B9 event (flagged, expired). Leads: two. See docs/10 B-830, B-831, B-834.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): the Ministry of Foreign Affairs and the Diaspora's own site (mfa.gov.sc, WordPress; REST search of the post types news and speeches) was read for the first time: two events (the Foreign Minister's remarks of 23 February 2024, B9; the visa exemption agreements with Israel of 11 January 2024, C2), lead_20261104_SYC_1 extended; A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found with the limits said in each note. See docs/10 B-2080.
 country: SYC
 protocol_version: 1
 last_full_check: '2026-11-04'
@@ -19,8 +20,13 @@ indicators:
       them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
     checked_at: '2026-11-04'
   A3:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No document names a Seychelles company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales customer in
+      the results. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
   A4:
     status: none-found
     note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
@@ -28,17 +34,45 @@ indicators:
     - sipri_orders.csv, buyer SYC
     checked_at: '2026-11-04'
   A5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The results show the Seychelles Defence Forces'' cooperation with India (Exercise Lamitiye, March 2026; the Defence Secretary''s talks of February 2026) and with China (State House release);
+      the Foreign Minister''s remarks of 23 February 2024 say Seychelles'' limited involvement in Operation Prosperity Guardian (the multinational maritime-security operation against the Houthis''
+      attacks in the Red Sea) shows it ''deplores violations of international law'': a maritime-security commitment, with no Israeli forces named, not an A5 instance. Israel''s Ambassador is non-resident
+      (Nairobi). Not searched: the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Seychelles Defence Forces Israel military cooperation OR drones OR training OR overflight OR port Victoria Israeli vessel (India''s and China''s cooperation; no Israel
+      item)'
+    - 'WebSearch 2026-11-10: Seychelles Israel 2025 OR 2026 agreement OR ambassador OR embassy OR cooperation Radegonde OR Herminie OR "State House" (accreditations of Israeli ambassadors of 2022
+      and earlier, the air services and visa agreements; no defence item)'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Israel (27 titles read; post 20669 read), Middle (30 titles; the Ministry''s
+      statements of 2 and 7 March 2026 on the Iran-Israel-United States hostilities read)'
+    checked_at: '2026-11-10'
   A6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Seychelles has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register).
+      Not searched: the Ministry of Home Affairs'' licensing notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   A7:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results concern other states. Not searched: the Official Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   A8:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No denial of port access or airspace to an arms shipment bound for Israel was found; the Ministry''s advisories of 2026 concern Seychellois nationals in the Middle East, not shipments.
+      Not searched: the Seychelles Ports Authority''s and the Civil Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Middle (the travel and safety advisories of February to August 2026
+      read by title)'
+    checked_at: '2026-11-10'
   B1:
     status: has-events
     note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on A/RES/ES-10/21 (27 October 2023; scores -2, expired), yes on the other eleven qualifying votes (+3 each). The country is
@@ -85,10 +119,12 @@ indicators:
     checked_at: '2026-11-04'
   B7:
     status: none-found
-    note: No sanction on ICC judges or prosecutors by Seychelles was found (no result on the State House site or in the Nation for the ICC terms of B5).
+    note: 'No sanction on ICC judges or prosecutors by Seychelles was found (no result on the State House site or in the Nation for the ICC terms of B5). Completion of 2026-11 (2026-11-10): the
+      Ministry''s site (mfa.gov.sc) returns no item on the ICC''s judges or prosecutors for Palestine (search: ICC, 30 titles; the items on the Court are of 2013 and 2015).'
     queries:
     - statehouse.gov.sc and nation.sc searches (see B5)
-    checked_at: '2026-11-04'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): ICC (30 titles read)'
+    checked_at: '2026-11-10'
   B8:
     status: none-found
     note: 'Generated from recognitions.csv: no row for Seychelles. The registry gives a recognition since 18 November 1988 (before the window; no recognition document was found in the sources
@@ -99,19 +135,26 @@ indicators:
     checked_at: '2026-11-04'
   B9:
     status: has-events
-    note: 'evt_2023_11_10_SYC_B9 (+2, flagged, expired): the President (Wavel Ramkalawan) at the First Saudi-African Summit, 10 November 2023, in the State House''s report of the address (''We
-      call for an end to those indiscriminate attacks, an immediate cessation of hostilities''); the quoted sentences say ''Palestine as in Israel'' and the Presidency ties the passage to Gaza
-      (R7, flagged). Not filed: the Foreign Minister''s remarks of 20 November 2023 (National Assembly) and 11 January 2024 (meeting with Israel''s ambassador), indirect speech in the Nation (lead_20261104_SYC_2,
-      lead_20261104_SYC_1); the 79th General Debate statement (the President, 25 September 2024) and the 81st (President Herminie, 22 September 2026) name neither Gaza nor Palestine; the 80th
-      has no page or file on the General Debate site (the page redirects, no Wayback capture); the Permanent Representative''s statement of 28 to 30 July 2025 (two-state conference) is not a B9
-      speaker''s (R3). The National Day and Independence messages of 2025 name ''the war between Israel and Hamas'' only as a cause of costs (no call).'
+    note: 'evt_2023_11_10_SYC_B9 (+2, flagged, expired): the President (Wavel Ramkalawan) at the First Saudi-African Summit, 10 November 2023, in the State House''s report of the address (''We call
+      for an end to those indiscriminate attacks, an immediate cessation of hostilities''); the quoted sentences say ''Palestine as in Israel'' and the Presidency ties the passage to Gaza (R7, flagged).
+      Not filed: the Foreign Minister''s remarks of 20 November 2023 (National Assembly) and 11 January 2024 (meeting with Israel''s ambassador), indirect speech in the Nation (lead_20261104_SYC_2,
+      lead_20261104_SYC_1); the 79th General Debate statement (the President, 25 September 2024) and the 81st (President Herminie, 22 September 2026) name neither Gaza nor Palestine; the 80th has
+      no page or file on the General Debate site (the page redirects, no Wayback capture); the Permanent Representative''s statement of 28 to 30 July 2025 (two-state conference) is not a B9 speaker''s
+      (R3). The National Day and Independence messages of 2025 name ''the war between Israel and Hamas'' only as a cause of costs (no call). Completion of 2026-11 (2026-11-10): the Ministry''s own
+      site (mfa.gov.sc, not read by the earlier session) gives the Foreign Minister''s remarks at the Diplomatic Cocktail of 23 February 2024 in quotation marks: ''We will continue to condemn the
+      indiscriminate use of force by Israel in Gaza ... The grave humanitarian disaster demands an immediate ceasefire.'' (evt_2024_02_23_SYC_B9, +5, expired, flagged). The Ministry''s release of
+      11 January 2024 on the meeting with Israel''s Ambassador (post 16228) prints the Minister''s position in indirect speech, so it stays a lead (R4; lead_20261104_SYC_1); the statement of 10
+      October 2023 (post 15800: ''call for the immediate cessation of hostilities'') names no speaker and does not name Gaza (R3, R7); the Permanent Representative''s statement of 30 July 2025
+      (post 18669, the conference on Palestine) is not a B9 speaker''s (R3), and his statement to the Security Council of April 2026 (post 20010) was seen by title only.'
     queries:
     - 'statehouse.gov.sc/search?search_q=: Gaza, Palestine, Palestinian, Hamas, Israel, ceasefire, cessation, two-state, genocide, Middle East (titles read; the items of 10 November 2023, 29 June
       2025, 24 October 2025 read in full)'
     - statehouse.gov.sc/speeches and /messages lists (pages 1 to 8; 122 items from id 5950, fetched and searched for Gaza, Palestin, Hamas, Israel)
     - gadebate.un.org/en/{79,80,81}/seychelles and gastatements/{79,81}/sc_en.pdf (read)
     - 'nation.sc/search?search_q=: Gaza, Palestine, Palestinian, Israel, Hamas, ceasefire, Radegonde (titles read; articles 20739, 20165, 19932, 26957, 26767, 25223 read in full)'
-    checked_at: '2026-11-04'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Gaza (5), Palestine (14), Israel (27), Palestinian (9), hostages (21),
+      ICC (30), Middle (30) (titles read; posts 16228, 16222, 16545, 16261, 15800, 20669, 19516 and 19472 read)'
+    checked_at: '2026-11-10'
   B10:
     status: none-found
     note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President was found. The Foreign Minister''s remark (Nation, 12 January 2024)
@@ -121,44 +164,64 @@ indicators:
     checked_at: '2026-11-04'
   B11:
     status: none-found
-    note: No sanction on Israeli ministers or settler entities was found (State House and Nation searches for Israel, Gaza and Palestine; Cabinet decisions not read in full).
+    note: 'No sanction on Israeli ministers or settler entities was found (State House and Nation searches for Israel, Gaza and Palestine; Cabinet decisions not read in full). Completion of 2026-11
+      (2026-11-10): the Ministry''s site (mfa.gov.sc) returns no item on sanctions on Israeli ministers or settlers (search: Israel, 27 titles).'
     queries:
     - statehouse.gov.sc and nation.sc searches (see B9)
-    checked_at: '2026-11-04'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Israel (27 titles read)'
+    checked_at: '2026-11-10'
   B12:
     status: none-found
-    note: No recall, downgrade or severance of relations with Israel was found. Israel's ambassador is non-resident (based in Nairobi) and met the Foreign Minister on 11 January 2024 (Nation,
-      12 January 2024); the State House lists accreditations of Israeli ambassadors in earlier years (ids 2838, 3513, 4206, 4671, 5644), the last before the window.
+    note: 'No recall, downgrade or severance of relations with Israel was found. Israel''s ambassador is non-resident (based in Nairobi) and met the Foreign Minister on 11 January 2024 (Nation,
+      12 January 2024); the State House lists accreditations of Israeli ambassadors in earlier years (ids 2838, 3513, 4206, 4671, 5644), the last before the window. Completion of 2026-11 (2026-11-10):
+      the Ministry''s own site lists the meeting of 11 January 2024 and the accreditation of 7 September 2022 (post 8173) and no recall or downgrade.'
     queries:
     - statehouse.gov.sc/search?search_q=Israel (titles read)
     - nation.sc/search?search_q=Israel (titles read)
-    checked_at: '2026-11-04'
+    checked_at: '2026-11-10'
   C1:
     status: none-found
     note: Seychelles is not an EU member and has no association or trade agreement with Israel to suspend or review.
     checked_at: '2026-11-04'
   C2:
-    status: none-found
-    note: 'No agreement with Israel signed since October 2023 was found: the State House and Nation searches return accreditations, the Foreign Minister''s meeting of 11 January 2024 (bilateral
-      cooperation discussed, nothing signed) and Tourism Seychelles'' participation in a trade event in Tel Aviv (Nation, 7 March 2025; Nation, 7 March 2025, mentions a five-year history of direct Air Seychelles flights from Tel Aviv),
-      none an instrument. Cabinet decisions were not read in full.'
+    status: has-events
+    note: 'One event: the Agreements on Visa Exemption (ordinary passports; diplomatic and official passports) signed on 11 January 2024 by Israel''s Ambassador and the Principal Secretary of the
+      Foreign Affairs Department (evt_2024_01_11_SYC_C2, -10, standing, confirmed on the Ministry''s own release; two agreements of one act filed as one event; flagged: a visa exemption read as
+      a cooperation agreement, R18; docs/10 B-2080). The Foreign Minister''s meeting with Israel''s Ambassador of the same day discussed cooperation in tourism, agriculture and capacity building
+      and signed nothing else (post 16228); Tourism Seychelles'' participation in a trade event in Tel Aviv (Nation, 7 March 2025) and the direct Air Seychelles flights are no instrument; Cabinet
+      decisions were not read in full.'
     queries:
     - statehouse.gov.sc/search?search_q=Israel, Middle East (titles read)
     - nation.sc/search?search_q=Israel (titles read; articles 20739 and 25223 read in full)
-    checked_at: '2026-11-04'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Israel (27 titles; the post 16222 ''Seychelles and Israel sign Visa
+      Exemption Agreements'' read in full and archived)'
+    checked_at: '2026-11-10'
   C3:
     status: no-data
     note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
     checked_at: '2026-11-04'
   C4:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the Seychelles Revenue Commission''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
   C5:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Seychelles public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the Seychelles Pension Fund''s and the
+      Central Bank''s investment policies (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   C6:
-    status: unchecked
-    note: 'Not searched: the light protocol (docs/06 §5) searches B3–B12, C1, C2 and D2–D5 only.'
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the Procurement Oversight Unit''s decisions.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
   D1:
     status: none-found
     note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
@@ -185,22 +248,42 @@ indicators:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
-    note: No medical evacuation hosted and no field hospital deployed for Gaza was found in the State House and Nation results.
+    note: 'No medical evacuation hosted and no field hospital deployed for Gaza was found in the State House and Nation results. Completion of 2026-11 (2026-11-10): Seychelles is not among the destination
+      countries in MSF''s table (21 October 2025) or WHO''s summary (29 September 2025); the Ministry''s site (mfa.gov.sc) has no item on evacuations from Gaza.'
     queries:
     - statehouse.gov.sc/search?search_q=humanitarian, Gaza (titles read)
-    checked_at: '2026-11-04'
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    checked_at: '2026-11-10'
   D5:
     status: none-found
-    note: No visa or refugee pathway for Gazans was found in the State House and Nation results.
+    note: 'No visa or refugee pathway for Gazans was found in the State House and Nation results. Completion of 2026-11 (2026-11-10): the Ministry''s site (mfa.gov.sc) has no item on a visa or refugee
+      pathway for Gazans (searches: Palestinian, Gaza, Palestine).'
     queries:
     - statehouse.gov.sc/search?search_q=Palestinian, Gaza; nation.sc/search?search_q=Gazans (titles read)
-    checked_at: '2026-11-04'
+    - 'mfa.gov.sc /wp-json/wp/v2/news?search= (the Ministry of Foreign Affairs and the Diaspora, post types news and speeches): Palestinian (9 titles), Gaza (5)'
+    checked_at: '2026-11-10'
   E1:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by a Seychelles prosecutor was found: the results of complaints under universal jurisdiction are in
+      other states (Seychelles is a State Party to the Rome Statute). Not searched: the Attorney General''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
   E2:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine was found: the ''Seychelles for Palestine'' group held a march through Victoria on 27 January 2024, three hours from Stad Popiler
+      to the Peace Park, described as peaceful, with no ban or police action reported (Seychelles Nation of 29 January 2024, post 20900, read in full). Not searched: the police''s releases.'
+    queries:
+    - nation.sc/articles/20900/seychelles-for-palestine-march (read in full)
+    - 'WebSearch 2026-11-10: Seychelles Gaza Palestine government statement OR ceasefire OR "Foreign Affairs" Seychelles Nation 2025 2026 (the march of January 2024, the Ministry''s statements;
+      no ban)'
+    checked_at: '2026-11-10'
   E3:
-    status: unchecked
-    note: Experimental, unscored; not searched in this session.
+    status: none-found
+    note: 'No case against a Seychelles national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
