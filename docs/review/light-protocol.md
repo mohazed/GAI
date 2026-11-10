@@ -3211,3 +3211,31 @@ New lead: `lead_20261110_FIN_2` (C4: Yle of 9 September 2026, 'Finland said it w
 Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. The Finnish record is the Wayback capture of 6 June 2026 (Save Page Now answers HTTP 403 for `valtioneuvosto.fi`).
 
 Score effect: Finland falls from +33 to +18 (Acting) because A3 counts -15.0 as a standing state (the B-992 reading, flagged); the Latvian E2 event is unscored in v1.0. Provisional previews (rc.1, 2026-11-10): FIN +18 Acting, ISL +50 Confronting, LTU +31 Acting, LVA +19 Acting, TON -39 Enabling, TUV -23 Enabling.
+
+### T-F-L11: WSM, BRN, KHM, LAO, MMR, PHL (2026-11-10, groups 21 and 22)
+
+The session had web search (standard mode: about 8 queries for Samoa, 8 for Brunei, 9 for Cambodia, 5 for the Lao PDR, 6 for Myanmar, 8 for the Philippines, in English only) and the Governments' own pages that answer: the Samoan Government portal's and Ministry's site searches, the Brunei Ministry of Foreign Affairs' Press Room (items 1200 to 1243 fetched by number), AKP (Cambodia), KPL (Lao), the Ministry of Foreign Affairs of Myanmar through its public WordPress interface, the Philippine Department of Foreign Affairs' UNGA archive. Refused or unreadable, not bypassed: gadebate.un.org (AWS human-verification page), newyorkpm.dfa.gov.ph, dti.gov.ph, the Manila Bulletin and Presidential Communications Office (bot checks), the Khmer Times (Cloudflare), mofa.gov.la. No Lao, Khmer, Burmese or Samoan-language search was run. Records: B-2001 to B-2008.
+
+| Country | Set to none-found (`checked_at` 2026-11-10) | Filled otherwise | Events | Still unchecked |
+|---|---|---|---|---|
+| WSM | A3, A5 to A8, B7, B8, B11, C4 to C6, D4, D5, E1 to E3 | none | none | none |
+| BRN | A3, A5 to A8, B7, B11, C4 to C6, D4, D5, E1 to E3 | none | none | B8 |
+| KHM | A3, A5 to A8, B7, B11, C4 to C6, D4, D5, E1 to E3 | C2 has-events | `evt_2025_12_01_KHM_C2` (-10, standing, corroborated, flagged) | B8 |
+| LAO | A3, A5 to A8, B7, B11, C4 to C6, D4, D5, E1 to E3 | none | none | B8 |
+| MMR | A3, A5 to A8, B7, B8, B11, C4 to C6, D4, D5, E1 to E3 | none | none | none |
+| PHL | A3, A5 to A8, B7, B11, C4 to C6, E1 to E3 | none | none | B8 |
+
+B8 is a generated indicator: for WSM and MMR (no recognition in the registry) it is none-found as for TON and TUV; for BRN, KHM, LAO and PHL the registry gives a 1988 or 1989 recognition and no state document was found (a search for a note or letter of 1988 under A/43 and the Department's release of 1989 returned nothing), so no row is added and B8 stays unchecked (R21).
+
+New lead: none. Leads WSM_1, WSM_2, BRN_1, KHM_1, LAO_1 and PHL_1 to PHL_3 were re-checked and kept (no official copy that can be archived): the Final Joint Statement of the ASEAN-GCC-China Summit of 27 May 2025, which several of them wait for, was found on asean.org and archived; it names the Member States as a body and no signatory, and is not filed (B-2004, an author question). Found and not filed: the Ministry of Foreign Affairs of Brunei's unsigned statements on Gaza (item 1214, 17 March 2026, 'strongly condemns the continued acts of genocide in Gaza'; no named speaker under R3, and B9 is at its cap); the Lao Deputy Foreign Minister's statement of 28 July 2025 (not a B9 speaker); the Myanmar Chargé d'Affaires' visits to the Gaza border (17 March and 14 August 2025, embassy items); the Philippine Defense Secretary's halt on new Israeli contracts (16 September 2025, press only) and the Joint Committee's summary of discussions (29 July 2025, press only).
+
+| Source id | What | Used for |
+|---|---|---|
+| src_20251201_i24news_israel-cambodia-labor-agreement | i24NEWS, 1 December 2025 (Wayback capture 20251201145254, 144,693 bytes) | `evt_2025_12_01_KHM_C2` |
+| src_20260625_cpp-org-kh_cambodia-israel-labour-deal | cpp.org.kh, 25 June 2026 (the Minister of Labour on the agreement signed on 1 December 2025) | `evt_2025_12_01_KHM_C2` |
+| src_20261106_akp_alumni-israel-shalom-club | AKP, 6 November 2026 (the Minister's reference to the agreement of December 2025) | `evt_2025_12_01_KHM_C2` |
+| src_20250527_asean_asean-gcc-china-summit-joint-statement | Final Joint Statement of the ASEAN-GCC-China Summit, 27 May 2025 (asean.org, archived) | cited by no event (B-2004; leads BRN_1, LAO_1, PHL_2) |
+
+Every replay was re-fetched with `curl --compressed` and equals its index row in bytes and SHA-256. `pnpm archive` prints the source record and does not write it: the four records were written by hand from the printed fields, with the page's own date.
+
+Score effect: Cambodia falls from +14 to +7 (Acting) because the C2 event counts -7.0 (weight 0.7, standing; passivity was already not applied since the computed C3 event qualifies); none-found entries carry no points and no other event was added. Provisional previews (rc.1, 2026-11-10): WSM -23 Enabling, BRN +26 Acting, KHM +7 Acting, LAO +1 Acting, MMR +1 Acting, PHL -2 Passive (the 2024 D3 event ended on 2025-12-31; the earlier preview of +6 Acting is out of date for that reason, not because of this session).
