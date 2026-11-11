@@ -1065,3 +1065,17 @@ Verification of the new and changed records of T-G-LEADS-5 to T-G-LEADS-8 and T-
 | ZAF | 0 | 0 | 1: 1 | 0 / 3 (200: 3, 403/wb: 1, 404/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
 
 `pnpm validate`: 0 errors.
+
+### T-G-FINAL: final hygiene (2026-11-11)
+
+| Check | Result |
+|---|---|
+| `pnpm lint`, `typecheck`, `test`, `validate` on `data/phase1` (909a1b6) | pass; 0 errors, 1,160 warnings |
+| Same on `main` (73c166d) | pass; 0 errors, 194 warnings |
+| `pnpm build:data:check` | identical: 1,929 files, 156,316,713 bytes (`data/phase1`); 78,578,628 bytes (`main`) |
+| `pnpm build` | pass on both |
+| PR #11 description | replaced with the counts of 2026-11-11 and the per-country preview table |
+| `git worktree list` | GAI and GAI-ag only |
+| Secrets in git history | 0 hits for the 3 `.env` values and for token patterns |
+
+Decision: docs/10 B-2166.
