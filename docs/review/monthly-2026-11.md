@@ -964,3 +964,20 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2151, B-2152. SVN is the only
 | SVN | SVN_1 | E3 | The Foundation's page and the press on the complaint of 7 Sep 2026 to the Ljubljana District State Prosecutor's Office; no prosecutor's or court communication | Kept open | None (unscored) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-8: leads of TUR to ZWE, full-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2153, B-2154. Every open lead of TUR, USA and ZAF carries a dated note with the searches made (`lead_20260928_ZAF_1` was already dropped as resolved); the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| TUR | TUR_1 | B12 | Press only (Takvim, Milli Gazete, BirGün); no Ministry announcement or Official Gazette act downgrading relations | Kept open | None |
+| TUR | TUR_2 | E3 | Press reports the prosecutors' **indictment of 35 suspects** and its acceptance by a court (NTV, CNN Türk, 10 Apr 2026); istanbul.adalet.gov.tr releases end Sep 2024; adalet.gov.tr archive search script-rendered; posts on x.com | Kept open; TUR E3 note updated (B-2153 (4)) | None (unscored) |
+| TUR | TUR_3 | A8 | No circular, harbour-master notice or Ministry release (press of Aug 2025 only) | Kept open | None |
+| USA | USA_1 | A5 | Press only; defense.gov release index Nov 2023 to Feb 2024 has no release on the flights (one Ryder statement, on Red Hill) | Kept open | None |
+| USA | USA_2 | E2 | Not searched again (visa revocations are not a ban) | Kept open | None (unscored) |
+| ZAF | ZAF_2 | A6 | gov.za: the Deputy Minister's presentation of the NCACC's 2025 reports denies arms sales to Israel; no decision suspending licences | Kept open (B-2153 (5)) | None |
+| ZAF | ZAF_3 | A8 | Bogotá statement archived (DIRCO); no instrument, port notice or refused vessel | Kept open | None |
+| ZAF | ZAF_4 | E1 | Press: Hawks say the investigation is ongoing; no Hawks or NPA statement, no charge | Kept open | None (unscored) |
+
+`pnpm validate`: 0 errors.

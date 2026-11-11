@@ -4406,3 +4406,39 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2151, B-2152. The full-protoc
 | TUN | TUN_4 | B9 | No text of the Doha speech (TAP summary only) | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-8: leads of TUR to ZWE, light-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2153, B-2154. The full-protocol rows (TUR, USA, ZAF) are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made. No human check or CAPTCHA was passed (gadebate.un.org's 'Human Verification' page was not passed).
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| TZA | TZA_1 | B9 | Not searched again (expired; R7 reading) | Kept open | None |
+| TZA | TZA_2 | A5 | No Ministry statement or instrument (Daily News, Horn Diplomat only) | Kept open (author's A5 reading) | None |
+| UGA | UGA_1 | A5 | UPDF's own items read (7 Aug and 4 Sep 2026): no deployment recorded | Kept open (no indicator defines the act) | None |
+| UKR | UKR_1, UKR_2 | B9, B10 | Not searched again (decayed; not a B10 reading) | Kept open | None |
+| UKR | UKR_3 | C2 | Ministry items on the 2025 meeting and 2026 calls; no signed instrument (Wayback index of mfa.gov.ua) | Kept open | None |
+| UKR | UKR_4 | B9 | No Ministry item of 3–4 Aug 2025 on Gaza; the Minister's calls with Israel (2026) read: no Gaza | Kept open | None |
+| UKR | UKR_5 | B9 | One more unnamed Ministry comment (Oct 2025) in the index | Kept open (R3 reading) | None |
+| UKR | UKR_6 | B9 | LIGA.net, Al-Monitor only; no Ministry item | Kept open | None |
+| URY | URY_1 | B9 | Presidency's report of the 81st-session statement read: no Gaza | Kept open (R7 reading) | None |
+| URY | URY_2 | B9 | No 2026 statement in the Foreign Minister's words; his posts of 3 Jun 2025 found | Kept open | None |
+| URY | URY_3 | B5 | Vice Foreign Minister and a deputy only | Kept open | None |
+| URY | URY_4 | C2 | No Government instrument | Kept open (R18 reading) | None |
+| URY | URY_5 | E3 | Reports of the filing only; no Fiscalía decision | Kept open | None (unscored) |
+| URY | (new) URY_6 | B9 | **The Foreign Minister's posts on X of 3 Jun 2025** on Gaza ('fruto de la masacre'; 'cese al fuego inmediato'), read in Wayback captures of the posts' data | **New lead** `lead_20261111_URY_6` (social media not scored without a transcript; B-2153 (2)) | None (+2 or +5 if the author accepts it) |
+| UZB | UZB_1 | B6 | No Ministry release or briefing transcript on the warrants | Kept open | None |
+| UZB | UZB_2 | D4 | **Decree PF-133 of 14 Aug 2025 archived** (lex.uz, official) with UzA and Kun.uz on the arrival of 26 Dec 2024 (100 injured Palestinian children and women, charter from Egypt) | **Filed** `evt_2024_12_26_UZB_D4` (+5, confirmed; scope `gaza` flagged; D5 not read; B-2153 (1)) | +21 → +23 (Acting) |
+| UZB | UZB_3 | E2 | Not searched again (searched 2026-11-09) | Kept open | None (unscored) |
+| VAT | VAT_1 | D4 | No Holy See text of a programme; no 2026 count | Kept open | None |
+| VCT | VCT_1 | B9 | 81st-session file behind a 'Human Verification' page (not passed); no Wayback capture | Kept open | +2 if archived and it cites Gaza (would end passivity) |
+| VEN | VEN_1 | B9 | Not searched again (R7 reading) | Kept open | None |
+| VEN | VEN_2, VEN_3 | C2, B12 | Consular mechanism only; no agreement, ambassadors or embassies | Kept open | None |
+| VNM | VNM_1 | B9 | Joint statement in the press only (Đại biểu Nhân dân and others); no Government portal, Ministry or Belgian copy | Kept open | None |
+| WSM | WSM_1 | B10 | Not searched again for a transcript (portal searched 2026-11-10) | Kept open | None |
+| WSM | WSM_2 | B12 | Reports of Jan 2026 only; no opening or instrument | Kept open | None |
+| ZMB | ZMB_1 | C2 | Press only; the Ministry's site did not answer | Kept open (C2 reading and date) | None |
+| ZMB | ZMB_2 | C2 | **News Diggers! (6 May 2026)** quotes a Cabinet Office official confirming the memorandum on bilateral consultations; no official copy | Kept open; corroborated reading left to the author (B-2153 (3)) | None (−7 if filed at corroborated) |
+| ZWE | ZWE_1 | E2 | Same police letter in four outlets; no ZRP statement | Kept open | None (unscored) |
+
+`pnpm validate`: 0 errors.
