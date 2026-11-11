@@ -4460,3 +4460,20 @@ P-23 re-search (CHECKUP §2b, B-2105 (a)). Decisions: docs/10 B-2155, B-2156. Th
 | BHR | C5, C6 | mumtalakat.bh, tenderboard.gov.bh (read); sio.gov.bh (403) | Mumtalakat's talks with Israel (2021) and exploration of joint ventures; Tender Board award reports only | none-found kept | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-RS-2: BEN, CAF and CIV re-checked on primary sources; five official languages used for the first time (2026-11-11)
+
+P-23 re-search (CHECKUP §2b and §7). Decisions: docs/10 B-2157, B-2158. Each entry's note ends with a dated 'P-23 re-search, T-G-RS-2, 2026-11-11' or 'P-23 search in the official language, T-G-RS-2, 2026-11-11' paragraph, and the queries list carries the searches and the pages read. No event filed, no lead added, no source archived.
+
+| Country | Entries | Primary sources or language | Result | Status | Score effect (preview) |
+|---|---|---|---|---|---|
+| BEN | B11, B12, C2, D4, D5 | sgg.gouv.bj: all 104 Council of Ministers reports of 5 Oct 2023 to 4 Nov 2026 (70 page text, 5 PDF text, 29 OCR); the register of laws, decrees and agreements searched (Israël, Israel, Palestine, Gaza); gouv.bj index of 3,685 article titles; diplomatie.gouv.bj refused | No text of the window names Israel, Gaza or Palestine; latest Israel text a decree of 2013; two Israel articles of Jul and Sep 2023 | none-found kept | None |
+| CAF | B11, B12, C2, D4, D5 | primature.cf: all 258 posts (16 Jun 2025 to 9 Nov 2026) and 67 pages; gouv.cf (78 nodes, dormant since 2018); diplomatie.gouv.cf and presidence.cf (no answer; Wayback copies stale); no gazette online | Only a sermon citing biblical Israel and a surname; gap 7 Oct 2023 to 15 Jun 2025 stated in the notes | none-found kept (flagged, B-2157 (2)) | None |
+| CIV | B11, B12, C2, D4, D5 | gouv.ci portal search (Israël, israélien, Gaza, Palestine, palestinien, Hamas, Moyen-Orient, Tel Aviv): 28 items opened; diplomatie.gouv.ci's 185 items already read on 2026-11-10; presidence.ci not searchable by word | One item of the window: Council of Ministers of 4 Mar 2026 on the Middle East (nationals in Iran and Israel, fuel prices), no measure | none-found kept | None |
+| KHM | 24 hand entries | Khmer: 8 web searches; AKP Khmer search (632 items, Jan 2025 to Nov 2026) | Courtesy calls, labour recruitment under the 2025 agreement, education cooperation; Prime Minister and President Herzog in Baku, 15 Oct 2026: consultations to be strengthened, no instrument | none-found kept | None |
+| LAO | 25 hand entries | Lao: 7 web searches (one restricted to KPL, the Ministry, Laopost, Pasaxon); KPL has no word search | Ministry statements on the region of Oct 2023 and 2 Mar 2026 (B9 material, B9 already has events); nothing else | none-found kept | None |
+| MMR | 26 hand entries | Burmese: 5 web searches; mofa.gov.mm Burmese search (Israel 24, Gaza 2, Palestine 3 posts) | Embassy courtesy items, a notice on nationals in Israel (9 Oct 2023), two Gaza-border visits of 2025; arms reports concern purchases (A4) | none-found kept | None |
+| WSM | 26 hand entries | Samoan: 4 web searches; samoagovt.ws Samoan search (Isaraelu 7, Palesitina 1, Kasa 12) | Acting Prime Minister's address of 18 Dec 2023 (read): the Israel-Palestine question lies with the Security Council; no call, no measure; ceasefire march of Dec 2023 escorted by police | none-found kept | None |
+| BTN | 26 hand entries | Dzongkha: 5 web searches (three restricted to BBS, Kuensel, the Ministry, the Prime Minister's Office, The Bhutanese); mfa.gov.bt Dzongkha search (no post) | The engine reads Dzongkha poorly; English pages on the 2020 relations and on nationals' safety only | none-found kept (B-2158 (3)) | None |
+
+`pnpm validate`: 0 errors.
