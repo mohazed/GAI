@@ -88,6 +88,14 @@ CLAUDE.md says `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Use th
 - Methodology drafts for the author: `docs/proposals/rule-8-scope.md`, `b1-article-19.md`, `a4-data-years.md` (B-2098 to B-2100; no version, no PR, no Discussion).
 - Everything the author must check or decide is in `CHECKUP.md` (updated on both branches on 2026-11-10; its §2e lists every reading the finish plan flagged, with B-id and default).
 
+**Changes since 2026-11-10 (checked 2026-11-11 by T-G-CHECKUP, B-2165; counts from the files, not from reports):**
+
+- One unattended run since: the P-23 pre-launch pass of 2026-11-10 to 2026-11-11 (the author's "continue doing the whole work"; 22 cards `T-G-…`, B-2110 to B-2165, report lines in `.claude/run-briefs/reports.jsonl`). It did the agent work of CHECKUP.md §2 to §7 with CHECKUP's default wherever a card said so; each default is in CHECKUP.md §2f with its B-id so the author can reverse it.
+- Branches: `main` `73c166d` (CHECKUP.md of T-G-CHECKUP; CI and Deploy of `32fe6f1` green on 2026-11-10, Nightly green to 2026-11-10); `data/phase1` has `main` merged (merge commits only). New branch `chore/rule8-gate` (PR #17). `data/phase1-ag` (`5522250`) and `/Users/mohorozovic/M2/GAI-ag` still stale.
+- Dataset on `data/phase1` (PR #11): 1,435 hand-researched events in 147 country files (1,434 `reviewed`, 1 `draft`, 0 `published`, 0 with `review.reviewed_by`); hand-researched entries: 4,576 `none-found`, 436 `has-events`, 5 `no-data`, 1 `unchecked` (BHR B12); generated entries still `unchecked`: B8 for 7 states (ARE, AZE, EGY, JOR, MAR, MYS, NGA), A1 and A4 for the 45, A2 and C3 for one state each; 330 leads in 134 files (307 open, 20 promoted, 3 dropped); 2,348 source records; `archive/index.csv` 2,407 rows; `recognitions.csv` 89 rows. `pnpm validate`: 0 errors, 1,160 warnings. Preview of 2026-11-11: bands 4 / 24 / 37 / 106 / 22 (Sustaining to Confronting); `build-notes.json` `counts.unchecked` 8.
+- Open PRs: #11 (dataset), #15 (rc.2, undecided), #16 (dependency update, CI green since `82c7b69`, B-2113), #17 (rule 8 build gate, CI green, B-2114), #1–#10 (superseded). Open issues: #12, #13, #14 (second Wayback check of 2026-11-10: 63 sources still do not replay, B-2112).
+- Everything the author must check or decide is in `CHECKUP.md` (updated on both branches on 2026-11-11; §2f the run's defaults, §2g its flagged readings). The follow-ups for agents are the "Also (T-G-…)" paragraphs of the P-23 block of `PROMPTS.md`.
+
 ### 2.1 Built and live
 
 P-01 to P-19 are done (repo bootstrap, schema, scoring engine, pipeline, build-data, web foundation, all pages in EN/FR, widget `/embed/v1/gai.js`, Cloudflare Pages deploy + nightly + quarterly Wayback workflows, country registry of 195 entries, structured data, French review, security and code review). The live site runs in **scorecard mode** (no score shown). Nothing from the dataset is published yet: the site shows only generated indicators.
