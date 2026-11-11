@@ -4477,3 +4477,17 @@ P-23 re-search (CHECKUP §2b and §7). Decisions: docs/10 B-2157, B-2158. Each e
 | BTN | 26 hand entries | Dzongkha: 5 web searches (three restricted to BBS, Kuensel, the Ministry, the Prime Minister's Office, The Bhutanese); mfa.gov.bt Dzongkha search (no post) | The engine reads Dzongkha poorly; English pages on the 2020 relations and on nationals' safety only | none-found kept (B-2158 (3)) | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-RS-3: six more official languages used for the first time, light-protocol countries (2026-11-11)
+
+P-23 search in the official languages (CHECKUP §7). Decisions: docs/10 B-2159, B-2160. The full-protocol rows (MYS, CHN) are in `docs/review/monthly-2026-11.md` §12. Each entry's note ends with a dated 'P-23 search in the official language(s), T-G-RS-3, 2026-11-11' paragraph naming what the searches found, and its queries list carries the searches with an English gloss. Each country also had one search restricted to the primary sites its notes named as not searched (customs, ports, funds, procurement, prosecutors, courts, police). No event filed, no source archived; one lead updated (BGD_1). No human check or CAPTCHA was passed.
+
+| Country | Entries | Language and primary sites | Result | Status | Score effect (preview) |
+|---|---|---|---|---|---|
+| LKA | 23 hand entries | Tamil (4), Sinhala (4), English (3); slpa.lk, customs.gov.lk, epf.lk, cbsl.gov.lk, npc.gov.lk, attorneygeneral.gov.lk, police.lk, defence.lk, pmd.gov.lk | Ministry statements already recorded; credentials of the Ambassador to Israel (3 Aug 2026); PTA detentions over pro-Palestine stickers and posts (lead LKA_2) and a police apology in court (Mar 2026); Hind Rajab Foundation complaints (Dec 2024, Apr 2026) with no decision | none-found kept | None |
+| AFG | 26 hand entries | Pashto (2), Dari (4); mfa.gov.af, bakhtarnews.af, moi, mod, moci, dab, npa, ago, supremecourt | The authorities' MoFA statements (2023 to 2025) and the Prime Minister of the authorities' statement of May 2025 (outside B9 under B-742); Herat cash collections for Gaza; overflights during the Iran-Israel war | none-found kept | None |
+| BGD | 25 hand entries | Bengali (6), English (2); customs, mincom, cptu, eprocure, bb.org.bd, mod, police, mha, cao, cpa, caab, dip | **Chief Adviser's Office PDF of the 80th General Debate address found** (Save Page Now 404 then 503; lead BGD_1 updated); Al Markazul Islami's plan of Apr 2025 to treat 1,000 wounded Palestinians (NGO, subject to permission; no record of arrival); passport and boycott items already recorded | none-found kept | None (BGD_1: B9 at about 0.8 weight if archived and accepted) |
+| BRN | 25 hand entries | Malay (6); pelitabrunei, pmo, mofe, customs, police, agc, judiciary, bia, taib, mod, immigration, moh | Statements of 2023 to Aug 2026 already recorded or of the same kind; no measure | none-found kept | None |
+| SGP | 22 hand entries | Mandarin (5), English (1); customs, mpa, caas, gic, temasek, gebiz, agc, judiciary, police, ica, mti, mindef | Strategic-goods control framework (no Israel decision); MHA-MINDEF statement of 24 Mar 2026 on Sar-El (read: no investigation of Gaza conduct); MINDEF on SAF medical facilities (Mar 2025); Malay and Tamil not searched | none-found kept | None |
+
+`pnpm validate`: 0 errors.

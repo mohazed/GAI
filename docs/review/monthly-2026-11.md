@@ -993,3 +993,14 @@ P-23 re-search (CHECKUP §2b, B-2105 (a)). Decisions: docs/10 B-2155, B-2156. Th
 | QAT | C5, C6 | qia.qa and its Sustainability page, monaqasat.mof.gov.qa (home, ESG, tenders law; read); mof.gov.qa (403) | MOFA statements welcoming other states' settlement-goods bans; no fund or procurement exclusion | none-found kept | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-RS-3: Malay and Mandarin searches, full-protocol countries (2026-11-11)
+
+P-23 search in the official languages (CHECKUP §7). Decisions: docs/10 B-2159, B-2160. The light-protocol rows (LKA, AFG, BGD, BRN, SGP) are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No capture was made (the AKPS site did not answer and the Internet Archive was briefly offline).
+
+| Country | Entries | Language and primary sites | Result | Status | Score effect (preview) |
+|---|---|---|---|---|---|
+| MYS | 20 entries whose searches were in English only, and A8 | Malay (7), English (1); kwsp, kwap, khazanah, mof, miti, customs, moha, rmp, agc, kehakiman, parlimen, eperolehan; akps, pmo, mot (no copy) | **AKPS seizure at Tanjung Pelepas on 7 Aug 2026 of a transit container reported as consigned to Elbit Systems**, under the export prohibition on Israel; Prime Minister's posts of 8 Aug and 15 Sep 2026; press only: **new lead** `lead_20261111_MYS_2` (A8, B-2159 (1)); Finance Minister II on Israeli-owned companies (not C6); Peaceful Assembly Act investigations of the Dec 2023 embassy picket (permit procedure, not a ban) | none-found kept (reading flagged) | None now; +5 A8 if an official copy is archived and the author accepts the reading |
+| CHN | 24 hand entries | Mandarin (9); mofcom, mod, cidca, nia, court, spp, mps, customs, safe, ccgp, ssf, gov.cn | MOFCOM's general dual-use and drone controls (none naming Israel); outbound-investment 'red category' classification of areas bordering Gaza and Lebanon (security classification, B-2159 (3)); no cooperation, sanction, evacuation, visa, prosecution or ban | none-found kept | None |
+
+`pnpm validate`: 0 errors.
