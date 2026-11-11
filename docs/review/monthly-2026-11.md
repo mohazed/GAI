@@ -1044,3 +1044,24 @@ Verification of the new and changed records of T-G-HOUSE, T-G-B8, T-G-JOINT, T-G
 | TUR | 2 | 12: 12 / 12 | 4: 4 | 0 / 0 (no URL) | none added or changed | 0 | evt_2026_10_16_TUR_B9: French summary began 'Ministre des Affaires étrangères, avec dix-neuf…' without the article (written by T-P23-3); 'Le ministre…' (fixed). Own copies of both statements added, quotes verbatim. |
 
 `pnpm validate`: 0 errors.
+
+### T-G-V2: verification of the P-23 pass, full-protocol countries (2026-11-11)
+
+Verification of the new and changed records of T-G-LEADS-5 to T-G-LEADS-8 and T-G-RS-1 to T-G-RS-3 (HANDOFF Task B2 checklist). Scope, method and the 75 light-protocol countries: `docs/review/light-protocol.md`, "Verification of the P-23 pass (2026-11-10)", T-G-V2. Decisions: docs/10 B-2163, B-2164. Columns as there.
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index on 2026-11-11 | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| ARE | 0 | 0 | 0: 0 | 1 / 0 (200: 1, 403/wb: 1) | none added or changed | 2 (2 notes only) | New lead_20261111_ARE_4 (C6) read: Ynet's page carries 'security concerns' (fetched 2026-11-11); C5 and C6 notes dated. Default reading kept (exhibition, not procurement, B-2155). |
+| CHN | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 24 (24 notes only) | Mandarin queries listed for each of the 24 entries; notes dated 2026-11-11, ids exist; status kept. No finding. |
+| MAR | 0 | 0 | 1: 1 | 0 / 5 (200: 5, 403/no-wb: 1, 403/wb: 4, 406/wb: 1) | none added or changed | 1 (1 note only) | A5 note: line 15 of the AFRICOM release lists Israel among the participating nations, as the note says; not filed (author's A5 reading). Leads annotated; barlamantoday URL answers 403 with no capture. No finding. |
+| MYS | 0 | 0 | 0: 0 | 1 / 1 (200: 7) | none added or changed | 20 (20 notes only) | Malay queries listed for each of the 20 entries; notes dated. New lead_20261111_MYS_2 (A8, AKPS seizure of 7 August 2026) read: the AKPS wording, Item No. 15 and the Prime Minister's sentence are on The Star's pages (fetched 2026-11-11); press only, nothing archived. No finding. |
+| NGA | 0 | 0 | 0: 0 | 0 / 2 (200: 2, 000/wb: 1, 403/wb: 3) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| POL | 0 | 0 | 0: 0 | 1 / 2 (200: 4) | none added or changed | 2 (2 notes only) | New lead_20261111_POL_3 (E3) read: Nomada's sentence ('has confirmed the launch of an investigation…') is on its page (fetched 2026-11-11); kind ngo; E1 and E3 notes dated with their queries. No finding. |
+| QAT | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 2 (2 notes only) | C5 and C6 notes dated, queries listed; the QIA and Monaqasat pages answer 200 (2026-11-11), consistent with 'read'. No finding. |
+| SAU | 0 | 0 | 0: 0 | 0 / 3 (200: 3, 403/wb: 3) | none added or changed | 2 (2 notes only) | C5 and C6 notes dated, queries listed; pif.gov.sa answered 403 again on 2026-11-11, as the note says. Leads annotated. No finding. |
+| SVN | 0 | 0 | 0: 0 | 0 / 1 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| TUR | 0 | 0 | 0: 0 | 0 / 3 (200: 4, 403/wb: 1) | none added or changed | 1 (1 note only) | E3 note dated (indictment reported by NTV and CNN Türk; no official copy). Leads annotated. No finding. |
+| USA | 0 | 0 | 0: 0 | 0 / 2 (200: 2, 403/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| ZAF | 0 | 0 | 1: 1 | 0 / 3 (200: 3, 403/wb: 1, 404/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+
+`pnpm validate`: 0 errors.
