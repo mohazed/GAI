@@ -939,3 +939,18 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2145 to B-2147. Every open le
 | NGA | NGA_2 | B9 | Press only; no Ministry text (expired) | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-6: leads of PAK to SEN, full-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2148 to B-2150. Every open lead of POL and SAU carries a dated note with the searches made; QAT has no open lead (`lead_20260929_QAT_1` promoted earlier); the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| POL | POL_1 | E2 | Helsinki Foundation's amicus opinion (NGO) gives the Mayor's decision number; the Court lifted the ban on 16 Nov 2023 (press); no City or Court document naming the purpose | Kept open; E2 note extended | None (unscored) |
+| POL | POL_2 | E3 | Press and the Foundation's pages on the Wrocław filing; no prosecutor's decision | Kept open | None (unscored) |
+| POL | POL_3 (new) | E3 | Nomada (NGO): the Kielce District Prosecutor's Office confirmed an investigation in rem (art. 118, 118a) on the MSPO complaint of 3 Sep 2025; no prosecutor's communication found | New lead; E3 stays none-found (B-2149 (1)) | None (unscored) |
+| SAU | SAU_1 | A5 | Press only; no official Saudi confirmation of interceptions for Israel | Kept open | None |
+| SAU | SAU_2 | E2 | NGO and press reports of sentences not concerning Gaza; no decree or record | Kept open | None (unscored) |
+| SAU | SAU_4 | D5 | Gulf News and a travel blog only; no Passports or SPA announcement | Kept open | None |
+
+`pnpm validate`: 0 errors.

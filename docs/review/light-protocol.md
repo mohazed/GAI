@@ -4319,3 +4319,43 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2145 to B-2147. The full-prot
 | NZL | NZL_1 | B9 | Joint donor statement's signatory line (already archived) names New Zealand's Foreign Minister; no transcript of the radio interview | **Filed** `evt_2025_05_19_NZL_B9` (+2); kept open for the interview (B-2146 (1)) | NZL +39 → +40 (Acting) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-6: leads of PAK to SEN, light-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2148 to B-2150. The full-protocol rows (POL, SAU; QAT has no open lead) are in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| PAK | PAK_1 | E2 | Press reports of the TLP notification; no archivable official copy; reading (not E2) unchanged | Kept open | None (unscored) |
+| PAK | PAK_2 | C6 | Press reports of the agreement of 19 Jul 2024; no order or list | Kept open | None |
+| PAN | PAN_1 | C2 | Only the memorandum of 27 May 2026 (filed); no water agreement or FTA amendment | Kept open | None |
+| PAN | PAN_2 | C2, B5/B6 | No answer on the ICC proposal; no instrument | Kept open | None |
+| PAN | PAN_3 | B9 | No Presidency transcript; no CDX capture of 9–15 Oct 2025 | Kept open | None |
+| PER | PER_1 | C2 | No new instrument (cybersecurity under the filed memorandum of 21 Nov 2025) | Kept open | None |
+| PHL | PHL_1 | B9 | No Wayback copy of `81/ph_en.pdf`; DFA archive stops at the 80th session | Kept open | None (passivity −15 stays) |
+| PHL | PHL_2 | B9 | **PCO file of the intervention found** on mirror.pco.gov.ph; 403 to scripts and to Save Page Now (failed row removed); no CDX capture | Kept open; archive by hand (B-2149 (3)) | None |
+| PHL | PHL_3 | B9 | Not searched again beyond PHL_2's routes; no named speaker | Kept open | None |
+| PLW | PLW_1, PLW_2 | B10 | Island Times and JNS only; no Government text | Kept open | None |
+| PNG | PNG_1 | B9 | Only the 405 capture of `81/pg_en.pdf` | Kept open | None |
+| PNG | PNG_2, PNG_5 | C2 | No signed instrument of the window (The National's 'agro deal' is of 2014) | Kept open | None |
+| PNG | PNG_3, PNG_4 | B10 | No video or transcript | Kept open | None |
+| PRK | PRK_1 | B9 | Press relays of KCNA texts of 2023–2025; nothing by the Chairman, Premier or Foreign Minister | Kept open | None |
+| PRT | PRT_1 | C1 | Not searched again by query (B-2030); October 2025 portal listing holds nothing | Kept open | None |
+| PRT | PRT_2 | B5 | Press reports of the press conference only | Kept open | None |
+| PRT | PRT_3 | A5 | Press names the aircraft as F-35s; committee approved a hearing of the Foreign Minister (14 Oct 2025); no Ministry note or hearing record archived | Kept open; route: the hearing's record (B-2149 (4)) | None |
+| PRY | PRY_1 | B10 | No CDX capture of the Knesset's text | Kept open | None |
+| PRY | PRY_2 | B10 | Not searched again (R7 reading, B-599) | Kept open | None |
+| PRY | PRY_3, PRY_4 | B6, C2 | No answer on the ICC invitation; no titles of the other agreements | Kept open | None |
+| PRY | PRY_5 | C2 | Cybersecurity agreements still announced; 'at least five memoranda' in an Ambassador's interview (excerpt only) | Kept open | None |
+| ROU | ROU_1 | B9 | **Ministry's release of 28 Sep 2025 in the AGERPRES press-release feed** prints the Foreign Minister's English transcript | **Filed** `evt_2025_09_27_ROU_B9` (+2); lead promoted (B-2148 (1)) | ROU −8 → −6 (Passive) |
+| ROU | ROU_2 | B5/B6 | No statement of an office holder on executing the warrants | Kept open | None |
+| ROU | ROU_3 | D3 | No Ministry release on the contribution; no CDX capture of mae.ro node 65727 | Kept open | None |
+| ROU | ROU_4 | D4 | **MApN release no. 278 of 31 Aug 2026** recorded from its Wayback capture | Added as evidence to `evt_2024_09_30_ROU_D4`; second event is the author's R11 reading (B-2148 (2)) | None |
+| ROU | ROU_5 | A6 | Only HTTP 503 captures of the ANCEX report | Kept open | None |
+| ROU | ROU_6 | E3 | No prosecutor's communication | Kept open | None (unscored) |
+| ROU | ROU_7 | B9 | No Ministry release or recording of the press conference of 28 Sep 2026 | Kept open | None |
+| RWA | RWA_1 | A5 | No Ministry of Defence release | Kept open | None |
+| SEN | SEN_1 | E2 | **Second outlet** (Koaci, 30 Oct 2023) reports the Prefect's order on the time-limit ground; order not found | Kept open; source added; reading the author's (B-2149 (2)) | None (unscored) |
+| SEN | SEN_2 | B9 | No record names Senegal's signatory of the Hague Group statement | Kept open | None |
+
+`pnpm validate`: 0 errors.
