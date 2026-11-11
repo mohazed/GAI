@@ -4491,3 +4491,88 @@ P-23 search in the official languages (CHECKUP §7). Decisions: docs/10 B-2159, 
 | SGP | 22 hand entries | Mandarin (5), English (1); customs, mpa, caas, gic, temasek, gebiz, agc, judiciary, police, ica, mti, mindef | Strategic-goods control framework (no Israel decision); MHA-MINDEF statement of 24 Mar 2026 on Sar-El (read: no investigation of Gaza conduct); MINDEF on SAF medical facilities (Mar 2025); Malay and Tamil not searched | none-found kept | None |
 
 `pnpm validate`: 0 errors.
+
+## Verification of the P-23 pass (2026-11-10)
+
+### T-G-V1: the new and changed records of T-G-HOUSE, T-G-B8, T-G-JOINT, T-G-BLOCKED and T-G-LEADS-1 to T-G-LEADS-4 (2026-11-11)
+
+The 31 full-protocol countries of the scope are in `docs/review/monthly-2026-11.md` §12 (T-G-V1); this section has the 68 light-protocol countries and the method for both.
+
+**Scope**, found with `git log 71a0390..HEAD` and a commit-by-commit diff of `data/` for the 17 commits of T-G-HOUSE, T-G-B8, T-G-JOINT, T-G-BLOCKED and T-G-LEADS-1 to T-G-LEADS-4 (the commits of T-G-WAYBACK, T-G-LEADS-5 to 8 and T-G-RS-1 to 3 are outside it): 23 events (9 new: `evt_2026_09_24_IRL_B9`, `evt_2023_10_07_DEU_A3`, `evt_2023_12_05_EST_E2`, `evt_2025_05_14_DEU_B6`, `evt_2024_05_27_BEL_A8`, `evt_2025_11_20_AZE_C2`, `evt_2026_01_22_BEL_A8`, `evt_2026_09_30_SAU_B9`, `evt_2026_01_27_KAZ_C2_3`; 14 changed: evidence added to the eight-minister and 16 October statements of ARE, QAT, TUR, notes of EGY, IDN, JOR, SAU and KAZ C2/C2_2, BRA B3 evidence, NRU B6 note, IRL B11 confidence) with 79 evidence items; 162 leads (2 new, 160 annotated, of which 9 promoted and 1 dropped); 25 recognition rows added; 70 assessment entries (23 `unchecked` to `has-events`, all B8 rows; 5 `none-found` to `has-events`; 1 `no-data` to `has-events` (POL B8); 6 `has-events` to `none-found` (T-G-HOUSE); 35 notes only); 42 sources added.
+
+**Method** (HANDOFF Task B2, as T-F-V1 and T-F-V3). (a) Quote at the locator: a script normalises each quote and its `archive/text/` file as the validator does and maps the match back to line numbers; all 79 evidence items are verbatim and at their locators. Quotes inside the changed assessment notes were looked up in the archived texts of the sources each note cites. (b) Captures: 101 distinct sources (the 42 added, every source cited by the events, the leads and the recognition rows, and those named in the changed notes) were fetched again from their `wayback_url` with `curl --compressed`, one at a time, and compared in bytes and SHA-256 with `archive/index.csv`; every source record equals its index row. 100 replay equal (8 after a second or third request, the first having returned nothing); `src_20260710_poderjudicial_an-admite-querellas-flotilla` answers the Wayback 404 page, as recorded by the Wayback check of 2026-11-10 (issue #14). (c) Speaker and wording under R3, R4 and R7, (d) date and tier against `methodology/v1.0.0/indicators.yaml`, (e) scope tags and (f) French summaries against `docs/glossary.fr.md`: every event read in full with its quotes, rationale and notes. (g) Leads: the two new leads read; the 160 annotations checked by script for a dated T-G note, for promotions to an existing event and for source kinds (press or NGO only); the 247 distinct lead URLs fetched live once: 221 answer 200; 20 answer 403, 4 answer 406, 1 answers 404 and 1 timed out, all 26 with Wayback captures. (h) Recognition rows: each date found in the archived text of its source (A/78/846 by line). (i) Assessments: by script, every `has-events` entry has a hand event of the indicator scoped `gaza` (B8: a `recognitions.csv` row), every hand `none-found` note names its date, and every source and event id named in a note exists.
+
+**Result.** No invented quote, source, date or speaker. Four fixes in place: the French summary of `evt_2026_10_16_TUR_B9` (article missing); the French summary of `evt_2023_12_05_EST_E2` (the person fined omitted); the note of `evt_2026_09_22_IDN_B9` (searched in English and Arabic only; two Indonesian searches added, no own copy); the address of `lead_20260930_EGY_1`'s Ahram Online source (mis-encoded, replaced by the canonical address with Wayback captures). One reading verified outside the archived text: the archived text of the Chamber's record of 27 November 2024 (ITA) is cut at 200 KB before the Minister's answer; the PDF, fetched again from its capture with equal bytes and SHA-256, contains the passages the notes quote. Nothing published; `review.reviewed_by` not set; no status of an event changed. Decisions: docs/10 B-2161 (session), B-2162 (readings flagged for the author).
+
+| Country | Events | Evidence items: quote verbatim / at locator | Sources: replay equal to index on 2026-11-11 | Leads new / annotated (source URLs live) | Recognition row | Assessment entries changed | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| AFG | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| AGO | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| ALB | 0 | 0 | 0: 0 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| ATG | 0 | 0 | 2: 2 | 0 / 3 (200: 3, 403/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BDI | 0 | 0 | 0: 0 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BFA | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (B6 has-events->none-found) | B6 set to none-found by T-G-HOUSE: the note names the event (scope related) and the reason (B-2111 (1)). |
+| BGD | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BGR | 0 | 0 | 6: 6 | 0 / 5 (200: 9) | BGR,1988-11-25 added | 1 (B8 unchecked->has-events) | Row date 25 November 1988: the year is in the Conference statement (line 15), the day in A/78/846 (line 84). R21 flag kept. |
+| BHR | 0 | 0 | 1: 1 | 0 / 3 (200: 5) | none added or changed | 1 (B12 note) | B12 still unchecked (bna.bh bot check); note dated. No change. |
+| BHS | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BIH | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BLR | 0 | 0 | 1: 1 | 0 / 1 (200: 4) | BLR,1988-11-19 added | 1 (B8 unchecked->has-events) | Row date 19 November 1988 is in A/78/846 (line 75); no state document (R21 flag kept). |
+| BLZ | 0 | 0 | 2: 2 | 0 / 3 (200: 3) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BRB | 0 | 0 | 1: 1 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| BRN | 0 | 0 | 1: 1 | 0 / 1 (200: 2) | BRN,1988-11-17 added | 1 (B8 unchecked->has-events) | Row date 17 November 1988 is in A/78/846 (line 83); R21 flag kept. |
+| CIV | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| CMR | 0 | 0 | 2: 2 | 0 / 1 (200: 1) | none added or changed | 1 (C2 note) | C2 note cites MINADER Infos no 0010 (archived, replays equal); the contract stays a lead. |
+| CRI | 0 | 0 | 1: 1 | 0 / 4 (200: 7) | CRI,2008-02-05 added | 1 (B8 unchecked->has-events) | Row date 5 February 2008 is in A/78/846 (line 96); R21 flag kept. |
+| CUB | 0 | 0 | 1: 1 | 0 / 3 (200: 4, 404/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| CYP | 0 | 0 | 0: 0 | 0 / 2 (200: 3) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| DMA | 0 | 0 | 3: 3 | 0 / 2 (200: 1, 403/wb: 1) | DMA,2011-09-19 added | 1 (B8 unchecked->has-events) | Row date 19 September 2011 is in A/78/846 (line 110); R21 flag kept. |
+| ECU | 0 | 0 | 4: 4 | 0 / 3 (200: 4) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| EST | 1 | 2: 2 / 2 | 2: 2 | 0 / 4 (200: 8) | none added or changed | 1 (E2 none-found->has-events) | evt_2023_12_05_EST_E2 (−5, unscored) read: lines 24 and 25–28 of the Supreme Court judgment. French summary omitted the person fined ('a infligé une amende pour une pancarte'): 'à un manifestant' added, as in the English (fixed). Flag kept: the fine was annulled on 5 March 2025 (B-2137). |
+| ETH | 0 | 0 | 0: 0 | 0 / 1 (200: 4) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| FIN | 0 | 0 | 0: 0 | 0 / 2 (200: 2, 403/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| FJI | 0 | 0 | 0: 0 | 0 / 3 (200: 4) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| FSM | 0 | 0 | 9: 9 | 0 / 2 (200: 1, 403/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| GEO | 0 | 0 | 0: 0 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| GHA | 0 | 0 | 2: 2 | 0 / 1 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| GRD | 0 | 0 | 1: 1 | 0 / 0 (no URL) | GRD,2013-09-27 added | 1 (B8 unchecked->has-events) | Row date 27 September 2013 is in the Joint Communiqué (line 35); diplomatic relations, R21 flag kept. |
+| GTM | 0 | 0 | 2: 2 | 0 / 4 (200: 3, 403/wb: 2) | GTM,2013-04-08 added | 1 (B8 unchecked->has-events) | Row date 8 April 2013 is in the Conference statement (line 25; the registry gives 9 April, flag kept). Lead GTM_2 dropped with the reason. |
+| GUY | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| HND | 0 | 0 | 0: 0 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| IRN | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| ISL | 0 | 0 | 0: 0 | 0 / 3 (200: 4) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| JAM | 0 | 0 | 0: 0 | 0 / 2 (200: 3) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| KAZ | 3 | 9: 9 / 9 | 6: 6 | 0 / 2 (200: 5) | KAZ,1992-04-06 added | 2 (C2 note; B8 unchecked->has-events) | evt_2026_01_27_KAZ_C2_3 (−10) read: the Memorandum of Intent is on line 8 of the Ministry's release; the release names no signatory. Flag kept (memorandum of intent read as a cooperation instrument, default B-2118 (1)). Row date 6 April 1992 from A/78/846 (line 137); the Ministry item gives April 1992 (R21). |
+| KEN | 0 | 0 | 3: 3 | 0 / 3 (200: 3) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| KGZ | 0 | 0 | 4: 4 | 0 / 2 (200: 3) | KGZ,1995-11-01 added | 2 (B9 note; B8 unchecked->has-events) | Row 1995-11-01: the year and the recognition in the Conference statement (lines 34–37), the month in A/78/846 (line 140); the day is the first-of-month convention of B-178 (flag kept). B9 note cites the archived Arabic 81st-session file (replays equal). |
+| KHM | 0 | 0 | 1: 1 | 0 / 1 (200: 2) | KHM,1988-11-21 added | 1 (B8 unchecked->has-events) | Row date 21 November 1988 is in A/78/846 (line 87); R21 flag kept. |
+| KWT | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| LAO | 0 | 0 | 2: 2 | 0 / 1 (200: 1) | LAO,1989-05-15 added | 1 (B8 unchecked->has-events) | Row date 15 May 1989 is in the KPL item (line 43); diplomatic relations (R21 flag kept; registry 2 December 1988). |
+| LBR | 0 | 0 | 1: 1 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| LBY | 0 | 0 | 1: 1 | 0 / 6 (200: 10, 403/wb: 1, 406/wb: 1) | LBY,1988-11-15 added | 1 (B8 unchecked->has-events) | Row date 15 November 1988 is in A/78/846 (line 145); R21 flag kept. |
+| LKA | 0 | 0 | 0: 0 | 0 / 2 (200: 4) | none added or changed | 1 (C2 note) | C2 note: the arrangement of 6 November 2023 read as an implementing plan (not filed); flag of B-2118 (3) kept. |
+| LSO | 0 | 0 | 0: 0 | 0 / 2 (200: 2) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| MDA | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (C2 note) | C2 note: extension of a pre-war agreement, not a new instrument. No finding. |
+| MLI | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (B6 has-events->none-found) | B6 set to none-found by T-G-HOUSE with the event id and reason (B-2111 (1)). |
+| NER | 0 | 0 | 1: 1 | 0 / 0 (no URL) | none added or changed | 1 (B6 has-events->none-found) | B6 set to none-found by T-G-HOUSE with the event id and reason (B-2111 (1)). |
+| NIC | 0 | 0 | 1: 1 | 0 / 0 (no URL) | NIC,1988-11-16 added | 1 (B8 unchecked->has-events) | Row date 16 November 1988 is in A/78/846 (line 165); R21 flag kept. |
+| NRU | 1 | 1: 1 / 1 | 1: 1 | 0 / 0 (no URL) | none added or changed | 1 (B6 has-events->none-found) | evt_2026_09_23_NRU_B6: only its note changed (T-G-BLOCKED retry of C.N.378.2026, not archived); scope related, B6 none-found (B-2111 (1)). Flag kept. |
+| PHL | 0 | 0 | 1: 1 | 0 / 1 (200: 2) | PHL,1989-09-04 added | 1 (B8 unchecked->has-events) | Row date 4 September 1989 is in A/78/846 (line 173); R21 flag kept. |
+| PRK | 0 | 0 | 1: 1 | 0 / 0 (no URL) | PRK,1988-11-24 added | 1 (B8 unchecked->has-events) | Row date 24 November 1988 is in A/78/846 (lines 101–103); R21 flag kept. |
+| ROU | 0 | 0 | 2: 2 | 0 / 0 (no URL) | ROU,1988-11-24 added | 1 (B8 unchecked->has-events) | Row date 24 November 1988: year in the Conference statement (line 33), day in A/78/846 (line 176). R21 flag kept. |
+| SDN | 0 | 0 | 1: 1 | 0 / 0 (no URL) | SDN,1988-11-17 added | 1 (B8 none-found->has-events) | Row date 17 November 1988 is in A/78/846 (line 193); R21 flag kept. |
+| SGP | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (B11 has-events->none-found) | B11 set to none-found by T-G-HOUSE with the event id and reason (B-2111 (1)). |
+| SMR | 0 | 0 | 0: 0 | 0 / 1 (200: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
+| SVK | 0 | 0 | 1: 1 | 0 / 0 (no URL) | SVK,1988-11-18 added | 1 (B8 unchecked->has-events) | Row date 18 November 1988 is in A/78/846 (line 188); R21 flag kept. |
+| THA | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (C2 note) | C2 note: quota memorandum reported by press only; not filed. No finding. |
+| TJK | 0 | 0 | 1: 1 | 0 / 0 (no URL) | TJK,1992-03-06 added | 1 (B8 unchecked->has-events) | Row date 6 March 1992 is in the Khovar item (line 79); diplomatic relations, R21 flag kept (registry 2 April 1994). |
+| TKM | 0 | 0 | 1: 1 | 0 / 0 (no URL) | TKM,1992-04-17 added | 1 (B8 unchecked->has-events) | Row date 17 April 1992 is in the Ministry of Health item (line 144); diplomatic relations, R21 flag kept. |
+| TON | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (C2 note) | C2 note: visa waiver of 2010 (before the window). No finding. |
+| UKR | 0 | 0 | 1: 1 | 0 / 0 (no URL) | UKR,1988-11-19 added | 1 (B8 unchecked->has-events) | Row date 19 November 1988 is in A/78/846 (line 211); R21 flag kept. |
+| UZB | 0 | 0 | 1: 1 | 0 / 0 (no URL) | UZB,1994-09-25 added | 1 (B8 unchecked->has-events) | Row date 25 September 1994 is in the Ministry's list (lines 338–339, exchange of notes); R21 flag kept. |
+| VEN | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (B6 has-events->none-found) | B6 set to none-found by T-G-HOUSE with the event id and reason (B-2111 (1)). |
+| VNM | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (C2 note) | C2 note: labour agreement unsigned. No finding. |
+| VUT | 0 | 0 | 1: 1 | 0 / 0 (no URL) | VUT,1989-08-21 added | 1 (B8 unchecked->has-events) | Row date 21 August 1989 is in A/78/846 (line 214); R21 flag kept. |
+| WSM | 0 | 0 | 0: 0 | 0 / 0 (no URL) | none added or changed | 1 (C2 note) | C2 note: visa waiver in force 6 July 2023 (before the window). No finding. |
+
+`pnpm validate`: 0 errors.
