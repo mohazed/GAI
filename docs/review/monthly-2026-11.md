@@ -954,3 +954,13 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2148 to B-2150. Every open le
 | SAU | SAU_4 | D5 | Gulf News and a travel blog only; no Passports or SPA announcement | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-7: leads of SGP to TUN, full-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2151, B-2152. SVN is the only full-protocol country of the card; its one open lead carries a dated note with the searches made; the light-protocol rows are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| SVN | SVN_1 | E3 | The Foundation's page and the press on the complaint of 7 Sep 2026 to the Ljubljana District State Prosecutor's Office; no prosecutor's or court communication | Kept open | None (unscored) |
+
+`pnpm validate`: 0 errors.

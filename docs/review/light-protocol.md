@@ -4359,3 +4359,50 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2148 to B-2150. The full-prot
 | SEN | SEN_2 | B9 | No record names Senegal's signatory of the Hague Group statement | Kept open | None |
 
 `pnpm validate`: 0 errors.
+
+### T-G-LEADS-7: leads of SGP to TUN, light-protocol countries (2026-11-11)
+
+P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2151, B-2152. The full-protocol row (SVN) is in `docs/review/monthly-2026-11.md` §12. Every open lead carries a dated note with the searches made; `lead_20261104_THA_1` was already promoted.
+
+| Country | Lead | Indicator | Result | Event or note | Score effect (preview) |
+|---|---|---|---|---|---|
+| SGP | SGP_1 | A3 | No MINDEF, ST Engineering or Lockheed Martin document naming a Singaporean F-35 supplier | Kept open | None |
+| SLB | SLB_1 | B9 | **81st-session file read live** (`sb_en`): no Gaza, Palestine or Israel | Kept open only for a recording (R7, B-2151 (4)) | None |
+| SMR | SMR_1 | B9 | A/80/PV.12 and PV.13 not served; 80th file still without a replay | Kept open | None |
+| SMR | SMR_2 | B9 | File read again; Save Page Now 405 on 2026-11-11 (failed row removed) | Kept open | +2 if archived |
+| SRB | SRB_1 | C2 | Press on the Simanovci factory (51/49 Elbit and Jugoimport); no instrument or Government release | Kept open | None |
+| SRB | SRB_2 | A6 | No Council or Ministry decision ending the suspension | Kept open | None |
+| SRB | SRB_3 | A5 | No Serbian aviation or Government record of the flights | Kept open | None |
+| SSD | SSD_1 | C2 | Gilat contract not reported signed | Kept open | None |
+| SSD | SSD_2 | B10 | No statement of the President | Kept open | None |
+| SSD | SSD_3 | C2 | **Knesset file archived** (`src_20260125_knesset_israel-south-sudan-framework-agreement`): the framework agreement was signed on 17 Jul 2023, before the window | Kept open with that reason; not counted (default, B-2151 (1)) | None |
+| SUR | SUR_1 | B9 | **81st-session file read live** (`sr_en`, exists): no Gaza, Palestine or Israel | Kept open only for a recording (R7, B-2151 (4)) | None |
+| SUR | SUR_2 | C2 | No agreement signed | Kept open | None |
+| SUR | SUR_3 | B9 | Decayed; not searched again | Kept open | None |
+| SVK | SVK_1 | B9 | No archivable Ministry release of 10 Jul 2025 (mzv.sk 403; Wayback home page only) | Kept open | None |
+| SVK | SVK_2 | B5 | No statement on executing the warrant | Kept open | None |
+| SVK | SVK_3, SVK_6 | C1, B9 | Not searched again (nothing scores; decayed) | Kept open | None |
+| SVK | SVK_4 | A4 | Press on the signing and the first battery's delivery (2026); no Slovak Ministry release found | Kept open (author's decision, B-536 (7)) | None |
+| SVK | SVK_5 | D5 | No Government resolution or regulation for Gazans | Kept open | None |
+| SYC | SYC_1 | B9 | Not searched again (indirect speech; expired) | Kept open | None |
+| SYC | SYC_2 | B9 | nationalassembly.sc under maintenance; no Hansard in Wayback | Kept open | None |
+| SYR | SYR_1 | C4 | **Decree No. 109 of 17 May 2026 archived** (`src_20260517_sana_decree-109-customs-law`, scanned, no text layer): Art. 112 bars boycott-prohibited goods from the free zones | Kept open; not a new C4 ban (default, B-2151 (2)); SYR C4 note updated | None |
+| TCD | TCD_1 | B9 | No transcript or video; expired | Kept open | None |
+| TCD | TCD_2 | B9 | Not retried (730 days old) | Kept open | None |
+| TCD | (none) | B6 | **Withdrawal from the Rome Statute** notified 27 Jul 2026 (C.N.291.2026, archived from its Wayback capture) | **Filed** `evt_2026_07_27_TCD_B6` (−10, scope `related`, unscored); B6 stays none-found (B-2111) | None (+11, Acting) |
+| TGO | TGO_1 | B10 | Not searched again (editorial voice; expired) | Kept open | None |
+| TGO | TGO_2 | A5 | No exercise or security instrument; July 2026 memorandum already filed | Kept open | None |
+| THA | THA_2 | B9 | Not searched again (author's reading; expired) | Kept open | None |
+| TJK | TJK_1 | B9 | No capture of `tj_en`; no full text of the address of 11 Nov 2024 | Kept open | +2 if archived |
+| TJK | TJK_2 | B5 | Draft resolution examined 16 Sep 2026 (expert.ru); no adopted resolution or depositary notification | Kept open | None |
+| TKM | TKM_1 | B9 | **81st-session file read live** (`tm_en`): no Gaza, Palestine or Israel | Kept open for the record | None |
+| TLS | TLS_1 | B9 | No Presidency text (Portuguese search) | Kept open | None |
+| TON | TON_1 | B10 | No Government transcript or video | Kept open | None |
+| TON | TON_2 | B10 | Not searched again (expired) | Kept open | None |
+| TTO | TTO_1 | B9 | Not searched again (decayed) | Kept open | None |
+| TTO | TTO_2 | C2 | No memorandum or work plan signed | Kept open | None |
+| TUN | TUN_1 | B9 | **Presidency's release of 22 Jul 2025** (Wayback): third person, no Gaza, no quoted words | Kept open (R4, R7) | None |
+| TUN | TUN_2, TUN_3, TUN_5 | B9, B9, E2 | Not searched again (read 2026-11-10; author's reading) | Kept open | None |
+| TUN | TUN_4 | B9 | No text of the Doha speech (TAP summary only) | Kept open | None |
+
+`pnpm validate`: 0 errors.
