@@ -1,0 +1,448 @@
+# Coverage record for Panama (docs/03 §6). P-21 light protocol, session T-P21-11, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mire.gob.pa: site searches for Gaza, Israel and Palestina; the releases of 2026 on Israel and on the Security Council), the Presidency (presidencia.gob.pa answers a bot check; its Wayback capture of 29 September 2026 read), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the Security Council verbatim records already archived, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 30 minutes of research on Panama, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: none cites Gaza by a B9 speaker (see B9).
+# Completion of 2026-11 (finish run, T-F-L06, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the sites of the Ministries of Foreign Affairs, Public Security,
+#   Economy and Finance, the Public Prosecutor, the Maritime Authority, the Canal Authority and the Ministry of Commerce (WordPress interfaces and site search); the Presidency, customs,
+#   courts, funds and the procurement portal were not read. The Foreign Ministry's interface holds posts from 18 May 2026 only. No web search was available: press and NGO sources were not
+#   searched. Read and not filed: the Foreign Minister's meeting with Jordan's of 22 September 2026 (indirect speech on Gaza and the West Bank, R4) and the President's address to the General
+#   Assembly of 23 September 2026 (the Middle East, no Gaza).
+# Redo pass with web search (T-F-L06-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 11 searches in Spanish and English; every status is kept; no new event (the Israeli Foreign
+#   Minister's visit to Panama of 24 and 25 February 2026 was announced with no instrument; outcome not found); the three leads were re-checked.
+country: PAN
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PAN
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of Panama as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does
+      not contain the word Panama (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations, Panama
+      not among them, and carries no supplier list by country. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s (minseg.gob.pa), the Public Prosecutor''s
+      (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s (pancanal.com) were searched on 2026-11-09
+      through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public Security 595 posts of 10 October 2023
+      to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000 posts of 10 June 2025 to 6 November
+      2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the Middle East in bond and market reports);
+      Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches (effects of the Middle East war on demand).
+      The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation projects with Israel and none on Gaza.
+      The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. No web search was available (the run''s shared allowance was
+      used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). One search on Panamanian procurement and Israeli defence firms and one on the Israel relationship found no Panamanian company
+      in the F-35 programme and no supplier link; the Panamanian items are cooperation on water and health.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Panama (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Panama Compra contrato empresa israeli OR Israel Aerospace OR Elbit OR Rafael Panama Servicio Nacional Aeronaval OR Policia OR Ministerio de Seguridad compra equipo 2025 2026'
+    - 'WebSearch 2026-11-09: Panama Israel acuerdo OR memorando OR convenio seguridad OR defensa OR drones OR ciberseguridad 2026 Mulino Netanyahu Herzog'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026 (Panama has no row in the register of transfers from Israel). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PAN
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, PAN
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public
+      Security''s (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama
+      Canal Authority''s (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza,
+      Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts),
+      22 matches; Public Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem);
+      Public Prosecutor 3,000 posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November
+      2026, 3 matches (the Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30
+      October 2026, 3 matches (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free
+      trade agreement and cooperation projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither
+      was read. The Foreign Ministry''s matches that name Israel as a party are the memorandum with MASHAV of 27 May 2026 (filed under C2), the medical mission of 18 August 2026 (cooperation, no
+      exercise), the meeting of Latin American leaders with Prime Minister Netanyahu in New York, reported on 25 September 2026 (the parties agreed to draw up a list of priority needs; no instrument:
+      lead PAN_2) and a visit of the American Jewish Committee on 14 October 2026. None records a joint exercise, intelligence sharing, basing or transit. Panama has no army; the Border Service
+      and National Aeronaval Service pages were not read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched,
+      and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). Two searches on security instruments found none signed in 2026: the memorandum of 27 May 2026 (water, health, public-private
+      partnerships; evt_2026_05_27_PAN_C2) is a cooperation framework; the Israeli President''s visit of 6 May 2026 and the Foreign Minister''s announced visit of 24 and 25 February 2026 (La
+      Prensa: agriculture, water, the Canal; no instrument announced; the outcome was not found) name no exercise, intelligence or basing item; the Foreign Ministers spoke by telephone on 29 March
+      2026 about the war with Iran (Middle East Forum, press, not read at the source). The ''security and information exchange on passengers'' negotiation with Israel is of October 2015 (La Prensa
+      Honduras, before the window).'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Israel acuerdo OR memorando OR convenio seguridad OR defensa OR drones OR ciberseguridad 2026 Mulino Netanyahu Herzog'
+    - 'WebSearch 2026-11-09: Gideon Saar Panama visita febrero 2026 Mulino firma acuerdo cancilleria comunicado'
+    - 'WebSearch 2026-11-09: Saar Mulino Panama canal reunion 25 febrero 2026 canciller israeli Panama Martinez-Acha firmaron OR acordaron'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s
+      (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s
+      (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas,
+      Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public
+      Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000
+      posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the
+      Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches
+      (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation
+      projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. Panama delivers no major
+      arms to Israel (A1). No export-licensing authority page was read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were
+      not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on flag ships found the Maritime Authority''s circular of 2023 advising Panama-flag vessels to avoid the
+      Mediterranean near the Gaza Strip and no decision on arms licences to Israel; Panama has no arms export industry (SIPRI: no delivery, A1) and no licence suspension was found.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama flag ships arms Israel Autoridad Maritima de Panama buque bandera panamena armas Israel Gaza'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s (minseg.gob.pa),
+      the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s (pancanal.com)
+      were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu,
+      UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public Security
+      595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000 posts
+      of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the Middle
+      East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches (effects
+      of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation
+      projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. The free trade agreement
+      with Israel (in force since 1 January 2020) is listed as operating on the Ministry of Commerce''s pages. No licensing or customs authority page was read. No web search was available (the run''s
+      shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No Panamanian embargo, import ban or two-way measure on Israel was found; Panama is not among the Hague Group''s twelve
+      signatories of Bogota and the searches found no restrictive decree (the Government''s recent acts are cooperation instruments with Israel).'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Israel Gaza Mulino Martinez-Acha cancilleria 2026 declaracion alto el fuego Palestina'
+    - 'WebSearch 2026-11-09: Panama Israel acuerdo OR memorando OR convenio seguridad OR defensa OR drones OR ciberseguridad 2026 Mulino Netanyahu Herzog'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s
+      (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s
+      (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas,
+      Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public
+      Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000
+      posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the
+      Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches
+      (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation
+      projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. The Maritime Authority''s
+      notices (communiqué of 3 October 2024 on notice MMN 08/2023, 20 June 2025 on MMN 04/2025, 6 March 2026 on MMN-05/2026) are safety advisories to Panama-flagged ships near Israel, Iran and the
+      Gulf: they restrict no cargo and refuse no transit. The Canal Authority''s posts name no cargo restriction. The civil aviation authority was not read. No web search was available (the run''s
+      shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Canal and Israeli ships found the Canal Authority''s statement of neutrality in the Middle East war (Dawn, 29
+      April 2026, text not read), traffic statistics and no refusal of passage, port call or overflight for Israel-linked cargo; Panama''s flag registry (Maritime Authority) published no
+      restriction on carrying arms to Israel.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Canal de Panama buques Israel transito OR peaje OR Autoridad del Canal Gaza OR israeli 2025 2026 ACP armamento transito carga militar'
+    - 'WebSearch 2026-11-09: Panama flag ships arms Israel Autoridad Maritima de Panama buque bandera panamena armas Israel Gaza'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 3 of the 12 qualifying votes (ES-10/23, ES-10/25, A/RES/80/78), abstained on 8, absent on A/DEC/80/506. The statements on the votes were not read.
+      No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Panama sits on the Security Council in 2025 and 2026 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent member): the vetoes of
+      the window are those of the permanent members.'
+    queries:
+    - unsc_vetoes.csv, vetoing state Panama
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Panama is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (Panama is a party to the Rome Statute). The press reports that
+      Netanyahu invited the Presidents of Panama, Paraguay and Bolivia on 24–25 September 2026 to join a United States initiative for countries to withdraw from the Court; no answer was found
+      (lead_20261006_PAN_2).
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found: the President met the Prime Minister of Israel in New York, on the margins of the General Assembly, which is not
+      hosting on an official visit; Israel''s President Herzog, who visited Panama on 6 May 2026, is not under a warrant.'
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Panama has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Panamá Corte Penal Internacional orden de arresto Netanyahu posición gobierno Mulino Cancillería
+    checked_at: '2026-10-06'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv; Panama has no row. Panama does not recognise the State of Palestine: the registry (countries.yaml) found none as of 2026-09-28, and BBC Mundo (Yahoo
+      Noticias, 27 September 2025, read) names it the only Latin American state that does not recognise the State of Palestine; the Foreign Ministry said in August 2014 that it would evaluate
+      a Palestinian request (La Estrella, 11 August 2014). No statement of the Government since October 2023 on recognition was found.'
+    queries:
+    - Panama recognizes State of Palestine 2013 Ministry of Foreign Affairs Panama reconoce Estado de Palestina Cancillería
+    - Panamá considera reconocer Estado palestino y establecer relaciones (La Estrella, 2014, read)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: the President''s General Debate statements of 25 September 2024, 24 September 2025 and 23 September 2026 (read in full, `pa_es.pdf`) never cite Gaza or Palestine; the 81st
+      session''s says only that ''en el Medio Oriente, buscamos una paz perdurable''. In the Security Council Panama spoke through its Permanent Representative or other members of its mission
+      (S/PV.9841, 9929, 10000, 10003, archived), not B9 speakers (R3); the Foreign Minister''s addresses of 2026 read (the Council debate of 26 May 2026, the war in Ukraine, the war in the Middle
+      East of March 2026) do not cite Gaza. The Ministry''s report of 2 January 2026 on its first year in the Council says Panama ''presentó proyectos de resolución, exigiendo un alto al fuego
+      inmediato, acceso humanitario pleno y la liberación de rehenes'' in ''Gaza y Medio Oriente'': a release in the Ministry''s name with no named speaker or exact words, so it stays in this
+      note (R4). President Mulino''s weekly press conference of 9 October 2025 (''Felicito el acuerdo ya público entre Israel y Hamás. Quiera Dios que este sea un paso hacia la paz duradera y
+      firme en el Medio Oriente'', Yahoo Noticias, read; 362 days old) congratulates an agreement already public and hopes for lasting peace: it is not a call for a ceasefire, the Presidency''s
+      own transcript was not found, and it is a lead (lead_20261006_PAN_3).'
+    queries:
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    - mire.gob.pa site search ?s=Gaza, ?s=Israel, ?s=Palestina
+    - Martínez-Acha Consejo de Seguridad Gaza Panamá canciller discurso Medio Oriente Palestina alto el fuego liberación de rehenes
+    - Panama Security Council Middle East Gaza statement Foreign Minister Martínez-Acha presided open debate Panama presidency August 2025
+    - gadebate.un.org Panama 78th to 81st sessions (pa_es.pdf), read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found. The President called the relationship with Israel 'una alianza fortalecida' on 6 May 2026
+      (the Herzog visit), a statement on bilateral relations that does not address the conduct of the war.
+    queries:
+    - Mulino Gaza declaración "Gaza" Panamá presidente conferencia de prensa jueves Israel Hamás postura Panamá genocidio
+    - Herzog visita Panamá mayo 2026 Mulino firman acuerdos Israel Panamá comunicado Presidencia
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Panama was found (not an EU member).
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Panama named an ambassador to Israel in January 2025 (Wikipedia, not read in a primary), Israel''s ambassador signed the memorandum of 27
+      May 2026, and the Ministry''s pages of 2026 show cooperation (a medical mission of 18 August 2026, the Day of the State of Israel of April 2026).'
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    - Panamá Israel embajada Jerusalén OR consulado OR vuelo OR visa acuerdo 2024 2025 Panamá Israel firma convenio
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: 'No association or trade agreement with Israel was suspended or reviewed: the free trade agreement (signed 2018, in force since 1 January 2020) stands, and on 6 May 2026 the Presidents
+      agreed to ''ampliar y reforzar'' it (lead_20261006_PAN_1: no signed amendment).'
+    queries:
+    - Panamá sanciones colonos israelíes OR "embargo de armas" OR "retira embajador" OR "suspende" Israel gobierno Panamá Gaza medidas
+    - Panamá Israel firman acuerdo memorando 2025 Cancillería Panamá Israel cooperación Mulino Israel
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the memorandum of understanding between the Ministry and Israel''s MASHAV agency, signed 27 May 2026 (-10, standing, flagged under R18; the Ministry''s release and La Prensa,
+      archived). Not filed: the commitments of the Herzog visit (6 May 2026) and of the meeting with the Prime Minister (New York, September 2026), which are leads (_1, _2); the Watergen water
+      machine donated to Pedro González Island (a project, not an instrument; La Prensa); the Israeli medical mission of 18 August 2026 (an activity under the memorandum). The free trade agreement
+      and earlier instruments pre-date the window.'
+    queries:
+    - Panamá firma acuerdo con Israel para cooperación en agua y salud
+    - Panama Israel sign agreement 2026 Mulino Netanyahu OR Saar memorandum cooperation Panama Israel relations
+    - Asamblea Nacional Panamá aprueba acuerdo Israel ley convenio Panamá Israel 2024 2025 tratado primer debate Israel
+    - Herzog visita Panamá mayo 2026 Mulino firman acuerdos Israel Panamá comunicado Presidencia
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s (minseg.gob.pa),
+      the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s (pancanal.com)
+      were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu,
+      UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public Security
+      595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000 posts
+      of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the Middle
+      East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches (effects
+      of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation
+      projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. The Ministry of Commerce''s
+      pages list the free trade agreement with Israel and its cooperation projects, with no measure on settlement goods. Customs was not read. No web search was available (the run''s shared allowance
+      was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the recognition of Palestine and on settlements found no Panamanian measure on settlement goods; Panama does not
+      recognise the State of Palestine (Prensa Latina, 24 September 2025; BBC Mundo), is the only Latin American state in that position, and its free trade agreement with Israel (in force 1
+      January 2020) has no settlement exclusion that was found.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama reconocimiento Estado de Palestina 2026 Mulino OR cancilleria posicion Palestina asentamientos Cisjordania Panama'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Panama over conduct in Gaza or the occupied territories was found. The Ministry of Foreign Affairs'' site (mire.gob.pa),
+      the Ministry of Public Security''s (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa)
+      and the Panama Canal Authority''s (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked
+      for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds
+      no earlier posts), 22 matches; Public Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John
+      of Jerusalem); Public Prosecutor 3,000 posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October
+      2023 to 2 November 2026, 3 matches (the Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11
+      October 2023 to 30 October 2026, 3 matches (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten
+      pages on the free trade agreement and cooperation projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the
+      request: neither was read. The Social Security Fund (css.gob.pa) and the Savings Fund of Panama (fsp.gob.pa) did not answer; no post of the Ministry of Economy and Finance names an exclusion
+      decision. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Savings Fund and the Social Security Fund found no exclusion list or divestment decision tied to Israel; the
+      results concern the Social Security Fund''s reserves and the sovereign rating only.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Fondo de Ahorro de Panama OR Caja de Seguro Social inversiones Israel bonos OR empresas israelies desinversion armamento 2025 2026'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s
+      (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s
+      (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas,
+      Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts), 22 matches; Public
+      Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000
+      posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the
+      Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches
+      (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation
+      projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither was read. The procurement portal
+      PanamaCompra answers an error and the General Directorate of Public Procurement (dgcp.gob.pa) was not searched. No web search was available (the run''s shared allowance was used up before
+      the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on procurement found aircraft purchases from Embraer (Brazil) and Airbus and no award to or exclusion of an Israeli
+      firm; no PanamaCompra record was read (the portal needs a script).'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Compra contrato empresa israeli OR Israel Aerospace OR Elbit OR Rafael Panama Servicio Nacional Aeronaval OR Policia OR Ministerio de Seguridad compra equipo 2025 2026'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Panama in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PAN
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Panama has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Panama
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      Panama has no row in UNRWA's donor tables of 2022, 2023 or 2024 (archived): no contribution to compare.
+      UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09)
+      has no row for Panama, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Panama
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    - Panamá visas palestinos Gaza refugiados humanitarias OR "evacuación médica" OR "niños de Gaza" Panamá gobierno acoge
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Panamá ayuda humanitaria Gaza donación Cancillería Panamá UNRWA contribución OR evacuación médica OR refugiados palestinos
+    - Panamá visas palestinos Gaza refugiados humanitarias OR "evacuación médica" OR "niños de Gaza" Panamá gobierno acoge
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Panama for conduct in Gaza was found. The Ministry of Foreign Affairs'' site
+      (mire.gob.pa), the Ministry of Public Security''s (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s
+      (amp.gob.pa) and the Panama Canal Authority''s (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every
+      post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface
+      holds no earlier posts), 22 matches; Public Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of
+      St John of Jerusalem); Public Prosecutor 3,000 posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9
+      October 2023 to 2 November 2026, 3 matches (the Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts
+      of 11 October 2023 to 30 October 2026, 3 matches (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns
+      ten pages on the free trade agreement and cooperation projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects
+      the request: neither was read. The Public Prosecutor''s 3,000 posts hold no case on conduct in Gaza; the courts'' site did not answer. No web search was available (the run''s shared allowance
+      was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Public Prosecutor, police and courts found no complaint, investigation or prosecution tied to Gaza or Israel
+      in 2025 or 2026; the results are protests and a statement of the Israeli Embassy on the arrest warrant of 22 November 2024 (Telemetro).'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Ministerio Publico OR Policia Nacional OR tribunal manifestacion Palestina Gaza OR Israel Panama 2025 2026 protesta embajada denuncia genocidio'
+    - 'WebSearch 2026-11-09: Panama Corte Penal Internacional retirarse Netanyahu orden de arresto Mulino respuesta cancilleria Estatuto de Roma Panama 2026'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. The Ministry
+      of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public Security''s (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa),
+      the Maritime Authority''s (amp.gob.pa) and the Panama Canal Authority''s (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`,
+      the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to
+      9 November 2026 (the interface holds no earlier posts), 22 matches; Public Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of
+      Israel in 2024 and the Order of St John of Jerusalem); Public Prosecutor 3,000 posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy
+      and Finance 686 posts of 9 October 2023 to 2 November 2026, 3 matches (the Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches;
+      Canal Authority 368 posts of 11 October 2023 to 30 October 2026, 3 matches (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches
+      ?s=Israel and ?s=Gaza) returns ten pages on the free trade agreement and cooperation projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check
+      and customs (ana.gob.pa) rejects the request: neither was read. The Ministry of Public Security''s 595 posts name no measure on protests or symbols concerning Palestine; the National Police''s
+      pages were not read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches found demonstrations in Panama City on 6 and 7 May 2026 against the Israeli President''s visit (''No al genocidio
+      en Gaza'', La Estrella de Panama, 7 May 2026), a demonstration at the Israeli Embassy and at the University of Panama; no police ban or dispersal was reported in the articles read.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Ministerio Publico OR Policia Nacional OR tribunal manifestacion Palestina Gaza OR Israel Panama 2025 2026 protesta embajada denuncia genocidio'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. The Ministry of Foreign Affairs'' site (mire.gob.pa), the Ministry of Public
+      Security''s (minseg.gob.pa), the Public Prosecutor''s (ministeriopublico.gob.pa), the Ministry of Economy and Finance''s (mef.gob.pa), the Maritime Authority''s (amp.gob.pa) and the Panama
+      Canal Authority''s (pancanal.com) were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza,
+      Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): Foreign Affairs 600 posts of 18 May to 9 November 2026 (the interface holds no earlier posts),
+      22 matches; Public Security 595 posts of 10 October 2023 to 2 November 2026, 2 matches (a paramedic course given by the Red Cross of Israel in 2024 and the Order of St John of Jerusalem);
+      Public Prosecutor 3,000 posts of 10 June 2025 to 6 November 2026 (the limit of the crawl), 3 matches (first names and a district); Economy and Finance 686 posts of 9 October 2023 to 2 November
+      2026, 3 matches (the Middle East in bond and market reports); Maritime Authority 401 posts of 9 July 2024 to 6 November 2026, 3 matches; Canal Authority 368 posts of 11 October 2023 to 30
+      October 2026, 3 matches (effects of the Middle East war on demand). The Ministry of Commerce and Industry''s site (mici.gob.pa, searches ?s=Israel and ?s=Gaza) returns ten pages on the free
+      trade agreement and cooperation projects with Israel and none on Gaza. The Presidency''s site (presidencia.gob.pa) answers a bot check and customs (ana.gob.pa) rejects the request: neither
+      was read. The Public Prosecutor''s posts and the Judiciary''s (organojudicial.gob.pa, no answer) hold no such step. No web search was available (the run''s shared allowance was used up before
+      the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The same searches found no decision of a Panamanian court on Israel, Gaza or a measure about them.'
+    queries:
+    - 'mire.gob.pa, minseg.gob.pa, ministeriopublico.gob.pa, mef.gob.pa, amp.gob.pa, pancanal.com WordPress interface, 2023-10-07 to 2026-11-09: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - mici.gob.pa ?s=Israel and ?s=Gaza, 2026-11-09
+    - 'WebSearch 2026-11-09: Panama Ministerio Publico OR Policia Nacional OR tribunal manifestacion Palestina Gaza OR Israel Panama 2025 2026 protesta embajada denuncia genocidio'
+    checked_at: '2026-11-09'

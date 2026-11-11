@@ -1,0 +1,1263 @@
+# Hand-authored events for Jordan (P-D research session, wave 8, 2026-09-29).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# Speakers: King Abdullah II is head of state and is not a B9 speaker (as the King of Saudi Arabia, the President of
+# the UAE and the Amir of Qatar, docs/10 B-382, B-390 (2), B-391 (3)). Ayman Safadi has been Deputy Prime Minister and
+# Minister of Foreign Affairs and Expatriates throughout the window, the foreign-minister speaker; the Prime Ministers
+# were Bisher Al-Khasawneh (to September 2024) and Jafar Hassan (from September 2024). Statements are read in the
+# English service of the Jordan News Agency (Petra), the government's news agency; its items before about February 2026
+# are no longer served by its site and are recorded from existing Wayback captures of their former addresses (docs/10
+# B-397). B9 events are filed only on the speaker's own words (the full text of a speech, words the agency quotes
+# directly) and on joint statements of foreign ministers, not on words reported in indirect speech, statements of the
+# spokesperson or the Ministry, or further statements in the same weeks as a filed one, and only when the document
+# cites Gaza (docs/10 B-381 (4), B-32). The English texts are the agency's own; the Arabic originals were not compared.
+# Finish run (T-F-W8, 2026-11-09): R3 (docs/calibration/README.md §6) made the head of state a B9 speaker; the King's
+# speeches that cite Gaza are filed from then on (docs/10 B-917, B-920 (1)), and the rule on further statements in the
+# same weeks applies per speaker: on 22 September 2026 the foreign ministers' joint statement and the King's General
+# Debate address are two events (`evt_2026_09_22_JOR_B9`, `evt_2026_09_22_JOR_B9_2`; docs/10 B-2107 (4)). The lines
+# above predate R3.
+
+- id: evt_2023_10_26_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2023-10-26'
+  points: 5
+  points_rationale: "Names specific violations (+5): the joint statement of nine Arab foreign ministers condemns the targeting of civilians and civilian infrastructure, forced displacement and collective punishment in Gaza, and calls for an immediate ceasefire."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Foreign Minister and eight Arab counterparts condemned the targeting of civilians, forced displacement and collective punishment in Gaza and called for an immediate ceasefire."
+    fr: "Le ministre des Affaires étrangères et huit homologues arabes ont condamné le ciblage des civils, le déplacement forcé et la punition collective à Gaza et appelé à un cessez-le-feu immédiat."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20231026_fm-gov-om_arab-fms-joint-statement
+    quote: "– Condemns and rejects the targeting of civilians, all acts of violence and terrorism against them, and all violations of international law, including international humanitarian law and international human rights law, by any party, including the targeting of civilian infrastructure and facilities."
+    quote_lang: en
+    locator: line 3
+  - source: src_20231026_fm-gov-om_arab-fms-joint-statement
+    quote: "– Condemns individual or collective forced displacement, as well as collective punishment policies."
+    quote_lang: en
+    locator: line 4
+  - source: src_20231026_fm-gov-om_arab-fms-joint-statement
+    quote: "– Calls on the UN Security Council to mandate the parties for an immediate and sustainable ceasefire."
+    quote_lang: en
+    locator: line 8
+  - source: src_20231026_fm-gov-om_arab-fms-joint-statement
+    quote: "the Foreign Ministers of the Hashemite Kingdom of Jordan"
+    quote_lang: en
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Lines 1, 3, 4 and 8 of the archived text re-read: the Hashemite Kingdom of Jordan is among the nine foreign ministers (line 1); the condemnation of the targeting of civilians, of forced displacement and collective punishment, and the call for a ceasefire. B9 +5 (violations named)."
+    notes: "Joint statement of the foreign ministers of Jordan, the United Arab Emirates, Bahrain, Saudi Arabia, Oman, Qatar, Kuwait, Egypt and Morocco of 26 October 2023, in the English version published by the Omani Ministry of Foreign Affairs (the only signatory ministry copy found that could be archived; the Arabic is the official text). Filed for the six signatories among the 45 countries in the P-16 consistency sweep (docs/10 B-444; B-396 (5), B-401 (6))."
+
+- id: evt_2023_11_01_JOR_B12
+  revision: 1
+  country: JOR
+  indicator: B12
+  type: standing
+  date: '2023-11-01'
+  end: null
+  points: 5
+  points_rationale: >-
+    Ambassador recalled (+5): the Foreign Minister announced the immediate recall of the Jordanian ambassador to Israel
+    on 1 November 2023, citing the war on Gaza, and told Israel that its ambassador, who had left Jordan, should not
+    return; the return of ambassadors was tied to an end of the war on Gaza. No downgrade or severance of relations
+    followed. No return of the ambassador was found to 29 September 2026, so the state is open.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister recalled Jordan's ambassador to Israel, citing the war on Gaza, and told Israel that its
+      ambassador should not return.
+    fr: >-
+      Le ministre des Affaires étrangères a rappelé l'ambassadeur de Jordanie en Israël, en invoquant la guerre à Gaza,
+      et a signifié à Israël que son ambassadeur ne devait pas revenir.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20231101_petra_jordan-recalls-ambassador-israel
+    quote: "Amman, Nov. 1 (Petra) -- Deputy Prime Minister and Minister of Foreign Affairs and Expatriates, Ayman Safadi, announced on Wednesday the immediate recall of the Jordanian ambassador to Israel."
+    quote_lang: en
+    locator: line 1
+  - source: src_20231101_petra_jordan-recalls-ambassador-israel
+    quote: "This decision stands as a firm representation of Jordan's condemnation and rejection of the raging Israeli war on Gaza, which has led to the killing of innocent civilians and an unprecedented severe humanitarian crisis."
+    quote_lang: en
+    locator: line 2
+  - source: src_20231101_petra_jordan-recalls-ambassador-israel
+    quote: "Moreover, Safadi directed the relevant department within the Ministry of Foreign Affairs and Expatriates to notify the Israeli foreign ministry that its ambassador, who had previously departed from Jordan, should not return for the time being."
+    quote_lang: en
+    locator: line 4
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item of 1 November 2023 (Wednesday; dated 01/11/2023 17:30:21 on line 9): line 1 the recall
+        announced by the Foreign Minister, line 2 the decision tied to the war on Gaza, line 4 Israel's ambassador not
+        to return, line 5 the return of ambassadors conditioned on Israel ceasing its war in Gaza. Recall tier agrees;
+        scope gaza (the document cites Gaza).
+    notes: >-
+      No official record of a return was found; a press analysis read only in a search summary (Jordan News, "Jordan
+      Between Two Costs in the West Bank File") says a new ambassador to Israel was appointed after the previous one
+      retired but has not been dispatched. The end date stays null until an official record of a return is archived.
+
+- id: evt_2023_12_10_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2023-12-10'
+  points: 5
+  points_rationale: >-
+    Legal characterisation and specific violations (+5): at the Doha Forum the Foreign Minister said the war falls
+    within the legal definition of genocide and described a systematic effort to empty Gaza of its people (forced
+    displacement).
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister said at the Doha Forum that the war on Gaza fell within the legal definition of genocide and
+      aimed to empty Gaza of its people.
+    fr: >-
+      Le ministre des Affaires étrangères a déclaré au Forum de Doha que la guerre à Gaza relevait de la définition
+      juridique du génocide et visait à vider Gaza de sa population.
+  actor:
+    en: "Minister of Foreign Affairs and Expatriates"
+    fr: "Ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20231210_petra_safadi-doha-forum-empty-gaza
+    quote: "He said, \"Our efforts have not stopped trying to explain the danger inherent in the continuation of this aggression, and we have not seen the world come yet to do what must be done to end this war, which falls within the legal definition of genocide."
+    quote_lang: en
+    locator: line 4
+  - source: src_20231210_petra_safadi-doha-forum-empty-gaza
+    quote: "Doha, December 10 (Petra) -- Foreign Minister Ayman Safadi Sunday said the number of victims from the Israeli war on Gaza is increasing \"day by day, and what we are seeing is not only the killing of innocent people and the destruction of their livelihoods, but a systematic effort to empty Gaza of its people.\""
+    quote_lang: en
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item datelined Doha, 10 December 2023 (Sunday; dated 10/12/2023 20:18:12 on line 24): line 1
+        quotes the Minister on "a systematic effort to empty Gaza of its people", line 3 places the words at the Doha
+        Forum, line 4 quotes him on the war falling within the legal definition of genocide. Direct quotes of the
+        speaker, same day and occasion; legal-characterisation tier agrees.
+    notes: >-
+      The Minister's words at the forum are quoted directly by the agency; no transcript of the forum session was
+      archived.
+
+- id: evt_2023_12_31_JOR_D3
+  revision: 1
+  country: JOR
+  indicator: D3
+  type: standing
+  date: '2023-12-31'
+  end: '2024-12-31'
+  points: 8
+  points_rationale: "Increased tier (+8): Jordan's 2023 contribution to UNRWA exceeds its 2022 contribution in nominal USD per UNRWA's donor tables (USD 7,876,424 in 2023 against USD 4,241,081 in 2022) (docs/02 §2 D3; docs/calibration/README.md R10)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Jordan contributed more to UNRWA in 2023 than in 2022, according to UNRWA's donor tables."
+    fr: "La contribution de la Jordanie à l'UNRWA pour 2023 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  evidence:
+  - source: src_20231231_unrwa_donor-ranking-2023
+    quote: "Jordan 0 3,639,135 3,639,135 0 0 0 0 0 0 4,237,288 7,876,424 23"
+    quote_lang: en
+    locator: line 39 (Jordan)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Jordan 0 4,241,081 4,241,081 0 0 0 4,241,081 28"
+    quote_lang: en
+    locator: line 37 (Jordan)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 39 of the 2023 table and line 37 of the 2022 table re-read: USD 7,876,424 in 2023 against USD 4,241,081 in 2022. D3 increased agrees; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_JOR_D3)."
+    notes: "UNRWA's donor table for 2023, archived in P-16 (docs/10 B-431 (6)), settles D3 for 2023: the increased tier holds from 31 December 2023, the end of the first calendar year whose contribution exceeds 2022; it ends on 2024-12-31, from which the 2024 table decides the tier (evt_2024_12_31_JOR_D3). Filed in the P-16 consistency sweep (docs/10 B-445)."
+
+- id: evt_2024_01_10_JOR_D4
+  revision: 1
+  country: JOR
+  indicator: D4
+  type: repeatable
+  date: '2024-01-10'
+  points: 5
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      Jordan operated the Jordanian Field Hospital/2 in Khan Yunis in the southern Gaza Strip, treating the wounded.
+    fr: >-
+      La Jordanie a fait fonctionner l'hôpital de campagne jordanien/2 à Khan Younès, dans le sud de la bande de Gaza,
+      pour soigner les blessés.
+  actor:
+    en: "Jordan Armed Forces"
+    fr: "Forces armées jordaniennes"
+  evidence:
+  - source: src_20240110_petra_field-hospital-khan-yunis
+    quote: "Amman, Jan. 10 (Petra) – The dedicated members of the Jordanian Field Hospital/ 2 in Khan Yunis, located in the southern region of the Gaza Strip, persist in delivering vital medical and humanitarian assistance to the wounded and injured individuals affected by the ongoing Israeli bombings."
+    quote_lang: en
+    locator: line 1
+  - source: src_20240110_petra_field-hospital-khan-yunis
+    quote: "Operating under tremendously challenging circumstances, the medical and nursing teams tirelessly manage thousands of caseload on a weekly basis, encompassing both major and minor surgeries, hospital admissions, and the dispensation of vital medications to those in need."
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item of 10 January 2024 (dated 10/01/2024 08:32:53 on line 5): line 1 the Jordanian Field
+        Hospital/2 in Khan Yunis delivering medical assistance to the wounded, line 2 surgeries and admissions by its
+        teams. A field hospital deployed in the Gaza Strip: one programme, one event (docs/02 §2 D4).
+    notes: >-
+      Dated from the earliest archived official record of the hospital in operation, as the Qatari D4 (docs/10 B-393
+      (2)); press reports put its arrival in Khan Yunis on 21 November 2023, so the event starts about seven weeks late
+      (past its 730-day decay either way). Jordan's field hospital in the north of the Gaza Strip predates the war and
+      is not counted; the later rotations of the southern hospital are the same programme.
+
+- id: evt_2024_01_23_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2024-01-23'
+  points: 5
+  points_rationale: >-
+    Specific violations named and legal characterisation (+5): at the Security Council the Foreign Minister said Israel
+    had subjected half a million Palestinians to starvation, asked the Council for a binding decision to end the
+    suffering and said Israel must be held responsible for its actions, including war crimes.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister told the Security Council that Israel had subjected half a million Palestinians in Gaza to
+      starvation and asked it for a binding decision.
+    fr: >-
+      Le ministre des Affaires étrangères a déclaré au Conseil de sécurité qu'Israël avait soumis un demi-million de
+      Palestiniens de Gaza à la famine et lui a demandé une décision contraignante.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20240124_petra_safadi-security-council
+    quote: "He further asserted, \"In explicit terms, Israel has subjected half a million Palestinians to starvation, a number four times greater than the global total facing famine at the fifth level."
+    quote_lang: en
+    locator: line 20
+  - source: src_20240124_petra_safadi-security-council
+    quote: "Such a challenge cannot go unanswered, and Israel must be held responsible for its actions, including war crimes, and for impeding the path to peace.\""
+    quote_lang: en
+    locator: line 25
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item datelined New York, 24 January 2024 (dated 24/01/2024 10:14:32 on line 37): line 1 the
+        Minister addressing the Security Council on Gaza, line 2 the session "late Tuesday" (23 January 2024), lines 17
+        to 20 displacement and starvation in Gaza, line 20 and line 25 his words quoted directly. Speaker, date and Gaza
+        citation confirmed; specific-violations tier (starvation) agrees.
+    notes: >-
+      Dated to the Council's session of Tuesday 23 January 2024, as the item says; the UN verbatim record of that
+      meeting was not archived in this session.
+
+- id: evt_2024_04_09_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2024-04-09'
+  points: 5
+  points_rationale: "Names specific violations (+5): the three heads of state said famine was setting in in Gaza, condemned the attacks that killed humanitarian workers and called for a permanent ceasefire."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The King, with the heads of state of Egypt and France, called for a permanent ceasefire in Gaza and said famine was already setting in."
+    fr: "Le roi, avec les chefs d'État de l'Égypte et de la France, a appelé à un cessez-le-feu permanent à Gaza et déclaré que la famine s'y installait déjà."
+  actor:
+    en: "King of the Hashemite Kingdom of Jordan"
+    fr: "Roi du Royaume hachémite de Jordanie"
+    name: "Abdullah II"
+  evidence:
+  - source: src_20240409_elysee_egypte-france-jordanie-cessez-le-feu
+    quote: "Face au nombre intolérable de victimes, nous, chefs d’État de l’Égypte, de la France et de la Jordanie, demandons une mise en œuvre immédiate et inconditionnelle de la résolution 2728 du Conseil de sécurité des Nations Unies. Nous soulignons la nécessité urgente d’instaurer à Gaza un cessez-le-feu permanent."
+    quote_lang: fr
+    quote_en: "Faced with the intolerable number of victims, we, heads of state of Egypt, France and Jordan, call for the immediate and unconditional implementation of UN Security Council resolution 2728. We stress the urgent need to establish a permanent ceasefire in Gaza."
+    locator: line 3
+  - source: src_20240409_elysee_egypte-france-jordanie-cessez-le-feu
+    quote: "Les Palestiniens de Gaza ne sont plus seulement exposés à un risque de famine ; celle-ci s’installe déjà."
+    quote_lang: fr
+    quote_en: "The Palestinians of Gaza are no longer only exposed to a risk of famine; it is already setting in."
+    locator: line 7
+  - source: src_20240409_elysee_egypte-france-jordanie-cessez-le-feu
+    quote: "Nous condamnons les attaques ayant conduit à la mort de travailleurs humanitaires, et tout récemment l’attaque contre un convoi d’aide de l’ONG World Central Kitchen."
+    quote_lang: fr
+    quote_en: "We condemn the attacks that led to the death of humanitarian workers, most recently the attack on an aid convoy of the NGO World Central Kitchen."
+    locator: line 8
+  - source: src_20240409_elysee_egypte-france-jordanie-cessez-le-feu
+    quote: "Roi Abdallah II du Royaume hachémite de Jordanie"
+    quote_lang: fr
+    quote_en: "King Abdullah II of the Hashemite Kingdom of Jordan"
+    locator: line 15
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_04_09_FRA_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Lines 3, 7, 8 and 15 of the archived text re-read: the three heads of state call for a permanent ceasefire, say famine is setting in and condemn the attacks that killed humanitarian workers; the King signs (line 15). +5 matches evt_2024_04_09_FRA_B9."
+    notes: "Joint text of the heads of state of Egypt, France and Jordan of 9 April 2024, published by the Élysée (the text archived for France), signed by the King (line 15). The King is the head of state, not the head of government: filed under the reading of docs/calibration/README.md R3 (docs/10 B-442), which 1.0.0-rc.2 writes into B9 (P-24); under 1.0.0-rc.1 B9 names the head of government or foreign minister. Filed in the P-16 consistency sweep (docs/10 B-444)."
+
+- id: evt_2024_11_21_JOR_B5
+  revision: 1
+  country: JOR
+  indicator: B5
+  type: standing
+  date: '2024-11-21'
+  end: null
+  points: 8
+  points_rationale: "Official statement on executing the warrants of 21 November 2024 (+8, standing): the Deputy Prime Minister and Foreign Minister said, at his press conference with the EU High Representative in Amman on the day of the warrants, that the ICC's decisions must be respected and must be implemented and that its member states, of which Jordan is one, are bound to respect the decision (the Ministry's item, partly in direct quotation). Read as a stated position on executing the warrants, as the statements of other states parties that their obligation binds them (AUT, CHE, SWE)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Foreign Minister said that the decisions of the International Criminal Court must be respected and implemented and that its member states are bound to respect the warrants of 21 November 2024."
+    fr: "Le ministre des Affaires étrangères a déclaré que les décisions de la CPI devaient être respectées et exécutées et que ses États membres étaient tenus de respecter les mandats du 21 novembre 2024."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20241121_mfa-jo_safadi-borrell-icc-warrants
+    quote: "وقال الصفدي، في رد على سؤال حول إصدار المحكمة الجنائية الدولية، مذكرات اعتقال ضد رئيس الوزراء الإسرائيلي بنيامين نتنياهو ووزير الدفاع السابق يوآف غالانت، إن \"قرارات المحكمة الجنائية الدولية يجب أن تحترم، ويجب أن تنفذ.\""
+    quote_lang: ar
+    quote_en: "Safadi said, in answer to a question on the issuance by the International Criminal Court of arrest warrants against the Israeli Prime Minister Benjamin Netanyahu and the former Defence Minister Yoav Gallant, that \"the decisions of the International Criminal Court must be respected, and must be implemented.\""
+    locator: line 16
+  - source: src_20241121_mfa-jo_safadi-borrell-icc-warrants
+    quote: "وأضاف الصفدي أن المحكمة مؤسسة دولية ثمة التزام باحترام قراراتها من كل الدول الأعضاء فيها، والدول الأعضاء في المحكمة هم 124دولة، وبالتالي، كل هذه الدول ملزمة باحترام هذا القرار."
+    quote_lang: ar
+    quote_en: "Safadi added that the Court is an international institution whose decisions all its member states are obliged to respect, that the member states of the Court are 124 states, and that all these states are therefore bound to respect this decision."
+    locator: line 17
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Lines 1, 2 and 16 to 19 of the archived Arabic text re-read: line 1 dates the item 21 November 2024; line 2 names the Deputy Prime Minister and Minister of Foreign Affairs and Expatriates Ayman Safadi receiving the EU High Representative in Amman; line 16 quotes him directly ('must be respected, and must be implemented') in answer to a question on the warrants against Netanyahu and Gallant; line 17 (indirect speech) says the 124 member states are bound to respect the decision; line 19 rejects selectivity. The quotes are verbatim; the translations are the session's own. Jordan is a party to the Rome Statute, so the statement covers its own obligation. Flagged: the words are a press-conference answer reported by the Ministry, not a statement issued in the Minister's name; read as his official statement because the Ministry publishes it with his words in direct quotation. No later B6 position found (no visit of a person under warrant to Jordan and no contrary statement in the searches of this session)."
+    notes: "Promoted from lead_20260929_JOR_1 (closed) after the Ministry's own copy was found by web search on 2026-11-09 (resumed T-F-W8 session, docs/10 B-949). Verification of 2026-11 (T-F-V3, docs/10 B-2106): French summary put in the tense of reported speech ('devaient', 'étaient tenus'); quotes checked at lines 16 and 17."
+
+- id: evt_2024_12_31_JOR_D3
+  revision: 1
+  country: JOR
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: '2025-12-31'
+  points: 8
+  points_rationale: >-
+    Increased tier (+8): UNRWA's tables give USD 8,626,299 pledged and received from Jordan for 2024 against USD
+    4,241,081 for 2022, both recorded as in-kind contributions to the programme budget; Jordan never suspended its
+    funding (D2 none-found).
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      Jordan's contribution to UNRWA for 2024 exceeded its 2022 contribution in UNRWA's donor tables.
+    fr: "La contribution de la Jordanie à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Jordan"
+    fr: "Gouvernement de la Jordanie"
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: "Jordan - - 8,626,299 8,626,299 8,626,299 8,626,299 - - - - - - - - - - - - - - 8,626,299 28 8,626,299 28"
+    quote_lang: en
+    locator: row Jordan (line 37)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Jordan 0 4,241,081 4,241,081 0 0 0 4,241,081 28"
+    quote_lang: en
+    locator: row Jordan (line 37)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The 2024 table (as of 31 December 2024), line 37: no cash to the programme budget, USD 8,626,299 in kind,
+        8,626,299 in total pledged and received (rank 28). The 2022 table (as of 31 December 2022), line 37: 0 cash,
+        4,241,081 in kind, 4,241,081 in total (rank 28). Increased tier agrees, as for the never-suspending countries of
+        this wave.
+    notes: "Both years are in-kind contributions of Jordan as a host country of Palestine refugees, not cash; flagged for the author (docs/10 B-398 (3)). The Jordan Chamber of Industry's separate row of 2024 (USD 161,801, line 115) is not a government contribution and is not counted. P-16 (docs/10 B-445): UNRWA's table for 2023, archived since, shows the 2023 contribution above 2022 as well: evt_2023_12_31_JOR_D3 holds the increased tier from 31 December 2023, and this event from 31 December 2024."
+
+- id: evt_2025_03_04_JOR_D4
+  revision: 1
+  country: JOR
+  indicator: D4
+  type: repeatable
+  date: '2025-03-04'
+  points: 5
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      Jordan began evacuating sick children from the Gaza Strip for treatment in Jordanian hospitals under the Jordanian
+      Medical Corridor.
+    fr: >-
+      La Jordanie a commencé à évacuer des enfants malades de la bande de Gaza pour les soigner dans des hôpitaux
+      jordaniens dans le cadre du Corridor médical jordanien.
+  actor:
+    en: "Jordan Armed Forces"
+    fr: "Forces armées jordaniennes"
+  evidence:
+  - source: src_20250827_petra_medical-corridor-tenth-group
+    quote: "Launched under royal directives in March of this year, the humanitarian initiative aims to alleviate the suffering of Palestinians in Gaza."
+    quote_lang: en
+    locator: line 3
+  - source: src_20250827_petra_medical-corridor-tenth-group
+    quote: "To date, Jordan has received a total of 518 individuals from the Strip, including 153 patients and 365 family members, transported via both land and air in several batches."
+    quote_lang: en
+    locator: line 4
+  - source: src_20250304_unifeed_who-gaza-jordan-patient-evacuation
+    quote: "“I am very happy that my son is going to Jordan for treatment, may God bless them."
+    quote_lang: en
+    locator: line 13
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item of 27 August 2025 (dated 27/08/2025 21:36:03 on line 7): line 1 the tenth group evacuated
+        under the "Jordanian Medical Corridor", line 3 the initiative launched under royal directives in March 2025,
+        line 4 the 518 people received to date. UNifeed's WHO story of 4 March 2025: its dateline and summary (in the
+        archived bytes, outside the extracted text) record the first WHO-supported evacuation of 29 children to Jordan
+        that day; line 13 a mother of a patient leaving for treatment in Jordan. One programme, one event, dated from
+        its first evacuation.
+    notes: >-
+      The date, 4 March 2025, is read from UNifeed's dateline and summary (source notes); the agency's item gives
+      "March" only. The programme followed the King's offer of 11 February 2025 to treat 2,000 sick children from Gaza
+      (press). Later batches (the 29th on 20 July 2026, Petra) are the same programme.
+
+- id: evt_2025_09_11_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2025-09-11'
+  points: 5
+  points_rationale: >-
+    Specific violations named (+5): at the Security Council's emergency session on the Israeli strike on Doha the
+    Foreign Minister said Israel has weaponised starvation in Gaza and asked the Council to press Israel to end its
+    aggression in Gaza and to stop the famine.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister told the Security Council that Israel had weaponised starvation in Gaza and asked it to press
+      Israel to end what he called its aggression there.
+    fr: >-
+      Le ministre des Affaires étrangères a déclaré au Conseil de sécurité qu'Israël avait fait de la famine une arme à
+      Gaza et lui a demandé d'obtenir d'Israël la fin de ce qu'il a appelé son agression.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20250912_petra_safadi-security-council-qatar
+    quote: "In just the past 23 months, more than 65,000 Palestinians in Gaza have been killed, including 547 humanitarian workers and journalists. Israel has weaponised starvation, with famine claiming the lives of 411 Palestinians, including 142 children."
+    quote_lang: en
+    locator: line 10
+  - source: src_20250912_petra_safadi-security-council-qatar
+    quote: "Pressure Israel to accept the proposed exchange agreement and end its aggression in Gaza. Ensure humanitarian access, stop the famine, and restore faith in the legitimacy of international law."
+    quote_lang: en
+    locator: line 23
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        The agency's item datelined New York, 12 September 2025 (dated 12/09/2025 02:43:19 on line 27): line 1 the
+        emergency session "on Thursday" (11 September 2025), line 4 introduces the statement's text, lines 5 to 25 the
+        statement; line 10 starvation weaponised in Gaza, line 23 the call to end the aggression in Gaza and stop the
+        famine. Speaker, date and Gaza citation confirmed; specific-violations tier agrees.
+    notes: >-
+      The session concerned the Israeli strike on Doha of 9 September 2025; the statement cites Gaza, so it is scoped
+      gaza. Qatar's Prime Minister spoke at the same session (not filed for Qatar, docs/10 B-393 (5)).
+
+- id: evt_2025_12_31_JOR_D3
+  revision: 1
+  country: JOR
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 11,671,380 pledged and USD 11,408,275 received for Jordan, against USD 4,241,081 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Jordan's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de la Jordanie à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Jordan"
+    fr: "Gouvernement de la Jordanie"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Jordan - - 11,671,380 11,408,275 11,671,380 11,408,275 - - - - - - - - - - 11,671,380 18 11,408,275 18"
+    quote_lang: en
+    locator: line 27 (Jordan)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Jordan 0 4,241,081 4,241,081 0 0 0 4,241,081 28"
+    quote_lang: en
+    locator: line 37 (Jordan)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Jordan row at line 27 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 37: USD 11,671,380 pledged in 2025 against USD 4,241,081 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_12_31_JOR_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). The 2025 amount is in kind (the host country's contribution), not cash, as in the earlier tables for Jordan and Lebanon; flagged for the author (docs/10 B-398 (3), B-876). Filed in T-F-UNDOCS-2 (docs/10 B-876)."
+
+- id: evt_2026_02_01_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-02-01'
+  points: 2
+  points_rationale: >-
+    Formal call for a ceasefire (+2): the joint statement of the foreign ministers of Jordan and seven other states
+    condemned Israel's repeated violations of the ceasefire in Gaza and called on all parties to preserve and sustain
+    it; no violation of international humanitarian law is named.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister and seven counterparts condemned Israel's repeated violations of the Gaza ceasefire and
+      called on all parties to preserve it.
+    fr: >-
+      Le ministre des Affaires étrangères et sept homologues ont condamné les violations répétées par Israël du
+      cessez-le-feu à Gaza et appelé toutes les parties à le préserver.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260201_spa_fms-joint-statement-ceasefire-gaza
+    quote: "Israel’s repeated violations of the ceasefire in Gaza which have resulted in the killing, and injuring of more than a thousand Palestinians."
+    quote_lang: en
+    locator: line 3
+  - source: src_20260201_spa_fms-joint-statement-ceasefire-gaza
+    quote: "They also call on all parties to fully uphold their responsibilities during this critical period and to exercise the utmost restraint, in order to preserve and sustain the ceasefire"
+    quote_lang: en
+    locator: line 6
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_02_01_SAU_B9
+  - evt_2026_02_01_ARE_B9
+  - evt_2026_02_01_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 3: Riyadh, 1 February 2026, the foreign ministers of Saudi Arabia, "the Hashimte Kingdom of Jordan" (the
+        agency's spelling), the United Arab Emirates, Qatar, Indonesia, Pakistan, Egypt and Türkiye condemn Israel's
+        repeated violations of the ceasefire in Gaza; line 6 calls on all parties to preserve and sustain the ceasefire.
+        Same document and tier as the Saudi, Emirati and Qatari events; call tier agrees.
+    notes: >-
+      The Saudi Press Agency's text, archived for Saudi Arabia, names Jordan's foreign minister among the signatories
+      and is cited here.
+
+- id: evt_2026_02_24_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-02-24'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the settlements as a violation of international law. West Bank conduct, tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Foreign Minister signed a joint statement that calls Israel's settlements a violation of international law."
+    fr: "Le ministre des Affaires étrangères a signé une déclaration commune qui qualifie les colonies d'Israël de violation du droit international."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20260224_um_joint-statement-west-bank
+    quote: "We are clear that Israel’s illegal settlements, and decisions designed to further them, are a flagrant violation of international law, including previous United Nations Security Council Resolutions and the 2024 Advisory Opinion of the International Court of Justice."
+    quote_lang: en
+    locator: line 2
+  - source: src_20260224_um_joint-statement-west-bank
+    quote: "We, the Foreign Ministers of the Federative Republic of Brazil, the French Republic, the Kingdom of Denmark, the Republic of Finland, the Republic of Iceland, the Republic of Indonesia, Ireland, the Arab Republic of Egypt, the Hashemite Kingdom of Jordan"
+    quote_lang: en
+    locator: line 1
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_02_24_DNK_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 1 of the archived text re-read: the Hashemite Kingdom of Jordan is among the signatories; line 2: the passage quoted. B9 +5 (legal characterisation), scope west-bank matches the events filed for the other signatories (evt_2026_02_24_DNK_B9)."
+    notes: "Joint statement of foreign ministers of 24 February 2026 on Israeli decisions in the West Bank, as published by the Danish Ministry of Foreign Affairs (the text archived for Denmark). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; JOR is named on line 1."
+
+- id: evt_2026_04_30_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-04-30'
+  points: 5
+  points_rationale: "Legal characterisation (+5): in a joint statement with eleven counterparts, the Minister called Israel's attacks on the Global Sumud Flotilla, a humanitarian initiative on the catastrophe in Gaza, and the detention of its activists flagrant violations of international law and international humanitarian law."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Foreign Minister and eleven counterparts called Israel's attacks on the Gaza flotilla violations of international humanitarian law."
+    fr: "Le ministre des Affaires étrangères et onze homologues ont qualifié les attaques d'Israël contre la flottille pour Gaza de violations du droit international humanitaire."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20260430_mre_joint-statement-sumud-flotilla
+    quote: "Os ataques israelenses contra as embarcações e a detenção ilegal de ativistas humanitários em águas internacionais constituem flagrantes violações do direito internacional e do direito internacional humanitário."
+    quote_lang: pt
+    quote_en: "The Israeli attacks against the vessels and the unlawful detention of humanitarian activists in international waters constitute flagrant violations of international law and international humanitarian law."
+    locator: line 337
+  - source: src_20260430_mre_joint-statement-sumud-flotilla
+    quote: "Os Ministros das Relações Exteriores da República Federativa do Brasil, da República da Turquia, do Reino Hachemita da Jordânia"
+    quote_lang: pt
+    quote_en: "The Ministers of Foreign Affairs of the Federative Republic of Brazil, the Republic of Türkiye, the Hashemite Kingdom of Jordan"
+    locator: line 336
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_04_30_BRA_B9, evt_2026_04_30_COL_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-30'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-30'
+      verdict: agree
+      notes: "Line 336 of the archived text re-read: do Reino Hachemita da Jordânia is among the signatories; line 337: the passage quoted. B9 +5 (legal characterisation) matches the events filed for the other signatories (evt_2026_04_30_BRA_B9, evt_2026_04_30_COL_B9)."
+    notes: "Joint statement of twelve foreign ministers of 30 April 2026 on the Global Sumud Flotilla, as published by the Brazilian Ministry of Foreign Affairs (the text archived for Brazil; docs/10 B-355 (3)). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; JOR is named on line 336."
+
+- id: evt_2026_06_02_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-06-02'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call settler incursions into Al-Aqsa Mosque under the protection of Israeli forces a flagrant violation of international law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts called settler incursions into Al-Aqsa Mosque under Israeli protection a violation of international law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont qualifié les incursions de colons dans la mosquée Al-Aqsa sous protection israélienne de violation du droit international.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs and Expatriates
+    fr: Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: They stress that these provocative and unacceptable actions constitute a flagrant violation of international law, the relevant United Nations resolutions, and the historical and legal status quo at the holy sites in occupied East Jerusalem.
+    quote_lang: en
+    locator: line 2
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_06_02_TUR_B9
+  - evt_2026_06_02_EGY_B9
+  - evt_2026_06_02_SAU_B9
+  - evt_2026_06_02_ARE_B9
+  - evt_2026_06_02_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Hashemite Kingdom of Jordan among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_06_02_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Jordan (evt_2026_06_18_JOR_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-06-02, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Jordan and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_06_18_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-06-18'
+  points: 5
+  points_rationale: >-
+    Specific violations named (+5): the joint statement of the foreign ministers of Jordan and seven other states
+    condemned settler attacks on two mosques north of Ramallah as violations of international law, including
+    international humanitarian law. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: >-
+      The Foreign Minister and seven counterparts condemned settler attacks on Palestinians and on two mosques in the
+      occupied West Bank.
+    fr: >-
+      Le ministre des Affaires étrangères et sept homologues ont condamné les attaques de colons contre des
+      Palestiniens et contre deux mosquées en Cisjordanie occupée.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260618_mofa-ae_fms-joint-statement-west-bank
+    quote: "They stress that these attacks constitute a clear violation of the sanctity of places of worship and religious sites, international law, including international humanitarian law, and relevant United Nations resolutions."
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_06_18_ARE_B9
+  - evt_2026_06_18_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 1 is the date (18 June 2026); line 3 names the foreign ministers of the UAE, Jordan, Türkiye, Egypt,
+        Indonesia, Pakistan, Saudi Arabia and Qatar, the attacks on the mosques of Jiljilya and Mazar'a al-Nubani and
+        their violation of international humanitarian law. The document does not cite Gaza: scope west-bank, unscored.
+    notes: >-
+      Filed as a tagged, unscored event as the P-D prompt asks for West Bank conduct met during the search, from the
+      text archived for the United Arab Emirates.
+
+- id: evt_2026_07_23_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-07-23'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call the access restrictions in the Old City of Jerusalem a flagrant violation of international law, including international humanitarian law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts called Israeli access restrictions in the Old City of Jerusalem a violation of international humanitarian law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont qualifié les restrictions d'accès israéliennes dans la vieille ville de Jérusalem de violation du droit international humanitaire.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs and Expatriates
+    fr: Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: Restrictions on access to the Old City of Jerusalem and its places of worship coupled with discriminatory and arbitrary access restrictions to the other places of worship in the old city constitute a flagrant violation of international law, including international humanitarian law
+    quote_lang: en
+    locator: line 4
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: 1. The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_07_23_TUR_B9
+  - evt_2026_07_23_EGY_B9
+  - evt_2026_07_23_SAU_B9
+  - evt_2026_07_23_ARE_B9
+  - evt_2026_07_23_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Hashemite Kingdom of Jordan among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_07_23_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Jordan (evt_2026_06_18_JOR_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-07-23, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Jordan and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_08_06_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-08-06'
+  points: 5
+  points_rationale: >-
+    Specific violations named (+5): the joint statement of the foreign ministers of Jordan and seven other states
+    condemned the targeting of healthcare facilities and medical infrastructure and attacks on civilian infrastructure
+    in the Gaza Strip, in grave violation of international humanitarian law.
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister and seven counterparts condemned the targeting of healthcare facilities and civilian
+      infrastructure in the Gaza Strip.
+    fr: >-
+      Le ministre des Affaires étrangères et sept homologues ont condamné le ciblage des établissements de santé et des
+      infrastructures civiles dans la bande de Gaza.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260806_mofa-ae_fms-joint-statement-gaza
+    quote: "The Ministers of Foreign Affairs of the United Arab Emirates, the State of Qatar, the Hashemite Kingdom of Jordan, the Republic of Indonesia, the Islamic Republic of Pakistan, the Republic of Türkiye, the Kingdom of Saudi Arabia, and the Arab Republic of Egypt express their strongest condemnation and denunciation of the ongoing Israeli violations in the Gaza Strip, particularly the targeting of healthcare facilities and medical infrastructure, attacks on civilian infrastructure, and the continued loss of civilian lives, including women and children, in grave violation of international law, including international humanitarian law."
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_06_ARE_B9
+  - evt_2026_08_06_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 1 is the date (6 August 2026); line 3 names the eight foreign ministers, Jordan's third, and the targeting
+        of healthcare facilities in the Gaza Strip in grave violation of international humanitarian law. Same document
+        and tier as the Emirati and Qatari events; specific-violations tier agrees.
+    notes: >-
+      Cited from the text archived for the United Arab Emirates.
+
+- id: evt_2026_08_21_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-08-21'
+  points: 5
+  points_rationale: 'Violations named (+5): the eight foreign ministers condemn settler violence against Palestinians and their property, with the support of the Israeli authorities, as violations of international law, and reject the E1 settlement plan. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts rejected the E1 settlement plan and called settler violence against Palestinians a violation of international law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont rejeté le plan de colonisation E1 et qualifié les violences de colons contre les Palestiniens de violations du droit international.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs and Expatriates
+    fr: Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: They stress that such acts in no way diminish the inalienable rights of the Palestinian people and constitute violations of international law and relevant United Nations resolutions
+    quote_lang: en
+    locator: line 2
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: The Foreign Ministers of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_21_TUR_B9
+  - evt_2026_08_21_EGY_B9
+  - evt_2026_08_21_SAU_B9
+  - evt_2026_08_21_ARE_B9
+  - evt_2026_08_21_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Hashemite Kingdom of Jordan among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_08_21_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Jordan (evt_2026_06_18_JOR_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-08-21, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Jordan and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_09_06_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-09-06'
+  points: 5
+  points_rationale: >-
+    Specific violations named (+5): the joint statement of the foreign ministers of Jordan and seven other states
+    condemned proposals to forcibly remove Palestinians from the Gaza Strip as flagrant violations of international
+    law, including international humanitarian law (forced displacement).
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: >-
+      The Foreign Minister and seven counterparts condemned Israeli ministers' proposals to forcibly displace
+      Palestinians from the Gaza Strip.
+    fr: >-
+      Le ministre des Affaires étrangères et sept homologues ont condamné les propositions de ministres israéliens de
+      déplacer de force les Palestiniens de la bande de Gaza.
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260906_mofa-ae_fms-joint-statement-displacement
+    quote: "The Foreign Ministers of the UAE, KSA, Qatar, Jordan, Indonesia, Pakistan, Türkiye, and Egypt strongly condemn the statements made by Israeli National Security Minister Itamar Ben-Gvir and Israeli Defense Minister Israel Katz regarding the displacement of the Palestinian people from the Gaza Strip, including proposals for plans and mechanisms aimed at forcibly removing Palestinians from their land."
+    quote_lang: en
+    locator: line 3
+  - source: src_20260906_mofa-ae_fms-joint-statement-displacement
+    quote: "Such inflammatory statements and proposals flagrantly violate principles of international law, including international humanitarian law, and pose a direct threat to the legitimate and inalienable rights of the Palestinian people."
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_06_ARE_B9
+  - evt_2026_09_06_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-09-29'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-09-29'
+      verdict: agree
+      notes: >-
+        Line 1 is the date (6 September 2026); line 3 names the foreign ministers of the UAE, KSA, Qatar, Jordan,
+        Indonesia, Pakistan, Türkiye and Egypt and condemns proposals to forcibly remove Palestinians from the Gaza
+        Strip as violations of international humanitarian law. Same document and tier as the Emirati and Qatari events;
+        specific-violations tier agrees.
+    notes: >-
+      Cited from the text archived for the United Arab Emirates.
+
+- id: evt_2026_09_09_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-09-09'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers refer to Israel''s unlawful occupation of the Occupied Palestinian Territory and call on Israel to rescind its settlement measures, welcoming restrictions on trade with settlements. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts welcomed restrictions on trade with settlements and called on Israel to rescind its settlement measures.
+    fr: Le ministre des Affaires étrangères et sept homologues ont salué les restrictions au commerce avec les colonies et appelé Israël à annuler ses mesures de colonisation.
+  actor:
+    en: Deputy Prime Minister and Minister of Foreign Affairs and Expatriates
+    fr: Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés
+    name: Ayman Safadi
+  evidence:
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: In this regard, they reiterate their call for Israel to rescind all measures taken in connection with settlement activities and other measures aimed at altering the geographic and demographic character of the Occupied Palestinian Territory.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: the obligation of all States not to recognize as legal the situation arising from Israel’s unlawful occupation in the Occupied Palestinian Territory
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: The Ministers of Foreign Affairs of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_09_TUR_B9
+  - evt_2026_09_09_EGY_B9
+  - evt_2026_09_09_SAU_B9
+  - evt_2026_09_09_ARE_B9
+  - evt_2026_09_09_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Hashemite Kingdom of Jordan among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_09_09_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Jordan (evt_2026_06_18_JOR_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-09-09, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Jordan and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_09_22_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-09-22'
+  points: 2
+  points_rationale: "Formal call (+2): the joint statement of eight foreign ministers calls on Israel to ensure the immediate, safe and unhindered delivery of humanitarian assistance in Gaza and stresses the imperative of preserving the ceasefire and ending all violations; it names no violation of international humanitarian law for Gaza (its passage on settlements, annexation and forced displacement concerns the occupied Palestinian territory as a whole and is not read as a Gaza violation, R7)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Minister of Foreign Affairs, with seven counterparts, called on Israel to ensure the unhindered delivery of humanitarian aid in Gaza and stressed the need to preserve the ceasefire."
+    fr: "Le ministre des Affaires étrangères, avec sept homologues, a appelé Israël à garantir l'acheminement sans entrave de l'aide humanitaire à Gaza et souligné la nécessité de préserver le cessez-le-feu."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "the Hashemite Kingdom of Jordan"
+    quote_lang: en
+    locator: line 1
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "call upon Israel to immediately fulfil its outstanding commitments under the First Phase of the Comprehensive Plan, including by ensuring the immediate, safe and unhindered delivery of humanitarian assistance and Early Recovery supplies"
+    quote_lang: en
+    locator: line 2
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "They stress the imperative of preserving the ceasefire and ending all violations."
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_09_22_PAK_B9, evt_2026_09_22_EGY_B9, evt_2026_09_22_TUR_B9_2, evt_2026_09_22_IDN_B9, evt_2026_09_22_QAT_B9, evt_2026_09_22_SAU_B9, evt_2026_09_22_ARE_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the Hashemite Kingdom of Jordan is among the eight signatory states (line 1); the quotes are verbatim. Gaza is named and the call is addressed to Israel (R7, R4). +2 (call), as for the joint statement of 1 February 2026 (evt_2026_02_01_PAK_B9). The text prints no name: the actor is the foreign minister of the state, Ayman Safadi, named by the continuity of the post (the same series of joint statements, docs/10 B-444); flagged. The meeting took place on 21 September 2026; the release is dated 22 September 2026 (line 20) and is the event date."
+    notes: "Joint statement of the foreign ministers of eight states (Pakistan, Egypt, Indonesia, Jordan, Qatar, Saudi Arabia, Türkiye, the United Arab Emirates) after their meeting in New York on 21 September 2026, as published by Pakistan's Ministry of Foreign Affairs (press release 252/2026, Islamabad, 22 September 2026; the text archived for Pakistan and used for every signatory, as in docs/10 B-444). Found in the monthly run of 2026-11 (T-P23-4) on the Ministry's press-release listing (the page before the first session of the 45 countries had not filed it). The statement also deplores settlement expansion, land confiscation, demolitions, settler violence and forced displacement in the occupied Palestinian territory as illegal measures: a West Bank passage that would be tagged west-bank and is not scored; one event for the same speaker and day (docs/10 B-32). Searched again on 2026-11-10 (T-G-JOINT, docs/10 B-2117): the own copies of Türkiye, the United Arab Emirates and Qatar are archived and filed with their events; no copy on this state's Ministry site was found (web searches in English and Arabic), so the text stays Pakistan's copy."
+
+- id: evt_2026_09_22_JOR_B9_2
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-09-22'
+  points: 5
+  points_rationale: 'Specific violations named (+5): the King says that Jordan''s field hospitals in Gaza have been targeted and that the Israeli Government continues its attacks and destruction of civilian infrastructure, and calls Israel''s conduct in Gaza an attempt to erase Palestinian life and impose a new territorial reality.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The King said at the General Assembly that Jordan's field hospitals in Gaza had been targeted and that Israel continued attacks on civilian infrastructure there.
+    fr: Le roi a déclaré à l'Assemblée générale que les hôpitaux de campagne jordaniens à Gaza avaient été pris pour cible et qu'Israël poursuivait ses attaques contre les infrastructures civiles.
+  actor:
+    en: King of the Hashemite Kingdom of Jordan
+    fr: Roi du Royaume hachémite de Jordanie
+    name: Abdullah II ibn Al Hussein
+  evidence:
+  - source: src_20260922_kingabdullah-jo_unga-81-general-debate-address
+    quote: 'In Gaza, the evidence is overwhelming: In the first 300 days of the so-called ceasefire, at least 300 Palestinian children were killed. Jordan’s field hospitals have also been targeted.'
+    quote_lang: en
+    locator: line 30
+  - source: src_20260922_kingabdullah-jo_unga-81-general-debate-address
+    quote: But this Israeli government keeps moving the goalposts, continuing its attacks and destruction of civilian infrastructure, refusing to withdraw, and squeezing Palestinians into barely a third of Gaza.
+    quote_lang: en
+    locator: line 30
+  - source: src_20260922_kingabdullah-jo_unga-81-general-debate-address
+    quote: 'Accountability begins when we call things what they are: an attempt to erase Palestinian life and impose a new territorial reality in Gaza.'
+    quote_lang: en
+    locator: line 31
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_22_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 31 (an attempt to erase Palestinian life in Gaza) and line 30 (field hospitals targeted; attacks and destruction of civilian infrastructure) are verbatim in the archived text; the page prints 22 September 2026 and the title names the General Debate of the 81st session. Attacks on hospitals are one of the named violations of the +5 tier.'
+    notes: 'The King''s address to the General Debate of the 81st session (22 September 2026), as the King''s official website publishes it. The King is a B9 speaker as head of state (R3, docs/calibration/README.md §6; the header of this file predates that reading). A different speaker from the Foreign Minister''s joint statement of the same day (evt_2026_09_22_JOR_B9), so a separate event (same speaker, same day: one event). The address also names forcible transfer and de-facto annexation in the West Bank (scope west-bank as well). Not reached by the wave-8 session (gadebate.un.org refuses Save Page Now); found on kingabdullah.jo in the finish run (T-F-W8, docs/10 B-917). Jordan''s B9 is at its cap, so no score effect.'
+
+- id: evt_2026_10_14_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-10-14'
+  points: 2
+  points_rationale: 'Formal call to end restrictions on humanitarian access (+2): the King and the Prime Minister of Australia emphasise the full, safe, rapid and unhindered delivery of humanitarian aid with the implementation of the Gaza Peace Plan. The legal characterisation in the same statement (the E1 settlement project as a violation of international law) concerns the West Bank, so it does not lift the Gaza reading to +5 (as for Australia, evt_2026_10_14_AUS_B9).'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The King and the Prime Minister of Australia, in a joint statement, emphasised the full, safe, rapid and unhindered delivery of humanitarian aid to Gaza.
+    fr: Le roi et le Premier ministre australien ont souligné, dans une déclaration commune, l'acheminement complet, sûr, rapide et sans entrave de l'aide humanitaire à Gaza.
+  actor:
+    en: King of the Hashemite Kingdom of Jordan
+    fr: Roi du Royaume hachémite de Jordanie
+    name: Abdullah II ibn Al Hussein
+  evidence:
+  - source: src_20261014_kingabdullah-jo_jordan-australia-joint-statement
+    quote: Leaders emphasised the importance of implementing the Gaza Peace Plan in full, in accordance with the UN Security Council Resolution 2803 (2025), protecting civilians consistent with international law, and the full, safe, rapid and unhindered delivery of humanitarian aid.
+    quote_lang: en
+    locator: line 20
+  - source: src_20261014_kingabdullah-jo_jordan-australia-joint-statement
+    quote: Leaders emphasised their rejection of any attempts to annex the West Bank or displace the Palestinian people, and reiterated their condemnation of the illegal ‘E1’ settlement project, emphasising it constitutes a violation of international law.
+    quote_lang: en
+    locator: line 18
+  - source: src_20261014_kingabdullah-jo_jordan-australia-joint-statement
+    quote: His Majesty King Abdullah II ibn Al Hussein of the Hashemite Kingdom of Jordan met in Canberra on 14 October 2026
+    quote_lang: en
+    locator: line 4
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_10_14_AUS_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 4 (the King and the Australian Prime Minister met in Canberra on 14 October 2026), line 18 (E1 condemned as a violation of international law) and line 20 (unhindered delivery of humanitarian aid; the Gaza Peace Plan) are verbatim. The tier and scope agree with evt_2026_10_14_AUS_B9; the Jordanian text spells ''emphasised'' where the Australian text has ''emphasized''.'
+    notes: Australia-Jordan Joint Leaders' Statement on Enhanced Cooperation, Canberra, 14 October 2026, in the Jordanian text on the King's official website (the Australian text is archived for Australia, evt_2026_10_14_AUS_B9, T-F-W3). The King is a B9 speaker as head of state (R3, docs/calibration/README.md §6). Found in the King's Press Room listing in the finish run (T-F-W8, docs/10 B-917). Jordan's B9 is at its cap, so no score effect.
+
+- id: evt_2026_10_16_JOR_B9
+  revision: 1
+  country: JOR
+  indicator: B9
+  type: repeatable
+  date: '2026-10-16'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the joint statement of twenty foreign ministers says that Colombia's inauguration of its embassy in Jerusalem contravenes Security Council resolutions and that any measure altering the status of occupied Jerusalem is null and void. Jerusalem and the West Bank only, no mention of Gaza: tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Minister of Foreign Affairs, with nineteen other foreign ministers, rejected Colombia's inauguration of its embassy in Jerusalem as contravening Security Council resolutions."
+    fr: "Le ministre des Affaires étrangères, avec dix-neuf autres ministres, a rejeté l'inauguration par la Colombie de son ambassade à Jérusalem comme contraire aux résolutions du Conseil de sécurité."
+  actor:
+    en: "Deputy Prime Minister and Minister of Foreign Affairs and Expatriates"
+    fr: "Vice-Premier ministre et ministre des Affaires étrangères et des Expatriés"
+    name: "Ayman Safadi"
+  evidence:
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "the Hashemite Kingdom of Jordan"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_10_16_EGY_B9, evt_2026_10_16_TUR_B9, evt_2026_10_16_QAT_B9, evt_2026_10_16_MYS_B9, evt_2026_10_16_IDN_B9, evt_2026_10_16_SAU_B9, evt_2026_10_16_DZA_B9, evt_2026_10_16_ZAF_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the Hashemite Kingdom of Jordan is among the twenty signatory states; the three quotes are verbatim. The text names Jerusalem and the West Bank's occupied status and not Gaza (R7), so scope west-bank. B9 +5 (legal characterisation) as for the joint statement of 21 August 2025. The actor's name is that of the foreign minister in the state's last filed B9 event (the statement names no individual)."
+    notes: "Joint statement of 16 October 2026 of twenty foreign ministers on Colombia's inauguration of its embassy in Jerusalem, as published by South Africa's Department of International Relations and Cooperation (the text archived for South Africa, used for every signatory among the 45 countries, as in docs/10 B-444). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Found in the department's list of media statements (monthly run of 2026-11, T-P23-3). The other ministries' copies were not read."
+

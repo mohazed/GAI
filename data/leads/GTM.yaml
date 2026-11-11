@@ -1,0 +1,82 @@
+# Leads for Guatemala: press or NGO claims without an archived primary document, and readings left unfiled.
+# Never scored (docs/03 §10). P-21 light protocol, session T-P21-09, 2026-10-06.
+- id: lead_20261006_GTM_1
+  country: GTM
+  indicator: B10
+  claim: 'EFE reports (Munich, 17 February 2024) that, according to Guatemala''s Foreign Ministry, President Arévalo, meeting Israel''s President Isaac Herzog at the Munich Security Conference,
+    ''reiteró su postura de mantener una firme vocación pacifista y su irrestricto apoyo y solidaridad ante este tiempo desafiante''. The words are the Ministry''s, not the President''s (R4 asks
+    for the speaker''s exact words), they speak of support and solidarity ''in this challenging time'' and not of support for Israel''s conduct in Gaza, and the same report notes that the President
+    had not called for a ceasefire. Not filed as B10; decayed to zero in any case (962 days). Re-checked 2026-11-09 (T-F-L05): the Presidency''s own item of 19 February 2024 on the Munich visit
+    (bernardoarevalo.presidencia.gob.gt, ''Presidente Arévalo continúa en París actividades gira de trabajo por Europa'') lists the meeting with Israel''s President, the International Criminal
+    Court''s prosecutor and others, and quotes no words of the President on Israel, Gaza or support; the Ministry''s text (the source of EFE''s words) is not on a site that can be read (minex.gob.gt
+    answers 403). The lead stays open. Re-checked with search (T-F-L05-R, 2026-11-09; Spanish): the search returned Emisoras Unidas'' report of 19 February 2024 (press) and items of the national
+    agency AGN, whose site and the Ministry''s (minex.gob.gt) answer a Cloudflare check that was not bypassed; the Ministry''s own text is still not archived. The lead stays open. P-23 pass, T-G-LEADS-3 (2026-11-10): not searched again by web search: the words are the Ministry''s and the event has decayed to zero, so the lead waits only for the author''s R4 reading; minex.gob.gt and agn.gt still answer 403 to a script (curl, 2026-11-10). Kept open.'
+  sources:
+  - url: https://www.infobae.com/america/agencias/2024/02/17/el-presidente-de-guatemala-reitera-vocacion-pacifista-a-su-homologo-de-israel/
+    publisher: Infobae (EFE)
+    kind: press
+    title: El presidente de Guatemala reitera vocación "pacifista" a su homólogo de Israel
+    date: '2024-02-17'
+  date: '2026-10-06'
+  status: open
+- id: lead_20261006_GTM_2
+  country: GTM
+  indicator: B8
+  claim: 'EFE reports (11 April 2013) that Guatemala recognised Palestine that week as a ''free, independent and sovereign'' State, the Foreign Minister Fernando Carrera announcing it by videoconference
+    from the UN; the registry gives 9 April 2013. No document of the Government of Guatemala (the Ministry''s communiqué or the Minister''s statement) is archived, so there is no row in data/structured/recognitions.csv
+    (R21). Once a state document is archived the row adds B8 +3 (the pre-existing tier). Re-checked 2026-11-09 (T-F-L05): the Ministry of Foreign Affairs'' site answers 403; the Wayback CDX window
+    of 9 April to 31 May 2013 for www.minex.gob.gt lists no page whose address names Palestine or a communiqué, and the capture of the home page of 20 April 2013 (204,470 bytes) has no item on
+    Palestine. No state document found; no recognitions row added. Re-checked with search (T-F-L05-R, 2026-11-09; Spanish): the searches returned press items on the recognition (the Foreign Ministry
+    statement of 2013 is not among them as a state document) and an AGN item on the Government''s position on the conflict, whose site answers a Cloudflare check that was not bypassed; no state
+    document found, no recognitions row added. The lead stays open. Candidate state document found in the redo pass (T-F-L05-R, 2026-11-09): the delegation of Guatemala''s statement to the United
+    Nations conference on the two-State solution of 30 July 2025, published by UNISPAL (https://www.un.org/unispal/wp-content/uploads/2025/07/guatemala_nyc_es.pdf; 6 pages, ''En nombre del Gobierno
+    de Guatemala''), says ''La República de Guatemala reconoció oficialmente a Palestina el 8 de abril de 2013, como un Estado libre, independiente y soberano.'' It is a state document of the
+    kind Angola''s row rests on and would support the row `GTM,2013-04-08` (B8, +3). Save Page Now captured it, but the Wayback replay answered the Internet Archive''s bot-filter text (620 bytes)
+    for about fifteen minutes, so the capture could not be checked against its replay (B-880) and was not recorded; a later session should archive it again (`pnpm archive <url> --kind official
+    --id src_20250730_unispal_gtm-two-state-conference`), check the replay, and add the row. The statement names no speaker (R3), so it is not a B9 event.'
+  sources:
+  - url: https://www.plazapublica.com.gt/content/guatemala-reconoce-palestina-como-estado-libre-y-soberano
+    publisher: Plaza Pública (EFE)
+    kind: press
+    title: Guatemala reconoce a Palestina como Estado libre y soberano
+    date: '2013-04-11'
+  date: '2026-10-06'
+  status: dropped
+  reason: 'Resolved in the P-23 pass of 2026-11-10 (T-G-B8, docs/10 B-2115 (2)): the row GTM,2013-04-08 in recognitions.csv cites the delegation''s archived statement to the Conference of 30 July 2025 (src_20250730_un-unispal_gtm-two-state-conference-statement: ''reconoció oficialmente a Palestina el 8 de abril de 2013''); B8 is generated from the row. Status set by T-G-LEADS-3 (2026-11-10), which did not search again.'
+- id: lead_20261109_GTM_3
+  country: GTM
+  indicator: B9
+  claim: 'Emisoras Unidas reports (27 August 2025) a statement of Guatemala''s Ministry of Foreign Affairs, issued for the Government of President Arévalo, that expresses ''profunda preocupación''
+    about the situation in the Gaza Strip and says ''Guatemala hace un llamado urgente a las partes al establecimiento de un alto al fuego inmediato'', with protection of civilians, the release
+    of all hostages and unrestricted humanitarian access; the same searches show Ministry statements on Gaza of 4 June 2024 (support for a ceasefire proposal) and 21 March 2025 (regret at the
+    breakdown of the ceasefire). The statements name no speaker (R3: B9 needs the head of state, the head of government or the foreign minister) and speak of a ceasefire without naming a violation;
+    not filed. Press only (a page of Emisoras Unidas, read through WebFetch; the Ministry''s site and the national agency''s answer a Cloudflare check that was not bypassed). A filing, if the
+    author reads a Ministry communiqué as a position of the state, needs the Ministry''s own text, archived (a decision of the R2 kind, docs/10 B-441). P-23 pass, T-G-LEADS-3 (2026-11-10): a Spanish search (MINEX Guatemala comunicado Gaza alto al fuego inmediato 27 agosto 2025) found Emisoras Unidas and the national agency''s items (agn.gt, which say the Ministry published the ''Comunicado relativo a la situación en la Franja de Gaza'' on its X account); minex.gob.gt and agn.gt answer 403 to a script (curl, 2026-11-10), so the Ministry''s own text is still not archived; it names no B9 speaker in any case (R3). Kept open.'
+  sources:
+  - url: https://emisorasunidas.com/nacional/2025/08/27/guatemala-arevalo-alto-fuego-gaza/
+    publisher: Emisoras Unidas
+    kind: press
+    title: Guatemala pide alto al fuego inmediato por crisis en Gaza
+    date: '2025-08-27'
+  date: '2026-11-09'
+  status: open
+- id: lead_20261109_GTM_4
+  country: GTM
+  indicator: C2
+  claim: 'Press and the national agency''s headlines report that Guatemala and Israel signed a free trade agreement on 8 September 2022 in Tel Aviv, that Guatemala''s Congress approved it on 29
+    November 2023 (Decree 17-2023 as the results give it), and that it entered into force on 1 March 2024 (the national agency''s headline and search summary; a Prensa Libre item gives 4 March;
+    the two pages answer 403 and were not read, so the dates are the search summaries). C2 counts an agreement ''signed with Israel since October 2023'': the signature precedes the window, so
+    no event is filed; the ratification and the entry into force are the part that falls after 7 October 2023. A reading for the author (a reader who counts ratification or entry into force would
+    file C2 at -10, standing from 1 March 2024); the Congress''s own decree, the Ministry of Economy''s treaty page or the Official Gazette, archived, would be the primary. Not read: the Congress''s
+    site and the Ministry of Economy''s treaty page were not fetched in this pass. P-23 pass, T-G-LEADS-3 (2026-11-10): a Spanish search (Decreto 17-2023 Congreso Guatemala Tratado de Libre Comercio Israel) found the Ministry of Economy''s profile of the agreement (July 2024), now archived as src_20240805_mineco-gt_perfil-guatemala-israel (891,761 bytes, SHA-256 equal to the Wayback replay and a direct download): ''suscrito en septiembre de 2022'', ''Aprobación: Decreto No. 17-2023 del Congreso de la República de Guatemala'', ''Entrada en Vigor: 01 de marzo de 2024''. The primary the lead asked for is now archived; the filing still waits for the author''s reading of C2 (''signed since October 2023''; default not filed, docs/10 B-970 (2)). Kept open.'
+  sources:
+  - url: https://agn.gt/entra-en-vigor-tlc-entre-guatemala-e-israel/
+    publisher: AGN (national news agency)
+    kind: press
+    title: Entra en vigor TLC entre Guatemala e Israel
+  - url: https://agn.gt/tratado-de-libre-comercio-con-israel-es-ratificado-por-el-legislativo/
+    publisher: AGN (national news agency)
+    kind: press
+    title: Tratado de libre comercio con Israel es ratificado por el legislativo
+  date: '2026-11-09'
+  status: open

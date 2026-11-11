@@ -1,0 +1,252 @@
+# Coverage record for Liechtenstein (docs/03 §6). P-21 light protocol, session T-P21-49, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Government's site (regierung.li: the members of the Government, the Foreign Minister's page archived). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46 to T-P21-48): no press item was read. These gaps are scheduled for P-23.
+# Four events (B9 x2, D3 x2). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L25, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in German and English; the Government's war material report), all none-found with the limits said in each note; B11 has-events from the Government's three ordinances applying the EU settler listings (gesetze.li, archived); the 80th General Debate statement read in the Government's copy (no event). See docs/10 B-2093.
+country: LIE
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LIE
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm
+      fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Liechtenstein company as a supplier of parts or maintenance for the F-35 programme: Liechtenstein is neither a partner nor a customer, and no result names a Liechtenstein supplier.
+      Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations and foreign military sales customers list 2026 (the eight partner nations and the foreign-military-sales customers named in the results; none of the
+      four of this batch: YEM, LIE, LUX, MCO)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by Liechtenstein from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer LIE
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Liechtenstein (not found)
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No instance of military cooperation with Israel was found; no result concerns an exercise, transit, basing or intelligence-sharing arrangement.
+      Not searched: the National Police''s cooperation agreements.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Israel Kriegsmaterial Export OR Waffen OR Sanktionen Regierung Gaza 2024 2025 (no result concerns Liechtenstein; the results concern Germany, the United
+      Kingdom and the Netherlands)'
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Kriegsmaterialgesetz Ausfuhr Israel Amt für Volkswirtschaft Bewilligung Landtag Anfrage Gaza (the Government''s report and motion on the war material law,
+      llv.li bua_009_bua-kmg.pdf: the manufacture, import, export and transit of war material are governed in Liechtenstein by the Swiss War Material Act through the customs union, only brokering and trade
+      outside the customs territory by national law; no Liechtenstein measure concerning Israel in the results)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found. The export, import and transit of war material from Liechtenstein are governed by the Swiss War Material Act through
+      the customs union (the Government''s report on the war material law, a search result, not archived), so a licensing decision would be Switzerland''s; only brokering and trade outside the customs territory
+      fall under Liechtenstein law, and no measure concerning Israel was found. Not searched: the Office of Economic Affairs'' licence records.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Kriegsmaterialgesetz Ausfuhr Israel Amt für Volkswirtschaft Bewilligung Landtag Anfrage Gaza (the Government''s report and motion on the war material law,
+      llv.li bua_009_bua-kmg.pdf: the manufacture, import, export and transit of war material are governed in Liechtenstein by the Swiss War Material Act through the customs union, only brokering and trade
+      outside the customs territory by national law; no Liechtenstein measure concerning Israel in the results)'
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Israel Kriegsmaterial Export OR Waffen OR Sanktionen Regierung Gaza 2024 2025 (no result concerns Liechtenstein; the results concern Germany, the United
+      Kingdom and the Netherlands)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or ordinance establishing a two-way arms embargo on Israel was found; see A6 on the Swiss War Material Act applying through the customs union. The Government''s sanctions ordinances under
+      the International Sanctions Act apply EU listings of persons (B11), not an embargo on Israel. Not searched: the Landtag''s interpellations item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Kriegsmaterialgesetz Ausfuhr Israel Amt für Volkswirtschaft Bewilligung Landtag Anfrage Gaza (the Government''s report and motion on the war material law,
+      llv.li bua_009_bua-kmg.pdf: the manufacture, import, export and transit of war material are governed in Liechtenstein by the Swiss War Material Act through the customs union, only brokering and trade
+      outside the customs territory by national law; no Liechtenstein measure concerning Israel in the results)'
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Israel Kriegsmaterial Export OR Waffen OR Sanktionen Regierung Gaza 2024 2025 (no result concerns Liechtenstein; the results concern Germany, the United
+      Kingdom and the Netherlands)'
+    - 'gesetze.li/konso/2021104000/meta (the amendment history of the human rights sanctions ordinance, LGBl. 2021 No. 104, 2026-11-10): LGBl. 2024 No. 168 (23 April 2024), 2024 No. 289 (17 July 2024) and
+      2026 No. 186 (2 June 2026) apply the EU settler listings; read and archived'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of transit to an arms shipment bound for Israel was found; Liechtenstein has no airport or port, and transit through the customs territory is governed by Swiss law (see A6). Not searched:
+      Swiss customs notices concerning Liechtenstein.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Kriegsmaterialgesetz Ausfuhr Israel Amt für Volkswirtschaft Bewilligung Landtag Anfrage Gaza (the Government''s report and motion on the war material law,
+      llv.li bua_009_bua-kmg.pdf: the manufacture, import, export and transit of war material are governed in Liechtenstein by the Swiss War Material Act through the customs union, only brokering and trade
+      outside the customs territory by national law; no Liechtenstein measure concerning Israel in the results)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Croatia OR "North Macedonia" OR "Bosnia and Herzegovina" OR Andorra OR Liechtenstein OR Monaco port OR airspace arms shipment Israel refused OR transit OR pro-Palestine protest banned police 2024 2025 (dockworkers'' blockades in Greece, Italy, Spain and Türkiye; none concerns this state)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven of the twelve qualifying votes and an abstention on ES-10/24 (18 September 2024; the votes of 2023 and 2024 up to that date have decayed). Liechtenstein
+      has all twelve votes recorded and is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched).'
+    queries:
+    - unga_votes.csv, country LIE
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Liechtenstein is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Liechtenstein).'
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt, Liechtenstein (not found)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Liechtenstein supporting the respondent in ICJ case 192 (same page).
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Liechtenstein is a state party to the Rome Statute (src_20261009_icc-asp_states-parties, line 165). No statement on the warrants of 21 November 2024 by a B5 speaker was read in an archived primary
+      in this session (regierung.li press releases not searched item by item; P-23).
+    queries:
+    - archive/text/src_20261009_icc-asp_states-parties.txt, Liechtenstein (line 165)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No statement against the warrants and no hosting of a person subject to a warrant was found in the sources read.
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Liechtenstein were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: Generated from recognitions.csv, which has no row for Liechtenstein; countries.yaml records no recognition of the State of Palestine (intent stated only). Left to the build.
+    queries:
+    - recognitions.csv, LIE
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Two events: the joint statements already archived that name Liechtenstein (21 July 2025, +5; 12 August 2025, +5), filed as for the other signatories (B-444); the Foreign Minister Sabine Monauni
+      named from the Government''s page (responsible for Foreign Affairs after 2021-2025 at Home Affairs, the day not stated) and the continuity of the post (flagged). Not filed: the 81st General Debate statement
+      (26 September 2026, delivered from the Permanent Mission''s file; it never names Gaza, Palestine or Israel); the 79th and 80th sessions have no file for Liechtenstein on gadebate.un.org (li_en.pdf and
+      li_fr.pdf answer 404). Not searched: the Government''s press releases (regierung.li/medienportal) item by item. Completion of 2026-11 (T-F-L25): the Government''s copy of the 80th General Debate statement
+      (25 September 2025, regierung.li, archived as src_20250925_regierung-li_monauni-80th-general-debate) says that in Gaza ''we have become bystanders'' and witnesses to the unjustifiable suffering of civilians:
+      no call and no named violation, not filed (as Yemen''s 80th text, B-773); its line 3 names Sabine Monauni as Minister of Foreign Affairs, Environment and Culture and is added to the two events as evidence
+      of the post. No Government release on Gaza was found by the search.'
+    queries:
+    - gadebate.un.org/sites/default/files/gastatements/{79,80,81}/li_{en,fr}.pdf (81st en read live; the others 404)
+    - 'archive/text: joint statements and UN records, grep Liechtenstein, Monauni, Hasler'
+    - 'WebSearch 2026-11-10 (German): Sabine Monauni Gaza Waffenstillstand Liechtenstein Regierung Medienmitteilung OR Erklärung 2025 2026 (the Government''s copy of the 80th General Debate statement, regierung.li,
+      read and archived; no Government release on Gaza in the results)'
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'Three events: the Government''s ordinances applying the EU settler listings in Liechtenstein under the International Sanctions Act, LGBl. 2024 No. 168 of 23 April 2024 (four settlers and two entities,
+      among them the Hilltop Youth; west-bank, unscored), LGBl. 2024 No. 289 of 17 July 2024 (five persons and three entities, among them Tzav 9, listed for blocking aid to Gaza; +5) and LGBl. 2026 No. 186
+      of 2 June 2026 (three persons and four entities; the tier already held, no points). Each is an act of the state itself, not a Council decision (R8 does not apply to an EEA/EFTA state). No national listing
+      beyond the EU''s was found. Completion of 2026-11 (T-F-L25).'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Verordnung Massnahmen gewalttätige Siedler Westjordanland Sanktionen EU Übernahme (gesetze.li: LGBl. 2026 No. 186 and 2024 No. 289, read)'
+    - 'gesetze.li/konso/2021104000/meta (the amendment history of the human rights sanctions ordinance, LGBl. 2021 No. 104, 2026-11-10): LGBl. 2024 No. 168 (23 April 2024), 2024 No. 289 (17 July 2024) and
+      2026 No. 186 (2 June 2026) apply the EU settler listings; read and archived'
+    checked_at: '2026-11-10'
+  B12:
+    status: none-found
+    note: No recall or downgrade of relations with Israel by Liechtenstein was found in the sources read.
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: Liechtenstein is not an EU member; the EU-Israel Association Agreement is not its instrument. Its free-trade relations with Israel run through the EFTA-Israel agreement (no act on it found in
+      the sources read).
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No instrument of cooperation with Israel signed by Liechtenstein after 7 October 2023 was found in the sources read.
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Liechtenstein is in a customs union with Switzerland and not in the EU, and no result concerns a Liechtenstein measure. Not searched: the Office
+      of Economic Affairs'' notices and Swiss customs rules applied in Liechtenstein.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Israel Kriegsmaterial Export OR Waffen OR Sanktionen Regierung Gaza 2024 2025 (no result concerns Liechtenstein; the results concern Germany, the United
+      Kingdom and the Netherlands)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund (the AHV-IV-FAK old-age insurance funds, the State Staff Pension Foundation, the state-owned Liechtensteinische Landesbank) over conduct in Gaza or the occupied
+      territories was found; no result concerns one. Not searched: the funds'' own investment policies.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Office of Construction and Infrastructure''s procurement notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    checked_at: '2026-11-10'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Liechtenstein Government flows to the Gaza response appear in fts_plan_totals.csv (monthly generated events, all ended at the build date). Left to the build.'
+    queries:
+    - fts_plan_totals.csv, donor LIE
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 100,604 in 2022, USD 111,732 in 2023, USD 115,473 in 2024. No announced suspension was found in the sources read.'
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events (D3 increased): 2023 (USD 111,732 against USD 100,604 in 2022, programme budget; ended
+      31 December 2024) and 2024 (USD 115,473, all in the ninth pair of columns, flagged as Iraq's and Kuwait's).
+      UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09)
+      gives USD 123,153 pledged against USD 100,604 in 2022: evt_2025_12_31_LIE_D3 holds the increased tier
+      from 31 December 2025, and evt_2024_12_31_LIE_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans hosted in Liechtenstein was read in a primary (P-23).
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Liechtenstein nationals or companies for conduct in Gaza was found. Not searched: the Office of the Public Prosecutor''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; no result concerns a Liechtenstein measure. Not searched: the National Police''s notices and the Liechtensteiner
+      Vaterland and Volksblatt item by item.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No complaint under universal jurisdiction concerning conduct in Gaza accepted for investigation in Liechtenstein was found (Liechtenstein is a state party to the
+      Rome Statute). Not searched: the Office of the Public Prosecutor''s site.'
+    queries:
+    - 'WebSearch 2026-11-10 (German): Liechtenstein Pensionskasse OR AHV Fonds OR Landesbank Ausschluss Israel Siedlungen Unternehmen OR Kundgebung Palästina Vaduz verboten OR Staatsanwaltschaft Anzeige Gaza
+      (no result concerns Liechtenstein; the results concern Danish, Dutch and Norwegian funds)'
+    checked_at: '2026-11-10'

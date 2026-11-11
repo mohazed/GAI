@@ -1,0 +1,482 @@
+# Coverage record for Nicaragua (docs/03 §6). P-21 light protocol, session T-P21-11, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government's official sites are not reachable from the session's network (cancilleria.gob.ni does not resolve; presidencia.gob.ni and the Ministry's name are parked pages in Wayback; El 19 Digital answers HTTP 403), so the research read the official gazette (La Gaceta No. 187, from Wayback), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the messages and statements Nicaragua published through UNISPAL, the ICJ documents (UNISPAL copies, the Court's report A/80/4), the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 45 minutes of research on Nicaragua, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: R7, no document cites Gaza (see B9).
+# Completion of 2026-11 (finish run, T-F-L06, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the state radio's posts (3,000 in full text and four term searches
+#   over the whole period), the Wayback index of the Government's news site (slugs) and the Gazette's front page; no ministry's own site answered a script request, so this is a thin base. B8
+#   stays unchecked (generated; no state document for the recognition of 1988 was found). No web search was available: press and NGO sources were not searched. Read and not filed: the
+#   Government's communiqué of 10 September 2026 on the oral hearings in Nicaragua v. Germany (case 193, not B3 or B4, B-591; no named speaker), the Co-President's remarks of the same day
+#   (no Gaza) and the Ambassador's meeting with a Fatah official of 22 October 2026 (R3).
+# Redo pass with web search (T-F-L06-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 9 searches in Spanish and English; every status is kept; no new event; the two el19digital
+#   articles of B-947 (6) were not read (403 live, no Wayback capture listed) and the search found no archived primary for the 1988 recognition; one new lead (NIC_5, Ortega's speech of 14
+#   October 2024).
+country: NIC
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NIC
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of Nicaragua as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      contains the word Nicaragua only in its references to the case Nicaragua v. Germany (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived)
+      lists the United States and 19 allied nations, Nicaragua not among them, and carries no supplier list by country. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni,
+      presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute:
+      403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts
+      of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem
+      (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The
+      Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first
+      300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee,
+      Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No web search was available (the run''s shared allowance was used up
+      before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). One search on arms, trade and Israel for Nicaragua found no Nicaraguan company or Government link to the F-35 programme;
+      Nicaragua has had no relations with Israel since 11 October 2024.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Nicaragua (4 occurrences, all in references to Nicaragua v. Germany)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists two orders of Nicaragua from Israel (1957, second-hand armoured vehicles; 1973, two aircraft), and A4 reads only the rows
+      of a release''s own data year (docs/10 B-536 (7)): nothing after 7 October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer NIC
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, NIC
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni,
+      presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute:
+      403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts
+      of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem
+      (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The
+      Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first
+      300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee,
+      Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. Nicaragua has had no diplomatic relations with Israel since 11 October
+      2024 (B12); no post records a joint exercise, an exchange of intelligence, a base or a transit of arms with Israel. No web search was available (the run''s shared allowance was used up before
+      the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches found no joint exercise, intelligence exchange, basing or transit with Israel in the window; Israel''s own
+      statement (El Ancasti, page header 30 August 2026, date unconfirmed) says Nicaragua refused to receive Israel''s ambassador accredited from Costa Rica, and the relations were severed on 11
+      October 2024.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    - 'WebSearch 2026-11-09: Nicaragua Israel diplomatic relations 2026 Nicaragua Iran Israel accuses Nicaragua Gaza statement Moncada Jaentschke'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni, presidencia.gob.ni,
+      mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute: 403), so the entry
+      rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts of 14 August to
+      8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem (114 matches),
+      and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The Wayback Machine''s
+      index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first 300 of the pages
+      captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee, Iran and
+      Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. Nicaragua delivers no major arms to Israel (A1) and has no relations
+      with it. No licensing authority page was read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and
+      the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No Nicaraguan arms export or licensing measure toward Israel exists to suspend: SIPRI records no delivery (A1) and the
+      Government has no relations with Israel. The only arms measure found in the results is a United States embargo on Nicaragua (July 2026, unrelated).'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni, presidencia.gob.ni,
+      mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute: 403), so the entry
+      rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts of 14 August to
+      8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem (114 matches),
+      and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The Wayback Machine''s
+      index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first 300 of the pages
+      captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee, Iran and
+      Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No decree on arms trade with Israel appears in the posts read or among
+      the titles of the Gazette''s front page; the Gazette''s texts were not searched. No web search was available (the run''s shared allowance was used up before the session began): press and NGO
+      sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No Nicaraguan law or decree of a two-way arms embargo on Israel was found in two searches; the Hague Group declaration of
+      Bogota (July 2025) lists Nicaragua among its signatories but no implementing act was found (lead_20261006_NIC_4).'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    - 'WebSearch 2026-11-09: Nicaragua sanciones OR prohibe OR boicot productos asentamientos israelies OR Cisjordania Asamblea Nacional resolucion Israel 2025 2026'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni,
+      presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute:
+      403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts
+      of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem
+      (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The
+      Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first
+      300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee,
+      Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No post names a refusal of a port, airspace or flagged vessel to an arms
+      shipment; the port and civil aviation authorities'' pages were not read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources
+      were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No refusal of a port call, ship or overflight for Israel-linked cargo was found; the search on ports and the Bogota measures
+      found no Nicaraguan implementing act.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: has-events
+    note: 'One event: Nicaragua''s Article 62 application to intervene ''as a party'' in case 192, filed 23 January 2024 and withdrawn on 1 April 2025 (+15, standing, ended; supports the applicant).
+      It is not on the Court''s current list, which keeps only the declarations in force. Nicaragua v. Germany (case 193, instituted 1 March 2024; Nicaragua is the applicant against a third State)
+      is a separate case: not a filing in case 192 and not filed (the methodology tracks joining a separate case under scope related, unscored).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    - ICJ press release 2024/14 (UNISPAL copy, archived), Nicaragua's application (UNISPAL, archived) and the Court's report A/80/4 paragraphs 189, 203 and 205 (archived)
+    - ICJ press release Nicaragua requests permission to intervene Article 62; Nicaragua withdraws application permission to intervene April 2025
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; Nicaragua's own filings ask the Court for measures (case 192 application; case 193 request for provisional
+      measures against Germany, A/80/4 paragraph 206 ff.).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8; the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: Nicaragua is not a State Party to the Rome Statute (it is not on the Assembly of States Parties' list, asp.icc-cpi.int/states-parties, read on 6 October 2026) and no statement on the
+      warrants of 21 November 2024 was found.
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Nicaragua has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Nicaragua celebra orden de arresto CPI Netanyahu Gallant comunicado gobierno Nicaragua noviembre 2024 Corte Penal Internacional
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row NIC,1988-11-16 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 16 November 1988: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). Before this session: Generated from recognitions.csv:
+      no row. The registry dates the recognition 16 November 1988 (the day after the proclamation of 15 November 1988; A/78/846, docs/10 B-178), but no document of the Nicaraguan State is archived (the UN
+      Yearbook of 1988 on UNISPAL lists votes only), so the pre-existing tier (+3, R21) waits for the state''s own document; the Government''s annual message of 15 November on the anniversary of the declaration
+      of independence is the likely source (El 19 Digital answers HTTP 403).'
+    queries:
+    - Nicaragua reconoce Estado de Palestina 1988 declaración de independencia Nicaragua primer país reconocimiento 16 noviembre 1988 Cancillería
+    - '"Nicaragua" recognized "State of Palestine" November 1988 United Nations document letter Permanent Representative'
+    - 'WebSearch 2026-11-10: Nicaragua "reconoció" "Estado de Palestina" 1988 comunicado'
+    - 'UNISPAL 2026-11-10: Nicaragua_nyc_es.pdf and the Foreign Minister''s letter of April 2023 (no dated recognition)'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: none-found
+    note: 'No event: every statement of the President, the Vice-President/co-president or the Foreign Ministers read speaks of the genocide against ''the Palestinian people'' or ''Palestine''
+      and never cites Gaza, so none is a B9 event under R7 (docs/10 B-32): the General Debate statements of the Foreign Ministers on 30 September 2024 and 29 September 2025 (the 81st session''s
+      statement, 26 September 2026, does not mention Palestine), the messages of the President and Rosario Murillo to the UN Committee of 14 November 2024 and 25 November 2025 (UNISPAL), and the
+      statement of 29 July 2025 at the UN conference on the two-State solution, which cites Gaza (''Gaza es hoy una tierra arrasada'') but was delivered by the Permanent Representative, Jaime
+      Hermida Castillo (El 19 Digital''s report, seen in a search result; the file on UNISPAL names no speaker): R3, not a B9 speaker. They are three leads (lead_20261006_NIC_1 to _3). The National
+      Assembly''s declaration A.N. 07-2024 and the Government''s announcement of the break (Vice-President, 11 October 2024) do cite Gaza or genocide but are not statements of a B9 speaker (R3:
+      not a head of state, head of government or foreign minister, in the Vice-President''s case at the time). The Hague Group''s declaration names Nicaragua among its signatories without a named
+      signatory: a lead (_4).'
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    - Rosario Murillo copresidenta Gaza genocidio Palestina alto el fuego declaración Nicaragua 2025
+    - Nicaragua gobierno comunicado Gaza cancillería Moncada Palestina genocidio flotilla OR "alto el fuego" OR "plan de paz" 2025 2026
+    - Nicaragua mensaje Día Internacional de Solidaridad con el Pueblo Palestino 25 noviembre 2025 Ortega Murillo genocidio crímenes de guerra
+    - canciller Nicaragua Jaentschke Asamblea General ONU 30 septiembre 2024 genocidio Israel "Pueblo Palestino" discurso
+    - Nicaragua canciller Moncada Asamblea General ONU 29 septiembre 2025 discurso genocidio Palestina Israel
+    - gadebate.un.org Nicaragua 78th to 81st sessions (ni_en.pdf, ni_es.pdf), read; UNISPAL messages of Nicaragua, read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found; Nicaragua's statements are the opposite.
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Nicaragua was found (not an EU member; the statements say Nicaragua has no commercial relations with Israel).
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - Nicaragua Ortega Murillo Gaza genocidio comunicado Israel Palestina alto el fuego 2025 2026
+    checked_at: '2026-10-06'
+  B12:
+    status: has-events
+    note: 'One event: the break of diplomatic relations with Israel, decided on 11 October 2024 (Presidential Agreement 181-2024, La Gaceta No. 187 of 14 October 2024, archived): +10, standing,
+      no restoration found (search of 6 October 2026).'
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    - '"Acuerdo Presidencial No. 181-2024" Nicaragua La Gaceta Oscar Ovidio Cubas Castro Israel rompimiento relaciones diplomáticas'
+    - Nicaragua Israel restablece relaciones diplomáticas 2026 OR 2025 Nicaragua Israel relations restored embassy
+    - La Gaceta No. 187 of 14 October 2024 (Wayback capture, read)
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Nicaragua has none).
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found; relations were severed on 11 October 2024.
+    queries:
+    - Nicaragua rompe relaciones diplomáticas con Israel comunicado Gobierno de Reconciliación y Unidad Nacional Gaza
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni, presidencia.gob.ni,
+      mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute: 403), so the entry
+      rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts of 14 August to
+      8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem (114 matches),
+      and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The Wayback Machine''s
+      index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first 300 of the pages
+      captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee, Iran and
+      Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No post names a measure on settlement goods; Nicaragua has no relations
+      with Israel and customs (dga.gob.ni) gave no content. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched,
+      and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). One search on settlement goods (Spanish) found no Nicaraguan ban, labelling rule or National Assembly resolution on them; the
+      results name the Netherlands, Canada, France, the United Kingdom, Ireland, Spain and Belgium only. The Assembly''s declaration A.N. 07-2024 (October 2024) asked for the break of
+      relations and is not a goods measure.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua sanciones OR prohibe OR boicot productos asentamientos israelies OR Cisjordania Asamblea Nacional resolucion Israel 2025 2026'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Nicaragua over conduct in Gaza or the occupied territories was found. No Nicaraguan ministry''s own site answers
+      a script request (cancilleria.gob.ni, presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior
+      and the social security institute: 403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface,
+      read on 2026-11-09): all 3,000 posts of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav,
+      F-35, Middle East, West Bank, Jerusalem (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51
+      and 175 posts) were read by title. The Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas,
+      netanyahu, embargo and genocid (the first 300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to
+      Palestinian towns, the United Nations committee, Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not
+      read). The Official Gazette''s front page (lagaceta.gob.ni, editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation
+      with Israel after 7 October 2023; the posts on Israel record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. The social security
+      institute''s site answers 403 and the central bank''s was not searched; no post names an exclusion decision. No web search was available (the run''s shared allowance was used up before the
+      session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No exclusion list or divestment decision of the social security institute or any other public fund of Nicaragua was found by
+      the searches above.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua sanciones OR prohibe OR boicot productos asentamientos israelies OR Cisjordania Asamblea Nacional resolucion Israel 2025 2026'
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni, presidencia.gob.ni,
+      mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute: 403), so the entry
+      rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts of 14 August to
+      8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem (114 matches),
+      and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The Wayback Machine''s
+      index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first 300 of the pages
+      captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee, Iran and
+      Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. The procurement portal (nicaraguacompra.gob.ni) did not answer. No web
+      search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No procurement exclusion of Israeli or settlement-linked firms was found in the searches; none is needed in practice since
+      relations were severed (not an exclusion measure).'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua sanciones OR prohibe OR boicot productos asentamientos israelies OR Cisjordania Asamblea Nacional resolucion Israel 2025 2026'
+    - 'WebSearch 2026-11-09: Nicaragua Israel arms OR weapons OR trade OR embargo OR ports Nicaragua 2025 2026 Gaza measures Hague Group Bogota implement'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Nicaragua in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor NIC
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Nicaragua has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Nicaragua
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      Nicaragua has no row in UNRWA's donor tables of 2022, 2023 or 2024 (archived): no contribution to
+      compare. (The request of 2024 in case 193 that Germany resume its funding is not a Nicaraguan contribution.)
+      UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09)
+      has no row for Nicaragua, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Nicaragua
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Nicaragua UNRWA contribución OR ayuda humanitaria Gaza OR "visas" palestinos gobierno Nicaragua 2024 2025
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Nicaragua for conduct in Gaza was found. No Nicaraguan ministry''s own site
+      answers a script request (cancilleria.gob.ni, presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the
+      Interior and the social security institute: 403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface,
+      read on 2026-11-09): all 3,000 posts of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav,
+      F-35, Middle East, West Bank, Jerusalem (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51
+      and 175 posts) were read by title. The Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas,
+      netanyahu, embargo and genocid (the first 300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to
+      Palestinian towns, the United Nations committee, Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not
+      read). The Official Gazette''s front page (lagaceta.gob.ni, editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation
+      with Israel after 7 October 2023; the posts on Israel record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No post names an
+      investigation or prosecution of Nicaraguan nationals or companies for conduct in Gaza; the Public Prosecutor and the Attorney General did not answer. No web search was available (the run''s
+      shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches found no investigation or prosecution in Nicaragua tied to Gaza or Israel; Nicaragua''s own proceedings are before
+      the International Court of Justice (Nicaragua v. Germany, oral hearings from 7 September 2026, Germany''s preliminary objections), which is not a domestic E1 act.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Alemania Corte Internacional de Justicia audiencias septiembre 2026 Nicaragua contra Alemania Gaza'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. No Nicaraguan
+      ministry''s own site answers a script request (cancilleria.gob.ni, presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly,
+      the Ministry of the Interior and the social security institute: 403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni,
+      WordPress interface, read on 2026-11-09): all 3,000 posts of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu,
+      UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel
+      relaciones: 600, 120, 51 and 175 posts) were read by title. The Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel,
+      gaza, palestin, hamas, netanyahu, embargo and genocid (the first 300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan
+      delegations to Palestinian towns, the United Nations committee, Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the
+      texts were not read). The Official Gazette''s front page (lagaceta.gob.ni, editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No
+      post records cooperation with Israel after 7 October 2023; the posts on Israel record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the
+      Court. No post names a measure on protests or symbols concerning Palestine; the police''s site did not answer. No web search was available (the run''s shared allowance was used up before the
+      session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). One search for marches and rallies found official and institutional expressions only (a message of the university community,
+      the sandinista march of June 2025 that names Palestine among causes); no police ban or dispersal tied to Gaza, and no mass march confirmed for 2025 or 2026.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua marcha solidaridad pueblo palestino Managua estudiantes OR sandinistas 2025 2026 Gaza'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. No Nicaraguan ministry''s own site answers a script request (cancilleria.gob.ni,
+      presidencia.gob.ni, mre.gob.ni, mhcp.gob.ni, pgr.gob.ni, mp.gob.ni and the courts: no answer; el19digital.com, the Assembly, the Ministry of the Interior and the social security institute:
+      403), so the entry rests on the state radio, which prints the Government''s communiqués and messages in full (radionicaragua.com.ni, WordPress interface, read on 2026-11-09): all 3,000 posts
+      of 14 August to 8 November 2026 (the limit of the crawl) were checked in full text for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem
+      (114 matches), and four term searches over 7 October 2023 to 8 November 2026 (embargo, Israel armas, Israel comercio, Israel relaciones: 600, 120, 51 and 175 posts) were read by title. The
+      Wayback Machine''s index of el19digital.com (the Government''s news site, 403 to a script) was scanned by address for israel, gaza, palestin, hamas, netanyahu, embargo and genocid (the first
+      300 of the pages captured from 7 October 2023 to 9 November 2026): the slugs concern solidarity with Palestine, visits of Nicaraguan delegations to Palestinian towns, the United Nations committee,
+      Iran and Managua''s Israel Lewites market; none concerns arms, trade, cooperation or measures against Israel (slugs only; the texts were not read). The Official Gazette''s front page (lagaceta.gob.ni,
+      editions 203 to 205 of 5 to 9 November 2026) lists titles only; its texts are PDF files and were not searched. No post records cooperation with Israel after 7 October 2023; the posts on Israel
+      record the severance of relations (11 October 2024), the Foreign Minister''s statements and the case before the Court. No post names such a step; the courts'' site did not answer. No web search
+      was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on courts found no decision of a Nicaraguan court on Israel, Gaza or a measure about them.'
+    queries:
+    - 'radionicaragua.com.ni WordPress interface, 2026-08-14 to 2026-11-08 (3,000 posts): Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem,
+      2026-11-09'
+    - 'radionicaragua.com.ni search, 2023-10-07 to 2026-11-08: embargo; Israel armas; Israel comercio; Israel relaciones, 2026-11-09'
+    - web.archive.org CDX index of www.el19digital.com/* (text/html, first 300 addresses, 2023-10-07 to 2026-11-09) scanned for israel, gaza, palestin, hamas, netanyahu, embargo, genocid in the
+      address, 2026-11-09
+    - lagaceta.gob.ni front page (editions 203 to 205, 5 to 9 November 2026), 2026-11-09
+    - 'WebSearch 2026-11-09: Nicaragua Alemania Corte Internacional de Justicia audiencias septiembre 2026 Nicaragua contra Alemania Gaza'
+    - 'WebSearch 2026-11-09: Nicaragua marcha solidaridad pueblo palestino Managua estudiantes OR sandinistas 2025 2026 Gaza'
+    checked_at: '2026-11-09'

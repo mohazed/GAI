@@ -1,0 +1,313 @@
+# Coverage record for Liberia (docs/03 §6). P-21 light protocol, session T-P21-38, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Executive Mansion's site (emansion.gov.lr, Drupal; no usable site search, so the list /media-center/press-release was read page by page, 560 items by title, and the items that bore on the war opened: the report of
+# the 80th General Debate statement, the Israel-Iran item of 15 April 2024, the UN80 commemoration, the UAE visit, TICAD 9, and the President's speeches /publications/document-type/speeches, /other-speeches and /united-nations), the Ministry of
+# Foreign Affairs' site (mofa.gov.lr, Drupal; /search/node returns an empty page: the lists /media-center/press-releases (300 items), /press-briefings, /features-and-articles, /media-summaries and /publications/document-type/speeches were read by
+# title), the UN's General Debate pages and files (79th, 80th, 81st; the 81st by OCR), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the Assembly of States Parties' list, the generated tables,
+# UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and nothing
+# is filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: one (B9); see docs/10 B-809.
+# Completion of 2026-11 (finish run, T-F-L19, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with web searches, the Ministry of National Defense's item, the Ministry of Foreign Affairs' list of cooperation agreements and the shared searches, all none-found with the limits said in each note; B8, B9, B10, B11, B12, C2, D4 and D5 notes extended (docs/10 B-2061). No recognition row (R21). No event; lead_20261104_LBR_1 searched again and unchanged.
+country: LBR
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LBR
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Liberian company as a supplier of parts or maintenance for the F-35 programme: Liberia is neither a programme partner nor a foreign-military-sales customer in the
+      search results, A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for Liberia, and the searches returned no supplier. Not searched: the programme''s full supplier
+      database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Liberia (no match)
+    - 'WebSearch 2026-11-10: F-35 program supplier countries list partner nations foreign military sales customers Lockheed Martin global supply chain 2026 (the partner nations and foreign-military-sales
+      customers named in the results; none of the six)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists one order by Liberia from Israel, of data year 2024 (0.24 TIV). The build reads only rows of the
+      release''s own data year (2025), so A4 is derived none-found (the A4 data-year gap, docs/10 B-536 (7), reported for P-23); 0.24 TIV is below the 100 TIV threshold of docs/02 §2 A4 in any
+      case. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer LBR (row of 2024)
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023
+      to 2026. The Ministry of National Defense''s report of 8 May 2024 (read) is a courtesy visit of Israel''s Ambassador and the Director for West African Affairs on the Minister (Brig. Gen.
+      Geraldine Janet George) ''to strengthen bilateral defense cooperation'': Liberia asked for help with a new defence headquarters, patrol boats for the Coast Guard and specialised intelligence
+      training, ''presented for consideration''; no agreement, exercise or intelligence sharing is reported, so it is not an A5 instance. Not searched: the Armed Forces of Liberia''s own releases.'
+    queries:
+    - 'mod.gov.lr/israel-ambassador-pays-courtesy-visit-to-liberia-defense-minister/ (read 2026-11-10: the Ministry of National Defense''s report of 8 May 2024)'
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Liberia to Israel either (A1: no delivery in the SIPRI register). Not searched: the
+      official gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results on Liberia and arms embargoes concern United Nations sanctions on Liberia, unrelated. Not searched:
+      the official gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access (Monrovia, Buchanan), airspace or transit to an arms shipment bound for Israel was found. Not searched: the National Port Authority''s and the Liberia Civil
+      Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on five of the twelve qualifying votes; no on A/RES/ES-10/22 (12 December 2023, expired); abstention on A/RES/ES-10/24 (18 September 2024, expired);
+      no vote recorded on A/RES/ES-10/21, A/RES/ES-10/23, A/DEC/80/506, A/RES/80/1 and A/RES/80/116 (five of the twelve). The country is not named in the Secretary-General''s letter of 3 September
+      2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360); the reason for the five non-votes was not found (docs/10
+      B-809).'
+    queries:
+    - unga_votes.csv, country LBR
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: 'Generated from unsc_vetoes.csv. Liberia sits on the Security Council from 1 January 2026 to 31 December 2027 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent
+      member): the vetoes of the window are those of the permanent members. Liberia''s votes on other Council texts on Gaza in 2026 are not in the table and were not searched (P-23).'
+    queries:
+    - unsc_vetoes.csv, vetoing state LBR
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Liberia is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Liberia supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Liberia is a state party to the Rome Statute (signed 17 July 1998, ratified 22 September 2004: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 164). No statement on the warrants of 21 November 2024 by a B5 speaker was found: the titles of about 560 list entries of the Executive Mansion''s press releases and of the Ministry''s
+      300 press releases, 32 press briefings and 43 speeches contain nothing on the warrants or the Court''s cases other than Liberia''s own War and Economic Crimes Court.'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Liberia (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - emansion.gov.lr /media-center/press-release (all pages, titles)
+    - mofa.gov.lr /media-center/press-releases, /press-briefings, /publications/document-type/speeches (all pages, titles)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Liberia was found in the sources read (the Treaty Collection's page
+      lists no notification of withdrawal by Liberia).
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Liberia were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Liberia. The registry gives a recognition since 19 July 2011, before the window, with no Government document read (R21, left for P-23); no
+      recognition after 7 October 2023 was found. The President''s 80th General Debate statement supports ''the two-state solution'' without announcing a recognition. Searched again on 2026-11-10
+      for a document of the State dating its recognition of 19 July 2011: the searches returned only secondary tables (a thematic map and Wikipedia, both giving 2011) and no Liberian document,
+      so no row is added (R21).'
+    queries:
+    - recognitions.csv, LBR (no row)
+    - emansion.gov.lr and mofa.gov.lr press-release titles (screened for Palestine, Palestinian)
+    - 'WebSearch 2026-11-10: Lesotho recognised State of Palestine 2011 OR Liberia recognized State of Palestine 2011 government statement Ministry of Foreign Affairs (a thematic map and encyclopaedia
+      pages; no Liberian document)'
+    checked_at: '2026-11-10'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President (Joseph Nyuma Boakai) is head of state and head of government (R3); the Foreign Minister is Sara Beysolow Nyanti. (1) His 79th General Debate statement (25
+      September 2024, src_20240925_un-gadebate_lr-boakai-ag79, lines 231 to 234; 770 days, expired): ''we call for an immediate ceasefire in the Middle East'' and urges ''both the Israelis and
+      Palestinians'' to negotiate: Gaza is not named (R7), so it is not an event (an `official` source cannot support a lead; it stays here). (2) His 80th statement (23 September 2025, src_20250923_un-gadebate_lr-boakai-ag80,
+      lines 89 to 94): support for ''all credible mediation efforts'' on ''the Israeli-Palestinian conflict'' and the two-state solution, no call, no Gaza. (3) His 81st statement (24 September
+      2026; the file lr_en.pdf is an image of 2,294,967 bytes, read by OCR on 2026-11-04, not recorded: no Wayback capture and gadebate.un.org fails Save Page Now): no mention of Gaza, Palestine,
+      Israel or the Middle East. (4) The Executive Mansion''s report of 15 April 2024 (src_20240415_emansion_boakai-israel-iran-conflict) says in indirect speech that he ''urged both Israel and
+      Hamas to adhere to the terms of the UN Security Council Resolution 2728'': lead_20261104_LBR_1. (5) The Executive Mansion''s report of the 80th statement (indirect speech, line 18) says
+      the same as (2). The Foreign Minister''s statements: none on Gaza in the Ministry''s titles; Liberia''s statements in the Security Council since January 2026 were not read (a statement by
+      a Permanent Representative is not B9, R3). Completion pass of 2026-11-10: the searches (Israel, Boakai and Gaza; the planned visit to Israel; the Jerusalem embassy) return statements of
+      Israel''s Ambassador (Roey Gilad) in Liberian newspapers and a pledge of a legislator, Rep. Moimah Briggs Mensah (the Israel Allies Foundation caucus, 5 March 2024), to see an embassy open
+      in Jerusalem; neither is a B9 speaker (R3). No statement of the President or the Foreign Minister naming Gaza was found.'
+    queries:
+    - emansion.gov.lr /media-center/press-release (560 items, titles), /publications/document-type/speeches, /other-speeches
+    - mofa.gov.lr /media-center/press-releases (300 items), /press-briefings, /features-and-articles, /media-summaries (titles); /search/node returns no results page (empty index)
+    - gadebate.un.org/en/{79,80,81}/liberia and gastatements/{79,80,81}/lr_en.pdf
+    - emansion.gov.lr reports of the 80th General Debate, the UN80 commemoration, TICAD 9 and the UAE visit (opened)
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    - 'WebSearch 2026-11-10: Liberia Boakai visit Israel 2026 OR Liberia embassy Jerusalem opened OR Liberia Israel agreement signed Jerusalem Foreign Minister Nyanti (no visit, no embassy, no
+      agreement; Israel-Liberia solar farm and the President''s visit of July 2023 are before the window)'
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Foreign Minister was found in the Executive Mansion''s and
+      the Ministry''s items (titles screened for Israel, Israeli, terror, solidarity, condemn). The only item naming Israel since 2023 is the report of 15 April 2024 on the Israel-Iran escalation
+      (lead_20261104_LBR_1). Israel''s Ambassador said in December 2024 and September 2025 (Liberian Observer, through allAfrica snippets; the pages refused a scripted request) that Liberia ''either
+      abstains or votes in support of Israel'' and is ''among the closest allies of Israel in Africa'': his words, not a statement of the President (R3); not filed.'
+    queries:
+    - emansion.gov.lr and mofa.gov.lr press-release titles (screened)
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    - 'WebSearch 2026-11-10: Liberia Boakai visit Israel 2026 OR Liberia embassy Jerusalem opened OR Liberia Israel agreement signed Jerusalem Foreign Minister Nyanti (no visit, no embassy, no
+      agreement; Israel-Liberia solar farm and the President''s visit of July 2023 are before the window)'
+    checked_at: '2026-11-10'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the Executive Mansion's and the Ministry's items read. This rests on those sites only (P-23). The searches
+      of 2026-11-10 returned no sanctions measure.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance was found; no item of the Executive Mansion or the Ministry concerns an ambassador to or from Israel since 2023 (titles screened; the only title of
+      the Ministry naming Israel is an item of President Weah on Israel's incoming Prime Minister, before the window). The searches of 2026-11-10 returned no recall, downgrade or severance. Liberia
+      has no embassy in Israel; the Israeli Ambassador (September 2025) urged one in Jerusalem and said a state visit of the President was being prepared for early 2026; no opening and no visit
+      was found (the announcements of 2022 and July 2023 are before the window). Not a B12 act.
+    queries:
+    - emansion.gov.lr and mofa.gov.lr press-release titles (screened)
+    - 'WebSearch 2026-11-10: Liberia Israel Boakai Gaza 2025 2026 agreement OR embassy OR military OR cooperation Monrovia Israeli ambassador (the Israeli Ambassador''s statements of September
+      2025 and December 2024 in Liberian newspapers, a defence ministry item of 8 May 2024, a planned state visit of the President to Israel in early 2026 not found to have taken place)'
+    - 'WebSearch 2026-11-10: Liberia Boakai visit Israel 2026 OR Liberia embassy Jerusalem opened OR Liberia Israel agreement signed Jerusalem Foreign Minister Nyanti (no visit, no embassy, no
+      agreement; Israel-Liberia solar farm and the President''s visit of July 2023 are before the window)'
+    checked_at: '2026-11-10'
+  C1:
+    status: none-found
+    note: Liberia is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found in the Executive Mansion''s and the Ministry''s items (titles screened; the Ministry''s list of cooperation agreements,
+      /publications/document-type/cooperation-agreements, was not opened). No treaty register was read (P-23). Completion pass of 2026-11-10: the Ministry of Foreign Affairs'' list of cooperation
+      agreements was read (106 items, the latest of 5 September 2016) and holds none with Israel since October 2023; the web searches return no Liberia-Israel agreement of 2025 or 2026 (the visit
+      of MASHAV''s head to Monrovia in late November 2025 reports plans for training programmes and no signing; the Ministry of National Defense''s report of 8 May 2024 records requests, not an
+      agreement).'
+    checked_at: '2026-11-10'
+    queries:
+    - 'mofa.gov.lr/publications/document-type/cooperation-agreements (read 2026-11-10 with curl: 106 items, the latest dated 5 September 2016)'
+    - 'WebSearch 2026-11-10: Liberia Israel memorandum of understanding signed 2025 OR 2026 Monrovia Ministry of Foreign Affairs Israel agriculture OR defense OR health (no Liberia-Israel agreement
+      of 2025 or 2026; agreements with the United States, India, Morocco, France and South Sudan)'
+    - 'WebSearch 2026-11-10: MASHAV director Liberia visit November 2025 Monrovia agreement signed Ministry of Foreign Affairs Liberia Israel cooperation (the MASHAV head''s visit of late November
+      2025; no signed agreement)'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Liberia is not an EU member and the searches returned none. Not searched: the Liberia Revenue Authority''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund (the National Social Security and Welfare Corporation) or the Central Bank of Liberia over conduct in Gaza or the occupied
+      territories was found; the results name the Norwegian, Danish and New Zealand funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements
+      (the Norwegian, Danish and New Zealand funds; none of the four)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Public Procurement and Concessions Commission''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements
+      (the Norwegian, Danish and New Zealand funds; none of the four)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Liberia in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_funding.csv, donor LBR
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Liberia has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row for Liberia in UNRWA''s donor rankings for 2022, 2023 or 2024. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no
+      row for Liberia, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Liberia was found. The Ministry's item on the Foreign Minister's meeting with KSRelief (Saudi Arabia) was
+      screened by its title only and not opened. The searches of 2026-11-10 returned no evacuation programme or field hospital; the Ministry's item on the Foreign Minister's meeting with KSRelief
+      remains screened by title only.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Kenya OR Madagascar OR Liberia OR Lesotho Gaza wounded children medical evacuation OR visa OR refugees OR humanitarian corridor government announces 2024 2025 (the
+      programmes of the UK, Ireland, Greece, Jordan, the UAE and the United States; none of the four; one Kenyan newspaper headline on a WHO evacuation of 1,000 Gazans, page not readable)'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read. The searches of 2026-11-10 returned no visa or refugee pathway for Gazans.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Kenya OR Madagascar OR Liberia OR Lesotho Gaza wounded children medical evacuation OR visa OR refugees OR humanitarian corridor government announces 2024 2025 (the
+      programmes of the UK, Ireland, Greece, Jordan, the UAE and the United States; none of the four; one Kenyan newspaper headline on a WHO evacuation of 1,000 Gazans, page not readable)'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Liberian nationals or companies for conduct in Gaza was found. Not searched: the Ministry of Justice''s communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Kenyan OR Liberian OR Malagasy OR Basotho citizens serving Israeli army Gaza investigated OR prosecuted OR charged OR complaint universal jurisdiction (complaints
+      in Belgium, Brazil, Chile, Peru and Britain against Israeli or British soldiers; none of the four countries)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest in Monrovia was found; the searches returned none. Not searched: the
+      Liberia National Police''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Liberia OR Lesotho Palestine solidarity march OR protest Gaza Monrovia OR Maseru Palestinian flag police permit (no Gaza protest in either capital; a Lesotho textile
+      workers'' protest blocked, unrelated)'
+    - 'WebSearch 2026-11-10: Antananarivo OR Monrovia OR Maseru OR Malabo OR Bissau pro-Palestine protest Gaza demonstration police banned OR arrested OR dispersed (no Gaza protest in any of the
+      five capitals; the Kenyan dispersal of January 2024 and Malagasy anti-government protests)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a Liberian authority was found; the results concern Belgium, Brazil, Chile,
+      Peru and Britain.
+    queries:
+    - 'WebSearch 2026-11-10: Kenyan OR Liberian OR Malagasy OR Basotho citizens serving Israeli army Gaza investigated OR prosecuted OR charged OR complaint universal jurisdiction (complaints
+      in Belgium, Brazil, Chile, Peru and Britain against Israeli or British soldiers; none of the four countries)'
+    checked_at: '2026-11-10'

@@ -1,0 +1,420 @@
+# Coverage record for Honduras (docs/03 §6). P-21 light protocol, session T-P21-09, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Foreign Ministry's site (sreci.gob.hn: no news archive of the period reachable by its search), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; files `hn_es.pdf`, `hn_es_0.pdf`), the archived press (La Prensa, El Heraldo, EFE through Infobae, Honduras Trascendental, the Jerusalem Post), the Israeli President's, Defense Ministry's and embassies' pages, the UNRWA donor tables, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 25 minutes of research on Honduras, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: the Secretary of Foreign Affairs' General Debate statement of 29 September 2025 (lead_20261006_HND_1) and the President's statement of the 81st session (23 September 2026, no passage on Gaza).
+# Completion of 2026-11 (finish run, T-F-L05, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found. The Foreign Ministry's site (5 posts and 24 items for the period) was read through its WordPress interface, the Defence
+#   Secretariat's by its Drupal search, the Public Prosecutor's, Finance, pension and Central Bank sites by search; the Presidency and customs refused (403), the judiciary and the procurement portal did not answer. The Secretariat's
+#   undated item on a meeting with Israel's ambassador is not an A5 instance. The two C2 events and the two leads are unchanged (no official copy could be archived). No web search was available (the run's shared allowance
+#   was used up before the session began): press and NGO sources were not searched.
+# Redo pass with web search (T-F-L05-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 13 searches in Spanish and English; every status is kept; evt_2026_08_16_HND_C2 raised to confirmed on the Israeli Ministry of Defense's own page (src_20260816_imod_honduras-mou, archived from the Wayback capture of 17 September 2026); leads HND_1 and HND_2 re-checked.
+country: HND
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Honduras
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of Honduras as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Honduras (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations,
+      Honduras not among them, and carries no supplier list by country. The Foreign Ministry''s and the Defence Secretariat''s pages do not name the programme. Press and NGO supplier lists were
+      not searched. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no
+      web search was available describes the first session and is kept). One search for a Honduran company in the F-35 supply chain found no Honduran firm: every supplier named is Israeli (IAI
+      wings, Elbit''s Cyclone); the only Honduran item is a 2011 report of arms purchases from Israel and the United States.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Honduras (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Honduras F-35 Israel supplier company Honduras Lockheed Martin components'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders of Honduras from Israel of 1976, 1977, 2011 (a radar) and 2016 (a patrol boat, delivered 2019), none in the data year
+      of the release of 9 March 2026 and none after October 2023 (A4 reads only the rows of a release''s own data year, docs/10 B-536 (7)). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Honduras
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Honduras
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds
+      only 5 posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one
+      capture of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two
+      items for Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and
+      security cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina
+      or memorando (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection
+      to Gaza (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza)
+      and ''Sin resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency
+      (presidencia.gob.hn, 403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The defence memorandum of understanding of 16 August 2026 (evt_2026_08_16_HND_C2)
+      is filed under C2; its text is not public and it names no exercise, intelligence sharing, basing or transit, so it is not an A5 instance. No web search was available (the run''s shared allowance
+      was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode,
+      English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept).
+      Two searches in Spanish on the defence memorandum of 16 August 2026 and on military cooperation found the memorandum itself (the Israeli Ministry of Defense''s release, now archived from
+      its own page, src_20260816_imod_honduras-mou, and press reports: a framework to deepen defence cooperation, no content, amount, exercise, basing, transit or intelligence-sharing clause published)
+      and background of 2016 to 2019 (the 2016 cooperation agreement, the patrol vessel built in Haifa and delivered in 2019 to 2020, a 2019 denial of any Israeli military presence); no joint
+      exercise, basing agreement, transit or confirmation of intelligence sharing tied to the Gaza campaign. The memorandum stays filed under C2.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Israel memorando de entendimiento defensa seguridad agosto 2026 Secretaría de Defensa Katz Asfura'
+    - 'WebSearch 2026-11-09: Honduras Israel cooperación militar inteligencia ejercicio drones armamento israelí Fuerzas Armadas Honduras 2026'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5 posts
+      and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture of the
+      old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for Israel:
+      an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security cooperation
+      in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando (so the
+      memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza (Palestina
+      appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin resultados''
+      for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn,
+      403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. SIPRI records no delivery of major arms from Honduras to Israel (A1), so there is
+      no export of that kind to suspend. The Defence Secretariat''s search names no licence decision. No web search was available (the run''s shared allowance was used up before the session began):
+      press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were
+      used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). The searches found no decision to suspend
+      or refuse arms or dual-use licences to Israel; Honduras''s measures since 2025 point the other way (withdrawal from the Hague Group announced by the Foreign Ministry on 3 March 2026, as
+      El Heraldo, La Prensa and Prensa Latina report; the Ministry''s own text was not found).'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras gaza genocidio Palestina Secretaría de Relaciones Exteriores comunicado 2026 retiro Grupo de La Haya'
+    - 'WebSearch 2026-11-09: Honduras Israel memorando de entendimiento defensa seguridad agosto 2026 Secretaría de Defensa Katz Asfura'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5 posts and 24 ''noticia''
+      items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture of the old site that matches
+      (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for Israel: an undated report of
+      a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security cooperation in general terms,
+      an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando (so the memorandum of 16
+      August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza (Palestina appears as a place
+      name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin resultados'' for Gaza and Palestina;
+      the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn, 403) and customs
+      (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The Congress''s gazette (La Gaceta) was not searched. No web search was available (the run''s shared
+      allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard
+      mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is
+      kept). One search on a Congress decree, resolution, boycott or embargo found none in 2026: the results are the Congress leadership''s pro-Israel statements (JNS, 2026), a parliamentary cooperation
+      meeting with Israel''s ambassador and a motion of solidarity with Israel of 2023 (press, undated in the results).'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Congreso Nacional Israel decreto OR resolución Palestina OR Gaza OR boicot OR embargo 2026'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5
+      posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture
+      of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for
+      Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security
+      cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando
+      (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza
+      (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin
+      resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn,
+      403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The port authority (Empresa Nacional Portuaria) and the civil aviation agency were
+      not read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no
+      web search was available describes the first session and is kept). One search on Puerto Cortés, airspace and vessels found only the Honduran Navy''s patrol vessel built in Haifa (2019 to
+      2020), a purchase, not a transit; no refusal, complaint or record of an Israeli-bound arms cargo.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Puerto Cortés OR espacio aéreo OR buque armas Israel Gaza tránsito Fuerza Aérea Hondureña'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 11 and absent on 1 (A/DEC/80/506 of 12 September 2025) of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Honduras is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06). It was a founding member of the Hague Group (31 January 2025; withdrew 3 March
+      2026, press), whose declaration is not a filing in the case.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President or the Secretary of Foreign Affairs on executing the warrants of 21 November 2024 was found (Honduras is a State Party to the Rome Statute). The Hague
+      Group''s founding declaration of 31 January 2025 (CADTM''s copy, read) declares the intention to support the ICC''s requests in respect of the warrants; its Honduran signatory is not named
+      in the text read, and Honduras left the Group on 3 March 2026: lead_20261006_HND_2.'
+    queries: &id001
+    - Honduras Corte Penal Internacional orden de arresto Netanyahu Cancillería Honduras postura Reina OR Agüero
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal and no hosting of a person under warrant was found. The President-elect travelled to Israel on 17 January 2026 and met the Prime Minister in Jerusalem before taking
+      office on 27 January 2026: a visit by a President-elect to Israel, not hosting.'
+    queries:
+    - Honduras Corte Penal Internacional orden de arresto Netanyahu Cancillería Honduras postura Reina OR Agüero
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Honduras has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `HND,2011-08-26` is added in this session from the President''s General Debate address of 21 September 2011 (''my Government has recognized Palestine
+      as a State'', A/66/PV.12, UNISPAL) and the UN Division for Palestinian Rights'' chronology of August 2011 (recognition on 26 August), both archived: the pre-existing tier, +3 (R21). Flagged:
+      the date rests on a UN Secretariat review, not on the Government''s own text of 2011 (the Foreign Ministry''s communiqué of 26 August 2011 was not found online). The Foreign Minister''s
+      address of 29 September 2025 ''ratifies'' the recognition.'
+    queries:
+    - Honduras reconoce Estado de Palestina 26 agosto 2011 Mireya Agüero comunicado Cancillería reconocimiento Palestina unispal OR "A/66"
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 25 September 2024 (+5, decayed to zero). Not filed: the Secretary of Foreign Affairs'' General Debate statement of 29 September
+      2025 on behalf of the President (''El genocidio en Gaza, la devastación en Ucrania ...'', ''ratificamos nuestro reconocimiento del Estado de Palestina''; +5 if filed, 372 days old, outside
+      the 365-day window): the delegation''s file `hn_es_0.pdf` was read on 6 October 2026 but its Wayback capture (20250929195245) is not served and Save Page Now fails on the site, so it is
+      lead_20261006_HND_1. The statement of the 81st session (President Asfura, 23 September 2026) has no passage on Gaza. The Government''s communiqué of 3 November 2023 (calling the situation
+      ''genocidio'') was deleted from X and is known only through the press (see B12). The statements of President Castro of October to December 2023 were not searched (decayed to zero). The Hague
+      Group''s founding declaration: lead_20261006_HND_2.'
+    queries: &id002
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of documented violations was found. President Asfura''s words in Jerusalem (17 to 18 January 2026, as press reports give them
+      in search results, not read in full: ''amistad histórica'', an alliance ''basada en la libertad, la cooperación y el respeto'') and the Israeli Defense Ministry''s statement that Honduras
+      ''has been notable over the years for its support of Israel'' (an Israeli statement, not Honduras''s) do not state support for Israel''s conduct in Gaza or deny violations.'
+    queries: &id003
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    - Asfura OR "Mireya Agüero" Israel "derecho a defenderse" OR "apoyo incondicional" Gaza Honduras gobierno posición Gaza 2026
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Honduras was found (not an EU member).
+    queries: *id002
+    checked_at: '2026-10-06'
+  B12:
+    status: has-events
+    note: 'One event: the recall of the ambassador to Israel for consultations on 3 November 2023, ended on 3 August 2026 when Israel''s President received the credentials of the new ambassador
+      (`corroborated`). The embassy in Jerusalem (moved in 2021) stayed open. The Israeli Ambassador''s credentials were received by the new President on 27 January 2026 (press, not archived).
+      Chile''s ambassador returned on the same day (the Israeli release): see docs/10 B-571.'
+    queries:
+    - Honduras llama a consulta embajador en Israel Gaza noviembre 2023 Cancillería comunicado
+    - Honduras Cancillería comunicado Gaza genocidio Xiomara Castro Israel 2023 2024 cese al fuego embajador regreso
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel exists to review or suspend (Honduras has none).
+    queries: *id003
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'Two events: the addendum to the bilateral Cooperation Plan signed on 2 June 2026 with MASHAV (`corroborated`; flagged under R18) and the defense memorandum of understanding signed on
+      16 August 2026 (`corroborated`; text not public). Other items found and not filed: the President-elect''s visit to Israel in January 2026 (no instrument), the Israeli ambassador''s statement
+      that cooperation will extend to cybersecurity, digital ecosystem, transport, tourism and energy (an announcement), and Israeli donations to a Honduran hospital (12 August 2026; not an instrument).
+      Completion of 2026-11 (2026-11-09): the Defence Secretariat''s own site (sedena.gob.hn) has no page on the memorandum of 16 August 2026 (searches for Israel, Katz, memorando); the Foreign
+      Ministry''s site holds no post of 2 June 2026. Both events stay `corroborated`.'
+    queries:
+    - Honduras Israel adenda plan de cooperación MASHAV canciller Mireya Agüero Eynat Schlein 3 de junio 2026 Tegucigalpa
+    - Defense Minister Katz Honduras Defense Secretary Rodríguez Burchard memorandum of understanding signed August 2026 Israel Ministry of Defense
+    - Asfura Honduras Israel embajada Jerusalén embajador Israel 2026 relaciones
+    - Honduras Israel acuerdo firmado 2026 Asfura Netanyahu OR Sa'ar OR Israel cooperación
+    - 'sedena.gob.hn Drupal search: Israel, Katz, memorando; sreci.gob.hn WordPress interface 2023-10-07 to 2026-11-08, 2026-11-09'
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5 posts and 24 ''noticia''
+      items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture of the old site that matches
+      (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for Israel: an undated report of
+      a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security cooperation in general terms,
+      an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando (so the memorandum of 16
+      August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza (Palestina appears as a place
+      name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin resultados'' for Gaza and Palestina;
+      the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn, 403) and customs
+      (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The customs service (aduanas.gob.hn) answered 403 and the Ministry of Economic Development''s pages
+      were not read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no
+      web search was available describes the first session and is kept). One search on a trade agreement, settlement goods, labelling and tariffs found no ban or labelling rule on settlement goods
+      in Honduras; the only trade item is an old report of free trade negotiations (2019) and statements of intent of July 2026 by the Israeli non-resident ambassador (no instrument).'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Israel tratado libre comercio OR productos asentamientos OR etiquetado Cisjordania aranceles Secretaría de Desarrollo Económico 2026'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Honduras over conduct in Gaza or the occupied territories was found. The Foreign Ministry''s site (sreci.gob.hn,
+      WordPress interface) holds only 5 posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The
+      Wayback CDX index lists one capture of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn,
+      Drupal search) returns two items for Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché
+      (bilateral defence and security cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for
+      Katz, Gaza, Palestina or memorando (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court
+      reports with no connection to Gaza (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles
+      read, none names Gaza) and ''Sin resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no
+      relevant item. The Presidency (presidencia.gob.hn, 403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The pension institute''s search
+      for Israel, Gaza and Palestina returned nothing. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched,
+      and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from
+      them; the sentence above that says no web search was available describes the first session and is kept). One search on the pension institute (INPREMA), the Central Bank and public purchasing
+      found no exclusion decision; INPREMA''s largest investment plan is a solar project with a Chinese company, and no Honduran fund publishes an exclusion list that was found.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras INPREMA OR Banco Central OR fondo de pensiones exclusión empresas Israel inversiones OR compras públicas HonduCompras Israel empresa contrato 2026'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5 posts
+      and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture of the
+      old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for Israel:
+      an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security cooperation
+      in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando (so the
+      memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza (Palestina
+      appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin resultados''
+      for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn,
+      403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The procurement portal (HonduCompras) did not answer, so no exclusion list was read.
+      No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass
+      with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search
+      was available describes the first session and is kept). The same search found no procurement exclusion of Israeli suppliers or settlement companies and no 2026 contract between an Israeli
+      firm and a Honduran public body (HonduCompras was not read); the items found (the addendum of 2 June 2026 and the memorandum of 16 August 2026, filed under C2) point the other way.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras INPREMA OR Banco Central OR fondo de pensiones exclusión empresas Israel inversiones OR compras públicas HonduCompras Israel empresa contrato 2026'
+    - 'WebSearch 2026-11-09: MASHAV Honduras addendum cooperation plan signed June 2026 Foreign Minister Mireya Agüero Israel'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Honduras to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Honduras has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Honduras
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row of Honduras in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read
+      2026-11-09) has no row for Honduras, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Honduras
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Honduras palestinos refugiados Gaza visa OR evacuación OR ayuda humanitaria Honduras gobierno 2024 2025 hondureños evacuados Gaza
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Honduras palestinos refugiados Gaza visa OR evacuación OR ayuda humanitaria Honduras gobierno 2024 2025 hondureños evacuados Gaza
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Honduras for conduct in Gaza was found. The Foreign Ministry''s site (sreci.gob.hn,
+      WordPress interface) holds only 5 posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The
+      Wayback CDX index lists one capture of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn,
+      Drupal search) returns two items for Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché
+      (bilateral defence and security cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for
+      Katz, Gaza, Palestina or memorando (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court
+      reports with no connection to Gaza (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles
+      read, none names Gaza) and ''Sin resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no
+      relevant item. The Presidency (presidencia.gob.hn, 403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The Public Prosecutor''s site
+      search returns no case on conduct in Gaza; the judiciary''s site (poderjudicial.gob.hn) did not answer. No web search was available (the run''s shared allowance was used up before the session
+      began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries
+      were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). One search in Spanish on complaints
+      before the Public Prosecutor or the Supreme Court and on the International Criminal Court''s warrants found no Honduran investigation or prosecution for conduct in Gaza; the hits are the
+      Government''s recall of its ambassador (2023) and press.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Ministerio Público OR Corte Suprema denuncia crímenes de guerra Gaza OR hondureños Israel ejército investigación OR CPI Netanyahu orden de arresto Honduras'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. The Foreign
+      Ministry''s site (sreci.gob.hn, WordPress interface) holds only 5 posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and
+      genocidio, 0 hits in both. The Wayback CDX index lists one capture of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s
+      site (sedena.gob.hn, Drupal search) returns two items for Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the
+      regional defence attaché (bilateral defence and security cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history;
+      it returns nothing for Katz, Gaza, Palestina or memorando (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns
+      arrest and court reports with no connection to Gaza (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office
+      for Israel (titles read, none names Gaza) and ''Sin resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn)
+      site returns no relevant item. The Presidency (presidencia.gob.hn, 403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. No police or Interior
+      Ministry site was read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to
+      a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above
+      that says no web search was available describes the first session and is kept). One search in Spanish on demonstrations and arrests found only a demonstration of Honduran Palestinians outside
+      the Israeli embassy on 23 October 2023, with no report of arrests or a ban; nothing for 2026.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras manifestación Palestina Gaza policía detenidos embajada Israel Tegucigalpa protesta 2026'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. The Foreign Ministry''s site (sreci.gob.hn, WordPress interface) holds only
+      5 posts and 24 ''noticia'' items for the period: searched for Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente and genocidio, 0 hits in both. The Wayback CDX index lists one capture
+      of the old site that matches (a communiqué of May 2019 on an Israeli military presence), none on Gaza. The Defence Secretariat''s site (sedena.gob.hn, Drupal search) returns two items for
+      Israel: an undated report of a meeting of the Defence Secretary and the Chief of the Joint Staff with Israel''s ambassador and the regional defence attaché (bilateral defence and security
+      cooperation in general terms, an exchange of gifts: no instrument, exercise or Gaza; not filed) and an unrelated anniversary history; it returns nothing for Katz, Gaza, Palestina or memorando
+      (so the memorandum of 16 August 2026, filed under C2, has no page on that site). The Public Prosecutor''s site (mp.hn) search returns arrest and court reports with no connection to Gaza
+      (Palestina appears as a place name); the Finance Ministry''s (sefin.gob.hn) returns items on Israeli experts and an Israeli trade office for Israel (titles read, none names Gaza) and ''Sin
+      resultados'' for Gaza and Palestina; the pension institute''s (inprema.gob.hn) returns nothing for the three; the Central Bank''s (bch.hn) site returns no relevant item. The Presidency (presidencia.gob.hn,
+      403) and customs (aduanas.gob.hn, 403) refused; the judiciary and the procurement portal did not answer. The judiciary''s site did not answer, so court records were not read. No web search
+      was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). The same searches found no Honduran court decision or prosecutorial step on conduct in Gaza.'
+    queries:
+    - 'sreci.gob.hn WordPress interface (posts and noticia), 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Hamas, Medio Oriente, genocidio, 2026-11-09'
+    - 'sedena.gob.hn Drupal search: Israel, Katz, Gaza, Palestina, memorando, 2026-11-09'
+    - 'mp.hn, sefin.gob.hn, inprema.gob.hn, bch.hn site search: Israel, Gaza, Palestina, 2026-11-09'
+    - Wayback CDX, sreci.gob.hn/*, url filter israel|palestin|gaza|mashav|medio-oriente|hamas, 2026-11-09
+    - 'WebSearch 2026-11-09: Honduras Ministerio Público OR Corte Suprema denuncia crímenes de guerra Gaza OR hondureños Israel ejército investigación OR CPI Netanyahu orden de arresto Honduras'
+    - 'WebSearch 2026-11-09: Honduras manifestación Palestina Gaza policía detenidos embajada Israel Tegucigalpa protesta 2026'
+    checked_at: '2026-11-09'

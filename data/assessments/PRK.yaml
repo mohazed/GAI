@@ -1,0 +1,301 @@
+# Coverage record for the Democratic People's Republic of Korea (docs/03 §6). P-21 light protocol, session T-P21-03, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs, KCNA and Naenara (reachable over plain HTTP; their news pages
+#   cannot be searched by a script), the General Debate statements of the United Nations (gadebate.un.org, Wayback captures of
+#   the 78th and 79th sessions in English and the 80th in Korean, read in full), KCNA texts as mirrored by globalsecurity.org
+#   (Wayback captures), the generated events and the structured tables; web searches in English and in Korean per indicator
+#   group. Time: about 5 minutes.
+# Statements read and not filed as B9: the General Debate statements of 30 September 2024 (Ambassador Kim Song, on 'the Israeli
+#   genocide') and 29 September 2025 (Vice Foreign Minister Kim Son Gyong, who demands that Israel stop its crimes and withdraw from
+#   Gaza): a Permanent Representative and a Vice Foreign Minister are not B9 speakers (R3). The statements of the Foreign
+#   Ministry's spokesperson (1 October 2024, 12 August 2025), who is unnamed, and the remarks attributed to Kim Jong Un
+#   (20 December 2025, relayed by IRNA, with no passage on Gaza quoted).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, first session, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 to A8 and C4 none-found and C5, C6, E1, E2 and E3 no-data on the ground that the DPRK has no relations or trade with Israel and publishes no fund, procurement, licensing, prosecution or police documents (KCNA's archive cannot be searched from here).
+# Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09): A3, A5 to A8, C4 re-run with web search (nothing changes); the DPRK's statements on Gaza (KCNA, Foreign Ministry) are by offices that are not B9 speakers (lead_20261005_PRK_1); E1 to E3, C5, C6 stay no-data.
+country: PRK
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from the DPRK to
+      Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PRK
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of
+      the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch.
+      Nothing is hand-authored.'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of the Democratic People''s Republic of Korea (DPRK) as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23,
+      archived text) does not contain the words Democratic People''s Republic or DPRK (searched 2026-11-09). The report contains the word Korea once, in "Korean HD Hyundai" (a company of the Republic of Korea,
+      line 626), not the DPRK. The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme, the Democratic People''s Republic of Korea not among
+      them, and carries no supplier list by country. Press and NGO supplier lists were not searched in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): the search on the programme''s supplier countries returned no North Korean company or link
+      (the DPRK is under UN sanctions). Nothing changes the none-found.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Democratic People and DPRK (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - F-35 supply chain countries suppliers Israel Gaza Special Rapporteur report list of states components F-35 Mongolia Moldova Belarus North Korea
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no DPRK order of Israeli major arms in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PRK
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No joint exercise, intelligence sharing, basing agreement or weapons transit arrangement with Israel was found. The DPRK has no diplomatic relations with Israel and does not recognise it (B12).
+      Its statements on Gaza that were read (General Debate statements of 30 September 2024, src_20240930_un-gadebate_prk-kim-song-en, and of 29 September 2025, src_20250929_un-gadebate_prk-kim-son-gyong-ko,
+      both archived; that of 28 September 2026 by Vice Foreign Minister Kim Son Gyong, gadebate.un.org, read 2026-11-09, not archived and without a passage on Gaza, Palestine or Israel) treat Israel as an
+      adversary and mention no arrangement with it. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine
+      and KCNA Watch''s search sends a visitor to a membership form. Re-run with web search (T-F-L02, third session, 2026-11-09): the English search for DPRK and Israel military dealings found none: the results
+      concern North Korean-made weapons found with Hamas (South Korea''s intelligence service, January 2024; the US State Department: through intermediaries) and the DPRK''s denial, and no cooperation between
+      the DPRK and Israel''s armed forces. Nothing changes the none-found.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf) searched for Gaza, Palestin, Israel (no match)
+    - North Korea Israel arms Hamas weapons supply DPRK Israel military cooperation exports Israel sanctions 2024 2025
+  A6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No export-licence regime or decision concerning Israel was found, and none is conceivable without relations or trade (Comtrade has no DPRK rows; SIPRI shows no DPRK delivery to Israel, A1). The
+      DPRK has no diplomatic relations with Israel and does not recognise it (B12). Its statements on Gaza that were read (General Debate statements of 30 September 2024, src_20240930_un-gadebate_prk-kim-song-en,
+      and of 29 September 2025, src_20250929_un-gadebate_prk-kim-son-gyong-ko, both archived; that of 28 September 2026 by Vice Foreign Minister Kim Son Gyong, gadebate.un.org, read 2026-11-09, not archived
+      and without a passage on Gaza, Palestine or Israel) treat Israel as an adversary and mention no arrangement with it. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search sends a visitor to a membership form. Re-run with web search (T-F-L02, third session, 2026-11-09): the
+      same search found no DPRK export licence or arms export to Israel; the DPRK is under a UN arms-export ban. Nothing changes the none-found.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf) searched for Gaza, Palestin, Israel (no match)
+    - North Korea Israel arms Hamas weapons supply DPRK Israel military cooperation exports Israel sanctions 2024 2025
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree prohibiting both exports to and imports from Israel was found; the DPRK publishes no such instrument and has no relations or trade with Israel to prohibit. The DPRK has no diplomatic
+      relations with Israel and does not recognise it (B12). Its statements on Gaza that were read (General Debate statements of 30 September 2024, src_20240930_un-gadebate_prk-kim-song-en, and of 29 September
+      2025, src_20250929_un-gadebate_prk-kim-son-gyong-ko, both archived; that of 28 September 2026 by Vice Foreign Minister Kim Son Gyong, gadebate.un.org, read 2026-11-09, not archived and without a passage
+      on Gaza, Palestine or Israel) treat Israel as an adversary and mention no arrangement with it. No web search in that earlier session (re-run with web search below); KCNA''s
+      own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search sends a visitor to a membership form. Re-run with web search (T-F-L02, third session, 2026-11-09): the DPRK is not among
+      the co-sponsors of the joint letter A/79/572-S/2024/802 of 1 November 2024 (text read at digitallibrary.un.org, 2026-11-09); no DPRK embargo measure on Israel was found, the DPRK''s statements being
+      condemnations (lead_20261005_PRK_1). Nothing changes the none-found.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf) searched for Gaza, Palestin, Israel (no match)
+    - North Korea Israel arms Hamas weapons supply DPRK Israel military cooperation exports Israel sanctions 2024 2025
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision on port, airspace or flag-vessel transit of arms shipments bound for Israel was found. The DPRK has no diplomatic relations with Israel and does not recognise it (B12). Its statements
+      on Gaza that were read (General Debate statements of 30 September 2024, src_20240930_un-gadebate_prk-kim-song-en, and of 29 September 2025, src_20250929_un-gadebate_prk-kim-son-gyong-ko, both archived;
+      that of 28 September 2026 by Vice Foreign Minister Kim Son Gyong, gadebate.un.org, read 2026-11-09, not archived and without a passage on Gaza, Palestine or Israel) treat Israel as an adversary and
+      mention no arrangement with it. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA
+      Watch''s search sends a visitor to a membership form. Re-run with web search (T-F-L02, third session, 2026-11-09): the search found no DPRK denial of airspace, port or transit for arms shipments to
+      Israel; the DPRK has no shipments in the results. Nothing changes the none-found.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf) searched for Gaza, Palestin, Israel (no match)
+    - North Korea Israel arms Hamas weapons supply DPRK Israel military cooperation exports Israel sanctions 2024 2025
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, DPRK
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of the Premier or the Foreign Minister on executing the warrants of 21 November 2024 was found; the
+      DPRK is not a State Party to the Rome Statute.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has imposed no sanctions on ICC officials (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row PRK,1988-11-24 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 24 November 1988: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). Before this session: Generated from recognitions.csv,
+      which has no DPRK row. The registry dates the recognition 24 November 1988 (A/78/846 annex, via Wikipedia); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with
+      the pre-existing tier the score would be +3 higher. Third session (T-F-L02, 2026-11-09): the UN Digital Library''s General Assembly documents A/43/780 to A/43/1009 (letters of the 43rd session, November
+      to December 1988) were searched by title for letters from the Democratic People''s Republic of Korea and none was found (the Mongolian letter A/43/863 was, MNG B8); the state''s own document is still
+      not found, so still no row.'
+    queries:
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No statement of the Chairman of State Affairs, the Premier or the Foreign Minister (the B9 speakers, R3) that calls
+      for a ceasefire or names a violation was found among the texts read. The DPRK speaks on Gaza through the General Debate
+      delegation (a Permanent Representative in 2024, a Vice Foreign Minister in 2025), the Foreign Ministry''s spokesperson
+      and Vice Foreign Ministers, who are not B9 speakers (R3) or are unnamed: lead_20261005_PRK_1. A KCNA statement of the
+      Foreign Minister herself, if one exists, was not found (KCNA''s archive cannot be searched by a script). Finish run,
+      T-F-L02 (2026-11-09): the General Debate statement of the 81st session (Vice Foreign Minister Kim Son Gyong, 28 September
+      2026; gadebate.un.org/sites/default/files/gastatements/81/kp_en.pdf, read, Wayback holds no capture so it is not archived)
+      has no passage on Gaza, Palestine or Israel, and is a Vice Minister''s in any case (R3). KCNA''s archive (kcna.kp) did
+      not answer from this machine and KCNA Watch''s search leads to a membership form, so a Foreign Minister''s text of 5
+      October to 9 November 2026, if one exists, was not found.'
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+    - Kim Jong Un Palestine Gaza Israel message OR statement OR speech North Korea
+    - '"Choe Son Hui" Gaza OR Palestinian OR Israel statement foreign minister DPRK "genocide" OR "ceasefire"'
+    - 조선민주주의인민공화국 외무성 대변인 팔레스티나 가자지대 이스라엘 담화 조선중앙통신 2025
+    - gadebate.un.org/sites/default/files/gastatements/81/kp_en.pdf read (searched for Gaza, Palestin, Israel, Middle East)
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found (the DPRK does not
+      recognise Israel).
+    queries:
+    - DPRK foreign minister Choe Son Hui Israel Gaza Palestine statement KCNA
+    - Kim Jong Un Palestine Gaza Israel message OR statement OR speech North Korea
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has listed no Israeli minister or settler entity for sanctions (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance applies: the DPRK has no diplomatic relations with Israel and does not recognise
+      it (press, Wikipedia).'
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: The DPRK has no trade or association agreement with Israel (none found).
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No instrument with Israel was found; the DPRK has no relations with it.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No ban or labelling rule for settlement goods was found; the DPRK has no trade with Israel (C1). The DPRK has no diplomatic relations with Israel and does not recognise it (B12). Its statements
+      on Gaza that were read (General Debate statements of 30 September 2024, src_20240930_un-gadebate_prk-kim-song-en, and of 29 September 2025, src_20250929_un-gadebate_prk-kim-son-gyong-ko, both archived;
+      that of 28 September 2026 by Vice Foreign Minister Kim Son Gyong, gadebate.un.org, read 2026-11-09, not archived and without a passage on Gaza, Palestine or Israel) treat Israel as an adversary and
+      mention no arrangement with it. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA
+      Watch''s search sends a visitor to a membership form. Re-run with web search (T-F-L02, third session, 2026-11-09): the search found no DPRK measure on settlement goods; the DPRK has no reported trade
+      with Israel in the results. Nothing changes the none-found.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf) searched for Gaza, Palestin, Israel (no match)
+    - North Korea Israel arms Hamas weapons supply DPRK Israel military cooperation exports Israel sanctions 2024 2025
+  C5:
+    status: no-data
+    checked_at: '2026-11-09'
+    note: 'The DPRK publishes no list of exclusions by a sovereign fund, public pension fund or central bank, and none was
+      found: the indicator has no source for this State. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search
+      sends a visitor to a membership form.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf)
+      searched for Gaza, Palestin, Israel (no match)
+  C6:
+    status: no-data
+    checked_at: '2026-11-09'
+    note: 'The DPRK publishes no public-procurement rules or exclusion decisions that can be read, and none was found: the
+      indicator has no source for this State. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search sends a
+      visitor to a membership form.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf)
+      searched for Gaza, Palestin, Israel (no match)
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans. Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No row of the DPRK in UNRWA's donor tables for 2022, 2023 or 2024 (it was not a donor to suspend).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Democratic People's Republic of Korea
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      No row of the DPRK in UNRWA's donor tables for 2022, 2023 or 2024 (archived): no restored or increased
+      contribution. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) has no row for Democratic People's Republic of Korea, so 2025 does not exceed 2022:
+      no 2025 event (docs/10 B-876).
+    queries:
+    - >-
+      UNRWA donor tables 2022, 2023 and 2024 (archived), row Democratic People's Republic of Korea
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - North Korea DPRK ICC arrest warrant Netanyahu statement OR UNRWA contribution OR Israel relations OR medical Gaza
+  E1:
+    status: no-data
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. The DPRK publishes no prosecution or investigation records that can be read, and none concerning
+      conduct in Gaza was found: the indicator has no source for this State. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search
+      sends a visitor to a membership form.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf)
+      searched for Gaza, Palestin, Israel (no match)
+  E2:
+    status: no-data
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. The DPRK publishes no police or interior-ministry decisions on assemblies, and the state''s own
+      statements that were read (General Debate statements of 2024, 2025 and 28 September 2026) say nothing on protests about Gaza:
+      the indicator has no source for this State. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s search sends a visitor to
+      a membership form.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf)
+      searched for Gaza, Palestin, Israel (no match)
+  E3:
+    status: no-data
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. The DPRK publishes no court or prosecutor records that can be read, and no universal-jurisdiction
+      complaint concerning Gaza was found: the indicator has no source for this State. No web search in that earlier session (re-run with web search below); KCNA''s own archive (kcna.kp) did not answer from this machine and KCNA Watch''s
+      search sends a visitor to a membership form.'
+    queries:
+    - archive/text of the DPRK General Debate statements of 2024 and 2025 read; 28 September 2026 statement (gadebate.un.org/…/81/kp_en.pdf)
+      searched for Gaza, Palestin, Israel (no match)

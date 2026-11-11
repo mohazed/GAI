@@ -1,0 +1,299 @@
+# Coverage record for Lesotho (docs/03 §6). P-21 light protocol, session T-P21-38, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Government of Lesotho's portal (gov.ls, WordPress with an open REST API, full-text search /wp-json/wp/v2/posts?search= for Gaza, Palestine, Palestinian, Israel, Israeli, ceasefire, Hamas, Middle East,
+# ICC, International Criminal Court, genocide, UNRWA, two-state, Netanyahu, hostages, Jerusalem, Holy Land, Gaza ceasefire, humanitarian crisis, ICJ, International Court of Justice, Security Council, Mpotjoane; the portal prints the
+# Prime Minister's and the Minister's speeches and its documents library holds PDFs by a download manager), the Ministry of Foreign Affairs and International Relations' site (foreignaffairs.gov.ls, ASP.NET; /Post, /Documents, /Home/Docs read),
+# the UN's General Debate pages and files (79th, 80th, 81st), the ICJ's case 192 page (live), the UN Treaty Collection's status page of the Rome Statute (live), the Assembly of States Parties' list, the generated tables, UNRWA donor
+# rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): no press item outside the Government's own sites was read and nothing is
+# filed from one; the 'one search per indicator group' of docs/06 §5 is left for P-23. The portal answers slowly (Save Page Now got 504 and 503 on it; the Government's page of the 80th statement was recorded from an existing Wayback capture).
+# Events: three (B9); see docs/10 B-807, B-808. Leads: one (B9); see docs/10 B-807.
+# Completion of 2026-11 (finish run, T-F-L19, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with web searches, the portal's REST search and the shared searches, all none-found with the limits said in each note; B8, B9, B11, B12, C2, D4 and D5 notes extended (docs/10 B-2062). No recognition row (R21). No new event; lead_20261104_LSO_1 searched again and lead_20261110_LSO_2 added.
+country: LSO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier LSO
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Basotho company as a supplier of parts or maintenance for the F-35 programme: Lesotho is neither a programme partner nor a foreign-military-sales customer in the
+      search results, A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for Lesotho, and the searches returned no supplier. Not searched: the programme''s full supplier
+      database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Lesotho (no match)
+    - 'WebSearch 2026-11-10: F-35 program supplier countries list partner nations foreign military sales customers Lockheed Martin global supply chain 2026 (the partner nations and foreign-military-sales
+      customers named in the results; none of the six)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the register lists two orders by Lesotho from Israel, of data years 1976 (1.2 TIV) and 2006 (0.72 TIV), none of the
+      release''s own data year (2025). A4 is derived none-found. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer LSO (rows of 1976 and 2006)
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023
+      to 2026; the searches return no security or defence item between the two states. Not searched: the Lesotho Defence Force''s and the Ministry of Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    - 'WebSearch 2026-11-10: Lesotho Mpotjoane OR Matekane Palestine OR Gaza OR Israel 2026 Lesotho Times OR Newsday OR LENA (nothing from 2026; the Bi-National Commission of April 2025)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Israel military cooperation OR joint exercise OR defence agreement 2024 2025 Lesotho OR Mali OR Mauritania OR Mauritius OR Somalia OR "South Sudan" OR "Sierra Leone" OR Malawi OR Namibia OR Armenia (results on Morocco, Nigeria and an unverified Armenia report; none on a named exercise, transit, basing or intelligence arrangement of this state)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Lesotho to Israel either (A1: no delivery in the SIPRI register). Not searched: the
+      Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found (Lesotho has no seaport). Not searched: the Civil Aviation Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven of the twelve qualifying votes; no vote recorded on A/RES/80/116 (12 December 2025). The country is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360).'
+    queries:
+    - unga_votes.csv, country LSO
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Lesotho is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Lesotho supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Lesotho is a state party to the Rome Statute (signed 30 November 1998, ratified 6 September 2000: the UN Treaty Collection''s status page read live on 2026-11-04; listed in src_20261009_icc-asp_states-parties,
+      line 163). No statement on the warrants of 21 November 2024 by a B5 speaker was found: the portal''s searches for ICC, International Criminal Court and genocide return items unrelated to
+      the warrants.'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Lesotho (found: state party)'
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - 'gov.ls REST search: ICC, International Criminal Court, genocide'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Lesotho was found in the sources read (the Treaty Collection's page
+      lists no notification of withdrawal by Lesotho).
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Lesotho were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Lesotho. The registry gives a recognition since 3 May 2011, before the window, with no Government document read (R21, left for P-23); no
+      recognition after 7 October 2023 was found. All three statements filed under B9 support a two-State solution without announcing a recognition. Searched again on 2026-11-10 for a document
+      of the State dating its recognition of 3 May 2011: the searches returned only secondary tables (a thematic map and Wikipedia; a United Nations list of recognitions, from 1988 to 2023, gives
+      3 May 2011 for Lesotho) and no Lesotho document, so no row is added (R21).'
+    queries:
+    - recognitions.csv, LSO (no row)
+    - 'gov.ls REST search: Palestine, Palestinian, State of Palestine, two-state'
+    - 'WebSearch 2026-11-10: Lesotho recognition 2011 Government of Lesotho OR Ministry of Foreign Affairs Lesotho Palestinian ambassador Maseru recognised statehood (secondary tables, a United
+      Nations list of recognitions; no Lesotho document)'
+    checked_at: '2026-11-10'
+  B9:
+    status: has-events
+    note: 'Three events filed, all B9 (docs/10 B-807, B-808): evt_2025_09_26_LSO_B9 (the Prime Minister, 80th General Debate, call for a permanent ceasefire and the release of hostages, +2), evt_2024_09_26_LSO_B9
+      (the King, 79th, call for a ceasefire, +2, flagged, expired) and evt_2023_11_14_LSO_B9 (the Minister of Foreign Affairs, statement to the National Assembly in Sesotho, +5, flagged, expired).
+      Not filed: (1) the Prime Minister''s 81st statement (25 September 2026, file read live, not recorded): ''We welcome the ceasefire framework and stabilization arrangements in Gaza'' is not
+      a call; the Government''s own summary says ''Ceasefire in Gaza NOW'': lead_20261104_LSO_1. (2) The 78th-session statement (September 2023, before the window). (3) The Ministry''s statement
+      of 3 March 2026 on ''Middle East escalated tensions'' (gov.ls) concerns the regional war of that month and does not name Gaza. The Ministry of Foreign Affairs'' own site (foreignaffairs.gov.ls)
+      lists few documents (a docx of August 2025 with the Minister''s national statement at the conference of landlocked developing countries at Awaza; none on Gaza). Completion pass of 2026-11-10:
+      (1) the lead on the 81st statement was searched again (UN meetings coverage, Government speeches page, REST search): no recording, transcript or coverage was found, so lead_20261104_LSO_1
+      stays open. (2) The joint communiqué of the second session of the Lesotho-South Africa Bi-National Commission (Maseru, 23 April 2025; co-chaired by the Prime Minister; the South African
+      Government''s copy read) says in paragraph 5 that ''The Leaders reiterated their solidarity with the peoples of Palestine and Western Sahara and reaffirmed their support in their quest for
+      self determination'': no call, no violation, no Gaza; Newsday (5 May 2025) reports from the Commission''s minutes a joint call for ''urgent international action to end the war in Gaza'',
+      which the communiqué does not contain: lead_20261110_LSO_2.'
+    queries:
+    - 'gov.ls REST search: Gaza, Palestine, Palestinian, Israel, Israeli, ceasefire, Hamas, Middle East, ICC, International Criminal Court, genocide, UNRWA, two-state, Netanyahu, hostages, Jerusalem,
+      Holy Land, Gaza ceasefire, humanitarian crisis, ICJ, International Court of Justice, Security Council, Mpotjoane, two state; the matches that bore on Gaza opened'
+    - foreignaffairs.gov.ls /Post, /Documents, /Home/Docs
+    - gadebate.un.org/en/{79,80,81}/lesotho and gastatements/{79,80,81}/ls_en.pdf
+    - 'WebSearch 2026-11-10: Matekane United Nations General Assembly September 2026 Lesotho Prime Minister statement Gaza ceasefire two-state (no coverage of the 81st statement)'
+    - 'WebSearch 2026-11-10: General Assembly general debate 81st session 25 September 2026 Lesotho Prime Minister Matekane said Gaza press.un.org meetings coverage (no coverage; the Government''s
+      speeches page)'
+    - 'WebSearch 2026-11-10: Joint Communiqué Second Session Lesotho South Africa Bi-National Commission Maseru April 2025 Palestine Gaza "urgent international action" (the communiqué at gov.za;
+      Newsday''s report)'
+    - gov.za FINAL JOINT COMMUNIQUE SECOND SESSION OF THE BNC 23 APRIL 2025.pdf (read 2026-11-10, paragraph 5)
+    - 'gov.ls REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (3 items: the Minister''s statement of 14 November 2023 and two unrelated), Palestine and Palestinian (no item), Gaza
+      (the two General Assembly items already read: 28 September 2026 and 29 September 2025), General Assembly (the 81st items of 21 to 28 September 2026), Bi-National Commission (items on the
+      commissions with South Africa and Botswana)'
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the King, the Prime Minister or the Minister of Foreign Affairs was found (the portal''s
+      searches for Israel and Israeli list no statement on the war; the titles returned are unrelated).'
+    queries:
+    - 'gov.ls REST search: Israel, Israeli, Hamas'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found in the portal's items read. This rests on that site only (P-23). The searches of 2026-11-10 returned no sanctions
+      measure.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found; the portal''s items name no ambassador to or from Israel since 2023 (the portal''s list of embassies was not opened: P-23). The searches
+      of 2026-11-10 returned no recall, downgrade or severance.'
+    queries:
+    - 'gov.ls REST search: Israel, Israeli, Israeli ambassador (the last returned an error and was not repeated)'
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    - 'WebSearch 2026-11-10: Lesotho Mpotjoane OR Matekane Palestine OR Gaza OR Israel 2026 Lesotho Times OR Newsday OR LENA (nothing from 2026; the Bi-National Commission of April 2025)'
+    checked_at: '2026-11-10'
+  C1:
+    status: none-found
+    note: Lesotho is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement signed with Israel since October 2023 was found in the portal''s items read (the searches for Israel, Israeli and MASHAV return nothing of the kind; two of the terms returned
+      errors and were not repeated). No treaty register was read (P-23); the Ministry''s /Treaties page was not opened. The searches of 2026-11-10 returned no agreement with Israel since October
+      2023; the portal''s search for Israel (re-run) returns the three items already read. The Ministry''s /Treaties page did not answer from the session''s network (foreignaffairs.gov.ls: no
+      connection).'
+    queries:
+    - 'gov.ls REST search: Israel, Israeli'
+    - 'WebSearch 2026-11-10: Lesotho Israel Matekane Gaza 2025 2026 government OR agreement OR embassy OR Palestine statement (the Foreign Minister''s statement of late 2023, Lesotho''s support
+      for South Africa''s ICJ case, the Lesotho-South Africa Bi-National Commission of April 2025; no Israel agreement or embassy)'
+    - 'gov.ls REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (3 items: the Minister''s statement of 14 November 2023 and two unrelated), Palestine and Palestinian (no item), Gaza
+      (the two General Assembly items already read: 28 September 2026 and 29 September 2025), General Assembly (the 81st items of 21 to 28 September 2026), Bi-National Commission (items on the
+      commissions with South Africa and Botswana)'
+    - 'foreignaffairs.gov.ls/Treaties and / (curl, 2026-11-10: no connection)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Lesotho is not an EU member and the searches returned none. Not searched: the Revenue Services Lesotho''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" OR "Guinea-Bissau" OR "Equatorial Guinea" ban imports Israeli settlements OR arms embargo Israel OR suspend arms
+      export licences Israel 2025 2026 (Slovenia, Ireland, the United Kingdom, France and Canada; none of the six)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund or the Central Bank of Lesotho over conduct in Gaza or the occupied territories was found; the results name the Norwegian,
+      Danish and New Zealand funds only. Not searched: the funds'' own reports.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements
+      (the Norwegian, Danish and New Zealand funds; none of the four)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Public Procurement Advisory Division''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: "Kenya" OR "Liberia" OR "Lesotho" OR "Madagascar" sovereign wealth fund OR pension fund divest Israeli companies OR public procurement exclusion Israel settlements
+      (the Norwegian, Danish and New Zealand funds; none of the four)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Lesotho in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_funding.csv, donor LSO
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Lesotho has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found.
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row for Lesotho in UNRWA''s donor rankings for 2022, 2023 or 2024. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no
+      row for Lesotho, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Lesotho was found in the portal's items read. The searches of 2026-11-10 returned no evacuation programme
+      or field hospital.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Kenya OR Madagascar OR Liberia OR Lesotho Gaza wounded children medical evacuation OR visa OR refugees OR humanitarian corridor government announces 2024 2025 (the
+      programmes of the UK, Ireland, Greece, Jordan, the UAE and the United States; none of the four; one Kenyan newspaper headline on a WHO evacuation of 1,000 Gazans, page not readable)'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read. The searches of 2026-11-10 returned no visa or refugee pathway for Gazans.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Kenya OR Madagascar OR Liberia OR Lesotho Gaza wounded children medical evacuation OR visa OR refugees OR humanitarian corridor government announces 2024 2025 (the
+      programmes of the UK, Ireland, Greece, Jordan, the UAE and the United States; none of the four; one Kenyan newspaper headline on a WHO evacuation of 1,000 Gazans, page not readable)'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Basotho nationals or companies for conduct in Gaza was found. Not searched: the Director of Public Prosecutions'' communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Kenyan OR Liberian OR Malagasy OR Basotho citizens serving Israeli army Gaza investigated OR prosecuted OR charged OR complaint universal jurisdiction (complaints
+      in Belgium, Brazil, Chile, Peru and Britain against Israeli or British soldiers; none of the four countries)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest in Maseru was found; the searches returned none (a Lesotho police block
+      of a textile workers'' protest in October 2025 is unrelated). Not searched: the Lesotho Mounted Police Service''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Liberia OR Lesotho Palestine solidarity march OR protest Gaza Monrovia OR Maseru Palestinian flag police permit (no Gaza protest in either capital; a Lesotho textile
+      workers'' protest blocked, unrelated)'
+    - 'WebSearch 2026-11-10: Antananarivo OR Monrovia OR Maseru OR Malabo OR Bissau pro-Palestine protest Gaza demonstration police banned OR arrested OR dispersed (no Gaza protest in any of the
+      five capitals; the Kenyan dispersal of January 2024 and Malagasy anti-government protests)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a Basotho authority was found; the results concern Belgium, Brazil, Chile,
+      Peru and Britain.
+    queries:
+    - 'WebSearch 2026-11-10: Kenyan OR Liberian OR Malagasy OR Basotho citizens serving Israeli army Gaza investigated OR prosecuted OR charged OR complaint universal jurisdiction (complaints
+      in Belgium, Brazil, Chile, Peru and Britain against Israeli or British soldiers; none of the four countries)'
+    checked_at: '2026-11-10'

@@ -1,0 +1,271 @@
+# Coverage record for Lebanon (docs/03 §6). P-21 light protocol, session T-P21-48, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live with a browser User-Agent; Wayback captures checked through CDX); the joint statements and UN records already archived (grep of archive/text for the country's name) (S/PV.9763: Lebanon's representative, R3); the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Presidency's site (presidency.gov.lb, which answers a browser User-Agent; its media search /media?q=غزة listed two items, both in the Presidency's indirect speech). The Council of Ministers (pcm.gov.lb) and the Ministry of Foreign Affairs and Emigrants (mfa.gov.lb) did not answer from this network. Web searches were not available to this session (the run's search budget was spent, as for T-P21-26, T-P21-46 and T-P21-47): no press item in Arabic, English or French was read. These gaps are scheduled for P-23.
+# Three events (B9, D3 x2). Leads: none.
+# Completion of 2026-11 (finish run, T-F-L24, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Arabic; the boycott law of 1955 is before the window), all none-found with the limits said in each note; C2 note extended (the 2026 direct talks and the framework of 26 June 2026, front hostilities). The conference text of 28 July 2025 is the Deputy Prime Minister's (R3). No new event since 2026-11-04. See docs/10 B-2090.
+country: LBN
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier LBN'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade`
+      reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Lebanese company as a supplier of parts or maintenance for the F-35 programme: Lebanon is neither a partner nor a foreign-military-sales customer. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list 2026 (the Joint Program Office''s eight partners and its foreign-military-sales customers; none of the six of
+      this batch: GEO, IRQ, KWT, LBN, OMN, SYR)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order by the Lebanese state from Israel in the window. The register''s Lebanese rows (archive/text/src_20261005_sipri_register-supplier-israel.txt,
+      lines 448 to 451 and 622) are second-hand transfers of 1976 to 1987 to non-state armed groups (Lebanese Forces, SLA), not orders of the state. Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer LBN'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Lebanon (searched)'
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No instance of military cooperation with Israel was found. Lebanon and Israel are in a state of war; the US-brokered direct talks of 2026 and the security framework of 26 June 2026 concern hostilities on the Israel-Lebanon front (outside the scale, docs/07), not cooperation related to the Gaza campaign. Not searched: the Lebanese Army''s releases. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): the Lebanese Army''s site (lebarmy.gov.lb, Arabic and English home pages read) and Arabic searches for Army statements return the Army''s plan to bring weapons under State control (Council of Ministers'' decision of 5 August 2025), its announcement of the first phase south of the Litani and its statements on Israeli strikes and occupied positions (Arabi21, Al-Rai, Annahar, Okaz); coordination with UNIFIL and the ceasefire monitoring mechanism concerns the Israel-Lebanon front (outside the scale, docs/07); no cooperation related to the Gaza campaign found; status kept.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon Israel direct negotiations agreement signed 2026 Aoun Salam government November 2026 (the US statement of 14 April 2026 that Israel and Lebanon would launch direct negotiations;
+      a US-brokered framework of 26 June 2026 on security measures, which An-Nahar reports is not a formal treaty or an announced agreement; nothing signed after it in the results)'
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-11 (T-G-RS-1): الجيش اللبناني بيان تعاون إسرائيل مكتب مقاطعة إسرائيل لبنان قرار 2024 2025 سلاح (Arabic: the Council of Ministers'' decision of 5 August 2025 on weapons, the Army''s five-phase plan and first phase, its statements on Israeli attacks; President Aoun and Prime Minister Salam on the plan; no cooperation with Israel)'
+    - 'curl 2026-11-11: www.lebarmy.gov.lb and /ar (200, home pages and menus read; no item on cooperation with Israel)'
+    checked_at: '2026-11-11'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; Lebanon exports no arms to Israel (A1: no delivery in the SIPRI register) and the boycott law of 1955 bars any dealing with Israel. Not searched: the Ministry of Defence''s notices. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): Lebanon has no published arms-export licensing register; the Ministry of Economy and Trade''s site, which holds the Office for the Boycott of Israel, answered 403; searches on the Office return its lists of prohibited companies, the Casino du Liban tender case and a seizure of shoes in South Lebanon in February 2025 (L''Orient Today, Ynet, The961), none a decision on arms licences; status kept.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-11 (T-G-RS-1): Lebanon Israel Boycott Office decision ships blacklist 2024 OR 2025 Ministry of Economy (the Office''s lists of prohibited companies; the shoe seizure of February 2025 (L''Orient Today); the debate on repealing the boycott law (Ynet, 2026); BIMCO''s note of 23 October 2013 on vessel certificates; no arms decision)'
+    - 'curl 2026-11-11: www.economy.gov.lb (403)'
+    checked_at: '2026-11-11'
+  A7:
+    status: none-found
+    note: 'No two-way arms embargo on Israel adopted in the window was found. The boycott law of 23 June 1955 already bars all dealings with Israeli persons and entities (before the window, not an act of the window); in 2026 the Government declined to repeal it (press). Not searched: the Official Gazette item by item. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): the Official Gazette is published by the Presidency of the Council of Ministers (pcm.gov.lb did not answer on 2026-11-11), so it was searched through the web: the results give the boycott law of 1955 (Lexis Middle East''s copy), its enforcement by the Office for the Boycott of Israel and the debate of 2026 on its repeal (Ynet), no law or decree on arms to and from Israel adopted in the window; status kept.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-10: Lebanon Israel direct negotiations agreement signed 2026 Aoun Salam government November 2026 (the US statement of 14 April 2026 that Israel and Lebanon would launch direct negotiations;
+      a US-brokered framework of 26 June 2026 on security measures, which An-Nahar reports is not a formal treaty or an announced agreement; nothing signed after it in the results)'
+    - 'WebSearch 2026-11-11 (T-G-RS-1): Lebanon Israel Boycott Office decision ships blacklist 2024 OR 2025 Ministry of Economy (Law of 1955 on the boycott of Israel (Lexis Middle East); repeal debate (Ynet); no new embargo instrument)'
+    - 'curl 2026-11-11: www.pcm.gov.lb (no answer within 20 s)'
+    checked_at: '2026-11-11'
+  A8:
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel was found; the airspace ban on a Cypriot airline over Israeli shareholding (L''Orient Today) predates the window and concerns civil flights. Not searched: the Directorate General of Civil Aviation''s and the port authorities'' notices. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): the Directorate General of Civil Aviation''s site (http://www.dgca.gov.lb, home page read) and the Port of Beirut''s site (portdebeyrouth.com, home page read) hold no notice on Israel; the airport''s site (beirut-airport.gov.lb) and Customs (customs.gov.lb) did not answer; English searches return the Boycott Office''s certificate required of vessels calling at Lebanese ports since October 2013 (BIMCO; West of England P&I Club, undated), the Government''s tour of Beirut airport in June 2024 against a press claim of weapons stored there, and older Hezbollah denials; no denial of port, transit or airspace to an arms shipment bound for Israel in the window; status kept.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Lebanon Beirut port ship weapons Israel denied OR Lebanese court prosecution Israel Gaza war crimes OR fund divest Israeli companies 2024 2025 (reports on arms smuggling to Hezbollah through Beirut port; no denial of a shipment for Israel, no prosecution, no fund exclusion)'
+    - 'WebSearch 2026-11-11 (T-G-RS-1): Lebanon Beirut port weapons shipment Israel refused OR denied 2024 2025 (the airport tour of 24 June 2024 (Spokesman-Review, Stars and Stripes, Gulf Today); Hezbollah''s denials of 2019 on the port; no denial of an arms shipment for Israel)'
+    - 'WebSearch 2026-11-11 (T-G-RS-1): Lebanon Israel Boycott Office decision ships blacklist 2024 OR 2025 Ministry of Economy (BIMCO: vessel certificates from the Boycott Office since 23 October 2013, before the window and not specific to arms)'
+    - 'curl 2026-11-11: http://www.dgca.gov.lb (200, 13,216 bytes, home page); www.portdebeyrouth.com (200, 21,078 bytes, home page); www.beirut-airport.gov.lb and www.customs.gov.lb (no answer within 20 s)'
+    checked_at: '2026-11-11'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on the twelve qualifying votes (the votes of 2023 and the first half of 2024 have decayed). Lebanon has all twelve votes recorded and is not among the Member
+      States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched).'
+    queries:
+    - 'unga_votes.csv, country LBN'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Lebanon is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Lebanon).'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Lebanon (not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No filing by Lebanon supporting the respondent in ICJ case 192 (same page).'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Lebanon is not a state party to the Rome Statute (src_20261009_icc-asp_states-parties, searched: not listed). No statement on the warrants of 21 November 2024 by a B5 speaker was found in the
+      sources read (P-23).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Lebanon (not found)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: 'Lebanon is not a state party, so a hosting is not a state party''s act; no statement against the warrants was found in the sources read.'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Lebanon were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Lebanon. The registry gives 30 November 2008 (countries.yaml recognises_palestine); no Government document of the date was read, so no row
+      is added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, LBN'
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Completion of 2026-11 (T-F-L24, 2026-11-10): a second scored event, the President''s address to the emergency Arab-Islamic summit in Doha (15 September 2025, +5, flagged: the striking of hungry children in Gaza named in a speech on Qatar; the Presidency''s text, archived; evt_2025_09_15_LBN_B9). Lebanon''s Arabic text at the two-State conference (UNISPAL, 1st plenary, 28 July 2025) was delivered by the Deputy Prime Minister Tarek Mitri (the UN''s press release of the meeting, UNISPAL document 309503): not a B9 speaker (R3), not filed. The joint statement of 16 October 2026 was filed by T-F-UNDOCS-1 (evt_2026_10_16_LBN_B9, scoped west-bank, unscored; docs/10 B-874). As written on 2026-11-04: one event: the President Joseph Aoun''s 80th General Debate statement (23 September 2025, French, +2, flagged: ''mettre une fin immédiate à la tragédie qui se déroule à Gaza'' read at the call
+      tier), archived from its Wayback capture. Not filed: the 79th statement (the Foreign Minister Abdallah Bou Habib, 26 September 2024, Arabic; more than 730 days old, no score effect); the 81st statement
+      (September 2026, Arabic, no speaker named in the file: ''the tragedy of wounded Gaza'' puts the world''s conscience to a test, no call and no named violation, and its call for a ceasefire concerns
+      Lebanon); the Presidency''s pages of 16 January 2025 (the President''s welcome of the Gaza agreement) and 30 September 2025 (his welcome of the US President''s plan), both in the Presidency''s indirect
+      speech (R4); Lebanon''s representative at the Security Council''s open debate of October 2024 (S/PV.9763, R3). The Prime Minister''s and the Foreign Minister''s statements (pcm.gov.lb, mfa.gov.lb)
+      were not reached (P-23).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/lb_{en,fr,ar}.pdf (read live; 79th and 81st Arabic only, 80th French only)'
+    - 'web.archive.org CDX for 80/lb_fr.pdf'
+    - 'presidency.gov.lb/media?q=غزة (two items, read)'
+    - 'archive/text: joint statements and UN records, grep Lebanon, لبنان'
+    - 'monthly run 2026-11 (T-P23-4): the joint statement of 16 October 2026 on Colombia''s embassy in Jerusalem (src_20261016_dirco_joint-statement-colombia-embassy, line 1) names the Republic of Lebanon among its twenty signatories; not filed, because no archived document names the Foreign Minister of the government represented at the UN in the twelve months before that date and a B9 event needs the speaker''s name (as Kuwait, 26 October 2023); Jerusalem and the West Bank only (R7), so it would be tagged west-bank and unscored (docs/10 B-855)'
+    - 'T-F-UNDOCS-1 (2026-11-09): the foreign minister named in an archived official document (src_20260416_gov-uk_falconer-lebanon-funding: Youssef Rajji); evt_2026_10_16_LBN_B9 filed for the joint statement of 16 October 2026 (+5, Jerusalem and the West Bank only, tagged west-bank and unscored in v1, docs/10 B-32), so it does not change this status'
+    checked_at: '2026-11-09'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by a B10 speaker was found in the sources read.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Lebanon on settlers or settler entities were found in the sources read.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'Lebanon has no diplomatic relations with Israel in the sources read (no ambassador to recall); nothing is filed. The President''s demand for an end to Israel''s attacks on Lebanon and for its
+      withdrawal (80th General Debate, line 184) concerns Lebanon and is outside the scale (docs/07).'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Lebanon is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel was found in the sources read. Arrangements on the Israel-Lebanon front (the cessation of hostilities and the monitoring mechanism) concern direct hostilities,
+      outside the scale (docs/07), and were not read in a primary. Searched again on 2026-11-10 (T-F-L24): the US statement of 14 April 2026 on direct Israel-Lebanon negotiations and a US-brokered framework of 26 June 2026 on security measures, which An-Nahar reports is not a formal treaty or an announced agreement; both concern the front (outside the scale) and no instrument of cooperation was found.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon Israel direct negotiations agreement signed 2026 Aoun Salam government November 2026'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements taken in the window was found. The boycott law of 1955 bans all Israeli goods (before the window); customs enforce it by seizures. Not
+      searched: the Lebanese Customs'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion of companies by a Lebanese public fund or the Banque du Liban over conduct in Gaza or the occupied territories was found. Not searched: the National Social Security Fund''s investment
+      reports, the Banque du Liban''s circulars.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Lebanon Beirut port ship weapons Israel denied OR Lebanese court prosecution Israel Gaza war crimes OR fund divest Israeli companies 2024 2025 (reports on arms smuggling to Hezbollah through Beirut port; no denial of a shipment for Israel, no prosecution, no fund exclusion)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories taken in the window was found; the Israel Boycott Office''s lists of prohibited companies apply
+      the law of 1955 (before the window) and no addition of the window was found. Not searched: the Public Procurement Authority''s notices and the Office''s lists.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Lebanese Government flow to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor LBN'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: USD 818,204 in 2022, USD 1,128,280 in 2023, USD 1,140,002 in 2024 (all in-kind). No announced suspension was found.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events (D3 increased, from 31 December 2023 to 31 December 2024, and from 31 December 2024): UNRWA's
+      tables give USD 1,128,280 (2023) and USD 1,140,002 (2024) against USD 818,204 (2022), all in-kind
+      contributions of a host country, flagged as Jordan's (B-398 (3)). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 1,126,019 pledged against USD 818,204 in 2022:
+      evt_2025_12_31_LBN_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_LBN_D3 ends
+      on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (read)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Lebanon and no field hospital deployed by Lebanon was read in a primary (not searched beyond the sources listed; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched beyond the sources listed; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No domestic investigation or prosecution of Lebanese nationals or companies for conduct in Gaza was found. Not searched: the Public Prosecution''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-10: Lebanon President Aoun OR Prime Minister Salam OR Foreign Minister Rajji Gaza statement November 2026 (the President''s welcome of the Gaza agreement, January and October 2025;
+      the AFP interview of 15 September 2026 on the south; nothing on Gaza dated after 2026-11-04)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Lebanon Beirut port ship weapons Israel denied OR Lebanese court prosecution Israel Gaza war crimes OR fund divest Israeli companies 2024 2025 (reports on arms smuggling to Hezbollah through Beirut port; no denial of a shipment for Israel, no prosecution, no fund exclusion)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No ban on Palestine solidarity protests or symbols was found; LBCI reports protests near the US embassy at Awkar on 18 October 2023 without a ban, and the security forces''
+      use of tear gas and arrests at Awkar found concern December 2017. Not searched: the Internal Security Forces'' releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanese security forces tear gas protesters US embassy Awkar Gaza October 2023 OR ban Palestine rally Lebanon interior ministry (the clashes at Awkar of December 2017; LBCI''s
+      headline of 18 October 2023 on protests near the US embassy after the strike on al-Ahli hospital, without detail of a ban; no ban by the Ministry of Interior found)'
+    - 'pcm.gov.lb and mfa.gov.lb: did not answer on 2026-11-04 (not retried)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No universal-jurisdiction complaint concerning conduct in Gaza accepted for investigation in Lebanon was found (Lebanon is not a party to the Rome Statute). Not searched:
+      the Public Prosecution''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Lebanon boycott Israel law 1955 Israel Boycott Office decision 2024 2025 companies Gaza ministry of economy (the law of 23 June 1955 barring dealings with Israeli persons and
+      entities; the Israel Boycott Office under the Ministry of Economy and Trade, set up in 1963, which publishes lists of prohibited companies (economy.gov.lb, services/boycott); the United States'' calls
+      of 2026 for its repeal and the Government''s refusal (Kataeb, Alhurra, This Is Beirut); customs seizures of smuggled shoes in the south; a Cypriot airline barred from Lebanese airspace over Israeli
+      shareholding (L''Orient Today, before the window); no decision of the window on arms, settlement goods, funds or procurement)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Lebanon Beirut port ship weapons Israel denied OR Lebanese court prosecution Israel Gaza war crimes OR fund divest Israeli companies 2024 2025 (reports on arms smuggling to Hezbollah through Beirut port; no denial of a shipment for Israel, no prosecution, no fund exclusion)'
+    checked_at: '2026-11-10'

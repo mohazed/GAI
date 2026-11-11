@@ -1,0 +1,441 @@
+# Coverage record for Romania (docs/03 §6). P-21 light protocol, session T-P21-04, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mae.ro and its New York mission mpnewyork.mae.ro answer every scripted request with a
+#   JavaScript bot check and their Wayback captures are bot-check pages: the Ministry's releases are known through the Romanian outlets that quote them
+#   and through search-engine excerpts of its pages), the Government (gov.ro), the Presidency (presidency.ro: same bot check), the Ministry of Health (ms.ro),
+#   the General Inspectorate for Emergency Situations (igsu.ro), the General Debate statements of the United Nations (gadebate.un.org: the 78th and 79th
+#   sessions through Wayback captures; the 80th and 81st through a direct request), the joint statements already archived for the 45 (docs/10 B-444: two
+#   name Romania), the EU Council's settler listings (R8, docs/10 B-446), UNRWA's donor tables, the generated events and the structured tables; web searches
+#   in English and in Romanian per indicator group. Time: about 25 minutes (the first country of the session, with the archiving of ten pages).
+# Statements read and not filed as B9: the Foreign Minister's General Debate statement of 27 September 2025 (an immediate ceasefire in Gaza: in the UN's file,
+#   which Save Page Now cannot capture and Wayback does not hold: lead_20261005_ROU_1); the President's of 81st session (23 September 2026: 'advance the
+#   implementation of the Peace Plan for Gaza ... and to address the humanitarian situation on the ground without delay': no call for a ceasefire or an end of
+#   the blockade); the Prime Minister's visit to Israel of 2024 (support for the efforts towards a ceasefire agreement, a post relayed by
+#   news.ro, decayed to zero; news.ro dates it 5 September 2024, HotNews 5 November 2024); the Prime Minister's words after it (conditional support for Israel's right to self-defence).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, first session, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; A5 from the Ministry of National Defence's press releases of mid-2023 to November 2026 (mapn.ro, read, not archivable); A6 to A8 and C4 to C6 from the Official Gazette's legislative portal (acts naming Gaza, Palestine, Hamas, the West Bank or Israel since 7 October 2023); D5 note extended (Government Decision no. 1155 of 2023); lead_20261005_ROU_4 now has an official copy that cannot be archived; the Foreign Ministry, the Presidency, ANCEX and the Public Prosecutor's Office answer a verification check; E1 to E3 still unchecked.
+# Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09): A3, A5 to A8, C4 to C6 re-run with web search (nothing changes); E1 to E3 none-found; ANCEX figures (lead_20261109_ROU_5) and Hind Rajab Foundation complaints (lead_20261109_ROU_6) recorded as leads.
+country: ROU
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Romania to Israel.
+      Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier ROU
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the
+      full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
+      is hand-authored.'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Romania as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain
+      the word Romania (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme, Romania among them as a nation of the
+      programme, with no supplier role stated (a nation''s presence on the page is not evidence of a company in the supply chain), and carries no supplier list by country. Press and NGO supplier lists were not searched in that earlier session (re-run with web search below). Re-run with web search (T-F-L02,
+      third session, 2026-11-09): searches for Romanian suppliers in the F-35 programme returned Romania''s purchase of 32 aircraft through a Foreign Military Sale (customer relationship, not industrial participation:
+      A4) and no list of Romanian suppliers; Lockheed Martin gives the European share of components in aggregate only. Nothing changes the none-found.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Romania (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - F-35 supplier Romania OR Bulgaria company parts Lockheed Martin supply chain list countries suppliers F-35 components Romanian firm
+  A4:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): Romanian orders of Israeli major arms in many data years since 1993, among
+      them 192 TIV in data year 2025 (the A4 event of 9 March 2026) and 18 TIV in 2022. Left to the build. President Dan said at
+      the BSDA 2026 defence exhibition that Romania keeps the military contracts with Israel already under way (Mediafax): category
+      A is not searched in this protocol.'
+    queries:
+    - sipri_orders.csv, buyer ROU
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence sharing related to the Gaza campaign was found in the releases of the Ministry of
+      National Defence (mapn.ro, press releases no. 17900 to 19470, mid-2023 to 6 November 2026, full text searched for Israel, Gaza, Palestin, Hamas and Orientul Mijlociu, 2026-11-09; the pages were read,
+      not archived: Save Page Now answers HTTP 410 for mapn.ro). Bilateral defence contacts are recorded and are not instances under the A5 rule (routine bilateral arrangements): the Minister''s meetings
+      with Israel''s ambassador on 27 June, 7 August and 23 September 2024 and 17 July 2025 (release no. 192, ''cooperarea româno-israeliană în domeniul apărării are o bază solidă''), his visit to Tel Aviv
+      and meeting with Minister Gallant on 5 September 2024 (no. 271), the Minister''s meeting with the chairman of Elbit Systems on 17 April 2026, and the procurement of the SHORAD-VSHORAD air-defence systems
+      from Rafael (framework agreement of 18 July 2025, subsequent contract no. 1 of 24 June 2026: arms purchases from Israel, A4, generated from SIPRI, not A5). The Ministry of Foreign Affairs (mae.ro) and
+      the Presidency answer a verification check and could not be read; no web search in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third
+      session, 2026-11-09): the English search for Romanian and Israeli defence contacts of 2025 and 2026 returned the Ministry of National Defence''s older releases (visits and meetings of earlier ministers,
+      undated in the summary) and a meeting of Minister Moșteanu with Israel''s ambassador (undated in the summary), ''a constant political-military dialogue''; no exercise, basing or intelligence arrangement
+      tied to the Gaza campaign was found. Elbit Systems'' drone factory near Bucharest and the Watchkeeper X contract are industry and procurement (A4, generated from SIPRI). The March 2026 decision on United
+      States aircraft at Mihail Kogălniceanu concerned the Iran war and, per the Defence Minister, no armed departures (Euronews Romania); not Israel''s forces. Nothing changes the none-found.'
+    queries:
+    - mapn.ro/cpresa ids 17900 to 19470 (full text searched for Israel, Gaza, Palestin, Hamas, Orientul Mijlociu, israelian), 2026-11-09
+    - Romania Israel defence ministers meeting military cooperation exercise 2025 2026 Miruță Katz OR Israeli air force Romania
+    - România tranzit armament Israel aeroport Mihail Kogălniceanu zboruri militare Israel Gaza spațiu aerian
+  A6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No Government decision suspending or refusing a class of arms export licences to Israel was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09 through
+      its public search service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search
+      is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023
+      (solidarity with Israel and condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January
+      2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led
+      maritime operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National Strategy of 23 May 2024
+      against antisemitism. None suspends or refuses licences. The service''s coverage of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority
+      are not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections)
+      were not read; no web search in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): Romania did not suspend licences:
+      the annual report of ANCEX (the export-control department of the Ministry of Foreign Affairs) for 2025, published in March 2026 at ancex.ro/wp-content/uploads/2026/03/Anual.pdf (the site answers HTTP
+      503 to scripts and Save Page Now, no capture, not read by this session), is reported by Snoop and HotNews on 26 March 2026 to show 33 definitive export licences for Israel in 2025 (the most for any
+      destination, over EUR 307 million), 26 in 2024 (EUR 102 million) and 16 in 2023 (EUR 67.5 million), and exports actually made to Israel of EUR 78.3 million in 2025 (25 per cent of the total, the largest
+      destination), EUR 75.8 million in 2024 and EUR 59 million in 2023. Press figures only; the report is recorded as lead_20261109_ROU_5 (not scored: A1 and A2 are generated from SIPRI and Comtrade). The
+      none-found stands: no suspension.'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later, 2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile
+      palestiniene ocupate'': 2 results, none dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title and text), 2026-11-09
+    - Romania Israel arms exports licences ANCEX Romanian defence companies Israel 2024 2025 Gaza
+    - raport ANCEX exporturi militare 2025 Israel 78,3 milioane euro mae.ro raportul anual armament
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree prohibiting both exports to and imports from Israel was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09 through its public search service
+      for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search is the first 400 of it)) lists,
+      among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation
+      of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian
+      aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation Prosperity Guardian
+      in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns an
+      embargo or a trade restriction against Israel; the legislation on Israel in the window is of the other direction (Law no. 86 of 2024). The service''s coverage of the Israel text is partial, the decisions
+      of the national export-control authority (ANCEX) and the customs authority are not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the
+      Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search in that earlier session (re-run with web search below). Re-run with
+      web search (T-F-L02, third session, 2026-11-09): Romania is not among the co-sponsors of the joint letter A/79/572-S/2024/802 of 1 November 2024 (text read at digitallibrary.un.org, 2026-11-09). The
+      ANCEX figures of A6 show licences and exports to Israel continuing, and the President said at the BSDA 2026 exhibition that Romania keeps its military contracts with Israel (A4 note). No embargo in
+      either direction. Nothing changes the none-found.'
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09 through its
+      public search service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search is the
+      first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity
+      with Israel and condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January 2024 and
+      no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime
+      operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism.
+      None concerns transit of arms. Decision no. 795 of 2024 routes humanitarian goods by air or land to Greece or Türkiye and by sea to the European Union''s hub in Cyprus; Parliament Decision no. 8 of
+      2024 concerns Romanian staff officers in the Red Sea operation, not Israel. The Ministry of National Defence''s releases (1,570 of mid-2023 to 6 November 2026, read for A5) name no refusal or authorisation
+      of transit. The service''s coverage of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority are not published as acts, and their sites
+      answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): no denial of airspace, port or transit to arms shipments bound for Israel
+      was found. A Snoop investigation of February 2026, relayed by Cotidianul and Informat, reports that Romanian military components for Elbit Systems (at least EUR 35 million in 2025, 29 shipments) were
+      flown to Israel in the holds of Tarom and HiSky passenger flights, and that the Ministry of Transport confirmed Tarom holds authorisations for carrying arms and dangerous goods; ANCEX is reported to
+      have no information on the flights used. That is the opposite of a denial (Romanian press only, the ministry''s reply not read). Nothing changes the none-found.'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later, 2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile
+      palestiniene ocupate'': 2 results, none dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title and text), 2026-11-09
+    - Snoop Tarom HiSky Elbit componente militare Israel zboruri comerciale autorizații ANCEX investigație
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on 6 and abstention on 6 of the 12 qualifying votes. The Ministry''s releases on
+      the votes were not read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Romania filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Romania
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found; the 19 February 2024 declaration of 26 EU foreign
+      ministers (filed as B9) reiterates respect for the order of 26 January 2024.
+    queries: &id002
+    - Romania foreign minister Odobescu Gaza ceasefire statement humanitarian 2024 mae.ro
+    - Romania Țoiu Gaza statement 2026 foreign minister Israel ceasefire
+    - Romania Gaza statement Bolojan OR "Nicușor Dan" Israel ceasefire humanitarian 2025 2026 recognize Palestine position Romania
+    - Oana Țoiu discurs Adunarea Generală ONU 27 septembrie 2025 încetarea imediată a focului Gaza eliberarea necondiționată a
+      ostaticilor text integral
+    - Iohannis semnat declarație comună liderilor 17 țări sprijin acord încetarea focului eliberare ostatici Gaza 6 iunie 2024
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No official statement of the Government on executing the warrants of 21 November 2024 was found. The Ministry of Foreign
+      Affairs'' message of 22 November 2024 (on its X account, as HotNews reports it) reiterates Romania''s principled position
+      on the Court''s independence, says that there is no equivalence between Israel, a democracy, and terrorist organisations
+      such as Hamas and Hezbollah, and states no position on executing the warrants; it names no speaker (docs/10 B-298 (2) for
+      Austria, B-517 (4) for Bulgaria): lead_20261005_ROU_2.'
+    queries: &id001
+    - România CPI mandat arestare Netanyahu poziția MAE executare Statutul de la Roma noiembrie 2024
+    - Netanyahu vizită București ședință comună guvern România Israel 2025 OR 2026 Bolojan Netanyahu invitație mandat CPI
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found. Prime Minister Ciolacu
+      invited Mr Netanyahu in January 2025 to a joint meeting of the two governments in Bucharest (HotNews, Digi24, G4Media); the
+      meeting did not take place and no visit followed (Romanian press, February 2026): an invitation is not hosting (docs/02 §2
+      B5/B6): lead_20261005_ROU_2.'
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Romania has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row ROU,1988-11-24 added: Romania''s statement at the Conference of 28-30 July 2025 (src_20250730_un-unispal_rou-two-state-conference-statement,
+      archived): ''Romania recognized the State of Palestine back in 1988''; the day is the registry''s (A/78/846 annex), as for India and Russia (docs/10 B-448). Flagged (R21; the day is the registry''s).
+      Before this session: Generated from recognitions.csv, which has no Romania row. The registry dates the recognition 24 November 1988 (A/78/846 annex); the state''s own document was not found, so no row
+      (R21, docs/calibration/README.md): with the pre-existing tier the score would be +3 higher. Third session (T-F-L02, 2026-11-09): the UN Digital Library''s General Assembly documents A/43/780 to A/43/1009
+      (letters of the 43rd session, November to December 1988) were searched by title for letters from Romania and none was found (the Mongolian letter A/43/863 was, MNG B8); the state''s own document is
+      still not found, so still no row.'
+    queries:
+    - 'UNISPAL 2026-11-10: romania_nyc_en.pdf (Conference of July 2025)'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: has-events
+    checked_at: '2026-11-11'
+    note: 'P-23 pass, T-G-LEADS-6 (2026-11-11): the Foreign Minister''s General Debate statement of 27 September 2025 is now filed (evt_2025_09_27_ROU_B9, +2, call tier) from the Ministry''s
+      press release of 28 September 2025 in the AGERPRES press-release feed, which prints her English transcript as delivered (src_20250927_agerpres-mae_toiu-unga-80-statement); 410 days old, outside
+      the 365 days of the passivity rule; the passages below on that statement as a lead are superseded. Earlier record: three events, each a call at +2, all decayed to zero: the Foreign Minister''s signature of the declaration of 26 EU foreign ministers (19 February 2024), the President''s signature of the leaders''
+      statement of 6 June 2024, and the President''s General Debate statement of 25 September 2024. Flagged: the last words the end of hostilities as an ''imperative'' (docs/10 B-525 (5)). Not filed: the
+      Foreign Minister''s General Debate statement of 27 September 2025 (''An immediate ceasefire in Gaza, the unconditional release of all hostages, as well as adequate humanitarian assistance are merely
+      the first steps towards a permanent end to hostilities'': the UN''s file cannot be archived, lead_20261005_ROU_1); the President''s statement of 81st session (no call). The 78th session''s statement
+      (2023) has no passage on Gaza. On 2026-11-04 (T-P23-1) the President''s 81st General Debate statement (Nicușor Dan; the delegation''s file ro_en.pdf, 191,245 bytes, read from its Wayback capture of
+      22 October 2026) was read: its passage on Gaza supports the Security Council''s Peace Plan, asks that the humanitarian situation be addressed ''without delay'', says the disarmament of Hamas is a prerequisite
+      and mentions Romania''s medical evacuations; no ceasefire call, no violation named: no event. Not archived as a source (no event rests on it). Finish run, T-F-L02 (2026-11-09): the President''s 81st-session
+      statement (23 September 2026) is now archived (src_20260923_un-gadebate_rou-dan-81-en, Wayback capture 20261022074109, replay checked) and read again: the reading above stands, no event. The Foreign
+      Minister''s statement of 27 September 2025 stays a lead (Save Page Now answered 405 again, no Wayback capture, lead_20261005_ROU_1). The Government''s news (gov.ro/ro/stiri, 125 items from 9 November
+      back to early August 2026), the Ministry of National Defence''s releases (mapn.ro, to 6 November 2026) and the Council''s press list (keywords Israel and Gaza, newest items 6 August and 30 September
+      2026) hold nothing new for 5 October to 9 November 2026 that names Gaza; the Presidency and the Ministry of Foreign Affairs (presidency.ro, mae.ro) answer a verification check and were not read. The
+      Government changed in November 2026 (new Prime Minister, Foreign Minister and Defence Minister named on gov.ro); no statement of theirs on Gaza was found. Third session (T-F-L02, with web search, 2026-11-09):
+      the search for Romanian statements of October and November 2026 found none; it found Agerpres'' report of 28 September 2026 on the interim Foreign Minister''s press conference (support for access to
+      the Gaza Strip for humanitarian aid, journalists and independent analysts; the English text is the agency''s translation), recorded as lead_20261109_ROU_7 and not filed (B9 needs the official transcript
+      or video, and the speaker''s exact words).'
+    queries:
+    - Romania foreign minister Odobescu Gaza ceasefire statement humanitarian 2024 mae.ro
+    - Romania Țoiu Gaza statement 2026 foreign minister Israel ceasefire
+    - Romania Gaza statement Bolojan OR "Nicușor Dan" Israel ceasefire humanitarian 2025 2026 recognize Palestine position Romania
+    - Oana Țoiu discurs Adunarea Generală ONU 27 septembrie 2025 încetarea imediată a focului Gaza eliberarea necondiționată a ostaticilor text integral
+    - A/80/PV.13 General Assembly eightieth session 13th plenary meeting 27 September 2025 Romania Țoiu (2026-11-11)
+    - agerpres comunicate MAE Țoiu conferință de presă 28 septembrie 2026 Fâșia Gaza acces ajutor umanitar jurnaliști (2026-11-11)
+    - Iohannis semnat declarație comună liderilor 17 țări sprijin acord încetarea focului eliberare ostatici Gaza 6 iunie 2024
+    - gov.ro/ro/stiri listing pages 1 to 25 (125 items, 9 November back to early August 2026, full text searched for Gaza, Palestin, Israel, Hamas, Orientul Mijlociu, UNRWA), 2026-11-09
+    - mapn.ro/cpresa ids 17900 to 19470 (full text searched for Israel, Gaza, Palestin, Hamas, Orientul Mijlociu), 2026-11-09
+    - consilium.europa.eu press releases, keywords Israel and Gaza, read in the browser pane 2026-11-09
+    - Romania Gaza Israel November 2026 Romanian government statement OR vote OR aid
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No B10 event filed. Prime Minister Ciolacu''s words after meeting Mr Netanyahu in 2024 (HotNews, 3 February 2026, dates
+      the meeting 5 November 2024; news.ro dates the Prime Minister''s visit to Israel 5 September 2024) (''We express our support
+      for the right of the State of Israel to self-defence against terrorist threats. We stress, at the same time, the importance
+      of respecting international law, humanitarian law and the need to protect all civilians'', HotNews, 3 February 2026) pair
+      the support with a call to respect the law: not unconditional (docs/02 §2 B10).'
+    queries: *id002
+  B11:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024 (west-bank, unscored), 15 July 2024 and 28 May 2026
+      (gaza and west-bank), counted for Romania under R8 (docs/10 B-446, B-519); the third adds no points beside the second. No
+      national listing of settlers or ministers by Romania was found.'
+    queries: &id003
+    - Romania sanctions Israeli settlers Romania national ban entry violent settlers OR ambassador recalled Israel Romania Țoiu
+    - consilium.europa.eu settlers sanctions 19 April 2024, 15 July 2024, 28 May 2026 (the Council's decisions, R8)
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recall, downgrade or severance was found; the relations continued (the President of Israel was received in Bucharest
+      on an official visit in June 2026, Israeli Foreign Ministry release of 9 June 2026).
+    queries: *id003
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No Romanian support for a review or suspension of the EU-Israel Association Agreement was found (the Article 2 review
+      of 20 May 2025 is an EU-level act that counts for the states that supported it in the Council, docs/02 §2 C1): no ministerial
+      statement or Council record naming Romania''s support was found.'
+    queries:
+    - România Acordul de asociere UE-Israel suspendare revizuire poziția României Țoiu OR Odobescu OR Hurezeanu articolul 2
+  C2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the memorandum of understanding on emergency wheat supplies signed in Bucharest on 12 May 2024 by Israel''s
+      Minister of Agriculture (`reported`: the Israeli ministry''s page cannot be archived; the report is the TPS agency''s, relayed
+      by Agerpres), flagged. Not filed: the memorandum on scientific cooperation (27 February 2023) and the cybersecurity memorandum
+      (7 June 2019), which pre-date the window, and the agreement of the two Olympic committees (2 April 2025), not a governmental
+      instrument.'
+    queries:
+    - Romania Israel sign agreement memorandum 2025 OR 2026 government cooperation signed Bucharest Israeli minister
+    - România Israel acord semnat memorandum cooperare 2025 2026 guvern ministru semnat Ierusalim București
+    - madr.ro Florin Barbu Avi Dichter ministrul agriculturii Israel memorandum grâu vizită București mai 2024
+    - Romania Israel cybersecurity memorandum of understanding signed Romania-Israel Cyber Security Forum Bucharest date
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No national ban or labelling rule for settlement goods beyond European Union law was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09 through its public
+      search service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search is the first
+      400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity
+      with Israel and condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January 2024 and
+      no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime
+      operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism.
+      None concerns settlements, the occupied territories or the labelling of goods: the text Cisiordania occurs in no act dated 7 October 2023 or later, and ''teritoriile palestiniene ocupate'' in none.
+      The service''s coverage of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority are not published as acts, and their sites answer a verification
+      check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): the English search found no Romanian measure on settlement goods; the results are the EU''s
+      labelling notice of 2015, the Court of Justice''s ruling of 2019 and other states'' bills. Romania applies the EU rules (the Court''s ruling covers labelling, not a ban); no Romanian act, Ministry of
+      Economy or customs communication beyond that was found. Nothing changes the none-found.'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later, 2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile
+      palestiniene ocupate'': 2 results, none dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title and text), 2026-11-09
+    - Romania settlement products labelling Israel West Bank import Romania ban Ministry of Economy 2025
+  C5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision by a sovereign fund, public pension fund or the central bank to exclude companies over conduct in Gaza or the occupied territories was found. The Official Gazette''s legislative portal
+      (legislatie.just.ro, queried on 2026-11-09 through its public search service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at
+      most 400 results of a text, so the Israel search is the first 400 of it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war:
+      Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel and condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the
+      Gaza Strip), Government Decisions no. 65 of 31 January 2024 and no. 795 of 11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22
+      April 2024 (three Romanian officers in the United States-led maritime operation Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and
+      Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism. None concerns an investment or exclusion decision (the orders of the Ministry of Finance that name Hamas, no. 346 of
+      2024, 173, 549, 1086 and 1473 of 2025 and 35 and 289 of 2026, amend the base prospectus of the FIDELIS retail government-bond programme, whose risk factors mention the war). The Sovereign Development
+      and Investment Fund''s, the Pension Funds Supervisory Authority''s and the National Bank''s own pages were not read. The service''s coverage of the Israel text is partial, the decisions of the national
+      export-control authority (ANCEX) and the customs authority are not published as acts, and their sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s
+      meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search in that earlier session (re-run with web search below). Re-run with web search
+      (T-F-L02, third session, 2026-11-09): no search result concerned a Romanian public fund and the exclusion of Israeli companies; the funds'' own lists were not
+      read. Nothing changes the none-found.'
+  C6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No exclusion of Israeli or settlement companies from public procurement was found. The Official Gazette''s legislative portal (legislatie.just.ro, queried on 2026-11-09 through its public search
+      service for the texts Gaza, Palestina, Cisiordania, Hamas, ''teritoriile palestiniene ocupate'' and Israel (the service returns at most 400 results of a text, so the Israel search is the first 400 of
+      it)) lists, among the acts dated 7 October 2023 or later that name Gaza, Palestine, Hamas or Israel, these that concern the war: Parliament''s Declaration no. 2 of 11 October 2023 (solidarity with Israel
+      and condemnation of Hamas), Government Decision no. 1155 of 23 November 2023 (emergency aid for persons evacuated from the Gaza Strip), Government Decisions no. 65 of 31 January 2024 and no. 795 of
+      11 July 2024 (humanitarian aid from the state reserves for the civilian population of Gaza), Parliament Decision no. 8 of 22 April 2024 (three Romanian officers in the United States-led maritime operation
+      Prosperity Guardian in the Red Sea), Law no. 86 of 9 April 2024 (a day of solidarity and friendship between Romania and Israel on 14 May) and the National Strategy of 23 May 2024 against antisemitism.
+      None concerns the exclusion of Israeli or settlement companies from public procurement. The National Agency for Public Procurement (anap.gov.ro did not answer on 2026-11-09) and the electronic procurement
+      system were not read. The service''s coverage of the Israel text is partial, the decisions of the national export-control authority (ANCEX) and the customs authority are not published as acts, and their
+      sites answer a verification check (not bypassed); the Foreign Ministry (mae.ro) and the Government''s meeting communiqués of 2023 to 2025 (gov.ro refuses connections) were not read; no web search in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): no Romanian procurement exclusion of Israeli suppliers was
+      found; the contrary is documented (SHORAD framework agreement and contract with Rafael, Watchkeeper X drones from Elbit, A4). Press of December 2025 reports that NATO''s procurement agency (NSPA) suspended
+      Elbit from new tenders amid a corruption inquiry in Belgium and Luxembourg; that is NATO''s decision on a corruption inquiry (not about Gaza) and not Romania''s. Nothing changes the none-found.'
+    queries:
+    - 'legislatie.just.ro public SOAP service (FreeWebService, Search), text Gaza: 58 results, 6 acts dated 7 October 2023 or later, 2026-11-09'
+    - 'legislatie.just.ro, text Palestina: 47 results, 4 acts dated 7 October 2023 or later; text Cisiordania: 18 results, none dated 7 October 2023 or later; text Hamas: 25 results, 11 acts; text ''teritoriile
+      palestiniene ocupate'': 2 results, none dated 7 October 2023 or later, 2026-11-09'
+    - legislatie.just.ro, text Israel (the first 400 results of the service, 21 acts dated 7 October 2023 or later, read by title and text), 2026-11-09
+    - Snoop Tarom HiSky Elbit componente militare Israel zboruri comerciale autorizații ANCEX investigație
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: Government flows of USD 1,278,339 (plan 1156, 2024) and USD 49,296 (plan 1273, 2025) over all flow
+      dates (fts_plan_totals.csv). Left to the build.'
+  D2:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'One event: the Ministry of Foreign Affairs'' announcement of 29 January 2024 that it would start no procedure for new
+      voluntary contributions to UNRWA until the investigation was completed (`corroborated` on three Romanian outlets that quote
+      the release; the Ministry''s page cannot be archived), ending no later than 19 July 2024 (docs/10 B-525 (1), (2)).'
+    queries: &id004
+    - Romania suspends funding UNRWA January 2024 Ministry of Foreign Affairs
+    - România UNRWA suspendare finanțare MAE comunicat ianuarie 2024
+    - România reia finanțarea UNRWA 2024 MAE contribuție voluntară reluare
+    - Romania resumes UNRWA funding 2024 Odobescu OR Ministry of Foreign Affairs Romania UNRWA contribution resumed after Colonna
+      report
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events: increased from 31 December 2023 (USD 270,755 in 2023 against USD 210,748 in 2022), ended
+      at the hold of 29 January 2024; restored from 19 July 2024 (`reported`: the UK government's release
+      of that day names Romania among the partners that had restored their funding, and UNRWA's table for
+      2024 shows USD 42,194 received from Romania), flagged. The 2024 contribution is below 2022: no increased
+      tier for 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) has no row for Romania, so 2025 does not exceed 2022: no 2025 event; the restored
+      tier stands as filed (a lower or missing contribution is not a stated suspension, R10) (docs/10 B-876).
+    queries:
+    - Romania suspends funding UNRWA January 2024 Ministry of Foreign Affairs
+    - România UNRWA suspendare finanțare MAE comunicat ianuarie 2024
+    - România reia finanțarea UNRWA 2024 MAE contribuție voluntară reluare
+    - >-
+      Romania resumes UNRWA funding 2024 Odobescu OR Ministry of Foreign Affairs Romania UNRWA contribution
+      resumed after Colonna report
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: 'One event for the medical-evacuation programme: the Ministry of Health''s release of 1 October 2024 on the arrival
+      on 30 September 2024 of Palestinian children from Gaza, and the IGSU release of 10 April 2025 on a further evacuation;
+      the Ministry of Foreign Affairs counted twelve humanitarian flights by 31 August 2026 (its release could not be archived):
+      the same programme, lead_20261005_ROU_4 (docs/10 B-525 (3)). Finish run, T-F-L02 (2026-11-09): the Ministry of National
+      Defence''s releases show the Air Force''s evacuation flights from Eilat/Ramon (Israel) and later from the Gaza Strip,
+      among them no. 278 of 31 August 2026 (a C-130 Hercules, five paediatric patients with relatives, ''al 12-lea zbor umanitar
+      organizat de țara noastră'', under the EU Civil Protection Mechanism with the WHO); read at mapn.ro with a browser User-Agent,
+      not archivable (Save Page Now answers HTTP 410, no Wayback capture), recorded in lead_20261005_ROU_4. Still one event
+      for the programme.'
+    queries:
+    - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat
+      primul grup
+    - Romania takes eight pediatric patients from Gaza treatment Romania hospitals medical evacuation first group arrived
+    - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
+      civilă 2024 comunicat MApN
+    - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
+    - 'mapn.ro/cpresa ids 17900 to 19470 searched for Israel, Gaza, Palestin, Hamas (flights: ids 18667, 18702, 18732, 18804,
+      18823, 18936, 18975, 19039, 19386)'
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No visa or refugee instrument for Gazans was found; the families accompany the patients of the medical evacuation (D4).
+      Finish run, T-F-L02 (2026-11-09): the Official Gazette''s legislative portal (legislatie.just.ro, public search service, text
+      Gaza and Fâșia Gaza) lists Government Decision no. 1155 of 23 November 2023 (Monitorul Oficial no. 1065 of 24 November 2023),
+      which grants emergency financial aid (lodging and food, for at most four months, from December 2023 to 31 March 2024) to families
+      and persons, with or without Romanian citizenship, evacuated from the Gaza Strip and present in Romania. It opens no visa
+      or refugee pathway and creates no residence or protection status, so it is read as a support measure for evacuees (the D4
+      programme) and not filed as D5; not archived. Default for the author in docs/10 B-935: not D5.'
+    queries:
+    - copii din Gaza evacuați medical România spitale Departamentul pentru Situații de Urgență Ministerul Sănătății comunicat primul
+      grup
+    - Romania takes eight pediatric patients from Gaza treatment Romania hospitals medical evacuation first group arrived
+    - primii copii din Fâșia Gaza ajunși la București aeronavă Ministerul Apărării Naționale OMS Mecanismul european de protecție
+      civilă 2024 comunicat MApN
+    - al 12-lea zbor umanitar Gaza pacienți pediatrici evacuare medicală august 2026
+    - legislatie.just.ro public search service, texts Gaza and Fâșia Gaza (acts dated 7 October 2023 or later read), 2026-11-09
+  E1:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No investigation or prosecution in Romania of Romanian nationals or companies for conduct in Gaza was found. The Romanian-language
+      search for criminal complaints returned only complaints against Israeli soldiers (see E3). The exports to Israel of A6 are licensed and no case concerning them was found. The Prosecutor's Office's own
+      site was not searched in this session. Experimental, unscored (D-12).
+    queries:
+    - România plângere penală Gaza crime de război DIICOT OR Parchet cetățean român armata israeliană Hind Rajab
+  E2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No ban on Palestine solidarity protests or symbols was found. Press reports (G4Media, Cotidianul, Adevărul, Spotmedia;
+      several undated in the search summary) describe pro-Palestine marches in Bucharest held with the approval of the commission of Bucharest City Hall for public assemblies and policed by the Gendarmerie,
+      which warned participants against antisemitic expression; an MEP asked the Gendarmerie for explanations about its handling of one march (informat.ro, undated). No refusal of a Gaza rally was found.
+      Experimental, unscored (D-12).
+    queries:
+    - București protest Palestina Gaza manifestație interzisă OR autorizată Primăria Capitalei Jandarmeria 2025
+  E3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No universal-jurisdiction investigation over Gaza confirmed by a Romanian prosecutor or court was found. The Hind Rajab
+      Foundation's page of 7 May 2025 states that the Prosecutor's Office attached to the High Court of Cassation and Justice acknowledged its complaint against an Israeli soldier and referred it to the Military
+      Prosecutor's Office attached to the Bucharest Military Court of Appeal (Penal Code articles 438 and 441 cited), and its page of 30 March 2026 says it filed a further complaint against another Israeli
+      soldier whose Romanian nationality is not confirmed; no communication of a Romanian prosecutor or court confirms an investigation opened, so the claims are recorded as lead_20261109_ROU_6 and the indicator
+      stays none-found. Experimental, unscored (D-12).
+    queries:
+    - România plângere penală Gaza crime de război DIICOT OR Parchet cetățean român armata israeliană Hind Rajab
+    - https://www.hindrajabfoundation.org/posts/romanian-authorities-refer-hrf-war-crimes-complaint-against-israeli-soldier-to-military-prosecutor read
+    - https://www.hindrajabfoundation.org/posts/criminal-complaint-filed-in-romania-against-israeli-soldier-elyahu-nishli read

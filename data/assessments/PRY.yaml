@@ -1,0 +1,500 @@
+# Coverage record for Paraguay (docs/03 §6). P-21 light protocol, session T-P21-12, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mre.gov.py: its pages through Wayback captures, the live site answers a bot check), the Presidency (presidencia.gov.py through Wayback captures; the host does not answer from this network), Agencia IP (ip.gov.py) and Paraguay TV (paraguaytv.gov.py), the General Debate statements of the 78th to 81st sessions (gadebate.un.org), the ICJ's case page and Paraguay's declaration, the SIPRI register, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 80 minutes of research on Paraguay, inside the 90-minute budget of the session.
+# Statements read and not filed as B9 or B10: see B9 and B10 (R7: no Gaza in the document).
+# Completion of 2026-11 (finish run, T-F-L06, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the Ministry of Industry and Commerce's posts (2,424, full text)
+#   and customs' news page only: the Ministry of Foreign Affairs, the Presidency, the live site of the Ministry of Defence (its page on the memorandum with Israel, found in the Wayback Machine, is archived), the Agencia IP, the courts and the funds could not be read (bot check, no answer).
+#   This is a thin base for the country with the most C2 events of the six; a session with a readable route or a web search should repeat the queries. No web search was available: press and
+#   NGO sources were not searched. Nothing new since 6 October 2026 names Gaza on the pages read.
+# Redo pass with web search (T-F-L06-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 13 searches in Spanish and English and the Wayback index of the Presidency, Foreign
+#   Ministry and Agencia IP; every status is kept; two new events (evt_2026_10_07_PRY_C2, the health and medicine agreement of 7 October 2026; evt_2024_12_09_PRY_B6, the President's interview
+#   with AFP on the warrant); the Defence Ministry's page of 10 June 2026 was read.
+country: PRY
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PRY
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of Paraguay as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Paraguay (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations,
+      Paraguay not among them, and carries no supplier list by country. Only one Paraguayan Government site could be searched in full text: the Ministry of Industry and Commerce''s (mic.gov.py,
+      WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West
+      Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under certificates of origin (USD 46 million
+      in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli Chamber of Commerce
+      of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting with representatives of the Israeli Chamber
+      of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest of 16 October 2026)
+      holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer but offer no search that works on a script request.
+      The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum with Israel''s Ministry
+      of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026 on a national workshop on the control of arms
+      exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency, the live site of the Ministry of Defence (mdn.gov.py
+      gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank (a Cloudflare challenge), Migration and Interior (no
+      answer); the Wayback Machine was offline for part of the session. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were
+      not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches on Israeli firms in Paraguay found no Paraguayan company in the F-35 programme or its supplier lists; the Israeli
+      items are exports of Paraguayan beef, a company contract with the Ministry of Education (press, about USD 2 million, no award read) and cooperation instruments.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Paraguay (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Paraguay compra OR contrato empresa israeli Ministerio del Interior OR Policia Nacional OR Ministerio de Educacion OR MITIC licitacion Israel 2025 2026 ciberseguridad contratacion'
+    - 'WebSearch 2026-11-09: Paraguay Israel acuerdo OR memorandum firmado ciberseguridad OR cooperacion octubre noviembre 2026 Pena Netanyahu Paraguay'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists one order of Paraguay from Israel, of 2011 (an EL/M-2106NG air-search radar, comment ''PYG14 b ($3.5 m) deal''), none in
+      the data year of the release of 9 March 2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer PRY
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Paraguay
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. Only one Paraguayan Government site could be searched in full text: the
+      Ministry of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu,
+      UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports
+      under certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade
+      with the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting
+      with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most
+      recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer
+      but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s
+      page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026
+      on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency,
+      the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank
+      (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The Ministry of Defence''s live site could not be read; its page on the
+      memorandum of defence cooperation with Israel''s Ministry of Defense (filed under C2, confirmed from this page on 2026-11-09) says that the memorandum will set up a mechanism to strengthen
+      mutual collaboration and names no exercise, intelligence sharing, basing or transit; the Ministry of Commerce''s posts record none either. The Presidents of Paraguay and Panama met after the
+      meeting with Prime Minister Netanyahu in New York of 24 September 2026 (Panama''s Foreign Ministry, 25 September 2026: they spoke of geopolitics and Mercosur). No web search was available
+      (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches found, in addition to the memoranda of 24 November 2025 (evt_2025_11_24_PRY_C2 and _C2_2), the Israeli press and
+      Paraguayan press reports that the memorandum covers intelligence, equipment acquisition and training for Paraguay''s security forces (AP and Diario Libre, press, not the instrument''s text;
+      the Defense Ministry''s own page is archived) and a request of the President of December 2024 to Israel for support against organised crime (La Nacion, 19 December 2024); no joint exercise,
+      basing, transit or intelligence-sharing act was found in the window beyond those memoranda, which are C2 events. The Wayback index of the Presidency, Foreign Ministry and Agencia IP pages
+      (2026) returned no further item.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay Ministerio de Defensa Israel ejercicio OR cooperacion militar OR compra OR adquisicion armas israelies Fuerzas Armadas 2026 mdn.gov.py'
+    - 'WebSearch 2026-11-09: Paraguay Israel acuerdo OR memorandum firmado ciberseguridad OR cooperacion octubre noviembre 2026 Pena Netanyahu Paraguay'
+    - 'Wayback CDX of www.ip.gov.py/ip/2026/*, www.mre.gov.py/*, www.presidencia.gov.py/* (israel|gaza|palestin|hamas|netanyahu|cpi|armas), 2026-11-09'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. Only one Paraguayan Government site could be searched in full text: the Ministry of
+      Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide,
+      Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under certificates
+      of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli
+      Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting with representatives of
+      the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest
+      of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer but offer no search that
+      works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum
+      with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026 on a national workshop
+      on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency, the live site of the
+      Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank (a Cloudflare challenge),
+      Migration and Interior (no answer); the Wayback Machine was offline for part of the session. Paraguay delivers no major arms to Israel (A1). The Ministry of Defence''s page on a national workshop
+      on arms export control (captured 10 June 2026) was not read; no other export-licensing authority page was read. No web search was available (the run''s shared allowance was used up before
+      the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The Ministry of National Defense''s page of 10 June 2026 (Wayback capture 20260610122616, read) reports the opening of a
+      national workshop on the control of dual-use goods and arms exports under Security Council Resolution 1540 and the Arms Trade Treaty, with the German Federal Office for Economic Affairs and
+      Export Control and the European Union; it names no Israeli measure. The searches found the national control authority (DIGEMABEL) and no decision to suspend or refuse licences to Israel;
+      Paraguay has no major arms export to Israel (SIPRI, A1).'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay taller nacional control de exportacion de armas Ministerio de Defensa junio 2026 Tratado sobre Comercio de Armas Paraguay'
+    - 'Wayback replay of mdn.gov.py/ministro-presidio-ceremonia-de-apertura-de-taller-nacional-sobre-control-de-exportacion-de-armas/ (capture 20260610122616), read 2026-11-09'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. Only one Paraguayan Government site could be searched in full text: the Ministry of Industry and
+      Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav,
+      F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under certificates of
+      origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli
+      Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting with representatives of
+      the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest
+      of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer but offer no search that
+      works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum
+      with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026 on a national workshop
+      on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency, the live site of the
+      Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank (a Cloudflare challenge),
+      Migration and Interior (no answer); the Wayback Machine was offline for part of the session. No law or decree on arms trade with Israel appears on the pages read; the Official Gazette was
+      not searched. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No embargo, import ban or two-way arms measure was found; the Government''s record is of memoranda of defence and security
+      cooperation (24 November 2025) and a Defence Ministry workshop on export control with European partners that names no measure on Israel.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay taller nacional control de exportacion de armas Ministerio de Defensa junio 2026 Tratado sobre Comercio de Armas Paraguay'
+    - 'WebSearch 2026-11-09: Paraguay Ministerio de Defensa Israel ejercicio OR cooperacion militar OR compra OR adquisicion armas israelies Fuerzas Armadas 2026 mdn.gov.py'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. Only one Paraguayan Government site could be searched in full text: the Ministry
+      of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under
+      certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with
+      the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting
+      with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most
+      recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer
+      but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s
+      page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026
+      on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency,
+      the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank
+      (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. No port, river-transport or civil aviation authority page was read. No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No refusal of a port call, ship or overflight was found; the search on the airport and ports returned seizures of firearm parts
+      in cargo (June and July 2026, European origin per the press, not Israeli) and repatriation flights, and no transit measure on Israel-linked cargo.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay vuelo OR aeronave OR carga militar Israel aeropuerto Silvio Pettirossi OR espacio aereo OR puerto Asuncion transito armas Israel Paraguay 2025 2026'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no on 11 of the 12 qualifying votes, abstained on A/RES/ES-10/23 (10 May 2024). The statements on the votes were not read. No disagreement found.'
+    queries:
+    - unga_votes.csv, voter PRY
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: 'Paraguay''s declaration of intervention (Article 63, filed 3 March 2026) is on the Court''s list, but it argues against the applicant''s construction: it is a B4 event, not B3 (docs/02
+      §2 B3, B4).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: has-events
+    note: 'One event: Paraguay''s declaration of intervention of 3 March 2026 (-15, evt_2026_03_03_PRY_B4; the declaration on UNISPAL, scanned and read by OCR, and the Court''s press release,
+      archived). The Court''s case page lists the declaration under 3 March 2026 and no withdrawal (page read 2026-10-06).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    - Paraguay declaration of intervention ICJ South Africa v. Israel 3 March 2026 Article 63 Genocide Convention
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found (Paraguay is a party to the Rome Statute). Israel''s
+      Prime Minister thanked Paraguay for its support at the Knesset on 11 December 2024, ''tras la decisión de la CPI'' (La Política Online, read; the Knesset''s text is unreachable): those are
+      Israeli words. The invitation of 24 September 2026 to withdraw from the Court is lead_20261006_PRY_3; no Paraguayan answer was found.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish; the summaries were used to find pages, nothing was filed from them). CORRECTION of the first sentence above: the
+      President''s interview with AFP (evt_2024_12_09_PRY_B6) is a statement on the warrants, and it is a refusal (B6), not a commitment to execute them (B5); B5 stays none-found. The Foreign
+      Ministry''s communique of 21 November 2024 is not a B5 statement either. No answer of the Government to the invitation of 24 September 2026 was found in the searches of this pass.'
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    - 'WebSearch 2026-11-09: Pena entrevista AFP Netanyahu no existe ninguna posibilidad detenido Paraguay Corte Penal Internacional orden de arresto diciembre 2024'
+    checked_at: '2026-11-09'
+  B6:
+    status: has-events
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant: Israel''s Prime Minister has not visited Paraguay (the President went to Israel in December 2024),
+      and the meeting of 24 September 2026 was held in New York on the margins of the General Assembly. Netanyahu''s invitation to withdraw from the Court (his office''s statement, as ABC Color
+      reports) was met, as far as found, by no Government answer (lead_20261006_PRY_3).
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish; the summaries were used to find pages, nothing was filed from them). CORRECTION of the first sentence above: a
+      stated refusal was found. In an interview published by AFP, reported by Ultima Hora on 10 December 2024 (archived, src_20241210_ultimahora_pena-netanyahu-no-sera-detenido), President Peña
+      said that his Government condemns and rejects the warrant against Israel''s Prime Minister and that if he visited Paraguay ''no existe ninguna posibilidad'' of his detention:
+      evt_2024_12_09_PRY_B6, `reported` (one press source; the AFP original was not found), standing, -10 at weight 0.4. The Foreign Ministry''s communique of 21 November 2024 (''lamenta la
+      decision'' and ''rechaza enérgicamente la instrumentalización política del derecho internacional'', La Nacion, not archived) names no execution of the warrants and is not filed. No visit of
+      the Prime Minister and no later position were found.'
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    - Peña OR Ramírez Lezcano "Corte Penal Internacional" Netanyahu orden de captura Paraguay posición
+    - 'WebSearch 2026-11-09: Pena entrevista AFP Netanyahu no existe ninguna posibilidad detenido Paraguay Corte Penal Internacional orden de arresto diciembre 2024'
+    - 'WebSearch 2026-11-09: Paraguay Corte Penal Internacional Pena retiro CPI Netanyahu Acuerdos de Isaac respuesta gobierno Ramirez Lezcano octubre 2026'
+    checked_at: '2026-11-09'
+  B7:
+    status: none-found
+    note: Paraguay has imposed no sanctions on ICC officials (none found).
+    queries:
+    - Paraguay Corte Penal Internacional orden de arresto Netanyahu Peña posición ejecutar
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `PRY,2011-01-28` is added in this session from the Division for Palestinian Rights'' review of January 2011 (UNISPAL, archived, line 298: ''Paraguay''s
+      Ministry of Foreign Affairs said in a statement: "The Republic of Paraguay expressly reiterates the recognition of [the Palestinian] State as free and independent with the borders of 4 June
+      1967"'', AFP, under 28 January): the pre-existing tier, +3 (R21). A UN Secretariat review, not the Government''s own text, flagged; the statement says ''reiterates'', so the recognition
+      may predate it; the registry''s date (2011-01-29, A/78/846, docs/10 B-178) and Wikipedia''s (2005) differ and change no score. The Government of 2023 to 2026 has not withdrawn it (no statement
+      found).'
+    queries:
+    - Paraguay reconoce Estado de Palestina 2011 Ministerio de Relaciones Exteriores
+    - UNISPAL Chronological Review of Events January 2011 (archived)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: the President''s General Debate statements of the 79th (September 2024), 80th (September 2025) and 81st sessions (September 2026), read in full (`py_es.pdf`, `py_es_1.pdf`),
+      never cite Gaza (R7). The 79th and 80th say that Paraguay ''reafirma'' Israel''s right to defend itself, reject ''equiparar'' the responsibility of Israel''s elected authorities and Hamas,
+      and call for a solution that ''alivie la situación humanitaria [en territorio palestino en la 80.ª], ponga fin a la violencia y garantice la liberación inmediata de los rehenes'': a call
+      that does not cite Gaza (the 80th says ''territorio palestino''), so not a B9 event under R7 and not an exact-words call for a ceasefire (R4). The 81st calls for ''el cese inmediato de los
+      ataques'' and the opening of the Strait of Hormuz and does not cite Gaza. The Ministry''s release on a virtual meeting of Latin American foreign ministers with Israel''s Foreign Minister
+      on the attacks of Iran (Wayback capture of 15 April 2026; ''su reconocimiento al derecho del Estado de Israel a garantizar la seguridad y la defensa de su población'') is in the Ministry''s
+      name, with no named speaker (R3). The Foreign Minister''s remarks of 8 February 2026 are lead_20261006_PRY_2.'
+    queries:
+    - gadebate.un.org Paraguay 78th to 81st sessions (py_es.pdf, py_es_1.pdf), read
+    - Peña Gaza "Paraguay" presidente declaración Gaza Hamás cese al fuego ayuda humanitaria 2025
+    - canciller Ramírez Lezcano Gaza Paraguay declaración Consejo de Seguridad ONU Israel derecho a defenderse
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No B10 event under R7 (the document must cite Gaza). Read and not filed: the President''s General Debate statements of the 79th and 80th sessions (the right of Israel to defend itself,
+      Hamas and Hezbollah named terrorist organisations; no mention of Gaza); the embassy ceremony and the address to the Knesset of 11 and 12 December 2024 (lead_20261006_PRY_1); the Presidency''s
+      report of the speech on receiving the American Jewish Committee''s Gesher award (April 2025: ''No abandonaremos a Israel'', the attacks of 7 October condemned; Wayback capture of 3 August
+      2025, read, no mention of Gaza); the Foreign Minister''s words of 24 November 2025 (''el más firme apoyo al derecho de Israel a defender su soberanía y su seguridad'', Agencia IP, archived)
+      and of 8 February 2026 (lead_20261006_PRY_2). The unconditional character of the support is stated in the President''s own words (''vamos a estar con Israel pase lo que pase''); the author
+      may revisit R7 for Paraguay (docs/10 B-599): several of them would then count (B10''s cap is -10).'
+    queries:
+    - Peña Gaza "Paraguay" presidente declaración Gaza Hamás cese al fuego ayuda humanitaria 2025
+    - Peña discurso Knéset 11 diciembre 2024 Paraguay presidente Gaza rehenes
+    - canciller Ramírez Lezcano Gaza Paraguay declaración Consejo de Seguridad ONU Israel derecho a defenderse
+    - presidencia.gov.py Peña Israel Jerusalén Netanyahu
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Paraguay was found (not an EU member).
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found. The opposite: Israel reopened its embassy in Asunción in 2024 (Agencia IP, 18 September 2024, headline only, page not read) and Paraguay
+      moved its embassy from Tel Aviv to Jerusalem on 12 December 2024 (Agencia IP, archived). No indicator measures an upgrade of relations or the location of an embassy (B12 is a recall, a downgrade
+      or a severance), so the move is no event; noted for the author (docs/10 B-599), as for Argentina''s announcement.'
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    - Paraguay embajada Jerusalén traslado Peña inauguración diciembre 2024
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found; the MERCOSUR–Israel free trade agreement stands.
+    queries:
+    - Paraguay sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno paraguayo Gaza
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'Three events: the memorandum between the research bodies of Paraguay and Israel, signed with other agreements on 12 December 2024 (-10, `confirmed` on the Ministry''s release); the
+      memorandum on defense and security cooperation (24 November 2025, `confirmed` since 2026-11-09 on the Ministry of National Defense''s own page, src_20251129_mdn_memorando-defensa-paraguay-israel); the memorandum on cooperation in diplomacy (24 November 2025, `reported`). All three flagged under R18
+      (docs/10 B-598). Not filed: the other agreements of 12 December 2024 (energy, innovation, science and technology: no title or text, lead_20261006_PRY_4), the seven agreements the Israeli
+      Embassy counts and the announced cybersecurity agreements, the tourism cooperation of February 2025 and a company''s contract with the Ministry of Education (lead_20261006_PRY_5). A signed
+      amendment of the free trade agreement or an instrument under the Isaac Accords would be further events (lead_20261006_PRY_3).
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish; the summaries were used to find pages, nothing was filed from them). New event: the agreement of international
+      cooperation in health and medicine signed in Jerusalem by the two Foreign Ministers, the Vice-President present (evt_2026_10_07_PRY_C2, -10, `confirmed` on the Ministry''s own page, dateline
+      7 October 2026, archived from Wayback capture 20261007133034, replay equal in bytes and SHA-256); the Ministry says the instrument was signed in 2026 and does not say whether it replaces the
+      convenio of 21 November 2005 (Ley 3457; seen in a search result, not archived). The searches found the security memorandum (24 November 2025, already filed), reports that cybersecurity
+      agreements would follow (not signed as of the searches) and no other titled instrument.'
+    queries:
+    - Peña Netanyahu Paraguay Israel acuerdo firmado memorando cooperación 2025 2026 Cancillería
+    - Paraguay Israel convenio firmado 2025 Ramírez Lezcano Sa'ar acuerdos firmados visita Asunción noviembre 2025 memorándum seguridad
+    - Paraguay e Israel firman acuerdo 2026 cooperación agua agricultura defensa visita ministro israelí Asunción
+    - Paraguay Israel memorándum de entendimiento firmado MEC OR MITIC OR Ministerio de Agricultura OR Salud OR Industria 2025
+    - mre.gov.py noviembre 2025 canciller Israel Gideon Sa'ar visita oficial Paraguay firma memorándum
+    - 'WebSearch 2026-11-09: Paraguay Israel acuerdo OR memorandum firmado ciberseguridad OR cooperacion octubre noviembre 2026 Pena Netanyahu Paraguay'
+    - 'WebSearch 2026-11-09: Paraguay Israel convenio cooperacion salud y medicina Ramirez Lezcano Sa''ar Alliana Jerusalen firman'
+    checked_at: '2026-11-09'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. Only one Paraguayan Government site could be searched in full text: the Ministry of Industry and
+      Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav,
+      F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under certificates of
+      origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli
+      Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting with representatives of
+      the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest
+      of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer but offer no search that
+      works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum
+      with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026 on a national workshop
+      on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency, the live site of the
+      Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank (a Cloudflare challenge),
+      Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The Ministry of Commerce''s posts record growing exports to Israel and no measure on settlement
+      goods; customs'' news page holds no match. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the
+      entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Mercosur-Israel trade agreement (Law 3483, in force for Paraguay) and on settlement goods found no Paraguayan
+      ban or labelling rule on settlement goods; Israel is a buyer of Paraguayan beef (exports of USD 225 million in 2025 per an Israeli official, press).'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay Israel tratado libre comercio Mercosur asentamientos productos etiquetado OR Cisjordania Paraguay importacion 2026 DNIT'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Paraguay over conduct in Gaza or the occupied territories was found. Only one Paraguayan Government site could
+      be searched in full text: the Ministry of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza,
+      Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears
+      as a destination of exports under certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister
+      and the Vice-Minister of Trade with the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument)
+      and in the Minister''s meeting with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news
+      page (dnit.gov.py, the 39 most recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py)
+      home pages answer but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo:
+      it lists the Ministry''s page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page
+      captured on 10 June 2026 on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot
+      check, 403), the Presidency, the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP
+      (ip.gov.py), the central bank (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. No public fund''s or pension fund''s page
+      (Social Security Institute, central bank) was readable. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched,
+      and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Social Security Institute, the Fiscal Fund and a sovereign fund found no holding of Israeli securities,
+      exclusion list or divestment decision; the results concern the pension funds'' finances and the Israeli business delegation of 2026 only.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay Instituto de Prevision Social OR Caja Fiscal OR fondo soberano inversiones Israel OR empresas israelies bonos desinversion'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. Only one Paraguayan Government site could be searched in full text: the Ministry of
+      Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide,
+      Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under certificates
+      of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli
+      Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting with representatives of
+      the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest
+      of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer but offer no search that
+      works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum
+      with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026 on a national workshop
+      on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency, the live site of the
+      Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank (a Cloudflare challenge),
+      Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The procurement agency''s home page answers, but no decision on exclusions was found on it and
+      its search was not usable by a script. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry
+      is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on public contracts found a company contract of an Israeli firm with the Ministry of Education (press, May 2026, no
+      award read) and no exclusion of an Israeli or settlement-linked firm; the procurement portal (contrataciones.gov.py) was not searched by script.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay compra OR contrato empresa israeli Ministerio del Interior OR Policia Nacional OR Ministerio de Educacion OR MITIC licitacion Israel 2025 2026 ciberseguridad contratacion'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Paraguay in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PRY
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Paraguay has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Paraguay
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      Paraguay has no row in UNRWA's donor tables of 2022, 2023 or 2024 (archived): no contribution to compare.
+      UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09)
+      has no row for Paraguay, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Paraguay
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Paraguay ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno paraguayo Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Paraguay for conduct in Gaza was found. Only one Paraguayan Government site
+      could be searched in full text: the Ministry of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel,
+      Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel
+      appears as a destination of exports under certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister
+      and the Vice-Minister of Trade with the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument)
+      and in the Minister''s meeting with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news
+      page (dnit.gov.py, the 39 most recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py)
+      home pages answer but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo:
+      it lists the Ministry''s page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page
+      captured on 10 June 2026 on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot
+      check, 403), the Presidency, the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP
+      (ip.gov.py), the central bank (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The Public Prosecutor''s home page shows
+      no case on Gaza; its news was not searched. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the
+      entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches on the Public Prosecutor, the courts and complaints found no prosecution or investigation tied to Gaza or Israel
+      in Paraguay in 2025 or 2026; the opposition Senators'' criticism of the Government''s intervention before the International Court of Justice is political.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay Fiscalia OR Poder Judicial OR Corte Suprema Israel OR Gaza OR Hamas denuncia genocidio OR crimen contra la humanidad Paraguay 2025 2026'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. Only one
+      Paraguayan Government site could be searched in full text: the Ministry of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every
+      post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November
+      2026, 50 matches. Israel appears as a destination of exports under certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026),
+      in the meeting of the Minister and the Vice-Minister of Trade with the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the
+      second half of 2026; no instrument) and in the Minister''s meeting with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator.
+      The customs authority''s news page (dnit.gov.py, the 39 most recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement
+      agency''s (contrataciones.gov.py) home pages answer but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza,
+      palestin, hamas, armas and embargo: it lists the Ministry''s page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel)
+      and a page captured on 10 June 2026 on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers
+      a bot check, 403), the Presidency, the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia
+      IP (ip.gov.py), the central bank (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The Interior Ministry and the National
+      Police did not answer. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). One search for protests in Asuncion found no report of a demonstration, ban or dispersal tied to Gaza in 2025 or 2026 (every
+      result concerns other capitals).'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay manifestacion OR marcha OR vigilia Palestina Gaza Asuncion embajada de Israel policia 2025 2026 flotilla OR genocidio'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. Only one Paraguayan Government site could be searched in full text: the Ministry
+      of Industry and Commerce''s (mic.gov.py, WordPress interface, `/wp-json/wp/v2/posts?after=2023-10-07`, the text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA,
+      genocide, Mashav, F-35, Middle East, West Bank, Jerusalem), read on 2026-11-09: 2,424 posts of 9 October 2023 to 2 November 2026, 50 matches. Israel appears as a destination of exports under
+      certificates of origin (USD 46 million in the report of 14 October 2026 on September, 36 million in that of 14 July 2026), in the meeting of the Minister and the Vice-Minister of Trade with
+      the Paraguayan-Israeli Chamber of Commerce of 24 March 2026 (a public-private trade mission to Israel is planned for the second half of 2026; no instrument) and in the Minister''s meeting
+      with representatives of the Israeli Chamber of Commerce of 26 December 2023; no post names Gaza or an act under this indicator. The customs authority''s news page (dnit.gov.py, the 39 most
+      recent items, the latest of 16 October 2026) holds no match, and the Public Prosecutor''s (ministeriopublico.gov.py) and the procurement agency''s (contrataciones.gov.py) home pages answer
+      but offer no search that works on a script request. The Wayback Machine''s index of mdn.gov.py was scanned by address for israel, gaza, palestin, hamas, armas and embargo: it lists the Ministry''s
+      page on the memorandum with Israel''s Ministry of Defense (first captured 29 November 2025, archived as src_20251129_mdn_memorando-defensa-paraguay-israel) and a page captured on 10 June 2026
+      on a national workshop on the control of arms exports (not read: the replay was rate limited). Not read: the Ministry of Foreign Affairs (mre.gov.py answers a bot check, 403), the Presidency,
+      the live site of the Ministry of Defence (mdn.gov.py gave no answer and, in one request, a message that the client was banned: not tried again), the Agencia IP (ip.gov.py), the central bank
+      (a Cloudflare challenge), Migration and Interior (no answer); the Wayback Machine was offline for part of the session. The Judiciary''s site (pj.gov.py) was not searched. No web search was
+      available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on courts found no decision of a Paraguayan court on Israel, Gaza or a measure about them.'
+    queries:
+    - 'mic.gov.py WordPress interface, 2023-10-07 to 2026-11-02: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem, 2026-11-09'
+    - web.archive.org CDX index of mdn.gov.py/* scanned for israel, gaza, palestin, hamas, armas, embargo in the address (2023-10-07 to 2026-11-09), 2026-11-09
+    - dnit.gov.py/web/portal-institucional/noticias read for Israel, Gaza, Palestin- (no match), 2026-11-09
+    - 'WebSearch 2026-11-09: Paraguay Fiscalia OR Poder Judicial OR Corte Suprema Israel OR Gaza OR Hamas denuncia genocidio OR crimen contra la humanidad Paraguay 2025 2026'
+    checked_at: '2026-11-09'

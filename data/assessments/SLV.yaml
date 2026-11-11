@@ -1,0 +1,380 @@
+# Coverage record for El Salvador (docs/03 §6). P-21 light protocol, session T-P21-12, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (rree.gob.sv: the live site answers a bot challenge; Wayback captures of its news read) and the Presidency (presidencia.gob.sv, same: capture of 22 April 2026), the General Debate statements of the 79th and 81st sessions (gadebate.un.org; the 78th, of September 2023, is an image file before the war and was not read, and the 80th has no page), the ICJ's case page, the SIPRI register, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. Time: about 25 minutes of research on El Salvador, inside the 90-minute budget of the session.
+# No hand-authored event: nothing filed.
+# Completion of 2026-11 (finish run, T-F-L06, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the posts of the Presidency, the Ministry of Economy, Migration
+#   and the Port Authority (WordPress interfaces, full text); the Ministry of Foreign Affairs (403), Defence, the Attorney General, the police, the funds and the Gazette could not be read.
+#   This is a thin base. No web search was available: press and NGO sources were not searched. Nothing new since 6 October 2026 names Gaza on the pages read.
+# Redo pass with web search (T-F-L06-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 12 searches in Spanish and English and the Wayback index of the Ministry of Foreign Affairs
+#   and the Presidency; every status is kept; no new event; the 80th session's statement could not be found (Bukele did not attend) and no Salvadoran text on the warrants was found.
+country: SLV
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SLV
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of El Salvador as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the words El Salvador (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations,
+      El Salvador not among them, and carries no supplier list by country. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`,
+      the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189
+      posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv: 34 posts of 14 January to 3 November 2026, no match),
+      the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to
+      21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of Defence (no answer), the Attorney General (503), the
+      National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces closed or no search). No web search was available
+      (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on public contracts and Israeli firms found no Salvadoran company in the F-35 programme or its supplier lists.
+      Reported purchases from Israeli-linked suppliers are the police''s spyware (2020, El Faro, reported in 2023, before the window) and an attempted purchase of 2024 through an intermediary (El
+      Faro, no contract found); they are purchases, not supplier links.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for El Salvador (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: El Salvador contratos Estado empresa israeli OR Israel Aerospace OR Cellebrite OR NSO OR Elbit gobierno Bukele compras publicas drones OR software OR vigilancia 2025 2026'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders of El Salvador from Israel of 1973, 1975, 2008, 2013 and 2022 (the last: 5 SandCat armoured personnel carriers, ''Black
+      Mamba B-6 version from Mexican production line'', delivered 2022), none in the data year of the release of 9 March 2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SLV
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, El Salvador
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. Four Salvadoran Government sites were searched on 2026-11-09 through their
+      WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East,
+      West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv:
+      34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority
+      CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of
+      Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces
+      closed or no search). No post of the Presidency or of Migration records an exercise, an exchange of intelligence, a base or a transit of arms with Israel; the Ministry of Defence could not
+      be read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The searches found El Mundo''s article of 8 May 2026 (read): Vice-President Ulloa met Israel''s President in San Jose, Costa Rica, the same day; they spoke of cooperation in fintech, technology, innovation and agriculture, Ulloa asked Israel to consider reopening its embassy in El Salvador, Israel invited him to an official visit after its elections of October 2026, and no document was signed; El Salvador''s
+      attendance at the first session of the Board of Peace in Washington on 19 February 2026, represented by the Foreign Minister (US Embassy post, as El Salvador in English reports it), is not a
+      military act. The press reports the Government''s purchases of Israeli ARAD rifles and drones since 2022 (arms imports from Israel since 1994 about USD 19 million per Central Bank data,
+      press), which are A4 (generated) and not A5. No joint exercise, intelligence-sharing, basing or transit act was found.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Fuerza Armada OR Policia Nacional Civil Israel armas OR drones OR compra OR capacitacion israeli 2025 2026 CAESS'
+    - 'WebSearch 2026-11-09: El Salvador Israel acuerdo OR memorando OR convenio firmado cooperacion seguridad OR ciberseguridad OR agua 2026 Bukele Netanyahu Sa''ar'
+    - 'WebSearch 2026-11-09: El Salvador Gaza Israel Bukele OR cancilleria Alexandra Hill declaracion 2026 Palestina alto el fuego'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress
+      interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank,
+      Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv:
+      34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority
+      CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of
+      Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces
+      closed or no search). El Salvador delivers no major arms to Israel (A1). No export-licensing authority page was read. No web search was available (the run''s shared allowance was used up before
+      the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No decision of the Government to suspend or refuse arms or dual-use licences to Israel was found; the results show purchases of
+      Israeli arms by El Salvador and the opposite stance. Arms exports from El Salvador to Israel are not recorded (SIPRI, A1).'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Fuerza Armada OR Policia Nacional Civil Israel armas OR drones OR compra OR capacitacion israeli 2025 2026 CAESS'
+    - 'WebSearch 2026-11-09: El Salvador Corte Penal Internacional Netanyahu orden de arresto Bukele OR cancilleria posicion ejecutar OR rechaza Estatuto de Roma El Salvador'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress interfaces
+      (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem):
+      the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv: 34 posts of
+      14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority CEPA (cepa.gob.sv:
+      151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of Defence (no answer),
+      the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces closed or no search).
+      No law or decree on arms trade with Israel appears on the pages read; the Official Gazette was not searched. No web search was available (the run''s shared allowance was used up before the
+      session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). No embargo, import ban or two-way arms measure was found; the Government buys Israeli arms (press, A4) and no Salvadoran text
+      adopts the Hague Group or Bogota measures.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Fuerza Armada OR Policia Nacional Civil Israel armas OR drones OR compra OR capacitacion israeli 2025 2026 CAESS'
+    - 'WebSearch 2026-11-09: El Salvador Israel productos asentamientos OR Cisjordania OR boicot OR sanciones Asamblea Legislativa OR Ministerio de Economia El Salvador comercio Israel 2026'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress
+      interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank,
+      Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv:
+      34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority
+      CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of
+      Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces
+      closed or no search). CEPA''s 151 posts (ports and the international airport) name no restriction on a cargo; the civil aviation authority''s own pages were not read. No web search was available
+      (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the airport, ports and the maritime authority found infrastructure projects of CEPA and no refusal of a port
+      call, ship or overflight for Israel-linked cargo; a press item on military cargo flights to Israel (Misbar, April 2026) does not mention El Salvador.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador CEPA OR aeropuerto OR puerto OR Autoridad Maritima Portuaria Israel carga militar OR buque OR vuelo OR flotilla Gaza El Salvador 2025 2026'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    queries:
+    - unga_votes.csv, voter SLV
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: El Salvador is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found; El Salvador is not on the intervention list.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (the Court's page read 2026-10-06)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found (El Salvador is a party to the Rome Statute).
+    queries:
+    - El Salvador Corte Penal Internacional Netanyahu orden de arresto postura Bukele OR Cancillería salvadoreña
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - El Salvador Corte Penal Internacional Netanyahu orden de arresto postura Bukele OR Cancillería salvadoreña
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: El Salvador has imposed no sanctions on ICC officials (none found).
+    queries:
+    - El Salvador Corte Penal Internacional Netanyahu orden de arresto postura Bukele OR Cancillería salvadoreña
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row `SLV,2011-08-25` is added in this session from the Division for Palestinian Rights'' review of August 2011 (UNISPAL, archived since T-P21-09,
+      src_20110831_un-unispal_dpr-chronology-august-2011, line 28 and, under 25 August, line 287: ''El Salvador recognized Palestine as an independent State'', President Carlos Mauricio Funes
+      at a news conference, Reuters): the pre-existing tier, +3 (R21). A UN Secretariat review, not the Government''s own text, flagged, as Honduras''s row (docs/10 B-571): no communiqué of the
+      Government of 2011 was found online. The registry''s date (2011-08-25) agrees. The Government has not withdrawn the recognition (no statement found).'
+    queries:
+    - El Salvador reconoce Estado de Palestina 2011 Funes Cancillería comunicado
+    - UNISPAL Chronological Review of Events August 2011 (archived)
+    checked_at: '2026-10-06'
+  B9:
+    status: none-found
+    note: 'No event: no B9 speaker named Gaza with a call or a violation. The General Debate statements read (the 79th, President Bukele''s of September 2024; the 81st, Foreign Minister Alexandra
+      Hill Tinoco''s of 28 September 2026, `sv_es.pdf`) never cite Gaza, Palestine or Israel; the 81st asks ''¿Dónde están las Naciones Unidas?'' of ''miles de personas [que] mueren víctimas de
+      la guerra, el hambre, la violencia'' without naming a place (a web-search summary said the passage was about Gaza; the text read does not say so, so nothing is filed from the summary). For
+      the 80th session (September 2025) the debate site has no readable page for El Salvador (HTTP answer ''Access denied'' for `gadebate.un.org/en/80/el-salvador`; no file `sv_es.pdf`), so no
+      statement could be read. Site searches of rree.gob.sv and presidencia.gob.sv (the live sites answer a bot challenge) returned no item on Gaza.'
+    queries:
+    - El Salvador Israel acuerdo firmado cooperación Bukele Gaza Palestina postura gobierno canciller Alexandra Hill 2025
+    - Bukele Gaza Israel Hamás declaración Palestina El Salvador presidente "Gaza" alto el fuego
+    - canciller Hill El Salvador comunicado Gaza Israel Hamás "El Salvador" Cancillería condena OR llama OR apoya 2025 2026
+    - Gaza Palestina Israel comunicado Cancillería El Salvador (site rree.gob.sv)
+    - Gaza Palestina Israel Presidente Bukele discurso comunicado Casa Presidencial (site presidencia.gob.sv)
+    - gadebate.un.org El Salvador 79th and 81st sessions (sv_es.pdf), read
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President or the Foreign Minister, transcribed on an official site, was found.
+      The President''s posts on X of October 2023 (''esas bestias salvajes no representan a los palestinos'', ''los palestinos deberían hacer lo mismo: deshacerse de esos animales y dejar que
+      la gente buena prospere'', reported by several outlets in the search results, pages not read) are social-media posts with no official transcript (docs/06 §7, not scored), do not cite Gaza
+      (R7) and are more than 730 days old.'
+    queries:
+    - Bukele Gaza Israel Hamás declaración Palestina El Salvador presidente "Gaza" alto el fuego
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by El Salvador was found (not an EU member).
+    queries:
+    - El Salvador sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno salvadoreño Gaza medidas embargo
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found.
+    queries:
+    - El Salvador sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno salvadoreño Gaza medidas embargo
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No suspension or review of any agreement with Israel was found.
+    queries:
+    - El Salvador sanciones colonos israelíes OR "retira embajador" OR "suspende" acuerdo Israel gobierno salvadoreño Gaza medidas embargo
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found. The agreements and consultations the Ministry''s and the Presidency''s sites show with Israel date from 2022, before
+      the window: the Minister of Economy''s visit of 23 May 2022 with an agreement with the Hebrew University (Presidency release, Wayback capture, published 25 May 2022, read) and the third
+      round of bilateral consultations of June 2022 (Ministry release, published 14 June 2022, read). El Salvador took part in the first session of the Board of Peace for Gaza in February 2026
+      (Infobae, search result, not read), which is not an indicator.'
+    queries:
+    - El Salvador Israel firma convenio memorándum 2026 OR 2025 OR 2024 gobierno salvadoreño embajador de Israel Bukele cooperación Mashav
+    - El Salvador Bukele Netanyahu llamada OR reunión OR visita Israel 2025 2026 presidente salvadoreño Jerusalén embajada
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress interfaces
+      (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem):
+      the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv: 34 posts of
+      14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority CEPA (cepa.gob.sv:
+      151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of Defence (no answer),
+      the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces closed or no search).
+      The Ministry of Economy''s 34 posts name no measure on settlement goods; customs was not read. No web search was available (the run''s shared allowance was used up before the session began):
+      press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on settlement goods and boycott found no Salvadoran ban, labelling rule or Legislative Assembly measure; the results
+      name other states (the United Kingdom, Canada, France, Spain, the Netherlands). Trade with Israel is small (imports from Israel USD 8.6 million in 2024 per UN data via Trading Economics).'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Israel productos asentamientos OR Cisjordania OR boicot OR sanciones Asamblea Legislativa OR Ministerio de Economia El Salvador comercio Israel 2026'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of El Salvador over conduct in Gaza or the occupied territories was found. Four Salvadoran Government sites were searched
+      on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide,
+      Mashav, F-35, Middle East, West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the
+      Ministry of Economy (economia.gob.sv: 34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November
+      2026, no match) and the Port Authority CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare
+      challenge, 403), the Ministry of Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement
+      portal COMPRASAL (interfaces closed or no search). No public fund''s or pension fund''s page was readable (Ministry of Finance and central bank: restricted interfaces). No web search was available
+      (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the pension funds, the social security institute and trusts found no Israeli holding, exclusion list or
+      divestment decision; the results concern the pension debt only.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador fondo de pensiones OR Instituto Salvadoreno del Seguro Social OR Fideicomiso inversiones Israel bonos OR Elbit desinversion armas 2025 2026'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. Four Salvadoran Government sites were searched on 2026-11-09 through their WordPress
+      interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank,
+      Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv:
+      34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority
+      CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of
+      Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces
+      closed or no search). The procurement portal COMPRASAL has no search that a script can use; no exclusion decision appears on the pages read. No web search was available (the run''s shared
+      allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on public contracts found Salvadoran purchases from Israeli-linked suppliers (spyware of 2020 reported by El Faro;
+      the purchase of ARAD rifles reported by the press) and no exclusion of an Israeli or settlement-linked firm; the procurement portal (COMPRASAL) was not searched by script.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador contratos Estado empresa israeli OR Israel Aerospace OR Cellebrite OR NSO OR Elbit gobierno Bukele compras publicas drones OR software OR vigilancia 2025 2026'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for El Salvador in fts_plan_totals.csv (plans 1156, 1273, 1510) and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor SLV
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; El Salvador has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row El Salvador
+    - El Salvador ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno salvadoreño Cancillería
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      El Salvador has no row in UNRWA's donor tables of 2022, 2023 or 2024 (archived): no contribution to
+      compare. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read
+      2026-11-09) has no row for El Salvador, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row El Salvador
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - El Salvador ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno salvadoreño Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - El Salvador ayuda humanitaria Gaza donación UNRWA OR "evacuación médica" OR visas OR refugiados palestinos gobierno salvadoreño Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of El Salvador for conduct in Gaza was found. Four Salvadoran Government sites
+      were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu,
+      UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order
+      of Malta), the Ministry of Economy (economia.gob.sv: 34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023
+      to 3 November 2026, no match) and the Port Authority CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers
+      a Cloudflare challenge, 403), the Ministry of Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette
+      and the procurement portal COMPRASAL (interfaces closed or no search). The Attorney General''s site answers 503; no post of the Presidency names a case on conduct in Gaza. No web search was
+      available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on the Attorney General and the courts found no investigation, prosecution or complaint tied to Gaza or Israel in El
+      Salvador (the results concern Spain and South Africa).'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Fiscalia General OR tribunal OR Corte Suprema Hamas OR Gaza OR Israel OR palestinos caso denuncia genocidio 2025 2026 El Salvador'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. Four Salvadoran
+      Government sites were searched on 2026-11-09 through their WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas,
+      Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East, West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names
+      or the Order of Malta), the Ministry of Economy (economia.gob.sv: 34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of
+      19 October 2023 to 3 November 2026, no match) and the Port Authority CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs
+      (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank,
+      the Official Gazette and the procurement portal COMPRASAL (interfaces closed or no search). The National Civil Police''s site answers 403; no post of the Presidency names such a measure. No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search for demonstrations found solidarity gatherings at the Plaza Palestina and a protest at Israel''s embassy by
+      supporters of the FMLN (Prensa Latina and Panama America, years not shown in the excerpts; the embassy protest concerns a flotilla and may be older than the window) and no report of a police
+      ban or dispersal in 2025 or 2026.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador manifestacion OR marcha OR protesta Palestina Gaza San Salvador comunidad palestina policia embajada Israel 2025 2026'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. Four Salvadoran Government sites were searched on 2026-11-09 through their
+      WordPress interfaces (`/wp-json/wp/v2/posts?after=2023-10-07`, the full text of every post checked for Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35, Middle East,
+      West Bank, Jerusalem): the Presidency (presidencia.gob.sv: 189 posts of 9 October 2023 to 15 October 2026, 4 matches, all first names or the Order of Malta), the Ministry of Economy (economia.gob.sv:
+      34 posts of 14 January to 3 November 2026, no match), the General Directorate of Migration (migracion.gob.sv: 54 posts of 19 October 2023 to 3 November 2026, no match) and the Port Authority
+      CEPA (cepa.gob.sv: 151 posts of 12 October 2023 to 21 October 2026, no match). Not read: the Ministry of Foreign Affairs (rree.gob.sv answers a Cloudflare challenge, 403), the Ministry of
+      Defence (no answer), the Attorney General (503), the National Civil Police (403), the Ministry of Finance, the central bank, the Official Gazette and the procurement portal COMPRASAL (interfaces
+      closed or no search). No court page was read. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the
+      entry is open to a later search.
+      Redo pass with web search (T-F-L06-R, 2026-11-09; standard mode, Spanish and English; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The search on courts found no decision of a Salvadoran court on Israel, Gaza or a measure about them.'
+    queries:
+    - 'presidencia.gob.sv, economia.gob.sv, migracion.gob.sv, cepa.gob.sv WordPress interface, 2023-10-07 to 2026-11-03: Israel, Gaza, Palestin-, Hamas, Netanyahu, UNRWA, genocide, Mashav, F-35,
+      Middle East, West Bank, Jerusalem, 2026-11-09'
+    - 'WebSearch 2026-11-09: El Salvador Fiscalia General OR tribunal OR Corte Suprema Hamas OR Gaza OR Israel OR palestinos caso denuncia genocidio 2025 2026 El Salvador'
+    checked_at: '2026-11-09'

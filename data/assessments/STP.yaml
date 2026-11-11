@@ -1,0 +1,271 @@
+# Coverage record for Sao Tome and Principe (docs/03 §6). P-21 light protocol, session T-P21-43, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the REST search of STP-Press (stp-press.st, a news site that reprints the Government's communiques, kind press), the Presidency's site (presidencia.st: an agenda page only), the Government's citizens' portal (gov.st: services, no news), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Ministry site answered.
+# Events: none. Leads: none. See docs/10 B-832, B-834.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4 and E1 to E3 searched (web searches in Portuguese and English, STP-Press's REST search and the shared searches), all none-found with the limits said in each note; B10, B12 and C2 notes extended; no new event, no lead. No Foreign Ministry site was reachable. See docs/10 B-2081.
+country: STP
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier STP
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Sao Tome and Principe company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales
+      customer in the results, and it has no defence industry in the sources read. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer STP
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The military instruments in the results are with Russia (April 2024, a framework the Prime Minister described to the press as an ordinary agreement), Portugal, Nigeria (2023), Brazil
+      and China; Israel''s Ambassador, accredited on 10 February 2026, named tourism and renewable energy as his interests (STP-Press, read). Not searched: the Ministry of Defence''s releases (no
+      site found).'
+    queries:
+    - 'WebSearch 2026-11-10: São Tomé e Príncipe Israel acordo cooperação militar OR defesa OR embaixada 2024 2025 2026 (Russia''s agreement of April 2024, Portugal''s cooperation, Brazil''s agreement
+      of 2010; no Israel defence instrument)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): cooperação militar (30 titles read; none concerns Israel),
+      Israel (15 titles; the posts of 10 February and 17 April 2026 read in full)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Sao Tome and Principe has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI
+      register). Not searched: the Ministry of Defence''s and the Customs'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): embargo (3 titles; none on Israel)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results concern other states. Not searched: the Diário da República (the national gazette).'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access or airspace to an arms shipment bound for Israel was found. Not searched: the port authority''s (ENAPORT) and the civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on all twelve qualifying votes (each scores -2; B1 -11.0 after decay). Sao Tome and Principe is named in the Secretary-General''s
+      letter of 3 September 2025 (A/80/362: arrears under Article 19, minimum payment USD 785,653; src_20250903_undocs_a-80-362-article19) and on the Assembly''s page of October 2026 (A/81/360;
+      resolution 81/2 of 12 October 2026 permits it to vote until the end of the 81st session; src_20261013_un-ga_article19-page). The non-votes may therefore be a loss of vote and not a choice;
+      the arrears lists for the earlier vote dates (2023, 2024) were not checked. The Nation of 31 October 2023 lists the country among the 14 states that did not vote on A/RES/ES-10/21. Report
+      only (docs/10 B-832): the author decides how B1 treats a state without a vote.'
+    queries:
+    - unga_votes.csv, country STP
+    - src_20250903_undocs_a-80-362-article19 (named)
+    - src_20261013_un-ga_article19-page (named)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Sao Tome and Principe is not on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties). No statement on the warrants was found in the General Debate statements
+      or the press search below.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'stp-press.st /wp-json/wp/v2/posts?search=: Gaza, Palestina, Israel, Hamas (titles read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country is not a State Party).
+    queries:
+    - stp-press.st searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanction on ICC judges or prosecutors by Sao Tome and Principe was found: STP-Press returns no post on the Court (the country is not on the Assembly of States Parties'' list). Not
+      searched: the Government''s own site (gov.st carries services only).'
+    queries:
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): Israel, Gaza, Palestina, Hamas, Tribunal Penal Internacional (7 titles, none on the Court''s Palestine situation), TPI and Netanyahu (0 titles)'
+    - 'WebSearch 2026-11-10 (T-F-V2, Portuguese): São Tomé e Príncipe sanções colonos israelitas OR Tribunal Penal Internacional juízes sanções governo (the results concern the United States'' sanctions on the Court; none mentions Sao Tome and Principe)'
+    checked_at: '2026-11-10'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Sao Tome and Principe. The registry gives a recognition since 10 December 1988 (before the window; no recognition document was found in the
+      sources read, so no row is added: R21); no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, STP (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The 79th General Debate statement (the President, Carlos Vila Nova, 26 September 2024; Portuguese, gastatements/79/st_pt.pdf) says the world sees an escalation of conflicts
+      ''such as the recent worsening of the situation in the Gaza Strip and in Lebanon'' and appeals to respect for State sovereignty and more diplomatic effort for the peaceful resolution of
+      conflicts: concern with no call for a ceasefire, no violation named and no party (neither tier; flagged as Samoa''s and Botswana''s). The 80th (the Prime Minister, Americo Ramos, 25 September
+      2025) has no file on the General Debate site; the UN''s summary and the STP-Press report of 26 September 2025 quote ''a peaceful and lasting solution to the Israeli-Palestinian conflict''
+      based on two States, without naming Gaza (R7). The 81st (the Minister of State and for Foreign Affairs, Ilza Vaz, 26 September 2026; Portuguese) speaks of the Middle East, ''full access
+      to humanitarian assistance'', ''the release of the hostages'' and two States, without naming Gaza (R7). The Government''s communique of 29 October 2023 (Council of Ministers, signed by the
+      Foreign Minister Gareth Guadalupe; STP-Press) ''makes a vehement appeal to both parties to join efforts for an urgent dialogue'': dialogue, not a ceasefire, and a communique, not a speaker''s
+      statement.'
+    queries:
+    - 'gadebate.un.org/en/{79,80,81}/sao-tome-and-principe and gastatements/{79,81}/st_{fr,pt}.pdf (read; 80th: no file)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search=: Gaza, Palestina, Israel, Hamas (titles read; the posts of 29 October 2023, 26 September 2025 and 10 February 2026 read in full)'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found in the sources read. Completion of 2026-11 (2026-11-10):
+      the Prime Minister''s interview to RFI of 17 June 2024 (STP-Press, read) says he does not wish to speak ''du nouveau de la situation dans la Palestine et en Israël'' while listing the conflicts
+      of the DRC and Sudan: no support for Israel and no denial.'
+    queries:
+    - stp-press.st searches (see B9)
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): Palestina (6 titles; the interview of 17 June 2024 read)'
+    checked_at: '2026-11-10'
+  B11:
+    status: none-found
+    note: 'No sanction on Israeli ministers or settler entities was found in the STP-Press results (Israel, Gaza, Hamas, Palestina). Not searched: the Council of Ministers'' decisions in full.'
+    queries:
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): Israel, Gaza, Hamas, sanções (15 titles, none on Israel), boicote (8 titles, an electoral boycott), colonatos (0 titles)'
+    - 'WebSearch 2026-11-10 (T-F-V2, Portuguese): São Tomé e Príncipe sanções colonos israelitas OR Tribunal Penal Internacional juízes sanções governo (the results concern the United States'' sanctions on the Court and on Palestinian organisations; none mentions Sao Tome and Principe)'
+    checked_at: '2026-11-10'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the President accredited a new Israeli ambassador (Leo Vinavezky) on 10 February 2026 (STP-Press). Official sources
+      not read (see B7). Completion of 2026-11 (2026-11-10): STP-Press of 10 February 2026 (read in full) says the Israeli Ambassador, Leo Vinavezky, ''manifestou interesse em turismo e energias
+      renováveis'' on his accreditation; no downgrade or recall in the results.'
+    queries:
+    - stp-press.st /wp-json/wp/v2/posts?search=Israel (titles read; the post of 10 February 2026 read in full)
+    checked_at: '2026-11-10'
+  C1:
+    status: none-found
+    note: Sao Tome and Principe is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement with Israel signed since October 2023 was found in the STP-Press titles (the post of 29 July 2022 on sending patients to Israel for treatment is before the window). Official
+      sources not read (see B7). Completion of 2026-11 (2026-11-10): the STP-Press titles for Israel (15), Palestina, Gaza and ''cooperação militar'' were read again; the post of 10 February 2026
+      is an accreditation, not an instrument.'
+    queries:
+    - stp-press.st /wp-json/wp/v2/posts?search=Israel (titles read)
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): Israel (15 titles)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the customs authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Sao Tome and Principe public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the country''s own public
+      investment institutions (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the procurement regulator''s decisions and the notices of the Ministry of Planning and Finance (STP-Press
+      carries the notices of expressions of interest, none naming Israel).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): manifestação (30 titles read: calls for expressions
+      of interest, none naming Israel)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor STP
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Sao Tome and Principe in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      No row for Sao Tome and Principe in UNRWA's donor rankings for 2022, 2023 or 2024. UNRWA's table for
+      2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no row for
+      Sao Tome and Principe, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - >-
+      archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt,
+      src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: 'No medical evacuation of Gazans hosted and no field hospital deployed for Gaza was found: Sao Tome and Principe is not among the destination countries in MSF''s table (21 October 2025)
+      or WHO''s summary (29 September 2025), and STP-Press returns only the post of 29 July 2022 on sending Sao Tomean patients to Israel (before the window).'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): doentes Israel (1 title, 29 July 2022)'
+    checked_at: '2026-11-10'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the STP-Press titles read. Official sources not read (see B7).
+    queries:
+    - stp-press.st searches (see B9)
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by the Sao Tome and Principe prosecutor was found: the results of complaints under universal jurisdiction
+      are in other states. Not searched: the Public Prosecutor''s releases (no site found).'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine was found. STP-Press''s results for the term ''manifestação'' are domestic (the teachers'' march of March 2024 allowed and welcomed
+      by the Government; the ban on demonstrations during the CPLP summit of August 2023 was before the window and general). Not searched: the police''s releases.'
+    queries:
+    - 'stp-press.st /wp-json/wp/v2/posts?search= (STP-Press, the Government''s communiques and the Prime Minister''s speeches in Portuguese): manifestação (30 titles read; none for Palestine)'
+    - 'WebSearch 2026-11-10 (T-F-V2, Portuguese): São Tomé manifestação Palestina Gaza polícia proibida 2024 OR 2025 (the results concern bans and dispersals in Germany, France, the United Kingdom and the Netherlands; none concerns Sao Tome and Principe)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'No case against a Sao Tome and Principe national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists (no site found).'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'

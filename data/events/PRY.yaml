@@ -1,0 +1,312 @@
+# Hand-authored events for Paraguay (P-21 light protocol, T-P21-12, 2026-10-06).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08). B8 comes from the row PRY,2011-01-28 of data/structured/recognitions.csv.
+# Speakers for B9/B10: President (Santiago Peña Palacios, head of state and of government), Minister of Foreign Affairs (Rubén Ramírez Lezcano), R3.
+- id: evt_2024_12_09_PRY_B6
+  revision: 1
+  country: PRY
+  indicator: B6
+  type: standing
+  date: '2024-12-09'
+  end: null
+  points: -10
+  points_rationale: 'B6 (-10): the President, head of state and of government, said in an interview with AFP that his Government rejects the arrest warrant of the International Criminal Court for Israel''s
+    Prime Minister and that, if the Prime Minister visited Paraguay, ''no existe ninguna posibilidad'' that he would be detained (a stated refusal to execute the warrants of 21 November 2024; B5 and B6
+    replace each other in time and no later position was found). One press source, so `reported`.'
+  confidence: reported
+  scope:
+  - gaza
+  summary:
+    en: The President said in an interview with AFP that Israel's Prime Minister, subject of an International Criminal Court arrest warrant, would not be detained on a visit to Paraguay.
+    fr: Le président a déclaré dans un entretien à l'AFP que le Premier ministre israélien, visé par un mandat d'arrêt de la Cour pénale internationale, ne serait pas arrêté lors d'une visite au Paraguay.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20241210_ultimahora_pena-netanyahu-no-sera-detenido
+    quote: si el primer ministro israelí visitara Paraguay “no existe ninguna posibilidad” de que sea detenido.
+    quote_lang: es
+    quote_en: if Israel's Prime Minister visited Paraguay 'there is no possibility' of him being detained.
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'The archived text (line 3) re-read against the event: the sentence reports, in indirect speech with a short direct quotation, that the President said in an AFP interview that his Government
+        condemns and rejects the warrant and that there is no possibility of the Prime Minister being detained on a visit. The reading as a stated refusal to execute the warrants (B6) follows the
+        wording of indicators.yaml. The date is the day before the article (''ayer''): 9 December 2024. Confidence `reported`: one press source; the AFP original was not found.'
+    notes: 'Found by the redo pass (T-F-L06-R, 2026-11-09): the earlier session found no statement of the President on the warrants (B5 and B6 notes said so) and the search of that pass returned the
+      article, which was then read in full and archived from the Wayback capture of 12 December 2024. Three readings are flagged for the author (B-973): (1) an interview given to a news agency
+      stands for the ''official statement'' of the indicator (the head of government is the speaker, as for B9); (2) the date (9 December 2024; the Última Hora article is of 10 December and says
+      ''ayer''); (3) the Foreign Ministry''s communique of 21 November 2024 (Government in the name of the Ministry: it ''lamenta'' the decision and ''rechaza enérgicamente la instrumentalización política
+      del derecho internacional'', read through La Nación, not archived) says nothing about executing the warrants and is not filed as B5 or B6. Standing, no decay; the effect on the score is at
+      weight 0.4.'
+- id: evt_2024_12_12_PRY_C2
+  revision: 1
+  country: PRY
+  indicator: C2
+  type: standing
+  date: '2024-12-12'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): a memorandum of understanding between the research bodies of Paraguay and Israel on innovation and technology, signed with other cooperation agreements by the two
+    Foreign Ministers (docs/calibration/README.md R18, one event per instrument; only the memorandum is named).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Foreign Minister cooperation agreements, among them a memorandum between the two countries' research bodies on innovation.
+    fr: Le ministre des Affaires étrangères a signé avec son homologue israélien des accords de coopération, dont un mémorandum d'entente entre organismes de recherche sur l'innovation et la technologie.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20241212_mre-py_canciller-firma-acuerdos-israel
+    quote: firmar una serie de acuerdos que apuntan a profundizar la relación entre ambos países.
+    quote_lang: es
+    quote_en: to sign a series of agreements aimed at deepening the relationship between the two countries.
+    locator: line 1
+  - source: src_20241212_mre-py_canciller-firma-acuerdos-israel
+    quote: Entre los mismos sobresale el memorándum de entendimiento entre los organismos de investigación de Paraguay e Israel para avanzar en innovación y tecnología.
+    quote_lang: es
+    quote_en: Prominent among them is the memorandum of understanding between the research bodies of Paraguay and Israel to advance in innovation and technology.
+    locator: line 2
+  - source: src_20241212_ip_embajada-jerusalen-apoyo-israel
+    quote: los cancilleres de ambos Estados suscribieron acuerdos conjuntos de cooperación bilateral en sectores energéticos, de innovación, ciencia y tecnología, entre otros.
+    quote_lang: es
+    quote_en: the foreign ministers of the two States signed joint bilateral cooperation agreements in the energy, innovation, science and technology sectors, among others.
+    locator: line 17
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-06'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-06'
+      verdict: agree
+      notes: 'The Ministry''s release (lines 1 to 2 of the archived text) and Agencia IP''s report (the paragraph ''Acuerdos entre Paraguay e Israel'') re-read against the event: both say the
+        two foreign ministers signed cooperation agreements, the Ministry names the memorandum between the research bodies. The one-day difference between ''ayer'' and the ceremony of 12 December
+        noted. C2 -10 agrees under R18; confidence confirmed on the Ministry''s own release.'
+    notes: 'Signed during President Peña''s visit to Israel (the address to the Knesset on 11 December 2024, the inauguration of the embassy in Jerusalem on Thursday 12 December). The Ministry''s
+      release is dated 12 December and says the Foreign Minister met his counterpart ''ayer'' and signed a series of agreements; Agencia IP (the state news agency) places the signing after the
+      embassy ceremony of 12 December, and Israel''s Foreign Minister wrote that ''today'' he signed ''una serie de acuerdos bilaterales y un Memorando'' (Paraguay TV, read, not archived). Dated
+      12 December; a one-day difference changes nothing for a standing event. Only one instrument is named (the memorandum between the research bodies); the other agreements (energy, innovation,
+      science and technology) have no title or text: lead_20261006_PRY_4. Flagged under R18 (docs/10 B-598): a memorandum between research bodies on innovation is a technical instrument; a reader
+      who counts only trade, investment or security instruments would remove it. Standing, no decay; 663 days old, so it does not count as a qualifying event for the passivity rule.'
+- id: evt_2025_11_24_PRY_C2
+  revision: 1
+  country: PRY
+  indicator: C2
+  type: standing
+  date: '2025-11-24'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): a memorandum of understanding on defense cooperation between the defense ministries of Paraguay and Israel, signed by Paraguay''s Defense Minister and, on the Ministry''s
+    own page, Israel''s Defense Minister, with Israel''s ambassador as witness of honor; the press dates the signing to 24 November 2025 (docs/calibration/README.md R18, a signed governmental
+    instrument of cooperation, one event per instrument).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of National Defense and Israel's Minister of Defense signed a memorandum of understanding on defense cooperation, with Israel's ambassador as witness of honor.
+    fr: Le ministre de la Défense nationale et le ministre israélien de la Défense ont signé un mémorandum d'entente de coopération en défense, l'ambassadeur d'Israël étant témoin d'honneur.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20251129_mdn_memorando-defensa-paraguay-israel
+    quote: El Ministro de Defensa Nacional, Gral Ej (R) Óscar González, y el Ministro de Defensa del Estado de Israel, Israel Katz, suscribieron un Memorando de Entendimiento sobre Cooperación
+      en Materia de Defensa
+    quote_lang: es
+    quote_en: The Minister of National Defense, General (ret.) Óscar González, and the Minister of Defense of the State of Israel, Israel Katz, signed a Memorandum of Understanding on Defense
+      Cooperation
+    locator: line 70
+  - source: src_20251124_efe-swissinfo_israel-paraguay-defensa-seguridad
+    quote: El Memorándum de Entendimiento, suscrito por el ministro de Defensa, Óscar González, y el embajador de Israel, Amit Mekel, en presencia de Saar y del canciller anfitrión, Rubén Ramírez
+    quote_lang: es
+    quote_en: The Memorandum of Understanding, signed by the Minister of Defense, Óscar González, and Israel's ambassador, Amit Mekel, in the presence of Saar and the host Foreign Minister, Rubén
+      Ramírez
+    locator: line 181
+  - source: src_20251124_ip_visita-saar-memorandum-defensa-israel
+    quote: Posteriormente, en sede de la Cancillería paraguaya, Sa’ar partició de la firma de un memorándum de entendimiento entre los ministerios de Defensa de Paraguay e Israel
+    quote_lang: es
+    quote_en: Afterwards, at the Paraguayan Foreign Ministry, Sa'ar took part in the signing of a memorandum of understanding between the Defense Ministries of Paraguay and Israel
+    locator: line 3
+  - source: src_20251124_jns_israel-paraguay-security-pact
+    quote: visited Paraguay on Monday, where he signed a Memorandum of Understanding on security cooperation.
+    quote_lang: en
+    locator: line 663
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-06'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: Re-read on 2026-11-09 after the Ministry's own page was found in the Wayback Machine (src_20251129_mdn_memorando-defensa-paraguay-israel, line 70 against the archived text; replay
+        re-fetched, SHA-256 equal to the index). The page names the Defense Minister Óscar González and Israel's Defense Minister Israel Katz as the signatories and the ambassador Amit Mekel as
+        witness of honor; EFE (line 181) and Agencia IP (line 3) report the signing at the Foreign Ministry in the presence of the two Foreign Ministers, EFE naming the ambassador as the Israeli
+        signatory. The Ministry's page is the primary and is kept for the signatories; the date of 24 November 2025 rests on the press (the page is undated). C2 -10 agrees; confidence confirmed
+        (an official source).
+    notes: 'Signed on Monday 24 November 2025 in Asunción during the visit of Israel''s Foreign Minister (EFE, Agencia IP and JNS give the day; the Ministry''s page is undated, its first Wayback
+      capture is of 29 November 2025). Confirmed since 2026-11-09 by the Ministry of National Defense''s own page (before that `corroborated` on two publishers, weight 0.7). Discrepancy kept visible:
+      the Ministry''s page names the two Defense Ministers as signatories with the ambassador as witness of honor, EFE (quoting the Foreign Ministry) names the Defense Minister and the ambassador,
+      JNS writes that Israel''s Foreign Minister signed; the Ministry''s page is the reading kept. The text of the memorandum is not public; EFE quotes the Foreign Ministry on its object (mutual
+      knowledge of defense needs and programmes, industry, acquisition and sale of equipment and services, joint training). Flagged under R18 (docs/10 B-598): a memorandum of defense cooperation,
+      as Honduras''s (docs/10 B-572). Standing; a qualifying event: it ends the passivity penalty.'
+- id: evt_2025_11_24_PRY_C2_2
+  revision: 1
+  country: PRY
+  indicator: C2
+  type: standing
+  date: '2025-11-24'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): a memorandum of understanding on cooperation in diplomacy (training programmes) signed on 24 November 2025 by the two Foreign Ministers (docs/calibration/README.md
+    R18, one event per instrument).'
+  confidence: reported
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Foreign Minister a memorandum of understanding on cooperation in diplomacy, with training programmes for diplomats.
+    fr: Le ministre des Affaires étrangères a signé avec son homologue israélien un mémorandum d'entente sur la coopération diplomatique (formations en diplomatie publique et communication de
+      crise).
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20251124_efe-swissinfo_israel-paraguay-defensa-seguridad
+    quote: Los ministros de Exteriores firmaron igualmente un memorando de entendimiento sobre cooperación en materia diplomática, que incluye programas de formación en áreas como diplomacia pública,
+      marca país, gestión comunicacional en situación de crisis e inteligencia artificial.
+    quote_lang: es
+    quote_en: The Foreign Ministers also signed a memorandum of understanding on cooperation in diplomatic matters, which includes training programmes in areas such as public diplomacy, country
+      branding, crisis communication management and artificial intelligence.
+    locator: line 186
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-06'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-06'
+      verdict: agree
+      notes: 'Line 186 of EFE''s text re-read: the Foreign Ministers signed ''igualmente'' a memorandum on diplomatic cooperation with training programmes; no other archived text names it. C2
+        -10 agrees under R18; confidence reported (single origin).'
+    notes: 'Signed the same day as the defense memorandum (evt_2025_11_24_PRY_C2): a second instrument (R18, one event per instrument), signed by the two Foreign Ministers. Known only from EFE''s
+      report (line 186, citing no document); Agencia IP and JNS mention only the defense memorandum, and no release of the Ministry was found, so the confidence is `reported`. A memorandum on
+      training of diplomats is the thinnest instrument in the file: flagged under R18 (docs/10 B-598); a reader who counts only instruments with a material object would remove it. With the other
+      C2 events the category reaches its cap (-20), so this event changes no score.'
+- id: evt_2026_03_03_PRY_B4
+  revision: 1
+  country: PRY
+  indicator: B4
+  type: repeatable
+  date: '2026-03-03'
+  points: -15
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Paraguay filed a declaration of intervention in South Africa v. Israel arguing for a strict reading of the crime of genocide and of the standard of intent.
+    fr: Le Paraguay a déposé une déclaration d'intervention dans l'affaire Afrique du Sud c. Israël, défendant une lecture stricte du crime de génocide et de la norme d'intention.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20260303_un-unispal_paraguay-declaration-intervention
+    quote: recent attempts to broaden the definition of genocide risk diluting the specific normative function of the Convention
+    quote_lang: en
+    locator: page 5, paragraph 15
+  - source: src_20260303_un-unispal_paraguay-declaration-intervention
+    quote: This high threshold of requiring that genocidal intent be the only reasonable inference is consistent with the exceptional gravity of the crime of genocide.
+    quote_lang: en
+    locator: page 10, paragraph 33
+  - source: src_20260303_un-unispal_paraguay-declaration-intervention
+    quote: The crime of genocide must be interpreted consistently with the object and purpose of the Convention and the Court’s established jurisprudence, and should not be expanded to cover other
+      violations of international law
+    quote_lang: en
+    locator: page 14, paragraph 49(a)
+  - source: src_20260304_un-unispal_icj-press-release-paraguay
+    quote: On Tuesday 3 March 2026, Paraguay, invoking Article 63 of the Statute of the Court, filed in the Registry of the Court a declaration of intervention
+    quote_lang: en
+    locator: paragraph 1 (ICJ press release No. 2026/3 of 4 March 2026)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-06'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-06'
+      verdict: agree
+      notes: 'OCR text re-read against the page images of pages 5, 10 and 14 (paragraphs 15, 33 and 49(a) agree word for word) and the conclusions (paragraphs 48 to 51): the declaration argues
+        for the strict standard and a narrow construction; the press release re-read for the filing date (Tuesday 3 March 2026). B4 agrees.'
+    notes: 'Article 63 intervention arguing against the applicant''s construction (docs/02 §2 B3/B4), as Hungary''s and the United States'' of 12 March 2026: the declaration asks the Court not
+      to depart from the strict standard of intent (the ''only reasonable inference'', paragraphs 32 to 38), says that expansive readings of the definition of genocide have no basis and that alleged
+      breaches of international humanitarian law are beyond the Convention (paragraphs 15, 20 to 23, 49), and asks for caution with the reports of international organisations and NGOs (paragraphs
+      43 to 46). Read in full (paragraphs 1 to 52; the PDF is a scan, OCR). Flagged for the author: unlike the declarations of Hungary and the United States it does not say that Israel acted in
+      self-defence, and paragraph 12 states that it ''does not address the facts of the present case, nor does it seek to support the claims of either party''; the argument is the narrower construction
+      against the applicant''s reading, so it is filed as B4 and not as a neutral declaration (docs/10 B-597). Filing date 3 March 2026 from the Court''s press release (the declaration is dated
+      the same day). The agent is Miguel Angel Aranda, of Paraguay''s embassy in Brussels. The Court''s case page lists the declaration and no withdrawal (read 2026-10-06).'
+- id: evt_2026_10_07_PRY_C2
+  revision: 1
+  country: PRY
+  indicator: C2
+  type: standing
+  date: '2026-10-07'
+  end: null
+  points: -10
+  points_rationale: 'C2 (-10): an agreement of international cooperation in health and medicine signed in Jerusalem by Paraguay''s Minister of Foreign Affairs and Israel''s Foreign Minister, with the
+    Vice-President of Paraguay present (docs/calibration/README.md R18, a signed governmental instrument of cooperation, one event per instrument).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of Foreign Affairs signed with Israel's Foreign Minister an agreement of international cooperation in health and medicine, in Jerusalem.
+    fr: Le ministre des Affaires étrangères a signé à Jérusalem avec son homologue israélien un accord de coopération internationale en matière de santé et de médecine.
+  actor:
+    en: Government of Paraguay
+    fr: Gouvernement du Paraguay
+  evidence:
+  - source: src_20261007_mre-py_acuerdo-salud-medicina-israel
+    quote: El ministro de Relaciones Exteriores, Rubén Ramírez Lezcano, y su homólogo israelí, Gideon Sa’ar, firmaron en Jerusalén un acuerdo de cooperación internacional que abarca los ámbitos de la salud y la medicina.
+    quote_lang: es
+    quote_en: The Minister of Foreign Affairs, Rubén Ramírez Lezcano, and his Israeli counterpart, Gideon Sa'ar, signed in Jerusalem an agreement of international cooperation covering health and medicine.
+    locator: line 1
+  - source: src_20261007_mre-py_acuerdo-salud-medicina-israel
+    quote: Jerusalén, 07 de octubre de 2026
+    quote_lang: es
+    quote_en: Jerusalem, 7 October 2026
+    locator: line 4
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'The archived text (lines 1 to 4) re-read against the event: the Ministry names the signatories (the two Foreign Ministers), the place (Jerusalem), the subject (health and medicine) and the
+        dateline of 7 October 2026; the Vice-President''s presence is stated in line 1. The summary follows the template; no adjective. C2 -10 agrees under R18; confidence confirmed on the Ministry''s
+        own release.'
+    notes: 'Found by the redo pass (T-F-L06-R, 2026-11-09) through a Spanish search (La República of Colombia, 9 October 2026, which has no source named); the Ministry''s own page was then located by the
+      Wayback index of www.mre.gov.py and archived from the capture of 7 October 2026 (replay equal in bytes and SHA-256). The ceremony was held during a visit that the Ministry page does not describe;
+      the Vice-President attended. Paraguay and Israel already had a convenio on cooperation in the fields of health and medicine of 21 November 2005 (Ley 3457 of 2008, bacn.gov.py, seen in a search
+      result, not archived); the page of 2026 describes a new instrument signed in 2026 and does not say whether it replaces the earlier one, so the reading as a new instrument rests on the Ministry''s
+      words (author flag, B-972). Flagged under R18 (docs/10 B-598): a health cooperation agreement is a technical instrument; a reader who counts only trade, investment or security instruments would
+      remove it. Standing, no decay. Category C is already at its floor for Paraguay, so the score does not change.'

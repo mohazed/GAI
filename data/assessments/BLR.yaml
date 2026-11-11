@@ -1,0 +1,286 @@
+# Coverage record for Belarus (docs/03 §6). P-21 light protocol, session T-P21-04, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the President's site (president.gov.by/en), the Ministry of Foreign Affairs (mfa.gov.by/en, whose pages the session read
+#   through search results and press relays), the General Debate statements of the United Nations (gadebate.un.org: the Foreign Minister's statements of
+#   the 78th and 79th sessions through Wayback captures, of the 80th and 81st by a direct request, in Russian, searched for Gaza, Palestine, Israel and the Middle East and read around each hit; Save Page Now answers HTTP 405
+#   for that site, so the 80th and 81st were not archived), the generated events and the structured tables; web searches in English and in Russian per
+#   indicator group. Time: about 5 minutes.
+# Statements read and not filed as B9: the Foreign Minister's General Debate statements (2023 to 2026: Palestine appears in lists of unresolved conflicts
+#   and, in 2024, as 'the place where a real humanitarian catastrophe has been unleashed and tens of thousands of civilians are dying', with no call for a
+#   ceasefire); the President's message of 29 November 2023 to the President of Palestine (a Palestinian state and 'a just and lasting peace in the Middle
+#   East', no ceasefire, Gaza not named); the President's remarks of 27 October 2023 (the creation of a Palestinian state as the only way out) and his
+#   interview to Al Arabiya of 15 June 2026 (criticism of Israel's conduct in Gaza, 'What Holocaust?'), with no call for a ceasefire or an end of the
+#   blockade; the Foreign Ministry press secretary's statement of 13 October 2025 welcoming the ceasefire (a spokesperson: not a B9 speaker, R3).
+# Completion of 2026-11 (T-F-L02, 2026-11-09, first session, no web search available): A3 from the UN Special Rapporteur's report and the programme's page; the President's site read for 5 October to 9 November 2026 and the Foreign Minister's General Debate statement of the 81st session read (no event); the Foreign Ministry's news list loads by script; A5 to A8, C4 to C6 and E1 to E3 still unchecked.
+# Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09): A3 re-run; A5 to A8, C4 to C6, E1 to E3 none-found after English and Russian searches (the Foreign Ministry's and the belarus.by sites answer HTTP 403).
+country: BLR
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms from Belarus to Israel.
+      Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier BLR
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the
+      full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data until a fetch. Nothing
+      is hand-authored.'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Belarus as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain
+      the word Belarus (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme, Belarus not among them, and carries
+      no supplier list by country. Press and NGO supplier lists were not searched in that earlier session (re-run with web search below). Re-run with web search (T-F-L02, third session, 2026-11-09): the search on the programme''s supplier countries returned no Belarusian company or link. Nothing changes the
+      none-found.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Belarus (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - F-35 supply chain countries suppliers Israel Gaza Special Rapporteur report list of states components F-35 Mongolia Moldova Belarus North Korea
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): no Belarusian order of Israeli major arms in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer BLR
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No joint exercise, basing, transit or intelligence-sharing arrangement between Belarus and Israel's armed forces since
+      7 October 2023 was found. The English and Russian searches returned Belarus's military cooperation with Iran (protocol of March 2025), the UAE and Russia, and Israel's summoning of Belarus's ambassador
+      on 17 June 2026 over the President's remarks on Gaza; none records an instrument, exercise or delivery with Israel. The Foreign Ministry's and the State Military-Industrial Committee's own sites were
+      not read (mfa.gov.by and belarus.by answer HTTP 403 to scripts; no Wayback copy).
+    queries:
+    - Belarus Israel military cooperation Gaza 2024 2025
+    - Беларусь Израиль экспорт вооружений запрет Газа
+  A6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No Belarusian decision on export licences for arms or dual-use goods to Israel was found. Belarus is not a supplier of
+      major arms to Israel (SIPRI, A1) and no export-control act naming Israel appeared in the Russian-language search, whose results concerned Slovenia, Germany and Canada.  The Foreign Ministry's and the State Military-Industrial Committee's own sites were not read (mfa.gov.by and belarus.by answer HTTP 403 to scripts; no Wayback copy).
+    queries:
+    - Беларусь Израиль экспорт вооружений запрет Газа
+    - Belarus Israel military cooperation Gaza 2024 2025
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No Belarusian embargo on arms in either direction with Israel was found; Belarus is not listed among the arms suppliers
+      of Israel (A1) and the Russian-language search returned no Belarusian act or statement on an embargo. Belarus is not among the co-sponsors of the joint letter A/79/572-S/2024/802 of 1 November 2024 to the United Nations (text read at digitallibrary.un.org, 2026-11-09; a call is not an embargo in force). The Foreign Ministry's and the State Military-Industrial Committee's own sites were not read (mfa.gov.by and belarus.by answer HTTP 403 to scripts; no Wayback
+      copy).
+    queries:
+    - Беларусь Израиль экспорт вооружений запрет Газа
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No Belarusian denial of airspace, port or transit for arms shipments to Israel was found. The English search returned
+      Belavia's Minsk to Tel Aviv flights, suspended in 2026 for Israeli airspace closures (not a Belarusian measure), and Israel's refusal to service Belavia aircraft (Interfax, undated in the summary);
+      neither concerns arms transit. The Foreign Ministry's and the State Military-Industrial Committee's own sites were not read (mfa.gov.by and belarus.by answer HTTP 403 to scripts; no Wayback copy).
+    queries:
+    - Belarus airspace Israel flights transit weapons Ben Gurion Minsk ban 2024
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (12 of 12). The Ministry''s releases on the votes were not
+      read. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, Belarus
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting the ICJ's provisional measures was found.
+    queries: &id001
+    - Лукашенко сектор Газа прекращение огня заявление палестино-израильский конфликт
+    - МИД Беларуси заявление Газа Израиль прекращение огня Рыженков гуманитарная катастрофа
+    - Belarus Ryzhenkov OR Lukashenko Gaza Palestine statement ceasefire 2025 General Assembly 80th session
+    - Лукашенко призвал прекратить кровопролитие Израиль Палестина ХАМАС заявил президент Беларуси Газа гуманитарная помощь Беларусь
+  B5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus is not a State Party to the Rome Statute; no statement of the Government on the warrants of 21 November 2024
+      was found.
+    queries: *id001
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no hosting of a person under the Gaza-situation warrants was found.
+    queries: *id001
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row BLR,1988-11-19 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 19 November 1988: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). The Official Website of the Republic of
+      Belarus (belarus.by) reports the Deputy Foreign Minister on 13 October 2025 describing Belarus as having recognised the independence of the State of Palestine in 1988 (search result; the page refuses
+      Save Page Now, HTTP 403, and has no Wayback copy; mfa.gov.by has no Palestine page): a state document, unread and unarchived, so not cited. Before this session: Generated from recognitions.csv, which
+      has no Belarus row. The registry dates the recognition 19 November 1988 (A/78/846 annex); the state''s own document was not found, so no row (R21, docs/calibration/README.md): with the pre-existing
+      tier the score would be +3 higher. The President''s message of 29 November 2023 to the President of Palestine speaks of ''the creation of the State of Palestine'' (Anadolu). Third session (T-F-L02,
+      2026-11-09): the UN Digital Library''s General Assembly documents A/43/780 to A/43/1009 (letters of the 43rd session, November to December 1988) were searched by title for letters from the Byelorussian
+      SSR or Belarus and none was found (the Mongolian letter A/43/863 was, MNG B8); the state''s own document is still not found, so still no row.'
+    queries:
+    - 'WebSearch 2026-11-10: mfa.gov.by Palestine bilateral relations Belarus recognized State of Palestine 1988; site:mfa.gov.by Палестина двусторонние отношения признала 1988'
+    - 'pnpm archive belarus.by item of 13 October 2025: Save Page Now refused (HTTP 403), no Wayback copy'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No B9 event filed: no statement of the President, the Prime Minister or the Foreign Minister that calls for a ceasefire
+      or an end of the blockade, or names specific violations in such a call, was found in a document that can be archived.
+      The Foreign Minister''s General Debate statements (Russian, searched and read around each hit) mention Palestine in
+      lists of conflicts and, in 2024, a humanitarian catastrophe, with no call; the President''s interview of 15 June 2026
+      criticises Israel''s conduct without a call for a ceasefire; the other statements read are a spokesperson''s (R3): lead_20261005_BLR_1.
+      Finish run, T-F-L02 (2026-11-09): the Foreign Minister''s General Debate statement of the 81st session (Maxim Ryzhenkov,
+      26 September 2026; Russian text, gadebate.un.org/sites/default/files/gastatements/81/by_ru.pdf, read, Wayback holds
+      no capture so it is not archived) names the Middle East in a list of regions (''От Европы до Ближнего Востока, от Азии
+      до Африки и Латинской Америки'') and Palestine in a list of countries ''в фокусе западного интереса''; no call, Gaza
+      not named: no event. The President''s site (president.gov.by/en, 48 items of 5 October to 9 November 2026 in eight categories,
+      full text searched for Gaza, Palestin, Israel, Hamas, Middle East, ceasefire, UNRWA) has one passage naming the Middle
+      East (22 October, no call). The Foreign Ministry''s news list (mfa.gov.by) is loaded by script and was not read.'
+    queries:
+    - Лукашенко сектор Газа прекращение огня заявление палестино-израильский конфликт
+    - МИД Беларуси заявление Газа Израиль прекращение огня Рыженков гуманитарная катастрофа
+    - Belarus Ryzhenkov OR Lukashenko Gaza Palestine statement ceasefire 2025 General Assembly 80th session
+    - Лукашенко призвал прекратить кровопролитие Израиль Палестина ХАМАС заявил президент Беларуси Газа гуманитарная помощь
+      Беларусь
+    - president.gov.by/en/events/category/{meetings,visits,addresses,commentaries,sessions,trips,other,greetings}?page=N (48
+      items of 5 October to 9 November 2026), full text searched, 2026-11-09
+    - gadebate.un.org/sites/default/files/gastatements/81/by_ru.pdf read (Russian, searched for газ, палест, ближн, израил)
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found; Belarus's statements criticise
+      Israel's conduct in Gaza.
+    queries: *id001
+  B11:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus has listed no Israeli minister or settler entity for sanctions (none found).
+    queries: *id001
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance by Belarus was found. Israel''s Foreign Ministry summoned Belarus''s ambassador over
+      the President''s remarks of 15 June 2026 (RTVI, Israeli press): an Israeli act, not scored here.'
+    queries: *id001
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: Belarus is not an EU member and has no association agreement with Israel to suspend or review (none found).
+    queries:
+    - Беларусь Израиль соглашение подписали 2025 2026 сотрудничество правительство Минск Израиль посол
+  C2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No governmental instrument with Israel signed since October 2023 was found; the Ministry's and the Embassy's pages (read
+      in search excerpts) list the visa-waiver agreement and earlier intergovernmental agreements, which pre-date the window. The
+      President's signing of Belarus's accession to the Board of Peace on 20 January 2026 (the Gaza body proposed by the United
+      States) is not an instrument with Israel.
+    queries:
+    - Беларусь Израиль соглашение подписали 2025 2026 сотрудничество правительство Минск Израиль посол
+    - Belarus Board of Peace Gaza Lukashenko signs joining statement text January 2026 president.gov.by
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No Belarusian ban on, or labelling rule for, goods from Israeli settlements was found; the Russian query returned only
+      the general product-labelling system (Decree of 2014) and rules for goods from non-friendly countries. Israel's imports from Belarus were about USD 106.6 million in 2025 (Comtrade via Trading Economics,
+      an aggregator). No Customs Committee or Ministry of Antimonopoly Regulation and Trade act naming settlements was found. The Foreign Ministry's and the State Military-Industrial Committee's own sites
+      were not read (mfa.gov.by and belarus.by answer HTTP 403 to scripts; no Wayback copy).
+    queries:
+    - Беларусь товары израильских поселений запрет маркировка Западный берег
+    - Belarus Israel trade imports exports 2025 Belarusian National Bank reserves investment Israeli companies
+  C5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No exclusion or divestment decision by a Belarusian public fund concerning Israeli companies was found. The search returned
+      no item on the National Bank''s reserves or a state fund and Israel; No fund exclusion list was found. Entry is thin: the National Bank''s reserve report was not
+      read. '
+    queries:
+    - Belarus Israel trade imports exports 2025 Belarusian National Bank reserves investment Israeli companies
+  C6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No Belarusian procurement exclusion of Israeli suppliers was found. The Russian and English searches returned nothing
+      on public procurement and Israel (the State Procurement portal, icetrade.by, was not searched by supplier country). '
+    queries:
+    - Belarus Israel trade imports exports 2025 Belarusian National Bank reserves investment Israeli companies
+    - Беларусь бойкот израильских товаров госзакупки
+  D1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: no Government flow to the oPt plans (fts_funding.csv has no row above zero). Left to the build.'
+  D2:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No announcement of a suspension of UNRWA funding was found; Belarus has no row in UNRWA's donor tables for 2022, 2023
+      or 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belarus
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      No row of Belarus in UNRWA's donor tables for 2022, 2023 or 2024 (archived): no restored or increased
+      contribution. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) has no row for Belarus, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Belarus
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries: &id002
+    - Беларусь гуманитарная помощь сектор Газа Палестина Беларусь направила помощь МЧС OR Министерство здравоохранения Газа дети
+      лечение
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No visa or refugee instrument for Gazans was found.
+    queries: *id002
+  E1:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No investigation or prosecution in Belarus of nationals or companies for conduct in Gaza was found; the English search
+      returned the universal-jurisdiction complaints and inquiries in Belgium, Germany and Italy against Israeli soldiers, none in Belarus. The Prosecutor General's site was not read (no script access). Experimental,
+      unscored (D-12).
+    queries:
+    - Belarus citizen Israeli army Gaza prosecuted OR investigation OR universal jurisdiction complaint Belarus
+  E2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No ban on Palestine solidarity protests or symbols and no report of a Palestine rally in Belarus was found (Russian and
+      English queries). The results describe rallies in Belarus on other subjects as often banned or dispersed; a general restriction is not a ban aimed at Palestine solidarity. Viasna's and Spring96's records were not searched by name. Experimental, unscored (D-12).
+    queries:
+    - Беларусь митинг в поддержку Палестины Минск акция задержаны Газа
+    - Belarus Palestine solidarity rally Minsk Gaza protest police permitted
+  E3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: Completion of 2026-11 (T-F-L02, third session, with web search, 2026-11-09). No universal-jurisdiction case or complaint concerning Gaza opened by Belarus's prosecutors or courts, and no case against
+      Belarusian nationals abroad, was found (same query as E1; TRIAL International's Universal Jurisdiction Annual Review 2026 text was not searched for Belarus in this session). Experimental, unscored (D-12).
+    queries:
+    - Belarus citizen Israeli army Gaza prosecuted OR investigation OR universal jurisdiction complaint Belarus

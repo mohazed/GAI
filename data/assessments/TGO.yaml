@@ -1,0 +1,283 @@
+# Coverage record for Togo (docs/03 §6). P-21 light protocol, session T-P21-44, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the Presidency's site (presidence.gouv.tg, WordPress, REST search over its 21 posts), republicoftogo.com (the Government's news magazine: its search ignores the term), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. diplomatie.gouv.tg (the Ministry) is a script-rendered page. No web search was available.
+# Events: none. Leads: none. See docs/10 B-838, B-840.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): the Ministry of Foreign Affairs' own pages were read through the WordPress API behind its script-rendered site (bk.diplomatie.gouv.tg, REST search; found in the site's script): one event (C2, the memorandum on political consultations of 6 July 2026) and two leads (lead_20261110_TGO_1, B10, the Government web magazine's editorial of 12 December 2023; lead_20261110_TGO_2, A5, the 'security partnership' and counter-terrorism words); A3, A5 to A8, B7, B11, C4 to C6, D4, D5 and E1 to E3 searched, all none-found with the limits said in each note. See docs/10 B-2079.
+country: TGO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier TGO
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs (docs/10 B-718) cover about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Togolese company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales customer in
+      the results. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer TGO
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The Ministry''s own pages record the Foreign Ministers'' call of 20 January 2025 and meeting in Jerusalem on 29 January 2026, where counter-terrorism cooperation and a ''security partnership''
+      are mentioned in general terms (no activity or instrument named; lead_20261110_TGO_2), and the memorandum of 6 July 2026 on political consultations, whose listed topics include regional security
+      (C2: evt_2026_07_06_TGO_C2). Not searched: the Ministry of Defence''s releases (defense.gouv.tg answers but its news was not read).'
+    queries:
+    - 'WebSearch 2026-11-10: Togo Israël coopération sécurité OR défense OR accord OR ambassade 2024 2025 2026 Faure Gnassingbé Gaza Palestine (the memorandum of July 2026, the Foreign Minister''s
+      visit of January 2026, the Ambassador''s credentials of October 2025; no defence instrument)'
+    - 'WebSearch 2026-11-10: Faure Gnassingbé Netanyahou visite Israël OR Lomé sommet Israël-Afrique sécurité développement 2026 (the State visit of August 2016 and the cancelled summit of 2017;
+      nothing in 2026)'
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): Israël (21 titles),
+      Gaza (2), otages (2), Hamas (6) (posts 22273, 21245 and 21728 read in full)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Togo has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register). Not searched:
+      the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the Ministry''s searches for ''sanctions'' (13 titles) return the Niger, Cuba and the diaspora''s letter,
+      not Israel. Not searched: the Journal officiel.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): sanctions (13 titles
+      read by title)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access or airspace to an arms shipment bound for Israel was found. Not searched: the Port Autonome de Lomé''s and the civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: a vote recorded on all twelve qualifying votes: 3 ''Y'' (A/DEC/80/506, A/RES/80/1, A/RES/80/78), 6 ''A'' (abstentions: ES-10/22, ES-10/25, ES-10/26, 79/232,
+      ES-10/27, 80/116) and 3 ''X'' (non-votes: ES-10/21, ES-10/23, ES-10/24); each non-Y scores -2 (B1 +3.0 after decay). Togo is not named in the Secretary-General''s letter of 3 September 2025
+      (A/80/362) or on the Assembly''s page of October 2026 (Article 19). Left to the build.'
+    queries:
+    - unga_votes.csv, country TGO
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Togo has no entry on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties: the list runs from Timor-Leste to Trinidad and Tobago). No statement on the
+      warrants was found in the General Debate statements or the Presidency''s posts.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'presidence.gouv.tg /wp-json/wp/v2/posts?search=: Israël, Palestine, palestinien, Moyen-Orient'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country has no entry on the ASP list).
+    queries:
+    - presidence.gouv.tg searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanction on ICC judges or prosecutors by Togo was found: the Ministry''s site returns no item on the Court''s Palestine situation (searches: CPI, 0 titles; Cour pénale, 2 titles, none
+      concerning the Palestine situation by its title); Togo is not on the Assembly of States Parties'' list.'
+    queries:
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): CPI (0 titles),
+      Cour pénale (2 titles read by title)'
+    - 'WebSearch 2026-11-10 (T-F-V2, French): Togo sanctions colons israéliens OR sanctions juges CPI gouvernement togolais (the results concern the United States'' sanctions on ICC judges; the only result naming Togo is an ICJ filing unrelated to sanctions)'
+    checked_at: '2026-11-10'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Togo. The registry gives a recognition since 29 November 1988 (before the window; no recognition document was found in the sources read,
+      so no row is added: R21). The Presidency received the credentials of the State of Palestine''s Ambassador on 4 March 2026 (an embassy in Lome is announced): no recognition after 7 October
+      2023 was found.'
+    queries:
+    - recognitions.csv, TGO (no row)
+    - presidence.gouv.tg post 420530 (read)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The 79th General Debate statement (President Faure Essozimna Gnassingbe, 25 September 2024; gastatements/79/tg_fr.pdf), the 80th (Foreign Minister Robert Dussey, 26 September
+      2025; tg_fl.pdf) and the 81st (Foreign Minister Dussey, 25 September 2026; tg_fr.pdf) do not mention Gaza, Palestine, Israel or the Middle East (text layers searched for Gaza, Palestin, Israel,
+      Moyen-Orient, Proche-Orient, conflit). The Presidency''s site (21 posts) has no statement on Gaza. Completion of 2026-11 (2026-11-10): the Ministry''s site (bk.diplomatie.gouv.tg, searches:
+      Gaza, Palestine, cessez-le-feu, Moyen-Orient, Hamas, otages) holds no statement by the President, the head of government or the Foreign Minister on Gaza: its items on Israel are the Israeli
+      Minister''s own words after the calls and meetings of 20 January 2025 and 29 January 2026 and the review of 2025 (no Gaza passage), and the Government''s web magazine (republicoftogo.com)
+      says on 22 November 2012 (before the window) that the President welcomed a truce.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/togo and gastatements/79/tg_fr.pdf, 80/tg_fl.pdf, 81/tg_fr.pdf (read)
+    - 'presidence.gouv.tg /wp-json/wp/v2/posts?search=: Gaza, Israël, Palestine, palestinien, Palestiniens, Moyen-Orient'
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): Gaza (2 titles),
+      Palestine (1), cessez-le-feu (2), Moyen-Orient (15) (posts for 2025 and 2026 read)'
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the head of government (the President of the Council, Faure Gnassingbe, since May
+      2025) was found in the sources read. Tchadinfos of 10 November 2023 lists Togo among the governments that supported Israel after 7 October 2023, without a source: not a document, not filed.
+      Completion of 2026-11 (2026-11-10): the Government''s web magazine (republicoftogo.com) of 12 December 2023, under the title ''Abstention du Togo'', writes in its own unsigned voice that Togo
+      ''se tient historiquement toujours aux côtés d’Israël'' and that Israel ''combat une organisation terroriste, le Hamas, et non la population civile palestinienne''; attributed to no speaker
+      (R3), so not filed: lead_20261110_TGO_1 (expired, 1,064 days). The Israeli Minister''s thanks for Togo''s ''support after Oct. 7th'' (his own words, reported by the Ministry''s pages of 20
+      January 2025 and 30 January 2026) are Israel''s statements.'
+    queries:
+    - presidence.gouv.tg searches (see B9)
+    - tchadinfos.com post 271498 (read)
+    - republicoftogo.com/toutes-les-rubriques/diplomatie/abstention-du-togo2 and /lome-se-felicite-de-l-accord-de-cessez-le-feu (read in full)
+    checked_at: '2026-11-10'
+  B11:
+    status: none-found
+    note: 'No sanction on Israeli ministers or settler entities was found: the Ministry''s pages for Israël (21 titles) are the visits and the memorandum of 2026, none a sanction.'
+    queries:
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): Israël (21 titles),
+      colonies (0 relevant titles)'
+    - 'WebSearch 2026-11-10 (T-F-V2, French): Togo sanctions colons israéliens OR sanctions juges CPI gouvernement togolais (no result concerns a Togolese sanction on settlers or ministers)'
+    checked_at: '2026-11-10'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the President of the Republic accredited Israel''s new Ambassador (Simoon-Clement Seroussi) on 10 October 2025 (Presidency,
+      post 420505, read in full). Completion of 2026-11 (2026-11-10): the Ministry''s pages show the Foreign Minister''s working visit to Israel (27 to 29 January 2026), the call of 20 January 2025
+      and the memorandum of 6 July 2026; no recall, downgrade or severance.'
+    queries:
+    - presidence.gouv.tg post 420505 (read)
+    checked_at: '2026-11-10'
+  C1:
+    status: none-found
+    note: Togo is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: has-events
+    note: 'One event: the Memorandum of Understanding on political consultations signed in Lomé on 6 July 2026 by the Secretary General of the Ministry of Foreign Affairs and Israel''s Ambassador
+      (evt_2026_07_06_TGO_C2, -10, standing, confirmed on the Ministry''s own release, archived; the Government''s web magazine of 8 July 2026 says ''il y a quelques jours''; flagged: ''paraphé''
+      next to ''signature solennelle'', the text not published; docs/10 B-2079). The Foreign Minister''s visit to Israel of 27 to 29 January 2026 signed nothing (the Minister''s communique: the
+      delegations ''emphasized the need to establish a regular dialogue mechanism through the negotiation and signing of a memorandum''); the Ministry''s call of 20 January 2025 and the Israeli
+      Ministry''s thanks are no instrument.'
+    queries:
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): Israël (21 titles),
+      visa (30 titles) (posts 22273, 21728 and 21245 read in full; post 22273 archived)'
+    - republicoftogo.com/toutes-les-rubriques/diplomatie/nouveau-cadre-de-cooperation-entre-lome-et-jerusalem (read and archived)
+    - 'robertdussey.com /wp-json/wp/v2/posts?search=: Israel, Israël (30 titles; the communique of 30 January 2026 read and archived)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the customs authority''s (OTR) notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Togolese public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the national social-security fund''s and
+      the sovereign fund''s policies (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the public procurement regulator''s decisions.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor TGO
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Togo in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      No row for Togo in UNRWA's donor rankings for 2022, 2023 or 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Togo, so 2025 does not exceed 2022: no 2025
+      event (docs/10 B-876).
+    queries:
+    - >-
+      archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt,
+      src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: 'No medical evacuation of Gazans hosted and no field hospital deployed for Gaza was found: Togo is not among the destination countries in MSF''s table (21 October 2025) or WHO''s summary
+      (29 September 2025), and the Ministry''s searches for ''évacuation'' (0 titles) and ''aide humanitaire'' (12 titles, none on Gaza) return nothing on it.'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): évacuation (0 titles),
+      aide humanitaire (12 titles read by title)'
+    checked_at: '2026-11-10'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was found: the Ministry''s searches for ''réfugiés'' (3 titles) and ''visa'' (30 titles) return visa exemptions with other states and the Togolese
+      visa policy for Africans (19 May 2026), none for Palestinians.'
+    queries:
+    - 'bk.diplomatie.gouv.tg /wp-json/wp/v2/posts?search= (the Ministry of Foreign Affairs'' site, whose script-rendered pages take their text from this WordPress API; official): réfugiés (3 titles),
+      visa (30 titles read by title)'
+    - 'WebSearch 2026-11-10 (T-F-V2, French): Togo visa Palestiniens Gaza réfugiés accueil gouvernement togolais 2024 2025 (UNHCR''s pages on Togo''s general asylum policy and visa aggregators; no programme or visa for people from Gaza)'
+    checked_at: '2026-11-10'
+  E1:
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by a Togolese prosecutor was found: the results of complaints under universal jurisdiction are in other
+      states. Not searched: the Public Prosecutor''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine was found: the French search returned nothing for Lomé (its results are other states'' rallies and Chad''s domestic protests). Not
+      searched: the police''s and the Ministry of Security''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Tchad OR Togo manifestation soutien Palestine Gaza interdite OR autorisée OR dispersée police marche solidarité N''Djamena OR Lomé (nothing for Lomé)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'No case against a Togolese national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'

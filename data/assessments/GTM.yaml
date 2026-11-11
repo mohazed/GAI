@@ -1,0 +1,418 @@
+# Coverage record for Guatemala (docs/03 §6). P-21 light protocol, session T-P21-09, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Presidency's site (bernardoarevalo.presidencia.gob.gt, 200), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; file `gt_es.pdf`), the Ministry of Economy's treaties page and the Israeli embassy's bilateral-relations page, the UNRWA donor tables, the generated events and the structured tables; web searches in Spanish (the official language) and English per indicator group. The Ministry of Foreign Affairs' site (minex.gob.gt) and the state news agency (agn.gt) refuse scripted requests. Time: about 15 minutes of research on Guatemala, inside the 90-minute budget of the session.
+# Statements read and not filed as B9: the President's General Debate statement of 24 September 2024 (no call on Gaza) and the Foreign Minister's of the 81st session (no passage on Gaza).
+# Completion of 2026-11 (finish run, T-F-L05, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found. The Presidency's, the Interior Ministry's and the Public Prosecutor's posts of 7 October 2023 to 8 November 2026
+#   were read through their WordPress interfaces, the Ministry of Economy's site by search; the Ministry of Foreign Affairs (403), the Ministry of Defence, the Congress, the tax authority and the judiciary did not answer.
+#   No new event; B8 is generated and was not touched. No web search was available (the run's shared allowance was used up before the session began): press and NGO sources were not searched.
+# Redo pass with web search (T-F-L05-R, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 re-run with 12 searches in Spanish and English; every status is kept; the Ministry's statements on Gaza (no named speaker) and the Free Trade Agreement (signed 8 September 2022) are leads 3 and 4 (lead_20261109_GTM_3, lead_20261109_GTM_4).
+country: GTM
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Guatemala
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    note: 'No document names a company of Guatemala as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Guatemala (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations,
+      Guatemala not among them, and carries no supplier list by country. The Ministry of Economy''s search for Israel returned nothing. Press and NGO supplier lists were not searched. No web search
+      was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). One search for a Guatemalan company in the F-35 supply chain found no Guatemalan firm: every supplier named is Israeli (IAI wings, Elbit''s Cyclone) or a
+      shipping line in an NGO report. Still no supplier list that names a Guatemalan firm.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Guatemala (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Guatemala F-35 Israel supplier company Guatemala Lockheed Martin components'
+    checked_at: '2026-11-09'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists orders of Guatemala from Israel of 1974, 1976 and 1982 (armoured personnel carriers and transport aircraft), none in the
+      data year of the release of 9 March 2026 and none after October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Guatemala
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, Guatemala
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or documented transit of arms with Israel was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress
+      interface) was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the
+      President''s address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s
+      President, the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items
+      on fuel prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface,
+      with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the
+      Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the
+      Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The Ministry of Defence (mindef.mil.gt) did not answer on 2026-11-09, so its releases were not read. No web search was
+      available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). One search in Spanish on military cooperation found only historical material (the cooperation of the 1970s and 1980s, a BBC Mundo feature of February 2026)
+      and the Free Trade Agreement in force since 2024; a purchase of United States arms by the Army in 2026 (press, undated page) is not Israeli. No joint exercise, basing, transit or intelligence-sharing
+      item tied to the Gaza campaign.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Israel cooperación militar ejército armas compra equipo israelí Gaza'
+    checked_at: '2026-11-09'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms or dual-use export licences to Israel was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface)
+      was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s
+      address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President,
+      the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel
+      prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface,
+      with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the
+      Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the
+      Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. SIPRI records no delivery of major arms from Guatemala to Israel (A1), so there is no export of that kind to suspend.
+      The Ministry of Economy''s and the Ministry of Defence''s pages gave nothing (the second did not answer); the customs service (SAT, 403) was not read. No web search was available (the run''s
+      shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09;
+      standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session
+      and is kept). The same searches found no decision to suspend or refuse arms or dual-use licences to Israel; the Ministry''s statements on Gaza (4 June 2024, 21 March 2025, 27 August 2025:
+      press reports of communiqués of the Ministry, no named speaker) are calls for a ceasefire, not export measures (lead_20261109_GTM_3).'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Israel cooperación militar ejército armas compra equipo israelí Gaza'
+    - 'WebSearch 2026-11-09: Guatemala Minex comunicado Gaza alto al fuego inmediato agosto 2025 Ministerio de Relaciones Exteriores'
+    checked_at: '2026-11-09'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing an arms embargo on Israel, exports or imports, was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface) was searched
+      on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s address of
+      24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President, the subject
+      of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel prices caused
+      by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface, with the police
+      news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the Interior matches
+      are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the Minister''s meeting
+      with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise named: not filed). The
+      Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and the state agency (agn.gt)
+      refuses scripted requests, as in T-P21-09. The Congress''s site (congreso.gob.gt) answered 403, so bills and decrees were not read; the official gazette was not searched. No web search was
+      available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). One search in Spanish on a bill, motion or decree for an embargo or the suspension of trade or relations found none in Guatemala''s Congress (the hits are
+      Spain''s Congress and Chile''s); the nearest items are the Congress''s wish in May 2024 to question the Foreign Minister over the vote on Palestine''s membership, the opposite direction.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Congreso iniciativa embargo Israel suspender comercio relaciones Palestina genocidio'
+    checked_at: '2026-11-09'
+  A8:
+    status: none-found
+    note: 'No refusal of port, airspace or flagged-vessel transit to an arms shipment bound for Israel was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface)
+      was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s
+      address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President,
+      the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel
+      prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface,
+      with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the
+      Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the
+      Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The port authorities and the civil aviation directorate were not read. No web search was available (the run''s shared
+      allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard
+      mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is
+      kept). One search in Spanish on Puerto Quetzal, Santo Tomás de Castilla, cargo and airspace found only the seizures of smuggled firearms from the United States and the United States port
+      task force of February 2026; no refusal, complaint or record of an Israeli-bound arms cargo.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Puerto Quetzal Santo Tomás de Castilla barco carga militar Israel Gaza espacio aéreo'
+    checked_at: '2026-11-09'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 8, no on 2 (A/RES/ES-10/21 of 27 October 2023 and ES-10/22 of 12 December 2023, under the previous Government), abstention on 2 (A/RES/ES-10/24
+      and A/DEC/80/506) of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-10-06'
+  B3:
+    status: none-found
+    note: Guatemala is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-10-06).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President or the Minister of Foreign Affairs on executing the warrants of 21 November 2024 was found (Guatemala is a State Party to the Rome Statute, ratified in
+      2012).
+    queries: &id001
+    - Guatemala Corte Penal Internacional orden de arresto Netanyahu postura Guatemala Cancillería Martínez
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries:
+    - Guatemala Corte Penal Internacional orden de arresto Netanyahu postura Guatemala Cancillería Martínez
+    - Guatemala embajada Jerusalén Arévalo Israel visita Sa'ar OR Herzog OR Netanyahu 2026
+    - President Herzog visit Guatemala Arévalo agreements signed 2026 first Israeli president to visit Guatemala
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Guatemala has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row GTM,2013-04-08 added from the delegation''s statement at the Conference of 30 July 2025 on behalf of the Government (src_20250730_un-unispal_gtm-two-state-conference-statement,
+      archived): ''La República de Guatemala reconoció oficialmente a Palestina el 8 de abril de 2013''. The registry (A/78/846 annex) gives 9 April 2013; the row follows the state document (docs/10 B-355
+      (4)). No score difference. Before this session: No row in recognitions.csv. The registry dates the recognition 2013-04-09; EFE (Plaza Pública, 11 April 2013, read, not archived) reports that Guatemala
+      recognised Palestine ''esta semana'', announced by the Foreign Minister Fernando Carrera by videoconference from the UN, and the UN Division for Palestinian Rights'' chronology of April 2013 relays
+      the President''s Office through a press report (entry of 10 April); no state document of the date was archived (R21): +3 to add once the Ministry''s or the President''s statement is archived.'
+    queries:
+    - Guatemala reconoce Estado de Palestina 9 abril 2013 comunicado Ministerio de Relaciones Exteriores Guatemala reconocimiento Palestina
+    - 'WebSearch 2026-11-10: Guatemala reconoce al Estado de Palestina abril 2013 Ministerio de Relaciones Exteriores comunicado'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: has-events
+    note: 'One event: the President''s General Debate statement of 24 September 2025 (+2, call tier), archived through the Presidency''s report. Not filed: the President''s General Debate statement
+      of 24 September 2024 (''No podemos aceptar ninguna violación a la Carta ... ni en Ucrania, ni en Gaza ...'': a rejection of violations anywhere, not a call on Gaza); the Foreign Ministry''s
+      statements (one of a date not read that, in a search result, ''urge[s] the parties to agree on an immediate ceasefire''; the welcome of the ceasefire of 15 January 2025) carry no named speaker
+      (R3); the Foreign Minister''s General Debate statement of the 81st session (25 September 2026, read) has no passage on Gaza. The Ministry''s site (minex.gob.gt) and the state news agency
+      (agn.gt) answer scripted requests with HTTP 403 or a bot check, so these statements are known through the press and are not archived. Completion of 2026-11 (2026-11-09): the Presidency''s
+      posts after 6 October 2026 and the Foreign Minister''s 81st-session statement were re-read through the Presidency''s site: no new statement that names Gaza (the Presidency''s items of 2026
+      name the war in the Middle East only for fuel prices). The Interior Minister''s meeting with Israel''s ambassador (5 November 2025) is not a B9 statement.'
+    queries:
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Medio Oriente, 2026-11-09'
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of documented violations with a named speaker''s exact words was found. The Foreign Ministry''s account of the President''s
+      meeting with Israel''s President at the Munich Security Conference (17 February 2024: ''su irrestricto apoyo y solidaridad ante este tiempo desafiante'', as EFE quotes the Ministry) is in
+      the Ministry''s wording, not the President''s (R4), and is support and solidarity in a ''challenging time'', not for Israel''s conduct: lead_20261006_GTM_1; decayed to zero in any case.'
+    queries:
+    - Arévalo Israel febrero 2024 apoyo Israel embajada Jerusalén reafirma Guatemala presidente declaraciones Gaza "Arévalo"
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Guatemala was found (not an EU member).
+    queries:
+    - Guatemala Arévalo Gaza cese al fuego declaración Cancillería Israel 2025
+    - Guatemala Cancillería comunicado Gaza Israel Hamás 2024 2025 2026 Ministerio de Relaciones Exteriores Guatemala condena OR llama OR exhorta
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: Guatemala moved its embassy to Jerusalem on 16 May 2018 (the Israeli embassy''s bilateral page), where it stays; the Government''s statements
+      keep relations with Israel (the Ministry''s statement ''reitera su buena relación bilateral con el Estado de Israel'', agn.gt, not readable).'
+    queries: &id002
+    - Guatemala Israel acuerdo firmado 2025 OR 2026 Cancillería Guatemala Israel memorando cooperación Arévalo
+    - Guatemala embajada Jerusalén Arévalo Israel visita Sa'ar OR Herzog OR Netanyahu 2026
+    - President Herzog visit Guatemala Arévalo agreements signed 2026 first Israeli president to visit Guatemala
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association agreement with Israel exists to review or suspend; the free trade agreement is a C2 matter.
+    queries: *id002
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: 'No governmental instrument with Israel signed since October 2023 was found. The free trade agreement was signed on 8 September 2022 and entered into force on 1 March 2024 (the Ministry
+      of Economy''s page and the Israeli embassy''s page, read): a pre-war instrument, not filed under R18 (a reader who counts the entry into force as a new instrument would add a C2 event of
+      -10, dated 1 March 2024, 949 days old, which would not end the passivity penalty). A reported visit of Israel''s President to Guatemala with agreements in May 2026, which one search summary
+      gave, was not confirmed: the Israeli sources found (titles read: the embassy''s release ''President Herzog concludes official visit to Central America'', 10 May 2026, and a JNS item) give
+      his trip of 6 to 10 May 2026 as Panama and Costa Rica.'
+    queries: *id002
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    note: 'No ban on goods from the Israeli settlements and no labelling rule for them was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface) was searched
+      on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s address of
+      24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President, the subject
+      of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel prices caused
+      by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface, with the police
+      news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the Interior matches
+      are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the Minister''s meeting
+      with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise named: not filed). The
+      Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and the state agency (agn.gt)
+      refuses scripted requests, as in T-P21-09. The free trade agreement with Israel of 8 September 2022 (in force 1 March 2024, pre-war, docs/review/light-protocol.md T-P21-09) was not filed
+      (pre-war) and its text was not read; the customs service (SAT) answered 403. No web search was available (the run''s shared allowance was used up before the session began): press and NGO
+      sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find
+      pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). One search in Spanish and the Free Trade Agreement
+      results found no ban or labelling rule on settlement goods in Guatemala: the Agreement (signed 8 September 2022, ratified by Congress on 29 November 2023, in force on 1 March 2024 according
+      to the national agency, press reports differ on the date) has no Gaza-related restriction in any result (lead_20261109_GTM_4).'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Israel tratado de libre comercio exportaciones importaciones Gaza aduanas SAT 2026'
+    checked_at: '2026-11-09'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a public fund, pension fund or central bank of Guatemala over conduct in Gaza or the occupied territories was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt,
+      WordPress interface) was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match
+      are the President''s address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with
+      Israel''s President, the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the
+      2026 items on fuel prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress
+      interface, with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four
+      terms): the Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case)
+      and the Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The pension institute (IGSS, igssgt.org) and the Central Bank (banguat.gob.gt) answer but their pages were not searched.
+      No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass
+      with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search
+      was available describes the first session and is kept). One search in Spanish on the social-security institute''s funds and the central bank found no exclusion decision; the results are
+      about pensions generally. No public fund of Guatemala publishes an exclusion list that was found.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala fondo de pensiones IGSS exclusión empresas Israel inversiones Gaza Banco de Guatemala'
+    checked_at: '2026-11-09'
+  C6:
+    status: none-found
+    note: 'No procurement exclusion of Israeli suppliers or of companies active in the settlements was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface) was
+      searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s address
+      of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President, the subject
+      of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel prices caused
+      by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface, with the police
+      news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the Interior matches
+      are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the Minister''s meeting
+      with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise named: not filed). The
+      Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and the state agency (agn.gt)
+      refuses scripted requests, as in T-P21-09. The public procurement portal (Guatecompras) answered 403, so no exclusion list was read. No web search was available (the run''s shared allowance
+      was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode,
+      English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept).
+      The searches found no procurement exclusion of Israeli suppliers or of settlement companies in Guatemala (Guatecompras returned 403 in the first session and was not read); the Free Trade
+      Agreement results point to the opposite direction.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala Israel tratado de libre comercio exportaciones importaciones Gaza aduanas SAT 2026'
+    checked_at: '2026-11-09'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Guatemala to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Guatemala has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guatemala
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row of Guatemala in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) has no row for Guatemala, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Guatemala
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Guatemala UNRWA contribución OR retira OR suspende Guatemala evacuación médica Gaza OR guatemaltecos Gaza evacuados Cancillería
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Guatemala UNRWA contribución OR retira OR suspende Guatemala evacuación médica Gaza OR guatemaltecos Gaza evacuados Cancillería
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies of Guatemala for conduct in Gaza was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt,
+      WordPress interface) was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match
+      are the President''s address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with
+      Israel''s President, the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the
+      2026 items on fuel prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress
+      interface, with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four
+      terms): the Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case)
+      and the Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The Public Prosecutor''s site search returned nothing for Gaza, Israel, Palestina or Hamas; the judiciary''s site (oj.gob.gt)
+      did not answer. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that
+      says no web search was available describes the first session and is kept). One search in Spanish and English on complaints, universal jurisdiction and the International Criminal Court''s
+      warrants found no Guatemalan investigation, prosecution or complaint filed against anyone for conduct in Gaza; the hits concern Peru, Spain, Cyprus, Argentina and Chile.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala denuncia penal soldados israelíes jurisdicción universal OR Corte Penal Internacional Netanyahu orden de captura Guatemala Arévalo'
+    checked_at: '2026-11-09'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a police or interior-ministry measure on conduct in Gaza (arrest, travel restriction, ban on a gathering of the other side) was found. The Presidency''s
+      site (bernardoarevalo.presidencia.gob.gt, WordPress interface) was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente
+      9, genocidio 0): the posts that match are the President''s address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European
+      tour (it lists the meeting with Israel''s President, the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel
+      among donors (27 March 2025), the 2026 items on fuel prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s
+      site (mingob.gob.gt, WordPress interface, with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public
+      Prosecutor: 0 for the four terms): the Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February
+      2026, a religious-sect case) and the Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'',
+      no instrument and no exercise named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt)
+      answered 403 and the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The Interior Ministry''s and the National Civil Police''s news (mingob.gob.gt) name no measure of that
+      kind; the extradition of an Israeli national to Mexico (6 February 2026) is a religious-sect case, not Gaza. No web search was available (the run''s shared allowance was used up before the
+      session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09; standard mode, English and Spanish; the
+      summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). One search in Spanish on
+      demonstrations, arrests and the Israeli embassy found only peaceful marches of the Palestinian community (26 May 2024 on Avenida Reforma, October 2024) and a protest in Antigua Guatemala
+      in August 2025; no ban, arrest or police measure was found.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala manifestación Palestina Gaza detenidos policía protesta embajada Israel Ministerio Público'
+    checked_at: '2026-11-09'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No evidence of a court decision or prosecutorial step on conduct in Gaza was found. The Presidency''s site (bernardoarevalo.presidencia.gob.gt, WordPress interface)
+      was searched on 2026-11-09 for 7 October 2023 to 8 November 2026 (Gaza 2 posts, Israel 6, Palestina 2, Palestino 1, Medio Oriente 9, genocidio 0): the posts that match are the President''s
+      address of 24 September 2025 (filed, B9), the credentials ceremony of 13 September 2024, the item of 19 February 2024 on his European tour (it lists the meeting with Israel''s President,
+      the subject of lead_20261006_GTM_1), a statement of 23 June 2025 on the Middle East crisis, a scholarship platform that names Israel among donors (27 March 2025), the 2026 items on fuel
+      prices caused by the war in the Middle East, and name matches (Palestina de los Altos, a colonel named Israel). The Ministry of the Interior''s site (mingob.gob.gt, WordPress interface,
+      with the police news) and the Public Prosecutor''s (mp.gob.gt) were searched the same way (Interior: Gaza 5, Israel 6, Palestina 1, Hamas 0; Public Prosecutor: 0 for the four terms): the
+      Interior matches are arrest reports (first names, Palestina de los Altos, Guanagazapa), the extradition of an Israeli national to Mexico (6 February 2026, a religious-sect case) and the
+      Minister''s meeting with Israel''s ambassador of 5 November 2025 (security cooperation in general terms, ''proyectos conjuntos en tecnología y seguridad'', no instrument and no exercise
+      named: not filed). The Ministry of Economy''s site search (mineco.gob.gt) for Israel, Gaza and Palestina returned nothing. The Ministry of Foreign Affairs (minex.gob.gt) answered 403 and
+      the state agency (agn.gt) refuses scripted requests, as in T-P21-09. The judiciary''s site (oj.gob.gt) did not answer, so court records were not read. No web search was available (the run''s
+      shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L05-R, 2026-11-09;
+      standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session
+      and is kept). The searches on complaints and the Public Prosecutor found no Guatemalan court decision or prosecutorial step on conduct in Gaza.'
+    queries:
+    - 'bernardoarevalo.presidencia.gob.gt WordPress interface, 2023-10-07 to 2026-11-08: Gaza, Israel, Palestina, Palestino, Medio Oriente, genocidio, 2026-11-09'
+    - 'mingob.gob.gt and mp.gob.gt WordPress interface: Gaza, Israel, Palestina, Hamas, 2026-11-09'
+    - 'mineco.gob.gt site search: Israel, Gaza, Palestina, 2026-11-09'
+    - 'WebSearch 2026-11-09: Guatemala denuncia penal soldados israelíes jurisdicción universal OR Corte Penal Internacional Netanyahu orden de captura Guatemala Arévalo'
+    - 'WebSearch 2026-11-09: Guatemala manifestación Palestina Gaza detenidos policía protesta embajada Israel Ministerio Público'
+    checked_at: '2026-11-09'

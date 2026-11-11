@@ -1,0 +1,383 @@
+# Coverage record for Cuba (docs/03 §6). P-21 light protocol, session T-P21-07, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the ICJ's documents on Cuba's intervention (UNISPAL copies, archived), the Presidency's site (presidencia.gob.cu, 200), the Ministry's English text of the Foreign Minister's statement of
+#   15 October 2025 (cubaminrex.cu, not reachable from outside Cuba: Wayback capture), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 79th and 80th archived through their
+#   Wayback captures; the 81st read, no capture), the Cuban press (Cubadebate by plain HTTP, Granma and Prensa Latina through search results), the generated events and the structured tables; web searches in Spanish
+#   (the official language) and English per indicator group. Time: about 45 minutes.
+# Statements read and not filed as B9: the Foreign Minister's of the 81st session (26 September 2026: 'the genocidal crime of Zionism against the Palestinian people', Gaza not cited, R7: lead_20261006_CUB_2),
+#   his intervention at the Hague Group's high-level meeting of 25 September 2026 (a press copy only: lead_20261006_CUB_1), and the posts of the President and the Foreign Minister on X (not official transcripts).
+# Completion of 2026-11 (finish run, T-F-L04, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the Ministry of Foreign Affairs' own site
+#   (cubaminrex.cu, reachable on that day: 237 items listed, 169 read in full, the site's search service), not on the Gazette, customs, prosecutors' or courts' sites. New
+#   event: evt_2026_09_25_CUB_B9 (the Foreign Minister at the Hague Group's meeting, the Ministry's own text, lead_20261006_CUB_1 promoted). No web search was available (the
+#   run's shared allowance was used up before the session began): press and NGO sources were not searched.
+# Redo pass with web search (T-F-L04-R, 2026-11-09): A3, A5 to A8, C4 to C6, E1 to E3 re-run with nine searches in English and Spanish and three UN pages; every status is kept. Two new events from the Ministry's own pages (evt_2025_10_01_CUB_B9, evt_2026_07_26_CUB_B9, archived); the Foreign Minister's reply of 9 July 2026 is the speech of the General Assembly's embargo debate (28 October 2026 by the United Nations' news pages; page date 9 July 2026; not filed) and the President's speech of 14 August 2026 is not filed (Gaza as an example).
+country: CUB
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Cuba
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Cuba as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does
+      not contain the word Cuba (the one match is inside ''incubator''; searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations
+      of the programme (the United States and 19 allied nations), Cuba not among them, and carries no supplier list by country. The Ministry''s items name no F-35 supplier. Press and NGO supplier
+      lists were not searched. No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a
+      later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that
+      says no web search was available describes the first session and is kept). One search (F-35 supplier, Cuban company, Israeli arms trade) found no Cuban company in the programme and no arms
+      trade between Cuba and Israel; the two states have no relations (since 1973).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Cuba (no match as a word)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Cuba F-35 supplier OR Cuban company Israel arms trade Cuba Israel relations ties 1973 Gaza Cuba hosted Hamas delegation 2026'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Cuba
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No official record of a named exercise, a documented transit, a basing agreement or an official confirmation of intelligence sharing with Israel related to the Gaza campaign was found.
+      The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements
+      (the President''s and the Foreign Minister''s speeches, the Government''s and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full
+      text of the 169 items dated 9 November 2024 or later, searched for Israel, Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search
+      service for Gaza, Israel and Palestina (564 distinct pages, titles only). The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and
+      15 October 2025, 25 September 2026 and his General Debate statements, the President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an
+      arms, licence, transit, labelling, fund, procurement or prosecution measure of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no
+      counterpart. The Ministry''s items speak of Israel''s strikes in the region and of the United States'' support for them; none reports an exercise, a transit, a basing or an intelligence arrangement
+      of Cuba with Israel.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says
+      no web search was available describes the first session and is kept). Two searches found no exercise, transit, basing or intelligence arrangement; the results name Cuba''s rejection of Israel''s
+      plan to take Gaza City (August 2025), its intervention in ICJ case 192 (B3, filed) and its calls for a two-state solution, and no measure.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Israel armas embargo Gaza cooperación militar OR tránsito OR espacio aéreo OR puerto gobierno cubano decisión'
+    - 'WebSearch 2026-11-09: Cuba Díaz-Canel OR Rodríguez Parrilla Gaza genocidio Israel declaración octubre 2026 noviembre 2026'
+  A6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision suspending or refusing a class of arms or dual-use licences to Israel was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from outside Cuba
+      on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the Government''s and the Ministry''s
+      declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched for Israel, Gaza, Palestin-,
+      sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles only). The items that name
+      Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements, the President''s speeches
+      of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure of Cuba. Cuba has no
+      relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. SIPRI records no delivery of major arms from Cuba to Israel (A1), so there is no export
+      to suspend.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The same searches found no arms-licence decision; Cuba exports no arms to Israel and has no relations with it (C2 note).'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Israel armas embargo Gaza cooperación militar OR tránsito OR espacio aéreo OR puerto gobierno cubano decisión'
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree establishing an arms embargo on Israel, in either direction, was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from outside Cuba on
+      2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the Government''s and the Ministry''s
+      declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched for Israel, Gaza, Palestin-,
+      sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles only). The items that name
+      Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements, the President''s speeches
+      of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure of Cuba. Cuba has no
+      relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Foreign Minister''s statement of 1 October 2025 (the Ministry''s text) says that
+      the General Assembly ''puede instar a los Estados Miembros a imponer un embargo de armas contra Israel'': a call on other states, not a law or decree of Cuba. The Official Gazette (gacetaoficial.gob.cu)
+      was not searched.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says
+      no web search was available describes the first session and is kept). The same searches found no law or decree on an arms embargo in either direction; the only trade link in the results is
+      private: a chamber of commerce mission of Israeli businesspeople announced in 2025 (Cubanet, Times of Israel, read as search results), with the Cuban Chamber of Commerce''s agreement. No state
+      instrument.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Israel armas embargo Gaza cooperación militar OR tránsito OR espacio aéreo OR puerto gobierno cubano decisión'
+    - 'WebSearch 2026-11-09: Cuba Gaceta Oficial Israel comercio prohibición OR restricción productos asentamientos importación Cuba Israel intercambio comercial'
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No official record of a port or airspace denial to an arms shipment bound for Israel was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from outside
+      Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the Government''s and the
+      Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched for Israel, Gaza,
+      Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles only). The items
+      that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements, the President''s
+      speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure of Cuba. Cuba
+      has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Ports and Maritime Authority and the Civil Aviation Institute were not read.  No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with
+      web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available
+      describes the first session and is kept). The same searches found no port or airspace denial and no record of arms cargo for Israel crossing Cuban airspace or ports.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Israel armas embargo Gaza cooperación militar OR tránsito OR espacio aéreo OR puerto gobierno cubano decisión'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 of the 12 qualifying votes. The statements on the votes were not read. No disagreement found.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: has-events
+    note: Cuba filed a declaration of intervention under Article 63 on 10 January 2025 (ICJ press release of 13 January 2025; the declaration, in French, archived through UNISPAL); the construction
+      of the Convention supports the applicant (one event, +15). No withdrawal found.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    - Cuba declaration of intervention ICJ South Africa v. Israel 10 January 2025
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional measures was found; the declaration of intervention treats Israel's attitude to them as contempt.
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: No statement of the President, the Foreign Minister or a justice minister on executing the warrants of 21 November 2024 was found (Cuba is not a State Party to the Rome Statute; the Ministry's
+      pages that the searches returned do not address the warrants).
+    queries: &id001
+    - Cuba cancillería saluda orden de arresto CPI Netanyahu Gallant noviembre 2024 Bruno Rodríguez
+    - Cuba statement Gaza ceasefire Foreign Minister Rodríguez Parrilla Hague Group
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: No stated refusal and no hosting of a person under warrant was found.
+    queries: *id001
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Cuba has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the pre-existing standing state (+3), recognition on 16 November 1988, from the Ministry''s documentation service (src_20231116_cubaminrex_cuba-palestina-reconocimiento,
+      archived; a retrospective essay of 2023 stating the date; the row was added in this session, R21, as for Belize, Turkey and South Africa). The registry dates the recognition 1988-11-16.'
+    checked_at: '2026-10-06'
+  B9:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: 'Four events: the President''s message of 28 October 2023 (+5, decayed), the Foreign Minister''s General Debate statements of 28 September 2024 (+5, decayed) and 26 September 2025 (+5,
+      375 days old) and his statement at the Non-Aligned Movement''s Ministerial Committee on Palestine of 15 October 2025 (+5, 356 days old: the only one of the four inside the 365-day window).
+      Not filed: lead_20261006_CUB_1 (Hague Group, 25 September 2026: +5 if an official copy is archived), _2 (81st session, R7), _3 (Hague Group joint declaration of Bogotá, signatory not named)
+      and _4 (posts on X).  Completion of 2026-11 (finish run, T-F-L04, 2026-11-09): lead_20261006_CUB_1 is promoted to evt_2026_09_25_CUB_B9 (+5, 45 days old) from the Ministry''s own Spanish text
+      of the Foreign Minister''s intervention, found through cubaminrex.cu''s search (the lists of speeches do not hold it) and archived. The Ministry''s text of the 81st General Debate statement
+      (26 September 2026) names ''el pueblo palestino'' and never Gaza: lead _2 stays (R7). Redo pass with web search (T-F-L04-R, 2026-11-09): new events from the Ministry''s own pages, found through
+      the Ministry''s search and checked in full text, both archived (replays equal in bytes and SHA-256): evt_2025_10_01_CUB_B9 (the Foreign Minister at the General Assembly''s plenary on the use
+      of the veto, 1 October 2025: +5, 404 days old, decayed, no score effect) and evt_2026_07_26_CUB_B9 (the President''s speech of 26 July 2026: more than 70,000 Palestinians, about 21,000 children,
+      ''los genocidas sionistas''; +5, 106 days old; inside the cap of +10 with the two events of 30 July and 25 September 2026, so no score effect). Read and not filed: (1) the Foreign Minister''s
+      speech at the General Assembly''s debate on ending the embargo (item 38; the Ministry''s page says ''cómplice del genocidio que ocurre en Gaza'' of the United States'' Government, one sentence
+      in a speech on the blockade): the page''s date is 9 July 2026 but the speech reports damages to 28 February 2026 and the United Nations'' own news pages say the debate opened on 27 October
+      2026 and that the Foreign Minister was to speak on Wednesday 28 October 2026; the date is not settled by a primary document (press.un.org answers a bot check), so it is not filed (default:
+      file as +5 dated 28 October 2026 only when a United Nations record states the date; no score effect: B9 is at its cap); (2) the President''s speech of 14 August 2026 (the centenary of Fidel
+      Castro; ''el genocidio en Gaza'' named once as an example of aggressions incompatible with international law): not filed, Gaza as an example in a list (as Costa Rica''s statement of 24 September
+      2025), default: leave. One search for statements of October and November 2026 found none besides the above.'
+    queries:
+    - Díaz-Canel Gaza genocidio discurso cese al fuego Cuba presidente Palestina 2025
+    - Bruno Rodríguez Parrilla Palestina Gaza genocidio canciller 2026 declaración
+    - Cuba Bogotá Conferencia Ministerial de Emergencia Palestina Grupo de La Haya julio 2025
+    - 'WebSearch 2026-11-09: Cuba Díaz-Canel OR Rodríguez Parrilla Gaza genocidio Israel declaración octubre 2026 noviembre 2026'
+    - 'WebSearch 2026-11-09: General Assembly vote resolution necessity of ending embargo Cuba 2026 debate Rodríguez Parrilla speech date'
+    - 'cubaminrex.cu Drupal search keys: cómplice del genocidio que ocurre en Gaza; Díaz-Canel Gaza agosto 2026; Día de la Rebeldía Nacional discurso 2026; 2026-11-09'
+    - news.un.org/en/story/2026/10/1168686 read 2026-11-09 (the debate opened 27 October 2026; the Foreign Minister due to speak on 28 October)
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of documented violations was found.
+    queries:
+    - Díaz-Canel Gaza genocidio discurso cese al fuego Cuba presidente Palestina 2025
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Cuba was found (Cuba has no relations with Israel; the Hague Group's measures of July 2025 are commitments, not acts of Cuba).
+    queries:
+    - Cuba sanciones colonos israelíes OR medidas Grupo de La Haya Bogotá
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance applies in the window: Cuba broke diplomatic and consular relations with Israel in 1973 (the decision of September 1973 quoted in the Ministry''s essay,
+      archived), so there is no ambassador to recall and no relation to downgrade.'
+    queries:
+    - Cuba Israel relaciones diplomáticas ruptura 1973 cubaminrex
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel exists to review.
+    queries:
+    - Cuba Israel acuerdo comercial
+    checked_at: '2026-10-06'
+  C2:
+    status: none-found
+    note: No governmental instrument with Israel signed since October 2023 was found; Cuba has no relations with Israel.
+    queries:
+    - Cuba Israel agreement OR memorandum signed 2024 OR 2025 OR 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No regulation on labelling or banning goods from Israeli settlements was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from outside Cuba on 2026-11-09)
+      was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the Government''s and the Ministry''s declarations,
+      notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched for Israel, Gaza, Palestin-, sionis-, arms
+      embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles only). The items that name Gaza, Palestine
+      or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements, the President''s speeches of 2025 and
+      2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure of Cuba. Cuba has no relations with
+      Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Ministry of Foreign Trade and Foreign Investment''s site (mincex.gob.cu) did not answer and the
+      customs service''s was not read.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is
+      open to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence
+      above that says no web search was available describes the first session and is kept). One search of the Gazette and trade rules found no regulation on settlement goods and no Gazette text
+      on trade with Israel (results concern Spain''s royal decree-law of 2025, not Cuba).'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Gaceta Oficial Israel comercio prohibición OR restricción productos asentamientos importación Cuba Israel intercambio comercial'
+  C5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No exclusion decision by a public fund, pension fund or the Central Bank over conduct in Gaza or the occupied territories was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu,
+      which answered from outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches,
+      the Government''s and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later,
+      searched for Israel, Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct
+      pages, titles only). The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General
+      Debate statements, the President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement
+      or prosecution measure of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Central Bank of Cuba''s and the state
+      funds'' sites were not read.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open
+      to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above
+      that says no web search was available describes the first session and is kept). One search (sovereign fund, Central Bank, divestment) found no exclusion decision; Cuba has no sovereign or
+      pension fund with a public exclusion list and the results concern other states.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba contratación pública OR licitación empresas israelíes excluidas OR fondo soberano OR Banco Central de Cuba inversiones Israel desinversión'
+  C6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No public-procurement rule excluding companies over conduct in Gaza or the occupied territories was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which answered from
+      outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the Government''s
+      and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched for Israel,
+      Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles only).
+      The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements, the
+      President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure
+      of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Official Gazette and the Ministry of Finance and Prices were
+      not read.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search.
+      Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web
+      search was available describes the first session and is kept). The same search found no procurement exclusion rule; the results on Israeli firms excluded from tenders concern Spain and Chile.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba contratación pública OR licitación empresas israelíes excluidas OR fondo soberano OR Banco Central de Cuba inversiones Israel desinversión'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Cuba to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Cuba has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived).
+    queries:
+    - Cuba UNRWA contribution OR funding
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row of Cuba in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09)
+      has no row for Cuba, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Cuba
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found; Cuba's Henry Reeve contingent is a general disaster-response brigade (no deployment to Gaza found), and Palestinian
+      students study in Cuba (a long-standing programme, not an indicator).
+    queries:
+    - Cuba brigada médica Henry Reeve Gaza oferta
+    - Cuba Gaza humanitarian aid medical Palestinian students
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Cuba visa OR refugio palestinos Gaza
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies for conduct in Gaza was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu,
+      which answered from outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches,
+      the Government''s and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later,
+      searched for Israel, Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct
+      pages, titles only). The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General
+      Debate statements, the President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement
+      or prosecution measure of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Attorney General''s site (fgr.gob.cu)
+      and the Supreme Court''s were not searched.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the
+      entry is open to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the
+      sentence above that says no web search was available describes the first session and is kept). One search (Fiscalía General, courts, universal jurisdiction) found no domestic investigation
+      or prosecution of nationals or companies for conduct in Gaza.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Tribunal Supremo OR Fiscalía General denuncia Israel crímenes Gaza jurisdicción universal OR proceso penal Cuba manifestación solidaridad Palestina prohibida OR
+      restringida'
+  E2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a ban or restriction of assemblies or symbols in solidarity with Palestine was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu,
+      which answered from outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches,
+      the Government''s and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later,
+      searched for Israel, Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct
+      pages, titles only). The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General
+      Debate statements, the President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement
+      or prosecution measure of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Ministry of the Interior''s site (mininter.gob.cu)
+      did not answer; no ban or restriction of assemblies or symbols in solidarity with Palestine appears in the items read.  No web search was available (the run''s shared allowance was used up
+      before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish;
+      the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). The same search found
+      no ban or restriction of assemblies or symbols in solidarity with Palestine; the results report state-organised marches in Havana (October 2025) and Cuba''s ICJ intervention. The Ministry
+      of the Interior''s site was not read.'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Tribunal Supremo OR Fiscalía General denuncia Israel crímenes Gaza jurisdicción universal OR proceso penal Cuba manifestación solidaridad Palestina prohibida OR
+      restringida'
+    - 'WebSearch 2026-11-09: Cuba Díaz-Canel OR Rodríguez Parrilla Gaza genocidio Israel declaración octubre 2026 noviembre 2026'
+  E3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a universal-jurisdiction complaint over Gaza accepted for investigation was found. The Ministry of Foreign Affairs'' own site (cubaminrex.cu, which
+      answered from outside Cuba on 2026-11-09) was read as follows: the titles and dates of its five lists of speeches and statements (the President''s and the Foreign Minister''s speeches, the
+      Government''s and the Ministry''s declarations, notes and declarations: 237 items of 7 October 2023 to 5 November 2026), the full text of the 169 items dated 9 November 2024 or later, searched
+      for Israel, Gaza, Palestin-, sionis-, arms embargo, settlements, sovereign funds, procurement and F-35, and the site''s search service for Gaza, Israel and Palestina (564 distinct pages, titles
+      only). The items that name Gaza, Palestine or Israel are condemnations and calls (the Foreign Minister''s of 1 October and 15 October 2025, 25 September 2026 and his General Debate statements,
+      the President''s speeches of 2025 and 2026, the Ministry''s declarations on Iran, Lebanon and Syria); none reports an arms, licence, transit, labelling, fund, procurement or prosecution measure
+      of Cuba. Cuba has no relations with Israel (C2 note of the session of 6 October 2026), so these measures have no counterpart. The Attorney General''s and the courts'' sites were not searched.  No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with
+      web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available
+      describes the first session and is kept). The same search found no universal-jurisdiction complaint accepted in Cuba; the only proceedings in the results are international (the ICC''s jurisdiction
+      ruling of December 2025, ICJ case 192).'
+    queries:
+    - 'cubaminrex.cu: five speech and statement lists, 237 items of 2023-10-07 to 2026-11-05 (titles), 169 items of 2024-11-09 onward (full text): israel, gaza, palestin, sionis, embargo de armas,
+      asentamientos, fondo soberano, contratación, F-35, 2026-11-09'
+    - 'cubaminrex.cu search service: Gaza, Israel, Palestina (564 pages, titles), 2026-11-09'
+    - 'WebSearch 2026-11-09: Cuba Tribunal Supremo OR Fiscalía General denuncia Israel crímenes Gaza jurisdicción universal OR proceso penal Cuba manifestación solidaridad Palestina prohibida OR
+      restringida'

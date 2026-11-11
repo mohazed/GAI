@@ -1,0 +1,265 @@
+# Coverage record for Eswatini (docs/03 §6). P-21 light protocol, session T-P21-43, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the UN's General Debate pages and files (79th to 81st), the REST search of the Times of Eswatini (times.co.sz) and Eswatini Post (eswatinipost.com), both kind press, the Government portal (www.gov.sz: connection failed; the Wayback capture of 2026-09-16 is the home page only), the ICJ's case 192 page (live and archived copy), the ASP's list (archived), UNRWA donor rankings (2022 to 2024) and the Article 19 documents. No Ministry site was found.
+# Events: none. Leads: none. See docs/10 B-833, B-834.
+# Completion of 2026-11 (finish run, T-F-L22, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6, D4 and E1 to E3 searched (web searches, the Times of Eswatini's REST search and the shared searches), all none-found with the limits said in each note; B9, B12 and C2 notes extended; no new event, no lead. The Government portal (gov.sz) did not answer. See docs/10 B-2081.
+country: SWZ
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier SWZ
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names an Eswatini company as a supplier of parts or maintenance for the F-35 programme: the country is neither a programme partner nor a foreign-military-sales customer in
+      the results. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list supplier countries 2026 (Lockheed Martin''s partner list of eight nations, the foreign-military-sales
+      customers and the Pentagon''s long-lead contract for an undisclosed buyer; none of the six of this batch: STP, SWZ, SYC, TCD, TGO, TZA)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by this country from Israel in the register. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer SWZ
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, documented transit, basing agreement or official confirmation of intelligence sharing in 2023 to
+      2026. The defence instruments in the results are with Zambia (a defence agreement), Russia (military cooperation reaffirmed with Lavrov) and Kenya (a draft agreement discussed in September
+      2026); Israel closed its embassy in Mbabane in 1994 and the report of 24 October 2024 on a possible reopening (Anadolu, snippet) has no follow-up in the results. Not searched: the Ministry of Defence''s and the Umbutfo Eswatini Defence Force''s releases (gov.sz
+      did not answer).'
+    queries:
+    - 'WebSearch 2026-11-10: Eswatini Israel agreement OR military OR defence OR King Mswati 2024 2025 2026 (Zambia, Russia and Kenya defence items; no Israel instrument)'
+    - 'WebSearch 2026-11-10: Israel reopen embassy Eswatini Mbabane ambassador 2025 2026 (Israel''s embassy closed in 1994, relations handled from Pretoria; the 2024 speculation has no confirmation)'
+    - 'times.co.sz /wp-json/wp/v2/posts?search= (Times of Eswatini, WordPress REST, kind press): Israel (30 titles read), Gaza (30), Palestine (15), Palestinian (30)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and Eswatini has no arms exports to Israel in the sources read (A1: no delivery in the SIPRI register). Not
+      searched: the Ministry of Defence''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found; the results concern other states. Not searched: the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of airspace or transit to an arms shipment bound for Israel was found (Eswatini is landlocked; ports do not arise). Not searched: the civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: no vote recorded (non-vote) on all twelve qualifying votes (each scores -2; B1 -11.0 after decay). The country is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (A/81/360; src_20261013_un-ga_article19-page); the Nation of 31 October 2023
+      lists Eswatini among the 14 states that did not vote on A/RES/ES-10/21. The arrears lists for the earlier vote dates were not checked: compare the UN''s voting records before the score is
+      read.'
+    queries:
+    - unga_votes.csv, country SWZ
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04): not found'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by this country supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Eswatini is not on the Assembly of States Parties'' list (archived: src_20261009_icc-asp_states-parties). No statement on the warrants was found in the General Debate statements or
+      the press search below.'
+    queries:
+    - src_20261009_icc-asp_states-parties (searched)
+    - 'times.co.sz and eswatinipost.com /wp-json/wp/v2/posts?search=: Gaza, Palestine, Palestinian, Israel, Hamas, Netanyahu, Jerusalem, UNRWA (titles and excerpts read)'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants and no hosting of a person under warrant was found (the country is not a State Party).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanction on ICC judges or prosecutors by Eswatini was found (the country is not on the Assembly of States Parties'' list; the Times of Eswatini''s results for Gaza and Palestine are
+      world news and the King''s UN reports). Not searched: the Government''s own site (gov.sz did not answer).'
+    queries:
+    - 'times.co.sz /wp-json/wp/v2/posts?search= (Times of Eswatini, WordPress REST, kind press): Gaza (30 titles), Palestinian (30)'
+    - 'WebSearch 2026-11-10 (T-F-V2): Eswatini government sanctions Israeli settlers OR ICC judges sanctions Eswatini 2024 2025 (the results concern the United States'' sanctions on ICC judges; none mentions Eswatini)'
+    checked_at: '2026-11-10'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Eswatini. The registry gives a recognition since 1 July 1991 (before the window; no recognition document was found in the sources read, so
+      no row is added: R21); no recognition after 7 October 2023 was found in the sources read.'
+    queries:
+    - recognitions.csv, SWZ (no row)
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The 80th General Debate statement (King Mswati III, head of state, 25 September 2025; English, gastatements/80/sz_en.pdf) proposes ad hoc committees and says that in the
+      Middle East ''the team could ask the Palestinians what it will take to release the hostages'' and should ''engage the Israelis to ascertain what it would also take for them to stop the bombardment
+      to avoid loss of more innocent lives, widespread destruction of property, and a growing refugee crisis'': no call for a ceasefire, no violation named, and Gaza is not named (R7); the 79th
+      (Prime Minister Russell Dlamini, 27 September 2024) and the 81st (the King, 23 September 2026) do not mention Gaza or Palestine. The Times of Eswatini''s and Eswatini Post''s search results
+      are world news and the King''s UN reports; none reports a B9 statement. Completion of 2026-11 (2026-11-10): the Times of Eswatini of 24 September 2026 (post 44662, read in full) reports the
+      King''s 81st address as urging the United Nations to enforce compliance with peace agreements and to ''silence the guns'', with no mention of Gaza; its comment of 7 October 2025 (post 26751)
+      says the King cited ''the wars in Gaza, Russia and Ukraine, Sudan...'' among the conflicts, a newspaper''s account, not his words.'
+    queries:
+    - gadebate.un.org/en/{79,80,81}/eswatini and gastatements/{79,80,81}/sz_en.pdf (read)
+    - times.co.sz and eswatinipost.com searches (see B5; titles and excerpts read; the UN reports of 20 to 24 September 2026 listed)
+    - 'times.co.sz /wp-json/wp/v2/posts?search= (Times of Eswatini, WordPress REST, kind press): posts 44662 and 26751 read in full'
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the Prime Minister was found in the sources read.'
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanction on Israeli ministers or settler entities was found in the Times of Eswatini''s results. Not searched: the Government Gazette and the Cabinet''s decisions.'
+    queries:
+    - 'times.co.sz /wp-json/wp/v2/posts?search= (Times of Eswatini, WordPress REST, kind press): Israel (30 titles), Palestinian (30)'
+    - 'WebSearch 2026-11-10 (T-F-V2): Eswatini government sanctions Israeli settlers OR ICC judges sanctions Eswatini 2024 2025 (no result mentions Eswatini or a sanction on settlers by it)'
+    checked_at: '2026-11-10'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found in the press results read. Official sources not read (see B7). Completion of 2026-11 (2026-11-10): Israel has no embassy
+      in Mbabane (closed in 1994; the report of 24 October 2024 on a possible return, Anadolu, has no follow-up in the results read); no recall or downgrade by Eswatini in the Times of Eswatini''s
+      results.'
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    - 'WebSearch 2026-11-10: Israel reopen embassy Eswatini Mbabane ambassador 2025 2026 (no reopening found)'
+    checked_at: '2026-11-10'
+  C1:
+    status: none-found
+    note: Eswatini is not an EU member and has no association or trade agreement with Israel to suspend or review.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No agreement with Israel signed since October 2023 was found in the press results read. Official sources not read (see B7). Completion of 2026-11 (2026-11-10): the Times of Eswatini of
+      26 September 2026 (post 44810, read in full) reports that Foreign Minister Pholile Shakantu met the American Jewish Committee in New York on the margins of the 81st General Assembly and named
+      agriculture, technology, health and commerce as areas for collaboration: a meeting with an advocacy group, no instrument signed and no Israeli official present; no agreement with Israel since
+      October 2023 in the press results (a search for memoranda signed by the Minister returned agreements with the United Arab Emirates, Zambia, Singapore and Turkiye).'
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    - 'WebSearch 2026-11-10: Eswatini Israel MoU OR agreement signed agriculture OR technology OR health OR water 2024 OR 2025 OR 2026 Shakantu (visa exemption with the United Arab Emirates, defence
+      with Zambia, protocol with Turkiye, a water MoU not naming Israel; no Israel instrument)'
+    - 'times.co.sz /wp-json/wp/v2/posts?search= (Times of Eswatini, WordPress REST, kind press): post 44810 read in full'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found; the results concern other states. Not searched: the Eswatini Revenue Authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Tanzania OR Chad OR Togo OR Eswatini OR Seychelles OR "Sao Tome" arms embargo Israel OR suspend arms exports Israel OR ban settlement goods 2024 2025 (the twelve states
+      of the Bogota meeting of July 2025, the letter of November 2024 signed by 52 states, Spain and South Africa; none of the six of this batch)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion of Israeli companies by an Eswatini public fund was found: the funds in the results are Norway''s and New Zealand''s. Not searched: the Public Service Pension Fund''s and
+      the Central Bank''s investment policies (no list found).'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the Eswatini Public Procurement Regulatory Agency''s decisions.'
+    queries:
+    - 'WebSearch 2026-11-10: sovereign wealth fund OR pension fund exclusion Israeli companies OR public procurement exclusion Israeli companies Africa 2024 2025 Tanzania OR Chad OR Togo OR Seychelles
+      OR Eswatini (Norway''s fund exclusions of 2025 and New Zealand''s fund; no African fund or procurement measure; none of the six)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS (fts_funding.csv): no row for this country in the windows from December 2023 to October 2025. Left to the build.'
+    queries:
+    - fts_funding.csv, donor SWZ
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: No row for Eswatini in UNRWA's donor rankings for 2022, 2023 or 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries: &id001
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      No row for Eswatini in UNRWA's donor rankings for 2022, 2023 or 2024. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Eswatini, so 2025 does not exceed 2022: no
+      2025 event (docs/10 B-876).
+    queries:
+    - >-
+      archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt,
+      src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: 'No medical evacuation of Gazans hosted and no field hospital deployed for Gaza was found: Eswatini is not among the destination countries in MSF''s table (21 October 2025) or WHO''s summary
+      (29 September 2025), and the press results have no such item.'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza medical evacuation patients received countries list WHO 2024 2025 (WHO''s destinations, MSF''s country comparison data of 21 October 2025 and WHO''s medevac summary
+      of 29 September 2025, both fetched and searched by script for the six names: none found)'
+    checked_at: '2026-11-10'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the press results read. Official sources not read (see B7).
+    queries:
+    - times.co.sz and eswatinipost.com searches (see B5)
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'No investigation or prosecution of an Israeli national or of a Gaza-related offence by an Eswatini prosecutor was found: the results of complaints under universal jurisdiction are in
+      other states. Not searched: the Director of Public Prosecutions'' releases.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'No ban, dispersal or arrest at a rally for Palestine in Eswatini was found: the search returned the protests of 2021 to 2023 against the monarchy (some banned) and nothing for Gaza or
+      Palestine. Not searched: the Royal Eswatini Police Service''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Eswatini Gaza protest OR march OR petition OR statement government Palestine solidarity police Mbabane Israel embassy (the 2021 to 2023 pro-democracy protests; no Palestine
+      rally)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'No case against an Eswatini national for service in the Israeli forces, or against the state for complicity, was found. Not searched: the courts'' lists.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Israeli soldiers Gaza Africa OR "Hind Rajab Foundation" Tanzania OR Seychelles OR Togo OR Chad OR Eswatini (complaints in Belgium, Cyprus
+      and other European states; none in the six)'
+    checked_at: '2026-11-10'

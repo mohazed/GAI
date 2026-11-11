@@ -1,0 +1,140 @@
+# Hand-authored events for the Sudan (P-21 light protocol, T-P21-18, 2026-10-13).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08).
+# The Sudan has two rival authorities in a war: the speakers for B9/B10 are those of the government that represents the Sudan at the UN (R3): the President of the Transitional Sovereign Council (Abdel-Fattah Al-Burhan, head of state), the Prime Minister (Kamil El-Tayeb Idris, from May 2025) and the Minister of Foreign Affairs and International Cooperation (Mohieldin Salem, from 2025). The Rapid Support Forces' parallel authority is not a B9 speaker.
+
+- id: evt_2024_09_26_SDN_B9
+  revision: 1
+  country: SDN
+  indicator: B9
+  type: repeatable
+  date: '2024-09-26'
+  points: 2
+  points_rationale: 'Formal call for an end to hostilities (+2): the head of state tells the General Assembly ''We call for the immediate end to the hostilities in Gaza and Lebanon''; no violation
+    is named.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President of the Transitional Sovereign Council told the General Assembly that the Government of the Sudan called for an immediate end to the hostilities in Gaza and Lebanon.
+    fr: Le président du Conseil souverain de transition a dit à l'Assemblée générale que le gouvernement du Soudan demandait la fin immédiate des hostilités à Gaza et au Liban.
+  actor: &id001
+    en: President of the Transitional Sovereign Council of the Sudan
+    fr: Président du Conseil souverain de transition du Soudan
+    name: Abdel-Fattah Al-Burhan
+  evidence:
+  - source: src_20240926_undocs_a-79-pv-11
+    quote: We call for the immediate end to the hostilities in Gaza and Lebanon, and we recommend that Palestine’s be granted full membership of the Organization.
+    quote_lang: en
+    locator: line 1838
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: Lines 1838 and 1839 of the Assembly's verbatim record A/79/PV.11 (26 September 2024) re-read after the sentence on the Palestinian cause and the 1967 borders. Tier +2 (a call, no
+        violation named). The delegation's Arabic file (sd_ar.pdf of the 79th session) has no passage on Gaza; the statement as delivered did (the UN's summary on the General Debate page carries
+        it too).
+    notes: 'From the verbatim record (English interpretation of the Arabic): the closing passage of the address, after the account of the war in the Sudan. The event is 747 days old on 13 October
+      2026, so it is expired and adds nothing to the score. The speaker is the head of the government that represents the Sudan at the UN (Port Sudan; the rival authority of the Rapid Support
+      Forces is not a B9 speaker). Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2025_03_04_SDN_B9
+  revision: 1
+  country: SDN
+  indicator: B9
+  type: repeatable
+  date: '2025-03-04'
+  points: 2
+  points_rationale: 'Formal call to keep the ceasefire (+2): the head of state tells the extraordinary Arab Summit that the ceasefire in Gaza must continue and its terms be implemented, and works
+    ''toward ending the war on Gaza''; no violation is named. Flagged: a call to maintain a ceasefire already in force (it began on 19 January 2025).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The President of the Transitional Sovereign Council told the extraordinary Arab Summit in Cairo that the ceasefire in Gaza must continue and its terms be implemented.
+    fr: Le président du Conseil souverain de transition a dit au sommet arabe extraordinaire du Caire que le cessez-le-feu à Gaza devait se poursuivre et que ses clauses devaient être appliquées.
+  actor: *id001
+  evidence:
+  - source: src_20250304_suna_burhan-arab-summit-cairo
+    quote: كما نؤكد على ضرورة إستمرار وقف إطلاق النار وتنفيذ بنوده ، بما يخفف من معاناة الشعب الفلسطيني ويمكنه من العيش الكريم
+    quote_lang: ar
+    quote_en: we also stress the necessity of continuing the ceasefire and implementing its terms, which eases the suffering of the Palestinian people and enables them to live in dignity
+    locator: line 15
+  - source: src_20250304_suna_burhan-arab-summit-cairo
+    quote: وصولاً لإنهاء الحرب على غزة تمهيداً لبدء رحلة التعافي والسلام والبناء
+    quote_lang: ar
+    quote_en: leading to the end of the war on Gaza, as a prelude to the start of the journey of recovery, peace and building
+    locator: line 14
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-10-13'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-10-13'
+      verdict: agree
+      notes: 'Lines 14 and 15 of the agency''s text of the speech re-read (the agency prints ''the text of the speech of the President of the Sovereignty Council to the extraordinary Arab Summit''):
+        the call to continue the ceasefire and implement its terms, and the aim of ending the war on Gaza. The English renderings are the session''s own and sit beside the Arabic. Tier +2 (call,
+        no violation named); the speech also rejects ''any plans aimed at displacing'' Palestinians (a plan, not a violation named).'
+    notes: 'Full text of the speech as the Sudan News Agency prints it (state agency, kind official as the Saudi Press Agency and the State Information Service of Egypt are). Flagged: (1) the
+      call concerns a ceasefire already in force; (2) the speech''s other Gaza passages reject plans of displacement and support the Egyptian-Arab reconstruction plan without naming a violation,
+      so +2 and not +5. 588 days old on 13 October 2026: it counts at weight 0.54 and, being more than 365 days old, does not end the passivity penalty. Filed in the light protocol (docs/10 B-662 ff.).'
+
+- id: evt_2026_10_16_SDN_B9
+  revision: 1
+  country: SDN
+  indicator: B9
+  type: repeatable
+  date: '2026-10-16'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the joint statement of twenty foreign ministers says that Colombia's inauguration of its embassy in Jerusalem contravenes Security Council resolutions and that any measure altering the status of occupied Jerusalem is null and void. Jerusalem and the West Bank only, no mention of Gaza: tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Minister of Foreign Affairs, with nineteen other foreign ministers, rejected Colombia's inauguration of its embassy in Jerusalem as contravening Security Council resolutions."
+    fr: "Le ministre des Affaires étrangères, avec dix-neuf autres ministres, a rejeté l'inauguration par la Colombie de son ambassade à Jérusalem comme contraire aux résolutions du Conseil de sécurité."
+  actor:
+    en: "Minister of Foreign Affairs and International Cooperation of the Sudan"
+    fr: "Ministre des Affaires étrangères et de la Coopération internationale du Soudan"
+    name: "Mohieddin Salem Ahmed"
+  evidence:
+  - source: src_20261016_mofa-pk_fms-joint-statement-colombia-embassy
+    quote: "Republic of the Sudan"
+    quote_lang: en
+    locator: line 104
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "the Republic of Sudan"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 2
+  - source: src_20261011_fm-gov-om_ambassador-credentials-sudan-fm
+    quote: "Mohieddin Salem Ahmed"
+    quote_lang: en
+    locator: line 19
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_10_16_EGY_B9, evt_2026_10_16_TUR_B9, evt_2026_10_16_QAT_B9, evt_2026_10_16_JOR_B9, evt_2026_10_16_MYS_B9, evt_2026_10_16_IDN_B9, evt_2026_10_16_SAU_B9, evt_2026_10_16_DZA_B9, evt_2026_10_16_ZAF_B9, evt_2026_10_16_PAK_B9, evt_2026_10_16_OMN_B9, evt_2026_10_16_LBY_B9, evt_2026_10_16_SOM_B9, evt_2026_10_16_DJI_B9, evt_2026_10_16_KWT_B9, evt_2026_10_16_LBN_B9, evt_2026_10_16_SYR_B9, evt_2026_10_16_YEM_B9]
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Line 104 of Pakistan's Ministry's copy (Republic of the Sudan) and line 1 of South Africa's department's copy (the Republic of Sudan) re-read: the state is among the twenty signatories; the quotes are verbatim. The text names Jerusalem and the West Bank's occupied status and not Gaza (R7), so scope west-bank. B9 +5 (legal characterisation) as for the other signatories. The statement names no individual: the actor is the foreign minister in office in the weeks of the statement, named by Oman's Ministry of Foreign Affairs, news item of 11 October 2026 (line 19: Mohieddin Salem Ahmed, Sudan's Minister of Foreign Affairs and International Cooperation, received the copy of the Omani Ambassador's credentials); the Sudan's assessment header gives the same minister as Mohieldin Salem; flagged as for the other signatories (docs/10 B-444, B-855)."
+    notes: "Joint statement of 16 October 2026 of twenty foreign ministers on Colombia's inauguration of its embassy in Jerusalem, as published by South Africa's Department of International Relations and Cooperation and by Pakistan's Ministry of Foreign Affairs (docs/10 B-444, B-854, B-855). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Filed in T-F-UNDOCS-1 (2026-11-09), once an archived official document named the foreign minister (the monthly run of 2026-11 had left it unfiled for that reason). The copy of the state's own ministry was not read."
