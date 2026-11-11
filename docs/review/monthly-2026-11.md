@@ -981,3 +981,15 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2153, B-2154. Every open lead
 | ZAF | ZAF_4 | E1 | Press: Hawks say the investigation is ongoing; no Hawks or NPA statement, no charge | Kept open | None (unscored) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-RS-1: re-search of none-found entries where events are plausible, full-protocol countries (2026-11-11)
+
+P-23 re-search (CHECKUP §2b, B-2105 (a)). Decisions: docs/10 B-2155, B-2156. The light-protocol rows (IRQ, KWT, LBN, OMN, SYR, IRN, SRB, MNE, BHR) are in `docs/review/light-protocol.md` ("P-23 pass of 2026-11-10"). No human check or CAPTCHA was passed; no capture was made.
+
+| Country | Entries | Primary sources tried | Result | Status | Score effect (preview) |
+|---|---|---|---|---|---|
+| SAU | C5, C6 | pif.gov.sa (403); sama.gov.sa, hassanainvestment.com, lcgpa.gov.sa (no answer); mof.gov.sa tenders-law page (404) | PIF's sales of US holdings (2025, market reasons); regional-headquarters procurement rule and its Etimad exemptions; GCC secondary boycott unenforced since 1994 | none-found kept | None |
+| ARE | C5, C6 | adia.ae, mubadala.com, adq.ae, mof.gov.ae federal procurement page (read) | Boycott law repealed in 2020 (before the window); ADNOC-NewMed deal paused (not a fund exclusion); **Israeli defence firms barred from the Dubai Airshow 2025** (press only): not C6 by default, **new lead** `lead_20261111_ARE_4` (B-2155 (4)) | none-found kept (reading flagged) | None |
+| QAT | C5, C6 | qia.qa and its Sustainability page, monaqasat.mof.gov.qa (home, ESG, tenders law; read); mof.gov.qa (403) | MOFA statements welcoming other states' settlement-goods bans; no fund or procurement exclusion | none-found kept | None |
+
+`pnpm validate`: 0 errors.

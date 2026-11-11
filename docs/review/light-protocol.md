@@ -4442,3 +4442,21 @@ P-23 lead pass (CHECKUP §7). Decisions: docs/10 B-2153, B-2154. The full-protoc
 | ZWE | ZWE_1 | E2 | Same police letter in four outlets; no ZRP statement | Kept open | None (unscored) |
 
 `pnpm validate`: 0 errors.
+
+### T-G-RS-1: re-search of none-found entries where events are plausible, light-protocol countries (2026-11-11)
+
+P-23 re-search (CHECKUP §2b, B-2105 (a)). Decisions: docs/10 B-2155, B-2156. The full-protocol rows (SAU, ARE, QAT C5 and C6) are in `docs/review/monthly-2026-11.md` §12. Each entry's note ends with a dated 'P-23 re-search, T-G-RS-1, 2026-11-11' paragraph naming the primary sources tried and the searches (English and Arabic, Persian, Serbian or Montenegrin). No human check or CAPTCHA was passed; no capture was made.
+
+| Country | Entries | Primary sources tried | Result | Status | Score effect (preview) |
+|---|---|---|---|---|---|
+| IRQ | A5–A8 | mod.mil.iq ('Secure Gateway' check, not passed; Wayback has challenge pages only); iraqcaa.gov.iq, scp.gov.iq, moj.gov.iq (no answer); en.alfawport.gov.iq (406) | Denials (May 2026) of a reported Israeli outpost used in the war on Iran; NSC measures of Nov 2024 on armed factions; airspace closures of Apr and Oct 2024 and Jun 2025 (civil-aviation precautions) | none-found kept | None |
+| KWT | A5–A8, C5, C6 | mod.gov.kw (script only); kpa.gov.kw, dgca.gov.kw, kuwaitalyawm.media.gov.kw (home pages read); kia.gov.kw/about-kia/ (Law No. 47 of 1982 forbids disclosure, B-2155 (5)); pifss.gov.kw (read); capt.gov.kw (403) | Ship ban of Dec 2021 only (before the window); no amendment of the boycott law found enacted; no fund or procurement exclusion | none-found kept | None |
+| LBN | A5–A8 | lebarmy.gov.lb, dgca.gov.lb, portdebeyrouth.com (read); economy.gov.lb (403); pcm.gov.lb, beirut-airport.gov.lb, customs.gov.lb (no answer) | Army statements on the weapons plan and Israeli strikes; Boycott Office lists and seizures; vessel certificates since 2013 | none-found kept | None |
+| OMN | A5–A8, C5, C6 | mod.gov.om, caa.gov.om, mtcit.gov.om, etendering.tenderboard.gov.om (read); qanoon.om searched for the boycott law; oia.gov.om (500); spf.gov.om, tenderboard.gov.om (no answer) | Permit regime for foreign ships (Feb 2026, not about Israel); Shura referral of Dec 2022 not enacted; popular boycott only | none-found kept | None |
+| SYR | A5–A8 | gaca.gov.sy, sana.sy (read); mod.gov.sy, pministry.gov.sy, syrianports.gov.sy, customs.gov.sy (no answer) | **Paris joint statement of Jan 2026** on a security and intelligence mechanism: Syria-Israel front, not the Gaza campaign, not A5 (B-2155 (1)); Decree No. 109 of 2026 already read (B-2151) | none-found kept (reading flagged) | None |
+| IRN | A5–A8 | mod.ir, pmo.ir, rc.majlis.ir (no answer); cao.ir (403); qavanin.ir (no text); Hamshahri Online (read) | **Espionage and cooperation law of Oct 2025** (Art. 3(a) on arms transactions for Israel): not A7 by default, **new lead** `lead_20261111_IRN_3` (B-2155 (2)); IRGC shipping ban of Mar 2026 not A8 (B-2155 (3)) | none-found kept (reading flagged) | None (a standing A7 if the author accepts it and an official copy is archived) |
+| SRB | A6 | mtt.gov.rs (no answer; Wayback index read, no report) | Trade ministry's arms-export reports unpublished for years and refused as confidential in Oct 2024 (RFE/RL); suspension of Jun 2025 general; restart reported Feb 2026 | none-found kept; `lead_20261110_SRB_2` open | None |
+| MNE | A6 | gov.me (no answer); SEESAC report for 2023 (read: no Montenegrin licence to Israel, no denial table); hraction.org statement of 3 Apr 2026 (read) | Two licences to Israel of Mar and Apr 2024 (BIRN via HRA), issued, not refused; no halt found | none-found kept | None |
+| BHR | C5, C6 | mumtalakat.bh, tenderboard.gov.bh (read); sio.gov.bh (403) | Mumtalakat's talks with Israel (2021) and exploration of joint ventures; Tender Board award reports only | none-found kept | None |
+
+`pnpm validate`: 0 errors.
