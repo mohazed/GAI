@@ -49,7 +49,7 @@ describe('the table registry', () => {
     expect(text.split('\n')[0]).toBe(STRUCTURED_TABLES[t].columns.join(','))
   })
 
-  it('names the twelve documented tables', () => {
+  it('names the thirteen documented tables', () => {
     expect([...STRUCTURED_TABLE_NAMES].sort()).toEqual([
       'a2_confirmed_military.csv',
       'comtrade_a2.csv',
@@ -61,6 +61,7 @@ describe('the table registry', () => {
       'recognitions.csv',
       'sipri_deliveries.csv',
       'sipri_orders.csv',
+      'unga_article19.csv',
       'unga_votes.csv',
       'unsc_vetoes.csv',
     ])

@@ -154,3 +154,73 @@ Effect of the whole set on 2026-10-05:
 
 Rejected: B-23's one-sided cap, B-48's alternative, the pre-existing recognitions from A/78/846
 as B8 rows, a quarterly D1 (docs/calibration/README.md §4, §5).
+
+## 1.0.0-rc.3 — absences under Article 19, the order years of A4 (proposed 2026-11-28)
+
+Proposed in pull request `methodology/v1.0.0-rc.3` → `data/phase1` (LAUNCH-PLAN.md card
+T-H-METHOD, docs/10 B-2174), open for comment for 14 days from the day its Discussion is posted
+(docs/08 §1); merged only after that window and after the author's decision. The branch is built
+on the branch of 1.0.0-rc.2 (pull request 15, not merged), so this version contains rc.2; merge
+rc.2 first, or this pull request carries both. The rule changes are the recommended defaults of
+two proposals for the author, `docs/proposals/b1-article-19.md` (docs/10 B-2099) and
+`docs/proposals/a4-data-years.md` (B-2100), adopted by default in the launch-plan run of
+2026-11-27 (CHECKUP §2a); the author decides.
+
+Folder: `methodology/v1.0.0/` now declares 1.0.0-rc.3. `diff.json` is computed from 1.0.0-rc.2
+(the branch's merge of `data/phase1` into rc.2, commit 08b00d5, as `--from`) on 2026-11-28, so it
+lists only what this version moves. Nothing of 1.0.0-rc.1 or rc.2 was ever displayed (D-16).
+
+Rule changes (minor level):
+
+1. **B1: an absence of a state that had no vote under Article 19 of the Charter scores 0**
+   (B-2099, option (b); `indicators.yaml` B1 tier `not_entitled: 0`, new table
+   `data/structured/unga_article19.csv`, read by the B1 generator). A state named in the
+   Secretary-General's letter under Article 19 in force on the date of the vote (the last letter,
+   with its addenda, dated on or before the vote) and not permitted to vote by a resolution of the
+   General Assembly in force that day had no vote; −2 recorded a choice it could not make. The
+   table has the 30 absences of `docs/review/monthly-2026-11.md` §6.2 (Venezuela 12, Afghanistan
+   10, Bolivia 3, Sao Tome and Principe 3, Ecuador 1, Somalia 1), each citing the archived letter
+   and, for Sao Tome and Principe and Somalia, the archived resolution whose permission had ended
+   (B-878). `unga_votes.csv` keeps the UN's `X`. The 188 other absences (non-votes of entitled
+   states) keep −2. The rule `structured.article19-absence` checks that each row of the table is
+   an `X` of the same vote and date. **Shown with the reason** (option (c)): the event of such an
+   absence stays on the country page and in the API at 0 points, its summary says "having no vote
+   under Article 19 of the Charter" and it cites the letter. The four points of B-879 (Ecuador on
+   10 May 2024, Somalia on 18 September 2024, the session boundaries, the label "non-vote") keep
+   their defaults.
+2. **A4: each order year from 2024 is scored once, in the first imported release that reports
+   it** (B-2100, option (c); `thresholds.yaml` formula a4 `parameters.years:
+   first-reporting-release`, read by the generator; `release-year`, the earlier rule, scores the
+   release's own data year only). The release of 9 March 2026, the first imported, carries the
+   orders of 2024 (whose own release, of March 2025, was never imported) and of 2025. One A4 event
+   per country and release, its points the sum of each year's tier, its rationale and summary
+   listing each year's TIV; the event of a year that is not the release's own data year says
+   "(release of 2026-03-09)". Once two consecutive releases are imported, the rule equals the
+   earlier one. A year a later release revises is not scored again.
+
+Stated in the text, no rule changed (patch level):
+
+- **D3 as a qualifying event for passivity** (CHECKUP §2a, B-877 (2)): a D3 event is dated the
+  last day of the year of UNRWA's donor table, so a D3 event of 2025 lifts the penalty until
+  31 December 2026 where it is a state's only qualifying event (Syria, for one); the Passivity
+  section now says so. Removing D3 from the qualifying list is left to a later review.
+- **Rule 8 of docs/02 §12, scope (a)** (B-2098, `docs/proposals/rule-8-scope.md`): scores are
+  displayed only when none of the 193 scored entities has an unchecked indicator; the Coverage
+  section now says that the build enforces it (the gate of pull request 17, `apps/web/scripts/
+  rule8.ts`, merged into `main` on 2026-11-27, B-2114).
+
+Code in the same pull request, as for rc.2: the table's schema (`@gai/schema`
+`UngaArticle19Row`), the validation rule, the B1 and A4 generators and their unit tests with the
+worked examples (Venezuela on A/RES/ES-10/21; the Philippines −2 −5 = −7, Slovakia −10, Germany
+−10 unchanged; the earlier rules kept under the earlier files), and two causes of
+`methodology:diff` ("tier of an event changed", "events added or replaced").
+
+Effect on 2026-11-28 (`pnpm methodology:diff --from 08b00d5 --date 2026-11-28`, with and without
+`--preview`):
+
+- Published events (`diff.json`): 10 display scores move, 4 bands (Enabling → Passive for
+  Afghanistan, Bolivia and Venezuela; Acting → Passive for Azerbaijan), 0 passivity decisions.
+- Preview (provisional; the reviewed events scored as if published): 10 display scores, 5 bands
+  (Afghanistan Enabling → Passive, Venezuela Passive → Acting, Kenya and Slovakia Acting →
+  Passive, Azerbaijan Passive → Enabling), 0 passivity decisions. The side-by-side table of
+  rc.1, rc.2 and rc.3 is in `docs/proposals/v1.0.0-rc.3-pr.md`.

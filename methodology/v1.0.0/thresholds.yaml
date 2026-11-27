@@ -12,7 +12,7 @@
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
 
-version: 1.0.0-rc.2
+version: 1.0.0-rc.3
 
 formulas:
   a1:
@@ -107,13 +107,20 @@ formulas:
         From the same release as A1: any new order placed with Israel in year Y with TIV > 0,
         counting only orders whose year starts on or after 2023-10-07, that is orders dated 2024
         or later, since SIPRI dates orders by year only (orders, not deliveries of pre-war
-        orders). Tiers by TIV: ≥ 500 → −15; ≥ 100 → −10; ≥ 10 → −5; > 0 → −2.
+        orders). Each data year from 2024 is scored once, in the first imported release that
+        reports it: a release scores its own data year and any earlier year from 2024 that no
+        earlier imported release reports. One event per country and release; its points are the
+        sum of each year's tier. Tiers by TIV: ≥ 500 → −15; ≥ 100 → −10; ≥ 10 → −5; > 0 → −2.
       fr: >-
         À partir de la même publication que A1 : toute nouvelle commande passée à Israël l'année Y
         avec un TIV > 0, en ne comptant que les commandes dont l'année commence le 7 octobre 2023 ou
         après, c'est-à-dire les commandes datées de 2024 ou après, puisque le SIPRI ne date les
         commandes que par année (commandes, et non livraisons de commandes antérieures à la
-        guerre). Paliers selon le TIV :
+        guerre). Chaque année de données à partir de 2024 est notée une fois, dans la première
+        publication importée qui la couvre : une publication note sa propre année de données et
+        toute année antérieure à partir de 2024 qu'aucune publication importée antérieure ne
+        couvre. Un événement par pays et par publication ; ses points sont la somme des paliers
+        de chaque année. Paliers selon le TIV :
         ≥ 500 → −15 ; ≥ 100 → −10 ; ≥ 10 → −5 ; > 0 → −2.
     validity:
       en: >-
@@ -131,6 +138,9 @@ formulas:
     otherwise: 0
     parameters:
       orders_signed_from: '2023-10-07'
+      # 1.0.0-rc.3 (docs/proposals/a4-data-years.md option (c), B-2100): read by the generator;
+      # release-year (the earlier rule) scores only the release's own data year.
+      years: first-reporting-release
 
   c3:
     kind: ratio_gated_tiers

@@ -40,12 +40,18 @@ const preview = flag('--preview')
 if (preview && flag('--write')) fail('--write takes published events only; drop --preview')
 const statuses = preview ? ['reviewed'] : []
 
-/** Every scored entity's score at `date` under the methodology and data of `root`. */
-function scoreAll(root: string) {
+/**
+ * Every scored entity's score at `date` under the methodology and data of `root`. In the
+ * previous version (`previous`), a structured table added since (unga_article19.csv in
+ * 1.0.0-rc.3) is missing; it is read as empty, as the loader does, instead of failing.
+ */
+function scoreAll(root: string, previous = false) {
   const lm = loadMethodology(root)
   const ds = loadDataset(root)
+  const addedTable = (i: { rule: string; file?: string }) =>
+    previous && i.rule === 'load.missing-file' && (i.file ?? '').startsWith('data/structured/')
   const errors = [...lm.issues, ...ds.issues].filter(
-    (i) => i.level === 'error' && i.rule.startsWith('load.'),
+    (i) => i.level === 'error' && i.rule.startsWith('load.') && !addedTable(i),
   )
   if (errors.length > 0) {
     fail(
@@ -87,7 +93,7 @@ try {
     },
   )
   execFileSync('tar', ['-x', '-C', tmp], { input: tar })
-  before = scoreAll(tmp)
+  before = scoreAll(tmp, true)
 } finally {
   rmSync(tmp, { recursive: true, force: true })
 }

@@ -147,7 +147,9 @@ export const RC2_MOST_SEVERE: readonly string[] = ['A3', 'A6', 'A7', 'B3', 'B7',
  * from the files of 1.0.0-rc.2 (P-24): passivity on the absolute contribution and on every B8
  * tier, no B1 cap, A3, A6, A7, B3, B7 and D2 summed. The data changes of rc.2 (confidence of
  * the events with a parliamentary or official-video source, the generators' parameters) are not
- * reverted: they live in the events and tables, not in these files.
+ * reverted: they live in the events and tables, not in these files. Nor are the generator rules
+ * of 1.0.0-rc.3 (the B1 tier `not_entitled`, formula a4 `years`): they shape the generated
+ * events, which every engine rule set here scores alike.
  */
 export function rc1Files(files: MethodologyFilesInput): MethodologyFilesInput {
   return {

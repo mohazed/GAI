@@ -1182,7 +1182,7 @@ const INDICATOR_TABLE: Row[] = [
   ['A8', 'repeatable', 'positive', { perInstance: 5 }, [null, 10], 'sum', 'hand', 'on-event'],
   // B. Diplomacy & international law (cap −40 / +45). B3, B5/B6 standing (docs/02 §3).
   // rc.2 (B-23): B1 capped at −15…+15.
-  ['B1', 'repeatable', 'mixed', { tiers: { yes: 3, abstain: -2, no: -5, absent: -2 } }, [-15, 15], 'sum', 'generated', 'per-vote'],
+  ['B1', 'repeatable', 'mixed', { tiers: { yes: 3, abstain: -2, no: -5, absent: -2, not_entitled: 0 } }, [-15, 15], 'sum', 'generated', 'per-vote'],
   ['B2', 'repeatable', 'negative', { fixed: -20 }, null, 'sum', 'generated', 'per-vote'],
   ['B3', 'standing', 'positive', { fixed: 15 }, null, 'most_severe', 'hand', 'on-event'],
   ['B4', 'repeatable', 'negative', { fixed: -15 }, null, 'sum', 'hand', 'on-event'],

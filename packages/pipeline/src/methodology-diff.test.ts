@@ -91,6 +91,46 @@ describe('methodology:diff causes (rc.1 → rc.2)', () => {
     expect(causeOf(x.before, x.after, 'en')).toBe('C2 −4.0 → −10.0 (confidence)')
   })
 
+  it('names a tier change and events added or replaced (1.0.0-rc.3), same methodology', () => {
+    // B1: the absence of a state with no vote under Article 19 keeps its event, at 0 points.
+    const absent = Array.from({ length: 5 }, (_, i) =>
+      ev('XGG', 'B1', 'repeatable', `2025-0${i + 1}-10`, -2, {
+        id: `evt_2025_0${i + 1}_10_XGG_B1`,
+      }),
+    )
+    const tier: DiffInput = {
+      iso3: 'XGG',
+      name: { en: 'Country XGG', fr: 'Pays XGG' },
+      before: createScorer('XGG', absent, rc2).at(DATE),
+      after: createScorer(
+        'XGG',
+        absent.map((e) => ({ ...e, points: 0 })),
+        rc2,
+      ).at(DATE),
+    }
+    expect(causeOf(tier.before, tier.after, 'en')).toBe('B1 −10.0 → 0.0 (tier of an event changed)')
+    expect(causeOf(tier.before, tier.after, 'fr')).toBe(
+      "B1 −10,0 → 0,0 (palier d'un événement modifié)",
+    )
+    // A4: the orders of 2024 join those of 2025 in one event of the release.
+    const own = ev('XHH', 'A4', 'computed', '2025-03-10', -5, {
+      id: 'evt_2025_03_10_XHH_A4_orders-2024',
+    })
+    const both = { ...own, id: 'evt_2025_03_10_XHH_A4_orders-2023-2024', points: -7 }
+    const added: DiffInput = {
+      iso3: 'XHH',
+      name: { en: 'Country XHH', fr: 'Pays XHH' },
+      before: createScorer('XHH', [own], rc2).at(DATE),
+      after: createScorer('XHH', [both], rc2).at(DATE),
+    }
+    expect(causeOf(added.before, added.after, 'en')).toBe(
+      'A4 −5.0 → −7.0 (events added or replaced)',
+    )
+    expect(causeOf(added.before, added.after, 'fr')).toBe(
+      'A4 −5,0 → −7,0 (événements ajoutés ou remplacés)',
+    )
+  })
+
   it('lists the countries moved by 1 or more, by ISO3, as diff.json takes them', () => {
     const inputs = [
       input('XEE', votes('XEE', 8)),

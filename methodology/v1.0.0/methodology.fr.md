@@ -1,6 +1,6 @@
 # Méthodologie
 
-Version 1.0.0-rc.2 · projet · scores non encore affichés (mode fiche)
+Version 1.0.0-rc.3 · projet · scores non encore affichés (mode fiche)
 
 ## Objet et point de vue
 
@@ -128,7 +128,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 | ID | Indicateur | Points | Type | Plafond de l'indicateur et cumul | Sources primaires | Fréquence |
 |---|---|---|---|---|---|---|
-| B1 | Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA, le statut de la Palestine | Pour +3 / Abstention −2 / Contre −5 / Absent −2 | événement répétable | plafond −15 / +15 | [Relevés des votes de la Bibliothèque numérique des Nations unies](https://digitallibrary.un.org) | À chaque vote |
+| B1 | Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA, le statut de la Palestine | Pour +3 / Abstention −2 / Contre −5 / Absent −2 / Sans droit de vote (Article 19) 0 | événement répétable | plafond −15 / +15 | [Relevés des votes de la Bibliothèque numérique des Nations unies](https://digitallibrary.un.org) | À chaque vote |
 | B2 | Veto au Conseil de sécurité des Nations unies contre une résolution de cessez-le-feu (membres uniquement) | −20 | événement répétable | — | Documents du Conseil de sécurité des Nations unies | À chaque vote |
 | B3 | Affaire de génocide devant la CIJ : déclaration d'intervention déposée | +15 | état durable | un seul état compte : le plus grave | Communiqués de presse de la CIJ | À chaque événement |
 | B4 | Position formelle rejetant les mesures conservatoires de la CIJ ou s'y opposant | −15 | événement répétable | — | Déclaration gouvernementale | À chaque événement |
@@ -143,7 +143,7 @@ L'indice utilise 34 indicateurs répartis en cinq catégories. Les 31 indicateur
 
 **Règles de preuve**
 
-- **B1** — Généré à partir de `data/structured/unga_votes.csv`, filtré par `votes.yaml` ; jamais rédigé à la main. Chaque ligne de vote cite une source de type dataset qui archive le relevé de vote des Nations unies, et chaque vote retenu dans `votes.yaml` cite comme source officielle le communiqué de presse archivé des Nations unies.
+- **B1** — Généré à partir de `data/structured/unga_votes.csv`, filtré par `votes.yaml` ; jamais rédigé à la main. Chaque ligne de vote cite une source de type dataset qui archive le relevé de vote des Nations unies, et chaque vote retenu dans `votes.yaml` cite comme source officielle le communiqué de presse archivé des Nations unies. Chaque ligne de `data/structured/unga_article19.csv` cite la lettre archivée du Secrétaire général au titre de l'Article 19 en vigueur à la date du vote et, lorsqu'une autorisation de voter avait pris fin avant cette date, la résolution archivée qui l'avait accordée.
 - **B2** — Généré à partir de `data/structured/unsc_vetoes.csv` (lignes avec `ceasefire: true`) ; jamais rédigé à la main. Chaque ligne cite une source de type dataset qui archive le relevé du vote au Conseil de sécurité, par exemple la liste des vetos des Nations unies ou le procès-verbal de la séance.
 - **B3** — La déclaration d'intervention telle qu'enregistrée par la CIJ, et son texte : le sens de son argumentation décide entre B3 et B4. Une preuve est un document primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Sans document primaire, un événement ne peut être noté qu'au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
 - **B4** — La déclaration officielle ou l'acte formel, ou le texte de la déclaration d'intervention plaidant contre l'interprétation du demandeur ; une remarque à la presse sans acte formel ne suffit pas. Une preuve est un document primaire (acte officiel, communiqué gouvernemental, pièce de procédure judiciaire, ligne de jeu de données). Sans document primaire, un événement ne peut être noté qu'au niveau de confiance « corroboré » ou « signalé », avec un poids réduit.
@@ -268,7 +268,7 @@ Le « plus grave » se choisit par les points : lorsqu'un seul état ou un se
 
 ### Votes retenus de l'Assemblée générale des Nations unies
 
-B1 compte les résolutions et décisions de l'Assemblée générale des Nations unies adoptées en séance plénière par vote enregistré le 7 octobre 2023 ou après, et dont l'objet est Gaza (cessez-le-feu, trêve, accès humanitaire), l'UNRWA, ou le statut et les droits de la Palestine. Une décision adoptée par vote enregistré compte au même titre qu'une résolution ; l'approbation de la Déclaration de New York, le 12 septembre 2025, a pris la forme de la décision A/DEC/80/506. Les votes en commission, les votes de procédure et les votes sur des amendements sont exclus. Chaque vote est noté comme suit : pour +3, abstention −2, contre −5, absent −2 ; une mention formelle « n'a pas participé » compte comme une absence. Chaque vote retenu figure dans la liste avec sa cote, sa date, son objet et une justification d'inclusion d'une ligne, et l'ajout d'un vote à la liste constitue une nouvelle version mineure. La liste ci-dessous est remplie à partir de `votes.yaml` ; chaque vote qui y figure a été vérifié dans les relevés de vote des Nations unies.
+B1 compte les résolutions et décisions de l'Assemblée générale des Nations unies adoptées en séance plénière par vote enregistré le 7 octobre 2023 ou après, et dont l'objet est Gaza (cessez-le-feu, trêve, accès humanitaire), l'UNRWA, ou le statut et les droits de la Palestine. Une décision adoptée par vote enregistré compte au même titre qu'une résolution ; l'approbation de la Déclaration de New York, le 12 septembre 2025, a pris la forme de la décision A/DEC/80/506. Les votes en commission, les votes de procédure et les votes sur des amendements sont exclus. Chaque vote est noté comme suit : pour +3, abstention −2, contre −5, absent −2 ; une mention formelle « n'a pas participé » compte comme une absence. L'absence d'un État qui n'avait pas le droit de vote en vertu de l'Article 19 de la Charte des Nations unies à la date du vote compte 0 : l'État figurait dans la lettre du Secrétaire général au titre de l'Article 19 en vigueur ce jour-là (la dernière lettre, avec ses additifs, datée du jour du vote ou d'avant) et aucune résolution de l'Assemblée générale ne l'autorisait à voter. Une telle absence n'exprime aucune position ; elle ne fait donc ni baisser ni monter le score, et son événement en donne la raison en citant la lettre. La liste datée est `data/structured/unga_article19.csv` ; le relevé du vote des Nations unies est conservé tel quel. Chaque vote retenu figure dans la liste avec sa cote, sa date, son objet et une justification d'inclusion d'une ligne, et l'ajout d'un vote à la liste constitue une nouvelle version mineure. La liste ci-dessous est remplie à partir de `votes.yaml` ; chaque vote qui y figure a été vérifié dans les relevés de vote des Nations unies.
 
 <!-- BEGIN generated:votes -->
 
@@ -394,7 +394,7 @@ Pour chaque édition du SIPRI, publiée en mars de l'année Y+1 avec des donnée
 
 ### A4 — armes achetées à Israël
 
-À partir de la même édition du SIPRI : une nouvelle commande passée à Israël l'année Y, avec une TIV supérieure à 0, est notée par palier de TIV. Seules comptent les commandes datées de 2024 ou après : le SIPRI ne date les commandes que par année, si bien que les commandes de 2023 sont écartées plutôt que comptées d'un côté ou de l'autre du 7 octobre 2023.
+À partir de la même édition du SIPRI : une nouvelle commande passée à Israël l'année Y, avec une TIV supérieure à 0, est notée par palier de TIV. Seules comptent les commandes datées de 2024 ou après : le SIPRI ne date les commandes que par année, si bien que les commandes de 2023 sont écartées plutôt que comptées d'un côté ou de l'autre du 7 octobre 2023. Chaque année de commandes à partir de 2024 est notée une fois, dans la première édition importée qui la couvre : une édition note sa propre année de données et toute année antérieure à partir de 2024 qu'aucune édition importée antérieure ne couvre. L'index a commencé à importer les données du SIPRI avec l'édition du 9 mars 2026 ; cette édition note donc les commandes de 2024 et de 2025, et chaque édition suivante note sa propre année. Un pays a une seule valeur A4 par édition ; ses points sont la somme des paliers de chaque année, et l'événement donne la TIV de chaque année.
 
 ### A2 — exportations militaires dans les données douanières
 
@@ -476,6 +476,8 @@ Un pays reçoit une pénalité de passivité de 15 points à la date t lorsqu'il
 - La catégorie A n'est jamais admissible. Vendre ou refuser des armes ne relève pas du type d'engagement que mesure la pénalité, et les événements A6 à A8 s'accompagnent presque toujours d'événements des catégories B ou C.
 - La catégorie E n'est pas admissible, car elle n'est pas notée.
 
+D3 (financement de l'UNRWA augmenté ou rétabli) est admissible comme tout indicateur de la catégorie D. Un événement D3 est un état durable daté du dernier jour de l'année que couvre le tableau des donateurs de l'UNRWA, par exemple le 31 décembre 2025 ; il lève donc la pénalité pendant 365 jours à partir de cette date : lorsqu'il est le seul événement admissible d'un État, un événement D3 de 2025 écarte la pénalité jusqu'au 31 décembre 2026.
+
 La pénalité est la mise en œuvre de la règle « le silence est négatif ». À un pays sans aucune donnée, seule la pénalité de passivité s'applique. Le classement obtenu avec une pénalité de 5, de 15 et de 25 points constitue la première table de sensibilité ; comme les autres, cette table est calculée à chaque génération du site et publiée une fois les scores affichés.
 
 <!-- BEGIN generated:passivity -->
@@ -515,7 +517,7 @@ La barre de couverture figure à côté de chaque score. Les segments pleins cor
 
 Lorsqu'un pays n'a pas de données pour A1 ou A2, sa fiche affiche « pas de données d'exportation », jamais un zéro. Un pays qui ne publie rien n'est pas noté comme s'il n'avait rien exporté : à un pays sans aucune donnée, seule la pénalité de passivité s'applique. Ainsi, l'absence de données publiées n'est pas lue comme une absence d'actes.
 
-Un indicateur non vérifié déclenche un avertissement lors de la génération du site. Un pays qui a des indicateurs non vérifiés ne peut être publié qu'en mode fiche, et les scores ne sont pas affichés tant qu'un pays publié a un indicateur non vérifié.
+Un indicateur non vérifié déclenche un avertissement lors de la génération du site. Un pays qui a des indicateurs non vérifiés ne peut être publié qu'en mode fiche, et les scores ne sont pas affichés tant qu'un pays publié a un indicateur non vérifié. La règle vaut pour les 193 entités notées, et non pour les seuls pays étudiés selon le protocole complet : la génération du site refuse d'afficher les scores tant que l'une d'elles a un indicateur non vérifié.
 
 ## Tables de sensibilité
 
@@ -567,7 +569,7 @@ Chaque version est un dossier complet et autonome, `methodology/vX.Y.Z/`, dans l
 
 Une modification est proposée sous la forme d'une demande de fusion (pull request) accompagnée d'une justification écrite. La génération du site publie ce fichier de différences dans la demande de fusion. La proposition est annoncée sur la page [Changements](/fr/changes) et reste ouverte aux commentaires publics pendant 14 jours dans une discussion liée ; elle n'est fusionnée qu'après ce délai. Une version majeure requiert en outre l'approbation d'au moins un relecteur nommément désigné.
 
-La version 1.0.0-rc.2 est une version candidate. Avant l'affichage des scores, les points et les seuils sont testés en notant dix pays à la main, et des relecteurs externes nommément désignés examinent la table des indicateurs et les seuils ; tout ajustement est consigné dans le journal des modifications. Cette version consigne les ajustements issus de la notation à la main des dix pays (le journal des modifications donne pour chacun sa justification et son effet mesuré) ; la version 1.0.0-rc.1 n'a jamais été affichée.
+La version 1.0.0-rc.3 est une version candidate. Avant l'affichage des scores, les points et les seuils sont testés en notant dix pays à la main, et des relecteurs externes nommément désignés examinent la table des indicateurs et les seuils ; tout ajustement est consigné dans le journal des modifications. Cette version consigne les ajustements issus de la notation à la main des dix pays (1.0.0-rc.2) et deux règles de plus, sur les absences au titre de l'Article 19 de la Charte et sur les années de commandes de A4 (1.0.0-rc.3) ; le journal des modifications donne pour chacune sa justification et son effet mesuré. La version 1.0.0-rc.1 n'a jamais été affichée.
 
 ### Reproductibilité et contrôles de cohérence
 

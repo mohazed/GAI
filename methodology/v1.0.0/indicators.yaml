@@ -15,7 +15,7 @@
 #
 # Changes only through a new version folder and a CHANGELOG entry (docs/08 §1).
 
-version: 1.0.0-rc.2
+version: 1.0.0-rc.3
 
 cadences:
   annual-march:
@@ -586,7 +586,10 @@ indicators:
         decision, A/DEC/80/506, and qualifies). The list of qualifying resolutions is
         votes.yaml, each with a one-line inclusion rationale. Committee votes, procedural votes
         and amendments are excluded. Absent is scored −2; a formal "did not participate" is
-        treated as absent.
+        treated as absent. An absence of a state that had no vote under Article 19 of the
+        Charter on the date of the vote (named in the Secretary-General's letter under Article
+        19 in force that day and not permitted to vote by the General Assembly) scores 0, from
+        the dated table unga_article19.csv.
       fr: >-
         Votes à l'Assemblée générale des Nations unies sur le cessez-le-feu à Gaza, l'UNRWA et
         le statut de la Palestine : pour +3, abstention −2, contre −5, absent −2, par vote. Ne
@@ -597,12 +600,16 @@ indicators:
         adoptée sous forme de décision, A/DEC/80/506, et compte). La liste des résolutions
         retenues figure dans votes.yaml, chacune avec une justification d'une ligne. Les votes
         en commission, les votes de procédure et les amendements sont exclus. L'absence compte
-        −2 ; une « non-participation » formelle est traitée comme une absence.
+        −2 ; une « non-participation » formelle est traitée comme une absence. L'absence d'un
+        État qui n'avait pas le droit de vote en vertu de l'Article 19 de la Charte à la date du
+        vote (nommé dans la lettre du Secrétaire général au titre de l'Article 19 en vigueur ce
+        jour-là et non autorisé à voter par l'Assemblée générale) compte 0, d'après la table
+        datée unga_article19.csv.
     sign: mixed
     type: repeatable
     scored: true
     authoring: generated
-    generated_from: data/structured/unga_votes.csv filtered by methodology votes.yaml
+    generated_from: data/structured/unga_votes.csv filtered by methodology votes.yaml, with data/structured/unga_article19.csv
     points:
       kind: tiers
       tiers:
@@ -626,6 +633,11 @@ indicators:
           label:
             en: Absent
             fr: Absent
+        - key: not_entitled
+          value: 0
+          label:
+            en: Not entitled to vote (Article 19)
+            fr: Sans droit de vote (Article 19)
     scaled: true
     indicator_cap: {min: -15, max: 15}
     stacking:
@@ -651,12 +663,18 @@ indicators:
           Generated from `data/structured/unga_votes.csv`, filtered by `votes.yaml`; never
           hand-authored. Each vote row cites a dataset source that archives the UN voting record,
           and each qualifying vote in `votes.yaml` cites the archived UN press release as its
-          official source.
+          official source. Each row of `data/structured/unga_article19.csv` cites the archived
+          letter of the Secretary-General under Article 19 in force on the date of the vote and,
+          where a permission to vote had ended before that date, the archived resolution that
+          granted it.
         fr: >-
           Généré à partir de `data/structured/unga_votes.csv`, filtré par `votes.yaml` ; jamais
           rédigé à la main. Chaque ligne de vote cite une source de type dataset qui archive le
           relevé de vote des Nations unies, et chaque vote retenu dans `votes.yaml` cite comme
-          source officielle le communiqué de presse archivé des Nations unies.
+          source officielle le communiqué de presse archivé des Nations unies. Chaque ligne de
+          `data/structured/unga_article19.csv` cite la lettre archivée du Secrétaire général au
+          titre de l'Article 19 en vigueur à la date du vote et, lorsqu'une autorisation de voter
+          avait pris fin avant cette date, la résolution archivée qui l'avait accordée.
     primary_sources:
       - en: UN Digital Library voting records
         fr: Relevés des votes de la Bibliothèque numérique des Nations unies
@@ -666,12 +684,14 @@ indicators:
       en: >-
         Committee stages, procedural votes and amendments are never listed in votes.yaml. In
         unga_votes.csv a formal "did not participate" is recorded as X (absent or non-voting)
-        and scores −2, like an absence. Resolutions not listed in votes.yaml may be stored in
-        the table for tracking and do not score (docs/03 §7).
+        and scores −2, like an absence, unless unga_article19.csv lists it (0). Resolutions not
+        listed in votes.yaml may be stored in the table for tracking and do not score (docs/03
+        §7).
       fr: >-
         Les étapes en commission, les votes de procédure et les amendements ne figurent jamais
         dans votes.yaml. Dans unga_votes.csv, une « non-participation » formelle est enregistrée
-        comme X (absent ou non-votant) et compte −2, comme une absence. Les résolutions absentes
+        comme X (absent ou non-votant) et compte −2, comme une absence, sauf si
+        unga_article19.csv la mentionne (0). Les résolutions absentes
         de votes.yaml peuvent être conservées dans la table pour suivi et ne sont pas notées
         (docs/03 §7).
 

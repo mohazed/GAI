@@ -78,7 +78,11 @@ function addLead(ds: Dataset, fields: Record<string, unknown>): void {
   ds.leads.push({ value, file: 'data/leads/DEU.yaml', line: 1 })
 }
 
-function addStructured(ds: Dataset, table: 'unga_votes.csv' | 'fts_funding.csv', record: object) {
+function addStructured(
+  ds: Dataset,
+  table: 'unga_votes.csv' | 'fts_funding.csv' | 'unga_article19.csv',
+  record: object,
+) {
   const value = STRUCTURED_TABLES[table].row.parse(record)
   const rows = ds.structured[table] as { value: unknown; file: string; line: number }[]
   rows.push({ value, file: `data/structured/${table}`, line: rows.length + 2 })
@@ -525,6 +529,15 @@ const CASES: Record<RuleId, Case> = {
         date: '2023-10-27',
         iso3: 'XYZ',
         vote: 'Y',
+        source: SRC_1,
+      }),
+  },
+  'structured.article19-absence': {
+    memory: (ds) =>
+      addStructured(ds, 'unga_article19.csv', {
+        resolution: 'A/RES/ES-10/99',
+        date: '2024-01-01',
+        iso3: 'DEU',
         source: SRC_1,
       }),
   },

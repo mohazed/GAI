@@ -1,6 +1,6 @@
 # Methodology
 
-Version 1.0.0-rc.2 · draft · scores not yet displayed (scorecard mode)
+Version 1.0.0-rc.3 · draft · scores not yet displayed (scorecard mode)
 
 ## Purpose and standpoint
 
@@ -128,7 +128,7 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 | ID | Indicator | Points | Type | Indicator cap and stacking | Primary sources | Cadence |
 |---|---|---|---|---|---|---|
-| B1 | UN General Assembly votes on Gaza ceasefire, UNRWA, Palestine status | Yes +3 / Abstain −2 / No −5 / Absent −2 | repeatable | cap −15 / +15 | [UN Digital Library voting records](https://digitallibrary.un.org) | Per vote |
+| B1 | UN General Assembly votes on Gaza ceasefire, UNRWA, Palestine status | Yes +3 / Abstain −2 / No −5 / Absent −2 / Not entitled to vote (Article 19) 0 | repeatable | cap −15 / +15 | [UN Digital Library voting records](https://digitallibrary.un.org) | Per vote |
 | B2 | UN Security Council veto of a ceasefire resolution (members only) | −20 | repeatable | — | UNSC records | Per vote |
 | B3 | ICJ genocide case: declaration of intervention filed | +15 | standing | one record counts: the most severe | ICJ press releases | On event |
 | B4 | Formal position rejecting or opposing ICJ provisional measures | −15 | repeatable | — | Government statement | On event |
@@ -143,7 +143,7 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 **Evidence rules**
 
-- **B1** — Generated from `data/structured/unga_votes.csv`, filtered by `votes.yaml`; never hand-authored. Each vote row cites a dataset source that archives the UN voting record, and each qualifying vote in `votes.yaml` cites the archived UN press release as its official source.
+- **B1** — Generated from `data/structured/unga_votes.csv`, filtered by `votes.yaml`; never hand-authored. Each vote row cites a dataset source that archives the UN voting record, and each qualifying vote in `votes.yaml` cites the archived UN press release as its official source. Each row of `data/structured/unga_article19.csv` cites the archived letter of the Secretary-General under Article 19 in force on the date of the vote and, where a permission to vote had ended before that date, the archived resolution that granted it.
 - **B2** — Generated from `data/structured/unsc_vetoes.csv` (rows with `ceasefire: true`); never hand-authored. Each row cites a dataset source that archives the Security Council record of the vote, such as the UN veto list or the meeting record.
 - **B3** — The declaration of intervention as registered by the ICJ, and its text: the direction of its argument decides B3 versus B4. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B4** — The official statement or formal act, or the text of the declaration of intervention arguing against the applicant's construction; a press remark without a formal act does not qualify. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
@@ -268,7 +268,7 @@ Some indicators have their own cap, or a rule on how their events combine. These
 
 ### Qualifying UN General Assembly votes
 
-B1 counts plenary resolutions and decisions of the UN General Assembly adopted by recorded vote on or after 7 October 2023 whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine. A decision adopted by recorded vote counts as a resolution does; the endorsement of the New York Declaration on 12 September 2025 was adopted as decision A/DEC/80/506. Committee votes, procedural votes and votes on amendments are excluded. Each vote scores yes +3, abstention −2, no −5 and absent −2; a formal "did not participate" counts as absent. Each qualifying vote is listed with its symbol, date, subject and a one-line reason for inclusion, and adding a vote to the list is a new minor version. The list below is filled from `votes.yaml`; each vote on it was verified against the UN voting records.
+B1 counts plenary resolutions and decisions of the UN General Assembly adopted by recorded vote on or after 7 October 2023 whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine. A decision adopted by recorded vote counts as a resolution does; the endorsement of the New York Declaration on 12 September 2025 was adopted as decision A/DEC/80/506. Committee votes, procedural votes and votes on amendments are excluded. Each vote scores yes +3, abstention −2, no −5 and absent −2; a formal "did not participate" counts as absent. An absence of a state that had no vote under Article 19 of the Charter of the United Nations on the date of the vote scores 0: the state was named in the Secretary-General's letter under Article 19 in force that day (the last letter, with its addenda, dated on or before the vote) and no resolution of the General Assembly permitted it to vote. Such an absence records no position, so it neither lowers nor raises the score; its event says why, and cites the letter. The dated list is `data/structured/unga_article19.csv`; the UN record of the vote is kept unchanged. Each qualifying vote is listed with its symbol, date, subject and a one-line reason for inclusion, and adding a vote to the list is a new minor version. The list below is filled from `votes.yaml`; each vote on it was verified against the UN voting records.
 
 <!-- BEGIN generated:votes -->
 
@@ -394,7 +394,7 @@ For each SIPRI release, published in March of year Y+1 with data through year Y,
 
 ### A4 — arms purchased from Israel
 
-From the same SIPRI release: a new order placed with Israel in year Y with a TIV above 0 scores by tier of TIV. Only orders dated 2024 or later count: SIPRI dates orders by year only, so the orders of 2023 are left out rather than counted on either side of 7 October 2023.
+From the same SIPRI release: a new order placed with Israel in year Y with a TIV above 0 scores by tier of TIV. Only orders dated 2024 or later count: SIPRI dates orders by year only, so the orders of 2023 are left out rather than counted on either side of 7 October 2023. Each order year from 2024 is scored once, in the first imported release that reports it: a release scores its own data year and any earlier year from 2024 that no earlier imported release reports. The index began importing SIPRI data with the release of 9 March 2026, so that release scores the orders of 2024 and 2025, and each later release scores its own year. A country has one A4 value per release; its points are the sum of each year's tier, and the event lists each year's TIV.
 
 ### A2 — military exports in customs data
 
@@ -476,6 +476,8 @@ A country receives a passivity penalty of 15 points at date t when it has no qua
 - Category A never qualifies. Selling or refusing arms is not the kind of engagement the penalty measures, and events on A6 to A8 almost always come with events in categories B or C.
 - Category E does not qualify, because it is not scored.
 
+D3 (UNRWA funding increased or restored) qualifies like any indicator of category D. A D3 event is a standing state dated the last day of the year that UNRWA's table of donors reports, for example 31 December 2025, so it lifts the penalty for 365 days from that date: where it is a state's only qualifying event, a D3 event of 2025 keeps the penalty off until 31 December 2026.
+
 The penalty is how the rule "silence is negative" is applied. Only the passivity penalty applies to a country with no data at all. The ranking with the penalty at 5, 15 and 25 points is the first sensitivity table; like the others, it is computed at every build and published once scores are displayed.
 
 <!-- BEGIN generated:passivity -->
@@ -515,7 +517,7 @@ The coverage bar sits next to every score. Filled segments are indicators with e
 
 When a country has no data on A1 or A2, its card shows "no export data", never a zero. A country that publishes nothing is not scored as if it had exported nothing: only the passivity penalty applies to a country with no data at all. This keeps a lack of published data from being read as an absence of conduct.
 
-An unchecked indicator is a build warning. A country with unchecked indicators can be published only in scorecard mode, and scores are not displayed while any published country has an unchecked indicator.
+An unchecked indicator is a build warning. A country with unchecked indicators can be published only in scorecard mode, and scores are not displayed while any published country has an unchecked indicator. The rule covers all 193 scored entities, not only the countries researched in full: the build of the site refuses to display scores while any of them has an unchecked indicator.
 
 ## Sensitivity tables
 
@@ -567,7 +569,7 @@ Each version is a complete, self-contained folder `methodology/vX.Y.Z/` in the p
 
 A change is proposed as a pull request with a written rationale. The build posts the diff on the pull request. The proposal is announced on the [Changes](/en/changes) page and stays open for public comment for 14 days in a linked discussion; it is merged only after that period. A major version also needs a sign-off from at least one named reviewer.
 
-Version 1.0.0-rc.2 is a release candidate. Before scores are displayed, the points and thresholds are tested by hand-scoring ten countries, and named external reviewers review the indicator table and thresholds; any adjustment is recorded in the changelog. This version records the adjustments of the hand-scoring of the ten countries (the changelog lists each with its rationale and its measured effect); version 1.0.0-rc.1 was never displayed.
+Version 1.0.0-rc.3 is a release candidate. Before scores are displayed, the points and thresholds are tested by hand-scoring ten countries, and named external reviewers review the indicator table and thresholds; any adjustment is recorded in the changelog. This version records the adjustments of the hand-scoring of the ten countries (1.0.0-rc.2) and two further rules, on absences under Article 19 of the Charter and on the order years of A4 (1.0.0-rc.3); the changelog lists each with its rationale and its measured effect. Version 1.0.0-rc.1 was never displayed.
 
 ### Reproducibility and consistency checks
 

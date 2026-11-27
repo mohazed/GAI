@@ -121,8 +121,12 @@ describe('renderBlock: indicators', () => {
   })
 
   it('renders tiers with their labels (B1 mixed sign, B12)', () => {
-    expect(cells(row(en, 'B1'))[2]).toBe('Yes +3 / Abstain −2 / No −5 / Absent −2')
-    expect(cells(row(fr, 'B1'))[2]).toBe('Pour +3 / Abstention −2 / Contre −5 / Absent −2')
+    expect(cells(row(en, 'B1'))[2]).toBe(
+      'Yes +3 / Abstain −2 / No −5 / Absent −2 / Not entitled to vote (Article 19) 0',
+    )
+    expect(cells(row(fr, 'B1'))[2]).toBe(
+      'Pour +3 / Abstention −2 / Contre −5 / Absent −2 / Sans droit de vote (Article 19) 0',
+    )
     expect(cells(row(en, 'B12'))[2]).toBe(
       'Ambassador recalled +5 / Relations downgraded +8 / Relations severed +10',
     )

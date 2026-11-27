@@ -34,10 +34,12 @@ import {
   generateD1,
   gniFor,
   money,
+  NOT_ENTITLED_TIER,
   percent,
   usdExact,
   voteSlug,
 } from './index.js'
+import { a4YearsByRelease } from './sipri.js'
 import { inForce } from './trade.js'
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..')
@@ -154,6 +156,70 @@ describe('B1 UNGA votes', () => {
     const out = generateB1(ctx(), r)
     expect(out.events[0]?.date).toBe('2024-01-01')
     expect(out.notes[0]).toContain('votes.yaml says 2024-01-01')
+  })
+
+  // 1.0.0-rc.3 (docs/proposals/b1-article-19.md option (b) with (c)): worked example of
+  // Venezuela on A/RES/ES-10/21 (27 October 2023), named in A/78/336 and never permitted to vote.
+  const A19_SRC = 'src_20230831_undocs_a-78-336-article19'
+  const a19 = (iso3: string, resolution = 'A/RES/TEST/1', date = '2024-01-01') => ({
+    value: { resolution, date, iso3, source: A19_SRC },
+    file: 'data/structured/unga_article19.csv',
+    line: 2,
+  })
+
+  it('scores 0 for an absence of a state with no vote under Article 19, and says why', () => {
+    const r = rows('unga_votes.csv', [
+      { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: 'VEN', vote: 'X' },
+      { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: 'HUN', vote: 'X' },
+    ])
+    const { events } = generateB1(ctx(), r, [a19('VEN')])
+    const got = Object.fromEntries(events.map((e) => [e.country, e.points]))
+    // VEN: not entitled, 0 (was −2); HUN: entitled and absent, −2 as before.
+    expect(got).toEqual({ VEN: 0, HUN: -2 })
+    const ven = events.find((e) => e.country === 'VEN')
+    expect(ven?.points_rationale).toBe(
+      'Recorded vote X on A/RES/TEST/1; no vote under Article 19 of the Charter on 2024-01-01 (row 2 of data/structured/unga_article19.csv): not_entitled, 0.',
+    )
+    expect(ven?.summary.en).toMatch(
+      /^.+ did not vote on General Assembly resolution A\/RES\/TEST\/1, having no vote under Article 19 of the Charter\.$/,
+    )
+    expect(ven?.summary.fr).toMatch(
+      /^.+ n'a pas pris part au vote sur la résolution A\/RES\/TEST\/1 de l'Assemblée générale, sans droit de vote au titre de l'Article 19 de la Charte\.$/,
+    )
+    // The table's row (the Secretary-General's letter) is cited between the vote row and the
+    // press release.
+    expect(ven?.evidence.map((e) => [e.source, e.locator])).toEqual([
+      [DS, 'row 2 of data/structured/unga_votes.csv'],
+      [A19_SRC, 'row 2 of data/structured/unga_article19.csv'],
+      [PRESS, 'paragraph 1'],
+    ])
+  })
+
+  it('leaves a recorded vote alone, and keeps −2 under a methodology without the tier', () => {
+    const r = rows('unga_votes.csv', [
+      { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: 'VEN', vote: 'N' },
+      { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: 'AFG', vote: 'X' },
+    ])
+    const c = ctx()
+    // rc.2 and earlier: B1 has no `not-entitled` tier, so the table is ignored.
+    const before = {
+      ...c,
+      indicators: c.indicators.map((i) =>
+        i.id === 'B1' && i.points.kind === 'tiers'
+          ? {
+              ...i,
+              points: {
+                ...i.points,
+                tiers: i.points.tiers.filter((t) => t.key !== NOT_ENTITLED_TIER),
+              },
+            }
+          : i,
+      ),
+    }
+    const pts = (g: ReturnType<typeof generateB1>) =>
+      Object.fromEntries(g.events.map((e) => [e.country, e.points]))
+    expect(pts(generateB1(c, r, [a19('VEN'), a19('AFG')]))).toEqual({ VEN: -5, AFG: 0 })
+    expect(pts(generateB1(before, r, [a19('VEN'), a19('AFG')]))).toEqual({ VEN: -5, AFG: -2 })
   })
 
   it('slugs follow docs/03 §2', () => {
@@ -318,6 +384,141 @@ describe('A4 SIPRI orders', () => {
     ])
     expect(out.notes).toEqual([
       'sipri_orders.csv row 7: IND orders of 2023 not scored (the year starts before 2023-10-07)',
+    ])
+  })
+
+  // 1.0.0-rc.3 (docs/proposals/a4-data-years.md option (c)): the release of 9 March 2026 is the
+  // first imported release; its register export carries every order year. Worked examples of
+  // 2026-11-10: the Philippines (5 TIV in 2024 → −2, 24 TIV in 2025 → −5: −7 in one event),
+  // Slovakia (282 TIV in 2024 → −10), Germany (281 TIV in 2025 → −10, as under rc.2).
+  const register = rows('sipri_orders.csv', [
+    {
+      release_date: '2026-03-09',
+      data_year: 2023,
+      buyer_iso3: 'PHL',
+      tiv_new_orders_from_israel: 9,
+    },
+    {
+      release_date: '2026-03-09',
+      data_year: 2024,
+      buyer_iso3: 'PHL',
+      tiv_new_orders_from_israel: 5,
+    },
+    {
+      release_date: '2026-03-09',
+      data_year: 2025,
+      buyer_iso3: 'PHL',
+      tiv_new_orders_from_israel: 24,
+    },
+    {
+      release_date: '2026-03-09',
+      data_year: 2024,
+      buyer_iso3: 'SVK',
+      tiv_new_orders_from_israel: 282,
+    },
+    {
+      release_date: '2026-03-09',
+      data_year: 2025,
+      buyer_iso3: 'DEU',
+      tiv_new_orders_from_israel: 281,
+    },
+    {
+      release_date: '2026-03-09',
+      data_year: 2024,
+      buyer_iso3: 'CHE',
+      tiv_new_orders_from_israel: 0,
+    },
+  ])
+
+  it('scores each year from 2024 once, in the first imported release that reports it', () => {
+    const out = generateA4(ctx(), register)
+    expect(out.events.map((e) => [e.id, e.points, e.end])).toEqual([
+      ['evt_2026_03_09_PHL_A4_orders-2024-2025', -7, null],
+      ['evt_2026_03_09_SVK_A4_orders-2024', -10, null],
+      ['evt_2026_03_09_DEU_A4_orders-2025', -10, null],
+    ])
+    const phl = out.events[0]
+    expect(phl?.points_rationale).toBe(
+      'SIPRI release 2026-03-09: new orders from Israel in 2024 worth 5 TIV (tier −2) and 2025 worth 24 TIV (tier −5), each year scored once, in the first imported release that reports it (formula a4, years: first-reporting-release); −7.',
+    )
+    expect(phl?.summary.en).toBe(
+      'The Philippines ordered major arms from Israel worth 5 TIV in 2024 and 24 TIV in 2025, per SIPRI (release of 2026-03-09).',
+    )
+    expect(phl?.evidence.map((e) => e.locator)).toEqual([
+      'row 3 of data/structured/sipri_orders.csv',
+      'row 4 of data/structured/sipri_orders.csv',
+    ])
+    expect(out.events[1]?.summary.en).toBe(
+      'Slovakia ordered major arms from Israel in 2024 worth 282 TIV, per SIPRI (release of 2026-03-09).',
+    )
+    // A year of the release's own: the summary of rc.2, unchanged.
+    expect(out.events[2]?.summary.en).toBe(
+      'Germany ordered major arms from Israel in 2025 worth 281 TIV, per SIPRI.',
+    )
+  })
+
+  it('scores only the new year once the next release is imported, as release-year does', () => {
+    const next = rows('sipri_orders.csv', [
+      ...register.map((r) => r.value),
+      {
+        release_date: '2027-03-08',
+        data_year: 2024,
+        buyer_iso3: 'SVK',
+        tiv_new_orders_from_israel: 282,
+      },
+      {
+        release_date: '2027-03-08',
+        data_year: 2026,
+        buyer_iso3: 'SVK',
+        tiv_new_orders_from_israel: 12,
+      },
+    ])
+    const out = generateA4(ctx(), next)
+    expect(out.events.map((e) => [e.id, e.points, e.end])).toEqual([
+      ['evt_2026_03_09_PHL_A4_orders-2024-2025', -7, '2027-03-08'],
+      ['evt_2026_03_09_SVK_A4_orders-2024', -10, '2027-03-08'],
+      ['evt_2026_03_09_DEU_A4_orders-2025', -10, '2027-03-08'],
+      ['evt_2027_03_08_SVK_A4_orders-2026', -5, null],
+    ])
+  })
+
+  it('reads only the release year under release-year (1.0.0-rc.1 and rc.2)', () => {
+    const c = ctx()
+    const a4 = c.thresholds.formulas.a4
+    if (a4 === undefined || a4.kind !== 'tiers') throw new Error('formula a4 missing')
+    const before = {
+      ...c,
+      thresholds: {
+        ...c.thresholds,
+        formulas: {
+          ...c.thresholds.formulas,
+          a4: { ...a4, parameters: { ...a4.parameters, years: 'release-year' } },
+        },
+      },
+    }
+    expect(generateA4(before, register).events.map((e) => [e.id, e.points])).toEqual([
+      ['evt_2026_03_09_PHL_A4_orders-2025', -5],
+      ['evt_2026_03_09_DEU_A4_orders-2025', -10],
+    ])
+  })
+
+  it('a4YearsByRelease: years per release under each rule', () => {
+    const r = [
+      { release_date: '2026-03-09', data_year: 2023 },
+      { release_date: '2026-03-09', data_year: 2024 },
+      { release_date: '2026-03-09', data_year: 2025 },
+      { release_date: '2028-03-13', data_year: 2025 },
+      { release_date: '2028-03-13', data_year: 2027 },
+    ]
+    const first = a4YearsByRelease(r, 'first-reporting-release', 2024)
+    expect([...first].map(([d, y]) => [d, [...y]])).toEqual([
+      ['2026-03-09', [2024, 2025]],
+      ['2028-03-13', [2027]],
+    ])
+    const own = a4YearsByRelease(r, 'release-year', 2024)
+    expect([...own].map(([d, y]) => [d, [...y]])).toEqual([
+      ['2026-03-09', [2025]],
+      ['2028-03-13', [2027]],
     ])
   })
 })
@@ -759,6 +960,7 @@ describe('every generated event', () => {
     'population.csv': [],
     'recognitions.csv': rows('recognitions.csv', [{ iso3: 'IND', date: '1988-11-18' }]),
     'a2_confirmed_military.csv': [],
+    'unga_article19.csv': [],
   }
   const { events } = generateAll(ctx(), structured)
 
@@ -831,6 +1033,7 @@ describe('summaries for every registry name (P-18)', () => {
       scored.flatMap((c) => [
         { resolution: 'A/RES/TEST/1', date: '2024-01-01', iso3: c.iso3, vote: 'X' as const },
         { resolution: 'A/RES/TEST/2', date: '2024-02-01', iso3: c.iso3, vote: 'A' as const },
+        { resolution: 'A/RES/TEST/3', date: '2024-03-01', iso3: c.iso3, vote: 'X' as const },
       ]),
     ),
     'unsc_vetoes.csv': rows(
@@ -866,12 +1069,21 @@ describe('summaries for every registry name (P-18)', () => {
     ),
     'sipri_orders.csv': rows(
       'sipri_orders.csv',
-      scored.map((c) => ({
-        release_date: '2025-03-10',
-        data_year: 2024,
-        buyer_iso3: c.iso3,
-        tiv_new_orders_from_israel: 12_345.5,
-      })),
+      scored.flatMap((c) => [
+        {
+          release_date: '2025-03-10',
+          data_year: 2024,
+          buyer_iso3: c.iso3,
+          tiv_new_orders_from_israel: 12_345.5,
+        },
+        // Two years first reported by one release (1.0.0-rc.3): the longest A4 template.
+        ...[2025, 2026].map((y) => ({
+          release_date: '2027-03-08',
+          data_year: y,
+          buyer_iso3: c.iso3,
+          tiv_new_orders_from_israel: 12_345.5,
+        })),
+      ]),
     ),
     'comtrade_a2.csv': rows(
       'comtrade_a2.csv',
@@ -911,15 +1123,28 @@ describe('summaries for every registry name (P-18)', () => {
       scored.map((c) => ({ iso3: c.iso3, date: '1988-11-15' })),
     ),
     'a2_confirmed_military.csv': [],
+    'unga_article19.csv': scored.map((c, i) => ({
+      value: {
+        resolution: 'A/RES/TEST/3',
+        date: '2024-03-01',
+        iso3: c.iso3,
+        source: 'src_20230831_undocs_a-78-336-article19',
+      },
+      file: 'data/structured/unga_article19.csv',
+      line: i + 2,
+    })),
   }
   const confirmed = new Map(scored.map((c) => [c.iso3, new Set(['8526', '8802'])]))
   const vote2 = { ...VOTE, symbol: 'A/RES/TEST/2', date: '2024-02-01', kind: 'decision' as const }
-  const { events } = generateAll(ctx([VOTE, vote2]), structured, { confirmedMilitary: confirmed })
+  const vote3 = { ...VOTE, symbol: 'A/RES/TEST/3', date: '2024-03-01' }
+  const { events } = generateAll(ctx([VOTE, vote2, vote3]), structured, {
+    confirmedMilitary: confirmed,
+  })
   const names = new Map(REGISTRY.map((c) => [c.iso3, c.name]))
 
   it('covers every template for every scored country', () => {
     expect(new Set(events.map((e) => e.country)).size).toBe(193)
-    expect(events).toHaveLength(193 * 9)
+    expect(events).toHaveLength(193 * 11)
   })
 
   it('opens with the name, stays within 200 characters and passes the tone lint', () => {
