@@ -7,7 +7,11 @@
  * - PDF: the text layer of every page (pdfjs-dist), pages separated by a form feed.
  * - Anything else (JSON, CSV, plain text): the bytes decoded as text.
  *
- * The output is capped at 200 KB of UTF-8 with a marker line saying what was cut.
+ * The output is capped with a marker line saying what was cut (`textLimitFor`): 4,096 KB of UTF-8
+ * for the text of a document (HTML, PDF), 200 KB for raw text (dataset JSON or CSV, whose rows the
+ * importers read from the archived bytes, not from archive/text). The 200 KB cap of D-24 cut the
+ * passages of long transcripts and parliamentary records that quotes need (docs/10 B-509 (1),
+ * B-2143 (2), B-2169).
  */
 import { Readability } from '@mozilla/readability'
 import { parseHTML } from 'linkedom'
@@ -26,8 +30,25 @@ export interface Extracted {
   siteName: string | null
 }
 
-/** 200 KB (docs/03 §1, D-24). */
+/** 200 KB: the cap on raw text (datasets and anything else decoded as is; docs/03 §1, D-24). */
 export const TEXT_LIMIT_BYTES = 200 * 1024
+
+/**
+ * 4,096 KB: the cap on the text of a document (every method except `raw`; docs/10 B-2169). The
+ * longest document text archived so far is about 1,027 KB (a Moniteur belge issue, 1,051,449
+ * bytes); the cap still keeps a hostile or broken file from writing an unbounded text to git.
+ */
+export const DOCUMENT_TEXT_LIMIT_BYTES = 4096 * 1024
+
+/** The text cap for an extraction method: raw text keeps 200 KB, document text 4,096 KB. */
+export function textLimitFor(method: string): number {
+  return method === 'raw' ? TEXT_LIMIT_BYTES : DOCUMENT_TEXT_LIMIT_BYTES
+}
+
+/** `200 KB`, `4096 KB`: a byte limit as the truncation marker names it. */
+export function limitLabel(limit: number): string {
+  return `${Math.floor(limit / 1024)} KB`
+}
 
 /** Share of the page text Readability must keep for its result to be used. */
 const READABILITY_MIN_SHARE = 0.3
@@ -306,7 +327,7 @@ export async function extractText(
 
 /**
  * `text` cut to at most `limit` bytes of UTF-8, marker included, at a character boundary. The
- * marker states how much was kept.
+ * marker states the limit and how much was kept.
  */
 export function truncateText(
   text: string,
@@ -315,7 +336,7 @@ export function truncateText(
   const total = Buffer.byteLength(text, 'utf8')
   if (total <= limit) return { text, truncated: false }
   const marker = (kept: number) =>
-    `\n\n[pnpm archive: text truncated at 200 KB; ${kept} of ${total} bytes of extracted text kept]\n`
+    `\n\n[pnpm archive: text truncated at ${limitLabel(limit)}; ${kept} of ${total} bytes of extracted text kept]\n`
   // The marker's length depends on the kept count; reserve room for the widest count.
   const room = limit - Buffer.byteLength(marker(total), 'utf8')
   const buf = Buffer.from(text, 'utf8')
@@ -323,4 +344,70 @@ export function truncateText(
   while (end > 0 && ((buf[end] ?? 0) & 0xc0) === 0x80) end--
   const head = buf.subarray(0, end).toString('utf8')
   return { text: head + marker(end), truncated: true }
+}
+
+/** The truncation marker at the end of an archive/text file, with the counts it states. */
+const MARKER =
+  /\n\n\[pnpm archive: text truncated at (\d+) KB; (\d+) of (\d+) bytes of extracted text kept\]\n$/
+
+export type ExtendResult =
+  | {
+      ok: true
+      text: string
+      /** True when the new text is still cut (at the new limit). */
+      truncated: boolean
+      /** Bytes of extracted text kept before and after. */
+      keptBefore: number
+      keptAfter: number
+      total: number
+    }
+  | { ok: false; reason: string }
+
+/**
+ * The full text of a truncated archive/text file (`pnpm archive:retext`, docs/10 B-2169): given
+ * the file as it stands and the text extracted again from the same archived bytes, returns the
+ * new file, capped at `limit`. Refuses unless the file ends with a truncation marker, the
+ * re-extracted text has the length the marker states, and the kept part is, byte for byte, the
+ * start of the re-extracted text, so that every passage already in the file (and every quote
+ * checked against it) stays where it is and text is only added after it.
+ */
+export function extendTruncatedText(
+  existing: string,
+  extracted: string,
+  limit: number,
+): ExtendResult {
+  const m = MARKER.exec(existing)
+  if (!m) return { ok: false, reason: 'the file has no truncation marker (it is not truncated)' }
+  const keptBefore = Number(m[2])
+  const totalBefore = Number(m[3])
+  const head = existing.slice(0, m.index)
+  if (Buffer.byteLength(head, 'utf8') !== keptBefore) {
+    return {
+      ok: false,
+      reason: `the file keeps ${Buffer.byteLength(head, 'utf8')} bytes before its marker, which states ${keptBefore}`,
+    }
+  }
+  const total = Buffer.byteLength(extracted, 'utf8')
+  if (total !== totalBefore) {
+    return {
+      ok: false,
+      reason: `the text extracted again has ${total} bytes, the marker states ${totalBefore} (the extraction differs)`,
+    }
+  }
+  if (!extracted.startsWith(head)) {
+    return {
+      ok: false,
+      reason: 'the kept text is not the start of the text extracted again (the extraction differs)',
+    }
+  }
+  const { text, truncated } = truncateText(extracted, limit)
+  const cut = truncated ? MARKER.exec(text) : null
+  const keptAfter = cut ? Number(cut[2]) : total
+  if (keptAfter <= keptBefore) {
+    return {
+      ok: false,
+      reason: `the limit of ${limitLabel(limit)} keeps no more than the file already holds`,
+    }
+  }
+  return { ok: true, text, truncated, keptBefore, keptAfter, total }
 }

@@ -10,7 +10,7 @@
 import { createHash } from 'node:crypto'
 import { isValidId, type Source, type SourceKind, slugify } from '@gai/schema'
 import { isoSeconds, type NetDeps } from './deps.js'
-import { type Extracted, extractText, truncateText } from './extract.js'
+import { type Extracted, extractText, limitLabel, textLimitFor, truncateText } from './extract.js'
 import { appendArchiveIndex, writeArchiveText } from './files.js'
 import { downloadSnapshot, type SpnCredentials, type SpnOptions, spnSave } from './wayback.js'
 
@@ -183,7 +183,8 @@ export async function archiveUrl(req: ArchiveRequest): Promise<ArchivedDocument>
   const date = extracted.published ?? today
   const sha256 = sha256Hex(snap.body)
   const id = req.resolveId?.(sha256) ?? req.id ?? deriveSourceId(req.url, date, extracted.title)
-  const { text, truncated } = truncateText(extracted.text)
+  const textLimit = textLimitFor(extracted.method)
+  const { text, truncated } = truncateText(extracted.text, textLimit)
   const textFile = writeArchiveText(req.root, id, text)
   const contentType = snap.contentType ?? 'application/octet-stream'
   appendArchiveIndex(req.root, {
@@ -209,7 +210,7 @@ export async function archiveUrl(req: ArchiveRequest): Promise<ArchivedDocument>
         ? `Save Page Now capture ${saved.capture.timestamp}; Wayback serves the identical snapshot ${snap.timestamp}.`
         : '',
       snap.originalUrl !== req.url ? `Wayback captured ${snap.originalUrl} (redirect).` : '',
-      truncated ? 'Extracted text truncated at 200 KB.' : '',
+      truncated ? `Extracted text truncated at ${limitLabel(textLimit)}.` : '',
       `Text extracted by ${extracted.method}.`,
     ]
       .filter(Boolean)
