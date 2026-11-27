@@ -744,6 +744,8 @@ Also (T-G-CHECKUP, docs/10 B-2165): CHECKUP.md was updated on `main` and merged 
 
 Also (T-G-FINAL, docs/10 B-2166): final hygiene done (checks and builds on both branches, PR #11 description refreshed, no secrets in history). Nothing new is deferred.
 
+Also (T-H-HOUSE, docs/10 B-2167): the third Wayback check was started on 2026-11-27 (run 46068557695, data/phase1); it was still running when T-H-HOUSE finished. T-H-WAYBACK reads it, waiting if needed, and re-captures the failing sources with `--root` on a scratch directory.
+
 ## P-24 — Methodology change proposal (template)
 
 ```

@@ -1079,3 +1079,14 @@ Verification of the new and changed records of T-G-LEADS-5 to T-G-LEADS-8 and T-
 | Secrets in git history | 0 hits for the 3 `.env` values and for token patterns |
 
 Decision: docs/10 B-2166.
+
+## 13. Launch plan of 2026-11-27
+
+### T-H-HOUSE (2026-11-27)
+
+| Item | Result | B-id |
+|---|---|---|
+| `git status`, `git rev-parse` | `data/phase1` at `bc3be69`, equal to origin; only `.claude/` untracked; `origin/main` at `73c166d` | B-2167 (1) |
+| Wayback check, third run | `gh workflow run wayback.yml --ref data/phase1`, run id 46068557695, started 2026-11-27 21:10 UTC, in progress at the time of writing | B-2167 (2) |
+| Parts 2 and 3 of LAUNCH-PLAN.md | recorded in the build log | B-2167 (3), (4) |
+| `pnpm validate` | see reports.jsonl line T-H-HOUSE | |
