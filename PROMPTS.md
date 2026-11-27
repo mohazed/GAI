@@ -748,6 +748,8 @@ Also (T-H-HOUSE, docs/10 B-2167): the third Wayback check was started on 2026-11
 
 Also (T-H-MERGE, docs/10 B-2168): PR #16 and PR #17 are merged into `main` (`da585c6` is live) and `main` is merged into `data/phase1`. The CI push run of `main` for the merge of #17 (46072700860) was still running when T-H-MERGE finished; T-H-FINAL checks its result and the nightly runs. Code PRs of later cards start from `da585c6`; PR #15 (rc.2) still has the older base and T-H-METHOD builds rc.3 on it.
 
+Also (T-H-ARCHIVER, docs/10 B-2169): the archiver's text cap is 4,096 KB for document text and 200 KB for raw dataset text (PR #18), and `pnpm archive:retext <src_id>` completes a text the former 200 KB cap cut, from bytes with the recorded SHA-256. The 15 cut document texts are complete; the 15 raw dataset texts (FTS, UNDL) stay at 200 KB by design. Deferred: (1) the Wayback capture 20261110231756 of the Italian Chamber's stenographic record of 27 November 2024 (`src_20241127_camera_stenografico-388-tajani-cpi`) answered HTTP 404 and the CDX listed no capture on 2026-11-27; T-H-WAYBACK re-captures it with `--root` and records `archive_url_alt` if the bytes match. (2) `lead_20261005_TJK_1`: the UN automatic transcript is archived with its whole text (`src_20260926_un-transcripts_ga81-day5-general-debate`), but nothing is filed from automatic transcripts until the author's rule (CHECKUP §2a); T-H-UNDOCS looks for the speaker's own text (a Wayback capture of gadebate `tj_en.pdf`) or A/81/PV. (3) Any session that meets a text ending with the 200 KB marker runs `pnpm archive:retext` on it before reading past the cut.
+
 ## P-24 — Methodology change proposal (template)
 
 ```

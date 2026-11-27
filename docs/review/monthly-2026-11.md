@@ -1100,3 +1100,17 @@ Decision: docs/10 B-2166.
 | Deploy runs of `main` | 46068739084 and 46072700869, both success | B-2168 (3) |
 | Live pages | `/`, `/en/`, `/en/country/NOR/`, `/fr/country/NOR/`, `/api/v1/manifest.json` answer 200; manifest `build_date` 2026-11-27 | B-2168 (4) |
 | `main` into `data/phase1`, `pnpm build:data:check` | identical: 1,945 files, 157,496,769 bytes | B-2168 (5) |
+
+### T-H-ARCHIVER (2026-11-27)
+
+| Item | Result | B-id |
+|---|---|---|
+| Text cap (PR #18, merge commit `57262a9` on `main`, CI green) | 4,096 KB for document text, 200 KB kept for raw dataset text; `pnpm archive:retext` added with tests; docs/04, docs/03, docs/06, D-24 | B-2169 (1) |
+| `main` into `data/phase1` | merge commit `4c09850`, clean | B-2169 (1) |
+| Cut document texts completed | 15 of 15, each from bytes with the recorded SHA-256 and byte count, prefix check passed; notes of the 15 source records extended | B-2169 (2) |
+| Raw dataset texts (14 FTS, 1 UNDL) | left at 200 KB by design | B-2169 (2) |
+| Italian stenographic record, Wayback capture 20261110231756 | HTTP 404, CDX empty on 2026-11-27; text re-extracted from the origin PDF (SHA-256 equal); re-capture left to T-H-WAYBACK | B-2169 (3) |
+| ITA B5/B6 passages | now in the archived text (lines 6035 to 6048); not filed, B-2143 reading kept | B-2169 (4) |
+| FRA A2 figures | now in the archived text (lines 4418 to 4437, 7475); note extended, figures unchanged | B-2169 (4) |
+| TJK Foreign Minister, 81st session (`lead_20261005_TJK_1`) | UN automatic transcript archived with its whole text (`src_20260926_un-transcripts_ga81-day5-general-debate`, line 160); not filed (CHECKUP §2a default, B-2134 (3)) | B-2169 (4) |
+| Quotes and hashes | no recorded hash, byte count or index row changed; `pnpm validate` 0 errors | B-2169 (2) |
