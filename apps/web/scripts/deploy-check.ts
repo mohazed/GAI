@@ -6,6 +6,7 @@
  *
  * - the API was built for the run day and the site's address (manifest `build_date`, `site_url`),
  *   from the checked-out commit (`git.sha` equal to HEAD, `dirty` false unless --allow-dirty);
+ * - rule 8 (docs/02 §12): in score mode, no `unchecked` build note (scripts/rule8.ts);
  * - no `history` build note: each corrections-log entry is linked to its mainline commit, which a
  *   shallow clone cannot do (P-05, docs/10 B-76; the workflows also run the prompt's jq test);
  * - the API comes from data/, never from fixtures/ (docs/10 B-34): every country, correction and
@@ -21,6 +22,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import path from 'node:path'
 import { findRepoRoot, loadDataset, PUBLIC_STATUSES } from '@gai/schema'
 import type { Mode } from '../lib/mode'
+import { rule8Problems, type UncheckedFacts, uncheckedFacts } from './rule8'
 import { loadSiteMode } from './site-env'
 
 export const MAX_FILE_BYTES = 25 * 1024 * 1024
@@ -33,6 +35,8 @@ export interface DeployFacts {
     git: { sha: string | null; dirty: boolean | null }
   }
   historyNotes: number
+  /** The `unchecked` notes of build-notes.json (rule 8, docs/02 §12). */
+  unchecked: UncheckedFacts
   /** Ids the API publishes; `events` are the hand-authored ones of the country files. */
   api: { countries: string[]; corrections: string[]; replies: string[]; events: string[] }
   /** Ids of data/; `events` are the ones whose status is public there. */
@@ -72,6 +76,7 @@ export function deployProblems(f: DeployFacts, e: DeployExpectations): string[] 
       `build-notes.json has ${f.historyNotes} history note(s): fetch the full history (fetch-depth: 0)`,
     )
   }
+  problems.push(...rule8Problems(e.mode, f.unchecked))
   for (const kind of ['countries', 'corrections', 'replies'] as const) {
     const known = new Set(f.data[kind])
     const foreign = f.api[kind].filter((id) => !known.has(id))
@@ -126,7 +131,9 @@ const json = (file: string): unknown => JSON.parse(readFileSync(file, 'utf8'))
 function readFacts(outDir: string, repoRoot: string): DeployFacts {
   const api = path.join(outDir, 'api', 'v1')
   const manifest = json(path.join(api, 'manifest.json')) as DeployFacts['manifest']
-  const notes = json(path.join(api, 'build-notes.json')) as { counts: { history: number } }
+  const notes = json(path.join(api, 'build-notes.json')) as {
+    counts: { history: number }
+  }
   const countries = json(path.join(api, 'countries.json')) as { countries: { iso3: string }[] }
   const corrections = json(path.join(api, 'corrections.json')) as { corrections: { id: string }[] }
   const replies = json(path.join(api, 'replies.json')) as { replies: { id: string }[] }
@@ -143,6 +150,7 @@ function readFacts(outDir: string, repoRoot: string): DeployFacts {
   return {
     manifest,
     historyNotes: notes.counts.history,
+    unchecked: uncheckedFacts(notes),
     api: {
       countries: countries.countries.map((c) => c.iso3),
       corrections: corrections.corrections.map((c) => c.id),
