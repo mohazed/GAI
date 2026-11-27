@@ -139,6 +139,33 @@ export function methodologyFiles(lm: Methodology): MethodologyFilesInput {
   }
 }
 
+/** The standing indicators that summed in 1.0.0-rc.1 and stack by most severe from rc.2. */
+export const RC2_MOST_SEVERE: readonly string[] = ['A3', 'A6', 'A7', 'B3', 'B7', 'D2']
+
+/**
+ * The engine rules of 1.0.0-rc.1, the base the P-15 proposals were measured against, rebuilt
+ * from the files of 1.0.0-rc.2 (P-24): passivity on the absolute contribution and on every B8
+ * tier, no B1 cap, A3, A6, A7, B3, B7 and D2 summed. The data changes of rc.2 (confidence of
+ * the events with a parliamentary or official-video source, the generators' parameters) are not
+ * reverted: they live in the events and tables, not in these files.
+ */
+export function rc1Files(files: MethodologyFilesInput): MethodologyFilesInput {
+  return {
+    ...withIndicators(files, (i) =>
+      i.id === 'B1'
+        ? { ...i, indicator_cap: null }
+        : RC2_MOST_SEVERE.includes(i.id)
+          ? { ...i, stacking: { rule: 'sum' } }
+          : i,
+    ),
+    passivity: {
+      ...files.passivity,
+      contribution_sign: 'any',
+      excluded: (files.passivity.excluded ?? []).filter((e) => e.tiers === undefined),
+    },
+  }
+}
+
 export const compile = (files: MethodologyFilesInput): ScoringMethodology =>
   compileMethodology(files)
 

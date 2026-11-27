@@ -324,7 +324,7 @@ export interface FtsTables {
   unattributed: UnattributedFlow[]
   /** Government flows (after the filters) listed under more than one plan, counted once in windows. */
   sharedFlows: string[]
-  /** Attributed flows dated before 2023-10-07. */
+  /** Attributed flows dated before 2023-10-07 (before `flowsFrom` when given). */
   preWindowFlows: GovernmentFlow[]
   /** Flows attributed by an override (FTS_ATTRIBUTION_OVERRIDES). */
   overriddenFlows: GovernmentFlow[]
@@ -334,6 +334,11 @@ export interface FtsTables {
  * The two tables of fetch:fts. Window rows for every donor with an attributed flow, for every
  * month from October 2023 to `lastMonth`, zeros included (zero is a real zero, docs/02 §5); plan
  * rows per donor and plan over all flow dates. Amounts are summed exactly and rounded once.
+ *
+ * `flowsFrom` (formula d1 `parameters.flows_from`, methodology 1.0.0-rc.2, P-04 B-60): a flow
+ * dated before it counts in no window. Without it (1.0.0-rc.1) a flow counts in every window its
+ * FTS date falls in, including the flows FTS dates before 7 October 2023. The donors and the rows
+ * are the same either way, so a donor whose only flows are earlier has rows of zero.
  */
 export function ftsTables(input: {
   pages: readonly FtsPage[]
@@ -346,7 +351,13 @@ export function ftsTables(input: {
   /** Organisation id → ISO3 (verifyOverrides), and the archived organisation list they cite. */
   overrides?: ReadonlyMap<string, string>
   organizationSourceId?: string
+  /** First flow date counted in the windows (YYYY-MM-DD); absent: every date. */
+  flowsFrom?: string | undefined
 }): FtsTables {
+  const from = input.flowsFrom ?? ''
+  if (from !== '' && !/^\d{4}-\d{2}-\d{2}$/.test(from)) {
+    throw new Error(`flowsFrom must be a date, got ${from}`)
+  }
   const { attributed, unattributed } = governmentFlows(
     input.pages,
     input.locations,
@@ -403,7 +414,8 @@ export function ftsTables(input: {
     for (const iso3 of donors) {
       let sum = 0
       for (const f of unique)
-        if (f.iso3 === iso3 && f.date >= w.start && f.date <= w.end) sum += f.amount
+        if (f.iso3 === iso3 && f.date >= w.start && f.date <= w.end && f.date >= from)
+          sum += f.amount
       windows.push({
         iso3,
         window_start: w.start,
@@ -420,7 +432,63 @@ export function ftsTables(input: {
     plans,
     unattributed,
     sharedFlows: [...shared].sort(),
-    preWindowFlows: unique.filter((f) => f.date < '2023-10-07'),
+    preWindowFlows: unique.filter((f) => f.date < (from === '' ? '2023-10-07' : from)),
     overriddenFlows: attributed.filter((f) => f.overriddenBy !== undefined),
   }
+}
+
+/** `YYYY-MM-DD` of formula d1 `parameters.flows_from`, or undefined when the version has none. */
+export function flowsFromOf(
+  thresholds: { formulas: Readonly<Record<string, object>> } | undefined,
+): string | undefined {
+  const d1 = thresholds?.formulas.d1 as { parameters?: Record<string, unknown> } | undefined
+  const v = d1?.parameters?.flows_from
+  if (v === undefined) return undefined
+  if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(v)) {
+    throw new Error(`formula d1 parameters.flows_from must be a date, got ${String(v)}`)
+  }
+  return v
+}
+
+/**
+ * fts_funding.csv rebuilt from the archived responses it cites (`pnpm fetch:fts --rebuild`): the
+ * windows built from those responses must equal the committed rows (same rows, same amounts),
+ * either with every flow date or with `flowsFrom` already applied, so that only the rule changes
+ * the table; then each committed row takes the amount built with `flowsFrom`, keeping its other
+ * cells. Throws when neither matches.
+ */
+export function rebuildWindows(
+  committed: readonly FtsWindowRow[],
+  input: Omit<Parameters<typeof ftsTables>[0], 'flowsFrom'>,
+  flowsFrom: string | undefined,
+): {
+  rows: FtsWindowRow[]
+  changed: { iso3: string; window_end: string; from: number; to: number }[]
+} {
+  const key = (r: { iso3: string; window_end: string }) => `${r.iso3} ${r.window_end}`
+  const amounts = (from: string | undefined) =>
+    new Map(
+      ftsTables({ ...input, flowsFrom: from }).windows.map((w) => [key(w), w.usd_paid_committed]),
+    )
+  const differing = (m: Map<string, number>) =>
+    m.size !== committed.length
+      ? committed.length
+      : committed.filter((r) => m.get(key(r)) !== r.usd_paid_committed).length
+  const all = amounts(undefined)
+  const cut = amounts(flowsFrom)
+  // The table must be the archived responses under either rule: every flow date (as fetched by
+  // 1.0.0-rc.1) or `flowsFrom` already applied (a second run changes nothing).
+  if (differing(all) > 0 && differing(cut) > 0) {
+    throw new Error(
+      `the archived responses do not rebuild fts_funding.csv: ${differing(all)} of ${committed.length} rows differ (every flow date), ${differing(cut)} (flows from ${flowsFrom ?? 'any date'})`,
+    )
+  }
+  const changed: { iso3: string; window_end: string; from: number; to: number }[] = []
+  const rows = committed.map((r) => {
+    const to = cut.get(key(r)) ?? 0
+    if (to !== r.usd_paid_committed)
+      changed.push({ iso3: r.iso3, window_end: r.window_end, from: r.usd_paid_committed, to })
+    return { ...r, usd_paid_committed: to }
+  })
+  return { rows, changed }
 }

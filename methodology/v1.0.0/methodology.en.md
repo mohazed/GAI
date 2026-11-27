@@ -1,6 +1,6 @@
 # Methodology
 
-Version 1.0.0-rc.1 · draft · scores not yet displayed (scorecard mode)
+Version 1.0.0-rc.2 · draft · scores not yet displayed (scorecard mode)
 
 ## Purpose and standpoint
 
@@ -106,11 +106,11 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 |---|---|---|---|---|---|---|
 | A1 | Major conventional arms delivered to Israel, scaled by share of Israel's imports | −40 to 0 (formula a1) | computed | — | [SIPRI Arms Transfers Database](https://www.sipri.org/databases/armstransfers) | Annual (March) |
 | A2 | Ammunition, components, dual-use military goods exported (HS 93, 8710, 8802, 8526) | −25 to 0 (formula a2) | computed | — | Israeli Tax Authority customs data; UN Comtrade; National licence registers; NGO investigations | Quarterly |
-| A3 | Participation in the F-35 supply chain | −15 | standing | — | UN Special Rapporteur reports; Lockheed supplier disclosures | On change |
+| A3 | Participation in the F-35 supply chain | −15 | standing | one record counts: the most severe | UN Special Rapporteur reports; Lockheed supplier disclosures | On change |
 | A4 | Arms purchased from Israel (new contracts since Oct 2023) | −15 to 0 (formula a4) | computed | — | SIPRI; National procurement notices | Annual |
 | A5 | Military cooperation: joint exercises, intelligence sharing, basing, weapons transit via ports or airspace | −5 per instance | repeatable | cap −15 | Defence ministry releases; Investigative journalism | On event |
-| A6 | Export licences suspended (partial) | +10 | standing | superseded by A7 | Government decision; Official gazette | On event |
-| A7 | Full two-way arms embargo in force | +25 | standing | supersedes A6 | Law or decree | On event |
+| A6 | Export licences suspended (partial) | +10 | standing | one record counts: the most severe; superseded by A7 | Government decision; Official gazette | On event |
+| A7 | Full two-way arms embargo in force | +25 | standing | one record counts: the most severe; supersedes A6 | Law or decree | On event |
 | A8 | Transit denied to arms shipments (ports, airspace, flagged vessels) | +5 per instance | repeatable | cap +10 | Port authority; Government statement | On event |
 
 **Evidence rules**
@@ -128,16 +128,16 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 | ID | Indicator | Points | Type | Indicator cap and stacking | Primary sources | Cadence |
 |---|---|---|---|---|---|---|
-| B1 | UN General Assembly votes on Gaza ceasefire, UNRWA, Palestine status | Yes +3 / Abstain −2 / No −5 / Absent −2 | repeatable | — | [UN Digital Library voting records](https://digitallibrary.un.org) | Per vote |
+| B1 | UN General Assembly votes on Gaza ceasefire, UNRWA, Palestine status | Yes +3 / Abstain −2 / No −5 / Absent −2 | repeatable | cap −15 / +15 | [UN Digital Library voting records](https://digitallibrary.un.org) | Per vote |
 | B2 | UN Security Council veto of a ceasefire resolution (members only) | −20 | repeatable | — | UNSC records | Per vote |
-| B3 | ICJ genocide case: declaration of intervention filed | +15 | standing | — | ICJ press releases | On event |
+| B3 | ICJ genocide case: declaration of intervention filed | +15 | standing | one record counts: the most severe | ICJ press releases | On event |
 | B4 | Formal position rejecting or opposing ICJ provisional measures | −15 | repeatable | — | Government statement | On event |
 | B5 | ICC: public commitment to execute arrest warrants | +8 | standing | latest position of B5 and B6 holds | Government statement | On event |
 | B6 | ICC: stated refusal to execute warrants, or hosting a wanted official | −10 | standing | latest position of B5 and B6 holds | Government statement; Visit records | On event |
-| B7 | Sanctions on ICC judges or prosecutors | −20 | standing | — | Official sanctions list | On event |
+| B7 | Sanctions on ICC judges or prosecutors | −20 | standing | one record counts: the most severe | Official sanctions list | On event |
 | B8 | Recognition of the State of Palestine after Oct 2023 | Recognised after 2023-10-07 +8 / Pre-existing recognition +3 | standing | only the largest holding tier counts | Foreign ministry | On event |
-| B9 | Head of government or foreign minister formally names violations, calls for ceasefire or an end to the blockade | Formal call for ceasefire or end of blockade +2 / Names specific violations or uses a legal characterisation +5, per instance | repeatable | cap +10 | Official transcript | On event |
-| B10 | Head of government declares unconditional support or denies documented violations | −5 per instance | repeatable | cap −10 | Official transcript | On event |
+| B9 | Head of state, head of government or foreign minister formally names violations, calls for ceasefire or an end to the blockade | Formal call for ceasefire or end of blockade +2 / Names specific violations or uses a legal characterisation +5, per instance | repeatable | cap +10 | Official transcript | On event |
+| B10 | Head of state, head of government or foreign minister declares unconditional support or denies documented violations | −5 per instance | repeatable | cap −10 | Official transcript | On event |
 | B11 | Sanctions on Israeli ministers or settler entities | Sanctions on Israeli ministers +10 / Sanctions on settler entities +5 | standing | one event per tier, tiers add | Official sanctions list | On event |
 | B12 | Ambassador recalled / relations downgraded / severed | Ambassador recalled +5 / Relations downgraded +8 / Relations severed +10 | standing | only the largest holding tier counts | Foreign ministry | On event |
 
@@ -151,8 +151,8 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 - **B6** — An official statement by the head of government, foreign or justice minister on the warrants, the official record of a visit by a person under warrant hosted without arrest, or the official record of the withdrawal from the Rome Statute; an overflight authorisation without a stated position on the warrants is a lead. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B7** — The official sanctions list. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B8** — Generated from `data/structured/recognitions.csv`; never hand-authored. Each row gives the date the recognition took effect and cites the archived official statement of the recognising government (or the UN record of it).
-- **B9** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government or the foreign minister; statements by spokespersons do not score.
-- **B10** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government; statements by spokespersons do not score.
+- **B9** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of state, the head of government or the foreign minister, the three who represent the state without producing full powers (Vienna Convention on the Law of Treaties, art. 7 (2) (a)); statements by vice-presidents, deputies and spokespersons do not score.
+- **B10** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of state, the head of government or the foreign minister, the three who represent the state without producing full powers (Vienna Convention on the Law of Treaties, art. 7 (2) (a)); statements by vice-presidents, deputies and spokespersons do not score.
 - **B11** — The official sanctions list. An EU-level listing counts only for a member state that voted for it. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B12** — The foreign ministry's announcement. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 
@@ -180,15 +180,15 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 
 | ID | Indicator | Points | Type | Indicator cap and stacking | Primary sources | Cadence |
 |---|---|---|---|---|---|---|
-| D1 | Humanitarian funding to the Gaza response, scaled per capita of GNI | 0 to +12 (formula d1) | computed | — | [OCHA Financial Tracking Service API](https://fts.unocha.org) | Monthly |
-| D2 | UNRWA funding suspended | −10 | standing | — | UNRWA donor tables | On event |
+| D1 | Humanitarian funding to the Gaza response, as a share of GNI | 0 to +12 (formula d1) | computed | — | [OCHA Financial Tracking Service API](https://fts.unocha.org) | Monthly |
+| D2 | UNRWA funding suspended | −10 | standing | one record counts: the most severe | UNRWA donor tables | On event |
 | D3 | UNRWA funding restored / increased above 2022 level | Funding restored +5 / Funding increased above the 2022 level +8 | standing | only the largest holding tier counts | UNRWA donor tables | On event |
 | D4 | Medical evacuations hosted, field hospitals deployed | +5 | repeatable | — | WHO; Health ministry | On event |
 | D5 | Visa or refugee pathway opened for Gazans | +5 | repeatable | — | Immigration regulations | On event |
 
 **Evidence rules**
 
-- **D1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Rows of `data/structured/fts_funding.csv` (FTS, donor organisation type Government) and `data/structured/gni.csv` (World Bank Atlas) cite dataset sources that archive the API responses.
+- **D1** — Computed from the dataset, never typed in by hand; the formula and the raw rows are downloadable. Rows of `data/structured/fts_funding.csv` (FTS, donor organisation type Governments, FTS's spelling) and `data/structured/gni.csv` (World Bank Atlas) cite dataset sources that archive the API responses.
 - **D2** — The government announcement of the suspension, or UNRWA donor tables; the event ends on the announced resumption. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **D3** — UNRWA donor tables; the increased tier requires the annual contribution to exceed the 2022 contribution in nominal USD in those tables. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **D4** — A WHO or health ministry document on the programme, one event per programme. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
@@ -217,9 +217,10 @@ Some indicators have their own cap, or a rule on how their events combine. These
 | Indicator | Rule |
 |---|---|
 | A5 military cooperation | −5 per confirmed instance; the sum is capped at −15 |
+| A3, A6, A7, B3, B7 and D2 standing states | when two records of the same country hold on the same day, only the most severe counts (see below); the records do not add |
 | A6 and A7 arms export measures | A7 (full two-way embargo, +25) supersedes A6 (partial suspension, +10) for the same country; the two do not add |
 | A8 transit denied | +5 per instance; the sum is capped at +10 |
-| B1 UN General Assembly votes | no indicator cap; the category cap applies |
+| B1 UN General Assembly votes | the sum is capped at −15 and at +15, the size of the passivity penalty, so that votes alone never outweigh it, in either direction |
 | B5 and B6 ICC arrest warrants | the latest formal position of the country holds; B5 and B6 do not add |
 | B8 recognition of Palestine | one standing state: +8 for a recognition after 7 October 2023, otherwise +3 for a recognition that predates it, held from 7 October 2023 |
 | B9 formal statements | +2 or +5 per statement; the sum is capped at +10 |
@@ -230,41 +231,44 @@ Some indicators have their own cap, or a rule on how their events combine. These
 | C4 settlement goods | labelling (+2) and ban (+5) do not add; the ban supersedes labelling |
 | D3 UNRWA funding | restored (+5) and increased (+8) do not add; increased supersedes restored |
 
+"Most severe" is chosen by points: where only one record or one tier of an indicator counts (A3, A6, A7, B3, B7, B8, B12, C1, C4, D2 and D3), the one with the most points is kept, not the one with the most points multiplied by its confidence weight; on equal points, the larger weighted contribution, then the earlier date, then the smaller event id. A severe measure supported only at confidence reported therefore counts at its reduced weight even when a milder confirmed measure of the same country would weigh more. When a B5 and a B6 position start on the same day, the one whose event id sorts last holds.
+
 ### Definitions per indicator
 
-- **A1 and A4** use SIPRI trend-indicator values (TIV) from the annual release of the SIPRI Arms Transfers Database. A4 counts only contracts signed on or after 7 October 2023: new orders, not deliveries of orders placed before the war. Both are computed (see Computed indicators).
+- **A1 and A4** use SIPRI trend-indicator values (TIV) from the annual release of the SIPRI Arms Transfers Database. A4 counts only new orders, not deliveries of orders placed before the war, and only orders dated 2024 or later: SIPRI dates orders by year only, so an order of 2023 cannot be placed before or after 7 October 2023, and none is counted. Both are computed (see Computed indicators).
 - **A2** counts HS chapter 93 (arms and ammunition) and HS heading 8710 (tanks and armoured vehicles) in full. HS headings 8526 (radar and remote-control apparatus) and 8802 (aircraft) count only when a licence register, a parliamentary answer or a published investigation citing the customs code confirms that the flow is military, because both headings are mostly civil goods.
 - **A3** is a standing state for countries whose companies are documented Tier-1 or Tier-2 suppliers of parts or maintenance for the F-35 programme in official programme documents, national ministry statements or reports of the UN Special Rapporteur. It carries −15 while it holds. A judicial or governmental halt of F-35 part exports to Israel ends the standing state and is, separately, an A6 event.
 - **A5** counts confirmed instances only: a named exercise, a documented transit (port call, overflight authorisation), a public basing agreement, or an official confirmation of intelligence sharing related to the military campaign in Gaza. Routine NATO or bilateral arrangements that predate the war are not instances unless they are activated for the campaign.
-- **A6** is any government decision that suspends or refuses a class of export licences to Israel, or a court order with the same effect. It holds until the suspension is lifted.
-- **A7** is a law or decree that covers both arms exports to Israel and arms imports from Israel.
+- **A6** is any government decision that suspends or refuses a class of export licences to Israel, military or not, or a court order with the same effect. It holds until the suspension is lifted. A refusal policy that predates 7 October 2023 is not an act in the window, and A6 has no tier for it. Criteria for dual-use goods specific to Israel and the exclusion of Israeli companies from an arms fair are not A6 events in version 1.0.
+- **A7** is a law or decree that covers both arms exports to Israel and arms imports from Israel. A general embargo on trade with Israel in both directions, decided by the government, is an A7 event; it is not also a C1 event.
 - **B1** counts plenary UN General Assembly votes; see Qualifying UN General Assembly votes below.
 - **B2** counts any veto, by any permanent member, of a draft Security Council resolution whose operative paragraphs call for a ceasefire or a humanitarian truce or pause, at −20 per veto. Vetoes of drafts on other subjects, such as Palestine's UN membership (18 April 2024), and vetoes of amendments are recorded and not scored. B2 is not applicable to states that were not on the Security Council at any point since 7 October 2023.
-- **B3** counts an intervention filed under Article 62 or 63 of the Statute of the International Court of Justice (ICJ) in case 192 (South Africa v. Israel, under the Genocide Convention), from the date the Court registers it, only when the declaration's stated construction of the Convention supports the applicant's reading or the Court's provisional-measures orders (obligations to prevent, scope of intent, binding character of the orders). It is a standing state; a withdrawal ends it on the withdrawal date. A declaration that argues for a narrower reading against the applicant is a B4 event, not a B3 event. Joining a separate case is tagged `related` and not scored.
+- **B3** counts an intervention filed under Article 62 or 63 of the Statute of the International Court of Justice (ICJ) in case 192 (South Africa v. Israel, under the Genocide Convention), from the date the Court registers it, only when the declaration's stated construction of the Convention supports the applicant's reading or the Court's provisional-measures orders (obligations to prevent, scope of intent, binding character of the orders). It is a standing state; a withdrawal ends it on the withdrawal date. A declaration that argues for a narrower reading against the applicant is a B4 event, not a B3 event. The application that starts case 192 counts as a B3 event for the applicant: it is the fullest form of the act B3 rewards. Joining a separate case is tagged `related` and not scored.
 - **B4** requires an official statement rejecting the ICJ's provisional-measures orders or their binding character, a formal act to that effect, or a declaration of intervention filed against the applicant's construction (see B3). Criticism of the merits of the case in a press remark, without a formal act, is not a B4 event.
-- **B5 and B6** concern the arrest warrants issued by the International Criminal Court on 21 November 2024. B5 is an official statement by the head of government or the foreign or justice minister committing to execute them. B6 is a stated refusal to execute them, hosting a person under warrant on an official visit without arrest, or a withdrawal from the Rome Statute since 7 October 2023. Authorising an overflight is a lead, not an event, unless it comes with a stated position on the warrants. B5 and B6 are standing states that replace each other in time: the latest formal position holds.
+- **B5 and B6** concern the arrest warrants issued by the International Criminal Court on 21 November 2024. B5 is an official statement by the head of government or the foreign or justice minister committing to execute them. B6 is a stated refusal to execute them, hosting a person under warrant on an official visit without arrest, or a withdrawal from the Rome Statute since 7 October 2023. A statement that the foreign ministry issues in its own name is the foreign minister's formal position, for B5 and B6 alike. Authorising an overflight is a lead, not an event, unless it comes with a stated position on the warrants. B5 and B6 are standing states that replace each other in time: the latest formal position holds.
 - **B7** is a standing state while sanctions on ICC judges or prosecutors are in force.
 - **B8** is a standing state for recognition of the State of Palestine: +8 for a recognition after 7 October 2023, +3 for a recognition that predates it.
-- **B9** requires a formal statement by the head of government or the foreign minister, with the exact quote, the speaker, the date and the official transcript or official video with a timestamp: +2 for a formal call for a ceasefire or for an end to the blockade; +5 when the statement names specific violations (for example starvation as a method of warfare, attacks on hospitals, forced displacement) or uses a legal characterisation. Statements by the same speaker on the same day are one event.
-- **B10** requires a statement by the head of government declaring unconditional support or denying documented violations, with the same evidence as B9, at −5 per statement. Statements by the same speaker on the same day are one event.
-- **B11** counts sanctions listings by the country itself or, for EU member states, EU-level listings the state voted for. A state that blocked an EU listing has no B11 event; the block is recorded as a note and not scored.
-- **B12** is a standing state; the most severe current measure counts.
-- **C1** counts a suspension or a formal review of a trade or association agreement with Israel. For EU member states, an EU-level review or suspension of the Association Agreement counts for every member state that supported it in the Council, as recorded in official minutes or ministerial statements; states that opposed it have no C1 event.
-- **C2** is a standing state for a new trade, investment or cooperation agreement signed with Israel on or after 7 October 2023.
-- **C3** uses total goods trade with Israel (exports plus imports) over the trailing 12 months, compared with calendar year 2022 (see Computed indicators).
+- **B9** requires a formal statement by the head of state, the head of government or the foreign minister, with the exact quote, the speaker, the date and the official transcript or official video with a timestamp: +2 for a formal call for a ceasefire or for an end to the blockade; +5 when the statement names specific violations (for example starvation as a method of warfare, attacks on hospitals, forced displacement) or uses a legal characterisation. Statements by the same speaker on the same day are one event.
+- **B10** requires a statement by the head of state, the head of government or the foreign minister declaring unconditional support or denying documented violations, with the same evidence as B9, at −5 per statement. Statements by the same speaker on the same day are one event.
+- **Speakers of B9 and B10.** The head of state, the head of government and the foreign minister are the three who represent the state without producing full powers (Vienna Convention on the Law of Treaties, article 7 (2) (a)). Statements by vice-presidents, deputy ministers and spokespersons do not score. A readout written in the third person is not evidence: B9 and B10 need the exact words. When the only verbatim record of a statement is a transcript published by another government, that transcript is accepted. The statement must cite Gaza; a statement on "the Palestinians" or "the Palestinian people" that does not cite Gaza is out of scope, for B9 and B10 alike.
+- **B11** counts sanctions listings by the country itself or, for EU member states, EU-level listings the state voted for. An EU listing adopted by unanimity without a recorded national vote counts for every member state on the date of the Council decision, because unanimity is each member's assent; a recorded constructive abstention excludes that member. A state that blocked an EU listing has no B11 event; the block is recorded as a note and not scored.
+- **B12** is a standing state; the most severe current measure counts. A downgrade is a lower level of diplomatic representation; the withdrawal of military attachés is not a downgrade.
+- **C1** counts a suspension or a formal review of a trade or association agreement with Israel. For EU member states, an EU-level review or suspension of the Association Agreement counts for every member state that supported it in the Council, as recorded in official minutes or ministerial statements; states that opposed it have no C1 event. Suspending the negotiation of an agreement is the review tier. A stated openness to a review is not support for it.
+- **C2** is a standing state for a new trade, investment or cooperation agreement signed with Israel on or after 7 October 2023: any signed governmental instrument (an agreement, a memorandum, or a joint declaration that sets up a cooperation mechanism), one event per instrument, summed within the category cap. A restoration of relations, an implementing arrangement of a convention that predates the war and an unsigned statement are not C2 events.
+- **C3** uses total goods trade with Israel (exports plus imports) over one calendar year, compared with calendar year 2022 (see Computed indicators).
 - **C4** is a standing state for a ban on settlement goods (+5) or a labelling requirement alone (+2).
 - **C5** counts decisions by a sovereign fund, a public pension fund or a central bank to exclude companies over their conduct in Gaza or the occupied territories, one event per decision batch.
 - **C6** counts public procurement rules or decisions with legal effect that exclude implicated companies.
 - **D1** is computed from OCHA Financial Tracking Service data (see Computed indicators).
-- **D2** is a standing state from the announcement of a suspension of UNRWA funding to the announced resumption.
-- **D3** applies from the date funding resumes; "increased" means the annual contribution exceeds the 2022 contribution in nominal US dollars, per the UNRWA donor tables.
+- **D2** is a standing state from the announcement of a suspension of UNRWA funding to the announced resumption. A publicly stated hold or stop of UNRWA payments, including a hold pending the UN investigations, is a suspension from its announcement.
+- **D3** applies from the date funding resumes; "restored" requires a prior D2 suspension, "increased" does not, and means the annual contribution exceeds the 2022 contribution in nominal US dollars, per the UNRWA donor tables, from the year it does. Contributions are the pledges listed in the UNRWA donor tables.
 - **D4** counts one event per programme (a field hospital deployment, a medical evacuation programme), not per patient.
 - **D5** counts one event per legal instrument that opens a visa or refugee pathway for people from Gaza.
 - **E1 to E3** are recorded with the points listed in the table and excluded from the score in version 1.0.
 
 ### Qualifying UN General Assembly votes
 
-B1 counts plenary resolutions and decisions of the UN General Assembly adopted by recorded vote on or after 7 October 2023 whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine. A decision adopted by recorded vote counts as a resolution does; the endorsement of the New York Declaration on 12 September 2025 was adopted as decision A/DEC/80/506. Committee votes, procedural votes and votes on amendments are excluded. Each vote scores yes +3, abstention −2, no −5 and absent −2; a formal "did not participate" counts as absent. Each qualifying vote is listed with its symbol, date, subject and a one-line reason for inclusion, and adding a vote to the list is a new minor version. The list below is filled from `votes.yaml` and is empty until the votes are verified against the UN records.
+B1 counts plenary resolutions and decisions of the UN General Assembly adopted by recorded vote on or after 7 October 2023 whose subject is Gaza (ceasefire, truce, humanitarian access), UNRWA, or the status and rights of Palestine. A decision adopted by recorded vote counts as a resolution does; the endorsement of the New York Declaration on 12 September 2025 was adopted as decision A/DEC/80/506. Committee votes, procedural votes and votes on amendments are excluded. Each vote scores yes +3, abstention −2, no −5 and absent −2; a formal "did not participate" counts as absent. Each qualifying vote is listed with its symbol, date, subject and a one-line reason for inclusion, and adding a vote to the list is a new minor version. The list below is filled from `votes.yaml`; each vote on it was verified against the UN voting records.
 
 <!-- BEGIN generated:votes -->
 
@@ -334,6 +338,8 @@ Each indicator has one event type, and each event takes the type of its indicato
 - **Repeatable event.** Contributes its points multiplied by its confidence weight and by the decay d(Δ), where Δ is the number of whole days between the event date and the date t. Repeatable: A5, A8, B1, B2, B4, B9, B10, C5, C6, D4, D5, E1, E2, E3.
 - **Computed quantity.** Behaves as a standing state that starts on the release date of the source data and ends on the next release date. Its points are the output of the formula. Computed: A1, A2, A4, C3, D1.
 
+A standing state or a computed value whose start date is before 7 October 2023 counts from 7 October 2023, the first day of the window; a repeatable event keeps its date.
+
 The decay d is 1 for the first 365 days after the event, falls linearly to 0.25 at 730 days, and is 0 after 730 days and before the event date. A 2023 vote therefore weighs less than a 2026 vote. An event past 730 days stays on the country page and in the data; it no longer contributes to the score.
 
 <!-- BEGIN generated:decay -->
@@ -356,14 +362,14 @@ Each event has one confidence level. Its weight multiplies the event's points.
 
 | Level | Weight | Rule |
 |---|---|---|
-| Confirmed | 1.0 | At least one source of kind official, court, or dataset. |
+| Confirmed | 1.0 | At least one source of kind official, official-video, parliamentary, court, or dataset. |
 | Corroborated | 0.7 | Two independent ngo or press sources that name the underlying document. |
 | Reported | 0.4 | One credible ngo or press source; flagged on the country page. |
 | Disputed | 0.4 | An official denial is on record (a reply or an official source) and counter-evidence exists; both sides linked. |
 
 <!-- END generated:confidence -->
 
-- **Confirmed** requires at least one source of kind official, court or dataset. The validator rejects a confirmed event without one. A press article can never be the only support of a confirmed event.
+- **Confirmed** requires at least one source of kind official, official-video, parliamentary, court or dataset: an official video and a parliamentary record are the government's own record, as good as its press release. The validator rejects a confirmed event without one. A press article can never be the only support of a confirmed event.
 - **Corroborated** requires two independent NGO or press sources, from distinct publishers, that name the underlying document.
 - **Reported** rests on one credible NGO or press source. The event card carries a one-line notice.
 - **Disputed** applies when an official denial is on record, in a reply or an official source, and counter-evidence exists. Both are linked from the event card, which carries a one-line notice. An event contested through the right of reply is disputed until it is resolved.
@@ -380,27 +386,27 @@ Leads never score; a country page can note that a matter is under investigation.
 
 ## Computed indicators
 
-Five indicators are computed from datasets and never typed in by hand: A1, A2, A4, C3 and D1. Each is recomputed when its source publishes a new release and holds until the next release. The formula output and the raw rows can be downloaded from the [Data](/en/data) page. The votes of B1, the vetoes of B2 and the recognition states of B8 are also generated, from the UN voting records, a table of Security Council vetoes and the recognition dates in the country list.
+Five indicators are computed from datasets and never typed in by hand: A1, A2, A4, C3 and D1. Each is recomputed when its source publishes a new release and holds until the next release. The formula output and the raw rows can be downloaded from the [Data](/en/data) page. The votes of B1, the vetoes of B2 and the recognition states of B8 are also generated, from the UN voting records, a table of Security Council vetoes and a table of recognitions, each citing the recognising government's archived statement.
 
 ### A1 — major arms delivered to Israel
 
-For each SIPRI release, published in March of year Y+1 with data through year Y, s = TIV(country → Israel, year Y) ÷ TIV(all suppliers → Israel, year Y). Points = −40 × √s, rounded to one decimal. The value holds from the release's publication date to the next release's publication date. Before the first release after 7 October 2023 (March 2024), A1 is no-data for every country. The square root keeps secondary suppliers visible: on a linear scale a supplier with a 1 % share would score −0.4; with the root it scores −4, while the largest supplier stays near the bottom of the range.
+For each SIPRI release, published in March of year Y+1 with data through year Y, s = TIV(country → Israel, year Y) ÷ TIV(all suppliers → Israel, year Y). Points = −40 × √s, rounded to one decimal. The value holds from the release's publication date to the next release's publication date. Before the first release after 7 October 2023 (March 2024), A1 is no-data for every country. A release covers every country: a country that delivered nothing to Israel in its data year has s = 0, so A1 is none-found and scores 0. The square root keeps secondary suppliers visible: on a linear scale a supplier with a 1 % share would score −0.4; with the root it scores −4, while the largest supplier stays near the bottom of the range.
 
 ### A4 — arms purchased from Israel
 
-From the same SIPRI release: a new order placed with Israel in year Y with a TIV above 0 scores by tier of TIV. Only contracts signed on or after 7 October 2023 count.
+From the same SIPRI release: a new order placed with Israel in year Y with a TIV above 0 scores by tier of TIV. Only orders dated 2024 or later count: SIPRI dates orders by year only, so the orders of 2023 are left out rather than counted on either side of 7 October 2023.
 
 ### A2 — military exports in customs data
 
-V is the value of exports to Israel over the trailing 12 months under HS chapter 93 and heading 8710, plus headings 8526 and 8802 when the flow is confirmed as military (see Definitions per indicator). The source is the country's own reporting to UN Comtrade; if that is absent or confidential, Israel's mirror import data by country of origin; if both are absent, A2 is no-data. Points by tier of V. The value is recomputed at each annual or quarterly Comtrade release and holds until the next.
+V is the value of exports to Israel over one calendar year under HS chapter 93 and heading 8710, plus headings 8526 and 8802 when the flow is confirmed as military (see Definitions per indicator). The source is the country's own reporting to UN Comtrade; if that is absent or confidential, Israel's mirror import data by country of origin; if both are absent, A2 is no-data. Points by tier of V. A2 uses the calendar-year annual data that UN Comtrade publishes for every reporter: each value holds from the reporter's first release of that year's data (Israel's, for mirror data) to its first release of the next year's. A value of data year 2022 or earlier, wholly before 7 October 2023, is not in force in the window: until a country's 2023 figures appear, A2 has no value for it.
 
 ### C3 — trade as usual
 
-T is the total of goods exports and imports with Israel over the trailing 12 months, from the country's own reporting, or else from mirror data. r = T ÷ T(2022). If r is at least 0.9, points by tier of T; if r is below 0.9, 0. A drop in trade is not rewarded here; only a decision is, through C1. A rise is not penalised beyond the tier.
+T is the total of goods exports and imports with Israel over one calendar year, from the country's own reporting, or else from mirror data. r = T ÷ T(2022). If r is at least 0.9, points by tier of T; if r is below 0.9, 0. A drop in trade is not rewarded here; only a decision is, through C1. A rise is not penalised beyond the tier. As for A2, each value holds from the reporter's first release of the year's data to its first release of the next year's, and a value of data year 2022 is not in force in the window; 2022 remains the baseline T(2022).
 
 ### D1 — humanitarian funding
 
-F is the total of paid and committed contributions from the country's government (donor organisation type "Government") to the OCHA-tracked flash appeals for the occupied Palestinian territory (oPt) and to the oPt pooled fund over the trailing 12 months, as recorded by the OCHA Financial Tracking Service (FTS). x = F ÷ GNI, where GNI is the country's total gross national income, not GNI per capita, from the World Bank (Atlas method, current US dollars, latest available year). Points by tier of x. Zero is a real zero, because FTS is the reference for government humanitarian funding; some bilateral and in-kind aid is not reported to FTS, and D4 and D5 capture part of it (see Known limitations). The value is recomputed monthly and holds for one month.
+F is the total of paid and committed contributions from the country's government (FTS donor organisation type "Governments", FTS's spelling) to the OCHA-tracked flash appeals for the occupied Palestinian territory (oPt) and to the oPt pooled fund over the twelve calendar months before the month the value applies to, as recorded by the OCHA Financial Tracking Service (FTS). A flow counts by the date FTS gives it, and only a flow dated on or after 7 October 2023 counts. x = F ÷ GNI, where GNI is the country's total gross national income, not GNI per capita, from the World Bank (Atlas method, current US dollars): the latest year not after the window, else the most recent year published. D1's name says "as a share of GNI" for that reason. Points by tier of x. Zero is a real zero, because FTS is the reference for government humanitarian funding; some bilateral and in-kind aid is not reported to FTS, and D4 and D5 capture part of it (see Known limitations). The value is recomputed monthly and holds for one month.
 
 ### Thresholds and tiers
 
@@ -446,7 +452,7 @@ The scale factor of A1 and the tiers of A2, A4, C3 and D1:
 | r ≥ 0.9 and T ≥ 10,000,000 USD | −2 |
 | r ≥ 0.9 and T < 10,000,000 USD | 0 |
 
-#### D1 (formula d1) — Humanitarian funding to the Gaza response, scaled per capita of GNI
+#### D1 (formula d1) — Humanitarian funding to the Gaza response, as a share of GNI
 
 | Condition | Points |
 |---|---|
@@ -461,10 +467,12 @@ The scale factor of A1 and the tiers of A2, A4, C3 and D1:
 
 ## Passivity
 
-A country receives a passivity penalty of 15 points at date t when it has no qualifying event in the trailing 365 days. A qualifying event is a published event on an indicator in B2 to B12, C1 to C6 or D1 to D5, dated in the 365 days up to and including t, whose current weighted contribution is at least 2 in absolute value.
+A country receives a passivity penalty of 15 points at date t when it has no qualifying event in the trailing 365 days. A qualifying event is a published event on an indicator in B2 to B12, C1 to C6 or D1 to D5, dated in the 365 days up to and including t, whose current weighted contribution is +2 or more. The date of a standing state is its start date: a standing state lifts the penalty for 365 days from its start, and a state that still holds after that keeps its points but no longer lifts the penalty.
 
 - B1 votes do not qualify: UN General Assembly votes, whichever way they are cast, do not end the passivity penalty.
+- A negative act never qualifies: an agreement signed with Israel or trade as usual adds negative points and does not end the penalty, so adding a negative act to a country's record never raises its score.
 - D1 funding below the +3 tier does not qualify, because its contribution is below 2.
+- The pre-existing recognition of the State of Palestine (B8, +3) does not qualify: it is a state that predates the window. A recognition after 7 October 2023 (+8) qualifies.
 - Category A never qualifies. Selling or refusing arms is not the kind of engagement the penalty measures, and events on A6 to A8 almost always come with events in categories B or C.
 - Category E does not qualify, because it is not scored.
 
@@ -477,10 +485,11 @@ The penalty is how the rule "silence is negative" is applied. Only the passivity
 | Penalty | 15 points |
 | Window | 365 days, up to and including t |
 | Qualifying indicators | B2–B12, C1–C6, D1–D5 |
-| Minimum absolute contribution | 2 |
+| Minimum contribution (positive) | +2 |
 | Event statuses | `published` |
 | Excluded: B1 | B1 votes do not qualify: spec §2 describes a country that votes yes at the UN and does nothing else as Passive. |
 | Excluded: A1–A8 | Category A never qualifies: selling or refusing arms is not the kind of engagement the penalty measures, and A6–A8 events almost always come with B or C events anyway. |
+| Excluded: B8, tier “Pre-existing recognition” | The pre-existing recognition of the State of Palestine (B8, +3) does not qualify: it is a state that predates the window, not engagement in it; a recognition after 7 October 2023 (+8) qualifies. |
 | Excluded: E1–E3 | Category E is experimental and unscored in v1.0. |
 | Sensitivity values | 5, 15 and 25 points |
 
@@ -488,7 +497,7 @@ The penalty is how the rule "silence is negative" is applied. Only the passivity
 
 ## Coverage
 
-Coverage is computed over the 31 scored indicators. Each country has one assessment status per indicator; a status of none-found or no-data carries the date checked and a note or the search queries used:
+Coverage is computed over the 31 scored indicators. Each country has one assessment status per indicator; a status of none-found or no-data written by hand carries the date checked and a note or the search queries used. For the generated indicators (A1, A2, A4, B1, B2, C3 and D1), the build derives the status from the structured tables and gives its reason in place of a date checked:
 
 - `has-events`: at least one published event (set by the build).
 - `none-found`: checked, nothing found.
@@ -500,7 +509,7 @@ $$
 \text{applicable} = 31 - n_{\text{not-applicable}}, \qquad \text{coverage} = \frac{n_{\text{has-events}} + n_{\text{none-found}}}{\text{applicable}}
 $$
 
-The coverage bar sits next to every score. Filled segments are indicators with events or with nothing found; hatched segments are indicators with no data; empty segments are unchecked indicators. The country page lists, for every indicator, what was checked and when.
+The coverage bar sits next to every score. Filled segments are indicators with events or with nothing found; hatched segments are indicators with no data; empty segments are unchecked indicators. The country page lists, for every indicator, what was checked and when. The assessments record what was checked, not the date from which it applied, so coverage is published for the build date only: a page for an earlier date (`?date=`) and the daily series carry scores and no coverage.
 
 ### No data is not zero
 
@@ -558,14 +567,14 @@ Each version is a complete, self-contained folder `methodology/vX.Y.Z/` in the p
 
 A change is proposed as a pull request with a written rationale. The build posts the diff on the pull request. The proposal is announced on the [Changes](/en/changes) page and stays open for public comment for 14 days in a linked discussion; it is merged only after that period. A major version also needs a sign-off from at least one named reviewer.
 
-Version 1.0.0-rc.1 is a release candidate. Before scores are displayed, the points and thresholds are tested by hand-scoring ten countries, and named external reviewers review the indicator table and thresholds; any adjustment is recorded in the changelog.
+Version 1.0.0-rc.2 is a release candidate. Before scores are displayed, the points and thresholds are tested by hand-scoring ten countries, and named external reviewers review the indicator table and thresholds; any adjustment is recorded in the changelog. This version records the adjustments of the hand-scoring of the ten countries (the changelog lists each with its rationale and its measured effect); version 1.0.0-rc.1 was never displayed.
 
 ### Reproducibility and consistency checks
 
 Every score can be rebuilt from a copy of the public repository: for a given date, the build regenerates every output byte for byte from `data/` and `methodology/`, and the published `manifest.json` records the git commit and a hash of every file. The following checks run at every build and block publication when they fail:
 
 1. Two events on the same indicator for the same country, in overlapping windows, with different points, are an error unless the indicator is scaled, that is, its points can differ between events; each event on a scaled indicator records the reason for its points. The scaled indicators are A1, A2, A4, A5, B1, B8, B9, B11, B12, C1, C3, C4, D1 and D3.
-2. Every confirmed event has a source of kind official, court or dataset.
+2. Every confirmed event has a source of kind official, official-video, parliamentary, court or dataset.
 3. Every source has an archived copy, a SHA-256 hash and a retrieval timestamp, except a dataset row, which relies on the archived copy of its dataset, and a failed capture, which is flagged and cannot support a published event; every piece of evidence has a quote.
 4. Every B9 and B10 quote appears verbatim in the extracted text of its archived source, after whitespace normalisation; the quotes of other events must appear too, unless the source is a dataset row.
 5. The symmetry table is present and complete.
@@ -591,6 +600,8 @@ The implementation differs from the project specification on these points:
 4. The Compare page shows category values as a dot plot instead of a radar chart. The map is drawn as SVG from Natural Earth data instead of map tiles.
 5. Category E is recorded and not scored. Israel and Palestine are not scored.
 6. Indicator A2 counts HS headings 8526 and 8802 only when the military nature of the flow is confirmed (see Definitions per indicator).
+7. Readers set four category weights, for categories A to D; the specification's five sliders included E, which is not scored.
+8. C3's "continued at or above the pre-war level" is read as a ratio of at least 0.9 between the year's trade and the 2022 total.
 
 ## Known limitations
 
@@ -601,4 +612,4 @@ The implementation differs from the project specification on these points:
 - **Research coverage.** Countries are researched in waves, and coverage differs between countries while the research is in progress. The coverage bar and the list of what was checked show the state of research for every country.
 - **Point values.** The points, caps and thresholds are choices. They are published, versioned and open to comment; the sensitivity tables, computed at every build and published once scores are displayed, show their effect on the ranking, and readers can set their own category weights.
 - **Category E.** Domestic accountability is recorded and not scored in version 1.0.
-- **Qualifying votes.** B1 scores only the votes listed in `votes.yaml`; the list is empty until each vote has been verified against the UN records.
+- **Qualifying votes.** B1 scores only the votes listed in `votes.yaml`, each verified against the UN voting records; a vote is added through a new minor version.

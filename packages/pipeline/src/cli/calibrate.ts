@@ -12,6 +12,11 @@
  * `--fts` also downloads the archived FTS flow pages that fts_funding.csv cites (their `id_`
  * Wayback URLs), checks each body's SHA-256 against its source record, rebuilds the monthly
  * windows with and without the flows dated before 2023-10-07, and compares D1 (P-04 choice B-60).
+ *
+ * `--rc1` scores the baseline and the proposals with the engine rules of 1.0.0-rc.1 rebuilt from
+ * the current files (`rc1Files`): from 1.0.0-rc.2 (P-24) the proposals of §4 are part of the
+ * methodology, so without it they measure nothing. The data changes of rc.2 (two events raised
+ * to confirmed, the FTS windows from 2023-10-07) are not reverted.
  */
 import { createHash } from 'node:crypto'
 import { writeFileSync } from 'node:fs'
@@ -49,6 +54,7 @@ import {
   positiveOnly,
   preexistingB8,
   raiseConfidence,
+  rc1Files,
   type Scored,
   scoreVariant,
   sensitivityRows,
@@ -77,7 +83,10 @@ const ten = (option('--countries') ?? TEN.join(',')).toUpperCase().split(',').fi
 const statuses = (option('--statuses') ?? 'reviewed').split(',').filter(Boolean)
 const out = option('--out')
 for (const a of argv) {
-  if (a.startsWith('--') && !['--date', '--countries', '--statuses', '--out', '--fts'].includes(a))
+  if (
+    a.startsWith('--') &&
+    !['--date', '--countries', '--statuses', '--out', '--fts', '--rc1'].includes(a)
+  )
     fail(`unknown option ${a}`)
 }
 
@@ -88,7 +97,7 @@ const ds = loadDataset(REPO_ROOT)
 if (ds.issues.some((i) => i.level === 'error')) fail('the dataset has errors: run pnpm validate', 1)
 let files: MethodologyFilesInput
 try {
-  files = methodologyFiles(lm)
+  files = flag('--rc1') ? rc1Files(methodologyFiles(lm)) : methodologyFiles(lm)
 } catch (err) {
   fail((err as Error).message, 1)
 }
@@ -638,7 +647,7 @@ async function ftsPrewar() {
 
 const report = {
   date,
-  methodology: m.version,
+  methodology: flag('--rc1') ? `${m.version} with the engine rules of 1.0.0-rc.1` : m.version,
   preview: { statuses, events: previewed.length },
   n: base.scores.length,
   ranking_ten: ten

@@ -337,6 +337,14 @@ describe('A2 (Comtrade military exports)', () => {
     expect(derive({ structured: tables() }).A2).toBeNull()
   })
 
+  it('is no-data when the only rows are of data year 2022, not in force (1.0.0-rc.2)', () => {
+    const rows = tables({ 'comtrade_a2.csv': [a2('XXA', 2022, '2023-06-30', '93', 700)] })
+    expect(generateAll(generateContext(M), rows).events).toEqual([])
+    expect(derive({ date: '2025-07-01', structured: rows }).A2).toEqual(d('no-data', 'no-row'))
+    const c3rows = tables({ 'comtrade_c3.csv': [c3('XXA', 2022, '2023-06-30', 5, 5)] })
+    expect(derive({ date: '2025-07-01', structured: c3rows }).C3).toEqual(d('no-data', 'no-row'))
+  })
+
   it('is no-data without a row of the country released on or before the date', () => {
     const other = tables({ 'comtrade_a2.csv': [a2('XXB', 2024, '2025-06-30', '8526', 1)] })
     expect(derive({ structured: other }).A2).toEqual(d('no-data', 'no-row'))
