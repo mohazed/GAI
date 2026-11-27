@@ -104,15 +104,40 @@ indicators:
       (measure 11) and asks the regions to widen the export ban (measure 5); neither is a two-way
       embargo in law.
   A8:
-    status: none-found
-    checked_at: 2026-09-28
+    status: has-events
+    checked_at: 2026-11-10
     note: >-
-      No documented instance of transit denied. The government instructed the Minister of Foreign
+      evt_2026_01_22_BEL_A8: the Royal Decree of 18 January 2026, in force on 22 January 2026.
+      evt_2024_05_27_BEL_A8: the Walloon ministerial decree of 27 May 2024 on transit through the Walloon
+      airports (filed 2026-11-10).
+      Before 2026-11-10: no documented instance of transit denied. The government instructed the Minister of Foreign
       Affairs on 2 September 2025 to refuse Israeli requests for military overflights of Belgian
       airspace while the war continues (src_20250902_diplomatie-belgium_kern-palestine, measure 10),
       and Wallonia and Brussels refuse transit licences that would strengthen the forces present
       (evt_2024_02_07_BEL_A6); these are policies, not instances (as Spain's transit measures,
       data/wave-1). A documented refusal of a given flight or shipment was not found.
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the Royal Decree of 18
+      January 2026 banning the overflight of Belgian territory and technical stops by aircraft carrying
+      military equipment bound for Israel or the occupied Palestinian territory (Numac 2025009929,
+      Moniteur belge of 22 January 2026) was found and its text read at the Moniteur's address, but no
+      archived copy could be made (Save Page Now captures a protection page, the Wayback Machine holds
+      none): recorded as lead_20261109_BEL_1, so A8 stays none-found until a copy is archived.
+      T-G-BLOCKED, 2026-11-10 (docs/10 B-2119): the Moniteur belge of 22 January 2026 was archived
+      from a Wayback capture of the PDF of 24 January 2026 (src_20260122_moniteur-belge_ar-survol-israel)
+      and the decree is filed as evt_2026_01_22_BEL_A8 (+5, confirmed); the build derives has-events
+      from it. A reported seizure at Liège of military components bound for Israel (March and April
+      2026) is lead_20261110_BEL_3. P-23 pass, T-G-LEADS-1 (2026-11-10): the Walloon Minister-President's
+      decree of 27 May 2024 prohibiting all arms transit to Israel, with or without transshipment, later
+      annulled by the Council of State, was first known from the press (lead_20261110_BEL_4, docs/10 B-2131);
+      its Justel text was then archived and it is filed as evt_2024_05_27_BEL_A8 (+5, confirmed, decayed, no
+      score effect; docs/10 B-2133).
+    queries:
+      - 'web search: Belgique interdit transferts armes Israël janvier 2026 gouvernement transit arrêté'
+      - 'web search: Arrêté royal du 18 janvier 2026 portant interdiction du survol de l''espace aérien national et prohibant les escales techniques'
+      - ejustice.just.fgov.be/eli/arrete/2026/01/18/2025009929/moniteur (read, not archivable)
+      - 'Wayback CDX: www.ejustice.just.fgov.be/mopdf/2026/01/22* (PDF captures of 2026-01-22 and 2026-01-24), eli/arrete/2026/01/18/2025009929/* (no capture), cgi_loi and cgi variants (none)'
+      - 'web search: arrêté royal 18 janvier 2026 interdiction survol matériel militaire Israël mobilit.belgium.be; koninklijk besluit overvliegen militair materieel Israël januari 2026 persbericht; Liège airport seized components Israel April 2026'
+      - diplomatie.belgium.be/fr/actualites pages 7 and 8 (January 2026, no release on the decree); mobilit.belgium.be (human-verification page, not passed)
   B1:
     status: has-events
     checked_at: 2026-09-28
@@ -178,7 +203,7 @@ indicators:
       same conditional position.
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Eleven events: the Prime Minister's statements of 24 November 2023 (+2), 24 September 2024
       (+5) and 22 September 2025 (+2); the Minister of Foreign Affairs' statements of 2 February
@@ -192,6 +217,20 @@ indicators:
       September 2026 (Palestine named among other crises, no call or violation specific to Gaza),
       and the Walloon Minister-President's statements (not a head of government or foreign minister
       of the state).
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the FPS Foreign Affairs
+      news search (Gaza, three pages in English), the Wayback CDX listings of
+      diplomatie.belgium.be/en/news, premier.be and prevot.belgium.be and web searches found no B9 event
+      in the window. Read and not filed: the Belgian-Vietnamese joint statement of 24 October 2026 on
+      the visit of President Tô Lâm (issued by the two Ministries of Foreign Affairs; 'They urged Israel
+      to allow immediate, unimpeded access'; no named signatory among the Prime Minister and the
+      Minister, the Prime Minister only the host of the visit), the FPS release on Belgium at the 81st
+      General Assembly of 21 September 2026 (announces a call to action for Palestinian children; no
+      call, no violation), the release on the Türkiye dialogue of 20 October (Gaza named as a subject of
+      Turkish diplomacy). B9 is at its cap; no score effect.
+    queries:
+      - diplomatie.belgium.be/en/news?search_term=Gaza (pages 0 to 3, items of 2026 read)
+      - 'Wayback CDX listings: diplomatie.belgium.be/en/news, premier.be, prevot.belgium.be (from 2026-09-27)'
+      - 'web search: Prévot Gaza octobre 2026 déclaration ministre Affaires étrangères Belgique'
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -229,12 +268,22 @@ indicators:
       disagreement.
   C4:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       The government decided on 2 September 2025 to prepare a royal decree banning imports of goods
       from the settlements (src_20250902_diplomatie-belgium_kern-palestine, measure 6); no adopted
       royal decree was found (the Moniteur belge was not searched). A ban, once published, is a
       west-bank event (unscored in v1). Not searched specifically.
+      Finish run of 2026-11-09 (T-F-W3, window 27 September to 9 November 2026): the Council of
+      Ministers of 18 July 2026 approved a draft royal decree amending the royal decree of 30 December
+      1993 so that import authorisations are systematically refused for goods from Israeli settlements
+      in the occupied Palestinian territory (120-day transition; src_20260718_news-belgium_projet-ar-
+      colonies, the Federal Government's release, archived); it is a draft sent for the Council of
+      State's opinion, not an instrument in force, and no royal decree was found in the Moniteur belge;
+      kept none-found.
+    queries:
+      - 'web search: Belgium royal decree ban imports goods Israeli settlements Moniteur belge arrêté royal colonies 2026'
+      - 'news.belgium.be: Introduction d''une réglementation spécifique pour les marchandises provenant des colonies israéliennes (archived)'
   C5:
     status: none-found
     checked_at: 2026-09-28
@@ -266,8 +315,14 @@ indicators:
       line 28).
   D3:
     status: has-events
-    checked_at: 2026-09-28
-    note: evt_2024_12_31_BEL_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024).
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_12_31_BEL_D3 (increased tier, from UNRWA's donor tables for 2022 and 2024). UNRWA's table
+      for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD
+      12,760,368 pledged against USD 12,558,653 in 2022: evt_2025_12_31_BEL_D3 holds the increased tier
+      from 31 December 2025, and evt_2024_12_31_BEL_D3 ends on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     checked_at: 2026-09-28
@@ -285,18 +340,36 @@ indicators:
       operations, not pathways. Immigration Office and Fedasil instructions were not searched.
   E1:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       No opened investigation or prosecution found in the sources searched. The government gave the
       federal prosecutor an injunction on 2 September 2025 to prosecute any Belgian or resident who
       commits a serious violation of international humanitarian law in Israel or the occupied
       Palestinian territory (measure 9), which is an instruction, not an investigation. The federal
       prosecutor's site was not searched.
+      Finish run of 2026-11-09 (T-F-W3): the investigating judge seized on 17 October 2024 in the matter
+      of Belgian-Israeli soldiers (Refaim) is known only from press; see lead_20261109_BEL_2 (the
+      prosecutor's communiqué of July 2025 on the Tomorrowland complaints could not be archived); kept
+      none-found.
+    queries:
+      - 'web search: parquet fédéral enquête Gaza crimes de guerre Belgique 2026 plainte compétence universelle Israël'
   E2:
     status: none-found
     checked_at: 2026-09-28
     note: No national or municipal ban on Palestine solidarity protests found; not searched beyond the federal listings (no web search).
   E3:
     status: none-found
-    checked_at: 2026-09-28
-    note: No universal-jurisdiction complaint over Gaza accepted for investigation found in the sources searched; the federal prosecutor and court records were not searched.
+    checked_at: 2026-11-09
+    note: >-
+      No universal-jurisdiction complaint over Gaza accepted for investigation found in the sources
+      searched; the federal prosecutor and court records were not searched. Finish run of 2026-11-09
+      (T-F-W3): web search for the federal prosecutor's handling of complaints on Gaza found press
+      reports of the July 2025 complaints against two Israeli soldiers at Tomorrowland (police located
+      and questioned them), of the setting aside of a similar complaint in July 2026 and of an
+      investigating judge seized on 17 October 2024 (Refaim); the prosecutor's own communiqué could not
+      be archived (om-mp.be answers Save Page Now with a protection page): recorded as
+      lead_20261109_BEL_2; kept none-found.
+
+    queries:
+      - 'web search: parquet fédéral enquête Gaza crimes de guerre Belgique 2026 plainte compétence universelle Israël'
+      - 'web search: federaal parket gerechtelijk onderzoek oorlogsmisdaden Gaza (om-mp.be, dekamer.be)'

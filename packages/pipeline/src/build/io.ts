@@ -30,7 +30,13 @@ import {
   writeFileSync,
 } from 'node:fs'
 import { dirname, isAbsolute, join, posix, relative, resolve, sep } from 'node:path'
-import { listMethodologyVersions, loadDataset, loadMethodology, loadReviewers } from '@gai/schema'
+import {
+  listMethodologyVersions,
+  loadDataset,
+  loadMethodology,
+  loadProposals,
+  loadReviewers,
+} from '@gai/schema'
 import { GENERATOR } from './manifest.js'
 import type { BuildInput, GitInfo, SnapshotFile } from './types.js'
 
@@ -309,6 +315,13 @@ export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: stri
     )
   }
 
+  const proposals = loadProposals(repoRoot)
+  if (proposals.value === null) {
+    throw new Error(
+      `methodology/proposals.yaml does not match its schema (run pnpm validate): ${proposals.issues.map((i) => i.message).join('; ')}`,
+    )
+  }
+
   const prefix = insideRoot(repoRoot, datasetRoot)
   const datasetPath = (p: string) =>
     prefix === null ? join(datasetRoot, p) : prefix === '.' ? p : `${prefix}/${p}`
@@ -324,6 +337,7 @@ export function loadBuildInput(opts: LoadOptions & { date: string; siteUrl: stri
     older,
     changelog,
     reviewers: reviewers.value.reviewers,
+    proposals: proposals.value.proposals,
     snapshots: readSnapshots(datasetRoot),
     date: opts.date,
     siteUrl: opts.siteUrl,

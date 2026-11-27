@@ -31,6 +31,11 @@
 # Armed Forces and the Administration of National Defence, the Bulletin officiel, Parliament, the
 # Ministry of Industry and Trade, the Caisse de dépôt et de gestion and pension funds (C5), the
 # Public Prosecution and courts (E1, E3).
+# Finish run, T-F-W8 (2026-11-09, docs/10 B-917 to B-920): window 27 September to 9 November 2026 read
+# through maroc.ma (royal speeches: the speech at the opening of Parliament of 9 October 2026 does not
+# mention Gaza or Palestine; news) and the Wayback index of diplomatie.ma (the site serves a bot check);
+# no Moroccan act of the window found; the field hospital (lead_20260929_MAR_3) has no official record
+# of deployment. E1 and E3 stay unchecked (web-search allowance used up). B8 unchanged.
 country: MAR
 protocol_version: 1
 last_full_check: 2026-09-29
@@ -78,9 +83,15 @@ indicators:
       lead_20260929_MAR_1), and Maersk ships carrying F-35 components that called at Tangier Med and
       Casablanca in November 2024 and April 2025 (press and NGO; the port authority said it did not
       know the containers' contents; lead_20260929_MAR_2). Flagged for the author (docs/10 B-403 (4)).
+      P-23 pass, T-G-LEADS-5 (2026-11-11): United States Africa Command's release of 12 May 2025 on
+      the Moroccan phase of African Lion 25, which lists Israel among the participating nations, is
+      archived from its Wayback capture (src_20250512_africom_african-lion-25-morocco, line 15); a
+      document of the United States that names no Israeli unit or activity. Not filed; the A5 reading
+      of the exercise stays the author's (lead_20260929_MAR_1). Status unchanged.
     queries:
       - African Lion 2025 Morocco Israel IDF participation exercise
       - Morocco Israeli warship Tangier port Maersk F-35 parts ministry response 2025
+      - 'WebSearch 2026-11-11: africom.mil African Lion 2025 participating nations Israel'
   A6:
     status: none-found
     checked_at: 2026-09-29
@@ -155,13 +166,21 @@ indicators:
     queries:
       - Morocco sanctions International Criminal Court officials
   B8:
-    status: unchecked
-    note: >-
-      Generated from recognitions.csv; Morocco has no row. The registry dates its recognition to 15
-      November 1988 (data/countries.yaml, from A/78/846, a lead). No Moroccan document stating the
-      recognition and its date was archived in this session; no row added (as for Saudi Arabia, the
-      United Arab Emirates, Qatar and Jordan, docs/10 B-385 (2), B-399 (5)); P-16 looks for a
-      document of 1988.
+    status: has-events
+    checked_at: '2026-11-27'
+    note: 'T-H-DEFAULTS, 2026-11-27 (docs/10 B-2170): Row MAR,1988-11-15 added to recognitions.csv citing A/78/846-S/2024/283 only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists Morocco on 15 November 1988 (line 161 of the archived text): the default of CHECKUP §2b (B-2115 (4) (a)) adopted in the launch-plan run of 2026-11-27, flagged under R21 as a UN record of the recognition, not the state''s own document, as for the 13 light-protocol rows of B-2115 (3). The author may remove the row (the entry then returns to unchecked). No score depends on the day (pre-existing tier, +3). Before this session: Generated from recognitions.csv; Morocco has no row. The registry dates its recognition to 15 November 1988 (data/countries.yaml, from A/78/846, a lead). No Moroccan document stating the recognition
+      and its date was archived in this session; no row added (as for Saudi Arabia, the United Arab Emirates, Qatar and Jordan, docs/10 B-385 (2), B-399 (5)); P-16 looks for a document of 1988. Resumed T-F-W8
+      session, 2026-11-09 (docs/10 B-949): web searches in English and Arabic and the UNISPAL document API (1988 letters of member states on the declaration of independence; none from Morocco) found no Moroccan
+      document stating the recognition; no row added (B-860). T-G-B8, 2026-11-10 (docs/10 B-2115): Still no document of the state itself dating the recognition (searches below). Not added from A/78/846 alone
+      (annex: 15 November 1988): rule 4 of the run keeps B8 for the full-protocol countries to a document of the state itself, so the CHECKUP §2b default (a flagged A/78/846 row) is left to the author; one
+      line in recognitions.csv applies it (B-2115).'
+    queries:
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+    - 'T-H-DEFAULTS 2026-11-27: archive/text/src_20240409_un-unispal_a-78-846-recognition-annex.txt line 161 read: 86. Morocco 15 November 1988 LAS / OIC / NAM'
   B9:
     status: has-events
     note: >-
@@ -176,7 +195,20 @@ indicators:
       Director General); the Ministry's unsigned statements (20 March 2025 on the resumption of
       strikes, 9 October 2025 on the ceasefire); the King's speeches and messages (head of state,
       B-390 (2)). Morocco is not a signatory of the joint statements of foreign ministers of 2026
-      filed for Saudi Arabia, the UAE, Qatar and Jordan.
+      filed for Saudi Arabia, the UAE, Qatar and Jordan. Finish run, T-F-W8, 2026-11-09: under R3
+      (docs/calibration/README.md §6) the King is a B9 speaker as head of state, so his speeches and
+      messages on the Government's portal (maroc.ma, royal speeches and messages listings, every page
+      from 2023) were read and six filed with archived French texts (docs/10 B-921): the messages to the
+      UN Committee on the Exercise of the Inalienable Rights of the Palestinian People of 29 November
+      2023, 26 November 2024 and 25 November 2025 (+5 each), the addresses to the Arab League summits of
+      16 May 2024 (+5) and 17 May 2025 (+2) and to the OIC summit of 4 May 2024 (+2). Read and not
+      filed: the Throne Day speech of 29 July 2024 (a cessation of hostilities in Gaza is "une priorité
+      urgente", a statement of priority rather than a call; no score effect, flagged in B-921); the
+      Throne Day speeches of 2025 and 2026, the openings of Parliament of October 2023 to October 2026,
+      the Green March speeches of 2023 and 2024 and the address of 31 October 2025 (none names Gaza or
+      Palestine). B9 now reaches its
+      +10 cap (rc.1 preview +3 to +8). No new statement of the Head of Government or the Foreign
+      Minister quoting his own words on Gaza was found for 27 September to 9 November 2026.
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -267,11 +299,15 @@ indicators:
       - Morocco UNRWA funding suspend statement (UNRWA donor tables 2022, 2024)
   D3:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      Morocco is absent from UNRWA's donor tables for 2022 and 2024 (every donor down to USD 894 in
-      2024 listed), so no restored or increased contribution is recorded; the Ministry's items
-      support UNRWA's role (5 March 2024, line 6) without a contribution.
+      Morocco is absent from UNRWA's donor tables for 2022 and 2024 (every donor down to USD 894 in 2024
+      listed), so no restored or increased contribution is recorded; the Ministry's items support UNRWA's
+      role (5 March 2024, line 6) without a contribution. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for Morocco, so 2025 does not exceed 2022: no
+      2025 event (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29
@@ -293,8 +329,23 @@ indicators:
     queries:
       - Maroc visa humanitaire Gaza Palestiniens
   E1:
-    status: unchecked
-    note: The Public Prosecution and the courts were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No investigation or prosecution of nationals or companies of Morocco for conduct in Gaza
+      found. Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and NGO searches in
+      English and Arabic and French (queries below). The searches returned complaints by Moroccan
+      lawyers against an Israeli soldier and an Israeli minister (see E3), none against a Moroccan
+      national or company for conduct in Gaza; the complaint against a Moroccan-born Israeli
+      official dates from before the window. Earlier the same day: maroc.ma (royal speeches and
+      news) and the Wayback index of diplomatie.ma for 27 September to 9 November 2026; nothing
+      found. The prosecutor's site (www.pmp.ma; www.cspj.ma earlier the same day) did not
+      answer (WebFetch: connection refused or empty page, 2026-11-09). Experimental, unscored
+      (D-12).
+    queries:
+      - Morocco complaint Moroccan-Israeli soldier Gaza war crimes prosecutor
+      - شكاية النيابة العامة المغرب جنود إسرائيليين من أصل مغربي غزة
+      - Maroc plainte crimes de guerre Gaza parquet Rabat soldat israélien 2025
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -306,5 +357,29 @@ indicators:
     queries:
       - Maroc condamnation militant Gaza normalisation prison 2024 2025 manifestation interdite Palestine
   E3:
-    status: unchecked
-    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No universal-jurisdiction complaint accepted for investigation in Morocco found. Finish run,
+      T-F-W8 (resumed), 2026-11-09, with web search (queries below). Press reports read (Morocco
+      World News, 18 September 2024; Yabiladi, 19 February 2025) say seven lawyers filed a complaint
+      on 29 July 2024 against an Israeli soldier then in Marrakech under Article 711-1 of the Code
+      of Criminal Procedure, that the Marrakech prosecutor first refused it and that the Court of
+      Appeal of Rabat agreed to review it (September 2024), and that a complaint of 17 February 2025
+      against the Israeli Transport Minister was under review by the same court; the Administrative
+      Court of Rabat rejected the request to bar her entry on 18 February 2025. No court record or
+      prosecutor statement accepting either complaint for investigation was found, and no later
+      decision was reported in the results read: a lead (lead_20261109_MAR_5), not an event. TRIAL
+      International's Universal Jurisdiction Annual Review 2026 (developments of 2025,
+      trialinternational.org PDF, text searched for Morocco, Jordan, Saudi Arabia, the United Arab
+      Emirates and Qatar) lists no case with Morocco as the forum state. Earlier the same day:
+      maroc.ma (royal speeches and news) and the Wayback index of diplomatie.ma for 27 September to
+      9 November 2026; nothing found. The prosecutor's site (www.pmp.ma; www.cspj.ma earlier
+      the same day) did not answer (WebFetch: connection refused or empty page, 2026-11-09).
+      Experimental, unscored (D-12).
+    queries:
+      - Maroc plainte crimes de guerre Gaza parquet Rabat soldat israélien 2025
+      - محكمة الاستئناف بالرباط شكاية الجندي الإسرائيلي مآل
+      - Rabat court of appeal complaint outcome Moroccan lawyers Israeli soldier
+      - Morocco Miri Regev complaint Court of Appeal Rabat prosecutor decision 2025
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan

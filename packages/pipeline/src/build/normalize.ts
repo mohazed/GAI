@@ -239,6 +239,7 @@ export type RegistryFieldsOut = Pick<
   | 'name'
   | 'region'
   | 'subregion'
+  | 'intermediate_region'
   | 'un_member'
   | 'observer'
   | 'memberships'
@@ -286,6 +287,7 @@ export function registryFields(c: Country, date: string): RegistryFieldsOut {
     name: { en: c.name.en, fr: c.name.fr },
     region: c.region,
     subregion: c.subregion,
+    intermediate_region: c.intermediate_region,
     un_member: c.un_member,
     observer: c.observer,
     memberships: {

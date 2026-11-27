@@ -1,0 +1,375 @@
+# Coverage record for New Zealand (docs/03 §6). P-21 light protocol, session T-P21-01, 2026-10-05.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Trade's page "Israel-Hamas Conflict" (mfat.govt.nz,
+#   statements, press releases, OIA releases and frequently asked questions; archived as
+#   src_20261005_mfat_israel-hamas-conflict-faq) read in full; the Beehive (beehive.govt.nz) releases and the
+#   transcripts of the Prime Minister's post-Cabinet press conferences, read through Wayback captures (Beehive answers
+#   scripted requests with a bot check); the generated events (`pnpm score --country NZL --list`) and the structured
+#   tables; one web search in English per indicator group (no other official language is searched for a
+#   government that publishes in English; te reo Māori texts are translations). Time: about 25 minutes.
+# Statements read and not filed as B9: the Prime Minister's and the Minister's remarks on radio (21 May 2025, RNZ
+#   Morning Report: "running out of patience", press only, lead_20261005_NZL_1); the General Debate statement of 26
+#   September 2024 (the Minister calls the violence in Gaza "unacceptable" and describes Israel's response as "overwhelming",
+#   with no call and no named violation; read in the General Debate site's copy, not filed).
+# Completion of 2026-11 (T-F-L01, 2026-11-09, no web search available): A3, A5, A7, A8, C6 filled from the Minister of Foreign Affairs' letter of 22 July 2024
+#   (src_20240722_mfat_letter-minto-psn) and the f35.com programme page; C4 and C5 rewritten with the Ministry's OIA 29917 response and the NZ Super Fund's own exclusion lists.
+#   C2 and E1 to E3 stay unchecked (they need press, court and treaty-register searches).
+# Completion of 2026-11 (T-F-L01 resumed, 2026-11-09, with web search): C2 and E1 to E3 set none-found after English searches (queries in each entry; TRIAL's UJAR 2026 searched); the Beehive's Foreign Affairs list read in the browser pane for 5 October to 9 November 2026 (no Gaza release).
+country: NZL
+protocol_version: 1
+last_full_check: '2026-10-05'
+indicators:
+  A1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026, imported in T-P14, docs/10 B-487):
+      no delivery of major arms from New Zealand to Israel. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier NZL
+  A2:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries
+      of the full protocol and was not run in this light-protocol session (docs/10 B-503); the build shows no-data
+      until a fetch. Nothing is hand-authored.'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No document names a New Zealand company as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme.
+      A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text) does not contain the words New Zealand. The programme's
+      own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the United States and 19 allied nations as
+      operators, New Zealand not among them, and carries no supplier list by country. The Minister's statement on export controls
+      (src_20240722_mfat_letter-minto-psn, Annex 1 item 1) concerns strategic goods for the Israeli military and does not
+      mention F-35 components. Press and NGO supplier lists were not searched (no web search in this session, FINISH-PLAN
+      Part 3 rule 4); the entry is open to a later press search.
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for New Zealand (no match)
+    - f35.com/f35/global-enterprise.html read (operator nations)
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 1)
+  A4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'Generated from SIPRI (sipri_orders.csv): the register lists one New Zealand order of Israeli major arms,
+      data year 2005 (TIV 15), before the window; none since October 2023. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer NZL
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No named exercise with Israel, transit authorisation, basing agreement or official confirmation of intelligence
+      sharing related to the Gaza campaign was found on the Ministry's page (src_20261005_mfat_israel-hamas-conflict-faq)
+      or in the Minister's letter of 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1). The letter says the Defence
+      Force took part in RIMPAC 2024, a United States-hosted multilateral exercise whose participants the United States determines,
+      and that its personnel are not training Israeli forces; it says a six-member team joined the coalition against Houthi
+      attacks in the Red Sea. Read under the A5 rule, RIMPAC is a routine multilateral exercise, not one activated for the
+      campaign (flagged for the author, docs/10 B-927). Press and NGO reports were not searched (no web search in this session).
+    queries:
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 items 2 and 3)
+  A6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No government decision suspending or refusing a class of arms export licences to Israel in the window
+      was found. The Ministry''s export-controls pages (seen in search results, not read) say no export of military
+      or dual-use goods for the Israel Defence Force or Israeli Security Services has been approved since the electronic
+      database began in 2006: a standing refusal practice that predates the window (docs/calibration/README.md R14),
+      not an act in it.'
+    queries:
+    - New Zealand military exports Israel export controls strategic goods Gaza government decision MFAT export permits
+      Israel
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No law or decree prohibiting both exports to and imports from Israel exists. The Minister of Foreign Affairs wrote
+      on 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1 items 8 and 9) that New Zealand is not under a legal obligation
+      to impose sanctions on Israel and can impose sanctions only through regulations implementing UN Security Council resolutions
+      or under the Russia Sanctions Act; the letter lists the thirteen countries under UN regulations, which do not include
+      Israel. The Ministry's page of 5 October 2026 (src_20261005_mfat_israel-hamas-conflict-faq) shows no embargo; its OIA
+      list includes OIA 30086, advice on a proposed Unlawful Occupation of Palestine Sanctions Bill (not read). A6 records
+      the standing refusal practice of the export controls regime.
+    queries:
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 items 8 and 9)
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No denial of port, airspace or flag-vessel transit to arms shipments bound for Israel was found. The Minister's
+      letter of 22 July 2024 (src_20240722_mfat_letter-minto-psn, Annex 1 item 8) says New Zealand continues to allow the
+      shipping company ZIM to use its ports, on the ground that New Zealand supports free and open shipping and has no legal
+      obligation to sanction Israel. The Ministry's page lists no transit decision. Press and NGO reports on shipments were
+      not searched (no web search in this session).
+    queries:
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 8)
+    - src_20261005_mfat_israel-hamas-conflict-faq read in full
+  B1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from unga_votes.csv: yes on every qualifying vote (ES-10/21 to ES-10/27, 79/232, A/DEC/80/506,
+      80/1, 80/78, 80/116). The Ministry lists its explanations of vote on its page (27 October 2023, 11 December
+      2024, 20 December 2024, 13 June 2025); not compared line by line. No disagreement found.'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: New Zealand filed no declaration of intervention in ICJ case 192 (not on the Court's list, docs/06 §8,
+      verified 2026-09-26). The Ministry publishes OIA 29038, "New Zealand's response to South Africa v Israel -
+      ICJ case" (not read).
+    queries:
+    - icj-cij.org case 192 declarations of intervention, New Zealand
+    - New Zealand ICJ South Africa v Israel declaration of intervention New Zealand position provisional measures
+      statement Peters
+  B4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement or act rejecting or opposing the ICJ's provisional measures was found. The Minister told
+      the General Assembly on 8 April 2024 that the measures must be complied with fully and immediately (evt_2024_04_08_NZL_B9).
+    queries:
+    - New Zealand ICJ South Africa v Israel declaration of intervention New Zealand position provisional measures
+      statement Peters
+  B5:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'evt_2024_12_02_NZL_B5: the Prime Minister''s answer at the post-Cabinet press conference of 2 December
+      2024. The Ministry''s page says New Zealand, like all parties to the Rome Statute, has legal obligations to
+      the Court, and does not comment on the merits.'
+    queries:
+    - Peters ICC warrants Netanyahu "New Zealand" statement Ministry of Foreign Affairs "obligations" Rome Statute
+      November 2024 mfat.govt.nz
+    - Luxon post-Cabinet press conference 3 December 2024 transcript Netanyahu ICC "would we enforce"
+  B6:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No stated refusal to execute the warrants and no official visit by a person under warrant was found.
+    queries:
+    - Luxon police would arrest Netanyahu ICC warrant New Zealand RNZ December 2024
+  B7:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: New Zealand has imposed no sanctions on ICC judges or prosecutors; the Ministry's page says New Zealand
+      has no legislation enabling autonomous sanctions beyond UN Security Council measures and the Russia Sanctions
+      Act.
+    queries:
+    - New Zealand recall ambassador Israel OR downgrade relations OR sanctions ICC officials New Zealand government
+      Israel embassy
+  B8:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No recognition. The Minister of Foreign Affairs announced at the General Assembly on 26 September 2025
+      that New Zealand would not recognise the State of Palestine at this time (src_20250926_mfat_national-statement-unga80);
+      the Ministry's page repeats it. No row in recognitions.csv, so none is generated; B8 derives no status from
+      a missing row (docs/03 §7).
+    queries:
+    - mfat.govt.nz Israel-Hamas Conflict, frequently asked questions on recognition
+    - New Zealand national statement UN General Assembly 26 September 2025
+  B9:
+    status: has-events
+    checked_at: '2026-11-11'
+    note: 'Ten events. Added in the P-23 lead pass (T-G-LEADS-5, 2026-11-11): the joint donor statement of 19 May 2025, whose signatory line in the archived text (src_20250519_vm-ee_joint-donor-statement-gaza,
+      line 5) names ''The Foreign Ministers of'' 24 states including New Zealand: evt_2025_05_19_NZL_B9 (+2; preview +39 to +40, Acting; docs/10 B-2146). Earlier record: nine events: the joint statements of the Prime Ministers (12 December 2023, 14 February and 26 July 2024), the Minister''s
+      statements of 8 April and 7 May 2024 and 26 September 2025, and two joint statements of foreign ministers (21 July and
+      9 August 2025). Other joint statements listed on the Ministry''s page not filed: the New York call of 29 July 2025 and
+      the joint donor statement of 19 May 2025 (signatory lines not read: lead_20261005_NZL_1). Completion of 2026-11 (T-F-L01,
+      resumed, 2026-11-09): the Beehive''s Foreign Affairs list (read in the browser pane, which the Beehive serves where scripted
+      requests get a bot check) has no release on Gaza from 5 October to 9 November 2026 (latest item 23 September 2026); the
+      General Debate statement of the 81st session (28 September 2026) was delivered by the Permanent Representative, not by
+      the Prime Minister or the Foreign Minister, so it is not a B9 statement (read in the General Debate site''s copy, not
+      filed); the release of 2 June 2026 on travel bans on three settlers is a later round of the standing B11 state (evt_2024_02_29_NZL_B11
+      note).'
+    queries:
+    - mfat.govt.nz Israel-Hamas Conflict, statements and press releases
+    - beehive.govt.nz releases of the Minister of Foreign Affairs on Gaza 2024-2025
+    - 'archive/text/src_20250519_vm-ee_joint-donor-statement-gaza.txt read for the signatory line (2026-11-11)'
+    - 'WebSearch 2026-11-11: beehive.govt.nz Peters Gaza Israel running out of patience May 2025 RNZ Morning Report transcript (RNZ, Scoop and Asia Pacific Report items; no transcript)'
+  B10:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No statement of unconditional support for Israel or denial of documented violations was found. The Prime
+      Minister's support for Israel's right to defend itself is stated with the condition that Israel respect international
+      humanitarian law (joint statement of 12 December 2023); he has called the military response disproportionate
+      (press).
+    queries:
+    - Luxon "right to defend itself" Israel support unconditional OR "stands with Israel" New Zealand Prime Minister
+      Gaza criticism
+  B11:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Two events: the travel bans on extremist settlers of 29 February 2024 (west-bank, unscored) and on the
+      two Israeli ministers of 10 June 2025 (gaza and west-bank). The Ministry counts 33 settlers and two ministers
+      (page read 5 October 2026). Travel bans only: no asset freezes.'
+    queries:
+    - New Zealand sanctions Ben-Gvir Smotrich travel ban Peters announcement
+    - mfat.govt.nz frequently asked questions on sanctions
+  B12:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No recall, downgrade or severance by New Zealand in the window. (Israel recalled its ambassador from
+      Wellington in December 2016 after Resolution 2334 and did not return him: an act of Israel, before the window.)'
+    queries:
+    - New Zealand recall ambassador Israel OR downgrade relations OR sanctions ICC officials New Zealand government
+      Israel embassy
+  C1:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: No suspension or formal review of a trade or cooperation agreement with Israel was found; the Government
+      told the press in September 2026 that New Zealand has not traditionally used trade measures to address foreign
+      policy issues (RNZ, not archived).
+    queries:
+    - New Zealand Israel trade review settlement goods labelling ban Parliament bill Unlawful Occupation of Palestine
+      Sanctions Bill government response
+  C2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No trade, investment or cooperation agreement signed between New Zealand and Israel since 7 October 2023 was found.
+      Completion of 2026-11 (T-F-L01, resumed, with web search). The Ministry's treaty database lists the Agreement on Technological
+      Innovation, Research and Development (signed in Wellington on 5 March 2020, before the window; the database entry read
+      in the search summary gave it as awaiting entry into force, the entry itself could not be opened from this session, so
+      entry into force is not stated). The Ministry's page on the conflict (src_20261005_mfat_israel-hamas-conflict-faq) and
+      the Minister's letter of 22 July 2024 (src_20240722_mfat_letter-minto-psn) record no new instrument. Press searches returned
+      only instruments of 2016, 2017 and 2020.
+    queries:
+    - New Zealand Israel agreement signed since October 2023 trade cooperation memorandum
+    - 'treaties.mfat.govt.nz Israel (search result: innovation agreement of 5 March 2020)'
+    - src_20261005_mfat_israel-hamas-conflict-faq and src_20240722_mfat_letter-minto-psn re-read for new instruments
+  C3:
+    status: no-data
+    checked_at: '2026-10-05'
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No national ban or labelling rule for settlement goods was found. The Ministry answered an Official Information
+      Act request on 4 March 2025 that the information on whether the Government had considered labelling requirements under
+      the Customs and Excise Act 2018 does not exist (src_20250304_mfat_oia-29917-trade-israel, section 18(e)), and the Minister's
+      letter of 22 July 2024 (Annex 1 item 9) says New Zealand has no sanctions basis for banning imports from settlement
+      companies. The Government declined to join the settlement-goods bans of the United Kingdom, France and Canada in September
+      2026 (RNZ, Asia Pacific Report, not archived). Seven local bodies have decided their own bans (press; not national).
+    queries:
+    - New Zealand Israel trade review settlement goods labelling ban Parliament bill Unlawful Occupation of Palestine Sanctions
+      Bill government response
+    - src_20250304_mfat_oia-29917-trade-israel read
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 9)
+  C5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No exclusion decision by the NZ Super Fund over conduct in Gaza or the occupied territories in the window. The
+      Fund''s own lists were compared: the Israeli names (Elbit Systems, AFI Properties, Shikun & Binui, Bank Hapoalim, Bank
+      Leumi, FIBI Holdings, First International Bank of Israel Holdings, Israel Discount Bank, Mizrahi Tefahot Bank, under
+      Poor ESG Practice) are on the list of 31 December 2023 (src_20231231_nzsuperfund_exclusions-list-december-2023) and
+      on that of 30 June 2026 (src_20260630_nzsuperfund_exclusions-list-june-2026). The lists of 30 June 2024, 31 December
+      2024, August 2025 and 31 December 2025 (Wayback copies, read, not archived) add no Israeli company; they record name
+      changes (Africa-Israel Properties to AFI Properties, First International Bank of Israel Holdings to FIBI Holdings),
+      and the list of June 2026 marks Africa-Israel Investments for removal. The Fund''s exclusion of Israeli banks pre-dates
+      the window (an Investment Committee paper titled Exclusion of Israeli Banks is dated January 2021; title seen on the
+      Fund''s site, not read). The High Court ruled in April 2026 that the Fund''s 2022 exclusions policy was unlawful (press):
+      a court decision on policy, not an exclusion.'
+    queries:
+    - New Zealand Super Fund exclusion Israeli companies Gaza West Bank settlements divest decision
+    - nzsuperfund.nz exclusions lists of 31 December 2023, 30 June 2024, 31 December 2024, August 2025, 31 December 2025 and
+      30 June 2026 compared for Israeli names
+  C6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No exclusion of Israeli or settlement companies from public procurement was found. The Minister's letter of 22 July
+      2024 (src_20240722_mfat_letter-minto-psn, Annex 1 item 9) says New Zealand has no sanctions basis for restrictions on
+      companies in the settlements; the Government Procurement Rules page (procurement.govt.nz, read 2026-11-09) names no
+      Israel-specific measure. Press reports and local-body procurement policies were not searched (no web search in this
+      session).
+    queries:
+    - procurement.govt.nz Government Procurement Rules page read
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 9)
+  D1:
+    status: has-events
+    checked_at: '2026-10-05'
+    note: 'Generated from FTS: window 2025-09 to 2026-08 USD 6,983,122 (government flows to the oPt plans); the
+      Ministry reports NZ$50.5 million of humanitarian and stabilisation support since October 2023 (its page, 5
+      October 2026). Disagreement reported, not corrected: FTS counts what is booked to the appeals (docs/06 §7).'
+  D2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No suspension: the Ministry''s frequently asked questions say New Zealand did not pause or suspend funding, and
+      that its NZ$1 million annual payment was disbursed as planned in 2024 (src_20261005_mfat_israel-hamas-conflict-faq).
+      The seed list of docs/06 §8 names New Zealand among the January 2024 suspensions: no primary of a pause was found, so
+      it is not filed (docs/10 B-504 (9)). Completion of 2026-11: the Minister of Foreign Affairs'' letter of 22 July 2024
+      (src_20240722_mfat_letter-minto-psn, Annex 1 item 4) states that New Zealand did not pause funding to UNRWA after the
+      January 2024 allegations and that the decision to disburse its 2024 funding in June 2024 followed consideration of the
+      UN''s response; this closes the seed-list question with a primary document (docs/10 B-927).'
+    queries:
+    - mfat.govt.nz Israel-Hamas Conflict, frequently asked questions on UNRWA
+    - src_20240722_mfat_letter-minto-psn read (Annex 1 item 4)
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events from UNRWA's donor tables: increased tier from 31 December 2023 (USD 602,400 against USD
+      560,800 in 2022) and from 31 December 2024 (USD 612,400). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) has no row for New Zealand, so 2025 does not exceed 2022:
+      no 2025 event; evt_2024_12_31_NZL_D3 ends on 2025-12-31, from which the 2025 table decides the tier
+      (docs/10 B-876).
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row New Zealand
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No medical-evacuation programme or field hospital deployed by New Zealand for Gaza was found. New Zealand
+      funded an ICRC field hospital in Rafah (NZ$7 million, per a search result, not read): a contribution to an
+      organisation, not a deployment. The Ministry lists OIA 29678, People Evacuated out of Gaza by New Zealand
+      (not read).'
+    queries:
+    - New Zealand Gaza medical evacuation OR field hospital OR evacuated Palestinians New Zealand government OIA
+      2024 2025
+  D5:
+    status: none-found
+    checked_at: '2026-10-05'
+    note: 'No visa or refugee pathway for Gazans was found: no special category had been created by mid-2024, when
+      the Minister of Immigration said Cabinet would consider the ICJ opinion if it set one up (press); later position
+      not found.'
+    queries:
+    - New Zealand Gaza humanitarian visa Palestinian family members residents Immigration New Zealand special visa
+      Gaza
+  E1:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: No investigation or prosecution of New Zealand nationals or companies for conduct in Gaza was found. Completion of
+      2026-11 (T-F-L01, resumed, with web search; queries below). The Palestine Solidarity Network Aotearoa (PSNA) called on
+      the Government on 20 February 2026 to act against New Zealanders serving in the Israeli armed forces, saying that New
+      Zealand law does not bar citizens from fighting overseas (Asia Pacific Report, 20 February 2026); that is a call, not
+      an investigation. The police matters in the results concern an assault case and a social media message (the 'genocide
+      hotline'), neither a Gaza-conduct investigation by a prosecutor. Experimental, unscored (D-12). TRIAL International's
+      Universal Jurisdiction Annual Review 2026 (text searched 2026-11-09) has no mention of New Zealand. No Police or Crown
+      Law statement was found; the Police site was not searched in full text.
+    queries:
+    - New Zealand police investigation New Zealander Israel Defence Forces Gaza war crimes complaint
+    - Hind Rajab Foundation New Zealand Israeli soldier complaint police Gaza
+  E2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No ban on Palestine solidarity protests or symbols was found. Completion of 2026-11 (T-F-L01, resumed, with web search;
+      queries below). Marches of September 2025 in Auckland (police estimate of 20,000, route changed for wind after discussion
+      with the organisers, RNZ 12 and 13 September 2025) and of December 2024 at Parliament went ahead. Arrests at a protest
+      in February 2024 were reported by Asia Pacific Report (policing of a march, not a ban). In December 2025 the Speaker closed
+      the Parliament chamber''s public gallery for the rest of the year after a protest and the protesters were trespassed from
+      Parliament for two years (RNZ, 10 December 2025): a sanction on individuals and on a building, not a ban on protests or
+      symbols. Experimental, unscored (D-12).'
+    queries:
+    - New Zealand police ban Palestine protest march Gaza keffiyeh flag ban Parliament
+    - NZ Police statement Palestine Action protest ban Thales Elbit New Zealand protesters charged 2026
+  E3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No universal-jurisdiction complaint accepted for investigation in New Zealand was found. Completion of 2026-11 (T-F-L01,
+      resumed, with web search; queries below). PSNA''s lawyers referred the Prime Minister, three ministers and two business
+      leaders to the International Criminal Court (July 2025): a referral abroad, not a complaint accepted by New Zealand Police
+      under the International Crimes and International Criminal Court Act 2000. The Prime Minister said on 2 December 2024 that
+      Police would arrest the Israeli Prime Minister if he entered New Zealand (Te Ao News, 4 December 2024): a statement on
+      the ICC warrant, not an investigation. Experimental, unscored (D-12). TRIAL International''s Universal Jurisdiction Annual
+      Review 2026 (developments of 2025, trialinternational.org PDF of April 2026, text searched with pdftotext on 2026-11-09)
+      has no mention of New Zealand.'
+    queries:
+    - New Zealand universal jurisdiction complaint Netanyahu police International Crimes and International Criminal Court Act
+      Gaza
+    - Palestine solidarity New Zealand Police complaint International Crimes and International Criminal Court Act Israel soldiers
+      New Zealand 2026

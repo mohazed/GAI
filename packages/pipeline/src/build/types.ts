@@ -13,6 +13,7 @@ import type {
   Dataset,
   Event,
   Methodology,
+  Proposal,
   Reviewer,
 } from '@gai/schema'
 import type {
@@ -47,6 +48,8 @@ export interface BuildInput {
   changelog: string | null
   /** methodology/reviewers.yaml `reviewers` ([] when the file is absent, docs/08 §2). */
   reviewers: Reviewer[]
+  /** methodology/proposals.yaml `proposals` ([] when the file is absent, docs/08 §1). */
+  proposals: Proposal[]
   snapshots: SnapshotFile[]
   /** Build date `YYYY-MM-DD` (UTC), on or after the window start. */
   date: string

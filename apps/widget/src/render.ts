@@ -49,7 +49,7 @@ export interface CountryFile {
     unchecked: number
     statuses: Record<string, string>
   }
-  series?: { date: string; score: number }[]
+  series?: { date: string; score: number; score_display?: number }[]
   event_list?: {
     date: string
     indicator: string
@@ -251,7 +251,8 @@ function timelineSvg(f: CountryFile, o: Options, c: WidgetConfig): string {
         longFrom,
         longTo,
         Math.max(0, series.length - 1),
-        last === undefined ? '—' : formatSigned(last.score, o.lang),
+        // The integer the gauge shows, not the one-decimal score (docs/10 B-865).
+        last === undefined ? '—' : formatSigned(last.score_display ?? last.score, o.lang, 0),
       )
     : t.stripAria(
         name,

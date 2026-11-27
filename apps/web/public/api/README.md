@@ -143,14 +143,16 @@ All paths are relative to `/api/v1/`.
 | `dumps/countries.csv`, `dumps/countries.scorecard.csv` | Every country at the build date, as the ranking table shows it, with and without scores |
 | `dumps/registry.csv` | The country registry: codes, names, regions, memberships, recognition of Palestine |
 | `dumps/scores-daily-{YYYY}.csv` | Daily scores, one file per year |
-| `dumps/gai-{YYYY-MM-DD}.json` | The whole published dataset at the build date |
+| `dumps/gai-{YYYY-MM-DD}.json` | The published dataset at the build date in JSON: the main file, which lists the next two kinds in `parts` |
+| `dumps/gai-{YYYY-MM-DD}-sources.json` | Every source of the dataset |
+| `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json` | The events dated in one calendar year |
 
 ### 3.1 `countries.json`
 
 Every entry of `data/countries.yaml` at the build date, by ISO3. A scored country carries the score fields; an excluded entity (ISR, PSE, D-10) carries `excluded: true` and `excluded_reason` instead.
 
 - `counts`: `total`, `scored`, `excluded`.
-- Registry fields: `iso3`, `iso2`, `m49`, `name`, `region`, `subregion`, `un_member`, `observer`, `memberships` (`unsc` is a list of terms `{from, to, permanent}`; each other membership is `true`, `false` or `{since, until, note}`), `member_of` (the memberships held on the build date), `recognises_palestine_since`.
+- Registry fields: `iso3`, `iso2`, `m49`, `name`, `region`, `subregion`, `intermediate_region` (the M49 intermediate region where M49 gives one, such as `Eastern Africa` or `Caribbean`, else `null`), `un_member`, `observer`, `memberships` (`unsc` is a list of terms `{from, to, permanent}`; each other membership is `true`, `false` or `{since, until, note}`), `member_of` (the memberships held on the build date), `recognises_palestine_since`.
 - Score fields: `methodology`, `date` (the build date), `score`, `score_display`, `band`, `band_name`, `passivity_applied`, `passivity`, `categories`, `coverage`, `events`, `last_change`, `latest_event`, `summary`, `summary_scorecard`.
 - `passivity`: `applied`; `points`, the size of the penalty, applied or not; `value`, what is subtracted (`points` when applied, else 0); `window_days`; `qualifying`, the ids of the qualifying events at the build date, by date then id.
 - `categories`: A to E, each with `raw`, `clipped`, `cap` (`min`, `max`), `capped`, `scored` and `weight` (1 at the published score).
@@ -334,6 +336,7 @@ Example (fixtures build). `countries` keeps DEU and ISR, and leaves out PSE (1 o
       "score": -15,
       "score_display": -15,
       "subregion": "Western Europe",
+      "intermediate_region": null,
       "summary": {
         "en": "Score −15 (Passive). 1 event, 1 confirmed. Coverage 3%. Last change: 2025-11-24, export licence suspension, ended (A6, −10).",
         "fr": "Score −15 (Passivité). 1 événement, dont 1 confirmé. Couverture 3 %. Dernier changement : 2025-11-24, suspension de licences d'exportation, fin (A6, −10)."
@@ -372,6 +375,7 @@ Example (fixtures build). `countries` keeps DEU and ISR, and leaves out PSE (1 o
       "recognises_palestine_since": null,
       "region": "Asia",
       "subregion": "Western Asia",
+      "intermediate_region": null,
       "un_member": true
     }
   ],
@@ -555,6 +559,7 @@ For an excluded entity the file holds the registry fields, `excluded`, `excluded
   "recognises_palestine_since": null,
   "region": "Asia",
   "subregion": "Western Asia",
+  "intermediate_region": null,
   "un_member": true
 }
 ```
@@ -959,7 +964,7 @@ Example (real-data build, `scores/2026-09-27.json`), the whole file:
 
 ### 3.7 `methodology/index.json`
 
-The methodology versions, the changelog and the reviewers: `build_date`, `current`, `versions` (each with `version`, `folder` in the repository, `status` `current` or `superseded`, `file` in the API, and `frozen`, the API folder of the frozen outputs of a superseded version, or `null`), `changelog`, `methodology/CHANGELOG.md` verbatim, and `reviewers`, the named external reviewers of `methodology/reviewers.yaml` (docs/08 §2; empty until there are reviewers), each with `name`, `expertise` and `disclosure` (`en`, `fr`), `signed_off` (`version`, `date`, `url` of the public sign-off) and `caveat` (`en`, `fr`, or `null`). A superseded version keeps its last outputs, copied verbatim from `data/snapshots/{folder}/` to `methodology/{folder}/`, for example `methodology/v1.0.0/` (docs/02 §11); those files follow the schemas of their own time.
+The methodology versions, the changelog, the reviewers and the proposals open for comment: `build_date`, `current`, `versions` (each with `version`, `folder` in the repository, `status` `current` or `superseded`, `file` in the API, and `frozen`, the API folder of the frozen outputs of a superseded version, or `null`), `changelog`, `methodology/CHANGELOG.md` verbatim, and `reviewers`, the named external reviewers of `methodology/reviewers.yaml` (docs/08 §2; empty until there are reviewers), each with `name`, `expertise` and `disclosure` (`en`, `fr`), `signed_off` (`version`, `date`, `url` of the public sign-off) and `caveat` (`en`, `fr`, or `null`); and `proposals`, the methodology changes open for comment of `methodology/proposals.yaml` (docs/08 §1 step 3; empty when none is open), each with `version`, `pr_url`, `discussion_url` (`null` until the Discussion is posted), `opened`, `comment_until` (the last day of the 14-day window) and `summary` (`en`, `fr`); the Changes page announces them. A superseded version keeps its last outputs, copied verbatim from `data/snapshots/{folder}/` to `methodology/{folder}/`, for example `methodology/v1.0.0/` (docs/02 §11); those files follow the schemas of their own time.
 
 Example (fixtures build; the real-data build gives the same bytes). `changelog` is cut after its first paragraph (the string has 2528 characters).
 
@@ -968,6 +973,7 @@ Example (fixtures build; the real-data build gives the same bytes). `changelog` 
   "build_date": "2026-09-27",
   "changelog": "# Methodology changelog\n\nEvery change to points, caps, thresholds, decay, passivity, the qualifying-votes list, the\nsymmetry table or the universe ships as a new version folder under `methodology/` with an entry\nhere and a `diff.json` listing every country whose displayed score moved by 1 or more, with the\ncause (`docs/02-methodology-spec.md` §11, `docs/08-governance.md` §1). Major: scale, category or\nuniverse changes. Minor: indicator, point or threshold changes, new qualifying votes. Patch:\nwording.",
   "current": "1.0.0-rc.1",
+  "proposals": [],
   "reviewers": [],
   "versions": [
     {
@@ -1706,11 +1712,11 @@ iso3,name_en,name_fr,region,excluded,coverage,has_events,none_found,no_data,unch
 DEU,Germany,Allemagne,Europe,false,0.1,3,0,0,27,1,0,0,0,0,0,0,0,0,0,0,
 ```
 
-**`dumps/registry.csv`**: the country registry (`data/countries.yaml`) by ISO3, as the build publishes it: `iso2`, `m49`, the UNTERM short names `name_en` and `name_fr`, `name_en_def` and `name_fr_def` (the short name with the article UNTERM gives it, "the United States of America", "l'Allemagne", "la France"; the name alone when UNTERM gives none, "Germany", "Cuba"; the formal name for the five short names that carry a descriptor, "the Islamic Republic of Iran", "la République islamique d'Iran"), the M49 `region` and `subregion`, `un_member`, `observer`, `excluded`; `unsc` lists the Security Council terms as ISO 8601 intervals `from/to` joined with `;` (`..` for an open end: the permanent members' `1945-10-24/..`), `unsc_permanent` says whether one of them is permanent; each other membership is `true`, `false`, or a dated interval `since/until` when it began or ended after 7 October 2023 (Sweden's NATO membership is `2024-03-07/..`); `member_of` lists the memberships held at the build date, joined with `;`; `recognises_palestine_since` is the date in the registry, a lead for B8 until the recognitions table confirms it. Research notes and `gov_sources` are not published. Header and the DEU row of the real-data build:
+**`dumps/registry.csv`**: the country registry (`data/countries.yaml`) by ISO3, as the build publishes it: `iso2`, `m49`, the UNTERM short names `name_en` and `name_fr`, `name_en_def` and `name_fr_def` (the short name with the article UNTERM gives it, "the United States of America", "l'Allemagne", "la France"; the name alone when UNTERM gives none, "Germany", "Cuba"; the formal name for the five short names that carry a descriptor, "the Islamic Republic of Iran", "la République islamique d'Iran"), the M49 `region`, `subregion` and `intermediate_region` (empty where M49 gives none), `un_member`, `observer`, `excluded`; `unsc` lists the Security Council terms as ISO 8601 intervals `from/to` joined with `;` (`..` for an open end: the permanent members' `1945-10-24/..`), `unsc_permanent` says whether one of them is permanent; each other membership is `true`, `false`, or a dated interval `since/until` when it began or ended after 7 October 2023 (Sweden's NATO membership is `2024-03-07/..`); `member_of` lists the memberships held at the build date, joined with `;`; `recognises_palestine_since` is the date in the registry, a lead for B8 until the recognitions table confirms it. Research notes and `gov_sources` are not published. Header and the DEU row of the real-data build:
 
 ```csv
-iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,recognises_palestine_since
-DEU,DE,276,Germany,Germany,Allemagne,l'Allemagne,Europe,Western Europe,true,false,false,,false,true,true,false,false,true,true,false,eu;nato;g20;g7,
+iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,intermediate_region,un_member,observer,excluded,unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,recognises_palestine_since
+DEU,DE,276,Germany,Germany,Allemagne,l'Allemagne,Europe,Western Europe,,true,false,false,,false,true,true,false,false,true,true,false,eu;nato;g20;g7,
 ```
 
 **`dumps/scores-daily-{YYYY}.csv`**: one file per year, one row per date and scored country from 2023-10-07 to the build date, by date then ISO3; `score` to one decimal, `score_display`, `band`, `passivity_applied`, and the clipped category subtotals `A` to `E` in full precision. No coverage (section 2). Header and first two rows of `scores-daily-2026.csv` in the real-data build:
@@ -1721,17 +1727,18 @@ date,iso3,score,score_display,band,passivity_applied,A,B,C,D,E
 2026-01-02,DEU,-5,-5,passive,false,-3,0,-5,3,0
 ```
 
-**`dumps/gai-{YYYY-MM-DD}.json`**: the whole published dataset at the build date, in one JSON file. Top-level keys:
+**`dumps/gai-{YYYY-MM-DD}.json`, `dumps/gai-{YYYY-MM-DD}-sources.json`, `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json`**: the published dataset at the build date in JSON, in several files so that none nears the 25 MiB that Cloudflare Pages serves however many events the index holds (the whole dataset in one file was 26.5 MB at the end of Phase 1). The main file holds, as top-level keys:
 
 | Key | Holds |
 |---|---|
 | `build_date`, `methodology`, `git` | As in `manifest.json` (`methodology` is the version string) |
 | `countries` | Every registry entry, as in `countries.json` |
-| `events` | Every published event of the scored countries, as in section 3.3 |
-| `sources` | Every source of the dataset, as in section 3.3 |
 | `assessments` | One per scored country: `country`, `protocol_version`, `last_full_check`, `indicators` (the rows of section 3.2) |
 | `corrections`, `replies` | As in `corrections.json` and `replies.json` |
 | `leads` | Open leads: `id`, `country`, `indicator` |
+| `parts` | The other files of the dump, one entry each: `record` (`sources` or `events`), `path` (relative to `api/v1/`), `year` (the calendar year of the events in the file; `null` for the sources) and `count` (the number of records in the file). The sources file comes first, then the events files by year; only years that have events have a file |
+
+`dumps/gai-{YYYY-MM-DD}-sources.json` holds `build_date` and `sources`, every source of the dataset by id, as in section 3.3. `dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json` holds `build_date`, `year` and `events`, the published events of the scored countries whose date falls in that year, by country, date and id, as in section 3.3. To rebuild the whole dataset in one object, read the main file, then each file of `parts`. `dumps/events.csv` and `dumps/sources.csv` hold the same events and sources in one table each.
 
 ## 4. Reproducing a build
 

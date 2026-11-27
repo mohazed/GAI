@@ -203,7 +203,7 @@
   indicator: D3
   type: standing
   date: '2024-03-15'
-  end: null
+  end: '2025-12-31'
   points: 5
   points_rationale: "Restored tier (+5): funding to UNRWA resumed after the pause. Not the increased tier: UNRWA's tables show USD 13,797,995 from Australia in 2022 and USD 3,980,546 in 2024."
   confidence: confirmed
@@ -774,6 +774,46 @@
       notes: "Re-read: the signatories, including the Foreign Minister of Australia, offer support for treating patients from Gaza in the West Bank and urge Israel to lift restrictions on medical deliveries; read as a call to end restrictions. Call tier agrees. The offer is not a D4 programme."
     notes: "Joint statement of 26 foreign ministers, two development ministers and EU office-holders. The offer to fund or staff treatment is conditional (\"stand ready\"), so no D4 event."
 
+- id: evt_2025_12_31_AUS_D3
+  revision: 1
+  country: AUS
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 26,082,750 pledged and USD 26,082,750 received for Australia, against USD 13,797,995 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Australia's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de l'Australie à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Australia"
+    fr: "Gouvernement de l'Australie"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Australia 26,082,750 26,082,750 - - 26,082,750 26,082,750 - - - - - - - - - - 26,082,750 9 26,082,750 9"
+    quote_lang: en
+    locator: line 17 (Australia)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Australia 13,797,995 0 13,797,995 0 0 0 13,797,995 16"
+    quote_lang: en
+    locator: line 25 (Australia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Australia row at line 17 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 25: USD 26,082,750 pledged in 2025 against USD 13,797,995 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_03_15_AUS_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Australia's restored tier (+5, from 15 March 2024) ends the same day: the increased tier supersedes it. Filed in T-F-UNDOCS-2 (docs/10 B-876)."
+
 - id: evt_2026_06_08_AUS_B9
   revision: 1
   country: AUS
@@ -925,3 +965,49 @@
       verdict: agree
       notes: "Re-read: remarks at the roundtable on health and humanitarian access in Gaza, 24 September 2026; a call for unhindered assistance citing the ICJ's binding orders. Call tier agrees."
     notes: "Remarks in New York, the day after evt_2026_09_23_AUS_B9 (different day, so a separate event)."
+
+
+- id: evt_2026_10_14_AUS_B9
+  revision: 1
+  country: AUS
+  indicator: B9
+  type: repeatable
+  date: '2026-10-14'
+  points: 2
+  points_rationale: 'Formal call to end restrictions on humanitarian access (+2): the leaders emphasise the full, safe, rapid and unhindered delivery of humanitarian aid to Gaza. The legal characterisation in the same statement (the E1 settlement project
+    as a violation of international law) concerns the West Bank, not conduct in Gaza, so it does not lift the Gaza reading to +5.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Prime Minister and the King of Jordan, in a joint statement, emphasised the full, safe, rapid and unhindered delivery of humanitarian aid to Gaza.
+    fr: Le Premier ministre et le roi de Jordanie ont souligné, dans une déclaration commune, l'acheminement complet, sûr, rapide et sans entrave de l'aide humanitaire à Gaza.
+  actor:
+    en: Prime Minister
+    fr: Premier ministre
+    name: Anthony Albanese
+  evidence:
+  - source: src_20261014_pm-gov-au_joint-statement-jordan
+    quote: Leaders emphasized the importance of implementing the Gaza Peace Plan in full, in accordance with the UN Security Council Resolution 2803 (2025), protecting civilians consistent with international law, and the full, safe, rapid and unhindered
+      delivery of humanitarian aid.
+    quote_lang: en
+    locator: line 17
+  - source: src_20261014_pm-gov-au_joint-statement-jordan
+    quote: Leaders emphasized their rejection of any attempts to annex the West Bank or displace the Palestinian people, and reiterated their condemnation of the illegal ‘E1’ settlement project, emphasizing it constitutes a violation of international law.
+    quote_lang: en
+    locator: line 15
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 15 (rejection of annexation and displacement; condemnation of E1 as a violation of international law) and line 17 (full, safe, rapid and unhindered delivery of humanitarian aid; Gaza Peace
+        Plan) are found verbatim in the archived text; the page header gives 14 October 2026 and names the Prime Minister and the King. +2 for the Gaza sentence.'
+    notes: Joint statement issued on the visit of the King of Jordan to Canberra on 14 October 2026, on the Prime Minister's media page; the Prime Minister is the speaker for Australia (the King for Jordan, evt for JOR is another wave). Scope gaza and
+      west-bank (the Gaza paragraph and the E1 paragraph), as evt_2026_10_12_IRL_B9. Australia's B9 is at its +10 cap, so the event does not move the score. Found through a search of pm.gov.au (T-F-W3, docs/10 B-891).

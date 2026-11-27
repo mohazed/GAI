@@ -1,0 +1,281 @@
+# Coverage record for Mozambique (docs/03 §6). P-21 light protocol, session T-P21-39, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Cooperation's site (minec.gov.mz, WordPress, Portuguese; the REST search for Gaza, Palestina, Palestiniano, Israel, cessar-fogo, Médio Oriente: the word Gaza returns the
+# province's news, and the matches that bore on Palestine or Israel were opened), the Government portal (portaldogoverno.gov.mz, WordPress; the same terms), the Presidency's site (presidencia.gov.mz, WordPress; its REST search returned the home page,
+# so it was not searched), the UN's General Debate pages and files (79th, 80th, 81st; live, the 80th file recorded from a Wayback capture), the ICJ's case 192 page (archived copy and live), the UN Treaty Collection's status page of the Rome Statute
+# (live), the Assembly of States Parties' list, the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register and the Article 19 documents. Web searches were not available to this session (the run's search budget was spent): nothing
+# is filed from a press item; the 'one search per indicator group' of docs/06 §5 is left for P-23.
+# Events: none. Leads: none. See docs/10 B-814.
+# Completion of 2026-11 (finish run, T-F-L20, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched with web searches (English and Portuguese), the Ministry's and the portal's REST search and the shared searches, all none-found with the limits said in each note; B11, B12, C2, D4 and D5 notes extended (docs/10 B-2066). No recognition row (no State document found). No new event; lead_20261110_MOZ_1 added (A5, the port of Maputo and the Holder G).
+country: MOZ
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MOZ
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the daily runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among
+      them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Mozambican company as a supplier of parts or maintenance for the F-35 programme: Mozambique is neither a programme partner nor a foreign-military-sales customer
+      in the search results, and A/HRC/59/23 (archived text, src_20250616_un-unispal_a-hrc-59-23) has no match for Mozambique. Not searched: the programme''s full supplier database (not public).'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for the country's name (no match)
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list suppliers countries 2026 Lockheed Martin industrial participation (the eight partner nations and
+      the foreign-military-sales customers named in the results; none of the six of this batch: MLI, MOZ, MRT, MUS, MWI, NAM)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): no order by Mozambique from Israel in the register (the archived export of the supplier Israel names the country only
+      in lines for the UN and the African Union and for German leases in Mali, which are not orders by it). Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MOZ
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel was found: no named exercise, basing agreement, official confirmation of intelligence sharing or documented transit authorised
+      by a Mozambican authority in 2023 to 2026. An NGO''s claim that the vessel Holder G put into Maputo with military cargo for Elbit Systems in November 2025 is denied by the port operator
+      (MPDC), which says the vessel only bunkered at an anchorage buoy 30 nautical miles out on 19 November 2025 and left on 20 November: lead_20261110_MOZ_1 (no Government act, no documented
+      port call). A 2023 report of Israeli equipment for the defence forces rests on unnamed sources and is before the window. Not searched: the Ministry of National Defence''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese and English): Moçambique Israel acordo cooperação 2024 2025 OR Mozambique Israel agreement Chapo OR Nyusi Gaza Maputo manifestação Palestina (the Mozambique-Israel
+      Chamber of Commerce of 2020, a 2023 report on Israeli equipment for the defence forces resting on unnamed sources; no agreement since October 2023, no protest ban)'
+    - 'WebSearch 2026-11-10: Mozambique Israel military equipment OR security cooperation Cabo Delgado 2024 2025 Israeli drones OR training Mozambique defence (an Israeli anti-drone system seen
+      in 2022; Portuguese, EU and Turkish cooperation; an AIM item of 27 November 2025 on the port of Maputo)'
+    - 'WebSearch 2026-11-10: "Mozambique" port denies supplying military equipment to Israel November 2025 Maputo OR Nacala OR Beira (AIM and Club of Mozambique, 27 November 2025: the port operator''s
+      denial; opened and archived, src_20251127_aim_maputo-port-denies-israel-military-cargo)'
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (Ministry: three items of 2016, 2022 and 2024, none on an act; portal: the President''s
+      81st General Debate item), armas (no item on Israel), Palestina (Ministry: six items, none since October 2023 on an act; portal: none)'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found, and no arms export by Mozambique to Israel either (A1: no delivery in the SIPRI register). Not searched:
+      the Boletim da República.'
+    queries:
+    - 'WebSearch 2026-11-10: "Mali" OR "Mozambique" OR "Mauritania" OR "Mauritius" OR "Malawi" OR "Namibia" arms embargo Israel OR suspend arms export licences Israel OR ban settlement goods 2024
+      2025 (the United Kingdom''s suspension and the Hague Group''s recommendations; Namibia''s refusal of a vessel in August 2024; no licence suspension, embargo or settlement-goods measure by
+      any of the six)'
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (Ministry: three items of 2016, 2022 and 2024, none on an act; portal: the President''s
+      81st General Debate item), armas (no item on Israel), Palestina (Ministry: six items, none since October 2023 on an act; portal: none)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both exports to and imports from Israel was found. Not searched: the Boletim da República.'
+    queries:
+    - 'WebSearch 2026-11-10: "Mali" OR "Mozambique" OR "Mauritania" OR "Mauritius" OR "Malawi" OR "Namibia" arms embargo Israel OR suspend arms export licences Israel OR ban settlement goods 2024
+      2025 (the United Kingdom''s suspension and the Hague Group''s recommendations; Namibia''s refusal of a vessel in August 2024; no licence suspension, embargo or settlement-goods measure by
+      any of the six)'
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (Ministry: three items of 2016, 2022 and 2024, none on an act; portal: the President''s
+      81st General Debate item), armas (no item on Israel), Palestina (Ministry: six items, none since October 2023 on an act; portal: none)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found. The port operator''s statement of 26 November 2025 on the Holder G denies a port call and
+      reports a bunkering at anchorage; it is not a denial of transit (lead_20261110_MOZ_1). Not searched: the maritime administration''s (INAMAR) and the civil aviation authority''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Mali" OR "Mozambique" OR "Mauritania" OR "Mauritius" OR "Malawi" OR "Namibia" arms embargo Israel OR suspend arms export licences Israel OR ban settlement goods 2024
+      2025 (the United Kingdom''s suspension and the Hague Group''s recommendations; Namibia''s refusal of a vessel in August 2024; no licence suspension, embargo or settlement-goods measure by
+      any of the six)'
+    - 'WebSearch 2026-11-10: "Mozambique" port denies supplying military equipment to Israel November 2025 Maputo OR Nacala OR Beira (AIM and Club of Mozambique, 27 November 2025: the port operator''s
+      denial; opened and archived, src_20251127_aim_maputo-port-denies-israel-military-cargo)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on eleven of the twelve qualifying votes; no vote recorded on A/RES/79/232 (19 December 2024). The country is not named in the Secretary-General''s
+      letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19) or on the Assembly''s page of October 2026 (src_20261013_un-ga_article19-page; A/81/360). The reason for the non-vote
+      was not found (docs/10 B-814).'
+    queries:
+    - unga_votes.csv, country MOZ
+    - src_20250903_undocs_a-80-362-article19 (searched)
+    - src_20261013_un-ga_article19-page (searched)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: Generated from unsc_vetoes.csv. Mozambique sat on the Security Council from 1 January 2023 to 31 December 2024 (countries.yaml memberships.unsc) and cast no veto (it is not a permanent
+      member). Its statements in Council debates on the Middle East (by the Permanent Representative or the Minister) were not read (P-23).
+    queries:
+    - unsc_vetoes.csv, vetoing state MOZ
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Mozambique is not on the Court's list of states that filed a declaration of intervention in case 192 (the page read live on 2026-11-04 and the copy archived on 2026-09-27, src_20260927_icj-cij_case-192,
+      searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt (not found)
+    - 'www.icj-cij.org/case/192 (live, 2026-11-04: not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No filing by Mozambique supporting the respondent in ICJ case 192 (the Court's page, searched).
+    queries:
+    - archive/text/src_20260927_icj-cij_case-192.txt
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Mozambique signed the Rome Statute on 28 December 2000 and has not ratified it (the UN Treaty Collection's status page, read live on 2026-11-04, gives a signature only; not in src_20261009_icc-asp_states-parties).
+      No statement on the warrants of 21 November 2024 by a B5 speaker was found on the Ministry's and the Government portal's sites.
+    queries:
+    - treaties.un.org status page XVIII-10 (live, 2026-11-04)
+    - archive/text/src_20261009_icc-asp_states-parties.txt (not found)
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search: Israel, Palestina'
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No refusal to execute the warrants, no hosting of a person under warrant and no withdrawal from the Rome Statute by Mozambique was found (it is not a state party).
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Mozambique were found in the sources read.
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv: no row for Mozambique. The registry gives a recognition since 8 December 1988, before the window, with no Government document read (R21, left for P-23).
+      The President''s 80th General Debate statement (23 September 2025, paragraph 30) ''welcomes the countries that recently decided to recognise the State of Palestine'' without announcing a
+      recognition; no recognition after 7 October 2023 was found.'
+    queries:
+    - recognitions.csv, MOZ (no row)
+    - src_20250923_un-gadebate_mz-chapo-ag80, paragraph 30
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'No B9 event. The President is Daniel Francisco Chapo (head of state; the Prime Minister is head of government); the Minister of Foreign Affairs and Cooperation is Maria Manuela dos
+      Santos Lucas (R3). (1) The 79th General Debate statement (30 September 2024) was delivered by the Deputy Minister of Foreign Affairs, who is not a B9 speaker (R3); the file is an image with
+      no text layer. (2) The 80th statement (23 September 2025, the President, src_20250923_un-gadebate_mz-chapo-ag80, paragraph 30): ''a defesa da solução de dois Estados para a Palestina, vivendo
+      lado a lado, em paz e segurança com Israel'' and a welcome to the recent recognitions of the State of Palestine; no call for a ceasefire, no violation, Gaza not named (R7). (3) The 81st
+      statement (23 September 2026, the President; the file gastatements/81/mz_en.pdf read live, no Wayback capture, not recorded): paragraph 22, ''our support for a two-state solution for Palestine'',
+      same reading. (4) The Ministry''s items that matched Palestina or Israel (minec.gov.mz: 2016 to 2019, and 30 July 2024, the Minister''s talks in Madrid, ''positions on the conflict between
+      Israel and Palestine'') name no call and no violation.'
+    queries:
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search: Gaza, Palestina, Palestiniano, Israel, cessar-fogo, Médio Oriente (the matches that bore on Palestine opened)'
+    - gadebate.un.org/en/{79,80,81}/mozambique and gastatements/{79,80,81}/mz_*.pdf
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No B10 event: no statement of unconditional support for Israel or denial of documented violations by the President, the Prime Minister or the Foreign Minister was found on the Ministry''s
+      and the Government portal''s sites (searched Israel, Palestina).'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No national sanctions on Israeli ministers or settler entities were found on the Ministry's and the Government portal's sites. The Presidency's site was not searched (P-23). The searches
+      of 2026-11-10 returned no sanctions measure.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: "Mali" OR "Mozambique" OR "Mauritania" OR "Mauritius" OR "Malawi" OR "Namibia" arms embargo Israel OR suspend arms export licences Israel OR ban settlement goods 2024
+      2025 (the United Kingdom''s suspension and the Hague Group''s recommendations; Namibia''s refusal of a vessel in August 2024; no licence suspension, embargo or settlement-goods measure by
+      any of the six)'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found on the Ministry's and the Government portal's sites (searched Israel, Palestina, Médio Oriente). The Presidency's
+      site was not searched (P-23). The searches of 2026-11-10 returned no recall, downgrade or severance.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese and English): Moçambique Israel acordo cooperação 2024 2025 OR Mozambique Israel agreement Chapo OR Nyusi Gaza Maputo manifestação Palestina (the Mozambique-Israel
+      Chamber of Commerce of 2020, a 2023 report on Israeli equipment for the defence forces resting on unnamed sources; no agreement since October 2023, no protest ban)'
+  C1:
+    status: none-found
+    note: Mozambique is not an EU member; the EU-Israel Association Agreement is not its instrument.
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: No agreement signed with Israel since October 2023 was found on the Ministry's and the Government portal's sites. No treaty register was read (P-23). The searches of 2026-11-10 and the
+      Ministry's and the portal's REST search for Israel returned no agreement with Israel since October 2023.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese and English): Moçambique Israel acordo cooperação 2024 2025 OR Mozambique Israel agreement Chapo OR Nyusi Gaza Maputo manifestação Palestina (the Mozambique-Israel
+      Chamber of Commerce of 2020, a 2023 report on Israeli equipment for the defence forces resting on unnamed sources; no agreement since October 2023, no protest ban)'
+    - 'minec.gov.mz and portaldogoverno.gov.mz REST search (/wp-json/wp/v2/posts?search=) 2026-11-10: Israel (Ministry: three items of 2016, 2022 and 2024, none on an act; portal: the President''s
+      81st General Debate item), armas (no item on Israel), Palestina (Ministry: six items, none since October 2023 on an act; portal: none)'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; Mozambique is not an EU member and the searches returned none. Not searched: the Autoridade Tributária''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: "Mali" OR "Mozambique" OR "Mauritania" OR "Mauritius" OR "Malawi" OR "Namibia" arms embargo Israel OR suspend arms export licences Israel OR ban settlement goods 2024
+      2025 (the United Kingdom''s suspension and the Hague Group''s recommendations; Namibia''s refusal of a vessel in August 2024; no licence suspension, embargo or settlement-goods measure by
+      any of the six)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a sovereign or public pension fund over conduct in Gaza or the occupied territories was found; the results name the Norwegian, New Zealand, Danish and Irish
+      funds only. Not searched: the Instituto Nacional de Segurança Social''s reports and the sovereign fund of the Banco de Moçambique.'
+    queries:
+    - 'WebSearch 2026-11-10: Mauritius OR Namibia OR Malawi OR Mozambique OR Mauritania OR Mali sovereign wealth fund OR pension fund divest Israeli companies OR exclude settlements OR public
+      procurement exclusion Israel (the Norwegian, New Zealand, Danish and Irish funds; none of the six)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the procurement authority''s (UFSA) site.'
+    queries:
+    - 'WebSearch 2026-11-10: Mauritius OR Namibia OR Malawi OR Mozambique OR Mauritania OR Mali sovereign wealth fund OR pension fund divest Israeli companies OR exclude settlements OR public
+      procurement exclusion Israel (the Norwegian, New Zealand, Danish and Irish funds; none of the six)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no row for Mozambique in fts_plan_totals.csv and none in fts_funding.csv (no government flow to the oPt appeal). Left to the build.'
+    queries:
+    - fts_funding.csv, donor MOZ
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: Mozambique has no row in UNRWA's donor rankings for 2022 to 2024; no announced suspension was found. The 2025 table is not archived (P-23).
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row for Mozambique in UNRWA''s donor rankings for 2022, 2023 or 2024. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has
+      no row for Mozambique, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - archive/text/src_20221231_unrwa_donor-ranking-2022.txt, src_20231231_unrwa_donor-ranking-2023.txt, src_20241231_unrwa_donor-ranking-2024.txt (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Mozambique was found in the sources read. The searches of 2026-11-10 returned no evacuation programme or
+      field hospital.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza wounded children medical evacuation OR visa OR refugees Mauritius OR Namibia OR Malawi OR Mozambique OR Mauritania OR Mali government receives patients 2024 2025
+      (South Africa, Egypt, Spain, Switzerland and others; none of the six)'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found in the sources read. The searches of 2026-11-10 returned no visa or refugee pathway for Gazans.
+    checked_at: '2026-11-10'
+    queries:
+    - 'WebSearch 2026-11-10: Gaza wounded children medical evacuation OR visa OR refugees Mauritius OR Namibia OR Malawi OR Mozambique OR Mauritania OR Mali government receives patients 2024 2025
+      (South Africa, Egypt, Spain, Switzerland and others; none of the six)'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Mozambican nationals or companies for conduct in Gaza was found. Not searched: the Procuradoria-Geral da República''s
+      communiqués.'
+    queries:
+    - 'WebSearch 2026-11-10: Namibian OR Mauritian OR Malawian OR Mozambican OR Mauritanian OR Malian citizen Israeli army Gaza prosecuted OR investigated OR universal jurisdiction complaint dual
+      national soldier (cases in South Africa, Belgium, France, Germany, Brazil and Sri Lanka; none of the six)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols and no arrest at a Gaza protest in Maputo was found; the searches returned none. Not searched: the
+      police''s (PRM) notices.'
+    queries:
+    - 'WebSearch 2026-11-10 (Portuguese and English): Moçambique Israel acordo cooperação 2024 2025 OR Mozambique Israel agreement Chapo OR Nyusi Gaza Maputo manifestação Palestina (the Mozambique-Israel
+      Chamber of Commerce of 2020, a 2023 report on Israeli equipment for the defence forces resting on unnamed sources; no agreement since October 2023, no protest ban)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: Experimental, unscored (D-12). No universal-jurisdiction complaint about Gaza accepted for investigation by a Mozambican authority was found; the results concern South Africa, Belgium,
+      France, Germany, Brazil and Sri Lanka.
+    queries:
+    - 'WebSearch 2026-11-10: Namibian OR Mauritian OR Malawian OR Mozambican OR Mauritanian OR Malian citizen Israeli army Gaza prosecuted OR investigated OR universal jurisdiction complaint dual
+      national soldier (cases in South Africa, Belgium, France, Germany, Brazil and Sri Lanka; none of the six)'
+    checked_at: '2026-11-10'

@@ -162,38 +162,62 @@ indicators:
     queries:
       - gov.pl search (Międzynarodowy Trybunał Karny, MTK, ICC)
   B8:
-    status: no-data
-    checked_at: 2026-09-29
-    note: >-
-      Generated from recognitions.csv, which has no Polish row. The Ministry states that Poland
-      recognised Palestine's statehood in 1988 (src_20251121_gov-pl_zaangazowanie-palestyna, line 3;
-      also src_20240510_gov-pl_rezolucja-palestyna: recognition of the Palestinian declaration of
-      independence in 1988), but no archived official document gives the day it took effect; the
-      registry's 1988-12-14 is a lead from A/78/846. No row was added, so the build derives nothing
-      (docs/10 B-321): a row dated 1988 would give +3 from 2023-10-07.
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): Row POL,1988-12-14 added: the year from the Ministry''s own text (src_20251121_gov-pl_zaangazowanie-palestyna, line 3: ''Państwowość
+      Palestyny została uznana przez Polskę już 37 lat temu, w roku 1988''), the day from the registry (A/78/846 annex, now archived as src_20240409_un-unispal_a-78-846-recognition-annex), the convention
+      of India and Russia (docs/10 B-448, B-459 (6)), which came after B-321 (2) withheld the row for want of a day. Poland''s delegation said the same at the Conference of 28-30 July 2025 (UNISPAL file Poland_nyc_en.pdf,
+      read in its Wayback copy, not archived). Flagged (R21; the day is the registry''s); the pre-existing tier (+3) does not depend on the day. Before this session: Generated from recognitions.csv, which
+      has no Polish row. The Ministry states that Poland recognised Palestine''s statehood in 1988 (src_20251121_gov-pl_zaangazowanie-palestyna, line 3; also src_20240510_gov-pl_rezolucja-palestyna: recognition
+      of the Palestinian declaration of independence in 1988), but no archived official document gives the day it took effect; the registry''s 1988-12-14 is a lead from A/78/846. No row was added, so the
+      build derives nothing (docs/10 B-321): a row dated 1988 would give +3 from 2023-10-07.'
+    queries:
+    - 'UNISPAL 2026-11-10: Poland_nyc_en.pdf ("Poland recognized Palestinian statehood back in 1988")'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
   B9:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      Three gaza events on joint statements the Minister signed (21 July 2025 +5, 13 August 2025 +5,
-      22 September 2025 +2) and one West Bank event (8 September 2026, unscored). Not filed, under
-      docs/10 B-314 (the speaker's own words only): the Ministry's reports of the Minister's words in
-      indirect speech (10 January 2024, "restraint" in the military response; 2 April 2024, an
-      impartial investigation of the strike on the World Central Kitchen convoy that killed a Polish
-      citizen; 15 July 2025, condemning violations of international and humanitarian law in the
-      occupied Palestinian territories), and the Ministry's unattributed statements (18 September
-      2025, src_20250918_gov-pl_komunikat-strefa-gazy: the IDF ground operation has "no sufficient
-      military justification", with a call to protect civilians and increase aid and a reference to
-      the Commission of Inquiry's genocide finding; 20 August 2026, src_20260820_gov-pl_oswiadczenie-wck:
-      Israel's ambassador summoned after the closure of the military investigation into the convoy
-      strike; 22 May 2025, condemning violations of international humanitarian law in Gaza; 30 April
-      2026, the flotilla interception called a serious violation of international law; 28 August 2026,
-      the entry into UNRWA's Qalandia centre). The joint statement of 22 August 2025 on the E1
-      settlement plan (West Bank) is named by the Ministry but its text with Poland as signatory was
-      not archived. No statement by Prime Ministers Morawiecki or Tusk calling for a ceasefire or
-      naming violations was found on GOV.PL.
+      Three gaza events on joint statements the Minister signed (21 July 2025 +5, 13 August 2025 +5, 22
+      September 2025 +2) and one West Bank event (8 September 2026, unscored). Not filed, under docs/10
+      B-314 (the speaker's own words only): the Ministry's reports of the Minister's words in indirect speech
+      (10 January 2024, "restraint" in the military response; 2 April 2024, an impartial investigation of
+      the strike on the World Central Kitchen convoy that killed a Polish citizen; 15 July 2025, condemning
+      violations of international and humanitarian law in the occupied Palestinian territories), and the
+      Ministry's unattributed statements (18 September 2025, src_20250918_gov-pl_komunikat-strefa-gazy:
+      the IDF ground operation has "no sufficient military justification", with a call to protect civilians
+      and increase aid and a reference to the Commission of Inquiry's genocide finding; 20 August 2026,
+      src_20260820_gov-pl_oswiadczenie-wck: Israel's ambassador summoned after the closure of the military
+      investigation into the convoy strike; 22 May 2025, condemning violations of international humanitarian
+      law in Gaza; 30 April 2026, the flotilla interception called a serious violation of international
+      law; 28 August 2026, the entry into UNRWA's Qalandia centre). The joint statement of 22 August 2025
+      on the E1 settlement plan (West Bank) is named by the Ministry but its text with Poland as signatory
+      was not archived. No statement by Prime Ministers Morawiecki or Tusk calling for a ceasefire or naming
+      violations was found on GOV.PL. Finish run of 2026-11-09 (T-F-W5, docs/10 B-905): the GOV.PL search
+      API was queried for 35 Polish and English terms (Gaza, Strefa Gazy, Izrael, Palestyna, Hamas, UNRWA,
+      Zachodni Brzeg, Bliski Wschód, rozejm, osadnicy, Trybunał Karny, eksport uzbrojenia, Liban, and others;
+      up to 300 results each) and filtered for items dated from 27 September 2026. Read: the Ministry's
+      statement on the Taybeh incident of 18 October 2026 (settler violence, 'a firm response from the Israeli
+      authorities'; a Ministry text without a named speaker, not filed, as B-320 (4)), the Mission's statement
+      at the Security Council debate of 15 October 2026 (Permanent Representative, R3), the Deputy Prime
+      Minister's items of 8 to 14 October and 1 and 2 November 2026 (no Gaza passage). The President's General
+      Debate statements of 24 September 2024, 23 September 2025 and 23 September 2026 name 'the Middle East'
+      and a two-state solution, not Gaza (R7), so no event (the 2025 file is a scan, read by OCR). No B9
+      event.
     queries:
-      - gov.pl search (Gaza terms, Sikorski Gaza, Tusk Gaza, wspólne oświadczenie Gaza, joint statement Gaza, zawieszenie broni)
+    - >-
+      gov.pl search (Gaza terms, Sikorski Gaza, Tusk Gaza, wspólne oświadczenie Gaza, joint statement Gaza,
+      zawieszenie broni)
+    - >-
+      gov.pl/api/data/search, 35 terms, items from 2026-09-27 (Gaza, Strefa Gazy, Izrael, Palestyna, Hamas,
+      UNRWA, Zachodni Brzeg, Bliski Wschód, Netanjahu, rozejm, osadnicy, Trybunał Karny, eksport uzbrojenia,
+      Liban, Sikorski Izrael, MSZ oświadczenie and others)
+    - >-
+      gadebate.un.org files pl_en.pdf of sessions 79, 80 (OCR) and 81 and speaker page gadebate.un.org/en/81/poland
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -259,12 +283,18 @@ indicators:
       - gov.pl search (osiedli, osadników, Zachodni Brzeg)
   C5:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      No divestment decision by a Polish public fund or the central bank found on GOV.PL; the funds'
-      own sites (ZUS, PFR) and the National Bank of Poland were not searched.
+      No divestment decision by a Polish public fund or the central bank found on GOV.PL; the funds' own
+      sites (ZUS, PFR) and the National Bank of Poland were not searched. Finish run of 2026-11-09 (T-F-W5):
+      two web searches (queries below) returned reports of other countries' funds only and nothing on a
+      decision by this country's public funds or central bank; the funds' and banks' own pages were not
+      opened. None-found kept.
     queries:
-      - gov.pl search (Izrael, Israel, Zachodni Brzeg with fund and investment terms)
+    - gov.pl search (Izrael, Israel, Zachodni Brzeg with fund and investment terms)
+    - >-
+      web search (Polish pension fund ZUS OR PFR divest Israeli companies OR Hungary national bank OR Greece
+      fund exclusion Israel), 2026-11-09
   C6:
     status: none-found
     checked_at: 2026-09-29
@@ -290,12 +320,16 @@ indicators:
       - gov.pl search (UNRWA, UNRWA wpłata)
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_POL_D3), increased tier: UNRWA's tables give USD 205,956 for 2022 and
-      USD 2,025,766 for 2024; Poland never suspended.
+      One event (evt_2024_12_31_POL_D3), increased tier: UNRWA's tables give USD 205,956 for 2022 and USD
+      2,025,766 for 2024; Poland never suspended. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 1,058,649 pledged against USD 205,956 in 2022:
+      evt_2025_12_31_POL_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_POL_D3 ends
+      on 2025-12-31 (docs/10 B-876).
     queries:
-      - gov.pl search (UNRWA)
+    - gov.pl search (UNRWA)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29
@@ -316,23 +350,63 @@ indicators:
       - gov.pl search (wizy Gaza, ewakuacja Strefa Gazy)
   E1:
     status: none-found
-    checked_at: 2026-09-29
+    checked_at: 2026-11-09
     note: >-
-      Experimental, unscored. No investigation of Polish nationals or companies for conduct in Gaza
-      found. The Regional Prosecutor's Office in Przemyśl has investigated since 2 April 2024 the
-      killing of a Polish citizen, a World Central Kitchen volunteer, in an Israeli strike in Gaza
-      (murder with explosives, Criminal Code art. 148 § 2 pt 4; extended to 2 October 2026); it
-      concerns a Polish victim, not Polish suspects, so it is not filed as E1 (docs/10 B-322).
+      Experimental, unscored. No investigation of Polish nationals or companies for conduct in Gaza found.
+      The Regional Prosecutor's Office in Przemyśl has investigated since 2 April 2024 the killing of a
+      Polish citizen, a World Central Kitchen volunteer, in an Israeli strike in Gaza (murder with explosives,
+      Criminal Code art. 148 § 2 pt 4; extended to 2 October 2026); it concerns a Polish victim, not Polish
+      suspects, so it is not filed as E1 (docs/10 B-322). Finish run of 2026-11-09 (T-F-W5): no new investigation
+      of Polish nationals or companies for conduct in Gaza found in the GOV.PL window or in a web search
+      (the prosecutions in Przemyśl on the killing of a Polish citizen are recorded above). The prosecution
+      service was not opened. None-found kept.
     queries:
-      - gov.pl search (Soból, World Central Kitchen, Gaza terms; prosecution offices publish on GOV.PL)
+    - >-
+      gov.pl search (Soból, World Central Kitchen, Gaza terms; prosecution offices publish on GOV.PL)
   E2:
-    status: unchecked
+    status: none-found
+    checked_at: 2026-11-11
     note: >-
-      Experimental, unscored. The police and municipal decisions on assemblies were not searched; the
-      GOV.PL search found no ban on Palestine solidarity protests or symbols (P-16).
+      Experimental, unscored. No ban on Palestine solidarity protests or symbols documented by a primary
+      source found. A press report (Notes from Poland, 15 November 2023) says the Mayor of Warsaw banned
+      a pro-Palestinian march of 18 November 2023 ending near the Israeli embassy; a decision of the Regional
+      Court in Warsaw of 16 November 2023 (IV Ns 173/23, anonymised, bip.warszawa.so.gov.pl) reviewed a
+      ban of an assembly planned for 18 November whose route ended near an embassy but does not name the
+      topic: lead_20261109_POL_1. The police's and municipalities' decisions were not searched further;
+      the GOV.PL search found no ban (P-16). P-23 pass, T-G-LEADS-6 (2026-11-11): the Helsinki Foundation's
+      amicus opinion (NGO) gives the Mayor's decision number (WV5310/ZG/9/2023, 14 November 2023) and OKO.press
+      reports that the Court lifted the ban on 16 November 2023 and the march took place; no City or Court
+      document naming the purpose was found; none-found kept.
+    queries:
+    - >-
+      web search (zakaz zgromadzenia Palestyna Gaza demonstracja zakazana prezydent miasta; um.warszawa.pl,
+      bip.warszawa.pl, gov.pl), 2026-11-09
+    - bip.warszawa.so.gov.pl postanowienie IV Ns 173/23 of 2023-11-16 read (pdftotext)
+    - >-
+      web search (Prezydent m.st. Warszawy zakaz zgromadzenia 18 listopada 2023 propalestyńskie ambasada
+      Izraela decyzja sąd okręgowy), 2026-11-11
   E3:
     status: none-found
-    checked_at: 2026-09-29
-    note: Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the courts were not searched.
+    checked_at: 2026-11-11
+    note: >-
+      Experimental, unscored. No universal-jurisdiction complaint accepted for investigation found; the
+      courts were not searched. Finish run of 2026-11-09 (T-F-W5): OKO.press and the Anadolu Agency report
+      that on 25 May 2026 Polish citizens of Palestinian origin, with the Hind Rajab Foundation, filed a
+      notification at the Regional Prosecutor's Office in Wrocław against Israeli officials (genocide, war
+      crimes, crimes against humanity; article 110 of the criminal code); no decision to open or refuse
+      an investigation is known: lead_20261109_POL_2. None-found kept. P-23 pass, T-G-LEADS-6 (2026-11-11):
+      Nomada (NGO, 9 September 2025) reports that the District Prosecutor's Office in Kielce confirmed an
+      investigation in rem (articles 118 and 118a of the criminal code) on a complaint of 3 September 2025
+      about representatives of Israeli arms companies at the MSPO fair; no communication of a prosecution
+      office was found, so it is a lead (lead_20261111_POL_3), not an event. The Przemyśl prosecutors'
+      investigation into the death of a Polish aid worker in Gaza (April 2024, article 148 of the criminal
+      code, press reports) is a homicide investigation for a Polish victim, not a universal-jurisdiction
+      complaint. None-found kept until a prosecutor's communication is archived.
     queries:
-      - gov.pl search (Gaza terms, ludobójstwo, zbrodnie)
+    - gov.pl search (Gaza terms, ludobójstwo, zbrodnie)
+    - web search (prokuratura śledztwo zawiadomienie Fundacja Hind Rajab Polska), 2026-11-09
+    - >-
+      web searches (Prokuratura Regionalna we Wrocławiu zawiadomienie ludobójstwo Gaza Hind Rajab wszczęcie
+      śledztwa odmowa 2026; prokuratura wszczęła śledztwo Gaza ludobójstwo zawiadomienie Kaktus 2025;
+      site:gov.pl prokuratura śledztwo Strefie Gazy zbrodnia ludobójstwa art. 118; Prokuratura Okręgowa w
+      Kielcach śledztwo MSPO izraelskie firmy), 2026-11-11

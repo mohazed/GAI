@@ -5,8 +5,8 @@ Everything in spec §8, made operational for a one-person project with Claude Co
 ## 1. Methodology changes
 
 1. Open a pull request in the public repo that changes `methodology/` (a new version folder) with a written rationale in `CHANGELOG.md`.
-2. CI produces `diff.json` (every country moved ≥ 1 point and why) and posts it as a PR comment.
-3. Open a GitHub Discussion linked from the PR, announce it on the site's Changes page ("Proposed: v1.1.0, comment until 2026-11-14"), and leave it open **14 days**.
+2. CI produces `diff.json` (every country moved ≥ 1 point and why) and posts it as a PR comment. Mechanism (P-20, docs/10 B-863): the workflow `.github/workflows/methodology-diff.yml` runs on every pull request that changes `methodology/`, runs `pnpm methodology:diff --from origin/<base> --date <today>` and posts the table as one comment, updated on each push (the job summary carries it too, for a pull request from a fork, whose token cannot comment). The command belongs to the pull request that proposes 1.0.0-rc.2 until it is merged; the workflow says so in the comment when it is absent.
+3. Open a GitHub Discussion linked from the PR, announce it on the site's Changes page ("Proposed: v1.1.0, comment until 2026-11-14"), and leave it open **14 days**. Mechanism: add an entry to `methodology/proposals.yaml` (template in the file: version, pull request, Discussion, opening day, last day of the window, one-sentence summary in EN and FR); the build publishes it in `methodology/index.json` `proposals` and the Changes page shows it while it is in the file. Remove the entry in the commit that merges or withdraws the proposal.
 4. Merge only after the window; the site's version tag updates; the previous version's outputs are frozen under `data/snapshots/`.
 5. Major versions additionally require a sign-off comment from at least one named reviewer.
 

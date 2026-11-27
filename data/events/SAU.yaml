@@ -270,7 +270,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: >-
     Increased tier (+8): UNRWA's tables give USD 42,279,765 pledged and received from Saudi Arabia (including the King
@@ -455,6 +455,51 @@
       notes: "Line 1 of the archived text re-read: the Kingdom of Saudi Arabia is among the signatories; line 2: the passage quoted. B9 +5 (legal characterisation), scope west-bank matches the events filed for the other signatories (evt_2026_02_24_DNK_B9)."
     notes: "Joint statement of foreign ministers of 24 February 2026 on Israeli decisions in the West Bank, as published by the Danish Ministry of Foreign Affairs (the text archived for Denmark). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; SAU is named on line 1."
 
+- id: evt_2026_06_02_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-06-02'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call settler incursions into Al-Aqsa Mosque under the protection of Israeli forces a flagrant violation of international law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts called settler incursions into Al-Aqsa Mosque under Israeli protection a violation of international law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont qualifié les incursions de colons dans la mosquée Al-Aqsa sous protection israélienne de violation du droit international.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Faisal bin Farhan bin Abdullah
+  evidence:
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: They stress that these provocative and unacceptable actions constitute a flagrant violation of international law, the relevant United Nations resolutions, and the historical and legal status quo at the holy sites in occupied East Jerusalem.
+    quote_lang: en
+    locator: line 2
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan, Islamic Republic of Pakistan, State of Qatar, Kingdom of Saudi Arabia
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_06_02_TUR_B9
+  - evt_2026_06_02_EGY_B9
+  - evt_2026_06_02_ARE_B9
+  - evt_2026_06_02_QAT_B9
+  - evt_2026_06_02_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Kingdom of Saudi Arabia among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_06_02_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Saudi Arabia (evt_2026_06_18_SAU_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-06-02, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Saudi Arabia and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
 - id: evt_2026_06_18_SAU_B9
   revision: 1
   country: SAU
@@ -494,6 +539,51 @@
       verdict: agree
       notes: "Line 3 of the archived text re-read: Saudi Arabia is among the signatories; line 3: the passage quoted. B9 +5 (violations named), scope west-bank matches the events filed for the other signatories (evt_2026_06_18_ARE_B9, evt_2026_06_18_JOR_B9, evt_2026_06_18_QAT_B9)."
     notes: "Joint statement of the foreign ministers of eight states of 18 June 2026, as published by the UAE Ministry of Foreign Affairs (the text archived for the United Arab Emirates). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; SAU is named on line 3."
+
+- id: evt_2026_07_23_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-07-23'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call the access restrictions in the Old City of Jerusalem a flagrant violation of international law, including international humanitarian law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts called Israeli access restrictions in the Old City of Jerusalem a violation of international humanitarian law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont qualifié les restrictions d'accès israéliennes dans la vieille ville de Jérusalem de violation du droit international humanitaire.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Faisal bin Farhan bin Abdullah
+  evidence:
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: Restrictions on access to the Old City of Jerusalem and its places of worship coupled with discriminatory and arbitrary access restrictions to the other places of worship in the old city constitute a flagrant violation of international law, including international humanitarian law
+    quote_lang: en
+    locator: line 4
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: 1. The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan, Islamic Republic of Pakistan, State of Qatar, Kingdom of Saudi Arabia
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_07_23_TUR_B9
+  - evt_2026_07_23_EGY_B9
+  - evt_2026_07_23_ARE_B9
+  - evt_2026_07_23_QAT_B9
+  - evt_2026_07_23_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Kingdom of Saudi Arabia among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_07_23_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Saudi Arabia (evt_2026_06_18_SAU_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-07-23, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Saudi Arabia and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
 
 - id: evt_2026_08_06_SAU_B9
   revision: 1
@@ -535,6 +625,51 @@
       notes: "Line 3 of the archived text re-read: the Kingdom of Saudi Arabia is among the signatories; line 3: the passage quoted. B9 +5 (violations named) matches the events filed for the other signatories (evt_2026_08_06_ARE_B9, evt_2026_08_06_JOR_B9, evt_2026_08_06_QAT_B9)."
     notes: "Joint statement of the foreign ministers of eight states of 6 August 2026, as published by the UAE Ministry of Foreign Affairs (the text archived for the United Arab Emirates). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; SAU is named on line 3."
 
+- id: evt_2026_08_21_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-08-21'
+  points: 5
+  points_rationale: 'Violations named (+5): the eight foreign ministers condemn settler violence against Palestinians and their property, with the support of the Israeli authorities, as violations of international law, and reject the E1 settlement plan. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts rejected the E1 settlement plan and called settler violence against Palestinians a violation of international law.
+    fr: Le ministre des Affaires étrangères et sept homologues ont rejeté le plan de colonisation E1 et qualifié les violences de colons contre les Palestiniens de violations du droit international.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Faisal bin Farhan bin Abdullah
+  evidence:
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: They stress that such acts in no way diminish the inalienable rights of the Palestinian people and constitute violations of international law and relevant United Nations resolutions
+    quote_lang: en
+    locator: line 2
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: The Foreign Ministers of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan, the Islamic Republic of Pakistan, the State of Qatar, the Kingdom of Saudi Arabia
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_21_TUR_B9
+  - evt_2026_08_21_EGY_B9
+  - evt_2026_08_21_ARE_B9
+  - evt_2026_08_21_QAT_B9
+  - evt_2026_08_21_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Kingdom of Saudi Arabia among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_08_21_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Saudi Arabia (evt_2026_06_18_SAU_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-08-21, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Saudi Arabia and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
 - id: evt_2026_09_06_SAU_B9
   revision: 1
   country: SAU
@@ -574,6 +709,99 @@
       verdict: agree
       notes: "Line 3 of the archived text re-read: KSA is among the signatories; line 3: the passage quoted. B9 +5 (violations named) matches the events filed for the other signatories (evt_2026_09_06_ARE_B9, evt_2026_09_06_JOR_B9, evt_2026_09_06_QAT_B9)."
     notes: "Joint statement of the foreign ministers of eight states of 6 September 2026, as published by the UAE Ministry of Foreign Affairs (the text archived for the United Arab Emirates). Filed in the P-16 consistency sweep (docs/10 B-444): the same joint statement is filed for every signatory among the 45 countries of Phase 1; SAU is named on line 3."
+
+- id: evt_2026_09_09_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-09-09'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers refer to Israel''s unlawful occupation of the Occupied Palestinian Territory and call on Israel to rescind its settlement measures, welcoming restrictions on trade with settlements. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and seven counterparts welcomed restrictions on trade with settlements and called on Israel to rescind its settlement measures.
+    fr: Le ministre des Affaires étrangères et sept homologues ont salué les restrictions au commerce avec les colonies et appelé Israël à annuler ses mesures de colonisation.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Faisal bin Farhan bin Abdullah
+  evidence:
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: In this regard, they reiterate their call for Israel to rescind all measures taken in connection with settlement activities and other measures aimed at altering the geographic and demographic character of the Occupied Palestinian Territory.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: the obligation of all States not to recognize as legal the situation arising from Israel’s unlawful occupation in the Occupied Palestinian Territory
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: The Ministers of Foreign Affairs of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan, the Islamic Republic of Pakistan, the State of Qatar, the Kingdom of Saudi Arabia
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_09_TUR_B9
+  - evt_2026_09_09_EGY_B9
+  - evt_2026_09_09_ARE_B9
+  - evt_2026_09_09_QAT_B9
+  - evt_2026_09_09_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the Kingdom of Saudi Arabia among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_09_09_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Saudi Arabia (evt_2026_06_18_SAU_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-09-09, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Saudi Arabia and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_09_22_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-09-22'
+  points: 2
+  points_rationale: "Formal call (+2): the joint statement of eight foreign ministers calls on Israel to ensure the immediate, safe and unhindered delivery of humanitarian assistance in Gaza and stresses the imperative of preserving the ceasefire and ending all violations; it names no violation of international humanitarian law for Gaza (its passage on settlements, annexation and forced displacement concerns the occupied Palestinian territory as a whole and is not read as a Gaza violation, R7)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Minister of Foreign Affairs, with seven counterparts, called on Israel to ensure the unhindered delivery of humanitarian aid in Gaza and stressed the need to preserve the ceasefire."
+    fr: "Le ministre des Affaires étrangères, avec sept homologues, a appelé Israël à garantir l'acheminement sans entrave de l'aide humanitaire à Gaza et souligné la nécessité de préserver le cessez-le-feu."
+  actor:
+    en: "Minister of Foreign Affairs"
+    fr: "Ministre des Affaires étrangères"
+    name: "Faisal bin Farhan bin Abdullah"
+  evidence:
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "the Kingdom of Saudi Arabia"
+    quote_lang: en
+    locator: line 1
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "call upon Israel to immediately fulfil its outstanding commitments under the First Phase of the Comprehensive Plan, including by ensuring the immediate, safe and unhindered delivery of humanitarian assistance and Early Recovery supplies"
+    quote_lang: en
+    locator: line 2
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "They stress the imperative of preserving the ceasefire and ending all violations."
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_09_22_PAK_B9, evt_2026_09_22_EGY_B9, evt_2026_09_22_TUR_B9_2, evt_2026_09_22_IDN_B9, evt_2026_09_22_JOR_B9, evt_2026_09_22_QAT_B9, evt_2026_09_22_ARE_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the Kingdom of Saudi Arabia is among the eight signatory states (line 1); the quotes are verbatim. Gaza is named and the call is addressed to Israel (R7, R4). +2 (call), as for the joint statement of 1 February 2026 (evt_2026_02_01_PAK_B9). The text prints no name: the actor is the foreign minister of the state, Faisal bin Farhan bin Abdullah, named by the continuity of the post (the same series of joint statements, docs/10 B-444); flagged. The meeting took place on 21 September 2026; the release is dated 22 September 2026 (line 20) and is the event date."
+    notes: "Joint statement of the foreign ministers of eight states (Pakistan, Egypt, Indonesia, Jordan, Qatar, Saudi Arabia, Türkiye, the United Arab Emirates) after their meeting in New York on 21 September 2026, as published by Pakistan's Ministry of Foreign Affairs (press release 252/2026, Islamabad, 22 September 2026; the text archived for Pakistan and used for every signatory, as in docs/10 B-444). Found in the monthly run of 2026-11 (T-P23-4) on the Ministry's press-release listing (the page before the first session of the 45 countries had not filed it). The statement also deplores settlement expansion, land confiscation, demolitions, settler violence and forced displacement in the occupied Palestinian territory as illegal measures: a West Bank passage that would be tagged west-bank and is not scored; one event for the same speaker and day (docs/10 B-32). Searched again on 2026-11-10 (T-G-JOINT, docs/10 B-2117): the own copies of Türkiye, the United Arab Emirates and Qatar are archived and filed with their events; no copy on this state's Ministry site was found (web searches in English and Arabic), so the text stays Pakistan's copy."
 
 - id: evt_2026_09_26_SAU_B9
   revision: 1
@@ -623,3 +851,145 @@
     notes: >-
       His address at the 80th session (28 September 2025) spoke of "war crimes and acts of genocide" without citing Gaza
       and is not filed (B-32 read literally; docs/10 B-381 (4)).
+
+- id: evt_2026_09_30_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-09-30'
+  points: 2
+  points_rationale: "Formal condemnation and call (+2): in the annual royal address to the Shura Council, delivered on the King's behalf, the Crown Prince and Prime Minister condemned the continued attacks of the occupying authority on Palestinians in the Gaza Strip and called on the international community and the Board of Peace to work for a lasting political solution; no category of violation of international humanitarian law is named."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Crown Prince and Prime Minister condemned continued attacks on Palestinians in the Gaza Strip in the royal address to the Shura Council and called for a lasting political solution."
+    fr: "Le prince héritier et Premier ministre a condamné la poursuite des attaques contre les Palestiniens de Gaza dans le discours royal à la Choura et appelé à une solution politique durable."
+  actor:
+    en: "Crown Prince and Prime Minister"
+    fr: "Prince héritier et Premier ministre"
+    name: Mohammed bin Salman bin Abdulaziz Al Saud
+  evidence:
+  - source: src_20260930_uqn_crown-prince-shura-address
+    quote: "وقد ألقى نيابة عن خادم الحرمين الشريفين الملك سلمان بن عبدالعزيز آل سعود حفظه الله، صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود، ولي العهد رئيس مجلس الوزراء، الخطاب الملكي السنوي"
+    quote_lang: ar
+    quote_en: "On behalf of the Custodian of the Two Holy Mosques King Salman bin Abdulaziz Al Saud, may God protect him, His Royal Highness Prince Mohammed bin Salman bin Abdulaziz Al Saud, Crown Prince and Prime Minister, delivered the annual royal address"
+    locator: line 15
+  - source: src_20260930_uqn_crown-prince-shura-address
+    quote: "وندين بكل قوة استمرار الاعتداءات الوحشية لسلطة الاحتلال على إخوتنا في فلسطين في قطاع غزة، وانتهاكاتها المتعددة للمسجد الأقصى، وندعو المجتمع الدولي ومجلس السلام على وجه الخصوص، لممارسة دوره المأمول للوصول إلى حل سياسي دائم."
+    quote_lang: ar
+    quote_en: "We strongly condemn the continued brutal attacks of the occupying authority on our brothers in Palestine in the Gaza Strip, and its repeated violations of Al-Aqsa Mosque, and we call on the international community, and the Board of Peace in particular, to play its expected role in reaching a lasting political solution."
+    locator: line 33
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-10'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-10'
+      verdict: agree
+      notes: "Lines 15 and 33 of the archived Umm Al-Qura item re-read after writing: the Crown Prince and Prime Minister delivered the annual royal address on the King's behalf (line 15, the address follows from line 16); line 33 condemns the occupying authority's continued attacks on Palestinians in the Gaza Strip and calls for a lasting political solution. Both quotes are verbatim. A condemnation and a call without a named category of violation: B9 +2. The head of government is a B9 speaker."
+    notes: >-
+      Filed by T-G-BLOCKED on 2026-11-10 (docs/10 B-2123), closing lead_20261109_SAU_3 (B-918,
+      B-920 (5)). spa.gov.sa refuses the Internet Archive (HTTP 403 to Save Page Now on 2026-11-09);
+      the same text, attributed to the Saudi Press Agency, is published by Umm Al-Qura, the official
+      gazette of the Kingdom (uqn.gov.sa, Save Page Now on 2026-11-10, replay equal in bytes and
+      SHA-256). The address was delivered on 30 September 2026 (19 Rabi' al-Akhir 1448, line 2) at the
+      opening of the third year of the Shura Council's ninth session. Read as the head of government's
+      own words (he delivers the King's address; as the royal addresses of earlier years filed for
+      Saudi Arabia). The lead's English wording came from SPA's English item; the quote here is the
+      Arabic original with the session's own translation. Saudi Arabia's B9 is at its cap for the
+      trailing year, so no score effect.
+
+- id: evt_2026_10_16_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-10-16'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the joint statement of twenty foreign ministers says that Colombia's inauguration of its embassy in Jerusalem contravenes Security Council resolutions and that any measure altering the status of occupied Jerusalem is null and void. Jerusalem and the West Bank only, no mention of Gaza: tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Minister of Foreign Affairs, with nineteen other foreign ministers, rejected Colombia's inauguration of its embassy in Jerusalem as contravening Security Council resolutions."
+    fr: "Ministre des Affaires étrangères, avec dix-neuf autres ministres, a rejeté l'inauguration par la Colombie de son ambassade à Jérusalem comme contraire aux résolutions du Conseil de sécurité."
+  actor:
+    en: "Minister of Foreign Affairs"
+    fr: "Ministre des Affaires étrangères"
+    name: "Faisal bin Farhan bin Abdullah"
+  evidence:
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "the Kingdom of Saudi Arabia"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_10_16_EGY_B9, evt_2026_10_16_TUR_B9, evt_2026_10_16_QAT_B9, evt_2026_10_16_JOR_B9, evt_2026_10_16_MYS_B9, evt_2026_10_16_IDN_B9, evt_2026_10_16_DZA_B9, evt_2026_10_16_ZAF_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the Kingdom of Saudi Arabia is among the twenty signatory states; the three quotes are verbatim. The text names Jerusalem and the West Bank's occupied status and not Gaza (R7), so scope west-bank. B9 +5 (legal characterisation) as for the joint statement of 21 August 2025. The actor's name is that of the foreign minister in the state's last filed B9 event (the statement names no individual)."
+    notes: "Joint statement of 16 October 2026 of twenty foreign ministers on Colombia's inauguration of its embassy in Jerusalem, as published by South Africa's Department of International Relations and Cooperation (the text archived for South Africa, used for every signatory among the 45 countries, as in docs/10 B-444). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Found in the department's list of media statements (monthly run of 2026-11, T-P23-3). The other ministries' copies were not read."
+- id: evt_2026_10_23_SAU_B9
+  revision: 1
+  country: SAU
+  indicator: B9
+  type: repeatable
+  date: '2026-10-23'
+  points: 2
+  points_rationale: 'Formal call to end the violence and for humanitarian access (+2): the four foreign ministers call for an urgent end to the ongoing Israeli violence and underline the urgent need for an uninterrupted flow of humanitarian aid to Gaza; the violations named (settlement activity, settler violence) are in the West Bank.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Minister of Foreign Affairs and three counterparts called for an urgent end to Israeli violence and for an uninterrupted flow of humanitarian aid to Gaza.
+    fr: Le ministre des Affaires étrangères et trois homologues ont appelé à la fin urgente des violences israéliennes et à un acheminement ininterrompu de l'aide humanitaire à Gaza.
+  actor:
+    en: Minister of Foreign Affairs
+    fr: Ministre des Affaires étrangères
+    name: Faisal bin Farhan bin Abdullah
+  evidence:
+  - source: src_20261023_mfa-tr_joint-statement-r4-ministerial-istanbul
+    quote: They underlined the urgent need for uninterrupted flow of humanitarian aid to and reconstruction in Gaza.
+    quote_lang: en
+    locator: line 4
+  - source: src_20261023_mfa-tr_joint-statement-r4-ministerial-istanbul
+    quote: The Ministers called for an urgent end to the ongoing Israeli violence
+    quote_lang: en
+    locator: line 4
+  - source: src_20261023_mfa-tr_joint-statement-r4-ministerial-istanbul
+    quote: The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Islamic Republic of Pakistan, and the Kingdom of Saudi Arabia (R4 Group), met today in İstanbul
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_10_23_TUR_B9
+  - evt_2026_10_23_EGY_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the foreign minister of the Kingdom of Saudi Arabia among the four (R4 Group) meeting in Istanbul; line 4 holds both passages verbatim. The call tier (+2) and the scope gaza and west-bank agree with the same statement filed for Türkiye and Egypt (evt_2026_10_23_EGY_B9).'
+    notes: Joint statement of the R4 Group (the foreign ministers of Türkiye, Egypt, Pakistan and Saudi Arabia) after their meeting in Istanbul on 23 October 2026, published by the Turkish Ministry of Foreign Affairs. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-886); filed for Saudi Arabia in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (1)); Pakistan is in a light-protocol session.

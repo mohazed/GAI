@@ -1,14 +1,19 @@
 import { defineConfig, devices } from '@playwright/test'
+import { loadSiteMode } from './scripts/site-env'
 
 /**
  * Browser tests of two builds, served with the rules of _headers so the CSP is live:
  * - `score`: the kit build (`pnpm --filter @gai/web build:kit`, out-kit/), built with
  *   NEXT_PUBLIC_SHOW_SCORES=true: the production pages in score mode plus the dev-only /_kit.
- * - `scorecard`: the production build (`pnpm build`, out/), in scorecard mode as deployed (D-16);
- *   only the page smoke tests run on it.
- * Both builds must exist before `pnpm test:e2e`.
+ * - `production`: the production build (`pnpm build`, out/), in the mode it was built in, read
+ *   from apps/web/.env.production as the build reads it (scripts/site-env.ts; scorecard until the
+ *   score flip of P-22, D-16); only the page smoke tests run on it.
+ * The specs read the mode of a project from `metadata.mode`, so the flip of the one line in
+ * .env.production needs no change here (T-P22 dry run, docs/10 B-866). Both builds must exist
+ * before `pnpm test:e2e`.
  */
-const PORTS = { score: 4173, scorecard: 4174 } as const
+const PORTS = { score: 4173, production: 4174 } as const
+const productionMode = loadSiteMode(import.meta.dirname, false)
 
 export default defineConfig({
   testDir: 'e2e',
@@ -19,12 +24,14 @@ export default defineConfig({
   projects: [
     {
       name: 'score',
+      metadata: { mode: 'score' },
       use: { ...devices['Desktop Chrome'], baseURL: `http://localhost:${PORTS.score}` },
     },
     {
-      name: 'scorecard',
+      name: 'production',
+      metadata: { mode: productionMode },
       testMatch: /(pages|country|compare|changes|info|embed)\.spec\.ts$/,
-      use: { ...devices['Desktop Chrome'], baseURL: `http://localhost:${PORTS.scorecard}` },
+      use: { ...devices['Desktop Chrome'], baseURL: `http://localhost:${PORTS.production}` },
     },
   ],
   webServer: [
@@ -36,8 +43,8 @@ export default defineConfig({
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: `node --import tsx scripts/serve.ts out ${PORTS.scorecard}`,
-      port: PORTS.scorecard,
+      command: `node --import tsx scripts/serve.ts out ${PORTS.production}`,
+      port: PORTS.production,
       gracefulShutdown: { signal: 'SIGTERM', timeout: 2000 },
       reuseExistingServer: !process.env.CI,
     },

@@ -2,7 +2,9 @@ import {
   type ApiAssessmentRow,
   type ApiCorrection,
   type ApiCountryEntry,
+  ApiDumpEventsFile,
   ApiDumpFile,
+  ApiDumpSourcesFile,
   type ApiEvent,
   type ApiReply,
   type ApiSource,
@@ -229,6 +231,7 @@ const E_XAA_RETRACTED = event({
 const REGISTRY = {
   region: 'Synthetic region',
   subregion: 'Synthetic subregion',
+  intermediate_region: null,
   un_member: true,
   observer: false,
   memberships: {
@@ -435,6 +438,7 @@ function registryEntry(iso3: string, over: Partial<Country> = {}): Country {
     },
     region: 'Europe',
     subregion: 'Western Europe',
+    intermediate_region: null,
     un_member: true,
     observer: false,
     excluded: false,
@@ -455,6 +459,7 @@ function registryEntry(iso3: string, over: Partial<Country> = {}): Country {
 }
 const REGISTRY_ENTRIES: Country[] = [
   registryEntry('XBB', {
+    intermediate_region: 'Synthetic intermediate region',
     memberships: {
       unsc: [
         { from: '2023-01-01', to: '2023-12-31', permanent: false },
@@ -542,7 +547,7 @@ const text = (path: string): string => {
 const records = (path: string): string[][] => parse(text(path), { relax_column_count: false })
 
 describe('dumpFiles: paths and CSV conventions', () => {
-  it('produces the eight files, in order', () => {
+  it('produces the ten files, in order', () => {
     expect([...files.keys()]).toEqual([
       'dumps/events.csv',
       'dumps/sources.csv',
@@ -551,6 +556,8 @@ describe('dumpFiles: paths and CSV conventions', () => {
       'dumps/countries.scorecard.csv',
       'dumps/registry.csv',
       'dumps/scores-daily-2023.csv',
+      'dumps/gai-2023-10-10-sources.json',
+      'dumps/gai-2023-10-10-events-2023.json',
       'dumps/gai-2023-10-10.json',
     ])
   })
@@ -858,27 +865,46 @@ describe('dumps/scores-daily-{YYYY}.csv', () => {
   })
 })
 
-describe('dumps/gai-{date}.json', () => {
+describe('dumps/gai-{date}.json and its parts', () => {
   const json = text('dumps/gai-2023-10-10.json')
   const dump = ApiDumpFile.parse(JSON.parse(json))
+  const sourcesJson = text('dumps/gai-2023-10-10-sources.json')
+  const sourcesFile = ApiDumpSourcesFile.parse(JSON.parse(sourcesJson))
+  const eventsJson = text('dumps/gai-2023-10-10-events-2023.json')
+  const eventsFile = ApiDumpEventsFile.parse(JSON.parse(eventsJson))
 
-  it('parses with ApiDumpFile and is canonical JSON', () => {
+  it('parses with its schemas and is canonical JSON', () => {
     expect(apiSchemaFor('dumps/gai-2023-10-10.json')).toBe(ApiDumpFile)
+    expect(apiSchemaFor('dumps/gai-2023-10-10-sources.json')).toBe(ApiDumpSourcesFile)
+    expect(apiSchemaFor('dumps/gai-2023-10-10-events-2023.json')).toBe(ApiDumpEventsFile)
     expect(jsonText(JSON.parse(json))).toBe(json)
+    expect(jsonText(JSON.parse(sourcesJson))).toBe(sourcesJson)
+    expect(jsonText(JSON.parse(eventsJson))).toBe(eventsJson)
     expect(dump.build_date).toBe(DATE)
     expect(dump.methodology).toBe(VERSION)
     expect(dump.git).toEqual({ sha: SHA, dirty: false })
+    expect(sourcesFile.build_date).toBe(DATE)
+    expect(eventsFile).toMatchObject({ build_date: DATE, year: 2023 })
+  })
+
+  it('lists its parts: the sources, then the events by year', () => {
+    expect(dump.parts).toEqual([
+      { record: 'sources', path: 'dumps/gai-2023-10-10-sources.json', year: null, count: 2 },
+      { record: 'events', path: 'dumps/gai-2023-10-10-events-2023.json', year: 2023, count: 4 },
+    ])
+    expect(Object.keys(dump)).not.toContain('events')
+    expect(Object.keys(dump)).not.toContain('sources')
   })
 
   it('sorts every list', () => {
     expect(dump.countries.map((c) => c.iso3)).toEqual(['XAA', 'XBB', 'XEX'])
-    expect(dump.events.map((e) => e.id)).toEqual([
+    expect(eventsFile.events.map((e) => e.id)).toEqual([
       'evt_2023_10_07_XAA_C5',
       'evt_2023_10_08_XAA_A6',
       'evt_2023_10_08_XAA_B1_synthetic-vote',
       'evt_2023_10_09_XBB_B9',
     ])
-    expect(dump.sources.map((s) => s.id)).toEqual([SRC_A, SRC_B])
+    expect(sourcesFile.sources.map((s) => s.id)).toEqual([SRC_A, SRC_B])
     expect(dump.assessments.map((a) => a.country)).toEqual(['XAA', 'XBB'])
     expect(dump.assessments[0]?.indicators.map((r) => r.indicator)).toEqual(['A1', 'B9', 'E1'])
     expect(dump.corrections.map((c) => c.id)).toEqual([
@@ -895,9 +921,9 @@ describe('dumps/gai-{date}.json', () => {
   })
 
   it('keeps the records as given (events, sources, assessments)', () => {
-    expect(dump.events[3]).toEqual(E_XBB)
+    expect(eventsFile.events[3]).toEqual(E_XBB)
     expect(dump.assessments[1]).toEqual(ASSESS_XBB)
-    expect(dump.sources[1]).toEqual(source(SRC_B))
+    expect(sourcesFile.sources[1]).toEqual(source(SRC_B))
   })
 
   it('writes null git fields outside a checkout', () => {
@@ -905,12 +931,55 @@ describe('dumps/gai-{date}.json', () => {
     const d = ApiDumpFile.parse(JSON.parse(out.get('dumps/gai-2023-10-10.json') ?? ''))
     expect(d.git).toEqual({ sha: null, dirty: null })
   })
+
+  it('writes one events file for each calendar year of the events’ dates, in year order', () => {
+    const base = input().events
+    const e2024 = { ...(base[0] as ApiEvent), id: 'evt_2024_03_01_XAA_C5', date: '2024-03-01' }
+    const e2026 = { ...(base[0] as ApiEvent), id: 'evt_2026_01_01_XAA_C5', date: '2026-01-01' }
+    const out = dumpFiles(input({ events: [e2026, ...base, e2024] }))
+    const main = ApiDumpFile.parse(JSON.parse(out.get('dumps/gai-2023-10-10.json') ?? ''))
+    expect(main.parts.map((p) => [p.record, p.year, p.count])).toEqual([
+      ['sources', null, 2],
+      ['events', 2023, base.length],
+      ['events', 2024, 1],
+      ['events', 2026, 1],
+    ])
+    for (const p of main.parts) expect(out.has(p.path), p.path).toBe(true)
+    expect(out.has('dumps/gai-2023-10-10-events-2025.json')).toBe(false)
+    const y2024 = ApiDumpEventsFile.parse(
+      JSON.parse(out.get('dumps/gai-2023-10-10-events-2024.json') ?? ''),
+    )
+    expect(y2024).toMatchObject({ year: 2024, events: [{ id: 'evt_2024_03_01_XAA_C5' }] })
+    // Every event is in exactly one file; the CSV holds them all.
+    const ids = main.parts
+      .filter((p) => p.record === 'events')
+      .flatMap((p) =>
+        ApiDumpEventsFile.parse(JSON.parse(out.get(p.path) ?? '')).events.map((e) => e.id),
+      )
+    expect(ids).toHaveLength(base.length + 2)
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it('bounds each events file by the events of its year, not by the whole dataset', () => {
+    // The split exists so that a growing dataset never nears the 25 MiB of one file.
+    const base = input().events
+    const many = Array.from({ length: 300 }, (_, i) => ({
+      ...(base[0] as ApiEvent),
+      id: `evt_${2023 + (i % 4)}_01_01_XAA_C5_${i}`,
+      date: `${2023 + (i % 4)}-01-01`,
+    }))
+    const out = dumpFiles(input({ events: many }))
+    const main = ApiDumpFile.parse(JSON.parse(out.get('dumps/gai-2023-10-10.json') ?? ''))
+    expect(main.parts.filter((p) => p.record === 'events').map((p) => p.count)).toEqual([
+      75, 75, 75, 75,
+    ])
+  })
 })
 
 describe('dumpFiles: registry.csv', () => {
   it('writes the header exactly as specified', () => {
     expect(text('dumps/registry.csv').split('\n')[0]).toBe(
-      'iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,un_member,observer,excluded,' +
+      'iso3,iso2,m49,name_en,name_en_def,name_fr,name_fr_def,region,subregion,intermediate_region,un_member,observer,excluded,' +
         'unsc,unsc_permanent,eu,nato,arab_league,oic,g20,g7,brics,member_of,' +
         'recognises_palestine_since',
     )
@@ -918,14 +987,14 @@ describe('dumpFiles: registry.csv', () => {
 
   it('writes one row per entry by ISO3, memberships as flags or intervals, held ones at the build date', () => {
     expect(text('dumps/registry.csv').split('\n').slice(1)).toEqual([
-      'XAA,XA,900,Country XAA,the Country XAA,Pays XAA,le Pays XAA,Europe,Western Europe,true,false,false,' +
+      'XAA,XA,900,Country XAA,the Country XAA,Pays XAA,le Pays XAA,Europe,Western Europe,,true,false,false,' +
         '1945-10-24/..,true,false,false,true,true,true,false,false,unsc;arab_league;oic;g20,1988-11-15',
       // Build date 2023-10-10: the 2023 term is held, NATO since 2023-10-09 is held, BRICS
       // ended on 2023-10-08, the OIC invitation (since null) is not a membership.
-      'XBB,XB,900,Country XBB,the Country XBB,Pays XBB,le Pays XBB,Europe,Western Europe,true,false,false,' +
+      'XBB,XB,900,Country XBB,the Country XBB,Pays XBB,le Pays XBB,Europe,Western Europe,Synthetic intermediate region,true,false,false,' +
         '2023-01-01/2023-12-31;2027-01-01/2028-12-31,false,true,2023-10-09/..,false,false,false,' +
         'false,2023-01-01/2023-10-08,unsc;eu;nato,2024-05-28',
-      'XZZ,XZ,900,"Excluded, one",,Exclu,l\'Exclu,Europe,Western Europe,true,false,true,,false,' +
+      'XZZ,XZ,900,"Excluded, one",,Exclu,l\'Exclu,Europe,Western Europe,,true,false,true,,false,' +
         'false,false,false,false,false,false,false,,',
       '',
     ])
@@ -983,6 +1052,15 @@ describe('dumpFiles: determinism and edge cases', () => {
     expect(empty.get('dumps/countries.csv')).toBe(`${COUNTRIES_CSV_COLUMNS.join(',')}\n`)
     expect(empty.get('dumps/scores-daily-2023.csv')).toBe(`${SCORES_DAILY_CSV_COLUMNS.join(',')}\n`)
     const d = ApiDumpFile.parse(JSON.parse(empty.get('dumps/gai-2023-10-10.json') ?? ''))
-    expect(d).toMatchObject({ countries: [], events: [], sources: [], leads: [] })
+    expect(d).toMatchObject({
+      countries: [],
+      leads: [],
+      parts: [{ record: 'sources', path: 'dumps/gai-2023-10-10-sources.json', count: 0 }],
+    })
+    // No events, so no events file; the sources file is always there.
+    expect([...empty.keys()].filter((k) => k.includes('-events-'))).toEqual([])
+    expect(
+      ApiDumpSourcesFile.parse(JSON.parse(empty.get('dumps/gai-2023-10-10-sources.json') ?? '')),
+    ).toEqual({ build_date: DATE, sources: [] })
   })
 })

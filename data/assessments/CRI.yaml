@@ -1,0 +1,395 @@
+# Coverage record for Costa Rica (docs/03 §6). P-21 light protocol, session T-P21-07, 2026-10-06.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs and Worship's press releases (rree.go.cr, the releases of 7 October 2023, 24 April, 10 July 2024, 7 April, 11 August and 30 September 2025 read; the
+#   site blocks scripted requests after a burst and Save Page Now; Wayback captures exist), COMEX's release of the free trade agreement (archived), the General Debate statements of the 78th to 81st sessions
+#   (gadebate.un.org; the 79th archived through its Wayback capture; the 80th and 81st read: the 80th has Gaza in a list of examples, the 81st has no passage), the generated events and the structured tables; web searches
+#   in English and Spanish (the official language) per indicator group. Time: about 30 minutes.
+# Statements read and not filed as B9: the Ministry's releases (no named speaker, R3); the General Debate statement of 24 September 2025 (Gaza named only as an example of humanitarian crises, no call);
+#   the Foreign Minister's interview of 12 July 2026 (press, lead_20261006_CRI_2).
+# Completion of 2026-11 (finish run, T-F-L04, 2026-11-09): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found, on the Presidency, the Procuraduría, the Ministries
+#   of Public Security and Foreign Trade as far as their interfaces answer; the Ministry of Foreign Affairs (rree.go.cr) answered 403. No new event. B8 left to the build (the
+#   63rd-session statement does not mention Palestine). No web search was available (the run's shared allowance was used up before the session began): press and NGO sources
+#   were not searched.
+# Redo pass with web search (T-F-L04-R, 2026-11-09): A3, A5 to A8, C4 to C6, E1 to E3 re-run with eighteen searches in Spanish; every status is kept; E2 note and lead_20261109_CRI_4 carry the Sala IV ruling on the Palestinian flag (not filed: resolution not found).
+country: CRI
+protocol_version: 1
+last_full_check: '2026-10-06'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier Costa Rica
+    checked_at: '2026-10-06'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: `pnpm fetch:comtrade` is run for the 45 countries of the full protocol and was not run in this light-protocol session (docs/10
+      B-503); the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-10-06'
+  A3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No document names a company of Costa Rica as a Tier-1 or Tier-2 supplier of parts or maintenance for the F-35 programme. A/HRC/59/23 (src_20250616_un-unispal_a-hrc-59-23, archived text)
+      does not contain the word Costa Rica (searched 2026-11-09). The programme''s own page (f35.com, Global Enterprise, read 2026-11-09, not archived) lists the nations of the programme (the United
+      States and 19 allied nations), Costa Rica not among them, and carries no supplier list by country. Press and NGO supplier lists were not searched. No web search was available (the run''s shared
+      allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard
+      mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept).
+      One search for Costa Rica in the F-35 supply chain found no Costa Rican company: every supplier named is Israeli (Israel Aerospace Industries wings, Elbit''s Cyclone assemblies) and Costa
+      Rica has no F-35 purchase. Still no supplier list that names a Costa Rican firm.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Costa Rica (no match)
+    - f35.com/f35/global-enterprise.html read (nations listed)
+    - 'WebSearch 2026-11-09: Costa Rica Israel F-35 supplier company Costa Rica components Lockheed Martin'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer Costa Rica
+    checked_at: '2026-10-06'
+  A5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No official record of a named exercise, a documented transit, a basing agreement or an official confirmation of intelligence sharing with Israel related to the Gaza campaign was found.
+      The Government''s own sites were read on 2026-11-09 as far as their interfaces allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered
+      87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República
+      (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina, Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and
+      the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request,
+      and the Customs service, the Legislative Assembly, the Judiciary and the Public Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the
+      judicial records and the legislature were not read beyond the session of 6 October 2026. The Constitution''s abolition of the army and the lack of any defence ministry mean that the Ministry
+      of Public Security''s police-cooperation releases are the nearest source; none of the pages read names an exercise with Israel.  No web search was available (the run''s shared allowance was
+      used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English
+      and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes the first session and is kept). Three searches
+      (Spanish) on military or security cooperation found only cybersecurity and police cooperation (the Israeli President''s offer of cybersecurity cooperation, the Israeli ambassador''s interview
+      on technology and agriculture) and an opinion piece on the ''Escudo de las Americas''; no exercise, transit, basing agreement or intelligence-sharing confirmation tied to the Gaza campaign.
+      The country has no army and no defence ministry.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica Israel armas cooperación militar seguridad Gaza exportación compra equipo israelí'
+    - 'WebSearch 2026-11-09: Costa Rica Israel Gaza gobierno cancillería comunicado octubre noviembre 2026'
+    - 'WebSearch 2026-11-09: Costa Rica canciller Tovar Gaza declaración alto el fuego Asamblea General ONU discurso presidenta Laura Fernández Palestina'
+  A6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No decision suspending or refusing a class of arms or dual-use licences to Israel was found. The Government''s own sites were read on 2026-11-09 as far as their interfaces allow: the
+      Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered none;
+      the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina, Hamas
+      and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned no result
+      or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary and the Public Prosecutor''s
+      sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session of 6 October 2026.  No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with
+      web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available
+      describes the first session and is kept). The same searches found no decision to suspend or refuse arms or dual-use licences to Israel; the Government''s only measures on Israel since 2025
+      are the free trade agreement of 8 December 2025 (C2, filed) and the statements of concern of August 2025 (no named speaker, R3). No arms-export authority page names Israel.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica Israel armas cooperación militar seguridad Gaza exportación compra equipo israelí'
+    - 'WebSearch 2026-11-09: Costa Rica tratado de libre comercio Israel Chaves Laura Fernández Gaza 2026'
+  A7:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No law or decree establishing an arms embargo on Israel, in either direction, was found. The Government''s own sites were read on 2026-11-09 as far as their interfaces allow: the Presidency
+      (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered none; the index is
+      incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina, Hamas and genocidio:
+      none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned no result or an error).
+      The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary and the Public Prosecutor''s sites
+      did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session of 6 October 2026.  No web search
+      was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). No law, decree or bill establishing an embargo in either direction was found; the legislative file on the free trade agreement (expediente 25.542, Comision
+      de Relaciones Internacionales y Comercio Exterior; its report deadline was extended by 60 working days in September 2026) points the other way.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica Asamblea Legislativa TLC Israel expediente 25.542 votación primer debate comisión noviembre 2026'
+    - 'WebSearch 2026-11-09: Costa Rica tratado de libre comercio Israel Chaves Laura Fernández Gaza 2026'
+  A8:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No official record of a port or airspace denial to an arms shipment bound for Israel was found. The Government''s own sites were read on 2026-11-09 as far as their interfaces allow: the
+      Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered none;
+      the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina, Hamas
+      and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned no result
+      or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary and the Public Prosecutor''s
+      sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session of 6 October 2026.  No
+      web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with
+      web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available
+      describes the first session and is kept). One search on airspace, ports (Limon, Caldera), vessels and arms cargo for Israel found no denial, no complaint and no record; the only vessels named
+      in the results are the aid vessels Madleen and Handala in a civil-society letter of September 2025 (not a Costa Rican port or airspace act).'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica espacio aéreo OR puerto OR Limón OR Caldera barco armas Israel carga denuncia buque Gaza'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on 10 and abstain on 2 of the 12 qualifying votes (A/RES/ES-10/24 of 18 September 2024 and A/RES/80/116 of 12 December 2025, the latter on the Court''s
+      advisory opinion that Costa Rica had voted to request in December 2024). The statements on the votes were not read.'
+    checked_at: '2026-10-06'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+  B3:
+    status: none-found
+    note: Costa Rica is not on the ICJ case 192 intervention list (docs/06 §8; the Court's case page read 2026-09-27).
+    queries:
+    - icj-cij.org case 192 declarations of intervention (list of docs/06 §8)
+    checked_at: '2026-10-06'
+  B4:
+    status: none-found
+    note: 'No rejection of the provisional measures was found: the Ministry''s releases of 24 April and 10 July 2024 call for the good-faith compliance of all States with the Security Council''s
+      resolutions and the Court''s provisional measures (not archived; Wayback captures read). The abstention of 12 December 2025 on the Assembly''s resolution welcoming the advisory opinion is
+      a vote (B1), not a rejection.'
+    queries:
+    - Costa Rica espera que Israel y Hamás acaten órdenes del máximo tribunal de la ONU
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B5:
+    status: none-found
+    note: 'No statement of the President, the Foreign Minister or the Justice Minister on executing the warrants of 21 November 2024 was found: the Government''s statement of 22 November 2024 (Delfino)
+      says it trusts the Court''s judges and the integrity of the institution and its officials, takes no position on execution and names no speaker (lead_20261006_CRI_3). Costa Rica is a State
+      Party to the Rome Statute.'
+    queries: &id001
+    - Costa Rica Israel acuerdo firmado 2026 Laura Fernández embajada Jerusalén
+    - Costa Rica Corte Penal Internacional orden de arresto Netanyahu comunicado noviembre 2024
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B6:
+    status: none-found
+    note: 'No stated refusal to execute the warrants and no hosting of a person under warrant was found: Israel sent its President, not its Prime Minister, to the inauguration of 8 May 2026 (Herzog
+      met President Fernández on 8 May); a Netanyahu visit was asked about by press on 27 April 2026 and did not take place.'
+    queries: *id001
+    checked_at: '2026-10-06'
+  B7:
+    status: none-found
+    note: Costa Rica has imposed no sanctions on ICC officials (none found).
+    queries: *id001
+    checked_at: '2026-10-06'
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row CRI,2008-02-05 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 5 February 2008: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). NV/2008/9 (''Diplomatic Relations between
+      Palestine and Costa Rica as of 5 Feb. 2008'') is catalogued in the UN Digital Library without a file; the Ministry''s annual report 2007-2008 still cannot be archived. Before this session: No row in
+      recognitions.csv. The registry dates the recognition 2008-02-05; the Ministry''s annual report 2007-2008 (rree.go.cr/files/includes/files.php?id=310, read: it lists the State of Palestine among the
+      recognitions, 5 February 2008) cannot be archived (Save Page Now HTTP 403, no Wayback capture): +3 to add once a state document is archived (R21). Completion of 2026-11 (finish run, T-F-L04, 2026-11-09):
+      President Óscar Arias''s General Debate statement of the 63rd session (September 2008; the UN''s file un.org/ga/63/generaldebate/pdf/costarica_en.pdf, read in its Wayback capture of 1 October 2008 by
+      OCR, not archived) has no passage on Palestine, Israel or a recognition: it is not a document for the row (R21). The Ministry''s annual report 2007-2008 stays the only state document that gives the
+      date, and cannot be archived. No row added. Completion of 2026-11 (finish run, T-F-L04, 2026-11-09): The President''s General Debate statement of the 63rd session (September 2008; the UN''s file un.org/ga/63/generaldebate/pdf/costarica_en.pdf,
+      read in its Wayback capture of 1 October 2008 by OCR, not archived) has no passage on Palestine, Israel or a recognition: it is not a document for the row (R21). The Ministry''s annual report 2007-2008
+      stays the only state document that gives the date, and cannot be archived. No row added.'
+    queries:
+    - 'WebSearch 2026-11-10: "Costa Rica reconoció" "Estado de Palestina" 2008 Cancillería comunicado'
+    - 'UN Digital Library record 1325906 (NV/2008/9): no file'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: has-events
+    note: 'One event: the Foreign Minister''s General Debate statement of 26 September 2024 (a call for an immediate and unconditional ceasefire in each of nine conflicts, Gaza among them; +2, flagged,
+      decayed to zero). Not filed: the Foreign Minister''s of the 80th session (24 September 2025: Gaza named as an example of crises, no call), the 81st (no passage on Gaza), the Ministry''s releases
+      (24 April and 10 July 2024; 7 April, 11 August and 30 September 2025: no named speaker, R3), the President''s remarks of 2 July 2025 (lead_20261006_CRI_1) and the Foreign Minister''s interview
+      of 12 July 2026 (lead_20261006_CRI_2).'
+    queries:
+    - Costa Rica cancillería comunicado Gaza cese al fuego Arnoldo André
+    - gadebate.un.org Costa Rica 2024 2025 2026
+    - rree.go.cr comunicado Gaza Israel Palestina cese al fuego Costa Rica Cancillería
+    checked_at: '2026-10-06'
+  B10:
+    status: none-found
+    note: 'No filed statement of unconditional support or denial: the Ministry''s release of 7 October 2023 condemns the attack, extends solidarity to Israel and demands the release of hostages
+      (no named speaker); the President''s mocking reply of 2 July 2025 to a question on a trade agreement with Israel and the Foreign Minister''s interview of 12 July 2026 (''we appeal that the
+      very existence of the State of Israel be recognised'') are press reports, not exact words in an official transcript (lead_20261006_CRI_1, _2).'
+    queries:
+    - presidente Rodrigo Chaves Israel apoyo Gaza conferencia de prensa declaraciones genocidio
+    - Canciller Manuel Tovar se posiciona sobre Gaza
+    checked_at: '2026-10-06'
+  B11:
+    status: none-found
+    note: No sanction of Israeli settlers or ministers by Costa Rica was found (not an EU member).
+    queries:
+    - Costa Rica sanciones colonos israelíes
+    checked_at: '2026-10-06'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: the embassy is in Tel Aviv; on 8 May 2026 President Fernández told Israel''s President she was willing to elevate the representation in Jerusalem
+      to an embassy (Israeli President''s office, via JNS and Delfino; a reverse of the 2006 decision), and the Minister of Foreign Trade announced an office of innovation in Jerusalem for 2026:
+      neither is an indicator and neither is an act.'
+    queries:
+    - Costa Rica Israel acuerdo firmado 2026 Laura Fernández embajada Jerusalén
+    checked_at: '2026-10-06'
+  C1:
+    status: none-found
+    note: No association or trade agreement with Israel was suspended or reviewed; the free trade agreement is a new instrument (C2).
+    queries:
+    - Costa Rica Israel tratado de libre comercio suspender OR revisar
+    checked_at: '2026-10-06'
+  C2:
+    status: has-events
+    note: 'One event: the free trade agreement signed in Jerusalem on 8 December 2025 (-10, standing; the Ministry''s release carries a misprinted year, flagged). The memorandum of understanding
+      of 29 March 2023 pre-dates the window; the ''reaffirmation of the commitment'' of October 2024 is not an instrument.'
+    queries:
+    - Israel Costa Rica free trade agreement signed Jerusalem Barkat Tovar December 2025
+    - Costa Rica Israel acuerdo firmado 2026
+    checked_at: '2026-10-06'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-10-06'
+  C4:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No regulation on labelling or banning goods from Israeli settlements was found. The Government''s own sites were read on 2026-11-09 as far as their interfaces allow: the Presidency (presidencia.go.cr:
+      the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered none; the index is incomplete, since
+      ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina, Hamas and genocidio: none), the Ministry
+      of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned no result or an error). The Ministry of
+      Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary and the Public Prosecutor''s sites did not answer or
+      have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session of 6 October 2026. The free trade agreement with
+      Israel (filed as C2, 8 December 2025) is described in the archived COMEX release and press reports without a territorial clause on settlements; the treaty text was not read.  No web search
+      was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo pass with web search
+      (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search was available describes
+      the first session and is kept). Two searches found no regulation, bill or labelling rule on settlement goods. In the legislative hearings on the free trade agreement (September 2026) the Frente
+      Amplio deputy asked whether Costa Rica can verify that Israeli origin certificates do not cover goods from settlements, and PROCOMER''s general manager answered that the institution does not
+      know whether the State has the technical capacity (Delfino, September 2026, read as a search result, not archived). No decision.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica etiquetado productos asentamientos israelíes Cisjordania prohibir importación diputados proyecto de ley'
+    - 'WebSearch 2026-11-09: Costa Rica Asamblea Legislativa TLC Israel expediente 25.542 votación primer debate comisión noviembre 2026'
+  C5:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No exclusion decision by a public fund, pension fund or the Central Bank over conduct in Gaza or the occupied territories was found. The Government''s own sites were read on 2026-11-09
+      as far as their interfaces allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina''
+      and ''Hamas'' answered none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for
+      Israel, Gaza, Palestina, Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page;
+      its searches returned no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the
+      Judiciary and the Public Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond
+      the session of 6 October 2026.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open
+      to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above
+      that says no web search was available describes the first session and is kept). One search (CCSS, Banco Central, pension funds, Israeli bonds, divestment) found no exclusion or divestment
+      decision by any Costa Rican fund; the divestments in the results are foreign (ABP, AkademikerPension, New York City).'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica fondo de pensiones OR Banco Central OR Caja Costarricense inversión bonos Israel desinversión Gaza ROP'
+  C6:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No public-procurement rule excluding companies over conduct in Gaza or the occupied territories was found. The Government''s own sites were read on 2026-11-09 as far as their interfaces
+      allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and ''Hamas'' answered
+      none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel, Gaza, Palestina,
+      Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its searches returned
+      no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary and the Public
+      Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session of 6 October
+      2026.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later search. Redo
+      pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says no web search
+      was available describes the first session and is kept). One search (SICOP, Ministry of Public Security, Israeli suppliers) found no exclusion rule and no purchase from an Israeli firm (the
+      equipment bought or donated is American); SICOP itself was not read.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica contratación pública empresas israelíes Elbit OR Rafael OR "Israel Aerospace" compra Ministerio de Seguridad Pública OR Fuerza Pública drones OR radares OR
+      software'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow of Costa Rica to the oPt plans (fts_plan_totals.csv). Left to the build.'
+    checked_at: '2026-10-06'
+  D2:
+    status: none-found
+    note: No announcement of a suspension of UNRWA funding was found; Costa Rica has no row in UNRWA's donor tables of 2022, 2023 and 2024 (archived). The Ministry's release of 24 April 2024 calls
+      on the States that suspended their contributions to resume them.
+    queries:
+    - Costa Rica UNRWA contribución OR donación Gaza
+    checked_at: '2026-10-06'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'No row of Costa Rica in UNRWA''s donor tables of 2022, 2023 and 2024 (archived): no D3 event. UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read
+      2026-11-09) has no row for Costa Rica, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).'
+    queries:
+    - UNRWA donor tables 2022, 2023 and 2024 (archived), row Costa Rica
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme or field hospital for Gaza was found.
+    queries:
+    - Costa Rica evacuación médica niños Gaza gobierno
+    checked_at: '2026-10-06'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found.
+    queries:
+    - Costa Rica visa humanitaria Gaza palestinos refugio
+    checked_at: '2026-10-06'
+  E1:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a domestic investigation or prosecution of nationals or companies for conduct in Gaza was found. The Government''s own sites were read on 2026-11-09
+      as far as their interfaces allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina''
+      and ''Hamas'' answered none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for
+      Israel, Gaza, Palestina, Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page;
+      its searches returned no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the
+      Judiciary and the Public Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond
+      the session of 6 October 2026.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open
+      to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above
+      that says no web search was available describes the first session and is kept). One search (Spanish: Fiscalia, universal jurisdiction, nationals fighting for Israel) found no investigation
+      or prosecution in Costa Rica of nationals or companies for conduct in Gaza. Courts and the Fiscalia''s own sites were not read.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica denuncia penal jurisdicción universal Netanyahu OR soldados israelíes Gaza Ministerio Público investigación OR costarricense combatiente Israel'
+  E2:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a ban or restriction of assemblies or symbols in solidarity with Palestine was found. The Government''s own sites were read on 2026-11-09 as far
+      as their interfaces allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina''
+      and ''Hamas'' answered none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for
+      Israel, Gaza, Palestina, Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page;
+      its searches returned no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the
+      Judiciary and the Public Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond
+      the session of 6 October 2026.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open
+      to a later search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above
+      that says no web search was available describes the first session and is kept). Three searches found one reading for the author, not filed: on 8 May 2026 the Fuerza Pública removed and apprehended
+      two University of Costa Rica students who showed a Palestinian flag at the transfer of power in the National Stadium, and on 8 September 2026 the Sala Constitucional (Sala IV) granted the
+      habeas corpus for damages (resolution 2026-034203 as Delfino reports it; Nacion reports an earlier resolution annulled on 4 August 2026), finding that the flag rule was applied only against
+      the Palestinian flag (lead_20261109_CRI_4: the resolution itself was not found on the Judicial Branch''s sites, the Sala IV''s own site and the Nexus database need scripts or answer 404).
+      Earlier: the detention of four people at a vigil at the Israeli embassy on 15 May 2024 (press, 2024) and a conviction of November 2023 for burning an Israeli flag (Semanario Universidad).
+      No filed event: no primary document archived.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica Sala Constitucional OR Fiscalía OR denuncia Gaza genocidio Israel manifestación embajada Israel San José prohibida OR policía'
+    - 'WebSearch 2026-11-09: condenan al Estado detención estudiantes banderas de Palestina traspaso de poderes Costa Rica tribunal sentencia 2026'
+    - 'WebSearch 2026-11-09: Poder Judicial Sala Constitucional resolución 2026-034203 hábeas corpus bandera Palestina traspaso de poderes'
+    - salaconstitucional.poder-judicial.go.cr comunicados (HTTP 404 on 2026-11-09), nexuspj.poder-judicial.go.cr (script-loaded), Wayback CDX regex bandera|palestin|traspaso (no match)
+  E3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: 'Experimental, unscored. No evidence of a universal-jurisdiction complaint over Gaza accepted for investigation was found. The Government''s own sites were read on 2026-11-09 as far as
+      their interfaces allow: the Presidency (presidencia.go.cr: the news page, and the site search, whose control query ''Laura'' answered 87 results while ''Israel'', ''Gaza'', ''Palestina'' and
+      ''Hamas'' answered none; the index is incomplete, since ''Canciller'' also answered none), the Procuraduría General de la República (pgr.go.cr, WordPress search of posts and pages for Israel,
+      Gaza, Palestina, Hamas and genocidio: none), the Ministry of Public Security (seguridadpublica.go.cr, site search: no result) and the Ministry of Foreign Trade (comex.go.cr: home page; its
+      searches returned no result or an error). The Ministry of Foreign Affairs and Worship (rree.go.cr) answered 403 to every request, and the Customs service, the Legislative Assembly, the Judiciary
+      and the Public Prosecutor''s sites did not answer or have no search, so the releases of the Ministry, the customs rules, the judicial records and the legislature were not read beyond the session
+      of 6 October 2026.  No web search was available (the run''s shared allowance was used up before the session began): press and NGO sources were not searched, and the entry is open to a later
+      search. Redo pass with web search (T-F-L04-R, 2026-11-09; standard mode, English and Spanish; the summaries were used to find pages, nothing was filed from them; the sentence above that says
+      no web search was available describes the first session and is kept). The same search found no complaint under universal jurisdiction accepted for investigation in Costa Rica.'
+    queries:
+    - 'presidencia.go.cr site search: Laura (control, 87), Israel, Gaza, Palestina, Hamas (none), 2026-11-09'
+    - 'pgr.go.cr WordPress search, posts and pages: Israel, Gaza, Palestina, Hamas, genocidio (none), 2026-11-09'
+    - 'seguridadpublica.go.cr and comex.go.cr site search: Israel (no result), 2026-11-09'
+    - 'WebSearch 2026-11-09: Costa Rica denuncia penal jurisdicción universal Netanyahu OR soldados israelíes Gaza Ministerio Público investigación OR costarricense combatiente Israel'

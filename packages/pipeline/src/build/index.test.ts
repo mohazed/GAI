@@ -30,6 +30,7 @@ import {
   type ApiCountriesFile,
   type ApiCountryEventsFile,
   type ApiCountrySeriesFile,
+  type ApiDumpEventsFile,
   type ApiDumpFile,
   type ApiManifestFile,
   type ApiRepliesFile,
@@ -76,6 +77,7 @@ function input(dataset: Dataset, over: Partial<BuildInput> = {}): BuildInput {
     older: [],
     changelog: CHANGELOG,
     reviewers: [],
+    proposals: [],
     snapshots: [],
     date: DATE,
     siteUrl: SITE,
@@ -134,6 +136,7 @@ describe('buildData on the fixtures', () => {
       'dumps/scores-daily-2025.csv',
       'dumps/scores-daily-2026.csv',
       `dumps/gai-${DATE}.json`,
+      `dumps/gai-${DATE}-sources.json`,
       'build-notes.json',
       'manifest.json',
     ])
@@ -142,6 +145,12 @@ describe('buildData on the fixtures', () => {
         expected.add(`changes/${m}${suffix}`)
       }
     }
+    // The JSON dump's events: one file for each year that has events, as the main file lists.
+    const parts = read<ApiDumpFile>(out, `dumps/gai-${DATE}.json`).parts
+    expect(parts[0]).toMatchObject({ record: 'sources', year: null })
+    expect(parts.slice(1).every((x) => x.record === 'events' && x.year !== null)).toBe(true)
+    expect(parts.length).toBeGreaterThan(1)
+    for (const x of parts) expected.add(x.path)
     const index = read<ApiScoresIndex>(out, 'scores/index.json')
     for (const d of index.dates) expected.add(`scores/${d}.json`)
     expect(index.count).toBe(DAYS)
@@ -464,7 +473,11 @@ describe('buildData on the real structured tables', () => {
     const byId = new Map(deu.event_list.map((e) => [e.id, e]))
     const csv = text(out, 'dumps/events.csv')
     const dump = read<ApiDumpFile>(out, `dumps/gai-${DATE}.json`)
-    const dumpIds = new Set(dump.events.map((e) => e.id))
+    const dumpIds = new Set(
+      dump.parts
+        .filter((x) => x.record === 'events')
+        .flatMap((x) => read<ApiDumpEventsFile>(out, x.path).events.map((e) => e.id)),
+    )
     const eventsFile = read<ApiCountryEventsFile>(out, 'countries/DEU/events.json')
     const eventsIds = new Set(eventsFile.events.map((e) => e.id))
     for (const g of deuGenerated) {

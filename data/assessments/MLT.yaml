@@ -1,0 +1,267 @@
+# Coverage record for Malta (docs/03 §6). P-21 light protocol, session T-P21-28, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry for Foreign Affairs and Tourism (foreign.gov.mt), the Office of the Prime Minister (primeminister.gov.mt) and the Department of Information (gov.mt) answer HTTP 403 to every script and to Save Page Now, so their texts were read through Wayback captures (the Review of Foreign Affairs of December 2025, the release PR251629 of 23 September 2025) and otherwise through the press (MaltaToday, Lovin Malta, Newsbook headlines and Italpress in search results; MaltaToday and Lovin Malta pages read), the General Debate statements of the 78th to 81st sessions (the 80th and 81st archived; the 81st, a scanned printout of the Prime Minister's release, by OCR), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not searched in Maltese or Italian. Malta is an EU member: the three Council listings (B11) and seven joint statements (B9) are filed as for the other members (R8, B-444, B-446).
+# Eleven B9 events, three B11 events, one C1 event, two D3 events, one D4 event, one A8 event. Leads: 1 (lead_20261104_MLT_1).
+# Completion of 2026-11 (finish run, T-F-L14, 2026-11-10): A3, A5 to A7, C4 to C6 and E1 to E3 searched, all none-found (7 web searches; docs/10 B-2028). The D4 event moved from 22 September to 29 August 2025 (the Prime Minister's release PR251482, found through the Wayback CDX; lead MLT_1 keeps the press dates). A8 is has-events (Kathrin, 7 October 2024).
+country: MLT
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier MLT
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the run of 2026-11-04 (docs/10 B-718) covered 12 reporters and this country was not among them; `pnpm fetch:comtrade` reaches
+      about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Maltese company as a supplier of parts or maintenance for the F-35 programme: A/HRC/59/23 (archived text) has no match for Malta and the F-35 supplier search returned none.
+      Not searched: the programme''s own supplier lists.'
+    queries:
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Malta (no match)
+    - 'WebSearch 2026-11-10: F-35 supply chain supplier company Croatia OR Malta OR Albania OR "North Macedonia" OR "Bosnia and Herzegovina" OR Andorra parts maintenance Lockheed Martin'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): no order from Israel by this buyer in the release of 9 March 2026. Left to the build.'
+    queries:
+    - sipri_orders.csv, buyer MLT
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of the kinds A5 counts was found: the results concern the Government''s refusals of Israel-bound arms shipments (A8) and NGOs'' calls to block shipments, not cooperation.
+      A search result titled ''The mysterious Hercules, the flotilla strike and Malta''s fury'' (Israel Hayom, 3 May 2025; the page refused) was not read. Not searched: the Armed Forces of Malta''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta arms Israel overflight OR transit OR port OR export licences OR military cooperation Government of Malta 2025 2026 Gaza'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending a class of arms export licences to Israel beyond the refusals filed under A8 was found. Licences under the Military Equipment (Export Control) Regulations are assessed case
+      by case, and a transit licence is required for military goods (Commerce Department page, a search result); the Foreign Ministry spokesperson said in October 2024 that Malta ''upholds a stringent policy''
+      on the export and transshipment of weapons (the source of the A8 event). NGOs'' letter of 5 October 2026 urges trade restrictions and the article reports no Government reply. Not searched: the Commerce
+      Department''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta arms Israel overflight OR transit OR port OR export licences OR military cooperation Government of Malta 2025 2026 Gaza'
+    - maltatoday.com.mt/news/national/144831 (22 NGOs hand letters to MPs urging trade restrictions on Israel, 5 October 2026; read 2026-11-10)
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree establishing a full arms embargo on Israel was found; the NGOs'' letter of 5 October 2026 asks for trade restrictions and the article reports no Government reply (read). Not searched:
+      Legal Notices of the Government Gazette.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta arms Israel overflight OR transit OR port OR export licences OR military cooperation Government of Malta 2025 2026 Gaza'
+    - maltatoday.com.mt/news/national/144831 (22 NGOs hand letters to MPs urging trade restrictions on Israel, 5 October 2026; read 2026-11-10)
+    checked_at: '2026-11-10'
+  A8:
+    status: has-events
+    note: 'One event, `corroborated`: on 7 October 2024 Transport Malta and a government spokesman said that all service requests of the vessel Kathrin, which was bound for Israel with explosives,
+      were refused and that it would not be allowed to bunker, citing a longstanding policy of refusing the transit of weapons destined for conflict zones (MaltaToday and Lovin Malta, archived).
+      The later case of the Eendracht (July 2025) is known only from a search summary of an Italpress item and was not read, so it is not filed; Maltese civil society calls to de-flag Israeli-linked
+      ships (MaltaToday, titles in search results) are not Government acts.'
+    queries:
+    - Malta arms Israel ship port refused transit (web search)
+    - maltatoday.com.mt/news/world/131598 and lovinmalta.com (read, archived)
+    checked_at: '2026-11-04'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. All 12 are recorded, so no absence is scored; Malta is not among the four Member States in arrears in the Secretary-General''s
+      letter of 3 September 2025 (A/80/362, src_20250903_undocs_a-80-362-article19, archived).'
+    queries:
+    - unga_votes.csv, voter MLT
+    - A/80/362 (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: none-found
+    note: 'Malta sat on the Security Council in 2023 and 2024 (countries.yaml memberships.unsc); B2 counts vetoes (unsc_vetoes.csv) and Malta cast none. Left to the build. The Prime Minister''s
+      General Debate address of 27 September 2024 (the 79th session''s mt_en.pdf, read live, not archived) says Malta worked for Resolutions 2712 and 2728: the resolutions are the Council''s acts,
+      not a veto, and no indicator scores a draft.'
+    queries:
+    - unsc_vetoes.csv, MLT
+    - gadebate.un.org 79th session (Malta, read live)
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Malta is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for
+      Malta).'
+    queries:
+    - icj-cij.org case 192 declarations of intervention (archived 27 September 2026, searched for Malta)
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Malta is a state party to the Rome Statute (the Assembly of States Parties' list, src_20261009_icc-asp_states-parties, archived, line 173). No statement by the Prime Minister or the
+      Foreign Minister committing Malta to execute the warrants was found; a search summary reports a Foreign Ministry spokesperson saying Malta respects the Court's mandate (not read, no named
+      speaker).
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched)'
+    - Malta ICC arrest warrant Netanyahu (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found.
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Malta were found.
+    queries:
+    - Malta sanctions International Criminal Court (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: the row of 22 September 2025 (src_20250922_gov-mt_recognition-palestine), which gives the generated event evt_2025_09_22_MLT_B8_recognition. Left to
+      the build.'
+    queries:
+    - recognitions.csv, row MLT
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'Eleven events: seven joint statements (19 February 2024 +2, 21 July 2025 +5, 30 July 2025 +2, 10 August 2025 +5, 12 August 2025 +5, 21 August 2025 +5 west-bank, 27 September 2025 +2),
+      the Prime Minister''s announcement of the recognition (22 September 2025, +5), his General Debate address (26 September 2025, +5, flagged), the Minister''s signed article (3 December 2025,
+      +5, flagged) and the Prime Minister''s General Debate address (25 September 2026, +2, with an unscored passage on the West Bank). The category cap of +10 is reached in the score. Not filed:
+      the Prime Minister''s General Debate address of 27 September 2024 (it recounts Malta''s work on Council resolutions 2712 and 2728 without a call of its own); the Prime Minister''s remarks
+      at a party meeting on 25 February 2024 (''how can we remain silent in the face of this massacre'', MaltaToday, read, not an official text); the Minister''s remarks after the Council of 20
+      May 2025 (''Starvation cannot be used as a weapon of war'', MaltaToday, read, not an official text); the Prime Minister''s posts on X (not archivable). Verification of 2026-11 (T-VERIFY-2,
+      docs/10 B-849): two more joint statements filed, both archived for other signatories and naming Malta (the Prime Ministers'' statement of 16 May 2025, +5, evt_2025_05_16_MLT_B9; the
+      statement of 5 January 2026 on UNRWA and NGOs, +2, evt_2026_01_05_MLT_B9): thirteen events; the cap is unchanged.'
+    queries:
+    - foreign.gov.mt and gov.mt (through Wayback captures and web search)
+    - maltatoday.com.mt and newsbook.com.mt (web search)
+    - gadebate.un.org 78th to 81st sessions (Malta)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Foreign Minister was found; the statements read condemn the attack of 7 October
+      2023, call for the release of hostages and criticise the conduct of the war.
+    queries:
+    - Malta Israel support statement (web search)
+    checked_at: '2026-11-04'
+  B11:
+    status: has-events
+    note: 'Three events: the EU Council''s settler listings of 19 April 2024, 15 July 2024 and 28 May 2026, adopted by unanimity (R8, B-446). No national sanctions by Malta were found.'
+    queries:
+    - archive/text of the Council decisions (src_20240419_consilium_settlers-sanctions, src_20240715_consilium_settlers-tzav9-sanctions, src_20260528_eur-lex_reg-impl-2026-1177)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found. Malta's Government was asked by the UN Special Rapporteur to stop the Kathrin and refused its service requests (A8);
+      no ambassador was recalled.
+    queries:
+    - Malta Israel ambassador recalled (web search)
+    checked_at: '2026-11-04'
+  C1:
+    status: has-events
+    note: 'One event (C1 review, +4): the Minister''s signed article says Malta supported the Netherlands'' call for the EU to review Article 2 of the Association Agreement; the Council decided
+      on the review on 20 May 2025. No position on the later proposals to suspend trade concessions or the agreement was found as an official text.'
+    queries:
+    - EU Association Agreement review Malta Borg (web searches)
+    - foreign.gov.mt PARISIO II-2025 (archived)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found: search results list agreements of 1994 (technical cooperation), 2005 (health), 2018 (an education memorandum with Yad
+      Vashem), 2019 (a health plan) and a water-sector memorandum of an unknown date on the Ministry''s treaty pages (not read).'
+    queries:
+    - Malta Israel agreement signed memorandum 2024 2025 (web search)
+    checked_at: '2026-11-04'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods beyond EU law was found; the search returned no Maltese measure (one item of 2012, a Green party request on labelling). The NGOs'' letter of 5 October
+      2026 urges trade restrictions on Israel and the article reports no Government reply. Not searched: the Malta Customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta settlement goods ban OR labelling Israel Foreign Minister Borg OR Abela West Bank settlements trade 2025 2026'
+    - maltatoday.com.mt/news/national/144831 (22 NGOs hand letters to MPs urging trade restrictions on Israel, 5 October 2026; read 2026-11-10)
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by a Maltese public fund, the Central Bank of Malta or the Malta Development Bank over conduct in Gaza or the occupied territories was found; no web result concerns one. Not
+      searched: the institutions'' own pages.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta pension fund OR Central Bank of Malta OR Malta Development Bank OR public procurement exclude OR divest Israeli companies Gaza settlements'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over conduct in Gaza or the occupied territories was found. Not searched: the Department of Contracts'' notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta pension fund OR Central Bank of Malta OR Malta Development Bank OR public procurement exclude OR divest Israeli companies Gaza settlements'
+    checked_at: '2026-11-10'
+  D1:
+    status: has-events
+    note: 'Generated from FTS: Maltese Government flows to the Gaza response appear in fts_plan_totals.csv. Left to the build. The Prime Minister confirmed on 21 September 2025 that 250 tonnes
+      of flour from Malta had arrived in Gaza (release PR251629).'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor MLT
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) show Malta contributing in each year; no suspension was found.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Malta
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events (D3 increased, from 31 December 2023, then from 31 December 2024): UNRWA's table for 2023
+      gives USD 159,818 for Malta (rank 83) and the 2024 table USD 204,484, against USD 80,061 in 2022.
+      A mechanical reading of small amounts, flagged as for Thailand (docs/10 B-711). UNRWA's table for
+      2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) gives USD 57,803
+      pledged, not above USD 80,061 in 2022: no 2025 event; evt_2024_12_31_MLT_D3 ends on 2025-12-31, from
+      which the 2025 table decides the tier (docs/10 B-876).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Malta
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: has-events
+    note: 'One event (D4, one per programme): the Government''s programme of medical care in Malta for injured children from Gaza, dated ''no later than'' 22 September 2025 from the Prime Minister''s
+      release and address; the press dates the first arrivals to 20 February 2024 and 10 April 2025 (lead_20261104_MLT_1).'
+    queries:
+    - Malta Gaza children medical treatment Mater Dei (web search)
+    - maltatoday.com.mt pages of 19 February 2024, 25 February 2024 and 10 April 2025 (read)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee pathway for Gazans was found; University of Malta scholarships to Palestinian students are a continuing programme named in the Minister's article, not a pathway opened
+      for Gazans.
+    queries:
+    - Gaza refugees visa Malta (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Maltese nationals or companies for conduct in Gaza was found; the universal-jurisdiction search returned filings in other states.
+      Not searched: the Attorney General''s site.'
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    - 'WebSearch 2026-11-10: Malta Gaza Israeli embassy protest police OR court OR complaint universal jurisdiction OR Maltese soldiers IDF investigation 2025 2026'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols was found; the results describe marches and rallies in Valletta held without a ban reported (MaltaToday: titles
+      read). A court case in which three protesters were fined for a ''Stop Israeli Apartheid'' banner at a football match (MaltaToday, a search result with no date, not read) concerns disobeying police orders,
+      not a ban. Not searched: the Police''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Malta Gaza Israeli embassy protest police OR court OR complaint universal jurisdiction OR Maltese soldiers IDF investigation 2025 2026'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: Experimental, unscored (D-12). No complaint under universal jurisdiction accepted for investigation in Malta was found (the two searches returned none).
+    queries:
+    - 'WebSearch 2026-11-10: universal jurisdiction complaint Gaza war crimes filed Croatia OR Bosnia OR Albania OR "North Macedonia" OR Andorra OR Malta prosecutor Israeli soldier'
+    - 'WebSearch 2026-11-10: Malta Gaza Israeli embassy protest police OR court OR complaint universal jurisdiction OR Maltese soldiers IDF investigation 2025 2026'
+    checked_at: '2026-11-10'

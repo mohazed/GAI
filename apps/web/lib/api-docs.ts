@@ -165,8 +165,8 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
     {
       path: 'methodology/index.json',
       holds: t(
-        'The methodology versions, current and superseded, the changelog, and the named reviewers.',
-        'Les versions de la méthodologie, en vigueur et remplacées, le journal des modifications et les relecteurs nommés.',
+        'The methodology versions, current and superseded, the changelog, the named reviewers and the changes open for comment.',
+        'Les versions de la méthodologie, en vigueur et remplacées, le journal des modifications, les relecteurs nommés et les modifications ouvertes aux commentaires.',
       ),
       example: has('methodology/index.json'),
       kind: 'json',
@@ -292,8 +292,8 @@ export function endpoints(api: ApiReader, mode: Mode): Endpoint[] {
     {
       path: 'dumps/gai-{YYYY-MM-DD}.json',
       holds: t(
-        'The whole published dataset at the build date in one file: countries, events, sources, assessments, corrections, replies and open leads.',
-        "L'ensemble des données publiées à la date de génération en un fichier : pays, événements, sources, évaluations, corrections, réponses et pistes ouvertes.",
+        'The published dataset at the build date in JSON. The main file holds the countries, assessments, corrections, replies and open leads, and lists in `parts` the files that hold the rest: dumps/gai-{YYYY-MM-DD}-sources.json (every source) and dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json (the events dated in each year).',
+        'Les données publiées à la date de génération en JSON. Le fichier principal contient les pays, les évaluations, les corrections, les réponses et les pistes ouvertes, et liste dans `parts` les fichiers qui contiennent le reste : dumps/gai-{YYYY-MM-DD}-sources.json (toutes les sources) et dumps/gai-{YYYY-MM-DD}-events-{YYYY}.json (les événements datés de chaque année).',
       ),
       example: has(`dumps/gai-${date}.json`),
       kind: 'json',

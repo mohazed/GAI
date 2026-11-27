@@ -10,8 +10,9 @@ const shown = (name: string, lang: string) =>
 
 /**
  * Smoke tests of Home and Ranking (P-07), in English and French, with JavaScript on and off, in
- * the mode of the project: `score` (kit build, scores shown) and `scorecard` (production build,
- * D-16). Values come from the API the build published, so the tests hold for any dataset.
+ * the mode of the project: `score` (kit build, scores shown) and `production` (production build,
+ * in the site's mode, D-16). Values come from the API the build published, so the tests hold
+ * for any dataset.
  */
 
 type Lang = 'en' | 'fr'
@@ -57,7 +58,7 @@ interface Entry {
   coverage?: { ratio: number }
 }
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 async function countries(page: Page): Promise<Entry[]> {
   const res = await page.request.get('/api/v1/countries.json')

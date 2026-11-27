@@ -146,7 +146,7 @@ indicators:
       src_20250921_gov-uk_recognition-palestine). The row exists; nothing to add.
   B9:
     status: has-events
-    checked_at: 2026-09-28
+    checked_at: 2026-11-09
     note: >-
       Filed: the Foreign Secretary's statements of 2 September 2024, 20 May 2025, 23 September 2025
       (Security Council), 18 November 2025 and 8 September 2026, and the Prime Minister's statement of
@@ -162,11 +162,18 @@ indicators:
       Permanent Representative's statements in the Security Council (not a head of government or
       foreign minister); earlier calls of the Foreign Secretary in July 2024 (one per period was filed,
       the cap being +10).
+      Finish run of 9 November 2026: the same GOV.UK search (twenty queries, from 27 September) was
+      repeated to 9 November; nothing new for Gaza (the items of 5 November are statements to the OSCE
+      on Ukraine) and the Occupied Palestinian Territory (Trade with Israeli Settlements) Bill of
+      2026 has had no stage since 25 June 2026 (Parliament's Bills API).
     queries:
       - gov.uk Prime Minister statement Gaza (search API, from 2023-10-07)
       - gov.uk Foreign Secretary Yvette Cooper Gaza 2025 2026
       - gov.uk Foreign Secretary Cameron sustainable ceasefire Gaza
       - gov.uk PM speech at UNGA 22 September 2026
+      - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: GOV.UK search API (q=gaza, palestinian, settlers, occupied palestinian; FCDO) and its content API; filed evt_2026_10_19_GBR_B9 (West Bank, tagged unscored); read, not filed: Foreign Secretary's statement of 8 October 2026 on the Jerusalem mission (no call or named violation of the kind), joint statement of 13 October 2026 on the postponement of Palestinian elections and joint press release of the R4 meeting in Istanbul of 24 October 2026 (neither mentions Gaza), UK statements at the Security Council of 28 September and 15 October 2026 (Permanent Representative, not a B9 speaker)"
+      - "finish run 2026-11-09: GOV.UK search API (gaza, palestinian, israel, west bank, settlers, unrwa, hamas, ceasefire, middle east, occupied palestinian territories, arms export israel, international criminal court, netanyahu, hostages, medical evacuation, rafah, board of peace, lebanon) from 2026-09-27 to 2026-11-09; Parliament Bills API (settlement, israel, occupied)"
+
   B10:
     status: none-found
     checked_at: 2026-09-28
@@ -240,8 +247,16 @@ indicators:
   D2: {status: has-events, checked_at: 2026-09-28}
   D3:
     status: has-events
-    checked_at: 2026-09-30
-    note: "evt_2024_07_19_GBR_D3 (restored, to 31 December 2024), evt_2023_12_31_GBR_D3 and evt_2024_12_31_GBR_D3 (increased; UNRWA's tables: USD 21,158,281 in 2022, 36,872,747 in 2023, 59,117,143 in 2024; checked in P-16, docs/10 B-445)."
+    checked_at: '2026-11-09'
+    note: >-
+      evt_2024_07_19_GBR_D3 (restored, to 31 December 2024), evt_2023_12_31_GBR_D3 and evt_2024_12_31_GBR_D3
+      (increased; UNRWA's tables: USD 21,158,281 in 2022, 36,872,747 in 2023, 59,117,143 in 2024; checked
+      in P-16, docs/10 B-445). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December
+      2025, read 2026-11-09) gives USD 47,334,000 pledged against USD 21,158,281 in 2022: evt_2025_12_31_GBR_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_GBR_D3 ends on 2025-12-31 (docs/10
+      B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4: {status: has-events, checked_at: 2026-09-28}
   D5:
     status: none-found

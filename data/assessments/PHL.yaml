@@ -1,0 +1,351 @@
+# Coverage record for the Philippines (docs/03 §6). P-21 light protocol, session T-P21-22, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Department of Foreign Affairs' UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph), the General Debate statements of the 78th to 81st sessions (gadebate.un.org; the 80th and 81st files have no usable Wayback replay), UNISPAL's file of the Philippines' statement at the two-state conference, the Permanent Mission (un.int/philippines), news reports (GMA News, Philstar, Inquirer, Daily Tribune, Khaleej Times, PTV News and GlobalSecurity.org's mirrors of the Department's and the Philippine News Agency's releases); dfa.gov.ph, pco.gov.ph and op-proper.gov.ph answer a Cloudflare challenge to scripts and their Wayback captures are the challenge page; pna.gov.ph is script-rendered; the generated tables, UNRWA donor rankings, the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English. Not searched in Filipino. Not searched individually: B7, B11. Time: the whole session took about 35 minutes by the machine's clock, inside the 90-minute budget.
+# Completion of 2026-11 (finish run, T-F-L11, 2026-11-10): A3, A5 to A8, B7, B11, C4 to C6 and E1 to E3 searched, all none-found, with the DFA and Mission pages, press reports of the Manila protests and 8 web searches in English; B8 stays unchecked (no state document of the 1989 recognition).
+#   No new event. The Defense Secretary's halt on new Israeli military contracts (16 September 2025, press only) and the Joint Committee's summary of discussions (29 July 2025, press only) are recorded in the notes (A7, C2), not filed (docs/10 B-2007). Leads PHL_1 to PHL_3 re-checked and kept.
+country: PHL
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier PHL
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached
+      this one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Philippine company as a supplier of parts or maintenance for the F-35 programme. The Philippines is not a partner or a customer of the programme, and the Special
+      Rapporteur''s report on companies (archive/text/src_20250616_un-unispal_a-hrc-59-23.txt) has no match for the Philippines or Philippine (searched 2026-11-10). Pages read on 2026-11-10: the
+      DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026
+      statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages''
+      bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph
+      answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a
+      script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Philippines and Philippine (no match)
+    checked_at: '2026-11-10'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): the Philippines has new orders from Israel in the release''s data years 2024 (TIV 5) and 2025 (TIV 24), which the build
+      scores as A4; earlier years are older orders. Left to the build; the register''s entries are not hand-authored here (docs/10 B-536 (7) for the data-year rule).'
+    queries:
+    - sipri_orders.csv, buyer PHL
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No joint exercise, intelligence sharing, basing agreement or arms transit with Israel in connection with the Gaza campaign was found. The relationship is one of Philippine purchases
+      of Israeli equipment (A4, generated) and talk of closer cooperation: a defence seminar in July 2026 (Australia/Israel Review, a search result, not read) and reports that Israel seeks a defence
+      cooperation agreement (The Defense Post, undated search result, not read); no signed Philippines-Israel defence agreement of 2024 to 2026 appeared. Purchases are not A5 instances. Pages
+      read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines:
+      no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN
+      pages'' bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture).
+      dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP
+      404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - 'WebSearch 2026-11-10: Philippines Israeli arms shipment port OR airspace OR "transit" Manila OR Subic OR Davao Gaza dockworkers OR customs Israeli weapons'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; the Philippines is not an arms exporter to Israel (no row in the SIPRI deliveries table, A1 is none-found).
+      Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site
+      (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests
+      (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session
+      file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered
+      (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree restricting both exports to and imports from Israel was found. Reports (search results; the pages could not be read) say the Secretary of National Defense, Gilberto
+      Teodoro, told the House on 16 September 2025 that the Department would make no new military contracts with Israeli suppliers while the Army remained tied to one existing supplier (ABS-CBN,
+      headline read; Manila Bulletin, bot check), that a halt on new contracts was tied to a dispute over Israel''s recognition of the Philippines'' sovereignty in the South China Sea (Calcalist,
+      as relayed by Ynet and The New Arab, search results) and that party-list members filed a resolution to stop purchases (search result). A halt on new procurement is not a full two-way embargo:
+      trade is not restricted and free trade talks with Israel were opened in 2025 (DTI, search results). Recorded as context for the A4 generated indicator and for the author (docs/10 B-2007).
+      Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site
+      (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests
+      (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session
+      file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered
+      (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - 'WebSearch 2026-11-10: Philippines Israel trade OR "settlement" OR boycott OR "free trade" agreement Department of Trade and Industry Israel 2025 2026'
+    - 'WebSearch 2026-11-10: Philippines complaint OR petition Gaza genocide Israel Philippine court OR "Department of Justice" OR "Commission on Human Rights" OR Congress resolution Israel arms
+      ban'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of transit, port access or airspace to an arms shipment bound for Israel was found; the search returned only a seizure of Israeli rifles on a ship at Mariveles in 2009 (before
+      the window) and no dockworker or customs action on Israeli cargo in 2023 to 2026. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements
+      to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block,
+      not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of
+      the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential
+      Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israeli arms shipment port OR airspace OR "transit" Manila OR Subic OR Davao Gaza dockworkers OR customs Israeli weapons'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: abstained on A/RES/ES-10/21 (27 October 2023) and yes on the other 11 qualifying votes (the Philippines voted for the Assembly''s resolution of 12 December
+      2023, Philstar and Inquirer, search results). Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter PHL
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: The Philippines is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for The Philippines; docs/06
+      §8). The advisory proceedings (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for The Philippines)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found in the sources read.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: The Philippines is not on the Assembly of States Parties' list (archived, searched for Philippines); no Government statement on the warrants of 21 November 2024 for Netanyahu and Gallant
+      was found. Statements of March 2025 and May 2026 on the Court (search results, not read) concern its warrants against a former President of the Philippines, not Gaza.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Philippines)'
+    - Philippines ICC arrest warrant Netanyahu Marcos DFA (web search)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (not a state party).
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanction on ICC officials was found; the Philippines is not a state party to the Rome Statute (it withdrew with effect from 17 March 2019; the Assembly of States Parties'' list,
+      archived, as for B5) and its statements on the Court concern the case of a former President, not Gaza. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph:
+      statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare
+      block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement
+      of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential
+      Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  B8:
+    status: has-events
+    checked_at: '2026-11-10'
+    note: 'Generated from recognitions.csv. T-G-B8, 2026-11-10 (docs/10 B-2115): No document of the state itself dating the recognition was found (searches below). Row PHL,1989-09-04 added citing A/78/846-S/2024/283
+      only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists the state on 4 September 1989: the default of CHECKUP §2b (B-860 option (b)) adopted in the unattended run of 2026-11-10,
+      flagged under R21 as a UN record of another state''s act, not the state''s own document. The author may remove the row (the entry then returns to unchecked). Before this session: Generated from recognitions.csv,
+      which has no row for the Philippines. The registry gives 4 September 1989 (A/78/846 annex) and records no official document for it (P-14); the Department''s Undersecretary said on 18 November 2025 that
+      the Philippines'' support for the two-state solution ''has never wavered'' (GMA News, read) and the Philippines voted yes on A/DEC/80/506 (a vote on the New York Declaration, not a recognition act).
+      No row (R21): with the pre-existing tier the score would be +3 higher. Re-checked 2026-11-10 (T-F-L11): the date 4 September 1989 rests on Wikipedia-derived pages in the search results; no state document
+      (a Department of Foreign Affairs release or note of 1989) was found, so no row is added (R21).'
+    queries:
+    - recognitions.csv, row PHL (none)
+    - 'WebSearch 2026-11-10: Philippines recognition State of Palestine 1989 Foreign Affairs Secretary Manglapus OR "Department of Foreign Affairs" recognized Palestine 4 September 1989 document'
+    - 'WebSearch 2026-11-10: Department of Foreign Affairs Philippines recognized State of Palestine 1989 statement; DFA statement welcomes recognition "1989"'
+    - 'UNISPAL 2026-11-10: philipines_nyc_en.pdf (no dated recognition)'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+  B9:
+    status: has-events
+    note: 'One B9 event: Secretary of Foreign Affairs Ma. Theresa P. Lazaro at the 80th General Debate (27 September 2025; evt_2025_09_27_PHL_B9, +2, call tier, flagged). Not filed: Secretary
+      Manalo at the 78th (22 September 2023: no Gaza passage found in the text) and 79th (28 September 2024: ''the suffering of people in Gaza, Ukraine, Yemen, Sudan, Myanmar, and Congo'' with
+      no call); the Permanent Representative''s statement at the two-state conference (28-30 July 2025, UNISPAL, read: ''we support a complete and permanent ceasefire in Gaza'', a Permanent Representative
+      is not a B9 speaker, R3); the Department''s statements of 21 March, 23 May (search results, not read) and 25 August 2025 (ministry statements with no named speaker, R3: lead_20261104_PHL_3);
+      the Department''s undersecretary''s remarks of 18 November 2025 (not a B9 speaker). Leads: Lazaro''s 81st statement of 26 September 2026 (''immediate and sustained ceasefire in Gaza'', read
+      in the live file, not archivable: lead_20261104_PHL_1), and President Marcos at the ASEAN-GCC Summit of 27 May 2025 (''gravely concerned over Israel''s ongoing military operations across
+      the Gaza Strip'', no official copy archivable: lead_20261104_PHL_2). The delegation joined the walkout during the Israeli Prime Minister''s address on 24 September 2026 (DFA spokesperson,
+      GMA News, read): no indicator measures it.'
+    queries:
+    - 'gadebate.un.org Philippines 78th to 81st sessions (ph_en.pdf: live files read; the Wayback Machine holds the 79th only)'
+    - sites.google.com/dfa.gov.ph/ungarchiveph (read)
+    - Marcos Gaza ceasefire statements (web searches; pco.gov.ph and dfa.gov.ph answer a Cloudflare challenge)
+    - Lazaro UNGA 81 Gaza (web search)
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the President or the Secretary of Foreign Affairs was found; the statements read call for restraint, a ceasefire
+      and humanitarian access, and the Department 'strongly calls on Israel to heed the ceasefire proposal' (25 August 2025).
+    queries:
+    - Marcos Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanction, entry ban or asset freeze on Israeli ministers or settlers by the Philippines was found; the Department''s statements call on Israel to heed the ceasefire proposal (25
+      August 2025, lead_20261104_PHL_3) and announce no measure. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session,
+      no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN,
+      Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit
+      (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office
+      show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel trade OR "settlement" OR boycott OR "free trade" agreement Department of Trade and Industry Israel 2025 2026'
+    - 'WebSearch 2026-11-10: Philippines GSIS OR SSS OR Maharlika OR "Bangko Sentral" Israel divest OR exclusion OR sanctions OR "Israeli ministers" Philippines'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  B12:
+    status: none-found
+    note: No recall, downgrade or severance of relations with Israel was found; the Philippines' joining of the walkout during the Israeli Prime Minister's address (24 September 2026) is a delegation's
+      act at the Assembly, not a change in relations (the Palace Press Officer said it expressed solidarity for peace, Daily Tribune, read; no change in diplomatic relations was found).
+    queries:
+    - Philippines walkout Netanyahu UN speech September 2026 (web search; GMA News, Daily Tribune, Khaleej Times read)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No suspension or review of any trade or investment agreement with Israel was found.
+    queries:
+    - Philippines Israel agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found in the sources read: the search results give an environmental-protection memorandum of June 2023 and trade and investment
+      instruments of 2018 and 2022, all before the window (not read in full). Re-checked 2026-11-10 (T-F-L11): search results (not readable in primary form: the PNA pages are script-rendered and
+      dti.gov.ph answers HTTP 403) report that the first meeting of the Joint Committee, set up by the memorandum of June 2022, was held on 1 July 2025 and that the Secretary of Trade and Industry
+      and Israel''s Minister of Economy signed a ''summary of discussions'' in Makati on 29 July 2025 while exploring a free trade agreement. A signed record of a meeting under a pre-war memorandum
+      is an implementing step of a pre-war instrument, which R18 excludes, and its text was not found: not filed, no lead opened beyond this note (docs/10 B-2007).'
+    queries:
+    - Philippines Israel agreement signed 2025 OR 2026 (web search)
+    - 'WebSearch 2026-11-10: Philippines Israel Joint Economic Committee free trade agreement terms of reference OR memorandum OR "joint declaration" signed (domains: dti.gov.ph, pna.gov.ph, pco.gov.ph,
+      dfa.gov.ph, gov.il)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No Philippine ban on settlement goods and no labelling rule was found; the trade items found concern free trade talks (the first Joint Economic Committee on 1 July 2025; trade in goods
+      of about USD 400 million in 2024, search results) and none mentions settlement origin. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements
+      to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block,
+      not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of
+      the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential
+      Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel trade OR "settlement" OR boycott OR "free trade" agreement Department of Trade and Industry Israel 2025 2026'
+    - 'WebSearch 2026-11-10: Philippines Israel Joint Economic Committee free trade agreement terms of reference OR memorandum OR "joint declaration" signed (domains: dti.gov.ph, pna.gov.ph, pco.gov.ph,
+      dfa.gov.ph, gov.il)'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No decision of the GSIS, the SSS, the Maharlika Investment Corporation or the central bank to exclude companies over conduct in Gaza or the occupied territories was found; the search
+      returned only other states'' funds. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement),
+      the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily
+      Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived)
+      and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and
+      the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines GSIS OR SSS OR Maharlika OR "Bangko Sentral" Israel divest OR exclusion OR sanctions OR "Israeli ministers" Philippines'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No procurement rule or decision of the Philippines excluding Israeli or settlement-linked suppliers was found (the Department of National Defense''s halt on new Israeli military contracts,
+      see A7, is a defence procurement decision reported by press, not an exclusion of implicated companies). Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph:
+      statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare
+      block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement
+      of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential
+      Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Israel defense cooperation OR "military" OR arms purchase OR agreement 2025 2026 DND Teodoro Israel'
+    - 'WebSearch 2026-11-10: Philippines GSIS OR SSS OR Maharlika OR "Bangko Sentral" Israel divest OR exclusion OR sanctions OR "Israeli ministers" Philippines'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): public procurement exclude Israeli companies OR tender ban Israel firms Uganda OR Zambia OR Zimbabwe OR Georgia OR Thailand OR Philippines 2024 2025 (measures in Ireland, Spain, Belgium, the United Kingdom and United States states; none concerns this state)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Government flow to the Gaza response in fts_plan_totals.csv (zero for this donor). Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor PHL
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings: the Philippines gave USD 50,000 in 2022 (rank 75), USD 50,000 in 2023 (rank 106) and USD 100,000 in 2024 (rank 86): no suspension of its contribution was found.'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Philippines
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: 'One D3 event (increased): the 2024 contribution of USD 100,000 exceeds the 2022 contribution of USD 50,000 (evt_2024_12_31_PHL_D3, +8). UNRWA''s table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 50,000 pledged, not above USD 50,000 in 2022: no 2025 event; evt_2024_12_31_PHL_D3 ends on 2025-12-31, from which the 2025 table decides
+      the tier (docs/10 B-876).'
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Philippines
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans was found; the Office of Civil Defense's donation of supplies to Jordan's Humanitarian Air Bridge for Gaza (February 2025, GMA News and Manila
+      Bulletin, search results, not read in full) is a donation, not a D4 programme.
+    queries:
+    - Philippines Gaza humanitarian aid donation (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa or refugee instrument for Gazans was found (the search results show none).
+    queries:
+    - Philippines Gaza humanitarian aid donation OR visa (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'No Philippine investigation or prosecution of a national or a company for conduct in Gaza was found. E1 is recorded, not scored (D-12). Pages read on 2026-11-10: the DFA''s UNGA archive
+      (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new
+      site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered,
+      headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to
+      a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture);
+      the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines complaint OR petition Gaza genocide Israel Philippine court OR "Department of Justice" OR "Commission on Human Rights" OR Congress resolution Israel arms
+      ban'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'No ban of Gaza solidarity protests or symbols was found. The police blocked, diverted or confronted pro-Palestine marches at the Israeli embassy (31 October 2023: ''demonstrators resisted
+      a police blockade and an attempted dispersal'', Al Jazeera, read) and at the US embassy (14 November 2023, Daily Tribune, read: pushing and shoving, the rally ended at 11 a.m.; December
+      2023 and 5 October 2024, Reuters via ABS-CBN, headline read, text not available), while marches to the Cultural Center of the Philippines (February 2024) and in Ermita (7 October 2025) went
+      ahead under police monitoring (search results). Crowd control and route changes are not a ban, and no permit denial or order was found. E2 is recorded, not scored. Pages read on 2026-11-10:
+      the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no
+      2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block, not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages''
+      bodies are script-rendered, headlines only), the Final Joint Statement of the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph
+      answers HTTP 403 to a script, the Manila Bulletin and the Presidential Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a
+      script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines Palestine solidarity rally Manila police dispersed OR banned OR permit Gaza protest Israeli embassy'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'No Philippine judicial or prosecutorial step concerning Gaza (a complaint, a universal-jurisdiction case or an arrest) was found; the search returned no court petition, Department of
+      Justice complaint or Commission on Human Rights inquiry. E3 is recorded, not scored. Pages read on 2026-11-10: the DFA''s UNGA archive (sites.google.com/dfa.gov.ph/ungarchiveph: statements
+      to 2024 and the 80th session, no 81st statement), the Philippine Mission''s old site (un.int/philippines: no 2026 statements; its new site newyorkpm.dfa.gov.ph answers a Cloudflare block,
+      not bypassed), the ABS-CBN, Al Jazeera and Daily Tribune pages on the Manila protests (read; the ABS-CBN pages'' bodies are script-rendered, headlines only), the Final Joint Statement of
+      the ASEAN-GCC-China Summit (asean.org, archived) and the Wayback CDX for the 81st-session file (no capture). dti.gov.ph answers HTTP 403 to a script, the Manila Bulletin and the Presidential
+      Communications Office show a bot check, and the Philippine News Agency''s pages are script-rendered (HTTP 404 to a script, no Wayback capture); the search was in English only.'
+    queries:
+    - 'WebSearch 2026-11-10: Philippines complaint OR petition Gaza genocide Israel Philippine court OR "Department of Justice" OR "Commission on Human Rights" OR Congress resolution Israel arms
+      ban'
+    - DFA UNGA archive; un.int/philippines; abs-cbn.com 2024/10/5; aljazeera.com 2023/10/31; tribune.net.ph 2023/11/14; asean.org ASEAN-GCC-China statement (read, 2026-11-10)
+    checked_at: '2026-11-10'

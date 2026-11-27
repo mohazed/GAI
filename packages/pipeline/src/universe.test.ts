@@ -18,6 +18,58 @@ const registry = (parse(readFileSync(join(ROOT, 'data/countries.yaml'), 'utf8'))
 )
 const sorted = (codes: Iterable<string>) => [...codes].sort()
 
+describe('the M49 intermediate region of the registry (P-20, docs/10 B-861)', () => {
+  // The UN Statistics Division's table divides two sub-regions further; every other entry has
+  // none. Counts read from the table on 2026-11-04 (SHA-256 b9048114… in the registry's header).
+  const BY_SUBREGION: Record<string, Record<string, number>> = {
+    'Sub-Saharan Africa': {
+      'Eastern Africa': 18,
+      'Middle Africa': 9,
+      'Southern Africa': 5,
+      'Western Africa': 16,
+    },
+    'Latin America and the Caribbean': { Caribbean: 13, 'Central America': 8, 'South America': 12 },
+  }
+
+  it('gives every Sub-Saharan African and Latin American or Caribbean entry one of the seven', () => {
+    for (const c of registry) {
+      const allowed = BY_SUBREGION[c.subregion]
+      if (allowed === undefined) {
+        expect(c.intermediate_region, c.iso3).toBeNull()
+      } else {
+        expect(Object.keys(allowed), c.iso3).toContain(c.intermediate_region)
+      }
+    }
+  })
+
+  it('has the counts of the M49 table', () => {
+    for (const [subregion, counts] of Object.entries(BY_SUBREGION)) {
+      for (const [name, n] of Object.entries(counts)) {
+        const found = registry.filter((c) => c.intermediate_region === name)
+        expect(found.length, name).toBe(n)
+        expect(
+          found.every((c) => c.subregion === subregion),
+          name,
+        ).toBe(true)
+      }
+    }
+    expect(registry.filter((c) => c.intermediate_region === null)).toHaveLength(114)
+  })
+
+  it('places the countries the peers list is read for', () => {
+    const of = (iso3: string) => registry.find((c) => c.iso3 === iso3)?.intermediate_region
+    expect(of('KEN')).toBe('Eastern Africa')
+    expect(of('AGO')).toBe('Middle Africa')
+    expect(of('ZAF')).toBe('Southern Africa')
+    expect(of('GHA')).toBe('Western Africa')
+    expect(of('BRA')).toBe('South America')
+    expect(of('MEX')).toBe('Central America')
+    expect(of('JAM')).toBe('Caribbean')
+    expect(of('EGY')).toBeNull()
+    expect(of('USA')).toBeNull()
+  })
+})
+
 describe('data/countries.yaml and the universe', () => {
   it('lists 195 entries: 193 scored entities, and ISR and PSE excluded', () => {
     expect(registry).toHaveLength(195)

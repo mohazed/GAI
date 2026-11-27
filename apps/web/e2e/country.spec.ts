@@ -10,9 +10,10 @@ const shown = (name: string, lang: string) =>
 
 /**
  * Smoke tests of the country page (P-08), in English and French, with JavaScript on and off, in
- * the mode of the project: `score` (kit build) and `scorecard` (production build, D-16). Values
- * come from the API the build published, so the tests hold for any dataset: the scored country
- * tested is the one with the most public events, the excluded one the first excluded entity.
+ * the mode of the project: `score` (kit build) and `production` (production build, in the
+ * site's mode, D-16). Values come from the API the build published, so the tests hold for any
+ * dataset: the scored country tested is the one with the most public events, the excluded one
+ * the first excluded entity.
  */
 
 type Lang = 'en' | 'fr'
@@ -45,7 +46,7 @@ interface CountryFile {
   build_date: string
 }
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 async function entries(page: Page) {
   const res = await page.request.get('/api/v1/countries.json')
@@ -113,7 +114,7 @@ for (const lang of LANGS) {
       await expect(page.locator('.gauge')).toHaveCount(1)
       await expect(page.locator('.coverage-bar')).toHaveCount(1)
       const summary = scoreMode() ? scored.summary?.[lang] : scored.summary_scorecard?.[lang]
-      await expect(page.getByText(summary ?? '', { exact: true })).toBeVisible()
+      await expect(page.getByText(shown(summary ?? '', lang), { exact: true })).toBeVisible()
       await expect(page.getByRole('heading', { name: t.events, exact: true })).toBeVisible()
       await expect(page.getByRole('heading', { name: t.checked })).toBeVisible()
       const levels = await headingLevels(page)

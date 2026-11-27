@@ -30,7 +30,7 @@ data/
   leads/{ISO3}.yaml               # unresolved leads (press/NGO claims without a primary yet); never scored
   snapshots/{version}/            # frozen outputs of superseded methodology versions only
 archive/
-  text/{src_id}.txt               # extracted plain text of the archived document (≤ 200 KB)
+  text/{src_id}.txt               # extracted plain text of the archived document (≤ 4,096 KB; raw dataset text ≤ 200 KB; B-2169)
   index.csv                       # src_id, url, wayback_url, sha256, bytes, retrieved_at, content_type
 methodology/
   v1.0.0/
@@ -63,6 +63,7 @@ Slugs: lowercase ASCII, hyphens, ≤ 40 chars. IDs never change; a corrected eve
   name: {en: Germany, en_def: Germany, fr: Allemagne, fr_def: "l'Allemagne"}   # *_def: the UNTERM name with its article, the actor of generated summaries (P-13, P-18)
   region: Europe
   subregion: Western Europe
+  intermediate_region: null       # the M49 intermediate region where M49 gives one (Eastern Africa, Caribbean…; 81 entries), else null (P-20)
   un_member: true
   observer: false
   excluded: false                 # true only for ISR, PSE, with `excluded_reason`

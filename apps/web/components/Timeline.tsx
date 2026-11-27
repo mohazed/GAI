@@ -92,7 +92,9 @@ export function Timeline({
         from: longDate(from, lang),
         to: longDate(to, lang),
         changes: Math.max(0, series.length - 1),
-        score: last === undefined ? '—' : signed(last.score, lang),
+        // The integer the page's headline shows (read from the full-precision score), not the
+        // one-decimal `score`: −3.48 is −3.5 to one decimal but −3 on the page (docs/10 B-865).
+        score: last === undefined ? '—' : signed(last.score_display, lang),
       })
     : t('chart.stripAria', {
         country: countryName,

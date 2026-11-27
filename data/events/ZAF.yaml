@@ -93,6 +93,9 @@
   date: '2023-12-29'
   end: null
   points: 15
+  points_rationale: 'Application instituting proceedings (+15) in ICJ case 192, read as B3 at its origin, flagged: South Africa is the applicant, not an intervener; its application states the applicant''s reading, which
+    B3 counts in declarations of intervention (docs/10 B-231; docs/07 ''Applicant in the ICJ case''). Standing from the filing of 29 December 2023; the case was not withdrawn. Rationale added on
+    2026-11-27 (CHECKUP §2e, B-875 (2), B-2107 (7); docs/10 B-2172).'
   confidence: confirmed
   scope:
   - gaza
@@ -264,7 +267,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: 'Increased tier (+8): South Africa''s 2024 contribution to UNRWA (USD 2,754,821) exceeds its 2022 contribution (USD 171,600) in nominal USD per UNRWA''s donor tables (docs/02 §2 D3).'
   confidence: confirmed
@@ -332,6 +335,46 @@
       verdict: agree
       notes: 'Lines 47–55 of the statement re-read: genocide in Gaza, the Commission of Inquiry, famine. B9 +5 matches.'
     notes: 'Statement at the general debate of the 80th session, 23 September 2025, as published on gov.za (the DIRCO copy was not archived). One event for the statement; the President''s statement at the high-level meeting on the two-state solution of 22 September 2025 was not filed (same speaker, previous day, not archived).'
+
+- id: evt_2025_12_31_ZAF_D3
+  revision: 1
+  country: ZAF
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 2,884,200 pledged and USD 2,884,200 received for South Africa, against USD 171,600 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "South Africa's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de l'Afrique du Sud à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of South Africa"
+    fr: "Gouvernement de l'Afrique du Sud"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "South Africa - - - - - - - - 2,884,200 2,884,200 - - - - 2,884,200 2,884,200 2,884,200 30 2,884,200 30"
+    quote_lang: en
+    locator: line 39 (South Africa)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "South Africa 171,600 0 171,600 0 0 0 171,600 56"
+    quote_lang: en
+    locator: line 67 (South Africa)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The South Africa row at line 39 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 67: USD 2,884,200 pledged in 2025 against USD 171,600 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_12_31_ZAF_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Filed in T-F-UNDOCS-2 (docs/10 B-876)."
 
 - id: evt_2026_01_30_ZAF_B12
   revision: 1
@@ -488,3 +531,93 @@
       verdict: agree
       notes: 'Lines 20 and 23 of the statement re-read: accountability for the ongoing genocide against the Palestinians; the ICJ and ICC. Gaza is not named anywhere in the statement (40 lines searched). Tracked with scope related, unscored.'
     notes: 'Statement at the session on inclusive global governance of the 18th BRICS summit, New Delhi, 12 September 2026, recorded from the Wayback capture of that day. Neither the sentence nor the rest of the statement names Gaza, so under the scope rule (docs/10 B-32) the event is tracked with scope related and does not score, although the ICJ proceedings it cites concern the Gaza Strip (docs/10 B-231).'
+
+- id: evt_2026_09_24_ZAF_B9
+  revision: 1
+  country: ZAF
+  indicator: B9
+  type: repeatable
+  date: '2026-09-24'
+  points: 2
+  points_rationale: 'Formal call for a ceasefire and humanitarian access (+2): in a joint statement with the foreign ministers of Brazil and India, the Minister urges all parties to maintain the ceasefire and ensure full and unhindered humanitarian access in the Gaza Strip and calls for halting any policies aimed at the forced displacement of Palestinians from Gaza; read at the call tier because the statement names no act as a violation (the +5 reading, forced displacement named, is flagged for the author).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Minister of International Relations and Cooperation, with the foreign ministers of Brazil and India, urged all parties to maintain the ceasefire and unhindered humanitarian access in Gaza.
+    fr: Le ministre des Relations internationales, avec ses homologues du Brésil et de l'Inde, a exhorté les parties à maintenir le cessez-le-feu et l'accès humanitaire sans entrave à Gaza.
+  actor:
+    en: Minister of International Relations and Cooperation
+    fr: Ministre des Relations internationales et de la Coopération
+    name: Ronald Lamola
+  evidence:
+  - source: src_20260928_mea_ibsa-14th-ministerial-media-statement
+    quote: The Ministers called for the implementation of the relevant UNGA and UNSC Resolutions and urged all parties to ensure the maintenance of ceasefire and full and unhindered humanitarian access in the Gaza Strip.
+    quote_lang: en
+    locator: line 15
+  - source: src_20260928_mea_ibsa-14th-ministerial-media-statement
+    quote: They called for halting any policies aimed at forced displacement of Palestinians from Gaza Strip
+    quote_lang: en
+    locator: line 15
+  - source: src_20260928_mea_ibsa-14th-ministerial-media-statement
+    quote: Honourable Mr Ronald Lamola, Minister of International Relations and Cooperation of the Republic of South Africa
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_24_IND_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 3 names Ronald Lamola as Minister of International Relations and Cooperation among the three Ministers who met on 24 September 2026; line 15 holds both passages verbatim (paragraph 13 of the statement). The call tier agrees with the call tier of B9 (a call for a ceasefire and humanitarian access, +2); the forced-displacement sentence is a call to halt policies, not a finding, so +2 is kept as the weaker reading.'
+    notes: 'Joint media statement of the 14th IBSA Trilateral Ministerial Commission (India, Brazil, South Africa), New York, 24 September 2026, published by the Ministry of External Affairs of India on 28 September 2026; the event takes the meeting date. A joint statement of named foreign ministers, filed for each signatory among the 45 countries (docs/10 B-444); Brazil is in another wave (P-23 block of PROMPTS.md). Found in the MEA listing read for the finish run (T-F-W2, docs/10 B-886).'
+
+- id: evt_2026_10_16_ZAF_B9
+  revision: 1
+  country: ZAF
+  indicator: B9
+  type: repeatable
+  date: '2026-10-16'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the joint statement of twenty foreign ministers says that Colombia's inauguration of its embassy in Jerusalem contravenes Security Council resolutions and that any measure altering the status of occupied Jerusalem is null and void. Jerusalem and the West Bank only, no mention of Gaza: tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Minister of Foreign Affairs, with nineteen other foreign ministers, rejected Colombia's inauguration of its embassy in Jerusalem as contravening Security Council resolutions."
+    fr: "Le ministre des Affaires étrangères, avec dix-neuf autres ministres, a rejeté l'inauguration par la Colombie de son ambassade à Jérusalem comme contraire aux résolutions du Conseil de sécurité."
+  actor:
+    en: "Minister of International Relations and Cooperation"
+    fr: "Ministre des Relations internationales et de la Coopération"
+    name: "Ronald Lamola"
+  evidence:
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "the Republic of South Africa"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_10_16_EGY_B9, evt_2026_10_16_TUR_B9, evt_2026_10_16_QAT_B9, evt_2026_10_16_JOR_B9, evt_2026_10_16_MYS_B9, evt_2026_10_16_IDN_B9, evt_2026_10_16_SAU_B9, evt_2026_10_16_DZA_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the Republic of South Africa is among the twenty signatory states; the three quotes are verbatim. The text names Jerusalem and the West Bank's occupied status and not Gaza (R7), so scope west-bank. B9 +5 (legal characterisation) as for the joint statement of 21 August 2025. The actor's name is that of the foreign minister in the state's last filed B9 event (the statement names no individual)."
+    notes: "Joint statement of 16 October 2026 of twenty foreign ministers on Colombia's inauguration of its embassy in Jerusalem, as published by South Africa's Department of International Relations and Cooperation (the text archived for South Africa, used for every signatory among the 45 countries, as in docs/10 B-444). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Found in the department's list of media statements (monthly run of 2026-11, T-P23-3). The other ministries' copies were not read."
+

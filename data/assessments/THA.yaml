@@ -1,0 +1,294 @@
+# Coverage record for Thailand (docs/03 §6). P-21 light protocol, session T-P21-23, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the Ministry of Foreign Affairs (mfa.go.th/en, HTTP 200; its news items are searched through the search engine), the Prime Minister's site (thaigov.go.th: HTTP 403 to a script, a Wayback capture of 28 September 2026 reads HTTP 200), the General Debate statements of the 78th to 81st sessions (gadebate.un.org, live files), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; web searches in English and one in Thai. Time: see Singapore.
+# Completion of 2026-11 (finish run, T-F-L12, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched, all none-found (8 web searches, one in Thai; the Ministry's page of 22 October 2023); lead_20261104_THA_1 promoted to evt_2024_06_06_THA_B9 (+2, expired, from the archived DCPD text); lead THA_2 re-read and kept. Nothing new on Gaza from 4 to 10 November 2026 (docs/10 B-2010).
+country: THA
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - sipri_deliveries.csv, supplier THA
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows yet: `pnpm fetch:comtrade` runs for reporters in daily batches under the Save Page Now limits (docs/10 B-695) and has not reached this
+      one; the build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No official programme document, Lockheed Martin supplier disclosure, ministry statement or UN Special Rapporteur''s report naming a Thai company as a Tier-1 or Tier-2 supplier of parts or maintenance
+      for the F-35 programme was found; Thailand is not a partner or customer of the programme and A/HRC/59/23 has no match for Thailand. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of
+      the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand Israel military cooperation OR joint exercise OR arms deal 2025 2026 Royal Thai Army Israeli'
+    - archive/text/src_20250616_un-unispal_a-hrc-59-23.txt searched for Thailand, Thai (no match)
+    checked_at: '2026-11-10'
+  A4:
+    status: has-events
+    note: 'Generated from SIPRI (sipri_orders.csv, release of 9 March 2026): Thailand''s order of Barak-LRAD surface-to-air missiles from Israel (2025, TIV 114.5) is the release''s data year 2025 and the
+      build scores it as A4. The register also lists an order of Hermes-900 reconnaissance drones of 2022 (TIV 21), which the build does not score (the A4 data-year gap, docs/10 B-536 (7)). Left to the
+      build; not hand-authored.'
+    queries:
+    - sipri_orders.csv, buyer THA
+    - archive/text/src_20261005_sipri_register-supplier-israel.txt, rows Thailand of 2022 and later
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No named joint exercise, documented arms transit, public basing agreement or official confirmation of intelligence sharing with Israel related to the Gaza campaign was found. The searches return
+      purchases (the Barak MX air-defence contract of December 2025, SIPRI A4 generated), Israel Aerospace Industries'' sustainment agreement with Thai Aviation Industries (a company contract reported by
+      the trade press), the use of Israeli artillery and drones in the border fighting with Cambodia (July 2025), and the Foreign Ministers'' call of 12 February 2026 agreeing to deepen cooperation in medical
+      diplomacy and cybersecurity (Ministry page found by search, not read): none is an A5 instance. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention
+      at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand Israel military cooperation OR joint exercise OR arms deal 2025 2026 Royal Thai Army Israeli'
+    - 'WebSearch 2026-11-10: Thailand arms export Israel ban OR suspend OR transit Gaza Ministry of Defence Thailand government decision'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing a class of arms export licences to Israel was found; Thailand''s arms trade with Israel runs as imports (A4). Pages read on 2026-11-10: the Ministry of Foreign
+      Affairs'' page of the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned
+      to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime
+      Minister''s site (thaigov.go.th) refuses scripts and was not searched; the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand arms export Israel ban OR suspend OR transit Gaza Ministry of Defence Thailand government decision'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree restricting arms exports to and imports from Israel was found; Thailand bought the Barak MX system from Israel Aerospace Industries in December 2025 (search results). Pages read
+      on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered
+      by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items
+      of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched; the Ministry of Defence, the Customs Department and the Comptroller General''s Department were
+      not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand arms export Israel ban OR suspend OR transit Gaza Ministry of Defence Thailand government decision'
+    - 'WebSearch 2026-11-10: Thailand Israel military cooperation OR joint exercise OR arms deal 2025 2026 Royal Thai Army Israeli'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access, airspace or transit to an arms shipment bound for Israel was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention
+      at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand arms export Israel ban OR suspend OR transit Gaza Ministry of Defence Thailand government decision'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: yes on all 12 qualifying votes. Article 19 note: not applicable (all 12 votes recorded).'
+    queries:
+    - unga_votes.csv, voter THA
+    - A/80/362 and the Article 19 page (archived, read)
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: Not a Security Council member in the window (countries.yaml memberships.unsc is empty).
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: Thailand is not among the states that filed a declaration of intervention in ICJ case 192 (the Court's page of 27 September 2026, archived, searched for Thailand; docs/06 §8). The advisory proceedings
+      (case 186) are not B3 or B4 (docs/10 B-629).
+    queries:
+    - 'icj-cij.org case 192 declarations of intervention (archived 27 September 2026: src_20260927_icj-cij_case-192, searched for Thailand)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: No statement or act rejecting the ICJ's provisional-measures orders was found.
+    queries:
+    - as for B3
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: Thailand is not a state party to the Rome Statute (the Assembly of States Parties' list, archived, searched); no statement of the Prime Minister or the Foreign Minister on the warrants of 21 November
+      2024 was found.
+    queries:
+    - 'asp.icc-cpi.int list of States Parties (archived: src_20261009_icc-asp_states-parties, searched for Thailand)'
+    - Thailand ICC arrest warrant Netanyahu (web searches)
+    checked_at: '2026-11-04'
+  B6:
+    status: none-found
+    note: No stated refusal to execute the warrants and no hosting of a person under warrant was found (not a state party).
+    queries:
+    - as for B5
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: No sanctions on ICC judges or prosecutors by Thailand were found; no statement of the Government on the United States' sanctions on ICC officials (June 2025 onward) appeared in the search results
+      read.
+    queries:
+    - Thailand sanctions International Criminal Court judges prosecutor (web search)
+    checked_at: '2026-11-04'
+  B8:
+    status: has-events
+    note: 'Generated from recognitions.csv: a row is added in this session (R21): Thailand''s Ministry of Foreign Affairs states that ''Thailand officially recognized the State of Palestine on 17 January
+      2012'' and that diplomatic relations date from 1 August 2012 (news item of 12 January 2024, archived: src_20240112_mfa-th_palestine-ambassador-call). The registry (countries.yaml) gives 18 January
+      2012 (recognition by letter, AP and AFP via search results); the Ministry''s own date is used for the row and the one-day difference is flagged for the author.'
+    queries:
+    - recognitions.csv, row THA (added 2026-11-04)
+    - src_20240112_mfa-th_palestine-ambassador-call
+    checked_at: '2026-11-04'
+  B9:
+    status: has-events
+    note: 'One B9 event, added in the completion pass (T-F-L12, 2026-11-10): the joint statement of the leaders of seventeen states of 6 June 2024 (evt_2024_06_06_THA_B9, +2, the Prime Minister read as signatory,
+      docs/10 B-444; expired). Before that pass: no B9 event. The General Debate statements of the 79th (28 September 2024, Foreign Minister Maris Sangiampongsa: ''deeply concerned about … the escalating
+      violence and worsening humanitarian situation in Gaza'') and 80th sessions (27 September 2025, Foreign Minister Sihasak Phuangketkeow, ''the horrendous suffering in Gaza … weighs heavily on our collective
+      conscience'') state concern and name no violation and make no call; the 81st statement (Prime Minister Anutin Charnvirakul) says only that ''The situation in Palestine continues to demand our attention''
+      (R7). The Ministry''s statements of 18 November 2023 (''calls on all parties to the conflict to immediately cease all acts of hostilities''), of January 2025 (welcoming the ceasefire) and of March 2025
+      (urging all sides to ''cease the hostilities and resume negotiations'', read through search results) have no named speaker (R3). Leads: the joint statement of the 17 countries with hostages of 7 June
+      2024 (lead_20261104_THA_1) and the Prime Minister''s call at the ASEAN-GCC summit of 20 October 2023 (lead_20261104_THA_2), both older than 730 days.'
+    queries:
+    - gadebate.un.org Thailand 78th to 81st sessions (live files read for Gaza, Palestine, Israel, Hamas, ceasefire)
+    - mfa.go.th Gaza statement (web searches, English and Thai)
+    - Thailand Prime Minister Gaza ceasefire (web search)
+    - archive/text/src_20240606_govinfo_dcpd-202400492.txt, line 6 (Thailand listed; read 2026-11-10)
+    checked_at: '2026-11-10'
+  B10:
+    status: none-found
+    note: No statement of unconditional support for Israel or denial of violations by the Prime Minister or the Foreign Minister was found; the Government's line is neutrality and the safety of its nationals
+      (search results, not read in full).
+    queries:
+    - Thailand Prime Minister Israel support statement (web searches)
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: No sanctions or travel bans on Israeli ministers or settlers by Thailand were found.
+    queries:
+    - Thailand sanctions settlers Israel ministers (web search)
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance of relations with Israel was found: the Minister held a telephone conversation with Israel''s Foreign Minister on 12 February 2026 (the Ministry''s readout,
+      found by search, not read in full) on medical diplomacy and cybersecurity cooperation.'
+    queries:
+    - Thailand recall ambassador Israel downgrade relations (web search)
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: No trade or association agreement with Israel is known to be suspended or reviewed by Thailand; interest in a free-trade agreement was reported in January 2025 (Bangkok Post, search results),
+      the opposite of a suspension.
+    queries:
+    - Thailand Israel free trade agreement (web search)
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument signed with Israel after 7 October 2023 was found: the search results show a cybersecurity memorandum of 2022, a MASHAV-TICA development cooperation memorandum (undated) and Israel''s
+      quotas for Thai farm workers (13,000 more positions in 2025 at the Labour Minister''s visit of January 2025; the return of the first 100 workers in June 2024), all reported by the press in search
+      results, not read in full, under a placement project (TIC) in force for about a decade. Quotas and placement arrangements under a pre-war framework are not a new signed instrument; the Ministry''s
+      readout of 12 February 2026 records talks, not a signature. Re-checked 2026-11-10 (T-G-JOINT, docs/10 B-2118): Thaiger (press) reports that Israel''s Minister of Labor and Thailand''s Minister of Labour signed a memorandum of understanding on a Tuesday of early March 2025 expanding the quota to 13,000 agricultural and 8,500 construction workers; the Bangkok Post of 6 March 2025 (read) says the two ministers met to discuss plans to increase the quota, and the Israeli Embassy''s own page of the visit (new.embassies.gov.il/thailand/en/node/7994, read) says they explored opportunities to expand the quota and sectors, with no signing. The Thai Department of Consular Affairs'' items of 2025 (search results) report a government-to-government agreement on manufacturing and construction still in drafting. One press report against the official page: not filed, no lead (the official account records no instrument).'
+    queries:
+    - Thailand Israel agreement signed memorandum 2024 2025 2026 (web searches)
+    - Thailand Israel labour agreement Thai workers (web search)
+    - 'WebSearch 2026-11-10: Thailand Israel memorandum signed Thai workers quota 2025 Labour Minister signing'
+    - 'WebSearch 2026-11-10 (Thai): Ministry of Labour Israel memorandum signed Thai workers March 2025'
+    - 'new.embassies.gov.il/thailand/en/node/7994 and bangkokpost.com/thailand/general/2973831 (read 2026-11-10)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: Generated from Comtrade; no rows (see A2). Nothing is hand-authored.
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban on or labelling of settlement goods was found; the search returned no Thai customs measure. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention
+      at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand Government Pension Fund OR Thai sovereign fund divest Israeli companies OR settlement goods Thailand customs labelling West Bank'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion decision by the Government Pension Fund, the Social Security Fund or the Bank of Thailand over conduct in Gaza or the occupied territories was found; the search returned Norway''s
+      exclusions (of Israeli and Thai companies) and a Government Pension Fund item on reducing exposure to assets affected by war, without Israel. The funds'' own sites were not searched. Pages read on 2026-11-10:
+      the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script:
+      no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023
+      to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched; the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched
+      in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand Government Pension Fund OR Thai sovereign fund divest Israeli companies OR settlement goods Thailand customs labelling West Bank'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of companies from public procurement over Gaza or the occupied territories was found (the Comptroller General''s e-GP system was not searched). Pages read on 2026-11-10: the Ministry
+      of Foreign Affairs'' page of the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list
+      returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only.
+      The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched; the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand Government Pension Fund OR Thai sovereign fund divest Israeli companies OR settlement goods Thailand customs labelling West Bank'
+    - 'WebSearch 2026-11-10: Thailand arms export Israel ban OR suspend OR transit Gaza Ministry of Defence Thailand government decision'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): public procurement exclude Israeli companies OR tender ban Israel firms Uganda OR Zambia OR Zimbabwe OR Georgia OR Thailand OR Philippines 2024 2025 (measures in Ireland, Spain, Belgium, the United Kingdom and United States states; none concerns this state)'
+    checked_at: '2026-11-10'
+  D1:
+    status: has-events
+    note: 'Generated from FTS (fts_plan_totals.csv): the Government''s flows to the Gaza response (appeals 1156, 1186, 1273 and 1510) are recorded; the build makes them D1 events. Left to the build.'
+    queries:
+    - fts_plan_totals.csv and fts_funding.csv, donor THA
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: UNRWA's donor rankings of 2022, 2023 and 2024 (archived) show Thailand in each year (USD 40,000, 120,000 and 90,000); no suspension of funding was announced, and the Ministry's page of 12 January
+      2024 says Thailand has consistently contributed.
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Thailand
+    - src_20240112_mfa-th_palestine-ambassador-call
+    checked_at: '2026-11-04'
+  D3:
+    status: has-events
+    checked_at: '2026-11-09'
+    note: >-
+      Two events: the increased tier from 31 December 2023 (USD 120,000 against USD 40,000 in 2022) to 31
+      December 2024, and from 31 December 2024 (USD 90,000). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 90,000 pledged against USD 40,000 in 2022: evt_2025_12_31_THA_D3
+      holds the increased tier from 31 December 2025, and evt_2024_12_31_THA_D3 ends on 2025-12-31 (docs/10
+      B-876).
+    queries:
+    - UNRWA donor rankings 2022, 2023 and 2024 (archived), row Thailand
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: No medical-evacuation programme for Gazans and no field hospital deployed by Thailand was found in the search results read.
+    queries:
+    - Gaza medical evacuation Thailand (web search)
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: No visa, refugee or scholarship pathway for Gazans opened by Thailand was found in the search results read (the only results on Thailand concerned tourist visa rules).
+    queries:
+    - Gaza medical evacuation OR visa OR refugees Gazans Thailand (web search)
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No investigation or prosecution of Thai nationals or companies for conduct in Gaza was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of
+      the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand police ban pro-Palestine rally Bangkok OR Thai court Gaza protest OR war crimes complaint Thailand Israeli soldier'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No ban on Palestine solidarity protests or symbols in the window was found: the results describe rallies at the Israeli embassy and marches in Bangkok in 2023 and
+      2024 held without reported interference and police security for Quds Day in March 2026. Outside the window and not filed: the removal of a ''Free Palestine'' billboard in June 2021 (press), the dispersal
+      of a student gathering in 2017 and the junta''s measures of 2014. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime Minister''s intervention at the ASEAN-GCC Summit (22 October
+      2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt (no match for Thailand);
+      a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched; the Ministry of Defence,
+      the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand police ban pro-Palestine rally Bangkok OR Thai court Gaza protest OR war crimes complaint Thailand Israeli soldier'
+    - 'WebSearch 2026-11-10: Bangkok billboard "liberation of Palestine" removed authorities Thailand'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored (D-12). No universal-jurisdiction complaint accepted for investigation in Thailand was found. Pages read on 2026-11-10: the Ministry of Foreign Affairs'' page of the Prime
+      Minister''s intervention at the ASEAN-GCC Summit (22 October 2023, through WebFetch) and the Ministry''s news listing (mfa.go.th, rendered by script: no item list returned to a script); archive/text/src_20250616_un-unispal_a-hrc-59-23.txt
+      (no match for Thailand); a Thai-language search for Ministry statements on Gaza in 2026 returned items of 2023 to 2025 only. The Prime Minister''s site (thaigov.go.th) refuses scripts and was not searched;
+      the Ministry of Defence, the Customs Department and the Comptroller General''s Department were not searched in Thai.'
+    queries:
+    - 'WebSearch 2026-11-10: Thailand police ban pro-Palestine rally Bangkok OR Thai court Gaza protest OR war crimes complaint Thailand Israeli soldier'
+    checked_at: '2026-11-10'

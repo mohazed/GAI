@@ -29,6 +29,13 @@
 #   Representatives, the Jordan Armed Forces' site, the Ministries of Defence, Industry and Trade
 #   and Water, the Social Security Investment Fund (C5), the Public Prosecution and courts (E1,
 #   E3).
+# Finish run, T-F-W8 (2026-11-09, docs/10 B-917 to B-920): window 27 September to 9 November 2026 read
+# through the King's official website (kingabdullah.jo Press Room pages 0 to 5 and Speeches); Petra's
+# listing is built by script and its sitemap is unavailable. Filed: the King's General Assembly address
+# of 22 September 2026, the Australia-Jordan joint leaders' statement of 14 October 2026 and the eight
+# ministers' West Bank statements of 2 June, 23 July, 21 August and 9 September 2026. The Speech from
+# the Throne of 2 November 2026 was read and not filed (no call, no named violation; B-918). E1 and E3
+# stay unchecked. B8 unchanged.
 country: JOR
 protocol_version: 1
 last_full_check: 2026-09-29
@@ -133,21 +140,25 @@ indicators:
     queries:
       - Safadi International Court of Justice South Africa case Jordan intervention
   B5:
-    status: none-found
-    checked_at: 2026-09-29
+    status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Jordan is a party to the Rome Statute. The press reports that the Foreign Minister said on
-      21 November 2024 that the ICC's decisions must be respected and implemented and that
-      Palestinians deserve justice (Al Jazeera's list of reactions, read in a search summary; his
-      words were posted on a social network, which does not score without an official transcript).
-      No agency item or Ministry statement carrying his words could be found or archived in this
-      session (the agency's items of November 2024 are served only through Wayback captures, which
-      exist for few of them). A lead (lead_20260929_JOR_1); filed, it would be a B5 standing state of
-      +8 from 21 November 2024.
+      One event: evt_2024_11_21_JOR_B5 (+8, standing from 21 November 2024), the Deputy Prime
+      Minister and Foreign Minister's answer on the arrest warrants at his press conference with the
+      EU High Representative in Amman, in the Ministry's own item of that day (archived,
+      src_20241121_mfa-jo_safadi-borrell-icc-warrants): the ICC's decisions 'must be respected, and
+      must be implemented', and its 124 member states are bound to respect the decision. Jordan is
+      a party to the Rome Statute. Promoted from lead_20260929_JOR_1 in the resumed T-F-W8 session of
+      2026-11-09 (docs/10 B-949); the item was found by a web search restricted to the Ministry's
+      and the agency's domains after the read of the Ministry's listings and site search had missed
+      it (B-922).
     queries:
       - Safadi ICC arrest warrants Netanyahu "must be respected and implemented" Jordan November 2024
       - Safadi International Criminal Court arrest warrants Netanyahu Gallant (petra.gov.jo, jordantimes.com, mfa.gov.jo)
       - Wayback CDX listing of Petra item numbers 658xx (late November 2024)
+      - Safadi ICC arrest warrants Netanyahu Gallant must be respected implemented Petra November 2024
+      - الصفدي قرارات المحكمة الجنائية الدولية يجب احترامها وتنفيذها مذكرات اعتقال نتنياهو غالانت بترا
+      - الصفدي بوريل مؤتمر صحفي عمان المحكمة الجنائية الدولية تحترم وتنفذ (mfa.gov.jo, petra.gov.jo, jordan.gov.jo, pm.gov.jo)
   B6:
     status: none-found
     checked_at: 2026-09-29
@@ -163,15 +174,27 @@ indicators:
     queries:
       - Safadi International Criminal Court arrest warrants Netanyahu Gallant (petra.gov.jo, jordantimes.com, mfa.gov.jo)
   B8:
-    status: unchecked
-    note: >-
-      Generated from recognitions.csv; Jordan has no row. The registry dates its recognition to 16
-      November 1988 (data/countries.yaml, from A/78/846, a lead). No Jordanian document stating the
-      recognition and its date was archived in this session; no row added (as for Saudi Arabia, the
-      United Arab Emirates and Qatar, docs/10 B-385 (2), B-390 (5)); P-16 looks for a document of
-      1988.
+    status: has-events
+    checked_at: '2026-11-27'
+    note: 'T-H-DEFAULTS, 2026-11-27 (docs/10 B-2170): Row JOR,1988-11-16 added to recognitions.csv citing A/78/846-S/2024/283 only (src_20240409_un-unispal_a-78-846-recognition-annex, archived), whose annex lists Jordan on 16 November 1988 (line 136 of the archived text): the default of CHECKUP §2b (B-2115 (4) (a)) adopted in the launch-plan run of 2026-11-27, flagged under R21 as a UN record of the recognition, not the state''s own document, as for the 13 light-protocol rows of B-2115 (3). The author may remove the row (the entry then returns to unchecked). No score depends on the day (pre-existing tier, +3). Before this session: Generated from recognitions.csv; Jordan has no row. The registry dates its recognition to 16 November 1988 (data/countries.yaml, from A/78/846, a lead). No Jordanian document stating the recognition
+      and its date was archived in this session; no row added (as for Saudi Arabia, the United Arab Emirates and Qatar, docs/10 B-385 (2), B-390 (5)); P-16 looks for a document of 1988. Resumed T-F-W8 session,
+      2026-11-09 (docs/10 B-949): web searches in English and Arabic and the UNISPAL document API found Jordan''s letter of 18 November 1988 (A/43/827-S/20278), sent as Chairman of the Arab Group, which transmits
+      the PLO''s communiqué and the Declaration of Independence, not a Jordanian recognition; no Jordanian document stating the recognition was found; no row added (B-860). T-G-B8, 2026-11-10 (docs/10 B-2115):
+      Still no document of the state itself dating the recognition (searches below). Not added from A/78/846 alone (annex: 16 November 1988): rule 4 of the run keeps B8 for the full-protocol countries to
+      a document of the state itself, so the CHECKUP §2b default (a flagged A/78/846 row) is left to the author; one line in recognitions.csv applies it (B-2115). A WebSearch in Arabic for a Ministry statement
+      of Jordan''s 1988 recognition found only the Ministry''s welcomes of other states'' recognitions (2024, 2025).'
+    queries:
+    - 'WebSearch 2026-11-10: وزارة الخارجية الأردنية "اعترف الأردن بدولة فلسطين" 1988'
+    - 'UNISPAL 2026-11-10: Jordan_nyc_ar.pdf'
+    - 'WebFetch 2026-11-10: UNISPAL document API, search "PNC Declaration of Independence Letter from" (63 items: 1988 letters of Qatar, Oman, Malta, Mongolia, Greece, Tunisia, Zimbabwe, Indonesia, Bahrain,
+      Kuwait, Pakistan, Madagascar; Jordan as Arab Group chair)'
+    - 'UN Digital Library search API 2026-11-10: "Palestinian State" 1988 letters; "recognition State of Palestine" 1989, 1990, 1992, 1994, 1995; series "Diplomatic relations between State of Palestine and
+      ..." (NV notes of 1995 to 2024)'
+    - 'UNISPAL media API 2026-11-10: the statements of the High-level Conference of 28-30 July and 22 September 2025 (about 110 files read for a dated statement of the speaker state''s own recognition)'
+    - 'T-H-DEFAULTS 2026-11-27: archive/text/src_20240409_un-unispal_a-78-846-recognition-annex.txt line 136 read: 65. Jordan 16 November 1988 LAS / OIC / NAM'
   B9:
     status: has-events
+    checked_at: 2026-11-04
     note: >-
       Six events scoped `gaza`, all on the Foreign Minister's own words or signature: his words at
       the Doha Forum (10 December 2023) and at the Security Council (23 January 2024 and 11
@@ -189,6 +212,8 @@ indicators:
     queries:
       - petra.gov.jo Safadi Gaza genocide starvation 2026
       - petra.gov.jo Safadi speech full text Gaza 2024 genocide UNRWA Security Council
+      - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: the archived text of South Africa's DIRCO for the joint statement of 16 October 2026 on Colombia's embassy in Jerusalem; filed evt_2026_10_16_JOR_B9 (Jerusalem and the West Bank, tagged unscored); no other search for this country in this run; the other ministries' copies of the statement were not read"
+      - "monthly run 2026-11 (T-P23-4), 27 September to 4 November 2026: Pakistan's Ministry of Foreign Affairs press-release listing (mofa.gov.pk, pages 1 and 2, 12 September to 3 November 2026); found and archived the joint statement of eight foreign ministers of 22 September 2026 on Gaza (src_20260922_mofa-pk_fms-joint-statement-gaza-81st); filed evt_evt_2026_09_22_JOR_B9 (+2, call; the minister named by continuity of the post, flagged, docs/10 B-855); its settlement passage is a West Bank passage and not scored"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -283,10 +308,16 @@ indicators:
       - Jordan UNRWA funding suspend statement (UNRWA donor tables 2022, 2024)
   D3:
     status: has-events
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_JOR_D3): UNRWA's table of 2024 gives USD 8,626,299 pledged and
-      received from Jordan, in kind; UNRWA's table of 2022 gives USD 4,241,081, in kind. The
-      increase is of in-kind support of a host country (docs/10 B-398 (3)).
+      One event (evt_2024_12_31_JOR_D3): UNRWA's table of 2024 gives USD 8,626,299 pledged and received
+      from Jordan, in kind; UNRWA's table of 2022 gives USD 4,241,081, in kind. The increase is of in-kind
+      support of a host country (docs/10 B-398 (3)). UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 11,671,380 pledged against USD 4,241,081 in 2022:
+      evt_2025_12_31_JOR_D3 holds the increased tier from 31 December 2025, and evt_2024_12_31_JOR_D3 ends
+      on 2025-12-31 (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     note: >-
@@ -308,8 +339,20 @@ indicators:
     queries:
       - Jordan medical evacuation 2,000 Gaza children King initiative first batch March 2025 Petra
   E1:
-    status: unchecked
-    note: The Public Prosecution and the courts were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No investigation or prosecution of nationals or companies of Jordan for conduct in Gaza found.
+      Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and NGO searches in English
+      and Arabic (queries below). The searches returned no Jordanian case against a national or
+      company over conduct in Gaza; the Jordanian items found concern border crossings before the
+      window. Earlier the same day: the King's official website (Press Room listing to mid-September
+      2026) and Petra items read for B9; nothing found. The prosecutor's site (www.jc.jo) did not
+      answer (WebFetch: connection refused or empty page, 2026-11-09). Experimental, unscored
+      (D-12).
+    queries:
+      - Jordanian court case Israeli dual national soldier Gaza arrested Jordan 2024 2025 investigation
+      - شكوى النائب العام الأردني جرائم حرب غزة محامون أردنيون مزدوجي الجنسية الجيش الإسرائيلي
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -321,5 +364,22 @@ indicators:
     queries:
       - Amnesty Jordan arrests Gaza solidarity protesters ban protests Israeli embassy 2024
   E3:
-    status: unchecked
-    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No universal-jurisdiction complaint accepted for investigation in Jordan found. Finish run,
+      T-F-W8 (resumed), 2026-11-09, with web search (queries below). The searches returned the
+      Jordan Bar Association's complaint to the Prosecutor of the International Criminal Court
+      against Israeli leaders (an international filing, not a complaint before a Jordanian court);
+      no complaint filed with or accepted by a Jordanian prosecutor or court was found. TRIAL
+      International's Universal Jurisdiction Annual Review 2026 (developments of 2025,
+      trialinternational.org PDF, text searched for Morocco, Jordan, Saudi Arabia, the United Arab
+      Emirates and Qatar) lists no case with Jordan as the forum state. Earlier the same day: the
+      King's official website (Press Room listing to mid-September 2026) and Petra items read for
+      B9; nothing found. The prosecutor's site (www.jc.jo) did not answer (WebFetch: connection
+      refused or empty page, 2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - Jordan prosecutor complaint Israeli war crimes Gaza universal jurisdiction lawyers Amman
+      - شكوى النائب العام الأردني جرائم حرب غزة محامون أردنيون مزدوجي الجنسية الجيش الإسرائيلي
+      - '"universal jurisdiction" Gaza complaint filed United Arab Emirates OR Qatar OR Jordan court accepted investigation'
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan

@@ -31,6 +31,13 @@
 #   Official Gazette (Al Meezan), the Shura Council, the Ministry of Defence, the Qatar Investment
 #   Authority (C5), the Public Prosecution and courts (E1, E3), Arabic-language pages (the Ministry's
 #   English service was read; the Arabic originals were not compared).
+# Finish run, T-F-W8 (2026-11-09, docs/10 B-917 to B-920): window 27 September to 9 November 2026 read
+# through the Ministry's Statements listing (listing API, 90 items to 14 August 2026), the lists of the
+# Prime Minister's speeches and press conferences (none in the window) and the Amiri Diwan's Speeches &
+# Remarks (built-in browser). Filed: the Amir's speeches of 13 October (Shura Council) and 22 September
+# 2026 (General Assembly), the France-Qatar joint statement of 21 October 2026 (Qatari and French
+# texts), the mediators' statements of 3 and 20 August 2026 and the eight ministers' West Bank
+# statements of 2 June, 23 July, 21 August and 9 September 2026. E1 and E3 stay unchecked. B8 unchanged.
 country: QAT
 protocol_version: 1
 last_full_check: 2026-09-29
@@ -157,18 +164,25 @@ indicators:
     queries:
       - mofa.gov.qa site search ("Criminal Court")
   B8:
-    status: unchecked
+    status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Generated from recognitions.csv; Qatar has no row. The registry dates its recognition to 16
-      November 1988 (data/countries.yaml, from A/78/846, a lead). No Qatari document stating the
-      recognition and its date was found: the site search for "recognition" and "State of Palestine"
-      returns Qatar's calls on other states to recognise Palestine and its welcome of their
-      recognitions, not its own. No row added (as for Saudi Arabia and the United Arab Emirates,
-      docs/10 B-382 (4), B-387 (5)); P-16 looks for a document of 1988.
+      Generated from recognitions.csv. The row QAT,1988-11-16 was added in the resumed T-F-W8
+      session of 2026-11-09 (docs/10 B-949), citing the letter of 14 December 1988 from Qatar's
+      Chargé d'affaires a.i. to the Secretary-General (A/43/971-S/20332, UNISPAL, archived,
+      src_19881214_un-unispal_qat-recognition-a-43-971), which transmits the statement issued on 16
+      November 1988 by the Council of Ministers of the State of Qatar 'in declaring its recognition
+      of the Palestinian State'. The date agrees with the registry (A/78/846). The pre-existing tier
+      (+3 from 2023-10-07, R21) does not depend on the day. Before this session: the Ministry's site search for
+      "recognition" and "State of Palestine" returned Qatar's calls on other states to recognise
+      Palestine, not its own recognition (docs/10 B-391).
     queries:
       - mofa.gov.qa site search (recognition, "State of Palestine")
+      - '"recognized the State of Palestine" 1988 Jordan OR Morocco OR Qatar OR "Saudi Arabia" OR "United Arab Emirates" statement ministry'
+      - UNISPAL document API, search "PNC Declaration of Independence Letter from" (1988 letters of member states)
   B9:
     status: has-events
+    checked_at: 2026-11-04
     note: >-
       Eleven events scoped `gaza`, all on the Prime Minister and Minister of Foreign Affairs' own
       words: his remarks at the joint press availability with the US Secretary of State in Doha of
@@ -200,6 +214,8 @@ indicators:
       - mofa.gov.qa site search (Gaza, ceasefire, genocide, starvation, famine, "joint statement")
       - mofa.gov.qa Prime Minister Speeches and Press Conferences (every item from October 2023)
       - state.gov Secretary Blinken Qatari Prime Minister joint press availability Doha October 13 2023 transcript
+      - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: the archived text of South Africa's DIRCO for the joint statement of 16 October 2026 on Colombia's embassy in Jerusalem; filed evt_2026_10_16_QAT_B9 (Jerusalem and the West Bank, tagged unscored); no other search for this country in this run; the other ministries' copies of the statement were not read"
+      - "monthly run 2026-11 (T-P23-4), 27 September to 4 November 2026: Pakistan's Ministry of Foreign Affairs press-release listing (mofa.gov.pk, pages 1 and 2, 12 September to 3 November 2026); found and archived the joint statement of eight foreign ministers of 22 September 2026 on Gaza (src_20260922_mofa-pk_fms-joint-statement-gaza-81st); filed evt_evt_2026_09_22_QAT_B9 (+2, call; the minister named by continuity of the post, flagged, docs/10 B-855); its settlement passage is a West Bank passage and not scored"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -255,19 +271,20 @@ indicators:
       - mofa.gov.qa site search ("West Bank")
   C5:
     status: none-found
-    checked_at: 2026-09-29
-    note: >-
-      No divestment decision by a Qatari public fund over conduct in Gaza or the occupied
-      territories was found in the Ministry's items; the Qatar Investment Authority was not
-      searched.
+    checked_at: 2026-11-11
+    note: 'No divestment decision by a Qatari public fund over conduct in Gaza or the occupied territories was found in the Ministry''s items; the Qatar Investment Authority was not searched. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): the Qatar Investment Authority''s home page and its Sustainability page (qia.qa/en/About/Pages/Sustainability.aspx, read) contain no exclusion list and no mention of Israel; English searches for a QIA divestment or exclusion over Gaza return Norway''s fund and a Danish pension fund only; no exclusion or divestment by a Qatari public fund over conduct in Gaza or the occupied territories; status kept.'
     queries:
       - mofa.gov.qa site search (Israeli)
+      - 'WebSearch 2026-11-11 (T-G-RS-1): Qatar Investment Authority divest Israel-linked companies exclusion Gaza 2024 2025 (Norway''s NBIM (Al-Ain, Cyprus Mail, Top1000funds) and a Danish fund (Asharq); no QIA decision)'
+      - 'curl 2026-11-11: www.qia.qa (200, home page) and /en/About/Pages/Sustainability.aspx (200, 5,170 characters of text, no exclusion or Israel)'
   C6:
     status: none-found
-    checked_at: 2026-09-29
-    note: No procurement exclusion with legal effect adopted in the window was found.
+    checked_at: 2026-11-11
+    note: 'No procurement exclusion with legal effect adopted in the window was found. P-23 re-search, T-G-RS-1, 2026-11-11 (CHECKUP §2b, B-2105 (a)): the Ministry of Finance''s procurement portal (monaqasat.mof.gov.qa: home page, its ESG page and its tenders-law page read) shows no exclusion of companies over conduct in Gaza or the occupied territories, and mof.gov.qa answered 403; Arabic searches return the Ministry of Foreign Affairs'' statements welcoming other states'' bans on settlement goods (the United Kingdom, Ireland, the Netherlands and Belgium) and on aid to Gaza, not a Qatari procurement measure; status kept.'
     queries:
       - mofa.gov.qa site search (Israeli)
+      - 'WebSearch 2026-11-11 (T-G-RS-1): قطر المشتريات الحكومية وزارة المالية استبعاد شركات داعمة لإسرائيل مقاطعة غزة 2024 قرار (Arabic: MOFA statements welcoming the UK, Irish, Dutch and Belgian settlement-goods measures (mofa.gov.qa); no Qatari procurement exclusion)'
+      - 'curl 2026-11-11: monaqasat.mof.gov.qa (200), /ESG and /TendersLaws (200, read, no exclusion); www.mof.gov.qa (403)'
   D1:
     status: has-events
     note: >-
@@ -289,13 +306,19 @@ indicators:
       - mofa.gov.qa site search (UNRWA)
   D3:
     status: has-events
+    checked_at: '2026-11-09'
     note: >-
-      One event (evt_2024_12_31_QAT_D3): UNRWA's table of 2024 gives USD 50,664,265 pledged and
-      41,787,120 received from Qatar (including Qatar Charity and Qatar Red Crescent), of which USD
-      34,274,424 to the programme budget; UNRWA's table of 2022 gives USD 10,500,000 for Qatar. The
-      Minister of State for International Cooperation said on 26 September 2024 that Qatar has
-      continuously increased its donations to UNRWA (archived). The QFFD-UNRWA agreement of 17 June
-      2025 (USD 20 million for 2025-2026, Ministry item by title) is later than the comparison year.
+      One event (evt_2024_12_31_QAT_D3): UNRWA's table of 2024 gives USD 50,664,265 pledged and 41,787,120
+      received from Qatar (including Qatar Charity and Qatar Red Crescent), of which USD 34,274,424 to the
+      programme budget; UNRWA's table of 2022 gives USD 10,500,000 for Qatar. The Minister of State for
+      International Cooperation said on 26 September 2024 that Qatar has continuously increased its donations
+      to UNRWA (archived). The QFFD-UNRWA agreement of 17 June 2025 (USD 20 million for 2025-2026, Ministry
+      item by title) is later than the comparison year. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025,
+      as of 31 December 2025, read 2026-11-09) gives USD 10,000,000 pledged, not above USD 10,500,000 in
+      2022: no 2025 event; evt_2024_12_31_QAT_D3 ends on 2025-12-31, from which the 2025 table decides the
+      tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: has-events
     note: >-
@@ -317,8 +340,20 @@ indicators:
     queries:
       - mofa.gov.qa site search (evacuation, wounded)
   E1:
-    status: unchecked
-    note: The Public Prosecution and the courts were not searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No investigation or prosecution of nationals or companies of Qatar for conduct in Gaza found.
+      Finish run, T-F-W8 (resumed), 2026-11-09, with web search: press and NGO searches in English
+      and Arabic (queries below). The searches returned Qatari statements condemning strikes in Gaza
+      and calling for accountability, none on an investigation of a Qatari national or company.
+      Earlier the same day: the Ministry of Foreign Affairs' site search ('universal jurisdiction',
+      'prosecution Israel', 'war crimes Gaza') and its Statements listing to 14 August 2026; nothing
+      found. The prosecutor's site (www.pp.gov.qa) did not answer (WebFetch: connection refused or
+      empty page, 2026-11-09). Experimental, unscored (D-12).
+    queries:
+      - Qatar Public Prosecution complaint Israeli officials war crimes Gaza lawsuit Doha court
+      - النيابة العامة القطرية دعوى جنائية ضد مسؤولين إسرائيليين غزة محكمة الدوحة
   E2:
     status: none-found
     checked_at: 2026-09-29
@@ -329,5 +364,23 @@ indicators:
     queries:
       - mofa.gov.qa site search (Gaza)
   E3:
-    status: unchecked
-    note: No domestic universal-jurisdiction complaint accepted for investigation was searched (P-16).
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No universal-jurisdiction complaint accepted for investigation in Qatar found. Finish run,
+      T-F-W8 (resumed), 2026-11-09, with web search (queries below). The searches returned Qatar's
+      steps at the International Criminal Court after the Israeli strike on Doha of 9 September 2025
+      (an international proceeding, not a complaint before a Qatari court, and not on conduct in
+      Gaza); no complaint filed with or accepted by a Qatari prosecutor or court was found. TRIAL
+      International's Universal Jurisdiction Annual Review 2026 (developments of 2025,
+      trialinternational.org PDF, text searched for Morocco, Jordan, Saudi Arabia, the United Arab
+      Emirates and Qatar) lists no case with Qatar as the forum state. Earlier the same day: the
+      Ministry of Foreign Affairs' site search ('universal jurisdiction', 'prosecution Israel', 'war
+      crimes Gaza') and its Statements listing to 14 August 2026; nothing found. The prosecutor's
+      site (www.pp.gov.qa) did not answer (WebFetch: connection refused or empty page, 2026-11-09).
+      Experimental, unscored (D-12).
+    queries:
+      - Qatar Public Prosecution complaint Israeli officials war crimes Gaza lawsuit Doha court
+      - النيابة العامة القطرية دعوى جنائية ضد مسؤولين إسرائيليين غزة محكمة الدوحة
+      - '"universal jurisdiction" Gaza complaint filed United Arab Emirates OR Qatar OR Jordan court accepted investigation'
+      - TRIAL International Universal Jurisdiction Annual Review 2025 Gaza cases countries Morocco Jordan

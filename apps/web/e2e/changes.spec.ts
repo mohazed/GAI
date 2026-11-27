@@ -46,7 +46,7 @@ interface MonthFile {
   }[]
 }
 
-const scoreMode = () => test.info().project.name === 'score'
+const scoreMode = () => test.info().project.metadata.mode === 'score'
 
 async function latest(page: Page): Promise<Latest> {
   const res = await page.request.get('/api/v1/changes/latest.json')
@@ -107,6 +107,27 @@ for (const lang of LANGS) {
       await expect(page.locator('#feed article')).toHaveCount(listed.length)
       await expect(page.getByText(t.stale)).toHaveCount(0)
       expect(errors).toEqual([])
+    })
+
+    test('the methodology proposals open for comment are announced, and only those', async ({
+      page,
+    }) => {
+      const res = await page.request.get('/api/v1/methodology/index.json')
+      expect(res.status()).toBe(200)
+      const index = (await res.json()) as {
+        proposals: { version: string; pr_url: string; comment_until: string }[]
+      }
+      await page.goto(`/${lang}/changes/`)
+      if (index.proposals.length === 0) {
+        await expect(page.locator('#proposed')).toHaveCount(0)
+        return
+      }
+      const section = page.locator('#proposed')
+      await expect(section.getByRole('heading', { level: 2 })).toBeVisible()
+      for (const p of index.proposals) {
+        await expect(section).toContainText(p.version)
+        await expect(section.locator(`a[href="${p.pr_url}"]`)).toHaveCount(1)
+      }
     })
 
     test('a build older than three days shows the stale notice', async ({ page }) => {

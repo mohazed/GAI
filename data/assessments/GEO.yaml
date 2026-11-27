@@ -1,0 +1,247 @@
+# Coverage record for Georgia (docs/03 §6). P-21 light protocol, session T-P21-47, 2026-11-04.
+# `has-events` is set by the build from published events; hand-set values below are the research status for review.
+# Generated indicators (D-08) are noted, never hand-authored.
+# Search method (docs/06 §5): the General Debate files of the 79th to 81st sessions (gadebate.un.org, read live, English), the UN Security Council records and Meetings Coverage already archived (grep for Georgia), the joint statements already archived (grep for Georgia), the generated tables, UNRWA donor rankings (2022 to 2024), the SIPRI register, the ICJ's case 192 page and the Assembly of States Parties' list; the Ministry of Foreign Affairs' site (mfa.gov.ge/en: the first page of its 'Statements by MFA' and news listings; the site answered HTTP 522 at one request and 200 at the next, and its search parameters do not filter). Web searches were not available to this session (the run's search budget was spent, as for T-P21-26 and T-P21-46): no press item and no Georgian-language source was read, and the Government's (gov.ge) and the President's (president.gov.ge) sites did not answer from this network. These gaps are scheduled for P-23.
+# No event. Leads: none.
+# Completion of 2026-11 (finish run, T-F-L24, 2026-11-10): A3, A5 to A8, C4 to C6 and E1 to E3 searched (web searches in English and Georgian; mfa.gov.ge answered 522), all none-found with the limits said in each note; new lead_20261110_GEO_1 (A5, press report of talks on personnel for the stabilisation force in Gaza). No new event since 2026-11-04. See docs/10 B-2088.
+country: GEO
+protocol_version: 1
+last_full_check: '2026-11-04'
+indicators:
+  A1:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_deliveries.csv, release of 9 March 2026): no delivery of major arms to Israel from this country. Left to the build.'
+    queries:
+    - 'sipri_deliveries.csv, supplier GEO'
+    checked_at: '2026-11-04'
+  A2:
+    status: no-data
+    note: 'Generated from Comtrade. The country has no Comtrade rows: the runs of 2026-11-03 and 2026-11-04 (docs/10 B-718) covered about 12 reporters each and this country was not among them; `pnpm fetch:comtrade` reaches about 12 reporters per UTC day under Save Page Now''s pace (the monthly run, P-23). The build shows no-data until a fetch. Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  A3:
+    status: none-found
+    note: 'No document names a Georgian company as a supplier of parts or maintenance for the F-35 programme: Georgia is neither a partner nor a foreign-military-sales customer. The Tbilisi composites plant
+      of the state Partnership Fund and Elbit Systems-Cyclone (Aero-Structure Technologies, opened 2018) makes parts for civil aircraft in every source read; none links it to the F-35. Not searched: the programme''s
+      full supplier database (not public).'
+    queries:
+    - 'WebSearch 2026-11-10: F-35 program partner nations foreign military sales customers list 2026 (the Joint Program Office''s eight partners and its foreign-military-sales customers; none of the six of
+      this batch: GEO, IRQ, KWT, LBN, OMN, SYR)'
+    - 'WebSearch 2026-11-10: Aero-Structure Technologies Tbilisi Cyclone Elbit F-35 parts Georgia factory (civil.ge, agenda.ge, 1tv.ge and the company''s site: the joint venture of the state Partnership Fund
+      and Elbit Systems-Cyclone, opened 2018, makes composite parts for civil aircraft, Boeing named; no F-35 work in any result)'
+    checked_at: '2026-11-10'
+  A4:
+    status: none-found
+    note: 'Generated from SIPRI (sipri_orders.csv): Georgia''s orders from Israel are of 2004 to 2008 (archive/text/src_20261005_sipri_register-supplier-israel.txt, lines 261 to 265: Aerostar, LAR-160, Hermes-450, Python-5, Wolf), before the window. Left to the build.'
+    queries:
+    - 'sipri_orders.csv, buyer GEO'
+    - 'archive/text/src_20261005_sipri_register-supplier-israel.txt, Georgia (searched)'
+    checked_at: '2026-11-04'
+  A5:
+    status: none-found
+    note: 'No confirmed instance of military cooperation with Israel in the window was found: no named exercise, documented transit, public basing agreement or official confirmation of intelligence sharing
+      related to the Gaza campaign. The defence contracts with Israeli companies (air defence, 2020) and the counter-terrorism and cyber agreements of 2018 are before the window and pre-existing. A press
+      report (JAMnews, 26 June 2026, citing Israel''s Channel 12 and three diplomats) says that Georgia is in talks on sending personnel to the international stabilisation force in Gaza; neither Government
+      commented, no indicator defines participation in that force and nothing was decided: lead_20261110_GEO_1. Not searched: the Ministry of Defence''s releases (mod.gov.ge) item by item. The searches found no statement by Georgia''s Government on its relations with Israel in the window other than meetings and a welcome of the ceasefire.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia Israel military cooperation OR defence agreement OR arms 2024 2025 Elbit Georgian Ministry of Defence (civil.ge, agenda.ge, Eurasianet: the air-defence modernisation contracts
+      of 2020 with Rafael and Elbit, the drone settlement, the 2018 counter-terrorism and cyber agreements; nothing in the window)'
+    - 'WebSearch 2026-11-10: საქართველო ისრაელი თავდაცვის სამინისტრო თანამშრომლობა 2024 2025 ღაზა (Georgian: JAMnews of 26 June 2026 citing Israel''s Channel 12 on talks about Georgian personnel for the international
+      stabilisation force in Gaza, no Government comment; the Israeli Minister of National Security''s visit to Tbilisi of 24 August 2025; the Interior Ministry''s item on that meeting; no exercise, transit,
+      basing or intelligence agreement)'
+    - 'mfa.gov.ge/en/news: HTTP 522 on 2026-11-10 (as at times on 2026-11-04); the Ministry''s items were not read in this pass'
+    checked_at: '2026-11-10'
+  A6:
+    status: none-found
+    note: 'No decision suspending or refusing arms export licences to Israel was found; Georgia exports no major arms to Israel (A1: no delivery in the SIPRI register). Not searched: the export-control registers
+      of the Ministry of Defence and the Revenue Service.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia Israel military cooperation OR defence agreement OR arms 2024 2025 Elbit Georgian Ministry of Defence (civil.ge, agenda.ge, Eurasianet: the air-defence modernisation contracts
+      of 2020 with Rafael and Elbit, the drone settlement, the 2018 counter-terrorism and cyber agreements; nothing in the window)'
+    - 'WebSearch 2026-11-10: საქართველო ისრაელი თავდაცვის სამინისტრო თანამშრომლობა 2024 2025 ღაზა (Georgian: JAMnews of 26 June 2026 citing Israel''s Channel 12 on talks about Georgian personnel for the international
+      stabilisation force in Gaza, no Government comment; the Israeli Minister of National Security''s visit to Tbilisi of 24 August 2025; the Interior Ministry''s item on that meeting; no exercise, transit,
+      basing or intelligence agreement)'
+    checked_at: '2026-11-10'
+  A7:
+    status: none-found
+    note: 'No law or decree covering both arms exports to and imports from Israel was found; Georgia''s purchases from Israeli companies (A4: orders of 2004 to 2008; the air-defence contracts of 2020) point
+      the other way. Not searched: the Legislative Herald (matsne.gov.ge) item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia Israel military cooperation OR defence agreement OR arms 2024 2025 Elbit Georgian Ministry of Defence (civil.ge, agenda.ge, Eurasianet: the air-defence modernisation contracts
+      of 2020 with Rafael and Elbit, the drone settlement, the 2018 counter-terrorism and cyber agreements; nothing in the window)'
+    - 'WebSearch 2026-11-10: საქართველო ისრაელი თავდაცვის სამინისტრო თანამშრომლობა 2024 2025 ღაზა (Georgian: JAMnews of 26 June 2026 citing Israel''s Channel 12 on talks about Georgian personnel for the international
+      stabilisation force in Gaza, no Government comment; the Israeli Minister of National Security''s visit to Tbilisi of 24 August 2025; the Interior Ministry''s item on that meeting; no exercise, transit,
+      basing or intelligence agreement)'
+    checked_at: '2026-11-10'
+  A8:
+    status: none-found
+    note: 'No denial of port access, transit or airspace to an arms shipment bound for Israel was found. Not searched: the Maritime Transport Agency''s and the Civil Aviation Agency''s notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia Israel military cooperation OR defence agreement OR arms 2024 2025 Elbit Georgian Ministry of Defence (civil.ge, agenda.ge, Eurasianet: the air-defence modernisation contracts
+      of 2020 with Rafael and Elbit, the drone settlement, the 2018 counter-terrorism and cyber agreements; nothing in the window)'
+    - 'WebSearch 2026-11-10: საქართველო ისრაელი თავდაცვის სამინისტრო თანამშრომლობა 2024 2025 ღაზა (Georgian: JAMnews of 26 June 2026 citing Israel''s Channel 12 on talks about Georgian personnel for the international
+      stabilisation force in Gaza, no Government comment; the Israeli Minister of National Security''s visit to Tbilisi of 24 August 2025; the Interior Ministry''s item on that meeting; no exercise, transit,
+      basing or intelligence agreement)'
+    - 'mfa.gov.ge/en/news: HTTP 522 on 2026-11-10 (as at times on 2026-11-04); the Ministry''s items were not read in this pass'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): Bahrain arms embargo Israel OR port airspace arms shipment Israel; Georgia Batumi Poti port ship arms Israel transit 2024 2025 (commercial land routes through Bahrain and Georgian transit to Armenia; no arms shipment, refusal or embargo)'
+    checked_at: '2026-11-10'
+  B1:
+    status: has-events
+    note: 'Generated from unga_votes.csv: abstentions on nine qualifying votes, yes on A/RES/80/78 (5 December 2025) and no vote recorded on A/DEC/80/506 (12 September 2025) and A/RES/80/1 (19 September 2025), each absence scored at −2 like an abstention whatever the reason (B-690). Georgia is not among the Member States in arrears in the Secretary-General''s letter of 3 September 2025 (src_20250903_undocs_a-80-362-article19, searched), so the two absences are not explained by Article 19 (Article 19 note in docs/review/light-protocol.md, for P-23).'
+    queries:
+    - 'unga_votes.csv, country GEO'
+    - 'src_20250903_undocs_a-80-362-article19 (searched)'
+    checked_at: '2026-11-04'
+  B2:
+    status: not-applicable
+    note: 'Not a Security Council member in the window (countries.yaml memberships.unsc is empty).'
+    checked_at: '2026-11-04'
+  B3:
+    status: none-found
+    note: 'Georgia is not among the states that filed a declaration of intervention in ICJ case 192 (the Court''s page of 27 September 2026, archived: src_20260927_icj-cij_case-192, searched for Georgia).'
+    queries:
+    - 'archive/text/src_20260927_icj-cij_case-192.txt, Georgia (not found)'
+    checked_at: '2026-11-04'
+  B4:
+    status: none-found
+    note: 'No statement or act rejecting the ICJ''s provisional-measures orders was found in the sources read (limited: the Ministry''s statements were read on the first listing page only; P-23).'
+    checked_at: '2026-11-04'
+  B5:
+    status: none-found
+    note: 'Georgia is a state party to the Rome Statute (the Assembly of States Parties'' list, src_20261009_icc-asp_states-parties, line 140). No statement on the warrants of 21 November 2024 by the President, the Prime Minister or the Foreign Minister was found in the sources read (the Ministry''s site was not searched item by item and no press search was possible; P-23). Searched on 2026-11-10 (T-F-L24): a web search found no statement of the Georgian Government on the warrants (the results concern the Court''s own situation in Georgia).'
+    queries:
+    - 'archive/text/src_20261009_icc-asp_states-parties.txt, Georgia'
+    - 'WebSearch 2026-11-10: Georgia government ICC arrest warrant Netanyahu position Kobakhidze OR foreign ministry Georgia Rome Statute 2024'
+    checked_at: '2026-11-10'
+  B6:
+    status: none-found
+    note: 'No statement or act by Georgia refusing to execute the warrants, and no hosting of a person subject to a warrant, was found in the sources read (P-23).'
+    checked_at: '2026-11-04'
+  B7:
+    status: none-found
+    note: 'No sanctions on ICC judges or prosecutors by Georgia were found in the sources read.'
+    checked_at: '2026-11-04'
+  B8:
+    status: none-found
+    note: 'Generated from recognitions.csv, which has no row for Georgia. The registry gives 25 April 1992 (countries.yaml recognises_palestine); no Government document of the date was read, so no row is added (R21; P-23).'
+    queries:
+    - 'recognitions.csv, GEO'
+    checked_at: '2026-11-04'
+  B9:
+    status: none-found
+    note: 'Georgia''s General Debate statements of the 79th, 80th (the President, Mikheil Kavelashvili, named in the file''s heading) and 81st sessions (ge_en.pdf, read live, 52,510, 166,050 and 141,766 bytes; the 79th and 81st files name no speaker) never mention Gaza, Palestine, Israel, a ceasefire or hostages. No statement by the Prime Minister, the President or the Foreign Minister Maka Botchorishvili (named on the Ministry''s site) naming Gaza was found in the first listing pages of the Ministry''s site, and no joint statement already archived names Georgia as a signatory. Not searched: the Ministry''s and the Government''s items one by one, the press, Georgian-language sources (P-23).'
+    queries:
+    - 'gadebate.un.org/sites/default/files/gastatements/{79,80,81}/ge_en.pdf (read live, grep Gaza, Palestin, Israel, ceasefire, hostage)'
+    - 'mfa.gov.ge/en/statements-by-mfa, mfa.gov.ge/en/news (first pages)'
+    - 'archive/text: joint statements, grep Georgia'
+    checked_at: '2026-11-04'
+  B10:
+    status: none-found
+    note: 'No statement of unconditional support for Israel or denial of violations by the President, the Prime Minister or the Foreign Minister was found in the sources read (limited, as for B9). The Israeli President''s release of 3 August 2026 on the credentials of Georgia''s ambassador (src_20260803_embassies-gov-il_herzog-credentials-new-ambassadors, line 8) gives the Israeli President''s words, not Georgia''s, and is not an event.'
+    checked_at: '2026-11-04'
+  B11:
+    status: none-found
+    note: 'No sanctions by Georgia on settlers or settler entities were found in the sources read. Georgia is an EU candidate, not a member, so the Council''s listings (R8) do not apply.'
+    checked_at: '2026-11-04'
+  B12:
+    status: none-found
+    note: 'No recall, downgrade or severance was found: an ambassador of Georgia presented credentials to Israel''s President on 3 August 2026 (src_20260803_embassies-gov-il_herzog-credentials-new-ambassadors, line 8: ''the Ambassador of Georgia, Beka Dvali''); an accreditation is not an indicator act (B-599).'
+    checked_at: '2026-11-04'
+  C1:
+    status: none-found
+    note: 'Georgia is not a party to the EU-Israel Association Agreement.'
+    checked_at: '2026-11-04'
+  C2:
+    status: none-found
+    note: 'No instrument of cooperation with Israel signed since October 2023 was read in a primary. Searched on 2026-11-10 (T-F-L24): the press reports that the Minister of Internal Affairs, Geka Geladze, and Israel''s Minister of National Security, Itamar Ben-Gvir, signed a memorandum of cooperation on police cooperation, migration agencies and police academies during the Minister''s visit to Israel on or about 20 October 2025, relaying the Ministry''s statement and photos of 20 October 2025 (Civil.ge of 20 October 2025, read; 1TV, Imedi and Report.az in the results). That is an instrument of the C2 class (R18, as the Kazakh, South Sudanese, Argentine and Togolese memoranda), but the Ministry''s release could not be read or archived (police.ge and mia.police.ge did not answer from this network; the Wayback Machine was offline when tried): recorded as lead_20261110_GEO_2, C2 stays none-found until a primary is archived (as Zambia''s, docs/10 B-2085). The memorandum of cooperation between the two Ministries of Justice (8 October 2021, the Georgian Embassy in Israel''s item) and the visa-exemption and crime-fighting agreements of 18 November 2013 are before the window.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia Israel agreement signed 2024 2025 2026 memorandum free trade visa cooperation Tbilisi Jerusalem'
+    - 'WebSearch 2026-11-10: Geladze Ben-Gvir memorandum of cooperation signed Israel Ministry of Internal Affairs Georgia police.ge October 2025'
+    - 'WebSearch 2026-11-10 (police.ge, gov.ge, mfa.gov.ge, gov.il): Geladze Israel memorandum Ben-Gvir police cooperation (no official text in the results)'
+    - 'israel.mfa.gov.ge/en/news/sakartvelosa-da-israelis-iusticiis-saministroebs-shoris-tanamshromlobis-shesaxeb-memoranduli-gapormda (read 2026-11-10: the justice memorandum of 8 October 2021)'
+    checked_at: '2026-11-10'
+  C3:
+    status: no-data
+    note: 'Generated from Comtrade; no rows yet (see A2). Nothing is hand-authored.'
+    checked_at: '2026-11-04'
+  C4:
+    status: none-found
+    note: 'No ban or labelling rule on goods from Israeli settlements was found. Georgia is an EU candidate but applies its own customs law; the EU''s labelling notice of 2015 does not bind it. Not searched:
+      the Revenue Service''s customs notices.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia government Israel settlement products labelling OR Pension Agency divest OR Israel bonds OR universal jurisdiction complaint Gaza Georgian prosecutor (results concern
+      the US state of Georgia and other governments; nothing on the country)'
+    checked_at: '2026-11-10'
+  C5:
+    status: none-found
+    note: 'No exclusion of Israeli companies by a Georgian public fund was found (the Pension Agency, the Partnership Fund, the National Bank); the results concern other states'' funds and the US state of
+      Georgia. Not searched: the Pension Agency''s investment reports.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia government Israel settlement products labelling OR Pension Agency divest OR Israel bonds OR universal jurisdiction complaint Gaza Georgian prosecutor (results concern
+      the US state of Georgia and other governments; nothing on the country)'
+    checked_at: '2026-11-10'
+  C6:
+    status: none-found
+    note: 'No exclusion of Israeli companies from public procurement was found. Not searched: the State Procurement Agency''s register (procurement.gov.ge).'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia government Israel settlement products labelling OR Pension Agency divest OR Israel bonds OR universal jurisdiction complaint Gaza Georgian prosecutor (results concern
+      the US state of Georgia and other governments; nothing on the country)'
+    - 'WebSearch 2026-11-10 (T-F-V2 verification): public procurement exclude Israeli companies OR tender ban Israel firms Uganda OR Zambia OR Zimbabwe OR Georgia OR Thailand OR Philippines 2024 2025 (measures in Ireland, Spain, Belgium, the United Kingdom and United States states; none concerns this state)'
+    checked_at: '2026-11-10'
+  D1:
+    status: none-found
+    note: 'Generated from FTS: no Georgian Government flow to the Gaza response in fts_plan_totals.csv. Left to the build.'
+    queries:
+    - 'fts_plan_totals.csv, donor GEO'
+    checked_at: '2026-11-04'
+  D2:
+    status: none-found
+    note: 'UNRWA''s donor rankings of 2022, 2023 and 2024 have no row for Georgia; no announced suspension was found.'
+    queries:
+    - 'archive/text/src_2022…2024 UNRWA donor rankings (searched)'
+    checked_at: '2026-11-04'
+  D3:
+    status: none-found
+    checked_at: '2026-11-09'
+    note: >-
+      UNRWA's donor rankings of 2022, 2023 and 2024 have no row for Georgia: no contribution to restore
+      or increase. UNRWA's table for 2025 (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025,
+      read 2026-11-09) has no row for Georgia, so 2025 does not exceed 2022: no 2025 event (docs/10 B-876).
+    queries:
+    - archive/text/src_2022…2024 UNRWA donor rankings (searched)
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
+  D4:
+    status: none-found
+    note: 'No medical-evacuation programme for Gazans hosted in Georgia and no field hospital deployed by Georgia was read in a primary (not searched beyond the General Debate texts; P-23).'
+    checked_at: '2026-11-04'
+  D5:
+    status: none-found
+    note: 'No visa or refugee pathway for Gazans was read in a primary (not searched; P-23).'
+    checked_at: '2026-11-04'
+  E1:
+    status: none-found
+    note: 'Experimental, unscored. No domestic investigation or prosecution of Georgian nationals or companies for conduct in Gaza was found. Not searched: the Prosecutor''s Office''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia government Israel settlement products labelling OR Pension Agency divest OR Israel bonds OR universal jurisdiction complaint Gaza Georgian prosecutor (results concern
+      the US state of Georgia and other governments; nothing on the country)'
+    - 'WebSearch 2026-11-10: Georgia Kobakhidze OR Botchorishvili Israel Gaza statement November 2026 (the Prime Minister''s welcome of the ceasefire, his meeting with Israel''s Ambassador of March 2026,
+      the Israeli minister''s visit of August 2025; no measure)'
+    checked_at: '2026-11-10'
+  E2:
+    status: none-found
+    note: 'Experimental, unscored. No ban on Palestine solidarity protests or symbols was found; the rallies of November and December 2023 in Tbilisi and Marneuli are reported without police action, and the
+      detentions of 2024 and 2025 found concern the election protests. Not searched: the Ministry of Internal Affairs'' releases, Georgian-language press item by item.'
+    queries:
+    - 'WebSearch 2026-11-10: Tbilisi pro-Palestine rally police OR protest Gaza Georgia 2024 2025 detained (rallies of November and December 2023 in Tbilisi and Marneuli reported without incident; the detentions
+      found concern the election protests, not Palestine)'
+    - 'WebSearch 2026-11-10: საქართველო ისრაელი თავდაცვის სამინისტრო თანამშრომლობა 2024 2025 ღაზა (Georgian: JAMnews of 26 June 2026 citing Israel''s Channel 12 on talks about Georgian personnel for the international
+      stabilisation force in Gaza, no Government comment; the Israeli Minister of National Security''s visit to Tbilisi of 24 August 2025; the Interior Ministry''s item on that meeting; no exercise, transit,
+      basing or intelligence agreement)'
+    checked_at: '2026-11-10'
+  E3:
+    status: none-found
+    note: 'Experimental, unscored. No universal-jurisdiction complaint concerning conduct in Gaza accepted for investigation in Georgia was found (Georgia is a party to the Rome Statute). Not searched: the
+      Prosecutor''s Office''s releases.'
+    queries:
+    - 'WebSearch 2026-11-10: Georgia government Israel settlement products labelling OR Pension Agency divest OR Israel bonds OR universal jurisdiction complaint Gaza Georgian prosecutor (results concern
+      the US state of Georgia and other governments; nothing on the country)'
+    checked_at: '2026-11-10'

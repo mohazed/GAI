@@ -23,11 +23,17 @@ const byIso = (a: { iso3: string }, b: { iso3: string }) =>
 /**
  * "Compare with peers" (docs/05 §6 Country): up to `n` scored countries of the same region and,
  * in score mode, of the same band. Score mode takes the nearest scores (ties by ISO3); scorecard
- * mode, which has no score to measure distance with, takes the same subregion first, then ISO3.
+ * mode, which has no score to measure distance with, takes the same M49 intermediate region
+ * first (Eastern Africa, Caribbean… where M49 gives one: a sub-region as wide as Sub-Saharan
+ * Africa would otherwise give Kenya the first four of its 48 neighbours by ISO3, Angola, Burundi,
+ * Benin and Burkina Faso), then the same subregion, then ISO3 (P-20, docs/10 B-861).
  */
 export function peersOf(
   file: ApiCountriesFile,
-  self: Pick<ApiScoredCountry, 'iso3' | 'region' | 'subregion' | 'band' | 'score'>,
+  self: Pick<
+    ApiScoredCountry,
+    'iso3' | 'region' | 'subregion' | 'intermediate_region' | 'band' | 'score'
+  >,
   mode: Mode,
   n = 4,
 ): Peers {
@@ -36,8 +42,11 @@ export function peersOf(
   )
   const near = (a: ApiScoredCountry, b: ApiScoredCountry) =>
     Math.abs(a.score - self.score) - Math.abs(b.score - self.score) || byIso(a, b)
-  const sub = (a: ApiScoredCountry, b: ApiScoredCountry) =>
-    Number(b.subregion === self.subregion) - Number(a.subregion === self.subregion) || byIso(a, b)
+  const same = (c: ApiScoredCountry) =>
+    (self.intermediate_region !== null && c.intermediate_region === self.intermediate_region
+      ? 2
+      : 0) + (c.subregion === self.subregion ? 1 : 0)
+  const sub = (a: ApiScoredCountry, b: ApiScoredCountry) => same(b) - same(a) || byIso(a, b)
   const pick = (xs: ApiScoredCountry[]) =>
     xs.slice(0, n).map((c) => ({ iso3: c.iso3, name: c.name }))
   const region = others.filter((c) => c.region === self.region)

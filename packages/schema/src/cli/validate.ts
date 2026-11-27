@@ -25,6 +25,7 @@ import { type BaseSnapshot, baseRequired, loadBaseSnapshot, resolveBase } from '
 import {
   listMethodologyVersions,
   loadMethodology,
+  loadProposals,
   loadReviewers,
   type Methodology,
 } from '../load/methodology.js'
@@ -170,6 +171,9 @@ export function main(argv: string[], options: MainOptions = {}): number {
   // methodology/reviewers.yaml (docs/08 §2): optional; when present it must match its schema.
   const reviewerIssues = loadReviewers(repoRoot).issues
   if (reviewerIssues.length > 0) issues = sortIssues([...issues, ...reviewerIssues])
+  // methodology/proposals.yaml (docs/08 §1 step 3): optional; when present it must match its schema.
+  const proposalIssues = loadProposals(repoRoot).issues
+  if (proposalIssues.length > 0) issues = sortIssues([...issues, ...proposalIssues])
 
   const display = (i: Issue): Issue =>
     i.file.startsWith('methodology/') || prefix === '' ? i : { ...i, file: `${prefix}${i.file}` }

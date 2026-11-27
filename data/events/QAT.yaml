@@ -11,6 +11,11 @@
 # filed one, and only when the document cites Gaza (docs/10 B-381 (4), B-32). The transcripts carry no date on the
 # page; each event is dated from a dated document (the Ministry's news item of the day, or the archived page's
 # metadata), docs/10 B-393. The English texts are the Ministry's own; the Arabic originals were not compared.
+# Finish run (T-F-W8, 2026-11-09): R3 (docs/calibration/README.md §6) made the head of state a B9 speaker; the Amir's
+# speeches that cite Gaza are filed from then on (docs/10 B-917, B-920 (1)), and the rule on further statements in the
+# same weeks applies per speaker: on 22 September 2026 the foreign ministers' joint statement and the Amir's General
+# Debate address are two events (`evt_2026_09_22_QAT_B9`, `evt_2026_09_22_QAT_B9_2`; docs/10 B-2107 (4)). The lines
+# above predate R3.
 
 - id: evt_2023_10_13_QAT_B9
   revision: 1
@@ -388,7 +393,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: >-
     Increased tier (+8): UNRWA's table of 2024 gives USD 50,664,265 pledged and 41,787,120 received from Qatar
@@ -695,6 +700,51 @@
       The Ministry's list of press conferences dates the transcript 14 May 2026; the visit and meeting were on 12 May
       2026 (docs/10 B-393).
 
+- id: evt_2026_06_02_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-06-02'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call settler incursions into Al-Aqsa Mosque under the protection of Israeli forces a flagrant violation of international law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Prime Minister and seven counterparts called settler incursions into Al-Aqsa Mosque under Israeli protection a violation of international law.
+    fr: Le Premier ministre et sept homologues ont qualifié les incursions de colons dans la mosquée Al-Aqsa sous protection israélienne de violation du droit international.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: They stress that these provocative and unacceptable actions constitute a flagrant violation of international law, the relevant United Nations resolutions, and the historical and legal status quo at the holy sites in occupied East Jerusalem.
+    quote_lang: en
+    locator: line 2
+  - source: src_20260602_mfa-tr_eight-ministers-al-aqsa
+    quote: The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan, Islamic Republic of Pakistan, State of Qatar
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_06_02_TUR_B9
+  - evt_2026_06_02_EGY_B9
+  - evt_2026_06_02_SAU_B9
+  - evt_2026_06_02_ARE_B9
+  - evt_2026_06_02_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_06_02_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Qatar (evt_2026_06_18_QAT_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-06-02, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Qatar and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
 - id: evt_2026_06_18_QAT_B9
   revision: 1
   country: QAT
@@ -743,6 +793,89 @@
     notes: >-
       Filed as a tagged, unscored event as the P-D prompt asks for West Bank conduct met during the search, from the
       text archived for the United Arab Emirates (as evt_2026_06_18_ARE_B9).
+
+- id: evt_2026_07_23_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-07-23'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers call the access restrictions in the Old City of Jerusalem a flagrant violation of international law, including international humanitarian law. Scoped west-bank (East Jerusalem): tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Prime Minister and seven counterparts called Israeli access restrictions in the Old City of Jerusalem a violation of international humanitarian law.
+    fr: Le Premier ministre et sept homologues ont qualifié les restrictions d'accès israéliennes dans la vieille ville de Jérusalem de violation du droit international humanitaire.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: Restrictions on access to the Old City of Jerusalem and its places of worship coupled with discriminatory and arbitrary access restrictions to the other places of worship in the old city constitute a flagrant violation of international law, including international humanitarian law
+    quote_lang: en
+    locator: line 4
+  - source: src_20260723_mfa-tr_eight-ministers-al-aqsa-jerusalem
+    quote: 1. The Foreign Ministers of the Republic of Türkiye, Arab Republic of Egypt, Republic of Indonesia, the Hashemite Kingdom of Jordan, Islamic Republic of Pakistan, State of Qatar
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_07_23_TUR_B9
+  - evt_2026_07_23_EGY_B9
+  - evt_2026_07_23_SAU_B9
+  - evt_2026_07_23_ARE_B9
+  - evt_2026_07_23_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_07_23_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Qatar (evt_2026_06_18_QAT_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-07-23, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Qatar and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_08_03_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-08-03'
+  points: 5
+  points_rationale: 'Names a specific violation (+5): the mediating states condemn the targeting of healthcare facilities and medical infrastructure in the Gaza Strip and call it a flagrant violation of international law and international humanitarian law.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister and his counterparts of the other mediating states condemned the targeting of healthcare facilities in Gaza as a violation of international humanitarian law.
+    fr: Le Premier ministre et ses homologues des autres États médiateurs ont condamné le ciblage d'installations de santé à Gaza comme une violation du droit international humanitaire.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260803_mfa-tr_mediators-violations-gaza
+    quote: The Republic of Türkiye, the Arab Republic of Egypt and the State of Qatar, in their capacity as the mediating countries, express their strong condemnation and denunciation of the ongoing Israeli violations in the Gaza Strip, particularly the targeting of healthcare facilities and medical infrastructure, and the resulting civilian casualties, including women and children, which constitute a flagrant violation of international law and international humanitarian law.
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_03_TUR_B9
+  - evt_2026_08_03_EGY_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the three mediating countries; the passages quoted are verbatim. The +5 tier (attacks on medical facilities named as a violation of international humanitarian law) agrees with the same statement filed for Egypt and Türkiye (evt_2026_08_03_EGY_B9).'
+    notes: Joint statement of the mediating states (Türkiye, Egypt, Qatar) of 2026-08-03, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. The signatories are listed as states, read as the foreign ministers' statement (docs/10 B-272; flagged), Qatar's Prime Minister and Minister of Foreign Affairs named by his office on that date as in Qatar's other events of 2026. Filed for Egypt and Türkiye in T-F-W2 (docs/10 B-887); filed for Qatar in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (1)).
 
 - id: evt_2026_08_06_QAT_B9
   revision: 1
@@ -794,6 +927,93 @@
       the Prime Minister's press conference with the Egyptian Foreign Minister of 20 August 2026 are in the same weeks
       and are not filed (docs/10 B-381 (4)).
 
+- id: evt_2026_08_20_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-08-20'
+  points: 2
+  points_rationale: 'Formal call to respect the ceasefire (+2): the mediating states condemn Israeli attacks in the Gaza Strip that killed civilians and stress that Israel must comply with its obligations under the ceasefire agreement; no act is named as a violation of law, so the call tier is the weaker reading (+5 is the alternative, flagged).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Prime Minister and his counterparts of the other mediating states condemned Israeli attacks in Gaza that killed civilians and called on Israel to comply with the ceasefire.
+    fr: Le Premier ministre et ses homologues des autres États médiateurs ont condamné des attaques israéliennes à Gaza ayant tué des civils et appelé Israël à respecter le cessez-le-feu.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260820_mfa-tr_mediators-statement-israeli-attacks-gaza
+    quote: The mediating countries stress the imperative for Israel to fully comply with all its obligations under the ceasefire agreement and to refrain from actions that could further undermine the ceasefire and escalate tensions.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260820_mfa-tr_mediators-statement-israeli-attacks-gaza
+    quote: The Republic of Türkiye, the Arab Republic of Egypt and the State of Qatar, in their capacity as mediating countries, strongly condemn the recent Israeli attacks in the Gaza Strip, which have resulted in the loss of civilian lives, including women and children, and express their deep concern over the ongoing violations.
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_20_TUR_B9
+  - evt_2026_08_20_EGY_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the three mediating countries; the passages quoted are verbatim. The call tier (+2; the attacks and their civilian toll are condemned without a category of violation named, +5 the alternative, flagged as for Egypt and Türkiye, docs/10 B-889 (2)) agrees with the same statement filed for Egypt and Türkiye (evt_2026_08_20_EGY_B9).'
+    notes: Joint statement of the mediating states (Türkiye, Egypt, Qatar) of 2026-08-20, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. The signatories are listed as states, read as the foreign ministers' statement (docs/10 B-272; flagged), Qatar's Prime Minister and Minister of Foreign Affairs named by his office on that date as in Qatar's other events of 2026. Filed for Egypt and Türkiye in T-F-W2 (docs/10 B-887); filed for Qatar in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (1)).
+
+- id: evt_2026_08_21_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-08-21'
+  points: 5
+  points_rationale: 'Violations named (+5): the eight foreign ministers condemn settler violence against Palestinians and their property, with the support of the Israeli authorities, as violations of international law, and reject the E1 settlement plan. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Prime Minister and seven counterparts rejected the E1 settlement plan and called settler violence against Palestinians a violation of international law.
+    fr: Le Premier ministre et sept homologues ont rejeté le plan de colonisation E1 et qualifié les violences de colons contre les Palestiniens de violations du droit international.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: They stress that such acts in no way diminish the inalienable rights of the Palestinian people and constitute violations of international law and relevant United Nations resolutions
+    quote_lang: en
+    locator: line 2
+  - source: src_20260821_mfa-tr_eight-ministers-e1-settlement
+    quote: The Foreign Ministers of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan, the Islamic Republic of Pakistan, the State of Qatar
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_08_21_TUR_B9
+  - evt_2026_08_21_EGY_B9
+  - evt_2026_08_21_SAU_B9
+  - evt_2026_08_21_ARE_B9
+  - evt_2026_08_21_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the eight foreign ministers; the passage of line 2 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_08_21_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Qatar (evt_2026_06_18_QAT_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-08-21, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Qatar and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
 - id: evt_2026_09_06_QAT_B9
   revision: 1
   country: QAT
@@ -843,3 +1063,301 @@
       Cited from the text archived for the United Arab Emirates. The Prime Minister's participation in the high-level
       meeting on the two-state solution in New York (23 September 2026, Ministry item by title) is in the same weeks and
       was not filed.
+
+- id: evt_2026_09_09_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-09-09'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the eight foreign ministers refer to Israel''s unlawful occupation of the Occupied Palestinian Territory and call on Israel to rescind its settlement measures, welcoming restrictions on trade with settlements. Scoped west-bank: tracked, not scored in v1 (D-14, docs/10 B-32).'
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: The Prime Minister and seven counterparts welcomed restrictions on trade with settlements and called on Israel to rescind its settlement measures.
+    fr: Le Premier ministre et sept homologues ont salué les restrictions au commerce avec les colonies et appelé Israël à annuler ses mesures de colonisation.
+  actor:
+    en: Prime Minister and Minister of Foreign Affairs
+    fr: Premier ministre et ministre des Affaires étrangères
+    name: Mohammed bin Abdulrahman bin Jassim Al Thani
+  evidence:
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: In this regard, they reiterate their call for Israel to rescind all measures taken in connection with settlement activities and other measures aimed at altering the geographic and demographic character of the Occupied Palestinian Territory.
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: the obligation of all States not to recognize as legal the situation arising from Israel’s unlawful occupation in the Occupied Palestinian Territory
+    quote_lang: en
+    locator: line 4
+  - source: src_20260909_mfa-tr_eight-ministers-settlement-trade
+    quote: The Ministers of Foreign Affairs of the Republic of Türkiye, the Arab Republic of Egypt, the Republic of Indonesia, the Hashemite Kingdom of Jordan, the Islamic Republic of Pakistan, the State of Qatar
+    quote_lang: en
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_09_TUR_B9
+  - evt_2026_09_09_EGY_B9
+  - evt_2026_09_09_SAU_B9
+  - evt_2026_09_09_ARE_B9
+  - evt_2026_09_09_JOR_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 2 names the State of Qatar among the eight foreign ministers; the passage of line 4 is verbatim. B9 +5 and scope west-bank match the same statement filed for Türkiye and Egypt (evt_2026_09_09_EGY_B9) and the eight ministers'' statement of 18 June 2026 filed for Qatar (evt_2026_06_18_QAT_B9).'
+    notes: Joint statement of the foreign ministers of Türkiye, Egypt, Indonesia, Jordan, Pakistan, Qatar, Saudi Arabia and the United Arab Emirates of 2026-09-09, as published by the Turkish Ministry of Foreign Affairs among its Joint Declarations of 2026. Filed for Türkiye and Egypt in T-F-W2 (docs/10 B-890); filed for Qatar and the other signatories of this wave in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W2) (2)); Indonesia and Pakistan are in other sessions. West Bank conduct, tagged and unscored in v1 (docs/10 B-32).
+
+- id: evt_2026_09_22_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-09-22'
+  points: 2
+  points_rationale: "Formal call (+2): the joint statement of eight foreign ministers calls on Israel to ensure the immediate, safe and unhindered delivery of humanitarian assistance in Gaza and stresses the imperative of preserving the ceasefire and ending all violations; it names no violation of international humanitarian law for Gaza (its passage on settlements, annexation and forced displacement concerns the occupied Palestinian territory as a whole and is not read as a Gaza violation, R7)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Minister of Foreign Affairs, with seven counterparts, called on Israel to ensure the unhindered delivery of humanitarian aid in Gaza and stressed the need to preserve the ceasefire."
+    fr: "Le ministre des Affaires étrangères, avec sept homologues, a appelé Israël à garantir l'acheminement sans entrave de l'aide humanitaire à Gaza et souligné la nécessité de préserver le cessez-le-feu."
+  actor:
+    en: "Prime Minister and Minister of Foreign Affairs"
+    fr: "Premier ministre et ministre des Affaires étrangères"
+    name: "Mohammed bin Abdulrahman bin Jassim Al Thani"
+  evidence:
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "the State of Qatar"
+    quote_lang: en
+    locator: line 1
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "call upon Israel to immediately fulfil its outstanding commitments under the First Phase of the Comprehensive Plan, including by ensuring the immediate, safe and unhindered delivery of humanitarian assistance and Early Recovery supplies"
+    quote_lang: en
+    locator: line 2
+  - source: src_20260922_mofa-pk_fms-joint-statement-gaza-81st
+    quote: "They stress the imperative of preserving the ceasefire and ending all violations."
+    quote_lang: en
+    locator: line 2
+  - source: src_20260922_mofa-qa_fms-joint-statement-gaza-81st
+    quote: "the State of Qatar"
+    quote_lang: en
+    locator: line 2
+  - source: src_20260922_mofa-qa_fms-joint-statement-gaza-81st
+    quote: "call upon Israel to immediately fulfil its outstanding commitments under the First Phase of the Comprehensive Plan, including by ensuring the immediate, safe and unhindered delivery of humanitarian assistance and Early Recovery supplies"
+    quote_lang: en
+    locator: line 3
+  - source: src_20260922_mofa-qa_fms-joint-statement-gaza-81st
+    quote: "They stress the imperative of preserving the ceasefire and ending all violations."
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_09_22_PAK_B9, evt_2026_09_22_EGY_B9, evt_2026_09_22_TUR_B9_2, evt_2026_09_22_IDN_B9, evt_2026_09_22_JOR_B9, evt_2026_09_22_SAU_B9, evt_2026_09_22_ARE_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the State of Qatar is among the eight signatory states (line 1); the quotes are verbatim. Gaza is named and the call is addressed to Israel (R7, R4). +2 (call), as for the joint statement of 1 February 2026 (evt_2026_02_01_PAK_B9). The text prints no name: the actor is the foreign minister of the state, Mohammed bin Abdulrahman bin Jassim Al Thani, named by the continuity of the post (the same series of joint statements, docs/10 B-444); flagged. The meeting took place on 21 September 2026; the release is dated 22 September 2026 (line 20) and is the event date."
+    notes: "Joint statement of the foreign ministers of eight states (Pakistan, Egypt, Indonesia, Jordan, Qatar, Saudi Arabia, Türkiye, the United Arab Emirates) after their meeting in New York on 21 September 2026, as published by Pakistan's Ministry of Foreign Affairs (press release 252/2026, Islamabad, 22 September 2026; the text archived for Pakistan and used for every signatory, as in docs/10 B-444). Found in the monthly run of 2026-11 (T-P23-4) on the Ministry's press-release listing (the page before the first session of the 45 countries had not filed it). The statement also deplores settlement expansion, land confiscation, demolitions, settler violence and forced displacement in the occupied Palestinian territory as illegal measures: a West Bank passage that would be tagged west-bank and is not scored; one event for the same speaker and day (docs/10 B-32). Qatar's own copy (Ministry of Foreign Affairs statement, New York, 22 September 2026, src_20260922_mofa-qa_fms-joint-statement-gaza-81st) was archived and added as evidence on 2026-11-10 (T-G-JOINT, docs/10 B-2117): same text, same signatories (line 2); it names no individual either, so the actor stays named by the continuity of the post (flagged)."
+
+- id: evt_2026_09_22_QAT_B9_2
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-09-22'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the Amir states at the General Assembly that what happened in Gaza is genocide in every sense of the word, and calls on Israel to honour its commitments in full: a definitive cessation of operations, withdrawal from the Strip, the lifting of the blockade and the unconditional delivery of humanitarian aid.'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: The Amir told the General Assembly that what happened in Gaza was genocide and called on Israel to lift the blockade and withdraw from the Strip.
+    fr: L'émir a déclaré devant l'Assemblée générale que ce qui s'est produit à Gaza était un génocide et a appelé Israël à lever le blocus et à se retirer de la bande.
+  actor:
+    en: Amir of the State of Qatar
+    fr: Émir de l'État du Qatar
+    name: Tamim bin Hamad Al Thani
+  evidence:
+  - source: src_20260922_diwan-gov-qa_amir-speech-unga-81
+    quote: إن ما جرى في غزة إبادة جماعية بكل ما تحمله الكلمة من معنى
+    quote_lang: ar
+    quote_en: What has happened in Gaza is genocide in every sense of the word
+    locator: line 22
+  - source: src_20260922_diwan-gov-qa_amir-speech-unga-81
+    quote: 'فإن على إسرائيل، في المقابل، أن تفي بتعهداتها كاملةً غير منقوصة: من وقف نهائي للعمليات، وانسحاب من القطاع، ورفع للحصار، وإدخال غير مشروط للمساعدات الإنسانية.'
+    quote_lang: ar
+    quote_en: 'Israel, for its part, must fully honor all its commitments and in their entirety: a definitive cessation of operations, withdrawal from the Strip, lifting of the blockade, and the unconditional delivery of humanitarian assistance.'
+    locator: line 24
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_09_22_QAT_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 24 (Israel must honour its commitments: cessation of operations, withdrawal, lifting of the blockade, unconditional aid) and line 22 (genocide in every sense of the word) are verbatim in the archived Arabic text; the English version read in the browser agrees. +5 for the legal characterisation.'
+    notes: The Amir's speech at the opening of the General Debate of the 81st session (22 September 2026), Arabic original on the Amiri Diwan's site; quote_en from the Diwan's English version, read in the built-in browser on 2026-11-09 and not archived. The Amir is a B9 speaker as head of state (R3); a different speaker from the Prime Minister's joint statement of the same day (evt_2026_09_22_QAT_B9), so a separate event. The wave-8 session did not reach the Diwan (it needs JavaScript); found in the finish run (T-F-W8, docs/10 B-917). Qatar's B9 is at its cap, so no score effect.
+
+- id: evt_2026_10_13_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-10-13'
+  points: 5
+  points_rationale: 'Legal characterisation (+5): the Amir states that what happened in the Gaza Strip is undoubtedly a genocide and that those responsible must not escape accountability; the same passage names settler attacks on Palestinians in the West Bank under army protection.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Amir told the Shura Council that what happened in the Gaza Strip was a genocide and that those responsible must be held to account.
+    fr: L'émir a déclaré devant le Conseil consultatif que ce qui s'est produit dans la bande de Gaza était un génocide et que ses responsables devaient rendre des comptes.
+  actor:
+    en: Amir of the State of Qatar
+    fr: Émir de l'État du Qatar
+    name: Tamim bin Hamad Al Thani
+  evidence:
+  - source: src_20261013_diwan-gov-qa_amir-speech-shura-council-55
+    quote: ونؤكد أن ما جرى في قطاع غزة يعد بلا جدال إبادةً جماعية، ولا يجوز أن يفلت مرتكبوها من المحاسبة
+    quote_lang: ar
+    quote_en: we affirm that what has happened in the Gaza Strip is undoubtedly a genocide, and those responsible must not escape accountability
+    locator: line 36
+  - source: src_20261013_diwan-gov-qa_amir-speech-shura-council-55
+    quote: وآخرها اعتداءات المستوطنين على الفلسطينيين في الضفة الغربية بحماية من الجيش
+    quote_lang: ar
+    quote_en: most recently the attacks by settlers against Palestinians in the West Bank under army protection
+    locator: line 36
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: line 36 of the archived Arabic text holds both passages verbatim (settler attacks in the West Bank under army protection; the genocide characterisation of what happened in the Gaza Strip, with accountability); the English version read in the browser says the same. A legal characterisation is the +5 tier, as for other genocide statements filed under B9.'
+    notes: 'The Amir''s speech at the opening of the 55th annual session of the Shura Council (13 October 2026), Arabic original on the Amiri Diwan''s site; the English renderings in quote_en are the Diwan''s own English version of the page, read in the built-in browser on 2026-11-09 and not archived (the archived page is the Arabic original). The Amir is a B9 speaker as head of state (R3, docs/calibration/README.md §6; the header of this file predates that reading). Found in the finish run (T-F-W8, docs/10 B-917). Qatar''s B9 is at its cap, so no score effect.'
+
+- id: evt_2026_10_16_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-10-16'
+  points: 5
+  points_rationale: "Uses a legal characterisation (+5): the joint statement of twenty foreign ministers says that Colombia's inauguration of its embassy in Jerusalem contravenes Security Council resolutions and that any measure altering the status of occupied Jerusalem is null and void. Jerusalem and the West Bank only, no mention of Gaza: tagged and unscored in v1 (docs/10 B-32)."
+  confidence: confirmed
+  scope:
+  - west-bank
+  summary:
+    en: "The Minister of Foreign Affairs, with nineteen other foreign ministers, rejected Colombia's inauguration of its embassy in Jerusalem as contravening Security Council resolutions."
+    fr: "Le ministre des Affaires étrangères, avec dix-neuf autres ministres, a rejeté l'inauguration par la Colombie de son ambassade à Jérusalem comme contraire aux résolutions du Conseil de sécurité."
+  actor:
+    en: "Prime Minister and Minister of Foreign Affairs"
+    fr: "Premier ministre et ministre des Affaires étrangères"
+    name: "Mohammed bin Abdulrahman bin Jassim Al Thani"
+  evidence:
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "the State of Qatar"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 1
+  - source: src_20261016_dirco_joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 2
+  - source: src_20261016_mofa-qa_fms-joint-statement-colombia-embassy
+    quote: "The Foreign Ministers of Qatar"
+    quote_lang: en
+    locator: line 2
+  - source: src_20261016_mofa-qa_fms-joint-statement-colombia-embassy
+    quote: "strongly condemn and express their unequivocal rejection of the inauguration by the Republic of Colombia of its embassy in Jerusalem, a step that contravenes relevant United Nations Security Council resolutions"
+    quote_lang: en
+    locator: line 2
+  - source: src_20261016_mofa-qa_fms-joint-statement-colombia-embassy
+    quote: "is null and void and has no legal effect"
+    quote_lang: en
+    locator: line 3
+  status: reviewed
+  supersedes: null
+  related: [evt_2026_10_16_EGY_B9, evt_2026_10_16_TUR_B9, evt_2026_10_16_JOR_B9, evt_2026_10_16_MYS_B9, evt_2026_10_16_IDN_B9, evt_2026_10_16_SAU_B9, evt_2026_10_16_DZA_B9, evt_2026_10_16_ZAF_B9]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: "Lines 1 and 2 of the archived text re-read: the State of Qatar is among the twenty signatory states; the three quotes are verbatim. The text names Jerusalem and the West Bank's occupied status and not Gaza (R7), so scope west-bank. B9 +5 (legal characterisation) as for the joint statement of 21 August 2025. The actor's name is that of the foreign minister in the state's last filed B9 event (the statement names no individual)."
+    notes: "Joint statement of 16 October 2026 of twenty foreign ministers on Colombia's inauguration of its embassy in Jerusalem, as published by South Africa's Department of International Relations and Cooperation (the text archived for South Africa, used for every signatory among the 45 countries, as in docs/10 B-444). West Bank conduct, tagged and unscored in v1 (docs/10 B-32). Found in the department's list of media statements (monthly run of 2026-11, T-P23-3). Qatar's own copy (Ministry of Foreign Affairs statement, Doha, 16 October 2026, src_20261016_mofa-qa_fms-joint-statement-colombia-embassy) was archived and added as evidence on 2026-11-10 (T-G-JOINT, docs/10 B-2117); its list names eighteen states and omits Pakistan and South Africa; it names no individual."
+- id: evt_2026_10_21_QAT_B9
+  revision: 1
+  country: QAT
+  indicator: B9
+  type: repeatable
+  date: '2026-10-21'
+  points: 2
+  points_rationale: 'Formal call (+2): in the joint declaration of the State visit to Doha the two heads of state stress that all parties must respect their obligations, including the implementation of the ceasefire, the withdrawal of Israeli forces and the urgent, safe and unhindered delivery of humanitarian aid to the population of Gaza without conditions or restrictions; the declaration also calls for an end to settlement and settler violence in the West Bank.'
+  confidence: confirmed
+  scope:
+  - gaza
+  - west-bank
+  summary:
+    en: The Amir and the President of France stressed that all parties must implement the Gaza ceasefire and allow unhindered humanitarian aid to the population of Gaza, in a joint declaration.
+    fr: "L'émir et le président de la République française ont souligné, dans une déclaration conjointe, que toutes les parties devaient appliquer le cessez-le-feu à Gaza et laisser passer l'aide sans entrave."
+  actor:
+    en: Amir of the State of Qatar
+    fr: Émir de l'État du Qatar
+    name: Tamim bin Hamad Al Thani
+  evidence:
+  - source: src_20261021_mofa-qa_joint-statement-qatar-france-state-visit
+    quote: stressed the need for all parties to fulfil all their obligations under the relevant agreements and frameworks, including the implementation of the ceasefire, the withdrawal of Israeli forces in accordance with the agreed arrangements, and the urgent, safe and unhindered delivery of humanitarian assistance to the people of Gaza without conditions or restrictions.
+    quote_lang: en
+    locator: line 7
+  - source: src_20261021_mofa-qa_joint-statement-qatar-france-state-visit
+    quote: His Highness Sheikh Tamim bin Hamad Al Thani, Amir of the State of Qatar
+    quote_lang: en
+    locator: line 3
+  - source: src_20261021_diplomatie-gouv_declaration-conjointe-france-qatar
+    quote: ont souligné qu’il est nécessaire que toutes les parties respectent l’ensemble de leurs obligations au titre des accords et cadres pertinents, notamment la mise en œuvre du cessez-le-feu, le retrait des forces israéliennes conformément aux dispositions convenues ainsi que l’acheminement urgent, sûr et sans entrave de l’aide humanitaire à la population de Gaza, sans conditions ni restrictions.
+    quote_lang: fr
+    quote_en: have stressed that it is necessary for all parties to respect all of their obligations under the relevant agreements and frameworks, in particular the implementation of the ceasefire, the withdrawal of Israeli forces in accordance with the agreed provisions and the urgent, safe and unhindered delivery of humanitarian aid to the population of Gaza, without conditions or restrictions.
+    locator: line 6
+  - source: src_20261021_diplomatie-gouv_declaration-conjointe-france-qatar
+    quote: Son Altesse Cheikh Tamim bin Hamad Al Thani, Émir de l’État du Qatar
+    quote_lang: fr
+    quote_en: His Highness Sheikh Tamim bin Hamad Al Thani, Amir of the State of Qatar
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related:
+  - evt_2026_10_21_FRA_B9
+  review:
+    drafted_by: claude-opus-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-opus-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: 'The Qatari Ministry''s English text (line 1: Doha, 21 October 2026; line 3 names the Amir; line 7 the call) and the French Ministry''s text agree. Re-read in reverse order of the evidence list: line 2 names Sheikh Tamim bin Hamad Al Thani, Amir of the State of Qatar, as one of the two heads of state; line 6 holds the call verbatim, made by ''les deux chefs d’État''. The Amir is a B9 speaker as head of state (R3, docs/calibration/README.md §6, which replaced the reading in the header of this file); the text cites Gaza (R7); the call tier (+2) and scope gaza and west-bank agree with evt_2026_10_21_FRA_B9.'
+    notes: 'Joint declaration of the State visit of the President of France to Doha, 20 and 21 October 2026, as the French Ministry for Europe and Foreign Affairs publishes it (archived for France in T-F-W1). The call is made in the names of the two heads of state. Filed for Qatar in the finish run (T-F-W8), as the P-23 block of PROMPTS.md asks (Also (T-F-W1) (1)). The Qatari Ministry''s English text, listed among its Statements on 21 October 2026, was archived in this session and is cited first (docs/10 B-917). Qatar''s B9 is at its cap, so no score effect. Verification of 2026-11 (T-F-V3, docs/10 B-2106): French summary changed from ''ont déclaré que toutes les parties doivent'' to ''ont souligné, dans une déclaration conjointe, que toutes les parties devaient'' (the English ''stressed''; tense of reported speech); quotes checked.'

@@ -48,6 +48,12 @@
 # the Ministry of Commerce and the National Office of Statistics (C3, C4), the Fonds national
 # d'investissement and the Bank of Algeria (C5), the Ministry of Justice and courts (E1, E3), the
 # Ministry of the Interior (D5, E2), Parliament.
+# Finish run, T-F-W9 (2026-11-09, docs/10 B-923 to B-926): window 27 September to 9 November 2026 read
+# through the Ministry's Arabic Statements (all 4 pages) and Communiqués (pages 1 and 2) listings; the News
+# listing did not answer. Filed: the Minister's speech of 8 October 2026. The statement of 22 September 2026
+# (consultative meeting of Arab foreign ministers) carries no text in its page data. E1 to E3 stay unchecked.
+# Second resumed session of T-F-W9 (2026-11-09, docs/10 B-951), with web search: E1 to E3 set to none-found
+# after press and NGO searches in English and the official language (queries in each entry).
 country: DZA
 protocol_version: 1
 last_full_check: 2026-09-29
@@ -158,19 +164,21 @@ indicators:
     queries:
       - mfa.gov.dz Announcements, terms ICJ, محكمة العدل الدولية
   B5:
-    status: none-found
-    checked_at: 2026-09-29
+    status: has-events
+    checked_at: 2026-11-09
     note: >-
-      Algeria is not a party to the Rome Statute. The Ministry's unsigned statement of 21 November
-      2024 (Announcements) welcomed the ICC's arrest warrants and called on the Court's states
-      parties to take the measures needed to execute them; B5 needs a
-      statement by the head of government, the foreign or the justice minister, and none by the
-      President or the Minister was found in the Ministry's listings for November and December 2024.
-      Whether a Ministry statement is a B5 position is the question left open for Indonesia (docs/10
-      B-411 (2), B-421 (2)); the statement was read on the Ministry's site and not archived.
+      evt_2024_11_21_DZA_B5 (+8, standing, flagged): the Ministry of Foreign Affairs' statement of 21
+      November 2024 welcomed the ICC's warrants and called on the international community, in particular the
+      Court's member states, to take the measures needed to execute them; archived on 2026-11-09 from the
+      Arabic Wayback capture of 15 February 2025 (src_20241121_mfa-dz_statement-icc-warrants), the live site
+      not answering scripts. Filed under R2 (a Ministry statement in its own name is the foreign minister's
+      formal position). Algeria is not a party to the Rome Statute; the statement does not commit its own
+      authorities (flagged). No statement by the President or the Minister in his own name was found in the
+      Ministry's listings for November and December 2024 (P-D session, 2026-09-29).
     queries:
       - mfa.gov.dz Announcements, term ICC, المحكمة الجنائية الدولية
       - Algeria ICC arrest warrants Netanyahu Gallant November 2024 statement
+      - Wayback CDX of *.mfa.gov.dz filtered on announcements and icc (2026-11-09; slug statement-of-the-ministry-of-foreign-affairs-icc-21112024, four captures)
   B6:
     status: none-found
     checked_at: 2026-09-29
@@ -193,7 +201,7 @@ indicators:
       2023-10-07) does not depend on the day.
   B9:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: 2026-11-04
     note: >-
       Ten events (docs/10 B-418): the Minister of Foreign Affairs at the Security Council (24 October
       2023, 23 January 2024, 18 April 2024, 20 January 2025 presiding, 23 September 2025), the OIC (7
@@ -209,6 +217,7 @@ indicators:
       - mfa.gov.dz Video news, Statements, Announcements and Diplomacy (Arabic and English), all items 2023-10 to 2026-09
       - mfa.gov.dz News and press releases (English), items 2023-06 to 2026-09
       - UN ODS S/PV.9534, S/PV.9841, A/79/PV.17, A/80/PV.6 to A/80/PV.20
+      - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: the archived text of South Africa's DIRCO for the joint statement of 16 October 2026 on Colombia's embassy in Jerusalem; filed evt_2026_10_16_DZA_B9 (Jerusalem and the West Bank, tagged unscored); no other search for this country in this run; the other ministries' copies of the statement were not read"
   B10:
     status: none-found
     checked_at: 2026-09-29
@@ -292,12 +301,16 @@ indicators:
       - mfa.gov.dz listings, term UNRWA, الأونروا
   D3:
     status: has-events
-    checked_at: 2026-09-29
+    checked_at: '2026-11-09'
     note: >-
-      One event: UNRWA's tables give USD 15,000,000 for 2024 and no row for Algeria in 2022 (the
-      2022 table ranks donors down to USD 11), the increased tier (+8, standing from 31 December
-      2024), as for the countries that never suspended on data/wave-6 to data/wave-9 (docs/10
-      B-418).
+      One event: UNRWA's tables give USD 15,000,000 for 2024 and no row for Algeria in 2022 (the 2022 table
+      ranks donors down to USD 11), the increased tier (+8, standing from 31 December 2024), as for the
+      countries that never suspended on data/wave-6 to data/wave-9 (docs/10 B-418). UNRWA's table for 2025
+      (src_20251231_unrwa_donor-ranking-2025, as of 31 December 2025, read 2026-11-09) has no row for Algeria,
+      so 2025 does not exceed 2022: no 2025 event; evt_2024_12_31_DZA_D3 ends on 2025-12-31, from which
+      the 2025 table decides the tier (docs/10 B-876).
+    queries:
+    - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
   D4:
     status: none-found
     checked_at: 2026-09-29
@@ -324,11 +337,50 @@ indicators:
       - Algeria visa Gaza Palestinians regulation
       - mfa.gov.dz listings, terms visa, national community in Gaza
   E1:
-    status: unchecked
-    note: "Experimental, unscored; the Ministry of Justice and courts were not searched."
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No investigation or prosecution of nationals or companies of Algeria for conduct in Gaza found.
+      Finish run, T-F-W9 (resumed), 2026-11-09, with web search (queries below). The searches returned
+      a press report (Akhbarona, citing a British investigation) counting one Algerian dual national
+      among foreign nationals in the Israeli army, and no Algerian proceeding against any person. The
+      Ministry of Justice's site (mjustice.dz) did not answer earlier the same day. Experimental,
+      unscored (D-12). TRIAL International's Universal Jurisdiction Annual Review 2026 (developments
+      of 2025, trialinternational.org PDF) has no mention of Indonesia, Malaysia, Algeria, Nigeria or
+      Azerbaijan (text searched for the five names, 2026-11-09).
+    queries:
+      - النيابة العامة الجزائرية شكوى جرائم الحرب غزة الاختصاص العالمي تحقيق مزدوجي الجنسية الجيش الإسرائيلي الجزائر
+      - Algérie plainte compétence universelle crimes Gaza parquet algérien enquête Israël
   E2:
-    status: unchecked
-    note: "Experimental, unscored; the Ministry of the Interior was not searched."
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No decree, court ruling or published official instruction banning Palestine solidarity protests
+      or symbols was archived. Finish run, T-F-W9 (resumed), 2026-11-09, with web search (queries
+      below). The press reports that the Ministry of the Interior, in a letter signed by its Secretary
+      General Mahmoud Djamaa, answered a request of 29 July 2025 by a coalition of about twelve
+      parties (among them the Movement of Society for Peace, the Workers' Party and Tajamou Amel El
+      Djazair) for a march in Algiers on 7 or 8 August 2025 by inviting them to hold solidarity
+      gatherings in halls and designated spaces, citing Law 89-28 of 31 December 1989 on public
+      meetings and demonstrations (Awras, 5 August 2025; The New Arab, 7 August 2025); the letter
+      itself was not found. The Ministry authorised a march in Algiers on 19 October 2023. Recorded as
+      lead_20261109_DZA_2. Experimental, unscored (D-12).
+    queries:
+      - Algeria ban pro-Palestine march Algiers authorities refuse protest Gaza 2024 2025
+      - 'وزارة الداخلية رفض ترخيص مسيرة "الجزائر مع فلسطين" ضد التجويع والتهجير الأحزاب رد الوزارة'
   E3:
-    status: unchecked
-    note: "Experimental, unscored; not searched."
+    status: none-found
+    checked_at: 2026-11-09
+    note: >-
+      No universal-jurisdiction complaint accepted for investigation in Algeria found. Finish run,
+      T-F-W9 (resumed), 2026-11-09, with web search (queries below). The searches returned the
+      collective complaint by lawyers, Algerians among them, to the Prosecutor of the International
+      Criminal Court and the Algiers Declaration of the conference "Justice for the Palestinian
+      people" (Radio Algérie); both are international steps, not complaints before an Algerian
+      prosecutor or court. Experimental, unscored (D-12). TRIAL International's Universal Jurisdiction
+      Annual Review 2026 (developments of 2025, trialinternational.org PDF) has no mention of
+      Indonesia, Malaysia, Algeria, Nigeria or Azerbaijan (text searched for the five names,
+      2026-11-09).
+    queries:
+      - Algérie plainte compétence universelle crimes Gaza parquet algérien enquête Israël
+      - النيابة العامة الجزائرية شكوى جرائم الحرب غزة الاختصاص العالمي تحقيق مزدوجي الجنسية الجيش الإسرائيلي الجزائر

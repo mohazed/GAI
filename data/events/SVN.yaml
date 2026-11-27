@@ -484,7 +484,7 @@
   indicator: D3
   type: standing
   date: '2024-12-31'
-  end: null
+  end: '2025-12-31'
   points: 8
   points_rationale: >-
     Increased tier (+8): UNRWA's tables give USD 1,665,614 pledged and received from Slovenia for 2024 against USD
@@ -1172,6 +1172,46 @@
       The Minister's quoted words at the Foreign Affairs Council of 20 October 2025, during the ceasefire; read as a
       call to end the blockade (humanitarian access, crossings).
 
+- id: evt_2025_12_31_SVN_D3
+  revision: 1
+  country: SVN
+  indicator: D3
+  type: standing
+  date: '2025-12-31'
+  end: null
+  points: 8
+  points_rationale: "Increased tier (+8): UNRWA's table of 2025 gives USD 1,172,333 pledged and USD 1,172,333 received for Slovenia, against USD 50,710 in UNRWA's table of 2022 (nominal USD, docs/02 §2 D3)."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "Slovenia's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables."
+    fr: "La contribution de la Slovénie à l'UNRWA pour 2025 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA."
+  actor:
+    en: "Government of Slovenia"
+    fr: "Gouvernement de la Slovénie"
+  evidence:
+  - source: src_20251231_unrwa_donor-ranking-2025
+    quote: "Slovenia 1,172,333 1,172,333 - - 1,172,333 1,172,333 - - - - - - - - - - 1,172,333 44 1,172,333 42"
+    quote_lang: en
+    locator: line 55 (Slovenia)
+  - source: src_20221231_unrwa_donor-ranking-2022
+    quote: "Slovenia 50,710 0 50,710 0 0 0 50,710 72"
+    quote_lang: en
+    locator: line 83 (Slovenia)
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "The Slovenia row at line 55 of the archived 2025 table was re-read against the text file after writing, and so was the 2022 row at line 83: USD 1,172,333 pledged in 2025 against USD 50,710 in 2022. Increased tier agrees."
+    notes: "UNRWA's donor table for 2025 (as of 31 December 2025), archived from its Wayback capture of 21 May 2026 (docs/10 B-876), settles D3 for 2025: the increased tier holds from 31 December 2025, the end of the calendar year whose contribution exceeds 2022. evt_2024_12_31_SVN_D3 ends on 2025-12-31, the date from which the 2025 table decides the tier (as for 2023, docs/10 B-445). Filed in T-F-UNDOCS-2 (docs/10 B-876)."
+
 - id: evt_2026_02_24_SVN_B9
   revision: 1
   country: SVN
@@ -1364,3 +1404,46 @@
       declarations of intent on other branches, docs/10 B-246 (2) on data/wave-2), signed during Foreign Minister Saar's
       visit of 9 September 2026 with a business forum; it provides scholarships and exchanges. A cultural and
       educational programme rather than a trade or investment agreement; flagged for the author (docs/10 B-304).
+
+
+- id: evt_2026_09_29_SVN_B10
+  revision: 1
+  country: SVN
+  indicator: B10
+  type: repeatable
+  date: '2026-09-29'
+  points: -5
+  points_rationale: "Fixed value of B10 (-5): the Prime Minister tells the National Assembly that under international law there is no genocide in Gaza and that no competent body has decided that there is, in answer to deputies' questions on Slovenia's relations with Israel."
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: "The Prime Minister told the National Assembly that under international law there was no genocide in Gaza."
+    fr: "Le Premier ministre a déclaré à l'Assemblée nationale qu'il n'y avait pas de génocide à Gaza au regard du droit international."
+  actor:
+    en: "Prime Minister"
+    fr: "Premier ministre"
+    name: "Janez Janša"
+  evidence:
+  - source: src_20260929_gov-si_pm-odgovori-poslanska-vprasanja
+    quote: "»Po mednarodnem pravu v Gazi ni genocida,« je dejal in opozoril, da so poleg genocida opredeljena tudi druga dejanja, kot so zločini proti človeštvu in kršitve Ženevskih konvencij."
+    quote_lang: sl
+    quote_en: "'Under international law there is no genocide in Gaza,' he said, and pointed out that other acts are also defined besides genocide, such as crimes against humanity and violations of the Geneva Conventions."
+    locator: line 2
+  - source: src_20260929_gov-si_pm-odgovori-poslanska-vprasanja
+    quote: "Po njegovih besedah noben pristojen organ v skladu z veljavno mednarodnopravno ureditvijo ni odločil, da gre v Gazi za genocid."
+    quote_lang: sl
+    quote_en: "According to him, no competent body under the international legal order in force has decided that what is happening in Gaza is genocide."
+    locator: line 2
+  status: reviewed
+  supersedes: null
+  related: [evt_2024_05_20_USA_B10]
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-09'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-09'
+      verdict: agree
+      notes: "Line 2 of the archived text re-read: the release prints the Prime Minister's words in direct speech (»Po mednarodnem pravu v Gazi ni genocida,«) and reports, in indirect speech, that no competent body has decided that there is genocide in Gaza; he adds that other acts, such as crimes against humanity and violations of the Geneva Conventions, are also defined. The words rejecting the characterisation are his own quoted words (R3, R4); the reading as a denial is flagged in the note."
+    notes: "Answer of the Prime Minister to deputies' questions at the session of the National Assembly of 29 September 2026, as reported by the Government's release of that day (the Assembly's own record was not opened). Found in the finish run (T-F-W5, docs/10 B-905, B-906 (3)). Filed as B10 on the reading of evt_2024_05_20_USA_B10 (the US President's statement that what was happening in Gaza was not genocide, rejecting the allegations before the International Court of Justice): a head of government rejecting the characterisation of the conduct in Gaza as genocide. The statement does not deny other violations (the Prime Minister names crimes against humanity and violations of the Geneva Conventions as separately defined acts, without saying whether they occurred) and rests on the fact that no competent body has decided that genocide occurred; the alternative reading is no event (a legal opinion, not a denial of documented violations), which would lift Slovenia's preview score by 5 points. Default kept: filed, as for the United States."

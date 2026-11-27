@@ -13,6 +13,7 @@ import {
   type ApiMethodologyFile,
   type ApiMethodologyIndex,
   type Methodology,
+  type Proposal,
   type Reviewer,
   WINDOW_START,
 } from '@gai/schema'
@@ -97,6 +98,8 @@ export interface MethodologyIndexArgs {
   frozen: ReadonlySet<string>
   /** methodology/reviewers.yaml `reviewers` (docs/08 §2), in file order. */
   reviewers: readonly Reviewer[]
+  /** methodology/proposals.yaml `proposals` (docs/08 §1 step 3), in file order. */
+  proposals: readonly Proposal[]
 }
 
 /**
@@ -133,5 +136,6 @@ export function methodologyIndex(args: MethodologyIndexArgs): ApiMethodologyInde
     }),
     changelog: args.changelog,
     reviewers: [...args.reviewers],
+    proposals: [...args.proposals],
   }
 }
