@@ -1090,3 +1090,13 @@ Decision: docs/10 B-2166.
 | Wayback check, third run | `gh workflow run wayback.yml --ref data/phase1`, run id 46068557695, started 2026-11-27 21:10 UTC, in progress at the time of writing | B-2167 (2) |
 | Parts 2 and 3 of LAUNCH-PLAN.md | recorded in the build log | B-2167 (3), (4) |
 | `pnpm validate` | see reports.jsonl line T-H-HOUSE | |
+
+### T-H-MERGE (2026-11-27)
+
+| Item | Result | B-id |
+|---|---|---|
+| PR #16 (dependencies) | merge commit `19c2624` on `main`, CI green before merge | B-2168 (1) |
+| PR #17 (rule 8 gate) | `main` merged into `chore/rule8-gate` (`0df65b3`), CI green, merge commit `da585c6` on `main` | B-2168 (2) |
+| Deploy runs of `main` | 46068739084 and 46072700869, both success | B-2168 (3) |
+| Live pages | `/`, `/en/`, `/en/country/NOR/`, `/fr/country/NOR/`, `/api/v1/manifest.json` answer 200; manifest `build_date` 2026-11-27 | B-2168 (4) |
+| `main` into `data/phase1`, `pnpm build:data:check` | identical: 1,945 files, 157,496,769 bytes | B-2168 (5) |

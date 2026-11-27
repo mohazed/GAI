@@ -746,6 +746,8 @@ Also (T-G-FINAL, docs/10 B-2166): final hygiene done (checks and builds on both 
 
 Also (T-H-HOUSE, docs/10 B-2167): the third Wayback check was started on 2026-11-27 (run 46068557695, data/phase1); it was still running when T-H-HOUSE finished. T-H-WAYBACK reads it, waiting if needed, and re-captures the failing sources with `--root` on a scratch directory.
 
+Also (T-H-MERGE, docs/10 B-2168): PR #16 and PR #17 are merged into `main` (`da585c6` is live) and `main` is merged into `data/phase1`. The CI push run of `main` for the merge of #17 (46072700860) was still running when T-H-MERGE finished; T-H-FINAL checks its result and the nightly runs. Code PRs of later cards start from `da585c6`; PR #15 (rc.2) still has the older base and T-H-METHOD builds rc.3 on it.
+
 ## P-24 — Methodology change proposal (template)
 
 ```
