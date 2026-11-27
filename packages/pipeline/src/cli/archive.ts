@@ -17,6 +17,7 @@ import { findRepoRoot, SOURCE_KINDS, type SourceKind } from '@gai/schema'
 import { archiveUrl, skeletonChecks } from '../lib/archive.js'
 import { realDeps } from '../lib/deps.js'
 import { loadEnv } from '../lib/env.js'
+import { limitLabel, textLimitFor } from '../lib/extract.js'
 import { sourcePath, sourceYaml } from '../lib/files.js'
 
 const USAGE = `usage: pnpm archive <url> [--kind ${SOURCE_KINDS.join('|')}] [--id src_…] [--root DIR] [--capture YYYYMMDDhhmmss]`
@@ -81,7 +82,7 @@ const checks = skeletonChecks(doc, kind !== undefined)
 const header = [
   `# ${sourcePath(doc.source.id)}`,
   doc.ok
-    ? `# archived: ${doc.source.wayback_url} · sha256 ${doc.source.sha256} · ${doc.source.bytes} bytes · text by ${doc.extracted.method}${doc.truncated ? ' (truncated at 200 KB)' : ''}`
+    ? `# archived: ${doc.source.wayback_url} · sha256 ${doc.source.sha256} · ${doc.source.bytes} bytes · text by ${doc.extracted.method}${doc.truncated ? ` (truncated at ${limitLabel(textLimitFor(doc.extracted.method))})` : ''}`
     : `# NOT ARCHIVED: ${doc.reason}. This source cannot support an event until archived (docs/06 §6).`,
   `# check before filing: ${checks.join(', ')}`,
 ]
