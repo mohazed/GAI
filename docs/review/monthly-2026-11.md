@@ -1114,3 +1114,32 @@ Decision: docs/10 B-2166.
 | FRA A2 figures | now in the archived text (lines 4418 to 4437, 7475); note extended, figures unchanged | B-2169 (4) |
 | TJK Foreign Minister, 81st session (`lead_20261005_TJK_1`) | UN automatic transcript archived with its whole text (`src_20260926_un-transcripts_ga81-day5-general-debate`, line 160); not filed (CHECKUP §2a default, B-2134 (3)) | B-2169 (4) |
 | Quotes and hashes | no recorded hash, byte count or index row changed; `pnpm validate` 0 errors | B-2169 (2) |
+
+### T-H-DEFAULTS (2026-11-27)
+
+| Item | Result | B-id |
+|---|---|---|
+| B8 rows from A/78/846, flagged (R21) | ARE 1988-11-16, AZE 1992-04-15, EGY 1988-11-18, JOR 1988-11-16, MAR 1988-11-15, MYS 1988-11-15, NGA 1988-11-18 added to `recognitions.csv`; the seven B8 entries `has-events`; HUN and CZE no row | B-2170 |
+| BHR B12 retry | bna.bh, mofa.gov.bh 405; legalaffairs.gov.bh no answer; ncc.gov.bh, nuwab.bh 200 | B-2171 (1) |
+| BHR B12 primary | National Communication Centre, 2 November 2023, `src_20231102_ncc-bh_ambassador-returned` (Wayback 20251028073841, 39,862 bytes, SHA-256 equal on re-fetch) | B-2171 (2) |
+| `evt_2023_11_02_BHR_B12` | recall tier +5, standing, open, `confirmed`, scope gaza, `reviewed`; flagged: the Government confirms the return and does not use the word recall; `lead_20261110_BHR_2` promoted | B-2171 (3) |
+| ECU `recognises_palestine.since` | 2010-12-27 → 2010-12-24 (the Ministry's statement) | B-2172 (1) |
+| docs/06 §8 UNRWA seed list | New Zealand removed, with its two primaries | B-2172 (2) |
+| B3 `points_rationale` | added to BEL, BRA (CHECKUP §2e) and ESP, IRL, TUR, ZAF (same treatment); no points, dates or quotes changed | B-2172 (3) |
+| Seven E `none-found` entries without query text | deferred to T-H-MF-4 (CHN, RUS, ARG, BOL, CHL) | B-2172 (4) |
+| `counts.unchecked` (preview, 2026-11-27) | 8 → 0 | B-2173 |
+
+Score and band changes (preview, rc.1, `pnpm build:data --preview --date 2026-11-27`, before and after this task):
+
+| Country | Indicator | Score before | Score after | Band before | Band after |
+|---|---|---|---|---|---|
+| ARE | B8 +3 | +21.6 | +24.6 | Acting | Acting |
+| AZE | B8 +3 | −4.4 | −1.4 | Passive | Passive |
+| BHR | B12 +5 | +16.6 | +21.6 | Acting | Acting |
+| EGY | B8 +3 | +20.6 | +23.6 | Acting | Acting |
+| JOR | B8 +3 | +48.9 | +51.9 | Confronting | Confronting |
+| MAR | B8 +3 | +7.6 | +10.6 | Acting | Acting |
+| MYS | B8 +3 | +30.6 | +33.6 | Acting | Acting |
+| NGA | B8 +3 | −4.4 | −1.4 | Passive | Passive |
+
+Bands of the 193: Sustaining 4, Enabling 24, Passive 38, Acting 105, Confronting 22, before and after. No other country moved.
