@@ -4692,3 +4692,4 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L0
 | ATG | ab.gov.ag home page; two English web searches (CARICOM; CHOGM 2026, which ended on 4 November) | none | none | −1.3 Passive, unchanged | B9 note and queries; leads 1 to 3 dated |
 | BHS | mofa.gov.bs WordPress API (15 posts of 8 to 27 November, bodies searched); one English web search | none | none | +8.6 Acting, unchanged | B9 note and queries; lead 1 dated |
 | BLZ | pressoffice.gov.bz WordPress API (14 posts of 9 to 26 November, bodies searched); mfa.gov.bz (no post after 7 November); one English web search | none | none | +23.7 Acting, unchanged | B9 note and queries; leads 1 to 3 dated |
+| BRB | foreign.gov.bb WordPress API (no post after 24 June 2026); gisbarbados.gov.bb (HTTP 403); one English web search | none | Government Information Service not read (B-2199) | +12.9 Acting, unchanged | B9 note and queries; leads 1, 2 dated |
