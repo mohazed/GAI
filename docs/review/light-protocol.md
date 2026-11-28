@@ -4816,3 +4816,12 @@ Sources added (5, each replay re-fetched and equal in byte count and SHA-256 to 
 Not done (B-2209): the official sites of IRN (en.mfa.gov.ir, redirect loop), LKA (listings rendered by script), MDV (presidency.gov.mv 500, foreign.gov.mv 403), MLT (gov.mt list), ALB and BEN (rendered by script), MKD (English page without dates), SMR (esteri.sm), AGO (mirex.gov.ao), BWA (gov.bw), CAF (diplomatie.gouv.cf), CIV (403); BTN and BFA read only from 18 and 24 November; AND and SRB lists carry no dates; the Pakistani Ministry's own copies of the two joint statements (listed, not archived); the group-specific sources for A, C, D and E. For the author (B-2208): the dates of the undated Iranian and Sri Lankan messages; the Pakistani tier; the Sri Lankan and Maltese calls while the ceasefire holds; the Maldivian message under the literal R7 default.
 
 `pnpm validate`: 0 errors.
+
+### T-H-ML-5: catch-up CMR to NAM, light groups 33 to 40 (2026-11-28; docs/10 B-2210 to B-2212)
+
+Window of 9 to 28 November 2026 (after each country's last session table: T-F-L17 to T-F-L20, their redo passes and the P-23 pass, 9 to 11 November), read on the governments' own sites where they answer scripts (WordPress APIs for posts after 8 November where the site has one; home pages otherwise); web searches were used to find pages, never as evidence. The UNISPAL uploads of November 2026 (`wp-json/wp/v2/media?after=2026-11-01`, which answered curl on 2026-11-28: 54 files of 3 to 24 November) hold one text of this card's states: the Republic of Namibia's message of 23 November (no named speaker, R3; not filed). The P-23 items for the card's states were filed: the statement of 14 November 2026 for DJI and MRT (T-H-MF-1 (3)). Open leads were dated.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| DJI | presidence.dj (no answer); UNISPAL uploads (no message); two web searches (French, Arabic) | `evt_2026_11_14_DJI_B9` (+5, Nasser Medical Complex statement, P-23 item) | none | +17.9 to +22.9 Acting | B9 note and queries; no open lead |
+| MRT | diplomatie.gov.mr and ami.mr home pages (AMI items of 9 to 22 November; no غزة or فلسطين); UNISPAL uploads (no message); one Arabic web search | `evt_2026_11_14_MRT_B9` (+5, Nasser Medical Complex statement, P-23 item; the first qualifying event of 365 days, passivity lifted, B-2211 (1)) | none | +5.0 to +25.0 Acting | B9 note and queries; leads 1 to 3 dated |
