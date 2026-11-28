@@ -178,7 +178,7 @@ indicators:
       declaring the recognition is archived for B9 (src_20250922_elysee_agnu-80-reconnaissance).
   B9:
     status: has-events
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       Filed in the finish run of 9 November 2026 (T-F-W1; the ministry's news list read page by page
       from 27 September to 5 November): the President's address to the General Assembly of 22
@@ -193,9 +193,19 @@ indicators:
       Doha of 21 October 2026 (evt_2026_10_21_FRA_B9, call tier, with the West Bank passage on
       annexation and settler violence); the Emir of Qatar's counterpart event is for the wave that
       holds Qatar (P-23 block of PROMPTS.md).
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1; window 9 to 28 November, the ministry's news
+      list pages 0 to 3, every item with Gaza, Palestine, Cisjordanie or colons read): filed
+      evt_2026_11_11_FRA_B9 (+2, the G7 foreign ministers' Paris declaration, GOV.UK copy; the ministry
+      lists its French copy; flagged, docs/10 B-2182) and evt_2026_11_24_FRA_B9 (+5, the Minister's answer
+      in the National Assembly). Not filed: the ministry's statement on settler attacks of 21 to 22
+      November (no speaker named); the Minister's press statements of 16 November (sanctions on Hamas and
+      Gaza Now, no call), his interviews of 17, 19 and 25 November (no Gaza passage) and the
+      spokesperson's briefings of 13, 18 and 26 November (spokesperson, not a B9 speaker). FRA B9 is at
+      its cap.
     queries:
       - "finish run 2026-11-09: diplomatie.gouv.fr actualités, pages 0 to 9 of the news list (27 September to 5 November 2026), every item with Gaza, Palestine, Cisjordanie or Israël read in full"
       - "elysee.fr search and listing (not reachable by script for the window)"
+      - "diplomatie.gouv.fr actualites pages 0-3 (9-28 November 2026), items with Gaza, Palestine, Cisjordanie, colons"
 
   B10:
     status: none-found
@@ -215,8 +225,16 @@ indicators:
       - Macron génocide Gaza refus qualification déclaration
   B11:
     status: "has-events"
-    checked_at: 2026-09-30
-    note: "P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024 (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza and west-bank), adopted by unanimity, are filed as evt_2024_04_19_FRA_B11, evt_2024_07_15_FRA_B11 and evt_2026_05_28_FRA_B11 under the reading R8 of docs/calibration/README.md."
+    checked_at: 2026-11-28
+    note: >-
+      P-16 (docs/10 B-446): the EU Council's settler listings of 19 April 2024 (west-bank), 15 July 2024
+      (Tzav 9, blocking aid to Gaza: gaza and west-bank) and 28 May 2026 (Nachala, the Gaza Strip: gaza
+      and west-bank), adopted by unanimity, are filed as evt_2024_04_19_FRA_B11, evt_2024_07_15_FRA_B11
+      and evt_2026_05_28_FRA_B11 under the reading R8 of docs/calibration/README.md.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the spokesperson said on 18 November 2026 that
+      a named person is on the list of entry bans (interdictions administratives du territoire) for
+      settlers responsible for illegal settlement or violence in the West Bank; further names continue the
+      standing state already filed. No new event.
   B12:
     status: none-found
     checked_at: 2026-09-28
@@ -243,7 +261,7 @@ indicators:
       r = 0.858 → 0; 2023 r = 0.940 → −5.
   C4:
     status: none-found
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       No ban or new labelling rule for settlement goods in force. The origin-labelling rule predates
       the window. The President, with the British and Canadian Prime Ministers, announced on 8
@@ -255,6 +273,9 @@ indicators:
       discussions with partners were under way, that a bill had been tabled in the National Assembly
       and that several routes were examined if the EU did not decide (src_20261028_diplomatie-gouv_france2-barrot):
       no instrument in force.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the Minister recalled on 24 November 2026 the
+      announced ban on imports of settlement products (8 September 2026) and the spokesperson said on 26
+      November that interministerial discussions continue; no instrument in force, so C4 stays none-found.
     queries:
       - interdiction importation produits colonies France 2026 décret
       - non-papier franco-suédois produits des colonies Commission
