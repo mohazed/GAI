@@ -1189,3 +1189,15 @@ Side by side (display score and band, 2026-11-28; rc.1 = `data/phase1`, rc.2 = P
 | Slovakia | SVK | +2 Acting | +2 Acting | −8 Passive | A4 0.0 → −10.0 (events added, removed or replaced) |
 | Venezuela (Bolivarian Republic of) | VEN | −9 Passive | −9 Passive | +1 Acting | B1 −10.4 → 0.0 (tier of an event changed) |
 
+
+### T-H-WAYBACK (2026-11-28)
+
+| Item | Result | B-id |
+|---|---|---|
+| Run 46068557695 (third check) | 2,371 URLs; 89 sources not 200, 1 hash difference (UNDL voting file, served 74,036,107 of 352,192,301 bytes) | B-2176 (1) |
+| Second request by hand (two passes) | 24 of 89 now serve the recorded bytes; 65 do not | B-2176 (2) |
+| Re-capture with `--root` (14 non-Comtrade sources) | 2 equal the record: `archive_url_alt` set (the two Article 19 letters A/79/338/Add.1, A/79/720/Add.2); 9 other bytes; 3 Save Page Now failures (documenti.camera.it answers 503) | B-2176 (3) |
+| AIM source of `lead_20261110_MOZ_1`, poderjudicial source | AIM: capture has 102,058 bytes against 99,743 recorded, not recorded; poderjudicial: replays as recorded | B-2176 (3) |
+| Comtrade, 50 sources | not re-capturable to the same bytes (elapsedTime in the body); left | B-2176 (4) |
+| Issue #14 | stays open; counts commented (63 left: 50 Comtrade, 13 other) | B-2176 (5) |
+| Per-source table | `docs/review/wayback-check-2026-11-27.tsv` | B-2176 |
