@@ -1398,3 +1398,26 @@ Window of 9 to 28 November 2026 (after the last session tables of T-F-W8, T-F-W9
 Sources added (5): `src_20261114_mofa-ae_fms-joint-statement-nasser-medical`, `src_20261119_mofa-ae_fms-joint-statement-sanctions`, `src_20261117_kln_joint-declaration-malaysia-france`, `src_20261121_mofa-qa_qatar-germany-state-visit-declaration`, `src_20260824_kingabdullah_jordan-china-joint-statement`.
 
 Not done: B-2195 (1) and B-2196 (AZE's window, read by the resumed session, B-2197; JOR's Press Room, Petra and the Ministry; the Amiri Diwan; the Malaysian Prime Minister's Office; the Algerian Communiqués; the group-specific sources for A, C, D and E; the DEU, CHN and FRA events of the declarations found here; the Amir's 2025 address from the Arabic record). For the author: B-2195 (3) (joint leaders' declarations read as each leader's statement; the China-Jordan statement filed outside the window; the King's 2025 address at +5).
+
+### T-H-RS: primary sources still not searched behind `none-found` entries (2026-11-28; docs/10 B-2216)
+
+Cross-country re-search of CHECKUP §7: the hosts of B-2156 (4) retried with Wayback CDX copies, Pashto for AFG and Sinhala for LKA (B-2164 (9)), Malay and Tamil for SGP (B-2160). Web searches were used to find pages, never as evidence. No CAPTCHA or bot check was passed; the browser pane was not used.
+
+| Country | Entries | Routes tried (2026-11-28) | Found | Status | Score effect |
+|---|---|---|---|---|---|
+| AFG | A3, A5 to A8, B11, B12, C1 | 3 web searches in Pashto | Taliban statements on Gaza (Afghanistan International), other states' acts; no relation, trade, transit or agreement with Israel | none-found kept | None |
+| LKA | B11, B12, C1 | 3 web searches in Sinhala; mfa.gov.lk statement of 9 August 2025 read | the Ministry's unsigned statements of 9 August 2025 and on the flotilla detainees (R3, B9 material; B9 already has events); trade talks with Israel | none-found kept | None |
+| SGP | 22 hand none-found entries | 4 web searches in Malay, 4 in Tamil; the Minister's written reply of 2 July 2024 on defence sales read | acts already recorded (settler sanctions, medical contingent, aid); defence sales not disclosed, no measure stated | none-found kept | None |
+| IRQ | A5 to A8 | mod.mil.iq (gateway, not passed; Wayback: gateway pages only); moj.gov.iq (Gazette listing, restricted search); iraqcaa.gov.iq, scp.gov.iq (NXDOMAIN, no usable capture) | the 2022 normalisation law only (before the window) | none-found kept | None |
+| KWT | A5, A6, C6 | mod.gov.kw (script shell, live and Wayback); capt.gov.kw (Cloudflare check; Wayback home pages of September and October 2026 read) | nothing on Israel | none-found kept | None |
+| LBN | A5 to A8 | economy.gov.lb (Cloudflare check; Wayback of 4 November 2026 read); pcm.gov.lb latest news; customs.gov.lb (HTTP); beirut-airport.gov.lb (NXDOMAIN, no capture) | the boycott office under the law of 1955; Prime Minister's statements on strikes (not these indicators) | none-found kept | None |
+| OMN | C5, C6 | oia.gov.om and spf.gov.om (home and news); etendering.tenderboard.gov.om dashboard; tenderboard.gov.om (NXDOMAIN; captures end 2022) | nothing on Israel | none-found kept | None |
+| SYR | A5, A6, A8 | mod.gov.sy, customs.gov.sy, pministry.gov.sy, syrianports.gov.sy (refused, TLS, timeout, NXDOMAIN); Wayback home pages of October 2024, December 2024 and May 2025 read | nothing on Israel | none-found kept | None |
+| IRN | A5 to A8 | mod.ir (NXDOMAIN; captures end 2008); pmo.ir (timeout; Wayback of June 2025 and December 2024 read); cao.ir (403/NXDOMAIN); rc.majlis.ir (timeout; Wayback of 28 October 2025 archived) | the official text of the espionage law of 2025, archived as `src_20251014_majlis-rc_espionage-cooperation-law`; reading unchanged (lead IRN_3, B-2155) | none-found kept | None |
+| SRB | A6 | mtt.gov.rs (NXDOMAIN; controlled-goods page last captured 2019); restricted search | frameworks only | none-found kept | None |
+| MNE | A6 | gov.me (200, search by script); the Ministry of Economic Development's report for 2025 read | 951 controlled-goods requests approved, 8 refused, no country named | none-found kept | None |
+| SAU | C5, C6 | pif.gov.sa (Cloudflare 403; Wayback press releases of 11 and 18 November 2026 read); sama.gov.sa; lcgpa.gov.sa (firewall page; Wayback news of February 2025 read); hassanainvestment.com (NXDOMAIN, no capture) | nothing on Israel | none-found kept | None |
+| QAT | C6 | mof.gov.qa (403 maintenance page; Wayback news of March and October 2026 read) | nothing on Israel | none-found kept | None |
+| BHR | C5 | sio.gov.bh (home and news) | nothing on Israel | none-found kept | None |
+
+Source added (1): `src_20251014_majlis-rc_espionage-cooperation-law` (recorded from an existing Wayback capture; replay equal in bytes and SHA-256). Lead updated (1): `lead_20261111_IRN_3`. Not done: the hosts that still refuse, do not resolve or show a bot check (listed above) remain unread for the window; B-2215 (5) and (6) are not this card's. For the author: B-2216 (default: `none-found` kept on the 59 entries; the IRN_3 reading kept).
