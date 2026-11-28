@@ -1267,19 +1267,24 @@
   indicator: B9
   type: repeatable
   date: '2026-11-19'
-  points: 5
-  points_rationale: "Uses a legal characterisation (+5): the sixteen foreign ministers condemn Israel's settlement policies in the Occupied Palestinian Territory, call the settlement activity illegal and the occupation unlawful. West Bank conduct, tagged and unscored in v1 (docs/10 B-32); the one mention of Gaza is a welcome of the British sanction on a group obstructing aid to Gaza, read as not a statement on conduct in Gaza (flagged, docs/10 B-2183)."
+  points: 2
+  points_rationale: "Formal condemnation and call (+2), set by the Gaza passage: the sixteen foreign ministers condemn the Israeli military escalation in Gaza and call for the full and immediate implementation of the Comprehensive Plan, without naming a category of violation for Gaza. The legal characterisations (illegal settlement activity, unlawful occupation) concern the West Bank and East Jerusalem and are tagged west-bank, unscored in v1 (docs/10 B-32), as for evt_2026_10_23_TUR_B9. Corrected in place on 2026-11-28 (T-H-MF-4, docs/10 B-2192): first filed at +5, west-bank only, without line 5."
   confidence: confirmed
   scope:
+  - gaza
   - west-bank
   summary:
-    en: "The Minister of Foreign Affairs and fifteen counterparts welcomed British and Australian sanctions over settlements and condemned Israel's settlement policies in the Occupied Palestinian Territory."
-    fr: "Le ministre des Affaires étrangères et quinze homologues ont salué les sanctions britanniques et australiennes et condamné la politique de colonisation d'Israël dans le Territoire palestinien occupé."
+    en: "The Minister of Foreign Affairs and fifteen counterparts condemned the Israeli military escalation in Gaza and Israel's settlement policies in the Occupied Palestinian Territory."
+    fr: "Le ministre des Affaires étrangères et quinze homologues ont condamné l'escalade militaire israélienne à Gaza et la politique de colonisation d'Israël dans le Territoire palestinien occupé."
   actor:
     en: "Minister of Foreign Affairs"
     fr: "Ministre des Affaires étrangères"
     name: "Hakan Fidan"
   evidence:
+  - source: src_20261119_mfa-tr_joint-statement-uk-australia-sanctions
+    quote: "The Ministers condemn the Israeli military escalation in Gaza and call for the full and immediate implementation of President Trump’s Comprehensive Plan to End the Gaza Conflict"
+    quote_lang: en
+    locator: line 5
   - source: src_20261119_mfa-tr_joint-statement-uk-australia-sanctions
     quote: "The Ministers renew their strongest condemnation of Israel’s continued settlement policies in the Occupied Palestinian Territory, particularly the “E1” settlement plan and related settlement activities east of occupied East Jerusalem"
     quote_lang: en
@@ -1302,5 +1307,5 @@
       by: claude-opus-5-5
       at: '2026-11-28'
       verdict: agree
-      notes: "Lines 2 to 4 of the archived text re-read: Türkiye is among the sixteen signatories (line 2); the condemnation (line 3) and the reference to the unlawful occupation (line 4) are verbatim. West Bank only: the Gaza sentence of line 2 welcomes a sanction and describes no conduct in Gaza."
-    notes: "Joint statement of the foreign ministers of Türkiye, Algeria, Egypt, Indonesia, Jordan, Kuwait, Libya, Maldives, Niger, Oman, Pakistan, Palestine, Qatar, Saudi Arabia, Somalia and the United Arab Emirates of 19 November 2026, published by the Turkish Ministry of Foreign Affairs (T-H-MF-1). Filed for TUR and EGY in this session; the other signatories are listed in the P-23 block of PROMPTS.md (docs/10 B-444). West Bank conduct, unscored in v1."
+      notes: "Lines 2 to 4 of the archived text re-read: Türkiye is among the sixteen signatories (line 2); the condemnation (line 3) and the reference to the unlawful occupation (line 4) are verbatim. West Bank only: the Gaza sentence of line 2 welcomes a sanction and describes no conduct in Gaza. Re-read on 2026-11-28 (T-H-MF-4): line 5 condemns the Israeli military escalation in Gaza and calls for the Plan's implementation, a Gaza passage missed in the first reading; scope gaza and west-bank, tier +2 from the Gaza passage (docs/10 B-2192)."
+    notes: "Joint statement of the foreign ministers of Türkiye, Algeria, Egypt, Indonesia, Jordan, Kuwait, Libya, Maldives, Niger, Oman, Pakistan, Palestine, Qatar, Saudi Arabia, Somalia and the United Arab Emirates of 19 November 2026, published by the Turkish Ministry of Foreign Affairs (T-H-MF-1). Filed for TUR and EGY in this session; the other signatories are listed in the P-23 block of PROMPTS.md (docs/10 B-444). The West Bank passages are unscored in v1; the Gaza passage of line 5 scores at the call tier (corrected in place by T-H-MF-4, docs/10 B-2192; B9 at its cap, no score effect)."
