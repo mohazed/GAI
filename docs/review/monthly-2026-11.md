@@ -1477,3 +1477,14 @@ Verification (HANDOFF Task B2 checklist) of every record that T-H-ARCHIVER, T-H-
 Also checked: the 15 texts completed by T-H-ARCHIVER keep the former text byte for byte up to the old truncation marker, which is the only part replaced; two of them (MINADER Infos no 0010, A/79/PV.8) were extracted again with `pnpm archive:retext --file` on a scratch root from the replayed bytes and are identical to the committed files. The 7 recognition rows match the dates of the annex of A/78/846 (lines 72, 113, 136, 148, 161, 167, 205). ECU `recognises_palestine.since` (2010-12-24) is the date at line 4 of `src_20181203_cancilleria_posicion-invariable-palestina`. `src_20261128_comtrade_reporters` has two identical index rows (the same capture recorded by the two Comtrade runs of B-2177); both equal the record, left as written (index rows are appended, never rewritten).
 
 `pnpm validate`: 0 errors.
+
+### T-H-V2: verification of T-H-ML-1 to T-H-RS, full-protocol records (2026-11-28; docs/10 B-2219, B-2220)
+
+The only full-protocol records of this scope are three T-H-RS notes (SAU C5 and C6, QAT C6: the primary hosts of B-2156 (4) retried, Wayback CDX copies read, status kept). Scope and method as in `docs/review/light-protocol.md`, Launch plan of 2026-11-27, T-H-V2.
+
+| Country | Events new or changed | Evidence items: quote verbatim / at locator | Sources: replay equal on 2026-11-28 | Leads | Assessment entries changed | Findings and fixes |
+|---|---|---|---|---|---|---|
+| QAT | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes dated only (T-H-RS retry of the primary hosts of B-2156 (4), Wayback CDX copies); status kept; no finding. |
+| SAU | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 2 | Notes dated only (T-H-RS retry of the primary hosts of B-2156 (4), Wayback CDX copies); status kept; no finding. |
+
+`pnpm validate`: 0 errors.

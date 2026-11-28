@@ -4929,3 +4929,160 @@ The records of this scope in light-protocol countries: BHR B12 (T-H-DEFAULTS), t
 | VEN | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
 
 `pnpm validate`: 0 errors.
+
+### T-H-V2: verification of T-H-ML-1 to T-H-RS, light-protocol countries (2026-11-28; docs/10 B-2219, B-2220)
+
+Verification (HANDOFF Task B2 checklist) of every record that T-H-ML-1 to T-H-ML-6 and T-H-RS wrote or changed. Scope from the parsed diff of `data/` and `archive/` between `682201d` (the last T-H-MF-5 commit) and `801dbbd` (T-H-RS), cross-checked with the commit subjects of those ids: 29 new B9 events (no existing event changed) with 82 evidence items; 221 leads in 101 countries (claims extended with a dated note; none new, removed or rewritten); 208 assessment entries in 150 files (one status change, VNM B9 none-found->has-events; no generated indicator touched; every old note and query kept, every addition dated 28 November 2026); 13 new source records and texts of `archive/text/`; 13 rows appended to `archive/index.csv` (no row changed); no recognition row. The YAML of 150 assessment files was re-wrapped by the writers (about 10,000 lines), which a parsed comparison shows to be layout only. Method: quotes normalised as the validator does and located by script (82 of 82 found, 81 at their stated lines; one locator one line off, corrected); 15 sources (every source of the new events, the T-H-RS Majlis copy and the MDV message cited in a note) fetched again from their `wayback_url` with `curl --compressed`, one at a time: all equal to the record and the index row in bytes and SHA-256, none a challenge page; the OCR of the BHR (Arabic, machine OCR) and PAK pages compared with renderings of the replayed PDFs; speakers (R3), wording (R4, R7), dates, tiers, scopes and French summaries read event by event; signatory lists of the statements of 14 and 19 November 2026 and of the New York Call checked against the archived texts; preview scores re-run for the 22 countries with new events (equal to the values the cards report). Decisions: docs/10 B-2219 and B-2220. Full-protocol records of this scope (SAU, QAT: T-H-RS notes only) are in `docs/review/monthly-2026-11.md` §13, T-H-V2.
+
+| Country | Events new or changed | Evidence items: quote verbatim / at locator | Sources: replay equal on 2026-11-28 | Leads | Assessment entries changed | Findings and fixes |
+|---|---|---|---|---|---|---|
+| AFG | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 9 | Notes and leads dated only (catch-up of 9 to 28 November 2026, T-H-RS retry); no finding. |
+| AGO | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ALB | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| AND | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ARM | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ATG | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BDI | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BEN | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BFA | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BGD | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BGR | 0 | 0: 0 / 0 | 0: 0 | 5 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BHR | 1 (2026_11_17_BHR_B9) | 4: 4 / 4 | 1: 1 | 2 annotated | 2 | evt_2026_11_17_BHR_B9 (+2, +5 alternative flagged, B-2214): machine Arabic OCR of page 2 (lines 38 to 49) compared with a rendering of the replayed PDF at 110 dpi: the quoted lines equal the image. No finding. |
+| BHS | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BIH | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BLR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BLZ | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BRB | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BRN | 1 (2026_11_23_BRN_B9) | 3: 3 / 2 (third locator corrected) | 1: 1 | 1 annotated | 1 | evt_2026_11_23_BRN_B9 (+2, tier flagged, B-2206 (2)): the second quote (call on the Occupying Power) starts on line 64, not 63; locator and second-reading note corrected in place (B-2219 (3)). Otherwise no finding. |
+| BTN | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| BWA | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CAF | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CIV | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CMR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| COD | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| COG | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| COM | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CPV | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CRI | 0 | 0: 0 / 0 | 0: 0 | 4 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CUB | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| CYP | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| DJI | 1 (2026_11_14_DJI_B9) | 3: 3 / 3 | 1: 1 | 0 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| DMA | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| DOM | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ECU | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ERI | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| EST | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ETH | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| FIN | 1 (2025_07_30_FIN_B9) | 2: 2 / 2 | 1: 1 | 2 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| FJI | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 2 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| FSM | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GAB | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GEO | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GHA | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GIN | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GMB | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GNB | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GNQ | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GRD | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GTM | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| GUY | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| HND | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| HRV | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| HTI | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| IRN | 1 (2026_11_19_IRN_B9) | 3: 3 / 3 | 2: 2 | 2 annotated | 5 | evt_2026_11_19_IRN_B9 (+5; date by file receipt flagged, B-2208): page-image check of lines 28 to 40 and 88 to 93. src_20251014_majlis-rc_espionage-cooperation-law (T-H-RS) replayed equal; Article 3(a) wording and Gazette No. 23462 found at line 8 as the lead says; lead_20261111_IRN_3 kept open. No finding. |
+| IRQ | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 5 | Notes and leads dated only (catch-up of 9 to 28 November 2026, T-H-RS retry); no finding. |
+| ISL | 1 (2025_07_30_ISL_B9) | 2: 2 / 2 | 1: 1 | 3 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| JAM | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KAZ | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KEN | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KGZ | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KHM | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KIR | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KNA | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| KWT | 3 (2026_11_14_KWT_B9, 2026_11_16_KWT_B9, 2026_11_19_KWT_B9) | 9: 9 / 9 | 3: 3 | 1 annotated | 4 | Three B9 events (14 and 19 November joint statements; the Amir's message of 16 November, +2, +5 alternative flagged, B-2214): date line 1, lines 40 to 55 and the signature lines 109 to 110 read. No finding. |
+| LAO | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LBN | 1 (2026_11_14_LBN_B9) | 3: 3 / 3 | 1: 1 | 0 annotated | 5 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| LBR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LBY | 2 (2026_11_14_LBY_B9, 2026_11_19_LBY_B9) | 8: 8 / 8 | 3: 3 | 6 annotated | 1 | Two B9 events (14 and 19 November joint statements); the Acting Minister named from the Mission's note (lines 6 to 7, read). The Acting Minister's Arabic message is still not archived (P-23 Also (T-H-ML-3) (2)). No finding. |
+| LCA | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LIE | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LKA | 1 (2026_11_05_LKA_B9) | 3: 3 / 3 | 1: 1 | 2 annotated | 4 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| LSO | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LTU | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LUX | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| LVA | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MCO | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MDA | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MDG | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MDV | 1 (2026_11_19_MDV_B9) | 3: 3 / 3 | 2: 2 | 3 annotated | 1 | evt_2026_11_19_MDV_B9 (+2). The President's message of 23 November 2026 (archived, replay equal) has no occurrence of 'Gaza' in its text, so not filed (R7 literal reading, B-2220). No finding. |
+| MHL | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MKD | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MLI | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MLT | 1 (2026_11_17_MLT_B9) | 3: 3 / 3 | 1: 1 | 1 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| MMR | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MNE | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 2 | Notes and leads dated only (catch-up of 9 to 28 November 2026, T-H-RS retry); no finding. |
+| MNG | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MOZ | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MRT | 1 (2026_11_14_MRT_B9) | 3: 3 / 3 | 1: 1 | 3 annotated | 1 | evt_2026_11_14_MRT_B9 (+5): Foreign Minister named from evt_2025_09_27_MRT_B9 (flagged, B-444). No finding. |
+| MUS | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| MWI | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| NAM | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| NER | 1 (2026_11_19_NER_B9) | 3: 3 / 3 | 1: 1 | 0 annotated | 1 | evt_2026_11_19_NER_B9 (+2): Foreign Minister named from A/79/PV.17 of 2024 (flagged, B-2214). No finding. |
+| NIC | 0 | 0: 0 / 0 | 0: 0 | 5 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| NPL | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| NRU | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| NZL | 1 (2025_07_30_NZL_B9) | 2: 2 / 2 | 1: 1 | 1 annotated | 1 | evt_2025_07_30_NZL_B9 (+2, New York Call), signatory list line 1, demand line 5. No finding. |
+| OMN | 2 (2026_11_14_OMN_B9, 2026_11_19_OMN_B9) | 6: 6 / 6 | 2: 2 | 0 annotated | 3 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| PAK | 3 (2026_11_14_PAK_B9, 2026_11_19_PAK_B9, 2026_11_23_PAK_B9) | 10: 10 / 10 | 3: 3 | 2 annotated | 1 | Three B9 events (14 and 19 November joint statements; the Prime Minister's message of 23 November, +5 flagged, B-2208): OCR of page 2 (lines 40 to 59) compared with a rendering of the replayed PDF: equal. No finding. |
+| PAN | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PER | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PHL | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PLW | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PNG | 0 | 0: 0 / 0 | 0: 0 | 5 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PRK | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PRT | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| PRY | 0 | 0: 0 / 0 | 0: 0 | 5 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ROU | 0 | 0: 0 / 0 | 0: 0 | 6 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| RWA | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SDN | 1 (2026_11_14_SDN_B9) | 3: 3 / 3 | 1: 1 | 0 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| SEN | 1 (2026_11_23_SEN_B9) | 2: 2 / 2 | 1: 1 | 2 annotated | 1 | evt_2026_11_23_SEN_B9 (+5, flagged, B-2214): heading lines 9 to 10 and date line 14 of the OCR text equal the page image. The French summary lacked the occasion the English one gives; added in place (B-2219 (3)). Otherwise no finding. |
+| SGP | 1 (2026_11_24_SGP_B9) | 2: 2 / 2 | 1: 1 | 1 annotated | 23 | evt_2026_11_24_SGP_B9 (+2): line 15 (leaders, date) and line 44 (paragraph 24); the HTML replay is the Ministry's page (title checked), not a challenge page. 22 none-found entries of T-H-RS (Malay and Tamil searches) dated, status kept. The same statement is still due for AUS (B-444; P-23 Also (T-H-ML-3) (3)). No finding. |
+| SLB | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SLE | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SLV | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SMR | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SOM | 2 (2026_11_14_SOM_B9, 2026_11_19_SOM_B9) | 6: 6 / 6 | 2: 2 | 0 annotated | 1 | New events read: speaker, date, tier, scope and French summary agree with the joint statement's other signatories (B-444, B-2192 (1)). No finding. |
+| SRB | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 2 | Notes and leads dated only (catch-up of 9 to 28 November 2026, T-H-RS retry); no finding. |
+| SSD | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| STP | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SUR | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SVK | 0 | 0: 0 / 0 | 0: 0 | 6 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SWZ | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SYC | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| SYR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 4 | Notes and leads dated only (catch-up of 9 to 28 November 2026, T-H-RS retry); no finding. |
+| TCD | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TGO | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| THA | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TJK | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TKM | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TLS | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TON | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TTO | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TUN | 0 | 0: 0 / 0 | 0: 0 | 5 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TUV | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| TZA | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| UGA | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| UKR | 0 | 0: 0 / 0 | 0: 0 | 6 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| URY | 0 | 0: 0 / 0 | 0: 0 | 6 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| UZB | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| VAT | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| VCT | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| VEN | 0 | 0: 0 / 0 | 0: 0 | 3 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| VNM | 1 (2026_11_13_VNM_B9) | 3: 3 / 3 | 1: 1 | 1 annotated | 1 (B9 none-found->has-events) | evt_2026_11_13_VNM_B9 (+2): Vietnamese original at lines 380 to 389 and the Mission's translation at lines 33 to 37, signature block lines 69 to 73; B9 none-found->has-events. French actor title spelled 'Viêt Nam', now 'Viet Nam' as the registry (B-2219 (3)). Otherwise no finding. |
+| VUT | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| WSM | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| YEM | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ZMB | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+| ZWE | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | 1 | Notes and leads dated only (catch-up of 9 to 28 November 2026); no finding. |
+
+`pnpm validate`: 0 errors.
