@@ -27,6 +27,20 @@ export interface ScoreGaugeProps {
 const SCALE = [-100, -50, 0, 50, 100]
 /** Source Code Pro advances 0.6 em; the tooltip box is sized from the character count. */
 const MONO_12_ADVANCE = 7.2
+/**
+ * The narrowest bar each tooltip is shown on, in pixels: the long one (score and methodology
+ * version) above the 480 px container query of the stylesheet, the short one (the score) below it,
+ * down to a 320 px screen (16 px gutters). Both are centred on the marker where they fit and
+ * pinned to the near end of the bar where they do not, so that neither leaves the screen.
+ */
+export const LONG_TIP_MIN_BAR = 481
+export const SHORT_TIP_MIN_BAR = 288
+
+/** x of a tooltip box `width` wide whose marker is at `p` per cent of a bar `minBar` px wide. */
+export function tipOffset(p: number, width: number, minBar: number): number {
+  const edge = Math.ceil(((width / 2 - 6) / minBar) * 100)
+  return p < edge ? -6 : p > 100 - edge ? -width + 6 : -width / 2
+}
 
 export interface ScoreGaugeViewProps extends ScoreGaugeProps {
   t: Translate
@@ -63,9 +77,14 @@ export function ScoreGaugeView({
   const band = bandById(methodology, value.band)
   const p = x(value.score)
   const tip = t('gauge.tooltip', { score: signed(value.score, lang), version: methodology.version })
-  const tipWidth = Math.ceil(tip.length * MONO_12_ADVANCE) + 12
-  // Keep the tooltip inside the bar near both ends.
-  const tipX = p < 20 ? -6 : p > 80 ? -tipWidth + 6 : -tipWidth / 2
+  const tipShort = signed(value.score, lang)
+  const tips = [
+    { cls: 'gauge-tip-long', text: tip, minBar: LONG_TIP_MIN_BAR },
+    { cls: 'gauge-tip-short', text: tipShort, minBar: SHORT_TIP_MIN_BAR },
+  ].map((v) => {
+    const width = Math.ceil(v.text.length * MONO_12_ADVANCE) + 12
+    return { ...v, width, x: tipOffset(p, width, v.minBar) }
+  })
   const label = showScore
     ? t('gauge.label', { score: signedInt(value.display, lang), band: band.name[lang] })
     : t('gauge.scorecardLabel')
@@ -127,20 +146,22 @@ export function ScoreGaugeView({
             <svg x={pct(p)} y={0} overflow="visible" aria-hidden="true">
               <path d="M-5,14 L5,14 L0,21 Z" className="fill-ink" />
               <rect x={-1} y={21} width={2} height={20} className="fill-ink" />
-              <g className="gauge-tip">
-                <rect
-                  x={tipX}
-                  y={-8}
-                  width={tipWidth}
-                  height={20}
-                  className="fill-paper stroke-ink"
-                  strokeWidth={1}
-                  rx={2}
-                />
-                <text x={tipX + 6} y={6} className="fill-ink font-mono" fontSize={12}>
-                  {tip}
-                </text>
-              </g>
+              {tips.map((v) => (
+                <g key={v.cls} className={`gauge-tip ${v.cls}`}>
+                  <rect
+                    x={v.x}
+                    y={-8}
+                    width={v.width}
+                    height={20}
+                    className="fill-paper stroke-ink"
+                    strokeWidth={1}
+                    rx={2}
+                  />
+                  <text x={v.x + 6} y={6} className="fill-ink font-mono" fontSize={12}>
+                    {v.text}
+                  </text>
+                </g>
+              ))}
             </svg>
           ) : null}
         </svg>

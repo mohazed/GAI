@@ -86,7 +86,29 @@ test.describe('component kit (/_kit)', () => {
     await page.goto('/_kit/')
     const gauge = page.locator('[data-kit-row="0"] .gauge').first()
     await gauge.focus()
-    await expect(gauge.locator('.gauge-tip')).toBeVisible()
+    await expect(gauge.locator('.gauge-tip-long')).toBeVisible()
+  })
+
+  test('a 360 px screen: every gauge tooltip stays on the screen (the short one)', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 360, height: 800 })
+    await page.goto('/_kit/')
+    const gauges = page.locator('.gauge:has(.gauge-tip)')
+    const n = await gauges.count()
+    expect(n).toBeGreaterThan(0)
+    for (let i = 0; i < n; i++) {
+      const gauge = gauges.nth(i)
+      await gauge.scrollIntoViewIfNeeded()
+      await gauge.focus()
+      const tip = gauge.locator('.gauge-tip-short')
+      await expect(tip).toBeVisible()
+      await expect(gauge.locator('.gauge-tip-long')).toBeHidden()
+      const box = await tip.boundingBox()
+      expect(box, `gauge ${i}`).not.toBeNull()
+      expect(box?.x ?? -1, `gauge ${i} left`).toBeGreaterThanOrEqual(0)
+      expect((box?.x ?? 0) + (box?.width ?? 0), `gauge ${i} right`).toBeLessThanOrEqual(360)
+    }
   })
 
   test('weights re-rank the table and go into the URL', async ({ page }) => {
