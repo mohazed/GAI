@@ -191,7 +191,7 @@ indicators:
       recognition must serve the political process between the parties; no row to add.
   B9:
     status: "has-events"
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       Five events: the Prime Minister at the General Assembly on 26 September 2024 (+2, call for an
       immediate ceasefire), the Minister of Foreign Affairs' letter of 7 May 2025 requesting the Article
@@ -215,12 +215,24 @@ indicators:
       state), the Prime Minister's General Assembly statement of 24 September (Gaza named among places
       of suffering, no call), the letters reporting the Councils of 22 September and 15 and 16 October
       (third-person reports). B9 is at its cap; no score effect.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-2; window 9 to 28 November): the official
+      publications repository (SRU, 'Gaza' with availability from 2026-11-09: 42 documents of the
+      Government, the House and the Senate) was the list; the Government's documents among them were read.
+      Filed: evt_2026_11_10_NLD_B9 (+2, the written answer of Minister Berendsen and the Minister for
+      Foreign Trade and Development received on 10 November, repeating the call of 27 October for safe,
+      unhindered and unconditional access). Read and not filed: the letter of the Minister for Foreign
+      Trade and Development of 27 October published on 18 November (not a B9 speaker; the same call), the
+      Minister's letter to the Senate of 20 November on the Foreign Affairs Council of 16 November (third-
+      person report: the Netherlands welcomed the EU declaration on access), the plenary debate on the
+      foreign policy letter of 26 November (transcript not read in full). B9 is above its cap; no score
+      effect.
     queries:
       - "SRU: w.dossiernummer==23432 AND dt.date>=2023-10-07 (letters 504–749 by title; 561, 563, 569, 572, 614, 617, 716 read)"
       - "rijksoverheid.nl documents CDX listing: toespraken (speeches 2023-10-11, 2023-10-24, 2024-09-26)"
       - "gadebate.un.org/en/79, 80 and 81/netherlands-kingdom (HTTP 405)"
       - 'SRU repository.overheid.nl: dt.date>=2026-09-27 AND cql.textAndIndexes=Gaza (82 records read by title; 27 October and 16 October answers, 30 October answer, Councils'' reports read)'
       - 'government.nl: speech by Prime Minister Jetten at the General Assembly, 2026 (read in full)'
+      - "repository.overheid.nl/sru cql.textAndIndexes='Gaza' AND dt.available>=2026-11-09 (42 records)"
   B10:
     status: none-found
     checked_at: 2026-09-28
