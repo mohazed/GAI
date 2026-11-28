@@ -1201,3 +1201,72 @@ Side by side (display score and band, 2026-11-28; rc.1 = `data/phase1`, rc.2 = P
 | Comtrade, 50 sources | not re-capturable to the same bytes (elapsedTime in the body); left | B-2176 (4) |
 | Issue #14 | stays open; counts commented (63 left: 50 Comtrade, 13 other) | B-2176 (5) |
 | Per-source table | `docs/review/wayback-check-2026-11-27.tsv` | B-2176 |
+
+### T-H-STRUCT (2026-11-28)
+
+| Item | Result | B-id |
+|---|---|---|
+| `pnpm fetch:fts` | 9 responses archived (`src_20261128_fts_*`); `fts_funding.csv` 2,448 → 2,584 rows (newest window 2025-11-01 to 2026-10-31), `fts_plan_totals.csv` 189 rows; 136 new rows, 126 rows of earlier windows revised (SWE, USA, ARE, BEL, DEU, DNK, ESP, IRL, CHE, NOR, PRT, ITA, LUX, FRA), none dropped | B-2177 (1) |
+| `pnpm fetch:worldbank` | GNI 192 countries, population 194; no value changed since 2026-09-28 | B-2177 (2) |
+| Wayback replays of the 11 new FTS and World Bank captures | 11 of 11 equal (bytes and SHA-256) | B-2177 (3) |
+| `pnpm fetch:comtrade` for the named reporters without rows (ATG FSM KIR MHL LBY NRU PLW SDN PRK QAT) | skipped (done 3 November); re-run with `--force`: no row for any of the ten, A2 and C3 stay `no-data`; 47 captures added, 47 of 47 replay | B-2177 (4) |
+| Quarterly Comtrade refresh of the 45 countries | not due (last run 2026-09-28; next on or after 2026-12-28) | B-2177 (4) |
+| Nightly runs, issues | 40 of 40 runs of 2026-10-19 to 2026-11-27 succeeded; open issues #12, #13, #14 only | B-2177 (5) |
+| UNGA votes since the last run | A/RES/81/1 (17 September 2026, draft A/81/L.2) is the only new Palestine item; symbol read in the Secretariat's list (archived `src_20261128_un-edelegate_ga81-resolutions`); not added to `votes.yaml` (minor version; press release says recorded vote 152-3-4, the list says without a vote) | B-2178 (1), (2) |
+| UNSC vetoes since the last run | none on Gaza after S/2025/583 (18 September 2025); the one 2026 veto (7 April, Hormuz) is not Gaza; `unsc_vetoes.csv` unchanged | B-2178 (3) |
+| Score effect (preview) | 48 of 193 countries move, all in category D; 6 change band | B-2177 (6) |
+
+Score and band changes (preview, rc.1, `pnpm build:data --preview --date 2026-11-28`, with the four tables of 2026-09-28 and with those of 2026-11-28; category D is the only category that moves):
+
+| Country | D before | D after | Score before | Score after | Band before | Band after |
+|---|---|---|---|---|---|---|
+| ARE | +8.0 | +20.0 | +24.6 | +36.6 | Acting | Acting |
+| AUS | +8.0 | +11.0 | +32.1 | +35.1 | Acting | Acting |
+| AUT | +5.0 | +8.0 | +34.7 | +37.7 | Acting | Acting |
+| BEL | +8.0 | +14.0 | +72.0 | +78.0 | Confronting | Confronting |
+| BGR | 0.0 | +1.0 | +9.5 | +10.5 | Acting | Acting |
+| CAN | +15.8 | +21.8 | +44.9 | +50.9 | Confronting | Confronting |
+| CHE | +9.6 | +15.6 | +35.2 | +41.2 | Acting | Confronting |
+| CHN | +8.0 | +9.0 | +27.6 | +28.6 | Acting | Acting |
+| CYP | +8.0 | +14.0 | +20.6 | +26.6 | Acting | Acting |
+| CZE | 0.0 | +1.0 | −37.8 | −36.8 | Enabling | Enabling |
+| DEU | +5.0 | +11.0 | −29.8 | −23.8 | Enabling | Enabling |
+| DNK | +8.0 | +17.0 | +28.6 | +37.6 | Acting | Acting |
+| ESP | +8.0 | +11.0 | +79.0 | +82.0 | Confronting | Confronting |
+| EST | +8.0 | +9.0 | +34.1 | +35.1 | Acting | Acting |
+| FIN | +5.0 | +11.0 | +17.6 | +23.6 | Acting | Acting |
+| FRA | +8.0 | +14.0 | +45.6 | +51.6 | Confronting | Confronting |
+| GBR | +12.3 | +15.3 | +51.9 | +54.9 | Confronting | Confronting |
+| GRC | +10.2 | +11.2 | +11.3 | +12.3 | Acting | Acting |
+| HRV | 0.0 | +6.0 | +14.1 | +20.1 | Acting | Acting |
+| IND | +8.0 | +9.0 | −10.4 | −9.4 | Passive | Passive |
+| IRL | +9.5 | +18.5 | +58.5 | +67.5 | Confronting | Confronting |
+| ISL | +8.0 | +14.0 | +49.6 | +55.6 | Confronting | Confronting |
+| ITA | +5.0 | +8.0 | +11.9 | +14.9 | Acting | Acting |
+| JPN | +2.5 | +5.5 | +23.1 | +26.1 | Acting | Acting |
+| KOR | +8.0 | +11.0 | +2.3 | +5.3 | Acting | Acting |
+| KWT | 0.0 | +3.0 | +7.3 | +25.3 | Acting | Acting |
+| LIE | +8.0 | +17.0 | +36.1 | +45.1 | Acting | Confronting |
+| LTU | +8.0 | +9.0 | +30.7 | +31.7 | Acting | Acting |
+| LUX | +8.0 | +17.0 | +51.0 | +60.0 | Confronting | Confronting |
+| NLD | +9.7 | +18.7 | +55.7 | +64.7 | Confronting | Confronting |
+| NOR | +9.4 | +21.4 | +47.3 | +59.3 | Confronting | Confronting |
+| NZL | 0.0 | +3.0 | +38.7 | +41.7 | Acting | Confronting |
+| POL | +8.0 | +11.0 | +37.6 | +40.6 | Acting | Confronting |
+| PRT | +8.0 | +9.0 | +53.6 | +54.6 | Confronting | Confronting |
+| QAT | 0.0 | +12.0 | +28.6 | +40.6 | Acting | Confronting |
+| ROU | +2.0 | +3.0 | −6.4 | −5.4 | Passive | Passive |
+| RUS | +8.0 | +9.0 | +30.9 | +31.9 | Acting | Acting |
+| SAU | 0.0 | +3.0 | +28.6 | +31.6 | Acting | Acting |
+| SGP | +2.7 | +3.7 | +23.3 | +24.3 | Acting | Acting |
+| SMR | +8.0 | +11.0 | +36.8 | +39.8 | Acting | Acting |
+| SVK | +1.5 | +2.5 | +1.7 | +2.7 | Acting | Acting |
+| SVN | +8.0 | +14.0 | +32.6 | +38.6 | Acting | Acting |
+| SWE | −10.0 | +2.0 | +32.6 | +44.6 | Acting | Confronting |
+| THA | +8.0 | +9.0 | +11.6 | +12.6 | Acting | Acting |
+| TUR | 0.0 | +1.0 | +68.6 | +69.6 | Confronting | Confronting |
+| USA | −10.0 | −7.0 | −100.0 | −100.0 | Sustaining | Sustaining |
+| VNM | 0.0 | +1.0 | +9.6 | +10.6 | Acting | Acting |
+| ZAF | +8.0 | +11.0 | +53.0 | +56.0 | Confronting | Confronting |
+
+The change comes from the newest 12-month window of FTS funding (D1) and from the revisions listed in B-2177 (1); no event, assessment or other table changed in this task. For the author: Switzerland, Liechtenstein, New Zealand, Poland, Qatar and Sweden would be Confronting on today's data (they were Acting on the data of 28 September); the scores of all countries shift again with each monthly FTS refresh.
