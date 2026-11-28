@@ -187,7 +187,7 @@ indicators:
       docs/10 B-192, B-409 (3). Pre-existing recognition: +3 standing from 2023-10-07.
   B9:
     status: has-events
-    checked_at: 2026-11-04
+    checked_at: 2026-11-28
     note: >-
       Seven events: the Foreign Minister's statements of 18 October 2023, 28 November 2023,
       23 February 2024, 4 May 2024, 30 April 2025, 26 May 2026 and 26 September 2026 (B-408). Filed
@@ -201,7 +201,9 @@ indicators:
       on 22 September 2025 (a call to end the war in Gaza, +2; the Cabinet Secretariat's page
       answered Save Page Now with a bot-check page). The President's General Assembly address of
       23 September 2025 names no violation and makes no ceasefire call; not filed.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-5; window 9 to 28 November): the Ministry's content API (Berita, 60 items of 8 to 28 November 2026) read; four items cite Gaza or Palestine and none holds a call or a named violation in Gaza in a B9 speaker's words (26 November, the Foreign Ministers of Indonesia and Kuwait, indirect speech on aid and reconstruction for Gaza; 17 November, the President at the East Asia Summit and the Foreign Minister at the ASEAN-UN summit, Palestine only). Filed the statements of 14 November (+5) and 19 November (+2). B9 at its cap.
     queries:
+      - "launch-plan catch-up 2026-11-28 (T-H-MF-5): backpanel.kemlu.go.id contentMenu slug berita page 1 limit 60 (items 2026-11-08 to 2026-11-28, bodies searched for Gaza, Palestina, Israel)"
       - kemlu API sections Pidato Menteri, Pidato Presiden, Siaran Pers, full text 2023-10-07 to 2026-09-29
       - setkab.go.id search feed Gaza
       - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: the archived text of South Africa's DIRCO for the joint statement of 16 October 2026 on Colombia's embassy in Jerusalem; filed evt_2026_10_16_IDN_B9 (Jerusalem and the West Bank, tagged unscored); no other search for this country in this run; the other ministries' copies of the statement were not read"
