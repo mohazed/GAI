@@ -4894,3 +4894,38 @@ Sources added: 3, all from the UNISPAL uploads, archived with Save Page Now and 
 Not done (B-2215): the official sites of SSD (mofaic.gov.ss), SWZ (gov.sz), SYC (mfa.gov.sc), TZA (foreign.go.tz, 503), UGA (statehouse.go.ug, 526), ZMB (mofaic.gov.zm), ZWE (zimfa.gov.zw), SLE (mofa.gov.sl), SOM (mfa.gov.so), BHR (mofa.gov.bh and bna.bh, 405), LBN (mfa.gov.lb), SYR (sana.sy, 401), MCO (gouv.mc, 403, not bypassed), SEN (presidence.sn) and KWT (kuna.net.kw, rendered by script); sites without an API were read on their home pages only; where a state news daily answered (lesahel.org, dailynews.co.tz, times.co.sz, zambiamonitor.com, eyeradio.org, radiotamazuj.org) it was read as press, to find pages; the Security Council records of November 2026 (BHR and SOM are members; a Permanent Representative is not a B9 speaker, R3); the group-specific sources for A, C, D and E. For the author (B-2214): NER's and SOM's passivity lifted by joint statements; the tiers of the SEN, KWT and BHR messages; NER's Foreign Minister named from a 2024 record.
 
 `pnpm validate`: 0 errors.
+
+### T-H-V1: verification of T-H-ARCHIVER to T-H-MF-5, light-protocol countries (2026-11-28; docs/10 B-2217, B-2218)
+
+The records of this scope in light-protocol countries: BHR B12 (T-H-DEFAULTS), the GHA and LTU General Debate addresses (T-H-UNDOCS) and lead annotations of T-H-ARCHIVER and T-H-UNDOCS. Scope and method as in `docs/review/monthly-2026-11.md` §13, T-H-V1.
+
+| Country | Events new or changed | Evidence items: quote verbatim / at locator | Sources of the events: replay equal on 2026-11-28 | Leads | Recognition row | Assessment entries changed | Findings and fixes |
+|---|---|---|---|---|---|---|---|
+| BGD | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| BHR | 1 (2023_11_02_BHR_B12) | 2: 2 / 2 | 1: 1 | 2 annotated, 1 promoted | none added or changed | 1 (B12 unchecked->has-events) | evt_2023_11_02_BHR_B12 (+5, recall tier, flag of B-2171 kept): the National Communication Centre's statement, lines 1 and 3; Wayback capture of 28 October 2025, replay equal; lead_20261110_BHR_2 promoted. No finding. |
+| BIH | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| BLR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| BLZ | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| CUB | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| GHA | 1 (2025_09_25_GHA_B9) | 4: 4 / 4 | 1: 1 | 1 annotated | none added or changed | 1 (B9 none-found->has-events) | evt_2025_09_25_GHA_B9 (+5) from A/80/PV.8 (lines 1425, 1565 to 1571), the President speaking English; the summary reports his words ('the crimes in Gaza must stop'), no listed term in the site's voice. No finding. |
+| HND | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| IRN | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| JAM | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| LBY | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| LSO | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| LTU | 1 (2025_09_23_LTU_B9) | 4: 4 / 4 | 3: 3 | 0 annotated | none added or changed | 1 (B9 note) | evt_2025_09_23_LTU_B9 (+2, flagged): the address in A/80/PV.4 (lines 2691 to 2694) equals the delegation's file (lines 149 and 150). No finding. |
+| NIC | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| PHL | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| PNG | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| PRK | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| SLB | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| SMR | 0 | 0: 0 / 0 | 0: 0 | 2 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| SUR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| TJK | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| TKM | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| UKR | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| URY | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| VCT | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+| VEN | 0 | 0: 0 / 0 | 0: 0 | 1 annotated | none added or changed | 0 | Lead annotated only (dated search of T-H-ARCHIVER or T-H-UNDOCS); no finding. |
+
+`pnpm validate`: 0 errors.
