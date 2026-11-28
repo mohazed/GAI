@@ -4682,3 +4682,4 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L0
 | TKM | mfa.gov.tm/en/news (24 to 28 November); one English web search | none | none | +12.3 Acting, unchanged | B9 note and queries; lead 1 dated |
 | UZB | president.uz items 9770 to 9904 one by one (108 texts, 27 empty ids), grep Gaza and Palestin; one English web search | none | the state visit to Jordan (about 22 to 24 November): 'exchanged views on pressing international and regional issues' only (item 9887) | +21.3 Acting, unchanged | B9 note and queries; leads 1, 3 dated |
 | MNG | mfa.gov.mn news category (HTTP 404); one English web search | none | window not read on the Ministry's own site (B-2199) | +3.6 Acting, unchanged | B9 note and queries; no open lead |
+| PRK | mfa.gov.kp (HTTP 404); kcna.kp (script-encoded); one English web search | none | window not read on the state's own sites (B-2199) | +3.6 Acting, unchanged | B9 note and queries; lead 1 dated |
