@@ -4861,3 +4861,4 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L2
 | Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
 |---|---|---|---|---|---|
 | NER | presidence.ne home page (no item names Gaza); lesahel.org WordPress API (250 posts of 10 to 27 November, none on Gaza: the hits are the town of Gazaoua); UNISPAL uploads (no message); web searches (French, English) | `evt_2026_11_19_NER_B9` (+2, the statement of 19 November, P-23 item; the first qualifying event of 365 days, passivity lifted, B-2214 (2)) | none | +5.0 to +22.0 Acting | B9 note and queries; no open lead |
+| RWA | minaffet.gov.rw news listing (items of 10 to 23 November, none names Gaza or Israel); paulkagame.rw home page (items of 2 to 25 November, none); UNISPAL uploads (no message); one English web search | none | none | −5.9 Passive, unchanged | B9 note and queries; lead 1 dated |
