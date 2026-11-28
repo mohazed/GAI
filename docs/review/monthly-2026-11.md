@@ -1143,3 +1143,49 @@ Score and band changes (preview, rc.1, `pnpm build:data --preview --date 2026-11
 | NGA | B8 +3 | −4.4 | −1.4 | Passive | Passive |
 
 Bands of the 193: Sustaining 4, Enabling 24, Passive 38, Acting 105, Confronting 22, before and after. No other country moved.
+
+### T-H-METHOD (2026-11-28)
+
+| Item | Result | B-id |
+|---|---|---|
+| Branch `methodology/v1.0.0-rc.3` | built on PR #15's branch with `data/phase1` merged (`08b00d5`); rc.3 commits `c961113`, `38fa314` | B-2174 |
+| PR #19 (rc.3 into `data/phase1`) | opened, not merged; "Methodology diff" comment and CI on the PR | B-2174 |
+| B1, Article 19 (b) with (c) | `data/structured/unga_article19.csv`, 30 rows (VEN 12, AFG 10, BOL 3, STP 3, ECU 1, SOM 1); tier `not_entitled: 0`; reason in the event summary; rule `structured.article19-absence` | B-2174 (1) |
+| A4 (c) | formula a4 `years: first-reporting-release`; the release of 9 March 2026 scores 2024 and 2025; one event per country and release | B-2174 (2) |
+| D3 qualifying, rule 8 scope (a) | stated in the Passivity and Coverage sections; no rule changed | B-2174 (3) |
+| Changelog, docs/02, docs/03, EN and FR text, tests | done; 2,686 tests pass; `pnpm validate` 0 errors | B-2174 (4) |
+| Discussions | rc.2: #20, rc.3: #21, category General, posted 2026-11-28 (UTC); windows close **2026-12-12** | B-2175 (1), (2) |
+| `methodology/proposals.yaml` on `main` | two entries, PR #22, merge commit `0a6d972` after green CI; `main` merged into `data/phase1` (`0625ac6`) | B-2175 (4) |
+
+Side by side (display score and band, 2026-11-28; rc.1 = `data/phase1`, rc.2 = PR #15, rc.3 = PR #19):
+
+**Published events (generated only), as diff.json, 2026-11-28**
+
+| Country | ISO3 | rc.1 | rc.2 | rc.3 | Cause of the rc.3 move |
+|---|---|---|---|---|---|
+| Afghanistan | AFG | −25 Enabling | −25 Enabling | −15 Passive | B1 −10.4 → 0.0 (tier of an event changed) |
+| Austria | AUT | +7 Acting | −8 Passive | −18 Passive | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Azerbaijan | AZE | +4 Acting | +3 Acting | −7 Passive | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Bolivia (Plurinational State of) | BOL | −21 Enabling | −21 Enabling | −16 Passive | B1 −9.2 → −4.5 (tier of an event changed) |
+| Kenya | KEN | +1 Acting | 0 Passive | −5 Passive | A4 0.0 → −5.0 (events added, removed or replaced) |
+| Liberia | LBR | −13 Passive | −13 Passive | −15 Passive | A4 0.0 → −2.0 (events added, removed or replaced) |
+| Philippines | PHL | −1 Passive | −2 Passive | −4 Passive | A4 −5.0 → −7.0 (events added, removed or replaced) |
+| Sao Tome and Principe | STP | −25 Enabling | −25 Enabling | −22 Enabling | B1 −10.4 → −7.0 (tier of an event changed) |
+| Slovakia | SVK | −15 Passive | −30 Enabling | −40 Enabling | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Venezuela (Bolivarian Republic of) | VEN | −22 Enabling | −22 Enabling | −12 Passive | B1 −10.4 → 0.0 (tier of an event changed) |
+
+**Preview: the reviewed events scored as if published (provisional), 2026-11-28**
+
+| Country | ISO3 | rc.1 | rc.2 | rc.3 | Cause of the rc.3 move |
+|---|---|---|---|---|---|
+| Afghanistan | AFG | −25 Enabling | −25 Enabling | −15 Passive | B1 −10.4 → 0.0 (tier of an event changed) |
+| Austria | AUT | +35 Acting | +35 Acting | +25 Acting | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Azerbaijan | AZE | −1 Passive | −17 Passive | −27 Enabling | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Bolivia (Plurinational State of) | BOL | +4 Acting | +4 Acting | +9 Acting | B1 −9.2 → −4.5 (tier of an event changed) |
+| Kenya | KEN | +2 Acting | +2 Acting | −3 Passive | A4 0.0 → −5.0 (events added, removed or replaced) |
+| Liberia | LBR | −13 Passive | −13 Passive | −15 Passive | A4 0.0 → −2.0 (events added, removed or replaced) |
+| Philippines | PHL | 0 Passive | 0 Passive | −2 Passive | A4 −5.0 → −7.0 (events added, removed or replaced) |
+| Sao Tome and Principe | STP | −25 Enabling | −25 Enabling | −22 Enabling | B1 −10.4 → −7.0 (tier of an event changed) |
+| Slovakia | SVK | +2 Acting | +2 Acting | −8 Passive | A4 0.0 → −10.0 (events added, removed or replaced) |
+| Venezuela (Bolivarian Republic of) | VEN | −9 Passive | −9 Passive | +1 Acting | B1 −10.4 → 0.0 (tier of an event changed) |
+
