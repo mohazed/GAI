@@ -1,56 +1,59 @@
 # Calibration: the ten countries and the thresholds (P-15)
 
-The Phase-0 hand-scoring of docs/08 §3 for the ten calibration countries, a critical review of the thresholds of methodology 1.0.0-rc.1, and one proposal for the next version (P-24, before the score is shown in P-22). No methodology file was changed in this session (docs/08 §1).
+The Phase-0 hand-scoring of docs/08 §3 for the ten calibration countries, a critical review of the thresholds of methodology 1.0.0-rc.1, and one proposal for the next version (P-24, before the score is shown in P-22). No methodology file was changed by this file (docs/08 §1).
 
-**Provisional numbers.** First computed on 2026-09-30 (P-15); re-computed on 2026-10-05 on branch `data/phase1` for the same date, 2026-09-30, after the import of the five later General Assembly votes and of the SIPRI release of 9 March 2026 (T-P14, docs/10 B-487). The date is kept so that what moved is the data, not the passage of time. No hand-written event is published yet: the author's review of the 773 events of the 45 countries is still to come (PR #11, `data/phase1`). The 773 events at status `reviewed` are scored as if published, as `pnpm score --preview` does (docs/06 §4 step 7); the one `draft` event (`evt_2025_09_29_USA_B10`, rejected at the second reading, B-205) is left out. Every number here changes when the author publishes, drops or corrects events. P-22 re-runs this worksheet on the published dataset before the flip.
+**Provisional numbers.** First computed on 2026-09-30 (P-15); re-computed on 2026-10-05 for the same date after the import of the five later General Assembly votes and of the SIPRI release of 9 March 2026 (T-P14, docs/10 B-487); **re-computed on 2026-11-28** on branch `data/phase1` at `63b4c8b` by task T-H-PREP of the launch-plan run (docs/10 B-2224), for the date 2026-11-28, after the finish plan, the P-23 pre-launch pass and the launch-plan run (events filed to 2026-11-28, B8 rows from A/78/846 added by default, FTS to October 2026). No hand-written event is published yet: the author's review is still to come (PR #11, `data/phase1`). The 1,515 events at status `reviewed` are scored as if published, as `pnpm score --preview` does (docs/06 §4 step 7); the one `draft` event (`evt_2025_09_29_USA_B10`, rejected at the second reading, B-205) is left out. Every number here changes when the author publishes, drops or corrects events. P-22 re-runs this worksheet on the published dataset before the flip. Sections 1, 2, 4 and 8 and the ten worksheets carry the numbers of 2026-11-28; sections 3, 5, 6 and 7 keep the reasoning and the numbers of 2026-10-05, each with a dated update where the numbers moved.
 
-**Reproduce.** `pnpm calibrate --date 2026-09-30 --fts --out calibration.json` on this commit (packages/pipeline/src/calibrate.ts and cli/calibrate.ts, local only; no workflow runs it). It scores the 193 scored entities with the engine of @gai/scoring, checks its baseline against `sensitivitySuite` (the function that writes sensitivity.json), compiles each proposal of §4 on a copy of the methodology in memory, and with `--fts` downloads the nine archived FTS responses fts_funding.csv cites, checks each SHA-256 against its source record, rebuilds the monthly windows (0 differences from the committed table) and rebuilds them again without the flows dated before 2023-10-07. The worksheets `{ISO3}.md` are written from that JSON. Since B-489 the assessment statuses it reports are the ones the build publishes (the hand statuses with those derived from the structured tables laid over them).
+**Reproduce.** `pnpm calibrate --date 2026-11-28 --fts --out calibration.json` on this commit (packages/pipeline/src/calibrate.ts and cli/calibrate.ts, local only; no workflow runs it). It scores the 193 scored entities with the engine of @gai/scoring, checks its baseline against `sensitivitySuite` (the function that writes sensitivity.json), compiles each proposal of §4 on a copy of the methodology in memory, and with `--fts` downloads the archived FTS responses fts_funding.csv cites (nine on 2026-11-28), checks each SHA-256 against its source record, rebuilds the monthly windows (0 differences from the committed table) and rebuilds them again without the flows dated before 2023-10-07. The worksheets `{ISO3}.md` are written from that JSON, field by field, keeping the reading slots (all 30 still blank on 2026-11-28) and each worksheet's last section. Since B-489 the assessment statuses it reports are the ones the build publishes (the hand statuses with those derived from the structured tables laid over them).
 
 ## 1. The ten
 
 | Country | Score | Display | Band | A | B | C | D | Passivity | Position of 193 |
 |---|---|---|---|---|---|---|---|---|---|
-| Spain (ESP) | +85.0 | +85 | Confronting | +22.0 | +45.0 (sum +78.8) | +4.0 | +14.0 | not applied | 1 |
-| Türkiye (TUR) | +77.9 | +78 | Confronting | +23.9 | +45.0 (sum +50.8) | 0.0 | +9.0 | not applied | 2 |
-| Ireland (IRL) | +68.1 | +68 | Confronting | 0.0 | +45.0 (sum +68.4) | +4.0 | +19.1 | not applied | 5 |
-| United Kingdom (GBR) | +59.9 | +60 | Confronting | −8.0 | +45.0 (sum +45.8) | +4.0 | +18.9 | not applied | 7 |
-| South Africa (ZAF) | +56.0 | +56 | Confronting | 0.0 | +45.0 (sum +58.8) | 0.0 | +11.0 | not applied | 8 |
-| France (FRA) | +53.8 | +54 | Confronting | 0.0 | +40.8 | −1.0 | +14.0 | not applied | 10 |
-| Egypt (EGY) | +22.8 | +23 | Acting | 0.0 | +27.8 | −5.0 | 0.0 | not applied | 39 |
-| Germany (DEU) | +5.1 | +5 | Acting | −23.4 | +26.5 | −9.0 | +11.0 | not applied | 53 |
-| India (IND) | −16.6 | −17 | Passive | −15.0 | +17.4 | −20.0 (sum −30.0) | +1.0 | not applied | 160 |
-| United States (USA) | −100.0 | −100 | Sustaining | −45.0 (sum −78.2) | −40.0 (sum −114.4) | −18.0 | −7.0 | not applied | 193 |
+| Spain (ESP) | +82.0 | +82 | Confronting | +22.0 | +45.0 (sum +76.6) | +4.0 | +11.0 | not applied | 1 |
+| Türkiye (TUR) | +69.6 | +70 | Confronting | +23.6 | +45.0 (sum +48.6) | 0.0 | +1.0 | not applied | 3 |
+| Ireland (IRL) | +67.5 | +67 | Confronting | 0.0 | +45.0 (sum +69.2) | +4.0 | +18.5 | not applied | 4 |
+| South Africa (ZAF) | +56.0 | +56 | Confronting | 0.0 | +45.0 (sum +56.6) | 0.0 | +11.0 | not applied | 8 |
+| United Kingdom (GBR) | +54.9 | +55 | Confronting | −8.0 | +43.6 | +4.0 | +15.3 | not applied | 10 |
+| France (FRA) | +51.6 | +52 | Confronting | 0.0 | +38.6 | −1.0 | +14.0 | not applied | 14 |
+| Egypt (EGY) | +23.6 | +24 | Acting | 0.0 | +28.6 | −5.0 | 0.0 | not applied | 61 |
+| India (IND) | −9.4 | −9 | Passive | −15.0 | +16.6 | −20.0 (sum −30.0) | +9.0 | not applied | 152 |
+| Germany (DEU) | −21.8 | −22 | Enabling | −38.4 | +14.6 | −9.0 | +11.0 | not applied | 166 |
+| United States (USA) | −100.0 | −100 | Sustaining | −45.0 (sum −78.2) | −40.0 (sum −97.0) | −18.0 | −7.0 | not applied | 193 |
 
-Ranking of the ten: 1 Spain, 2 Türkiye, 3 Ireland, 4 United Kingdom, 5 South Africa, 6 France, 7 Egypt, 8 Germany, 9 India, 10 United States. The positions of 193 mix 45 researched countries with 148 whose only events are generated (votes, vetoes, recognitions, FTS funding, Comtrade, SIPRI): they compare the ten with each other, not with the rest of the world.
+Ranking of the ten: 1 Spain, 2 Türkiye, 3 Ireland, 4 South Africa, 5 United Kingdom, 6 France, 7 Egypt, 8 India, 9 Germany, 10 United States. The positions of 193 mix 45 countries researched with the full protocol and 148 researched with the light protocol (103 of which have hand-researched events): they compare the ten with each other more safely than with the rest of the world.
 
-**What moved since P-15** (display scores on 2026-09-30). The first column is the P-15 computation; the second the same date with the events as they stand after P-16 to P-19 but without the imports; the third adds the imports.
+**What moved since the run of 2026-10-05** (display score on 2026-09-30 in that run, against 2026-11-28 now). Both the date and the data moved: decay lowers the B1 votes of 2024 and the statements of 2024 and 2025, a vote or statement older than two years leaves the score, D1 reads the twelve months to October 2026, and the events filed between 2026-10-05 and 2026-11-28 (the finish plan, the P-23 pass and this run) are in. The change of each category subtotal (clipped) is shown; the worksheets list the events in force.
 
-| Country | P-15 | Events of P-16 to P-19 | With the imports | What the imports changed |
-|---|---|---|---|---|
-| Spain | +85 | +85 | +85 | B1 +14.1 above the category cap: nothing |
-| Türkiye | +69 | +69 | +78 | B1 +14.1, B capped at +45 |
-| Ireland | +68 | +68 | +68 | B1 +14.1 above the category cap: nothing |
-| United Kingdom | +43 | +46 | +60 | B1 +14.1, B capped at +45 |
-| South Africa | +53 | +56 | +56 | B1 +14.1, B capped at +45 (+0.4) |
-| France | +32 | +40 | +54 | B1 +14.1; Acting → Confronting |
-| Egypt | +9 | +9 | +23 | B1 +14.1 |
-| Germany | +9 | +16 | +5 | A1 −10.4 and A4 −10 (SIPRI), B1 +9.1 (yes on four votes, abstention on A/RES/80/78) |
-| India | −30 | −27 | −17 | B1 +10.3; A4 `no-data` (B-488); Enabling → Passive |
-| United States | −100 | −100 | −100 | A1 −38.2 (A capped at −45), B1 −23.6 (no on all five); still at the clip |
+| Country | 2026-09-30 (run of 2026-10-05) | 2026-11-28 | A | B | C | D |
+|---|---|---|---|---|---|---|
+| Spain | +85 Confronting | +82 Confronting | 0 | 0 | 0 | −3.0 |
+| Türkiye | +78 Confronting | +70 Confronting | −0.3 | 0 | 0 | −8.0 |
+| Ireland | +68 Confronting | +67 Confronting | 0 | 0 | 0 | −0.6 |
+| South Africa | +56 Confronting | +56 Confronting | 0 | 0 | 0 | 0 |
+| United Kingdom | +60 Confronting | +55 Confronting | 0 | −1.4 | 0 | −3.6 |
+| France | +54 Confronting | +52 Confronting | 0 | −2.2 | 0 | 0 |
+| Egypt | +23 Acting | +24 Acting | 0 | +0.8 | 0 | 0 |
+| India | −17 Passive | −9 Passive | 0 | −0.8 | 0 | +8.0 |
+| Germany | +5 Acting | −22 Enabling | −15.0 | −11.9 | 0 | 0 |
+| United States | −100 Sustaining | −100 Sustaining | 0 | 0 | 0 | 0 |
 
-The five votes add, per country on this date, +3 × d (yes), −5 × d (no) or −2 × d (abstain or absent), d = 0.774, 0.963, 0.977, 1, 1 (A/RES/ES-10/27, A/DEC/80/506, A/RES/80/1, A/RES/80/78, A/RES/80/116): +14.1 for yes on all five, −23.6 for no on all five, before the category B cap. The SIPRI release gives A1 to Germany (−10.4), Italy (−5.7) and the United States (−38.2) and A4 to eleven buyers of Israeli arms in 2025 (Germany and Romania, the Republic of Korea, Thailand −10; Greece, Latvia, Morocco, Peru, the Philippines, Singapore −5; Lithuania −2); A1 is `none-found` (s = 0) for the 190 other scored entities, A4 `none-found` for 180, and `no-data` for India and Poland, whose 2025 orders SIPRI lists at 0 TIV (B-488).
-
-All 193 on 2026-09-30: Sustaining 2, Enabling 27, Passive 55, Acting 89, Confronting 20 (P-15: 1, 8, 139, 36, 9); the penalty applies to 141, as before. The imports change 180 display scores (median +10, from −24 for Paraguay to +15 for Jordan): 63 states move from Passive to Acting and 21 from Passive to Enabling (their votes), 11 from Acting to Confronting, Hungary from Enabling to Sustaining (−53) and India from Enabling to Passive. At the quarter ends since 2023-10-07 the distribution moved as follows (rc.1, same data):
+All 193 on 2026-11-28: Sustaining 4, Enabling 24, Passive 38, Acting 99, Confronting 28 (on 2026-09-30 in the run of 2026-10-05: 2, 27, 55, 89, 20); the penalty applies to 78 (141 then). At the quarter ends since 2023-10-07 and on the date the distribution is as follows (rc.1, the same data):
 
 | Date | Sustaining | Enabling | Passive | Acting | Confronting |
 |---|---|---|---|---|---|
-| 2023-12-31 | 1 | 12 | 143 | 37 | 0 |
-| 2024-06-30 | 1 | 23 | 119 | 43 | 7 |
-| 2024-12-31 | 1 | 22 | 50 | 101 | 19 |
-| 2025-06-30 | 2 | 23 | 32 | 116 | 20 |
-| 2025-12-31 | 9 | 21 | 24 | 109 | 30 |
-| 2026-06-30 | 4 | 26 | 35 | 103 | 25 |
-| 2026-09-30 | 2 | 27 | 55 | 89 | 20 |
+| 2023-12-31 | 1 | 11 | 78 | 103 | 0 |
+| 2024-03-31 | 1 | 13 | 79 | 99 | 1 |
+| 2024-06-30 | 1 | 18 | 59 | 109 | 6 |
+| 2024-09-30 | 1 | 15 | 59 | 106 | 12 |
+| 2024-12-31 | 1 | 18 | 34 | 113 | 27 |
+| 2025-03-31 | 1 | 23 | 31 | 113 | 25 |
+| 2025-06-30 | 2 | 25 | 23 | 113 | 30 |
+| 2025-09-30 | 7 | 19 | 19 | 101 | 47 |
+| 2025-12-31 | 8 | 20 | 16 | 95 | 54 |
+| 2026-03-31 | 7 | 22 | 20 | 98 | 46 |
+| 2026-06-30 | 5 | 24 | 22 | 105 | 37 |
+| 2026-11-28 | 4 | 24 | 38 | 99 | 28 |
 
 A1 and A4 hold from 2026-03-09 only: no earlier SIPRI release could be imported (SIPRI's database serves its current release), so at the quarter ends before that date A1 and A4 are `no-data` (`no-release`) and contribute nothing.
 
@@ -58,23 +61,33 @@ The worksheets: [USA](USA.md), [DEU](DEU.md), [GBR](GBR.md), [FRA](FRA.md), [ESP
 
 ## 2. Sensitivity (docs/02 §10)
 
-The five tables of sensitivity.json computed on the same preview dataset (193 entities; Spearman's ρ against the default ranking; countries whose display score changes):
+The fifteen rows of sensitivity.json computed on the same preview dataset (193 entities; Spearman's ρ against the default ranking; countries whose display score changes; the ten whose band changes):
 
-| Variant | ρ | Changed | Ten: notable moves |
+| Variant | ρ | Changed | Ten: band changes |
 |---|---|---|---|
-| passivity 5 | 0.9844 | 141 | none of the ten is penalised; Germany position 53 → 134 |
-| passivity 25 | 0.9946 | 141 | India 160 → 141, Germany 53 → 45 |
-| weight A 0.5 / 1.5 | 0.9981 / 0.9873 | 30 / 29 | Germany Passive at 1.5 (−7), +17 at 0.5; India Enabling at 1.5 (−24) |
-| weight B 0.5 / 1.5 | 0.9925 / 0.9986 | 190 / 187 | at 0.5 the United Kingdom (+37), France (+33) and South Africa (+34) Acting, Germany Passive (−8), India Enabling (−25); Egypt +37 at 1.5 |
-| weight C 0.5 / 1.5 | 0.9946 / 0.9936 | 29 / 29 | India −7 at 0.5, Enabling at 1.5 (−27) |
-| weight D 0.5 / 1.5 | 0.9970 / 0.9995 | 53 / 45 | Germany Passive at 0.5 (0) |
-| reported 0.2 / 0.6 | 1.0000 / 1.0000 | 2 / 2 | Germany +7 / +3 (its C2 is `reported`) |
-| statements excluded (B9, B10 at 0) | 0.9846 | 33 | Germany Passive (−4); Türkiye +59 |
-| decay off | 0.9432 | 183 | Germany Passive (−5, position 148); Egypt Confronting (+45); France +68; India −5 |
+| passivity-5 | 0.9813 | 78 | none |
+| passivity-15 | 1.0000 | 0 | none |
+| passivity-25 | 0.9892 | 78 | none |
+| weight-A-0.5 | 0.9953 | 38 | Germany Passive (−3) |
+| weight-A-1.5 | 0.9958 | 37 | none |
+| weight-B-0.5 | 0.9918 | 192 | United Kingdom Acting (+33); France Acting (+32); South Africa Acting (+34) |
+| weight-B-1.5 | 0.9976 | 191 | Germany Passive (−15) |
+| weight-C-0.5 | 0.9940 | 82 | Germany Passive (−17); India Acting (+1) |
+| weight-C-1.5 | 0.9953 | 84 | none |
+| weight-D-0.5 | 0.9973 | 59 | none |
+| weight-D-1.5 | 0.9986 | 59 | Germany Passive (−16) |
+| reported-0.2 | 0.9999 | 6 | Germany Passive (−20) |
+| reported-0.6 | 0.9999 | 5 | none |
+| statements-excluded | 0.9596 | 107 | none |
+| decay-off | 0.9479 | 184 | Egypt Confronting (+45); India Acting (+3) |
 
-Decay is still the parameter the ranking depends on most: switching it off changes 183 display scores and brings ρ to 0.943 (0.912 with the same events before the imports, 0.907 at P-15): the B1 votes of 2023 and 2024 and the statements of 2023 expire after two years by default, and the five votes of 2025, all within the last 16 months, now weigh on both sides. The category weights move more than at P-15, mostly through B, where the twelve votes sit: weight B 0.5 brings three of the ten from Confronting to Acting. For comparison, the sensitivity.json of `pnpm build:data --date 2026-09-30` (published events only, which are all generated) gives ρ 0.9702 and 0.9917 for passivity 5 and 25 (149 penalised), and 0.9172 for decay off.
+Decay off changes 184 display scores with ρ 0.9479 (0.9432 on 2026-09-30 in the run of 2026-10-05); the variant that changes the most display scores is weight-B-0.5 (192, ρ 0.9918). The reading of 2026-10-05 below still applies in kind: decay and the weight of category B, where the votes sit, move the ranking most.
+
+*Reading of 2026-10-05:* Decay is still the parameter the ranking depends on most: switching it off changes 183 display scores and brings ρ to 0.943 (0.912 with the same events before the imports, 0.907 at P-15): the B1 votes of 2023 and 2024 and the statements of 2023 expire after two years by default, and the five votes of 2025, all within the last 16 months, now weigh on both sides. The category weights move more than at P-15, mostly through B, where the twelve votes sit: weight B 0.5 brings three of the ten from Confronting to Acting. For comparison, the sensitivity.json of `pnpm build:data --date 2026-09-30` (published events only, which are all generated) gives ρ 0.9702 and 0.9917 for passivity 5 and 25 (149 penalised), and 0.9172 for decay off.
 
 ## 3. Critical review of the thresholds
+
+*Written at P-15 and revised on 2026-10-05; the numbers in this section are of 2026-09-30. The numbers of 2026-11-28 are in §1, §2 and §4.*
 
 Which rules produced a result that surprised on reading the ten and the 193, and what would change it. Each change is measured in §4 and §5; the ones recommended are gathered in §7.
 
@@ -88,38 +101,44 @@ Which rules produced a result that surprised on reading the ten and the 193, and
 
 ## 4. The methodology defaults under review
 
-Measured on 2026-09-30 over the 193 entities, and at the twelve quarter ends from 2023-12-31 (history). "Changed" counts display scores; ρ compares with rc.1.
+Measured on 2026-11-28 over the 193 entities, and at the eleven quarter ends from 2023-12-31 to 2026-06-30 and on the date (history). "Changed" counts display scores; ρ compares with rc.1. The reasons for each recommendation are those of 2026-10-05 (the table of that date is in the git history of this file, commit c125e38); rc.2 (PR #15) carries the adopted ones. rc.3 (PR #19: Article 19 absences, A4 data years) is not modelled by `pnpm calibrate`; its effect is in PR #19's `diff.json` and in `docs/review/monthly-2026-11.md` §13.
 
 | Default | Today: changed, bands, passivity, ρ | History (largest quarter end) | The ten today | Recommendation |
 |---|---|---|---|---|
-| B-21: `official-video` and `parliamentary` sources make an event `confirmed` | 2, 1, 0, 0.9973 (raises `evt_2025_08_29_TUR_A8` and `evt_2026_01_11_DEU_C2`) | 2 changes, 1 band (2026-06-30) | Germany +5 → −1 (Passive), Türkiye +78 → +81 | Adopt: a parliamentary answer or an official video is the government's own record, as good as its press release. |
-| B-22, B-51: "most severe" for A3, A6, A7, B3, B7, D2 instead of sum | 0 | 0 | none | Adopt: no country has two such states holding at the dates measured, so nothing moves today; the rule prevents one state recorded twice from counting twice. |
-| B-23: B1 capped at +15 (one-sided) | 98, 53, 0, 0.9960 | 127 changes, 87 bands (2025-12-31) | the United Kingdom +60 → +58, France +54 → +51, Egypt +23 → +20 | Reject in favour of the symmetric cap. |
-| B-23: B1 capped at −15…+15 | 107, 54, 0, 0.9959 | 150 changes, 95 bands (2025-12-31) | as the one-sided cap; on 2025-12-31 France +59 → +46, Egypt +33 → +20, the United Kingdom +59 → +57, India −6 → −10 | Adopt: a yes-only state never exceeds 0 (Passive, spec §2); no state loses more than the penalty to votes alone. |
-| B-24: a −5 denial ends the penalty; standing states older than 365 days never qualify | settled by B-46 and B-48 | | | Settled: B-46 for the first half, B-48 (kept) for the second. |
-| B-46: only contributions of +2 or more qualify | 4, 2, 4, 0.9912 (Argentina Enabling −48 → Sustaining −63; Morocco Acting +5 → Passive −10; the penalty also applies to Azerbaijan, −2 → −17, and Russia, +25 → +10) | 4 changes, 2 bands (2023-12-31 and 2026-09-30) | none | Adopt: adding a negative act must never raise a score. |
-| B-47: the pre-existing B8 tier (+3) does not qualify | 0 | 1 change, 1 band (2024-06-30: India −18 → −33, Enabling, penalised) | none | Adopt: needed before any further pre-existing recognition is added (see below), otherwise about 100 states escape the penalty for the first year (106 bands on 2024-06-30) and drop 15 points on 2024-10-06. |
-| B-48: open-ended states qualify only 365 days from their start (kept) | alternative measured: 9, 0, 9, 0.9991 (the penalty lifted for Armenia, the Bahamas, Bolivia, Barbados, Jamaica, Monaco, Malta, Portugal, Trinidad and Tobago, all already Acting through their votes) | 9 changes | none | Keep: the penalty measures recent engagement; a recognition of 2024 would otherwise lift it for good. |
-| B-54: the short labels of generated text move from `labels.ts` to `indicators.yaml` `short` | 0 (wording) | 0 | none | Adopt (wording). |
-| Pre-existing recognitions from the registry (A/78/846) as B8 +3 (B-199 (3)) | 122, 24, 0, 0.9930 | without B-47: 93–106 bands at the quarter ends from 2023-12-31 to 2024-09-30; with B-47: 2–24 | Egypt +23 → +26 | Keep them leads (B-199 (3)): the letter A/78/846 is not the recognising governments' own document. Rows are added one by one when a state's own record is archived (India and South Africa added in P-16, B-448; Türkiye, Algeria, Indonesia, Russia and eight others before); with B-47 each adds +3 and nothing else. |
+| b21: official-video and parliamentary sources count for confirmed (B-21) | 2, 0, 0, 0.9998 | 2 changes, 1 band (2026-03-31) | Germany −22 → −28; Türkiye +70 → +72 | Adopt (rc.2 rule 1). |
+| b22: most severe stacking for A3, A6, A7, B3, B7, D2 (B-22, B-51) | 0, 0, 0, 1.0000 | 0 | none | Adopt (rc.2 rule 2). |
+| b23: B1 capped at +15 (B-23, one option) | 74, 9, 0, 0.9999 | 126 changes, 36 bands (2025-12-31) | United Kingdom +55 → +54; France +52 → +51; Egypt +24 → +23 | Reject in favour of the symmetric cap. |
+| b23-sym: B1 capped at −15 and +15 (B-23, symmetric option) | 83, 11, 0, 0.9999 | 149 changes, 44 bands (2025-12-31) | United Kingdom +55 → +54; France +52 → +51; Egypt +24 → +23 | Adopt (rc.2 rule 3). |
+| b46: only contributions of +2 or more qualify (B-46) | 31, 19, 31, 0.9730 | 31 changes, 19 bands (2026-11-28) | none | Adopt (rc.2 rule 4). |
+| b47: pre-existing B8 tier does not qualify (B-47) | 0, 0, 0, 1.0000 | 27 changes, 26 bands (2024-06-30) | none | Adopt (rc.2 rule 5). |
+| b48-alt: alternative to B-48: a standing state qualifies while it holds | 37, 15, 37, 0.9653 | 37 changes, 15 bands (2026-11-28) | none | Keep B-48 (alternative rejected). |
+| b46+b47: B-46 and B-47 together | 31, 19, 31, 0.9730 | 62 changes, 49 bands (2023-12-31) | none | Measured together. |
+| b8-pre: pre-existing recognitions of the registry as B8 +3 (B-199 (3) alternative) | 60, 2, 0, 0.9977 | 61 changes, 39 bands (2024-03-31) | none | Rows one by one (R21); the seven A/78/846 rows of B-2170 were added by default, flagged. |
+| b8-pre+b47: pre-existing B8 +3 rows, with B-47 | 60, 2, 0, 0.9977 | 88 changes, 31 bands (2024-06-30) | none | As above, with B-47. |
+| trade-no-2022: A2 and C3 values of data year 2022 not in force in the window (P-04, B-63) | 1, 0, 0, 1.0000 | 95 changes, 24 bands (2023-12-31) | none | Adopt (rc.2 rule 6). |
+| d1-postwar: D1 from FTS flows dated on or after 2023-10-07 only (P-04, B-60) | 0, 0, 0, 1.0000 | 5 changes, 0 bands (2023-12-31) | none | Adopt (rc.2 rule 7). |
+| proposal: the recommended set: B-21, B-22, B-23 (B1 within −15…+15), B-46, B-47, no 2022 trade values, D1 from post-war flows | 105, 28, 31, 0.9728 | 158 changes, 57 bands (2025-12-31) | Germany −22 → −28; United Kingdom +55 → +54; France +52 → +51; Türkiye +70 → +72; Egypt +24 → +23 | The set of §7 (rc.2, PR #15). |
 
-Effect on the sensitivity tables: Spearman's ρ of the rows that move, each computed against the variant's own default ranking (the fifteen rows are in the JSON; the other eleven move by the amount in the last column at most).
+Effect on the sensitivity rows: Spearman's ρ of four rows, each computed against the variant's own default ranking.
 
-| Default | passivity 5 | passivity 25 | statements excluded | decay off | Largest other move |
-|---|---|---|---|---|---|
-| rc.1 | 0.9844 | 0.9946 | 0.9846 | 0.9432 | |
-| B-21 | 0.9888 | 0.9918 | 0.9887 | 0.9496 | weight A 1.5 +0.0048 |
-| B-22, B-51 | 0.9844 | 0.9946 | 0.9846 | 0.9432 | none |
-| B-23 (−15…+15) | 0.9812 | 0.9935 | 0.9827 | 0.9301 | weight A 1.5 −0.0017 |
-| B-46 | 0.9909 | 0.9995 | 0.9771 | 0.9429 | weight C 0.5 +0.0044 |
-| B-47 | 0.9844 | 0.9946 | 0.9846 | 0.9432 | none |
-| B-48 alternative | 0.9852 | 0.9952 | 0.9914 | 0.9520 | weight A 1.5 +0.0005 |
-| Pre-existing B8 rows | 0.9829 | 0.9920 | 0.9924 | 0.9466 | weight A 1.5 +0.0030 |
-| 2022 trade values out | 0.9844 | 0.9946 | 0.9846 | 0.9432 | none |
-| D1 from post-war flows | 0.9844 | 0.9946 | 0.9846 | 0.9432 | none |
-| The set of §7 | 0.9927 | 0.9959 | 0.9794 | 0.9313 | weight A 1.5 +0.0057 |
+| Default | passivity 5 | passivity 25 | statements excluded | decay off |
+|---|---|---|---|---|
+| rc.1 | 0.9813 | 0.9892 | 0.9596 | 0.9479 |
+| b21 | 0.9814 | 0.9891 | 0.9598 | 0.9479 |
+| b22 | 0.9813 | 0.9892 | 0.9596 | 0.9479 |
+| b23 | 0.9811 | 0.9886 | 0.9596 | 0.9618 |
+| b23-sym | 0.9808 | 0.9885 | 0.9594 | 0.9613 |
+| b46 | 0.9911 | 0.9966 | 0.9582 | 0.9576 |
+| b47 | 0.9813 | 0.9892 | 0.9596 | 0.9479 |
+| b48-alt | 0.9882 | 0.9955 | 0.9688 | 0.9407 |
+| b46+b47 | 0.9911 | 0.9966 | 0.9582 | 0.9576 |
+| b8-pre | 0.9811 | 0.9878 | 0.9593 | 0.9475 |
+| b8-pre+b47 | 0.9811 | 0.9878 | 0.9593 | 0.9475 |
+| trade-no-2022 | 0.9814 | 0.9892 | 0.9596 | 0.9480 |
+| d1-postwar | 0.9813 | 0.9892 | 0.9596 | 0.9479 |
+| proposal | 0.9916 | 0.9964 | 0.9578 | 0.9655 |
 
-B-46 makes the penalty's size matter less (it falls only on states without a positive act, which already rank low) and statements matter more (more states escape the penalty only through a statement). The B1 cap no longer makes decay matter less, as it did at P-15: with the five votes of 2025 in force, capping B1 takes away the part of the ranking that decay does not touch yet, and ρ for decay off falls from 0.943 to 0.930.
+Band changes of the whole set on 2026-11-28 (28): BWA Acting +6 → Passive −9; CIV Acting +1 → Passive 0; CRI Acting +2 → Passive −13; DOM Acting +7 → Passive −9; ECU Passive −14 → Enabling −29; GEO Passive −8 → Enabling −23; GIN Acting +1 → Passive 0; HUN Sustaining −53 → Enabling −48; KHM Acting +10 → Passive −6; MAR Acting +11 → Passive −5; MDA Passive −11 → Enabling −26; MKD Passive −15 → Enabling −30; MLI Acting +1 → Passive 0; MMR Acting +1 → Passive 0; MNE Acting +15 → Passive 0; NAM Confronting +41 → Acting +40; NPL Acting +1 → Passive 0; POL Confronting +41 → Acting +40; QAT Confronting +41 → Acting +40; SRB Passive −6 → Enabling −21; TGO Passive −7 → Enabling −22; TKM Acting +12 → Passive −3; TZA Acting +4 → Passive −11; UGA Acting +14 → Passive −2; UKR Acting +8 → Passive −7; URY Acting +14 → Passive −1; ZMB Passive −12 → Enabling −27; ZWE Acting +1 → Passive 0.
 
 ## 5. The implementation choices of P-04, with numbers
 
@@ -128,6 +147,8 @@ B-46 makes the penalty's size matter less (it falls only on states without a pos
 - **The GNI year when the World Bank's latest is old (B-62).** Of the countries with an old GNI year, only Liechtenstein (2009) and San Marino (2023) have FTS funding: Liechtenstein's best month is x = 0.0060 % (+9); a GNI more than 19.2 % above the 2009 figure would put it at +6. San Marino's best is 0.0024 % (+6); a GNI more than 20.9 % above the 2023 figure would put it at +3. Cuba (2019), Eritrea (2011), South Sudan (2015), Syria (2022) and Yemen (2018) have no government flow to the appeals, so the choice changes nothing for them. Kept; the wording patch states it.
 - **A4 without the orders of 2023 (B-10).** Measured with the release of 9 March 2026, whose trade register (372 order lines with a year marked uncertain by SIPRI) is read by data year: under that release A4 counts the orders of 2025 only, so the rule on 2023 changes nothing on 2026-09-30. It would matter only under the release of 2024 (data year 2023), which is not imported: the 2023 orders of universe states total 6,103 TIV, with Germany's 5,400 (two Arrow-3 orders), the Netherlands 184, Morocco 127, Singapore 125 and Greece 103 among them, all excluded by `orders_signed_from` as SIPRI dates orders by year only.
 - **A2 and C3 on calendar-year data (B-63).** Each value holds from the reporter's first release of the year's data to the next. The 2022 values (wholly pre-war) are in force from 2023-10-07 to: the United States 2024-02-11 (A2 −25, C3 −8), Germany 2024-02-21 (−3, −5), the United Kingdom 2024-03-06 (−3, −5), France 2024-05-21 (0, −5), Spain 2024-05-02 (−8, −5), Ireland 2024-04-12 (C3 −5), South Africa 2024-02-06 (C3 −3; A2 0 to 2024-03-08), Türkiye 2024-02-06 (−3, −5), Egypt 2024-03-21 (C3 −5), India 2024-05-30 (−15, −8). The 2023 values (86 of 365 days after 7 October) then hold until early 2025. Measured with the 2022 values out: see §3 item 3. Proposed in §7 for 2022; the 2023 values stay (the only annual figure that covers the start of the window).
+
+**Update of 2026-11-28.** D1: 67 donors; 284 tier changes in the window (median 4; most: GBR 11, POL 10, BEL 8, DEU 8); a quarterly value would change 231 times: kept monthly. FTS flows dated before 7 October 2023: 65 flows, USD 202,672,872, from 20 donors; they change D1 in 46 country-months of 19 countries, the last in 2024-07; the rebuilt windows differ from the committed table in 0 cases. Old GNI years: Liechtenstein (2009) best month x = 0.006 %, a GNI more than 19.2 % above the 2009 figure changes its tier; San Marino (2023) x = 0.0024 %, 20.8 %; Cuba, Eritrea, South Sudan, Syria and Yemen have no government flow.
 
 ## 6. Readings the country sessions referred to P-15
 
@@ -177,13 +198,17 @@ Wording (patch level, carried in the same version): the short labels in `indicat
 
 Effect of the whole set on 2026-09-30 (re-computed after the imports, T-P14): 109 display scores, 57 bands, 4 passivity decisions, ρ 0.9835 (at P-15, before the imports: 9 display scores, 4 bands); among the ten, Germany +5 → −1 (Passive), the United Kingdom +60 → +58, France +54 → +51, Türkiye +78 → +81, Egypt +23 → +20. In the history: 41 display scores and 7 bands on 2023-12-31 (the pre-war data and the negative acts), 151 and 95 on 2025-12-31 (the B1 cap), 109 and 57 today. With all twelve votes imported the B1 cap is now the largest change of the set: most of the 57 bands are states that move from Acting to Passive because their record is votes alone. Rejected: B-23's one-sided cap, B-48's alternative, the pre-existing recognitions from A/78/846, a quarterly D1.
 
+**Status on 2026-11-28.** The proposal is PR #15 (1.0.0-rc.2, into `data/phase1`); its Discussion is #20, posted on 2026-11-28 (docs/10 B-2175). A further proposal, 1.0.0-rc.3 (PR #19, Discussion #21; B-2174), built on rc.2, scores 0 for an absence of a state not entitled to vote under Article 19 (with the reason shown) and scores each SIPRI data year from 2024 once, in the first imported release that reports it. Both windows close on 2026-12-12; the author decides. Effect of the rc.2 set (as `pnpm calibrate` models it, §4 row "proposal") on 2026-11-28: 105 display scores, 28 bands, 31 passivity decisions, ρ 0.9728; among the ten: Germany −22 → −28; United Kingdom +55 → +54; France +52 → +51; Türkiye +70 → +72; Egypt +24 → +23.
+
 ## 8. Structured tables when this was computed
 
-- **B1:** all 12 qualifying votes, 2,316 rows (12 × 193). The seven votes to A/RES/79/232 of December 2024 come from the archived UN Digital Library file of March 2025 (B-186); the five later votes (A/RES/ES-10/27, A/DEC/80/506, A/RES/80/1, A/RES/80/78, A/RES/80/116) from the author's MARCXML exports, archived at their commit-pinned repository URL and imported from the bytes Wayback serves (B-903, B-487). Per-vote totals equal votes.yaml and the UN press releases; the named "no" and "abstention" lists of the press releases equal the rows.
-- **A1 and A4:** the SIPRI release of 9 March 2026 (B-487): 12 delivery rows (Germany, Italy and the United States, 2022–2025) and 524 order rows (recipient-years; Taiwan and 16 orders of unknown recipients skipped, B-904). A1 and A4 hold from 2026-03-09; no earlier release could be imported, so the quarter ends before that date have no A1 or A4 (§1).
-- **B8:** 32 rows in recognitions.csv. Of the ten, Egypt is `unchecked` on B8: the pre-existing tier, once its own document is archived (R21), adds +3 from 2023-10-07 (+23 → +26 on this date, no band change).
-- **A2 and C3:** Comtrade rows for 40 of the 45 researched countries (C3; A2 for 37): Saudi Arabia, the United Arab Emirates, Qatar, Algeria and Azerbaijan have no row (B-437). None of the ten is affected.
-- **D1:** complete to August 2026 (fts_funding.csv, 2,448 rows).
+On `data/phase1` at `63b4c8b`:
+
+- **B1:** the 12 qualifying votes, 2,316 rows (12 × 193), as on 2026-10-05 (B-186, B-903, B-487). A/RES/81/1 of the 81st session is not on the qualifying list (adding a vote is a minor version; T-H-STRUCT, B-2177).
+- **A1 and A4:** the SIPRI release of 9 March 2026 (B-487): 12 delivery rows and 524 order rows. A1 and A4 hold from 2026-03-09; no earlier release could be imported, so the quarter ends before that date have no A1 or A4 (§1).
+- **B8:** 96 rows in recognitions.csv, among them the seven rows from the registry A/78/846 added by default and flagged for ARE, AZE, EGY, JOR, MAR, MYS and NGA (B-2170). Of the ten, Egypt's B8 now rests on such a row (1988-11-18): +3 from 2023-10-07. `build-notes.json` `counts.unchecked` is 0 in the preview (B-2173).
+- **A2 and C3:** Comtrade rows for 152 reporters on C3 and 79 on A2; 42 registry entries have none, each with a documented reason (B-850; T-H-STRUCT re-run, B-2177). None of the ten is affected.
+- **D1:** fts_funding.csv, 2,584 rows, the newest window ending 2026-10-31 (T-H-STRUCT, B-2177).
 
 ## 9. Re-running
 

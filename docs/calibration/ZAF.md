@@ -1,8 +1,8 @@
 # Calibration worksheet: South Africa (ZAF)
 
-Computed on 2026-09-30 with methodology 1.0.0-rc.1, by `pnpm calibrate --date 2026-09-30 --fts` (P-15, docs/08 §3; re-run on 2026-10-05 after the import of the five later votes and of the SIPRI release of 9 March 2026, T-P14, docs/10 B-487). **Provisional**: none of this country's hand-written events is published yet; the 773 events at status `reviewed` are scored as if published (the `--preview` reading of docs/06 §4), and the one `draft` event of the dataset is left out. The numbers change when the author reviews and publishes the events; P-22 re-runs this worksheet on the published dataset before the score is shown.
+Computed on 2026-11-28 with methodology 1.0.0-rc.1, by `pnpm calibrate --date 2026-11-28 --fts` on `data/phase1` at `63b4c8b` (task T-H-PREP of the launch-plan run, docs/10 B-2224; first computed on 2026-09-30 in P-15, re-computed on 2026-10-05 in T-P14, docs/10 B-487). **Provisional**: none of this country's hand-written events is published yet; the 1,515 events at status `reviewed` are scored as if published (the `--preview` reading of docs/06 §4), and the one `draft` event of the dataset is left out. The proposals 1.0.0-rc.2 (PR #15) and 1.0.0-rc.3 (PR #19) are not applied here; the effect of the rc.2 rules is in the table of proposals below. The numbers change when the author reviews and publishes the events; P-22 re-runs this worksheet on the published dataset before the score is shown.
 
-**Score +56.0 → display +56 (Confronting)**, position 8 of 193 scored entities (148 of which have only generated events so far). Passivity: not applied (qualifying: `evt_2026_02_23_ZAF_B9`, `evt_2026_04_30_ZAF_B9`, `evt_2026_09_01_ZAF_D1_fts`).
+**Score +56.0 → display +56 (Confronting)**, position 8 of 193 scored entities. Passivity: not applied (qualifying: `evt_2025_12_31_ZAF_D3`, `evt_2026_02_23_ZAF_B9`, `evt_2026_04_30_ZAF_B9`, `evt_2026_09_24_ZAF_B9`, `evt_2026_11_01_ZAF_D1_fts`). In the run of 2026-10-05 (date 2026-09-30): display +56 (Confronting).
 
 ## Worksheet
 
@@ -10,22 +10,22 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 
 | Indicator | Event(s) | Points | Confidence | Source (primary) | Notes |
 |---|---|---|---|---|---|
-| A1 | — | — | — | — | none found; the SIPRI release of 2026-03-09 lists no delivery to Israel in 2025 (s = 0) |
+| A1 | — | — | — | — | none found |
 | A2 | `evt_2025_02_21_ZAF_A2_comtrade-2024-mirror`: South Africa exported USD 4,000 of goods under HS 93 to Israel in 2024, per Israel's report to UN Comtrade. | 0.0 × 1.0 × 1 = 0.00 | confirmed | `src_20260928_comtrade_mirror-2024-fra-aze-41` (dataset) | computed, 2025-02-21 to open; generated |
 | A3 | — | — | — | — | none found |
-| A4 | — | — | — | — | none found; the SIPRI release of 2026-03-09 lists no order placed with Israel in 2025 |
+| A4 | — | — | — | — | none found |
 | A5 | — | — | — | — | none found |
 | A6 | — | — | — | — | none found |
 | A7 | — | — | — | — | none found |
 | A8 | — | — | — | — | none found |
-| B1 | `evt_2024_12_11_ZAF_B1_es-10-25`: South Africa voted yes on General Assembly resolution A/RES/ES-10/25. | +3.0 × 1.0 × 0.3979 = +1.19 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
-| B1 | `evt_2024_12_11_ZAF_B1_es-10-26`: South Africa voted yes on General Assembly resolution A/RES/ES-10/26. | +3.0 × 1.0 × 0.3979 = +1.19 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
-| B1 | `evt_2024_12_19_ZAF_B1_79-232`: South Africa voted yes on General Assembly resolution A/RES/79/232. | +3.0 × 1.0 × 0.4144 = +1.24 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-19; generated |
-| B1 | `evt_2025_06_12_ZAF_B1_es-10-27`: South Africa voted yes on General Assembly resolution A/RES/ES-10/27. | +3.0 × 1.0 × 0.7740 = +2.32 | confirmed | `src_20261005_undl_voting-es-10-27` (dataset) | dated 2025-06-12; generated |
-| B1 | `evt_2025_09_12_ZAF_B1_dec-80-506`: South Africa voted yes on General Assembly decision A/DEC/80/506. | +3.0 × 1.0 × 0.9630 = +2.89 | confirmed | `src_20261005_undl_voting-a-dec-80-506` (dataset) | dated 2025-09-12; generated |
-| B1 | `evt_2025_09_19_ZAF_B1_80-1`: South Africa voted yes on General Assembly resolution A/RES/80/1. | +3.0 × 1.0 × 0.9774 = +2.93 | confirmed | `src_20261005_undl_voting-a-res-80-1` (dataset) | dated 2025-09-19; generated |
-| B1 | `evt_2025_12_05_ZAF_B1_80-78`: South Africa voted yes on General Assembly resolution A/RES/80/78. | +3.0 × 1.0 × 1.0000 = +3.00 | confirmed | `src_20261005_undl_voting-a-res-80-78` (dataset) | dated 2025-12-05; generated |
-| B1 | `evt_2025_12_12_ZAF_B1_80-116`: South Africa voted yes on General Assembly resolution A/RES/80/116. | +3.0 × 1.0 × 1.0000 = +3.00 | confirmed | `src_20261005_undl_voting-a-res-80-116` (dataset) | dated 2025-12-12; generated |
+| B1 | `evt_2024_12_11_ZAF_B1_es-10-25`: South Africa voted yes on General Assembly resolution A/RES/ES-10/25. | +3.0 × 1.0 × 0.2767 = +0.83 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
+| B1 | `evt_2024_12_11_ZAF_B1_es-10-26`: South Africa voted yes on General Assembly resolution A/RES/ES-10/26. | +3.0 × 1.0 × 0.2767 = +0.83 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
+| B1 | `evt_2024_12_19_ZAF_B1_79-232`: South Africa voted yes on General Assembly resolution A/RES/79/232. | +3.0 × 1.0 × 0.2932 = +0.88 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-19; generated |
+| B1 | `evt_2025_06_12_ZAF_B1_es-10-27`: South Africa voted yes on General Assembly resolution A/RES/ES-10/27. | +3.0 × 1.0 × 0.6527 = +1.96 | confirmed | `src_20261005_undl_voting-es-10-27` (dataset) | dated 2025-06-12; generated |
+| B1 | `evt_2025_09_12_ZAF_B1_dec-80-506`: South Africa voted yes on General Assembly decision A/DEC/80/506. | +3.0 × 1.0 × 0.8418 = +2.53 | confirmed | `src_20261005_undl_voting-a-dec-80-506` (dataset) | dated 2025-09-12; generated |
+| B1 | `evt_2025_09_19_ZAF_B1_80-1`: South Africa voted yes on General Assembly resolution A/RES/80/1. | +3.0 × 1.0 × 0.8562 = +2.57 | confirmed | `src_20261005_undl_voting-a-res-80-1` (dataset) | dated 2025-09-19; generated |
+| B1 | `evt_2025_12_05_ZAF_B1_80-78`: South Africa voted yes on General Assembly resolution A/RES/80/78. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20261005_undl_voting-a-res-80-78` (dataset) | dated 2025-12-05; generated |
+| B1 | `evt_2025_12_12_ZAF_B1_80-116`: South Africa voted yes on General Assembly resolution A/RES/80/116. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20261005_undl_voting-a-res-80-116` (dataset) | dated 2025-12-12; generated |
 | B2 | — | — | — | — | not applicable |
 | B3 | `evt_2023_12_29_ZAF_B3`: The government filed an application instituting proceedings against Israel at the ICJ under the Genocide Convention in relation to Palestinians in the Gaza Strip. | +15.0 × 1.0 × 1 = +15.00 | confirmed | `src_20231229_icj_192-press-application` (court) | standing, 2023-12-29 to open |
 | B4 | — | — | — | — | none found |
@@ -33,10 +33,10 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | B6 | — | — | — | — | none found |
 | B7 | — | — | — | — | none found |
 | B8 | `evt_2023_10_07_ZAF_B8_recognition`: South Africa recognised the State of Palestine, before 7 October 2023. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20141126_sanews_sa-palestine-bilateral-relations` (official) | standing, 2023-10-07 to open; generated |
-| B9 | `evt_2025_09_23_ZAF_B9`: The President used the term genocide for Israel's conduct in Gaza at the UN General Assembly, citing the finding of the UN Commission of Inquiry. | +5.0 × 1.0 × 0.9856 = +4.93 | confirmed | `src_20250923_gov-za_ramaphosa-unga80-general-debate` (official) | dated 2025-09-23 |
-| B9 | `evt_2026_02_23_ZAF_B9`: The Minister of International Relations and Cooperation called at the Human Rights Council for an end to the occupation and used the term genocide for the situation in Gaza. | +5.0 × 1.0 × 1.0000 = +5.00 | confirmed | `src_20260223_dirco_lamola-hrc61-national-statement` (official) | dated 2026-02-23; qualifies against passivity |
-| B9 | `evt_2026_04_30_ZAF_B9`: The Minister of International Relations and Cooperation and eleven counterparts called Israel's attacks on the Gaza flotilla violations of international humanitarian law. | +5.0 × 1.0 × 1.0000 = +5.00 | confirmed | `src_20260430_mre_joint-statement-sumud-flotilla` (official) | dated 2026-04-30; qualifies against passivity |
-| B9 | indicator cap | sum +14.93 → +10.00 | | | indicator-level cap (docs/02 §2) |
+| B9 | `evt_2025_09_23_ZAF_B9`: The President used the term genocide for Israel's conduct in Gaza at the UN General Assembly, citing the finding of the UN Commission of Inquiry. | +5.0 × 1.0 × 0.8644 = +4.32 | confirmed | `src_20250923_gov-za_ramaphosa-unga80-general-debate` (official) | dated 2025-09-23 |
+| B9 | `evt_2026_02_23_ZAF_B9`: The Minister of International Relations and Cooperation called at the Human Rights Council for an end to the occupation and used the term genocide for the situation in Gaza. | +5.0 × 1.0 × 1 = +5.00 | confirmed | `src_20260223_dirco_lamola-hrc61-national-statement` (official) | dated 2026-02-23; qualifies against passivity |
+| B9 | `evt_2026_04_30_ZAF_B9`: The Minister of International Relations and Cooperation and eleven counterparts called Israel's attacks on the Gaza flotilla violations of international humanitarian law. | +5.0 × 1.0 × 1 = +5.00 | confirmed | `src_20260430_mre_joint-statement-sumud-flotilla` (official) | dated 2026-04-30; qualifies against passivity |
+| B9 | `evt_2026_09_24_ZAF_B9`: The Minister of International Relations and Cooperation, with the foreign ministers of Brazil and India, urged all parties to maintain the ceasefire and unhindered humanitarian access in Gaza. | +2.0 × 1.0 × 1 = +2.00 | confirmed | `src_20260928_mea_ibsa-14th-ministerial-media-statement` (official) | dated 2026-09-24; qualifies against passivity |
 | B10 | — | — | — | — | none found |
 | B11 | — | — | — | — | none found |
 | B12 | `evt_2023_11_06_ZAF_B12`: Cabinet recalled all South African diplomats from Tel Aviv for consultation, citing the airstrikes on Gaza and the closure of humanitarian corridors. | +5.0 × 1.0 × 1 = +5.00 | confirmed | `src_20231106_gov-za_cabinet-statement-1-nov-2023` (official) | standing, 2023-11-06 to open |
@@ -46,9 +46,9 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | C4 | — | — | — | — | none found |
 | C5 | — | — | — | — | none found |
 | C6 | — | — | — | — | none found |
-| D1 | `evt_2026_09_01_ZAF_D1_fts`: South Africa paid or committed USD 2.9 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20260928_fts_plan-1186-p1` (dataset) | computed, 2026-09-01 to 2026-10-01; qualifies against passivity; generated |
+| D1 | `evt_2026_11_01_ZAF_D1_fts`: South Africa paid or committed USD 2.9 million to the oPt flash appeals in the 12 months to 31 October 2026, per FTS. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20261128_fts_plan-1186-p1` (dataset) | computed, 2026-11-01 to 2026-12-01; qualifies against passivity; generated |
 | D2 | — | — | — | — | none found |
-| D3 | `evt_2024_12_31_ZAF_D3`: The government's contribution to UNRWA in 2024 exceeded its 2022 contribution, per UNRWA's donor tables for both years. | +8.0 × 1.0 × 1 = +8.00 | confirmed | `src_20241231_unrwa_donor-ranking-2024` (dataset) | standing, 2024-12-31 to open |
+| D3 | `evt_2025_12_31_ZAF_D3`: South Africa's contribution to UNRWA for 2025 exceeded its 2022 contribution in UNRWA's donor tables. | +8.0 × 1.0 × 1 = +8.00 | confirmed | `src_20251231_unrwa_donor-ranking-2025` (dataset) | standing, 2025-12-31 to open; qualifies against passivity |
 | D4 | — | — | — | — | none found |
 | D5 | — | — | — | — | none found |
 
@@ -57,17 +57,17 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | Category | Sum of indicators | Cap | Clipped |
 |---|---|---|---|
 | A Arms & military | 0.00 | −45 … +30 | 0.00 |
-| B Diplomacy & international law | +58.77 | −40 … +45 | +45.00 |
+| B Diplomacy & international law | +56.59 | −40 … +45 | +45.00 |
 | C Trade & economy | 0.00 | −20 … +20 | 0.00 |
 | D Humanitarian | +11.00 | −15 … +25 | +11.00 |
 
-raw = 0.00 +45.00 +0.00 +11.00 − 0 (passivity) = +56.00; S = clip(raw, −100, +100) = +56.00; display +56; band Confronting (docs/02 §7: Sustaining ≤ −51, Enabling −50…−21, Passive −20…0, Acting 1…40, Confronting ≥ 41).
+raw = 0.00 +45.00 0.00 +11.00 − 0 (passivity) = +56.00; S = clip(raw, −100, +100) = +56.00; display +56; band Confronting (docs/02 §7: Sustaining ≤ −51, Enabling −50…−21, Passive −20…0, Acting 1…40, Confronting ≥ 41).
 
 ## What drives this score
 
-1. **B1 +17.77**: `evt_2024_12_11_ZAF_B1_es-10-25`, `evt_2024_12_11_ZAF_B1_es-10-26`, `evt_2024_12_19_ZAF_B1_79-232`, `evt_2025_06_12_ZAF_B1_es-10-27`, `evt_2025_09_12_ZAF_B1_dec-80-506`, `evt_2025_09_19_ZAF_B1_80-1`, `evt_2025_12_05_ZAF_B1_80-78`, `evt_2025_12_12_ZAF_B1_80-116`.
+1. **B1 +15.59**: `evt_2024_12_11_ZAF_B1_es-10-25`, `evt_2024_12_11_ZAF_B1_es-10-26`, `evt_2024_12_19_ZAF_B1_79-232`, `evt_2025_06_12_ZAF_B1_es-10-27`, `evt_2025_09_12_ZAF_B1_dec-80-506`, `evt_2025_09_19_ZAF_B1_80-1`, `evt_2025_12_05_ZAF_B1_80-78`, `evt_2025_12_12_ZAF_B1_80-116`.
 2. **B3 +15.00**: `evt_2023_12_29_ZAF_B3`.
-3. **B9 +10.00** (sum +14.93, capped): `evt_2025_09_23_ZAF_B9`, `evt_2026_02_23_ZAF_B9`, `evt_2026_04_30_ZAF_B9`.
+3. **B9 +10.00** (sum +16.32 before the indicator cap): `evt_2025_09_23_ZAF_B9`, `evt_2026_02_23_ZAF_B9`, `evt_2026_04_30_ZAF_B9`, `evt_2026_09_24_ZAF_B9`.
 
 ## Does the band feel right?
 
@@ -99,11 +99,11 @@ Three readings, left blank for human readers (docs/08 §3). Each reader states t
 
 ## Incomplete inputs
 
-- B1 counts all 12 qualifying votes; A1 and A4 read the SIPRI release of 9 March 2026 (docs/10 B-487). The structured tables are complete for this country on this date.
+- B1 counts all 12 qualifying votes; A1 and A4 read the SIPRI release of 9 March 2026 (docs/10 B-487); D1 reads fts_funding.csv to October 2026 (T-H-STRUCT, docs/10 B-2177). The structured tables are complete for this country on this date.
 
 ## Effect of the proposals on this country
 
-Display score on 2026-09-30 under each proposal measured in docs/calibration/README.md §4 (rc.1: +56, Confronting); the last column gives the largest change of this country's display score at a quarter end since 2023-10-07.
+Display score on 2026-11-28 under each proposal measured in docs/calibration/README.md §4 (rc.1: +56, Confronting); the last column gives the largest change of this country's display score at a quarter end since 2023-10-07.
 
 | Proposal | Display (band) | Change | Largest change in the history |
 |---|---|---|---|
@@ -132,17 +132,17 @@ Position among the 193 scored entities (1 = highest), display score and band und
 | passivity-15 | +56 (Confronting) | 8 |
 | passivity-25 | +56 (Confronting) | 8 |
 | weight-A-0.5 | +56 (Confronting) | 9 |
-| weight-A-1.5 | +56 (Confronting) | 6 |
-| weight-B-0.5 | +34 (Acting) | 9 |
+| weight-A-1.5 | +56 (Confronting) | 8 |
+| weight-B-0.5 | +34 (Acting) | 10 |
 | weight-B-1.5 | +79 (Confronting) | 8 |
 | weight-C-0.5 | +56 (Confronting) | 8 |
-| weight-C-1.5 | +56 (Confronting) | 8 |
-| weight-D-0.5 | +51 (Confronting) | 6 |
-| weight-D-1.5 | +62 (Confronting) | 9 |
+| weight-C-1.5 | +56 (Confronting) | 9 |
+| weight-D-0.5 | +51 (Confronting) | 8 |
+| weight-D-1.5 | +62 (Confronting) | 11 |
 | reported-0.2 | +56 (Confronting) | 8 |
 | reported-0.6 | +56 (Confronting) | 8 |
-| statements-excluded | +56 (Confronting) | 7 |
-| decay-off | +56 (Confronting) | 15 |
+| statements-excluded | +56 (Confronting) | 6 |
+| decay-off | +56 (Confronting) | 18 |
 
 ## Questions of the country session
 

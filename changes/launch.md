@@ -1,16 +1,35 @@
 <!--
-Draft of the launch note (P-20, T-P20 of 2026-11-04). Not published. The author publishes it with the
-tag v0.9.0-scorecard (docs/review/launch-readiness.md, "Launch commands"). Before tagging:
-1. Replace {DATE} and {URL} (the custom domain, if one is chosen) and set the contact line.
-2. Recompute the counts below after `pnpm publish:events --pr 11` with `pnpm build:data` and
-   `pnpm validate`; the counts here are those of the preview build of 2026-11-04 (1,235 reviewed
-   events shown as if published) and are the numbers expected after publication.
-3. Delete this comment.
+Draft of the launch note (P-20; T-P20 of 2026-11-04, filled by T-H-PREP of the launch-plan run on
+2026-11-28, docs/10 B-2226). Not published. The author publishes it with the tag v0.9.0-scorecard
+(docs/review/launch-commands-2026-11.md, step 4). Everything is written except the values that
+publication fixes, each in braces and marked here, and the contact:
+1. {DATE}: the date of the tag (UTC), as YYYY-MM-DD.
+2. {N_HAND}, {N_COMPUTED}, {N_SOURCES}, {N_LEADS}, {N_CORRECTIONS}: after `pnpm publish:events
+   --pr 11` and the merge, from `pnpm build:data` on main:
+     N_HAND        published hand-researched events (status published in data/events/*.yaml)
+     N_COMPUTED    events in the dump parts minus N_HAND
+                   (jq '[.parts[] | select(.record == "events") | .count] | add'
+                    apps/web/public/api/v1/dumps/gai-{DATE}.json)
+     N_SOURCES     source records with archive_status: archived
+     N_LEADS       leads with status open (the dump's leads)
+     N_CORRECTIONS entries of data/corrections.yaml (at least one before the launch, CHECKUP §6;
+                   with one, write "holds 1 entry")
+   The preview build of 2026-11-28 (1,515 reviewed events shown as if published) gives 1,515,
+   4,974, 2,436, 306 and 0; these are the numbers expected if every reviewed event is published.
+   Write numbers with a comma for thousands (1,515), as on the site.
+3. {CONTACT}: the contact address the author creates (CHECKUP §5).
+4. The methodology version line says 1.0.0-rc.1. If PR #15 (rc.2) and PR #19 (rc.3) are merged
+   before the tag, write 1.0.0-rc.3 instead. The paragraph "What comes next" names the comment
+   window that closes on 12 December 2026: if the tag comes after the author's decision on the
+   two proposals, replace that sentence with the decision.
+5. The address is the Pages address; if a domain is bought before the launch, change it here
+   and in SITE_URL (CHECKUP §5).
+6. Delete this comment.
 -->
 
 # Gaza Accountability Index: launch note
 
-Version 0.9.0-scorecard, {DATE}. Address: {URL}
+Version 0.9.0-scorecard, {DATE}. Address: https://gaza-accountability-index.pages.dev
 
 ## What the site is
 
@@ -28,11 +47,11 @@ The same data is published as JSON and CSV (the Data page and `/api/v1/`), with 
 
 No score, band or ranking is displayed. The index is in scorecard mode: scores are computed in every build and are in the data files, but the site does not show them until the methodology has been reviewed by two or three named external reviewers and the readers' notes on the calibration worksheet are in. The About page lists the reviewers; today it says there are none. The methodology page explains the gates.
 
-The research is of two depths. The 45 states of the first phase were researched with the full protocol: the Ministry's and the Head of State's pages, the structured datasets, one search per indicator group in English and the official language, a second reading of every event against the archived text. The other 148 states were researched with a lighter protocol (the same rules for what counts as an event, fewer sources searched); their pages say which indicators were not checked. A missing event on a page means that none was found in the sources read, not that none exists.
+The research is of two depths. The 45 states of the first phase were researched with the full protocol: the Ministry's and the Head of State's pages, the structured datasets, one search per indicator group in English and the official language, a second reading of every event against the archived text. The other 148 states were researched with a lighter protocol (the same rules for what counts as an event, fewer sources searched); their pages show, indicator by indicator, what was searched. A missing event on a page means that none was found in the sources read, not that none exists. Events are recorded to 28 November 2026; later events are added in the monthly maintenance.
 
 ## What the data holds
 
-At the build of {DATE}: 193 scored states; 1,235 events researched and read twice, and 4,834 values computed from structured data (UN votes, arms-transfer data, trade, humanitarian funding, UNRWA tables); 2,084 sources with an archived copy; 232 open leads (claims from the press or from non-governmental reports that have no primary document and are not scored). The corrections log is empty until a published event is corrected.
+At the build of {DATE}: 193 scored states; {N_HAND} events researched and read twice, and {N_COMPUTED} values computed from structured data (UN votes, arms-transfer data, trade, humanitarian funding, UNRWA tables); {N_SOURCES} sources with an archived copy; {N_LEADS} open leads (claims from the press or from non-governmental reports that have no primary document and are not scored). The corrections log holds {N_CORRECTIONS} entries; each keeps the previous version of the event it corrects.
 
 ## How to report an error, reply or send a lead
 
@@ -45,4 +64,4 @@ All three forms need a GitHub account and are public.
 
 ## What comes next
 
-Monthly maintenance (new events, the structured datasets, the quarterly check that archived copies still open). The score is displayed in version 1.0.0, after the reviewers' sign-off; a methodology change is proposed in a pull request and announced on the Changes page for 14 days before it is merged.
+Monthly maintenance (new events, the structured datasets, the quarterly check that archived copies still open). Two methodology proposals are open for comment until 12 December 2026: version 1.0.0-rc.2 (the adjustments from the calibration of ten countries) and version 1.0.0-rc.3 (absences of states without a vote under Article 19 of the Charter, and the years of arms orders). Each is a pull request with a discussion, listed on the Changes page. The score is displayed in version 1.0.0, after the reviewers' sign-off; a methodology change is proposed in a pull request and announced on the Changes page for 14 days before it is merged.

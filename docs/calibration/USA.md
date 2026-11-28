@@ -1,8 +1,8 @@
 # Calibration worksheet: United States of America (USA)
 
-Computed on 2026-09-30 with methodology 1.0.0-rc.1, by `pnpm calibrate --date 2026-09-30 --fts` (P-15, docs/08 §3; re-run on 2026-10-05 after the import of the five later votes and of the SIPRI release of 9 March 2026, T-P14, docs/10 B-487). **Provisional**: none of this country's hand-written events is published yet; the 773 events at status `reviewed` are scored as if published (the `--preview` reading of docs/06 §4), and the one `draft` event of the dataset is left out. The numbers change when the author reviews and publishes the events; P-22 re-runs this worksheet on the published dataset before the score is shown.
+Computed on 2026-11-28 with methodology 1.0.0-rc.1, by `pnpm calibrate --date 2026-11-28 --fts` on `data/phase1` at `63b4c8b` (task T-H-PREP of the launch-plan run, docs/10 B-2224; first computed on 2026-09-30 in P-15, re-computed on 2026-10-05 in T-P14, docs/10 B-487). **Provisional**: none of this country's hand-written events is published yet; the 1,515 events at status `reviewed` are scored as if published (the `--preview` reading of docs/06 §4), and the one `draft` event of the dataset is left out. The proposals 1.0.0-rc.2 (PR #15) and 1.0.0-rc.3 (PR #19) are not applied here; the effect of the rc.2 rules is in the table of proposals below. The numbers change when the author reviews and publishes the events; P-22 re-runs this worksheet on the published dataset before the score is shown.
 
-**Score −100.0 → display −100 (Sustaining)**, position 193 of 193 scored entities (148 of which have only generated events so far). Passivity: not applied (qualifying: `evt_2025_12_01_USA_C2`, `evt_2026_03_12_USA_B4`, `evt_2026_04_22_USA_C3_comtrade-2025-self`, `evt_2026_09_01_USA_D1_fts`).
+**Score −100.0 → display −100 (Sustaining)**, position 193 of 193 scored entities. Passivity: not applied (qualifying: `evt_2025_12_01_USA_C2`, `evt_2026_03_12_USA_B4`, `evt_2026_04_22_USA_C3_comtrade-2025-self`, `evt_2026_11_01_USA_D1_fts`, `evt_2026_11_11_USA_B9`). In the run of 2026-10-05 (date 2026-09-30): display −100 (Sustaining).
 
 ## Worksheet
 
@@ -13,30 +13,30 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | A1 | `evt_2026_03_09_USA_A1_tiv-2025`: The United States of America delivered 91.2% of Israel's imports of major arms in 2025, per SIPRI TIV. | −38.2 × 1.0 × 1 = −38.20 | confirmed | `src_20261005_sipri_tiv-israel-2022-2025` (dataset) | computed, 2026-03-09 to open; generated |
 | A2 | `evt_2026_04_22_USA_A2_comtrade-2025-self`: The United States of America exported USD 2.2 billion of goods under HS 8710, 93 to Israel in 2025, per its report to UN Comtrade. | −25.0 × 1.0 × 1 = −25.00 | confirmed | `src_20260928_comtrade_usa-self-2025` (dataset) | computed, 2026-04-22 to open; generated |
 | A3 | `evt_2023_10_07_USA_A3`: The United States was home to Lockheed Martin, the lead contractor of the F-35 programme, which maintains Israel's F-35 fleet with Israeli companies. | −15.0 × 1.0 × 1 = −15.00 | confirmed | `src_20250616_un-unispal_a-hrc-59-23` (official) | standing, 2023-10-07 to open |
-| A4 | — | — | — | — | none found; the SIPRI release of 2026-03-09 lists no order placed with Israel in 2025 |
+| A4 | — | — | — | — | none found |
 | A5 | — | — | — | — | none found |
-| A6 | — | — | — | — | has events; 1 event(s) recorded, none in force on 2026-09-30 |
+| A6 | — | — | — | — | has events; 1 event(s) recorded, none in force on 2026-11-28 |
 | A7 | — | — | — | — | none found |
 | A8 | — | — | — | — | none found |
-| B1 | `evt_2024_12_11_USA_B1_es-10-25`: The United States of America voted no on General Assembly resolution A/RES/ES-10/25. | −5.0 × 1.0 × 0.3979 = −1.99 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
-| B1 | `evt_2024_12_11_USA_B1_es-10-26`: The United States of America voted no on General Assembly resolution A/RES/ES-10/26. | −5.0 × 1.0 × 0.3979 = −1.99 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
-| B1 | `evt_2024_12_19_USA_B1_79-232`: The United States of America voted no on General Assembly resolution A/RES/79/232. | −5.0 × 1.0 × 0.4144 = −2.07 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-19; generated |
-| B1 | `evt_2025_06_12_USA_B1_es-10-27`: The United States of America voted no on General Assembly resolution A/RES/ES-10/27. | −5.0 × 1.0 × 0.7740 = −3.87 | confirmed | `src_20261005_undl_voting-es-10-27` (dataset) | dated 2025-06-12; generated |
-| B1 | `evt_2025_09_12_USA_B1_dec-80-506`: The United States of America voted no on General Assembly decision A/DEC/80/506. | −5.0 × 1.0 × 0.9630 = −4.82 | confirmed | `src_20261005_undl_voting-a-dec-80-506` (dataset) | dated 2025-09-12; generated |
-| B1 | `evt_2025_09_19_USA_B1_80-1`: The United States of America voted no on General Assembly resolution A/RES/80/1. | −5.0 × 1.0 × 0.9774 = −4.89 | confirmed | `src_20261005_undl_voting-a-res-80-1` (dataset) | dated 2025-09-19; generated |
-| B1 | `evt_2025_12_05_USA_B1_80-78`: The United States of America voted no on General Assembly resolution A/RES/80/78. | −5.0 × 1.0 × 1.0000 = −5.00 | confirmed | `src_20261005_undl_voting-a-res-80-78` (dataset) | dated 2025-12-05; generated |
-| B1 | `evt_2025_12_12_USA_B1_80-116`: The United States of America voted no on General Assembly resolution A/RES/80/116. | −5.0 × 1.0 × 1.0000 = −5.00 | confirmed | `src_20261005_undl_voting-a-res-80-116` (dataset) | dated 2025-12-12; generated |
-| B2 | `evt_2024_11_20_USA_B2_s-2024-835`: The United States of America vetoed Security Council draft resolution S/2024/835. | −20.0 × 1.0 × 0.3548 = −7.10 | confirmed | `src_20241120_undocs_s-pv-9790` (official) | dated 2024-11-20; generated |
-| B2 | `evt_2025_06_04_USA_B2_s-2025-353`: The United States of America vetoed Security Council draft resolution S/2025/353. | −20.0 × 1.0 × 0.7575 = −15.15 | confirmed | `src_20250604_undocs_s-pv-9929` (official) | dated 2025-06-04; generated |
-| B2 | `evt_2025_09_18_USA_B2_s-2025-583`: The United States of America vetoed Security Council draft resolution S/2025/583. | −20.0 × 1.0 × 0.9753 = −19.51 | confirmed | `src_20250918_undocs_s-pv-10000` (official) | dated 2025-09-18; generated |
+| B1 | `evt_2024_12_11_USA_B1_es-10-25`: The United States of America voted no on General Assembly resolution A/RES/ES-10/25. | −5.0 × 1.0 × 0.2767 = −1.38 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
+| B1 | `evt_2024_12_11_USA_B1_es-10-26`: The United States of America voted no on General Assembly resolution A/RES/ES-10/26. | −5.0 × 1.0 × 0.2767 = −1.38 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-11; generated |
+| B1 | `evt_2024_12_19_USA_B1_79-232`: The United States of America voted no on General Assembly resolution A/RES/79/232. | −5.0 × 1.0 × 0.2932 = −1.47 | confirmed | `src_20260928_undl_ga-voting-2025-03-31-corr1` (dataset) | dated 2024-12-19; generated |
+| B1 | `evt_2025_06_12_USA_B1_es-10-27`: The United States of America voted no on General Assembly resolution A/RES/ES-10/27. | −5.0 × 1.0 × 0.6527 = −3.26 | confirmed | `src_20261005_undl_voting-es-10-27` (dataset) | dated 2025-06-12; generated |
+| B1 | `evt_2025_09_12_USA_B1_dec-80-506`: The United States of America voted no on General Assembly decision A/DEC/80/506. | −5.0 × 1.0 × 0.8418 = −4.21 | confirmed | `src_20261005_undl_voting-a-dec-80-506` (dataset) | dated 2025-09-12; generated |
+| B1 | `evt_2025_09_19_USA_B1_80-1`: The United States of America voted no on General Assembly resolution A/RES/80/1. | −5.0 × 1.0 × 0.8562 = −4.28 | confirmed | `src_20261005_undl_voting-a-res-80-1` (dataset) | dated 2025-09-19; generated |
+| B1 | `evt_2025_12_05_USA_B1_80-78`: The United States of America voted no on General Assembly resolution A/RES/80/78. | −5.0 × 1.0 × 1 = −5.00 | confirmed | `src_20261005_undl_voting-a-res-80-78` (dataset) | dated 2025-12-05; generated |
+| B1 | `evt_2025_12_12_USA_B1_80-116`: The United States of America voted no on General Assembly resolution A/RES/80/116. | −5.0 × 1.0 × 1 = −5.00 | confirmed | `src_20261005_undl_voting-a-res-80-116` (dataset) | dated 2025-12-12; generated |
+| B2 | `evt_2025_06_04_USA_B2_s-2025-353`: The United States of America vetoed Security Council draft resolution S/2025/353. | −20.0 × 1.0 × 0.6363 = −12.73 | confirmed | `src_20250604_undocs_s-pv-9929` (official) | dated 2025-06-04; generated |
+| B2 | `evt_2025_09_18_USA_B2_s-2025-583`: The United States of America vetoed Security Council draft resolution S/2025/583. | −20.0 × 1.0 × 0.8541 = −17.08 | confirmed | `src_20250918_undocs_s-pv-10000` (official) | dated 2025-09-18; generated |
 | B3 | — | — | — | — | none found |
-| B4 | `evt_2026_03_12_USA_B4`: The United States filed a declaration of intervention in South Africa v. Israel stating that the genocide allegations were false and arguing for the strict standard of intent. | −15.0 × 1.0 × 1.0000 = −15.00 | confirmed | `src_20260312_un-unispal_usa-declaration-intervention` (court) | dated 2026-03-12; qualifies against passivity |
+| B4 | `evt_2026_03_12_USA_B4`: The United States filed a declaration of intervention in South Africa v. Israel stating that the genocide allegations were false and arguing for the strict standard of intent. | −15.0 × 1.0 × 1 = −15.00 | confirmed | `src_20260312_un-unispal_usa-declaration-intervention` (court) | dated 2026-03-12; qualifies against passivity |
 | B5 | — | — | — | — | none found |
 | B6 | `evt_2025_02_04_USA_B6`: The President received Prime Minister Benjamin Netanyahu, subject of an International Criminal Court arrest warrant, at the White House. | −10.0 × 1.0 × 1 = −10.00 | confirmed | `src_20250204_govinfo_dcpd-202500225` (official) | standing, 2025-02-04 to open |
 | B7 | `evt_2025_02_13_USA_B7`: The Department of the Treasury added International Criminal Court Prosecutor Karim Khan to its sanctions list under Executive Order 14203. | −20.0 × 1.0 × 1 = −20.00 | confirmed | `src_20250213_ofac_icc-designation` (official) | standing, 2025-02-13 to open |
 | B8 | — | — | — | — | none found |
-| B9 | `evt_2025_09_29_USA_B9`: The President announced a plan to end the war in Gaza and called for Hamas to accept it so that the war could end and the hostages return. | +2.0 × 1.0 × 0.9979 = +2.00 | confirmed | `src_20250929_govinfo_dcpd-202500964` (official) | dated 2025-09-29 |
-| B10 | — | — | — | — | has events; 2 event(s) recorded, none in force on 2026-09-30 |
+| B9 | `evt_2025_09_29_USA_B9`: The President announced a plan to end the war in Gaza and called for Hamas to accept it so that the war could end and the hostages return. | +2.0 × 1.0 × 0.8767 = +1.75 | confirmed | `src_20250929_govinfo_dcpd-202500964` (official) | dated 2025-09-29 |
+| B9 | `evt_2026_11_11_USA_B9`: The Secretary of State, with the other G7 foreign ministers, stressed the urgent need for unimpeded humanitarian assistance throughout Gaza and the opening of additional crossings. | +2.0 × 1.0 × 1 = +2.00 | confirmed | `src_20261111_gov-uk_g7-fmm-paris-joint-declaration` (official) | dated 2026-11-11; qualifies against passivity |
+| B10 | — | — | — | — | has events; 2 event(s) recorded, none in force on 2026-11-28 |
 | B11 | — | — | — | — | none found |
 | B12 | — | — | — | — | none found |
 | C1 | — | — | — | — | none found |
@@ -45,9 +45,9 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | C4 | — | — | — | — | none found |
 | C5 | — | — | — | — | none found |
 | C6 | — | — | — | — | none found |
-| D1 | `evt_2026_09_01_USA_D1_fts`: The United States of America paid or committed USD 600.0 million to the oPt flash appeals in the 12 months to 31 August 2026, per FTS. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20260928_fts_plan-1186-p1` (dataset) | computed, 2026-09-01 to 2026-10-01; qualifies against passivity; generated |
+| D1 | `evt_2026_11_01_USA_D1_fts`: The United States of America paid or committed USD 326.7 million to the oPt flash appeals in the 12 months to 31 October 2026, per FTS. | +3.0 × 1.0 × 1 = +3.00 | confirmed | `src_20261128_fts_plan-1186-p1` (dataset) | computed, 2026-11-01 to 2026-12-01; qualifies against passivity; generated |
 | D2 | `evt_2024_01_26_USA_D2`: The Department of State paused additional funding for UNRWA while it reviewed allegations against twelve of the agency's employees. | −10.0 × 1.0 × 1 = −10.00 | confirmed | `src_20240126_state-gov_unrwa-allegations` (official) | standing, 2024-01-26 to open |
-| D3 | — | — | — | — | has events; 1 event(s) recorded, none in force on 2026-09-30 |
+| D3 | — | — | — | — | has events; 1 event(s) recorded, none in force on 2026-11-28 |
 | D4 | — | — | — | — | none found |
 | D5 | — | — | — | — | none found |
 
@@ -56,7 +56,7 @@ One row per event in force on the date (counted, or set aside by a stacking rule
 | Category | Sum of indicators | Cap | Clipped |
 |---|---|---|---|
 | A Arms & military | −78.20 | −45 … +30 | −45.00 |
-| B Diplomacy & international law | −114.38 | −40 … +45 | −40.00 |
+| B Diplomacy & international law | −97.04 | −40 … +45 | −40.00 |
 | C Trade & economy | −18.00 | −20 … +20 | −18.00 |
 | D Humanitarian | −7.00 | −15 … +25 | −7.00 |
 
@@ -64,9 +64,9 @@ raw = −45.00 −40.00 −18.00 −7.00 − 0 (passivity) = −110.00; S = clip
 
 ## What drives this score
 
-1. **B2 −41.75**: `evt_2024_11_20_USA_B2_s-2024-835`, `evt_2025_06_04_USA_B2_s-2025-353`, `evt_2025_09_18_USA_B2_s-2025-583`.
-2. **A1 −38.20**: `evt_2026_03_09_USA_A1_tiv-2025`.
-3. **B1 −29.62**: `evt_2024_12_11_USA_B1_es-10-25`, `evt_2024_12_11_USA_B1_es-10-26`, `evt_2024_12_19_USA_B1_79-232`, `evt_2025_06_12_USA_B1_es-10-27`, `evt_2025_09_12_USA_B1_dec-80-506`, `evt_2025_09_19_USA_B1_80-1`, `evt_2025_12_05_USA_B1_80-78`, `evt_2025_12_12_USA_B1_80-116`.
+1. **A1 −38.20**: `evt_2026_03_09_USA_A1_tiv-2025`.
+2. **B2 −29.81**: `evt_2025_06_04_USA_B2_s-2025-353`, `evt_2025_09_18_USA_B2_s-2025-583`.
+3. **B1 −25.99**: `evt_2024_12_11_USA_B1_es-10-25`, `evt_2024_12_11_USA_B1_es-10-26`, `evt_2024_12_19_USA_B1_79-232`, `evt_2025_06_12_USA_B1_es-10-27`, `evt_2025_09_12_USA_B1_dec-80-506`, `evt_2025_09_19_USA_B1_80-1`, `evt_2025_12_05_USA_B1_80-78`, `evt_2025_12_12_USA_B1_80-116`.
 
 ## Does the band feel right?
 
@@ -98,11 +98,11 @@ Three readings, left blank for human readers (docs/08 §3). Each reader states t
 
 ## Incomplete inputs
 
-- B1 counts all 12 qualifying votes; A1 and A4 read the SIPRI release of 9 March 2026 (docs/10 B-487). The structured tables are complete for this country on this date.
+- B1 counts all 12 qualifying votes; A1 and A4 read the SIPRI release of 9 March 2026 (docs/10 B-487); D1 reads fts_funding.csv to October 2026 (T-H-STRUCT, docs/10 B-2177). The structured tables are complete for this country on this date.
 
 ## Effect of the proposals on this country
 
-Display score on 2026-09-30 under each proposal measured in docs/calibration/README.md §4 (rc.1: −100, Sustaining); the last column gives the largest change of this country's display score at a quarter end since 2023-10-07.
+Display score on 2026-11-28 under each proposal measured in docs/calibration/README.md §4 (rc.1: −100, Sustaining); the last column gives the largest change of this country's display score at a quarter end since 2023-10-07.
 
 | Proposal | Display (band) | Change | Largest change in the history |
 |---|---|---|---|

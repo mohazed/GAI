@@ -1503,3 +1503,15 @@ Full evidence in `docs/review/launch-readiness.md` §6.
 | Widget on a second localhost origin | renders, one request each, no cookie, no console error | B-2221 (7) |
 | PR #23 | merged (`9885d4d`) after green CI; `main` merged into `data/phase1` | B-2221 (8) |
 
+
+### T-H-PREP: author's sample, calibration, flip dry run, launch notes (2026-11-28; docs/10 B-2223 to B-2227)
+
+| Item | File | Result | B-id |
+|---|---|---|---|
+| Author's 10 % sample | `docs/review/author-sample-2026-11.md` | 227 events in 148 countries (first 152 by SHA-256 of the id, plus one per country not covered); 502 evidence items, every quote found in its archived text (479 starting within the line locator, 23 with paragraph or page locators) | B-2223 |
+| Calibration on the preview | `docs/calibration/` (README and ten worksheets) | `pnpm calibrate --date 2026-11-28 --fts`, nine FTS responses SHA-256 checked, 0 window differences; ten: ESP +82, TUR +70, IRL +67, ZAF +56, GBR +55, FRA +52, EGY +24, IND −9, DEU −22, USA −100; all 193: 4, 24, 38, 99, 28; 30 reading slots blank | B-2224 |
+| Score-flip dry run | `docs/review/score-flip-dry-run.md` | five gates fail (author); rule 8 met in the preview (0), 145 before publication; rc.2 moves 105 scores and 28 bands, rc.3 10 more and 5 bands; rc.3 tree validates with 0 errors | B-2225 |
+| Launch notes | `changes/launch.md`, `docs/drafts/index-launch.md` | filled except `{CONTACT}`, `{DATE}`, the counts publication fixes, `{REVIEWERS}` and the band counts of the flip (all listed in each file's comment with the preview values) | B-2226 |
+| Author's commands and review prompt | `docs/review/launch-commands-2026-11.md` | steps 1 to 6 with checks; one-paste review prompt using the sample | B-2226 |
+
+No event, assessment, source or score was changed by this card. `pnpm validate`: 0 errors.
