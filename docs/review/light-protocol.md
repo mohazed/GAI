@@ -4779,3 +4779,11 @@ Sources added (4, each replay re-fetched and equal in byte count and SHA-256 to 
 Not done (B-2205): the official sites of EST (listing), FIN (um.fi), LTU (urm.lt), SDN (Ministry and SUNA), PHL (DFA), THA (listing), BGD (listing), LAO (Ministry) and the Wayback CDX (offline during part of the session); Libya's Arabic message; the group-specific sources for A, C, D and E. For the author (B-2206): the date of a written message (signature date); the Brunei tier; SDN's passivity lifted by a joint statement; the Lao message under the literal R7 default; the 53-signatory UN statement of 12 November 2026 (delivered by the United Kingdom's Permanent Representative, R3) not filed for EST, FIN, ISL, LTU and LVA.
 
 `pnpm validate`: 0 errors.
+
+### T-H-ML-4: catch-up BTN to CIV, light groups 25 to 32 (2026-11-28; docs/10 B-2207 to B-2209)
+
+Window of 9 to 28 November 2026 (after each country's last session table: T-F-L13 to T-F-L16, their redo passes and the P-23 pass, 9 to 11 November), read on the governments' own sites where they answer scripts, and through the browser pane for the UNISPAL uploads of November 2026, which answer scripts with 403; web searches were used to find pages, never as evidence. The UNISPAL uploads (messages for the International Day of Solidarity with the Palestinian People) hold five texts of this card's states: Pakistan, Iran, Sri Lanka, Malta (filed) and the Maldives (no Gaza, R7). The P-23 items for the card's states were filed: the statements of 14 and 19 November 2026 for PAK and of 19 November for MDV. Open leads were dated.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| PAK | mofa.gov.pk/press-releases (1 to 27 November; items of 23 and 27 November read); UNISPAL uploads (the Prime Minister's message, archived, OCR checked against the images); one English web search | `evt_2026_11_14_PAK_B9` (+5, Nasser Medical Complex statement); `evt_2026_11_19_PAK_B9` (+2, sanctions statement, B-2192 (1)); `evt_2026_11_23_PAK_B9` (+5, the Prime Minister's Solidarity Day message; tier flagged, B-2208) | the Ministry's own copies of the two joint statements (listed, not archived) | +33.6 Acting, unchanged (B9 at its cap) | B9 note and queries; leads 1, 2 dated |
