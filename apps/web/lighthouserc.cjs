@@ -11,9 +11,10 @@
  *   pnpm build && pnpm --filter @gai/web lighthouse
  *
  * Pages: home and ranking (P-07); the country page of Germany in the real data, in both languages,
- * and Israel as an excluded entity (P-08); Compare empty and with Germany chosen (its charts
- * arrive after a fetch, inside a region that keeps its height), Changes and a monthly report
- * (P-09); Methodology and Data in both languages, About, Corrections, Reply and Embed (P-10).
+ * Norway, the heaviest page of the preview data (T-H-BROWSER), and Israel as an excluded entity
+ * (P-08); Compare empty and with Germany chosen (its charts arrive after a fetch, inside a region
+ * that keeps its height), Changes and a monthly report (P-09); Methodology and Data in both
+ * languages, About, Corrections, Reply and Embed (P-10).
  */
 const { chromium } = require('@playwright/test')
 
@@ -26,6 +27,9 @@ const PAGES = [
   '/en/country/DEU/',
   '/fr/country/DEU/',
   '/en/country/ISR/',
+  // The heaviest country page of the preview data: 52 events, about 1.2 MB of HTML (B-864).
+  '/en/country/NOR/',
+  '/fr/country/NOR/',
   '/en/compare/',
   '/fr/compare/',
   '/en/compare/?c=DEU',

@@ -463,13 +463,25 @@
 
 @layer components {
   /* Gauge tooltip (docs/05 §5 ScoreGauge): the exact score and the methodology version, shown on
-     hover and on keyboard focus. */
+     hover and on keyboard focus. On a bar of 480 px or less the box is too wide to stay on the
+     screen near the middle of the bar (it ran 35 px past a 360 px screen for a score of +59), so
+     the short box, the score alone, replaces it. */
   .gauge .gauge-tip {
     visibility: hidden;
   }
-  .gauge:hover .gauge-tip,
-  .gauge:focus .gauge-tip {
+  .gauge:hover .gauge-tip-long,
+  .gauge:focus .gauge-tip-long {
     visibility: visible;
+  }
+  @container (max-width: 480px) {
+    .gauge:hover .gauge-tip-long,
+    .gauge:focus .gauge-tip-long {
+      visibility: hidden;
+    }
+    .gauge:hover .gauge-tip-short,
+    .gauge:focus .gauge-tip-short {
+      visibility: visible;
+    }
   }
   /* The ±50 scale labels run into "0 · seuil de passivité" on a narrow gauge (docs/10 B-159 (4),
      decided in P-17): dropped at 480 px and under, as the widget does. */

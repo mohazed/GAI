@@ -38,6 +38,13 @@ let server: Server | null = null
 
 test.beforeAll(async () => {
   server = createServer((req, res) => {
+    // Branded Chrome asks for /favicon.ico (Playwright's Chromium does not); a 404 would be a
+    // console error that the page did not cause.
+    if (req.url === '/favicon.ico') {
+      res.writeHead(204)
+      res.end()
+      return
+    }
     const body = pages.get(req.url ?? '')
     res.writeHead(body === undefined ? 404 : 200, { 'Content-Type': 'text/html; charset=utf-8' })
     res.end(body ?? 'not found')
