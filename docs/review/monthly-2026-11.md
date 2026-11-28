@@ -1488,3 +1488,18 @@ The only full-protocol records of this scope are three T-H-RS notes (SAU C5 and 
 | SAU | 0 | 0: 0 / 0 | 0: 0 | 0 annotated | 2 | Notes dated only (T-H-RS retry of the primary hosts of B-2156 (4), Wayback CDX copies); status kept; no finding. |
 
 `pnpm validate`: 0 errors.
+
+### T-H-BROWSER: Lighthouse, browser tests, overflow, no-JavaScript pages and widget on the preview build (2026-11-28; docs/10 B-2221, B-2222)
+
+Full evidence in `docs/review/launch-readiness.md` §6.
+
+| Check | Result | B-id |
+|---|---|---|
+| Lighthouse (Chrome, 24 pages × 3, mobile profile with applied throttling) | all assertions pass; NOR LCP 0.84 s (en), 0.88 s (fr); 'All n values' tables stay in the page | B-2221 (2) |
+| Browser tests in score mode (Chrome, both builds) | 325 passed, 8 skipped, 2 failed (widget test: Chrome's `/favicon.ico` request, not a site defect; test fixed) | B-2221 (3) |
+| Overflow at 360, 768, 1280 px (12 pages, both modes) | no sideways scroll; gauge tooltip cut off at 360 and 400 px in score mode, fixed in PR #23 | B-2221 (4) |
+| French punctuation on 10 share cards | 0 problems | B-2221 (5) |
+| Pages with scripts off (486 URLs, curl, both builds) | 0 problems | B-2221 (6) |
+| Widget on a second localhost origin | renders, one request each, no cookie, no console error | B-2221 (7) |
+| PR #23 | merged (`9885d4d`) after green CI; `main` merged into `data/phase1` | B-2221 (8) |
+

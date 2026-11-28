@@ -90,3 +90,57 @@ curl -s https://gaza-accountability-index.pages.dev/api/v1/manifest.json | jq '.
 7. Post the Discussion for 1.0.0-rc.2 and decide PR #15; when the Discussion is posted, add its entry to `methodology/proposals.yaml` (template in the file) so that the Changes page announces it; remove the entry when the proposal is merged or withdrawn.
 8. Distribution (spec §9): the first ten country scorecards to Tech for Palestine for feedback; one novel finding from the data, not the site, to Disclose and one French newsroom.
 9. Update `CLAUDE.md`'s commit-trailer line (it names Opus 5.5; sessions since 2026-10-05 ran on Sonnet 5.5).
+
+## 6. Browser checks of the launch plan (T-H-BROWSER, 2026-11-28)
+
+Section 5 above is the author's checklist (CHECKUP.md refers to it by that number), so the results of the card "T-H-BROWSER" of LAUNCH-PLAN.md are here (default of the run, B-2221).
+
+**What was run, on what.** `pnpm build:data --preview --date 2026-11-28` on `data/phase1` at 1e92673 (1,515 reviewed events built as if published; local use only, never deployed), then `NODE_OPTIONS=--max-old-space-size=3072 pnpm --filter @gai/web build` (scorecard mode, as `.env.production` has it, `out/`) and `pnpm --filter @gai/web build:kit` (the same data in score mode, `out-kit/`; its `/_kit` route reads the fixtures). `apps/web/.env.production` was not changed. One browser at a time: the installed Google Chrome (`/Applications/Google Chrome.app`), not Playwright's Chromium (nothing was downloaded). Servers: `scripts/serve.ts` on localhost ports, stopped by PID afterwards.
+
+### 6.1 Lighthouse (docs/04 §3: LCP < 1.5 s, CLS ≤ 0.001, accessibility, best practices and SEO at 100, JavaScript ≤ 150 KB)
+
+Chrome via `--collect.chromePath`, the mobile profile with applied (devtools) throttling of `apps/web/lighthouserc.cjs`, three runs per page, median asserted. 24 pages of the production (scorecard) build: the 21 of the CI list plus `/en/country/NOR/`, `/fr/country/NOR/` and `/en/country/USA/`. **Every assertion passed** (lhci reported none failed). Medians:
+
+| Page | LCP (ms) | CLS | Performance | Accessibility | Best practices | SEO | JavaScript (KB, gzip) |
+|---|---|---|---|---|---|---|---|
+| /en/country/NOR/ | 844 | 0 | 100 | 100 | 100 | 100 | 145.6 |
+| /fr/country/NOR/ | 883 | 0 | 100 | 100 | 100 | 100 | 145.6 |
+| /en/country/USA/ | 841 | 0 | 100 | 100 | 100 | 100 | 145.6 |
+| /en/country/DEU/ | 1,285 (runs: two near 0.9 s, one 2.7 s) | 0 | 95 | 100 | 100 | 100 | 145.6 |
+| /fr/country/DEU/ | 945 | 0 | 100 | 100 | 100 | 100 | 145.6 |
+| /en/ranking/, /fr/ranking/ | 1,068, 1,080 | 0 | 100, 99 | 100 | 100 | 100 | 146.2 |
+| /en/, /fr/ | 1,066, 1,222 | 0 | 99, 99 | 100 | 100 | 100 | 141.7 |
+| the other 14 pages | 785 to 969 | 0 | 100 | 100 | 100 | 100 | 139.9 to 146.2 |
+
+The page size of Norway on this build is 1,189,973 bytes (English) and 1,200,488 (French) of HTML. **LCP on `/en/country/NOR/` is 0.84 s, under 1.5 s, so the "All n values" tables stay in the page (B-864's condition is not met; nothing moved).** The one slow run of `/en/country/DEU/` (2.7 s, the other two 0.9 s) is a cold-start outlier of the local machine; the median of CI's three runs is what the budget asserts. `/en/compare/?c=DEU` carries 155.5 KB of JavaScript because its results view loads on demand; the budget counts the first load of `/en/compare/` (145.0 KB), as `lighthouserc.cjs` says.
+
+Score mode (`out-kit/`, same data, 3 runs): `/en/` 0.84 s, `/en/ranking/` 1.03 s, `/fr/ranking/` 0.88 s, `/en/country/NOR/` 0.90 s, `/fr/country/NOR/` 0.92 s, `/en/country/USA/` 0.85 s, `/en/country/DEU/` 0.87 s (medians); CLS 0; performance 99 to 100; the other three categories 100; JavaScript 141.7 to 146.6 KB. Under the 1.5 s budget on every page.
+
+The Norway pages are now in the Lighthouse list of CI (PR #23), so that the heaviest page of the real data is measured on every push.
+
+### 6.2 Browser tests in score mode
+
+`pnpm test:e2e` on both builds, with Chrome as the browser (a local config that sets `channel: 'chrome'` and was deleted afterwards), two workers: projects `score` (out-kit, 4173) and `production` (out, 4174). **325 passed, 8 skipped (the mode-specific ones), 2 failed.** Both failures are the same test, `embed.spec.ts` "gauge and timeline, English and French, one request each, no cookie", in both projects: `errors` held "Failed to load resource: 404". Cause: branded Chrome asks the test's blank origin (a bare `http.createServer`) for `/favicon.ico`; Playwright's Chromium does not, so CI never saw it. Shown by serving the same host page with `<link rel="icon" href="data:,">`: no 404 and no console message. Not a defect of the site; the test's blank origin now answers `/favicon.ico` with 204 (PR #23), and with that change `kit.spec.ts` and `embed.spec.ts` pass in score mode (26 of 26).
+
+### 6.3 Overflow at 360, 768 and 1280 px
+
+Twelve pages at three widths on each build (72 page loads): `/en/`, `/fr/`, `/en/ranking/`, `/fr/ranking/`, `/en/country/NOR/`, `/en/country/USA/`, `/fr/country/FRA/`, `/en/compare/?c=DEU,FRA`, `/en/changes/`, `/en/methodology/`, `/en/data/`, `/en/embed/`. Test: `documentElement.scrollWidth` and `body.scrollWidth` against the viewport, and every element whose box passes the viewport outside a scrolling ancestor. **No page scrolls sideways at any width in either mode.** Two findings:
+
+1. **Closed Cite and Share panels** report a box past the edge at 360 px (right edge 405, the `<details>` panel's CSS position before it opens). Opened, with and without JavaScript, they sit at 16 to 344 px (360), 32 to 608 (768) and 112 to 688 (1280). Not a defect.
+2. **The gauge tooltip (score mode only) was cut off at 360 and 400 px.** The box (236 px, score and methodology version) is centred on the marker; for a score of +59 on a 328 px bar it ended at 395 px on a 360 px screen. Measured with the pointer on the gauge on 12 country pages: at 360 px NOR, FRA, GBR, ZAF and SWE ended 11 to 35 px past the edge, at 400 px NOR, FRA, GBR and ZAF; none at 768 px. The page does not scroll (the box is clipped). Not visible in scorecard mode (no marker, no tooltip), so nothing is wrong on the live site; it would have shown at the score flip. **Fixed** in PR #23: below the 480 px container query the tooltip holds the score alone (48 px), pinned to the near end of the bar where it does not fit; unit test of the placement for every marker position and a 360 px browser test on the kit gauges; with the fix all 36 combinations (12 countries, three widths) stay on the screen. docs/05 §5 records the change.
+
+### 6.4 French punctuation on ten share cards
+
+Ten countries (FRA, NOR, USA, DEU, ISR as an excluded entity, ESP, CIV, NLD, GBR, ZAF), French, in both modes: the card input of `scripts/cards.ts` for each (20 inputs: name, line, coverage label and missing counts, summary, band, scale, methodology line) checked against `docs/glossary.fr.md` (U+00A0 before `:` and inside guillemets, U+202F before `; ? ! %`, no plain space before them, typographic apostrophe, no straight apostrophe), then the cards for the scorecard mode rendered with satori and resvg (as the build does) and two of them (CIV, ISR) read as images. **0 problems.** The apostrophes of "Côte d’Ivoire", "à l’Assemblée générale", "n’est" are typographic; "Dernier événement : 2025-12-12" has the no-break space; "couverture 100 %" has the narrow no-break space (U+202F; in the image its gap is wider than a plain space in the summary line, a font-metric effect and not a character problem, as the string check shows). The dates on the cards are ISO (`2025-12-12`) in French as in English, as the card template has always had them.
+
+### 6.5 Pages with scripts off, read through curl
+
+`curl --compressed` on a local `scripts/serve.ts` for each of the 486 URLs of `sitemap.xml`, plus `/` and the headers: status 200, `lang` equal to the path's language, exactly one `h1`, at least 200 characters of text in `main`, the Content-Security-Policy meta, no `style` attribute, no error text, no "enable JavaScript" wall. **0 problems on 486 of 486, on the scorecard build and on the score build.** `/` answers with the meta refresh to `/en/`. `/en/country/NOR/` carries 113,344 characters of text in `main`, 9 tables and 26 disclosure elements in the served HTML. The headers of the serve script (CSP, nosniff, referrer policy, permissions policy, frame options, HSTS, COOP) are those of `public/_headers`.
+
+### 6.6 The widget on a second localhost origin
+
+Two static servers: the built site (`out-kit/`) on `localhost:4181` and a host page on `localhost:4182` (another origin) carrying three `<script src=".../embed/v1/gai.js">` tags (NOR gauge, FRA timeline in French, ISR excluded), stopped by PID afterwards. Result in Chrome: three widgets in shadow roots (640 px wide), Norway "+59" with the band, the timeline of France with its caption in French, Israel "Not scored … (D-10)"; site requests: the script and the three country files, nothing else; no cookie; no console error or failed response (with the favicon declared). The page's red links do not reach inside the shadow root. Read as a screenshot. The same behaviour is covered by `embed.spec.ts` in CI, which passed apart from the favicon request of Chrome.
+
+### 6.7 Changes made
+
+PR #23 (`fix/gauge-tip-narrow`, from `main`): the gauge tooltip, the favicon answer of the widget test, the Norway pages in the Lighthouse list. No data, methodology or scoring change. CI and merge are recorded in B-2221.
