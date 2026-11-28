@@ -1335,3 +1335,23 @@ Window of 9 to 28 November 2026 (after the last session tables of T-F-W2, T-F-W3
 Sources added (2): `src_20261127_gac_qatar-canada-strategic-dialogue`, `src_20261110_officielebekendmakingen_ah-1279214`.
 
 Not done: B-2187 (the Norwegian answer of 16 November, the Italian and Australian ministries' own pages, the New York Call for FIN, ISL, NZL and SVN, the Qatar-Canada statement for QAT). For the author: B-2182 (G7 at +2, now also ITA and CAN) and B-2186 (the Qatar-Canada statement as the Minister's call; the New York Call for AUS, CAN, NOR; the repeated Dutch answer). The NOR commit subject `ccace75` gives the preview as +58.7; it is +59.3 (B-2185 (5)).
+
+### T-H-MF-3: catch-up CHE AUT SVN CZE HUN POL GRC JPN KOR (2026-11-28; docs/10 B-2188 to B-2190)
+
+Window of 9 to 28 November 2026 (after the last session tables of T-F-W4, T-F-W5, T-F-W6 and T-G-LEADS), read on the governments' own sites, listings and parliamentary records (routes in B-2188), with web searches in English and the official language to find pages, never as evidence. No new capture was made: every event cites a source already archived and checked. Preview scores are rc.1 with `pnpm score --country XXX --preview`, for reading only.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| CHE | news service feed (184 de, 86 en releases), Parliament OData | none | Federal Council opinion of 25 November on motion 26.4604 (rejects excluding Israeli suppliers; C6 note) | +41.2 Confronting, unchanged | B9, C6 notes; leads 1, 2 dated |
+| AUT | Chancellery sitemap (18 items), Parliament Filter API; the Ministry's listing answered HTTP 500 (no Wayback copy) | none | security export law of 11 November (A6 note); motion 1183/A(E) of 18 November (members, not the Government) | +37.7 Acting, unchanged | B9, A6 notes; lead 1 dated |
+| SVN | GOV.SI listing (396 items opened, 9 hits read) | `evt_2025_05_16_SVN_B9` (+5), `evt_2025_07_30_SVN_B9` (+2), `evt_2025_12_14_SVN_B9` (+5), `evt_2026_01_05_SVN_B9` (+2): P-23 joint statements | the Minister's interpellation answer of 17 November (Gaza in indirect speech) and MED Dialogues remarks of 19 November | +38.6 Acting, unchanged (B9 at cap) | B9 note; lead 1 dated |
+| CZE | the Ministry's press releases (one in the window) and statements listing | none | the Minister's visit to the United Kingdom (no Gaza passage) | −36.8 Enabling, unchanged | B9 note; leads 1, 2 dated |
+| HUN | kormany.hu server-rendered list (12 items), 103 Wayback addresses | none | an older Ministry statement carried over from the former site | −53.0 Sustaining, unchanged | B9 note |
+| POL | GOV.PL search API (35 terms, 67 items, 25 read in full) | none | the Minister at the Council of 16 November (Syria, Ukraine); the Tel Aviv Embassy's condolence book after the Kraków attack | +40.6 Confronting, unchanged | B9 note; leads 1 to 3 dated |
+| GRC | mfa.gr WordPress API in the browser pane (53 posts) | `evt_2024_11_27_GRC_B9`, `evt_2025_01_09_GRC_B9`, `evt_2026_05_06_GRC_B9` (+2 each): P-23 trilateral declarations | the Minister at the Council of 16 November ('the wider Middle East') | +12.3 Acting, unchanged (B9 at cap) | B9 note; leads 1, 2 dated |
+| JPN | MOFA press releases and statements list in the browser pane; Diet minutes API (no Gaza speech) | `evt_2026_11_11_JPN_B9` (+2, G7 declaration, flagged B-2182) | readouts: G7 Middle East session, call with the Palestinian Prime Minister, Gaza reconstruction symposium, Japan-UNRWA Program Board | +26.1 Acting, unchanged (B9 at cap) | B9 note |
+| KOR | Korean press-release board (70 releases read in full) | none | the Minister at the G7 outreach (readout; not a signatory) | +5.3 Acting, unchanged | B9 note |
+
+Sources added: none.
+
+Not done: B-2190 (the Austrian Ministry's own releases, the Hungarian Foreign Ministry's news, vlada.gov.cz, hrad.cz, japan.kantei.go.jp, primeminister.gr; group-specific sources for A, C, D and E). For the author: B-2182 (G7 at +2, now also JPN) and B-2189 (the P-23 joint statements for SVN and GRC at their counterparts' tiers; the EU statement of 14 November 2026 not filed for any EU member).
