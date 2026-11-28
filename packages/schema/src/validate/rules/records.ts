@@ -65,12 +65,14 @@ export const STRUCTURED_UNIQUE_KEYS: Record<StructuredTableName, readonly string
   'population.csv': ['iso3', 'year'],
   'recognitions.csv': ['iso3'],
   'a2_confirmed_military.csv': ['iso3', 'hs'],
+  'unga_article19.csv': ['resolution', 'iso3'],
 }
 
 /** Tables whose rows record one vote each: the column naming the voted text, voted on one date. */
 const VOTE_COLUMN: Partial<Record<StructuredTableName, string>> = {
   'unga_votes.csv': 'resolution',
   'unsc_vetoes.csv': 'draft',
+  'unga_article19.csv': 'resolution',
 }
 
 /** Tables with a `window_start` / `window_end` pair (docs/03 §7). */
@@ -1304,6 +1306,51 @@ const structuredWindow: Rule = (ctx) => {
   return out
 }
 
+/**
+ * structured.article19-absence (docs/03 §7, docs/02 §2 B1, methodology 1.0.0-rc.3): each row of
+ * unga_article19.csv names an absence, so it matches a row of unga_votes.csv with the same
+ * resolution, state and date whose vote is `X`. A row with no such vote would mark a vote, a
+ * yes or a no as not entitled, which the Secretary-General's letters cannot show.
+ */
+const structuredArticle19Absence: Rule = (ctx) => {
+  const out: Issue[] = []
+  const votes = new Map<string, Located<Record<string, unknown>>>()
+  for (const row of rowsOf(ctx, 'unga_votes.csv')) {
+    votes.set(`${String(row.value.resolution)}\u0000${String(row.value.iso3)}`, row)
+  }
+  for (const row of rowsOf(ctx, 'unga_article19.csv')) {
+    const { resolution, iso3, date } = row.value
+    const vote = votes.get(`${String(resolution)}\u0000${String(iso3)}`)
+    const id = `row ${row.line ?? '?'}`
+    if (vote === undefined) {
+      out.push(
+        issue(
+          'structured.article19-absence',
+          at(row, id, 'resolution'),
+          `${String(iso3)} has no row for ${String(resolution)} in unga_votes.csv; expected the recorded absence (X) this row explains`,
+        ),
+      )
+    } else if (vote.value.vote !== 'X') {
+      out.push(
+        issue(
+          'structured.article19-absence',
+          at(row, id, 'iso3'),
+          `${String(iso3)} is recorded as ${String(vote.value.vote)} on ${String(resolution)} in unga_votes.csv (line ${vote.line ?? '?'}); expected X, an absence`,
+        ),
+      )
+    } else if (vote.value.date !== date) {
+      out.push(
+        issue(
+          'structured.article19-absence',
+          at(row, id, 'date'),
+          `${String(resolution)} is dated ${String(vote.value.date)} in unga_votes.csv (line ${vote.line ?? '?'}) but ${String(date)} here; expected the date of the vote`,
+        ),
+      )
+    }
+  }
+  return out
+}
+
 export const rules: Rule[] = [
   idUnique,
   idDateMatches,
@@ -1331,4 +1378,5 @@ export const rules: Rule[] = [
   structuredIso3Known,
   structuredUnique,
   structuredWindow,
+  structuredArticle19Absence,
 ]

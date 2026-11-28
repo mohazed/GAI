@@ -219,9 +219,11 @@ describe('pnpm score on a richer dataset: the printed numbers are the engine num
     expect(r.stdout).toMatch(/A5\s+−20\.0\s+−15 … —\s+−15\.0/)
     expect(r.stdout).toMatch(/evt_2025_08_08_DEU_A6 .* superseded, by evt_2025_09_01_DEU_A7/)
     expect(r.stdout).toMatch(/evt_2024_11_22_DEU_B5 .* earlier-position, by evt_2025_04_03_DEU_B6/)
+    // 1.0.0-rc.2 (B-46): a negative act is counted but never qualifies against passivity.
     expect(r.stdout).toMatch(
-      /evt_2025_02_01_DEU_B4 .*disputed\s+0\.4\s+1\.0000\s+−6\.00\s+−6\.00\s+counted · qualifies/,
+      /evt_2025_02_01_DEU_B4 .*disputed\s+0\.4\s+1\.0000\s+−6\.00\s+−6\.00\s+counted\s*$/m,
     )
+    expect(r.stdout).toContain('passivity not applied (qualifying: evt_2024_11_22_DEU_B5)')
     expect(r.stdout).toMatch(/evt_2025_07_01_DEU_C5 .*\s—\s+—\s+not-published/)
     expect(r.stdout).toContain(`Score ${fmt(s.exact)} → display`)
   })

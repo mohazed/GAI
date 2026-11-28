@@ -361,6 +361,10 @@ export const STRUCTURED_DOCS: Record<StructuredTableName, LangText> = {
     'Exports to Israel under HS 8526 (radar and remote-control apparatus) or 8802 (aircraft) confirmed as military by a licence register, a parliamentary answer or a published investigation citing the customs code (A2): one row per country and heading. Without a row these headings do not count in A2.',
     'Exportations vers Israël sous les positions SH 8526 (appareils de radar et de télécommande) ou 8802 (aéronefs) dont la nature militaire est confirmée par un registre de licences, une réponse parlementaire ou une enquête publiée citant le code douanier (A2) : une ligne par pays et par position. Sans ligne, ces positions ne comptent pas dans A2.',
   ),
+  'unga_article19.csv': t(
+    "Absences on the qualifying votes of states that had no vote under Article 19 of the Charter on the date (B1, from methodology 1.0.0-rc.3): one row per vote and state, citing the Secretary-General's letter in force and, where a permission to vote had ended, the General Assembly's resolution. Such an absence scores 0; unga_votes.csv keeps its X.",
+    "Absences, lors des votes retenus, d'États qui n'avaient pas le droit de vote en vertu de l'Article 19 de la Charte à la date du vote (B1, à partir de la méthodologie 1.0.0-rc.3) : une ligne par vote et par État, citant la lettre du Secrétaire général en vigueur et, lorsqu'une autorisation de voter avait pris fin, la résolution de l'Assemblée générale. Une telle absence compte 0 ; unga_votes.csv garde son X.",
+  ),
 }
 
 export function structuredTables(): { name: StructuredTableName; columns: readonly string[] }[] {

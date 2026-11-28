@@ -2,6 +2,10 @@
 
 This document turns spec §2–§4 into rules precise enough to code and to test. Where the spec was ambiguous, the choice is stated and justified. The public methodology page is generated from `methodology/v1.0.0/` files, which must agree with this document; when they conflict, fix the files.
 
+**Amendments of 1.0.0-rc.2** (proposed 2026-10-05 by P-24, in effect once its pull request is merged; `methodology/CHANGELOG.md`, docs/10 B-493): §4 `confirmed` also accepts `official-video` and `parliamentary` sources; §2 A3, A6, A7, B3, B7 and D2 stack by most severe, and B1 has an indicator cap of −15…+15; §6 a qualifying event contributes +2 or more (not its absolute value), and the pre-existing B8 tier (+3) does not qualify; §5 A2 and C3 values of data year 2022 are not in force in the window, and D1 counts FTS flows dated on or after 2023-10-07; B9 and B10 speakers are the head of state, the head of government and the foreign minister. Where the sections below say otherwise, they describe 1.0.0-rc.1.
+
+**Amendments of 1.0.0-rc.3** (proposed 2026-11-28 by the launch-plan run, card T-H-METHOD, in effect once its pull request is merged; `methodology/CHANGELOG.md`, docs/10 B-2174): §2 B1, an absence of a state that had no vote under Article 19 of the Charter on the date of the vote scores 0, from the dated table `data/structured/unga_article19.csv`, and its event says why; §5 A4, each order year from 2024 is scored once, in the first imported release that reports it, one event per country and release with each year's tier summed. Stated, not changed: §6 a D3 event of year Y qualifies until 31 December of Y+1 where it is a state's only qualifying event; §12 rule 8 covers all 193 scored entities, enforced by the build.
+
 ## 1. Universe
 
 - **Scored entities:** the 193 UN member states plus the Holy See, minus Israel and Palestine (D-10). 193 scored entities. Palestine's observer status is noted on the About page; neither excluded entity has a country page in v1.

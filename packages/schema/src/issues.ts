@@ -267,7 +267,7 @@ export const RULES = {
     level: 'warning',
     doc: 'docs/10 B-22, B-51',
     summary:
-      'Two standing records of one country under A3, B7 or D2 hold on the same day; methodology 1.0.0 adds them, so the overlap is flagged for review.',
+      'Two standing records of one country under A3, B7 or D2 hold on the same day while the methodology sums that indicator (1.0.0-rc.1); the overlap is flagged for review.',
   },
   'event.b5-b6-same-day': {
     level: 'warning',
@@ -451,7 +451,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/03 §7',
     summary:
-      'The source column names an existing source of kind dataset (official also in unsc_vetoes and recognitions; official, parliamentary, ngo or press in a2_confirmed_military: STRUCTURED_SOURCE_KINDS, B-31) that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin).',
+      'The source column names an existing source of kind dataset (official also in unsc_vetoes and recognitions; official, parliamentary, ngo or press in a2_confirmed_military; official in unga_article19: STRUCTURED_SOURCE_KINDS, B-31) that is archived (wayback_url and sha256, capture not failed; a dataset row through its origin).',
   },
   'structured.iso3-known': {
     level: 'warning',
@@ -463,6 +463,12 @@ export const RULES = {
     doc: 'docs/03 §7, docs/02 §2 (B1, B2)',
     summary:
       'Structured rows are unique by key, a resolution has one date, and vetoes are cast by permanent members.',
+  },
+  'structured.article19-absence': {
+    level: 'error',
+    doc: 'docs/03 §7, docs/02 §2 (B1)',
+    summary:
+      'A row of unga_article19.csv matches an absence (X) of unga_votes.csv: same resolution, state and date.',
   },
   'structured.window': {
     level: 'error',
@@ -480,7 +486,7 @@ export const RULES = {
     level: 'error',
     doc: 'docs/02 §2',
     summary:
-      'Indicator ids are unique, prefixed by their category, the category exists, and scored follows the category.',
+      'Indicator ids are unique, prefixed by their category, the category exists, scored follows the category, and each has a short label.',
   },
   'methodology.indicator-points': {
     level: 'error',

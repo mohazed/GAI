@@ -5,6 +5,10 @@
  * vote, with the tier of indicators.yaml: Y yes +3, A abstain −2, N no −5, X absent −2 (a formal
  * "did not participate" is recorded as X). Rows of resolutions not in votes.yaml are tracked,
  * never scored (docs/03 §7). Evidence: the table row and the vote's press release with its quote.
+ * From methodology 1.0.0-rc.3 (B1 tier `not-entitled`): an X that unga_article19.csv lists, a
+ * state with no vote under Article 19 of the Charter on that date, takes that tier (0), cites the
+ * table's row (the Secretary-General's letter) and says so in its summary; under a methodology
+ * without the tier the row is ignored and the absence keeps −2.
  *
  * B2: one repeatable event per permanent member and vetoed draft whose row says `ceasefire: true`
  * (docs/02 §2 B2), −20 each; other vetoes are tracked, not scored.
@@ -27,6 +31,15 @@ import {
 } from './common.js'
 
 const VOTE_TIER = { Y: 'yes', A: 'abstain', N: 'no', X: 'absent' } as const
+
+/** The B1 tier of an absence of a state not entitled to vote under Article 19 (1.0.0-rc.3). */
+export const NOT_ENTITLED_TIER = 'not_entitled'
+
+/** The qualifier of a not-entitled absence's summary, EN and FR. */
+const NOT_ENTITLED_TEXT = {
+  en: 'having no vote under Article 19 of the Charter',
+  fr: "sans droit de vote au titre de l'Article 19 de la Charte",
+} as const
 
 /**
  * The verb of each recorded vote, French by number (singular, plural). "Opté pour l'abstention"
@@ -61,11 +74,17 @@ function tierPoints(ctx: GenerateContext, id: string, key: string): number | und
 export function generateB1(
   ctx: GenerateContext,
   rows: readonly Located<StructuredRow<'unga_votes.csv'>>[],
+  article19: readonly Located<StructuredRow<'unga_article19.csv'>>[] = [],
 ): Generated {
   const votes = new Map(ctx.votes.votes.map((v) => [v.symbol, v]))
   const events = []
   const notes: string[] = []
   const columns = STRUCTURED_TABLES['unga_votes.csv'].columns
+  const a19Columns = STRUCTURED_TABLES['unga_article19.csv'].columns
+  const notEntitledPoints = tierPoints(ctx, 'B1', NOT_ENTITLED_TIER)
+  const notEntitled = new Map(
+    article19.map((row) => [`${row.value.resolution}\u0000${row.value.iso3}`, row]),
+  )
   for (const row of rows) {
     const r = row.value
     const vote = votes.get(r.resolution)
@@ -75,7 +94,11 @@ export function generateB1(
         `unga_votes.csv row ${row.line}: ${r.resolution} dated ${r.date}, votes.yaml says ${vote.date}; the votes.yaml date is used`,
       )
     }
-    const tier = VOTE_TIER[r.vote]
+    const a19 =
+      r.vote === 'X' && notEntitledPoints !== undefined
+        ? notEntitled.get(`${r.resolution}\u0000${r.iso3}`)
+        : undefined
+    const tier = a19 === undefined ? VOTE_TIER[r.vote] : NOT_ENTITLED_TIER
     const points = tierPoints(ctx, 'B1', tier)
     if (points === undefined) throw new Error(`indicators.yaml has no B1 tier "${tier}"`)
     const kind =
@@ -86,8 +109,22 @@ export function generateB1(
     const a = actorFor(ctx, r.iso3)
     const evidence = [
       ...rowEvidence(row as Located<Record<string, unknown>>, 'unga_votes.csv', columns),
+      ...(a19 === undefined
+        ? []
+        : rowEvidence(a19 as Located<Record<string, unknown>>, 'unga_article19.csv', a19Columns)),
       { source: vote.source, quote: vote.quote, quote_lang: 'en', locator: vote.locator },
     ]
+    const qualifier =
+      a19 === undefined
+        ? { en: '', fr: '' }
+        : {
+            en: `, ${NOT_ENTITLED_TEXT.en}`,
+            fr: `, ${NOT_ENTITLED_TEXT.fr}`,
+          }
+    const rationale =
+      a19 === undefined
+        ? `Recorded vote ${r.vote} (${tier}) on ${r.resolution}: ${signed(points)}.`
+        : `Recorded vote X on ${r.resolution}; no vote under Article 19 of the Charter on ${vote.date} (row ${a19.line ?? '?'} of data/structured/unga_article19.csv): ${tier}, ${signed(points)}.`
     events.push(
       baseEvent(
         {
@@ -102,10 +139,10 @@ export function generateB1(
           type: 'repeatable',
           date: vote.date,
           points,
-          points_rationale: `Recorded vote ${r.vote} (${tier}) on ${r.resolution}: ${signed(points)}.`,
+          points_rationale: rationale,
           summary: {
-            en: `${a.en} ${verb.en} General Assembly ${kind.en} ${r.resolution}.`,
-            fr: `${a.fr} ${byNumber(a, verb.fr[0], verb.fr[1])} ${kind.fr} ${r.resolution} de l'Assemblée générale.`,
+            en: `${a.en} ${verb.en} General Assembly ${kind.en} ${r.resolution}${qualifier.en}.`,
+            fr: `${a.fr} ${byNumber(a, verb.fr[0], verb.fr[1])} ${kind.fr} ${r.resolution} de l'Assemblée générale${qualifier.fr}.`,
           },
           evidence,
         },

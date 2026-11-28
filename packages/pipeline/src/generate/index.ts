@@ -24,7 +24,7 @@ export { generateD1, gniFor } from './funding.js'
 export { generateB8 } from './recognitions.js'
 export { generateA1, generateA4 } from './sipri.js'
 export { generateA2, generateC3 } from './trade.js'
-export { generateB1, generateB2, voteSlug } from './votes.js'
+export { generateB1, generateB2, NOT_ENTITLED_TIER, voteSlug } from './votes.js'
 
 /**
  * The HS 8526/8802 confirmations of a2_confirmed_military.csv (docs/02 §2 A2, B-30), per country:
@@ -77,7 +77,7 @@ export function generateAll(
   options: GenerateOptions = {},
 ): Generated {
   const parts = [
-    generateB1(ctx, structured['unga_votes.csv']),
+    generateB1(ctx, structured['unga_votes.csv'], structured['unga_article19.csv']),
     generateB2(ctx, structured['unsc_vetoes.csv']),
     generateB8(ctx, structured['recognitions.csv']),
     generateA1(ctx, structured['sipri_deliveries.csv']),

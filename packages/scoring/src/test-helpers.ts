@@ -35,6 +35,47 @@ export function repoFiles(): MethodologyFilesInput {
   return structuredClone(cache.files)
 }
 
+/** The standing indicators that stack by "most severe" from 1.0.0-rc.2 and summed in rc.1. */
+export const RC2_MOST_SEVERE: readonly string[] = ['A3', 'A6', 'A7', 'B3', 'B7', 'D2']
+
+/**
+ * The rules of methodology 1.0.0-rc.1, rebuilt from the repository files by reverting the rule
+ * changes of 1.0.0-rc.2 that the engine reads (docs/calibration/README.md §7): passivity counts
+ * the absolute contribution and every B8 tier, B1 has no indicator cap, and A3, A6, A7, B3, B7 and
+ * D2 add up. The worked examples of docs/02 as written are tested against it; the rc.2 rules have
+ * their own tests (rc2.test.ts). The other changes of rc.2 (confidence kinds, the generators'
+ * parameters) are not read by the engine.
+ */
+export function rc1Files(): MethodologyFilesInput {
+  const f = repoFiles()
+  return {
+    ...f,
+    indicators: {
+      ...f.indicators,
+      indicators: f.indicators.indicators.map((i) =>
+        i.id === 'B1'
+          ? { ...i, indicator_cap: null }
+          : RC2_MOST_SEVERE.includes(i.id)
+            ? { ...i, stacking: { rule: 'sum' as const } }
+            : i,
+      ),
+    },
+    passivity: {
+      ...f.passivity,
+      contribution_sign: 'any',
+      excluded: (f.passivity.excluded ?? []).filter((e) => e.tiers === undefined),
+    },
+  }
+}
+
+let rc1: ScoringMethodology | null = null
+
+/** The rules of 1.0.0-rc.1 (see rc1Files), compiled. */
+export function methodologyRc1(): ScoringMethodology {
+  if (rc1 === null) rc1 = compileMethodology(rc1Files())
+  return rc1
+}
+
 /** The repository's methodology, compiled. */
 export function methodology(): ScoringMethodology {
   if (cache === null) repoFiles()

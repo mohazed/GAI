@@ -107,7 +107,7 @@ describe('@gai/schema', () => {
       'lead',
     ])
     expect(Object.keys(schema.METHODOLOGY_FILES)).toHaveLength(9)
-    expect(schema.STRUCTURED_TABLE_NAMES).toHaveLength(12)
+    expect(schema.STRUCTURED_TABLE_NAMES).toHaveLength(13)
     expect(schema.WINDOW_START).toBe('2023-10-07')
     expect(schema.EVENT_TYPES).toEqual(['standing', 'repeatable', 'computed'])
   })

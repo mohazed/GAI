@@ -94,6 +94,10 @@ export const FtsFundingRow = z.strictObject({
   iso3: Iso3,
   window_start: IsoDate,
   window_end: IsoDate,
+  /**
+   * Paid + committed government funding dated in the window; from methodology 1.0.0-rc.2 only
+   * flows dated on or after formula d1 `parameters.flows_from` (2023-10-07) count (fetch:fts).
+   */
   usd_paid_committed: nonNegInt('usd_paid_committed'),
   /** FTS plan ids joined by `;`, e.g. 1156;1273. */
   plan_ids: z.string().regex(/^\d+(;\d+)*$/, 'expected plan ids joined by ";"'),
@@ -201,6 +205,22 @@ export const A2ConfirmedMilitaryRow = z.strictObject({
   source: SourceIdList,
 })
 
+/**
+ * Absences of a state that had no vote under Article 19 of the Charter (B1, methodology
+ * 1.0.0-rc.3, docs/02 §2 B1): one row per qualifying vote and state, dated the vote, for an `X`
+ * of unga_votes.csv on which the state was named in the Secretary-General's letter under Article
+ * 19 in force on the vote date (the last letter, with its addenda, dated on or before the vote)
+ * and no resolution of the General Assembly permitted it to vote that day. `source` cites the
+ * archived letter and, where a permission had ended before the vote, the archived resolution
+ * that granted it, joined by `;`. unga_votes.csv keeps the UN's `X` unchanged.
+ */
+export const UngaArticle19Row = z.strictObject({
+  resolution: z.string().regex(/^A\/(RES|DEC)\/\S+$/, 'expected a GA symbol A/RES/… or A/DEC/…'),
+  date: IsoDate,
+  iso3: Iso3,
+  source: SourceIdList,
+})
+
 /** Every structured table: file name → columns in order and the row schema. */
 export const STRUCTURED_TABLES = {
   'unga_votes.csv': {
@@ -286,6 +306,10 @@ export const STRUCTURED_TABLES = {
     columns: ['iso3', 'hs', 'source'],
     row: A2ConfirmedMilitaryRow,
   },
+  'unga_article19.csv': {
+    columns: ['resolution', 'date', 'iso3', 'source'],
+    row: UngaArticle19Row,
+  },
 } as const satisfies Record<string, { columns: readonly string[]; row: z.ZodType }>
 
 export type StructuredTableName = keyof typeof STRUCTURED_TABLES
@@ -308,6 +332,7 @@ export const STRUCTURED_ISO3_COLUMN: Record<StructuredTableName, string> = {
   'population.csv': 'iso3',
   'recognitions.csv': 'iso3',
   'a2_confirmed_military.csv': 'iso3',
+  'unga_article19.csv': 'iso3',
 }
 
 /**
@@ -329,4 +354,5 @@ export const STRUCTURED_SOURCE_KINDS: Record<StructuredTableName, readonly strin
   'population.csv': ['dataset'],
   'recognitions.csv': ['dataset', 'official'],
   'a2_confirmed_military.csv': ['official', 'parliamentary', 'ngo', 'press', 'dataset'],
+  'unga_article19.csv': ['official', 'dataset'],
 }

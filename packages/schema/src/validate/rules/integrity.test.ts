@@ -353,6 +353,10 @@ describe("'structured.unique'", () => {
         { iso3: 'DEU', hs: '8526', source: DATASET_ID },
         { iso3: 'DEU', hs: '8526', source: DATASET_ID },
       ])
+      addRows(ds, 'unga_article19.csv', [
+        { resolution: 'A/RES/TEST/1', date: '2024-01-10', iso3: 'VEN', source: DATASET_ID },
+        { resolution: 'A/RES/TEST/1', date: '2024-01-10', iso3: 'VEN', source: DATASET_ID },
+      ])
     })
     expect(issues.map((i) => [i.file, i.id])).toEqual([
       ['data/structured/unsc_vetoes.csv', 'row 3'],
@@ -366,8 +370,9 @@ describe("'structured.unique'", () => {
       ['data/structured/population.csv', 'row 3'],
       ['data/structured/recognitions.csv', 'row 3'],
       ['data/structured/a2_confirmed_military.csv', 'row 3'],
+      ['data/structured/unga_article19.csv', 'row 3'],
     ])
-    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(12)
+    expect(Object.keys(STRUCTURED_UNIQUE_KEYS)).toHaveLength(13)
   })
 
   it('reports a resolution or a draft recorded with two dates', () => {
@@ -398,5 +403,48 @@ describe("'structured.unique'", () => {
       path: 'vetoed_by',
     })
     expect(issues[0]?.message).toContain('vetoed_by DEU')
+  })
+})
+
+describe("'structured.article19-absence'", () => {
+  const notEntitled = (
+    iso3: string,
+    patch: Partial<StructuredRow<'unga_article19.csv'>> = {},
+  ): StructuredRow<'unga_article19.csv'> => ({
+    resolution: 'A/RES/TEST/1',
+    date: '2024-01-10',
+    iso3,
+    source: DATASET_ID,
+    ...patch,
+  })
+
+  it('passes on a row that explains a recorded absence (X) of the same vote and date', () => {
+    expect(of('structured.article19-absence')).toEqual([])
+    const issues = of('structured.article19-absence', (ds) => {
+      addRows(ds, 'unga_votes.csv', [vote('VEN', { vote: 'X' })])
+      addRows(ds, 'unga_article19.csv', [notEntitled('VEN')])
+    })
+    expect(issues).toEqual([])
+  })
+
+  it('reports a row with no vote, a row on a recorded vote, and a row with another date', () => {
+    const issues = of('structured.article19-absence', (ds) => {
+      addRows(ds, 'unga_votes.csv', [
+        vote('VEN', { vote: 'X' }),
+        vote('AFG', { vote: 'Y' }),
+        vote('BOL', { vote: 'X' }),
+      ])
+      addRows(ds, 'unga_article19.csv', [
+        notEntitled('STP'),
+        notEntitled('AFG'),
+        notEntitled('BOL', { date: '2024-01-11' }),
+      ])
+    })
+    expect(issues.map((i) => [i.file, i.id, i.path])).toEqual([
+      ['data/structured/unga_article19.csv', 'row 2', 'resolution'],
+      ['data/structured/unga_article19.csv', 'row 3', 'iso3'],
+      ['data/structured/unga_article19.csv', 'row 4', 'date'],
+    ])
+    expect(issues[1]?.message).toContain('recorded as Y')
   })
 })

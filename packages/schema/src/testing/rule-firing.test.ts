@@ -78,7 +78,11 @@ function addLead(ds: Dataset, fields: Record<string, unknown>): void {
   ds.leads.push({ value, file: 'data/leads/DEU.yaml', line: 1 })
 }
 
-function addStructured(ds: Dataset, table: 'unga_votes.csv' | 'fts_funding.csv', record: object) {
+function addStructured(
+  ds: Dataset,
+  table: 'unga_votes.csv' | 'fts_funding.csv' | 'unga_article19.csv',
+  record: object,
+) {
   const value = STRUCTURED_TABLES[table].row.parse(record)
   const rows = ds.structured[table] as { value: unknown; file: string; line: number }[]
   rows.push({ value, file: `data/structured/${table}`, line: rows.length + 2 })
@@ -330,7 +334,9 @@ const CASES: Record<RuleId, Case> = {
     memory: (ds) => addEvent(ds, { id: 'evt_2025_08_08_DEU_A6_2', points: 5 }),
   },
   'event.standing-overlap': {
-    memory: (ds) => {
+    memory: (ds, m) => {
+      // B7 summed in 1.0.0-rc.1; from rc.2 it stacks by most severe and the warning is silent.
+      ind(m, 'B7').stacking = { rule: 'sum' }
       addEvent(ds, { id: 'evt_2025_08_08_DEU_B7', indicator: 'B7', end: null })
       addEvent(ds, { id: 'evt_2025_09_01_DEU_B7', indicator: 'B7', date: '2025-09-01', end: null })
     },
@@ -523,6 +529,15 @@ const CASES: Record<RuleId, Case> = {
         date: '2023-10-27',
         iso3: 'XYZ',
         vote: 'Y',
+        source: SRC_1,
+      }),
+  },
+  'structured.article19-absence': {
+    memory: (ds) =>
+      addStructured(ds, 'unga_article19.csv', {
+        resolution: 'A/RES/ES-10/99',
+        date: '2024-01-01',
+        iso3: 'DEU',
         source: SRC_1,
       }),
   },

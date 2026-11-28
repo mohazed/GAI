@@ -10,6 +10,11 @@
  * conditional codes are otherwise kept in the table and not counted. Tiers of formula a2; an
  * event is written even at 0 points, since it records that export data exists.
  * C3: T and T(2022) from one reporter; tiers only when r = T / T(2022) ≥ 0.9 (formula c3).
+ *
+ * `parameters.min_window_end` of formulas a2 and c3 (1.0.0-rc.2, P-04 B-63): a window whose data
+ * end before this date (2023-10-07: calendar year 2022 and earlier, wholly before the war) is not
+ * in force in the window, so it writes no event; the next window's value starts at its own
+ * release. Absent (1.0.0-rc.1): every window is in force from its release.
  */
 import { formatEventId, type Located, STRUCTURED_TABLES, type StructuredRow } from '@gai/schema'
 import { formulaPoints } from '@gai/scoring'
@@ -52,6 +57,19 @@ function withValidity<R>(windows: Window<R>[]): (Window<R> & { until: string | n
     })
   }
   return out
+}
+
+/** Windows in force under `parameters.min_window_end` (see the module comment). */
+export function inForce<W extends { end: string }>(
+  windows: readonly W[],
+  f: { parameters?: Record<string, unknown> | undefined },
+): W[] {
+  const min = f.parameters?.min_window_end
+  if (min === undefined) return [...windows]
+  if (typeof min !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(min)) {
+    throw new Error(`parameters.min_window_end must be a date, got ${String(min)}`)
+  }
+  return windows.filter((w) => w.end >= min)
 }
 
 /** The source of the figures, French by the actor's number (`sa` or `leur` déclaration). */
@@ -105,7 +123,7 @@ export function generateA2(
   }
   const columns = STRUCTURED_TABLES['comtrade_a2.csv'].columns
   const events = []
-  for (const w of withValidity([...chosen.values()])) {
+  for (const w of inForce(withValidity([...chosen.values()]), f)) {
     const v = w.rows.reduce((s, r) => s + r.value.usd, 0)
     const codes = [...new Set(w.rows.map((r) => r.value.hs))].sort()
     const points = formulaPoints(f, v)
@@ -167,7 +185,7 @@ export function generateC3(
   }
   const columns = STRUCTURED_TABLES['comtrade_c3.csv'].columns
   const events = []
-  for (const w of withValidity([...chosen.values()])) {
+  for (const w of inForce(withValidity([...chosen.values()]), f)) {
     const row = w.rows[0] as Located<StructuredRow<'comtrade_c3.csv'>>
     const { usd_total: t, usd_2022: t0 } = row.value
     const points = formulaPoints(f, t, t0)
