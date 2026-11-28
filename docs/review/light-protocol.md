@@ -4798,3 +4798,4 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L1
 | BIH | mvp.gov.ba statements path (404); UNISPAL uploads (no message); one Bosnian web search | none | window not read on the Ministry's own site (B-2209) | +17.9 Acting, unchanged | B9 note and queries; lead 1 dated |
 | HRV | mvep.gov.hr news path (404); UNISPAL uploads (no message); one Croatian web search | none | window not read on the Ministry's own site (B-2209) | +20.1 Acting, unchanged | B9 note and queries; no open lead |
 | MKD | mfa.gov.mk statements path (404); UNISPAL uploads (no message); one Macedonian web search | none | window not read on the Ministry's own site (B-2209) | −15.2 Passive, unchanged | B9 note and queries; no open lead |
+| MNE | gov.me Ministry news path (404); UNISPAL uploads (no message); one Montenegrin web search | none | window not read on the Ministry's own site (B-2209) | +15.3 Acting, unchanged | B9 note and queries; lead 1 dated |
