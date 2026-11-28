@@ -4666,3 +4666,13 @@ The 12 full-protocol countries of the scope are in `docs/review/monthly-2026-11.
 | ZWE | 0 | 0 | 0: 0 | 0 / 1 (403/wb: 1) | none added or changed | 0 | Leads annotated only (dated searches); no finding. |
 
 `pnpm validate`: 0 errors.
+
+## Launch plan of 2026-11-27
+
+### T-H-ML-1: catch-up NZL to GRD, light groups 1 to 8 (2026-11-28; docs/10 B-2198 to B-2200)
+
+Window of 9 to 28 November 2026 (after each country's last session table: T-F-L01 to T-F-L04, their redo passes and T-G-LEADS-5, 9 to 11 November), read on the governments' own sites where they answer scripts or the browser pane, and through the Wayback CDX where they do not; web searches were used to find pages, never as evidence. Open leads were dated; P-23 "Also" items that an archived text already settles were filed.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| NZL | beehive.govt.nz (Imperva human check in the browser pane and to scripts, not bypassed); mfat.govt.nz media listing (rendered by script) and its Wayback CDX for November 2026; two English web searches | `evt_2025_07_30_NZL_B9` (+2, the New York Call of 30 July 2025, P-23 item; the archived Global Affairs Canada text names New Zealand in line 1) | the delegation's explanation of vote on an ES-10 resolution (not a B9 speaker); no Beehive release of the window could be read | +41.7 to +43.3 Confronting | B9 note and queries; lead 1 dated |
