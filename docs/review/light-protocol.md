@@ -4742,3 +4742,13 @@ Sources added: none. Leads: 48 open leads in 17 files dated (HND_1, JAM_1, NIC_2
 Not done (B-2202): the official sites listed there for LCA, SLV, VEN, SLB, KIR and MHL, and the bot-checked or unanswering sites of GTM (minex.gob.gt), NIC, PAN (Presidency), PRY (Ministry), JAM (JIS) and TTO (OPM); the group-specific sources for A, C, D and E. For the author (B-2203): the FJI diplomatic training read as implementing a filed instrument; Nicaragua's message of 2026 under the literal R7 default; rmigovernment.org no longer a Government domain.
 
 `pnpm validate`: 0 errors.
+
+### T-H-ML-3: catch-up NRU to BGD, light groups 17 to 24 (2026-11-28; docs/10 B-2204 to B-2206)
+
+Window of 9 to 28 November 2026 (after each country's last session table: T-F-L09 to T-F-L12, their redo passes and the P-23 pass, 9 to 11 November), read on the governments' own sites where they answer scripts, and through the Wayback CDX where they do not; web searches were used to find pages, never as evidence. The UNISPAL uploads of November 2026 (messages for the International Day of Solidarity with the Palestinian People, observed by the Committee on 23 November 2026) were listed and the ones of this card's states read. The P-23 items for the card's states were filed: the New York Call for FIN and ISL (T-H-MF-2 (4)), the statements of 14 and 19 November 2026 for LBY and SDN (T-H-MF-1 (3), T-H-MF-4 (1)). Open leads were dated.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| NRU | nauru.gov.nr media-release list (no release after 20 August 2026); naurugov.nr (no answer); UNISPAL uploads; one English web search | none | none | −38.0 Enabling, unchanged | B9 note and queries; lead 1 dated |
+| PLW | palaugov.pw WordPress API (no post after 19 September 2024); UNISPAL uploads; one English web search | none | none | −40.2 Enabling, unchanged | B9 note and queries; leads 1, 2 dated |
+| LBY | foreign.gov.ly/MOFA items 4590 to 4672 (none names Gaza or Palestine); UNISPAL uploads (the Mission's note of 19 November and the Acting Minister's Arabic message); one Arabic web search | `evt_2026_11_14_LBY_B9` (+5, Nasser Medical Complex statement); `evt_2026_11_19_LBY_B9` (+2, sanctions statement, B-2192 (1)) | the Acting Minister's message for the Day of Solidarity (scanned Arabic, no text layer, not transcribed; B-2205); the Ministry's unsigned statement of 12 November 2026 (R3) | +42.9 to +43.6 Confronting | B9 note and queries; leads 1 to 6 dated (LBY_2 with the A/81/PV check) |
