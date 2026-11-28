@@ -1355,3 +1355,25 @@ Window of 9 to 28 November 2026 (after the last session tables of T-F-W4, T-F-W5
 Sources added: none.
 
 Not done: B-2190 (the Austrian Ministry's own releases, the Hungarian Foreign Ministry's news, vlada.gov.cz, hrad.cz, japan.kantei.go.jp, primeminister.gr; group-specific sources for A, C, D and E). For the author: B-2182 (G7 at +2, now also JPN) and B-2189 (the P-23 joint statements for SVN and GRC at their counterparts' tiers; the EU statement of 14 November 2026 not filed for any EU member).
+
+### T-H-MF-4: catch-up CHN RUS BRA COL CHL MEX BOL ARG SAU (2026-11-28; docs/10 B-2191 to B-2193)
+
+Window of 9 to 28 November 2026 (after the last session tables of T-F-W6, T-F-W7, T-F-W8 and T-G-LEADS), read on the governments' own sites and listings (routes in B-2191; the Chilean Ministry in the built-in browser pane, one tab, closed afterwards), with web searches in English and the official language to find pages, never as evidence. The one new capture's replay was re-fetched and compared (bytes and SHA-256) with its index row. Preview scores are rc.1 with `pnpm score --country XXX --preview`, for reading only.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| CHN | fmprc.gov.cn Minister's Activities (13) and Top Stories (42); mfa.gov.cn Chinese activities (19) | none | the President's message of 23 November to the UN Palestine solidarity meeting (indirect speech, as 2023 to 2025); China-Russia-U.S. summit of 19 November (no Gaza passage) | +28.6 Acting, unchanged | B9 note |
+| RUS | en.kremlin.ru President news (68 items); kremlin.ru (ru) and mid.ru not readable by script | none | no Kremlin item of the window names Gaza or Palestine | +31.9 Acting, unchanged | B9 note |
+| BRA | the Ministry's press notes (22) and the Planalto's November speeches (7) | none | unsigned note of 13 November on a Brazilian-Palestinian who died in Israeli custody (West Bank, no speaker); COP31 and ASEAN speeches (no Gaza) | +50.6 Confronting, unchanged | B9, A6 notes; leads 1, 2 dated |
+| COL | cancilleria.gov.co behind a Cloudflare verification (scripts and pane; not bypassed); Wayback CDX (2 captures) | `evt_2025_09_23_COL_B9` (+5, the President's General Debate address in the Spanish record A/80/PV.5, T-H-UNDOCS item, archived) | the Minister before a House committee on 18 November (search result only, not read) | +27.2 → +28.6, Acting both | B9, C2 notes; lead 1 dated |
+| CHL | minrel.gob.cl press room pages 1 to 4 in the browser pane (45 items of the window in full) | none | the Foreign Minister at the Palestine solidarity day of 27 November (no Gaza, no call); floral tribute of 16 November | +51.6 Confronting, unchanged | B9, C2 notes; leads 1, 2 dated (searched again) |
+| MEX | SRE press archive (24 items); nine morning-conference transcripts | none | dialogue with the United Kingdom (Middle East among topics) | +46.6 Confronting, unchanged | B9 note |
+| BOL | the Ministry's feed (8 items of the window in full) | none | the Foreign Minister's first-year report of 18 November (restored relations with Israel, already the end of the B12 event) | +3.8 Acting, unchanged (passivity applied) | B9 note |
+| ARG | the Ministry's news (7 items); Casa Rosada speeches of 16 to 19 November (5); A/80/PV.6 | none | the President's speeches of 19 November (Israel, no Gaza: B10 under the literal scope rule not met, flagged B-2192 (2)); A/80/PV.6 (the hostages in Gaza, not B10) | −43.7 Enabling, unchanged | B9, B10, C2 notes; lead 1 dated |
+| SAU | Saudi Press Agency API (no dated list any more); Arabic and English web searches | `evt_2026_11_14_SAU_B9` (+5, Nasser Medical Complex) and `evt_2026_11_19_SAU_B9` (+2, gaza and west-bank, flagged B-2192 (1)): P-23 joint statements | none of the window on the agency's own pages | +31.6 Acting, unchanged (B9 at cap) | B9, D4 notes; leads 1, 2, 4 dated |
+
+Corrected in place (unpublished): `evt_2026_11_19_TUR_B9` and `evt_2026_11_19_EGY_B9`, now gaza and west-bank at +2 (line 5 of the statement condemns the Israeli military escalation in Gaza; B-2192 (1)); TUR +69.6 and EGY +23.6 unchanged (B9 at cap).
+
+Sources added (1): `src_20250923_undocs_a-80-pv-5-es`.
+
+Not done: B-2193 (the Colombian Ministry's items of the window, mid.ru and the Russian Kremlin site, a dated list of the Saudi Press Agency, group-specific sources for A, C, D and E, the ICJ declarations of BRA, MEX and BOL, the BRA_1 decree). For the author: B-2192 (the 19 November statement read with its Gaza passage for every signatory; the Argentine speeches of 19 November under the literal scope rule; the Colombian address from the Spanish record).
