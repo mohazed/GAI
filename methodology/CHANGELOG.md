@@ -213,7 +213,7 @@ Code in the same pull request, as for rc.2: the table's schema (`@gai/schema`
 `UngaArticle19Row`), the validation rule, the B1 and A4 generators and their unit tests with the
 worked examples (Venezuela on A/RES/ES-10/21; the Philippines −2 −5 = −7, Slovakia −10, Germany
 −10 unchanged; the earlier rules kept under the earlier files), and two causes of
-`methodology:diff` ("tier of an event changed", "events added or replaced").
+`methodology:diff` ("tier of an event changed", "events added, removed or replaced").
 
 Effect on 2026-11-28 (`pnpm methodology:diff --from 08b00d5 --date 2026-11-28`, with and without
 `--preview`):

@@ -91,7 +91,7 @@ describe('methodology:diff causes (rc.1 → rc.2)', () => {
     expect(causeOf(x.before, x.after, 'en')).toBe('C2 −4.0 → −10.0 (confidence)')
   })
 
-  it('names a tier change and events added or replaced (1.0.0-rc.3), same methodology', () => {
+  it('names a tier change and events added, removed or replaced (1.0.0-rc.3), same methodology', () => {
     // B1: the absence of a state with no vote under Article 19 keeps its event, at 0 points.
     const absent = Array.from({ length: 5 }, (_, i) =>
       ev('XGG', 'B1', 'repeatable', `2025-0${i + 1}-10`, -2, {
@@ -124,10 +124,10 @@ describe('methodology:diff causes (rc.1 → rc.2)', () => {
       after: createScorer('XHH', [both], rc2).at(DATE),
     }
     expect(causeOf(added.before, added.after, 'en')).toBe(
-      'A4 −5.0 → −7.0 (events added or replaced)',
+      'A4 −5.0 → −7.0 (events added, removed or replaced)',
     )
     expect(causeOf(added.before, added.after, 'fr')).toBe(
-      'A4 −5,0 → −7,0 (événements ajoutés ou remplacés)',
+      'A4 −5,0 → −7,0 (événements ajoutés, retirés ou remplacés)',
     )
   })
 

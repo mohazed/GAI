@@ -7,7 +7,7 @@
  * The cause names what moved the score, in the same words for every country: the indicators
  * whose value changed in a category whose clipped subtotal changed (with the rule that changed
  * it: an indicator cap, the most severe of overlapping records, the confidence of an event, the
- * tier of an event, events added or replaced, or a recomputed value), the category cap when it binds, and the passivity penalty when its
+ * tier of an event, events added, removed or replaced, or a recomputed value), the category cap when it binds, and the passivity penalty when its
  * decision changed (with the events that no longer lift it, or now do).
  */
 import type { MethodologyDiffFile } from '@gai/schema'
@@ -39,7 +39,7 @@ const T = {
     confidence: 'confidence',
     recomputed: 'value recomputed',
     tier: 'tier of an event changed',
-    events: 'events added or replaced',
+    events: 'events added, removed or replaced',
     categoryCap: (k: string, a: string, b: string) => `category ${k} ${a} → ${b} (category cap)`,
     applied: (p: string, list: string, n: number) =>
       n === 0
@@ -56,7 +56,7 @@ const T = {
     confidence: 'niveau de confiance',
     recomputed: 'valeur recalculée',
     tier: "palier d'un événement modifié",
-    events: 'événements ajoutés ou remplacés',
+    events: 'événements ajoutés, retirés ou remplacés',
     categoryCap: (k: string, a: string, b: string) =>
       `catégorie ${k} ${a} → ${b} (plafond de la catégorie)`,
     applied: (p: string, list: string) =>
@@ -100,7 +100,7 @@ function reasonOf(id: string, before: CountryScore, after: CountryScore, lang: L
   if ([...ea.values()].some((e) => same(e, eb.get(e.id)) && e.weight !== eb.get(e.id)?.weight))
     return t.confidence
   // 1.0.0-rc.3: an event kept with other points (B1 not entitled under Article 19), or events
-  // that appear or are replaced (A4 order years scored in one event per release).
+  // that appear, disappear or are replaced (A4 order years scored in one event per release).
   if ([...ea.values()].some((e) => eb.has(e.id) && eb.get(e.id)?.points !== e.points)) return t.tier
   if (eb.size !== ea.size || [...ea.keys()].some((k) => !eb.has(k))) return t.events
   return t.recomputed
