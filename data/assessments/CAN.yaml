@@ -175,7 +175,7 @@ indicators:
       Minister's statement of 30 July 2025 announced the intention; no disagreement.
   B9:
     status: has-events
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       Twelve events: the Prime Minister's statements of 12 December 2023, 14 February 2024, 26 July
       2024 (with Australia and New Zealand, +2 each), 19 May 2025 (with the United Kingdom and
@@ -202,12 +202,26 @@ indicators:
       as a subject of cooperation). The joint statement of Australia, Canada, France and the United
       Kingdom of 13 October on the postponed Palestinian elections names no Gaza. B9 is at its cap; no
       score effect.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-2; window 9 to 28 November): Global Affairs
+      Canada's news feed (api.io.canada.ca, department feed, 60 newest items, and the Palestine topic
+      feed) and the Wayback CDX of canada.ca/en/global-affairs/news/2026/11/ read; every item of the
+      window naming the Middle East read in full. Filed: evt_2026_11_11_CAN_B9 (+2, the G7 foreign
+      ministers' Paris declaration, GOV.UK copy; flagged, docs/10 B-2182), evt_2026_11_15_CAN_B9 (+2, the
+      four foreign ministers on the crossings), evt_2026_11_27_CAN_B9 (+2, the Qatar-Canada Strategic
+      Dialogue joint statement; flagged, docs/10 B-2186) and, from the P-23 list, evt_2025_07_30_CAN_B9
+      (+2, the New York Call of fifteen foreign ministers, Global Affairs Canada's text). Read and not
+      filed: the Austria-Canada joint statement of 6 November and the Lebanon and Austria visit notice
+      (before the window, no Gaza passage); the Minister's meeting with China's Foreign Minister (17
+      November) and the Qatar agreements release (24 November): no Gaza passage. The Prime Minister's site
+      lists by script and has no November capture; a web search (Prime Minister Carney statement Gaza
+      November 2026) found no statement in the window. B9 is above its cap; no score effect.
     queries:
       - "CDX: pm.gc.ca/en/news/statements|speeches filtered israel, gaza, palestin, ceasefire, joint-statement"
       - "CDX: canada.ca/en/global-affairs/news/ filtered gaza, israel, palestin, statement"
       - api.io.canada.ca news feed, department Global Affairs Canada, publishedDate>=2026-09-27 (75 items)
       - 'web search: Prime Minister Carney statement Gaza October 2026 (pm.gc.ca, canada.ca)'
       - 'web search: Minister Anand statement Gaza ceasefire humanitarian access (canada.ca)'
+      - "api.io.canada.ca/io-server/gc/news/en/v2?dept=departmentofforeignaffairstradeanddevelopment (60 newest, 2 October to 27 November 2026); api.io.canada.ca/io-server/gc/news/palestine/v1/en; Wayback CDX canada.ca/en/global-affairs/news/2026/11/*"
   B10:
     status: none-found
     checked_at: 2026-09-28
