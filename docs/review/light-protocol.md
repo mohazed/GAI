@@ -4705,3 +4705,16 @@ Sources added: none (the one event cites `src_20250730_gac_joint-statement-new-y
 Not done (B-2199): the official sites listed there for KGZ, MNG, PRK, MDA, ROU, SVK, UKR, BRB, CRI and the Beehive for NZL; the group-specific sources for A, C, D and E; the Cuban embargo-debate speech of 28 October 2026 (press.un.org behind a client challenge). For the author (B-2200): the New York Call filed for NZL under the joint-statement default (CHECKUP §2b, B-444); the Bulgarian Minister's words of 30 October 2026 read as indirect speech.
 
 `pnpm validate`: 0 errors.
+
+### T-H-ML-2: catch-up GTM to MHL, light groups 9 to 16 (2026-11-28; docs/10 B-2201 to B-2203)
+
+Window of 9 to 28 November 2026 (after each country's last session table: T-F-L05 to T-F-L08, their redo passes and the P-23 pass, 9 to 11 November), read on the governments' own sites where they answer scripts or the browser pane, and through the Wayback CDX where they do not; web searches were used to find pages, never as evidence. The UNISPAL uploads of November 2026 (messages for the International Day of Solidarity with the Palestinian People) were listed and the ones of this card's states read. Open leads were dated.
+
+| Country | Routes read | New events | Seen and not filed | Preview score before and after | Assessments and leads touched |
+|---|---|---|---|---|---|
+| GTM | bernardoarevalo.presidencia.gob.gt WordPress API (14 posts of 11 to 26 November); minex.gob.gt (403); one Spanish web search | none | none | +1.1 Acting, unchanged | B9 note and queries; leads 1, 3, 4 dated |
+| GUY | dpi.gov.gy WordPress API (177 posts of 8 to 27 November); op.gov.gy (4 posts); minfor.gov.gy/news (to 19 November); UNISPAL uploads; one English web search | none | the Ministry's Solidarity Day statement of November 2026 (no named speaker, R3; no Gaza, R7) | +12.2 Acting, unchanged | B9 note and queries; lead 1 dated |
+| HND | sreci.gob.hn WordPress 'noticia' items (7 of 16 to 25 November); presidencia.gob.hn (no answer); A/80/PV.9 to PV.15 symbol links (not issued); one Spanish web search | none | none | −2.6 Passive, unchanged | B9 note and queries; leads 1 (record not issued), 2 dated |
+| HTI | mae.gouv.ht (script challenge, not bypassed) through its Wayback copy of 17 November (script bundle with the news items, latest September 2026); primature.gouv.ht home page; one French web search | none | none | −11.6 Passive, unchanged | B9 note and queries; no open lead |
+| JAM | opm.gov.jm WordPress API (3 posts of 15 to 23 November); mfaft.gov.jm home page (items to 13 November); jis.gov.jm (interface closed); one English web search | none | none | +4.3 Acting, unchanged | B9 note and queries; leads 1 (record not issued), 2 dated |
+| KNA | sknis.gov.kn WordPress API (51 posts of 9 to 27 November); mofa.gov.kn (1 post); one English web search | none | none | +8.0 Acting, unchanged | B9 note and queries; no open lead |
