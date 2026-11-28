@@ -4687,3 +4687,4 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L0
 | BLR | mfa.gov.by news list (20 to 27 November); one English web search | none | none | +16.6 Acting, unchanged | B9 note and queries; lead 1 dated |
 | MDA | mfa.gov.md press releases (HTTP 404); one English web search | none | window not read on the Ministry's own site (B-2199) | −11.5 Passive, unchanged | B9 note and queries; leads 1 to 3 dated |
 | ROU | mae.ro lists (HTTP 503); one Romanian web search | none | window not read on the Ministry's own site (B-2199) | −5.4 Passive, unchanged | B9 note and queries; leads 1 to 6 dated |
+| SVK | mzv.sk (HTTP 403 to scripts; browser pane search page renders no results); vlada.gov.sk home page; one English web search | none | window not fully read on the Ministry's own site (B-2199) | +2.7 Acting, unchanged | B9 note and queries; leads 1 to 6 dated |
