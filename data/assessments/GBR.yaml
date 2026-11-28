@@ -49,7 +49,14 @@ indicators:
       - gov.uk surveillance flights Gaza hostages Ministry of Defence
       - Prime Minister deploys UK military to Eastern Mediterranean to support Israel October 2023
       - Declassified UK RAF Akrotiri flights Israel Gaza surveillance Shadow R1
-  A6: {status: has-events, checked_at: 2026-09-28}
+  A6:
+    status: has-events
+    checked_at: 2026-11-28
+    note: >-
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the Department for Business and Trade updated
+      its export control licensing management information for Israel on 26 November 2026 (GOV.UK; read by
+      title and summary, not archived); the suspensions of evt_2024_09_02_GBR_A6 and evt_2026_09_08_GBR_A6
+      stay in force as far as the window's documents show. No new event.
   A7:
     status: none-found
     checked_at: 2026-09-28
@@ -146,7 +153,7 @@ indicators:
       src_20250921_gov-uk_recognition-palestine). The row exists; nothing to add.
   B9:
     status: has-events
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       Filed: the Foreign Secretary's statements of 2 September 2024, 20 May 2025, 23 September 2025
       (Security Council), 18 November 2025 and 8 September 2026, and the Prime Minister's statement of
@@ -166,6 +173,16 @@ indicators:
       repeated to 9 November; nothing new for Gaza (the items of 5 November are statements to the OSCE
       on Ukraine) and the Occupied Palestinian Territory (Trade with Israeli Settlements) Bill of
       2026 has had no stage since 25 June 2026 (Parliament's Bills API).
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1; window 9 to 28 November, GOV.UK search API with
+      the queries Gaza, Palestine, Israel, West Bank, Occupied Palestinian, from 2026-11-09): filed
+      evt_2026_11_11_GBR_B9 (+2, the G7 foreign ministers' Paris declaration; flagged, docs/10 B-2182) and
+      evt_2026_11_15_GBR_B9 (+2, the joint statement of the foreign ministers of Australia, Canada, Italy
+      and the United Kingdom). Not filed: the Prime Minister's Lord Mayor's Banquet speech of 16 November
+      (working with a new Israeli government 'if they' allow aid into Gaza: a condition, not a formal
+      call); the Call to Action joint statement on health and humanitarian access of 12 November (read at
+      the UN by an official, with no named signatory: not B9); the Minister of State's statement to the
+      Commons of 12 November and the readouts of the Prime Minister's call of 9 November and meeting of 26
+      November (not B9 speakers or indirect speech). GBR B9 is above its cap.
     queries:
       - gov.uk Prime Minister statement Gaza (search API, from 2023-10-07)
       - gov.uk Foreign Secretary Yvette Cooper Gaza 2025 2026
@@ -173,6 +190,8 @@ indicators:
       - gov.uk PM speech at UNGA 22 September 2026
       - "monthly run 2026-11 (T-P23-3), 27 September to 4 November 2026: GOV.UK search API (q=gaza, palestinian, settlers, occupied palestinian; FCDO) and its content API; filed evt_2026_10_19_GBR_B9 (West Bank, tagged unscored); read, not filed: Foreign Secretary's statement of 8 October 2026 on the Jerusalem mission (no call or named violation of the kind), joint statement of 13 October 2026 on the postponement of Palestinian elections and joint press release of the R4 meeting in Istanbul of 24 October 2026 (neither mentions Gaza), UK statements at the Security Council of 28 September and 15 October 2026 (Permanent Representative, not a B9 speaker)"
       - "finish run 2026-11-09: GOV.UK search API (gaza, palestinian, israel, west bank, settlers, unrwa, hamas, ceasefire, middle east, occupied palestinian territories, arms export israel, international criminal court, netanyahu, hostages, medical evacuation, rafah, board of peace, lebanon) from 2026-09-27 to 2026-11-09; Parliament Bills API (settlement, israel, occupied)"
+      - "GOV.UK search API: Gaza, Palestine, Israel, West Bank, Occupied Palestinian (public_timestamp from 2026-11-09)"
+      - "UK Parliament written questions API: Gaza, answered from 2026-11-10"
 
   B10:
     status: none-found
@@ -187,7 +206,16 @@ indicators:
     queries:
       - gov.uk PM statement to the House of Commons Israel and Gaza 16 October 2023
       - gov.uk PM statement at press conference with Prime Minister Netanyahu 19 October 2023
-  B11: {status: has-events, checked_at: 2026-09-28}
+  B11:
+    status: has-events
+    checked_at: 2026-11-28
+    note: >-
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the Foreign Secretary's sanctions of 17
+      November 2026 on eight construction and property development firms involved in settlement expansion
+      and on Tzav 9 (an Israeli group blocking aid convoys to Gaza), under the expanded Global Human
+      Rights and International Humanitarian Law regime (archived, src_20261117_gov-uk_sanctions-
+      settlement-firms-tzav-9), continue the settlers standing state of evt_2024_02_12_GBR_B11 and are not
+      filed separately (docs/10 B-2181); the ministers tier (evt_2025_06_10_GBR_B11) is unchanged.
   B12:
     status: none-found
     checked_at: 2026-09-28
@@ -212,7 +240,7 @@ indicators:
       5,186,780,482 in 2022: r = 0.72 < 0.9 → 0 (the event exists at zero points).
   C4:
     status: none-found
-    checked_at: 2026-09-28
+    checked_at: 2026-11-28
     note: >-
       No ban or labelling rule for settlement goods in force. The Foreign Secretary announced on 8
       September 2026 an import ban on goods from settlements, through a sanctions regime to be
@@ -220,6 +248,9 @@ indicators:
       src_20260908_gov-uk_new-powers-settlements); the Prime Minister described it at the General
       Assembly on 22 September 2026 as done ("banning trade in goods with illegal settlements"). File
       the C4 event (scope west-bank unless the instrument cites Gaza) when the instrument is made.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the release of 17 November 2026 says the FCDO
+      is still developing the legislation banning settlement goods (announced 8 September 2026); no
+      instrument in force, so C4 stays none-found.
     queries:
       - gov.uk settlement goods import ban 2026
       - UK settlement goods labelling ban regulation
@@ -257,7 +288,14 @@ indicators:
       B-876).
     queries:
     - archive/text/src_20251231_unrwa_donor-ranking-2025.txt (read)
-  D4: {status: has-events, checked_at: 2026-09-28}
+  D4:
+    status: has-events
+    checked_at: 2026-11-28
+    note: >-
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-1): the second group of children from Gaza admitted
+      for NHS treatment (GOV.UK, 23 November 2026) continues the programme of evt_2025_09_17_GBR_D4 (one
+      event per programme); the GBP 14 million allocation to UK-Med's two field hospitals (25 November
+      2026) continues evt_2024_03_13_GBR_D4. No new event.
   D5:
     status: none-found
     checked_at: 2026-09-28
