@@ -1270,3 +1270,28 @@ Score and band changes (preview, rc.1, `pnpm build:data --preview --date 2026-11
 | ZAF | +8.0 | +11.0 | +53.0 | +56.0 | Confronting | Confronting |
 
 The change comes from the newest 12-month window of FTS funding (D1) and from the revisions listed in B-2177 (1); no event, assessment or other table changed in this task. For the author: Switzerland, Liechtenstein, New Zealand, Poland, Qatar and Sweden would be Confronting on today's data (they were Acting on the data of 28 September); the scores of all countries shift again with each monthly FTS refresh.
+
+### T-H-UNDOCS (2026-11-28)
+
+| Item | Result | B-id |
+|---|---|---|
+| A/80/PV.1 to PV.20 in the Official Document System | PV.1 to PV.8 and PV.16 to PV.18 served; PV.7 and PV.8 new since 2026-11-10 (created 24 and 25 November 2026); PV.9 to PV.15 not issued (also in five other languages for PV.9, 12, 14) | B-2179 (1) |
+| A/81/PV.1 to PV.20 | not issued (English; PV.2 and PV.6 also in five other languages) | B-2179 (1) |
+| transcripts.un.org, 81st session | meetings 5 to 15 answer 404; nothing filed from automatic transcripts (default, CHECKUP §2a) | B-2179 (2), B-2180 (3) |
+| gadebate.un.org, 81st session | 205 Wayback captures; no 200 capture for any file a lead waits for; Save Page Now still 405 | B-2179 (3) |
+| Archived | `src_20250925_undocs_a-80-pv-8` (684,475 bytes), `src_20250923_undocs_a-80-pv-4` (734,066 bytes); both replays equal | B-2179 (4) |
+| New events | `evt_2025_09_25_GHA_B9` (+5, flagged), `evt_2025_09_23_SVN_B9` (+5, flagged): the delivered words name Gaza, the delegations' files do not | B-2179 (4) |
+| Date corrected | `evt_2025_09_24_LTU_B9` → `evt_2025_09_23_LTU_B9` (the meeting of 23 September 2025 in A/80/PV.4) | B-2179 (5) |
+| Delivered words against the records (PV.4 to PV.8) | 32 countries' readings hold; MKD's interpreted address names Gaza without a call (no event) | B-2179 (6) |
+| Leads | 26 waiting leads carry a dated note; none closed; GHA_1's related reading settled | B-2179 (7) |
+| `pnpm validate` | 0 errors, 1,220 warnings | |
+
+Score changes (preview, rc.1, `pnpm score --country XXX --preview`, 2026-11-28):
+
+| Country | Score before | Score after | Band before | Band after | Cause |
+|---|---|---|---|---|---|
+| GHA | +0.6 | +4.9 | Acting | Acting | `evt_2025_09_25_GHA_B9` (+5 × decay 0.87); passivity still applied |
+| SVN | +38.6 | +38.6 | Acting | Acting | B9 above its cap of +10 |
+| LTU | +31.7 | +31.7 | Acting | Acting | date one day earlier; no visible change |
+
+For the author (B-2180): the GHA tier; SVN's President as a B9 speaker (head of state, R3); the default that a verbatim record of a speech delivered in English governs over the delegation's file.
