@@ -4699,3 +4699,9 @@ Window of 9 to 28 November 2026 (after each country's last session table: T-F-L0
 | DOM | mirex.gob.do WordPress API (14 posts of 8 to 27 November, bodies searched); one Spanish web search | none | the Government's unsigned message of 19 November 2025 for the Day of Solidarity (UNISPAL PDF; no Gaza passage, no call) | +6.6 Acting, unchanged | B9 note and queries; no open lead |
 | ECU | cancilleria.gob.ec (9 posts) and presidencia.gob.ec (2 posts) WordPress APIs, bodies searched; one Spanish web search | none | none | −13.9 Passive, unchanged | B9 note and queries; leads 1 to 3 dated |
 | GRD | gov.gd home page (/news 404); NOW Grenada WordPress API (100 posts of 12 to 27 November, press, to find statements); one English web search | none | none | −12.1 Passive, unchanged | B9 note and queries; no open lead |
+
+Sources added: none (the one event cites `src_20250730_gac_joint-statement-new-york-call`, archived and replay-checked earlier). Leads: 59 open leads in 21 files dated (KAZ_1 and NZL_1 with a search of their own), none promoted or closed. Official-language searches (Russian, Bulgarian, Romanian, Slovak, Ukrainian, Mongolian, Korean, Spanish) are listed in each B9 entry's queries.
+
+Not done (B-2199): the official sites listed there for KGZ, MNG, PRK, MDA, ROU, SVK, UKR, BRB, CRI and the Beehive for NZL; the group-specific sources for A, C, D and E; the Cuban embargo-debate speech of 28 October 2026 (press.un.org behind a client challenge). For the author (B-2200): the New York Call filed for NZL under the joint-statement default (CHECKUP §2b, B-444); the Bulgarian Minister's words of 30 October 2026 read as indirect speech.
+
+`pnpm validate`: 0 errors.
