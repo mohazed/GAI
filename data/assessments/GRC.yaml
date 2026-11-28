@@ -186,7 +186,7 @@ indicators:
       - mfa.gr search (αναγνώριση Παλαιστινιακού); primeminister.gr full-text search (recognition)
   B9:
     status: has-events
-    checked_at: 2026-11-09
+    checked_at: 2026-11-28
     note: >-
       Six gaza events and one west-bank event (unscored). Prime Minister: 21 October 2023 (Cairo Peace Summit,
       +5), 26 September 2024 (General Assembly, +2), 26 September 2025 (General Assembly, +5). Minister
@@ -210,6 +210,19 @@ indicators:
       Prime Minister's statement at the Security Council of 29 October 2026 (maritime security; no Gaza
       passage). primeminister.gr answered the browser with an Akamai block after the first query and was
       not searched further. The General Debate statements of 2024 and 2025 were already filed.
+      Launch-plan catch-up of 28 November 2026 (T-H-MF-3; window 9 to 28 November): mfa.gr's WordPress API
+      through the built-in browser pane (scripts get an Akamai block; posts after 2026-11-08, 53 posts,
+      full text searched for Γάζ*, Παλαιστ*, Ισραήλ/Ισραηλ*, Δυτική Όχθη, Χαμάς, Μέση Ανατολή, UNRWA,
+      εκεχειρ*): no post names Gaza; the Minister's statement on arrival at the Foreign Affairs Council of
+      16 November names the wars 'in the wider Middle East' and a global maritime truce, his Slemani
+      Strategic Forum interview of 13 November and the Yemen meeting of 25 November name the Middle East
+      only. A Greek web search (Μητσοτάκης Γάζα δήλωση Νοέμβριος 2026) found no statement of the Prime
+      Minister on Gaza in the window. Seen, not filed: the High Representative's statement on behalf of
+      the EU of 14 November 2026 on humanitarian developments in Gaza (not a national B9 speaker; not
+      filed for any EU member in this run). No event of the window. Filed from the P-23 list (Task V,
+      B-444): evt_2024_11_27_GRC_B9, evt_2025_01_09_GRC_B9 and evt_2026_05_06_GRC_B9 (+2 each, the Prime
+      Minister's trilateral declarations with Cyprus and Jordan or Egypt, the Cypriot texts already
+      archived). B9 is above its cap; no score effect.
     queries:
     - mfa.gr search (Γάζα, κατάπαυση, εκεχειρία, λιμός, εκτοπισμός, Κοινή δήλωση)
     - primeminister.gr full-text search (Gaza, ceasefire, Γάζα, κατάπαυση)
@@ -219,6 +232,7 @@ indicators:
       East, West Bank, ceasefire
     - >-
       gadebate.un.org file gr_en.pdf of the 81st session (Wayback capture) and speaker page gadebate.un.org/en/81/greece
+    - "T-H-MF-3 2026-11-28: mfa.gr /wp-json/wp/v2/posts?after=2026-11-08 through the browser pane (53 posts, full text filtered); WebSearch: Μητσοτάκης Γάζα δήλωση Νοέμβριος 2026"
   B10:
     status: has-events
     checked_at: 2026-09-29
