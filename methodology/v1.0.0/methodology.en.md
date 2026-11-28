@@ -150,7 +150,7 @@ The index uses 34 indicators in five categories. The 31 indicators of categories
 - **B5** — An official statement by the head of government, foreign or justice minister on executing the 21 November 2024 warrants; an overflight authorisation without a stated position on the warrants is a lead. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B6** — An official statement by the head of government, foreign or justice minister on the warrants, the official record of a visit by a person under warrant hosted without arrest, or the official record of the withdrawal from the Rome Statute; an overflight authorisation without a stated position on the warrants is a lead. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
 - **B7** — The official sanctions list. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
-- **B8** — Generated from `recognises_palestine.since` in `data/countries.yaml`; never hand-authored. The recognition date recorded there comes from the foreign ministry's announcement.
+- **B8** — Generated from `data/structured/recognitions.csv`; never hand-authored. Each row gives the date the recognition took effect and cites the archived official statement of the recognising government (or the UN record of it).
 - **B9** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government or the foreign minister; statements by spokespersons do not score.
 - **B10** — The exact quote, the speaker, the date and the official transcript or official video with timestamp; paraphrases in press are not enough. The event carries `actor.name` and cites a source of kind official or official-video; the quote appears verbatim in `archive/text/{source}.txt` after normalisation (whitespace, Unicode NFC, invisible characters), including for a video, whose transcript is stored there. Same speaker, same day: one event. The speaker is the head of government; statements by spokespersons do not score.
 - **B11** — The official sanctions list. An EU-level listing counts only for a member state that voted for it. Evidence is a primary document (official record, government release, court filing, dataset row). Without one, an event can score only at confidence corroborated or reported, at reduced weight.
@@ -268,7 +268,20 @@ B1 counts plenary resolutions and decisions of the UN General Assembly adopted b
 
 <!-- BEGIN generated:votes -->
 
-No qualifying votes are listed yet; the list is filled once each vote is verified.
+| Symbol | Date | Subject | Yes–no–abstain | Rationale |
+|---|---|---|---|---|
+| A/RES/ES-10/21 | 27 October 2023 | Gaza | 120–14–45 | Calls for an immediate, durable and sustained humanitarian truce in Gaza and for humanitarian access (subject: Gaza). |
+| A/RES/ES-10/22 | 12 December 2023 | Gaza | 153–10–23 | Demands an immediate humanitarian ceasefire in Gaza (subject: Gaza). |
+| A/RES/ES-10/23 | 10 May 2024 | Status of Palestine | 143–9–25 | Determines that Palestine is qualified for membership of the United Nations and extends its rights in the Assembly (subject: status and rights of Palestine). |
+| A/RES/ES-10/24 | 18 September 2024 | Status of Palestine | 124–14–43 | Demands the end of Israel's presence in the Occupied Palestinian Territory, Gaza included, following the ICJ advisory opinion (subject: status and rights of Palestine). |
+| A/RES/ES-10/25 | 11 December 2024 | UNRWA | 159–9–11 | Supports the mandate of UNRWA and its operations, Gaza included (subject: UNRWA). |
+| A/RES/ES-10/26 | 11 December 2024 | Gaza | 158–9–13 | Demands an immediate, unconditional and permanent ceasefire in Gaza (subject: Gaza). |
+| A/RES/79/232 | 19 December 2024 | UNRWA | 137–12–22 | Asks the ICJ for an opinion on Israel's obligations towards UNRWA, the UN and humanitarian aid in the Occupied Palestinian Territory; a new text arising from the war (subject: UNRWA). |
+| A/RES/ES-10/27 | 12 June 2025 | Gaza | 149–12–19 | Demands an immediate, unconditional and permanent ceasefire and the end of the blockade of Gaza (subject: Gaza). |
+| A/DEC/80/506 | 12 September 2025 | Status of Palestine | 142–10–12 | Endorses the New York Declaration on the peaceful settlement of the question of Palestine and the two-State solution; a decision adopted by recorded vote (subject: status and rights of Palestine). |
+| A/RES/80/1 | 19 September 2025 | Status of Palestine | 145–5–6 | Allows the State of Palestine to take part in the session by pre-recorded statement after visas were refused (subject: status and rights of Palestine). |
+| A/RES/80/78 | 5 December 2025 | UNRWA | 151–10–14 | Renews UNRWA's mandate to 30 June 2029, the first renewal since the war (subject: UNRWA). |
+| A/RES/80/116 | 12 December 2025 | UNRWA | 139–12–19 | Welcomes the ICJ advisory opinion of 22 October 2025 on Israel's obligations towards UNRWA and humanitarian aid (subject: UNRWA). |
 
 <!-- END generated:votes -->
 

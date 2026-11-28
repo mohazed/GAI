@@ -759,6 +759,111 @@ function samePoints(ctx: ValidationContext): Issue[] {
   return out
 }
 
+/** Standing indicators whose overlapping records add up today and should not (B-22, B-51). */
+export const STACKING_STANDING: readonly string[] = ['A3', 'B7', 'D2']
+
+/** Events of one country grouped by indicator, withdrawn records left out, by date then id. */
+function byCountryIndicator(ctx: ValidationContext, indicators: readonly string[]) {
+  const groups = new Map<string, LocatedEvent[]>()
+  for (const e of ctx.dataset.events) {
+    if (isWithdrawn(e.value) || !indicators.includes(e.value.indicator)) continue
+    const key = `${e.value.country}\u0000${e.value.indicator}`
+    const list = groups.get(key) ?? []
+    list.push(e)
+    groups.set(key, list)
+  }
+  for (const list of groups.values()) list.sort(compareByDateThenId)
+  return groups
+}
+
+/** [date, end) of a standing record: end null or absent is open. */
+const holds = (e: Event, day: string): boolean =>
+  e.date <= day && (e.end === null || e.end === undefined || day < e.end)
+
+/**
+ * event.standing-overlap (B-22, B-51; warning): two standing records of one country under A3, B7
+ * or D2 hold on the same day. Methodology 1.0.0 sums them (each designation of B7 adds its
+ * points); the "most severe" reading is scheduled for the next version (P-15, P-24), so the
+ * overlap is flagged for review. The later record is reported, naming the earlier.
+ */
+function standingOverlap(ctx: ValidationContext): Issue[] {
+  const out: Issue[] = []
+  for (const list of byCountryIndicator(ctx, STACKING_STANDING).values()) {
+    for (let j = 1; j < list.length; j++) {
+      const later = list[j] as LocatedEvent
+      if (later.value.type !== 'standing') continue
+      const earlier = list
+        .slice(0, j)
+        .find((e) => e.value.type === 'standing' && holds(e.value, later.value.date))
+      if (earlier === undefined) continue
+      out.push(
+        issue(
+          'event.standing-overlap',
+          at(later),
+          `${later.value.indicator} standing record overlaps ${earlier.value.id}, which still holds on ${later.value.date}; methodology 1.0.0 adds both (B-22), so check that two records are meant, or end the earlier one.`,
+        ),
+      )
+    }
+  }
+  return out
+}
+
+/**
+ * event.b5-b6-same-day (B-56; warning): a B5 and a B6 of one country on the same day. B5 and B6
+ * replace each other in time (docs/02 §2), so on one day the order between them is undecided.
+ */
+function b5b6SameDay(ctx: ValidationContext): Issue[] {
+  const out: Issue[] = []
+  const b5 = new Map<string, LocatedEvent>()
+  for (const e of ctx.dataset.events) {
+    if (!isWithdrawn(e.value) && e.value.indicator === 'B5') {
+      const key = `${e.value.country}\u0000${e.value.date}`
+      if (!b5.has(key)) b5.set(key, e)
+    }
+  }
+  for (const e of ctx.dataset.events) {
+    if (isWithdrawn(e.value) || e.value.indicator !== 'B6') continue
+    const other = b5.get(`${e.value.country}\u0000${e.value.date}`)
+    if (other === undefined) continue
+    out.push(
+      issue(
+        'event.b5-b6-same-day',
+        at(e),
+        `B6 on ${e.value.date}, the day of the B5 ${other.value.id}; B5 and B6 replace each other in time, so check which position was stated last that day.`,
+      ),
+    )
+  }
+  return out
+}
+
+/**
+ * event.d2-open-after-d3 (B-56; warning): a D2 (UNRWA funding suspended) of one country still
+ * holds on the day a D3 (funding restored or increased) of that country starts. The resumption
+ * ends the suspension (docs/02 §2 D2), so the D2 record's end is expected on or before it.
+ */
+function d2OpenAfterD3(ctx: ValidationContext): Issue[] {
+  const out: Issue[] = []
+  const d2 = [...byCountryIndicator(ctx, ['D2']).values()].flat()
+  for (const e of ctx.dataset.events) {
+    if (isWithdrawn(e.value) || e.value.indicator !== 'D3') continue
+    const open = d2.find(
+      (s) =>
+        s.value.country === e.value.country &&
+        s.value.date <= e.value.date &&
+        holds(s.value, e.value.date),
+    )
+    if (open === undefined) continue
+    out.push(
+      issue(
+        'event.d2-open-after-d3',
+        at(open),
+        `D2 still holds on ${e.value.date}, when D3 ${e.value.id} starts; expected the suspension to end (end ≤ ${e.value.date}) when funding resumes.`,
+      ),
+    )
+  }
+  return out
+}
+
 export const rules: Rule[] = [
   countryKnown,
   indicatorKnown,
@@ -778,4 +883,7 @@ export const rules: Rule[] = [
   secondRead,
   references,
   samePoints,
+  standingOverlap,
+  b5b6SameDay,
+  d2OpenAfterD3,
 ]

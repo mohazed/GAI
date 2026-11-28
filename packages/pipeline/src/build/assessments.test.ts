@@ -189,7 +189,7 @@ const HAS = d('has-events', 'generated-event')
 
 describe('GENERATED_INDICATORS', () => {
   it('lists the indicators the methodology generates from data/structured (D-08)', () => {
-    expect([...GENERATED_INDICATORS]).toEqual(['A1', 'A2', 'A4', 'B1', 'B2', 'C3', 'D1'])
+    expect([...GENERATED_INDICATORS]).toEqual(['A1', 'A2', 'A4', 'B1', 'B2', 'B8', 'C3', 'D1'])
     const fromTables = M.indicators
       .filter(
         (i) => i.authoring === 'generated' && i.generated_from?.startsWith('data/structured/'),

@@ -24,10 +24,18 @@ import { unreadableFiles } from './shared.js'
 const CORRECTIONS_FILE = 'data/corrections.yaml'
 
 /**
- * Fields whose change on a published event requires a corrections entry (docs/03 §11). Evidence
- * is compared on EVIDENCE_KEYS only.
+ * Fields whose change on a published event requires a corrections entry (docs/03 §11), and a
+ * `revision` bump. Evidence is compared on EVIDENCE_KEYS only.
  */
 export const EDIT_FIELDS = ['points', 'date', 'confidence', 'evidence'] as const
+
+/**
+ * Fields whose change on a published event requires a corrections entry recording the change,
+ * without a `revision` bump (B-27): they change a score as surely as the EDIT_FIELDS do (an end
+ * date closes a standing state, a scope tag decides whether the event scores, a status decides
+ * whether it counts), but a standing state that ends is an update, not a correction of the record.
+ */
+export const LOGGED_FIELDS = ['end', 'scope', 'status'] as const
 
 /**
  * The evidence fields an edit is judged on: the source, the verbatim quote, its language and the
@@ -48,7 +56,15 @@ export const PUBLIC_STATUSES: readonly string[] = [
 ]
 
 /** Keys of a correction's `before` / `after` checked against the diff. */
-export const DIFF_KEYS = ['date', 'points', 'confidence', 'end', 'evidence'] as const
+export const DIFF_KEYS = [
+  'date',
+  'points',
+  'confidence',
+  'end',
+  'evidence',
+  'scope',
+  'status',
+] as const
 
 // ---------------------------------------------------------------------------------------------
 // Helpers
@@ -255,9 +271,10 @@ const statusRegression: Rule = (ctx) => {
 // correction.required-on-edit
 
 /**
- * correction.required-on-edit (docs/03 §11, docs/08 §5). For every event that was public on the
- * base ref (PUBLIC_STATUSES) whose points, date, confidence or evidence changed, or whose status
- * entered or left retracted (leaving it needs an entry of kind correction), evidence being
+ * correction.required-on-edit (docs/03 §11, docs/08 §5, B-27). For every event that was public on
+ * the base ref (PUBLIC_STATUSES) whose points, date, confidence, evidence, end, scope or status
+ * changed (entering retracted needs an entry of kind retraction, any other change one of kind
+ * correction; only points, date, confidence and evidence also bump the revision), evidence being
  * compared on its source, quote, quote_lang and locator (EVIDENCE_KEYS; adding or fixing a
  * translation, quote_en or quote_fr, is not an evidence change, in the diff or in the entries'
  * before/after):
@@ -290,6 +307,9 @@ const requiredOnEdit: Rule = (ctx) => {
     const was = fieldsOf(b)
     const now = e.value as unknown as Record<string, unknown>
     const changed = EDIT_FIELDS.filter((k) => !sameField(k, was[k], now[k]))
+    // end, scope and status changes are logged too (B-27); an absent end reads as null.
+    const logged = LOGGED_FIELDS.filter((k) => !sameField(k, was[k] ?? null, now[k] ?? null))
+    const recorded = [...changed, ...logged]
     // Entering or leaving `retracted` is logged; staying retracted is not a new edit.
     const retracted = e.value.status === 'retracted' && b.raw.status !== 'retracted'
     const unretracted = b.raw.status === 'retracted' && e.value.status !== 'retracted'
@@ -297,11 +317,17 @@ const requiredOnEdit: Rule = (ctx) => {
       (c) => !base.corrections.has(c.value.id),
     )
 
-    if (changed.length > 0 || retracted || unretracted) {
+    if (recorded.length > 0) {
       const what = [
         ...(changed.length > 0 ? [`${changed.join(', ')} changed`] : []),
+        ...(logged.some((k) => k !== 'status')
+          ? [`${logged.filter((k) => k !== 'status').join(', ')} changed`]
+          : []),
         ...(retracted ? ['status changed to retracted'] : []),
         ...(unretracted ? [`status changed from retracted to ${e.value.status}`] : []),
+        ...(logged.includes('status') && !retracted && !unretracted
+          ? [`status changed from ${String(b.raw.status)} to ${e.value.status}`]
+          : []),
       ].join(' and ')
       const kind = retracted ? 'retraction' : 'correction'
       if (entries.length === 0) {
@@ -323,7 +349,7 @@ const requiredOnEdit: Rule = (ctx) => {
         )
       }
       if (entries.length > 0) {
-        for (const key of changed) {
+        for (const key of recorded) {
           const sides = [
             ...(entries.some((c) => hasOwn(c.value.before, key)) ? [] : [`before.${key}`]),
             ...(entries.some((c) => hasOwn(c.value.after, key)) ? [] : [`after.${key}`]),

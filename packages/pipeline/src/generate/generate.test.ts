@@ -21,12 +21,14 @@ import { describe, expect, it } from 'vitest'
 import { parse } from 'yaml'
 import {
   actorOf,
+  confirmedMilitaryOf,
   generateA1,
   generateA2,
   generateA4,
   generateAll,
   generateB1,
   generateB2,
+  generateB8,
   generateC3,
   generateContext,
   generateD1,
@@ -605,6 +607,58 @@ describe('D1 FTS funding', () => {
 
 // ---------------------------------------------------------------------------------------------
 
+describe('B8 recognition of the State of Palestine', () => {
+  const r = rows('recognitions.csv', [
+    { iso3: 'IRL', date: '2024-05-28' },
+    { iso3: 'IND', date: '1988-11-18' },
+    { iso3: 'PSE', date: '1988-11-15' },
+  ])
+  const events = byId(generateB8(ctx(), r).events)
+
+  it('scores a recognition on or after 2023-10-07 +8 from its date', () => {
+    const e = events.get('evt_2024_05_28_IRL_B8_recognition')
+    expect(e).toMatchObject({ type: 'standing', date: '2024-05-28', end: null, points: 8 })
+    expect(e?.summary.en).toBe('Ireland recognised the State of Palestine.')
+    expect(e?.summary.fr).toBe("L'Irlande a reconnu l'État de Palestine.")
+    expect(e?.evidence).toEqual([
+      {
+        source: DS,
+        quote: `IRL,2024-05-28,${DS}`,
+        quote_lang: 'en',
+        locator: 'row 2 of data/structured/recognitions.csv',
+      },
+    ])
+  })
+
+  it('scores an earlier recognition +3 as a standing state from 2023-10-07', () => {
+    const e = events.get('evt_2023_10_07_IND_B8_recognition')
+    expect(e).toMatchObject({ date: '2023-10-07', end: null, points: 3 })
+    expect(e?.points_rationale).toContain('before 2023-10-07')
+  })
+
+  it('leaves out the excluded entities', () => {
+    expect([...events.keys()].some((id) => id.includes('_PSE_'))).toBe(false)
+    expect(events.size).toBe(2)
+  })
+})
+
+describe('confirmedMilitaryOf', () => {
+  it('groups the confirmed headings by country, for generateAll', () => {
+    const m = confirmedMilitaryOf(
+      rows('a2_confirmed_military.csv', [
+        { iso3: 'DEU', hs: '8526' },
+        { iso3: 'DEU', hs: '8802' },
+        { iso3: 'ITA', hs: '8802' },
+      ]),
+    )
+    expect([...m].map(([k, v]) => [k, [...v]])).toEqual([
+      ['DEU', ['8526', '8802']],
+      ['ITA', ['8802']],
+    ])
+    expect(confirmedMilitaryOf([])).toEqual(new Map())
+  })
+})
+
 describe('every generated event', () => {
   const structured = {
     'unga_votes.csv': rows('unga_votes.csv', [
@@ -667,12 +721,23 @@ describe('every generated event', () => {
     ]),
     'gni.csv': rows('gni.csv', [{ iso3: 'DEU', year: 2025, gni_atlas_usd: 5_026_012_352_665 }]),
     'population.csv': [],
+    'recognitions.csv': rows('recognitions.csv', [{ iso3: 'IND', date: '1988-11-18' }]),
+    'a2_confirmed_military.csv': [],
   }
   const { events } = generateAll(ctx(), structured)
 
-  it('covers the seven generated indicators, in a stable order', () => {
-    expect(events.map((e) => e.indicator)).toEqual(['B1', 'A1', 'A2', 'C3', 'D1', 'A4', 'B2'])
-    expect(events.map((e) => e.country)).toEqual(['DEU', 'DEU', 'DEU', 'DEU', 'DEU', 'IND', 'USA'])
+  it('covers the eight generated indicators, in a stable order', () => {
+    expect(events.map((e) => e.indicator)).toEqual(['B1', 'A1', 'A2', 'C3', 'D1', 'B8', 'A4', 'B2'])
+    expect(events.map((e) => e.country)).toEqual([
+      'DEU',
+      'DEU',
+      'DEU',
+      'DEU',
+      'DEU',
+      'IND',
+      'IND',
+      'USA',
+    ])
   })
 
   it('is a valid event record with a generated id and generated: true', () => {
@@ -805,6 +870,11 @@ describe('summaries for every registry name (P-18)', () => {
       scored.map((c) => ({ iso3: c.iso3, year: 2025, gni_atlas_usd: 1_000_000_000_000 })),
     ),
     'population.csv': [],
+    'recognitions.csv': rows(
+      'recognitions.csv',
+      scored.map((c) => ({ iso3: c.iso3, date: '1988-11-15' })),
+    ),
+    'a2_confirmed_military.csv': [],
   }
   const confirmed = new Map(scored.map((c) => [c.iso3, new Set(['8526', '8802'])]))
   const vote2 = { ...VOTE, symbol: 'A/RES/TEST/2', date: '2024-02-01', kind: 'decision' as const }
@@ -813,7 +883,7 @@ describe('summaries for every registry name (P-18)', () => {
 
   it('covers every template for every scored country', () => {
     expect(new Set(events.map((e) => e.country)).size).toBe(193)
-    expect(events).toHaveLength(193 * 8)
+    expect(events).toHaveLength(193 * 9)
   })
 
   it('opens with the name, stays within 200 characters and passes the tone lint', () => {

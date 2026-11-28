@@ -26,6 +26,7 @@ export {
   DIFF_KEYS,
   EDIT_FIELDS,
   EVIDENCE_KEYS,
+  LOGGED_FIELDS,
   PUBLIC_STATUSES,
 } from './validate/rules/history.js'
 export {

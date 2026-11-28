@@ -147,6 +147,44 @@ describe('archiveUrl', () => {
     expect(doc).toMatchObject({ ok: false, reason: expect.stringContaining('rejected (no data)') })
     expect(() => readFileSync(join(r, 'archive/index.csv'))).toThrow()
   })
+
+  it('records an existing capture without saving anew (--capture)', async () => {
+    const r = root()
+    const csv = 'a,b\n1,2\n'
+    const net = fakeNet([
+      { match: isSnapshot, body: csv, headers: { 'content-type': 'text/csv; charset=utf-8' } },
+    ])
+    const doc = await archiveUrl({
+      url: 'https://data.example.org/files/votes.csv',
+      id: 'src_20260928_example_votes',
+      kind: 'dataset',
+      capture: '20250618161123',
+      root: r,
+      creds: CREDS,
+      deps: net.deps,
+    })
+    expect(net.calls.map((c) => c.url)).toEqual([
+      'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+    ])
+    expect(doc.ok).toBe(true)
+    if (!doc.ok) return
+    expect(doc.source).toMatchObject({
+      wayback_url:
+        'https://web.archive.org/web/20250618161123id_/https://data.example.org/files/votes.csv',
+      sha256: sha256Hex(new TextEncoder().encode(csv)),
+      archive_status: 'archived',
+    })
+    expect(doc.source.notes).toContain('existing Wayback capture 20250618161123')
+    await expect(
+      archiveUrl({
+        url: PAGE,
+        capture: '2025',
+        root: r,
+        creds: CREDS,
+        deps: net.deps,
+      }),
+    ).rejects.toThrow(/14-digit/)
+  })
 })
 
 describe('source ids', () => {
@@ -244,6 +282,65 @@ describe('text extraction', () => {
     const list = `<html><body><ul>${Array.from({ length: 40 }, (_, i) => `<li>Item ${i}</li>`).join('')}</ul></body></html>`
     const x = extractHtml(list)
     expect(x.text.split('\n')).toHaveLength(40)
+  })
+
+  it('reads the prose of a client-rendered Next.js page whose body has no text', () => {
+    const data = {
+      props: {
+        props: { settings: { terms: 'Site terms that are not the page' } },
+        pageProps: {
+          newsDetails: {
+            uuid: 'N1995533',
+            title: 'Crown Prince Inaugurates Summit',
+            content:
+              'Riyadh, November 11, 2023, SPA -- First paragraph.\n    Second <b>paragraph</b> here.\n',
+          },
+          gcloudToken: 'abc123',
+        },
+      },
+    }
+    const page = `<html lang="en"><head><title>SPA</title></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">${JSON.stringify(data)}</script></body></html>`
+    const x = extractHtml(page)
+    expect(x.method).toBe('next-data')
+    expect(x.text.split('\n')).toEqual([
+      'Crown Prince Inaugurates Summit',
+      'Riyadh, November 11, 2023, SPA -- First paragraph.',
+      'Second paragraph here.',
+    ])
+    expect(extractHtml('<html><body><div id="__next"></div></body></html>').method).toBe(
+      'html-body',
+    )
+  })
+
+  it('reads the prose of a content-API JSON document and leaves dataset JSON raw', async () => {
+    const api = {
+      message: 'berhasil mengambil data konten publikasi',
+      data: {
+        title: 'Menlu RI di SMU PBB',
+        slug: 'menlu-ri-di-smu-pbb',
+        thumbnail_path: 'publikasi/1790_image.jpeg',
+        content_detail:
+          '<p style="text-align:justify;"><strong>New York</strong>– “First paragraph,” said the Minister.</p><p>Second <i>paragraph</i> here.</p>',
+        views: 0,
+      },
+    }
+    const bytes = new TextEncoder().encode(
+      JSON.stringify(api).replace(/–|“|”/g, (c) => `\\u${c.charCodeAt(0).toString(16)}`),
+    )
+    const x = await extractText(bytes, 'application/json', null)
+    expect(x.method).toBe('json-content')
+    expect(x.text.split('\n')).toEqual([
+      'berhasil mengambil data konten publikasi',
+      'Menlu RI di SMU PBB',
+      'New York– “First paragraph,” said the Minister.',
+      'Second paragraph here.',
+    ])
+    const dataset = new TextEncoder().encode(
+      JSON.stringify({ data: [{ name: 'Plan 1186', amountUSD: 5 }] }),
+    )
+    const y = await extractText(dataset, 'application/json', null)
+    expect(y.method).toBe('raw')
+    expect(y.text).toBe(new TextDecoder().decode(dataset))
   })
 
   it('reads the text layer of a PDF', async () => {

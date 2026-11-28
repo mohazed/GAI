@@ -1,0 +1,41 @@
+# Hand-authored events for Zimbabwe (P-21 light protocol, T-P21-45, 2026-11-04).
+# Generated indicators (A1, A2, A4, B1, B2, B8, C3, D1) are not in this file (D-08). B2 is not-applicable: Zimbabwe's Security Council term runs from 1 January 2027 (countries.yaml), outside the window.
+# Not an EU member. Zimbabwe has no entry on the ICC Assembly of States Parties' list (src_20261009_icc-asp_states-parties). Not on the ICJ case 192 list.
+# Speakers for B9/B10 (R3): the President of the Republic, who is head of state and of government (Emmerson Mnangagwa); the Minister of Foreign Affairs and International Trade (Amon Murwira at the 80th General Debate).
+# Not filed as events (docs/10 B-842): the 79th, 80th and 81st General Debate statements. The 79th (25 September 2024, 'delivered on behalf of the President') and the 80th (26 September 2025, delivered by the Minister of Foreign Affairs) name Palestine and the
+# two-state solution and the 79th calls on the Security Council to 'ensure the protection of civilians', but neither names Gaza (R7); the 81st (the President, 24 September 2026, a scan read by OCR) does not name Gaza or Palestine. No press source carries the words, so no lead.
+- id: evt_2024_12_31_ZWE_D3
+  revision: 1
+  country: ZWE
+  indicator: D3
+  type: standing
+  date: '2024-12-31'
+  end: '2025-12-31'
+  points: 8
+  points_rationale: 'Increased tier (+8): Zimbabwe''s 2024 contribution to UNRWA (USD 500,000) exceeds its 2022 contribution in nominal USD per UNRWA''s donor tables (no row in the 2022 table)
+    (docs/02 §2 D3; docs/calibration/README.md R10).'
+  confidence: confirmed
+  scope:
+  - gaza
+  summary:
+    en: Zimbabwe contributed more to UNRWA in 2024 than in 2022, according to UNRWA's donor tables.
+    fr: La contribution du Zimbabwe à l'UNRWA pour 2024 a dépassé celle de 2022, selon les tableaux des donateurs de l'UNRWA.
+  evidence:
+  - source: src_20241231_unrwa_donor-ranking-2024
+    quote: Zimbabwe 500,000 500,000 - - 500,000 500,000 - - - - - - - - - - - - - - 500,000 63 500,000 61
+    quote_lang: en
+    locator: line 99
+  status: reviewed
+  supersedes: null
+  related: []
+  review:
+    drafted_by: claude-sonnet-5-5
+    drafted_at: '2026-11-04'
+    second_read:
+      by: claude-sonnet-5-5
+      at: '2026-11-04'
+      verdict: agree
+      notes: 'Re-read in reverse order of the evidence list: the quoted passage is a substring of line 99 of src_20241231_unrwa_donor-ranking-2024 (checked by script). The 2022 table (src_20221231_unrwa_donor-ranking-2022) and the 2023 table
+        (src_20231231_unrwa_donor-ranking-2023) have no Zimbabwe row (searched by script). The tier and the scope match the precedent for a donor with no 2022 row (Lithuania, docs/10 B-679 (1)).'
+    notes: UNRWA's donor table for 2024 gives USD 500,000 pledged and received (rank 61 by receipts). Dated 31 December 2024, the end of the calendar year whose contribution exceeds 2022; the amount is small and the rule is the nominal comparison, applied as for every
+      country (docs/10 B-445). The 2025 table was not archived, so the state is left open (P-23). The table does not say which Zimbabwean body paid. Filed in the light protocol (docs/10 B-841 ff.).

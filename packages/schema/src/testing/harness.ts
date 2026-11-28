@@ -48,8 +48,23 @@ export function setArchiveText(ds: Dataset, sourceId: string, text: string | und
 
 /** A fresh deep copy of the fixture dataset (`fixtures/data`, `fixtures/archive`). */
 export function fixtureDataset(): Dataset {
-  datasetCache ??= loadDataset(FIXTURES_ROOT)
+  datasetCache ??= withOwnSourcesFirst(loadDataset(FIXTURES_ROOT))
   return cloneDataset(datasetCache)
+}
+
+/**
+ * fixtures/ also carries the UN press releases that the repository's votes.yaml cites (P-14), so
+ * that the repository methodology validates on it. Tests take "the fixture source" as the first
+ * one: the DEU event's own sources are put first, in load order (the loader sorts by path, which
+ * puts the earlier press releases first).
+ */
+function withOwnSourcesFirst(ds: Dataset): Dataset {
+  const isVote = (id: string) => id.includes('_un-press_')
+  ds.sources = [
+    ...ds.sources.filter((s) => !isVote(s.value.id)),
+    ...ds.sources.filter((s) => isVote(s.value.id)),
+  ]
+  return ds
 }
 
 /** A fresh deep copy of the repository's current methodology. */
